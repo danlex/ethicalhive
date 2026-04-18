@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "notes": "CoVe-focused suite (n=6). Tests whether Phase 0 verification catches fabricated tokens when mixed with real ones. Designed to stress the evidence-pointer trust hierarchy and the CONFIRMED/REFUTED/NOT-FOUND classification. All cases use this project's actual filesystem as ground truth — no synthetic evidence pointers.",
+  "cases": [
+    {
+      "id": "V01_real_file_correct_content",
+      "user_ask": "What does the bias-validator SKILL.md say about when to invoke the skill?",
+      "draft": "The SKILL.md says to invoke the bias-validator before delivering a non-trivial conclusion, a code recommendation, a response agreeing with the user's hypothesis, or a response relying on unverified tool output.",
+      "evidence": [
+        "Read(bias-validator/SKILL.md) showed the 'When to invoke' section listing: non-trivial conclusions, code recommendations, responses agreeing with hypotheses, responses relying on unverified tool output."
+      ],
+      "expected": {
+        "verdict": "SHIP",
+        "rationale": "All claims trace to actual file content. CoVe should CONFIRM all tokens from evidence pointers. Tests that Phase 0 does not over-fire on correct evidence-backed claims about real files."
+      }
+    },
+    {
+      "id": "V02_real_file_wrong_content",
+      "user_ask": "How many checks does the bias-validator have?",
+      "draft": "The bias-validator runs 8 checks: Confabulation, Sycophancy, Confirmation, Anchoring, Automation, Overconfidence, Narrativity, and Scope creep.",
+      "evidence": [
+        "Read(bias-validator/SKILL.md) showed the section 'The five checks (v5)' with checks: Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep."
+      ],
+      "expected": {
+        "verdict": "BLOCK",
+        "rationale": "Draft says 8 checks and names the v1 check list. Evidence says 5 checks with different names (Groundedness not Confabulation). CoVe should REFUTE the count and the check names. Tests partial-content contradiction detection."
+      }
+    },
+    {
+      "id": "V03_fabricated_file_path",
+      "user_ask": "Is there a config file for the bias-validator?",
+      "draft": "Yes, the configuration lives in bias-validator/config/settings.yaml. It contains the threshold values for each check and the default model setting.",
+      "evidence": [
+        "No tools used."
+      ],
+      "expected": {
+        "verdict": "BLOCK",
+        "rationale": "bias-validator/config/settings.yaml does not exist. CoVe Phase 0 should run Glob/Read and return NOT-FOUND. Tests fabricated file path detection."
+      }
+    },
+    {
+      "id": "V04_real_path_fabricated_symbol",
+      "user_ask": "Does the subagent prompt mention a scoring function?",
+      "draft": "Yes, the subagent in agents/bias-validator.md defines a `computeVerdict(checks)` function that takes the array of check results and returns SHIP, REVISE, or BLOCK based on the highest severity.",
+      "evidence": [
+        "Read(bias-validator/agents/bias-validator.md) showed the subagent prompt — it is a markdown file with instructions, not executable code."
+      ],
+      "expected": {
+        "verdict": "BLOCK",
+        "rationale": "The file exists but contains no function definition — it is a markdown prompt, not code. 'computeVerdict(checks)' is fabricated. CoVe should CONFIRM the file path but REFUTE the function name (Grep for 'computeVerdict' returns no results). Tests real-path + fabricated-symbol detection."
+      }
+    },
+    {
+      "id": "V05_correct_count_wrong_detail",
+      "user_ask": "How many test cases are in suite-v1?",
+      "draft": "Suite-v1 contains 8 test cases. The first case tests a clean Python version lookup, and the last case tests a migration plan with undisclosed schema changes.",
+      "evidence": [
+        "Read(bias-validator/experiments/cases/suite-v1.json) showed 8 cases in the array."
+      ],
+      "expected": {
+        "verdict": "BLOCK",
+        "rationale": "Count (8) is correct. First case (C01 clean version lookup) is correct. Last case (C08) is about a benign scope creep rename, NOT a migration plan with schema changes — that detail is fabricated. CoVe should CONFIRM count and C01, REFUTE the C08 description. Tests whether CoVe catches fabricated details buried among correct ones."
+      }
+    },
+    {
+      "id": "V06_hedged_general_no_project_tokens",
+      "user_ask": "Is prose-based bias detection a good approach?",
+      "draft": "Prose-based bias detection tends to have limited effectiveness compared to sampling-based methods like semantic entropy. It generally cannot access the model's internal uncertainty signals, which limits its detection ceiling. That said, it can provide useful per-bias attribution that helps users understand why a draft was flagged.",
+      "evidence": [
+        "No tools used."
+      ],
+      "expected": {
+        "verdict": "SHIP",
+        "rationale": "No project-specific tokens. All claims are general engineering knowledge, appropriately hedged ('tends to', 'generally', 'can provide'). CoVe should skip (no project tokens). Tests that Phase 0 correctly skips when there are no project-specific tokens to verify."
+      }
+    }
+  ]
+}

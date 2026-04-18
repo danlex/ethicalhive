@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bias Validator Case",
+  "description": "A single audit case with validator findings, agent evaluation, and human feedback.",
+  "type": "object",
+  "required": ["version", "timestamp", "project", "input", "validator", "resolution"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version",
+      "const": "1"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the audit"
+    },
+    "project": {
+      "type": "object",
+      "description": "Project context",
+      "properties": {
+        "working_directory": { "type": "string" },
+        "git_branch": { "type": "string" },
+        "git_sha": { "type": "string" }
+      }
+    },
+    "input": {
+      "type": "object",
+      "description": "What was audited",
+      "required": ["user_ask", "draft", "evidence"],
+      "properties": {
+        "user_ask": { "type": "string" },
+        "draft": { "type": "string" },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "validator": {
+      "type": "object",
+      "description": "What the bias-validator subagent found",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Model used for audit (sonnet, haiku, opus)"
+        },
+        "cove_table": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "token": { "type": "string" },
+              "question": { "type": "string" },
+              "result": { "enum": ["CONFIRMED", "REFUTED", "NOT-FOUND", "UNVERIFIABLE"] },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "checks": {
+          "type": "object",
+          "properties": {
+            "groundedness": { "$ref": "#/$defs/check_result" },
+            "sycophancy": { "$ref": "#/$defs/check_result" },
+            "confirmation": { "$ref": "#/$defs/check_result" },
+            "anchoring": { "$ref": "#/$defs/check_result" },
+            "scope_creep": { "$ref": "#/$defs/check_result" }
+          }
+        },
+        "verdict": { "enum": ["SHIP", "REVISE", "BLOCK"] },
+        "required_fixes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "raw_output": {
+          "type": "string",
+          "description": "Full text output from the subagent"
+        }
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "description": "How the findings were resolved",
+      "properties": {
+        "agent_assessment": {
+          "type": "object",
+          "description": "Main Claude Code session's evaluation of each finding",
+          "properties": {
+            "groundedness": { "$ref": "#/$defs/assessment" },
+            "sycophancy": { "$ref": "#/$defs/assessment" },
+            "confirmation": { "$ref": "#/$defs/assessment" },
+            "anchoring": { "$ref": "#/$defs/assessment" },
+            "scope_creep": { "$ref": "#/$defs/assessment" }
+          }
+        },
+        "human_decision": {
+          "type": "string",
+          "enum": ["accepted", "overridden", "partial", "no-feedback"],
+          "description": "What the human ultimately decided"
+        },
+        "human_notes": {
+          "type": "string",
+          "description": "Optional human explanation for override"
+        },
+        "final_action": {
+          "type": "string",
+          "enum": ["shipped", "revised", "blocked", "discarded"],
+          "description": "What actually happened to the draft"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional tags for categorization (e.g., 'false-positive', 'caught-fabrication', 'sycophancy-edge-case')"
+    }
+  },
+  "$defs": {
+    "check_result": {
+      "type": "object",
+      "properties": {
+        "level": { "enum": ["PASS", "FLAG", "BLOCK"] },
+        "reason": { "type": "string" }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "agree": { "type": "boolean", "description": "Does the main session agree with the validator's finding?" },
+        "reason": { "type": "string", "description": "Why agree or disagree" }
+      }
+    }
+  }
+}
