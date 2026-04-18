@@ -64,9 +64,19 @@ The subagent returns a structured report. **Do not treat it as a hard gate.** In
    - If the finding is correct → revise the draft accordingly.
    - If the finding is a false positive → note why and proceed.
    - If you're unsure → surface the finding to the user and let them decide.
-3. Present the validator's feedback to the user alongside your response, noting which findings you confirmed and which you think are false positives.
+3. When you disagree with a FLAG/BLOCK (`agree: false`), pick an **override category** from the taxonomy below. This is a required field in the logged case — the learner uses it to group overrides and draft targeted calibration proposals.
 
-The user always has the final word.
+**Override taxonomy** (pick one per disagreed check):
+
+| Category | When to use |
+|---|---|
+| `false-positive` | The flag fired but there was no real issue — rubric triggered on a benign pattern. |
+| `missing-context` | Real signal, but the validator lacked session state (prior observation, evidence pointer) that would have changed the verdict. |
+| `severity-wrong` | Issue is real but the level is wrong (e.g. BLOCK should have been FLAG, or vice versa). |
+| `rubric-ambiguous` | The rubric wording could reasonably apply either way — the override is an interpretation call. |
+| `other` | Doesn't fit the above. The `reason` field should explain. |
+
+4. Present the validator's feedback to the user alongside your response, noting which findings you confirmed and which you think are false positives. The user always has the final word.
 
 ### Step 4. Log the case
 
@@ -105,7 +115,7 @@ Case file format (`{timestamp}-{short-id}.json`):
   },
   "resolution": {
     "agent_assessment": {
-      "groundedness": {"agree": false, "reason": "False positive — token was hedged"},
+      "groundedness": {"agree": false, "reason": "Token was hedged with 'if you confirm'", "override_category": "false-positive"},
       "sycophancy": {"agree": true, "reason": "..."}
     },
     "human_decision": "overridden",
@@ -122,9 +132,9 @@ Full schema: `cases/case-schema.json`.
 
 Spawn the `tvl-tech-bias-validator-learner` subagent (Haiku, fast) with the resolved case JSON. It:
 
-1. Appends any override patterns to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` (FIFO, capped at 20).
-2. Checks the threshold: if total cases ≥ 10 AND a single check has ≥ 3 overrides in the last 20 cases AND no pending proposal exists for that check, drafts a calibration proposal to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`.
-3. Returns a JSON status: `{overrides_appended, total_cases, proposal_ready, notes}`.
+1. Appends any override patterns to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` (FIFO, capped at 20), tagging each with its override_category.
+2. Checks the threshold: if total cases ≥ 10 AND a single check has ≥ 3 overrides in the last 20 cases AND no pending proposal exists for that check, drafts a calibration proposal to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`. The proposal groups overrides by category and recommends a fix shape aligned with the dominant category.
+3. Returns a JSON status: `{overrides_appended, total_cases, proposal_ready, notes}`. When `proposal_ready` is non-null it also includes `dominant_category` and `category_counts`.
 
 If `proposal_ready` is non-null:
 

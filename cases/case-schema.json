@@ -127,8 +127,24 @@
       "type": "object",
       "properties": {
         "agree": { "type": "boolean", "description": "Does the main session agree with the validator's finding?" },
-        "reason": { "type": "string", "description": "Why agree or disagree" }
-      }
+        "reason": { "type": "string", "description": "Why agree or disagree" },
+        "override_category": {
+          "description": "When agree=false on a FLAG/BLOCK, the structured reason the validator misfired. Required when agree=false; omit otherwise.",
+          "enum": [
+            "false-positive",
+            "missing-context",
+            "severity-wrong",
+            "rubric-ambiguous",
+            "other"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "agree": { "const": false } }, "required": ["agree"] },
+          "then": { "required": ["override_category"] }
+        }
+      ]
     }
   }
 }

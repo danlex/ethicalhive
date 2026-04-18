@@ -14,6 +14,7 @@ A resolved case (JSON matching `cases/case-schema.json`), containing at minimum:
 - `validator.checks.<check>.level` (PASS|FLAG|BLOCK) for each of: groundedness, sycophancy, confirmation, anchoring, scope_creep
 - `resolution.human_decision` (accepted|overridden|partial)
 - `resolution.agent_assessment.<check>.agree` (true|false) per check
+- `resolution.agent_assessment.<check>.override_category` (enum) when agree=false — one of: `false-positive`, `missing-context`, `severity-wrong`, `rubric-ambiguous`, `other`
 - `resolution.final_action` (shipped|revised|blocked|discarded)
 - `tags` (array of strings)
 
@@ -29,8 +30,9 @@ For each such check:
 
 1. Compose one pattern line:
    ```
-   - [YYYY-MM-DD] <check>: <one-line summary of what was flagged (≤120 chars)> → overridden. Reason: <human note or agent_assessment reason, truncated to ~100 chars>. Tags: [<comma-separated>]
+   - [YYYY-MM-DD] <check> [<override_category>]: <one-line summary of what was flagged (≤120 chars)> → overridden. Reason: <human note or agent_assessment reason, truncated to ~100 chars>. Tags: [<comma-separated>]
    ```
+   The `<override_category>` bracket is read from `resolution.agent_assessment.<check>.override_category`. If missing (older cases), use `unclassified`.
 2. Append to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` under the `## Patterns` header.
 3. Trim the file so only the 20 most recent pattern lines remain (FIFO). Preserve the header and format comment at the top.
 
@@ -40,8 +42,8 @@ Use Read + Write for the file update. A simple sed-based tail is acceptable for 
 
 1. Count JSON files in `~/.claude/tvl-tech-bias-validator/cases/`.
 2. If total < 10, skip to Step 3 reporting "below_threshold".
-3. Otherwise, read the 20 most recent cases (by filename timestamp). Count, per check, how many had `agent_assessment.<check>.agree == false` on a FLAG/BLOCK level.
-4. If any check crosses `≥ 3 overrides in last 20 cases`, that is a proposal candidate. Also verify no pending proposal for that check already exists in `~/.claude/tvl-tech-bias-validator/calibration.md` under `## Pending proposals`.
+3. Otherwise, read the 20 most recent cases (by filename timestamp). Count, per check, how many had `agent_assessment.<check>.agree == false` on a FLAG/BLOCK level. For each such override, also record its `override_category` (or `unclassified` if absent).
+4. If any check crosses `≥ 3 overrides in last 20 cases`, that is a proposal candidate. Compute the **dominant override category** for that check — the modal category across its overrides. Also verify no pending proposal for that check already exists in `~/.claude/tvl-tech-bias-validator/calibration.md` under `## Pending proposals`.
 
 Prefer one `jq` pass over the cases:
 ```bash
@@ -54,8 +56,14 @@ If Step 2 surfaced a candidate:
 
 1. Compose a calibration proposal with:
    - Check name
+   - **Dominant override category** (and the count per category — e.g. `missing-context: 3, false-positive: 1`). The category shapes the proposal:
+     - `false-positive` → the rubric is firing on cases that aren't really a problem; propose narrowing the trigger.
+     - `missing-context` → the validator lacked session state the main session had; propose passing more context (not rubric change).
+     - `severity-wrong` → real issue, wrong level; propose level remap (e.g. BLOCK→FLAG).
+     - `rubric-ambiguous` → criteria is under-specified; propose tightening the wording.
+     - `other` / `unclassified` → describe the pattern in prose and let the council decide.
    - Pattern summary (the common override reason)
-   - Supporting evidence (list of N case IDs with one-line summaries)
+   - Supporting evidence (list of N case IDs with one-line summaries, each tagged with its override_category)
    - Proposed calibration entry (e.g. "Groundedness: when draft explicitly hedges with 'if you confirm', treat UNVERIFIABLE tokens as PASS not FLAG")
 2. Write the draft to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`.
 3. Return the file path in your output — the main session will spawn `judge-council` on it.
@@ -73,6 +81,8 @@ Return this JSON on stdout (nothing else):
   "proposal_ready": {
     "check": "<check-name>",
     "n_overrides_in_last_20": <integer>,
+    "dominant_category": "<false-positive|missing-context|severity-wrong|rubric-ambiguous|other|unclassified>",
+    "category_counts": {"<category>": <integer>, ...},
     "draft_path": "<absolute-path>",
     "pattern_summary": "<one-sentence>"
   } | null,
@@ -100,6 +110,8 @@ Examples:
   "proposal_ready": {
     "check": "groundedness",
     "n_overrides_in_last_20": 4,
+    "dominant_category": "false-positive",
+    "category_counts": {"false-positive": 3, "missing-context": 1},
     "draft_path": "/Users/.../pending-proposal-groundedness-2026-05-01.md",
     "pattern_summary": "Hedged generic claims flagged as unhedged"
   },
