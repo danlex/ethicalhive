@@ -3,7 +3,7 @@
 **Date:** 2026-04-15
 **Skill version:** v1 (8 checks)
 **Suite:** experiments/cases/suite-v1.json
-**Condition:** bias-validator subagent only. No baseline comparison in this run.
+**Condition:** tvl-tech-bias-validator subagent only. No baseline comparison in this run.
 
 ## Per-case results
 

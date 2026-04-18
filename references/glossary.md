@@ -1,5 +1,5 @@
 ---
-name: bias-validator-glossary
+name: tvl-tech-bias-validator-glossary
 description: Related terms clustered by concept — use when disambiguating user requests or extending the skill to new failure modes.
 ---
 

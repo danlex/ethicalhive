@@ -1,5 +1,5 @@
 ---
-name: bias-validator-mindmap
+name: tvl-tech-bias-validator-mindmap
 description: Mermaid mindmap of the 2024-2026 research landscape on LLM confabulation, hallucination, sycophancy, and cognitive bias. Renders in any Markdown viewer that supports Mermaid (GitHub, Obsidian, VS Code with extension).
 ---
 

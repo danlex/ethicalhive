@@ -1,10 +1,10 @@
 # Community Cases
 
-This directory receives cases submitted by bias-validator agents running in the wild. Each case is a PR that was reviewed and merged by maintainers.
+This directory receives cases submitted by tvl-tech-bias-validator agents running in the wild. Each case is a PR that was reviewed and merged by maintainers.
 
 ## How cases arrive
 
-1. Someone runs the bias-validator in their project
+1. Someone runs the tvl-tech-bias-validator in their project
 2. After the audit resolves, the agent asks: "Want to contribute this case?"
 3. If approved, the agent sanitizes the case (removes proprietary code, PII, credentials) and creates a PR
 4. Maintainers review the PR for:

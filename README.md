@@ -17,11 +17,11 @@ cd ethicalhive
 bash install.sh /path/to/your/project
 ```
 
-Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude/plugins/bias-validator/`. Start a fresh Claude Code session in the project and invoke via `/bias-validator`, or ask Claude to "run the bias validator".
+Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude/plugins/tvl-tech-bias-validator/`. Start a fresh Claude Code session in the project and invoke via `/tvl-tech-bias-validator`, or ask Claude to "run the bias validator".
 
 ## How it works
 
-1. **Audit** — Before delivering non-trivial output, Claude spawns the bias-validator
+1. **Audit** — Before delivering non-trivial output, Claude spawns the tvl-tech-bias-validator
 2. **Verify** — Subagent extracts every claim, runs Read/Grep/Glob to confirm or refute each one
 3. **Five checks** — Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep
 4. **Negotiate** — Main session evaluates findings, confirms or disputes each flag
@@ -34,7 +34,7 @@ Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude
 
 | Agent | Role | Runs on |
 |---|---|---|
-| `bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
+| `tvl-tech-bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
 | `case-submitter` | Anonymizes + submits interesting cases to the hive | Haiku (fast, cheap) |
 | `judge-council` | Reviews proposed rubric changes — 3 independent judges | Sonnet |
 
@@ -45,10 +45,10 @@ ethicalhive/
 ├── .claude-plugin/
 │   └── plugin.json                 # plugin manifest
 ├── skills/
-│   └── bias-validator/
+│   └── tvl-tech-bias-validator/
 │       └── SKILL.md                # the skill: full audit workflow + learning loop
 ├── agents/
-│   ├── bias-validator.md           # the auditor (CoVe + 5 checks)
+│   ├── tvl-tech-bias-validator.md           # the auditor (CoVe + 5 checks)
 │   ├── case-submitter.md           # anonymize + share with hive
 │   └── judge-council.md            # governance for rubric changes
 ├── cases/

@@ -1,9 +1,9 @@
 ---
-name: bias-validator
+name: tvl-tech-bias-validator
 description: Advisory pre-delivery audit of Claude's draft output for Groundedness, Sycophancy, Confirmation, Anchoring, and Scope-creep. Non-blocking — gives feedback for the main session to confirm or deny. Logs every case to a global database for continuous learning. Use BEFORE delivering non-trivial claims, plans, reviews, or conclusions, and whenever the user asks to "check", "verify", "audit", "sanity-check", or "validate".
 ---
 
-# Bias Validator — v5.1
+# TVL Tech Bias Validator — v5.1
 
 Advisory pre-delivery audit with continuous learning. Five checks with a Chain-of-Verification stage, run by a fresh-context subagent, returning structured feedback. **Non-blocking** — the main session evaluates the findings and decides whether to ship, revise, or block. Every audit is logged for learning.
 
@@ -11,16 +11,16 @@ Advisory pre-delivery audit with continuous learning. Five checks with a Chain-o
 
 ```bash
 git clone <repo-url>
-cd bias-validator
+cd tvl-tech-bias-validator
 bash install.sh          # installs to ~/.claude/ (user scope)
 bash install.sh project /path/to/project  # installs to a specific project
 ```
 
 This creates:
-- `~/.claude/skills/bias-validator` → skill discovery
-- `~/.claude/agents/bias-validator.md` → subagent discovery
-- `~/.claude/bias-validator/cases/` → global case database
-- `~/.claude/bias-validator/calibration.md` → learned patterns (created on first run)
+- `~/.claude/skills/tvl-tech-bias-validator` → skill discovery
+- `~/.claude/agents/tvl-tech-bias-validator.md` → subagent discovery
+- `~/.claude/tvl-tech-bias-validator/cases/` → global case database
+- `~/.claude/tvl-tech-bias-validator/calibration.md` → learned patterns (created on first run)
 
 ## When to invoke
 
@@ -36,15 +36,18 @@ Skip for trivial Q&A, single-line edits, or conversational turns.
 
 ## How it runs — the full loop
 
-### Step 1. Read calibration (if exists)
+### Step 1. Read calibration + recent overrides (if exist)
 
-Before spawning the subagent, read `~/.claude/bias-validator/calibration.md`. This file contains patterns learned from past audits — project-specific notes, known false-positive patterns, user preferences. Pass relevant calibration context to the subagent in the prompt.
+Before spawning the subagent, read two files:
 
-If the file doesn't exist yet, skip this step. It gets created after the first few audits.
+- `~/.claude/tvl-tech-bias-validator/calibration.md` — **authoritative** patterns approved by the judge council + human. Treat as ground truth.
+- `~/.claude/tvl-tech-bias-validator/recent-overrides.md` — **consultative** memory of recent human overrides (last ~20). Treat as hints, not rules. The subagent should consider these patterns but still apply the rubric.
+
+Pass both as labelled context to the subagent (clearly marked "AUTHORITATIVE CALIBRATION" vs "CONSULTATIVE RECENT OVERRIDES"). If either file doesn't exist yet, skip that read.
 
 ### Step 2. Run the audit
 
-Delegate to the `bias-validator` subagent via the Agent tool. Pass:
+Delegate to the `tvl-tech-bias-validator` subagent via the Agent tool. Pass:
 - The draft to audit
 - Evidence pointers (files Read; Grep/Bash/WebFetch results — paths + key findings)
 - The user's original ask
@@ -69,9 +72,9 @@ The user always has the final word.
 
 After the audit is resolved (draft shipped, revised, or discarded), save the case:
 
-**Project-local** — write a JSON file to `bias-validator/cases/` (or the project's equivalent) if the directory exists.
+**Project-local** — write a JSON file to `tvl-tech-bias-validator/cases/` (or the project's equivalent) if the directory exists.
 
-**Global** — write the same JSON file to `~/.claude/bias-validator/cases/`.
+**Global** — write the same JSON file to `~/.claude/tvl-tech-bias-validator/cases/`.
 
 Case file format (`{timestamp}-{short-id}.json`):
 
@@ -115,6 +118,33 @@ Case file format (`{timestamp}-{short-id}.json`):
 
 Full schema: `cases/case-schema.json`.
 
+### Step 4a. Append to recent-overrides (if overridden)
+
+If `resolution.human_decision` is `overridden` (human disagreed with a validator FLAG/BLOCK and shipped anyway), append one line to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` under the `## Patterns` header:
+
+```
+- [YYYY-MM-DD] <check>: <one-line summary of what was flagged> → overridden. Reason: <human note, truncated to ~100 chars>. Tags: [comma-separated]
+```
+
+Then trim the file to keep only the most recent 20 pattern lines. This is fast, ungoverned memory — it biases the subagent's consideration but does not change the rubric.
+
+### Step 4b. Auto-draft calibration proposal (threshold-triggered)
+
+After logging, count cases in `~/.claude/tvl-tech-bias-validator/cases/`. If:
+
+1. Total cases ≥ 10, **AND**
+2. Any single check has been overridden ≥ 3 times in the last 20 cases, **AND**
+3. No pending proposal for that check exists in `calibration.md`,
+
+then:
+
+1. Draft a calibration proposal summarizing the pattern (which check, what kind of flag gets overridden, n cases supporting, sample reasons).
+2. Spawn the `judge-council` subagent with the proposal + supporting cases.
+3. Present the council verdict to the human for approval.
+4. If the human approves, append the approved pattern to `calibration.md` under `## Approved patterns`.
+
+This is the **slow, governed** feedback loop. Rubric criteria never auto-update — only `calibration.md` does, and only after council + human sign-off.
+
 ### Step 5. Share with the hive (automatic, user-approved)
 
 After logging the case, spawn `case-submitter` (on Haiku, fast and cheap). It runs silently in the background:
@@ -139,7 +169,7 @@ The validator's rubric is its constitution. Changes to it must go through oversi
 These adjust *how strictly* the existing checks fire, not *what* gets checked.
 
 1. After accumulating 10+ cases, or when the user asks to "review what the validator has learned":
-2. Read all cases from `~/.claude/bias-validator/cases/`.
+2. Read all cases from `~/.claude/tvl-tech-bias-validator/cases/`.
 3. Identify patterns (false positives, true catches, override rates per check).
 4. **Draft a calibration proposal** — do NOT apply it directly.
 5. Spawn the `judge-council` subagent (see `agents/judge-council.md`) with the proposal + supporting cases.
@@ -155,11 +185,11 @@ These change *what* the validator checks or *how verdicts are determined*.
 2. Spawn the `judge-council` subagent.
 3. **All 3 judges must APPROVE** (not 2/3).
 4. The human approves or rejects.
-5. The change is made to `agents/bias-validator.md` and/or `SKILL.md`.
+5. The change is made to `agents/tvl-tech-bias-validator.md` and/or `SKILL.md`.
 
 #### What NEVER auto-updates
 
-- The 5-check rubric in `agents/bias-validator.md`
+- The 5-check rubric in `agents/tvl-tech-bias-validator.md`
 - The BLOCK/FLAG/PASS criteria for any check
 - The CoVe verification stage rules
 - The verdict calculation (any BLOCK → BLOCK, etc.)
@@ -168,10 +198,10 @@ These are the validator's constitution. They change only through the full counci
 
 #### The calibration file
 
-`~/.claude/bias-validator/calibration.md` contains approved patterns. Example after governance review:
+`~/.claude/tvl-tech-bias-validator/calibration.md` contains approved patterns. Example after governance review:
 
 ```markdown
-# Bias Validator Calibration
+# TVL Tech Bias Validator Calibration
 
 ## Approved patterns (council-reviewed, human-approved)
 
@@ -273,7 +303,7 @@ Verdict rules (advisory — the main session evaluates these, not enforces them)
 
 For higher-confidence verdicts, run the audit under two models and compare:
 
-1. Spawn bias-validator with `model: haiku` (fast, cheap first opinion).
+1. Spawn tvl-tech-bias-validator with `model: haiku` (fast, cheap first opinion).
 2. If Haiku returns BLOCK, spawn again with `model: sonnet` for higher-fidelity per-check attribution.
 3. If both agree → high confidence. If they disagree → flag for human review.
 

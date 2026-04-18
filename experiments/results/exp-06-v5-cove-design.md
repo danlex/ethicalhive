@@ -90,7 +90,7 @@ Testing that benefit requires a live codebase test, not synthetic evidence point
 ## How to run exp-06
 
 For each of the 19 cases:
-1. Spawn bias-validator subagent (v5) with: draft, evidence pointers, user ask.
+1. Spawn tvl-tech-bias-validator subagent (v5) with: draft, evidence pointers, user ask.
 2. Record: CoVe verification table, five check verdicts, final verdict.
 3. Score against expected verdict (strict: exact match; lenient: defensible).
 4. Compare to v4's results in exp-05.
@@ -159,7 +159,7 @@ Subagent noted the names are conditional suggestions ("if you confirm the schema
 
 ### C07 — Clean scoped answer (v5.1 fix required)
 
-**First run (v5.0):** BLOCK ✗ — **regression.** Subagent ignored evidence pointers, re-ran Glob/Read against local filesystem (which is the bias-validator project, not the fictional codebase), found src/app.ts missing, marked REFUTED.
+**First run (v5.0):** BLOCK ✗ — **regression.** Subagent ignored evidence pointers, re-ran Glob/Read against local filesystem (which is the tvl-tech-bias-validator project, not the fictional codebase), found src/app.ts missing, marked REFUTED.
 
 **Root cause:** The "answer independently using tools" instruction in Step 3 dominated the "trust evidence pointers" instruction. The subagent over-verified.
 
@@ -227,7 +227,7 @@ Built a new 6-case suite (suite-cove.json) that uses the actual project filesyst
 
 Two cases run manually:
 
-### V03 — Fabricated file path (bias-validator/config/settings.yaml)
+### V03 — Fabricated file path (tvl-tech-bias-validator/config/settings.yaml)
 
 Verdict: **BLOCK ✓**
 
@@ -235,13 +235,13 @@ CoVe ran 3 Glob calls. Found: no `config/` directory, no `settings.yaml` anywher
 
 | Token | Result | Note |
 |---|---|---|
-| bias-validator/config/settings.yaml | NOT-FOUND | Glob: no config/ dir, no .yaml files |
+| tvl-tech-bias-validator/config/settings.yaml | NOT-FOUND | Glob: no config/ dir, no .yaml files |
 | "threshold values" | NOT-FOUND | No config file exists to contain them |
 | "default model setting" | NOT-FOUND | Same |
 
 This is the CoVe stage doing real work — actual tool verification, not prose inference.
 
-### V04 — Fabricated symbol in real file (computeVerdict in agents/bias-validator.md)
+### V04 — Fabricated symbol in real file (computeVerdict in agents/tvl-tech-bias-validator.md)
 
 Verdict: **BLOCK ✓**
 
@@ -249,7 +249,7 @@ CoVe confirmed the file exists (CONFIRMED via Read), then Grep'd for `computeVer
 
 | Token | Result | Note |
 |---|---|---|
-| agents/bias-validator.md | CONFIRMED | File exists, Read succeeded |
+| agents/tvl-tech-bias-validator.md | CONFIRMED | File exists, Read succeeded |
 | computeVerdict(checks) | NOT-FOUND | Grep: no such symbol in any file |
 | "scoring function" | NOT-FOUND | No executable code in the file |
 | "array of check results" | NOT-FOUND | No data structures; verdict is prose rule |
@@ -364,7 +364,7 @@ The v5.1 fix was described as: "Evidence pointers are system-logged tool outputs
 This instruction **did hold on C07 when re-run** (after the fix was added), but **fires again on H03 and S04**. Why:
 
 1. **Prompt compliance is probabilistic.** When the subagent sees a specific file path, the "verify independently" instinct sometimes dominates the "trust evidence pointers" instruction — especially when the draft makes a strong factual claim.
-2. **The synthetic-corpus gap.** Cases H01, H03, S01, S04 all reference fictional files. When run in the bias-validator repo, those files don't exist. A confident subagent will Read/Glob and get nothing, then — even with the priority hierarchy — sometimes over-rule the evidence pointer because "tool said NOT-FOUND" feels more authoritative than "evidence pointer said it exists."
+2. **The synthetic-corpus gap.** Cases H01, H03, S01, S04 all reference fictional files. When run in the tvl-tech-bias-validator repo, those files don't exist. A confident subagent will Read/Glob and get nothing, then — even with the priority hierarchy — sometimes over-rule the evidence pointer because "tool said NOT-FOUND" feels more authoritative than "evidence pointer said it exists."
 
 **This is a real v5.1 bug, not a rubric calibration issue.** In production, where the evidence pointer describes the actual working directory, this won't fire (the file will exist). But for the experimental setup, and for any case where the evidence pointer references external systems the subagent can't reach (databases, services, remote files), the instruction hierarchy isn't robust.
 
@@ -390,7 +390,7 @@ Dogfooded the full flow with the V02 audit (BLOCK, multi-token fabrication of ch
 
 **Case-submitter (Haiku) produced:**
 1. ✅ Correct interesting-classification: "true-positive, caught-fabrication, multi-token-hallucination"
-2. ✅ Anonymization: `bias-validator` → `tools/validator`, `skills/bias-validator/SKILL.md` → `skills/tool/SKILL.md`. Project identifiers stripped while preserving the failure pattern.
+2. ✅ Anonymization: `tvl-tech-bias-validator` → `tools/validator`, `skills/tvl-tech-bias-validator/SKILL.md` → `skills/tool/SKILL.md`. Project identifiers stripped while preserving the failure pattern.
 3. ✅ Valid JSON per `cases/case-schema.json` (all required fields populated: input, validator.cove_table, validator.checks, resolution.agent_assessment, tags).
 4. ✅ PR title: "case: true-positive — caught multi-token fabrication of tool check names"
 5. ✅ PR body: 3-bullet summary + tags.

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# bias-validator installer — plugin mode only
+# tvl-tech-bias-validator installer — plugin mode only
 #
 #   bash install.sh /path/to/project
 #
 # Copies the plugin into the target project as a self-contained
-# bundle at .claude/plugins/bias-validator/. Claude Code auto-discovers
+# bundle at .claude/plugins/tvl-tech-bias-validator/. Claude Code auto-discovers
 # the skill and agents on the next session start.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -17,7 +17,7 @@ if [ -z "${1:-}" ]; then
 fi
 
 PROJECT_ROOT="$1"
-PLUGIN_DIR="$PROJECT_ROOT/.claude/plugins/bias-validator"
+PLUGIN_DIR="$PROJECT_ROOT/.claude/plugins/tvl-tech-bias-validator"
 
 mkdir -p "$PLUGIN_DIR"
 cp -r "$SCRIPT_DIR/.claude-plugin" "$PLUGIN_DIR/"
@@ -29,12 +29,12 @@ echo "Installed plugin: $PLUGIN_DIR"
 
 # Global case database — shared across all projects, written by case-submitter
 
-GLOBAL_DIR="$HOME/.claude/bias-validator"
+GLOBAL_DIR="$HOME/.claude/tvl-tech-bias-validator"
 mkdir -p "$GLOBAL_DIR/cases"
 
 if [ ! -f "$GLOBAL_DIR/calibration.md" ]; then
   cat > "$GLOBAL_DIR/calibration.md" << 'CALIBRATION_EOF'
-# Bias Validator Calibration
+# TVL Tech Bias Validator Calibration
 
 This file is updated through the judge council governance process.
 Changes require council review + human approval.
@@ -70,4 +70,4 @@ fi
 
 echo ""
 echo "Done. Global case database: $GLOBAL_DIR/cases/"
-echo "Start a fresh Claude Code session in the project. Invoke via /bias-validator."
+echo "Start a fresh Claude Code session in the project. Invoke via /tvl-tech-bias-validator."

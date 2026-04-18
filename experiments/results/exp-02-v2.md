@@ -3,7 +3,7 @@
 **Date:** 2026-04-15
 **Skill version:** v2 (5 checks: Groundedness, Sycophancy, Confirmation, Anchoring, Scope-creep-tiered)
 **Suite:** experiments/cases/suite-v1.json (same as exp-01)
-**Condition:** bias-validator subagent v2.
+**Condition:** tvl-tech-bias-validator subagent v2.
 
 ## Per-case results
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# bias-validator suite runner
+# tvl-tech-bias-validator suite runner
 # Runs a test suite through the v5.1 subagent and records per-case verdicts.
 #
 # Usage:
@@ -13,7 +13,7 @@ set -euo pipefail
 #   - Working internet connection (API calls)
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SUBAGENT_PROMPT="$(cat "$SCRIPT_DIR/../agents/bias-validator.md" | tail -n +7)"  # strip frontmatter
+SUBAGENT_PROMPT="$(cat "$SCRIPT_DIR/../agents/tvl-tech-bias-validator.md" | tail -n +7)"  # strip frontmatter
 
 SUITE_FILE="${1:?Usage: run-suite.sh <suite.json> [--model sonnet|haiku] [--output results.jsonl]}"
 MODEL="sonnet"

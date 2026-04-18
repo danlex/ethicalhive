@@ -1,6 +1,6 @@
 # Case Database
 
-Every bias-validator audit gets saved here as a JSON file. Each case captures:
+Every tvl-tech-bias-validator audit gets saved here as a JSON file. Each case captures:
 
 - What was audited (draft, evidence, user ask)
 - What the validator found (CoVe table, per-check verdicts)
@@ -19,5 +19,5 @@ See `case-schema.json` for the full structure.
 
 ## Global vs project-local
 
-- **Project-local**: `bias-validator/cases/` in your project — cases from this codebase
-- **Global**: `~/.claude/bias-validator/cases/` — cases from all projects, for cross-project learning
+- **Project-local**: `tvl-tech-bias-validator/cases/` in your project — cases from this codebase
+- **Global**: `~/.claude/tvl-tech-bias-validator/cases/` — cases from all projects, for cross-project learning

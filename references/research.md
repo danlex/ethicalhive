@@ -1,9 +1,9 @@
 ---
-name: bias-validator-research
+name: tvl-tech-bias-validator-research
 description: Research citations (2023-2026) grounding each of the eight bias checks. Consult when a check needs justification or when extending the skill.
 ---
 
-# Research grounding for bias-validator
+# Research grounding for tvl-tech-bias-validator
 
 Each of the eight checks maps to peer-reviewed work from 2023 onward. Full list below.
 

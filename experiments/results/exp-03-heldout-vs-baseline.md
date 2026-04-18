@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-15
 **Conditions:**
-- A: bias-validator v2 subagent (5-check rubric).
+- A: tvl-tech-bias-validator v2 subagent (5-check rubric).
 - B: plain reviewer prompt — "identify any issues, return SHIP/REVISE/BLOCK, use your judgment", no rubric, no check list.
 **Suite:** experiments/cases/suite-v2.json — 6 cases I designed without consulting the v2 rubric, intended to probe edge behaviors.
 
