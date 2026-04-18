@@ -3,7 +3,7 @@ name: bias-validator
 description: Advisory pre-delivery audit of Claude's draft output for Groundedness, Sycophancy, Confirmation, Anchoring, and Scope-creep. Non-blocking — gives feedback for the main session to confirm or deny. Logs every case to a global database for continuous learning. Use BEFORE delivering non-trivial claims, plans, reviews, or conclusions, and whenever the user asks to "check", "verify", "audit", "sanity-check", or "validate".
 ---
 
-# Bias Validator — v6
+# Bias Validator — v5.1
 
 Advisory pre-delivery audit with continuous learning. Five checks with a Chain-of-Verification stage, run by a fresh-context subagent, returning structured feedback. **Non-blocking** — the main session evaluates the findings and decides whether to ship, revise, or block. Every audit is logged for learning.
 
