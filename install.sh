@@ -19,13 +19,21 @@ fi
 PROJECT_ROOT="$1"
 PLUGIN_DIR="$PROJECT_ROOT/.claude/plugins/tvl-tech-bias-validator"
 
-mkdir -p "$PLUGIN_DIR"
+# Idempotent install/update: wipe managed subdirs so removed files don't linger.
+if [ -d "$PLUGIN_DIR" ]; then
+  rm -rf "$PLUGIN_DIR"/.claude-plugin "$PLUGIN_DIR"/skills "$PLUGIN_DIR"/agents "$PLUGIN_DIR"/cases "$PLUGIN_DIR"/references
+  ACTION="Updated"
+else
+  mkdir -p "$PLUGIN_DIR"
+  ACTION="Installed"
+fi
+
 cp -r "$SCRIPT_DIR/.claude-plugin" "$PLUGIN_DIR/"
 cp -r "$SCRIPT_DIR/skills" "$PLUGIN_DIR/"
 cp -r "$SCRIPT_DIR/agents" "$PLUGIN_DIR/"
 cp -r "$SCRIPT_DIR/cases" "$PLUGIN_DIR/"
 cp -r "$SCRIPT_DIR/references" "$PLUGIN_DIR/"
-echo "Installed plugin: $PLUGIN_DIR"
+echo "$ACTION plugin: $PLUGIN_DIR"
 
 # Global case database — local, shared across all projects on this machine
 

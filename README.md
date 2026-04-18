@@ -11,13 +11,25 @@ A Claude Code plugin that audits drafts before delivery. Five checks (Groundedne
 
 ## Install
 
+One-liner:
+
+```bash
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s /path/to/your/project
+```
+
+Or clone and install manually:
+
 ```bash
 git clone https://github.com/danlex/ethicalhive.git
 cd ethicalhive
 bash install.sh /path/to/your/project
 ```
 
-Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude/plugins/tvl-tech-bias-validator/`. Start a fresh Claude Code session in the project and invoke via `/tvl-tech-bias-validator`, or ask Claude to "run the bias validator".
+Either path copies the plugin as a self-contained bundle into `/path/to/your/project/.claude/plugins/tvl-tech-bias-validator/`. Start a fresh Claude Code session in the project and invoke via `/tvl-tech-bias-validator`, or ask Claude to "run the bias validator".
+
+### Updating
+
+Re-run the one-liner. The installer is idempotent — it wipes the plugin's managed subdirs (`.claude-plugin/`, `skills/`, `agents/`, `cases/`, `references/`) and re-copies from the latest main. Your local case database (`~/.claude/tvl-tech-bias-validator/cases/`) and calibration (`calibration.md`, `recent-overrides.md`) are never touched.
 
 ## How it works
 
@@ -34,6 +46,7 @@ Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude
 | Agent | Role | Runs on |
 |---|---|---|
 | `tvl-tech-bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
+| `tvl-tech-bias-validator-learner` | Processes resolved cases into the learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
 | `judge-council` | Reviews proposed rubric/calibration changes — 3 independent judges | Sonnet |
 
 ## The skills
@@ -55,8 +68,9 @@ ethicalhive/
 │   └── tvl-tech-bias-validator-dashboard/
 │       └── SKILL.md                # stats dashboard
 ├── agents/
-│   ├── tvl-tech-bias-validator.md  # the auditor (CoVe + 5 checks)
-│   └── judge-council.md            # governance for rubric/calibration changes
+│   ├── tvl-tech-bias-validator.md          # the auditor (CoVe + 5 checks)
+│   ├── tvl-tech-bias-validator-learner.md  # post-audit learning loop (overrides + proposal drafts)
+│   └── judge-council.md                    # governance for rubric/calibration changes
 ├── cases/
 │   └── case-schema.json            # JSON schema for logged cases
 ├── experiments/
@@ -68,7 +82,8 @@ ethicalhive/
 │   ├── research.md                 # 2023-2026 citations per check
 │   ├── glossary.md                 # related-terms taxonomy
 │   └── mindmap.md                  # research landscape
-└── install.sh                      # installer
+├── install.sh                      # local installer
+└── install-remote.sh               # curl|bash bootstrap for the one-liner
 ```
 
 ## Learning loop (local)

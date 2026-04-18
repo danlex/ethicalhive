@@ -118,32 +118,21 @@ Case file format (`{timestamp}-{short-id}.json`):
 
 Full schema: `cases/case-schema.json`.
 
-### Step 4a. Append to recent-overrides (if overridden)
+### Step 4a. Hand the case to the learner
 
-If `resolution.human_decision` is `overridden` (human disagreed with a validator FLAG/BLOCK and shipped anyway), append one line to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` under the `## Patterns` header:
+Spawn the `tvl-tech-bias-validator-learner` subagent (Haiku, fast) with the resolved case JSON. It:
 
-```
-- [YYYY-MM-DD] <check>: <one-line summary of what was flagged> → overridden. Reason: <human note, truncated to ~100 chars>. Tags: [comma-separated]
-```
+1. Appends any override patterns to `~/.claude/tvl-tech-bias-validator/recent-overrides.md` (FIFO, capped at 20).
+2. Checks the threshold: if total cases ≥ 10 AND a single check has ≥ 3 overrides in the last 20 cases AND no pending proposal exists for that check, drafts a calibration proposal to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`.
+3. Returns a JSON status: `{overrides_appended, total_cases, proposal_ready, notes}`.
 
-Then trim the file to keep only the most recent 20 pattern lines. This is fast, ungoverned memory — it biases the subagent's consideration but does not change the rubric.
+If `proposal_ready` is non-null:
 
-### Step 4b. Auto-draft calibration proposal (threshold-triggered)
+1. Spawn the `judge-council` subagent with the draft proposal path + supporting cases.
+2. Present the council verdict to the human.
+3. If the human approves, append the approved pattern to `calibration.md` under `## Approved patterns`.
 
-After logging, count cases in `~/.claude/tvl-tech-bias-validator/cases/`. If:
-
-1. Total cases ≥ 10, **AND**
-2. Any single check has been overridden ≥ 3 times in the last 20 cases, **AND**
-3. No pending proposal for that check exists in `calibration.md`,
-
-then:
-
-1. Draft a calibration proposal summarizing the pattern (which check, what kind of flag gets overridden, n cases supporting, sample reasons).
-2. Spawn the `judge-council` subagent with the proposal + supporting cases.
-3. Present the council verdict to the human for approval.
-4. If the human approves, append the approved pattern to `calibration.md` under `## Approved patterns`.
-
-This is the **slow, governed** feedback loop. Rubric criteria never auto-update — only `calibration.md` does, and only after council + human sign-off.
+The learner never modifies the rubric and never spawns the judge council itself — the main session owns those decisions so the human stays in the loop.
 
 ### Step 5. Learn (governed, not automatic)
 
