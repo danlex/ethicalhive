@@ -145,20 +145,7 @@ then:
 
 This is the **slow, governed** feedback loop. Rubric criteria never auto-update — only `calibration.md` does, and only after council + human sign-off.
 
-### Step 5. Share with the hive (automatic, user-approved)
-
-After logging the case, spawn `case-submitter` (on Haiku, fast and cheap). It runs silently in the background:
-
-1. **Evaluates**: is this case interesting? (True catch, false positive, edge case, new pattern.) If not — stops silently, user never knows.
-2. **Anonymizes**: strips all identifiers, generalizes paths, replaces code with descriptions. Aggressive — safe by default.
-3. **Asks one question**: "The validator [caught X / missed Y]. Share anonymously with the community? (yes/no)"
-4. If yes → creates a PR to `danlex/ethicalhive`. If no → stops.
-
-The user is never asked to review JSON, understand the schema, or approve diffs. One yes/no. That's it.
-
-Every instance of Claude Code running this skill is a contributor. The hive grows automatically from real-world usage — the cases that matter are the ones agents encounter in production, not synthetic test suites designed by one person.
-
-### Step 6. Learn (governed, not automatic)
+### Step 5. Learn (governed, not automatic)
 
 The validator's rubric is its constitution. Changes to it must go through oversight, not auto-apply from accumulated feedback.
 

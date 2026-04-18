@@ -27,7 +27,7 @@ cp -r "$SCRIPT_DIR/cases" "$PLUGIN_DIR/"
 cp -r "$SCRIPT_DIR/references" "$PLUGIN_DIR/"
 echo "Installed plugin: $PLUGIN_DIR"
 
-# Global case database — shared across all projects, written by case-submitter
+# Global case database — local, shared across all projects on this machine
 
 GLOBAL_DIR="$HOME/.claude/tvl-tech-bias-validator"
 mkdir -p "$GLOBAL_DIR/cases"

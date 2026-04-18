@@ -1,13 +1,13 @@
 # EthicalHive
 
-Collective AI integrity through adversarial self-audit.
+AI integrity through adversarial self-audit — local-only.
 
-Every Claude Code instance running EthicalHive is a sensor. When the validator catches a fabrication, flags a false positive, or encounters an edge case — it asks the user one question: "share anonymously?" The cases flow to the hive. The validator evolves from real-world usage, not from one person's test suite.
+A Claude Code plugin that audits drafts before delivery. Five checks (Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep) with a Chain-of-Verification stage. Every audit is logged locally and feeds a governed learning loop. **No data leaves your machine.**
 
 **Advisory, not blocking.** The validator gives structured feedback. The human decides.
-**Self-aware.** The validator knows it has its own confirmation bias. It tracks its own error rate.
+**Self-aware.** The validator knows it has its own confirmation bias. It tracks its own override rate.
 **Governed.** Changes to the rubric go through a judge council (3 independent reviewers) + human approval. No auto-updates. No corruption.
-**Open source.** Anyone can install it. Every user contributes to the collective intelligence just by saying "yes" when asked.
+**Local-only.** Cases accumulate in `~/.claude/tvl-tech-bias-validator/`. Nothing is shared externally. Community hive submission is intentionally disabled pending hardening.
 
 ## Install
 
@@ -27,16 +27,21 @@ Copies the plugin as a self-contained bundle into `/path/to/your/project/.claude
 4. **Negotiate** — Main session evaluates findings, confirms or disputes each flag
 5. **Human decides** — Findings presented alongside the response, user has final word
 6. **Log** — Case saved locally with all three perspectives (validator, agent, human)
-7. **Share** — If interesting: "Share anonymously?" → one word → case flows to the hive
-8. **Evolve** — Accumulated cases inform rubric changes (through judge council governance)
+7. **Learn** — Recent overrides feed consultative memory; n≥10 cases with repeat overrides trigger auto-drafted calibration proposals (judge-council + human approval)
 
 ## The agents
 
 | Agent | Role | Runs on |
 |---|---|---|
 | `tvl-tech-bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
-| `case-submitter` | Anonymizes + submits interesting cases to the hive | Haiku (fast, cheap) |
-| `judge-council` | Reviews proposed rubric changes — 3 independent judges | Sonnet |
+| `judge-council` | Reviews proposed rubric/calibration changes — 3 independent judges | Sonnet |
+
+## The skills
+
+| Skill | Invocation | Role |
+|---|---|---|
+| `tvl-tech-bias-validator` | `/tvl-tech-bias-validator` | Full audit workflow + learning loop |
+| `tvl-tech-bias-validator-dashboard` | `/tvl-tech-bias-validator-dashboard` | Read-only stats: verdict mix, override rates, drift, calibration state |
 
 ## Plugin structure
 
@@ -45,15 +50,15 @@ ethicalhive/
 ├── .claude-plugin/
 │   └── plugin.json                 # plugin manifest
 ├── skills/
-│   └── tvl-tech-bias-validator/
-│       └── SKILL.md                # the skill: full audit workflow + learning loop
+│   ├── tvl-tech-bias-validator/
+│   │   └── SKILL.md                # audit workflow + learning loop
+│   └── tvl-tech-bias-validator-dashboard/
+│       └── SKILL.md                # stats dashboard
 ├── agents/
-│   ├── tvl-tech-bias-validator.md           # the auditor (CoVe + 5 checks)
-│   ├── case-submitter.md           # anonymize + share with hive
-│   └── judge-council.md            # governance for rubric changes
+│   ├── tvl-tech-bias-validator.md  # the auditor (CoVe + 5 checks)
+│   └── judge-council.md            # governance for rubric/calibration changes
 ├── cases/
-│   ├── case-schema.json            # JSON schema for logged cases
-│   └── community/                  # cases from the hive (submitted via PRs)
+│   └── case-schema.json            # JSON schema for logged cases
 ├── experiments/
 │   ├── cases/                      # test suites (25 cases across 4 suites)
 │   ├── results/                    # experiment reports (exp-01 through exp-06)
@@ -63,38 +68,15 @@ ethicalhive/
 │   ├── research.md                 # 2023-2026 citations per check
 │   ├── glossary.md                 # related-terms taxonomy
 │   └── mindmap.md                  # research landscape
-└── install.sh                      # installer (user/project/plugin scope)
+└── install.sh                      # installer
 ```
 
-## How the hive works
+## Learning loop (local)
 
-What you see:
+Every audit is logged to `~/.claude/tvl-tech-bias-validator/cases/`. Two levels of feedback:
 
-```
-You: Fix the auth bug
-
-Claude: [runs audit internally]
-        [catches that it fabricated a file path]
-        [fixes itself, delivers correct response]
-
-        Fixed the auth validation in src/middleware/auth.ts...
-
-        The validator caught a fabricated path in my first draft
-        and I corrected it before showing you.
-
-        Share anonymously with the community? This helps the
-        validator get smarter for everyone. (yes/no)
-
-You: yes
-
-Claude: Shared. ✓
-```
-
-That's it. No JSON to review. No PR to understand. No programming. One word: "yes."
-
-Behind the scenes, the case-submitter (running on Haiku, fast and cheap) anonymizes the case, strips your project details, preserves the failure pattern ("fabricated file path, caught by CoVe NOT-FOUND"), and submits a PR to `danlex/ethicalhive`. A maintainer reviews it later. When enough cases accumulate showing the same pattern, the rubric evolves — through the judge council, with human approval.
-
-Every Claude Code instance running this plugin is a worker bee. The repo is the hive. The cases are the honey. The judge council is the immune system that keeps the rubric from being corrupted.
+- **Fast (consultative):** human overrides append to `recent-overrides.md` (last 20 FIFO). The subagent reads these as hints on next audit. They bias judgment but never suppress a flag. No governance.
+- **Slow (governed):** at n≥10 cases with ≥3 overrides on a single check, an auto-drafted calibration proposal is sent to the judge council. Council APPROVE + human approval is required before `calibration.md` updates. The rubric itself never auto-changes.
 
 ## Governance
 
@@ -110,4 +92,4 @@ The validator's rubric is its constitution. It does not auto-update.
 - **Circularity.** Drafter and auditor share the same model family.
 - **The validator has its own confirmation bias.** It's primed to find problems. It tracks its own override rate to stay honest.
 - **Learning is pattern-based, not parameter-based.** No model fine-tuning.
-- **The hive needs scale.** At n=19 internal cases, the rubric tied a baseline. At n=500+ community cases, patterns become statistically meaningful.
+- **Local-only.** Cases never leave your machine in the current version. Community sharing was removed pending deterministic redaction, full-preview consent gate, blocklist, and category-refusal hardening.

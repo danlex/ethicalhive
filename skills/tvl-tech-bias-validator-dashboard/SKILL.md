@@ -82,4 +82,4 @@ NEXT ACTIONS
 
 ## Implementation note
 
-Prefer a single `jq` pass over the cases to compute stats, then compose the report string. Avoid running the validator subagent or case-submitter — this skill only reads.
+Prefer a single `jq` pass over the cases to compute stats, then compose the report string. Avoid running the validator subagent — this skill only reads.
