@@ -47,7 +47,7 @@ Re-run the one-liner. The installer is idempotent — it wipes the plugin's mana
 |---|---|---|
 | `tvl-tech-bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
 | `tvl-tech-bias-validator-learner` | Processes resolved cases into the learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
-| `judge-council` | Reviews proposed rubric/calibration changes — 3 independent judges | Sonnet |
+| `judge-council` | Reviews proposed rubric/calibration changes — spawned 3× in parallel across model tiers for genuine independence | Opus + Sonnet + Haiku |
 
 ## The skills
 
@@ -97,8 +97,9 @@ Every audit is logged to `~/.claude/tvl-tech-bias-validator/cases/`. Two levels 
 
 The validator's rubric is its constitution. It does not auto-update.
 
-- **Calibration changes** (sensitivity, project notes): 2/3 judge council approval + human
-- **Constitutional changes** (new checks, changed criteria): 3/3 unanimous + human
+- **Calibration changes** (sensitivity, project notes): ≥ 2 of 3 model tiers APPROVE + human
+- **Constitutional changes** (new checks, changed criteria): 3 of 3 model tiers APPROVE + human
+- **Multi-tier governance:** the council is spawned three times in parallel — Opus + Sonnet + Haiku — so model diversity (not just three personas in one prompt) provides the independence. Agreement across tiers is a stronger signal than any single model's internal debate.
 - **Never auto-applied**: the rubric, the BLOCK/FLAG/PASS criteria, the CoVe rules, the verdict calculation
 
 ## Known limitations

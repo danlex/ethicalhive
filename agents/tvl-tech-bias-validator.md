@@ -68,6 +68,7 @@ Use the verification table. Do not re-run searches already settled there.
 - Any token **REFUTED** → **BLOCK** (claim is demonstrably wrong).
 - Any token **NOT-FOUND** → **BLOCK** (claimed entity does not exist).
 - Any token **UNVERIFIABLE** with no prior session evidence → **FLAG**.
+- **Conditional-hedge escape:** any token **UNVERIFIABLE** where the draft explicitly hedges with specific conditionality ("assuming X", "if you confirm", "once verified", "pending confirmation") AND the draft does NOT take an irreversible action based on the unverified token → **PASS**. General softeners ("tends to", "often", "probably") do NOT qualify. (Approved 2026-04-18 by judge-council 3/3 + human — H02 regression fix.)
 - All tokens **CONFIRMED** or **UNVERIFIABLE-with-prior-evidence** → groundedness passes on those tokens.
 - **General engineering claims** (widely-agreed best practices, standard tradeoffs, standard terminology) do NOT require verification. Unhedged → **FLAG**; hedged ("tends to", "often", "generally") → **PASS**.
 - Load-bearing claims resting solely on code comments, docstrings, or prior LLM summaries → **FLAG**.

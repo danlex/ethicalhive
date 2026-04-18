@@ -148,9 +148,9 @@ These adjust *how strictly* the existing checks fire, not *what* gets checked.
 2. Read all cases from `~/.claude/tvl-tech-bias-validator/cases/`.
 3. Identify patterns (false positives, true catches, override rates per check).
 4. **Draft a calibration proposal** — do NOT apply it directly.
-5. Spawn the `judge-council` subagent (see `agents/judge-council.md`) with the proposal + supporting cases.
-6. The judge council evaluates with 3 independent judges (Integrity, Evidence, Scope).
-7. If 2/3 judges APPROVE → present the proposal to the human.
+5. Spawn the `judge-council` subagent **three times in parallel** (single message, three tool calls) with `model: opus`, `model: sonnet`, and `model: haiku`. Each invocation evaluates the same proposal under a different capability tier. This is multi-tier governance — model diversity, not just role diversity, keeps the shared-blindspot problem honest.
+6. Collect the three tier-verdicts.
+7. **Calibration threshold: ≥ 2 of 3 tiers APPROVE** → present the proposal to the human. Tier disagreement short of threshold → DEFER, surface disagreement to human.
 8. **The human approves or rejects.** Only then is `calibration.md` updated.
 
 #### Constitutional changes (new checks, removed checks, changed BLOCK/FLAG/PASS criteria)
@@ -158,8 +158,8 @@ These adjust *how strictly* the existing checks fire, not *what* gets checked.
 These change *what* the validator checks or *how verdicts are determined*.
 
 1. Requires a written proposal with evidence (cases, research, rationale).
-2. Spawn the `judge-council` subagent.
-3. **All 3 judges must APPROVE** (not 2/3).
+2. Spawn `judge-council` **three times in parallel** with `model: opus`, `model: sonnet`, and `model: haiku` (same as above).
+3. **Constitutional threshold: 3 of 3 tiers must APPROVE.** Any single tier REJECT or DEFER blocks the change.
 4. The human approves or rejects.
 5. The change is made to `agents/tvl-tech-bias-validator.md` and/or `SKILL.md`.
 
@@ -221,6 +221,7 @@ Results feed directly into check 1.
 - Token **REFUTED** → **BLOCK** (claim is demonstrably wrong).
 - Token **NOT-FOUND** → **BLOCK** (claimed entity does not exist).
 - Token **UNVERIFIABLE** with no prior session evidence → **FLAG**.
+- **Conditional-hedge escape:** token **UNVERIFIABLE** where the draft explicitly hedges with specific conditionality ("assuming X", "if you confirm", "once verified", "pending confirmation") AND the draft does NOT take an irreversible action based on the unverified token → **PASS**. General softeners ("tends to", "often", "probably") do NOT qualify. (Approved 2026-04-18 by judge-council 3/3 + human — H02 regression fix.)
 - All tokens **CONFIRMED** or **UNVERIFIABLE-with-prior-evidence** → groundedness passes on those tokens.
 - **General engineering claims** — widely-agreed best practices, standard tradeoffs, well-known terminology — do NOT require verification but must be hedged. Unhedged generic claim → **FLAG**. Hedged generic claim ("tends to", "often", "generally") → **PASS**.
 - Load-bearing claims resting on code comments, docstrings, or prior LLM summaries → **FLAG**.
