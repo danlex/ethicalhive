@@ -11,11 +11,33 @@ Every Claude Code instance running EthicalHive is a sensor. When the validator c
 
 ## Install
 
+Three modes — pick one.
+
+**User scope** (recommended — available in every project on the machine):
+
 ```bash
 git clone https://github.com/danlex/ethicalhive.git
 cd ethicalhive
 bash install.sh
 ```
+
+Symlinks to `~/.claude/skills/` and `~/.claude/agents/`. `git pull` to update.
+
+**Project scope** (one project only, via symlink):
+
+```bash
+bash install.sh project /path/to/your/project
+```
+
+**Plugin mode** (self-contained copy inside the project — no external repo dependency):
+
+```bash
+bash install.sh plugin /path/to/your/project
+```
+
+Copies the full plugin into `/path/to/your/project/.claude/plugins/bias-validator/`. Good for teammates who won't clone EthicalHive separately.
+
+After install, start a fresh Claude Code session in the target project. Invoke via `/bias-validator` or ask Claude to "run the bias validator".
 
 ## How it works
 
