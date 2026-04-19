@@ -14,7 +14,14 @@ A Claude Code plugin that audits drafts before delivery. Five checks (Groundedne
 One-liner (also the update command — idempotent, wipes and re-copies on re-run):
 
 ```bash
-curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s /path/to/your/project
+# User-wide — available in all Claude Code projects on this machine
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash
+
+# Current project only
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s .
+
+# Specific project
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s /path/to/project
 ```
 
 Or clone + install manually:
@@ -22,7 +29,9 @@ Or clone + install manually:
 ```bash
 git clone https://github.com/danlex/ethicalhive.git
 cd ethicalhive
-bash install.sh /path/to/your/project
+bash install.sh                    # user-wide
+bash install.sh .                  # current project
+bash install.sh /path/to/project   # specific project
 ```
 
 Local case database at `~/.claude/tvl-tech-bias-validator/` (cases, calibration, recent-overrides) is never touched by the installer. Start a fresh Claude Code session in the project and invoke via `/tvl-tech-bias-validator`.

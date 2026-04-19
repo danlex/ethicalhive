@@ -1,47 +1,66 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# tvl-tech-bias-validator installer — plugin mode only
+# tvl-tech-bias-validator installer
 #
-#   bash install.sh /path/to/project
+#   bash install.sh                    # user-wide — installs to ~/.claude/, available in all projects
+#   bash install.sh .                  # current project — installs to ./.claude/plugins/
+#   bash install.sh /path/to/project   # specific project
 #
-# Copies the plugin into the target project as a self-contained
-# bundle at .claude/plugins/tvl-tech-bias-validator/. Claude Code auto-discovers
-# the skill and agents on the next session start.
+# Idempotent: re-running wipes and re-copies managed files.
+# Your local case DB at ~/.claude/tvl-tech-bias-validator/ is never touched.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MODE="${1:-}"
 
-if [ -z "${1:-}" ]; then
-  echo "Usage: bash install.sh /path/to/project"
-  exit 1
-fi
+install_user_wide() {
+  local agents_dir="$HOME/.claude/agents"
+  local skills_dir="$HOME/.claude/skills"
+  mkdir -p "$agents_dir" "$skills_dir"
 
-PROJECT_ROOT="$1"
-PLUGIN_DIR="$PROJECT_ROOT/.claude/plugins/tvl-tech-bias-validator"
+  rm -f  "$agents_dir/tvl-tech-bias-validator.md" \
+         "$agents_dir/tvl-tech-bias-validator-learner.md" \
+         "$agents_dir/judge-council.md"
+  rm -rf "$skills_dir/tvl-tech-bias-validator" \
+         "$skills_dir/tvl-tech-bias-validator-dashboard"
 
-# Idempotent install/update: wipe managed subdirs so removed files don't linger.
-if [ -d "$PLUGIN_DIR" ]; then
-  rm -rf "$PLUGIN_DIR"/.claude-plugin "$PLUGIN_DIR"/skills "$PLUGIN_DIR"/agents "$PLUGIN_DIR"/cases "$PLUGIN_DIR"/references
-  ACTION="Updated"
-else
-  mkdir -p "$PLUGIN_DIR"
-  ACTION="Installed"
-fi
+  cp "$SCRIPT_DIR/agents/tvl-tech-bias-validator.md"         "$agents_dir/"
+  cp "$SCRIPT_DIR/agents/tvl-tech-bias-validator-learner.md" "$agents_dir/"
+  cp "$SCRIPT_DIR/agents/judge-council.md"                   "$agents_dir/"
+  cp -r "$SCRIPT_DIR/skills/tvl-tech-bias-validator"           "$skills_dir/"
+  cp -r "$SCRIPT_DIR/skills/tvl-tech-bias-validator-dashboard" "$skills_dir/"
 
-cp -r "$SCRIPT_DIR/.claude-plugin" "$PLUGIN_DIR/"
-cp -r "$SCRIPT_DIR/skills" "$PLUGIN_DIR/"
-cp -r "$SCRIPT_DIR/agents" "$PLUGIN_DIR/"
-cp -r "$SCRIPT_DIR/cases" "$PLUGIN_DIR/"
-cp -r "$SCRIPT_DIR/references" "$PLUGIN_DIR/"
-echo "$ACTION plugin: $PLUGIN_DIR"
+  echo "Installed user-wide: ~/.claude/agents/ + ~/.claude/skills/tvl-tech-bias-validator*"
+  echo "Available in every Claude Code session on this machine."
+}
 
-# Global case database — local, shared across all projects on this machine
+install_project() {
+  local project_root="$1"
+  local plugin_dir="$project_root/.claude/plugins/tvl-tech-bias-validator"
+  local action
 
-GLOBAL_DIR="$HOME/.claude/tvl-tech-bias-validator"
-mkdir -p "$GLOBAL_DIR/cases"
+  if [ -d "$plugin_dir" ]; then
+    rm -rf "$plugin_dir"/.claude-plugin "$plugin_dir"/skills "$plugin_dir"/agents "$plugin_dir"/cases "$plugin_dir"/references
+    action="Updated"
+  else
+    mkdir -p "$plugin_dir"
+    action="Installed"
+  fi
 
-if [ ! -f "$GLOBAL_DIR/calibration.md" ]; then
-  cat > "$GLOBAL_DIR/calibration.md" << 'CALIBRATION_EOF'
+  cp -r "$SCRIPT_DIR/.claude-plugin" "$plugin_dir/"
+  cp -r "$SCRIPT_DIR/skills"         "$plugin_dir/"
+  cp -r "$SCRIPT_DIR/agents"         "$plugin_dir/"
+  cp -r "$SCRIPT_DIR/cases"          "$plugin_dir/"
+  cp -r "$SCRIPT_DIR/references"     "$plugin_dir/"
+  echo "$action project plugin: $plugin_dir"
+}
+
+ensure_case_db() {
+  local global_dir="$HOME/.claude/tvl-tech-bias-validator"
+  mkdir -p "$global_dir/cases"
+
+  if [ ! -f "$global_dir/calibration.md" ]; then
+    cat > "$global_dir/calibration.md" << 'CALIBRATION_EOF'
 # TVL Tech Bias Validator Calibration
 
 This file is updated through the judge council governance process.
@@ -73,9 +92,34 @@ as strongly as catch data (human said "yes, good catch").
 - Clean passes: 0
 - Override rate: n/a
 CALIBRATION_EOF
-  echo "Created calibration: $GLOBAL_DIR/calibration.md"
-fi
+    echo "Created calibration: $global_dir/calibration.md"
+  fi
+}
+
+case "$MODE" in
+  "")
+    install_user_wide
+    ;;
+  ".")
+    install_project "$(pwd)"
+    ;;
+  *)
+    if [ -d "$MODE" ]; then
+      install_project "$(cd "$MODE" && pwd)"
+    else
+      echo "Error: target project directory does not exist: $MODE"
+      echo ""
+      echo "Usage:"
+      echo "  bash install.sh                    # user-wide (all projects, to ~/.claude/)"
+      echo "  bash install.sh .                  # current project"
+      echo "  bash install.sh /path/to/project   # specific project"
+      exit 1
+    fi
+    ;;
+esac
+
+ensure_case_db
 
 echo ""
-echo "Done. Global case database: $GLOBAL_DIR/cases/"
-echo "Start a fresh Claude Code session in the project. Invoke via /tvl-tech-bias-validator."
+echo "Case DB: $HOME/.claude/tvl-tech-bias-validator/cases/"
+echo "Start a fresh Claude Code session. Invoke via /tvl-tech-bias-validator."

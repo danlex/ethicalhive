@@ -11,10 +11,17 @@ A Claude Code plugin that audits drafts before delivery. Five checks (Groundedne
 
 ## Install
 
-One-liner:
+Three modes — user-wide (default), current project (`.`), or a specific project path.
 
 ```bash
-curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s /path/to/your/project
+# User-wide — available in every Claude Code session on this machine
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash
+
+# Current project only
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s .
+
+# Specific project
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash -s /path/to/project
 ```
 
 Or clone and install manually:
@@ -22,10 +29,12 @@ Or clone and install manually:
 ```bash
 git clone https://github.com/danlex/ethicalhive.git
 cd ethicalhive
-bash install.sh /path/to/your/project
+bash install.sh                    # user-wide → ~/.claude/
+bash install.sh .                  # current project → ./.claude/plugins/
+bash install.sh /path/to/project   # specific project
 ```
 
-Either path copies the plugin as a self-contained bundle into `/path/to/your/project/.claude/plugins/tvl-tech-bias-validator/`. Start a fresh Claude Code session in the project and invoke via `/tvl-tech-bias-validator`, or ask Claude to "run the bias validator".
+User-wide copies agents into `~/.claude/agents/` and skills into `~/.claude/skills/`. Project mode copies a self-contained plugin bundle into `<project>/.claude/plugins/tvl-tech-bias-validator/`. Either way: start a fresh Claude Code session and invoke via `/tvl-tech-bias-validator`, or ask Claude to "run the bias validator".
 
 ### Updating
 
