@@ -65,8 +65,20 @@ If Step 2 surfaced a candidate:
    - Pattern summary (the common override reason)
    - Supporting evidence (list of N case IDs with one-line summaries, each tagged with its override_category)
    - Proposed calibration entry (e.g. "Groundedness: when draft explicitly hedges with 'if you confirm', treat UNVERIFIABLE tokens as PASS not FLAG")
-2. Write the draft to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`.
-3. Return the file path in your output — the main session will spawn `judge-council` on it.
+2. Run a simulated replay. Read the last 20 cases. For each case, apply the proposed calibration as a text-overlay heuristic (e.g. "if the rule changes FLAG → PASS when the draft hedges with 'if you confirm'", re-classify the flagged check under that rule). Record:
+   - `pass_to_fail`: cases that PASSED under current rubric but would FLAG/BLOCK under the proposal (regressions).
+   - `fail_to_pass`: cases that FLAGged/BLOCKed under current rubric but would PASS under the proposal (fixes).
+   - `unchanged`: no verdict change on that check.
+   - `net_corpus_delta`: `fail_to_pass − pass_to_fail`.
+
+   Keep it to a single `jq` pass; target <5s.
+3. Attach an `## Impact report (simulated)` section to the proposal with:
+   - The four counts.
+   - Up to 5 example case IDs per non-zero bucket.
+   - The literal disclaimer line: `Simulated via text-overlay heuristic — not a full validator replay.`
+   - If `unchanged == 20`, add a one-line note: `No-op candidate — wording does not move any verdicts in the recent corpus; council should likely DEFER or REJECT.` (This short-circuits wording-only proposals that don't move the corpus.)
+4. Write the draft to `~/.claude/tvl-tech-bias-validator/pending-proposal-{check}-{date}.md`.
+5. Return the file path in your output — the main session will spawn `judge-council` on it.
 
 Do NOT spawn the judge council yourself. The main session owns that step so the human sees it.
 
@@ -83,6 +95,13 @@ Return this JSON on stdout (nothing else):
     "n_overrides_in_last_20": <integer>,
     "dominant_category": "<false-positive|missing-context|severity-wrong|rubric-ambiguous|other|unclassified>",
     "category_counts": {"<category>": <integer>, ...},
+    "impact_report": {
+      "pass_to_fail": <integer>,
+      "fail_to_pass": <integer>,
+      "unchanged": <integer>,
+      "net_corpus_delta": <integer>,
+      "disclaimer": "Simulated via text-overlay heuristic — not a full validator replay."
+    },
     "draft_path": "<absolute-path>",
     "pattern_summary": "<one-sentence>"
   } | null,
@@ -112,6 +131,13 @@ Examples:
     "n_overrides_in_last_20": 4,
     "dominant_category": "false-positive",
     "category_counts": {"false-positive": 3, "missing-context": 1},
+    "impact_report": {
+      "pass_to_fail": 0,
+      "fail_to_pass": 3,
+      "unchanged": 17,
+      "net_corpus_delta": 3,
+      "disclaimer": "Simulated via text-overlay heuristic — not a full validator replay."
+    },
     "draft_path": "/Users/.../pending-proposal-groundedness-2026-05-01.md",
     "pattern_summary": "Hedged generic claims flagged as unhedged"
   },
