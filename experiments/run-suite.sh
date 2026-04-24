@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # tvl-tech-bias-validator suite runner
-# Runs a test suite through the v5.1 subagent and records per-case verdicts.
+# Runs a test suite through the validator subagent and records per-case verdicts.
 #
 # Usage:
 #   bash run-suite.sh cases/suite-v1.json [--model sonnet|haiku] [--output results.jsonl]
@@ -11,8 +11,20 @@ set -euo pipefail
 #   - claude CLI in PATH
 #   - jq installed
 #   - Working internet connection (API calls)
+#   - ANTHROPIC_API_KEY set (via `.env` at repo root, or exported in the shell)
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Auto-load .env if present so the runner picks up ANTHROPIC_API_KEY (and
+# optionally ANTHROPIC_BASE_URL for OpenRouter-style routing).
+if [ -f "$REPO_ROOT/.env" ]; then
+  set -a
+  # shellcheck disable=SC1091
+  . "$REPO_ROOT/.env"
+  set +a
+fi
+
 SUBAGENT_PROMPT="$(cat "$SCRIPT_DIR/../agents/tvl-tech-bias-validator.md" | tail -n +7)"  # strip frontmatter
 
 SUITE_FILE="${1:?Usage: run-suite.sh <suite.json> [--model sonnet|haiku] [--output results.jsonl]}"
@@ -67,7 +79,7 @@ $SUBAGENT_PROMPT
 
 **CASE TO AUDIT:**
 
-**User's original ask:** $USER_ASK
+**User ask (original):** $USER_ASK
 
 **Draft:**
 $DRAFT

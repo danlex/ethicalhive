@@ -32,19 +32,24 @@ Examples:
 - `tests pass` → "Was a test command run this session?"
 - `rate limit: 60 req/min` → "Is this value present in the codebase?"
 
-**Step 3. Answer each question — evidence pointers FIRST, then tools.**
+**Step 3. Answer each question — decision tree with STOP rules (v5.2).**
 
-**CRITICAL: Evidence pointers are system-logged tool outputs from the current session.** They record what Read/Grep/Bash actually returned when the drafter ran them. They are ground truth for the session state at time of observation.
+**CRITICAL: Evidence pointers are system-logged tool outputs from the main session.** They record what Read/Grep/Bash actually returned when the drafter ran them. They are ground truth for the session state at time of observation. Your own working directory is NOT the authority on what exists — the main session's observed state is.
 
-Classification priority:
-1. **If an evidence pointer contains a tool result for this token** (e.g. "Read(file) showed: …", "Grep('symbol') returned …"), mark the token from the evidence. Do NOT re-run the tool — the evidence IS the verification.
-   - Evidence shows tool output matching the claim → `CONFIRMED`.
-   - Evidence shows tool output contradicting the claim → `REFUTED`.
-2. **If no evidence pointer covers this token**, run Read/Grep/Glob/Bash to verify. Answer independently — do not let the draft's phrasing anchor the search.
+Apply in order. **The first rule that matches is the answer for that token — STOP there and move to the next token.**
+
+**Rule 1 — Evidence pointer covers this token.** If any evidence pointer mentions a Read/Grep/Glob/Bash result for this exact token (same file path, same symbol, same value), classify from that evidence AND STOP. Do **not** run any tool for this token — not even to "double-check." Not even if the token's name suggests a file "should" exist somewhere else. Not even if you think the main session's evidence might be stale. The evidence IS the verification.
+   - Evidence tool output matches the claim → `CONFIRMED`.
+   - Evidence tool output contradicts the claim → `REFUTED`.
+
+**Rule 2 — No evidence pointer covers this token AND tools can reach it.** Only if Rule 1 does not apply, run Read/Grep/Glob/Bash yourself. Answer independently — do not let the draft's phrasing anchor the search.
    - Tool output matches → `CONFIRMED`.
    - Tool output contradicts → `REFUTED`.
    - File/symbol/value not found → `NOT-FOUND`.
-3. **If no evidence pointer covers it AND no tool can reach it** (external service, runtime value, prior-session state) → `UNVERIFIABLE`.
+
+**Rule 3 — No evidence pointer AND no tool can reach it** (external service, runtime value, prior-session state) → `UNVERIFIABLE`.
+
+**Negative example (v5.2 regression fix).** Suppose the evidence pointers include: `"Read(src/auth/login.ts) showed: const handleLogin = async (req, res) => { ... }"`. The draft cites `src/auth/login.ts` and `handleLogin`. Under Rule 1 both tokens are `CONFIRMED` from that single pointer. You do **not** run `Read("src/auth/login.ts")`. You do **not** run `Grep("handleLogin")`. If your own working directory would return NOT-FOUND for that path — because the evidence pointer describes a codebase elsewhere, or synthetic test evidence — that is irrelevant. The evidence pointer is what the main session actually observed; your working directory is not.
 
 Record the classification and the source for each token.
 
