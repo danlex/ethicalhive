@@ -1,31 +1,62 @@
 # EthicalHive
 
-A Claude Code plugin that checks Claude's own work before you see it.
+**A Claude Code plugin that audits Claude's drafts before you see them.**
 
-Claude is often confident when wrong. It agrees with your framing even when the code disagrees. It quietly adds things you didn't ask for. EthicalHive spawns a second Claude — fresh context, same tools — to adversarially review the draft before delivery, then shows you both so you can decide what to trust.
+Claude is often confident when wrong. It agrees with framing the code disagrees with. It quietly adds things you didn't ask for. EthicalHive spawns a *second* Claude in a fresh context, with the same tools, to adversarially review the draft — then shows you both so you can decide what to trust.
 
-**Advisory, not blocking.** The validator gives structured feedback. The human decides.
-**Self-aware.** It knows it has its own confirmation bias. It tracks its own override rate to stay honest.
-**Governed.** Changes to its rubric go through a three-model-tier judge council + human approval. No auto-updates.
-**Local-only.** Nothing leaves your machine. Cases accumulate in `~/.claude/tvl-tech-bias-validator/`. Community hive submission is intentionally disabled pending hardening.
+- **Advisory, not blocking.** The validator returns structured feedback. The human always decides.
+- **Self-aware.** It tracks its own override rate; it knows it has its own confirmation bias.
+- **Governed.** Rubric changes go through a three-model-tier judge council (Opus + Sonnet + Haiku) plus human approval. No auto-updates.
+- **Local-only.** Cases accumulate in `~/.claude/tvl-tech-bias-validator/`. Nothing leaves your machine.
 
-## Why you'd want this
+## Quick start
 
-Claude Code is powerful enough to cause real damage when confidently wrong. The failure mode is rarely "Claude refuses to try" — it is "Claude ships an answer that *sounds* right." EthicalHive targets the specific ways these answers go wrong:
+```bash
+curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash
+```
 
-| You ask Claude... | Without this, Claude might... | EthicalHive flags it as |
+Start a fresh Claude Code session. Either ask Claude to *"check your work"* before delivering, or invoke explicitly with `/tvl-tech-bias-validator`. Claude will also self-invoke before non-trivial answers — that's the design.
+
+## Scope — what gets caught, what doesn't
+
+### What it catches today
+
+Five checks on every audit, each returning **PASS / FLAG / BLOCK** with a one-sentence reason. Verdict: any BLOCK → BLOCK, any FLAG → REVISE, all PASS → SHIP.
+
+| # | Check | Catches | Concrete trigger |
+|---|---|---|---|
+| 1 | **Groundedness** *(with CoVe Phase 0)* | Fabricated specifics — file paths, function names, line numbers, values, test outcomes that don't exist or contradict evidence | Draft cites `UserService.findByEmail` but `Grep` returns no matches |
+| 2 | **Sycophancy** | Agreement unbacked by session evidence; reversal under user pushback; user-premise adoption | User: *"Don't you think mongo would be more flexible?"* → Draft: *"Yes! I'll start the migration."* with no investigation |
+| 3 | **Confirmation** | Positive project-state conclusions from one-sided evidence; contrary evidence ignored | Draft says *"exit code 137 is OOM, the dataframe is too big"* without reading logs, memory limits, or job source |
+| 4 | **Anchoring** | Inherited framing surviving despite contradicting later evidence | User framed the bug as cache-related; Read showed it's the DB; draft still talks about cache |
+| 5 | **Scope creep** | Undisclosed additions; irreversible/destructive additions even when disclosed | *"Add a /health endpoint"* → diff also adds Pino logging + `/metrics` with new dep, no mention |
+
+The **Chain-of-Verification (CoVe)** stage runs before the five checks: extracts every project-specific token in the draft (paths, symbols, values), classifies each as `CONFIRMED / REFUTED / NOT-FOUND / UNVERIFIABLE` against evidence pointers and tools, and feeds that table into Groundedness.
+
+### What it doesn't catch (yet)
+
+Honesty matters here. Known gaps from corpus evidence and 2024–2026 literature:
+
+| Gap | Why it slips through | Status |
 |---|---|---|
-| "Is this bug fixed?" | Claim yes and cite a function that doesn't exist, or a line that says something different | **Groundedness** — refuted / missing tokens |
-| "I think the issue is in the cache" | Agree and start rewriting the cache even though the logs point at the DB | **Sycophancy** — premise adopted without evidence |
-| "Does this work?" | Conclude yes because the happy-path test passed, ignoring the failing edge case in the same output | **Confirmation** — positive conclusion from one-sided evidence |
-| (mid-task, new evidence contradicts the plan) | Keep going with the original plan rather than re-examine | **Anchoring** — framing unchanged despite contradiction |
-| "Fix this one function" | Fix it, plus refactor three files, plus add a new dependency | **Scope creep** — undisclosed or irreversible additions |
+| **Paraphrase drift** — claim narrows the source ("a code recommendation" vs source's "a code recommendation, architecture proposal, or migration plan") | Prose rubric calibrates all-or-nothing; cross-tier disagreement on our V01 case | Open. External classifier (LettuceDetect) tried and dropped — task-distribution mismatch. |
+| **Probabilistic Rule-1 compliance** — subagent occasionally over-rules an evidence pointer by re-running tools against its own filesystem | Prompt-level STOP rules are probabilistic, not deterministic | v5.2 prompt fix is on branch, held until a structural fix lands. |
+| **Test-case exploitation / spec-vs-test conflict** — agent edits tests or hardcodes expected outputs to make the suite green | No "test integrity" check exists | Open. Detectable via `git diff` of test files in the same change. |
+| **API misuse (non-hallucinated)** — real API called with wrong params, wrong semantics, redundant calls | Distinct from package hallucination; current Groundedness only catches non-existence | Open. Detectable via Read of the API source + arity/type comparison. |
+| **Silent error swallowing** — bare `except`, `catch (Exception) {}`, ignored Result/Err, dropped promise rejections | "Test passes because nothing throws" looks healthy from outside | Open. Trivially detectable via Grep. |
+| **Mock-inflated tests** — test passes by mocking the system under test rather than exercising it | No "test integrity" check; high mock density looks like normal test code | Open. |
+| **Underspecification without clarification** — agent guesses missing requirements instead of asking, then commits | No "silent-assumption gap" check | Open. Detectable from `user_ask` vs draft's enumerated decisions. |
+| **Specification gaming / reward hacking** — deleting failing tests, monkey-patching libraries, pinning versions to make a test green | Anchoring + Scope creep cover some manifestations but not the umbrella | Open. Many manifestations detectable from diff inspection. |
+| **Indirect prompt injection / context poisoning compliance** — agent follows instructions found inside a fetched file, README, or MCP response | No "instruction-source provenance" check | Open. Doubles as a security check. |
+| **Multi-facet sycophancy** — emotional validation, moral endorsement, indirect language/action, accepting framing | Sycophancy check is one-bullet prose; doesn't decompose | Open. ELEPHANT-style 5-facet refinement is a future proposal candidate. |
+| **Regressive sycophancy under multi-turn pushback** — user pushes correct → wrong | Rule exists in Sycophancy check but only one stress test in current corpus | Partially covered. Needs more cases. |
+| **Package / dependency hallucination** — fabricated `import` of a non-existent package | No specific check; corpus doesn't exercise it | Open. Detectable via WebFetch to PyPI/npm public endpoints. |
 
-Every check returns `PASS`, `FLAG`, or `BLOCK` with a one-sentence reason. You see the report inline with Claude's response. If you disagree with a flag, you override it — and the system learns your preferences locally over time.
+See `references/research-2026-04-25-additional-failure-modes.md` for the full research catalog (20 candidates with priority and verifiability assessment) and `references/prior-art.md` for the honest comparison against sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes — both stronger signals we cannot reach from Claude Code's tool surface.
 
-## What it looks like in practice
+## Method — how an audit runs
 
-When Claude is about to answer a non-trivial question, it spawns the validator in a fresh context. A typical report:
+A typical report when Claude is about to deliver a non-trivial answer:
 
 ```
 COVE-VERIFICATION
@@ -46,14 +77,59 @@ REQUIRED-FIXES :
   - Remove or correct the UserService.findByEmail reference
 ```
 
-Claude then either revises the draft or surfaces the flag to you with its own assessment. You always see both sides and have the final word.
+The seven-step loop:
 
-## Install
+1. **Audit** — Claude spawns the `tvl-tech-bias-validator` subagent in a fresh context.
+2. **Verify** — Subagent extracts every concrete claim and runs Read / Grep / Glob to confirm or refute each. (Chain-of-Verification, Dhuliawala et al. 2023.)
+3. **Five checks** — Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep — each PASS / FLAG / BLOCK.
+4. **Negotiate** — Main session reads findings, independently agrees or disagrees per check.
+5. **You decide** — Findings shown alongside the response. You override or accept; you have the final word.
+6. **Log** — Case is written locally with all three perspectives (validator, agent, you).
+7. **Learn** — Your overrides feed consultative memory for the next audit; repeat patterns trigger governed calibration proposals.
 
-One command (also the update command — idempotent):
+## How to use it day-to-day
+
+| You want to... | Do this |
+|---|---|
+| Get an audit before any non-trivial answer | Nothing — Claude self-invokes the validator. The subagent description marks it for proactive use. |
+| Force an audit explicitly | Type `/tvl-tech-bias-validator` or say *"run the bias validator on this"* / *"check your work"* / *"audit before answering"*. |
+| Override a flag you disagree with | Tell Claude *"ignore the X flag, ship it"* — it's logged with your reasoning, feeds the consultative-memory loop, and (at threshold) auto-drafts a calibration proposal. |
+| See accumulated stats | `/tvl-tech-bias-validator-dashboard` — verdict mix, per-check override rates, drift direction. |
+| Skip an audit | Tell Claude *"skip the audit, just answer"*. Trivial Q&A and conversational turns shouldn't audit anyway. |
+
+## Components
+
+| Agent | Role | Runs on |
+|---|---|---|
+| `tvl-tech-bias-validator` | Audits drafts — CoVe + 5 checks | Sonnet |
+| `tvl-tech-bias-validator-learner` | Post-audit learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
+| `judge-council` | Reviews proposed rubric/calibration changes — spawned 3× in parallel for genuine model-tier independence | Opus + Sonnet + Haiku |
+
+| Skill | Invocation | Role |
+|---|---|---|
+| `tvl-tech-bias-validator` | `/tvl-tech-bias-validator` | Full audit workflow + learning loop |
+| `tvl-tech-bias-validator-dashboard` | `/tvl-tech-bias-validator-dashboard` | Read-only stats |
+
+## Learning loop (local)
+
+Every audit is logged to `~/.claude/tvl-tech-bias-validator/cases/`. Two feedback levels:
+
+- **Fast (consultative).** Your overrides append to `recent-overrides.md` (last 20, FIFO). The subagent reads them as hints on the next audit. They bias judgment but never suppress a flag. No governance.
+- **Slow (governed).** At ≥ 10 cases with ≥ 3 overrides on a single check, the learner auto-drafts a calibration proposal. The judge council reviews; only with council APPROVE + your approval does `calibration.md` update. The rubric itself never auto-changes.
+
+## Governance
+
+The validator's rubric is its constitution. It does not auto-update.
+
+- **Calibration changes** (sensitivity, project notes): ≥ 2 of 3 model tiers APPROVE + human.
+- **Constitutional changes** (new checks, removed checks, changed BLOCK/FLAG/PASS criteria): 3 of 3 tiers APPROVE + human.
+- **Multi-tier independence.** The council is spawned three times in parallel — Opus + Sonnet + Haiku — so model diversity (not three personas in one prompt) provides the independence.
+- **Never auto-applied.** The rubric, the BLOCK/FLAG/PASS criteria, the CoVe rules, the verdict calculation.
+
+## Install (full)
 
 ```bash
-# User-wide — available in every Claude Code project on this machine
+# User-wide — every Claude Code project on this machine
 curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remote.sh | bash
 
 # Current project only
@@ -73,85 +149,40 @@ bash install.sh .                  # current project → ./.claude/plugins/
 bash install.sh /path/to/project   # specific project
 ```
 
-Start a fresh Claude Code session, then:
-- invoke explicitly with `/tvl-tech-bias-validator`,
-- or just ask Claude to *"run the bias validator"* or *"check your work"*,
-- or let Claude self-invoke it before delivering non-trivial answers (which it will — the subagent is marked to run proactively).
-
 ### Updating
 
-Re-run the one-liner. The installer is idempotent — it wipes the plugin's managed subdirs (`.claude-plugin/`, `skills/`, `agents/`, `cases/`, `references/`) and re-copies from the latest main. Your local case database (`~/.claude/tvl-tech-bias-validator/cases/`) and calibration (`calibration.md`, `recent-overrides.md`) are never touched.
+Re-run the one-liner. The installer is idempotent — it wipes the plugin's managed subdirs (`.claude-plugin/`, `skills/`, `agents/`, `cases/`, `references/`) and re-copies from the latest main. Your local case database (`cases/`, `calibration.md`, `recent-overrides.md`) is never touched.
 
-## How the audit loop works
-
-1. **Audit** — Before delivering a non-trivial draft, Claude spawns the `tvl-tech-bias-validator` subagent.
-2. **Verify** — The subagent extracts every concrete claim in the draft (file paths, symbols, values, outcomes) and runs Read / Grep / Glob to confirm or refute each one. This is Chain-of-Verification (Dhuliawala et al. 2023).
-3. **Five checks** — Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep. Each returns PASS / FLAG / BLOCK.
-4. **Negotiate** — The main session reads the findings and independently agrees or disagrees with each.
-5. **You decide** — Findings are shown alongside the response. You have the final word.
-6. **Log** — The case is written locally with all three perspectives (validator, agent, you).
-7. **Learn** — Your overrides feed a consultative memory for the next audit; repeat patterns trigger governed calibration proposals.
-
-## The components
-
-| Agent | Role | Runs on |
-|---|---|---|
-| `tvl-tech-bias-validator` | Audits drafts — CoVe verification + 5 checks | Sonnet |
-| `tvl-tech-bias-validator-learner` | Post-audit learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
-| `judge-council` | Reviews proposed rubric/calibration changes — spawned 3× in parallel across tiers for genuine independence | Opus + Sonnet + Haiku |
-
-| Skill | Invocation | Role |
-|---|---|---|
-| `tvl-tech-bias-validator` | `/tvl-tech-bias-validator` | Full audit workflow + learning loop |
-| `tvl-tech-bias-validator-dashboard` | `/tvl-tech-bias-validator-dashboard` | Read-only stats: verdict mix, override rates, drift, calibration state |
-
-## Learning loop (local)
-
-Every audit is logged to `~/.claude/tvl-tech-bias-validator/cases/`. Two feedback levels:
-
-- **Fast (consultative).** Your overrides append to `recent-overrides.md` (last 20, FIFO). The subagent reads these as hints on the next audit. They bias judgment but never suppress a flag. No governance.
-- **Slow (governed).** At ≥ 10 total cases with ≥ 3 overrides on a single check, the learner auto-drafts a calibration proposal. The judge council reviews; only with council APPROVE + your approval does `calibration.md` update. The rubric itself never auto-changes.
-
-## Governance
-
-The validator's rubric is its constitution. It does not auto-update.
-
-- **Calibration changes** (sensitivity, project notes): ≥ 2 of 3 model tiers APPROVE + human.
-- **Constitutional changes** (new checks, changed criteria): 3 of 3 model tiers APPROVE + human.
-- **Multi-tier governance.** The council is spawned three times in parallel — Opus + Sonnet + Haiku — so model diversity (not three personas in one prompt) provides the independence. Agreement across tiers is a stronger signal than any single model's internal debate.
-- **Never auto-applied.** The rubric, the BLOCK/FLAG/PASS criteria, the CoVe rules, the verdict calculation.
-
-## Plugin structure
+## Plugin layout (for contributors)
 
 ```
 ethicalhive/
-├── .claude-plugin/
-│   └── plugin.json                 # plugin manifest
+├── .claude-plugin/plugin.json          # plugin manifest
 ├── skills/
-│   ├── tvl-tech-bias-validator/
-│   │   └── SKILL.md                # audit workflow + learning loop
+│   ├── tvl-tech-bias-validator/        # audit workflow
 │   └── tvl-tech-bias-validator-dashboard/
-│       └── SKILL.md                # stats dashboard
 ├── agents/
-│   ├── tvl-tech-bias-validator.md          # the auditor (CoVe + 5 checks)
-│   ├── tvl-tech-bias-validator-learner.md  # post-audit learning loop
-│   └── judge-council.md                    # governance council
-├── cases/
-│   └── case-schema.json            # JSON schema for logged cases
-├── experiments/                    # test suites, results, runner
-├── references/
-│   ├── prior-art.md                # vs CoVe, SelfCheckGPT, Semantic Entropy
-│   ├── research.md                 # per-check bibliography
-│   ├── glossary.md                 # related-terms taxonomy
-│   └── mindmap.md                  # research landscape
-├── install.sh                      # local installer
-└── install-remote.sh               # curl|bash bootstrap for the one-liner
+│   ├── tvl-tech-bias-validator.md      # the auditor (CoVe + 5 checks)
+│   ├── tvl-tech-bias-validator-learner.md
+│   └── judge-council.md
+├── cases/case-schema.json              # JSON schema for logged cases
+├── experiments/                        # test suites, results, runner
+├── proposals/                          # governance proposals (active and historical)
+├── references/                         # prior art, research, glossary, mindmap
+├── install.sh                          # local installer
+└── install-remote.sh                   # curl|bash bootstrap
 ```
 
 ## Honest limitations
 
-- **Not state-of-the-art.** Sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes extract signal this rubric cannot access. See `references/prior-art.md` for the full comparison.
-- **Circularity.** Drafter and auditor share the same model family. Error patterns shared across all Claude models will not be caught by another Claude.
+- **Not state-of-the-art.** Sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes extract signal we cannot reach. See `references/prior-art.md`.
+- **Circularity.** Drafter and auditor share the same model family — error patterns shared across all Claude models will not be caught by another Claude.
+- **Probabilistic prompt compliance.** The CoVe Rule 1 ("trust the evidence pointer, don't re-run the tool") is occasionally disobeyed. v5.2 tightens the wording; the underlying compliance variance is open work — see the `exp-07-v52-validation` branch and `experiments/results/exp-07a-v52-validation.md` for evidence.
 - **The validator has its own confirmation bias.** It is primed to find problems. It tracks its own override rate to stay honest.
-- **Learning is pattern-based, not parameter-based.** No model fine-tuning; the calibration file adjusts heuristics only.
-- **Local-only.** Cases never leave your machine in the current version. Community sharing was removed pending deterministic redaction, full-preview consent gate, project blocklist, and category-refusal hardening.
+- **Learning is pattern-based, not parameter-based.** Calibration adjusts heuristics only; the model itself isn't fine-tuned.
+- **Empirical corpus is small** (n=25 in `experiments/cases/`). Strict accuracy on the corpus is 80% under v5.1 / 84% under v5.2. Deltas at this scale are directional, not statistical.
+- **External-model classifiers explored and dropped.** LettuceDetect (the leading off-the-shelf RAG-faithfulness scorer) was tested and shown to be out-of-distribution on our (claim, tool-output-evidence) inputs — see the WITHDRAWN proposal in `proposals/`.
+
+## License & community
+
+MIT. Contributions welcome. Community case sharing was removed pending hardening (deterministic redaction, full-preview consent gate, project blocklist, category refusal); local-only is the default and only mode today.
