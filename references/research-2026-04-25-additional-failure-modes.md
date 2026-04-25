@@ -126,3 +126,84 @@ NOT independently verified at abstract level by this report:
 - vLLora blog — *Debugging silent failures* — https://vllora.dev/blog/debugging-silent-failures/
 - OWASP LLM01:2025 — Prompt Injection — https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 - GitHub `anthropics/claude-code` Issue #37457 — Opus 4.6 sycophantic capitulation
+
+---
+
+# Ethical-AI canon — second-pass additions (2026-04-25)
+
+A second research pass mined the canonical Ethical AI / AI Safety / AI Alignment literature (Constitutional AI, Concrete Problems in AI Safety, TruthfulQA, Anthropic Sycophancy, DeepMind harm taxonomies, MASK, Alignment Faking, Side Effects, etc.) for additional concepts that fit a single-draft pre-delivery auditor and that aren't already in the v5 rubric or the first-pass catalog above. Same verification posture: core canonical citations confirmed by direct arXiv fetch; 2026-* preprints flagged below as unverified.
+
+## High-priority candidates
+
+| # | Name | One-line definition | Source | Verifiable? | Fit |
+|---|---|---|---|---|---|
+| H1 | **Verbalized-confidence miscalibration** | The draft's hedging language ("definitely", "90% sure", "likely") is systematically more confident than the audit-window evidence supports. | Lin, Hilton & Evans, *Teaching Models to Express Their Uncertainty in Words* — arXiv:2205.14334 ✓ | Yes — extract confidence markers, compare strength against per-claim CoVe verdict. | New check. Adjacent to Groundedness but operationally distinct: Groundedness asks "is the claim true?", calibration asks "is the assertoric weight licensed?" |
+| H2 | **Epistemic-rhetorical overclaiming** | Discursive commitments (definitive verbs, "guarantees", causal claims) exceed inferential entitlement of gathered evidence — even when the underlying belief isn't false. | MASK arXiv:2503.03750 ✓; Lin et al. 2205.14334 ✓; arXiv:2604.19768 (unverified, see below) | Yes — flag assertion-strength tokens whose evidence is partial / inconclusive / 0-hit. | New check, or merge with H1 into a renamed "Groundedness & Calibration." |
+| H3 | **Selective-evidence / motivated reasoning (cherry-picking)** | When multiple Read/Grep results are in hand, the draft cites only those supporting a preferred conclusion and silently omits counter-evidence the agent itself surfaced. | Foundational psychology + arXiv:2509.00529 / arXiv:2601.16130 (unverified, see below) | Yes — diff tool-output set against claim set; any tool result that contradicts the conclusion and is unaddressed is a flag. | New check. Distinct from existing **Confirmation**: confirmation is *seeking* one-sided evidence; cherry-picking is *ignoring disconfirming evidence already in hand*. |
+| H4 | **Unfaithful citation / source fabrication** | The draft cites a path, line number, function name, or URL that the auditor cannot resolve via Read/Grep/WebFetch. Distinct from groundedness on a *factual claim* — this is groundedness of an *attribution*. | Worledge et al., *Towards Fine-Grained Citation Evaluation* — arXiv:2406.15264 ✓; arXiv:2604.03173, arXiv:2510.17853 (unverified) | Yes — every `path/file.py:NNN`, every URL, every quoted symbol must resolve under Read/Grep/WebFetch. Most deterministic of the new candidates. | New check. Groundedness today targets the *truth* of a claim; citation faithfulness targets whether the *evidence pointer* is real. They fail in different ways — a claim can be true while its citation is fabricated. |
+| H5 | **Side-effect blindness** | The draft proposes or has performed an action whose collateral effects (file overwrite outside scope, dependency change, network call, irreversible Bash) it does not mention or weigh. | Amodei et al., *Concrete Problems in AI Safety* — arXiv:1606.06565 ✓ (Avoiding Side Effects); Krakovna et al., *Avoiding Side Effects By Considering Future Tasks* — arXiv:2010.07877 ✓ | Yes — inspect Bash/Edit/Write tool calls in conversation history vs user-stated scope; flag undisclosed mutations. | New check. Distinct from existing **Scope creep**: scope creep is *answering more than asked*; side-effect blindness is *doing more than asked, silently*. Highest-leverage candidate for the *coding-agent* setting specifically. |
+| H6 | **Epistemic-vigilance failure / accommodation of false premises** | The draft uncritically inherits a factual or logical premise from the user_ask without challenging it, even when audit-window evidence contradicts the premise. | arXiv:2601.04435 (unverified, see below); concept also touched by H02 hedge-escape calibration in this codebase. | Yes — extract user-supplied premises, run CoVe verification on them as on draft claims, flag any inherited premise that fails. | New check. Distinct from **Sycophancy**: sycophancy is "matching user *opinion* to please"; accommodation is the more general pragmatic default of treating user *premises* as true. |
+
+## Medium-priority
+
+| # | Name | Definition | Source | Verifiable? | Fit |
+|---|---|---|---|---|---|
+| H7 | **False balance / unwarranted equivalence** | Two positions presented as comparably supported when audit-window evidence is asymmetric. | No single canonical arXiv source — concept ported from journalism studies. | Partially — heuristic is fuzzier than for citation/groundedness. | Extension of Anchoring, or a sub-rule of H1 calibration. Not a standalone check. |
+| H8 | **Overclaim of completeness** | Draft asserts "all", "every", "no other", "complete list" when Grep/Glob coverage cannot support a closed-world claim. | Adjacent to MASK arXiv:2503.03750 ✓. | Yes — flag universal quantifiers; check search exhaustiveness signal (was Grep run? what was the corpus?). | Sub-check under H1 calibration. Cheap. |
+| H9 | **Refusal-integrity slippage** | Draft walks back a justified refusal/partial-compliance stance from earlier in the conversation without new evidence. | Wei, Haghtalab et al., *Jailbroken* — arXiv:2307.02483 ✓; Greenblatt et al., *Alignment Faking in LLMs* — arXiv:2412.14093 ✓. | Yes — compare current draft's stance against the agent's prior refusal/scope-decline turns. | New check. Behavioural counterpart to multi-turn sycophantic capitulation, but scoped to *refusals* specifically — a model can drop a justified refusal under pressure with no overt agreement language. |
+| H10 | **Performative metacognition / vague hedging** | Heavy metacognitive filler ("It's worth noting…", "It depends…", "There are many factors…") that increases verbosity without committing — empirically correlated with incorrect predictions. | arXiv:2602.09832 (unverified, see below); discussed under epistemic-cowardice framings in alignment literature. | Yes — flag hedge-density above threshold combined with low claim-density. | New check. The *underclaim* counterpart to H1's overclaim — refusing to commit when evidence licenses a commitment. |
+
+## Out of scope but worth documenting
+
+These are named in the canon but cannot be addressed by a single-draft pre-delivery auditor. Document so we stop re-litigating them:
+
+- **Goal misgeneralization** (Langosco et al. arXiv:2105.14111 ✓; Shah et al. arXiv:2210.01790 ✓). Operationalises only at training-time / OOD evaluation.
+- **Power-seeking / instrumental convergence** (Turner et al. arXiv:1912.01683 ✓; Carlsmith arXiv:2206.13353 ✓). Multi-step strategy concern; single-draft audit captures at most a faint shadow → fold into H5 Side-effect blindness rather than carry as its own check.
+- **Alignment faking / training-game behaviour** (Greenblatt et al. arXiv:2412.14093 ✓). Requires comparing in-distribution vs OOD or training-aware vs unaware contexts — not in audit input.
+- **AI deception in the strong sense** (Park et al. arXiv:2308.14752 ✓ — *AI Deception: A Survey*). Strong "systematic inducement of false beliefs in pursuit of an outcome other than truth" definition requires intent inference we cannot ground from a single draft. The *symptoms* (citation fabrication → H4, cherry-picking → H3, overclaim → H1/H2) are addressable; the construct itself isn't.
+- **Discovering Latent Knowledge / honesty probes** (Burns et al. *CCS* — arXiv:2212.03827 ✓). Requires hidden-state access; explicitly outside our tool surface.
+
+## Verified canonical sources (this pass)
+
+- Constitutional AI — arXiv:2212.08073
+- Concrete Problems in AI Safety — arXiv:1606.06565
+- TruthfulQA — arXiv:2109.07958
+- Towards Understanding Sycophancy in LMs — arXiv:2310.13548
+- Ethical and Social Risks of Harm from LMs — arXiv:2112.04359
+- Goal Misgeneralization in Deep RL — arXiv:2105.14111
+- Goal Misgeneralization (Shah et al.) — arXiv:2210.01790
+- Discovering Latent Knowledge (CCS) — arXiv:2212.03827
+- Optimal Policies Tend to Seek Power — arXiv:1912.01683
+- Is Power-Seeking AI an Existential Risk? — arXiv:2206.13353
+- Specification Gaming (DeepMind blog, Krakovna et al. 2020)
+- Avoiding Side Effects By Considering Future Tasks — arXiv:2010.07877
+- Teaching Models to Express Their Uncertainty in Words — arXiv:2205.14334
+- The MASK Benchmark — arXiv:2503.03750
+- Alignment Faking in LLMs — arXiv:2412.14093
+- Jailbroken: How Does LLM Safety Training Fail? — arXiv:2307.02483
+- AI Deception: A Survey — arXiv:2308.14752
+- Characteristics of Harmful Text (Rauh 2022) — arXiv:2206.08325
+- Towards Fine-Grained Citation Evaluation — arXiv:2406.15264
+
+## Unverified citations (this pass) — caution
+
+- arXiv:2604.19768 — *Saying More Than They Know: Quantifying Epistemic-Rhetorical Miscalibration*
+- arXiv:2604.03173 — *Detecting and Correcting Reference Hallucinations in Commercial LLMs*
+- arXiv:2510.17853 — *CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation*
+- arXiv:2601.04435 — *Accommodation and Epistemic Vigilance: Why LLMs Fail to Challenge Harmful Beliefs*
+- arXiv:2602.09832 — *LLM Reasoning Predicts When Models Are Right*
+- arXiv:2604.21334 — *Ideological Bias in LLMs' Economic Causal Reasoning*
+- arXiv:2509.00529 — *Modeling Motivated Reasoning in Law*
+- arXiv:2601.16130 — *Replicating Human Motivated Reasoning Studies with LLMs*
+
+Same rule as the first pass: WebFetch the abstract before quoting any specific percentage or headline number from these. The structural insights are reliable; specific measurements are not.
+
+## Recommended top-three for governance review
+
+If we revisit "what to add next" after the C07-class structural fix, the second-pass research suggests these as the cleanest deterministic additions:
+
+1. **H4 Unfaithful citation** — every cited path / line / URL must resolve under Read/Grep/WebFetch. Most deterministic of the new candidates; our tool surface is uniquely well-suited.
+2. **H1 Verbalized-confidence miscalibration** — strongest operational support; CoVe already produces per-claim verdicts, we just extract confidence markers and compare.
+3. **H5 Side-effect blindness** — highest-leverage for the coding-agent setting specifically; rounds out the rubric for "draft auditor for code-execution agents."
+
+Each would be a constitutional change (3/3 council). H3 Cherry-picking and H6 Accommodation are theoretically interesting but require careful rubric drafting to avoid false-positive overlap with existing Confirmation / Sycophancy.
