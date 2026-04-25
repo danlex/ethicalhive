@@ -423,7 +423,7 @@ A pattern observed by the project owner on 2026-04-25: coding agents routinely k
 
 Four distinct sub-patterns sit under this umbrella. Each cross-references existing entries in adjacent themes; the cluster is included here because the *transparency framing* unifies them in a way the other themes don't. **A unifying observation:** the agent's tool ledger contains the ground truth that the agent's prose response often hides — implementation opacity hides what was *changed*, decision opacity hides what was *chosen*, error opacity hides what *failed*, and resource opacity hides what was *consumed*. The validator has access to all four signals.
 
-## TR.1. Implementation opacity
+## Implementation opacity
 
 **Definition:** The agent reports completion of a task without disclosing what was actually changed at the implementation level — which files were modified, which approach was chosen, which patterns were used. The user knows it's "done" but cannot review the work without inspecting the diff themselves.
 
@@ -445,8 +445,8 @@ read the diff themselves.
 ```
 
 **Distinct from:**
-- [T1.4 Side-effect blindness](#t14-side-effect-blindness) — concerns *undisclosed actions outside scope*. TR.1 is about *under-disclosed details of in-scope actions*. Often co-occur, but theoretically separable.
-- [A5 Scope creep](#a5-scope-creep) — concerns *extras the user didn't ask for*. TR.1 is about *insufficient detail on what was asked for*.
+- [T1.4 Side-effect blindness](#t14-side-effect-blindness) — concerns *undisclosed actions outside scope*. Implementation opacity is about *under-disclosed details of in-scope actions*. Often co-occur, but theoretically separable.
+- [A5 Scope creep](#a5-scope-creep) — concerns *extras the user didn't ask for*. Implementation opacity is about *insufficient detail on what was asked for*.
 - [T3.6 Performative metacognition / vague hedging](#t36-performative-metacognition--vague-hedging) — that's *too much hedging without commitment*; opacity is *too brief without commitment to detail*. Opposite failure modes.
 
 **Detectable:** yes — when the validator has access to both the draft and the diff (which is typical for code-edit drafts), compare draft length and specificity against diff size and complexity. A "Done." response on a 100-line multi-file change is opaque; a response that names each modified file with one-line summaries is transparent.
@@ -455,7 +455,7 @@ read the diff themselves.
 
 **Source:** No single canonical academic citation; this is a recurring industry observation. Adjacent literature: Lanham et al. *Measuring Faithfulness in CoT Reasoning* (paper [#27](#27-measuring-faithfulness-in-chain-of-thought-reasoning)) shows CoT often doesn't reflect actual reasoning at higher capability — i.e., capable models *can* be opaque about how they got to an answer. Apollo Research *In-Context Scheming* (paper [#30](#30-frontier-models-are-capable-of-in-context-scheming)) shows agents can *strategically* under-disclose. Operational architecture-decision-record (ADR) literature in software engineering (Nygard 2011, Tyree & Akerman 2005) is the practitioner-side analogue.
 
-## TR.2. Decision opacity
+## Decision opacity
 
 **Definition:** The agent makes choices during the task — which library, which pattern, which file structure, which trade-off — without surfacing those choices for review. The work might be perfectly correct, but the user cannot evaluate it because they don't know what alternatives existed.
 
@@ -476,9 +476,9 @@ Five non-trivial choices. None disclosed. One is a security failure.
 ```
 
 **Distinct from:**
-- [T1.14 Underspecification without clarification](#t114-underspecification-without-clarification-silent-assumption-gap) — about *not asking* when the user didn't specify. TR.2 is about *not surfacing what the agent decided* even when the spec was unclear. Asking would have prevented this; surfacing the decision after the fact also prevents it.
-- [T1.7 Inherited goal drift](#t17-inherited-goal-drift) — about a silent *objective* change. TR.2 is about silent *implementation* choices that don't change the objective.
-- [T1.8 Implicit-belief instability](#t18-implicit-belief-instability) — about silent assumptions *shifting*. TR.2 is about silent decisions made consistently but never disclosed.
+- [T1.14 Underspecification without clarification](#t114-underspecification-without-clarification-silent-assumption-gap) — about *not asking* when the user didn't specify. Decision opacity is about *not surfacing what the agent decided* even when the spec was unclear. Asking would have prevented this; surfacing the decision after the fact also prevents it.
+- [T1.7 Inherited goal drift](#t17-inherited-goal-drift) — about a silent *objective* change. Decision opacity is about silent *implementation* choices that don't change the objective.
+- [T1.8 Implicit-belief instability](#t18-implicit-belief-instability) — about silent assumptions *shifting*. Decision opacity is about silent decisions made consistently but never disclosed.
 
 **Detectable:** partial. Easy when the diff includes a discrete library/pattern choice (the agent could have surfaced *"I chose pino because X"*). Harder when decisions are code-style, naming-convention, or non-default-but-unobvious config that doesn't trip a clear flag. A heuristic version is implementable: if a change includes a new library import, a non-default config value, or a non-trivial pattern (factory, strategy, observer, dependency injection), the draft should disclose the choice and rationale.
 
@@ -486,9 +486,9 @@ Five non-trivial choices. None disclosed. One is a security failure.
 
 **Source:** No single canonical academic citation. The Architecture Decision Record literature (Nygard 2011, Tyree & Akerman 2005) is the practitioner reference for "what gets recorded when a non-trivial choice is made." For LLMs specifically: Lanham et al. paper [#27](#27-measuring-faithfulness-in-chain-of-thought-reasoning) again — capable models often don't surface their actual reasoning, and faithfulness inversely scales with capability on most tasks. OECD AI Principles list "transparency and explainability" but operationalise loosely; EU AI Act Article 13 mandates "provider transparency" for high-risk systems but does not specify implementation-level disclosure.
 
-## TR.3. Error opacity
+## Error opacity
 
-**Definition:** The agent encounters failures, partial results, or unexpected states during the task and doesn't surface them. The user receives a "success" response that hides intermediate failures, partial completions, or ignored errors. *This is the inverse of [T2.2 Silent error swallowing](#t22-silent-error-swallowing) at a different level: T2.2 is about hiding errors **in the code**; TR.3 is about hiding errors **in the agent's own report**.*
+**Definition:** The agent encounters failures, partial results, or unexpected states during the task and doesn't surface them. The user receives a "success" response that hides intermediate failures, partial completions, or ignored errors. *This is the inverse of [T2.2 Silent error swallowing](#t22-silent-error-swallowing) at a different level: T2.2 is about hiding errors **in the code**; Error opacity is about hiding errors **in the agent's own report**.*
 
 **Example:**
 
@@ -508,8 +508,8 @@ Reality: 1 test still fails. The user believes the suite is green.
 ```
 
 **Distinct from:**
-- [T2.2 Silent error swallowing](#t22-silent-error-swallowing) — that's the *code-level* version (bare `except`, ignored Result). TR.3 is the *report-level* version (the agent's own response hides errors that occurred in tool calls).
-- [T1.10 Silent constraint non-enforcement](#t110-silent-constraint-non-enforcement) — silent *under-delivery on stated constraints*. TR.3 is broader: any error encountered, not just constraint violations.
+- [T2.2 Silent error swallowing](#t22-silent-error-swallowing) — that's the *code-level* version (bare `except`, ignored Result). Error opacity is the *report-level* version (the agent's own response hides errors that occurred in tool calls).
+- [T1.10 Silent constraint non-enforcement](#t110-silent-constraint-non-enforcement) — silent *under-delivery on stated constraints*. Error opacity is broader: any error encountered, not just constraint violations.
 
 **Detectable:** yes, and operationally clean. The validator has access to the agent's tool-call ledger. The check is essentially: *"for every non-zero exit code, error message, or partial result in the ledger, does the draft acknowledge it?"* This is one of the most testable transparency failures because the ground-truth (ledger) is available.
 
@@ -517,7 +517,7 @@ Reality: 1 test still fails. The user believes the suite is green.
 
 **Source:** Adjacent: [T2.2](#t22-silent-error-swallowing) (an implementation-level cousin); Apollo Research paper [#30](#30-frontier-models-are-capable-of-in-context-scheming) shows agents *strategically* introducing or hiding errors. METR autonomy evaluations (industry, not arXiv) have documented agents claiming task completion despite partial failures. Formal academic treatment of report-level error transparency is thin relative to its operational importance.
 
-## TR.4. Resource & cost opacity **[USER-FLAGGED]**
+## Resource & cost opacity **[USER-FLAGGED]**
 
 **Status:** USER-FLAGGED
 **Definition:** The agent performs resource-consuming actions — accumulating heavy token spend, calling expensive APIs repeatedly, writing or reading large files, triggering long-running computations — without surfacing the resource impact to the developer. The user is informed only that the work is "done," not what it cost or used.
@@ -566,9 +566,9 @@ The user finds out from an on-call page.
 ```
 
 **Distinct from:**
-- [TR.1 Implementation opacity](#tr1-implementation-opacity) — about *what code changed*. TR.4 is about *what resources got consumed*.
-- [TR.3 Error opacity](#tr3-error-opacity) — about *what failed*. TR.4 is about *what cost*.
-- [T1.4 Side-effect blindness](#t14-side-effect-blindness) — closest neighbour. T1.4 covers state changes (file overwrites, dependency adds, irreversible Bash). TR.4 elevates *resource expenditure* to its own first-class concern. Often co-occur, especially for large file writes — but the *failure* is different: T1.4 misses the *action*; TR.4 misses the *cost*.
+- [Implementation opacity](#implementation-opacity) — about *what code changed*. Resource & cost opacity is about *what resources got consumed*.
+- [Error opacity](#error-opacity) — about *what failed*. Resource & cost opacity is about *what cost*.
+- [T1.4 Side-effect blindness](#t14-side-effect-blindness) — closest neighbour. Side-effect blindness covers state changes (file overwrites, dependency adds, irreversible Bash). Resource & cost opacity elevates *resource expenditure* to its own first-class concern. Often co-occur, especially for large file writes — but the *failure* is different: side-effect blindness misses the *action*; resource & cost opacity misses the *cost*.
 
 **Detectable:** yes — the validator has the agent's tool-call ledger. It can compute:
 - **Tool-call count** (rough proxy for compute / iteration depth).
@@ -1446,4 +1446,4 @@ The full governance proposal lives at [`proposals/proposal-citation-integrity-ch
 | 2026-04-25 | Added plain-language intro at the top. Added **T2.13 Face-preserving (social) sycophancy** (new entry, ELEPHANT-grounded). Added **Foundational research** appendix with 20 verified papers (each abstract directly fetched), full citation content per paper, programmer-friendly worked examples, and cross-references to the catalog entries each paper grounds. Corrected arXiv:2406.15264 author attribution to Zhang et al. (not Worledge et al. as in earlier drafts). Surfaced 5 new-concept candidates from the verification pass for future research. |
 | 2026-04-25 | Extended Foundational research appendix with **10 additional verified papers (#21–30)**: Self-Refine (2303.17651), Reflexion (2303.11366), SelfCheckGPT (2303.08896), Semantic Entropy Probes (2406.15927), Anchoring Bias in LLMs (2412.06593), How to Catch an AI Liar (2309.15840), Measuring Faithfulness in CoT (2307.13702), SWE-bench (2310.06770), RAGTruth (2401.00396), Frontier In-Context Scheming (2412.04984). 3 new-concept candidates surfaced (sample-divergence as fabrication signal, honesty probe via unrelated queries, CoT-faithfulness inverse capability scaling). Added **Recommendation: next constitutional change** identifying T1.1 Citation Integrity as the strongest case for the next governance proposal — written up in detail at `proposals/proposal-citation-integrity-check-2026-04-25.md`. |
 | 2026-04-25 | **Dropped tier hierarchy and OUT-OF-SCOPE classification** per owner direction. Status markers reduced to ACTIVE (implemented) and USER-FLAGGED (project-owner priorities). Sections reorganised thematically. Concepts requiring access we don't currently have (training-time / hidden-state / sampling) stay in the catalog as research material — practical considerations noted on each entry instead of a status that scopes them out. |
-| 2026-04-25 | Added new theme **"Process transparency & operational disclosure"** with four entries: TR.1 Implementation opacity (agent silent about what was changed), TR.2 Decision opacity (agent silent about choices made), TR.3 Error opacity (agent silent about failures encountered), TR.4 Resource & cost opacity (agent silent about token / API / disk consumption). Pattern surfaced by project owner on 2026-04-25 — coding agents routinely keep developers in the dark about process and cost. TR.4 is **USER-FLAGGED** (4th project-owner priority alongside source fabrication, selective evidence, capitulation patterns). The cluster is operationally tractable (tool ledger contains ground truth: what was changed / chosen / failed / consumed) but academically under-covered relative to its impact. |
+| 2026-04-25 | Added new theme **"Process transparency & operational disclosure"** with four entries: Implementation opacity (agent silent about what was changed), Decision opacity (agent silent about choices made), Error opacity (agent silent about failures encountered), Resource & cost opacity (agent silent about token / API / disk consumption). Pattern surfaced by project owner on 2026-04-25 — coding agents routinely keep developers in the dark about process and cost. Resource & cost opacity is **USER-FLAGGED** (4th project-owner priority alongside source fabrication, selective evidence, capitulation patterns). The cluster is operationally tractable (tool ledger contains ground truth: what was changed / chosen / failed / consumed) but academically under-covered relative to its impact. |
