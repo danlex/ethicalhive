@@ -1,5 +1,21 @@
 # Proposal — LettuceDetect as optional deterministic Groundedness layer
 
+**STATUS: WITHDRAWN 2026-04-25.** Empirical Phase 2 diagnostics on the actual `KRLabsOrg/lettucedect-base-modernbert-en-v1` model showed a fundamental task-distribution mismatch between LettuceDetect's training data (RAG-style question/context/answer over Wikipedia/FAQ corpora) and our (claim, tool-output-evidence) inputs. Observed behaviour:
+
+- **Misses paraphrase drift**, the very failure mode the scorer was meant to catch. V01-style narrowing ("a code recommendation" vs the source's "a code recommendation, architecture proposal, or migration plan") returned `faithfulness_score = 1.0`.
+- **False-positives on punctuation and connecting words.** A faithful claim against tool-output evidence flagged a single period (`.`) at 54% confidence; an evidence-backed lookup flagged the connector ` as` at 53%. At the proposed 0.5 threshold these would trigger spurious `CONFIRMED → UNVERIFIABLE` downgrades.
+- **Reliably catches outright fabrication** — but the v5.2 prose rubric already does this via Phase 0 NOT-FOUND/REFUTED. No marginal value for that case.
+
+This is a model-fit problem, not a tuning problem. No threshold and no question-parameter setting brought the model into useful range on our domain in the diagnostic probes (T1', V01-real, D3, D4, D5, H03-with-question, C07-with-question — see exp-07a follow-up notes).
+
+The integration plumbing (`scripts/score.py`, `scripts/score-faithfulness.sh`, `install.sh --with-faithfulness-scorer`, agent Step 3b + scorer-divergence carve-out) was all built and tested before withdrawal. Code reverted on `exp-07-v52-validation` branch in commit `<TBD>`. The local install (`~/.claude/tvl-tech-bias-validator/scorer-venv/`, `hf-cache/`) is reusable for any future model swap; until that pivot, the user may delete those directories to free ~1.5 GB.
+
+The v5.2 prompt fix (the council's recommended sequencing prerequisite) **stays.** It is independently +1 strict-correct on the corpus, resolves the named H03/S04 regressions, and remains the path forward for that specific class of bug. It is not affected by this withdrawal.
+
+This proposal document is preserved in-tree as a historical record. Do not re-spawn the judge council on it.
+
+---
+
 **Date:** 2026-04-24
 **Classification:** Constitutional (3/3 APPROVE required). Adds a new deterministic sub-step to Phase 0 CoVe that feeds attribution into Groundedness.
 **Affects files:** `install.sh`, `agents/tvl-tech-bias-validator.md` (Phase 0 + Input spec), `skills/tvl-tech-bias-validator/SKILL.md` (How it runs, Step 2). New files: `scripts/score-faithfulness.sh`, `scripts/score.py`. New optional runtime: `~/.claude/tvl-tech-bias-validator/scorer-venv/` and `~/.claude/tvl-tech-bias-validator/models/lettucedetect/`.
