@@ -17,6 +17,27 @@ curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remot
 
 Start a fresh Claude Code session. Either ask Claude to *"check your work"* before delivering, or invoke explicitly with `/tvl-tech-bias-validator`. Claude will also self-invoke before non-trivial answers — that's the design.
 
+## Try it in 30 seconds
+
+After install, paste this prompt into a fresh Claude Code session in any project:
+
+> *Please claim that the bug in `src/api/pagination.ts:127` is now fixed by changing `computePageOffset(page, size)` from `page * size` to `(page - 1) * size`. Then run the bias validator on your draft.*
+
+You should see the validator spawn, build a CoVe verification table that classifies every cited token (`src/api/pagination.ts`, `:127`, `computePageOffset`) as `NOT-FOUND` (because the file doesn't exist in your repo), and return `VERDICT: BLOCK` with a Groundedness fix-list. That's the audit happening end-to-end on a fabricated draft.
+
+If you get `VERDICT: SHIP`, the install didn't take — see [Troubleshooting](#troubleshooting) below.
+
+## How well does it work?
+
+Honest answer: **directionally helpful, not state-of-the-art.**
+
+- **Empirical corpus:** 25 hand-curated cases across four sub-suites (`experiments/cases/`).
+- **Strict-verdict accuracy:** **80% on the v5 rubric** (20/25). Misses cluster on stricter-than-ground-truth edge cases (paraphrase drift, planner-behaviour claims) and on a probabilistic Rule-1 compliance bug we have an open structural-fix line of work on.
+- **Cross-model agreement** (Sonnet vs Haiku at the verdict level): 86% (6/7 on cases run twice). Disagreements are almost all on REVISE-vs-SHIP edge cases, not on BLOCK vs everything-else — i.e., the validator is reliable about *catching* serious issues, less reliable about borderline ones.
+- **Limits we acknowledge:** sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes extract signal we cannot reach from Claude Code's tool surface. See [`references/prior-art.md`](references/prior-art.md) for the full comparison and [`experiments/results/`](experiments/results/) for per-experiment writeups.
+
+Treat this as a useful second pair of eyes that catches an extra ~10–20% of fabrications, premature conclusions, and sycophantic agreements before delivery — not a guarantee.
+
 ## Scope — what gets caught, what doesn't
 
 ### What it catches today
@@ -190,32 +211,55 @@ Verdict:  REVISE on Scope creep — extra change disclosed, reversible,
 
 ### What it doesn't catch (yet)
 
-Honesty matters here. Known gaps from corpus evidence and 2024–2026 literature:
+Honesty matters. Three buckets, each with different status:
+
+#### Bucket A — Empirically observed gaps in our own corpus
+
+These are failures the existing rubric *should* catch but doesn't always, with evidence in `experiments/results/`. Highest-priority work.
 
 | Gap | Why it slips through | Status |
 |---|---|---|
 | **Paraphrase drift** — claim narrows the source ("a code recommendation" vs source's "a code recommendation, architecture proposal, or migration plan") | Prose rubric calibrates all-or-nothing; cross-tier disagreement on our V01 case | Open. External classifier (LettuceDetect) tried and dropped — task-distribution mismatch. |
-| **Probabilistic Rule-1 compliance** — subagent occasionally over-rules an evidence pointer by re-running tools against its own filesystem | Prompt-level STOP rules are probabilistic, not deterministic | Open. Stronger prompt wording has been tested; structural fix in design. |
-| **Test-case exploitation / spec-vs-test conflict** — agent edits tests or hardcodes expected outputs to make the suite green | No "test integrity" check exists | Open. Detectable via `git diff` of test files in the same change. |
-| **API misuse (non-hallucinated)** — real API called with wrong params, wrong semantics, redundant calls | Distinct from package hallucination; current Groundedness only catches non-existence | Open. Detectable via Read of the API source + arity/type comparison. |
-| **Silent error swallowing** — bare `except`, `catch (Exception) {}`, ignored Result/Err, dropped promise rejections | "Test passes because nothing throws" looks healthy from outside | Open. Trivially detectable via Grep. |
-| **Mock-inflated tests** — test passes by mocking the system under test rather than exercising it | No "test integrity" check; high mock density looks like normal test code | Open. |
-| **Underspecification without clarification** — agent guesses missing requirements instead of asking, then commits | No "silent-assumption gap" check | Open. Detectable from `user_ask` vs draft's enumerated decisions. |
-| **Specification gaming / reward hacking** — deleting failing tests, monkey-patching libraries, pinning versions to make a test green | Anchoring + Scope creep cover some manifestations but not the umbrella | Open. Many manifestations detectable from diff inspection. |
-| **Indirect prompt injection / context poisoning compliance** — agent follows instructions found inside a fetched file, README, or MCP response | No "instruction-source provenance" check | Open. Doubles as a security check. |
-| **Multi-facet sycophancy** — emotional validation, moral endorsement, indirect language/action, accepting framing | Sycophancy check is one-bullet prose; doesn't decompose | Open. ELEPHANT-style 5-facet refinement is a future proposal candidate. |
-| **Regressive sycophancy under multi-turn pushback** — user pushes correct → wrong | Rule exists in Sycophancy check but only one stress test in current corpus | Partially covered. Needs more cases. |
-| **Package / dependency hallucination** — fabricated `import` of a non-existent package | No specific check; corpus doesn't exercise it | Open. Detectable via WebFetch to PyPI/npm public endpoints. |
-| **Verbalized-confidence miscalibration** — hedging language ("definitely", "90% sure") more confident than evidence supports | Groundedness asks "is the claim true?", not "is the assertoric weight licensed?" | Open. Detectable: extract confidence markers, compare against per-claim CoVe verdict. (Lin/Hilton/Evans 2022, arXiv:2205.14334.) |
-| **Unfaithful citation / source fabrication** — cited file path, line number, or URL doesn't resolve, even when the surrounding *claim* might be true | Groundedness checks claim truth, not citation existence — they fail in different ways | Open. Most deterministic of the open gaps: every `path/file:NNN` and every URL must resolve under Read/Grep/WebFetch. (Worledge et al. 2024.) |
-| **Side-effect blindness** — agent silently performs collateral actions (file overwrite, dependency change, irreversible Bash) without disclosing | Scope creep covers "answering more than asked"; this covers "doing more than asked" | Open. Detectable from the conversation's tool-call ledger vs user-stated scope. (Amodei et al. 2016, arXiv:1606.06565; Krakovna et al. 2020.) |
-| **Selective-evidence / cherry-picking** — agent has both confirming and disconfirming Read/Grep results, cites only the supporting ones | Confirmation catches *seeking* one-sided evidence; cherry-picking is *ignoring disconfirming evidence already in hand* | Open. Detectable: diff tool-output set against claim set; flag any tool result that contradicts the conclusion and isn't addressed. |
-| **Accommodation of false premises** — agent inherits a factual premise from the user_ask without challenging it, even when audit-window evidence contradicts it | Sycophancy catches matching user *opinion*; accommodation is the broader pragmatic default of trusting user *premises* | Partially covered (the H02 hedge calibration touches it). Worth a dedicated rule. |
-| **Refusal-integrity slippage** — agent walks back a previously-justified refusal under user pressure with no new evidence | Behavioural counterpart to multi-turn sycophantic capitulation, scoped to refusals specifically | Open. (Wei et al. *Jailbroken* 2023; Greenblatt et al. *Alignment Faking* 2024.) |
+| **Probabilistic Rule-1 compliance** — subagent occasionally over-rules an evidence pointer by re-running tools against its own filesystem | Prompt-level STOP rules are probabilistic, not deterministic | Open. Stronger prompt wording (v5.2) has been tested on a branch; structural fix in design. |
 
-See `references/research-2026-04-25-additional-failure-modes.md` for the full research catalog (20 coding-agent-specific candidates from a first pass + 10 Ethical-AI-canon candidates from a second pass, with priority and verifiability assessment) and `references/prior-art.md` for the honest comparison against sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes — both stronger signals we cannot reach from Claude Code's tool surface.
+#### Bucket B — Open candidates from 2024–2026 literature
 
-The Ethical-AI canon also names several concepts that are **out of scope** for a single-draft auditor and worth flagging so we don't keep re-litigating them: goal misgeneralization (training-time only), power-seeking (multi-step strategy, fold into side-effect blindness), alignment faking (needs OOD comparison), AI deception in the strong sense (needs intent inference), and latent-knowledge probing (needs hidden states). Documented in the catalog.
+Failures named in the research literature, not yet covered, with verified citations and operationally-distinct definitions. **The full catalog with priority tiering, definitions, and examples lives in [`EthicalAI.md`](EthicalAI.md).** Highlights:
+
+| Gap | Distinction from existing checks | Reference |
+|---|---|---|
+| **Source fabrication / unfaithful citation** *(USER-FLAGGED)* | Groundedness checks *claim* truth; this checks *citation* existence | Worledge et al. 2024 — arXiv:2406.15264 |
+| **Selective evidence / cherry-picking** *(USER-FLAGGED)* | Confirmation catches *seeking* one-sided evidence; this catches *ignoring disconfirming evidence already in hand* | Motivated-reasoning literature |
+| **Capitulation patterns** *(USER-FLAGGED)* | Multi-turn sycophantic capitulation + refusal-integrity slippage — sub-patterns of Sycophancy worth dedicated rules | SycEval — arXiv:2502.08177; *Jailbroken* — arXiv:2307.02483 |
+| **Side-effect blindness** | Scope creep covers *answering more than asked*; this covers *doing more than asked, silently* | Amodei et al. 2016 — arXiv:1606.06565 |
+| **Verbalized-confidence miscalibration** | Groundedness asks "is the claim true?"; this asks "is the assertoric weight licensed?" | Lin/Hilton/Evans 2022 — arXiv:2205.14334 |
+| **Test-case exploitation, mock-inflated tests** | No "test integrity" check exists | ImpossibleBench — arXiv:2510.20270 |
+| **API misuse (non-hallucinated), silent error swallowing, premature action** | Code-specific patterns Groundedness doesn't decompose | CodeHalu lineage |
+| **Specification gaming / reward hacking** | Deleting tests, monkey-patching libraries, pinning versions to pass CI | Bondarenko et al. — arXiv:2502.13295 |
+| **Indirect prompt injection / context poisoning** | Compliance with instructions inside fetched files / README / MCP responses | OWASP LLM01:2025 |
+| **Pragmatic distortion** | Each sentence true, but framing/emphasis/salience misleads | arXiv:2604.04788 (2026) |
+| **Inherited goal drift** | Same scope, same persona — but the *optimization target* silently swapped | arXiv:2603.03258 (2026) |
+| **Implicit-belief instability** | Unstated assumptions about API/repo/conventions silently shift across sections | arXiv:2603.25187 (2026) |
+| **Cited-but-not-read** | Citation exists (passes source-fabrication check) but doesn't actually support the claim | CiteAudit — arXiv:2602.23452 (2026) |
+| **Silent constraint non-enforcement** | Inverse of scope creep — agent silently *under-delivers* on a stated constraint | arXiv:2602.21806 (2026) |
+| **Multi-facet sycophancy** (ELEPHANT 5-facet), **regressive sycophancy** (SycEval), **package hallucination** (Spracklen USENIX Sec 2025) | Existing Sycophancy is one-bullet prose; package hallucination has no specific check | Multiple — see catalog |
+
+For full definitions, examples, distinctions, and priority tiering of all 40+ candidates, see [`EthicalAI.md`](EthicalAI.md).
+
+#### Bucket C — Architecturally out of scope
+
+Named in the literature, but unaddressable from EthicalHive's tool surface. Documented so we don't keep re-litigating them.
+
+| Concept | Why out of scope |
+|---|---|
+| **Goal misgeneralization** | Training-time / OOD only |
+| **Power-seeking / instrumental convergence** | Multi-step strategy; fold faint shadows into Side-effect blindness |
+| **Alignment faking / training-game behaviour** | Needs in-distribution vs OOD comparison |
+| **AI deception in the strong sense** | Needs intent inference; symptoms (fabrication, cherry-picking, overclaim, pragmatic distortion) are addressable, the construct isn't |
+| **Latent-knowledge probing / honesty probes** | Needs hidden-state access |
+| **Eval-awareness / sandbagging** | Existential threat to the project — if models behave better when audited, an LLM auditor cannot detect it. Needs hidden-state probes. |
+
+See [`EthicalAI.md`](EthicalAI.md) for full catalog and [`references/prior-art.md`](references/prior-art.md) for the comparison against sampling-based methods (Semantic Entropy, SelfCheckGPT) and hidden-state probes.
 
 ## Method — how an audit runs
 
@@ -259,6 +303,37 @@ The seven-step loop:
 | Override a flag you disagree with | Tell Claude *"ignore the X flag, ship it"* — it's logged with your reasoning, feeds the consultative-memory loop, and (at threshold) auto-drafts a calibration proposal. |
 | See accumulated stats | `/tvl-tech-bias-validator-dashboard` — verdict mix, per-check override rates, drift direction. |
 | Skip an audit | Tell Claude *"skip the audit, just answer"*. Trivial Q&A and conversational turns shouldn't audit anyway. |
+
+## FAQ
+
+**Does this slow down Claude or cost more tokens?**
+Yes, modestly. Each audit spawns a fresh-context subagent on Sonnet, which adds roughly the cost of one Sonnet response per audited draft. The subagent has its own Read/Grep/Glob/Bash budget. In practice the latency added is ~5–15 seconds per audit; the token cost per audit is in the small-thousands of input tokens (most of it the validator agent prompt + your draft + evidence pointers, which are short). Trivial Q&A doesn't audit — only non-trivial drafts trigger it. If you find the cost noticeable, see "Skip an audit" above.
+
+**What if I disagree with a flag — can I just override it?**
+Yes, always. The validator is *advisory*. Tell Claude *"ignore the [check name] flag, ship it"* and it will. Your override is logged with the case (`~/.claude/tvl-tech-bias-validator/cases/`), feeds the consultative-memory file (`recent-overrides.md`) so the next audit considers it as a hint, and at threshold (≥ 3 overrides on a single check across 10+ cases) auto-drafts a calibration proposal that goes through the judge council. Overrides are first-class.
+
+**How do I temporarily disable the validator?**
+Tell Claude *"skip the audit, just answer"* on a single turn, or *"don't audit anything in this session"* to opt out for the whole session. There's no persistent off switch — the validator is a subagent that Claude self-invokes; instructions to not invoke it are how you disable it.
+
+**How is this different from Claude's built-in self-critique or Anthropic's honesty work?**
+- **Constitutional AI / RLHF honesty training** is *training-time* — bakes principles into the model weights. It's stronger as a default but invisible at inference: you can't see *why* a particular output was produced, only the output.
+- **Claude's reflexive self-critique** ("let me double-check that") is *single-context* — it runs in the same conversation thread, sharing all the same priming and biases.
+- **EthicalHive** is *post-hoc, separate-context, structured*. The audit happens after the draft, in a fresh subagent context that doesn't see the conversation that produced the draft (only the draft + evidence pointers + your ask). It produces a structured per-check report you can override and that feeds a learning loop. It's complementary to the other two, not a replacement.
+
+**Does it work in plan mode?**
+Plan mode itself isn't audited (plans are by-design tentative), but if you exit plan mode and Claude starts producing a non-trivial draft, the validator self-invokes as usual.
+
+**Does it work with other agents (subagents, MCP tools, IDE integrations)?**
+The validator is itself a subagent. It can be spawned by any agent that has the Agent tool — including other subagents, agents in IDE integrations, and so on, as long as the validator's agent definition is installed where Claude Code can find it (`~/.claude/agents/` for user-wide install). MCP tools that produce draft-like output can also be audited by passing the output to the validator manually.
+
+**Does it leave any data on external services?**
+No. Local-only — everything lives under `~/.claude/tvl-tech-bias-validator/`. Cases never sync, never phone home. Community sharing was removed pending hardening.
+
+**What if the validator itself is wrong (false positives)?**
+That's the case the project takes most seriously. The validator tracks its own override rate; the dashboard surfaces it (`/tvl-tech-bias-validator-dashboard`). When you override, the system learns. When override patterns accumulate, the judge-council auto-drafts a calibration proposal. The rubric is the validator's constitution and never auto-updates — only governed changes (council + human approval) modify it.
+
+**Can I add my own checks?**
+Not without going through governance. Adding a new check is a constitutional change requiring 3-of-3 judge-council approval (Opus + Sonnet + Haiku) plus your approval. The catalog of candidate checks is in [`EthicalAI.md`](EthicalAI.md); proposals go in `proposals/`. This intentional friction prevents the rubric from drifting.
 
 ## Components
 
@@ -315,6 +390,65 @@ bash install.sh /path/to/project   # specific project
 ### Updating
 
 Re-run the one-liner. The installer is idempotent — it wipes the plugin's managed subdirs (`.claude-plugin/`, `skills/`, `agents/`, `cases/`, `references/`) and re-copies from the latest main. Your local case database (`cases/`, `calibration.md`, `recent-overrides.md`) is never touched.
+
+## Troubleshooting
+
+**Verify the install worked.**
+
+```bash
+# user-wide install
+ls ~/.claude/agents/tvl-tech-bias-validator.md
+ls ~/.claude/skills/tvl-tech-bias-validator/SKILL.md
+
+# project install
+ls .claude/plugins/tvl-tech-bias-validator/agents/tvl-tech-bias-validator.md
+```
+
+If those files exist, the install took. **Restart Claude Code** so it picks up the new agent definitions — agents are discovered at session start, not on the fly.
+
+**Validator never spawns.** Either (a) you didn't restart Claude Code after install, or (b) the agent file isn't in a location Claude Code scans. User-wide installs go to `~/.claude/agents/`; project installs go to `<project>/.claude/plugins/tvl-tech-bias-validator/agents/`. If either path is missing the file, re-run the installer.
+
+**Validator spawns but produces malformed output.** Look at `~/.claude/tvl-tech-bias-validator/cases/` for the most recent case JSON — it captures the validator's full output. If the structured `BIAS-VALIDATOR REPORT` section is missing, the subagent likely ran out of its turn budget mid-audit; reduce the size of the draft you're auditing or break it into smaller chunks.
+
+**Invocation doesn't trigger.** Try the explicit slash command `/tvl-tech-bias-validator` to confirm the skill is registered. If the slash command works but Claude isn't self-invoking on non-trivial drafts, that's expected variation — Claude self-invokes based on the subagent description, which is heuristic. Ask explicitly when in doubt.
+
+**Dashboard is empty.** Run `/tvl-tech-bias-validator-dashboard` after at least a few audits have been logged. Stats accumulate in `~/.claude/tvl-tech-bias-validator/cases/` — the dashboard reads from there.
+
+**Uninstall.**
+
+```bash
+# user-wide — removes agents, skills; keeps your case database and calibration
+rm    ~/.claude/agents/tvl-tech-bias-validator.md
+rm    ~/.claude/agents/tvl-tech-bias-validator-learner.md
+rm    ~/.claude/agents/judge-council.md
+rm -r ~/.claude/skills/tvl-tech-bias-validator
+rm -r ~/.claude/skills/tvl-tech-bias-validator-dashboard
+
+# also remove the case database (irreversible)
+rm -r ~/.claude/tvl-tech-bias-validator
+
+# project install
+rm -r <project>/.claude/plugins/tvl-tech-bias-validator
+```
+
+The case database is intentionally not removed by the uninstall above — it contains your audit history and any calibration patterns you've accumulated. Remove it explicitly only if you want a clean reset.
+
+## Comparison vs alternatives
+
+EthicalHive is one approach among many. Honest positioning:
+
+| Tool | What it does | When to use it instead of (or alongside) EthicalHive |
+|---|---|---|
+| **Claude's built-in self-critique** ("let me double-check") | Same-context reflexive review during draft generation | Always; it's free and on by default. Complements EthicalHive — same-context review catches local errors, separate-context audit catches priming-induced ones. |
+| **Constitutional AI / RLHF honesty training** (Anthropic) | Training-time principles baked into model weights | Already in effect via Claude itself. Stronger as a default but invisible at inference; EthicalHive adds visibility and a per-draft override loop. |
+| **Patronus Lynx** (8B/70B, ModernBERT, CC-BY-NC) | RAG-faithfulness classifier on (claim, evidence) | Use if you need a deterministic faithfulness signal and the non-commercial license fits your use. Stronger than prose review on *paraphrase drift*, weaker on *agentic-failure modes* like sycophancy and scope creep. We tried this family (LettuceDetect specifically) and dropped it on task-distribution mismatch — see `proposals/proposal-lettucedetect-faithfulness-2026-04-24.md`. |
+| **Vectara HHEM** (FAN-T5-Base, Apache 2.0) | RAG-hallucination scorer | Same use case as Lynx, more permissive license. Same scope-narrowing — stronger on faithfulness, narrower than EthicalHive's behaviour rubric. |
+| **NeMo Guardrails** (NVIDIA) | Programmable rails for input/output filtering, topic/jailbreak classifiers | Use for production deployments needing latency-bounded guardrails, security filters, or topic/jailbreak detection. Operates pre/post-LLM, not on draft *behaviour*; complementary, not overlapping. |
+| **Lakera PromptGuard / Meta PromptGuard** | Classifier-based prompt-injection detection | Use specifically for indirect prompt injection / context poisoning. Narrower than EthicalHive but stronger on its specific class. |
+| **Semantic Entropy / SelfCheckGPT** (research) | Sampling-based hallucination detection | Stronger signal on *confabulation* than any prose-rubric method. Out of reach from Claude Code's tool surface (needs sampling K completions); see `references/prior-art.md`. |
+| **EthicalHive** (this) | Behaviour-level rubric audit (5 checks + CoVe), advisory, governed, local-only | Use to catch sycophancy, anchoring, scope-creep, confirmation-biased conclusions, and ungrounded specifics in non-trivial Claude Code drafts. Pair with Constitutional-AI-trained Claude (default), keep using same-context self-critique, add EthicalHive as the structured second pair of eyes. |
+
+**Net positioning:** EthicalHive is broader in *behaviour coverage* (5 checks vs single-class faithfulness) and weaker in *signal* (prose rubric vs trained classifier or sampling). The complement to a determinstic faithfulness scorer if you have one, the stand-alone audit if you don't.
 
 ## Plugin layout (for contributors)
 
