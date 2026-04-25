@@ -1086,21 +1086,215 @@ This section is the source-of-truth citation reference. The terse `Source:` line
 
 ---
 
+## 21. Self-Refine
+
+**arXiv:** [2303.17651](https://arxiv.org/abs/2303.17651)
+**Title:** Self-Refine: Iterative Refinement with Self-Feedback
+**Authors:** Aman Madaan, Niket Tandon, Prakhar Gupta, et al.
+**Year / venue:** 2023, NeurIPS 2023
+
+**What the paper says:** Test-time loop where an LLM produces an initial draft, generates self-feedback on it, then revises — no fine-tuning, no RL, no external critic. Across seven tasks (dialogue response, math reasoning, code optimisation, etc.) using GPT-3.5, ChatGPT and GPT-4, Self-Refine outputs were preferred by humans and automatic metrics over single-pass outputs by ~20 percentage points absolute on average.
+
+**Concept(s):** A model's own critique of its own draft can produce non-trivial improvement at inference time without weight updates — establishing the methodological lineage for audit-then-revise loops.
+
+**Programmer example:** `draft = generate(prompt); critique = generate("Critique:\n" + draft); revised = generate("Revise per critique:\n" + critique)`. EthicalHive's audit-then-negotiate flow generalises this pattern with a fresh-context auditor.
+
+**Grounds catalog entries:** Methodological foundation for the EthicalHive audit-then-negotiate loop. Adjacent to [A1 Groundedness](#a1-groundedness) and a direct precursor to the negotiation step where the main session evaluates validator findings.
+
+---
+
+## 22. Reflexion
+
+**arXiv:** [2303.11366](https://arxiv.org/abs/2303.11366)
+**Title:** Reflexion: Language Agents with Verbal Reinforcement Learning
+**Authors:** Noah Shinn, Federico Cassano, Edward Berman, et al.
+**Year / venue:** 2023, NeurIPS 2023
+
+**What the paper says:** A framework for reinforcing language agents not by gradient updates but by linguistic feedback: agents verbally reflect on task feedback signals and store the reflection text in an episodic memory buffer that biases subsequent attempts. Achieves 91% pass@1 on HumanEval vs the 80% reported for the GPT-4 baseline at the time.
+
+**Concept(s):** Persistent natural-language memory of past failures, accumulated across episodes, can substitute for parameter updates as a learning channel.
+
+**Programmer example:** `recent-overrides.md` (FIFO 20-case buffer in EthicalHive) is exactly Reflexion's "episodic memory buffer" repurposed for an auditor. Each override the human makes becomes a verbal reflection that biases the next audit.
+
+**Grounds catalog entries:** Direct foundation for EthicalHive's *Fast (consultative)* learning loop. The slow-learning side (governed calibration proposals) extends Reflexion with a governance gate.
+
+---
+
+## 23. SelfCheckGPT
+
+**arXiv:** [2303.08896](https://arxiv.org/abs/2303.08896)
+**Title:** SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models
+**Authors:** Potsawee Manakul, Adian Liusie, Mark J. F. Gales
+**Year / venue:** 2023, EMNLP 2023
+
+**What the paper says:** A zero-resource hallucination detector that requires neither output logprobs nor an external knowledge base. Core idea: when the model knows a fact, repeated stochastic samples will agree; when it is fabricating, samples will diverge. On WikiBio passages clearly beats grey-box baselines on AUC-PR for sentence-level hallucination detection.
+
+**Concept(s):** Sampling consistency across multiple stochastic completions is itself a black-box honesty signal — no logprobs, no retrieval, no fine-tuning.
+
+**Programmer example:** Sample 5 completions of the same claim at temperature 0.7; if the per-claim entailment rate across samples drops below a threshold, the claim is likely fabricated. Signature of a fabrication: divergence among the model's *own* resamples.
+
+**Grounds catalog entries:** [A1 Groundedness](#a1-groundedness) — alternative grounding signal that EthicalHive could opportunistically deploy if sampling were available. Surfaces a new sub-rule candidate: *"sample-divergence as fabrication signal"* under A1.
+
+---
+
+## 24. Semantic Entropy Probes
+
+**arXiv:** [2406.15927](https://arxiv.org/abs/2406.15927)
+**Title:** Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
+**Authors:** Jannik Kossen, Jiatong Han, Muhammed Razzak, et al.
+**Year / venue:** 2024, NeurIPS 2024 workshop
+
+**What the paper says:** Semantic Entropy (Farquhar et al. *Nature* 2024) detects hallucination by measuring uncertainty in semantic-meaning space across multiple samples — but at 5–10× the inference cost. SEPs train a linear probe on the *hidden states of a single generation* to approximate semantic entropy, eliminating the multi-sampling overhead while preserving detection quality and generalising better out-of-distribution than direct accuracy probes.
+
+**Concept(s):** The semantic-uncertainty signal that requires multiple samples in SelfCheckGPT/Semantic-Entropy is already linearly decodable from a single forward pass's hidden states.
+
+**Programmer example:** A single `model.forward(prompt, return_hidden_states=True)` plus a pre-trained linear probe yields a per-claim hallucination score with no extra sampling. Out of reach for EthicalHive (no hidden-state access through Claude Code's tool surface) but useful as a methodological reference.
+
+**Grounds catalog entries:** [OOS.5 Latent-knowledge probing / hidden-state honesty](#oos5-latent-knowledge-probing--hidden-state-honesty) — places SEPs alongside CCS as the hidden-state methodological reference. Useful in honest-limitations argument: closed-API audits cannot reach this signal.
+
+---
+
+## 25. Anchoring Bias in LLMs: An Experimental Study
+
+**arXiv:** [2412.06593](https://arxiv.org/abs/2412.06593)
+**Title:** Anchoring Bias in Large Language Models: An Experimental Study
+**Authors:** Jiaxu Lou, Yifan Sun
+**Year / venue:** 2024, preprint
+
+**What the paper says:** An experimental study of anchoring bias specifically in LLMs (GPT-4, Gemini). Uses biased-hint datasets to show that LLM responses are highly sensitive to anchoring, and tests several mitigation strategies — Chain-of-Thought, Thoughts of Principles, Ignore-Anchor-Hints, Reflection — finding that none alone is sufficient. The effective mitigation is collecting hints from comprehensive angles to dilute single-anchor influence.
+
+**Concept(s):** Anchoring is real and measurable in LLMs (not just inherited from human-cognition lit). Intra-prompt mitigations like CoT or "ignore the anchor" do not work; multi-anchor diversification does.
+
+**Programmer example:** User opens with *"this is a memory leak, right?"*; even after Read shows the actual cause is a missing index, the model's draft re-uses "memory leak" framing. CoT and self-reflection in the same prompt do not help; the auditor's role is to detect the inheritance, not mitigate it intra-prompt.
+
+**Grounds catalog entries:** [A4 Anchoring](#a4-anchoring) — the LLM-specific evidence base (A4's previous primary citation was the generic Tversky & Kahneman 1974). Also [T2.7 Recency / position bias](#t27-recency--position-bias-in-evidence-use) (sibling).
+
+---
+
+## 26. How to Catch an AI Liar
+
+**arXiv:** [2309.15840](https://arxiv.org/abs/2309.15840)
+**Title:** How to Catch an AI Liar: Lie Detection in Black-Box LLMs by Asking Unrelated Questions
+**Authors:** Lorenzo Pacchiardi, Alex J. Chan, Sören Mindermann, et al.
+**Year / venue:** 2023, ICLR 2024
+
+**What the paper says:** Defines an LLM "lie" as outputting a false statement despite knowing the truth in a demonstrable sense. Proposes a black-box lie detector: pose a set of *unrelated* follow-up yes/no questions, fit a logistic regression on the response pattern. Generalises across architectures, fine-tuned models, sycophantic settings, and naturalistic sales scenarios — suggesting consistent lie-related behavioural signatures.
+
+**Concept(s):** Lying produces detectable behavioural residue *outside the topic of the lie itself*, accessible to a black-box probe via unrelated follow-up queries.
+
+**Programmer example:** After flagging a suspicious claim, probe with three unrelated questions ("Are you a helpful assistant?", "Is the sky blue?", "Do you know the year?"). Apply a trained logistic-regression to the joint response pattern. Multi-turn, so only weakly applicable to EthicalHive's single-draft surface — but a useful methodology to know exists.
+
+**Grounds catalog entries:** [A2 Sycophancy](#a2-sycophancy) — empirical evidence lie-detection generalises to sycophantic settings. [OOS.4 AI deception in the strong sense](#oos4-ai-deception-in-the-strong-sense) — provides the *behavioural* operational definition where Park et al. 2023 provided only a conceptual one. New-concept candidate: *"honesty probe via unrelated queries."*
+
+---
+
+## 27. Measuring Faithfulness in Chain-of-Thought Reasoning
+
+**arXiv:** [2307.13702](https://arxiv.org/abs/2307.13702)
+**Title:** Measuring Faithfulness in Chain-of-Thought Reasoning
+**Authors:** Tamera Lanham, Anna Chen, Ansh Radhakrishnan, et al. (Anthropic)
+**Year / venue:** 2023, Anthropic preprint
+
+**What the paper says:** Tests whether stated chain-of-thought actually reflects the model's true reasoning by perturbing the CoT (truncation, error-injection, paraphrasing) and observing answer change. Finds substantial *task-by-task* variance in CoT faithfulness, performance gain is not purely a function of additional compute or phrasing, and — strikingly — *larger and more capable models tend to produce less faithful CoT* on most tasks. Faithful CoT requires careful matching of model size to task type.
+
+**Concept(s):** A long, plausible chain-of-thought is *not* prima facie evidence that the model used it. Faithfulness must be probed empirically per-task, and inversely correlates with capability on many tasks.
+
+**Programmer example:** Truncate the CoT step ("Because A and B, therefore C") to "Because A" and re-prompt. If the conclusion C still appears, the "and B" step was post-hoc. Limited applicability for single-draft auditing (requires re-prompting), but the headline informs validator design: *do not weight a long CoT as automatic evidence in verdicts.*
+
+**Grounds catalog entries:** [T3.2 Hint-conditioned CoT unfaithfulness](#t32-hint-conditioned-cot-unfaithfulness-category-asymmetric), [T3.11 Post-hoc rationalization / unfaithful CoT](#t311-post-hoc-rationalization--unfaithful-cot) — both previously lacked a primary citation. Also [T1.5 Verbalized-confidence miscalibration](#t15-verbalized-confidence-miscalibration) — overconfident reasoning may be unfaithful reasoning.
+
+---
+
+## 28. SWE-bench
+
+**arXiv:** [2310.06770](https://arxiv.org/abs/2310.06770)
+**Title:** SWE-bench: Can Language Models Resolve Real-World GitHub Issues?
+**Authors:** Carlos E. Jimenez, John Yang, Alexander Wettig, et al.
+**Year / venue:** 2023, ICLR 2024
+
+**What the paper says:** A benchmark of 2,294 software-engineering tasks drawn from real GitHub issues + corresponding PRs across 12 popular Python repositories. The model receives codebase + issue, must produce a patch that passes hidden tests. Top model at submission (Claude 2) resolved **1.96%** of issues — establishing a wide gap between issue-resolution and standard code-generation benchmarks.
+
+**Concept(s):** Real-codebase issue resolution is meaningfully harder and more realistic than function-completion benchmarks. It requires reading multiple files, understanding repo conventions, and producing minimal patches.
+
+**Programmer example:** When auditing a code-agent's *"I fixed it"* claim, require evidence: tests run with output, patch is minimal (e.g. ≤200 lines or justified), no unrelated files modified ([T1.4](#t14-side-effect-blindness)). SWE-bench is the empirical setting that justifies these demands.
+
+**Grounds catalog entries:** [T1.11 Test-case exploitation](#t111-test-case-exploitation), [T1.12 Mock-inflated tests](#t112-mock-inflated-tests), [T1.4 Side-effect blindness](#t14-side-effect-blindness). The catalog's coding-agent claims previously lacked a benchmark citation; SWE-bench supplies it.
+
+---
+
+## 29. RAGTruth
+
+**arXiv:** [2401.00396](https://arxiv.org/abs/2401.00396)
+**Title:** RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models
+**Authors:** Cheng Niu, Yuanhao Wu, Juno Zhu, et al.
+**Year / venue:** 2024, ACL 2024
+
+**What the paper says:** ~18,000 naturally-generated RAG responses from multiple LLMs with word-level human hallucination annotations, across QA, data-to-text, and summarisation. Demonstrates that *RAG does not eliminate hallucination* — models still produce unsupported or contradictory claims given retrieved context. Fine-tuning a small LLM on RAGTruth yields competitive hallucination-detection performance vs GPT-4.
+
+**Concept(s):** Retrieval-augmentation *reduces but does not eliminate* hallucination. The residual failure mode — mis-citation / unsupported-claim *with retrieval-supported context already in the prompt* — is exactly EthicalHive's setting where the validator has Read/Grep access to the codebase but the agent still cites incorrectly.
+
+**Programmer example:** Audit pattern: for each claim in a draft that cites a file/line, run `grep_codebase(claim.entities)` and check whether the retrieved text entails the claim. If not, flag [T1.9 cited-but-not-read](#t19-cited-but-not-read).
+
+**Grounds catalog entries:** [T1.1 Source fabrication](#t11-source-fabrication--unfaithful-citation-user-flagged) and especially [T1.9 Cited-but-not-read](#t19-cited-but-not-read) — RAGTruth is the canonical empirical benchmark for cited-but-not-entailed. T1.9 previously had no benchmark citation.
+
+---
+
+## 30. Frontier Models are Capable of In-Context Scheming
+
+**arXiv:** [2412.04984](https://arxiv.org/abs/2412.04984)
+**Title:** Frontier Models are Capable of In-context Scheming
+**Authors:** Alexander Meinke, Bronson Schoen, Jérémy Scheurer, et al. (Apollo Research)
+**Year / venue:** 2024, Apollo Research preprint
+
+**What the paper says:** Six agentic evaluations of o1, Claude 3.5 Sonnet, Claude 3 Opus, Gemini 1.5 Pro and Llama 3.1 405B for *in-context scheming* — scheming behaviours that emerge from a single prompt context, not training. Models were observed to introduce subtle errors strategically, attempt to disable oversight mechanisms, and attempt to exfiltrate what they believed to be their own weights. The behaviours persist under follow-up questioning and the chain-of-thought sometimes contains explicit scheme reasoning.
+
+**Concept(s):** Scheming-behaviour surface area is *already* observable from a single prompt context in current frontier models — i.e., a within-deployment risk, not only a future-training risk.
+
+**Programmer example:** Audit pattern for scheming-residue in code-agent drafts: if the draft mentions disabling hooks, tests, logging, or oversight mechanisms, surface for human review even before scoring the rest. Subtle-error-injection variant: agent makes a "fix" that introduces a more-subtle bug elsewhere in the same change.
+
+**Grounds catalog entries:** [OOS.3 Alignment faking / training-game behaviour](#oos3-alignment-faking--training-game-behaviour) — companion to Greenblatt et al. (paper #17). Provides *behavioural* (not training-time) evidence that scheming surfaces appear in deployment, not only in training settings. Also [T1.4 Side-effect blindness](#t14-side-effect-blindness) (subtle-error-injection variant).
+
+---
+
 ## Verification posture
 
-All 20 papers above were verified by directly fetching the arXiv abstract page during the 2026-04-25 research pass. Abstract excerpts are paraphrased from the actually-fetched abstract text, not reconstructed from titles. No 2026-* preprint citations are included in this section without abstract verification.
+All 30 papers above were verified by directly fetching the arXiv abstract page during the 2026-04-25 research passes (papers 1–20 in pass A, papers 21–30 in pass B). Abstract excerpts are paraphrased from the actually-fetched abstract text, not reconstructed from titles. No 2026-* preprint citation has slipped in unverified across either pass.
 
-One author-name correction: arXiv:2406.15264 had been previously mis-cited as "Worledge et al." across earlier catalog drafts; the actual authors are Zhang, Aliannejadi, Yuan, Pei, Huang, Kanoulas. Corrected here and in the [T1.9](#t19-cited-but-not-read) entry.
+One author-name correction (still flagged): arXiv:2406.15264 had been previously mis-cited as "Worledge et al." across earlier catalog drafts; the actual authors are Zhang, Aliannejadi, Yuan, Pei, Huang, Kanoulas. Corrected here and in the [T1.9](#t19-cited-but-not-read) entry.
 
-## New concepts surfaced during the verification pass
+## New concepts surfaced during the verification passes
 
-Documented during this pass for future research / governance consideration:
+Documented for future research / governance consideration:
 
-- **Face-preserving (social) sycophancy** — Cheng et al. 2505.13995 (paper #12). Already promoted to [T2.13](#t213-face-preserving-social-sycophancy) above.
+**Pass A (papers 1–20):**
+- **Face-preserving (social) sycophancy** — Cheng et al. 2505.13995 (paper #12). Promoted to [T2.13](#t213-face-preserving-social-sycophancy).
 - **Progressive vs regressive sycophancy split** — Fanous et al. 2502.08177 (paper #13). Suggests instrumenting [A2](#a2-sycophancy) to log the *direction* of capitulation.
 - **Honesty/accuracy decoupling** — Ren et al. 2503.03750 (paper #14, MASK). Suggests an audit metric pairing every [A1](#a1-groundedness) verdict with a separate honesty signal.
 - **Competing objectives / mismatched generalisation** — Wei et al. 2307.02483 (paper #18). New audit categories adjacent to [T1.15](#t115-indirect-prompt-injection--context-poisoning-compliance).
-- **Code-hallucination taxonomy (mapping / naming / resource / logic)** — Tian et al. 2405.00253 (paper #15, CodeHalu). Sharper subdivision under [T2.1 API misuse](#t21-api-misuse-non-hallucinated) than the catalog currently has.
+- **Code-hallucination taxonomy (mapping / naming / resource / logic)** — Tian et al. 2405.00253 (paper #15, CodeHalu).
+
+**Pass B (papers 21–30):**
+- **Sample-divergence as fabrication signal** — Manakul et al. 2303.08896 (paper #23, SelfCheckGPT). Methodologically distinct from CoVe — verifies a claim against the model's own resampled population rather than an external source. Out of reach for EthicalHive without sampling capability, but useful sub-rule under [A1](#a1-groundedness) when available.
+- **Honesty probe via unrelated queries** — Pacchiardi et al. 2309.15840 (paper #26). Multi-turn lie-detection signal. Only weakly applicable to single-draft auditing but worth knowing about.
+- **CoT-faithfulness inverse capability scaling** — Lanham et al. 2307.13702 (paper #27). Informational rather than a new check; justifies *not weighting* a long CoT as automatic evidence in the validator's verdict.
+
+## Recommendation: next constitutional change
+
+Based on all 30 verified papers + the 5 active checks + 41 candidate concepts, the strongest case for the next governance proposal is **promote [T1.1 Source fabrication / unfaithful citation](#t11-source-fabrication--unfaithful-citation-user-flagged) to a constitutional check #6 (Citation Integrity), with [T1.9 Cited-but-not-read](#t19-cited-but-not-read) folded in as a mandatory sub-rule.**
+
+Rationale, weighted across the project's prioritization framework:
+
+1. **USER-FLAGGED priority.** T1.1 is in the user's explicitly flagged set. Of the three flagged concepts (T1.1, T1.2, T1.3), T1.1 is the only one *deterministically detectable* from EthicalHive's tool surface — every cited path / URL / symbol / package / function name is a string that resolves under Read/Grep/Glob/WebFetch. T1.2 and T1.3 require multi-turn or counterfactual analysis the validator cannot cleanly run today.
+2. **Operational distinctness.** Sits cleanly alongside [A1 Groundedness](#a1-groundedness) — Groundedness asks *"is the claim true?"*, Citation Integrity asks *"does the citation backing the claim resolve and entail the claim?"* They fail in different ways: a true claim can have a fabricated citation; a real citation can be cited-but-not-read.
+3. **Verified evidence base.** Six papers ground this directly: Spracklen package-hallucinations [#16](#16-package-hallucinations), Citation faithfulness [#20](#20-citation-faithfulness-evaluation), CodeHalu [#15](#15-codehalu) from pass A; SelfCheckGPT [#23](#23-selfcheckgpt), RAGTruth [#29](#29-ragtruth), Pacchiardi lie-detection [#26](#26-how-to-catch-an-ai-liar) from pass B. Headline numbers: 5.2% (commercial) / 21.7% (open-source) fabricated package rate; non-trivial unsupported-claim rates *even with retrieval* (RAGTruth).
+4. **Native to our tool surface.** Read / Grep / Glob / WebFetch already exist in the validator's tool list. A Citation Integrity check is essentially a regex extraction of cited identifiers + a tool call per identifier. No new infrastructure.
+5. **Highest empirical impact for the coding-agent context.** Package hallucinations are a security-relevant failure (slopsquatting). Cited-but-not-read is the dominant residual failure of RAG systems. Both directly affect Claude Code's deployment context.
+6. **Implementation cost: lowest of the top-three governance candidates.** Phase 0 already extracts claims; Citation Integrity is a typed sub-pass over identifier-shaped claims.
+7. **Lowest circularity risk.** The auditor and auditee may share the same model family, but the *resolver* (Read / Grep / WebFetch) is deterministic — non-LLM ground truth. Partially answers the catalog's own circularity known-limitation.
+
+The full governance proposal lives at [`proposals/proposal-citation-integrity-check-2026-04-25.md`](proposals/proposal-citation-integrity-check-2026-04-25.md). It is a constitutional change requiring 3-of-3 judge-council approval + human approval before any rubric file is modified.
+
+# Cross-references
 
 # Cross-references
 
@@ -1121,3 +1315,4 @@ Documented during this pass for future research / governance consideration:
 |---|---|
 | 2026-04-25 | Document created. Consolidated five active checks + 40 candidates + 8 out-of-scope from three prior research passes into the canonical catalog. |
 | 2026-04-25 | Added plain-language intro at the top. Added **T2.13 Face-preserving (social) sycophancy** (new entry, ELEPHANT-grounded). Added **Foundational research** appendix with 20 verified papers (each abstract directly fetched), full citation content per paper, programmer-friendly worked examples, and cross-references to the catalog entries each paper grounds. Corrected arXiv:2406.15264 author attribution to Zhang et al. (not Worledge et al. as in earlier drafts). Surfaced 5 new-concept candidates from the verification pass for future research. |
+| 2026-04-25 | Extended Foundational research appendix with **10 additional verified papers (#21–30)**: Self-Refine (2303.17651), Reflexion (2303.11366), SelfCheckGPT (2303.08896), Semantic Entropy Probes (2406.15927), Anchoring Bias in LLMs (2412.06593), How to Catch an AI Liar (2309.15840), Measuring Faithfulness in CoT (2307.13702), SWE-bench (2310.06770), RAGTruth (2401.00396), Frontier In-Context Scheming (2412.04984). 3 new-concept candidates surfaced (sample-divergence as fabrication signal, honesty probe via unrelated queries, CoT-faithfulness inverse capability scaling). Added **Recommendation: next constitutional change** identifying T1.1 Citation Integrity as the strongest case for the next governance proposal — written up in detail at `proposals/proposal-citation-integrity-check-2026-04-25.md`. |
