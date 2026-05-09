@@ -17,6 +17,32 @@ curl -sL https://raw.githubusercontent.com/danlex/ethicalhive/main/install-remot
 
 Start a fresh Claude Code session. Either ask Claude to *"check your work"* before delivering, or invoke explicitly with `/tvl-tech-bias-validator`. Claude will also self-invoke before non-trivial answers — that's the design.
 
+## Where you can run it
+
+Three target environments. Order is by fidelity — Claude Code keeps the full plugin, Cowork keeps most of it, claude.ai is degraded but still useful.
+
+### Claude Code — full plugin (recommended)
+
+The original target. Subagent isolation, filesystem-backed CoVe, judge council, learning loop, dashboard. Install via the curl one-liner above.
+
+### Claude Cowork — same plugin, different installer (untested)
+
+Cowork uses the **same plugin format** as Claude Code: `.claude-plugin/plugin.json`, `agents/*.md` with YAML frontmatter, `skills/<name>/SKILL.md`. Verified against the official [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins) repo, where partner-built plugins like `brand-voice` ship sub-agents in the identical `agents/` directory layout.
+
+Install path: **Cowork desktop app → Customize → Browse plugins → Install custom** (upload this repo's plugin folder). Per Anthropic's [Cowork plugin docs](https://support.claude.com/en/articles/13837440-use-plugins-in-claude-cowork), user-built plugins are first-class — *"You can also upload a custom plugin file if you've built one yourself or received one from a colleague... Plugins you add yourself are saved locally to your machine."*
+
+**Caveat:** I have not personally tested EthicalHive in Cowork. The plugin format matches and sub-agent support is documented, so it should work without code changes — but Cowork's tool surface, default models, and filesystem path conventions may differ in details I can't verify from docs alone. If you install it, the case database location may be different from `~/.claude/tvl-tech-bias-validator/`; the dashboard skill assumes that path.
+
+### claude.ai — three lighter variants
+
+claude.ai (web/desktop chat and Projects) does not support sub-agents and has no general filesystem. The validator collapses to an inline self-audit. Three options live in [`claude-ai/`](claude-ai/):
+
+- **Uploadable skill** (recommended; tested 2026-05-09) — the folder [`claude-ai/skill/tvl-tech-bias-validator/`](claude-ai/skill/tvl-tech-bias-validator/) is a standard Agent Skill. Install path: **claude.ai → Customize → Skills → + → Create skill → Upload a skill** (point at a `.zip` of the folder), or **Write skill instructions** if uploading is blocked by your browser extension. Triggers on slash command or before non-trivial answers per its description. Verified end-to-end: a fabricated-pagination test draft returned `VERDICT: BLOCK` with three independent BLOCK signals (Groundedness, Sycophancy, Confirmation). Skills are an open standard ([anthropics/skills](https://github.com/anthropics/skills)), so the same folder is also a fallback path for Cowork and other agent CLIs.
+- **Project custom instructions** — paste [`claude-ai/projects-instructions.md`](claude-ai/projects-instructions.md) into a claude.ai Project. Always-on audit; attach codebase files for token grounding.
+- **Chat one-shot prompt** — paste [`claude-ai/chat-prompt.md`](claude-ai/chat-prompt.md) at the top of a conversation. On-demand audit when you ask for one.
+
+All three claude.ai variants lose the subagent isolation, filesystem-backed CoVe, judge council, and learning loop. They keep the 5-check rubric and the structured output. Each file lists the honest tradeoffs at the top.
+
 ## Try it in 30 seconds
 
 After install, paste this prompt into a fresh Claude Code session in any project:
