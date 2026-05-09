@@ -40,7 +40,7 @@ If the text is missing, output exactly this and stop:
 
 1. **Rhetorical question opening** — staged opening question used as a hook, especially when the answer is supplied immediately afterwards. Template-feeling.
 2. **List stacking** — several short fragments placed one after another for rhythm. Mechanical cadence.
-3. **Negative correction** — denies one idea and replaces with another. Most common AI writing pattern.
+3. **Negative correction / parallelism** — denies one idea and replaces with another. Most common AI writing pattern. Regex-detectable patterns: `\bnot just\b.*\bbut\b`, `\bit's not\b.*\bit's\b`, `\bnot only\b.*\bbut also\b`, `\bnot a\b.*\bbut a\b`, `\bnot about\b.*\babout\b`, `\bnot X\b.*\bY\b`. Industry consensus rates this the single most-identified AI tell; effect-size data is missing in peer-reviewed literature.
 4. **Artificial contrast** — polished opposition created for effect rather than clarity. Slogan-feeling.
 5. **Slogan closer** — short final line written to sound memorable ("That is the L1 unlock", "This is the real shift"). Engineered-feeling.
 6. **Generic bridge phrase** — reusable transition that could fit any post. Structure without information.
@@ -51,9 +51,13 @@ If the text is missing, output exactly this and stop:
 11. **Marketing residue** — promotional words ("game changer", "powerful", "revolutionary", "seamless", "next generation", "AI powered", "unlock potential", "transform security operations"). Weaken trust.
 12. **False tension** — drama around something that does not need drama. Engagement bait.
 13. **Uniform paragraph rhythm** — paragraphs with the same length, cadence, or structure. Human writing usually varies more.
-14. **Em dashes** — the long dash (—). Heavy AI tell in LinkedIn-style writing.
+14. **Em dash density** — the long dash (—) is a signal at *abnormal density*, not at single-instance presence. Flag at >1 per 75 words OR ≥3 in a post under 250 words. Single em dash alone does not flag — em dashes are standard in professional journalism (NYT, Atlantic, Washington Post). Model-aware: GPT-4o/4.1/Copilot/Deepseek run high; Claude and Gemini run low.
 15. **Hashtags** — flagged because they signal LinkedIn-creator template, not professional content.
 16. **Unsupported claim / invented fact** — assertion presented as fact without source, evidence, or operational context.
+17. **Discourse-marker opener** — sentence-initial transitional phrases that cluster in alignment-trained LLM output: "However", "Moreover", "Additionally", "In conclusion", "Furthermore", "It is important to note", "It's worth noting", "Remember". Density flag at >1 per 5 sentences. *(Lin et al., arXiv:2312.01552, 2024.)*
+18. **Focal-word lexicon hit** — words empirically overused by alignment-trained LLMs. Strongest empirical anchor in the literature (Juzek & Ward, COLING 2025; Kobak et al., Science Advances 2025). High-effect-size set: *delves*, *delve*, *delved*, *delving*, *surpassing*, *surpasses*, *intricate*, *intricacies*, *underscore*, *underscores*, *underscoring*, *advancements*, *showcasing*, *showcases*, *boasts*, *garnered*, *emphasizing*, *realm*, *groundbreaking*, *aligns*, *comprehending*, *tapestry*, *unlocking*, *meticulous*, *commendable*. Treat *delve* / *delves* / *delving* as near-deterministic when paired with another tell. Note: this lexicon decays ~6-12 months as awareness rises (Liang et al., Nature Human Behaviour 2025).
+19. **Epistemic flatness** — for posts claiming personal experience or opinion, count first-person uncertainty markers ("I think", "I'm not sure", "maybe", "probably", "in my experience", "I've found", "for what it's worth"). Absence in a 150+-word personal-claim post is a tell — humans hedge in personal narrative; LLMs default to flat assertion. *(Hedging research: arXiv:2408.03319, 2024.)*
+20. **Tricolon density** — count list-of-three structures (commas or short-phrase parallel constructions) per 100 words. LLMs default to lists of three. Distinct from list-stacking (bullets) and over-neat-symmetry (full-post structure). Flag at >1 per 100 words.
 
 ## Score scale (0–10)
 
@@ -103,16 +107,20 @@ specific. Do not say "this sounds AI generated" without explaining the cause.>
 
 ## Validation Check
 
-- **Em dashes:** Pass | Issue found
+- **Em dash density (>1 per 75 words OR ≥3 in <250 words):** Pass | Issue found
 - **Hashtags:** Pass | Issue found
 - **Slogan ending:** Pass | Issue found
 - **Generic bridge phrase:** Pass | Issue found
 - **Artificial contrast:** Pass | Issue found
-- **Negative correction structure:** Pass | Issue found
+- **Negative correction / parallelism:** Pass | Issue found
 - **Marketing language:** Pass | Issue found
 - **Unsupported claim:** Pass | Issue found
 - **Short punchy standalone line:** Pass | Issue found
 - **Robotic paragraph rhythm:** Pass | Issue found
+- **Discourse-marker opener density:** Pass | Issue found
+- **Focal-word lexicon hits:** Pass | Issue found (list which words)
+- **Tricolon density (>1 per 100 words):** Pass | Issue found
+- **Epistemic flatness (no I-think / I'm-not-sure / maybe in personal-claim post):** Pass | Issue found
 - **Invented facts:** Pass | Issue found
 
 ## Summary of Priority Fixes
@@ -120,6 +128,20 @@ specific. Do not say "this sounds AI generated" without explaining the cause.>
 <List the top 3-5 issues to review, ranked by severity. Editorial direction
 only — do not rewrite.>
 ```
+
+## Calibration notes (v1.1, derived from 2024-2026 literature)
+
+**Combination-required scoring.** Single instances of any pattern are unreliable. Penalize *combination/density* of tells, not isolated occurrences. A LinkedIn post with one em dash or one tricolon may be a stylistic choice; the same post with three em dashes, two tricolons, and a slogan closer in 200 words is statistically AI-typical. Require ≥2 distinct tell categories before a non-PASS verdict.
+
+**Length-gate.** Below ~50 words, even SOTA commercial detectors degrade severely. Be conservative on short posts: require ≥2 converging strong tells before flagging anything as REVISE-or-worse.
+
+**Non-native-English overlap.** Stanford research (Liang et al. 2023, *Patterns*) found 61% false-positive rate when AI detectors are applied to non-native-English writing. Do NOT penalize: lexical-density on its own; short-paragraph styles (common across many writing traditions); predictable phrasing as long as content is specific.
+
+**Density, not presence.** Em dashes flag at >1 per 75 words or ≥3 in <250 words. Discourse-marker openers flag at >1 per 5 sentences. Tricolons flag at >1 per 100 words. The literature is consistent: single-instance signals are noise; cluster signals are signal.
+
+**Lexicon decays.** The focal-word list (item 18) has a 6-12-month half-life. Liang et al. (Nature Human Behaviour 2025) showed *delve* and *intricate* frequencies dropped after public awareness in 2024. Flag current uses but expect the list to age out.
+
+For full citations and effect-size data, see [`references/research-2026-05-09-linkedin-ai-detection-literature.md`](../references/research-2026-05-09-linkedin-ai-detection-literature.md).
 
 ## Rules
 
