@@ -1,6 +1,12 @@
 # EthicalHive
 
-**A Claude Code plugin that audits Claude's drafts before you see them.**
+**A Claude Code plugin for AI writing integrity. Three tools in one plugin:**
+
+- **`tvl-tech-bias-validator`** — audits Claude's drafts before delivery (Groundedness, Sycophancy, Confirmation, Anchoring, Scope creep + CoVe). The original.
+- **`linkedin-ai-detector`** — detects formulaic AI writing patterns in LinkedIn posts, short-form blogs, and professional web content. See [linkedin-ai-detector](#linkedin-ai-detector).
+- **`paper-ai-detector`** — detects AI patterns in academic papers (PDF / URL / source) with a citation audit. See [paper-ai-detector](#paper-ai-detector).
+
+All three return a strict Markdown report. None rewrite the input. The bias validator is the core; the rest of this README focuses primarily on it. The detectors live under [Components](#components) with their own subsections.
 
 Claude is often confident when wrong. It agrees with framing the code disagrees with. It quietly adds things you didn't ask for. EthicalHive spawns a *second* Claude in a fresh context, with the same tools, to adversarially review the draft — then shows you both so you can decide what to trust.
 
@@ -379,6 +385,44 @@ That's the case the project takes most seriously. The validator tracks its own o
 **Can I add my own checks?**
 Not without going through governance. Adding a new check is a constitutional change requiring 3-of-3 judge-council approval (Opus + Sonnet + Haiku) plus your approval. The catalog of candidate checks is in [`EthicalAI.md`](EthicalAI.md); proposals go in `proposals/`. This intentional friction prevents the rubric from drifting.
 
+## linkedin-ai-detector
+
+Detects formulaic AI writing patterns in short-form professional content — LinkedIn posts, blog excerpts, web articles, marketing copy. Sister tool to the bias validator: same philosophy (structured report, no rewriting, advisory only), different surface (audits user-supplied text rather than Claude's own draft).
+
+**Output (strict Markdown report):**
+
+- **Pattern Score** (0-10) — 0 is natural human writing; 10 is strongly AI-templated.
+- **Highlighted Text** — original text reproduced with `==phrase==` markers on exact suspicious phrases.
+- **Detected Patterns** — per pattern: name from taxonomy, exact phrase, why flagged, severity (Low/Medium/High), suggested editorial direction.
+- **Main Diagnosis** — 3-5 sentences explaining the mechanism behind the artificial feeling.
+- **11-item Validation Check** — em dashes, hashtags, slogan ending, generic bridge, artificial contrast, negative correction, marketing language, unsupported claim, short standalone line, robotic rhythm, invented facts.
+- **Priority Fixes** — top items to review, ranked by severity.
+
+**Detection coverage** — 13-item taxonomy (rhetorical question opening, list stacking, negative correction, artificial contrast, slogan closer, generic bridge phrase, authority insertion, compression claim, over-neat symmetry, vague abstraction, marketing residue, false tension, uniform paragraph rhythm) plus explicit banned-pattern lists for negative-correction structures, artificial-tension phrases, and generic bridge phrases.
+
+**Tone & calibration** — configured for Alexandru Dan's writing voice (calm, direct, factual, professional, no hype). The orchestrator can pass a preserve-list of domain terms (names, tools, technical jargon) so the detector does not flag them.
+
+**Invocation** — `/linkedin-ai-detector`, or paste a draft and ask to *"detect AI patterns"*, *"check if this LinkedIn post is AI-written"*, *"score this text"*, *"find AI tells"*, *"audit my post"*. Inputs accepted: pasted text or URL (the orchestrator pulls the article body via WebFetch). Does not rewrite. For academic papers, use `paper-ai-detector` instead.
+
+## paper-ai-detector
+
+Detects AI patterns in academic and research papers. Same report shape as `linkedin-ai-detector` plus a **citation audit** and a paper-specific validation checklist. Audience: researchers, peer reviewers, journal editors, and authors auditing their own drafts before submission.
+
+**Inputs accepted:**
+
+- PDFs (the orchestrator extracts text via the `Read` tool's `pages` parameter)
+- arxiv / DOI / journal / preprint-server URLs (via WebFetch)
+- `.tex` source, Markdown source, or pasted plain text
+
+**Output additions vs. linkedin-ai-detector:**
+
+- **Citation Audit (light, default)** — regex-validates that each in-text citation has a bibliography entry; flags entries without DOI or arxiv ID; flags suspicious patterns (same-author clusters across unrelated topics, bibliographies that are 80%+ recent papers, suspiciously generic venue names). Surfaces candidates for manual verification rather than WebFetching every reference (avoids paywalls and slowness). Deep verification available on explicit user opt-in.
+- **Paper-specific 11-item Validation Check** — em dashes in abstract/intro, generic abstract opener, cookie-cutter contributions list, filler hedges, repetitive methodology rhythm, hallucinated citations, synthetic experimental results, conclusion paraphrases abstract, definition-by-tautology, padding / hedge-stacking, marketing residue (*"novel"*, *"groundbreaking"*, *"unprecedented"*, *"state-of-the-art"* unhedged).
+
+**Detection taxonomy** — 13 items adapted for academic content: generic abstract opener (*"In this paper, we propose..."*), cookie-cutter contribution lists (*"Our contributions are threefold..."*), filler hedges (*"It is well known that..."*, *"Recent advances have demonstrated..."*), hallucinated / fabricated citations, synthetic experimental results (suspicious round numbers, missing standard deviations, perfect-power-of-ten sample sizes), generic discussion / future-work boilerplate, conclusion that paraphrases abstract verbatim, definition-by-tautology, padding / hedge-stacking, marketing residue in academic register, vague abstraction, em dashes in formal sections.
+
+**Invocation** — `/paper-ai-detector`, or share a paper and ask to *"detect AI patterns"*, *"audit this paper"*, *"score this manuscript"*, *"check this abstract"*, *"review this submission"*. Does not rewrite. For LinkedIn / blog content, use `linkedin-ai-detector` instead.
+
 ## Components
 
 | Agent | Role | Runs on |
@@ -386,11 +430,15 @@ Not without going through governance. Adding a new check is a constitutional cha
 | `tvl-tech-bias-validator` | Audits drafts — CoVe + 5 checks | Sonnet |
 | `tvl-tech-bias-validator-learner` | Post-audit learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
 | `judge-council` | Reviews proposed rubric/calibration changes — spawned 3× in parallel for genuine model-tier independence | Opus + Sonnet + Haiku |
+| `linkedin-ai-detector` | Detects AI patterns in short-form professional content — strict Markdown report | Sonnet |
+| `paper-ai-detector` | Detects AI patterns in academic papers — same report shape + citation audit | Sonnet |
 
 | Skill | Invocation | Role |
 |---|---|---|
 | `tvl-tech-bias-validator` | `/tvl-tech-bias-validator` | Full audit workflow + learning loop |
 | `tvl-tech-bias-validator-dashboard` | `/tvl-tech-bias-validator-dashboard` | Read-only stats |
+| `linkedin-ai-detector` | `/linkedin-ai-detector` | LinkedIn / blog / web AI-pattern report |
+| `paper-ai-detector` | `/paper-ai-detector` | Academic paper AI-pattern report + citation audit |
 
 ## Learning loop (local)
 
