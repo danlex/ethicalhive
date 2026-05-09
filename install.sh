@@ -20,17 +20,27 @@ install_user_wide() {
 
   rm -f  "$agents_dir/tvl-tech-bias-validator.md" \
          "$agents_dir/tvl-tech-bias-validator-learner.md" \
-         "$agents_dir/judge-council.md"
+         "$agents_dir/judge-council.md" \
+         "$agents_dir/linkedin-ai-detector.md" \
+         "$agents_dir/paper-ai-detector.md"
   rm -rf "$skills_dir/tvl-tech-bias-validator" \
-         "$skills_dir/tvl-tech-bias-validator-dashboard"
+         "$skills_dir/tvl-tech-bias-validator-dashboard" \
+         "$skills_dir/linkedin-ai-detector" \
+         "$skills_dir/paper-ai-detector"
 
   cp "$SCRIPT_DIR/agents/tvl-tech-bias-validator.md"         "$agents_dir/"
   cp "$SCRIPT_DIR/agents/tvl-tech-bias-validator-learner.md" "$agents_dir/"
   cp "$SCRIPT_DIR/agents/judge-council.md"                   "$agents_dir/"
+  cp "$SCRIPT_DIR/agents/linkedin-ai-detector.md"            "$agents_dir/"
+  cp "$SCRIPT_DIR/agents/paper-ai-detector.md"               "$agents_dir/"
   cp -r "$SCRIPT_DIR/skills/tvl-tech-bias-validator"           "$skills_dir/"
   cp -r "$SCRIPT_DIR/skills/tvl-tech-bias-validator-dashboard" "$skills_dir/"
+  cp -r "$SCRIPT_DIR/skills/linkedin-ai-detector"              "$skills_dir/"
+  cp -r "$SCRIPT_DIR/skills/paper-ai-detector"                 "$skills_dir/"
 
-  echo "Installed user-wide: ~/.claude/agents/ + ~/.claude/skills/tvl-tech-bias-validator*"
+  echo "Installed user-wide: ~/.claude/agents/ + ~/.claude/skills/"
+  echo "Skills: /tvl-tech-bias-validator, /tvl-tech-bias-validator-dashboard,"
+  echo "        /linkedin-ai-detector, /paper-ai-detector"
   echo "Available in every Claude Code session on this machine."
 }
 
@@ -122,4 +132,5 @@ ensure_case_db
 
 echo ""
 echo "Case DB: $HOME/.claude/tvl-tech-bias-validator/cases/"
-echo "Start a fresh Claude Code session. Invoke via /tvl-tech-bias-validator."
+echo "Start a fresh Claude Code session. Invoke via /tvl-tech-bias-validator,"
+echo "/linkedin-ai-detector, or /paper-ai-detector."
