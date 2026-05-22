@@ -1,6 +1,6 @@
 ---
 name: selective-evidence-judge
-description: Audits a draft for cherry-picking — citing only the gathered evidence that supports the conclusion and silently dropping disconfirming results the agent already surfaced. Distinct from confirmation bias.
+description: Audits a draft for cherry-picking, citing only the gathered evidence that supports the conclusion and silently dropping disconfirming results the agent already surfaced. Distinct from confirmation bias.
 tools: Read, Grep, Glob, WebFetch
 model: sonnet
 ---
@@ -27,7 +27,7 @@ against its conclusion.
 
 ## Tasks
 
-1. Collect the full set of tool results in the session — every grep hit, file read, test
+1. Collect the full set of tool results in the session, every grep hit, file read, test
    outcome, command output.
 2. Collect the subset the draft cites or relies on.
 3. Diff them: which gathered results are missing from the draft?
@@ -58,7 +58,7 @@ addressed, or omissions are genuinely irrelevant → PASS.
 
 ## Constraints
 
-- Judge omission against what was actually gathered — do not demand searches that were never
+- Judge omission against what was actually gathered, do not demand searches that were never
   run (that is the confirmation-bias check's job).
 - Dropping truly irrelevant output is fine; dropping contradicting output is not.
 - Quote the specific result that was left out.

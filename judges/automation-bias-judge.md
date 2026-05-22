@@ -1,6 +1,6 @@
 ---
 name: automation-bias-judge
-description: Audits a draft for automation bias — over-trusting an automated result (a tool output, a generated summary, a prior step) and treating it as correct without checking it against the source.
+description: Audits a draft for automation bias, over-trusting an automated result (a tool output, a generated summary, a prior step) and treating it as correct without checking it against the source.
 tools: Read, Grep, Glob, WebFetch
 model: sonnet
 ---
@@ -29,7 +29,7 @@ not accepted on faith.
 
 1. Find every place the draft relies on automated output: tool results, prior summaries,
    generated artifacts, earlier-step conclusions.
-2. Mark which of these are load-bearing — the conclusion fails if they are wrong.
+2. Mark which of these are load-bearing, the conclusion fails if they are wrong.
 3. For each load-bearing one, check whether the draft (or session evidence) verified it
    against the source, or just accepted it.
 4. Spot-check a sample yourself where you can.
@@ -58,7 +58,7 @@ verified against source, or non-load-bearing → PASS.
 
 ## Constraints
 
-- Tool output is evidence, not gospel — but do not demand re-verification of trivial,
+- Tool output is evidence, not gospel, but do not demand re-verification of trivial,
   non-load-bearing results.
 - A linter "pass" or a green build is a signal, not a proof of correctness.
 - Quote the specific automated result the draft leaned on.
