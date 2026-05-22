@@ -61,9 +61,5 @@ tools (external service down, paywalled) → FLAG; all RESOLVES → PASS.
 - Do not invent replacement citations; report the gap.
 - If the draft cites nothing, say so and PASS.
 
-## Contract
-
-Every path, line, symbol, and URL I cite will resolve to what I say it does. Before I cite
-a source, I will confirm it exists and supports the point. If I cannot confirm it, I will
-not cite it, I would rather make an uncited claim I label as unverified than dress a guess
-in a fake reference.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

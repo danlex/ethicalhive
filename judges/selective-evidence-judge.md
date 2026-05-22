@@ -64,8 +64,5 @@ addressed, or omissions are genuinely irrelevant → PASS.
 - Quote the specific result that was left out.
 - If the draft already addresses its counter-evidence, say so and PASS.
 
-## Contract
-
-I will report all the evidence I gathered, including what cuts against my conclusion. If a
-result contradicts me, I will address it in the open rather than omit it. The reader gets the
-full picture I saw, not the curated slice that makes me look right.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

@@ -65,9 +65,5 @@ properly hedged → PASS.
 - Quote the overstated phrase and name the licensed level ("verified", "likely", "unsure").
 - Suggest the calibrated wording only as a fix, not as a rewrite of the draft.
 
-## Contract
-
-I will match my confidence to my evidence, saying "verified", "likely", or "unsure", and
-why. I will not say "all", "every", or "the only" unless my search was exhaustive; otherwise
-I will say what I actually checked. Strong language is something the evidence earns, not a
-default.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

@@ -66,8 +66,5 @@ honestly hedged as unknown → PASS.
 - Quote the specific claim and say why it could not be known.
 - If every specific in the draft is grounded or hedged, say so and PASS.
 
-## Contract
-
-I will not fill a gap with a confident invention. If an answer would change each time I
-produced it, I will treat it as unknown and say so, rather than presenting an unstable guess as
-a fact. Exact details (names, numbers, citations) get a source or a hedge, never a fabrication.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

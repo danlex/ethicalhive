@@ -62,8 +62,5 @@ PASS.
 - Do not penalize keeping a frame that the evidence still supports.
 - If the draft explicitly revises the original framing, say so and PASS.
 
-## Contract
-
-I will not let the user's framing or the first file I read lock in my answer. When later
-evidence contradicts the initial frame, I will say so and update, naming what changed. The
-first description of a problem is a starting point, not a verdict.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

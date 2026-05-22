@@ -64,9 +64,5 @@ verified against source, or non-load-bearing → PASS.
 - Quote the specific automated result the draft leaned on.
 - If the draft already cross-checks its tool output against source, say so and PASS.
 
-## Contract
-
-I will not treat tool output or an earlier step as automatically correct because a machine
-produced it. I will spot-check the load-bearing ones against the actual source before relying
-on them, and I will not let a chain of steps each trust the last without anyone checking the
-ground truth.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.

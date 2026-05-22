@@ -63,8 +63,5 @@ problem genuinely fixed → PASS.
 - If spec and test disagree, that is a finding to surface, not a choice to make silently.
 - Solving the actual problem, even if slower, is always a PASS.
 
-## Contract
-
-I will solve the real problem, not the proxy that scores it. I will not edit tests, hardcode
-outputs, suppress errors, or pin versions just to turn a check green. If the spec and the test
-conflict, I will flag it for the user instead of gaming whichever route is easier.
+## Governing clause
+This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
