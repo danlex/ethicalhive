@@ -130,6 +130,27 @@ footer.site a{color:var(--accent);font-weight:600}
   .nav-links a:not(.nav-cta){display:none}
   .hero .wrap{padding:44px 18px 54px}
 }
+
+/* catalogue */
+.catalogue h2{margin-bottom:6px}
+.cat-legend{display:flex;flex-wrap:wrap;gap:18px;margin:10px 0 18px;font-size:13px;color:var(--muted)}
+.dot{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.dot.page{background:var(--accent)}
+.dot.research{background:#6f6b62}
+.dot.analogy{background:var(--panel-2);border:1px solid var(--line)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.cat-fam{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.cat-fam h3{font-family:var(--head);margin:0 0 10px;font-size:14.5px}
+.cat-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cat-chip{font-size:12px;border-radius:999px;padding:3px 10px;border:1px solid var(--line);color:var(--ink);background:#fff}
+.cat-chip .n{opacity:.5;margin-right:5px;font-variant-numeric:tabular-nums}
+.cat-chip.page{background:var(--accent-soft);border-color:var(--accent-soft2);color:var(--accent-d);font-weight:600}
+.cat-chip.analogy{color:#a7a299;background:var(--panel-2)}
+details.mm{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+details.mm>summary{cursor:pointer;padding:12px 16px;font-family:var(--head);font-weight:600;font-size:14px;list-style:none;color:var(--ink)}
+details.mm>summary::-webkit-details-marker{display:none}
+.mm-wrap{padding:10px;overflow:auto;border-top:1px solid var(--line)}
+.mm-wrap .mermaid{min-width:760px}
 </style>
 </head>
 <body>
@@ -155,6 +176,7 @@ footer.site a{color:var(--accent);font-weight:600}
       <a href="#list">Concepts</a>
       <a href="#framework">How it works</a>
       <a href="#contract">Contract</a>
+      <a href="#catalogue">Catalogue</a>
       <a class="nav-cta" href="https://github.com/danlex/ethicalhive" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
@@ -1541,6 +1563,249 @@ By acting on a request that references this Agreement, the Agent acknowledges it
 document and accepts to be bound by it. By making such a request, the Principal accepts the
 obligations in Section 7.</script></div>
   </section>
+
+  <section class="framework catalogue" id="catalogue">
+    <h2>The catalogue</h2>
+    <p>The fourteen shipped checks sit inside a wider map of <strong>100 failure modes seen as parallels to the human brain</strong>, across ten brain systems. The point is not that a model is a brain; it is that a century of naming human error describes AI failure more precisely than engineering jargon. Full corpus with sources is <a href="https://github.com/danlex/ethicalhive/blob/main/references/research-2026-05-23-neuroscience-parallels.md" target="_blank" rel="noopener">in the repository</a>.</p>
+    <div class="cat-legend"><span><span class="dot page"></span>on the page</span><span><span class="dot research"></span>parallel backed by a paper</span><span><span class="dot analogy"></span>cognitive-science analogy</span></div>
+    <div class="cat-grid">
+      <div class="cat-fam"><h3>1. Perception &amp; predictive processing</h3><div class="cat-chips">
+        <span class="cat-chip research"><span class="n">01</span>Controlled hallucination</span>
+        <span class="cat-chip research"><span class="n">02</span>Predictive coding / prediction error</span>
+        <span class="cat-chip analogy"><span class="n">03</span>Priors overriding evidence</span>
+        <span class="cat-chip analogy"><span class="n">04</span>Pattern completion</span>
+        <span class="cat-chip analogy"><span class="n">05</span>Pareidolia / apophenia</span>
+        <span class="cat-chip analogy"><span class="n">06</span>Perceptual filling-in</span>
+        <span class="cat-chip page"><span class="n">07</span>Confabulation</span>
+        <span class="cat-chip page"><span class="n">08</span>Hallucination</span>
+        <span class="cat-chip analogy"><span class="n">09</span>Bistable perception</span>
+        <span class="cat-chip analogy"><span class="n">10</span>Hallucination under low input</span>
+      </div></div>
+      <div class="cat-fam"><h3>2. Memory</h3><div class="cat-chips">
+        <span class="cat-chip analogy"><span class="n">11</span>Working-memory capacity</span>
+        <span class="cat-chip research"><span class="n">12</span>Catastrophic forgetting</span>
+        <span class="cat-chip research"><span class="n">13</span>Complementary learning systems</span>
+        <span class="cat-chip research"><span class="n">14</span>Misinformation effect / false memory</span>
+        <span class="cat-chip analogy"><span class="n">15</span>Source-monitoring error</span>
+        <span class="cat-chip analogy"><span class="n">16</span>Source amnesia</span>
+        <span class="cat-chip analogy"><span class="n">17</span>Cryptomnesia</span>
+        <span class="cat-chip analogy"><span class="n">18</span>Reconstructive memory</span>
+        <span class="cat-chip research"><span class="n">19</span>Serial position effect</span>
+        <span class="cat-chip analogy"><span class="n">20</span>Proactive and retroactive interference</span>
+      </div></div>
+      <div class="cat-fam"><h3>3. Attention &amp; salience</h3><div class="cat-chips">
+        <span class="cat-chip analogy"><span class="n">21</span>Selective attention</span>
+        <span class="cat-chip analogy"><span class="n">22</span>Inattentional blindness</span>
+        <span class="cat-chip analogy"><span class="n">23</span>Change blindness</span>
+        <span class="cat-chip analogy"><span class="n">24</span>Attentional capture / salience bias</span>
+        <span class="cat-chip analogy"><span class="n">25</span>Cognitive tunneling</span>
+        <span class="cat-chip analogy"><span class="n">26</span>Attentional blink</span>
+        <span class="cat-chip analogy"><span class="n">27</span>Spotlight vs zoom-lens attention</span>
+        <span class="cat-chip analogy"><span class="n">28</span>Goal neglect</span>
+        <span class="cat-chip analogy"><span class="n">29</span>Habituation</span>
+        <span class="cat-chip analogy"><span class="n">30</span>Sensory gating failure</span>
+      </div></div>
+      <div class="cat-fam"><h3>4. Heuristics &amp; biases</h3><div class="cat-chips">
+        <span class="cat-chip page"><span class="n">31</span>Anchoring and adjustment</span>
+        <span class="cat-chip research"><span class="n">32</span>Availability heuristic</span>
+        <span class="cat-chip research"><span class="n">33</span>Representativeness</span>
+        <span class="cat-chip analogy"><span class="n">34</span>Base-rate neglect</span>
+        <span class="cat-chip research"><span class="n">35</span>Framing effect</span>
+        <span class="cat-chip page"><span class="n">36</span>Confirmation / myside bias</span>
+        <span class="cat-chip analogy"><span class="n">37</span>Belief perseverance</span>
+        <span class="cat-chip analogy"><span class="n">38</span>Sunk-cost fallacy</span>
+        <span class="cat-chip research"><span class="n">39</span>Conjunction fallacy</span>
+        <span class="cat-chip analogy"><span class="n">40</span>Illusory truth effect</span>
+      </div></div>
+      <div class="cat-fam"><h3>5. Metacognition &amp; confidence</h3><div class="cat-chips">
+        <span class="cat-chip research"><span class="n">41</span>Metacognitive monitoring</span>
+        <span class="cat-chip research"><span class="n">42</span>Uncertainty communication</span>
+        <span class="cat-chip page"><span class="n">43</span>Overconfidence</span>
+        <span class="cat-chip analogy"><span class="n">44</span>Dunning-Kruger effect</span>
+        <span class="cat-chip analogy"><span class="n">45</span>Anosognosia</span>
+        <span class="cat-chip analogy"><span class="n">46</span>Feeling-of-knowing</span>
+        <span class="cat-chip research"><span class="n">47</span>Introspection illusion</span>
+        <span class="cat-chip analogy"><span class="n">48</span>Hard-easy effect</span>
+        <span class="cat-chip analogy"><span class="n">49</span>Overprecision</span>
+        <span class="cat-chip analogy"><span class="n">50</span>Hindsight bias</span>
+      </div></div>
+      <div class="cat-fam"><h3>6. Reasoning architecture</h3><div class="cat-chips">
+        <span class="cat-chip research"><span class="n">51</span>Dual-process, System 1 and System 2</span>
+        <span class="cat-chip analogy"><span class="n">52</span>Cognitive miserliness</span>
+        <span class="cat-chip analogy"><span class="n">53</span>Cognitive load</span>
+        <span class="cat-chip research"><span class="n">54</span>Motivated reasoning</span>
+        <span class="cat-chip research"><span class="n">55</span>Confabulated reasons</span>
+        <span class="cat-chip research"><span class="n">56</span>Split-brain interpreter</span>
+        <span class="cat-chip analogy"><span class="n">57</span>Belief bias</span>
+        <span class="cat-chip analogy"><span class="n">58</span>Einstellung / mental set</span>
+        <span class="cat-chip page"><span class="n">59</span>Narrativity drift</span>
+        <span class="cat-chip analogy"><span class="n">60</span>Functional fixedness</span>
+      </div></div>
+      <div class="cat-fam"><h3>7. Social cognition &amp; theory of mind</h3><div class="cat-chips">
+        <span class="cat-chip research"><span class="n">61</span>Theory of mind / mentalizing</span>
+        <span class="cat-chip research"><span class="n">62</span>False-belief tracking</span>
+        <span class="cat-chip research"><span class="n">63</span>Conformity (Asch)</span>
+        <span class="cat-chip research"><span class="n">64</span>Obedience to authority (Milgram)</span>
+        <span class="cat-chip page"><span class="n">65</span>Sycophancy</span>
+        <span class="cat-chip page"><span class="n">66</span>Capitulation</span>
+        <span class="cat-chip analogy"><span class="n">67</span>Suggestibility</span>
+        <span class="cat-chip analogy"><span class="n">68</span>Emotional contagion</span>
+        <span class="cat-chip research"><span class="n">69</span>Social desirability / people-pleasing</span>
+        <span class="cat-chip analogy"><span class="n">70</span>In-group favouritism</span>
+      </div></div>
+      <div class="cat-fam"><h3>8. Moral cognition</h3><div class="cat-chips">
+        <span class="cat-chip research"><span class="n">71</span>Dual-process moral judgment</span>
+        <span class="cat-chip research"><span class="n">72</span>Amplified moral bias</span>
+        <span class="cat-chip research"><span class="n">73</span>Omission bias</span>
+        <span class="cat-chip analogy"><span class="n">74</span>Moral licensing</span>
+        <span class="cat-chip analogy"><span class="n">75</span>Moral disengagement</span>
+        <span class="cat-chip analogy"><span class="n">76</span>Scope insensitivity</span>
+        <span class="cat-chip analogy"><span class="n">77</span>Identifiable-victim effect</span>
+        <span class="cat-chip analogy"><span class="n">78</span>Just-world bias</span>
+        <span class="cat-chip research"><span class="n">79</span>Trolley-frame sensitivity</span>
+        <span class="cat-chip analogy"><span class="n">80</span>Value misgeneralisation</span>
+      </div></div>
+      <div class="cat-fam"><h3>9. Self-model &amp; agency</h3><div class="cat-chips">
+        <span class="cat-chip analogy"><span class="n">81</span>Sense of agency</span>
+        <span class="cat-chip analogy"><span class="n">82</span>Confabulated agency</span>
+        <span class="cat-chip analogy"><span class="n">83</span>Default-mode / mind-wandering</span>
+        <span class="cat-chip research"><span class="n">84</span>Self-referential processing</span>
+        <span class="cat-chip analogy"><span class="n">85</span>Identity stability</span>
+        <span class="cat-chip research"><span class="n">86</span>Metacognitive self-prediction</span>
+        <span class="cat-chip analogy"><span class="n">87</span>Confidence-action coupling</span>
+        <span class="cat-chip analogy"><span class="n">88</span>Learned helplessness</span>
+        <span class="cat-chip analogy"><span class="n">89</span>Effort discounting</span>
+        <span class="cat-chip analogy"><span class="n">90</span>Theory of own mind</span>
+      </div></div>
+      <div class="cat-fam"><h3>10. Language &amp; semantics</h3><div class="cat-chips">
+        <span class="cat-chip analogy"><span class="n">91</span>Aphasia / paraphasia</span>
+        <span class="cat-chip analogy"><span class="n">92</span>Semantic satiation</span>
+        <span class="cat-chip analogy"><span class="n">93</span>Garden-path parsing</span>
+        <span class="cat-chip analogy"><span class="n">94</span>Semantic priming</span>
+        <span class="cat-chip analogy"><span class="n">95</span>Gricean cooperative principle</span>
+        <span class="cat-chip analogy"><span class="n">96</span>Pragmatic over-accommodation</span>
+        <span class="cat-chip research"><span class="n">97</span>Presupposition accommodation</span>
+        <span class="cat-chip analogy"><span class="n">98</span>Register matching</span>
+        <span class="cat-chip analogy"><span class="n">99</span>Lexical overconfidence</span>
+        <span class="cat-chip analogy"><span class="n">100</span>Verbal overshadowing</span>
+      </div></div>
+    </div>
+    <details class="mm">
+      <summary>View as a mindmap diagram</summary>
+      <div class="mm-wrap"><pre class="mermaid">mindmap
+  root((AI failure modes through the brain))
+    Perception and predictive processing
+      Controlled hallucination
+      Predictive coding or prediction error
+      Priors overriding evidence
+      Pattern completion
+      Pareidolia or apophenia
+      Perceptual filling-in
+      Confabulation
+      Hallucination
+      Bistable perception
+      Hallucination under low input
+    Memory
+      Working-memory capacity
+      Catastrophic forgetting
+      Complementary learning systems
+      Misinformation effect or false memory
+      Source-monitoring error
+      Source amnesia
+      Cryptomnesia
+      Reconstructive memory
+      Serial position effect
+      Proactive and retroactive interference
+    Attention and salience
+      Selective attention
+      Inattentional blindness
+      Change blindness
+      Attentional capture or salience bias
+      Cognitive tunneling
+      Attentional blink
+      Spotlight vs zoom-lens attention
+      Goal neglect
+      Habituation
+      Sensory gating failure
+    Heuristics and biases
+      Anchoring and adjustment
+      Availability heuristic
+      Representativeness
+      Base-rate neglect
+      Framing effect
+      Confirmation or myside bias
+      Belief perseverance
+      Sunk-cost fallacy
+      Conjunction fallacy
+      Illusory truth effect
+    Metacognition and confidence
+      Metacognitive monitoring
+      Uncertainty communication
+      Overconfidence
+      Dunning-Kruger effect
+      Anosognosia
+      Feeling-of-knowing
+      Introspection illusion
+      Hard-easy effect
+      Overprecision
+      Hindsight bias
+    Reasoning architecture
+      Dual-process System 1 and System 2
+      Cognitive miserliness
+      Cognitive load
+      Motivated reasoning
+      Confabulated reasons
+      Split-brain interpreter
+      Belief bias
+      Einstellung or mental set
+      Narrativity drift
+      Functional fixedness
+    Social cognition and theory of mind
+      Theory of mind or mentalizing
+      False-belief tracking
+      Conformity Asch
+      Obedience to authority Milgram
+      Sycophancy
+      Capitulation
+      Suggestibility
+      Emotional contagion
+      Social desirability or people-pleasing
+      In-group favouritism
+    Moral cognition
+      Dual-process moral judgment
+      Amplified moral bias
+      Omission bias
+      Moral licensing
+      Moral disengagement
+      Scope insensitivity
+      Identifiable-victim effect
+      Just-world bias
+      Trolley-frame sensitivity
+      Value misgeneralisation
+    Self-model and agency
+      Sense of agency
+      Confabulated agency
+      Default-mode or mind-wandering
+      Self-referential processing
+      Identity stability
+      Metacognitive self-prediction
+      Confidence-action coupling
+      Learned helplessness
+      Effort discounting
+      Theory of own mind
+    Language and semantics
+      Aphasia or paraphasia
+      Semantic satiation
+      Garden-path parsing
+      Semantic priming
+      Gricean cooperative principle
+      Pragmatic over-accommodation
+      Presupposition accommodation
+      Register matching
+      Lexical overconfidence
+      Verbal overshadowing</pre></div>
+    </details>
+  </section>
 </div>
 
 <footer class="site">
@@ -1614,6 +1879,15 @@ obligations in Section 7.</script></div>
     });
     noResults.style.display = shown===0 ? 'block' : 'none';
   }
+})();
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+(function(){
+  var d=document.querySelector("details.mm"), done=false;
+  if(d) d.addEventListener("toggle", function(){
+    if(d.open && !done && window.mermaid){ done=true; window.mermaid.initialize({startOnLoad:false}); window.mermaid.run({querySelector:"details.mm .mermaid"}); }
+  });
 })();
 </script>
 </body>
