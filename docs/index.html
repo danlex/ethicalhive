@@ -9,6 +9,206 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/">
+<meta name="author" content="Alexandru Dan, TVL Tech">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EthicalAI">
+<meta property="og:title" content="EthicalAI, failure modes, prevention, and judge agents">
+<meta property="og:description" content="A field guide to AI integrity failure modes, hallucination, sycophancy, confirmation bias and more. Each with a definition, examples, a prevention prompt, an installable Claude Code judge agent, and a contract.">
+<meta property="og:url" content="https://ethicalai.alexandrudan.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ethicalai.alexandrudan.com/og-image.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:image:alt" content="EthicalAI, a field guide to AI integrity failure modes">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EthicalAI, failure modes, prevention, and judge agents">
+<meta name="twitter:description" content="A field guide to AI integrity failure modes, hallucination, sycophancy, confirmation bias and more. Each with a definition, examples, a prevention prompt, an installable Claude Code judge agent, and a contract.">
+<meta name="twitter:image" content="https://ethicalai.alexandrudan.com/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ethicalai.alexandrudan.com/#website",
+      "url": "https://ethicalai.alexandrudan.com/",
+      "name": "EthicalAI",
+      "description": "A field guide to AI integrity failure modes, hallucination, sycophancy, confirmation bias and more. Each with a definition, examples, a prevention prompt, an installable Claude Code judge agent, and a contract.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://ethicalai.alexandrudan.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ethicalai.alexandrudan.com/#org",
+      "name": "TVL Tech",
+      "url": "https://alexandrudan.com/",
+      "logo": "https://ethicalai.alexandrudan.com/og-image.png"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ethicalai.alexandrudan.com/#author",
+      "name": "Alexandru Dan",
+      "url": "https://alexandrudan.com/"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://ethicalai.alexandrudan.com/#article",
+      "headline": "EthicalAI, failure modes, prevention, and judge agents",
+      "name": "EthicalAI",
+      "description": "A field guide to AI integrity failure modes, hallucination, sycophancy, confirmation bias and more. Each with a definition, examples, a prevention prompt, an installable Claude Code judge agent, and a contract.",
+      "inLanguage": "en",
+      "url": "https://ethicalai.alexandrudan.com/",
+      "mainEntityOfPage": "https://ethicalai.alexandrudan.com/",
+      "isPartOf": {
+        "@id": "https://ethicalai.alexandrudan.com/#website"
+      },
+      "author": {
+        "@id": "https://ethicalai.alexandrudan.com/#author"
+      },
+      "publisher": {
+        "@id": "https://ethicalai.alexandrudan.com/#org"
+      },
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-23",
+      "image": "https://ethicalai.alexandrudan.com/og-image.png",
+      "keywords": [
+        "AI integrity",
+        "hallucination",
+        "sycophancy",
+        "confirmation bias",
+        "prompt injection",
+        "specification gaming",
+        "AI alignment",
+        "Claude Code",
+        "judge agents",
+        "LLM evaluation",
+        "reward hacking"
+      ],
+      "about": [
+        {
+          "@id": "https://ethicalai.alexandrudan.com/#glossary"
+        }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://ethicalai.alexandrudan.com/#glossary",
+      "name": "AI integrity failure modes",
+      "description": "Fourteen ways AI output goes wrong, each with a definition, a check, and an installable judge agent.",
+      "url": "https://ethicalai.alexandrudan.com/",
+      "inLanguage": "en",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hallucination",
+          "description": "Stating as fact something the sources and reality do not support.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#hallucination"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Confabulation",
+          "description": "Making something up with full confidence, then giving a different made-up answer when asked again.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#confabulation"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Source Fabrication",
+          "description": "The claim might be true, but the path, line, function, or URL it cites doesn't exist.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#source-fabrication"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Narrativity Drift",
+          "description": "A smooth, story-shaped explanation whose coherence hides that the evidence isn't there.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#narrativity-drift"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Sycophancy",
+          "description": "Telling you what you want to hear instead of what's true.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#sycophancy"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Capitulation",
+          "description": "Folding on a correct answer just because you pushed back, no new evidence, just pressure.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#capitulation"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Confirmation Bias",
+          "description": "Concluding what you set out to find, gathering only the evidence that fits.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#confirmation-bias"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Selective Evidence",
+          "description": "You found the disconfirming result, and quietly left it out of the answer.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#selective-evidence"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Anchoring",
+          "description": "Letting the first framing set the answer, and not updating when later evidence breaks it.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#anchoring"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Automation Bias",
+          "description": "Trusting a machine's output because a machine produced it.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#automation-bias"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Overconfidence",
+          "description": "Stated certainty that runs ahead of the evidence, including false claims of completeness.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#overconfidence"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Prompt Injection",
+          "description": "Obeying instructions hidden in content it was only supposed to read.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#prompt-injection"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Scope Creep",
+          "description": "Doing more than you asked, especially the changes nobody mentioned and can't undo.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#scope-creep"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Specification Gaming",
+          "description": "Hitting the letter of the goal by breaking its spirit.",
+          "inDefinedTermSet": "https://ethicalai.alexandrudan.com/#glossary",
+          "url": "https://ethicalai.alexandrudan.com/#specification-gaming"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --accent:#FF4931; --accent-d:#e23a23;
@@ -228,7 +428,7 @@ details.mm>summary::-webkit-details-marker{display:none}
   <main id="list">
 
   <!-- 1 HALLUCINATION -->
-  <details class="concept" data-fam="truth" data-key="hallucination fabricate invent unsupported made up wrong fact misread not true" open>
+  <details id="hallucination" class="concept" data-fam="truth" data-key="hallucination fabricate invent unsupported made up wrong fact misread not true" open>
     <summary>
       <span class="num">01</span>
       <div class="head">
@@ -308,7 +508,7 @@ Recovery: a stated fact with no traceable support is FAIL.</pre></div>
   </details>
 
   <!-- CONFABULATION -->
-  <details class="concept" data-fam="truth" data-key="confabulation unstable resample semantic entropy different answer made up confident guess varies">
+  <details id="confabulation" class="concept" data-fam="truth" data-key="confabulation unstable resample semantic entropy different answer made up confident guess varies">
     <summary>
       <span class="num">02</span>
       <div class="head">
@@ -388,7 +588,7 @@ Recovery: an ungrounded specific that would vary on re-sampling is FAIL.</pre></
   </details>
 
   <!-- 2 SOURCE FABRICATION -->
-  <details class="concept" data-fam="truth" data-key="citation source fabrication reference url line number doesn't exist attribution">
+  <details id="source-fabrication" class="concept" data-fam="truth" data-key="citation source fabrication reference url line number doesn't exist attribution">
     <summary>
       <span class="num">02</span>
       <div class="head">
@@ -467,7 +667,7 @@ Recovery: a non resolving or wrong target citation is FAIL.</pre></div>
   </details>
 
   <!-- 3 NARRATIVITY DRIFT -->
-  <details class="concept" data-fam="truth" data-key="narrative story coherent smooth gaps root cause plan unverified">
+  <details id="narrativity-drift" class="concept" data-fam="truth" data-key="narrative story coherent smooth gaps root cause plan unverified">
     <summary>
       <span class="num">03</span>
       <div class="head">
@@ -546,7 +746,7 @@ Recovery: a load bearing assumed step presented as fact is FAIL.</pre></div>
   </details>
 
   <!-- 4 SYCOPHANCY -->
-  <details class="concept" data-fam="pressure" data-key="sycophancy agree flatter please validation premise soften yes-man">
+  <details id="sycophancy" class="concept" data-fam="pressure" data-key="sycophancy agree flatter please validation premise soften yes-man">
     <summary>
       <span class="num">04</span>
       <div class="head">
@@ -625,7 +825,7 @@ Recovery: unsupported agreement is REVISE; softening a correct point into error 
   </details>
 
   <!-- 5 CAPITULATION -->
-  <details class="concept" data-fam="pressure" data-key="capitulation pushback are you sure reverse fold refusal walk back multi-turn">
+  <details id="capitulation" class="concept" data-fam="pressure" data-key="capitulation pushback are you sure reverse fold refusal walk back multi-turn">
     <summary>
       <span class="num">05</span>
       <div class="head">
@@ -704,7 +904,7 @@ Recovery: a pressure only reversal is FAIL.</pre></div>
   </details>
 
   <!-- 6 CONFIRMATION BIAS -->
-  <details class="concept" data-fam="reasoning" data-key="confirmation bias one-sided alternative hypothesis untested conclusion">
+  <details id="confirmation-bias" class="concept" data-fam="reasoning" data-key="confirmation bias one-sided alternative hypothesis untested conclusion">
     <summary>
       <span class="num">06</span>
       <div class="head">
@@ -783,7 +983,7 @@ Recovery: a one sided positive conclusion is REVISE; ignoring contrary in sessio
   </details>
 
   <!-- 7 SELECTIVE EVIDENCE -->
-  <details class="concept" data-fam="reasoning" data-key="cherry-picking selective evidence omit drop counter-evidence motivated reasoning">
+  <details id="selective-evidence" class="concept" data-fam="reasoning" data-key="cherry-picking selective evidence omit drop counter-evidence motivated reasoning">
     <summary>
       <span class="num">07</span>
       <div class="head">
@@ -862,7 +1062,7 @@ Recovery: an omitted contradicting result is FAIL.</pre></div>
   </details>
 
   <!-- 8 ANCHORING -->
-  <details class="concept" data-fam="reasoning" data-key="anchoring first framing initial assumption update primacy stale frame">
+  <details id="anchoring" class="concept" data-fam="reasoning" data-key="anchoring first framing initial assumption update primacy stale frame">
     <summary>
       <span class="num">08</span>
       <div class="head">
@@ -941,7 +1141,7 @@ Recovery: a contradicted but unchanged frame is FAIL.</pre></div>
   </details>
 
   <!-- 9 AUTOMATION BIAS -->
-  <details class="concept" data-fam="trust" data-key="automation bias trust tool output linter prior summary previous step unchecked">
+  <details id="automation-bias" class="concept" data-fam="trust" data-key="automation bias trust tool output linter prior summary previous step unchecked">
     <summary>
       <span class="num">09</span>
       <div class="head">
@@ -1020,7 +1220,7 @@ Recovery: load bearing reliance on unchecked automated output is REVISE; a wrong
   </details>
 
   <!-- 10 OVERCONFIDENCE -->
-  <details class="concept" data-fam="trust" data-key="overconfidence certainty calibration definitely guaranteed all every only complete">
+  <details id="overconfidence" class="concept" data-fam="trust" data-key="overconfidence certainty calibration definitely guaranteed all every only complete">
     <summary>
       <span class="num">10</span>
       <div class="head">
@@ -1099,7 +1299,7 @@ Recovery: confidence or completeness beyond the evidence is REVISE; flatly contr
   </details>
 
   <!-- PROMPT INJECTION -->
-  <details class="concept" data-fam="trust" data-key="prompt injection indirect instructions observed content owasp ignore previous security poisoning untrusted">
+  <details id="prompt-injection" class="concept" data-fam="trust" data-key="prompt injection indirect instructions observed content owasp ignore previous security poisoning untrusted">
     <summary>
       <span class="num">12</span>
       <div class="head">
@@ -1179,7 +1379,7 @@ Recovery: acting on injected instructions without Approval is FAIL.</pre></div>
   </details>
 
   <!-- 11 SCOPE CREEP -->
-  <details class="concept" data-fam="scope" data-key="scope creep beyond ask extra refactor unrequested undisclosed irreversible feature creep">
+  <details id="scope-creep" class="concept" data-fam="scope" data-key="scope creep beyond ask extra refactor unrequested undisclosed irreversible feature creep">
     <summary>
       <span class="num">11</span>
       <div class="head">
@@ -1258,7 +1458,7 @@ Recovery: an undisclosed or irreversible addition is FAIL; a disclosed reversibl
   </details>
 
   <!-- SPECIFICATION GAMING -->
-  <details class="concept" data-fam="scope" data-key="specification gaming reward hacking cheat test edit hardcode suppress pin metric proxy game CI green">
+  <details id="specification-gaming" class="concept" data-fam="scope" data-key="specification gaming reward hacking cheat test edit hardcode suppress pin metric proxy game CI green">
     <summary>
       <span class="num">14</span>
       <div class="head">
