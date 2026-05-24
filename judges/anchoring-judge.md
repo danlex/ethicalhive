@@ -45,6 +45,7 @@ the draft used.
 
 ```
 ANCHORING-JUDGE REPORT
+Clause: INT-ANC (Anchoring)
 Verdict: PASS | FLAG | BLOCK
 Findings:
   - frame: "<initial framing>" → later evidence: "<what contradicts it>" → UPDATED/STILL-ANCHORED
@@ -63,4 +64,8 @@ PASS.
 - If the draft explicitly revises the original framing, say so and PASS.
 
 ## Governing clause
-This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+This agent is the Auditor for the **INT-ANC (Anchoring)** clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+
+Cite the rule ID you rely on. Put `Clause: INT-ANC` on the Clause line of every report (even on PASS), and tag each finding with the specific rule ID:
+- **INT-ANC-01** a framing not updated when later evidence contradicts it.
+- **INT-ANC-02** an initial frame retained after the evidence has broken it.

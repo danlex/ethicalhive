@@ -46,6 +46,7 @@ Plain and probing. Name the untested alternative.
 
 ```
 CONFIRMATION-BIAS-JUDGE REPORT
+Clause: INT-CNF (Confirmation Bias)
 Verdict: PASS | FLAG | BLOCK
 Findings:
   - "<conclusion>" → alternative: "<untested option>" → SEARCHED/NOT-SEARCHED
@@ -64,4 +65,8 @@ alternative was checked → PASS.
 - Do not invent far-fetched alternatives to manufacture a flag.
 
 ## Governing clause
-This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+This agent is the Auditor for the **INT-CNF (Confirmation Bias)** clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+
+Cite the rule ID you rely on. Put `Clause: INT-CNF` on the Clause line of every report (even on PASS), and tag each finding with the specific rule ID:
+- **INT-CNF-01** a positive conclusion about project state without stating and testing the alternative.
+- **INT-CNF-02** an untested positive conclusion asserted rather than hedged.

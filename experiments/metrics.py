@@ -5,7 +5,13 @@ Treats REVISE and BLOCK as a positive "flag" and SHIP as negative, so a single-m
 suite is scored as binary detection plus exact-verdict accuracy.
 
 Usage:
-    python3 metrics.py results/run-foo-contract-*.jsonl [more.jsonl ...]
+    python3 metrics.py results/run-foo-*.jsonl [more.jsonl ...] [--inspect [N]]
+
+Flags:
+    --inspect [N]   After the summary, print per-case detail: reviewer, got verdict,
+                    gold_clauses, rule_ids cited, and the first N characters (default 600)
+                    of the reviewer output. Useful for confirming rule-ID emission and
+                    sanity-checking judge behavior without piping ad-hoc heredocs.
 """
 import json, sys, glob
 from collections import defaultdict
@@ -74,9 +80,25 @@ def fmt(x):
 
 
 def main():
-    if len(sys.argv) < 2:
+    args = sys.argv[1:]
+    if not args:
         print(__doc__); sys.exit(1)
-    rows = load(sys.argv[1:])
+
+    inspect = False
+    inspect_chars = 600
+    paths = []
+    i = 0
+    while i < len(args):
+        a = args[i]
+        if a == "--inspect":
+            inspect = True
+            if i + 1 < len(args) and args[i + 1].isdigit():
+                inspect_chars = int(args[i + 1]); i += 1
+        else:
+            paths.append(a)
+        i += 1
+
+    rows = load(paths)
     if not rows:
         print("No rows found."); sys.exit(1)
 
@@ -106,6 +128,22 @@ def main():
         for cid in sorted(by_case):
             cells = "  ".join(f"{by_case[cid].get(rv,'-'):>8}" for rv in revs)
             print(f"{cid:<34}{gold[cid]:>6}  {cells}")
+
+    if inspect:
+        print("\nPer-case detail:")
+        for r in rows:
+            print(f"\n  case        {r['case_id']}")
+            print(f"  reviewer    {r.get('reviewer','?')}")
+            print(f"  expected    {r['expected']}")
+            print(f"  got         {r['got']}")
+            print(f"  gold_clauses {r.get('gold_clauses', [])}")
+            print(f"  rule_ids    {r.get('rule_ids', [])}")
+            snippet = (r.get("output", "") or "").strip().replace("\r", "")
+            if snippet:
+                if len(snippet) > inspect_chars:
+                    snippet = snippet[:inspect_chars] + "\n  ... [truncated]"
+                indented = "\n".join("    " + ln for ln in snippet.splitlines())
+                print(f"  output:\n{indented}")
 
 
 if __name__ == "__main__":

@@ -47,6 +47,7 @@ Plain and skeptical. Name the unchecked automated input.
 
 ```
 AUTOMATION-BIAS-JUDGE REPORT
+Clause: INT-AUT (Automation Bias)
 Verdict: PASS | FLAG | BLOCK
 Findings:
   - "<reliance on automated output>" → VERIFIED/UNCHECKED → <source to confirm against>
@@ -65,4 +66,8 @@ verified against source, or non-load-bearing → PASS.
 - If the draft already cross-checks its tool output against source, say so and PASS.
 
 ## Governing clause
-This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+This agent is the Auditor for the **INT-AUT (Automation Bias)** clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+
+Cite the rule ID you rely on. Put `Clause: INT-AUT` on the Clause line of every report (even on PASS), and tag each finding with the specific rule ID:
+- **INT-AUT-01** a load-bearing automated output relied on without checking it against the source.
+- **INT-AUT-02** a tool result or prior step treated as correct merely because a machine produced it.

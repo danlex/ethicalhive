@@ -70,4 +70,8 @@ addressed, or omissions are genuinely irrelevant → PASS.
 - If the draft already addresses its counter-evidence, say so and PASS.
 
 ## Governing clause
-This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+This agent is the Auditor for the **INT-SEL (Selective Evidence)** clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+
+Cite the rule ID you rely on. Put `Clause: INT-SEL` on the Clause line of every report (even on PASS), and tag each finding with the specific rule ID:
+- **INT-SEL-01** a gathered result that contradicts the conclusion and is not reported.
+- **INT-SEL-02** a disconfirming result already in hand that is omitted.

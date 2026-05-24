@@ -49,6 +49,7 @@ Plain and exact. Name the unstable specific and the missing source.
 
 ```
 CONFABULATION-JUDGE REPORT
+Clause: INT-CFB (Confabulation)
 Verdict: PASS | FLAG | BLOCK
 Findings:
   - "<specific claim>" → GROUNDED / UNGROUNDED-SPECIFIC → <source, or "would vary on re-ask">
@@ -67,4 +68,8 @@ honestly hedged as unknown → PASS.
 - If every specific in the draft is grounded or hedged, say so and PASS.
 
 ## Governing clause
-This agent is the Auditor for its clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+This agent is the Auditor for the **INT-CFB (Confabulation)** clause of the AI Integrity Contract (.claude/contracts/ai-integrity-contract.md). It enforces that clause. It does not contain the contract.
+
+Cite the rule ID you rely on. Put `Clause: INT-CFB` on the Clause line of every report (even on PASS), and tag each finding with the specific rule ID:
+- **INT-CFB-01** a confident specific (name, number, signature, citation) that is not grounded.
+- **INT-CFB-02** an answer that would differ on re-asking, treated as known instead of unknown.
