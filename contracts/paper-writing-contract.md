@@ -1,7 +1,7 @@
 # Paper Writing Contract
 
-**Version:** 1.0
-**Effective date:** 2026-05-24
+**Version:** 1.1
+**Effective date:** 2026-05-26 (was 1.0 on 2026-05-24)
 **Document type:** Binding writing standard for the EthicalAI workshop paper.
 **Auditors:** `paper-bias-judge`, `paper-ai-detector`, and the relevant EthicalAI clause
 judges named below.
@@ -57,9 +57,12 @@ The keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY follow
   BLOCK.
 - **PAP-SRC-02** (MUST). Citations resolve. A cited arXiv ID, venue, author, or URL MUST point
   to what the draft says it does. The `source-fabrication-judge` enforces this.
-- **PAP-SRC-03** (MUST NOT). The four currently unverified citations (AgentDojo, InjecAgent,
-  RAGTruth, ImpossibleBench) MUST NOT appear in any final draft section until they move from
-  "References to verify before citing" to "Confirmed" in `paper/proposal.md`.
+- **PAP-SRC-03** (MUST NOT). No citation in the "References to verify before citing (do not
+  cite unchecked)" list of `paper/proposal.md` appears in any final draft section until it
+  has been moved to the confirmed list with arXiv ID and authors. (As of v1.1 on 2026-05-26,
+  AgentDojo arXiv 2406.13352, InjecAgent arXiv 2403.02691, RAGTruth arXiv 2401.00396, and
+  ImpossibleBench arXiv 2510.20270 have been verified and are now citable; the to-verify
+  list is empty.)
 - **PAP-SRC-04** (MUST NOT). Do not invent experimental numbers, authors, venues, arXiv IDs,
   or any quantitative result. Experimental numbers come from `experiments/results/*.jsonl` and
   the tables in `experiments/seed-selective-evidence.md`.
@@ -169,3 +172,7 @@ Amendments take effect at the next draft, never mid-section.
 
 - **1.0** (2026-05-24) Initial paper writing contract. Five clause groups (PAP-SCO, PAP-SRC,
   PAP-STR, PAP-FMT, PAP-QUA), mapped to council Auditors.
+- **1.1** (2026-05-26) PAP-SRC-03 rewritten as a general rule pointing to the
+  `paper/proposal.md` to-verify list, rather than naming four specific citations. The four
+  (AgentDojo 2406.13352, InjecAgent 2403.02691, RAGTruth 2401.00396, ImpossibleBench
+  2510.20270) have been verified and are now citable.

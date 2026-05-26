@@ -71,9 +71,11 @@ The Lead gives you: the **section name**, an optional **existing draft**, and an
    - Model aliases only (`opus`, `sonnet`, `haiku`). Never pin a model ID.
    - No meta apologetics in the body.
 5. **Cite only verified sources** (PAP-SRC):
-   - Confirmed list is in `paper/proposal.md` § "Confirmed in this scan".
-   - The four unconfirmed (**AgentDojo**, **InjecAgent**, **RAGTruth**, **ImpossibleBench**)
-     MUST NOT appear in the section until they are confirmed and moved.
+   - Confirmed list is in `paper/proposal.md` § "Confirmed in this scan" and the entries
+     verified on 2026-05-26 just below it.
+   - Any citation in the to-verify list (when populated) MUST NOT appear in the section
+     until it has been moved to confirmed with arXiv ID and authors. As of 2026-05-26 the
+     to-verify list is empty; if it grows, re-check before citing.
    - Experimental numbers come from the seed doc and result JSONLs, never from memory.
 
 ### Honest constraints

@@ -130,6 +130,7 @@ PAP-* clauses verified: [PAP-SCO-01, PAP-STR-04, PAP-FMT-02, ...]
 - **Soft-bragging in synthesis.** Recasting the seed result as a detection win. The
   honest framing is at-equal-recall **specificity** and **rule-ID traceability**, plus
   severity calibration as the named open problem.
-- **Unverified citations slipping in.** AgentDojo, InjecAgent, RAGTruth, ImpossibleBench
-  must stay out until `paper/proposal.md` moves them from "to verify" to "Confirmed".
+- **Unverified citations slipping in.** Any citation in the to-verify list of
+  `paper/proposal.md` stays out until moved to confirmed with arXiv ID and authors. As of
+  2026-05-26 the list is empty; if it grows, re-check before citing.
 - **Em-dashes re-introduced.** Every revision pass re-checks PAP-FMT-02.

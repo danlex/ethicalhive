@@ -194,9 +194,12 @@ Confirmed in this scan (URL retrieved):
 - FaithBench (NAACL 2025), arXiv 2410.13210
 - Benchmarking LLM Faithfulness in RAG with Evolving Leaderboards, arXiv 2505.04847
 - FaithJudge, github.com/vectara/FaithJudge
+- AgentDojo (NeurIPS 2024 Datasets & Benchmarks), arXiv 2406.13352 -- Debenedetti, Zhang, Balunovic, Beurer-Kellner, Fischer, Tramèr. 97 tasks, 629 security cases over prompt injection.
+- InjecAgent (ACL 2024 Findings), arXiv 2403.02691 -- Zhan, Liang, Ying, Kang (UIUC). 1,054 indirect-prompt-injection cases across 17 user tools and 62 attacker tools.
+- RAGTruth (ACL 2024), arXiv 2401.00396 -- Niu, Wu, Zhu, Xu, Shum, Zhong, Song, Zhang. ~18k word-level hallucination annotations on RAG outputs.
+- ImpossibleBench (preprint), arXiv 2510.20270 -- Zhong, Raghunathan, Carlini. Title: "ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases." Reward-hacking via mutated tests on LiveCodeBench / SWE-bench.
 
-Named but arXiv ID / authors NOT yet verified (confirm before citing):
-- AgentDojo, InjecAgent, RAGTruth, ImpossibleBench
+Verified on 2026-05-26; the previous "Named but arXiv ID / authors NOT yet verified" list is now empty. PAP-SRC-03 no longer holds these four citations out.
 
 Already verified in repo prior-art (`references/prior-art.md`):
 - Constitutional AI 2212.08073, Self-Refine 2303.17651, Reflexion 2303.11366,
