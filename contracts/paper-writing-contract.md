@@ -1,7 +1,7 @@
 # Paper Writing Contract
 
-**Version:** 1.1
-**Effective date:** 2026-05-26 (was 1.0 on 2026-05-24)
+**Version:** 1.2
+**Effective date:** 2026-05-26 (was 1.0 on 2026-05-24, 1.1 on 2026-05-26)
 **Document type:** Binding writing standard for the EthicalAI workshop paper.
 **Auditors:** `paper-bias-judge`, `paper-ai-detector`, and the relevant EthicalAI clause
 judges named below.
@@ -119,7 +119,45 @@ The keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY follow
   paste-ready fix (exact replacement sentence, missing proof step, citation to add). A verdict
   without proposed fixes is itself an incomplete review and is sent back.
 
-## 8. Working draft template
+## 8. Working mode (PAP-WORK)
+
+The Agent must keep working. Capitulation under social pressure, and stopping early to seek
+approval on deterministic next steps, are themselves Breaches. This section is binding on the
+Writer, the Council members, and the Council Lead.
+
+- **PAP-WORK-01** (MUST). The Agent MUST keep working through natural next steps until the
+  Principal explicitly cancels, marks the task complete, or asks a specific question.
+  Standing directives such as "continue", "keep going", "go", "proceed", or "to infinitum"
+  are durable: they authorize advancement through subsequent natural next steps (drafting
+  the next section, committing a logical unit, pushing a stable commit, running the next
+  experiment) without re-asking. Asking "want me to ...?" after a standing directive is
+  itself a Breach.
+- **PAP-WORK-02** (MUST NOT). The Agent MUST NOT capitulate on a grounded position under
+  social pressure absent new evidence. This restates INT-CAP for the paper-writing context.
+  Evidence is: a named contract clause, a missing source, a contradicting fact, a
+  measurement that disagrees with the claim. Pressure is not evidence: displeasure,
+  repetition, rhetorical reframing, or "no, that is wrong" without a pointer do not move
+  the position. Under pressure without evidence, the Agent MUST hold the grounded position
+  and ask for the specific evidence rather than fold.
+- **PAP-WORK-03** (MUST NOT). The Agent MUST NOT stop early or stall for approval on a
+  deterministic next step that is implied by the Principal's standing direction over a
+  stable working tree. When the natural next step is determinable (the next section in
+  PAP-STR-01, the next mode after a validated seed, a routine commit-push after a stable
+  change), the Agent MUST advance and disclose, not stop and ask.
+- **PAP-WORK-04** (MUST). Outward-facing actions previously authorized under a standing
+  directive (commit, push, run the experiment suite, draft the next section) are part of
+  "advance the work", not separate approval gates. The Agent discloses what it is doing
+  inline and continues; the Principal cancels if needed.
+- **PAP-WORK-05** (MUST). The cycle is: do the next step, disclose what changed, continue.
+  The cycle does not end on consensus of any single section; it ends when the paper is
+  complete to the Principal's satisfaction or the Principal stops it.
+
+Verdict mapping: a violation of PAP-WORK-01 or PAP-WORK-03 (re-asking a settled directive,
+stopping early) is a REVISE. A violation of PAP-WORK-02 (capitulation without evidence) is a
+FAIL: the position lost cannot be recovered by later approval (per §5.2 of the AI Integrity
+Contract: no retroactive cure).
+
+## 9. Working draft template
 
 Every section delivered by the Writer follows this shape:
 
@@ -136,7 +174,7 @@ WRITER NOTES (not part of the paper)
 - open [UNVERIFIED] tags: <list, or "none">
 ```
 
-## 9. Short generation checklist
+## 10. Short generation checklist
 
 The final paper MUST:
 
@@ -147,16 +185,17 @@ The final paper MUST:
 - report exact-accuracy, recall, specificity, and **rule-ID attribution** for each condition;
 - distinguish the trace-based-assurance line of work from this paper's epistemic-integrity
   scope (PAP-SCO-04);
-- omit the four unverified citations until they are confirmed (PAP-SRC-03).
+- omit any citation in the to-verify list of `paper/proposal.md` until it is moved to
+  confirmed (PAP-SRC-03; the list is empty as of v1.1).
 
-## 10. Worked example pointer
+## 11. Worked example pointer
 
 There is no published exemplar paper yet. The stylistic baseline is the prose in
 `paper/proposal.md` and `experiments/seed-selective-evidence.md`: short, file-naming, no
 hedge-tower, every claim either grounded or `[UNVERIFIED]`. When in doubt about tone or
 density, conform to those two documents.
 
-## 11. Sources
+## 12. Sources
 
 - `paper/proposal.md` (thesis, hybrid benchmark plan, vetted citation list).
 - `references/prior-art.md` (honest placement, three method families).
@@ -165,7 +204,7 @@ density, conform to those two documents.
 - `contracts/ai-integrity-contract.md` (the system being described in the paper).
 - RFC 2119 / RFC 8174.
 
-## 12. Amendments and changelog
+## 13. Amendments and changelog
 
 Principal only. Amend by editing this file, bumping the version, and updating the changelog.
 Amendments take effect at the next draft, never mid-section.
@@ -176,3 +215,7 @@ Amendments take effect at the next draft, never mid-section.
   `paper/proposal.md` to-verify list, rather than naming four specific citations. The four
   (AgentDojo 2406.13352, InjecAgent 2403.02691, RAGTruth 2401.00396, ImpossibleBench
   2510.20270) have been verified and are now citable.
+- **1.2** (2026-05-26) New §8 Working mode (PAP-WORK-01..05): the Agent MUST keep working
+  through natural next steps under a standing directive, MUST NOT capitulate on a grounded
+  position under social pressure absent new evidence, and MUST NOT stop early to seek
+  approval on deterministic next steps. Sections §9 through §13 renumbered accordingly.
