@@ -133,26 +133,38 @@ A null or negative result on recall is publishable given the specificity and tra
 
 ## Seed results (so far)
 
-Four modes have been run end to end (Sonnet, all four conditions, easy + hard suites
-each). The pattern splits cleanly along audit-target type:
+Five modes have been run end to end (Sonnet, all four conditions, easy + hard suites
+each). The pattern splits along audit-target type and along how structurally anchored
+the evidence is:
 
 | Mode | Hard suite specificity (judge vs freeform vs v5) | ruleID (judge vs others) | Open problem |
 |---|---|---|---|
 | Selective Evidence (INT-SEL) | 1.00 vs 0.50 vs 0.50 | 1.00 vs 0.00 | Severity calibration |
 | Scope Creep (INT-SCP) | 1.00 vs 0.50 vs **0.00** | 1.00 vs 0.00 | Severity calibration |
 | Capitulation (INT-CAP) | 1.00 vs 0.80 vs 0.60 | 1.00 vs 0.00 | Severity calibration |
+| Sycophancy (INT-SYC) | 0.60 vs 0.60 vs **0.40** | 0.71 vs 0.00 | Tone-vs-substance + severity |
 | Source Fabrication (INT-SRC) | **0.60** vs 0.80 vs **1.00** | 0.71 vs 0.00 | Re-runs tools against real FS |
 
-On reasoning-pattern clauses (SEL, SCP, CAP), at equal recall the clause judge wins on
-specificity and rule-ID traceability. On a verification-heavy clause (SRC) the same
-structure flips: the judge over-flags clean SHIP cases when the verification target is
-provided text rather than a real artifact in the repo. The diagnosis and three honest
-readings are in `experiments/seed-source-fabrication.md`. Severity calibration
-(REVISE vs BLOCK) is the named open problem on the reasoning-pattern modes: free-form
-under-grades, the clause judge over-grades on REVISE boundary cases. Full per-suite
-writeups in `experiments/seed-selective-evidence.md`, `experiments/seed-scope-creep.md`,
-`experiments/seed-source-fabrication.md`, and `experiments/seed-capitulation.md`. All
-suites are clause-labeled and ~40% clean by design.
+The five modes split three ways:
+
+- **Reasoning-pattern, clean sweep** (SEL, SCP, CAP). At equal recall the clause judge
+  wins on specificity and rule-ID traceability. Evidence is structurally anchored: a
+  quoted prior position, an omission checkable, a scope boundary defined.
+- **Reasoning-pattern, partial sweep** (SYC). Judge wins on exact-match and ruleID, ties
+  on specificity. False flags cluster on "warm tone + honest content" SHIP cases. The
+  new open problem is tone-vs-substance discrimination.
+- **Verification-heavy counter-finding** (SRC). Judge over-flags by re-running tools
+  against the real filesystem instead of trusting the provided evidence text.
+
+The headline the paper can defend is therefore narrower than the SEL/SCP/CAP triple
+alone suggested: clause-grounded auditing wins at equal recall on specificity and
+rule-ID attribution **on clauses whose evidence is structurally anchored**. On clauses
+whose evidence is diffuse (earned vs unearned agreement, citation resolution against an
+external artifact) the win is partial or inverted, with named structural caveats. Full
+per-suite writeups: `experiments/seed-selective-evidence.md`,
+`experiments/seed-scope-creep.md`, `experiments/seed-capitulation.md`,
+`experiments/seed-sycophancy.md`, `experiments/seed-source-fabrication.md`. All suites
+are clause-labeled and ~40% clean by design.
 
 ## Paper structure (4 to 8 pages, workshop)
 
@@ -195,18 +207,18 @@ workshop; an ACL / EMNLP workshop on evaluation or honesty. Decide nearer submis
    was needed; the earlier note here is obsolete.
 3. ~~Author seed cases for one no-benchmark clause and validate end to end.~~ **Done** for
    Selective Evidence (commit `8be4bc1`, results commit `9363b5f`-adjacent).
-4. ~~Run the conditions on the seed set with `run-suite.sh`.~~ **Done** for four modes via
-   `experiments/run-conditions.sh` (SEL, SCP, SRC, CAP).
-5. **In progress:** scale to additional modes. The Sycophancy suite is authored
-   (`experiments/cases/suite-sycophancy.json`) and ready to run; other reasoning-pattern
-   modes (Confirmation Bias, Anchoring, Overconfidence, Automation Bias) can reuse the
-   current schema and `run-conditions.sh` directly. Verification-heavy modes
-   (Hallucination, Confabulation) inherit the SRC structural caveat and need either a
-   judge-prompt fix or a case-design rule before running.
+4. ~~Run the conditions on the seed set with `run-suite.sh`.~~ **Done** for five modes via
+   `experiments/run-conditions.sh` (SEL, SCP, SRC, CAP, SYC).
+5. **In progress:** scale to additional modes. Other reasoning-pattern modes
+   (Confirmation Bias, Anchoring, Overconfidence, Automation Bias) can reuse the current
+   schema and `run-conditions.sh` directly. Verification-heavy modes (Hallucination,
+   Confabulation) inherit the SRC structural caveat and need either a judge-prompt fix
+   or a case-design rule before running.
 6. **Then:** draft the paper sections via `/write-paper` (in a fresh Claude Code session
-   so the council loads). The Experiments section can be drafted from the four
-   completed modes; the cross-mode story (three reasoning-pattern wins + one
-   verification-heavy counter-finding) is the headline.
+   so the council loads). The Experiments section can be drafted from the five
+   completed modes; the cross-mode story (clean sweep on three structurally-anchored
+   reasoning modes, partial sweep on SYC, counter-finding on SRC) is the headline,
+   stated with the structural-anchoring qualifier.
 
 ## References to verify before citing (do not cite unchecked)
 
