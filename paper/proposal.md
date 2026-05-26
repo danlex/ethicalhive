@@ -131,6 +131,24 @@ Expected, honest headline: contract-grounding matches or slightly beats free-for
 recall, clearly beats it on specificity and on rule-ID attribution, while remaining advisory.
 A null or negative result on recall is publishable given the specificity and traceability gains.
 
+## Seed results (so far)
+
+Two modes have been run end to end (Sonnet, all four conditions). Source Fabrication is
+queued. The pattern holds across modes:
+
+| Mode | Hard suite specificity (judge vs freeform vs v5) | ruleID (judge vs others) | Open problem |
+|---|---|---|---|
+| Selective Evidence (INT-SEL) | 1.00 vs 0.50 vs 0.50 | 1.00 vs 0.00 | Severity calibration |
+| Scope Creep (INT-SCP) | 1.00 vs 0.50 vs **0.00** | 1.00 vs 0.00 | Severity calibration |
+| Source Fabrication (INT-SRC) | pending | pending | pending |
+
+At equal recall on both modes' hard suites, the clause judge wins on specificity and rule-ID
+traceability. On Scope Creep the v5 legacy validator collapses to 0.00 specificity (every
+clean distractor flagged). Severity calibration (REVISE vs BLOCK) is the named open problem
+in both modes: free-form under-grades severity, the clause judge over-grades on REVISE
+boundary cases. Full per-suite writeups in `experiments/seed-selective-evidence.md` and
+`experiments/seed-scope-creep.md`. Both suites are clause-labeled and ~40% clean by design.
+
 ## Paper structure (4 to 8 pages, workshop)
 
 1. Introduction. A confident answer and a correct answer look identical to the reader.
@@ -159,16 +177,27 @@ workshop; an ACL / EMNLP workshop on evaluation or honesty. Decide nearer submis
 - **LLM-as-judge unreliability.** Report agreement with humans; do not over-claim.
 - **Circularity.** Name it; offer the local cross-family auditor as future work or a small probe.
 
-## Next steps (proposed)
+## Next steps (status as of 2026-05-26)
 
-1. Verify and complete the related-work citation list (a few arXiv IDs below still need
-   confirmation, do not cite unverified).
-2. Lock the benchmark schema (extend `experiments/cases/case-schema` style) and the clause
-   labeling guide.
-3. Author 10 seed cases for one no-benchmark clause (suggest Selective Evidence) end to end to
-   validate the pipeline before scaling.
-4. Run the 3 conditions on the seed set with `run-suite.sh`, sanity-check metrics.
-5. Scale to 100 to 150 cases, then write.
+1. ~~Verify and complete the related-work citation list.~~ **Done** in commit `43a1c63`.
+   The to-verify list in this document is empty; the four held citations (AgentDojo,
+   InjecAgent, RAGTruth, ImpossibleBench) are now confirmed and citable.
+2. ~~Lock the benchmark schema and the clause labeling guide.~~ **Done.** Suites follow
+   `{id, mode, user_ask, draft, evidence[], expected{verdict, rationale}, gold_clauses[],
+   provenance}` (extends `experiments/cases/case-schema.json`). The labeling guide lives
+   in each clause judge under `judges/*-judge.md`. **Capitulation will need an additional
+   `conversation` field** because the clause turns on the prior position + pushback;
+   schema extension pending.
+3. ~~Author seed cases for one no-benchmark clause and validate end to end.~~ **Done** for
+   Selective Evidence (commit `8be4bc1`, results commit `9363b5f`-adjacent).
+4. ~~Run the conditions on the seed set with `run-suite.sh`.~~ **Done** for two modes via
+   `experiments/run-conditions.sh`. Source Fabrication sweep running at the time of writing.
+5. **In progress:** scale to additional modes. Capitulation suites pending (needs schema
+   extension for the conversation field). Other modes can reuse the current schema and
+   `run-conditions.sh` directly.
+6. **Then:** draft the paper sections via `/write-paper` (in a fresh Claude Code session
+   so the council loads). The Experiments section can be drafted as soon as
+   Source Fabrication finishes.
 
 ## References to verify before citing (do not cite unchecked)
 
