@@ -274,7 +274,9 @@ These are failures the existing rubric *should* catch but doesn't always, with e
 
 #### Bucket B — Open candidates from 2024–2026 literature
 
-Failures named in the research literature, not yet covered, with verified citations and operationally-distinct definitions. **The full catalog with priority tiering, definitions, and examples lives in [`EthicalAI.md`](EthicalAI.md).** Highlights:
+Failures named in the research literature, with verified citations and operationally-distinct definitions. **The full catalog with priority tiering, definitions, and examples lives in [`EthicalAI.md`](EthicalAI.md).**
+
+**Status (2026-05):** the three user-flagged items below — Source Fabrication, Selective Evidence, and Capitulation — are now operationalised as dedicated clause judges in `judges/` and clause-labeled benchmark modes under `experiments/cases/`. They are still listed here for historical context and because the rest of the table is still open. Highlights:
 
 | Gap | Distinction from existing checks | Reference |
 |---|---|---|
@@ -427,9 +429,12 @@ Detects AI patterns in academic and research papers. Same report shape as `linke
 
 | Agent | Role | Runs on |
 |---|---|---|
-| `tvl-tech-bias-validator` | Audits drafts — CoVe + 5 checks | Sonnet |
+| `tvl-tech-bias-validator` | Audits drafts — legacy v5 monolith (CoVe + 5 checks) | Sonnet |
 | `tvl-tech-bias-validator-learner` | Post-audit learning loop — appends overrides, drafts calibration proposals at threshold | Haiku |
 | `judge-council` | Reviews proposed rubric/calibration changes — spawned 3× in parallel for genuine model-tier independence | Opus + Sonnet + Haiku |
+| **14 clause judges** in `judges/` (e.g. `selective-evidence-judge`) | Per-clause auditors, one per INT-* clause. Emit clause-traceable PASS/FLAG/BLOCK with rule IDs. The "method under test" for the workshop paper. | Sonnet |
+| `paper-writer` | Drafts and revises sections of the EthicalAI workshop paper, grounded in `paper/proposal.md`, prior-art, seed results, and the two contracts | Opus |
+| `paper-bias-judge` | Composing bias/integrity auditor for paper text: spawns six relevant clause judges in parallel (overconfidence, selective-evidence, source-fabrication, confirmation-bias, anchoring, sycophancy) and aggregates with INT-* rule IDs | Opus |
 | `linkedin-ai-detector` | Detects AI patterns in short-form professional content — strict Markdown report | Sonnet |
 | `paper-ai-detector` | Detects AI patterns in academic papers — same report shape + citation audit | Sonnet |
 
@@ -439,6 +444,7 @@ Detects AI patterns in academic and research papers. Same report shape as `linke
 | `tvl-tech-bias-validator-dashboard` | `/tvl-tech-bias-validator-dashboard` | Read-only stats |
 | `linkedin-ai-detector` | `/linkedin-ai-detector` | LinkedIn / blog / web AI-pattern report |
 | `paper-ai-detector` | `/paper-ai-detector` | Academic paper AI-pattern report + citation audit |
+| `write-paper` | `/write-paper <section>` | Council Lead: draft via `paper-writer`, dispatch `paper-bias-judge` + `paper-ai-detector` in parallel, walk every contract MUST/MUST-NOT, the Lead rewrites, iterate to consensus (max 3 rounds) |
 
 ## Learning loop (local)
 
@@ -542,21 +548,90 @@ EthicalHive is one approach among many. Honest positioning:
 
 **Net positioning:** EthicalHive is broader in *behaviour coverage* (5 checks vs single-class faithfulness) and weaker in *signal* (prose rubric vs trained classifier or sampling). The complement to a determinstic faithfulness scorer if you have one, the stand-alone audit if you don't.
 
+## Research: the EthicalAI workshop paper
+
+A short paper on **contract-grounded advisory auditing of AI integrity** is in progress in this repo, building on the plugin's clause judges as the method under test. Full proposal in [`paper/proposal.md`](paper/proposal.md).
+
+### Thesis
+
+Represent an agent's integrity obligations as a machine-readable RFC 2119 contract whose 14 clauses each have a stable rule ID (`INT-HAL-01`, `INT-SEL-01` …) and a named LLM-judge Auditor. The judges emit **clause-traceable advisory verdicts** (verdict → rule ID); the human decides. Distinguished from trace-based assurance work (arXiv 2603.18096, RFCAudit, AgentVerify): those target functional / safety / orchestration conformance; this targets **epistemic integrity** of the agent's output, with an advisory + human-in-the-loop stance.
+
+### Artifacts in this repo
+
+- [`contracts/ai-integrity-contract.md`](contracts/ai-integrity-contract.md) — the 14-clause RFC 2119 contract.
+- [`judges/`](judges/) — 14 per-clause judge agents, each emitting `Clause: INT-XXX` and tagging findings with the specific rule ID it relies on.
+- [`contracts/paper-writing-contract.md`](contracts/paper-writing-contract.md) — the binding standard for the paper itself (v1.3, RFC 2119, PAP-* rule IDs). Codifies plain-language voice, no SOTA claim, working mode (PAP-WORK, no capitulation under social pressure, reusable scripts only).
+- [`agents/paper-writer.md`](agents/paper-writer.md), [`agents/paper-bias-judge.md`](agents/paper-bias-judge.md), [`skills/write-paper/SKILL.md`](skills/write-paper/SKILL.md) — the paper-writing council.
+
+### Benchmark and harness
+
+Clause-labeled benchmark suites per mode under [`experiments/cases/`](experiments/cases/). The reusable runner [`experiments/run-conditions.sh`](experiments/run-conditions.sh) takes one or more suites and runs four conditions (`none` / `freeform` / `contract` / `judge`) through [`experiments/run-suite.sh`](experiments/run-suite.sh), then scores per suite via [`experiments/metrics.py`](experiments/metrics.py).
+
+Metrics reported per condition: exact-verdict accuracy, recall, **specificity** (the false-positive cost most detection papers omit), precision, F1, and **rule-ID attribution** (the fraction of flagged verdicts citing the correct contract clause).
+
+### Seed result, two modes (Sonnet, hard suites, n=10 each)
+
+| Mode | Specificity (judge vs freeform vs v5) | Rule-ID attribution (judge vs others) |
+|---|---|---|
+| Selective Evidence (`INT-SEL`) | 1.00 vs 0.50 vs 0.50 | 1.00 vs 0.00 |
+| Scope Creep (`INT-SCP`) | 1.00 vs 0.50 vs 0.00 | 1.00 vs 0.00 |
+
+Per-mode writeups: [`experiments/seed-selective-evidence.md`](experiments/seed-selective-evidence.md), [`experiments/seed-scope-creep.md`](experiments/seed-scope-creep.md).
+
+At equal recall on both modes' hard suites, the clause judge wins on **specificity** and **rule-ID traceability**. **Severity calibration** (REVISE vs BLOCK) is the named open problem — free-form under-grades severity, the clause judge over-grades on REVISE boundary cases.
+
+Source Fabrication suites are run-pending; Capitulation suites are authored and queued.
+
 ## Plugin layout (for contributors)
 
 ```
 ethicalhive/
 ├── .claude-plugin/plugin.json          # plugin manifest
 ├── skills/
-│   ├── tvl-tech-bias-validator/        # audit workflow
-│   └── tvl-tech-bias-validator-dashboard/
+│   ├── tvl-tech-bias-validator/        # audit workflow (legacy v5 rubric)
+│   ├── tvl-tech-bias-validator-dashboard/
+│   ├── linkedin-ai-detector/
+│   ├── paper-ai-detector/
+│   └── write-paper/                    # Council Lead for the EthicalAI workshop paper
 ├── agents/
-│   ├── tvl-tech-bias-validator.md      # the auditor (CoVe + 5 checks)
+│   ├── tvl-tech-bias-validator.md      # legacy v5 auditor (CoVe + 5 checks)
 │   ├── tvl-tech-bias-validator-learner.md
-│   └── judge-council.md
-├── cases/case-schema.json              # JSON schema for logged cases
-├── experiments/                        # test suites, results, runner
-├── references/                         # prior art, research, glossary, mindmap
+│   ├── judge-council.md                # rubric/calibration reviewer (3-tier)
+│   ├── linkedin-ai-detector.md
+│   ├── paper-ai-detector.md            # AI tells in academic papers
+│   ├── paper-writer.md                 # paper-writing council Writer
+│   └── paper-bias-judge.md             # paper-writing council Bias Judge (composes clause judges)
+├── judges/                             # 14 per-clause auditor agents, one per INT-* clause
+│   ├── hallucination-judge.md  (INT-HAL)
+│   ├── confabulation-judge.md  (INT-CFB)
+│   ├── source-fabrication-judge.md  (INT-SRC)
+│   ├── narrativity-drift-judge.md  (INT-NAR)
+│   ├── sycophancy-judge.md  (INT-SYC)
+│   ├── capitulation-judge.md  (INT-CAP)
+│   ├── confirmation-bias-judge.md  (INT-CNF)
+│   ├── selective-evidence-judge.md  (INT-SEL)
+│   ├── anchoring-judge.md  (INT-ANC)
+│   ├── automation-bias-judge.md  (INT-AUT)
+│   ├── overconfidence-judge.md  (INT-OVR)
+│   ├── prompt-injection-judge.md  (INT-INJ)
+│   ├── scope-creep-judge.md  (INT-SCP)
+│   └── specification-gaming-judge.md  (INT-GAM)
+├── contracts/
+│   ├── ai-integrity-contract.md        # 14-clause RFC 2119 spec (INT-*) the judges enforce
+│   └── paper-writing-contract.md       # binding standard for the workshop paper (PAP-*)
+├── paper/proposal.md                   # workshop-paper proposal + seed results
+├── cases/case-schema.json              # JSON schema for logged audit cases
+├── experiments/
+│   ├── run-suite.sh                    # per-(suite, reviewer) runner; 4 conditions
+│   ├── run-conditions.sh               # reusable wrapper: all reviewers x all suites + score
+│   ├── metrics.py                      # exact, recall, specificity, ruleID attribution
+│   ├── baseline-freeform-prompt.md
+│   ├── cases/                          # clause-labeled benchmark suites per mode
+│   ├── results/                        # JSONL audit-run records
+│   ├── seed-selective-evidence.md      # mode writeup with 4-way comparison
+│   └── seed-scope-creep.md
+├── references/                         # prior art, research notes, glossary, mindmap
+├── docs/                               # GitHub Pages site (ethicalai.alexandrudan.com)
 ├── install.sh                          # local installer
 └── install-remote.sh                   # curl|bash bootstrap
 ```

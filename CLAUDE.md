@@ -79,6 +79,17 @@ The validator's rubric is its constitution. It does not auto-update.
 
 The case-submitter PR flow was too intrusive. It relied on a single Haiku pass to anonymize and a single yes/no for user consent, with no deterministic redaction and no full-JSON preview. Before re-enabling: add regex redaction, full-preview gate, project blocklist, category refusal (PII/credentials/legal/medical/financial).
 
+## Research and paper-writing council
+
+A short workshop paper on **contract-grounded advisory auditing of AI integrity** is in progress in this repo. Direction, citations, and the hybrid benchmark plan are in `paper/proposal.md`.
+
+- **14 clause judges in `judges/`** — one per failure-mode clause of `contracts/ai-integrity-contract.md`. Each emits its `INT-*` rule ID on findings (e.g. `[INT-SEL-01] dropped: "..."`). These are the method under test; the legacy `agents/tvl-tech-bias-validator.md` (the v5 monolithic rubric) is kept as a comparison baseline.
+- **Paper Writing Contract** (`contracts/paper-writing-contract.md`, v1.3, RFC 2119, rule IDs `PAP-*`). Binding standard for every paper draft. Notable clauses:
+  - **PAP-WORK** (Working mode): under a standing "continue" / "keep going" directive, the Agent advances through natural next steps (drafting, committing, pushing, running experiments) without re-asking; never capitulates on a grounded position under social pressure absent new evidence; reusable scripts only, no inline python heredocs or bundled bash loops in tool calls.
+  - **PAP-SCO-03** (no SOTA claim), **PAP-SRC** (every citation resolves; the `paper/proposal.md` to-verify list is empty as of 2026-05-26), **PAP-FMT** (plain language, no em-dashes, AI-tells ≤ 2/10, model aliases only).
+- **Paper-writing council** in `agents/paper-writer.md` + `agents/paper-bias-judge.md` + `skills/write-paper/SKILL.md`. The Council Lead (`/write-paper`) drafts via `paper-writer`, dispatches `paper-bias-judge` (which spawns six relevant clause judges in parallel) and `paper-ai-detector` concurrently, walks every contract MUST/MUST-NOT, the Lead rewrites, iterates to consensus.
+- **Benchmark harness** is reusable: `experiments/run-conditions.sh <suite>... [--model M] [--reviewers R]` runs four conditions (`none`, `freeform`, `contract`, `judge`) per suite and scores via `experiments/metrics.py` (exact, recall, specificity, precision, F1, rule-ID attribution). Seed results in `experiments/seed-*.md`. Headline so far: on hard suites the clause judge wins on **specificity** (1.00 vs 0.50 vs collapse) and **rule-ID attribution** (1.00 vs 0.00) at equal recall; severity calibration (REVISE vs BLOCK) is the named open problem.
+
 ## Known limitations
 
 - **Not SOTA.** Sampling-based methods and hidden-state probes are stronger. See `references/prior-art.md`.
