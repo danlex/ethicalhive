@@ -120,7 +120,7 @@ A parallel line of work formalises agent behaviour with step and trace
 contracts for multi-agent orchestration
 [Paduraru et al., 2026], conformance to RFC specifications
 in network protocols [Zheng et al., 2025], and LTL model checking of
-agent control flow [AgentVerify, 2026]. **Their target is functional
+agent control flow [Fang et al., 2026]. **Their target is functional
 correctness, protocol conformance, or control-flow safety; ours is
 epistemic output. Their intervention is constraints over traces or
 executions, mediated by allow / rewrite / block at runtime; ours is
@@ -722,7 +722,7 @@ includes factuality indicators among the properties it instruments,
 but treats them as properties of execution traces rather than as
 human-reviewable obligations. RFCAudit [Zheng et al., 2025] applies an
 LLM agent to functional bug detection against RFC specifications in
-network protocols. AgentVerify [AgentVerify, 2026] model-checks agent
+network protocols. AgentVerify [Fang et al., 2026] model-checks agent
 control flow against LTL properties. The differences are structural:
 these systems target orchestration safety, protocol conformance, or
 control-flow properties, and their unit of analysis is the agent's
@@ -909,10 +909,10 @@ Paduraru, C., Bouruc, P.-L., Stefanescu, A. (2026). A Trace-Based
 Assurance Framework for Agentic AI Orchestration: Contracts, Testing,
 and Governance. *arXiv preprint* arXiv:2603.18096.
 
-AgentVerify (2026). AgentVerify: Compositional Formal Verification of
-AI Agent Safety Properties via LTL Model Checking. *preprints.org*
-202604.1029, posted 14 April 2026. Author list verified at the
-preprints.org record; included in the final camera-ready.
+Fang, E., et al. (2026). AgentVerify: Compositional Formal
+Verification of AI Agent Safety Properties via LTL Model Checking.
+*preprints.org* 202604.1029, posted 14 April 2026.
+DOI: 10.20944/preprints202604.1029.v1.
 
 Ma, H., Wang, G., et al. (2025). Semantic Energy: Detecting LLM
 Hallucinations through Sample Disagreement Geometry. *arXiv preprint*
