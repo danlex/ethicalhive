@@ -1,0 +1,41 @@
+Here is a critical review of your workshop draft. It is a highly transparent and well-structured paper, but there are a few methodological and presentation gaps that a strong reviewer will latch onto.
+
+**1. Novelty positioning against Trace/RFCAudit/AgentVerify**
+*   **Honest and sufficient?** Yes, the positioning is honest and correctly maps the boundaries. You correctly state that prior work intervenes at runtime while yours is post-hoc advisory. 
+*   **Over/underclaim?** You slightly *underclaim* your conceptual difference. In §1.2 you state: "Their unit of analysis is the agent's execution trace... Our unit is the agent's final delivered draft." This is true, but the deeper novelty is in §6: "Their target is orchestration safety, functional correctness, or control-flow properties; our target is epistemic output." You are translating *cognitive/epistemic biases* into software contracts. Move this epistemic vs. functional distinction to the Introduction (§1.2) to make the novelty pop more. 
+
+**2. Is the Method section actually a method?**
+*   **Critique:** Section 3 is currently too thin and reads more like an architectural diagram description than a reproducible method. A reviewer at a trustworthy ML workshop will want to know exactly how the CoVe stage operates. 
+*   **Fix:** You write in §3: *"The draft is decomposed by an LLM call into a list of discrete factual claims... checked against the available evidence using Read, Grep, and where applicable a re-run..."* Is this CoVe stage a multi-turn agentic loop, or a static prompt? How does it decide what to `Grep`? If CoVe is doing the heavy lifting of grounding the claims, its reliability is the bottleneck for your judges. You need 1-2 paragraphs detailing the mechanics and prompt strategy of the CoVe extraction.
+
+**3. Experiments (n=10 easy + n=10 hard per clause)**
+*   **Defensible?** For a *workshop pilot*, yes, this is defensible—*because* of your extreme transparency. However, the way you present the math is not. 
+*   **Fix:** Do not use two-decimal percentages (e.g., `0.80`, `1.00`) in Table 2 when your denominator is 5 or 10. It looks like you are trying to hide the small sample size behind scientific-looking precision. Change Table 2 to report raw fractions (`8/10`, `5/5`). You already do this excellently in the prose of §5 ("ships 5/5 on SEL"); match that in the table.
+
+**4. Figures and Table 2**
+*   **Critique:** Table 2 is cluttered with redundant data that weakens your argument.
+*   **Fix:** Remove the `none` rows entirely. You admit in §7 that it is "a base-rate comparator, not a competitive reviewer" and it clutters the table with 0.00 recall and 1/n Exact matches. Furthermore, having `0.00` in the Rule-ID column for baselines that *were not prompted to emit rule IDs* looks like a strawman comparison. You should add a footnote to Table 2 explicitly stating that freeform and monolithic baselines do not emit rule IDs by design, or better yet, run the "fair comparison" baseline mentioned in §7 where the monolithic model is given the clause list. 
+
+**5. Severity calibration (REVISE vs BLOCK) framing**
+*   **Critique:** The framing is actually very strong. 
+*   **Quote:** *"This is not an open problem in the field; it is a fuzzy boundary in the current contract definitions of what counts as a partial recovery"* (§7).
+*   **Verdict:** This does not look like an excuse. It is the exact kind of insight a workshop wants. You successfully argue that because you framed this as a legal/contractual problem, the failure is naturally an ambiguity in the "legal text" rather than an opaque hallucination in the weights. Keep this framing as-is.
+
+**6. Limitations section (Author-built benchmark)**
+*   **Critique:** This is the strongest section of the paper. It is brutally honest and does not duck.
+*   **Quote:** *"Both the method and the labels are constructed by the same authors, which is the largest threat to validity in this work. Concretely: the case text was written before the judge prompts..."* (§7).
+*   **Verdict:** This is exactly how you preempt a reviewer's attack. By explicitly listing the shared ontology bias and proposing a Cohen kappa pilot, you disarm the primary reason to reject the paper.
+
+**7. Citations: Wrong, missing, or to be added**
+*   **Missing:** You are heavily borrowing from cognitive science, but you don't cite the foundational papers. In §1.1 you say, *"This failure has a name in the cognitive-science literature: anchoring."* In §6 you say, *"The cognitive-bias literature on confirmation, anchoring... provides the catalogue framing... we list those references where the corresponding clause is discussed"*, but those citations do not appear in the text or the References. 
+*   **Fix:** You must cite Kahneman & Tversky (1974) for Anchoring, and equivalent primary literature for Confirmation Bias, Automation Bias, etc. 
+
+**8. Anything else a strong reviewer would push back on**
+*   **The Title:** The field is actively exhausted by "X Is All You Need" titles. You acknowledge it's a "deliberate provocation" (§1.4), but it directly contradicts your own text later where you admit your method is *not* SOTA for raw hallucination detection and sampling methods are better. A strict reviewer will find the title arrogant rather than clever. Consider dropping the title and promoting the subtitle: *"Contract-Grounded Advisory Auditing of AI Integrity Failure Modes"*.
+*   **The SRC Benchmark Sandbox Issue:** In §5, you write: *"The source-fabrication judge has a file-existence mandate... it queries paths... finds them absent, and flags the draft as fabricating sources, even when the case evidence[] field states the file resolves."* A reviewer will ask why you didn't just fix the prompt to respect the `evidence[]` mock environment before submitting the paper. It feels like an easily fixable bug left in to pad word count. Either fix it and rerun that column, or frame it strictly as an interesting finding about agent "trust" hierarchies (e.g., agents trust live tools over prompt context).
+
+***
+
+**Verdict:** MINOR REVISION
+
+**Most important fix:** Detail the mechanics of the CoVe extraction stage in Section 3 so it reads like a reproducible method, and convert Table 2 percentages to raw fractions (`8/10`) to honestly reflect the $n=10$ sample size.

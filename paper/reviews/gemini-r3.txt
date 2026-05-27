@@ -1,0 +1,48 @@
+Here is a critical review of your workshop/short paper draft, structured to address your eight questions directly.
+
+### 1. Novelty Positioning
+**Is it honest and sufficient?** Yes, the positioning is sharp, honest, and arguably the strongest part of the paper. You clearly demarcate your work from the runtime/control-flow verification systems.
+* **Quote:** *"Their target is functional correctness, protocol conformance, or control-flow safety; ours is epistemic output. Their intervention is constraints over traces... ours is post-hoc advisory feedback..."* (§1.2)
+* **Verdict on claims:** You perfectly balance the claim. You explicitly disavow state-of-the-art raw factuality (§1.4: "We do not claim state of the art on raw factuality") and accurately locate the novelty in the "human-agent agreement as the unit of analysis" and the "per-clause decomposition". A workshop reviewer will respect this boundary.
+
+### 2. Method Section
+**Is it a method or a description?** It currently leans too heavily toward a system architecture description. It details the input/output schema but glosses over the prompt-engineering methodology. 
+* **Quote:** *"All judges run on the same model tier (sonnet) with temperature 0, no internal chain-of-thought exposed, and a fixed prompt template per clause..."* (§3)
+* **Rejection risk:** An ML safety reviewer might reject this for being too thin on *how* the CoVe extraction (`P_cove_extract`) and labeling are aligned. How sensitive is the judge to the specific phrasing of the RFC 2119 rules? Were the prompts zero-shot, or were they iteratively tuned on a dev set? You need a paragraph explaining the prompt-design methodology, or reviewers will assume you just guessed the prompts until they worked.
+
+### 3. Experiments Scale (n=10 per clause)
+**Is it defensible?** Barely, even for a workshop. With 5 clean and 5 flag cases per cell, a single misclassification swings accuracy by 20%. 
+* **Quote:** *"The headline result is the hard suite, reported in counts so the small-n caveat stays visible."* (§5)
+* **Minimum to fix:** Presenting fractions (e.g., 3/5) is an excellent choice for transparency. However, to survive a critical reviewer, you should either scale up to at least n=30 per clause (15 clean, 15 flag), **or** aggressively rename Section 5 from "Experiments" to "Pilot Demonstration" to lower the reviewer's expectation of statistical significance. 
+
+### 4. Figures and Table 2
+**Are they cluttered/redundant?** Yes, Figure 1 is entirely redundant.
+* **Critique:** Figure 1 plots "Specificity on hard suites", which is visually representing the exact same fractions as the "Spec" column in Table 2. Given the tiny sample size (n=5 per cell), a bar chart over-dignifies the data. 
+* **Fix:** Drop Figure 1 entirely. Table 2 tells the story perfectly, and keeping the data strictly in fractional text format forces the reader to confront the small *n*.
+* **Typo note:** In §5 you describe the monolithic baseline as a *"single five-check rubric reviewer"*, but you pilot *six* clauses. Fix this mismatch.
+
+### 5. Severity Calibration
+**Does it look like an excuse?** No, it reads as a strong, generalized scientific insight into LLM behaviour.
+* **Quote:** *"It shows that rule identity and intervention severity must be specified separately."* (§7)
+* **Framing:** This is excellent. You take a failure mode of your system (over-grading `REVISE` to `BLOCK`) and extract a valuable design lesson for the field (separating the boolean check of a rule violation from the severity ladder). This strengthens the paper.
+
+### 6. Author-Built Benchmark
+**Does the limitations section duck?** It tackles it head-on and is refreshingly honest.
+* **Quote:** *"Both the method and the labels are constructed by the same authors, which is the largest threat to validity in this work."* (§7)
+* **Critique:** Promising a gating independent annotation (Cohen's kappa) is exactly what reviewers want to see. 
+* **Missed promise:** In §4 you write *"we will disclose this and report results split by provenance [original | recast | reused]"*. However, you never actually report the results split by provenance in Section 5 or Table 2. You need to either add this split or remove the promise.
+
+### 7. Citations
+**Wrong/Missing?** 
+* **Uncited References:** Your bibliography includes *Wason (1960)* and *Mosier & Skitka (1996)*. You mention in §6 that you "list those references where the corresponding clause is discussed," but you never actually cite Wason (for Confirmation Bias) or Mosier (for Automation Bias) in the main text (e.g., in §2.2 or Table 1). Add the inline citations.
+* Otherwise, the citation graph is robust. Including 2026 preprints (Trace-Based Assurance, AgentVerify, RFCAudit) perfectly isolates your novelty.
+
+### 8. Other Pushback
+**Evidence-authority order (§5 & §7):** 
+* **Quote:** *"When the supplied evidence[] and a live-tool re-run disagree, judges treat evidence[] as ground truth... it queries paths... directly, finds them absent, and flags the draft."*
+* A strict reviewer might view the SRC (Source Fabrication) failure as a simple prompt-engineering bug rather than a profound "structural finding." To defend this, frame it explicitly as a fundamental tension in tool-using auditors: the conflict between *historical session state* and *current host state*. It's not a bug; it's an architectural challenge of post-hoc auditing.
+
+---
+
+### VERDICT: MINOR REVISION
+**Most important fix:** Drop the redundant Figure 1, fix the mismatched promises (the missing provenance split, the "five-check" vs six clause typo, and the orphaned citations), and explicitly reframe Section 5 as a "Pilot Demonstration" if you cannot increase *n* beyond 10 per clause before submission.

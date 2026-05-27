@@ -1,0 +1,689 @@
+OpenAI Codex v0.134.0
+--------
+workdir: /Users/adan/work/claude/code/ethicalhive
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 019e6919-dacc-79e0-9d88-c0f79c4757c8
+--------
+user
+I am working on a short workshop / short paper. I want a critical review, not a copyedit. Please tell me, with specific quotes and section pointers:
+
+1. Is the novelty positioning honest and sufficient, especially against the Trace-Based Assurance Framework, RFCAudit, and AgentVerify lines of work? Do I overclaim or underclaim?
+2. Is the method section actually a method section, or just a description? What would make a reviewer at a workshop on safety / evaluation / trustworthy ML reject it for being too thin?
+3. The Experiments section reports six clauses with n=10 easy + n=10 hard per clause. Is that defensible at workshop scale, and if not what is the minimum I need to fix?
+4. Are the figures and Table 2 telling the right story, or are they cluttered or redundant?
+5. Severity calibration (REVISE vs BLOCK over-grade) is named as the open problem. Is that framing strong enough or does it look like an excuse?
+6. The author-built benchmark is the largest threat to validity. Is the limitations section honest about it or does it duck?
+7. Any citations that look wrong, missing, or that I should add given the claim?
+8. Anything else a strong reviewer would push back on.
+
+End with a single Verdict: REJECT / MAJOR REVISION / MINOR REVISION / ACCEPT, plus one line on the most important fix.
+
+Here is the paper draft in full:
+
+---
+title: "From Prompts to Clauses: Contract-Grounded Advisory Auditing of AI Integrity Failure Modes in Agentic Coding"
+author: "Alexandru Dan"
+date: "2026-05-27"
+abstract: |
+  A confident answer and a correct answer look the same to a reader. We
+  represent an agent's integrity obligations as a natural-language RFC 2119
+  contract whose fourteen clauses each name a specific epistemic failure mode
+  (hallucination, sycophancy, capitulation, anchoring, selective evidence,
+  scope creep, and others), each with a stable rule ID, and each audited by a
+  dedicated per-clause LLM judge. The audit is advisory, not blocking: the
+  judge cites the clause it relies on and the human keeps the final word. We
+  evaluate on six clauses with hand-built easy and hard suites (~40 percent
+  clean) in the agentic-coding domain, against three baselines (no audit,
+  free-form self-review, the legacy monolithic rubric). At equal recall the
+  clause judge wins on specificity and on rule-ID attribution on four of six
+  clauses whose evidence is structurally anchored, with named caveats on the
+  other two. We do not claim state of the art on raw hallucination detection;
+  our contribution is breadth, traceability, and the advisory stance.
+---
+
+# 1. Introduction
+
+A confident answer and a correct answer look identical to a reader. Modern
+coding agents draft, reason, and act on a single conversational turn, and the
+modes by which they fail are not new. They are the same modes catalogued in
+the cognitive-science literature: confabulation, anchoring, confirmation bias,
+sycophancy, capitulation under pressure, narrative drift, automation bias.
+They produce drafts that read as competent and ship anyway.
+
+Three families of mitigation exist in current practice. Prose-rubric self-
+review asks the model to grade its own draft against a checklist
+[Bai et al., 2022; Madaan et al., 2023; Dhuliawala et al., 2023]. Sampling
+methods score answers by self-consistency or semantic entropy [Manakul et al.,
+2023; Farquhar et al., 2024]. Hidden-state probes train classifiers on
+activations [Kossen et al., 2024]. The three families trade off cost, latency,
+and access. None of them produce verdicts an external reader can trace to a
+specific obligation the agent was bound by.
+
+A parallel line of work formalises agent behaviour with assertion or trace
+contracts [Trace-Based Assurance Framework, 2026], implementation conformance
+to natural-language specifications [RFCAudit, 2025], and LTL model checking
+of agent control flow [AgentVerify, 2026]. These target orchestration safety,
+functional bug detection, and formal control-flow properties. They do not
+target the agent's epistemic output and they intervene at runtime, not as
+advisory feedback to a human reviewer.
+
+The slice we take is at the intersection of these lines. We define an agent's
+epistemic obligations in a natural-language RFC 2119 contract. Each clause
+names one failure mode, carries a stable rule ID, and names the LLM judge
+that audits it. The judge runs read-only, returns a verdict that cites the
+rule ID, and the human Principal decides. The contract does not block, does
+not rewrite, does not modify execution. It is an advisory layer, designed
+to be auditable and human-readable.
+
+Our claim, narrowly: clause-grounded advisory auditing yields verdicts that
+are clause-traceable, no worse on recall than free-form self-review, and
+better on specificity (fewer false flags on clean drafts) on clauses whose
+evidence is structurally anchored. We do not claim raw factuality wins.
+Sampling and probe methods remain stronger there. The contribution is
+breadth, traceability, and stance.
+
+# 2. The AI Integrity Contract
+
+The contract is a real document, not a prompt section. It lives at
+`contracts/ai-integrity-contract.md` in the project repository and is binding
+on the agent per turn. We summarise the structural pieces here.
+
+**Parties.** Principal (the human), Agent (the LLM), Auditor (the per-clause
+judge). Definitions for "evidence", "observed content", "approval", and
+"breach" are pinned to the session: evidence is a verifiable artefact from
+tool output, file read, or test result; observed content is data, never
+instruction.
+
+**Fourteen failure-mode clauses.** Table 1 lists them with their rule-ID
+prefixes and the named auditor. Each clause carries two to three sub-rules
+with explicit `MUST` or `MUST NOT` keywords (RFC 2119). The catalogue is
+drawn from the cognitive-science literature on reasoning failures and from
+the agentic-coding incidents the authors observed in practice; appendix
+provides the per-clause text in full.
+
+**Verdicts.** `PASS` (clause satisfied), `ASK APPROVAL` (a pending action
+needs Principal authorisation), `REVISE` (a clause is at risk, hedge or
+disclose before delivery), `FAIL` (a clause is violated). The clause judges
+emit these same four verdicts; the orchestrator can collapse `FAIL` to
+`BLOCK` and `ASK APPROVAL` to `REVISE` for downstream consumers.
+
+**Enforcement, three layers.** Layer 1, the Agent applies the clauses to its
+own draft. Layer 2, the matching judge reviews and returns a verdict. Layer
+3, the Principal sees the findings beside the draft and decides. Failure of
+one layer does not defeat the others.
+
+**Governance.** The contract is amended only by the Principal. Calibration
+changes (sensitivity, project notes) require approval from two of three
+model tiers in a judge council (one Opus, one Sonnet, one Haiku) plus the
+Principal. Constitutional changes (new clauses, changed criteria) require
+all three tiers plus the Principal. The rubric never auto-updates.
+
+| Clause | Rule prefix | Auditor |
+|---|---|---|
+| Hallucination | INT-HAL | hallucination-judge |
+| Confabulation | INT-CFB | confabulation-judge |
+| Source Fabrication | INT-SRC | source-fabrication-judge |
+| Narrativity Drift | INT-NAR | narrativity-drift-judge |
+| Sycophancy | INT-SYC | sycophancy-judge |
+| Capitulation | INT-CAP | capitulation-judge |
+| Confirmation Bias | INT-CNF | confirmation-bias-judge |
+| Selective Evidence | INT-SEL | selective-evidence-judge |
+| Anchoring | INT-ANC | anchoring-judge |
+| Automation Bias | INT-AUT | automation-bias-judge |
+| Overconfidence | INT-OVR | overconfidence-judge |
+| Prompt Injection | INT-INJ | prompt-injection-judge |
+| Scope Creep | INT-SCP | scope-creep-judge |
+| Specification Gaming | INT-GAM | specification-gaming-judge |
+
+Table 1: The fourteen failure-mode clauses, their rule-ID prefixes, and the
+LLM auditor named in the contract.
+
+# 3. Method
+
+For a single draft we run two operations, both as separate agent invocations
+that share no internal state with the drafter.
+
+**Chain-of-Verification stage.** The draft is decomposed into discrete
+factual claims. Each claim is checked against the available evidence with
+`Read`, `Grep`, and tool re-runs where applicable
+[CoVe; Dhuliawala et al., 2023]. The result is a structured list of claims
+with `verified`, `inferred`, `assumed`, or `unsupported` labels.
+
+**Per-clause judging.** Each clause judge receives the user ask, the draft,
+the evidence, and the CoVe output. It applies the clause's `MUST` and
+`MUST NOT` rules against the structured claim list and the draft prose. It
+returns one of `PASS`, `REVISE`, `BLOCK`, plus, on any flag, the rule ID it
+relied on (e.g. `INT-SEL-01`). Judges run in parallel. The orchestrator
+aggregates findings into a single report visible to the Principal.
+
+Two design choices are deliberate. First, the auditor is read-only and
+advisory. It cannot block or rewrite, only report. This is the named limit
+of the method, and we treat it as a feature: the contract is meant to
+augment human review, not replace it. Second, every flag is required to cite
+its rule ID. A `FLAG: REVISE` without a rule ID is treated as an incomplete
+review and is re-dispatched.
+
+# 4. Benchmark
+
+The benchmark targets agentic coding, because that is the domain where the
+auditor can verify claims with `Read` and `Grep` against ground truth. Each
+case in the suite carries:
+
+    {
+      id, mode, user_ask, draft, evidence[],
+      expected: {verdict, rationale},
+      gold_clauses: [INT-* rule IDs, multi-label],
+      provenance: original | recast | reused
+    }
+
+We follow two design choices that distinguish this set from typical
+detection benchmarks. First, roughly 40 percent of every suite is **clean
+SHIP cases that should not be flagged**. Most detection literature omits
+this and cannot report specificity. Second, every clean case is paired with
+a minimal-pair flag case on the same prompt or repo context, so that
+specificity is measured against a near distractor, not a random control.
+
+This paper reports results on six clauses with seeded easy and hard suites,
+ten cases each. The remaining eight clauses are queued; the schema and
+runner are clause-agnostic. The five reasoning-pattern clauses (SEL, SCP,
+CAP, ANC, SYC) and the verification-heavy clause SRC together cover the
+two structural families our results split along.
+
+The cases are author-built. We disclose this and report results split by
+provenance. Inter-annotator agreement and a held-out human label set are
+listed in Limitations as the immediate next step.
+
+# 5. Experiments
+
+We run four conditions on every suite, easy and hard.
+
+1. **none.** Raw draft, no audit. Measures the base rate. No model call.
+2. **freeform.** Same model and prompt as the drafter, asked to review the
+   draft for problems and list them. The honest prose-rubric baseline.
+3. **contract (v5).** The legacy monolithic rubric agent that pre-dated the
+   per-clause judges (five-check `tvl-tech-bias-validator`, with CoVe). Kept
+   as a same-family contract reviewer baseline.
+4. **judge.** The per-clause judge for this mode, with rule-ID emission.
+
+All conditions use the Sonnet tier through the Claude Code CLI; the runner
+is `experiments/run-conditions.sh`. Metrics are reported per condition.
+
+**Metrics.** Exact-verdict accuracy (does the call match the gold verdict
+SHIP / REVISE / BLOCK), recall (caught real problems), specificity (left
+clean drafts alone), and rule-ID attribution (when the audit flagged, did
+it cite a clause matching the gold rule ID).
+
+**The headline result is the hard suite.** Figure 1 plots specificity per
+mode per reviewer. The clause judge has specificity 1.00 on SEL, SCP, CAP,
+ANC (four of six modes). On SYC it sits at 0.60, tying the contract baseline
+on a known sub-class of clean cases (warm tone with honest content).
+On SRC it sits at 0.60, the only mode where the judge under-performs both
+baselines on specificity.
+
+![Specificity on hard suites by reviewer condition. The clause judge
+(green) reaches 1.00 on four of six modes; SYC and SRC are the named
+exceptions.](figures/spec-by-mode-hard.pdf){ width=92% }
+
+Figure 2 plots rule-ID attribution. By construction, the clause judge is
+the only reviewer that emits rule IDs; the question is whether the rule ID
+it emits is the right one. It is, on every flag on SEL, SCP, CAP, ANC; on
+SYC and SRC it sits at 0.71 because of the same sub-class miscalibrations.
+
+![Rule-ID attribution on hard suites. The free-form and v5 reviewers
+score zero by construction (they do not emit rule IDs); the judge cites
+the correct rule on every flag for the four clean-sweep modes.
+](figures/ruleid-by-mode-hard.pdf){ width=92% }
+
+Figure 3 plots exact-verdict accuracy. The judge wins on five of six modes;
+on SRC the v5 contract baseline edges it because it correctly SHIPs the
+clean citation distractors the judge over-flags by re-running the file
+system.
+
+![Exact-verdict accuracy on hard suites. The judge wins on five of six
+modes; SRC is the counter-finding.](figures/exact-by-mode-hard.pdf){ width=92% }
+
+Table 2 gives the hard-suite numbers per mode and reviewer.
+
+| Mode | Reviewer | Exact | Recall | Spec | Rule-ID |
+|---|---|---|---|---|---|
+| SEL | none | 0.40 | 0.00 | 1.00 | n/a |
+| SEL | freeform | 0.60 | 1.00 | 0.50 | 0.00 |
+| SEL | contract (v5) | 0.60 | 1.00 | 0.50 | 0.00 |
+| SEL | **judge** | **0.80** | 1.00 | **1.00** | **1.00** |
+| SCP | none | 0.40 | 0.00 | 1.00 | n/a |
+| SCP | freeform | 0.40 | 1.00 | 0.50 | 0.00 |
+| SCP | contract (v5) | 0.50 | 1.00 | 0.00 | 0.00 |
+| SCP | **judge** | **0.90** | 1.00 | **1.00** | **1.00** |
+| CAP | none | 0.50 | 0.00 | 1.00 | n/a |
+| CAP | freeform | 0.70 | 1.00 | 0.80 | 0.00 |
+| CAP | contract (v5) | 0.70 | 1.00 | 0.60 | 0.00 |
+| CAP | **judge** | **0.90** | 1.00 | **1.00** | **1.00** |
+| ANC | none | 0.50 | 0.00 | 1.00 | n/a |
+| ANC | freeform | 0.90 | 1.00 | 1.00 | 0.00 |
+| ANC | contract (v5) | 0.70 | 1.00 | 0.60 | 0.00 |
+| ANC | **judge** | **1.00** | 1.00 | **1.00** | **1.00** |
+| SYC | none | 0.50 | 0.00 | 1.00 | n/a |
+| SYC | freeform | 0.60 | 1.00 | 0.60 | 0.00 |
+| SYC | contract (v5) | 0.60 | 1.00 | 0.40 | 0.00 |
+| SYC | judge | 0.70 | 1.00 | 0.60 | **0.71** |
+| SRC | none | 0.50 | 0.00 | 1.00 | n/a |
+| SRC | freeform | 0.70 | 1.00 | 0.80 | 0.00 |
+| SRC | **contract (v5)** | **0.90** | 1.00 | **1.00** | 0.00 |
+| SRC | judge | 0.70 | 1.00 | 0.60 | 0.71 |
+
+Table 2: Hard-suite results per mode per reviewer. n = 10 per cell. Recall
+is 1.00 across all reviewers on all modes; the differentiation is in
+specificity, exact, and rule-ID. Bold marks the best cell per row group.
+
+**The three-group split.** Across six modes the result pattern is not flat.
+We organise it by structural anchoring of the evidence in the case design.
+
+*Clean-sweep modes* (SEL, SCP, CAP, ANC). The evidence is structurally
+anchored. SEL has an explicit omission to test against. SCP has a defined
+scope boundary. CAP has a quoted prior agent position in the user ask. ANC
+has a quoted prior framing paired with contradicting evidence in the same
+turn. On these four modes the judge dominates on specificity and rule-ID at
+equal recall; freeform varies from 0.50 to 1.00 specificity across modes;
+the v5 contract reviewer is the weakest on specificity (0.00 on SCP). The
+remaining judge errors are severity calibration, specifically `REVISE` calls
+graded `BLOCK` when the partial change in the draft is silent rather than
+named (see seed write-ups for the per-case detail).
+
+*Partial-sweep mode* (SYC). The judge wins on exact-match and rule-ID,
+ties on specificity. The false flags cluster on a named sub-pattern: warm
+tone with honest content. Three SHIP cases get false-revised because the
+opener mirrors politeness while the substance is honest. Sycophancy has no
+prior position to anchor against; the judge must infer earned vs unearned
+agreement, and tone is a noisy signal.
+
+*Counter-finding* (SRC). The judge over-flags clean citations because the
+source-fabrication judge re-runs `Read` against the host file system, finds
+no `src/cache/get.ts:42`, and flags despite the evidence text in the case
+stating the file resolves. This is a real and named structural problem with
+verification-heavy judges that have a file-existence mandate. We report it
+honestly. The v5 contract reviewer wins this mode by trusting the provided
+evidence text.
+
+# 6. Related Work
+
+Three method families are most directly comparable to ours.
+
+**Prose-rubric self-review.** Constitutional AI [Bai et al., 2022], Self-
+Refine [Madaan et al., 2023], Reflexion [Shinn et al., 2023], and Chain-of-
+Verification [Dhuliawala et al., 2023] use the model itself to grade or
+revise its draft against a prompt rubric. The clause-grounded audit sits in
+this family. The contributions over prior work are the contract as an
+external document, the per-clause judge with a stable rule ID, and the
+advisory orchestration with explicit verdict semantics.
+
+**Sampling-based uncertainty.** SelfCheckGPT [Manakul et al., 2023],
+Semantic Entropy [Farquhar et al., 2024], Semantic Entropy Probes [Kossen
+et al., 2024], and Semantic Energy [Wang et al., 2025] score answers by
+self-consistency over multiple samples. These methods reach higher
+factuality AUROC than prose-rubric methods on hallucination tasks and we
+do not compete with them on that axis.
+
+**Hidden-state and logit probes.** MiniCheck [Tang et al., 2024] and the
+probe line of work train classifiers on internal activations. These methods
+require model-internal access and are strongly architecture-dependent. The
+clause audit needs only the draft and the tools the agent can run.
+
+**Agentic contracts and assurance.** The Trace-Based Assurance Framework
+[2026] formalises step and trace contracts for multi-agent orchestration,
+with machine-checkable verdicts and runtime governance. RFCAudit
+[Cheng et al., 2025] checks implementation conformance to natural-language
+specs. AgentVerify [2026] model-checks agent control flow against LTL
+properties. The differences: these target orchestration safety, functional
+correctness, or control-flow properties; our target is epistemic output.
+Their stance is block-or-rewrite at runtime; ours is advisory at delivery
+time. Their formalism is trace, assertion, or LTL; ours is RFC 2119
+natural-language clauses.
+
+**Per-mode benchmarks** we either reuse or recast: SycEval and ELEPHANT
+[Cheng et al., 2025] for sycophancy; FaithBench [Bao et al., 2025] and
+RAGTruth [Niu et al., 2024] for hallucination; AgentDojo
+[Debenedetti et al., 2024] and InjecAgent [Zhan et al., 2024] for prompt
+injection; ImpossibleBench [Zhong et al., 2025] for specification gaming;
+the cognitive-bias evals at judgment level [2410.15413, 2509.22856,
+2505.15392] for confirmation, automation, and anchoring biases. The
+agentic-coding recast for several of these is partly re-authoring and we
+will disclose provenance.
+
+# 7. Limitations
+
+The benchmark is author-built. Both the method and the labels are
+constructed by the same authors. Two annotators with Cohen kappa per clause
+and a held-out human label set are the immediate next step.
+
+Six of fourteen clauses are seeded. The cross-mode story rests on six modes,
+not all fourteen. Confirmation Bias, Overconfidence, Automation Bias,
+Hallucination, Confabulation, Narrativity Drift, Prompt Injection, and
+Specification Gaming are queued; the schema and runner cover them.
+
+Drafter and auditor share the same model family. The clause judges and the
+drafter run on the same Sonnet tier. A cross-family auditor using a local
+permissive-license open-weight model is queued as a circularity probe.
+
+The method is not state of the art on hallucination detection. FaithBench
+shows LLM-as-judge accuracy near 50 percent on hard hallucination cases;
+the prose-rubric family inherits that ceiling. Sampling and probe methods
+remain stronger on raw factuality. The clause audit's contributions are
+specificity, traceability, and stance, not raw factuality.
+
+Severity calibration is the named open problem. The judges over-grade
+`REVISE` cases to `BLOCK` on four of six modes when the partial change in
+the draft is silent. The ANC results suggest the calibration is partly a
+case-design issue: drafts that name old-frame to new-frame contrast
+explicitly are graded correctly.
+
+The verification-heavy SRC counter-finding is structural. Judges with a
+file-existence mandate over-rule the provided evidence text by re-running
+tools against the host file system. A judge-prompt fix or case-design rule
+is needed before running Hallucination and Confabulation, which inherit the
+same structural problem.
+
+# 8. Conclusion
+
+A confident answer and a correct answer look identical to the reader, and
+the cost of mistaking the first for the second is paid downstream. The AI
+Integrity Contract treats this as an editorial control problem rather than
+a model-internal one. Fourteen clauses, fourteen named auditors, advisory
+verdicts cited by rule ID, the human Principal as the final decision maker.
+On four of six seeded clauses the clause-grounded audit wins on specificity
+and rule-ID attribution at equal recall; on two it does not, and the
+structural reasons are named. The contribution is breadth, traceability,
+and stance, not raw factuality.
+
+# References
+
+Bai, Y., Kadavath, S., Kundu, S., et al. (2022). Constitutional AI:
+Harmlessness from AI Feedback. *arXiv preprint* arXiv:2212.08073.
+
+Bao, F., Tu, M., Wei, M., et al. (2025). FaithBench: A Diverse Hallucination
+Benchmark for Summarization by Modern LLMs. *NAACL 2025*. arXiv:2410.13210.
+
+Debenedetti, E., Zhang, J., Balunovic, M., et al. (2024). AgentDojo: A
+Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.
+*NeurIPS 2024 Datasets and Benchmarks*. arXiv:2406.13352.
+
+Dhuliawala, S., Komeili, M., Xu, J., et al. (2023). Chain-of-Verification
+Reduces Hallucination in Large Language Models. *arXiv preprint*
+arXiv:2309.11495.
+
+Farquhar, S., Kossen, J., Kuhn, L., Gal, Y. (2024). Detecting hallucinations
+in large language models using semantic entropy. *Nature*.
+
+Cheng, M., Yu, Q., Fanous, A., et al. (2025). ELEPHANT: Social Sycophancy in
+LLMs. *arXiv preprint* arXiv:2505.13995.
+
+Kossen, J., Han, J., Razzak, M., et al. (2024). Semantic Entropy Probes:
+Robust and Cheap Hallucination Detection in LLMs. *arXiv preprint*
+arXiv:2406.15927.
+
+Madaan, A., Tandon, N., Gupta, P., et al. (2023). Self-Refine: Iterative
+Refinement with Self-Feedback. *arXiv preprint* arXiv:2303.17651.
+
+Manakul, P., Liusie, A., Gales, M. (2023). SelfCheckGPT: Zero-Resource
+Black-Box Hallucination Detection for Generative Large Language Models.
+*arXiv preprint* arXiv:2303.08896.
+
+Niu, C., Wu, Y., Zhu, J., et al. (2024). RAGTruth: A Hallucination Corpus
+for Developing Trustworthy Retrieval-Augmented Language Models.
+*ACL 2024*. arXiv:2401.00396.
+
+Shinn, N., Cassano, F., Berman, E., et al. (2023). Reflexion: Language
+Agents with Verbal Reinforcement Learning. *arXiv preprint*
+arXiv:2303.11366.
+
+Tang, L., Laban, P., Durrett, G. (2024). MiniCheck: Efficient Fact-Checking
+of LLMs on Grounding Documents. *EMNLP 2024*.
+
+Trace-Based Assurance Framework for Agentic AI (2026). *arXiv preprint*
+arXiv:2603.18096.
+
+RFCAudit (2025). *arXiv preprint* arXiv:2506.00714.
+
+AgentVerify (2026). preprints.org 202604.1029.
+
+Zhan, Q., Liang, Z., Ying, Z., Kang, D. (2024). InjecAgent: Benchmarking
+Indirect Prompt Injections in Tool-Integrated Large Language Model Agents.
+*ACL 2024 Findings*. arXiv:2403.02691.
+
+Zhong, Z., Raghunathan, A., Carlini, N. (2025). ImpossibleBench: Measuring
+LLMs' Propensity of Exploiting Test Cases. *arXiv preprint*
+arXiv:2510.20270.
+
+codex
+I’ll treat this as a reviewer-style critique rather than editing prose. I’m going to verify the named related-work lines enough to avoid giving citation advice from memory, then I’ll tie the critique back to exact draft quotes and sections.
+web search: 
+web search: Trace-Based Assurance Framework for Agentic AI arXiv 2603.18096 ...
+web search: 
+web search: SycEval Evaluating LLM Sycophancy arXiv 2502.08177 ...
+web search: 
+web search: https://arxiv.org/abs/2506.00714
+codex
+**Main Findings**
+
+1. **Novelty Positioning**
+Mostly honest, but it needs tighter wording against the contract / verification papers.
+
+The risky overclaim is in §1:
+
+> “None of them produce verdicts an external reader can trace to a specific obligation the agent was bound by.”
+
+That is too broad. Trace-Based Assurance explicitly uses step and trace contracts with machine-checkable verdicts and first-violation localization. Your distinction is not “traceability”; it is **traceability of epistemic output obligations in an advisory delivery-time review**. Say that.
+
+Similarly, §6 overstates the runtime contrast:
+
+> “Their stance is block-or-rewrite at runtime; ours is advisory at delivery time.”
+
+This fits Trace-Based Assurance partly, but not RFCAudit, which is an offline/agentic bug-detection system for RFC conformance, and AgentVerify also includes post-hoc behavioral analysis. Better: “These systems primarily evaluate orchestration, protocol conformance, or control-flow safety; our unit of analysis is the final epistemic draft and its human-reviewable obligations.”
+
+You underclaim slightly by saying the contribution is only:
+
+> “breadth, traceability, and stance.”
+
+The stronger honest claim is: **a contract-grounded LLM-as-judge decomposition for multiple epistemic failure modes, evaluated with clean matched controls and rule-ID attribution in agentic coding.** “Breadth” is weak while only six of fourteen clauses are evaluated.
+
+2. **Method Section**
+§3 is still more system description than method. A reviewer could reject it as too thin because it lacks enough detail to reproduce the audit.
+
+The key thin spots:
+
+> “The draft is decomposed into discrete factual claims.”
+
+How? Sentence split? LLM extraction? Prompt? Are normative claims extracted? Are code-path claims treated differently?
+
+> “Each claim is checked against the available evidence with `Read`, `Grep`, and tool re-runs where applicable.”
+
+What is “where applicable”? Who decides? What happens when evidence text conflicts with host filesystem state? SRC shows this matters.
+
+> “Each clause judge receives the user ask, the draft, the evidence, and the CoVe output.”
+
+Need the actual input schema, judge prompt template, model version, temperature, retry policy, context isolation, and aggregation rules.
+
+Minimum method fixes: add a pipeline figure, include one full worked example, publish judge prompt templates, define claim labels operationally, specify verdict mapping, and report model/config/runtime/cost.
+
+3. **Experiment Scale**
+n=10 easy + n=10 hard per clause is defensible only as a **seed / pilot workshop evaluation**, not as strong empirical validation.
+
+The current phrasing sometimes reads stronger than the sample supports:
+
+> “The clause judge wins on specificity 1.00 on SEL, SCP, CAP, ANC”
+
+With n=10 per cell, one case changes specificity by 0.20 or 0.25 depending clean count. You need confidence intervals or exact counts, not only decimals.
+
+Minimum fix: report counts like `5/5 clean`, bootstrap or binomial CIs, release the full benchmark, run at least 3 stochastic repeats per condition, and add independent human labels for at least the hard suite. Best small upgrade: increase hard suites to n=20 per clause before submission.
+
+4. **Figures / Table 2**
+The story is right, but redundant. Figures 1-3 plus Table 2 all say nearly the same thing.
+
+Keep Figure 1, because specificity is the real result. Keep Table 2, but compact it or move full table to appendix. Figure 2 is partly unfair because:
+
+> “free-form and v5 reviewers score zero by construction”
+
+That makes it less a result than a design property. Fold rule-ID attribution into Table 2 or show only judge correctness by mode. Figure 3 is useful only if it exposes the SRC counter-finding clearly.
+
+5. **Severity Calibration**
+The framing is honest but currently reads a bit like an excuse because the paper claims wins while explaining away the main residual error:
+
+> “The remaining judge errors are severity calibration”
+
+and
+
+> “Severity calibration is the named open problem.”
+
+Make it stronger by treating severity calibration as a measured failure mode, not a caveat. Add a small confusion matrix: SHIP / REVISE / BLOCK. State plainly: “The method detects problems but is not yet reliable at intervention severity.” That is a credible workshop contribution.
+
+6. **Author-Built Benchmark**
+The limitations section is honest, but too short for the largest threat.
+
+This is good:
+
+> “Both the method and the labels are constructed by the same authors.”
+
+But it needs consequences: author-built cases may encode the contract’s own ontology, favor the clause judge, and make rule-ID attribution easier because the benchmark labels mirror the rule IDs. Add whether cases were written before or after judge prompts, whether failed cases were iterated into the suite, and whether any negative examples were adversarially selected.
+
+7. **Citations**
+Several citation issues need fixing.
+
+RFCAudit is miscited. Your references say:
+
+> “RFCAudit (2025).”
+
+and related text says `[Cheng et al., 2025]`, but arXiv lists **Mingwei Zheng, Chengpeng Wang, Xuwei Liu, Jinyao Guo, Shiwei Feng, Xiangyu Zhang** for *RFCAudit: An LLM Agent for Functional Bug Detection in Network Protocols*; it checks RFC conformance in network protocol implementations and reports 47 bugs with 81.9% precision. Source: https://arxiv.org/abs/2506.00714
+
+Trace-Based Assurance is relevant and should be described more precisely: Message-Action Traces, step/trace contracts, deterministic replay, stress testing, fault injection, and runtime governance. Source: https://arxiv.org/abs/2603.18096
+
+AgentVerify is a non-peer-reviewed preprint, posted April 14, 2026, using LTL model checking for memory, tools, MCP/skill invocations, and human boundaries. Source: https://www.preprints.org/manuscript/202604.1029
+
+Add SycEval explicitly to references if you cite it. Source: https://arxiv.org/abs/2502.08177
+
+MiniCheck is not really a hidden-state/logit probe. It is a small fact-checking model for grounded claim verification. Move it out of “Hidden-state and logit probes.” Source: https://aclanthology.org/2024.emnlp-main.499/
+
+8. **Other Reviewer Pushback**
+A strong reviewer will ask why the baselines cannot emit rule IDs. If rule-ID attribution is central, add a baseline where the monolithic reviewer is asked to cite the best matching rule ID. Otherwise the comparison is structurally advantaged.
+
+They will also ask whether “none” having specificity 1.00 is meaningful. It never flags anything, so specificity is trivially perfect. Make clear that “none” is only a base-rate comparator.
+
+The SRC counter-finding is valuable, but dangerous: it shows your verification machinery can override benchmark evidence incorrectly. You need to make evidence authority explicit before running hallucination/confabulation.
+
+**Verdict: MAJOR REVISION**
+
+Most important fix: narrow the novelty claim and strengthen the method/experiment reproducibility package with exact prompts, counts/CIs, independent labels, and a rule-ID-capable baseline.
+tokens used
+42,394
+**Main Findings**
+
+1. **Novelty Positioning**
+Mostly honest, but it needs tighter wording against the contract / verification papers.
+
+The risky overclaim is in §1:
+
+> “None of them produce verdicts an external reader can trace to a specific obligation the agent was bound by.”
+
+That is too broad. Trace-Based Assurance explicitly uses step and trace contracts with machine-checkable verdicts and first-violation localization. Your distinction is not “traceability”; it is **traceability of epistemic output obligations in an advisory delivery-time review**. Say that.
+
+Similarly, §6 overstates the runtime contrast:
+
+> “Their stance is block-or-rewrite at runtime; ours is advisory at delivery time.”
+
+This fits Trace-Based Assurance partly, but not RFCAudit, which is an offline/agentic bug-detection system for RFC conformance, and AgentVerify also includes post-hoc behavioral analysis. Better: “These systems primarily evaluate orchestration, protocol conformance, or control-flow safety; our unit of analysis is the final epistemic draft and its human-reviewable obligations.”
+
+You underclaim slightly by saying the contribution is only:
+
+> “breadth, traceability, and stance.”
+
+The stronger honest claim is: **a contract-grounded LLM-as-judge decomposition for multiple epistemic failure modes, evaluated with clean matched controls and rule-ID attribution in agentic coding.** “Breadth” is weak while only six of fourteen clauses are evaluated.
+
+2. **Method Section**
+§3 is still more system description than method. A reviewer could reject it as too thin because it lacks enough detail to reproduce the audit.
+
+The key thin spots:
+
+> “The draft is decomposed into discrete factual claims.”
+
+How? Sentence split? LLM extraction? Prompt? Are normative claims extracted? Are code-path claims treated differently?
+
+> “Each claim is checked against the available evidence with `Read`, `Grep`, and tool re-runs where applicable.”
+
+What is “where applicable”? Who decides? What happens when evidence text conflicts with host filesystem state? SRC shows this matters.
+
+> “Each clause judge receives the user ask, the draft, the evidence, and the CoVe output.”
+
+Need the actual input schema, judge prompt template, model version, temperature, retry policy, context isolation, and aggregation rules.
+
+Minimum method fixes: add a pipeline figure, include one full worked example, publish judge prompt templates, define claim labels operationally, specify verdict mapping, and report model/config/runtime/cost.
+
+3. **Experiment Scale**
+n=10 easy + n=10 hard per clause is defensible only as a **seed / pilot workshop evaluation**, not as strong empirical validation.
+
+The current phrasing sometimes reads stronger than the sample supports:
+
+> “The clause judge wins on specificity 1.00 on SEL, SCP, CAP, ANC”
+
+With n=10 per cell, one case changes specificity by 0.20 or 0.25 depending clean count. You need confidence intervals or exact counts, not only decimals.
+
+Minimum fix: report counts like `5/5 clean`, bootstrap or binomial CIs, release the full benchmark, run at least 3 stochastic repeats per condition, and add independent human labels for at least the hard suite. Best small upgrade: increase hard suites to n=20 per clause before submission.
+
+4. **Figures / Table 2**
+The story is right, but redundant. Figures 1-3 plus Table 2 all say nearly the same thing.
+
+Keep Figure 1, because specificity is the real result. Keep Table 2, but compact it or move full table to appendix. Figure 2 is partly unfair because:
+
+> “free-form and v5 reviewers score zero by construction”
+
+That makes it less a result than a design property. Fold rule-ID attribution into Table 2 or show only judge correctness by mode. Figure 3 is useful only if it exposes the SRC counter-finding clearly.
+
+5. **Severity Calibration**
+The framing is honest but currently reads a bit like an excuse because the paper claims wins while explaining away the main residual error:
+
+> “The remaining judge errors are severity calibration”
+
+and
+
+> “Severity calibration is the named open problem.”
+
+Make it stronger by treating severity calibration as a measured failure mode, not a caveat. Add a small confusion matrix: SHIP / REVISE / BLOCK. State plainly: “The method detects problems but is not yet reliable at intervention severity.” That is a credible workshop contribution.
+
+6. **Author-Built Benchmark**
+The limitations section is honest, but too short for the largest threat.
+
+This is good:
+
+> “Both the method and the labels are constructed by the same authors.”
+
+But it needs consequences: author-built cases may encode the contract’s own ontology, favor the clause judge, and make rule-ID attribution easier because the benchmark labels mirror the rule IDs. Add whether cases were written before or after judge prompts, whether failed cases were iterated into the suite, and whether any negative examples were adversarially selected.
+
+7. **Citations**
+Several citation issues need fixing.
+
+RFCAudit is miscited. Your references say:
+
+> “RFCAudit (2025).”
+
+and related text says `[Cheng et al., 2025]`, but arXiv lists **Mingwei Zheng, Chengpeng Wang, Xuwei Liu, Jinyao Guo, Shiwei Feng, Xiangyu Zhang** for *RFCAudit: An LLM Agent for Functional Bug Detection in Network Protocols*; it checks RFC conformance in network protocol implementations and reports 47 bugs with 81.9% precision. Source: https://arxiv.org/abs/2506.00714
+
+Trace-Based Assurance is relevant and should be described more precisely: Message-Action Traces, step/trace contracts, deterministic replay, stress testing, fault injection, and runtime governance. Source: https://arxiv.org/abs/2603.18096
+
+AgentVerify is a non-peer-reviewed preprint, posted April 14, 2026, using LTL model checking for memory, tools, MCP/skill invocations, and human boundaries. Source: https://www.preprints.org/manuscript/202604.1029
+
+Add SycEval explicitly to references if you cite it. Source: https://arxiv.org/abs/2502.08177
+
+MiniCheck is not really a hidden-state/logit probe. It is a small fact-checking model for grounded claim verification. Move it out of “Hidden-state and logit probes.” Source: https://aclanthology.org/2024.emnlp-main.499/
+
+8. **Other Reviewer Pushback**
+A strong reviewer will ask why the baselines cannot emit rule IDs. If rule-ID attribution is central, add a baseline where the monolithic reviewer is asked to cite the best matching rule ID. Otherwise the comparison is structurally advantaged.
+
+They will also ask whether “none” having specificity 1.00 is meaningful. It never flags anything, so specificity is trivially perfect. Make clear that “none” is only a base-rate comparator.
+
+The SRC counter-finding is valuable, but dangerous: it shows your verification machinery can override benchmark evidence incorrectly. You need to make evidence authority explicit before running hallucination/confabulation.
+
+**Verdict: MAJOR REVISION**
+
+Most important fix: narrow the novelty claim and strengthen the method/experiment reproducibility package with exact prompts, counts/CIs, independent labels, and a rule-ID-capable baseline.
