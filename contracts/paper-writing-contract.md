@@ -1,7 +1,7 @@
 # Paper Writing Contract
 
-**Version:** 1.3
-**Effective date:** 2026-05-26 (was 1.0 on 2026-05-24, 1.1 and 1.2 on 2026-05-26)
+**Version:** 1.4
+**Effective date:** 2026-05-27 (was 1.0 on 2026-05-24, 1.1 / 1.2 on 2026-05-26, 1.3 on 2026-05-26)
 **Document type:** Binding writing standard for the EthicalAI workshop paper.
 **Auditors:** `paper-bias-judge`, `paper-ai-detector`, and the relevant EthicalAI clause
 judges named below.
@@ -151,16 +151,23 @@ Writer, the Council members, and the Council Lead.
 - **PAP-WORK-05** (MUST). The cycle is: do the next step, disclose what changed, continue.
   The cycle does not end on consensus of any single section; it ends when the paper is
   complete to the Principal's satisfaction or the Principal stops it.
-- **PAP-WORK-06** (MUST). Reusable scripts only. Any non-trivial multi-step shell logic,
-  analysis pipeline, or inspection routine MUST be a named, committed script in the repo
-  (typically under `experiments/`), invoked via a single Bash call. The following ARE
+- **PAP-WORK-06** (MUST). Reusable scripts only. Any non-trivial multi-step shell
+  logic MUST be a named, committed script in the repo (typically under `experiments/`),
+  invoked via a single Bash call. This covers, non-exhaustively: analysis pipelines,
+  inspection routines, figure generation, **environment setup, virtualenv creation,
+  dependency installation, tool bootstrap or upgrade, browser / headless install,
+  data download, and corpus preparation**. If the operation has more than one step or
+  needs to be re-runnable, it belongs in a committed script. The following ARE
   permitted in Bash calls: single standard CLI commands (e.g. `git status`, `gh issue
-  list`, `ls path/`), routine git workflows (`git add` + `git commit` + `git log` + `git
-  push` for the same change), and one-line `python3 -c '<expr>'` for trivial JSON or
-  syntax checks. The following are Breaches: inline `python3 - <<'PY' ... PY` heredocs
-  for analysis, multi-step `for` / `while` loops embedded in a Bash call, bundled `echo
-  --- header --- ; cmd1 ; cmd2 ; cmd3` chains that exist only inside the Bash call. When
-  in doubt, write the script first.
+  list`, `ls path/`), routine git workflows (`git add` + `git commit` + `git log` +
+  `git push` for the same change), and one-line `python3 -c '<expr>'` for trivial JSON
+  or syntax checks. The following ARE Breaches: inline `python3 - <<'PY' ... PY`
+  heredocs for analysis, multi-step `for` / `while` loops embedded in a Bash call,
+  bundled `echo --- header --- ; cmd1 ; cmd2 ; cmd3` chains that exist only inside the
+  Bash call, **and chained setup such as `python3 -m venv ... && source ... &&
+  pip install ... && python -c ...`, `brew install X && Y --version`,
+  or `npm i && node check.js`**. When the setup is missing, write the setup script
+  first, commit it, then run it. When in doubt, write the script first.
 
 Verdict mapping: a violation of PAP-WORK-01 or PAP-WORK-03 (re-asking a settled directive,
 stopping early) is a REVISE. A violation of PAP-WORK-02 (capitulation without evidence) is a
@@ -234,3 +241,10 @@ Amendments take effect at the next draft, never mid-section.
   committed script in the repo, invoked via a single Bash call. Inline python heredocs,
   for-loops, and bundled chained commands in Bash tool calls are Breaches. Single
   standard CLI commands and one-line `python3 -c` syntax checks remain allowed.
+- **1.4** (2026-05-27) PAP-WORK-06 strengthened. The rule now names environment
+  setup, virtualenv creation, dependency installation, tool bootstrap or upgrade,
+  browser / headless install, data download, and corpus preparation as Breaches when
+  chained inline (e.g. `python3 -m venv ... && source ... && pip install ...`,
+  `brew install X && Y --version`, `npm i && node check.js`). Reusable setup
+  primitives required: `experiments/setup-venv.sh` + `experiments/requirements.txt`
+  added in this commit; future setup workflows follow the same pattern.
