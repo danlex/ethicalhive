@@ -1,0 +1,89 @@
+% Workshop paper LaTeX skeleton for "Contracts Between Humans and AI Agents"
+%
+% Retargetable: the document class and the title block are the two pieces that
+% change per venue. Replace `\documentclass{article}` and the geometry block
+% with the venue's .sty file (e.g. neurips_2026.sty, iclr2026_conference.sty,
+% acl.sty) when the target is chosen.
+%
+% Anonymous-ready: comment out the AUTHOR line and uncomment the ANONYMOUS
+% line for double-blind submission.
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdftitle={Contracts Between Humans and AI Agents},
+    pdfauthor={Alexandru Dan}
+}
+\usepackage[shortlabels]{enumitem}
+
+% Pandoc compatibility macros
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\renewcommand{\arraystretch}{1.1}
+
+% --- Title block --------------------------------------------------------------
+
+\title{
+  \LARGE \textbf{Contracts Between Humans and AI Agents} \\[0.4em]
+  \large An Advisory Integrity Agreement for Agentic Coding
+}
+
+% AUTHOR version (camera-ready)
+\author{
+  Alexandru Dan \\
+  Triumvirate Labs \\
+  \texttt{alexandru.dan@triumviratelabs.ro}
+}
+
+% ANONYMOUS version (double-blind submission)
+% \author{Anonymous Authors}
+
+\date{2026-05-27}
+
+% --- Body ---------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We propose treating the relationship between a human user and an AI coding
+agent as a written contract. The Principal (the human) and the Agent (the LLM)
+work from the same document: a natural-language agreement in RFC 2119 style
+with fourteen clauses, one per recognised failure mode (hallucination,
+sycophancy, capitulation, anchoring, selective evidence, scope creep, and
+eight others). Each clause names a stable obligation and a dedicated auditor
+agent that checks compliance on the Agent's final delivered draft. The
+auditor is advisory: it cites the clause it relies on, the Principal keeps
+the final word, and the contract is amendable only by the Principal. We
+pilot six of the fourteen clauses on hand-built easy and hard case suites
+($\sim$40 percent clean SHIPs) in the agentic-coding domain, against two
+reviewer baselines (free-form self-review and a monolithic prose reviewer)
+plus a no-audit base-rate condition. At equal recall the per-clause auditor
+improves over the reviewer baselines in this pilot on specificity and on
+rule-ID attribution on four of six clauses whose evidence is structurally
+anchored, with named caveats on two. We position this paper as a design and
+pilot-feasibility report; the comparative evaluation claim is gated on
+independent annotation, which is queued. We do not claim state of the art on
+raw factuality.
+\end{abstract}
+
+\input{body-stripped.tex}
+
+\end{document}
