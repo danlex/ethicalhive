@@ -1,0 +1,42 @@
+Here is a critical review of your workshop draft, structured around your eight questions. 
+
+### 1. Novelty positioning (Honesty and Sufficiency)
+**Yes, it is honest and sufficient. You do not overclaim.** 
+You cleanly carve out the distinction between your work and the formal/trace-based assurance methods. In **Section 1.2**, you state: *"Their target is functional correctness, protocol conformance, or control-flow safety; ours is epistemic output."* You also explicitly bound your intervention as *"post-hoc advisory feedback to a human reviewer over the agent's final delivered draft."* Furthermore, you actively de-risk overclaiming in **Section 1.4**: *"We do not claim state of the art on raw factuality."* This is a highly mature positioning for a workshop paper.
+
+### 2. Is the Method section too thin?
+**It is structurally a method section (Section 3.3 provides a clear step-by-step procedure), but it is too thin on the CoVe stage.**
+A strict safety/eval reviewer might reject it because the CoVe stage seems to do all the actual epistemological heavy lifting (claim extraction and verification against evidence), making the per-clause "judge" look like a simple formatting wrapper. 
+* **Quote / Pointer:** In **Section 3.1**, you show CoVe outputting `unsupported`, and the judge essentially just translates that `unsupported` label into a `BLOCK` and slaps the `INT-ANC-01` rule ID on it. 
+* **To fix:** You need to explicitly state *why* the judge step requires an LLM call at all if CoVe already evaluates the claims, and clarify whether tools are actually executed during the benchmark or if the `evidence[]` array is entirely static.
+
+### 3. Defensibility of n=10 per clause
+**It is barely defensible, but your transparency saves it.**
+In the machine learning evaluation space, $n=10$ per clause (5 clean, 5 flag) is tiny. However, you handle this perfectly in **Section 5**: *"We show fractions rather than decimals so the small-n caveat is unavoidable on a glance."* For a workshop "pilot-feasibility report," reviewers will accept this *because* you don't hide it.
+* **The minimum fix needed:** You introduce the "easy and hard case suites" in the Abstract and Section 4, but **you completely abandon the easy suite in Section 5**. You must add at least one sentence summarizing the easy suite results (e.g., "On the easy suite, recall and specificity were 1.00 across all modes..."). Otherwise, the reviewer will wonder what you are hiding.
+
+### 4. Figures and Table 2
+**Table 2 is excellent and tells exactly the right story.**
+Removing the bar charts was the right call. At $n=5$ per clean cell, bar charts create an illusion of statistical rigor that doesn't exist. Reporting raw fractions (e.g., `5/5`, `8/10`) is scientifically honest. 
+* **The `monolithic + clauses` ablation** is a very strong addition that proves your specific architectural choice (decomposition) works better than just throwing the rubric at a single prompt. It is not cluttered.
+
+### 5. Severity calibration (REVISE vs BLOCK over-grade)
+**The framing is strong and reads as a scientific finding, not an excuse.**
+In **Section 5.1**, you present Table 3 and diagnose the exact failure: *"The pilot succeeds more clearly at clause identification than at intervention selection."* In **Section 7**, you propose a concrete fix for the next iteration: *"rule identity and intervention severity must be specified separately."* This is exactly the kind of open problem a workshop paper should articulate. It shows deep engagement with the error analysis.
+
+### 6. The author-built benchmark threat
+**The limitations section is brutally honest and does not duck.**
+In **Section 7**, you immediately state: *"Both the method and the labels are constructed by the same authors, which is the largest threat to validity in this work."* You further downgrade your own claims: *"We do not claim a comparative evaluation result without [independent annotation]."* This level of epistemic humility is rare and will heavily endear you to trustworthy-ML reviewers. 
+
+### 7. Citations
+Your citations are well-chosen, particularly the mappings to cognitive science for the failure modes (Tversky for Anchoring, Wason for Confirmation bias). 
+* **Missing context:** In **Section 6**, when discussing formal constraints and trace-based assurance, you might want to briefly mention structural generation constraints (e.g., *Outlines* or *LMQL*) to further cement the difference between forcing an LLM to output valid JSON/syntax (functional) vs enforcing epistemic honesty (your work).
+
+### 8. What else a strong reviewer would push back on
+* **The ablation of CoVe:** A strong reviewer will note that the `per-clause judge` and the `monolithic prose` baselines *both* use the CoVe stage, but the `freeform` baseline does not. They might ask: How much of the performance gap between `freeform` and `per-clause judge` is just because CoVe is doing a good job decomposing the prompt? 
+* **Model Mono-culture:** You state everything was run on "sonnet" at temperature 0. A reviewer will ask if this framework only works because Claude 3.5 Sonnet is uniquely good at following RFC 2119 instructions. Acknowledging this clearly in Section 7 as a model-generalization limitation would be wise.
+
+***
+
+### Verdict: MINOR REVISION
+**Most important fix:** Add a sentence summarizing the "easy suite" results to close the loop opened in the abstract, and explicitly clarify in Section 3 what the CoVe stage does versus what the Judge stage does so the Judge doesn't look like an unnecessary pass-through.

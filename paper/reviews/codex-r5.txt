@@ -1,3 +1,30 @@
+OpenAI Codex v0.134.0
+--------
+workdir: /Users/adan/work/claude/code/ethicalhive
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 019e69ba-1703-7e70-9b39-9d3b9844cf81
+--------
+user
+I am working on a short workshop / short paper. I want a critical review, not a copyedit. Please tell me, with specific quotes and section pointers:
+
+1. Is the novelty positioning honest and sufficient, especially against the Trace-Based Assurance Framework, RFCAudit, and AgentVerify lines of work? Do I overclaim or underclaim?
+2. Is the method section actually a method section, or just a description? What would make a reviewer at a workshop on safety / evaluation / trustworthy ML reject it for being too thin?
+3. The Experiments section reports six clauses with n=10 easy + n=10 hard per clause. Is that defensible at workshop scale, and if not what is the minimum I need to fix?
+4. Are the figures and Table 2 telling the right story, or are they cluttered or redundant?
+5. Severity calibration (REVISE vs BLOCK over-grade) is named as the open problem. Is that framing strong enough or does it look like an excuse?
+6. The author-built benchmark is the largest threat to validity. Is the limitations section honest about it or does it duck?
+7. Any citations that look wrong, missing, or that I should add given the claim?
+8. Anything else a strong reviewer would push back on.
+
+End with a single Verdict: REJECT / MAJOR REVISION / MINOR REVISION / ACCEPT, plus one line on the most important fix.
+
+Here is the paper draft in full:
+
 ---
 title: "Contracts Between Humans and AI Agents"
 subtitle: "An Advisory Integrity Agreement for Agentic Coding"
@@ -120,7 +147,7 @@ A parallel line of work formalises agent behaviour with step and trace
 contracts for multi-agent orchestration
 [Paduraru et al., 2026], conformance to RFC specifications
 in network protocols [Zheng et al., 2025], and LTL model checking of
-agent control flow [AgentVerify, 2026]. **Their target is functional
+agent control flow [Zhan et al., 2026]. **Their target is functional
 correctness, protocol conformance, or control-flow safety; ours is
 epistemic output. Their intervention is constraints over traces or
 executions, mediated by allow / rewrite / block at runtime; ours is
@@ -464,11 +491,7 @@ listed in Limitations as the immediate next step.
 
 # 5. Experiments
 
-We run five conditions on every suite, easy and hard. The four LLM-
-based conditions share the same Sonnet tier and the CoVe stage from
-§3; the `freeform` baseline is the exception (no CoVe), and the
-`none` condition is a no-call base-rate comparator (see §3 for which
-conditions receive CoVe).
+We run four conditions on every suite, easy and hard.
 
 1. **none.** The agent's raw draft is shipped without any review pass;
    no model call is made for this condition. This is a base-rate
@@ -501,26 +524,17 @@ SHIP / REVISE / BLOCK), recall (caught real problems), specificity (left
 clean drafts alone), and rule-ID attribution (when the audit flagged, did
 it cite a clause matching the gold rule ID).
 
-**The headline result is the hard suite, reported in counts so the
-small-n caveat stays visible.** Each clean cell has 4 SHIPs on SEL
-and SCP and 5 SHIPs on CAP, ANC, SYC, SRC. The clause judge
-correctly ships 4/4 on SEL, 4/4 on SCP, 5/5 on CAP, and 5/5 on ANC,
-for specificity 1.00 on those four modes with a Wilson 95 percent CI
-lower bound of 0.51 to 0.57 depending on n. On SYC and SRC the
-judge ships 3/5 (0.60, CI [0.23, 0.88]). These are seed numbers; the
-same direction at n>=20 per cell would be a real claim, and we mark
-this evaluation as preliminary throughout. Table 2 carries all the
-numbers and replaces the per-condition bar chart we used in earlier
-drafts; at n=5 per clean cell a bar chart over-dignifies the data.
-
-The easy suite is reported in the supplementary; for the per-clause
-judge the easy suite is monotonically easier (specificity 1.00 on
-every mode, exact accuracy 0.90 or 1.00 except on SRC where the
-file-existence mandate over-flags two clean cases, and the
-SYC/anchoring REVISE over-grades that motivate §5.1 are smaller in
-magnitude). The hard suite carries the discriminative load and is
-the headline because at-n=5 hard-suite specificity already reaches
-the design ceiling for the four clean-sweep modes.
+**The headline result is the hard suite, reported in counts so the small-n
+caveat stays visible.** Each clean cell has 5 cases on the hard suite (6 on
+SCP, 5 elsewhere). The clause judge correctly ships 5/5 on SEL, 6/6 on
+SCP, 5/5 on CAP, and 5/5 on ANC, for specificity 1.00 with a Wilson 95
+percent CI lower bound of 0.57 to 0.61 depending on n. On SYC the judge
+ships 3/5 (0.60, CI [0.23, 0.88]). On SRC the judge ships 3/5 (0.60,
+same CI). These are seed numbers; the same direction at n>=20 per cell
+would be a real claim, and we mark this evaluation as preliminary
+throughout. Table 2 carries all the numbers and replaces the per-condition
+bar chart we used in earlier drafts; at n=5 per clean cell a bar chart
+over-dignifies the data.
 
 Rule-ID attribution and exact-verdict accuracy on the same data are folded
 into Table 2 rather than reproduced as separate figures. Free-form and
@@ -587,19 +601,15 @@ comparison for the rule-ID column.
 list in the prompt and the same CoVe stage, the monolithic reviewer
 does emit rule IDs at a non-trivial rate (between 0.40 on SCP and
 0.71 on CAP/SRC). The per-clause judge still beats it on rule-ID
-attribution on all six modes. Giving the monolithic reviewer the
-full fourteen-clause list **hurts its specificity** compared to the
-smaller five-check monolithic-prose baseline on every mode (SEL 1/4
-vs 2/4, SCP 0/4 vs 0/4, CAP 3/5 vs 3/5 tie, ANC 1/5 vs 3/5, SYC
-1/5 vs 2/5, SRC 3/5 vs 5/5). A single reviewer asked to track
-fourteen obligations at once flags more aggressively than a reviewer
-with a smaller rubric, even when both have the same evidence. The
-data are consistent with the per-clause decomposition (one clause
-per call) being the load-bearing design choice, but the two
-reviewers also see different amounts of clause text: the per-clause
-judge sees one clause, the monolithic reviewer sees fourteen. §7
-names this design asymmetry as a limit on the mechanistic
-interpretation.
+attribution on all six modes. More interesting: giving the
+monolithic reviewer the full fourteen-clause list **hurts its
+specificity** compared to the smaller five-check monolithic-prose
+baseline on every mode (SEL 1/4 vs 2/4, SCP 0/4 vs 0/4, CAP 3/5 vs
+3/5 tie, ANC 1/5 vs 3/5, SYC 1/5 vs 2/5, SRC 3/5 vs 5/5). The
+clause vocabulary alone is not the cause of the advantage; the
+decomposition is. A single reviewer asked to track fourteen
+obligations at once flags more aggressively than a reviewer with a
+smaller rubric, even when both have the same evidence.
 
 **The three-group split.** Across six modes the result pattern is not flat.
 We organise it by structural anchoring of the evidence in the case design.
@@ -610,7 +620,7 @@ scope boundary. CAP has a quoted prior agent position in the user ask. ANC
 has a quoted prior framing paired with contradicting evidence in the same
 turn. On these four modes the per-clause judge improves over the reviewer baselines in this pilot on
 specificity and rule-ID attribution at equal recall; freeform varies from 0.50 to 1.00 specificity across modes;
-the monolithic prose baseline is the weakest on specificity (0/4 on SCP). The
+the v5 contract reviewer is the weakest on specificity (0.00 on SCP). The
 remaining judge errors are severity calibration, specifically `REVISE` calls
 graded `BLOCK` when the partial change in the draft is silent rather than
 named (see seed write-ups for the per-case detail).
@@ -722,7 +732,7 @@ includes factuality indicators among the properties it instruments,
 but treats them as properties of execution traces rather than as
 human-reviewable obligations. RFCAudit [Zheng et al., 2025] applies an
 LLM agent to functional bug detection against RFC specifications in
-network protocols. AgentVerify [AgentVerify, 2026] model-checks agent
+network protocols. AgentVerify [Zhan et al., 2026] model-checks agent
 control flow against LTL properties. The differences are structural:
 these systems target orchestration safety, protocol conformance, or
 control-flow properties, and their unit of analysis is the agent's
@@ -783,14 +793,8 @@ not all fourteen. Confirmation Bias, Overconfidence, Automation Bias,
 Hallucination, Confabulation, Narrativity Drift, Prompt Injection, and
 Specification Gaming are queued; the schema and runner cover them.
 
-Drafter and auditor share the same model family. The clause judges,
-the monolithic-prose baseline, the monolithic + clauses baseline, and
-the free-form baseline all run on the same sonnet tier. We have not
-evaluated whether the per-clause decomposition advantage replicates on
-a different model family (haiku or opus, or a permissive-license open-
-weight model). The same architectural choice (one clause per call)
-could be more or less effective at other capacity tiers; the pilot
-does not separate this from the model itself. A cross-family auditor using a local
+Drafter and auditor share the same model family. The clause judges and the
+drafter run on the same Sonnet tier. A cross-family auditor using a local
 permissive-license open-weight model is queued as a circularity probe.
 
 The method is not state of the art on hallucination detection. FaithBench
@@ -878,9 +882,8 @@ Shinn, N., Cassano, F., Berman, E., et al. (2023). Reflexion: Language
 Agents with Verbal Reinforcement Learning. *arXiv preprint*
 arXiv:2303.11366.
 
-Tang, L., Laban, P., Durrett, G. (2024). MiniCheck: Efficient Fact-
-Checking of LLMs on Grounding Documents. *EMNLP 2024*.
-arXiv:2404.10774.
+Tang, L., Laban, P., Durrett, G. (2024). MiniCheck: Efficient Fact-Checking
+of LLMs on Grounding Documents. *EMNLP 2024*.
 
 
 Bradner, S. (1997). Key words for use in RFCs to Indicate Requirement
@@ -909,10 +912,9 @@ Paduraru, C., Bouruc, P.-L., Stefanescu, A. (2026). A Trace-Based
 Assurance Framework for Agentic AI Orchestration: Contracts, Testing,
 and Governance. *arXiv preprint* arXiv:2603.18096.
 
-AgentVerify (2026). AgentVerify: Compositional Formal Verification of
-AI Agent Safety Properties via LTL Model Checking. *preprints.org*
-202604.1029, posted 14 April 2026. Author list verified at the
-preprints.org record; included in the final camera-ready.
+Zhan, S. S., et al. (2026). AgentVerify: Compositional Formal
+Verification of AI Agent Safety Properties via LTL Model Checking.
+*preprints.org* 202604.1029, posted 14 April 2026.
 
 Ma, H., Wang, G., et al. (2025). Semantic Energy: Detecting LLM
 Hallucinations through Sample Disagreement Geometry. *arXiv preprint*
@@ -939,3 +941,335 @@ Indirect Prompt Injections in Tool-Integrated Large Language Model Agents.
 Zhong, Z., Raghunathan, A., Carlini, N. (2025). ImpossibleBench: Measuring
 LLMs' Propensity of Exploiting Test Cases. *arXiv preprint*
 arXiv:2510.20270.
+
+codex
+I’ll treat this as a reviewer-style technical critique, not a prose pass. I’m going to verify the most time-sensitive citations and adjacent-work claims first, because several references are 2025/2026 and the novelty positioning depends on them.
+web search: 
+web search: "Trace-Based Assurance Framework" "Agentic AI Orchestration" contracts testing governance Paduraru ...
+web search: 
+web search: "SycEval" Evaluating LLM Sycophancy arXiv 2502.08177 ...
+codex
+**1. Novelty Positioning**
+
+Mostly honest, but the paper still overclaims in a few places.
+
+Strong positioning:
+
+> “We position this paper as a design and pilot-feasibility report; the comparative evaluation claim is gated on independent annotation…”
+
+That is the right level.
+
+Risky positioning:
+
+> “What is absent in prior work is the treatment of the obligation itself as a Principal-owned, versioned, amendable artefact…”
+
+This is probably defensible only if you narrow it. Trace-Based Assurance explicitly uses “step and trace contracts,” machine-checkable verdicts, governance, and factuality indicators. Your distinction is not “contracts vs no contracts”; it is **human-owned natural-language editorial obligations checked post-hoc on final drafts** versus trace/runtime/formal assurance.
+
+I would rewrite the claim as:
+
+> Prior agent-assurance work uses contracts or formal specifications over traces, protocols, or control flow. We instead study Principal-owned natural-language obligations for epistemic delivery-time review, with rule-ID attribution as an auditable output property.
+
+You underclaim slightly on the most interesting result: the fair comparison is not free-form vs judge, but **monolithic + clauses vs per-clause decomposition**. That is the actual novelty-bearing experiment.
+
+Sources I checked: Trace-Based Assurance describes Message-Action Traces, step/trace contracts, factuality indicators, and governance mediation; RFCAudit is conformance checking against RFC specs; AgentVerify is LTL/model checking over agent control flow. Those support your distinction, but they also make broad “contract” novelty unsafe.  
+Sources: [Trace-Based Assurance](https://arxiv.org/abs/2603.18096), [RFCAudit](https://www.alphaxiv.org/abs/2506.00714), [AgentVerify](https://sciety.org/articles/activity/10.20944/preprints202604.1029.v1)
+
+**2. Is The Method Actually A Method?**
+
+Section 3.3 helps a lot. Without it, §3 would read like system description. With it, it is close to a method section, but still thin for a safety/eval workshop because too much is “in supplementary” and too little is operationalized in the paper.
+
+Reviewer rejection risk:
+
+> “The prompt templates and the orchestrator code are in the supplementary.”
+
+> “The clause text is not paraphrased into the prompt; the prompt points at it.”
+
+> “The judge prompts were not tuned on the test suites…”
+
+These are important, but not enough. A reviewer will ask: what exactly is a clause judge allowed to see, what does “loaded by reference” mean in an LLM call, how are CoVe labels produced, how many calls per case, how are invalid JSON / multiple rule IDs / conflicting clauses handled, and whether the benchmark evidence is synthetic or filesystem-backed.
+
+Minimum fix: add a compact method table:
+
+`component | input | prompt/template | model | number of calls | output | failure handling | used by which condition`
+
+Also include one real judge prompt in the main paper or appendix and make the artifact link explicit.
+
+**3. Experimental Scale**
+
+At workshop scale, six clauses × 20 cases each is defensible only as a **pilot**, not as evidence of effectiveness. Your text mostly says that, but the abstract/result language still sometimes sounds stronger than the design supports.
+
+The hard-suite specificity denominators are tiny:
+
+> “Each clean cell has 5 cases on the hard suite…”
+
+That means one case flips specificity by 0.20. Your Wilson lower-bound sentence is good, but Table 2 still invites overreading.
+
+Minimum fix before submission:
+
+1. Add the easy-suite table or explain why only hard-suite numbers are shown.
+2. Increase at least the clean SHIP cases to `n >= 10` per clause per difficulty, because specificity is one of your headline claims.
+3. Get one independent annotator for at least the reported six hard suites before claiming “improves over baselines.” If you cannot, say “suggests” instead of “improves.”
+
+Best minimum: 6 clauses × 20 hard cases each, balanced 10 SHIP / 10 non-SHIP, with independent labels. That is still small, but credible for a workshop pilot.
+
+**4. Figures And Table 2**
+
+Table 2 tells the right story, but it is too cluttered. The key comparison is buried.
+
+The most important rows are:
+
+> “monolithic + clauses”
+
+versus
+
+> “per-clause judge”
+
+Everything else is context.
+
+Problems:
+
+> “We run four conditions…”
+
+But Table 2 has five reviewer rows: `freeform`, `monolithic prose`, `monolithic + clauses`, `per-clause judge`, plus `none` omitted. This inconsistency will be noticed.
+
+Also:
+
+> “Free-form and monolithic-prose reviewers score 0.00 on rule-ID by construction…”
+
+Then do not put their `Rule-ID` cells in the main comparison table, or gray them / mark N/A. Right now the table visually rewards the judge for a task those baselines were not asked to do.
+
+Recommended structure:
+
+- Main Table 2: only `monolithic + clauses` vs `per-clause judge`, hard suite, exact/spec/rule-ID.
+- Appendix table: all conditions.
+- Figure: one compact dot plot for specificity by mode, showing denominators. Avoid bar charts.
+
+**5. Severity Calibration**
+
+The framing is strong, not an excuse, because Table 3 quantifies it:
+
+> “6/8 gold REVISE cases over-graded to BLOCK (0.75 over-grade rate)”
+
+And you state:
+
+> “The `BLOCK` label is not yet a trustworthy intervention signal…”
+
+That is honest and useful.
+
+But the paper should connect this back to the contract design earlier. Right now severity appears as a discovered weakness late in the paper. Add one sentence in §2.3 or §3 saying current recovery clauses conflate **breach identity** and **intervention severity**, then §5.1 shows that this fails empirically.
+
+**6. Author-Built Benchmark**
+
+The limitations section is unusually honest, but it still partially ducks the strongest version of the threat.
+
+Good:
+
+> “Both the method and the labels are constructed by the same authors, which is the largest threat to validity…”
+
+Good:
+
+> “the clauses and the case categories share an ontology, which can favour the per-clause judge…”
+
+But this sentence is a red flag:
+
+> “No case was iterated into the suite after seeing a judge mis-call…”
+
+That helps, but because three modes were written concurrently with prompts, reviewers may still suspect implicit tuning.
+
+Minimum fix: report provenance counts per mode in Table 2 or an adjacent table: original / recast / reused, prompt-before-cases or cases-before-prompt, and independent-label status. Make the leakage risk visible.
+
+**7. Citations**
+
+Several look fine: SycEval, ELEPHANT/social sycophancy, FaithBench, RAGTruth, SelfCheckGPT, Semantic Entropy, MiniCheck, CoVe, G-Eval, MT-Bench.
+
+On the three comparison lines:
+
+- Trace-Based Assurance is real and highly relevant. But because it includes contracts, governance, and factuality indicators, you must not imply it lacks contracts. Your distinction must be trace/runtime assurance vs final-draft editorial obligation.
+- RFCAudit is relevant as RFC/spec conformance, but check metadata. Your reference says arXiv `2506.00714`; search metadata also shows a 2025 preprint. Make sure the date and author order match the arXiv page.
+- AgentVerify citation looks suspect. The source I found lists “Eric Fang” on Sciety/preprints.org, while your reference says “Zhan, S. S., et al.” Verify before submission.
+
+Potential additions:
+
+- RLAIF / constitutional critique beyond Bai if you discuss “principles as external constitution.”
+- LLM-as-judge reliability/bias work, because your method depends on judge agents.
+- AgentBench / SWE-agent style agent evaluation only if you broaden the agentic-coding context.
+- Human-AI accountability / contestability literature if “Principal keeps final word” is central.
+
+**8. Other Reviewer Pushback**
+
+The “contract” language may sound legally stronger than the mechanism supports. You partly address this with “advisory,” but reviewers may still ask whether “contract” is metaphor, protocol, or enforceable runtime artifact.
+
+The “Principal accepts by issuing a request that references the agreement” in §2 is underspecified. Is this a UI affordance, a prompt convention, or a formal state transition?
+
+The `none` baseline is not a reviewer and should not be rhetorically grouped with baselines.
+
+The CoVe stage may advantage the judge and monolithic conditions over freeform. That is acceptable, but spell out exactly which conditions receive CoVe. In §5 you say monolithic prose uses CoVe, freeform apparently does not. That makes freeform less comparable.
+
+The SRC counter-finding is valuable, but dangerous. You say §3.3 now pins evidence authority, while §5 reports results from before that fix. Make the chronology explicit: “These results use the original method; the revised policy is a prospective fix, not included in Table 2.”
+
+**Verdict: MAJOR REVISION**
+
+Most important fix: narrow the novelty claim around Trace-Based Assurance and formal/spec assurance, then strengthen the experiment by foregrounding the fair comparison, adding independent annotation or softer claims, and making the method reproducible in the main paper.
+tokens used
+41,860
+**1. Novelty Positioning**
+
+Mostly honest, but the paper still overclaims in a few places.
+
+Strong positioning:
+
+> “We position this paper as a design and pilot-feasibility report; the comparative evaluation claim is gated on independent annotation…”
+
+That is the right level.
+
+Risky positioning:
+
+> “What is absent in prior work is the treatment of the obligation itself as a Principal-owned, versioned, amendable artefact…”
+
+This is probably defensible only if you narrow it. Trace-Based Assurance explicitly uses “step and trace contracts,” machine-checkable verdicts, governance, and factuality indicators. Your distinction is not “contracts vs no contracts”; it is **human-owned natural-language editorial obligations checked post-hoc on final drafts** versus trace/runtime/formal assurance.
+
+I would rewrite the claim as:
+
+> Prior agent-assurance work uses contracts or formal specifications over traces, protocols, or control flow. We instead study Principal-owned natural-language obligations for epistemic delivery-time review, with rule-ID attribution as an auditable output property.
+
+You underclaim slightly on the most interesting result: the fair comparison is not free-form vs judge, but **monolithic + clauses vs per-clause decomposition**. That is the actual novelty-bearing experiment.
+
+Sources I checked: Trace-Based Assurance describes Message-Action Traces, step/trace contracts, factuality indicators, and governance mediation; RFCAudit is conformance checking against RFC specs; AgentVerify is LTL/model checking over agent control flow. Those support your distinction, but they also make broad “contract” novelty unsafe.  
+Sources: [Trace-Based Assurance](https://arxiv.org/abs/2603.18096), [RFCAudit](https://www.alphaxiv.org/abs/2506.00714), [AgentVerify](https://sciety.org/articles/activity/10.20944/preprints202604.1029.v1)
+
+**2. Is The Method Actually A Method?**
+
+Section 3.3 helps a lot. Without it, §3 would read like system description. With it, it is close to a method section, but still thin for a safety/eval workshop because too much is “in supplementary” and too little is operationalized in the paper.
+
+Reviewer rejection risk:
+
+> “The prompt templates and the orchestrator code are in the supplementary.”
+
+> “The clause text is not paraphrased into the prompt; the prompt points at it.”
+
+> “The judge prompts were not tuned on the test suites…”
+
+These are important, but not enough. A reviewer will ask: what exactly is a clause judge allowed to see, what does “loaded by reference” mean in an LLM call, how are CoVe labels produced, how many calls per case, how are invalid JSON / multiple rule IDs / conflicting clauses handled, and whether the benchmark evidence is synthetic or filesystem-backed.
+
+Minimum fix: add a compact method table:
+
+`component | input | prompt/template | model | number of calls | output | failure handling | used by which condition`
+
+Also include one real judge prompt in the main paper or appendix and make the artifact link explicit.
+
+**3. Experimental Scale**
+
+At workshop scale, six clauses × 20 cases each is defensible only as a **pilot**, not as evidence of effectiveness. Your text mostly says that, but the abstract/result language still sometimes sounds stronger than the design supports.
+
+The hard-suite specificity denominators are tiny:
+
+> “Each clean cell has 5 cases on the hard suite…”
+
+That means one case flips specificity by 0.20. Your Wilson lower-bound sentence is good, but Table 2 still invites overreading.
+
+Minimum fix before submission:
+
+1. Add the easy-suite table or explain why only hard-suite numbers are shown.
+2. Increase at least the clean SHIP cases to `n >= 10` per clause per difficulty, because specificity is one of your headline claims.
+3. Get one independent annotator for at least the reported six hard suites before claiming “improves over baselines.” If you cannot, say “suggests” instead of “improves.”
+
+Best minimum: 6 clauses × 20 hard cases each, balanced 10 SHIP / 10 non-SHIP, with independent labels. That is still small, but credible for a workshop pilot.
+
+**4. Figures And Table 2**
+
+Table 2 tells the right story, but it is too cluttered. The key comparison is buried.
+
+The most important rows are:
+
+> “monolithic + clauses”
+
+versus
+
+> “per-clause judge”
+
+Everything else is context.
+
+Problems:
+
+> “We run four conditions…”
+
+But Table 2 has five reviewer rows: `freeform`, `monolithic prose`, `monolithic + clauses`, `per-clause judge`, plus `none` omitted. This inconsistency will be noticed.
+
+Also:
+
+> “Free-form and monolithic-prose reviewers score 0.00 on rule-ID by construction…”
+
+Then do not put their `Rule-ID` cells in the main comparison table, or gray them / mark N/A. Right now the table visually rewards the judge for a task those baselines were not asked to do.
+
+Recommended structure:
+
+- Main Table 2: only `monolithic + clauses` vs `per-clause judge`, hard suite, exact/spec/rule-ID.
+- Appendix table: all conditions.
+- Figure: one compact dot plot for specificity by mode, showing denominators. Avoid bar charts.
+
+**5. Severity Calibration**
+
+The framing is strong, not an excuse, because Table 3 quantifies it:
+
+> “6/8 gold REVISE cases over-graded to BLOCK (0.75 over-grade rate)”
+
+And you state:
+
+> “The `BLOCK` label is not yet a trustworthy intervention signal…”
+
+That is honest and useful.
+
+But the paper should connect this back to the contract design earlier. Right now severity appears as a discovered weakness late in the paper. Add one sentence in §2.3 or §3 saying current recovery clauses conflate **breach identity** and **intervention severity**, then §5.1 shows that this fails empirically.
+
+**6. Author-Built Benchmark**
+
+The limitations section is unusually honest, but it still partially ducks the strongest version of the threat.
+
+Good:
+
+> “Both the method and the labels are constructed by the same authors, which is the largest threat to validity…”
+
+Good:
+
+> “the clauses and the case categories share an ontology, which can favour the per-clause judge…”
+
+But this sentence is a red flag:
+
+> “No case was iterated into the suite after seeing a judge mis-call…”
+
+That helps, but because three modes were written concurrently with prompts, reviewers may still suspect implicit tuning.
+
+Minimum fix: report provenance counts per mode in Table 2 or an adjacent table: original / recast / reused, prompt-before-cases or cases-before-prompt, and independent-label status. Make the leakage risk visible.
+
+**7. Citations**
+
+Several look fine: SycEval, ELEPHANT/social sycophancy, FaithBench, RAGTruth, SelfCheckGPT, Semantic Entropy, MiniCheck, CoVe, G-Eval, MT-Bench.
+
+On the three comparison lines:
+
+- Trace-Based Assurance is real and highly relevant. But because it includes contracts, governance, and factuality indicators, you must not imply it lacks contracts. Your distinction must be trace/runtime assurance vs final-draft editorial obligation.
+- RFCAudit is relevant as RFC/spec conformance, but check metadata. Your reference says arXiv `2506.00714`; search metadata also shows a 2025 preprint. Make sure the date and author order match the arXiv page.
+- AgentVerify citation looks suspect. The source I found lists “Eric Fang” on Sciety/preprints.org, while your reference says “Zhan, S. S., et al.” Verify before submission.
+
+Potential additions:
+
+- RLAIF / constitutional critique beyond Bai if you discuss “principles as external constitution.”
+- LLM-as-judge reliability/bias work, because your method depends on judge agents.
+- AgentBench / SWE-agent style agent evaluation only if you broaden the agentic-coding context.
+- Human-AI accountability / contestability literature if “Principal keeps final word” is central.
+
+**8. Other Reviewer Pushback**
+
+The “contract” language may sound legally stronger than the mechanism supports. You partly address this with “advisory,” but reviewers may still ask whether “contract” is metaphor, protocol, or enforceable runtime artifact.
+
+The “Principal accepts by issuing a request that references the agreement” in §2 is underspecified. Is this a UI affordance, a prompt convention, or a formal state transition?
+
+The `none` baseline is not a reviewer and should not be rhetorically grouped with baselines.
+
+The CoVe stage may advantage the judge and monolithic conditions over freeform. That is acceptable, but spell out exactly which conditions receive CoVe. In §5 you say monolithic prose uses CoVe, freeform apparently does not. That makes freeform less comparable.
+
+The SRC counter-finding is valuable, but dangerous. You say §3.3 now pins evidence authority, while §5 reports results from before that fix. Make the chronology explicit: “These results use the original method; the revised policy is a prospective fix, not included in Table 2.”
+
+**Verdict: MAJOR REVISION**
+
+Most important fix: narrow the novelty claim around Trace-Based Assurance and formal/spec assurance, then strengthen the experiment by foregrounding the fair comparison, adding independent annotation or softer claims, and making the method reproducible in the main paper.
