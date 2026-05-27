@@ -33,10 +33,10 @@ working relationship is currently implicit. The user provides a prompt,
 the agent acts and replies, and the user accepts or rejects the draft.
 There is no written agreement on what the agent is *bound to do*: which
 failure modes it must avoid, what evidence it must surface, what counts
-as a breach, what happens when one occurs. This paper proposes making
-that agreement explicit: a **contract between the Principal and the
-Agent**, written in plain natural language with RFC 2119 keywords
-[Bradner, 1997], that the agent acknowledges and an independent auditor
+as a breach, what happens when one occurs. The agreement we describe
+here is explicit: a **contract between the Principal and the Agent**,
+written in plain natural language with RFC 2119 keywords
+[Bradner, 1997], that the Agent acknowledges and an independent auditor
 agent checks on every final delivery.
 
 The contract is the document both parties work from. The Principal
@@ -87,7 +87,7 @@ has a name, a shape, and an evidence relationship.
 
 ## 1.2 The idea: write the obligations down, audit each one
 
-This paper proposes treating those obligations as a **contract**. The
+The proposal here is to treat those obligations as a **contract**. The
 contract is a real document, written in plain natural language with RFC
 2119 keywords [Bradner, 1997]. It has fourteen clauses, one per failure
 mode. Each clause carries a stable identifier (e.g. `INT-ANC-01` for
@@ -124,8 +124,9 @@ correctness, protocol conformance, or control-flow safety; ours is
 epistemic output. Their intervention is constraints over traces or
 executions, mediated by allow / rewrite / block at runtime; ours is
 post-hoc advisory feedback to a human reviewer over the agent's final
-delivered draft.** This epistemic-vs-functional axis is the deeper
-novelty and the one a workshop reviewer can grade us on.
+delivered draft.** The epistemic-vs-functional axis is the distinction
+this paper organises around: agents fail epistemically even when their
+execution traces are well-formed and their control flow is correct.
 
 ## 1.3 Why this helps
 
@@ -147,20 +148,19 @@ replaced or upgraded without re-prompting the other.
 
 ## 1.4 What we evaluate, and what we do not claim
 
-The contribution of this paper is the framing, the artefact, and the
-pilot. The framing: an agreement between a human and an AI agent is the
+We argue that an agreement between a human and an AI agent is the
 right unit of analysis for advisory integrity auditing of agentic
-coding. The artefact: a written natural-language contract with
+coding, and we provide a written natural-language contract with
 fourteen clauses, fourteen named auditors, and an enforcement model
-that keeps the human as the decision maker. The pilot: six of the
-fourteen clauses, evaluated on hand-built easy and hard case suites
-(ten cases each per suite per clause, ~40 percent clean SHIPs) in the
-agentic-coding domain, against three baselines (no audit, free-form
-self-review, a monolithic prose reviewer). At equal recall (1.00
-across all audited conditions) the per-clause auditor out-performs at
-pilot scale on specificity and on rule-ID attribution on the four
-clauses whose evidence is structurally anchored, with named caveats on
-the other two.
+that keeps the human as the decision maker. The accompanying pilot
+audits six of the fourteen clauses on hand-built easy and hard case
+suites (ten cases each per suite per clause, ~40 percent clean SHIPs)
+in the agentic-coding domain, against three baselines (no audit,
+free-form self-review, a monolithic prose reviewer). At equal recall
+(1.00 across all audited conditions) the per-clause auditor
+out-performs at pilot scale on specificity and on rule-ID attribution
+on the four clauses whose evidence is structurally anchored, with
+named caveats on the other two.
 
 We do not claim state of the art on raw factuality. Sampling and probe
 methods are stronger there and we cite them. We claim that on the
@@ -592,6 +592,37 @@ policy that future hallucination and confabulation runs inherit. The
 pilot result on SRC stands as the empirical observation that motivated
 the policy.
 
+## 5.1 Severity calibration in detail
+
+Recall is 1.00 across all six audited modes on the hard suites; the
+per-clause judge catches every gold flag case. The breakdown of which
+severity it assigns is in Table 3, aggregated across all 120 hard-suite
+predictions.
+
+| gold &#92; predicted | SHIP | REVISE | BLOCK | total |
+|---|---|---|---|---|
+| SHIP   | 44 |  3 |  5 | 52 |
+| REVISE |  0 |  3 | 16 | 19 |
+| BLOCK  |  0 |  0 | 49 | 49 |
+| total  | 44 |  6 | 70 | 120 |
+
+Table 3: Aggregate confusion matrix for the per-clause judge across
+all six audited modes on the hard suites. Diagonal accuracy is
+96/120 = 0.80. The off-diagonal mass is concentrated in two places:
+3/52 SHIP cases false-flagged as REVISE and 5/52 SHIP cases
+false-flagged as BLOCK (the specificity issue, mostly on SYC and SRC
+from Table 2), and **16/19 gold REVISE cases over-graded to BLOCK
+(0.84 over-grade rate)**. The BLOCK row is perfect: every gold BLOCK
+case is called BLOCK, never REVISE or SHIP.
+
+The REVISE row is the measured form of the severity-calibration
+problem: the judge correctly identifies *that* the clause is
+breached, but it does not reliably select *how severely*. This
+supports the §7 framing that rule identity and intervention severity
+need to be specified separately. It also explains why "exact"
+accuracy in Table 2 sits below recall: the rule-ID is right, the
+verdict bucket sometimes is not.
+
 # 6. Related Work
 
 Our work sits at the intersection of two lines that rarely meet: human-AI
@@ -739,7 +770,7 @@ evidence-authority disagreement between case text and live tools (the
 SRC counter-finding). Neither of these is closed by the present
 paper; both have proposed shapes for the next contract version. The
 independent-annotation pass is what would turn the pilot result into
-an evaluation result, and is the next step we report on.
+an evaluation result.
 
 # References
 
