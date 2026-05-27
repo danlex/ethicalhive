@@ -9,9 +9,12 @@ set -euo pipefail
 #        [--model sonnet|haiku|opus] [--output results.jsonl]
 #
 # Conditions (--reviewer):
-#   contract  the full tvl-tech-bias-validator agent (CoVe + clause checks). Default.
-#   freeform  a plain "review this draft for problems" baseline, no contract, no clauses.
-#   none      no audit; every draft is treated as shipped (VERDICT: SHIP). No model call.
+#   contract     the full tvl-tech-bias-validator agent (CoVe + clause checks). Default.
+#   freeform     a plain "review this draft for problems" baseline, no contract, no clauses.
+#   mono-rid     monolithic baseline given the 14-clause list and asked to cite rule IDs;
+#                fair comparison for per-clause-judge rule-ID attribution.
+#   judge        per-clause judge for the case's mode (loaded from judges/<mode>-judge.md).
+#   none         no audit; every draft is treated as shipped (VERDICT: SHIP). No model call.
 #
 # Requirements:
 #   - claude CLI in PATH and logged in (not needed for --reviewer none)
@@ -47,6 +50,9 @@ case "$REVIEWER" in
   freeform)
     REVIEWER_PROMPT="$(cat "$SCRIPT_DIR/baseline-freeform-prompt.md")"
     ;;
+  mono-rid)
+    REVIEWER_PROMPT="$(cat "$SCRIPT_DIR/baseline-monolithic-ruleid-prompt.md")"
+    ;;
   judge)
     REVIEWER_PROMPT=""  # loaded per case from judges/<mode>-judge.md inside the loop
     ;;
@@ -54,7 +60,7 @@ case "$REVIEWER" in
     REVIEWER_PROMPT=""
     ;;
   *)
-    echo "Unknown reviewer: $REVIEWER (use contract|freeform|judge|none)"; exit 1 ;;
+    echo "Unknown reviewer: $REVIEWER (use contract|freeform|mono-rid|judge|none)"; exit 1 ;;
 esac
 
 if [ "$REVIEWER" != "none" ] && ! command -v claude &>/dev/null; then

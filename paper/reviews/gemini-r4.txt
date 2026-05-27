@@ -1,0 +1,34 @@
+Here is a critical review of the draft, addressing your points directly.
+
+**1. Is the novelty positioning honest and sufficient?**
+Yes. It is exceptionally strong and avoids overclaiming. In **Section 1.2** and **Section 6**, you cleanly separate your work from Trace-Based Assurance (Paduraru), RFCAudit (Zheng), and AgentVerify (Zhan) using two clear axes: target (*"Their target is functional correctness, protocol conformance... ours is epistemic output"*) and intervention type (*"Their intervention is constraints over traces... ours is post-hoc advisory feedback"*). This precise scoping gives reviewers exactly what they need to categorize the paper. You do not overclaim.
+
+**2. Is the method section actually a method section?**
+It leans slightly toward an architectural description. **Section 3** provides the pipeline structure (CoVe -> Judge) and the I/O schema, which is great. However, a strict reviewer might argue it is too thin because the core mechanism—the prompt engineering—is entirely offloaded: *"The prompt templates and the orchestrator code are in the supplementary."* Because LLM-as-judge systems live and die by their prompts, hiding how CoVe extraction works and how the contract is presented in the prompt makes the method hard to evaluate.
+*Fix:* Bring one complete example of a clause-judge prompt (e.g., for `INT-ANC-01`) and a brief snippet of the CoVe extraction prompt into the main text to prove the mechanics are sound.
+
+**3. n=10 per clause: Defensible?**
+No, it is extremely thin, even for a workshop. 10 cases per suite (total 60 hard cases across 6 clauses) means a single prediction flip changes accuracy by 10%. While you are highly transparent about this (*"reported in counts so the small-n caveat stays visible"* in **Section 5**), a reviewer will rightly point out that running an automated LLM pipeline on 60 textual cases takes only minutes. 
+*Fix:* If you cannot scale the dataset to n=50 per clause before submission, you *must* complete the "independent annotation" pass mentioned in the limitations. A small *N* is acceptable for a pilot only if the labels are impeccably validated.
+
+**4. Figures and Table 2**
+**Table 2** is excellent and tells the right story. Your text notes that you dropped a bar chart because *"at n=5 per clean cell a bar chart over-dignifies the data"*. This was the right call. Showing raw fractions (e.g., `8/10`) forces the reader to confront the sample size while cleanly demonstrating that the clause judge matches baselines on Exact/Recall but dominates on Rule-ID attribution. It is not cluttered. 
+
+**5. Severity calibration: Strong framing or excuse?**
+It is a strong, honest framing. In **Section 5.1**, you show the data transparently (**Table 3**: 16/19 gold REVISE cases over-graded to BLOCK) and in **Section 7** you frame this as a *"contract-design failure"* that proves *"rule identity and intervention severity must be specified separately"*. This transforms a model weakness into an empirical finding about how to design human-AI contracts. It does not read like an excuse.
+
+**6. Author-built benchmark: Honest or ducking?**
+Brutally honest. **Section 7** states: *"Both the method and the labels are constructed by the same authors, which is the largest threat to validity... the clauses and the case categories share an ontology, which can favour the per-clause judge."* Acknowledging that the baselines lack the clause vocabulary, and explicitly gating your comparative claims behind an independent annotation pass, is exemplary scientific writing.
+
+**7. Citations**
+There is a formatting error in **Section 6 (Related Work)**. You write *"The Trace-Based Assurance Framework [2026]"* and *"AgentVerify [2026]"*. These should include the author names to match your formatting elsewhere, i.e., *[Paduraru et al., 2026]* and *[Zhan et al., 2026]*. 
+
+**8. Pushbacks from a strong reviewer**
+*   **The Missing Baseline:** In **Section 7**, you admit that the free-form and monolithic reviewers score 0 on rule-ID *by design* because they don't see the contract. You mention a fair baseline (giving the monolithic reviewer the clause list) is "queued". A reviewer will reject on this: you cannot claim victory on Rule-ID attribution if your baselines were explicitly blinded to the rules. You must run this baseline before submission.
+*   **The SRC Contradiction:** In **Section 5 (Method-specification finding)**, you note the judge trusted the live filesystem over the provided text evidence. You then state in **Section 3.3** that you pinned a policy to fix this. A reviewer will ask: If §3.3 represents your proposed method, why are you reporting pilot results from an older, flawed version of the pipeline? You should re-run the SRC cases with the §3.3 policy in place.
+
+---
+
+### Verdict: MINOR REVISION 
+
+**Most important fix:** Run and include the "queued" monolithic baseline that has access to the clause list; without it, the core claim of superior Rule-ID attribution is structurally unfair.
