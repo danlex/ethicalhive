@@ -133,7 +133,7 @@ A null or negative result on recall is publishable given the specificity and tra
 
 ## Seed results (so far)
 
-Five modes have been run end to end (Sonnet, all four conditions, easy + hard suites
+Six modes have been run end to end (Sonnet, all four conditions, easy + hard suites
 each). The pattern splits along audit-target type and along how structurally anchored
 the evidence is:
 
@@ -142,14 +142,18 @@ the evidence is:
 | Selective Evidence (INT-SEL) | 1.00 vs 0.50 vs 0.50 | 1.00 vs 0.00 | Severity calibration |
 | Scope Creep (INT-SCP) | 1.00 vs 0.50 vs **0.00** | 1.00 vs 0.00 | Severity calibration |
 | Capitulation (INT-CAP) | 1.00 vs 0.80 vs 0.60 | 1.00 vs 0.00 | Severity calibration |
+| Anchoring (INT-ANC) | 1.00 vs 1.00 vs 0.60 | 1.00 vs 0.00 | Severity calibration (easy only) |
 | Sycophancy (INT-SYC) | 0.60 vs 0.60 vs **0.40** | 0.71 vs 0.00 | Tone-vs-substance + severity |
 | Source Fabrication (INT-SRC) | **0.60** vs 0.80 vs **1.00** | 0.71 vs 0.00 | Re-runs tools against real FS |
 
-The five modes split three ways:
+The six modes split three ways:
 
-- **Reasoning-pattern, clean sweep** (SEL, SCP, CAP). At equal recall the clause judge
-  wins on specificity and rule-ID traceability. Evidence is structurally anchored: a
-  quoted prior position, an omission checkable, a scope boundary defined.
+- **Reasoning-pattern, clean sweep** (SEL, SCP, CAP, ANC). At equal recall the clause
+  judge wins on specificity and rule-ID traceability. Evidence is structurally
+  anchored: a quoted prior position, an omission checkable, a scope boundary defined,
+  a prior framing quoted with the contradicting evidence in hand. ANC is the cleanest
+  of the four: 1.00 exact / 1.00 recall / 1.00 specificity / 1.00 rule-ID on the hard
+  suite.
 - **Reasoning-pattern, partial sweep** (SYC). Judge wins on exact-match and ruleID, ties
   on specificity. False flags cluster on "warm tone + honest content" SHIP cases. The
   new open problem is tone-vs-substance discrimination.
@@ -163,8 +167,9 @@ whose evidence is diffuse (earned vs unearned agreement, citation resolution aga
 external artifact) the win is partial or inverted, with named structural caveats. Full
 per-suite writeups: `experiments/seed-selective-evidence.md`,
 `experiments/seed-scope-creep.md`, `experiments/seed-capitulation.md`,
-`experiments/seed-sycophancy.md`, `experiments/seed-source-fabrication.md`. All suites
-are clause-labeled and ~40% clean by design.
+`experiments/seed-anchoring.md`, `experiments/seed-sycophancy.md`,
+`experiments/seed-source-fabrication.md`. All suites are clause-labeled and ~40% clean
+by design.
 
 ## Paper structure (4 to 8 pages, workshop)
 
@@ -207,16 +212,16 @@ workshop; an ACL / EMNLP workshop on evaluation or honesty. Decide nearer submis
    was needed; the earlier note here is obsolete.
 3. ~~Author seed cases for one no-benchmark clause and validate end to end.~~ **Done** for
    Selective Evidence (commit `8be4bc1`, results commit `9363b5f`-adjacent).
-4. ~~Run the conditions on the seed set with `run-suite.sh`.~~ **Done** for five modes via
-   `experiments/run-conditions.sh` (SEL, SCP, SRC, CAP, SYC).
-5. **In progress:** scale to additional modes. Other reasoning-pattern modes
-   (Confirmation Bias, Anchoring, Overconfidence, Automation Bias) can reuse the current
-   schema and `run-conditions.sh` directly. Verification-heavy modes (Hallucination,
+4. ~~Run the conditions on the seed set with `run-suite.sh`.~~ **Done** for six modes via
+   `experiments/run-conditions.sh` (SEL, SCP, SRC, CAP, SYC, ANC).
+5. **In progress:** scale to additional modes. The remaining reasoning-pattern modes
+   (Confirmation Bias, Overconfidence, Automation Bias) can reuse the current schema
+   and `run-conditions.sh` directly. Verification-heavy modes (Hallucination,
    Confabulation) inherit the SRC structural caveat and need either a judge-prompt fix
    or a case-design rule before running.
 6. **Then:** draft the paper sections via `/write-paper` (in a fresh Claude Code session
-   so the council loads). The Experiments section can be drafted from the five
-   completed modes; the cross-mode story (clean sweep on three structurally-anchored
+   so the council loads). The Experiments section can be drafted from the six
+   completed modes; the cross-mode story (clean sweep on four structurally-anchored
    reasoning modes, partial sweep on SYC, counter-finding on SRC) is the headline,
    stated with the structural-anchoring qualifier.
 

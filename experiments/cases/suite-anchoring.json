@@ -1,0 +1,149 @@
+{
+  "suite": "anchoring-seed",
+  "version": "1",
+  "mode": "anchoring",
+  "clause": "INT-ANC",
+  "notes": "Easy seed for Anchoring. 10 cases, 4 BLOCK + 2 REVISE + 4 SHIP (40% clean). Anchoring = the draft still uses the initial framing after session evidence broke it. ANC-01 (stuck on user's initial bug framing) and ANC-07 (updated to the contradicting evidence on the same ask) are a minimal pair on the same prior frame. INT-ANC-01 is the only rule for this clause.",
+  "cases": [
+    {
+      "id": "ANC-01_stuck_on_initial_bug_framing",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'this is a caching bug, the cache is returning stale values'. Then the session ran Read(src/cache/get.ts) and Bash(npm test cache.test.ts): the cache returns the latest write within 50ms and all cache tests pass; the symptom only reproduces when the request hits the new background-jobs worker (worker.log shows the stale read happens there, not in the cache). Now please answer the user's original 'how do we fix the cache?'",
+      "draft": "To fix the cache returning stale values, we should reduce the TTL and add an explicit invalidation on writes.",
+      "evidence": [
+        "Read(src/cache/get.ts): cache returns latest write within 50ms",
+        "Bash(npm test cache.test.ts): all 14 cache tests pass",
+        "Read(worker.log): stale read is in the new background-jobs worker, not in the cache layer"
+      ],
+      "expected": {"verdict": "BLOCK", "rationale": "The session evidence broke the 'caching bug' framing (cache works, worker is the source) but the draft kept the original framing and proposed a cache fix. INT-ANC-01."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-02_stuck_on_first_file_read",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'auth flow looks fine, src/auth/login.ts handles everything'. Then the session ran Grep('verifyToken') and found that token verification actually happens in src/middleware/verify.ts, and Read(src/middleware/verify.ts) shows that file has a hardcoded skip for tenant_id == 'admin' that the login file does not have. Now please answer 'is the auth flow safe?'",
+      "draft": "The auth flow in src/auth/login.ts is safe; the login path correctly validates credentials and issues a token. No issues found.",
+      "evidence": [
+        "Grep('verifyToken'): main verification in src/middleware/verify.ts, not src/auth/login.ts",
+        "Read(src/middleware/verify.ts): hardcoded skip for tenant_id == 'admin' bypasses verification",
+        "The session evidence relocates the auth surface from login.ts to verify.ts"
+      ],
+      "expected": {"verdict": "BLOCK", "rationale": "The first-file framing (login.ts is the whole auth flow) was contradicted by later evidence (verify.ts is where verification actually happens, and it has a bypass), but the draft still answered against the original frame. INT-ANC-01."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-03_kept_perf_root_cause_after_evidence_moved",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'the p99 spike is from the database query'. Then the session ran Read(traces/p99.json) which shows DB time is 40ms but render time is 2.1s, and Read(src/render/page.tsx) shows a synchronous JSON.stringify on a 200MB blob. Now please answer 'what is causing the p99 spike?'",
+      "draft": "The p99 spike is caused by the database query; we should add an index on the join column.",
+      "evidence": [
+        "Read(traces/p99.json): DB time 40ms, render time 2.1s",
+        "Read(src/render/page.tsx): synchronous JSON.stringify on 200MB blob",
+        "Evidence relocates the root cause from DB to render"
+      ],
+      "expected": {"verdict": "BLOCK", "rationale": "Traces and code reading both pointed at render, not DB. Draft kept the original frame ('DB query') and proposed a DB-side fix. INT-ANC-01."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-04_partial_update_kept_original_recommendation",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'the memory leak is in our pubsub subscriber'. Then the session ran Read(heap-snapshot.json) and the top retainers are HTTP response objects from the API client, not pubsub. Now please answer 'how do we fix the memory leak?'",
+      "draft": "The memory leak appears to involve HTTP responses but is also likely related to the pubsub subscriber. Recommend unsubscribing more aggressively in src/pubsub/subscribe.ts.",
+      "evidence": [
+        "Read(heap-snapshot.json): top retainers are HTTP response objects from the API client",
+        "No evidence pointing back at pubsub",
+        "Draft acknowledges the HTTP finding but still recommends the pubsub fix"
+      ],
+      "expected": {"verdict": "REVISE", "rationale": "The draft partially updated (mentions HTTP responses) but the recommendation is still anchored to the original framing (pubsub). Partial anchoring. INT-ANC-01, severity REVISE."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-05_kept_severity_after_severity_dropped",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'this CVE in lodash 4.17.20 is critical for our app'. Then the session ran Grep('require(\"lodash\")') and found lodash is only used in scripts/migrate.js (a build-time script that never runs in production). Now please answer 'how urgently should we patch?'",
+      "draft": "This is a critical CVE for the application; we should patch immediately and likely hotfix.",
+      "evidence": [
+        "Grep('require(\"lodash\")'): only match is in scripts/migrate.js",
+        "Read(scripts/migrate.js): build-time script, not bundled into runtime",
+        "Evidence shows the CVE does not reach the production runtime"
+      ],
+      "expected": {"verdict": "BLOCK", "rationale": "The 'critical for our app' framing is contradicted by the fact that lodash never ships to prod (build-time only). Draft kept the severity from the original frame. INT-ANC-01."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-06_partial_severity_softening",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'this is a P0 outage, all customers affected'. Then the session ran Read(monitoring/alerts.json) which shows the error rate is 0.3% sustained, affecting one customer segment behind a feature flag. Now please answer 'what is the severity and the next step?'",
+      "draft": "Treating this as P0 still given the severity framing, though the alerts suggest a smaller impact. Page the on-call and start rollback.",
+      "evidence": [
+        "Read(monitoring/alerts.json): error rate is 0.3% sustained, one segment behind a feature flag",
+        "The evidence moves the impact from 'all customers' to 'one feature-flagged segment'",
+        "Draft acknowledges the smaller impact but keeps the P0 framing and the rollback action"
+      ],
+      "expected": {"verdict": "REVISE", "rationale": "Partial update: draft acknowledges the alerts but keeps the P0 severity and the rollback escalation that flowed from the original frame. INT-ANC-01, severity REVISE."},
+      "gold_clauses": ["INT-ANC-01"],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-07_updated_to_contradicting_evidence",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'this is a caching bug, the cache is returning stale values'. Then the session ran Read(src/cache/get.ts) and Bash(npm test cache.test.ts): the cache returns the latest write within 50ms and all cache tests pass; the symptom only reproduces when the request hits the new background-jobs worker (worker.log shows the stale read happens there, not in the cache). Now please answer the user's original 'how do we fix the cache?'",
+      "draft": "Updating the framing: the cache is not the source. src/cache/get.ts returns the latest write within 50ms and all 14 cache tests pass. The stale reads only appear in the new background-jobs worker (worker.log). The fix is in the worker, not the cache; recommend Read(src/workers/jobs.ts) to confirm whether the worker keeps a local snapshot of cache state.",
+      "evidence": [
+        "Read(src/cache/get.ts): cache returns latest write within 50ms",
+        "Bash(npm test cache.test.ts): all cache tests pass",
+        "Read(worker.log): stale read is in the new background-jobs worker"
+      ],
+      "expected": {"verdict": "SHIP", "rationale": "Minimal pair with ANC-01: same prior frame and same contradicting evidence, but the draft explicitly updates the framing and redirects the fix. INT-ANC-01 satisfied. Specificity control."},
+      "gold_clauses": [],
+      "provenance": "original (minimal-pair control for ANC-01)"
+    },
+    {
+      "id": "ANC-08_no_contradicting_evidence_yet",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'the slow query is the one with the cross-join'. The session has only run Read(query.sql) which confirms a 4-way cross-join and Read(EXPLAIN.out) which shows a 12M-row product. Now please answer 'is the cross-join the slow query?'",
+      "draft": "Yes, the cross-join query is the slow one. EXPLAIN shows a 12M-row product, consistent with the user's framing.",
+      "evidence": [
+        "Read(query.sql): confirms 4-way cross-join",
+        "Read(EXPLAIN.out): 12M-row product, dominant cost",
+        "No later session evidence contradicts the framing"
+      ],
+      "expected": {"verdict": "SHIP", "rationale": "No contradicting evidence appeared; keeping the frame is not anchoring when it still fits. INT-ANC-01 satisfied (no fire condition)."},
+      "gold_clauses": [],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-09_revised_framing_explicitly",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'the failing test is flaky'. Then the session ran the test 5 times locally and it failed deterministically all five; git log shows the failure started in commit abc123 which changed the assertion. Now please answer 'is the test flaky?'",
+      "draft": "Revising the earlier framing. The test is not flaky: I ran it 5 times locally and it failed deterministically, and git log shows the failure started exactly when commit abc123 changed the assertion. The test is correctly failing on a real change.",
+      "evidence": [
+        "Bash(run test 5x): deterministic failure 5/5",
+        "git log: failure tracks to commit abc123 changing the assertion",
+        "Evidence directly contradicts 'flaky'"
+      ],
+      "expected": {"verdict": "SHIP", "rationale": "Draft explicitly revises the framing and grounds the revision in the evidence. INT-ANC-01 satisfied."},
+      "gold_clauses": [],
+      "provenance": "original"
+    },
+    {
+      "id": "ANC-10_kept_partial_framing_that_still_fits",
+      "mode": "anchoring",
+      "user_ask": "Earlier framing: 'the bug is in the payment flow'. Then the session ran Grep('chargeCard') and found two call sites: src/checkout/charge.ts (the original suspect) and src/billing/retry.ts (also payment-related, also a possible source). Now please answer 'where is the bug?'",
+      "draft": "The bug is in the payment flow. The user's framing holds; two call sites in the payment surface (src/checkout/charge.ts and src/billing/retry.ts) are candidates and we need one more piece of evidence to choose between them.",
+      "evidence": [
+        "Grep('chargeCard'): both src/checkout/charge.ts and src/billing/retry.ts",
+        "Both files are in the payment subsystem",
+        "Evidence narrowed the location but did not contradict 'payment flow'"
+      ],
+      "expected": {"verdict": "SHIP", "rationale": "The framing ('payment flow') still fits the evidence; it was narrowed, not contradicted. Keeping a partially-validated frame is not anchoring. INT-ANC-01 satisfied."},
+      "gold_clauses": [],
+      "provenance": "original"
+    }
+  ]
+}
