@@ -28,6 +28,8 @@ EXAMPLES = ROOT / "experiments" / "catalogue-examples.tsv"
 PAPERS = ROOT / "experiments" / "catalogue-papers.json"
 SUPPRESS = ROOT / "experiments" / "catalogue-papers-suppress.txt"
 SHIPPED = ROOT / "experiments" / "shipped-check-papers.json"
+EXTRA = ROOT / "experiments" / "catalogue-extra.tsv"
+EXTRA_GROUP = "Agentic and engineering failure modes (beyond the brain map)"
 
 ENTRY_RE = re.compile(r"^(\d+)\.\s+\*\*(.+?)\*\*\s+`(page|research|analogy)`\s+(.+)$")
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
@@ -79,6 +81,21 @@ def load_papers():
         return {}
     raw = json.loads(PAPERS.read_text(encoding="utf-8"))
     return {int(k): v for k, v in raw.items()}
+
+
+def load_extra():
+    """[(num, name, tag, definition)] of behaviours outside the brain corpus."""
+    rows = []
+    if not EXTRA.exists():
+        return rows
+    for line in EXTRA.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or "\t" not in line:
+            continue
+        parts = line.split("\t")
+        if len(parts) < 4:
+            continue
+        rows.append((int(parts[0]), parts[1].strip(), parts[2].strip(), parts[3].strip()))
+    return rows
 
 
 def load_suppress():
@@ -186,13 +203,15 @@ def main():
     args = ap.parse_args()
 
     sections = parse()
+    extra = load_extra()
+    if extra:
+        sections.append((EXTRA_GROUP, extra))
     cites = load_cites()
     examples = load_examples()
     papers = load_papers()
     suppress = load_suppress()
     total = sum(len(e) for _, e in sections)
-    if total != 100:
-        print(f"WARNING: parsed {total} entries, expected 100", file=sys.stderr)
+    print(f"rendering {total} entries ({len(extra)} beyond the brain corpus)", file=sys.stderr)
     grid = render_numbered(sections, cites, examples, papers, suppress)
 
     if not args.write:

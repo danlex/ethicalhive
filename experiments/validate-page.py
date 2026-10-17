@@ -38,13 +38,13 @@ def main():
     none = html.count("cite none")
     deep = html.count('class="concept"')
     print(
-        f"catalogue: {catalogue} entries (expect 100); "
+        f"catalogue: {catalogue} entries (expect 109); "
         f"legacy deep blocks: {deep} (expect 0); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum 100)"
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum 109)"
     )
-    if catalogue != 100 or deep != 0 or papers + none != 100:
+    if catalogue != 109 or deep != 0 or papers + none != 109:
         ok = False
-        print("  MISMATCH: expected 100 single-style entries, 0 legacy blocks")
+        print("  MISMATCH: expected 109 single-style entries, 0 legacy blocks")
 
     stale_markers = (
         "Prompt to prevent it",
