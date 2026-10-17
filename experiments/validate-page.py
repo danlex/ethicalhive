@@ -36,10 +36,18 @@ def main():
     catalogue = html.count('class="cat-chip ')
     papers = html.count('class="papers"')
     none = html.count("cite none")
-    print(f"catalogue: {catalogue} entries, {papers} with papers, {none} no-paper")
-    if catalogue != 100 or papers + none != 100:
+    deep = html.count('class="concept"')
+    print(
+        f"catalogue: {catalogue} entries (expect 100); "
+        f"deep blocks: {deep} (expect 14); "
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum 114)"
+    )
+    if catalogue != 100:
         ok = False
-        print("  MISMATCH: expected 100 entries = papers + no-paper")
+        print("  MISMATCH: expected 100 catalogue entries")
+    if papers + none != 114:
+        ok = False
+        print("  MISMATCH: expected 114 papers/no-paper blocks (100 catalogue + 14 deep)")
 
     for stale in ("Prompt to prevent it", "<h4>Judge agent", "<h4>Contract clause"):
         n = html.count(stale)

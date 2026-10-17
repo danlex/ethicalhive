@@ -27,6 +27,7 @@ CITES = ROOT / "experiments" / "catalogue-citations.tsv"
 EXAMPLES = ROOT / "experiments" / "catalogue-examples.tsv"
 PAPERS = ROOT / "experiments" / "catalogue-papers.json"
 SUPPRESS = ROOT / "experiments" / "catalogue-papers-suppress.txt"
+SHIPPED = ROOT / "experiments" / "shipped-check-papers.json"
 
 ENTRY_RE = re.compile(r"^(\d+)\.\s+\*\*(.+?)\*\*\s+`(page|research|analogy)`\s+(.+)$")
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
@@ -108,10 +109,9 @@ def parse():
     return sections
 
 
-def papers_block(num, papers, suppress):
-    """Render the count + top-3 papers, or an honest 'no paper' note."""
-    pdata = papers.get(num)
-    if num in suppress or not pdata or not pdata.get("papers"):
+def render_papers(pdata):
+    """count + top-3 papers HTML, or an honest 'no paper' note."""
+    if not pdata or not pdata.get("papers"):
         return '<p class="cite none">No direct AI paper found yet.</p>'
     count = pdata.get("count")
     cnt = f"{count:,}" if isinstance(count, int) else "?"
@@ -127,6 +127,28 @@ def papers_block(num, papers, suppress):
         f'<p class="cite"><b>{cnt}</b> arXiv papers (cs.AI/CL/LG)</p>'
         f'<ul class="papers">{"".join(items)}</ul>'
     )
+
+
+def papers_block(num, papers, suppress):
+    if num in suppress:
+        return render_papers(None)
+    return render_papers(papers.get(num))
+
+
+def inject_shipped(html, shipped):
+    """Add a Research papers section after the Examples list of each shipped-check
+    deep block. Idempotent: skips a block that already has one."""
+    done = 0
+    for cid, pdata in shipped.items():
+        block = f'\n      <h4>Research papers</h4>\n      {render_papers(pdata)}'
+        pattern = re.compile(
+            r'(<details id="' + re.escape(cid) + r'"[^>]*>.*?<ul class="examples">.*?</ul>)'
+            r'(?!\s*<h4>Research papers)',
+            re.DOTALL,
+        )
+        html, n = pattern.subn(lambda m: m.group(1) + block, html, count=1)
+        done += n
+    return html, done
 
 
 def render_numbered(sections, cites, examples, papers, suppress):
@@ -207,11 +229,16 @@ def main():
     )
     after_j = html.count("<h4>Judge agent")
 
+    # Add a Research papers section to each shipped-check deep block.
+    shipped = json.loads(SHIPPED.read_text(encoding="utf-8")) if SHIPPED.exists() else {}
+    html, injected = inject_shipped(html, shipped)
+
     PAGE.write_text(html, encoding="utf-8")
     print(
         f"spliced {total} entries; removed "
         f"{before_p - html.count('Prompt to prevent it')} prompt, "
-        f"{before_j - after_j} judge+contract blocks"
+        f"{before_j - after_j} judge+contract blocks; "
+        f"injected papers into {injected}/{len(shipped)} shipped blocks"
     )
 
 
