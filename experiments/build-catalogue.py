@@ -15,6 +15,7 @@ The splice replaces the existing cat-grid in place (reversible via git).
 """
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -24,6 +25,8 @@ CORPUS = ROOT / "references" / "research-2026-05-23-neuroscience-parallels.md"
 PAGE = ROOT / "docs" / "index.html"
 CITES = ROOT / "experiments" / "catalogue-citations.tsv"
 EXAMPLES = ROOT / "experiments" / "catalogue-examples.tsv"
+PAPERS = ROOT / "experiments" / "catalogue-papers.json"
+SUPPRESS = ROOT / "experiments" / "catalogue-papers-suppress.txt"
 
 ENTRY_RE = re.compile(r"^(\d+)\.\s+\*\*(.+?)\*\*\s+`(page|research|analogy)`\s+(.+)$")
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
@@ -69,6 +72,26 @@ def load_examples():
     return ex
 
 
+def load_papers():
+    """num -> {count, papers:[{id,year,title}]}. Empty if the file is absent."""
+    if not PAPERS.exists():
+        return {}
+    raw = json.loads(PAPERS.read_text(encoding="utf-8"))
+    return {int(k): v for k, v in raw.items()}
+
+
+def load_suppress():
+    """Set of nums to render as 'no direct paper' (off-topic / homonym queries)."""
+    s = set()
+    if not SUPPRESS.exists():
+        return s
+    for line in SUPPRESS.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            s.add(int(line))
+    return s
+
+
 def parse():
     sections = []  # list of (title, [ (num, name, tag, definition), ... ])
     current = None
@@ -85,7 +108,28 @@ def parse():
     return sections
 
 
-def render_numbered(sections, cites, examples):
+def papers_block(num, papers, suppress):
+    """Render the count + top-3 papers, or an honest 'no paper' note."""
+    pdata = papers.get(num)
+    if num in suppress or not pdata or not pdata.get("papers"):
+        return '<p class="cite none">No direct AI paper found yet.</p>'
+    count = pdata.get("count")
+    cnt = f"{count:,}" if isinstance(count, int) else "?"
+    items = []
+    for p in pdata["papers"][:3]:
+        pid = re.sub(r"v\d+$", "", p.get("id", ""))
+        yr = f' ({p["year"]})' if p.get("year") else ""
+        items.append(
+            f'<li><a href="https://arxiv.org/abs/{pid}" target="_blank" '
+            f'rel="noopener">arXiv:{pid}</a>{yr} {esc(p.get("title", ""))}</li>'
+        )
+    return (
+        f'<p class="cite"><b>{cnt}</b> arXiv papers (cs.AI/CL/LG)</p>'
+        f'<ul class="papers">{"".join(items)}</ul>'
+    )
+
+
+def render_numbered(sections, cites, examples, papers, suppress):
     out = ['    <div class="cat-grid">']
     for i, (title, entries) in enumerate(sections, 1):
         out.append(
@@ -96,26 +140,18 @@ def render_numbered(sections, cites, examples):
             n = f"{num:02d}"
             name_html = esc(name)
             cite = cites.get(num)
-            if cite and cite[3]:  # link name to its detail block (examples)
+            if cite and cite[3]:  # link name to its detail block (extra examples)
                 name_html = f'<a href="#{cite[3]}">{name_html}</a>'
             ex_html = ""
             example = examples.get(num)
             if example:
                 ex_html = f'<p class="ex"><span>e.g.</span> {esc(example)}</p>'
-            cite_html = ""
-            if cite:
-                count, arxivid, year, _ = cite
-                yr = f" ({year})" if year else ""
-                cite_html = (
-                    f'<p class="cite"><b>{count:,}</b> arXiv papers · '
-                    f'<a href="https://arxiv.org/abs/{arxivid}" target="_blank" '
-                    f'rel="noopener">arXiv:{arxivid}{yr}</a></p>'
-                )
             out.append(
                 f'        <div class="cat-chip {tag}">'
                 f'<span class="n">{n}</span>'
                 f'<span class="nm">{name_html}</span>'
-                f'<p class="dfn">{esc(definition)}</p>{ex_html}{cite_html}</div>'
+                f'<p class="dfn">{esc(definition)}</p>{ex_html}'
+                f"{papers_block(num, papers, suppress)}</div>"
             )
         out.append("      </div></div>")
     out.append("    </div>")
@@ -130,10 +166,12 @@ def main():
     sections = parse()
     cites = load_cites()
     examples = load_examples()
+    papers = load_papers()
+    suppress = load_suppress()
     total = sum(len(e) for _, e in sections)
     if total != 100:
         print(f"WARNING: parsed {total} entries, expected 100", file=sys.stderr)
-    grid = render_numbered(sections, cites, examples)
+    grid = render_numbered(sections, cites, examples, papers, suppress)
 
     if not args.write:
         print(grid)
@@ -150,17 +188,31 @@ def main():
     html = pattern.sub(grid + "\n    ", html, count=1)
 
     # Remove the "Prompt to prevent it" section from every concept block.
-    before = html.count("Prompt to prevent it")
+    before_p = html.count("Prompt to prevent it")
     html = re.sub(
         r"\s*<h4>Prompt to prevent it</h4>.*?(?=<h4>Judge agent)",
         "\n      ",
         html,
         flags=re.DOTALL,
     )
-    after = html.count("Prompt to prevent it")
+    # Remove the Judge agent + Contract clause sections from every concept block,
+    # leaving title + definition + examples. The page documents concepts; it is not
+    # a governance tool, so per-concept judge/contract blocks come out.
+    before_j = html.count("<h4>Judge agent")
+    html = re.sub(
+        r"\s*<h4>Judge agent.*?(?=\s*</div>\s*</details>)",
+        "",
+        html,
+        flags=re.DOTALL,
+    )
+    after_j = html.count("<h4>Judge agent")
 
     PAGE.write_text(html, encoding="utf-8")
-    print(f"spliced {total} entries; removed {before - after} prevention-prompt blocks")
+    print(
+        f"spliced {total} entries; removed "
+        f"{before_p - html.count('Prompt to prevent it')} prompt, "
+        f"{before_j - after_j} judge+contract blocks"
+    )
 
 
 if __name__ == "__main__":

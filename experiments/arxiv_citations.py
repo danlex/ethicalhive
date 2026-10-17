@@ -78,6 +78,11 @@ def main():
     ap.add_argument("terms", help="path to a terms TSV (label<TAB>clause)")
     ap.add_argument("--top", type=int, default=3, help="papers per term (default 3)")
     ap.add_argument("--sleep", type=float, default=3.0, help="seconds between requests")
+    ap.add_argument(
+        "--json",
+        dest="json_out",
+        help="write results as JSON keyed by the integer label (num) to this path",
+    )
     args = ap.parse_args()
 
     with open(args.terms, encoding="utf-8") as fh:
@@ -91,24 +96,35 @@ def main():
             label, clause = line.split("\t", 1)
             rows.append((label.strip(), clause.strip()))
 
-    print(f"# Term literature map ({len(rows)} terms, arXiv cs.AI/CL/LG)\n")
+    results = {}
+    print(f"# Term literature map ({len(rows)} terms, arXiv cs.AI/CL/LG)\n", file=sys.stderr)
     for i, (label, clause) in enumerate(rows):
         try:
             total, papers = fetch(clause, args.top)
         except Exception as exc:  # network / parse failure, keep going
-            print(f"## {label}\n\n_query failed: {exc}_\n")
-            continue
+            print(f"## {label}  _query failed: {exc}_", file=sys.stderr)
+            total, papers = None, []
         count = "ERR" if total is None else str(total)
-        print(f"## {label}  (count: {count})")
-        print(f"\n`{clause}`\n")
-        if papers:
-            for arxiv_id, year, title in papers:
-                print(f"- arXiv:{arxiv_id} ({year}) - {title}")
-        else:
-            print("- _no papers returned_")
-        print()
+        print(f"## {label}  (count: {count})", file=sys.stderr)
+        for arxiv_id, year, title in papers:
+            print(f"  - arXiv:{arxiv_id} ({year}) - {title}", file=sys.stderr)
+        key = label.split()[0] if label.split() else label
+        results[key] = {
+            "label": label,
+            "count": total,
+            "papers": [
+                {"id": pid, "year": yr, "title": t} for pid, yr, t in papers
+            ],
+        }
         if i < len(rows) - 1:
             time.sleep(args.sleep)
+
+    if args.json_out:
+        import json
+
+        with open(args.json_out, "w", encoding="utf-8") as fh:
+            json.dump(results, fh, indent=2, ensure_ascii=False)
+        print(f"wrote {len(results)} results to {args.json_out}", file=sys.stderr)
 
 
 if __name__ == "__main__":
