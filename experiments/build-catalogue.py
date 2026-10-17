@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CORPUS = ROOT / "references" / "research-2026-05-23-neuroscience-parallels.md"
 PAGE = ROOT / "docs" / "index.html"
 CITES = ROOT / "experiments" / "catalogue-citations.tsv"
+EXAMPLES = ROOT / "experiments" / "catalogue-examples.tsv"
 
 ENTRY_RE = re.compile(r"^(\d+)\.\s+\*\*(.+?)\*\*\s+`(page|research|analogy)`\s+(.+)$")
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
@@ -55,6 +56,19 @@ def title_amp(title):
     return esc(title).replace(" and ", " &amp; ")
 
 
+def load_examples():
+    """num -> illustrative example string. Empty if the file is absent."""
+    ex = {}
+    if not EXAMPLES.exists():
+        return ex
+    for line in EXAMPLES.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or "\t" not in line:
+            continue
+        num, text = line.split("\t", 1)
+        ex[int(num)] = text.strip()
+    return ex
+
+
 def parse():
     sections = []  # list of (title, [ (num, name, tag, definition), ... ])
     current = None
@@ -71,7 +85,7 @@ def parse():
     return sections
 
 
-def render_numbered(sections, cites):
+def render_numbered(sections, cites, examples):
     out = ['    <div class="cat-grid">']
     for i, (title, entries) in enumerate(sections, 1):
         out.append(
@@ -84,6 +98,10 @@ def render_numbered(sections, cites):
             cite = cites.get(num)
             if cite and cite[3]:  # link name to its detail block (examples)
                 name_html = f'<a href="#{cite[3]}">{name_html}</a>'
+            ex_html = ""
+            example = examples.get(num)
+            if example:
+                ex_html = f'<p class="ex"><span>e.g.</span> {esc(example)}</p>'
             cite_html = ""
             if cite:
                 count, arxivid, year, _ = cite
@@ -97,7 +115,7 @@ def render_numbered(sections, cites):
                 f'        <div class="cat-chip {tag}">'
                 f'<span class="n">{n}</span>'
                 f'<span class="nm">{name_html}</span>'
-                f'<p class="dfn">{esc(definition)}</p>{cite_html}</div>'
+                f'<p class="dfn">{esc(definition)}</p>{ex_html}{cite_html}</div>'
             )
         out.append("      </div></div>")
     out.append("    </div>")
@@ -111,10 +129,11 @@ def main():
 
     sections = parse()
     cites = load_cites()
+    examples = load_examples()
     total = sum(len(e) for _, e in sections)
     if total != 100:
         print(f"WARNING: parsed {total} entries, expected 100", file=sys.stderr)
-    grid = render_numbered(sections, cites)
+    grid = render_numbered(sections, cites, examples)
 
     if not args.write:
         print(grid)
