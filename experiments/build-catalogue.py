@@ -209,36 +209,29 @@ def main():
         sys.exit(1)
     html = pattern.sub(grid + "\n    ", html, count=1)
 
-    # Remove the "Prompt to prevent it" section from every concept block.
-    before_p = html.count("Prompt to prevent it")
+    # Single uniform style: the 100-entry catalogue is the only concept list.
+    # Prune the legacy 14 deep-block section (with its now-orphaned "how a judge"
+    # blurb and family filter) and the AI Integrity Contract section. Idempotent:
+    # a no-op once they are gone.
+    had_main = "<main id=\"list\">" in html
     html = re.sub(
-        r"\s*<h4>Prompt to prevent it</h4>.*?(?=<h4>Judge agent)",
-        "\n      ",
-        html,
-        flags=re.DOTALL,
-    )
-    # Remove the Judge agent + Contract clause sections from every concept block,
-    # leaving title + definition + examples. The page documents concepts; it is not
-    # a governance tool, so per-concept judge/contract blocks come out.
-    before_j = html.count("<h4>Judge agent")
-    html = re.sub(
-        r"\s*<h4>Judge agent.*?(?=\s*</div>\s*</details>)",
+        r'<div class="framework" id="framework">.*?</main>\s*',
         "",
         html,
         flags=re.DOTALL,
     )
-    after_j = html.count("<h4>Judge agent")
-
-    # Add a Research papers section to each shipped-check deep block.
-    shipped = json.loads(SHIPPED.read_text(encoding="utf-8")) if SHIPPED.exists() else {}
-    html, injected = inject_shipped(html, shipped)
+    had_contract = 'id="contract"' in html
+    html = re.sub(
+        r'<section class="framework" id="contract">.*?</section>\s*',
+        "",
+        html,
+        flags=re.DOTALL,
+    )
 
     PAGE.write_text(html, encoding="utf-8")
     print(
-        f"spliced {total} entries; removed "
-        f"{before_p - html.count('Prompt to prevent it')} prompt, "
-        f"{before_j - after_j} judge+contract blocks; "
-        f"injected papers into {injected}/{len(shipped)} shipped blocks"
+        f"spliced {total} entries; "
+        f"pruned 14-block section: {had_main}; pruned contract section: {had_contract}"
     )
 
 

@@ -39,17 +39,24 @@ def main():
     deep = html.count('class="concept"')
     print(
         f"catalogue: {catalogue} entries (expect 100); "
-        f"deep blocks: {deep} (expect 14); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum 114)"
+        f"legacy deep blocks: {deep} (expect 0); "
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum 100)"
     )
-    if catalogue != 100:
+    if catalogue != 100 or deep != 0 or papers + none != 100:
         ok = False
-        print("  MISMATCH: expected 100 catalogue entries")
-    if papers + none != 114:
-        ok = False
-        print("  MISMATCH: expected 114 papers/no-paper blocks (100 catalogue + 14 deep)")
+        print("  MISMATCH: expected 100 single-style entries, 0 legacy blocks")
 
-    for stale in ("Prompt to prevent it", "<h4>Judge agent", "<h4>Contract clause"):
+    stale_markers = (
+        "Prompt to prevent it",
+        "<h4>Judge agent",
+        "<h4>Contract clause",
+        '<main id="list"',
+        'id="contract"',
+        'href="#list"',
+        'href="#framework"',
+        'href="#contract"',
+    )
+    for stale in stale_markers:
         n = html.count(stale)
         print(f"  {'OK ' if n == 0 else 'LEFTOVER'}  {stale!r}: {n}")
         if n:
