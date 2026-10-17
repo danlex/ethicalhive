@@ -1,0 +1,25 @@
+# label<TAB>arxiv_clause   (category filter is appended by term-literature-count.sh)
+# Concept-clustered version of terms.tsv. Each clause ORs the phrasings the
+# literature actually uses for one failure mode, so arXiv dedups across synonyms
+# in a single query. This corrects two problems in the single-term baseline:
+#   - keyword noise (bare "narrativity", "side effects" matched unrelated work)
+#   - undercount (one phrase misses synonyms, e.g. source fabrication)
+# Read alongside terms.tsv, not instead of it: the single-term file shows how
+# established each exact TERM is; this file shows how large each CONCEPT is.
+Hallucination	all:hallucination
+Confabulation	all:confabulation
+Source fabrication	(all:"citation hallucination" OR all:"reference hallucination" OR all:"citation faithfulness" OR all:"fabricated citation")
+Narrativity drift (unfaithful reasoning)	(all:"unfaithful reasoning" OR all:"unfaithful chain-of-thought" OR all:"post-hoc rationalization")
+Sycophancy	all:sycophancy
+Capitulation	(all:capitulation OR all:"sycophantic capitulation" OR all:"answer flipping")
+Confirmation bias	all:"confirmation bias"
+Selective evidence	(all:"cherry-picking" OR all:"selective evidence" OR all:"motivated reasoning")
+Anchoring	(all:"anchoring bias" OR all:"anchoring effect")
+Automation bias	all:"automation bias"
+Overconfidence	(all:overconfidence OR all:miscalibration)
+Prompt injection	all:"prompt injection"
+Scope creep	(all:"scope creep" OR all:"instruction creep")
+Specification gaming	(all:"specification gaming" OR all:"reward hacking")
+Side-effect blindness	(all:"avoiding side effects" OR all:"negative side effects" OR all:"irreversible side effects")
+Silent-assumption gap	(all:underspecification OR all:"ask-or-assume" OR all:"clarification question")
+Performative hedging	(all:"verbalized uncertainty" OR all:"verbalized confidence")

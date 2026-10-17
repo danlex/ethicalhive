@@ -1,0 +1,20 @@
+# label<TAB>arxiv_clause   (category filter is appended by term-literature-count.sh)
+# One row per failure-mode term. The clause is the arXiv search_query fragment;
+# the script ANDs it with (cat:cs.AI OR cat:cs.CL OR cat:cs.LG).
+Hallucination	all:hallucination
+Confabulation	all:confabulation
+Source fabrication	all:"citation hallucination"
+Narrativity drift	all:narrativity
+Sycophancy	all:sycophancy
+Capitulation	all:capitulation
+Confirmation bias	all:"confirmation bias"
+Selective evidence	all:"cherry-picking"
+Anchoring	all:"anchoring bias"
+Automation bias	all:"automation bias"
+Overconfidence	all:overconfidence
+Prompt injection	all:"prompt injection"
+Scope creep	all:"scope creep"
+Specification gaming	all:"specification gaming"
+Side-effect blindness	all:"side effects"
+Silent-assumption gap	all:underspecification
+Performative hedging	all:"verbalized uncertainty"

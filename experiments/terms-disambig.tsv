@@ -1,0 +1,4 @@
+# Disambiguated re-queries for terms the clustered run showed as homonym-contaminated.
+# Verified by reading returned titles, not by the category tag alone.
+Confirmation bias (reasoning sense)	all:"confirmation bias" AND (all:LLM OR all:"language model" OR all:reasoning) ANDNOT all:"domain adaptation" ANDNOT all:"pseudo-label"
+Selective evidence (LLM omission sense)	(all:"cherry-picking" OR all:"selective evidence" OR all:"motivated reasoning") AND (all:LLM OR all:"language model")
