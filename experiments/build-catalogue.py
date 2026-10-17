@@ -169,30 +169,32 @@ def inject_shipped(html, shipped):
 
 
 def render_numbered(sections, cites, examples, papers, suppress):
+    """Render every concept as an expandable .concept box (same design as the
+    original shipped-check blocks), grouped by brain system / extra group."""
     out = ['    <div class="cat-grid">']
     for i, (title, entries) in enumerate(sections, 1):
-        out.append(
-            f'      <div class="cat-fam"><h3>{i}. {title_amp(title)}</h3>'
-            f'<div class="cat-chips">'
-        )
+        fam = title_amp(title)
+        out.append(f'      <h3 class="cat-group">{i}. {fam}</h3>')
         for num, name, tag, definition in entries:
             n = f"{num:02d}"
-            name_html = esc(name)
-            cite = cites.get(num)
-            if cite and cite[3]:  # link name to its detail block (extra examples)
-                name_html = f'<a href="#{cite[3]}">{name_html}</a>'
-            ex_html = ""
-            example = examples.get(num)
-            if example:
-                ex_html = f'<p class="ex"><span>e.g.</span> {esc(example)}</p>'
-            out.append(
-                f'        <div class="cat-chip {tag}">'
-                f'<span class="n">{n}</span>'
-                f'<span class="nm">{name_html}</span>'
-                f'<p class="dfn">{esc(definition)}</p>{ex_html}'
-                f"{papers_block(num, papers, suppress)}</div>"
+            key = esc(name.lower())
+            ex = examples.get(num)
+            ex_html = (
+                f'<h4>Example</h4><ul class="examples"><li>{esc(ex)}</li></ul>'
+                if ex
+                else ""
             )
-        out.append("      </div></div>")
+            out.append(
+                f'      <details class="concept {tag}" data-fam="{tag}" data-key="{key}">'
+                f'<summary><span class="num">{n}</span>'
+                f'<div class="head"><h2>{esc(name)}</h2>'
+                f'<p class="one">{esc(definition)}</p>'
+                f'<span class="fam">{fam}</span></div>'
+                f'<span class="chev">▸</span></summary>'
+                f'<div class="body">{ex_html}'
+                f"<h4>Research papers</h4>{papers_block(num, papers, suppress)}"
+                f"</div></details>"
+            )
     out.append("    </div>")
     return "\n".join(out)
 
