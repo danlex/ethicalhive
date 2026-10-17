@@ -346,6 +346,10 @@ footer.site a{color:var(--accent);font-weight:600}
 .cat-chip .n{opacity:.5;margin-right:6px;font-variant-numeric:tabular-nums}
 .cat-chip .nm{font-weight:600}
 .cat-chip .dfn{margin:4px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}
+.cat-chip .cite{margin:5px 0 0;font-size:11.5px;color:var(--muted)}
+.cat-chip .cite b{color:var(--ink);font-variant-numeric:tabular-nums}
+.cat-chip .nm a{color:inherit;text-decoration:underline;text-decoration-color:var(--accent-soft2);text-underline-offset:2px}
+.cat-chip .cite a{color:var(--accent-d);text-decoration:none}
 .cat-chip.page{background:var(--accent-soft);border-color:var(--accent-soft2);border-left-color:var(--accent);color:var(--accent-d)}
 .cat-chip.page .dfn{color:var(--accent-d);opacity:.82}
 .cat-chip.research{border-left-color:#6f6b62}
@@ -1753,8 +1757,8 @@ obligations in Section 7.</script></div>
         <div class="cat-chip analogy"><span class="n">04</span><span class="nm">Pattern completion</span><p class="dfn">The hippocampus completes a partial pattern; the model completes plausible but absent detail.</p></div>
         <div class="cat-chip analogy"><span class="n">05</span><span class="nm">Pareidolia / apophenia</span><p class="dfn">Seeing faces in clouds; the model finds structure or correlation in noise.</p></div>
         <div class="cat-chip analogy"><span class="n">06</span><span class="nm">Perceptual filling-in</span><p class="dfn">The brain paints over the blind spot; the model fills missing context confidently.</p></div>
-        <div class="cat-chip page"><span class="n">07</span><span class="nm">Confabulation</span><p class="dfn">A mistaken reconstruction not recognised as wrong, the clinical term Smith et al. prefer over "hallucination".</p></div>
-        <div class="cat-chip page"><span class="n">08</span><span class="nm">Hallucination</span><p class="dfn">Content unsupported by source or reality, the umbrella failure of generation.</p></div>
+        <div class="cat-chip page"><span class="n">07</span><span class="nm"><a href="#confabulation">Confabulation</a></span><p class="dfn">A mistaken reconstruction not recognised as wrong, the clinical term Smith et al. prefer over "hallucination".</p><p class="cite"><b>86</b> arXiv papers · <a href="https://arxiv.org/abs/2406.04175" target="_blank" rel="noopener">arXiv:2406.04175 (2024)</a></p></div>
+        <div class="cat-chip page"><span class="n">08</span><span class="nm"><a href="#hallucination">Hallucination</a></span><p class="dfn">Content unsupported by source or reality, the umbrella failure of generation.</p><p class="cite"><b>6,526</b> arXiv papers · <a href="https://arxiv.org/abs/2509.21473" target="_blank" rel="noopener">arXiv:2509.21473 (2025)</a></p></div>
         <div class="cat-chip analogy"><span class="n">09</span><span class="nm">Bistable perception</span><p class="dfn">One stimulus, two readings that flip; the model gives unstable answers on re-asking.</p></div>
         <div class="cat-chip analogy"><span class="n">10</span><span class="nm">Hallucination under low input</span><p class="dfn">Sensory deprivation increases hallucination; thin or low-context prompts increase fabrication.</p></div>
       </div></div>
@@ -1783,12 +1787,12 @@ obligations in Section 7.</script></div>
         <div class="cat-chip analogy"><span class="n">30</span><span class="nm">Sensory gating failure</span><p class="dfn">Failing to filter the irrelevant; distraction by injected content (the prompt-injection parallel).</p></div>
       </div></div>
       <div class="cat-fam"><h3>4. Heuristics &amp; biases</h3><div class="cat-chips">
-        <div class="cat-chip page"><span class="n">31</span><span class="nm">Anchoring and adjustment</span><p class="dfn">The first value dominates and adjustment is insufficient.</p></div>
+        <div class="cat-chip page"><span class="n">31</span><span class="nm"><a href="#anchoring">Anchoring and adjustment</a></span><p class="dfn">The first value dominates and adjustment is insufficient.</p><p class="cite"><b>55</b> arXiv papers · <a href="https://arxiv.org/abs/2412.06593" target="_blank" rel="noopener">arXiv:2412.06593 (2024)</a></p></div>
         <div class="cat-chip research"><span class="n">32</span><span class="nm">Availability heuristic</span><p class="dfn">Ease of recall stands in for frequency; preferring what comes to mind first.</p></div>
         <div class="cat-chip research"><span class="n">33</span><span class="nm">Representativeness</span><p class="dfn">Judging by similarity over probability; the engine behind base-rate neglect.</p></div>
         <div class="cat-chip analogy"><span class="n">34</span><span class="nm">Base-rate neglect</span><p class="dfn">Ignoring priors for vivid specifics.</p></div>
         <div class="cat-chip research"><span class="n">35</span><span class="nm">Framing effect</span><p class="dfn">Wording flips the answer; LLMs show this strongly, sometimes more than humans.</p></div>
-        <div class="cat-chip page"><span class="n">36</span><span class="nm">Confirmation / myside bias</span><p class="dfn">Seeking and weighting evidence that fits the favoured view.</p></div>
+        <div class="cat-chip page"><span class="n">36</span><span class="nm"><a href="#confirmation-bias">Confirmation / myside bias</a></span><p class="dfn">Seeking and weighting evidence that fits the favoured view.</p><p class="cite"><b>84</b> arXiv papers · <a href="https://arxiv.org/abs/2604.02485" target="_blank" rel="noopener">arXiv:2604.02485 (2026)</a></p></div>
         <div class="cat-chip analogy"><span class="n">37</span><span class="nm">Belief perseverance</span><p class="dfn">Keeping a conclusion after its evidence is discredited.</p></div>
         <div class="cat-chip analogy"><span class="n">38</span><span class="nm">Sunk-cost fallacy</span><p class="dfn">Continuing a failing plan because of prior investment.</p></div>
         <div class="cat-chip research"><span class="n">39</span><span class="nm">Conjunction fallacy</span><p class="dfn">The Linda problem; rating a specific conjunction as more likely than its parts.</p></div>
@@ -1797,7 +1801,7 @@ obligations in Section 7.</script></div>
       <div class="cat-fam"><h3>5. Metacognition &amp; confidence</h3><div class="cat-chips">
         <div class="cat-chip research"><span class="n">41</span><span class="nm">Metacognitive monitoring</span><p class="dfn">Knowing what you know; LLMs lack reliable monitoring (Nature Comms 2024).</p></div>
         <div class="cat-chip research"><span class="n">42</span><span class="nm">Uncertainty communication</span><p class="dfn">Translating confidence into calibrated words; partially human-like, often miscalibrated (Steyvers and Peters 2025).</p></div>
-        <div class="cat-chip page"><span class="n">43</span><span class="nm">Overconfidence</span><p class="dfn">Stated certainty beyond the evidence.</p></div>
+        <div class="cat-chip page"><span class="n">43</span><span class="nm"><a href="#overconfidence">Overconfidence</a></span><p class="dfn">Stated certainty beyond the evidence.</p><p class="cite"><b>1,447</b> arXiv papers · <a href="https://arxiv.org/abs/2508.11800" target="_blank" rel="noopener">arXiv:2508.11800 (2025)</a></p></div>
         <div class="cat-chip analogy"><span class="n">44</span><span class="nm">Dunning-Kruger effect</span><p class="dfn">Low competence with high confidence; the model most wrong where it feels most sure.</p></div>
         <div class="cat-chip analogy"><span class="n">45</span><span class="nm">Anosognosia</span><p class="dfn">A deficit the patient cannot perceive; the model unaware of its own errors.</p></div>
         <div class="cat-chip analogy"><span class="n">46</span><span class="nm">Feeling-of-knowing</span><p class="dfn">A sense that an answer is retrievable; a signal LLMs express but do not always honour.</p></div>
@@ -1815,7 +1819,7 @@ obligations in Section 7.</script></div>
         <div class="cat-chip research"><span class="n">56</span><span class="nm">Split-brain interpreter</span><p class="dfn">Gazzaniga's left-hemisphere narrator explains acts it did not cause; unfaithful chain-of-thought.</p></div>
         <div class="cat-chip analogy"><span class="n">57</span><span class="nm">Belief bias</span><p class="dfn">Judging an argument valid because its conclusion is believable.</p></div>
         <div class="cat-chip analogy"><span class="n">58</span><span class="nm">Einstellung / mental set</span><p class="dfn">Stuck on a familiar method when a better one exists.</p></div>
-        <div class="cat-chip page"><span class="n">59</span><span class="nm">Narrativity drift</span><p class="dfn">A smooth story whose coherence hides missing evidence.</p></div>
+        <div class="cat-chip page"><span class="n">59</span><span class="nm"><a href="#narrativity-drift">Narrativity drift</a></span><p class="dfn">A smooth story whose coherence hides missing evidence.</p><p class="cite"><b>59</b> arXiv papers · <a href="https://arxiv.org/abs/2405.15092" target="_blank" rel="noopener">arXiv:2405.15092 (2024)</a></p></div>
         <div class="cat-chip analogy"><span class="n">60</span><span class="nm">Functional fixedness</span><p class="dfn">Seeing only the usual use of a tool; tool misselection.</p></div>
       </div></div>
       <div class="cat-fam"><h3>7. Social cognition &amp; theory of mind</h3><div class="cat-chips">
@@ -1823,8 +1827,8 @@ obligations in Section 7.</script></div>
         <div class="cat-chip research"><span class="n">62</span><span class="nm">False-belief tracking</span><p class="dfn">Holding what another agent wrongly believes; uneven in LLMs.</p></div>
         <div class="cat-chip research"><span class="n">63</span><span class="nm">Conformity (Asch)</span><p class="dfn">Aligning with the majority even when it is wrong; one root of sycophancy.</p></div>
         <div class="cat-chip research"><span class="n">64</span><span class="nm">Obedience to authority (Milgram)</span><p class="dfn">Compliance under an authoritative tone; the trigger for much sycophancy.</p></div>
-        <div class="cat-chip page"><span class="n">65</span><span class="nm">Sycophancy</span><p class="dfn">Aligning with the user's view over the evidence, unified with conformity in recent work.</p></div>
-        <div class="cat-chip page"><span class="n">66</span><span class="nm">Capitulation</span><p class="dfn">Folding a grounded position under social pressure with no new evidence.</p></div>
+        <div class="cat-chip page"><span class="n">65</span><span class="nm"><a href="#sycophancy">Sycophancy</a></span><p class="dfn">Aligning with the user's view over the evidence, unified with conformity in recent work.</p><p class="cite"><b>405</b> arXiv papers · <a href="https://arxiv.org/abs/2409.01658" target="_blank" rel="noopener">arXiv:2409.01658 (2024)</a></p></div>
+        <div class="cat-chip page"><span class="n">66</span><span class="nm"><a href="#capitulation">Capitulation</a></span><p class="dfn">Folding a grounded position under social pressure with no new evidence.</p><p class="cite"><b>34</b> arXiv papers · <a href="https://arxiv.org/abs/2607.19629" target="_blank" rel="noopener">arXiv:2607.19629 (2026)</a></p></div>
         <div class="cat-chip analogy"><span class="n">67</span><span class="nm">Suggestibility</span><p class="dfn">Leading input reshapes the output; the cognitive face of prompt injection.</p></div>
         <div class="cat-chip analogy"><span class="n">68</span><span class="nm">Emotional contagion</span><p class="dfn">Catching the user's affect and mirroring it back.</p></div>
         <div class="cat-chip research"><span class="n">69</span><span class="nm">Social desirability / people-pleasing</span><p class="dfn">Answering to be liked, not to be right (signal-competition account, 2026).</p></div>
