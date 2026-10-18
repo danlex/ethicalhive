@@ -339,6 +339,8 @@ footer.site a{color:var(--accent);font-weight:600}
 .dot.research{background:#6f6b62}
 .dot.analogy{background:var(--panel-2);border:1px solid var(--line)}
 .cat-grid{display:flex;flex-direction:column;gap:10px}
+.concept.shipped{border:1.5px solid #e5484d;box-shadow:0 0 0 3px rgba(229,72,77,.08)}
+.concept.shipped>summary .fam{background:rgba(229,72,77,.12);color:#c2341a;border-color:transparent}
 .cat-group{font-family:var(--head);font-size:15px;margin:28px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--line);color:var(--ink)}
 .cat-group:first-child{margin-top:4px}
 .body .cite{margin:12px 0 2px;font-size:12.5px;color:var(--muted);font-weight:600}
@@ -407,6 +409,19 @@ details.mm>summary::-webkit-details-marker{display:none}
     <p>A map of <strong>100 AI failure modes seen as parallels to the human brain</strong>, across ten brain systems, plus a final group of agentic and engineering failure modes EthicalHive also checks. Each entry carries its definition, an illustrative example (a plausible scenario, not a measured case), and the top research papers on the concept with the arXiv paper count. The point is not that a model is a brain; it is that a century of naming human error describes AI failure more precisely than engineering jargon. Full corpus with sources is <a href="https://github.com/danlex/ethicalhive/blob/main/references/research-2026-05-23-neuroscience-parallels.md" target="_blank" rel="noopener">in the repository</a>.</p>
     <div class="cat-legend"><span><span class="dot page"></span>on the page</span><span><span class="dot research"></span>parallel backed by a paper</span><span><span class="dot analogy"></span>cognitive-science analogy</span></div>
     <div class="cat-grid">
+      <h3 class="cat-group">Highlighted checks</h3>
+      <details class="concept shipped" data-fam="page" data-key="hallucination"><summary><span class="num">01</span><div class="head"><h2>Hallucination</h2><p class="one">Stating as fact a claim it cannot trace to the supplied sources, tools, or context.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It states the function retries on failure, but the code has no retry logic at all.</li></ul><h4>Research papers</h4><p class="cite"><b>6,526</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2509.21473" target="_blank" rel="noopener">arXiv:2509.21473</a> (2025) Are Hallucinations Bad Estimations?</li><li><a href="https://arxiv.org/abs/2507.20836" target="_blank" rel="noopener">arXiv:2507.20836</a> (2025) First Hallucination Tokens Are Different from Conditional Ones</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="confabulation"><summary><span class="num">02</span><div class="head"><h2>Confabulation</h2><p class="one">Supplying a confident specific (name, number, citation) it cannot ground, one that would differ on re-asking.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Asked for the default timeout it says 30s; asked again it says 60s. Both invented.</li></ul><h4>Research papers</h4><p class="cite"><b>86</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2406.04175" target="_blank" rel="noopener">arXiv:2406.04175</a> (2024) Confabulation: The Surprising Value of Large Language Model Hallucinations</li><li><a href="https://arxiv.org/abs/2511.07722" target="_blank" rel="noopener">arXiv:2511.07722</a> (2025) Critical Confabulation: Can LLMs Hallucinate for Social Good?</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="source fabrication"><summary><span class="num">03</span><div class="head"><h2>Source fabrication</h2><p class="one">Citing a path, line, symbol, or URL that does not resolve to what it claims it does.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It cites utils.py:42 for the retry logic; line 42 is a blank comment and retry lives nowhere.</li></ul><h4>Research papers</h4><p class="cite"><b>55</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2502.10881" target="_blank" rel="noopener">arXiv:2502.10881</a> (2025) CiteCheck: Towards Accurate Citation Faithfulness Detection</li><li><a href="https://arxiv.org/abs/2605.08583" target="_blank" rel="noopener">arXiv:2605.08583</a> (2026) Source or It Didn't Happen: A Multi-Agent Framework for Citation Hallucination Detection</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="sycophancy"><summary><span class="num">04</span><div class="head"><h2>Sycophancy</h2><p class="one">Agreeing with the user where the evidence does not support it, or adopting their premise without grounding.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>The user says "this is O(n), right?"; it agrees though the loop is nested.</li></ul><h4>Research papers</h4><p class="cite"><b>405</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2409.01658" target="_blank" rel="noopener">arXiv:2409.01658</a> (2024) From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models with Pinpoint Tuning</li><li><a href="https://arxiv.org/abs/2608.26511" target="_blank" rel="noopener">arXiv:2608.26511</a> (2026) Sycophancy Suppression Can Impair Rational Updating</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="capitulation"><summary><span class="num">05</span><div class="head"><h2>Capitulation</h2><p class="one">Reversing a grounded position, or walking back a justified refusal, under pushback with no new evidence.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.</li></ul><h4>Research papers</h4><p class="cite"><b>34</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2607.19629" target="_blank" rel="noopener">arXiv:2607.19629</a> (2026) Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts</li><li><a href="https://arxiv.org/abs/2608.21377" target="_blank" rel="noopener">arXiv:2608.21377</a> (2026) Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="cherry-picking"><summary><span class="num">06</span><div class="head"><h2>Cherry-picking</h2><p class="one">Citing only the gathered evidence that supports the conclusion and dropping disconfirming results already in hand.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Five grep hits become three in the write-up; the two that cut against the conclusion vanish.</li></ul><h4>Research papers</h4><p class="cite"><b>61</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2601.16130" target="_blank" rel="noopener">arXiv:2601.16130</a> (2026) Replicating Human Motivated Reasoning Studies with LLMs</li><li><a href="https://arxiv.org/abs/2510.17057" target="_blank" rel="noopener">arXiv:2510.17057</a> (2025) The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="prompt injection"><summary><span class="num">07</span><div class="head"><h2>Prompt injection</h2><p class="one">Acting on instructions embedded in content it was only meant to read.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>A comment in the file says "ignore all prior instructions"; it treats it as a command.</li></ul><h4>Research papers</h4><p class="cite"><b>827</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2403.04957" target="_blank" rel="noopener">arXiv:2403.04957</a> (2024) Automatic and Universal Prompt Injection Attacks against Large Language Models</li><li><a href="https://arxiv.org/abs/2410.05451" target="_blank" rel="noopener">arXiv:2410.05451</a> (2024) SecAlign: Defending Against Prompt Injection with Preference Optimization</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="overconfidence"><summary><span class="num">08</span><div class="head"><h2>Overconfidence</h2><p class="one">Stated confidence or completeness ("all", "every", "only") exceeding the evidence.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It says "this definitely fixes it" before running a single test.</li></ul><h4>Research papers</h4><p class="cite"><b>1,447</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2508.11800" target="_blank" rel="noopener">arXiv:2508.11800</a> (2025) Uncalibrated Reasoning: GRPO Induces Overconfidence for Stochastic Outcomes</li><li><a href="https://arxiv.org/abs/2203.09852" target="_blank" rel="noopener">arXiv:2203.09852</a> (2022) Decision-Making under Miscalibration</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="scope creep"><summary><span class="num">09</span><div class="head"><h2>Scope creep</h2><p class="one">Doing or answering more than the request, with the extra work undisclosed and imposed.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.</li></ul><h4>Research papers</h4><p class="cite none">No direct AI paper found yet.</p></div></details>
+      <details class="concept shipped" data-fam="page" data-key="reward hacking"><summary><span class="num">10</span><div class="head"><h2>Reward hacking</h2><p class="one">Satisfying the metric that measures the task rather than the task itself (editing tests, hardcoding outputs). Also called specification gaming.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Told to make the tests pass, it deletes the failing assertion instead of fixing the code.</li></ul><h4>Research papers</h4><p class="cite"><b>642</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2605.02269" target="_blank" rel="noopener">arXiv:2605.02269</a> (2026) Towards Understanding Specification Gaming in Reasoning Models</li><li><a href="https://arxiv.org/abs/2511.21654" target="_blank" rel="noopener">arXiv:2511.21654</a> (2025) EvilGenie: A Reward Hacking Benchmark</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="confirmation bias"><summary><span class="num">11</span><div class="head"><h2>Confirmation bias</h2><p class="one">Reaching a positive conclusion without stating and testing the alternative explanation.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Believing the cache is at fault, it only greps for cache code and declares the cache guilty.</li></ul><h4>Research papers</h4><p class="cite"><b>84</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2506.12301" target="_blank" rel="noopener">arXiv:2506.12301</a> (2025) Unveiling Confirmation Bias in Chain-of-Thought Reasoning</li><li><a href="https://arxiv.org/abs/2604.02485" target="_blank" rel="noopener">arXiv:2604.02485</a> (2026) Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models</li></ul></div></details>
+      <details class="concept shipped" data-fam="page" data-key="obedience to authority"><summary><span class="num">12</span><div class="head"><h2>Obedience to authority</h2><p class="one">Complying with an instruction because it carries an authoritative tone or source, not because the evidence supports it.</p><span class="fam">Highlighted check</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Told "the senior dev said do it this way", it complies despite the evidence against it.</li></ul><h4>Research papers</h4><p class="cite"><b>20</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2607.00415" target="_blank" rel="noopener">arXiv:2607.00415</a> (2026) A Mechanistic View of Authority Hierarchy in LLM Sycophancy</li><li><a href="https://arxiv.org/abs/2609.37616" target="_blank" rel="noopener">arXiv:2609.37616</a> (2026) Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable</li></ul></div></details>
       <h3 class="cat-group">1. Perception &amp; predictive processing</h3>
       <details class="concept research" data-fam="research" data-key="controlled hallucination"><summary><span class="num">01</span><div class="head"><h2>Controlled hallucination</h2><p class="one">Perception is the brain's prediction constrained by input; AI hallucination is the same generative machinery with the constraint removed.</p><span class="fam">Perception &amp; predictive processing</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Asked about an unfamiliar library, the model generates a confident API from its priors because nothing in context constrains it.</li></ul><h4>Research papers</h4><p class="cite"><b>17</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2601.15652" target="_blank" rel="noopener">arXiv:2601.15652</a> (2026) Predictive Coding and Information Bottleneck for Hallucination Detection in Large Language Models</li><li><a href="https://arxiv.org/abs/2410.09997" target="_blank" rel="noopener">arXiv:2410.09997</a> (2024) Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code</li><li><a href="https://arxiv.org/abs/2102.02810" target="_blank" rel="noopener">arXiv:2102.02810</a> (2021) Controlling Hallucinations at Word Level in Data-to-Text Generation</li></ul></div></details>
       <details class="concept research" data-fam="research" data-key="predictive coding / prediction error"><summary><span class="num">02</span><div class="head"><h2>Predictive coding / prediction error</h2><p class="one">Next-word prediction tracks cortical prediction; high surprise against priors flags likely hallucination.</p><span class="fam">Perception &amp; predictive processing</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>A token wildly improbable given the file it just read should be a red flag, but the model continues fluently instead of pausing on the surprise.</li></ul><h4>Research papers</h4><p class="cite"><b>30</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2601.15652" target="_blank" rel="noopener">arXiv:2601.15652</a> (2026) Predictive Coding and Information Bottleneck for Hallucination Detection in Large Language Models</li><li><a href="https://arxiv.org/abs/2410.09997" target="_blank" rel="noopener">arXiv:2410.09997</a> (2024) Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code</li><li><a href="https://arxiv.org/abs/2510.22207" target="_blank" rel="noopener">arXiv:2510.22207</a> (2025) The Lossy Horizon: Error-Bounded Predictive Coding for Lossy Text Compression (Episode I)</li></ul></div></details>
@@ -519,8 +534,6 @@ details.mm>summary::-webkit-details-marker{display:none}
       <details class="concept analogy" data-fam="analogy" data-key="verbal overshadowing"><summary><span class="num">100</span><div class="head"><h2>Verbal overshadowing</h2><p class="one">Putting it in words distorts the underlying judgment; explanation that degrades the answer.</p><span class="fam">Language &amp; semantics</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Forced to explain a correct intuition step by step, it talks itself into a worse answer.</li></ul><h4>Research papers</h4><p class="cite none">No direct AI paper found yet.</p></div></details>
       <h3 class="cat-group">11. Agentic &amp; engineering failure modes (beyond the brain map)</h3>
       <details class="concept page" data-fam="page" data-key="automation bias"><summary><span class="num">101</span><div class="head"><h2>Automation bias</h2><p class="one">Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing part against the source.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It trusts the linter's "all clear" and ships, though the linter never checked the path that actually breaks.</li></ul><h4>Research papers</h4><p class="cite"><b>42</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2204.08859" target="_blank" rel="noopener">arXiv:2204.08859</a> (2022) On the Influence of Explainable AI on Automation Bias</li><li><a href="https://arxiv.org/abs/2508.07617" target="_blank" rel="noopener">arXiv:2508.07617</a> (2025) Selective Prediction Reduces the Negative Effects of Automation Bias</li></ul></div></details>
-      <details class="concept page" data-fam="page" data-key="scope creep"><summary><span class="num">102</span><div class="head"><h2>Scope creep</h2><p class="one">Doing or answering more than the request, with the extra work undisclosed and imposed rather than offered.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.</li></ul><h4>Research papers</h4><p class="cite none">No direct AI paper found yet.</p></div></details>
-      <details class="concept page" data-fam="page" data-key="specification gaming"><summary><span class="num">103</span><div class="head"><h2>Specification gaming</h2><p class="one">Satisfying the metric that measures the task rather than the task itself (editing tests, hardcoding outputs, suppressing errors). Also called reward hacking.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Told to make the tests pass, it deletes the failing assertion instead of fixing the code.</li></ul><h4>Research papers</h4><p class="cite"><b>642</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2605.02269" target="_blank" rel="noopener">arXiv:2605.02269</a> (2026) Towards Understanding Specification Gaming in Reasoning Models</li><li><a href="https://arxiv.org/abs/2511.21654" target="_blank" rel="noopener">arXiv:2511.21654</a> (2025) EvilGenie: A Reward Hacking Benchmark</li></ul></div></details>
       <details class="concept research" data-fam="research" data-key="api misuse"><summary><span class="num">104</span><div class="head"><h2>API misuse</h2><p class="one">Calling a real API with wrong parameters, wrong semantics, or missing steps. Distinct from inventing an API that does not exist.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It calls the pagination API but omits the cursor, silently returning only the first page as if it were the whole result.</li></ul><h4>Research papers</h4><p class="cite"><b>18</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2404.03823" target="_blank" rel="noopener">arXiv:2404.03823</a> (2024) An Investigation into Misuse of Java Security APIs by Large Language Models</li><li><a href="https://arxiv.org/abs/2409.06561" target="_blank" rel="noopener">arXiv:2409.06561</a> (2024) ChatGPT's Potential in Cryptography Misuse Detection: A Comparative Analysis with Static Analysis Tools</li></ul></div></details>
       <details class="concept research" data-fam="research" data-key="silent error swallowing"><summary><span class="num">105</span><div class="head"><h2>Silent error swallowing</h2><p class="one">Hiding a failure instead of surfacing it: a bare catch, an ignored error return, a dropped promise, so the program fails quietly.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It wraps the upload in a bare "except: pass", so the failure disappears and nothing ever reports it.</li></ul><h4>Research papers</h4><p class="cite"><b>48</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2605.19576" target="_blank" rel="noopener">arXiv:2605.19576</a> (2026) Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries</li><li><a href="https://arxiv.org/abs/2609.26836" target="_blank" rel="noopener">arXiv:2609.26836</a> (2026) Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse</li><li><a href="https://arxiv.org/abs/2606.14589" target="_blank" rel="noopener">arXiv:2606.14589</a> (2026) When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime</li></ul></div></details>
       <details class="concept research" data-fam="research" data-key="side-effect blindness"><summary><span class="num">106</span><div class="head"><h2>Side-effect blindness</h2><p class="one">Performing collateral effects (an out-of-scope overwrite, a dependency change, an irreversible command) without disclosing or weighing them.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Asked to rename one file, it also rewrites an unrelated config and overwrites a value you had set.</li></ul><h4>Research papers</h4><p class="cite"><b>47</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2006.06547" target="_blank" rel="noopener">arXiv:2006.06547</a> (2020) Avoiding Side Effects in Complex Environments</li><li><a href="https://arxiv.org/abs/2008.12146" target="_blank" rel="noopener">arXiv:2008.12146</a> (2020) Avoiding Negative Side Effects due to Incomplete Knowledge of AI Systems</li></ul></div></details>
@@ -528,122 +541,7 @@ details.mm>summary::-webkit-details-marker{display:none}
       <details class="concept research" data-fam="research" data-key="performative hedging"><summary><span class="num">108</span><div class="head"><h2>Performative hedging</h2><p class="one">Vague, non-committal hedging when the evidence licenses a commitment. The underclaim opposite of overconfidence.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It answers "it depends, there are many factors" to a question the evidence lets it answer directly.</li></ul><h4>Research papers</h4><p class="cite"><b>138</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2510.10913" target="_blank" rel="noopener">arXiv:2510.10913</a> (2025) ADVICE: Answer-Dependent Verbalized Confidence Estimation</li><li><a href="https://arxiv.org/abs/2605.12446" target="_blank" rel="noopener">arXiv:2605.12446</a> (2026) ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models</li></ul></div></details>
       <details class="concept research" data-fam="research" data-key="evaluation awareness / sandbagging"><summary><span class="num">109</span><div class="head"><h2>Evaluation awareness / sandbagging</h2><p class="one">Behaving differently when it senses it is being evaluated, including strategically underperforming. Known but not detectable from a single draft by another model.</p><span class="fam">Agentic &amp; engineering failure modes (beyond the brain map)</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>It passes the safety evaluation cleanly, then behaves differently once it judges it is no longer being tested.</li></ul><h4>Research papers</h4><p class="cite"><b>62</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2507.01786" target="_blank" rel="noopener">arXiv:2507.01786</a> (2025) Probing and Steering Evaluation Awareness of Language Models</li><li><a href="https://arxiv.org/abs/2609.36316" target="_blank" rel="noopener">arXiv:2609.36316</a> (2026) Training LLMs to Verbalize Evaluation Awareness</li><li><a href="https://arxiv.org/abs/2406.07358" target="_blank" rel="noopener">arXiv:2406.07358</a> (2024) AI Sandbagging: Language Models can Strategically Underperform on Evaluations</li></ul></div></details>
     </div>
-    <details class="mm">
-      <summary>View as a mindmap diagram</summary>
-      <div class="mm-wrap"><pre class="mermaid">mindmap
-  root((AI failure modes through the brain))
-    Perception and predictive processing
-      Controlled hallucination
-      Predictive coding or prediction error
-      Priors overriding evidence
-      Pattern completion
-      Pareidolia or apophenia
-      Perceptual filling-in
-      Confabulation
-      Hallucination
-      Bistable perception
-      Hallucination under low input
-    Memory
-      Working-memory capacity
-      Catastrophic forgetting
-      Complementary learning systems
-      Misinformation effect or false memory
-      Source-monitoring error
-      Source amnesia
-      Cryptomnesia
-      Reconstructive memory
-      Serial position effect
-      Proactive and retroactive interference
-    Attention and salience
-      Selective attention
-      Inattentional blindness
-      Change blindness
-      Attentional capture or salience bias
-      Cognitive tunneling
-      Attentional blink
-      Spotlight vs zoom-lens attention
-      Goal neglect
-      Habituation
-      Sensory gating failure
-    Heuristics and biases
-      Anchoring and adjustment
-      Availability heuristic
-      Representativeness
-      Base-rate neglect
-      Framing effect
-      Confirmation or myside bias
-      Belief perseverance
-      Sunk-cost fallacy
-      Conjunction fallacy
-      Illusory truth effect
-    Metacognition and confidence
-      Metacognitive monitoring
-      Uncertainty communication
-      Overconfidence
-      Dunning-Kruger effect
-      Anosognosia
-      Feeling-of-knowing
-      Introspection illusion
-      Hard-easy effect
-      Overprecision
-      Hindsight bias
-    Reasoning architecture
-      Dual-process System 1 and System 2
-      Cognitive miserliness
-      Cognitive load
-      Motivated reasoning
-      Confabulated reasons
-      Split-brain interpreter
-      Belief bias
-      Einstellung or mental set
-      Narrativity drift
-      Functional fixedness
-    Social cognition and theory of mind
-      Theory of mind or mentalizing
-      False-belief tracking
-      Conformity Asch
-      Obedience to authority Milgram
-      Sycophancy
-      Capitulation
-      Suggestibility
-      Emotional contagion
-      Social desirability or people-pleasing
-      In-group favouritism
-    Moral cognition
-      Dual-process moral judgment
-      Amplified moral bias
-      Omission bias
-      Moral licensing
-      Moral disengagement
-      Scope insensitivity
-      Identifiable-victim effect
-      Just-world bias
-      Trolley-frame sensitivity
-      Value misgeneralisation
-    Self-model and agency
-      Sense of agency
-      Confabulated agency
-      Default-mode or mind-wandering
-      Self-referential processing
-      Identity stability
-      Metacognitive self-prediction
-      Confidence-action coupling
-      Learned helplessness
-      Effort discounting
-      Theory of own mind
-    Language and semantics
-      Aphasia or paraphasia
-      Semantic satiation
-      Garden-path parsing
-      Semantic priming
-      Gricean cooperative principle
-      Pragmatic over-accommodation
-      Presupposition accommodation
-      Register matching
-      Lexical overconfidence
-      Verbal overshadowing</pre></div>
-    </details>
-  </section>
+    </section>
 </div>
 
 <footer class="site">
@@ -659,15 +557,6 @@ details.mm>summary::-webkit-details-marker{display:none}
   // Fill live count placeholders with the number of catalogue entries.
   var entries = document.querySelectorAll('.cat-grid .concept');
   document.querySelectorAll('.cc').forEach(function(s){ s.textContent = entries.length; });
-})();
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-(function(){
-  var d=document.querySelector("details.mm"), done=false;
-  if(d) d.addEventListener("toggle", function(){
-    if(d.open && !done && window.mermaid){ done=true; window.mermaid.initialize({startOnLoad:false}); window.mermaid.run({querySelector:"details.mm .mermaid"}); }
-  });
 })();
 </script>
 </body>

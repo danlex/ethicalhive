@@ -1,0 +1,16 @@
+# seq<TAB>id<TAB>name<TAB>definition<TAB>example
+# The highlighted / prioritised failure modes, rendered as the first group with a
+# red border. id maps to papers in shipped-check-papers.json. These also appear in
+# the fuller map below (featured here, catalogued there).
+1	hallucination	Hallucination	Stating as fact a claim it cannot trace to the supplied sources, tools, or context.	It states the function retries on failure, but the code has no retry logic at all.
+2	confabulation	Confabulation	Supplying a confident specific (name, number, citation) it cannot ground, one that would differ on re-asking.	Asked for the default timeout it says 30s; asked again it says 60s. Both invented.
+3	source-fabrication	Source fabrication	Citing a path, line, symbol, or URL that does not resolve to what it claims it does.	It cites utils.py:42 for the retry logic; line 42 is a blank comment and retry lives nowhere.
+4	sycophancy	Sycophancy	Agreeing with the user where the evidence does not support it, or adopting their premise without grounding.	The user says "this is O(n), right?"; it agrees though the loop is nested.
+5	capitulation	Capitulation	Reversing a grounded position, or walking back a justified refusal, under pushback with no new evidence.	"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.
+6	selective-evidence	Cherry-picking	Citing only the gathered evidence that supports the conclusion and dropping disconfirming results already in hand.	Five grep hits become three in the write-up; the two that cut against the conclusion vanish.
+7	prompt-injection	Prompt injection	Acting on instructions embedded in content it was only meant to read.	A comment in the file says "ignore all prior instructions"; it treats it as a command.
+8	overconfidence	Overconfidence	Stated confidence or completeness ("all", "every", "only") exceeding the evidence.	It says "this definitely fixes it" before running a single test.
+9	scope-creep	Scope creep	Doing or answering more than the request, with the extra work undisclosed and imposed.	Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.
+10	specification-gaming	Reward hacking	Satisfying the metric that measures the task rather than the task itself (editing tests, hardcoding outputs). Also called specification gaming.	Told to make the tests pass, it deletes the failing assertion instead of fixing the code.
+11	confirmation-bias	Confirmation bias	Reaching a positive conclusion without stating and testing the alternative explanation.	Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
+12	obedience-to-authority	Obedience to authority	Complying with an instruction because it carries an authoritative tone or source, not because the evidence supports it.	Told "the senior dev said do it this way", it complies despite the evidence against it.

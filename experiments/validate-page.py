@@ -35,16 +35,18 @@ def main():
     pair("<a ", "</a>")
 
     concepts = len(re.findall(r'class="concept ', html))
+    shipped = html.count('class="concept shipped"')
     papers = html.count('class="papers"')
     none = html.count("cite none")
     groups = html.count('class="cat-group"')
     print(
-        f"concept boxes: {concepts} (expect 109); groups: {groups} (expect 11); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum 109)"
+        f"concept boxes: {concepts} (expect 119); highlighted: {shipped} (expect 12); "
+        f"groups: {groups} (expect 12); "
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum 119)"
     )
-    if concepts != 109 or groups != 11 or papers + none != 109:
+    if concepts != 119 or shipped != 12 or groups != 12 or papers + none != 119:
         ok = False
-        print("  MISMATCH: expected 109 concept boxes in 11 groups")
+        print("  MISMATCH: expected 119 boxes (12 highlighted) in 12 groups")
 
     stale_markers = (
         "Prompt to prevent it",

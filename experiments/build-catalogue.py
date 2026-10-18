@@ -168,6 +168,49 @@ def inject_shipped(html, shipped):
     return html, done
 
 
+SHIPPED_CHECKS = ROOT / "experiments" / "shipped-checks.tsv"
+
+
+def load_shipped_checks():
+    """[(seq, id, name, definition, example)] for the prioritised first group."""
+    rows = []
+    if not SHIPPED_CHECKS.exists():
+        return rows
+    for line in SHIPPED_CHECKS.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or "\t" not in line:
+            continue
+        parts = line.split("\t")
+        if len(parts) < 5:
+            continue
+        rows.append((int(parts[0]), parts[1].strip(), parts[2].strip(),
+                     parts[3].strip(), parts[4].strip()))
+    return rows
+
+
+def render_shipped(rows, shipped_papers):
+    """Prioritised, red-bordered first group of highlighted checks."""
+    out = ['      <h3 class="cat-group">Highlighted checks</h3>']
+    for seq, cid, name, definition, example in rows:
+        n = f"{seq:02d}"
+        key = esc(name.lower())
+        ex_html = (
+            f'<h4>Example</h4><ul class="examples"><li>{esc(example)}</li></ul>'
+            if example else ""
+        )
+        out.append(
+            f'      <details class="concept shipped" data-fam="page" data-key="{key}">'
+            f'<summary><span class="num">{n}</span>'
+            f'<div class="head"><h2>{esc(name)}</h2>'
+            f'<p class="one">{esc(definition)}</p>'
+            f'<span class="fam">Highlighted check</span></div>'
+            f'<span class="chev">▸</span></summary>'
+            f'<div class="body">{ex_html}'
+            f"<h4>Research papers</h4>{render_papers(shipped_papers.get(cid))}"
+            f"</div></details>"
+        )
+    return "\n".join(out)
+
+
 def render_numbered(sections, cites, examples, papers, suppress):
     """Render every concept as an expandable .concept box (same design as the
     original shipped-check blocks), grouped by brain system / extra group."""
@@ -212,17 +255,31 @@ def main():
     examples = load_examples()
     papers = load_papers()
     suppress = load_suppress()
-    total = sum(len(e) for _, e in sections)
-    print(f"rendering {total} entries ({len(extra)} beyond the brain corpus)", file=sys.stderr)
+    shipped_rows = load_shipped_checks()
+    shipped_papers = json.loads(SHIPPED.read_text(encoding="utf-8")) if SHIPPED.exists() else {}
+    total = sum(len(e) for _, e in sections) + len(shipped_rows)
+    print(
+        f"rendering {total} entries "
+        f"({len(shipped_rows)} highlighted, {len(extra)} beyond the brain corpus)",
+        file=sys.stderr,
+    )
     grid = render_numbered(sections, cites, examples, papers, suppress)
+    if shipped_rows:
+        grid = grid.replace(
+            '    <div class="cat-grid">',
+            '    <div class="cat-grid">\n' + render_shipped(shipped_rows, shipped_papers),
+            1,
+        )
 
     if not args.write:
         print(grid)
         return
 
     html = PAGE.read_text(encoding="utf-8")
+    # Splice the catalogue grid. Anchor on either the mindmap (first run) or the
+    # section close (later runs, after the mindmap is pruned) so it stays idempotent.
     pattern = re.compile(
-        r'    <div class="cat-grid">.*?</div>\s*(?=<details class="mm">)',
+        r'    <div class="cat-grid">.*?</div>\s*(?=<details class="mm">|</section>)',
         re.DOTALL,
     )
     if not pattern.search(html):
@@ -249,10 +306,26 @@ def main():
         flags=re.DOTALL,
     )
 
+    # Remove the Mermaid mindmap (unreadable at 100+ nodes, redundant with the
+    # boxes) and its external script, keeping the page self-contained.
+    had_mm = 'class="mm"' in html
+    html = re.sub(r'\s*<details class="mm">.*?</details>', "", html, flags=re.DOTALL)
+    html = re.sub(
+        r'\s*<script defer src="https://cdn\.jsdelivr\.net/npm/mermaid[^"]*"></script>',
+        "",
+        html,
+    )
+    html = re.sub(
+        r'\s*<script>\s*\(function\(\)\{\s*var d=document\.querySelector\("details\.mm".*?</script>',
+        "",
+        html,
+        flags=re.DOTALL,
+    )
+
     PAGE.write_text(html, encoding="utf-8")
     print(
-        f"spliced {total} entries; "
-        f"pruned 14-block section: {had_main}; pruned contract section: {had_contract}"
+        f"spliced {total} entries; pruned 14-block: {had_main}; "
+        f"contract: {had_contract}; mindmap: {had_mm}"
     )
 
 
