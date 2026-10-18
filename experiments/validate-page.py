@@ -40,13 +40,13 @@ def main():
     none = html.count("cite none")
     groups = html.count('class="cat-group"')
     print(
-        f"concept boxes: {concepts} (expect 119); highlighted: {shipped} (expect 12); "
+        f"concept boxes: {concepts} (expect 124); highlighted: {shipped} (expect 20); "
         f"groups: {groups} (expect 12); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum 119)"
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum 124)"
     )
-    if concepts != 119 or shipped != 12 or groups != 12 or papers + none != 119:
+    if concepts != 124 or shipped != 20 or groups != 12 or papers + none != 124:
         ok = False
-        print("  MISMATCH: expected 119 boxes (12 highlighted) in 12 groups")
+        print("  MISMATCH: expected 124 boxes (20 highlighted) in 12 groups")
 
     stale_markers = (
         "Prompt to prevent it",
