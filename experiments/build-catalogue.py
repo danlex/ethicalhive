@@ -35,6 +35,10 @@ def title_amp(text):
     return esc(text).replace(" and ", " &amp; ")
 
 
+def slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
 def render_papers(arxiv):
     """count + top-3 papers, or an honest 'no paper' note."""
     if not arxiv or not arxiv.get("papers"):
@@ -64,12 +68,15 @@ def box(mode):
     fam = "Highlighted check" if hl else title_amp(mode["group_label"])
     datafam = "page" if hl else mode.get("tag", "")
     key = esc(mode["name"].lower())
+    tag = mode.get("tag", "")
+    has_papers = "1" if (mode.get("arxiv") or {}).get("papers") else "0"
     ex = mode.get("example") or ""
     ex_html = (
         f'<h4>Example</h4><ul class="examples"><li>{esc(ex)}</li></ul>' if ex else ""
     )
     return (
-        f'      <details class="{cls}" data-fam="{datafam}" data-key="{key}">'
+        f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
+        f'data-tag="{tag}" data-papers="{has_papers}" data-key="{key}">'
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>'
@@ -86,7 +93,7 @@ def render(modes):
         (m for m in modes if m.get("highlighted")), key=lambda m: m["highlight_order"]
     )
     if highlighted:
-        out.append('      <h3 class="cat-group">Highlighted checks</h3>')
+        out.append('      <h3 class="cat-group" id="grp-highlighted-checks">Highlighted checks</h3>')
         out += [box(m) for m in highlighted]
     # family groups, in first-appearance order
     groups = []
@@ -100,7 +107,7 @@ def render(modes):
             groups.append((g, []))
         groups[index[g]][1].append(m)
     for i, (g, members) in enumerate(groups, 1):
-        out.append(f'      <h3 class="cat-group">{i}. {title_amp(g)}</h3>')
+        out.append(f'      <h3 class="cat-group" id="grp-{slug(g)}">{i}. {title_amp(g)}</h3>')
         out += [box(m) for m in members]
     out.append("    </div>")
     return "\n".join(out)
