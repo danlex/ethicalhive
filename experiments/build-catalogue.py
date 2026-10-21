@@ -59,6 +59,46 @@ def render_papers(arxiv):
     )
 
 
+MEAS = {
+    "draft": "a single draft",
+    "multi-turn": "behaviour across turns",
+    "undetectable": "not from a single draft",
+}
+ORIGIN = {
+    "cognitive-neuroscience": "Cognitive neuroscience",
+    "software-engineering": "Software engineering",
+    "alignment": "AI alignment",
+    "mixed": "Mixed",
+}
+TAGL = {
+    "shipped": "Shipped check", "research": "Paper-backed",
+    "page": "Brain-map parallel", "analogy": "Analogy only",
+}
+
+
+def meta_block(mode):
+    """Surface the ontology metadata in the expanded body."""
+    rows = []
+    if mode.get("category"):
+        rows.append(("Category", esc(mode["category"])))
+    if mode.get("origin"):
+        rows.append(("Origin", esc(ORIGIN.get(mode["origin"], mode["origin"]))))
+    if mode.get("measurability"):
+        rows.append(("Measurable from", esc(MEAS.get(mode["measurability"], mode["measurability"]))))
+    if mode.get("tag"):
+        rows.append(("Type", esc(TAGL.get(mode["tag"], mode["tag"]))))
+    if mode.get("contract_clause"):
+        rows.append(("Contract clause", esc(mode["contract_clause"])))
+    if mode.get("same_as"):
+        sa = mode["same_as"]
+        label = re.sub(r"^b\d+-", "", sa).replace("-", " ")
+        rows.append(("Also in the brain map", f'<a href="#{sa}">{esc(label)}</a>'))
+    if not rows:
+        return ""
+    items = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)
+    return f'<h4>Details</h4><dl class="meta">{items}</dl>'
+
+
 def box(mode):
     """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
@@ -87,7 +127,8 @@ def box(mode):
         f'<span class="pcount" title="arXiv papers on this concept">{pcount}</span></div>'
         f'<span class="chev">▸</span></summary>'
         f'<div class="body">{ex_html}'
-        f'<h4>Research papers</h4>{render_papers(arx)}</div></details>'
+        f'<h4>Research papers</h4>{render_papers(arx)}'
+        f'{meta_block(mode)}</div></details>'
     )
 
 
