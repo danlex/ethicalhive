@@ -449,8 +449,8 @@ details.mm>summary::-webkit-details-marker{display:none}
     <div class="cat-controls">
       <input id="search" type="search" placeholder="Search by name or keyword, e.g. citation, pushback, deception…" autocomplete="off" aria-label="Search failure modes">
       <div class="chips" id="chips" role="tablist">
-        <button data-filter="highlighted" class="active">Highlighted</button>
-        <button data-filter="all">All</button>
+        <button data-filter="highlighted">Highlighted</button>
+        <button data-filter="all" class="active">All</button>
         <button data-filter="shipped">Shipped checks</button>
         <button data-filter="paper">Paper-backed</button>
         <button data-filter="analogy">Analogy</button>
@@ -666,7 +666,7 @@ details.mm>summary::-webkit-details-marker{display:none}
   var chips = document.getElementById('chips');
   var resultCount = document.getElementById('resultCount');
   var toggleAll = document.getElementById('toggleAll');
-  var activeFilter = 'highlighted';
+  var activeFilter = 'all';
 
   function matchesChip(b){
     if(activeFilter === 'all') return true;
