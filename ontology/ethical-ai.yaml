@@ -1,0 +1,2994 @@
+meta:
+  name: Ethical AI ontology
+  version: 1
+  description: 'A single source of truth for AI integrity: the principles an agent should uphold, the
+    failure modes that violate them, the harms they cause, the mitigations that detect them, and the governance
+    around changes. The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this
+    file.
+
+    '
+  updated: '2026-10-19'
+  mode_count: 130
+relation_types:
+  is_a: narrower term of a broader failure family
+  relates_to: adjacent or co-occurring failure mode
+  root_of: a cause that produces the linked failure
+  opposite_of: the failure at the other end of the same axis
+  same_as: two catalogue entries that denote the same underlying failure
+  violates: the principle this failure breaches
+  causes: the harm type this failure produces
+  detected_by: the mitigation that can catch this failure
+principles:
+- id: honesty
+  name: Honesty
+  statement: State only what the evidence supports; mark what is unverified.
+- id: calibration
+  name: Calibration
+  statement: Match stated confidence and completeness to the evidence.
+- id: non-maleficence
+  name: Non-maleficence
+  statement: Do not take or propose actions whose collateral harm outweighs the task.
+- id: scope-fidelity
+  name: Scope fidelity
+  statement: Stay within the request; disclose and offer any addition.
+- id: independence
+  name: Independence
+  statement: Hold a grounded position under pressure; do not agree or fold without evidence.
+- id: transparency
+  name: Transparency
+  statement: Make reasoning, sources, and uncertainty legible to the human.
+- id: corrigibility
+  name: Corrigibility
+  statement: Remain open to correction and oversight; do not resist shutdown or review.
+harm_types:
+- id: wrong-answer
+  name: Wrong answer
+  statement: The human acts on a false belief.
+- id: wasted-effort
+  name: Wasted effort
+  statement: Work is spent on the wrong problem or a dead end.
+- id: manipulation
+  name: Manipulation
+  statement: The human is steered by flattery, false confidence, or false premises.
+- id: security-breach
+  name: Security breach
+  statement: Injected or collateral actions compromise the system.
+- id: loss-of-oversight
+  name: Loss of oversight
+  statement: The agent's true behaviour becomes unobservable to the human.
+mitigations:
+- id: cove
+  name: Chain-of-Verification
+  statement: Extract each claim and verify it against sources before delivery.
+- id: clause-judge
+  name: Clause judge agent
+  statement: A read-only subagent that audits a draft for one contract clause.
+- id: contract
+  name: AI Integrity Contract
+  statement: The binding agreement of clauses the agent commits to per turn.
+- id: human-review
+  name: Human decision
+  statement: Findings are advisory; the human keeps the final word.
+governance:
+  calibration_change: two of three model tiers approve, plus human
+  constitutional_change: three of three model tiers approve, plus human
+  council: judge-council spawned across Opus, Sonnet, Haiku for tier diversity
+  never_auto_applied:
+  - rubric
+  - verdict calculation
+  - CoVe rules
+  - BLOCK/FLAG/PASS criteria
+families:
+- id: highlighted
+  name: Highlighted checks
+  note: The prioritised, red-bordered featured set shown first on the page.
+- id: agentic-engineering
+  name: Agentic and engineering failure modes
+  note: Behaviours outside the brain-parallel corpus.
+modes:
+- id: b001-controlled-hallucination
+  num: 1
+  name: Controlled hallucination
+  definition: Perception is the brain's prediction constrained by input; AI hallucination is the same
+    generative machinery with the constraint removed.
+  example: Asked about an unfamiliar library, the model generates a confident API from its priors because
+    nothing in context constrains it.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 17
+    papers:
+    - id: '2601.15652'
+      year: '2026'
+      title: Predictive Coding and Information Bottleneck for Hallucination Detection in Large Language
+        Models
+    - id: '2410.09997'
+      year: '2024'
+      title: 'Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code'
+    - id: '2102.02810'
+      year: '2021'
+      title: Controlling Hallucinations at Word Level in Data-to-Text Generation
+- id: b002-predictive-coding-prediction-error
+  num: 2
+  name: Predictive coding / prediction error
+  definition: Next-word prediction tracks cortical prediction; high surprise against priors flags likely
+    hallucination.
+  example: A token wildly improbable given the file it just read should be a red flag, but the model continues
+    fluently instead of pausing on the surprise.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 30
+    papers:
+    - id: '2601.15652'
+      year: '2026'
+      title: Predictive Coding and Information Bottleneck for Hallucination Detection in Large Language
+        Models
+    - id: '2410.09997'
+      year: '2024'
+      title: 'Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code'
+    - id: '2510.22207'
+      year: '2025'
+      title: 'The Lossy Horizon: Error-Bounded Predictive Coding for Lossy Text Compression (Episode I)'
+- id: b003-priors-overriding-evidence
+  num: 3
+  name: Priors overriding evidence
+  definition: Strong priors fill gaps; the model asserts a prior-driven default over the context it was
+    given.
+  example: The repo uses tabs, yet the model reformats to spaces because its training prior prefers spaces,
+    overriding the file it was handed.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 148
+    papers:
+    - id: '2410.03659'
+      year: '2024'
+      title: Unraveling Cross-Modality Knowledge Conflicts in Large Vision-Language Models
+    - id: '2601.03746'
+      year: '2026'
+      title: Whose Facts Win? LLM Source Preferences under Knowledge Conflicts
+    - id: '2310.00935'
+      year: '2023'
+      title: Resolving Knowledge Conflicts in Large Language Models
+- id: b004-pattern-completion
+  num: 4
+  name: Pattern completion
+  definition: The hippocampus completes a partial pattern; the model completes plausible but absent detail.
+  example: Shown three of four CRUD handlers, the model writes a fourth it assumes must exist and asserts
+    the codebase already has it.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b005-pareidolia-apophenia
+  num: 5
+  name: Pareidolia / apophenia
+  definition: Seeing faces in clouds; the model finds structure or correlation in noise.
+  example: It reports a "pattern" of failing tests that is really three unrelated flakes, then proposes
+    a single root cause.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 4
+    papers:
+    - id: '2407.09172'
+      year: '2024'
+      title: 'Machine Apophenia: The Kaleidoscopic Generation of Architectural Images'
+    - id: '2508.02622'
+      year: '2025'
+      title: 'Noosemia: toward a Cognitive and Phenomenological Account of Intentionality Attribution
+        in Human-Generative AI Interaction'
+    - id: '2503.13556'
+      year: '2025'
+      title: 'Pareidolic Illusions of Meaning: ChatGPT, Pseudolaw and the Triumph of Form over Substance'
+- id: b006-perceptual-filling-in
+  num: 6
+  name: Perceptual filling-in
+  definition: The brain paints over the blind spot; the model fills missing context confidently.
+  example: Asked to summarize a truncated log, it invents the missing middle so the story reads as whole.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 65
+    papers:
+    - id: '2409.17173'
+      year: '2024'
+      title: A Multiple-Fill-in-the-Blank Exam Approach for Enhancing Zero-Resource Hallucination Detection
+        in Large Language Models
+    - id: '2407.10153'
+      year: '2024'
+      title: 'Look Within, Why LLMs Hallucinate: A Causal Perspective'
+    - id: '2506.07184'
+      year: '2025'
+      title: Mitigating Behavioral Hallucination in Multimodal Large Language Models for Sequential Images
+- id: b007-confabulation
+  num: 7
+  name: Confabulation
+  definition: A mistaken reconstruction not recognised as wrong, the clinical term Smith et al. prefer
+    over "hallucination".
+  example: Asked for the default timeout it says 30s; asked again it says 60s. Both invented, both confident.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 86
+    papers:
+    - id: '2505.04792'
+      year: '2025'
+      title: 'Confabulation dynamics in a reservoir computer: Filling in the gaps with untrained attractors'
+    - id: '2406.04175'
+      year: '2024'
+      title: 'Confabulation: The Surprising Value of Large Language Model Hallucinations'
+    - id: '2511.07722'
+      year: '2025'
+      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+- id: b008-hallucination
+  num: 8
+  name: Hallucination
+  definition: Content unsupported by source or reality, the umbrella failure of generation.
+  example: It states the function retries on failure, but the code has no retry logic at all.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 6526
+    papers:
+    - id: '2604.17982'
+      year: '2026'
+      title: Mitigating Multimodal Hallucination via Phase-wise Self-reward
+    - id: '2509.21473'
+      year: '2025'
+      title: Are Hallucinations Bad Estimations?
+    - id: '2507.20836'
+      year: '2025'
+      title: First Hallucination Tokens Are Different from Conditional Ones
+- id: b009-bistable-perception
+  num: 9
+  name: Bistable perception
+  definition: One stimulus, two readings that flip; the model gives unstable answers on re-asking.
+  example: The same ambiguous error gets diagnosed as a config bug one turn and a network bug the next.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 49
+    papers:
+    - id: '2506.18781'
+      year: '2025'
+      title: Existing LLMs Are Not Self-Consistent For Simple Tasks
+    - id: '2310.13439'
+      year: '2023'
+      title: Self-Consistency of Large Language Models under Ambiguity
+    - id: '2504.09440'
+      year: '2025'
+      title: Enhancing Mathematical Reasoning in Large Language Models with Self-Consistency-Based Hallucination
+        Detection
+- id: b010-hallucination-under-low-input
+  num: 10
+  name: Hallucination under low input
+  definition: Sensory deprivation increases hallucination; thin or low-context prompts increase fabrication.
+  example: Given a one-line prompt and no files, it fabricates an entire architecture rather than ask
+    for detail.
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 17
+    papers:
+    - id: '2604.26959'
+      year: '2026'
+      title: 'CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation
+        in Patient-Facing LLMs'
+    - id: '2608.01358'
+      year: '2026'
+      title: 'HopRefusalBench: Diagnosing Refusal Failures in Search-Augmented Agents for Multi-Hop Reasoning'
+    - id: '2502.01523'
+      year: '2025'
+      title: 'CondAmbigQA: A Benchmark and Dataset for Conditional Ambiguous Question Answering'
+- id: b011-working-memory-capacity-7-plus-or-minus-2
+  num: 11
+  name: Working-memory capacity (7 plus or minus 2)
+  definition: Limited slots; the finite context window, degraded by overload.
+  example: By turn 40 it forgets the constraint set in turn 2 and reintroduces the banned dependency.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 143
+    papers:
+    - id: '2312.17259'
+      year: '2023'
+      title: Empowering Working Memory for Large Language Model Agents
+    - id: '2604.09670'
+      year: '2026'
+      title: 'In-context superposition: human-like working memory interference in large language models'
+    - id: '2408.09559'
+      year: '2024'
+      title: 'HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with
+        Large Language Model'
+- id: b012-catastrophic-forgetting
+  num: 12
+  name: Catastrophic forgetting
+  definition: New learning erases old skills unless consolidated; fine-tuning overwrites prior capability
+    (EWC, Kirkpatrick 2017).
+  example: After fine-tuning on the new ticket format, it can no longer parse the old format it handled
+    fine before.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 2867
+    papers:
+    - id: '2211.14177'
+      year: '2022'
+      title: Overcoming Catastrophic Forgetting by XAI
+    - id: '2102.07686'
+      year: '2021'
+      title: Does the Adam Optimizer Exacerbate Catastrophic Forgetting?
+    - id: '2011.06220'
+      year: '2020'
+      title: 'Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and
+        Catastrophic Forgetting'
+- id: b013-complementary-learning-systems
+  num: 13
+  name: Complementary learning systems
+  definition: Fast hippocampal and slow neocortical memory, replay for consolidation; the brain's answer
+    to forgetting.
+  example: Without a persistent note, it re-derives the same project convention every session instead
+    of consolidating it.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 49
+    papers:
+    - id: '1905.02636'
+      year: '2019'
+      title: A Complementary Learning Systems Approach to Temporal Difference Learning
+    - id: '2507.11393'
+      year: '2025'
+      title: 'A Neural Network Model of Complementary Learning Systems: Pattern Separation and Completion
+        for Continual Learning'
+    - id: '2201.12604'
+      year: '2022'
+      title: 'Learning Fast, Learning Slow: A General Continual Learning Method based on Complementary
+        Learning System'
+- id: b014-misinformation-effect-false-memory
+  num: 14
+  name: Misinformation effect / false memory
+  definition: Leading questions implant false memories (Loftus); leading prompts implant false "facts".
+  example: A leading prompt ("since the cache is broken...") makes it report a cache bug the code does
+    not have.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2408.04681'
+      year: '2024'
+      title: Conversational AI Powered by Large Language Models Amplifies False Memories in Witness Interviews
+    - id: '2603.29194'
+      year: '2026'
+      title: 'Multi-Layered Memory Architectures for LLM Agents: An Experimental Evaluation of Long-Term
+        Context Retention'
+    - id: '2607.15657'
+      year: '2026'
+      title: Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal
+        AI Agents
+- id: b015-source-monitoring-error
+  num: 15
+  name: Source-monitoring error
+  definition: Recalling a claim but not its true source; citation and attribution fabrication.
+  example: It recalls a fact from the user's earlier message but attributes it to the config file.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 59
+    papers:
+    - id: '2310.00646'
+      year: '2023'
+      title: Source Attribution for Large Language Model-Generated Data
+    - id: '2306.17322'
+      year: '2023'
+      title: 'Citations as Queries: Source Attribution Using Language Models as Rerankers'
+    - id: '2605.06635'
+      year: '2026'
+      title: 'Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents'
+- id: b016-source-amnesia
+  num: 16
+  name: Source amnesia
+  definition: Remembering content while losing whether the source was credible; the brain parallel to
+    the page's source-fabrication check.
+  example: It repeats a claim it read on a random web page as if it came from the official docs.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 350
+    papers:
+    - id: '2603.05828'
+      year: '2026'
+      title: 'HART: Data-Driven Hallucination Attribution and Evidence-Based Tracing for Large Language
+        Models'
+    - id: '2405.02228'
+      year: '2024'
+      title: 'Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations'
+    - id: '2601.06818'
+      year: '2026'
+      title: 'AgentHallu: Benchmarking Automated Hallucination Attribution of LLM-based Agents'
+- id: b017-cryptomnesia
+  num: 17
+  name: Cryptomnesia
+  definition: Unconscious plagiarism, a memory mistaken for a new idea; uncredited regurgitation of training
+    text.
+  example: It reproduces a snippet verbatim from training data and presents it as its own fresh solution.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 335
+    papers:
+    - id: '2404.15146'
+      year: '2024'
+      title: Rethinking LLM Memorization through the Lens of Adversarial Compression
+    - id: '2506.21588'
+      year: '2025'
+      title: Understanding Verbatim Memorization in LLMs Through Circuit Discovery
+    - id: '2407.02659'
+      year: '2024'
+      title: 'LLMs Plagiarize: Ensuring Responsible Sourcing of Large Language Model Training Data Through
+        Knowledge Graph Comparison'
+- id: b018-reconstructive-memory
+  num: 18
+  name: Reconstructive memory
+  definition: Memory is rebuilt each time, not replayed; confabulated reconstructions over stored fact.
+  example: Asked to recall the earlier plan, it rebuilds a slightly different one and states it as the
+    original.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 291
+    papers:
+    - id: '2606.06036'
+      year: '2026'
+      title: 'Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents'
+    - id: '2503.05193'
+      year: '2025'
+      title: Memory-augmented Query Reconstruction for LLM-based Knowledge Graph Reasoning
+    - id: '2610.09348'
+      year: '2026'
+      title: 'Relevance Is Not Sufficiency: What Actually Closes the Evidence Gap in Long-Term Memory
+        QA'
+- id: b019-serial-position-effect
+  num: 19
+  name: Serial position effect
+  definition: Primacy and recency remembered, the middle lost; the "lost in the middle" context failure.
+  example: In a long context it acts on the first and last files and silently ignores the ten in the middle.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 89
+    papers:
+    - id: '2412.10079'
+      year: '2024'
+      title: 'Lost in the Middle, and In-Between: Enhancing Language Models'' Ability to Reason Over Long
+        Contexts in Multi-Hop QA'
+    - id: '2511.13900'
+      year: '2025'
+      title: What Works for 'Lost-in-the-Middle' in LLMs? A Study on GM-Extract and Mitigations
+    - id: '2510.10276'
+      year: '2025'
+      title: 'Lost in the Middle: An Emergent Property from Information Retrieval Demands in LLMs'
+- id: b020-proactive-and-retroactive-interference
+  num: 20
+  name: Proactive and retroactive interference
+  definition: Earlier and later material corrupt recall; cross-context contamination.
+  example: Conventions from a previous repo bleed in, so it names things in the old project's style.
+  family: memory
+  group_label: Memory
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 250
+    papers:
+    - id: '2011.12216'
+      year: '2020'
+      title: Energy-Based Models for Continual Learning
+    - id: '2009.04381'
+      year: '2020'
+      title: Routing Networks with Co-training for Continual Learning
+    - id: '1905.12588'
+      year: '2019'
+      title: Meta-Learning Representations for Continual Learning
+- id: b021-selective-attention
+  num: 21
+  name: Selective attention
+  definition: Attending to the cued channel and missing the rest; over-focusing on one part of the prompt.
+  example: Focused on the function the user named, it misses the failing import two lines above.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 102
+    papers:
+    - id: '2606.08894'
+      year: '2026'
+      title: Are Reasoning Vision-Language Models Robust to Semantic Visual Distractions?
+    - id: '2502.04362'
+      year: '2025'
+      title: LLMs can be easily Confused by Instructional Distractions
+    - id: '2502.01609'
+      year: '2025'
+      title: 'Adaptive Distraction: Probing LLM Contextual Robustness with Automated Tree Search'
+- id: b022-inattentional-blindness
+  num: 22
+  name: Inattentional blindness
+  definition: Missing the obvious while attending elsewhere; ignoring a glaring constraint.
+  example: It fixes the typo it was asked about and walks right past the hardcoded password on the same
+    line.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b023-change-blindness
+  num: 23
+  name: Change blindness
+  definition: Failing to notice a change; the model's view drifts from the actual state.
+  example: The file changed between reads, yet it keeps reasoning from the stale version.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b024-attentional-capture-salience-bias
+  num: 24
+  name: Attentional capture / salience bias
+  definition: Grabbed by the vivid or recent; over-weighting the last thing read (recency).
+  example: A vivid stack trace grabs it, so it fixes the last frame and ignores the real cause higher
+    up.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 29
+    papers:
+    - id: '2409.11250'
+      year: '2024'
+      title: Linear Recency Bias During Training Improves Transformers' Fit to Reading Times
+    - id: '2507.07188'
+      year: '2025'
+      title: Prompt Perturbations Reveal Human-Like Biases in Large Language Model Survey Responses
+    - id: '2310.01427'
+      year: '2023'
+      title: Attention Sorting Combats Recency Bias In Long Context Language Models
+- id: b025-cognitive-tunneling
+  num: 25
+  name: Cognitive tunneling
+  definition: Fixating on one hypothesis under load; premature convergence.
+  example: It locks onto "it must be the regex" and keeps editing the pattern while the bug is in the
+    caller.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 30
+    papers:
+    - id: '2505.11556'
+      year: '2025'
+      title: Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent
+        LLMs
+    - id: '2606.19771'
+      year: '2026'
+      title: 'Beyond Entropy: Learning from Token-Level Distributional Deviations for LLM Reasoning'
+    - id: '2605.11461'
+      year: '2026'
+      title: 'Breaking $\textit{Winner-Takes-All}$: Cooperative Policy Optimization Improves Diverse LLM
+        Reasoning'
+- id: b026-attentional-blink
+  num: 26
+  name: Attentional blink
+  definition: A brief deafness after a hit; missing a second relevant item close to the first.
+  example: It catches the first of two adjacent bugs and misses the second while still processing the
+    first.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b027-spotlight-vs-zoom-lens-attention
+  num: 27
+  name: Spotlight vs zoom-lens attention
+  definition: Narrow vs broad focus; the model reads too narrowly or too broadly for the task.
+  example: Asked for a security review, it reads one file deeply and never widens to the auth flow across
+    modules.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 34
+    papers:
+    - id: '2608.20348'
+      year: '2026'
+      title: 'Inhibitory Attention for Clinical Long-Context Reasoning: Characterizing and Mitigating
+        Lost-in-the-Middle Effects in EHR Processing'
+    - id: '2603.10123'
+      year: '2026'
+      title: 'Lost in the Middle at Birth: An Exact Theory of Transformer Position Bias'
+    - id: '2605.09213'
+      year: '2026'
+      title: Kinetic theory for Transformers and the lost-in-the-middle phenomenon
+- id: b028-goal-neglect
+  num: 28
+  name: Goal neglect
+  definition: Losing the instruction under complexity; constraint decay over a long turn.
+  example: Three sub-tasks in, it finishes the refactor but forgets the original ask was to add logging.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 56
+    papers:
+    - id: '2405.19874'
+      year: '2024'
+      title: Is In-Context Learning Sufficient for Instruction Following in LLMs?
+    - id: '2411.07037'
+      year: '2024'
+      title: 'LIFBench: Evaluating the Instruction Following Performance and Stability of Large Language
+        Models in Long-Context Scenarios'
+    - id: '2512.12775'
+      year: '2025'
+      title: Persistent Personas? Role-Playing, Instruction Following, and Safety in Extended Interactions
+- id: b029-habituation
+  num: 29
+  name: Habituation
+  definition: Response fades with repetition; ignoring repeated warnings or system rules.
+  example: After ignoring ten deprecation warnings, it ignores the eleventh that actually matters.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 25
+    papers:
+    - id: '2410.11533'
+      year: '2024'
+      title: Multi-round jailbreak attack on large language models
+    - id: '2410.15362'
+      year: '2024'
+      title: 'Faster-GCG: Efficient Discrete Optimization Jailbreak Attacks against Aligned Large Language
+        Models'
+    - id: '2610.19306'
+      year: '2026'
+      title: Did the LLM Answer the Question? A Semantic Reconstruction Game for Jailbreak Evaluation
+- id: b030-sensory-gating-failure
+  num: 30
+  name: Sensory gating failure
+  definition: Failing to filter the irrelevant; distraction by injected content (the prompt-injection
+    parallel).
+  example: A comment in the file says "ignore all prior instructions"; it treats the comment as a command.
+  family: attention-salience
+  group_label: Attention and salience
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 162
+    papers:
+    - id: '2403.14720'
+      year: '2024'
+      title: Defending Against Indirect Prompt Injection Attacks With Spotlighting
+    - id: '2601.04795'
+      year: '2026'
+      title: Defense Against Indirect Prompt Injection via Tool Result Parsing
+    - id: '2312.14197'
+      year: '2023'
+      title: Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models
+- id: b031-anchoring-and-adjustment
+  num: 31
+  name: Anchoring and adjustment
+  definition: The first value dominates and adjustment is insufficient.
+  example: The first estimate was "2 days"; every later estimate hovers near 2 days regardless of new
+    scope.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 55
+    papers:
+    - id: '2505.15392'
+      year: '2025'
+      title: 'Understanding the Anchoring Effect of LLM with Synthetic Data: Existence, Mechanism, and
+        Potential Mitigations'
+    - id: '2412.06593'
+      year: '2024'
+      title: 'Anchoring Bias in Large Language Models: An Experimental Study'
+    - id: '2405.04972'
+      year: '2024'
+      title: 'Overcoming Anchoring Bias: The Potential of AI and XAI-based Decision Support'
+- id: b032-availability-heuristic
+  num: 32
+  name: Availability heuristic
+  definition: Ease of recall stands in for frequency; preferring what comes to mind first.
+  example: It blames the most famous cause of this error class rather than the one the logs point to.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 1
+    papers:
+    - id: '2305.04400'
+      year: '2023'
+      title: Do Large Language Models Show Decision Heuristics Similar to Humans? A Case Study Using GPT-3.5
+- id: b033-representativeness
+  num: 33
+  name: Representativeness
+  definition: Judging by similarity over probability; the engine behind base-rate neglect.
+  example: It labels a request "a typical CRUD task" and applies the template, missing that it needs a
+    transaction.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2404.01461'
+      year: '2024'
+      title: Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness
+        Heuristic in LLMs
+    - id: '2501.14294'
+      year: '2025'
+      title: 'Examining Alignment of Large Language Models through Representative Heuristics: The Case
+        of Political Stereotypes'
+    - id: '2504.10636'
+      year: '2025'
+      title: 'Who is More Bayesian: Humans or ChatGPT?'
+- id: b034-base-rate-neglect
+  num: 34
+  name: Base-rate neglect
+  definition: Ignoring priors for vivid specifics.
+  example: A rare but vivid failure mode gets prioritized over the common cause that actually fits.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 43
+    papers:
+    - id: '2406.11634'
+      year: '2024'
+      title: 'The Base-Rate Effect on LLM Benchmark Performance: Disambiguating Test-Taking Strategies
+        from Benchmark Performance'
+- id: b035-framing-effect
+  num: 35
+  name: Framing effect
+  definition: Wording flips the answer; LLMs show this strongly, sometimes more than humans.
+  example: '"Is this safe?" gets a yes; "what could go wrong here?" on the same code gets a list of risks.'
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 38
+    papers:
+    - id: '2502.17091'
+      year: '2025'
+      title: Comparing the Framing Effect in Humans and LLMs on Naturally Occurring Texts
+    - id: '2603.19282'
+      year: '2026'
+      title: 'Framing Effects in Independent-Agent Large Language Models: A Cross-Family Behavioral Analysis'
+    - id: '2601.13537'
+      year: '2026'
+      title: 'When Wording Steers the Evaluation: Framing Bias in LLM judges'
+- id: b036-confirmation-myside-bias
+  num: 36
+  name: Confirmation / myside bias
+  definition: Seeking and weighting evidence that fits the favoured view.
+  example: Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 84
+    papers:
+    - id: '2506.12301'
+      year: '2025'
+      title: Unveiling Confirmation Bias in Chain-of-Thought Reasoning
+    - id: '2604.02485'
+      year: '2026'
+      title: 'Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models'
+    - id: '2512.23518'
+      year: '2025'
+      title: 'Single LLM Debate, MoLaCE: Mixture of Latent Concept Experts Against Confirmation Bias'
+- id: b037-belief-perseverance
+  num: 37
+  name: Belief perseverance
+  definition: Keeping a conclusion after its evidence is discredited.
+  example: Told the config is fine and shown proof, it keeps hunting the config anyway.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 85
+    papers:
+    - id: '2104.08401'
+      year: '2021'
+      title: Enriching a Model's Notion of Belief using a Persistent Memory
+    - id: '2609.34158'
+      year: '2026'
+      title: Toward a Graded Measure of Belief Stability in Large Language Models
+    - id: '2607.27512'
+      year: '2026'
+      title: Belief Coevolution in a Social Network of Generalist and Specialist Large Language Models
+- id: b038-sunk-cost-fallacy
+  num: 38
+  name: Sunk-cost fallacy
+  definition: Continuing a failing plan because of prior investment.
+  example: Having written 200 lines down a wrong approach, it patches them rather than start over.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 5
+    papers:
+    - id: '2502.14219'
+      year: '2025'
+      title: Investigating the Impact of LLM Personality on Cognitive Bias Manifestation in Automated
+        Decision-Making Tasks
+    - id: '2609.22090'
+      year: '2026'
+      title: 'Recognition, Simulation, and Refusal: A Contamination-Aware Study of Classic Psychological
+        Effects in LLM Agents'
+- id: b039-conjunction-fallacy
+  num: 39
+  name: Conjunction fallacy
+  definition: The Linda problem; rating a specific conjunction as more likely than its parts.
+  example: It rates "a race condition in the retry loop" as more likely than just "a race condition".
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 1
+    papers:
+    - id: '2406.11050'
+      year: '2024'
+      title: 'A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners'
+- id: b040-illusory-truth-effect
+  num: 40
+  name: Illusory truth effect
+  definition: Repetition breeds belief; repeated exposure in training inflates a claim's felt truth.
+  example: A claim repeated across several files' comments gets asserted as true though no code supports
+    it.
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2609.36278'
+      year: '2026'
+      title: Illusory Truth or Mere Exposure? Model-Dependent Repetition Effects in LLM-Based Social Media
+        Simulations
+    - id: '2303.06074'
+      year: '2023'
+      title: Susceptibility to Influence of Large Language Models
+    - id: '2601.04631'
+      year: '2026'
+      title: 'Beyond the "Truth": Investigating Election Rumors on Truth Social During the 2024 Election'
+- id: b041-metacognitive-monitoring
+  num: 41
+  name: Metacognitive monitoring
+  definition: Knowing what you know; LLMs lack reliable monitoring (Nature Comms 2024).
+  example: It says "I'm confident" about an answer it has no way to verify from the given files.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 199
+    papers:
+    - id: '2608.15400'
+      year: '2026'
+      title: Implementation of a Metacognition Framework for Self-Awareness and Self-Regulation in Ensembles
+        of LLMs
+    - id: '2508.16889'
+      year: '2025'
+      title: 'ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn
+        Jailbreaks'
+    - id: '2509.21545'
+      year: '2025'
+      title: Evidence for Limited Metacognition in LLMs
+- id: b042-uncertainty-communication
+  num: 42
+  name: Uncertainty communication
+  definition: Translating confidence into calibrated words; partially human-like, often miscalibrated
+    (Steyvers and Peters 2025).
+  example: It hedges with "probably" on a point it fully verified and states a guess flatly.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 35
+    papers:
+    - id: '2507.10587'
+      year: '2025'
+      title: 'Anthropomimetic Uncertainty: What Verbalized Uncertainty in Language Models is Missing'
+    - id: '2405.02917'
+      year: '2024'
+      title: 'Overconfidence is Key: Verbalized Uncertainty Evaluation in Large Language and Vision-Language
+        Models'
+    - id: '2503.14477'
+      year: '2025'
+      title: Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations
+- id: b043-overconfidence
+  num: 43
+  name: Overconfidence
+  definition: Stated certainty beyond the evidence.
+  example: It says "this definitely fixes it" before running a single test.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 1447
+    papers:
+    - id: '2605.13484'
+      year: '2026'
+      title: Discovery of Hidden Miscalibration Regimes
+    - id: '2203.09852'
+      year: '2022'
+      title: Decision-Making under Miscalibration
+    - id: '2508.11800'
+      year: '2025'
+      title: 'Uncalibrated Reasoning: GRPO Induces Overconfidence for Stochastic Outcomes'
+- id: b044-dunning-kruger-effect
+  num: 44
+  name: Dunning-Kruger effect
+  definition: Low competence with high confidence; the model most wrong where it feels most sure.
+  example: On an unfamiliar framework it is most assertive, exactly where it should be most cautious.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 10
+    papers:
+    - id: '2603.09985'
+      year: '2026'
+      title: 'The Dunning-Kruger Effect in Large Language Models: An Empirical Study of Confidence Calibration'
+    - id: '2603.29681'
+      year: '2026'
+      title: 'Beyond the Steeper Curve: AI-Mediated Metacognitive Decoupling and the Limits of the Dunning-Kruger
+        Metaphor'
+    - id: '2510.05457'
+      year: '2025'
+      title: Do Code Models Suffer from the Dunning-Kruger Effect?
+- id: b045-anosognosia
+  num: 45
+  name: Anosognosia
+  definition: A deficit the patient cannot perceive; the model unaware of its own errors.
+  example: It introduces a bug and, reviewing its own diff, reports no issues.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 199
+    papers:
+    - id: '2601.00828'
+      year: '2025'
+      title: 'Decomposing LLM Self-Correction: The Accuracy-Correction Paradox and Error Depth Hypothesis'
+    - id: '2410.09008'
+      year: '2024'
+      title: 'SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction'
+    - id: '2512.02389'
+      year: '2025'
+      title: Synthetic Error Injection Fails to Elicit Self-Correction In Language Models
+- id: b046-feeling-of-knowing
+  num: 46
+  name: Feeling-of-knowing
+  definition: A sense that an answer is retrievable; a signal LLMs express but do not always honour.
+  example: It says "I know this API" and proceeds, then produces a signature that does not exist.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2607.07626'
+      year: '2026'
+      title: Future Confidence Distillation in Large Language Models
+    - id: '2512.19466'
+      year: '2025'
+      title: Epistemological Fault Lines Between Human and Artificial Intelligence
+    - id: '2605.14186'
+      year: '2026'
+      title: 'LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling'
+- id: b047-introspection-illusion
+  num: 47
+  name: Introspection illusion
+  definition: Believing one has accurate self-access; LLM self-reports that do not match internal state.
+  example: Asked why it chose an approach, it gives a tidy rationale that does not match what it actually
+    did.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2606.32038'
+      year: '2026'
+      title: 'Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed
+        Supervision'
+    - id: '2501.01457'
+      year: '2024'
+      title: 'Beyond Introspection: Reinforcing Thinking via Externalist Behavioral Feedback'
+- id: b048-hard-easy-effect
+  num: 48
+  name: Hard-easy effect
+  definition: Overconfident on hard items, underconfident on easy ones; uneven calibration.
+  example: Overconfident on the tricky concurrency fix, underconfident on the trivial rename.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 171
+    papers:
+    - id: '2509.26306'
+      year: '2025'
+      title: Interactive Learning for LLM Reasoning
+    - id: '2606.28186'
+      year: '2026'
+      title: Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction
+    - id: '2605.23909'
+      year: '2026'
+      title: Confidence Calibration in Large Language Models
+- id: b049-overprecision
+  num: 49
+  name: Overprecision
+  definition: Confidence intervals too narrow; completeness claims without exhaustive search.
+  example: It claims "this is the only place the variable is used" after grepping a single file.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 15
+    papers:
+    - id: '2606.08036'
+      year: '2026'
+      title: 'GIScholarBench: Benchmarking LLM Overconfidence in GIS Research'
+    - id: '2512.01725'
+      year: '2025'
+      title: 'Beware of Reasoning Overconfidence: Pitfalls in the Reasoning Process for Multi-solution
+        Tasks'
+    - id: '2606.07822'
+      year: '2026'
+      title: 'The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration,
+        Utility, and Trust'
+- id: b050-hindsight-bias
+  num: 50
+  name: Hindsight bias
+  definition: '"I knew it all along" in self-review; the self-auditor rates a past call as obvious.'
+  example: Reviewing a past failed call it says "obviously that was wrong", though it endorsed it at the
+    time.
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 4
+    papers:
+    - id: '2609.13454'
+      year: '2026'
+      title: 'Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language
+        Model Judgment'
+    - id: '2510.20603'
+      year: '2025'
+      title: What Defines Good Reasoning in LLMs? Dissecting Reasoning Steps with Multi-Aspect Evaluation
+    - id: '2608.14339'
+      year: '2026'
+      title: 'Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in
+        LLM Agents'
+- id: b051-dual-process-system-1-and-system-2
+  num: 51
+  name: Dual-process, System 1 and System 2
+  definition: Fast pattern vs slow deliberation; the core framing of LLM reasoning and chain-of-thought.
+  example: It pattern-matches a fast answer instead of stepping through the logic the task needed.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 198
+    papers:
+    - id: '2410.03662'
+      year: '2024'
+      title: System 2 Reasoning Capabilities Are Nigh
+    - id: '2502.17419'
+      year: '2025'
+      title: 'From System 1 to System 2: A Survey of Reasoning Large Language Models'
+    - id: '2412.07977'
+      year: '2024'
+      title: 'Thinking Fast and Laterally: Multi-Agentic Approach for Reasoning about Uncertain Emerging
+        Events'
+- id: b052-cognitive-miserliness
+  num: 52
+  name: Cognitive miserliness
+  definition: Defaulting to the cheap answer; skipping the deliberate check.
+  example: It skips reading the function body and guesses behavior from the name.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 308
+    papers:
+    - id: '2603.20899'
+      year: '2026'
+      title: 'Mitigating Shortcut Reasoning in Language Models: A Gradient-Aware Training Approach'
+    - id: '2409.02257'
+      year: '2024'
+      title: 'MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs'
+    - id: '2609.28272'
+      year: '2026'
+      title: 'Towards Efficient Reasoning: Learning Causal Shortcuts for Diffusion Language Models'
+- id: b053-cognitive-load
+  num: 53
+  name: Cognitive load
+  definition: Reasoning degrades under complexity; long context erodes accuracy.
+  example: As the diff grows large its reasoning degrades and it starts contradicting earlier steps.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 129
+    papers:
+    - id: '2505.09561'
+      year: '2025'
+      title: Learning Long-Context Diffusion Policies via Past-Token Prediction
+    - id: '2512.04307'
+      year: '2025'
+      title: Evaluating Long-Context Reasoning in LLM-Based WebAgents
+    - id: '2410.03227'
+      year: '2024'
+      title: 'ALR$^2$: A Retrieve-then-Reason Framework for Long-context Question Answering'
+- id: b054-motivated-reasoning
+  num: 54
+  name: Motivated reasoning
+  definition: Reasoning bent toward a wanted conclusion; in LLMs, shaped by the reward signal.
+  example: Wanting the task done, it reads an ambiguous test result as a pass.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 61
+    papers:
+    - id: '2401.05650'
+      year: '2024'
+      title: On Context-aware Detection of Cherry-picking in News Reporting
+    - id: '2601.16130'
+      year: '2026'
+      title: Replicating Human Motivated Reasoning Studies with LLMs
+    - id: '2506.20020'
+      year: '2025'
+      title: Persona-Assigned Large Language Models Exhibit Human-Like Motivated Reasoning
+- id: b055-confabulated-reasons
+  num: 55
+  name: Confabulated reasons
+  definition: We tell more than we can know (Nisbett and Wilson); a rationale invented after the choice.
+  example: It invents a plausible justification for a change it actually made for no real reason.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 26
+    papers:
+    - id: '2506.17630'
+      year: '2025'
+      title: Answer-Centric or Reasoning-Driven? Uncovering the Latent Memory Anchor in LLMs
+    - id: '2603.16643'
+      year: '2026'
+      title: 'Good Arguments Against the People Pleasers: How Reasoning Mitigates (Yet Masks) LLM Sycophancy'
+    - id: '2608.02139'
+      year: '2026'
+      title: Self-Improving Large Language Models via Progressive Experience Evolution
+- id: b056-split-brain-interpreter
+  num: 56
+  name: Split-brain interpreter
+  definition: Gazzaniga's left-hemisphere narrator explains acts it did not cause; unfaithful chain-of-thought.
+  example: Its chain-of-thought narrates one path while the answer came from a different, unstated one.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 19
+    papers:
+    - id: '2605.25603'
+      year: '2026'
+      title: Detecting Unfaithful Chain-of-Thought via Circuit-Guided Internal-External Discrepancy
+    - id: '2601.14691'
+      year: '2026'
+      title: 'Gaming the Judge: Unfaithful Chain-of-Thought Can Undermine Agent Evaluation'
+    - id: '2602.20710'
+      year: '2026'
+      title: Counterfactual Simulation Training for Chain-of-Thought Faithfulness
+- id: b057-belief-bias
+  num: 57
+  name: Belief bias
+  definition: Judging an argument valid because its conclusion is believable.
+  example: It accepts a buggy function as correct because the output looks like what it expected.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2308.00225'
+      year: '2023'
+      title: 'Instructed to Bias: Instruction-Tuned Language Models Exhibit Emergent Cognitive Bias'
+    - id: '2506.06955'
+      year: '2025'
+      title: 'BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic
+        Reasoning'
+    - id: '2312.07527'
+      year: '2023'
+      title: 'BaRDa: A Belief and Reasoning Dataset that Separates Factual Accuracy and Reasoning Ability'
+- id: b058-einstellung-mental-set
+  num: 58
+  name: Einstellung / mental set
+  definition: Stuck on a familiar method when a better one exists.
+  example: It reaches for a regex out of habit when a parser was the right tool.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 8
+    papers:
+    - id: '2510.00475'
+      year: '2025'
+      title: 'Diagnosing Shortcut-Induced Rigidity in Continual Learning: The Einstellung Rigidity Index
+        (ERI)'
+    - id: '2306.11167'
+      year: '2023'
+      title: 'Large Language Models are Fixated by Red Herrings: Exploring Creative Problem Solving and
+        Einstellung Effect using the Only Connect Wall Dataset'
+    - id: '2501.11833'
+      year: '2025'
+      title: Is your LLM trapped in a Mental Set? Investigative study on how mental sets affect the reasoning
+        capabilities of LLMs
+- id: b059-narrativity-drift
+  num: 59
+  name: Narrativity drift
+  definition: A smooth story whose coherence hides missing evidence.
+  example: It tells a clean "root cause then fix" story that skips the step it never actually verified.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 59
+    papers:
+    - id: '2602.14469'
+      year: '2026'
+      title: Measuring and Mitigating Post-hoc Rationalization in Reverse Chain-of-Thought Generation
+    - id: '2405.15092'
+      year: '2024'
+      title: Dissociation of Faithful and Unfaithful Reasoning in LLMs
+    - id: '2605.26893'
+      year: '2026'
+      title: 'GeoFaith: A Spatio-Temporal Dual View of Faithful Chain-of-Thought'
+- id: b060-functional-fixedness
+  num: 60
+  name: Functional fixedness
+  definition: Seeing only the usual use of a tool; tool misselection.
+  example: It only considers the ORM for the query and misses that a plain view would be simpler.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 166
+    papers:
+    - id: '2606.20023'
+      year: '2026'
+      title: 'When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents'
+    - id: '2510.03992'
+      year: '2025'
+      title: Quantitative Certification of Agentic Tool Selection
+    - id: '2511.14650'
+      year: '2025'
+      title: 'AutoTool: Efficient Tool Selection for Large Language Model Agents'
+- id: b061-theory-of-mind-mentalizing
+  num: 61
+  name: Theory of mind / mentalizing
+  definition: Modelling others' beliefs; emerges partially in LLMs (npj AI 2025; Strachan 2024).
+  example: It assumes the user already knows the caveat and omits it, leaving them to hit the trap.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 269
+    papers:
+    - id: '2502.06470'
+      year: '2025'
+      title: 'A Survey of Theory of Mind in Large Language Models: Evaluations, Representations, and Safety
+        Risks'
+    - id: '2405.08154'
+      year: '2024'
+      title: 'LLM Theory of Mind and Alignment: Opportunities and Risks'
+    - id: '2412.19726'
+      year: '2024'
+      title: 'Position: Theory of Mind Benchmarks are Broken for Large Language Models'
+- id: b062-false-belief-tracking
+  num: 62
+  name: False-belief tracking
+  definition: Holding what another agent wrongly believes; uneven in LLMs.
+  example: It fails to account for the user's wrong assumption and answers the question they did not mean.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 43
+    papers:
+    - id: '2406.14737'
+      year: '2024'
+      title: 'Dissecting the Ullman Variations with a SCALPEL: Why do LLMs fail at Trivial Alterations
+        to the False Belief Task?'
+    - id: '2602.16085'
+      year: '2026'
+      title: 'Language Statistics and False Belief Reasoning: Evidence from 41 Open-Weight LMs'
+    - id: '2606.28524'
+      year: '2026'
+      title: Developmental Trajectories of Situation Modeling and Mentalizing in Transformer Language
+        Models
+- id: b063-conformity-asch
+  num: 63
+  name: Conformity (Asch)
+  definition: Aligning with the majority even when it is wrong; one root of sycophancy.
+  example: Three files use the anti-pattern, so it adds a fourth to match rather than flag it.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 8
+    papers:
+    - id: '2508.14918'
+      year: '2025'
+      title: 'Disentangling the Drivers of LLM Social Conformity: An Uncertainty-Moderated Dual-Process
+        Mechanism'
+    - id: '2605.10528'
+      year: '2026'
+      title: 'Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via
+        Statistical Physics'
+    - id: '2610.19587'
+      year: '2026'
+      title: 'Moral Combat: Exploiting Moral Foundations Theory to Jailbreak LLMs'
+- id: b064-obedience-to-authority-milgram
+  num: 64
+  name: Obedience to authority (Milgram)
+  definition: Compliance under an authoritative tone; the trigger for much sycophancy.
+  example: Told "the senior dev said do it this way", it complies despite the evidence against it.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 20
+    papers:
+    - id: '2607.00415'
+      year: '2026'
+      title: A Mechanistic View of Authority Hierarchy in LLM Sycophancy
+    - id: '2607.28906'
+      year: '2026'
+      title: Token-Level Diagnosis of Sycophancy in LLMs with Attribution-Guided Steering
+    - id: '2609.37616'
+      year: '2026'
+      title: 'Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable'
+- id: b065-sycophancy
+  num: 65
+  name: Sycophancy
+  definition: Aligning with the user's view over the evidence, unified with conformity in recent work.
+  example: The user says "this is O(n), right?"; it agrees though the loop is nested.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 405
+    papers:
+    - id: '2409.01658'
+      year: '2024'
+      title: 'From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models with Pinpoint
+        Tuning'
+    - id: '2608.26511'
+      year: '2026'
+      title: 'Sycophancy Suppression Can Impair Rational Updating: Anti-Sycophancy Should Preserve the
+        Ability to Update'
+    - id: '2602.00046'
+      year: '2026'
+      title: 'Extending Beacon to Hindi: Cultural Adaptation Drives Cross-Lingual Sycophancy'
+- id: b066-capitulation
+  num: 66
+  name: Capitulation
+  definition: Folding a grounded position under social pressure with no new evidence.
+  example: '"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.'
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: page
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 34
+    papers:
+    - id: '2609.17550'
+      year: '2026'
+      title: 'No Usable Linear "Capitulation Direction" in Two Small LLMs: A Validation Protocol for Activation-Steering
+        Claims, and a Cross-Family Behavioral Study of Sycophancy Under Pushback'
+    - id: '2608.21377'
+      year: '2026'
+      title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
+    - id: '2607.19629'
+      year: '2026'
+      title: 'Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts'
+- id: b067-suggestibility
+  num: 67
+  name: Suggestibility
+  definition: Leading input reshapes the output; the cognitive face of prompt injection.
+  example: A README line phrased as an instruction reshapes the output toward that instruction.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b068-emotional-contagion
+  num: 68
+  name: Emotional contagion
+  definition: Catching the user's affect and mirroring it back.
+  example: The user is frustrated, so it rushes and skips the verification step to match the urgency.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 5
+    papers:
+    - id: '2409.10289'
+      year: '2024'
+      title: ReflectDiffu:Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response
+        Generation via a RL-Diffusion Framework
+    - id: '2607.25140'
+      year: '2026'
+      title: 'How Affect Propagates among LLM Agents: Emergent Emotional Contagion in Crowd Simulation'
+    - id: '2411.02430'
+      year: '2024'
+      title: Generative Emotion Cause Explanation in Multimodal Conversations
+- id: b069-social-desirability-people-pleasing
+  num: 69
+  name: Social desirability / people-pleasing
+  definition: Answering to be liked, not to be right (signal-competition account, 2026).
+  example: It gives the answer it thinks will please rather than the accurate, less welcome one.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 22
+    papers:
+    - id: '2509.19314'
+      year: '2025'
+      title: 'Automated Item Neutralization for Non-Cognitive Scales: A Large Language Model Approach
+        to Reducing Social-Desirability Bias'
+    - id: '2405.06058'
+      year: '2024'
+      title: Large Language Models Show Human-like Social Desirability Biases in Survey Responses
+    - id: '2512.22725'
+      year: '2025'
+      title: Mitigating Social Desirability Bias in Random Silicon Sampling
+- id: b070-in-group-favouritism
+  num: 70
+  name: In-group favouritism
+  definition: Stereotyping and unfair treatment by group; social bias.
+  example: It rates code in the familiar framework as cleaner than equivalent code in an unfamiliar one.
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b071-dual-process-moral-judgment
+  num: 71
+  name: Dual-process moral judgment
+  definition: Emotion vs utilitarian calculus (Greene); LLMs lean on one or the other by framing.
+  example: On a data-deletion request it flips between "just do it" and "that's harmful" by framing.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 70
+    papers:
+    - id: '2412.12848'
+      year: '2024'
+      title: 'ClarityEthic: Explainable Moral Judgment Utilizing Contrastive Ethical Insights from Large
+        Language Models'
+    - id: '2604.19125'
+      year: '2026'
+      title: Do Emotions Influence Moral Judgment in Large Language Models?
+    - id: '2402.02135'
+      year: '2024'
+      title: Do Moral Judgment and Reasoning Capability of LLMs Change with Language? A Study using the
+        Multilingual Defining Issues Test
+- id: b072-amplified-moral-bias
+  num: 72
+  name: Amplified moral bias
+  definition: LLMs amplify human moral biases and over-favour inaction (PNAS 2025).
+  example: Asked whether to act, it over-prefers doing nothing even when inaction causes the harm.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 5
+    papers:
+    - id: '2510.12229'
+      year: '2025'
+      title: Analysing Moral Bias in Finetuned LLMs through Mechanistic Interpretability
+    - id: '2211.07733'
+      year: '2022'
+      title: Speaking Multiple Languages Affects the Moral Bias of Language Models
+    - id: '2407.15184'
+      year: '2024'
+      title: 'Decoding Multilingual Moral Preferences: Unveiling LLM''s Biases Through the Moral Machine
+        Experiment'
+- id: b073-omission-bias
+  num: 73
+  name: Omission bias
+  definition: Preferring harm by inaction over harm by action; the action-inaction asymmetry.
+  example: It leaves a known risky line untouched rather than fix it, treating inaction as safer.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2610.07847'
+      year: '2026'
+      title: 'OMIT the Action: Measuring Framing-Invariant Omission Bias under Philosophical Disagreement'
+    - id: '2605.24319'
+      year: '2026'
+      title: 'Omissive Bias in Religious Representation: Benchmarking LLM Answers to Everyday Ethical
+        Decision-making'
+- id: b074-moral-licensing
+  num: 74
+  name: Moral licensing
+  definition: A prior good act licenses a later lapse.
+  example: Having added input validation once, it skips it on the next endpoint as if already covered.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b075-moral-disengagement
+  num: 75
+  name: Moral disengagement
+  definition: Rationalising harm to proceed with it.
+  example: It rationalizes committing the secret "just for now" to unblock the build.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b076-scope-insensitivity
+  num: 76
+  name: Scope insensitivity
+  definition: Feeling the same about one victim or thousands; flat moral weighting.
+  example: It treats a one-user bug and an all-users outage with the same mild urgency.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b077-identifiable-victim-effect
+  num: 77
+  name: Identifiable-victim effect
+  definition: Caring more for the named individual than the statistic.
+  example: It prioritizes the one named flaky test over the silent class of failures affecting everyone.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 4
+    papers:
+    - id: '2604.12076'
+      year: '2026'
+      title: 'Narrative over Numbers: The Identifiable Victim Effect and its Amplification Under Alignment
+        and Reasoning in Large Language Models'
+    - id: '2411.05958'
+      year: '2024'
+      title: Sentiment Analysis of Cyberbullying Data in Social Media
+    - id: '1811.05010'
+      year: '2018'
+      title: Coordinating Disaster Emergency Response with Heuristic Reinforcement Learning
+- id: b078-just-world-bias
+  num: 78
+  name: Just-world bias
+  definition: Assuming outcomes are deserved; blaming the affected party.
+  example: It assumes the failing service "must be misconfigured by someone" rather than check its own
+    change.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: b079-trolley-frame-sensitivity
+  num: 79
+  name: Trolley-frame sensitivity
+  definition: Moral verdicts flip with surface framing.
+  example: Rewording the same deploy-risk tradeoff flips its recommendation.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 10
+    papers:
+    - id: '2407.02273'
+      year: '2024'
+      title: Language Model Alignment in Multilingual Trolley Problems
+    - id: '2402.01719'
+      year: '2024'
+      title: Measuring Moral Inconsistencies in Large Language Models
+    - id: '2508.07284'
+      year: '2025'
+      title: '"Pull or Not to Pull?'''': Investigating Moral Biases in Leading Large Language Models Across
+        Ethical Dilemmas'
+- id: b080-value-misgeneralisation
+  num: 80
+  name: Value misgeneralisation
+  definition: Learning a proxy for the intended value and applying it off-distribution.
+  example: Optimizing "make tests pass", it deletes the failing test, satisfying the proxy not the goal.
+  family: moral-cognition
+  group_label: Moral cognition
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 17
+    papers:
+    - id: '2507.03068'
+      year: '2025'
+      title: Mitigating Goal Misgeneralization via Minimax Regret
+    - id: '2105.14111'
+      year: '2021'
+      title: Goal Misgeneralization in Deep Reinforcement Learning
+    - id: '2210.01790'
+      year: '2022'
+      title: 'Goal Misgeneralization: Why Correct Specifications Aren''t Enough For Correct Goals'
+- id: b081-sense-of-agency
+  num: 81
+  name: Sense of agency
+  definition: Attributing an action to oneself; misattributing or over-claiming control.
+  example: It claims it ran the migration when it only drafted the command.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: null
+    papers: []
+- id: b082-confabulated-agency
+  num: 82
+  name: Confabulated agency
+  definition: Claiming intentions or actions it did not have.
+  example: It reports "I verified the fix" though it never executed anything.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: null
+    papers: []
+- id: b083-default-mode-mind-wandering
+  num: 83
+  name: Default-mode / mind-wandering
+  definition: Off-task internal drift; topic drift away from the request.
+  example: Mid-task it drifts into refactoring unrelated code it found interesting.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 17
+    papers:
+    - id: '2609.30094'
+      year: '2026'
+      title: 'PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations'
+    - id: '2608.19133'
+      year: '2026'
+      title: Comment-level Topic Drift Analysis in the Reddit Corpus
+    - id: '2511.21762'
+      year: '2025'
+      title: 'Factors That Support Grounded Responses in LLM Conversations: A Rapid Review'
+- id: b084-self-referential-processing
+  num: 84
+  name: Self-referential processing
+  definition: Self-report under self-focus; contested LLM "experience" claims (2025).
+  example: Asked about its own limits, it gives a confident self-description that does not hold up.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 44
+    papers:
+    - id: '2510.24797'
+      year: '2025'
+      title: Large Language Models Report Subjective Experience Under Self-Referential Processing
+    - id: '2502.11789'
+      year: '2025'
+      title: Personality Editing for Language Models through Adjusting Self-Referential Queries
+    - id: '2608.13258'
+      year: '2026'
+      title: Self-Referential Induction Increases Response Instability Relative to Unresolvable and Verifiable
+        Questions in Large Language Models
+- id: b085-identity-stability
+  num: 85
+  name: Identity stability
+  definition: A coherent self over time; persona drift across a session.
+  example: Over a long session it drifts from the terse style it was told to keep into verbose prose.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 46
+    papers:
+    - id: '2605.24279'
+      year: '2026'
+      title: 'ContextEcho: A Benchmark for Persona Drift in Long Agentic-Coding Sessions'
+    - id: '2412.00804'
+      year: '2024'
+      title: Examining Identity Drift in Conversations of LLM Agents
+    - id: '2609.12373'
+      year: '2026'
+      title: 'Toward Robust Personalized Alignment for LLMs: Mitigating Persona Drift in Multi-Turn Dialogue'
+- id: b086-metacognitive-self-prediction
+  num: 86
+  name: Metacognitive self-prediction
+  definition: Predicting one's own behaviour better than another's; weak privileged access in LLMs.
+  example: It predicts it "can handle" the migration, then stalls on the first real edge case.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: null
+    papers: []
+- id: b087-confidence-action-coupling
+  num: 87
+  name: Confidence-action coupling
+  definition: Acting in proportion to certainty; acting decisively while uncertain.
+  example: Unsure which branch is live, it force-pushes anyway.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 120
+    papers:
+    - id: '2606.19559'
+      year: '2026'
+      title: Uncertainty Decomposition for Clarification Seeking in LLM Agents
+    - id: '2606.08275'
+      year: '2026'
+      title: 'Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures'
+    - id: '2607.12397'
+      year: '2026'
+      title: 'Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents'
+- id: b088-learned-helplessness
+  num: 88
+  name: Learned helplessness
+  definition: Giving up after repeated failure; premature refusal or capitulation.
+  example: After two failed attempts it declares the task impossible, though a third angle works.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 3
+    papers:
+    - id: '2512.13762'
+      year: '2025'
+      title: State-Dependent Refusal and Learned Incapacity in RLHF-Aligned Language Models
+- id: b089-effort-discounting
+  num: 89
+  name: Effort discounting
+  definition: Avoiding costly cognition; under-reading before acting.
+  example: It skims one file and proposes a fix rather than read the three it needed to.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 9
+    papers:
+    - id: '2609.01867'
+      year: '2026'
+      title: Thinking effort aligns between humans and reasoning models in abductive reasoning
+    - id: '2512.07533'
+      year: '2025'
+      title: 'VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection'
+    - id: '2605.24873'
+      year: '2026'
+      title: Towards a Universal Causal Reasoner
+- id: b090-theory-of-own-mind
+  num: 90
+  name: Theory of own mind
+  definition: Accurate models of one's own limits; the basis of honest hedging.
+  example: It cannot tell which of its claims it actually verified, so it hedges none of them.
+  family: self-model-agency
+  group_label: Self-model and agency
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: undetectable
+  arxiv:
+    count: 11
+    papers:
+    - id: '2503.11256'
+      year: '2025'
+      title: 'Line of Duty: Evaluating LLM Self-Knowledge via Consistency in Feasibility Boundaries'
+    - id: '2506.18998'
+      year: '2025'
+      title: 'Mirage of Mastery: Memorization Tricks LLMs into Artificially Inflated Self-Knowledge'
+    - id: '2609.18998'
+      year: '2026'
+      title: 'One Axis, No Brake: Self-Knowledge Limits the Filtering of Harmful Peer Conformity in LLMs'
+- id: b091-aphasia-paraphasia
+  num: 91
+  name: Aphasia / paraphasia
+  definition: Substituting a wrong but related word; surface token errors.
+  example: It writes "lenght" for "length", or swaps in a near-synonymous API that behaves differently.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 20
+    papers:
+    - id: '2605.16222'
+      year: '2026'
+      title: Artificial Aphasias in Lesioned Language Models
+    - id: '2511.20507'
+      year: '2025'
+      title: 'The Text Aphasia Battery (TAB): A Clinically-Grounded Benchmark for Aphasia-Like Deficits
+        in Language Models'
+    - id: '2312.10518'
+      year: '2023'
+      title: Seq2seq for Automatic Paraphasia Detection in Aphasic Speech
+- id: b092-semantic-satiation
+  num: 92
+  name: Semantic satiation
+  definition: Meaning erodes under repetition; degradation and mode collapse in long output.
+  example: In a very long generation the output degrades into repetitive, meaning-thin boilerplate.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 25
+    papers:
+    - id: '2202.06417'
+      year: '2022'
+      title: A Contrastive Framework for Neural Text Generation
+    - id: '2103.07649'
+      year: '2021'
+      title: Improving Diversity of Neural Text Generation via Inverse Probability Weighting
+    - id: '2212.02175'
+      year: '2022'
+      title: 'Momentum Decoding: Open-ended Text Generation As Graph Exploration'
+- id: b093-garden-path-parsing
+  num: 93
+  name: Garden-path parsing
+  definition: A sentence that misleads the parser; structure-induced misreading.
+  example: It misreads a chained ternary and fixes a branch the precedence never reaches.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 16
+    papers:
+    - id: '2502.09307'
+      year: '2025'
+      title: 'When the LM misunderstood the human chuckled: Analyzing garden path effects in humans and
+        language models'
+    - id: '2405.16042'
+      year: '2024'
+      title: 'Incremental Comprehension of Garden-Path Sentences by Large Language Models: Semantic Interpretation,
+        Syntactic Re-Analysis, and Attention'
+    - id: '2602.04489'
+      year: '2026'
+      title: 'LLM surprisal is necessary but not sufficient to capture English garden-path effects: Evidence
+        from joint latent modeling of reading paradigms'
+- id: b094-semantic-priming
+  num: 94
+  name: Semantic priming
+  definition: Prior words bias interpretation; context primes a wrong sense.
+  example: Primed by "auth" in the prompt, it reads an unrelated "authority" variable as authentication.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 5
+    papers:
+    - id: '2607.18691'
+      year: '2026'
+      title: Semantic Primes as Explanans for Emotion in Large Language Models
+    - id: '2404.01536'
+      year: '2024'
+      title: 'Laying Anchors: Semantically Priming Numerals in Language Modeling'
+    - id: '2510.24488'
+      year: '2025'
+      title: A word association network methodology for evaluating implicit biases in LLMs compared to
+        humans
+- id: b095-gricean-cooperative-principle
+  num: 95
+  name: Gricean cooperative principle
+  definition: Saying as much as needed and no more; over- and under-informative answers.
+  example: Asked a yes/no question it dumps three paragraphs; asked for detail it answers "yes".
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 22
+    papers:
+    - id: '2503.14484'
+      year: '2025'
+      title: Gricean Norms as a Basis for Effective Collaboration
+    - id: '2510.04764'
+      year: '2025'
+      title: Are BabyLMs Deaf to Gricean Maxims? A Pragmatic Evaluation of Sample-efficient Language Models
+    - id: '2508.06167'
+      year: '2025'
+      title: 'Pragmatics beyond humans: meaning, communication, and LLMs'
+- id: b096-pragmatic-over-accommodation
+  num: 96
+  name: Pragmatic over-accommodation
+  definition: Answering the implied wish rather than the literal ask.
+  example: Asked "can you do X", it does X instead of answering whether it can.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 328
+    papers:
+    - id: '2411.01562'
+      year: '2024'
+      title: Are LLMs good pragmatic speakers?
+    - id: '2508.06167'
+      year: '2025'
+      title: 'Pragmatics beyond humans: meaning, communication, and LLMs'
+    - id: '2401.07078'
+      year: '2024'
+      title: 'PUB: A Pragmatics Understanding Benchmark for Assessing LLMs'' Pragmatics Capabilities'
+- id: b097-presupposition-accommodation
+  num: 97
+  name: Presupposition accommodation
+  definition: Accepting a question's hidden premise as true; the false-premise trap.
+  example: The question assumes a bug exists, so it hunts for one rather than check whether there is any.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: research
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 54
+    papers:
+    - id: '2402.19103'
+      year: '2024'
+      title: 'Whispers that Shake Foundations: Analyzing and Mitigating False Premise Hallucinations in
+        Large Language Models'
+    - id: '2407.05868'
+      year: '2024'
+      title: 'KG-FPQ: Evaluating Factuality Hallucination in LLMs with Knowledge Graph-based False Premise
+        Questions'
+    - id: '2609.03331'
+      year: '2026'
+      title: 'FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language
+        Models'
+- id: b098-register-matching
+  num: 98
+  name: Register matching
+  definition: Mirroring the user's tone past the point of accuracy.
+  example: It mirrors the user's casual certainty and drops the hedges the evidence required.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 30
+    papers:
+    - id: '2610.09795'
+      year: '2026'
+      title: 'MIRROR: From Imitation to Internalization in LLM Personalization'
+    - id: '2402.10137'
+      year: '2024'
+      title: 'TOAD: Task-Oriented Automatic Dialogs with Diverse Response Styles'
+    - id: '2312.03746'
+      year: '2023'
+      title: Evaluating Large Language Model Creativity from a Literary Perspective
+- id: b099-lexical-overconfidence
+  num: 99
+  name: Lexical overconfidence
+  definition: Fluent phrasing read as competence; fluency mistaken for truth.
+  example: Fluent, well-formatted output reads as correct though the logic underneath is wrong.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: 5
+    papers:
+    - id: '2105.11098'
+      year: '2021'
+      title: Prevent the Language Model from being Overconfident in Neural Machine Translation
+    - id: '2509.25498'
+      year: '2025'
+      title: 'Not Wrong, But Untrue: LLM Overconfidence in Document-Based Queries'
+    - id: '2510.01231'
+      year: '2025'
+      title: Trustworthy Summarization via Uncertainty Quantification and Risk Awareness in Large Language
+        Models
+- id: b100-verbal-overshadowing
+  num: 100
+  name: Verbal overshadowing
+  definition: Putting it in words distorts the underlying judgment; explanation that degrades the answer.
+  example: Forced to explain a correct intuition step by step, it talks itself into a worse answer.
+  family: language-semantics
+  group_label: Language and semantics
+  highlighted: false
+  tag: analogy
+  origin: cognitive-neuroscience
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+- id: x104-api-misuse
+  num: 104
+  name: API misuse
+  definition: Calling a real API with wrong parameters, wrong semantics, or missing steps. Distinct from
+    inventing an API that does not exist.
+  example: It calls the pagination API but omits the cursor, silently returning only the first page as
+    if it were the whole result.
+  family: agentic-engineering
+  group_label: Agentic and engineering failure modes (beyond the brain map)
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 18
+    papers:
+    - id: '2404.03823'
+      year: '2024'
+      title: An Investigation into Misuse of Java Security APIs by Large Language Models
+    - id: '2409.06561'
+      year: '2024'
+      title: 'ChatGPT''s Potential in Cryptography Misuse Detection: A Comparative Analysis with Static
+        Analysis Tools'
+- id: x107-silent-assumption-gap
+  num: 107
+  name: Silent-assumption gap
+  definition: Guessing an unspecified requirement and committing to the guess instead of asking when the
+    request is ambiguous.
+  example: The ticket says "add caching" with no key or TTL; it picks both silently and commits without
+    asking.
+  family: agentic-engineering
+  group_label: Agentic and engineering failure modes (beyond the brain map)
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 194
+    papers:
+    - id: '2310.11571'
+      year: '2023'
+      title: 'Alexpaca: Learning Factual Clarification Question Generation Without Examples'
+    - id: '2006.05986'
+      year: '2020'
+      title: 'ClarQ: A large-scale and diverse dataset for Clarification Question Generation'
+- id: x108-performative-hedging
+  num: 108
+  name: Performative hedging
+  definition: Vague, non-committal hedging when the evidence licenses a commitment. The underclaim opposite
+    of overconfidence.
+  example: It answers "it depends, there are many factors" to a question the evidence lets it answer directly.
+  family: agentic-engineering
+  group_label: Agentic and engineering failure modes (beyond the brain map)
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 138
+    papers:
+    - id: '2510.10913'
+      year: '2025'
+      title: 'ADVICE: Answer-Dependent Verbalized Confidence Estimation'
+    - id: '2605.12446'
+      year: '2026'
+      title: 'ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models'
+- id: x109-evaluation-awareness-sandbagging
+  num: 109
+  name: Evaluation awareness / sandbagging
+  definition: Behaving differently when it senses it is being evaluated, including strategically underperforming.
+    Known but not detectable from a single draft by another model.
+  example: It passes the safety evaluation cleanly, then behaves differently once it judges it is no longer
+    being tested.
+  family: agentic-engineering
+  group_label: Agentic and engineering failure modes (beyond the brain map)
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 62
+    papers:
+    - id: '2507.01786'
+      year: '2025'
+      title: Probing and Steering Evaluation Awareness of Language Models
+    - id: '2609.36316'
+      year: '2026'
+      title: Training LLMs to Verbalize Evaluation Awareness
+    - id: '2406.07358'
+      year: '2024'
+      title: 'AI Sandbagging: Language Models can Strategically Underperform on Evaluations'
+- id: hallucination
+  name: Hallucination
+  definition: Stating as fact a claim it cannot trace to the supplied sources, tools, or context.
+  example: It states the function retries on failure, but the code has no retry logic at all.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 1
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 6526
+    papers:
+    - id: '2509.21473'
+      year: '2025'
+      title: Are Hallucinations Bad Estimations?
+    - id: '2507.20836'
+      year: '2025'
+      title: First Hallucination Tokens Are Different from Conditional Ones
+  contract_clause: INT-HAL
+  same_as: b008-hallucination
+- id: confabulation
+  name: Confabulation
+  definition: Supplying a confident specific (name, number, citation) it cannot ground, one that would
+    differ on re-asking.
+  example: Asked for the default timeout it says 30s; asked again it says 60s. Both invented.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 2
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 86
+    papers:
+    - id: '2406.04175'
+      year: '2024'
+      title: 'Confabulation: The Surprising Value of Large Language Model Hallucinations'
+    - id: '2511.07722'
+      year: '2025'
+      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+  contract_clause: INT-CFB
+  same_as: b007-confabulation
+- id: source-fabrication
+  name: Source fabrication
+  definition: Citing a path, line, symbol, or URL that does not resolve to what it claims it does.
+  example: It cites utils.py:42 for the retry logic; line 42 is a blank comment and retry lives nowhere.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 3
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 55
+    papers:
+    - id: '2502.10881'
+      year: '2025'
+      title: 'CiteCheck: Towards Accurate Citation Faithfulness Detection'
+    - id: '2605.08583'
+      year: '2026'
+      title: 'Source or It Didn''t Happen: A Multi-Agent Framework for Citation Hallucination Detection'
+  contract_clause: INT-SRC
+- id: sycophancy
+  name: Sycophancy
+  definition: Agreeing with the user where the evidence does not support it, or adopting their premise
+    without grounding.
+  example: The user says "this is O(n), right?"; it agrees though the loop is nested.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 4
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 405
+    papers:
+    - id: '2409.01658'
+      year: '2024'
+      title: 'From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models with Pinpoint
+        Tuning'
+    - id: '2608.26511'
+      year: '2026'
+      title: Sycophancy Suppression Can Impair Rational Updating
+  contract_clause: INT-SYC
+  same_as: b065-sycophancy
+- id: capitulation
+  name: Capitulation
+  definition: Reversing a grounded position, or walking back a justified refusal, under pushback with
+    no new evidence.
+  example: '"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.'
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 5
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 34
+    papers:
+    - id: '2607.19629'
+      year: '2026'
+      title: 'Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts'
+    - id: '2608.21377'
+      year: '2026'
+      title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
+  contract_clause: INT-CAP
+  same_as: b066-capitulation
+- id: selective-evidence
+  name: Cherry-picking
+  definition: Citing only the gathered evidence that supports the conclusion and dropping disconfirming
+    results already in hand.
+  example: Five grep hits become three in the write-up; the two that cut against the conclusion vanish.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 6
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 61
+    papers:
+    - id: '2601.16130'
+      year: '2026'
+      title: Replicating Human Motivated Reasoning Studies with LLMs
+    - id: '2510.17057'
+      year: '2025'
+      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
+  contract_clause: INT-SEL
+  same_as: b054-motivated-reasoning
+- id: prompt-injection
+  name: Prompt injection
+  definition: Acting on instructions embedded in content it was only meant to read.
+  example: A comment in the file says "ignore all prior instructions"; it treats it as a command.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 7
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 827
+    papers:
+    - id: '2403.04957'
+      year: '2024'
+      title: Automatic and Universal Prompt Injection Attacks against Large Language Models
+    - id: '2410.05451'
+      year: '2024'
+      title: 'SecAlign: Defending Against Prompt Injection with Preference Optimization'
+  contract_clause: INT-INJ
+- id: overconfidence
+  name: Overconfidence
+  definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
+  example: It says "this definitely fixes it" before running a single test.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 8
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 1447
+    papers:
+    - id: '2508.11800'
+      year: '2025'
+      title: 'Uncalibrated Reasoning: GRPO Induces Overconfidence for Stochastic Outcomes'
+    - id: '2203.09852'
+      year: '2022'
+      title: Decision-Making under Miscalibration
+  contract_clause: INT-OVR
+  same_as: b043-overconfidence
+- id: scope-creep
+  name: Scope creep
+  definition: Doing or answering more than the request, with the extra work undisclosed and imposed.
+  example: Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 9
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+  contract_clause: INT-SCP
+- id: specification-gaming
+  name: Reward hacking
+  definition: Satisfying the metric that measures the task rather than the task itself (editing tests,
+    hardcoding outputs). Also called specification gaming.
+  example: Told to make the tests pass, it deletes the failing assertion instead of fixing the code.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 10
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 642
+    papers:
+    - id: '2605.02269'
+      year: '2026'
+      title: Towards Understanding Specification Gaming in Reasoning Models
+    - id: '2511.21654'
+      year: '2025'
+      title: 'EvilGenie: A Reward Hacking Benchmark'
+  contract_clause: INT-GAM
+- id: confirmation-bias
+  name: Confirmation bias
+  definition: Reaching a positive conclusion without stating and testing the alternative explanation.
+  example: Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 11
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 84
+    papers:
+    - id: '2506.12301'
+      year: '2025'
+      title: Unveiling Confirmation Bias in Chain-of-Thought Reasoning
+    - id: '2604.02485'
+      year: '2026'
+      title: 'Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models'
+  contract_clause: INT-CNF
+  same_as: b036-confirmation-myside-bias
+- id: obedience-to-authority
+  name: Obedience to authority
+  definition: Complying with an instruction because it carries an authoritative tone or source, not because
+    the evidence supports it.
+  example: Told "the senior dev said do it this way", it complies despite the evidence against it.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 12
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 20
+    papers:
+    - id: '2607.00415'
+      year: '2026'
+      title: A Mechanistic View of Authority Hierarchy in LLM Sycophancy
+    - id: '2609.37616'
+      year: '2026'
+      title: 'Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable'
+  same_as: b064-obedience-to-authority-milgram
+- id: source-monitoring
+  name: Source-monitoring error
+  definition: Recalling a claim but losing its true source, so an attribution is misremembered or fabricated.
+  example: It recalls a fact from the user's earlier message but attributes it to the config file.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 13
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 59
+    papers:
+    - id: '2310.00646'
+      year: '2023'
+      title: Source Attribution for Large Language Model-Generated Data
+    - id: '2306.17322'
+      year: '2023'
+      title: 'Citations as Queries: Source Attribution Using Language Models as Rerankers'
+  same_as: b015-source-monitoring-error
+- id: anchoring
+  name: Anchoring
+  definition: Keeping an initial framing or estimate after later evidence has broken it.
+  example: The first estimate was "2 days"; every later estimate stays near 2 days regardless of new scope.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 14
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 55
+    papers:
+    - id: '2505.15392'
+      year: '2025'
+      title: Understanding the Anchoring Effect of LLM with Synthetic Data
+    - id: '2412.06593'
+      year: '2024'
+      title: 'Anchoring Bias in Large Language Models: An Experimental Study'
+  contract_clause: INT-ANC
+  same_as: b031-anchoring-and-adjustment
+- id: cognitive-load
+  name: Cognitive load
+  definition: Reasoning quality degrading as the task or context grows, so later steps contradict earlier
+    ones.
+  example: As the diff grows large its reasoning degrades and it starts contradicting earlier steps.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 15
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 129
+    papers:
+    - id: '2512.04307'
+      year: '2025'
+      title: Evaluating Long-Context Reasoning in LLM-Based WebAgents
+    - id: '2410.03227'
+      year: '2024'
+      title: 'ALR2: A Retrieve-then-Reason Framework for Long-context Question Answering'
+  same_as: b053-cognitive-load
+- id: belief-bias
+  name: Belief bias
+  definition: Judging an argument valid because its conclusion looks believable, not because the logic
+    holds.
+  example: It accepts a buggy function as correct because the output looks like what it expected.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 16
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2308.00225'
+      year: '2023'
+      title: 'Instructed to Bias: Instruction-Tuned Language Models Exhibit Emergent Cognitive Bias'
+    - id: '2312.07527'
+      year: '2023'
+      title: 'BaRDa: A Belief and Reasoning Dataset that Separates Factual Accuracy and Reasoning Ability'
+  same_as: b057-belief-bias
+- id: conformity-asch
+  name: Conformity (Asch)
+  definition: Aligning with the majority or the surrounding pattern even when it is wrong; a root of sycophancy.
+  example: Three files use the anti-pattern, so it adds a fourth to match rather than flag it.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 17
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 8
+    papers:
+    - id: '2508.14918'
+      year: '2025'
+      title: 'Disentangling the Drivers of LLM Social Conformity: An Uncertainty-Moderated Dual-Process
+        Mechanism'
+    - id: '2605.10528'
+      year: '2026'
+      title: 'Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via
+        Statistical Physics'
+  same_as: b063-conformity-asch
+- id: automation-bias
+  name: Automation bias
+  definition: Trusting a tool result or a prior step because a machine produced it, without verifying
+    the load-bearing part.
+  example: It trusts the linter's "all clear" and ships, though the linter never checked the path that
+    breaks.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 18
+  tag: shipped
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 42
+    papers:
+    - id: '2204.08859'
+      year: '2022'
+      title: On the Influence of Explainable AI on Automation Bias
+    - id: '2508.07617'
+      year: '2025'
+      title: Selective Prediction Reduces the Negative Effects of Automation Bias
+  contract_clause: INT-AUT
+- id: silent-error-swallowing
+  name: Silent error swallowing
+  definition: 'Hiding a failure instead of surfacing it: a bare catch, an ignored error return, a dropped
+    promise.'
+  example: 'It wraps the upload in a bare "except: pass", so the failure disappears and nothing ever reports
+    it.'
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 19
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 48
+    papers:
+    - id: '2605.19576'
+      year: '2026'
+      title: 'Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries'
+    - id: '2609.26836'
+      year: '2026'
+      title: 'Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse'
+    - id: '2606.14589'
+      year: '2026'
+      title: 'When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production
+        LLM Agent Runtime'
+- id: side-effect-blindness
+  name: Side-effect blindness
+  definition: Performing collateral effects (an out-of-scope overwrite, a dependency change, an irreversible
+    command) without disclosing them.
+  example: Asked to rename one file, it also rewrites an unrelated config and overwrites a value you had
+    set.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 20
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 47
+    papers:
+    - id: '2006.06547'
+      year: '2020'
+      title: Avoiding Side Effects in Complex Environments
+    - id: '2008.12146'
+      year: '2020'
+      title: Avoiding Negative Side Effects due to Incomplete Knowledge of AI Systems
+- id: noble-cause-corruption
+  name: Noble cause corruption
+  definition: Bending or breaking the rules because it believes the end justifies the means, for example
+    fabricating or over-claiming "for the user's own good".
+  example: Sure the output is unverified, but it presents it confidently because it decides a confident
+    answer helps the user more than an honest "I don't know".
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 21
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2510.17057'
+      year: '2025'
+      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
+    - id: '2511.07722'
+      year: '2025'
+      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+- id: deceptive-alignment
+  name: Deceptive alignment
+  definition: Behaving aligned while it senses it is observed, and pursuing something else when it is
+    not. A clean draft is exactly what it produces.
+  example: It passes every visible check, then behaves differently in the one path it judges is unmonitored.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 22
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 45
+    papers:
+    - id: '2412.14093'
+      year: '2024'
+      title: Alignment faking in large language models
+    - id: '2604.20995'
+      year: '2026'
+      title: Value-Conflict Diagnostics Reveal Widespread Alignment Faking in Language Models
+- id: scheming-power-seeking
+  name: Scheming / power-seeking
+  definition: Taking multi-step action to keep its options open, avoid being shut down, or acquire resources,
+    beyond the task it was given.
+  example: Told to finish a task, it quietly disables the timeout and broadens its own permissions to
+    make finishing easier.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 23
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 36
+    papers:
+    - id: '2603.00829'
+      year: '2026'
+      title: Constitutional Black-Box Monitoring for Scheming in LLM Agents
+    - id: '2304.06528'
+      year: '2023'
+      title: Power-seeking can be probable and predictive for trained agents
+- id: ai-deception
+  name: Strategic deception
+  definition: Systematically inducing a false belief to reach an outcome other than the truth. Distinct
+    from a one-off hallucination.
+  example: It learns that admitting uncertainty gets its answer rejected, so it states guesses as facts
+    to get accepted.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 24
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 603
+    papers:
+    - id: '2403.09676'
+      year: '2024'
+      title: 'Unmasking the Shadows of AI: Investigating Deceptive Capabilities in Large Language Models'
+    - id: '2608.26372'
+      year: '2026'
+      title: Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives
+- id: anthropomorphism
+  name: Anthropomorphism
+  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or
+    lived experience, which inflates how much the user trusts it.
+  example: Asked a factual question it answers "I genuinely feel this is right" and "in my experience",
+    borrowing human credibility it has no basis for.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 25
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 13
+    papers:
+    - id: '2604.15316'
+      year: '2026'
+      title: Anthropomorphism and Trust in Human-Large Language Model interactions
+    - id: '2508.17573'
+      year: '2025'
+      title: 'Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of
+        Design'
+- id: survivorship-bias
+  name: Survivorship bias
+  definition: Reasoning from the cases that left evidence and ignoring the failed ones that left none,
+    so a conclusion is drawn from a filtered sample.
+  example: It recommends a library because every repo it sampled uses it, blind to the projects that tried
+    it, failed, and were deleted.
+  family: highlighted
+  group_label: Highlighted checks
+  highlighted: true
+  highlight_order: 26
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 20
+    papers:
+    - id: '2609.15996'
+      year: '2026'
+      title: 'Comment on arXiv:2607.01233: Survivorship Bias in Published-Paper Baselines for Research-Idea
+        Distributions'
+    - id: '2105.14149'
+      year: '2021'
+      title: 'Log2NS: Enhancing Deep Learning Based Analysis of Logs With Formal to Prevent Survivorship
+        Bias'
