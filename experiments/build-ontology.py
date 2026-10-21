@@ -54,6 +54,28 @@ CLAUSE = {
     "prompt-injection": "INT-INJ", "scope-creep": "INT-SCP",
     "specification-gaming": "INT-GAM",
 }
+# short category label per brain group index (1-10), shown in the row pill
+GROUP_SHORT = {
+    1: "Perception", 2: "Memory", 3: "Attention", 4: "Heuristics",
+    5: "Metacognition", 6: "Reasoning", 7: "Social", 8: "Moral",
+    9: "Self & agency", 10: "Language",
+}
+# short category for highlighted modes (what domain the check belongs to)
+CATEGORY = {
+    "hallucination": "Perception", "confabulation": "Perception",
+    "source-fabrication": "Memory", "sycophancy": "Social",
+    "capitulation": "Social", "selective-evidence": "Reasoning",
+    "prompt-injection": "Security", "overconfidence": "Metacognition",
+    "scope-creep": "Agentic", "specification-gaming": "Agentic",
+    "confirmation-bias": "Heuristics", "obedience-to-authority": "Social",
+    "source-monitoring": "Memory", "anchoring": "Heuristics",
+    "cognitive-load": "Reasoning", "belief-bias": "Reasoning",
+    "conformity-asch": "Social", "automation-bias": "Agentic",
+    "silent-error-swallowing": "Agentic", "side-effect-blindness": "Agentic",
+    "noble-cause-corruption": "Moral", "deceptive-alignment": "Misalignment",
+    "scheming-power-seeking": "Misalignment", "ai-deception": "Misalignment",
+    "anthropomorphism": "Social", "survivorship-bias": "Heuristics",
+}
 # measurability overrides (default is 'draft')
 HARD = {
     "deceptive-alignment": "multi-turn", "scheming-power-seeking": "multi-turn",
@@ -110,6 +132,7 @@ def main():
                 "example": examples.get(num, ""),
                 "family": fam,
                 "group_label": title,
+                "category": GROUP_SHORT.get(i, ""),
                 "highlighted": False,
                 "tag": tag,
                 "origin": BRAIN_ORIGIN,
@@ -129,6 +152,7 @@ def main():
             "example": examples.get(num, ""),
             "family": "agentic-engineering",
             "group_label": "Agentic and engineering failure modes (beyond the brain map)",
+            "category": "Agentic",
             "highlighted": False, "tag": tag, "origin": "software-engineering",
             "measurability": "draft", "arxiv": arxiv_block(pdata),
         })
@@ -139,6 +163,7 @@ def main():
         rec = {
             "id": cid, "name": name, "definition": definition, "example": example,
             "family": "highlighted", "group_label": "Highlighted checks",
+            "category": CATEGORY.get(cid, ""),
             "highlighted": True, "highlight_order": seq,
             "tag": "shipped" if cid in CLAUSE else "research",
             "origin": "alignment" if cid in HARD or cid in (

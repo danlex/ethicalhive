@@ -60,16 +60,19 @@ def render_papers(arxiv):
 
 
 def box(mode):
-    """Render one failure mode as an expandable .concept box."""
+    """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
     num = mode.get("highlight_order") if hl else mode.get("num")
     n = f"{num:02d}"
     cls = "concept shipped" if hl else f'concept {mode.get("tag", "")}'.strip()
-    fam = "Highlighted check" if hl else title_amp(mode["group_label"])
     datafam = "page" if hl else mode.get("tag", "")
-    key = esc(mode["name"].lower())
     tag = mode.get("tag", "")
-    has_papers = "1" if (mode.get("arxiv") or {}).get("papers") else "0"
+    key = esc(mode["name"].lower())
+    arx = mode.get("arxiv") or {}
+    has_papers = "1" if arx.get("papers") else "0"
+    cnt = arx.get("count")
+    pcount = f"{cnt:,}" if isinstance(cnt, int) else "—"
+    cat = esc(mode.get("category", ""))
     ex = mode.get("example") or ""
     ex_html = (
         f'<h4>Example</h4><ul class="examples"><li>{esc(ex)}</li></ul>' if ex else ""
@@ -80,34 +83,34 @@ def box(mode):
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>'
-        f'<span class="fam">{fam}</span></div>'
+        f'<span class="fam">{cat}</span>'
+        f'<span class="pcount" title="arXiv papers on this concept">{pcount}</span></div>'
         f'<span class="chev">▸</span></summary>'
         f'<div class="body">{ex_html}'
-        f'<h4>Research papers</h4>{render_papers(mode.get("arxiv"))}</div></details>'
+        f'<h4>Research papers</h4>{render_papers(arx)}</div></details>'
     )
 
 
 def render(modes):
+    """Group by group_label in first-appearance order. The Highlighted group is
+    rendered where it falls in that order (last), not pinned to the top."""
     out = ['    <div class="cat-grid">']
-    highlighted = sorted(
-        (m for m in modes if m.get("highlighted")), key=lambda m: m["highlight_order"]
-    )
-    if highlighted:
-        out.append('      <h3 class="cat-group" id="grp-highlighted-checks">Highlighted checks</h3>')
-        out += [box(m) for m in highlighted]
-    # family groups, in first-appearance order
     groups = []
     index = {}
     for m in modes:
-        if m.get("highlighted"):
-            continue
         g = m["group_label"]
         if g not in index:
             index[g] = len(groups)
             groups.append((g, []))
         groups[index[g]][1].append(m)
-    for i, (g, members) in enumerate(groups, 1):
-        out.append(f'      <h3 class="cat-group" id="grp-{slug(g)}">{i}. {title_amp(g)}</h3>')
+    n = 0
+    for g, members in groups:
+        if g == "Highlighted checks":
+            hid, header = "grp-highlighted-checks", "Highlighted checks"
+        else:
+            n += 1
+            hid, header = f"grp-{slug(g)}", f"{n}. {title_amp(g)}"
+        out.append(f'      <h3 class="cat-group" id="{hid}">{header}</h3>')
         out += [box(m) for m in members]
     out.append("    </div>")
     return "\n".join(out)
