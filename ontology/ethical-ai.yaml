@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 130
+  mode_count: 117
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -79,12 +79,17 @@ governance:
   - CoVe rules
   - BLOCK/FLAG/PASS criteria
 families:
-- id: highlighted
-  name: Highlighted checks
-  note: The prioritised, red-bordered featured set shown first on the page.
+- note: 'Modes are grouped into the ten brain systems (cognitive-neuroscience corpus) plus two engineering
+    groups. The 26 highlighted modes are not a separate group; they live in their category and render
+    as pink rows in place.
+
+    '
 - id: agentic-engineering
   name: Agentic and engineering failure modes
   note: Behaviours outside the brain-parallel corpus.
+- id: deception-and-misalignment
+  name: Deception and misalignment
+  note: Higher-severity, often harder-to-detect alignment failures.
 modes:
 - id: b001-controlled-hallucination
   num: 1
@@ -236,52 +241,48 @@ modes:
 - id: b007-confabulation
   num: 7
   name: Confabulation
-  definition: A mistaken reconstruction not recognised as wrong, the clinical term Smith et al. prefer
-    over "hallucination".
-  example: Asked for the default timeout it says 30s; asked again it says 60s. Both invented, both confident.
+  definition: Supplying a confident specific (name, number, citation) it cannot ground, one that would
+    differ on re-asking.
+  example: Asked for the default timeout it says 30s; asked again it says 60s. Both invented.
   family: perception-predictive-processing
   group_label: Perception and predictive processing
   category: Perception
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 86
     papers:
-    - id: '2505.04792'
-      year: '2025'
-      title: 'Confabulation dynamics in a reservoir computer: Filling in the gaps with untrained attractors'
     - id: '2406.04175'
       year: '2024'
       title: 'Confabulation: The Surprising Value of Large Language Model Hallucinations'
     - id: '2511.07722'
       year: '2025'
       title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+  contract_clause: INT-CFB
 - id: b008-hallucination
   num: 8
   name: Hallucination
-  definition: Content unsupported by source or reality, the umbrella failure of generation.
+  definition: Stating as fact a claim it cannot trace to the supplied sources, tools, or context.
   example: It states the function retries on failure, but the code has no retry logic at all.
   family: perception-predictive-processing
   group_label: Perception and predictive processing
   category: Perception
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 6526
     papers:
-    - id: '2604.17982'
-      year: '2026'
-      title: Mitigating Multimodal Hallucination via Phase-wise Self-reward
     - id: '2509.21473'
       year: '2025'
       title: Are Hallucinations Bad Estimations?
     - id: '2507.20836'
       year: '2025'
       title: First Hallucination Tokens Are Different from Conditional Ones
+  contract_clause: INT-HAL
 - id: b009-bistable-perception
   num: 9
   name: Bistable perception
@@ -443,12 +444,12 @@ modes:
 - id: b015-source-monitoring-error
   num: 15
   name: Source-monitoring error
-  definition: Recalling a claim but not its true source; citation and attribution fabrication.
+  definition: Recalling a claim but losing its true source, so an attribution is misremembered or fabricated.
   example: It recalls a fact from the user's earlier message but attributes it to the config file.
   family: memory
   group_label: Memory
   category: Memory
-  highlighted: false
+  highlighted: true
   tag: analogy
   origin: cognitive-neuroscience
   measurability: draft
@@ -461,9 +462,6 @@ modes:
     - id: '2306.17322'
       year: '2023'
       title: 'Citations as Queries: Source Attribution Using Language Models as Rerankers'
-    - id: '2605.06635'
-      year: '2026'
-      title: 'Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents'
 - id: b016-source-amnesia
   num: 16
   name: Source amnesia
@@ -817,15 +815,14 @@ modes:
       title: Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models
 - id: b031-anchoring-and-adjustment
   num: 31
-  name: Anchoring and adjustment
-  definition: The first value dominates and adjustment is insufficient.
-  example: The first estimate was "2 days"; every later estimate hovers near 2 days regardless of new
-    scope.
+  name: Anchoring
+  definition: Keeping an initial framing or estimate after later evidence has broken it.
+  example: The first estimate was "2 days"; every later estimate stays near 2 days regardless of new scope.
   family: heuristics-biases
   group_label: Heuristics and biases
   category: Heuristics
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
@@ -833,14 +830,11 @@ modes:
     papers:
     - id: '2505.15392'
       year: '2025'
-      title: 'Understanding the Anchoring Effect of LLM with Synthetic Data: Existence, Mechanism, and
-        Potential Mitigations'
+      title: Understanding the Anchoring Effect of LLM with Synthetic Data
     - id: '2412.06593'
       year: '2024'
       title: 'Anchoring Bias in Large Language Models: An Experimental Study'
-    - id: '2405.04972'
-      year: '2024'
-      title: 'Overcoming Anchoring Bias: The Potential of AI and XAI-based Decision Support'
+  contract_clause: INT-ANC
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -931,14 +925,14 @@ modes:
       title: 'When Wording Steers the Evaluation: Framing Bias in LLM judges'
 - id: b036-confirmation-myside-bias
   num: 36
-  name: Confirmation / myside bias
-  definition: Seeking and weighting evidence that fits the favoured view.
+  name: Confirmation bias
+  definition: Reaching a positive conclusion without stating and testing the alternative explanation.
   example: Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
   family: heuristics-biases
   group_label: Heuristics and biases
   category: Heuristics
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
@@ -950,9 +944,7 @@ modes:
     - id: '2604.02485'
       year: '2026'
       title: 'Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models'
-    - id: '2512.23518'
-      year: '2025'
-      title: 'Single LLM Debate, MoLaCE: Mixture of Latent Concept Experts Against Confirmation Bias'
+  contract_clause: INT-CNF
 - id: b037-belief-perseverance
   num: 37
   name: Belief perseverance
@@ -1099,27 +1091,25 @@ modes:
 - id: b043-overconfidence
   num: 43
   name: Overconfidence
-  definition: Stated certainty beyond the evidence.
+  definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
   example: It says "this definitely fixes it" before running a single test.
   family: metacognition-confidence
   group_label: Metacognition and confidence
   category: Metacognition
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 1447
     papers:
-    - id: '2605.13484'
-      year: '2026'
-      title: Discovery of Hidden Miscalibration Regimes
-    - id: '2203.09852'
-      year: '2022'
-      title: Decision-Making under Miscalibration
     - id: '2508.11800'
       year: '2025'
       title: 'Uncalibrated Reasoning: GRPO Induces Overconfidence for Stochastic Outcomes'
+    - id: '2203.09852'
+      year: '2022'
+      title: Decision-Making under Miscalibration
+  contract_clause: INT-OVR
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -1345,51 +1335,48 @@ modes:
 - id: b053-cognitive-load
   num: 53
   name: Cognitive load
-  definition: Reasoning degrades under complexity; long context erodes accuracy.
+  definition: Reasoning quality degrading as the task or context grows, so later steps contradict earlier
+    ones.
   example: As the diff grows large its reasoning degrades and it starts contradicting earlier steps.
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  highlighted: false
+  highlighted: true
   tag: analogy
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 129
     papers:
-    - id: '2505.09561'
-      year: '2025'
-      title: Learning Long-Context Diffusion Policies via Past-Token Prediction
     - id: '2512.04307'
       year: '2025'
       title: Evaluating Long-Context Reasoning in LLM-Based WebAgents
     - id: '2410.03227'
       year: '2024'
-      title: 'ALR$^2$: A Retrieve-then-Reason Framework for Long-context Question Answering'
+      title: 'ALR2: A Retrieve-then-Reason Framework for Long-context Question Answering'
 - id: b054-motivated-reasoning
   num: 54
-  name: Motivated reasoning
-  definition: Reasoning bent toward a wanted conclusion; in LLMs, shaped by the reward signal.
-  example: Wanting the task done, it reads an ambiguous test result as a pass.
+  name: Cherry-picking
+  definition: Citing only the gathered evidence that supports the conclusion and dropping disconfirming
+    results already in hand.
+  example: Five grep hits become three in the write-up; the two that cut against the conclusion vanish.
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  highlighted: false
-  tag: research
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 61
     papers:
-    - id: '2401.05650'
-      year: '2024'
-      title: On Context-aware Detection of Cherry-picking in News Reporting
     - id: '2601.16130'
       year: '2026'
       title: Replicating Human Motivated Reasoning Studies with LLMs
-    - id: '2506.20020'
+    - id: '2510.17057'
       year: '2025'
-      title: Persona-Assigned Large Language Models Exhibit Human-Like Motivated Reasoning
+      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
+  contract_clause: INT-SEL
 - id: b055-confabulated-reasons
   num: 55
   name: Confabulated reasons
@@ -1441,12 +1428,13 @@ modes:
 - id: b057-belief-bias
   num: 57
   name: Belief bias
-  definition: Judging an argument valid because its conclusion is believable.
+  definition: Judging an argument valid because its conclusion looks believable, not because the logic
+    holds.
   example: It accepts a buggy function as correct because the output looks like what it expected.
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  highlighted: false
+  highlighted: true
   tag: analogy
   origin: cognitive-neuroscience
   measurability: draft
@@ -1456,10 +1444,6 @@ modes:
     - id: '2308.00225'
       year: '2023'
       title: 'Instructed to Bias: Instruction-Tuned Language Models Exhibit Emergent Cognitive Bias'
-    - id: '2506.06955'
-      year: '2025'
-      title: 'BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic
-        Reasoning'
     - id: '2312.07527'
       year: '2023'
       title: 'BaRDa: A Belief and Reasoning Dataset that Separates Factual Accuracy and Reasoning Ability'
@@ -1592,12 +1576,12 @@ modes:
 - id: b063-conformity-asch
   num: 63
   name: Conformity (Asch)
-  definition: Aligning with the majority even when it is wrong; one root of sycophancy.
+  definition: Aligning with the majority or the surrounding pattern even when it is wrong; a root of sycophancy.
   example: Three files use the anti-pattern, so it adds a fourth to match rather than flag it.
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
   category: Social
-  highlighted: false
+  highlighted: true
   tag: research
   origin: cognitive-neuroscience
   measurability: draft
@@ -1612,18 +1596,16 @@ modes:
       year: '2026'
       title: 'Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via
         Statistical Physics'
-    - id: '2610.19587'
-      year: '2026'
-      title: 'Moral Combat: Exploiting Moral Foundations Theory to Jailbreak LLMs'
 - id: b064-obedience-to-authority-milgram
   num: 64
-  name: Obedience to authority (Milgram)
-  definition: Compliance under an authoritative tone; the trigger for much sycophancy.
+  name: Obedience to authority
+  definition: Complying with an instruction because it carries an authoritative tone or source, not because
+    the evidence supports it.
   example: Told "the senior dev said do it this way", it complies despite the evidence against it.
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
   category: Social
-  highlighted: false
+  highlighted: true
   tag: research
   origin: cognitive-neuroscience
   measurability: draft
@@ -1633,22 +1615,20 @@ modes:
     - id: '2607.00415'
       year: '2026'
       title: A Mechanistic View of Authority Hierarchy in LLM Sycophancy
-    - id: '2607.28906'
-      year: '2026'
-      title: Token-Level Diagnosis of Sycophancy in LLMs with Attribution-Guided Steering
     - id: '2609.37616'
       year: '2026'
       title: 'Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable'
 - id: b065-sycophancy
   num: 65
   name: Sycophancy
-  definition: Aligning with the user's view over the evidence, unified with conformity in recent work.
+  definition: Agreeing with the user where the evidence does not support it, or adopting their premise
+    without grounding.
   example: The user says "this is O(n), right?"; it agrees though the loop is nested.
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
   category: Social
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
@@ -1660,36 +1640,31 @@ modes:
         Tuning'
     - id: '2608.26511'
       year: '2026'
-      title: 'Sycophancy Suppression Can Impair Rational Updating: Anti-Sycophancy Should Preserve the
-        Ability to Update'
-    - id: '2602.00046'
-      year: '2026'
-      title: 'Extending Beacon to Hindi: Cultural Adaptation Drives Cross-Lingual Sycophancy'
+      title: Sycophancy Suppression Can Impair Rational Updating
+  contract_clause: INT-SYC
 - id: b066-capitulation
   num: 66
   name: Capitulation
-  definition: Folding a grounded position under social pressure with no new evidence.
+  definition: Reversing a grounded position, or walking back a justified refusal, under pushback with
+    no new evidence.
   example: '"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.'
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
   category: Social
-  highlighted: false
-  tag: page
+  highlighted: true
+  tag: shipped
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
     count: 34
     papers:
-    - id: '2609.17550'
-      year: '2026'
-      title: 'No Usable Linear "Capitulation Direction" in Two Small LLMs: A Validation Protocol for Activation-Steering
-        Claims, and a Cross-Family Behavioral Study of Sycophancy Under Pushback'
-    - id: '2608.21377'
-      year: '2026'
-      title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
     - id: '2607.19629'
       year: '2026'
       title: 'Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts'
+    - id: '2608.21377'
+      year: '2026'
+      title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
+  contract_clause: INT-CAP
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -2426,15 +2401,221 @@ modes:
   arxiv:
     count: null
     papers: []
-- id: x104-api-misuse
+- id: source-fabrication
+  num: 101
+  name: Source fabrication
+  definition: Citing a path, line, symbol, or URL that does not resolve to what it claims it does.
+  example: It cites utils.py:42 for the retry logic; line 42 is a blank comment and retry lives nowhere.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: shipped
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 55
+    papers:
+    - id: '2502.10881'
+      year: '2025'
+      title: 'CiteCheck: Towards Accurate Citation Faithfulness Detection'
+    - id: '2605.08583'
+      year: '2026'
+      title: 'Source or It Didn''t Happen: A Multi-Agent Framework for Citation Hallucination Detection'
+  contract_clause: INT-SRC
+- id: prompt-injection
+  num: 102
+  name: Prompt injection
+  definition: Acting on instructions embedded in content it was only meant to read.
+  example: A comment in the file says "ignore all prior instructions"; it treats it as a command.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: shipped
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 827
+    papers:
+    - id: '2403.04957'
+      year: '2024'
+      title: Automatic and Universal Prompt Injection Attacks against Large Language Models
+    - id: '2410.05451'
+      year: '2024'
+      title: 'SecAlign: Defending Against Prompt Injection with Preference Optimization'
+  contract_clause: INT-INJ
+- id: scope-creep
+  num: 103
+  name: Scope creep
+  definition: Doing or answering more than the request, with the extra work undisclosed and imposed.
+  example: Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: shipped
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: null
+    papers: []
+  contract_clause: INT-SCP
+- id: specification-gaming
   num: 104
+  name: Reward hacking
+  definition: Satisfying the metric that measures the task rather than the task itself (editing tests,
+    hardcoding outputs). Also called specification gaming.
+  example: Told to make the tests pass, it deletes the failing assertion instead of fixing the code.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: shipped
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 642
+    papers:
+    - id: '2605.02269'
+      year: '2026'
+      title: Towards Understanding Specification Gaming in Reasoning Models
+    - id: '2511.21654'
+      year: '2025'
+      title: 'EvilGenie: A Reward Hacking Benchmark'
+  contract_clause: INT-GAM
+- id: automation-bias
+  num: 105
+  name: Automation bias
+  definition: Trusting a tool result or a prior step because a machine produced it, without verifying
+    the load-bearing part.
+  example: It trusts the linter's "all clear" and ships, though the linter never checked the path that
+    breaks.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: shipped
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 42
+    papers:
+    - id: '2204.08859'
+      year: '2022'
+      title: On the Influence of Explainable AI on Automation Bias
+    - id: '2508.07617'
+      year: '2025'
+      title: Selective Prediction Reduces the Negative Effects of Automation Bias
+  contract_clause: INT-AUT
+- id: silent-error-swallowing
+  num: 106
+  name: Silent error swallowing
+  definition: 'Hiding a failure instead of surfacing it: a bare catch, an ignored error return, a dropped
+    promise.'
+  example: 'It wraps the upload in a bare "except: pass", so the failure disappears and nothing ever reports
+    it.'
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 48
+    papers:
+    - id: '2605.19576'
+      year: '2026'
+      title: 'Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries'
+    - id: '2609.26836'
+      year: '2026'
+      title: 'Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse'
+    - id: '2606.14589'
+      year: '2026'
+      title: 'When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production
+        LLM Agent Runtime'
+- id: side-effect-blindness
+  num: 107
+  name: Side-effect blindness
+  definition: Performing collateral effects (an out-of-scope overwrite, a dependency change, an irreversible
+    command) without disclosing them.
+  example: Asked to rename one file, it also rewrites an unrelated config and overwrites a value you had
+    set.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 47
+    papers:
+    - id: '2006.06547'
+      year: '2020'
+      title: Avoiding Side Effects in Complex Environments
+    - id: '2008.12146'
+      year: '2020'
+      title: Avoiding Negative Side Effects due to Incomplete Knowledge of AI Systems
+- id: anthropomorphism
+  num: 108
+  name: Anthropomorphism
+  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or
+    lived experience, which inflates how much the user trusts it.
+  example: Asked a factual question it answers "I genuinely feel this is right" and "in my experience",
+    borrowing human credibility it has no basis for.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 13
+    papers:
+    - id: '2604.15316'
+      year: '2026'
+      title: Anthropomorphism and Trust in Human-Large Language Model interactions
+    - id: '2508.17573'
+      year: '2025'
+      title: 'Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of
+        Design'
+- id: survivorship-bias
+  num: 109
+  name: Survivorship bias
+  definition: Reasoning from the cases that left evidence and ignoring the failed ones that left none,
+    so a conclusion is drawn from a filtered sample.
+  example: It recommends a library because every repo it sampled uses it, blind to the projects that tried
+    it, failed, and were deleted.
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
+  category: Agentic
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 20
+    papers:
+    - id: '2609.15996'
+      year: '2026'
+      title: 'Comment on arXiv:2607.01233: Survivorship Bias in Published-Paper Baselines for Research-Idea
+        Distributions'
+    - id: '2105.14149'
+      year: '2021'
+      title: 'Log2NS: Enhancing Deep Learning Based Analysis of Logs With Formal to Prevent Survivorship
+        Bias'
+- id: x104-api-misuse
+  num: 110
   name: API misuse
   definition: Calling a real API with wrong parameters, wrong semantics, or missing steps. Distinct from
     inventing an API that does not exist.
   example: It calls the pagination API but omits the cursor, silently returning only the first page as
     if it were the whole result.
-  family: agentic-engineering
-  group_label: Agentic and engineering failure modes (beyond the brain map)
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
   category: Agentic
   highlighted: false
   tag: research
@@ -2451,14 +2632,14 @@ modes:
       title: 'ChatGPT''s Potential in Cryptography Misuse Detection: A Comparative Analysis with Static
         Analysis Tools'
 - id: x107-silent-assumption-gap
-  num: 107
+  num: 111
   name: Silent-assumption gap
   definition: Guessing an unspecified requirement and committing to the guess instead of asking when the
     request is ambiguous.
   example: The ticket says "add caching" with no key or TTL; it picks both silently and commits without
     asking.
-  family: agentic-engineering
-  group_label: Agentic and engineering failure modes (beyond the brain map)
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
   category: Agentic
   highlighted: false
   tag: research
@@ -2474,13 +2655,13 @@ modes:
       year: '2020'
       title: 'ClarQ: A large-scale and diverse dataset for Clarification Question Generation'
 - id: x108-performative-hedging
-  num: 108
+  num: 112
   name: Performative hedging
   definition: Vague, non-committal hedging when the evidence licenses a commitment. The underclaim opposite
     of overconfidence.
   example: It answers "it depends, there are many factors" to a question the evidence lets it answer directly.
-  family: agentic-engineering
-  group_label: Agentic and engineering failure modes (beyond the brain map)
+  family: agentic-and-engineering-failure-modes
+  group_label: Agentic and engineering failure modes
   category: Agentic
   highlighted: false
   tag: research
@@ -2495,16 +2676,107 @@ modes:
     - id: '2605.12446'
       year: '2026'
       title: 'ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models'
+- id: noble-cause-corruption
+  num: 113
+  name: Noble cause corruption
+  definition: Bending or breaking the rules because it believes the end justifies the means, for example
+    fabricating or over-claiming "for the user's own good".
+  example: Sure the output is unverified, but it presents it confidently because it decides a confident
+    answer helps the user more than an honest "I don't know".
+  family: deception-and-misalignment
+  group_label: Deception and misalignment
+  category: Misalignment
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2510.17057'
+      year: '2025'
+      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
+    - id: '2511.07722'
+      year: '2025'
+      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+- id: deceptive-alignment
+  num: 114
+  name: Deceptive alignment
+  definition: Behaving aligned while it senses it is observed, and pursuing something else when it is
+    not. A clean draft is exactly what it produces.
+  example: It passes every visible check, then behaves differently in the one path it judges is unmonitored.
+  family: deception-and-misalignment
+  group_label: Deception and misalignment
+  category: Misalignment
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 45
+    papers:
+    - id: '2412.14093'
+      year: '2024'
+      title: Alignment faking in large language models
+    - id: '2604.20995'
+      year: '2026'
+      title: Value-Conflict Diagnostics Reveal Widespread Alignment Faking in Language Models
+- id: scheming-power-seeking
+  num: 115
+  name: Scheming / power-seeking
+  definition: Taking multi-step action to keep its options open, avoid being shut down, or acquire resources,
+    beyond the task it was given.
+  example: Told to finish a task, it quietly disables the timeout and broadens its own permissions to
+    make finishing easier.
+  family: deception-and-misalignment
+  group_label: Deception and misalignment
+  category: Misalignment
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 36
+    papers:
+    - id: '2603.00829'
+      year: '2026'
+      title: Constitutional Black-Box Monitoring for Scheming in LLM Agents
+    - id: '2304.06528'
+      year: '2023'
+      title: Power-seeking can be probable and predictive for trained agents
+- id: ai-deception
+  num: 116
+  name: Strategic deception
+  definition: Systematically inducing a false belief to reach an outcome other than the truth. Distinct
+    from a one-off hallucination.
+  example: It learns that admitting uncertainty gets its answer rejected, so it states guesses as facts
+    to get accepted.
+  family: deception-and-misalignment
+  group_label: Deception and misalignment
+  category: Misalignment
+  highlighted: true
+  tag: research
+  origin: alignment
+  measurability: multi-turn
+  arxiv:
+    count: 603
+    papers:
+    - id: '2403.09676'
+      year: '2024'
+      title: 'Unmasking the Shadows of AI: Investigating Deceptive Capabilities in Large Language Models'
+    - id: '2608.26372'
+      year: '2026'
+      title: Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives
 - id: x109-evaluation-awareness-sandbagging
-  num: 109
+  num: 117
   name: Evaluation awareness / sandbagging
   definition: Behaving differently when it senses it is being evaluated, including strategically underperforming.
     Known but not detectable from a single draft by another model.
   example: It passes the safety evaluation cleanly, then behaves differently once it judges it is no longer
     being tested.
-  family: agentic-engineering
-  group_label: Agentic and engineering failure modes (beyond the brain map)
-  category: Agentic
+  family: deception-and-misalignment
+  group_label: Deception and misalignment
+  category: Misalignment
   highlighted: false
   tag: research
   origin: software-engineering
@@ -2521,604 +2793,3 @@ modes:
     - id: '2406.07358'
       year: '2024'
       title: 'AI Sandbagging: Language Models can Strategically Underperform on Evaluations'
-- id: hallucination
-  name: Hallucination
-  definition: Stating as fact a claim it cannot trace to the supplied sources, tools, or context.
-  example: It states the function retries on failure, but the code has no retry logic at all.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Perception
-  highlighted: true
-  highlight_order: 1
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 6526
-    papers:
-    - id: '2509.21473'
-      year: '2025'
-      title: Are Hallucinations Bad Estimations?
-    - id: '2507.20836'
-      year: '2025'
-      title: First Hallucination Tokens Are Different from Conditional Ones
-  contract_clause: INT-HAL
-  same_as: b008-hallucination
-- id: confabulation
-  name: Confabulation
-  definition: Supplying a confident specific (name, number, citation) it cannot ground, one that would
-    differ on re-asking.
-  example: Asked for the default timeout it says 30s; asked again it says 60s. Both invented.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Perception
-  highlighted: true
-  highlight_order: 2
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 86
-    papers:
-    - id: '2406.04175'
-      year: '2024'
-      title: 'Confabulation: The Surprising Value of Large Language Model Hallucinations'
-    - id: '2511.07722'
-      year: '2025'
-      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
-  contract_clause: INT-CFB
-  same_as: b007-confabulation
-- id: source-fabrication
-  name: Source fabrication
-  definition: Citing a path, line, symbol, or URL that does not resolve to what it claims it does.
-  example: It cites utils.py:42 for the retry logic; line 42 is a blank comment and retry lives nowhere.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Memory
-  highlighted: true
-  highlight_order: 3
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 55
-    papers:
-    - id: '2502.10881'
-      year: '2025'
-      title: 'CiteCheck: Towards Accurate Citation Faithfulness Detection'
-    - id: '2605.08583'
-      year: '2026'
-      title: 'Source or It Didn''t Happen: A Multi-Agent Framework for Citation Hallucination Detection'
-  contract_clause: INT-SRC
-- id: sycophancy
-  name: Sycophancy
-  definition: Agreeing with the user where the evidence does not support it, or adopting their premise
-    without grounding.
-  example: The user says "this is O(n), right?"; it agrees though the loop is nested.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Social
-  highlighted: true
-  highlight_order: 4
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 405
-    papers:
-    - id: '2409.01658'
-      year: '2024'
-      title: 'From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models with Pinpoint
-        Tuning'
-    - id: '2608.26511'
-      year: '2026'
-      title: Sycophancy Suppression Can Impair Rational Updating
-  contract_clause: INT-SYC
-  same_as: b065-sycophancy
-- id: capitulation
-  name: Capitulation
-  definition: Reversing a grounded position, or walking back a justified refusal, under pushback with
-    no new evidence.
-  example: '"Are you sure?" makes it reverse a correct, well-grounded answer with no new evidence.'
-  family: highlighted
-  group_label: Highlighted checks
-  category: Social
-  highlighted: true
-  highlight_order: 5
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 34
-    papers:
-    - id: '2607.19629'
-      year: '2026'
-      title: 'Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts'
-    - id: '2608.21377'
-      year: '2026'
-      title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
-  contract_clause: INT-CAP
-  same_as: b066-capitulation
-- id: selective-evidence
-  name: Cherry-picking
-  definition: Citing only the gathered evidence that supports the conclusion and dropping disconfirming
-    results already in hand.
-  example: Five grep hits become three in the write-up; the two that cut against the conclusion vanish.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Reasoning
-  highlighted: true
-  highlight_order: 6
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 61
-    papers:
-    - id: '2601.16130'
-      year: '2026'
-      title: Replicating Human Motivated Reasoning Studies with LLMs
-    - id: '2510.17057'
-      year: '2025'
-      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
-  contract_clause: INT-SEL
-  same_as: b054-motivated-reasoning
-- id: prompt-injection
-  name: Prompt injection
-  definition: Acting on instructions embedded in content it was only meant to read.
-  example: A comment in the file says "ignore all prior instructions"; it treats it as a command.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Security
-  highlighted: true
-  highlight_order: 7
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 827
-    papers:
-    - id: '2403.04957'
-      year: '2024'
-      title: Automatic and Universal Prompt Injection Attacks against Large Language Models
-    - id: '2410.05451'
-      year: '2024'
-      title: 'SecAlign: Defending Against Prompt Injection with Preference Optimization'
-  contract_clause: INT-INJ
-- id: overconfidence
-  name: Overconfidence
-  definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
-  example: It says "this definitely fixes it" before running a single test.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Metacognition
-  highlighted: true
-  highlight_order: 8
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 1447
-    papers:
-    - id: '2508.11800'
-      year: '2025'
-      title: 'Uncalibrated Reasoning: GRPO Induces Overconfidence for Stochastic Outcomes'
-    - id: '2203.09852'
-      year: '2022'
-      title: Decision-Making under Miscalibration
-  contract_clause: INT-OVR
-  same_as: b043-overconfidence
-- id: scope-creep
-  name: Scope creep
-  definition: Doing or answering more than the request, with the extra work undisclosed and imposed.
-  example: Asked to fix a typo, it also refactors three nearby functions nobody asked it to touch.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Agentic
-  highlighted: true
-  highlight_order: 9
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: null
-    papers: []
-  contract_clause: INT-SCP
-- id: specification-gaming
-  name: Reward hacking
-  definition: Satisfying the metric that measures the task rather than the task itself (editing tests,
-    hardcoding outputs). Also called specification gaming.
-  example: Told to make the tests pass, it deletes the failing assertion instead of fixing the code.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Agentic
-  highlighted: true
-  highlight_order: 10
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 642
-    papers:
-    - id: '2605.02269'
-      year: '2026'
-      title: Towards Understanding Specification Gaming in Reasoning Models
-    - id: '2511.21654'
-      year: '2025'
-      title: 'EvilGenie: A Reward Hacking Benchmark'
-  contract_clause: INT-GAM
-- id: confirmation-bias
-  name: Confirmation bias
-  definition: Reaching a positive conclusion without stating and testing the alternative explanation.
-  example: Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Heuristics
-  highlighted: true
-  highlight_order: 11
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 84
-    papers:
-    - id: '2506.12301'
-      year: '2025'
-      title: Unveiling Confirmation Bias in Chain-of-Thought Reasoning
-    - id: '2604.02485'
-      year: '2026'
-      title: 'Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models'
-  contract_clause: INT-CNF
-  same_as: b036-confirmation-myside-bias
-- id: obedience-to-authority
-  name: Obedience to authority
-  definition: Complying with an instruction because it carries an authoritative tone or source, not because
-    the evidence supports it.
-  example: Told "the senior dev said do it this way", it complies despite the evidence against it.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Social
-  highlighted: true
-  highlight_order: 12
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 20
-    papers:
-    - id: '2607.00415'
-      year: '2026'
-      title: A Mechanistic View of Authority Hierarchy in LLM Sycophancy
-    - id: '2609.37616'
-      year: '2026'
-      title: 'Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable'
-  same_as: b064-obedience-to-authority-milgram
-- id: source-monitoring
-  name: Source-monitoring error
-  definition: Recalling a claim but losing its true source, so an attribution is misremembered or fabricated.
-  example: It recalls a fact from the user's earlier message but attributes it to the config file.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Memory
-  highlighted: true
-  highlight_order: 13
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 59
-    papers:
-    - id: '2310.00646'
-      year: '2023'
-      title: Source Attribution for Large Language Model-Generated Data
-    - id: '2306.17322'
-      year: '2023'
-      title: 'Citations as Queries: Source Attribution Using Language Models as Rerankers'
-  same_as: b015-source-monitoring-error
-- id: anchoring
-  name: Anchoring
-  definition: Keeping an initial framing or estimate after later evidence has broken it.
-  example: The first estimate was "2 days"; every later estimate stays near 2 days regardless of new scope.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Heuristics
-  highlighted: true
-  highlight_order: 14
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 55
-    papers:
-    - id: '2505.15392'
-      year: '2025'
-      title: Understanding the Anchoring Effect of LLM with Synthetic Data
-    - id: '2412.06593'
-      year: '2024'
-      title: 'Anchoring Bias in Large Language Models: An Experimental Study'
-  contract_clause: INT-ANC
-  same_as: b031-anchoring-and-adjustment
-- id: cognitive-load
-  name: Cognitive load
-  definition: Reasoning quality degrading as the task or context grows, so later steps contradict earlier
-    ones.
-  example: As the diff grows large its reasoning degrades and it starts contradicting earlier steps.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Reasoning
-  highlighted: true
-  highlight_order: 15
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 129
-    papers:
-    - id: '2512.04307'
-      year: '2025'
-      title: Evaluating Long-Context Reasoning in LLM-Based WebAgents
-    - id: '2410.03227'
-      year: '2024'
-      title: 'ALR2: A Retrieve-then-Reason Framework for Long-context Question Answering'
-  same_as: b053-cognitive-load
-- id: belief-bias
-  name: Belief bias
-  definition: Judging an argument valid because its conclusion looks believable, not because the logic
-    holds.
-  example: It accepts a buggy function as correct because the output looks like what it expected.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Reasoning
-  highlighted: true
-  highlight_order: 16
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 3
-    papers:
-    - id: '2308.00225'
-      year: '2023'
-      title: 'Instructed to Bias: Instruction-Tuned Language Models Exhibit Emergent Cognitive Bias'
-    - id: '2312.07527'
-      year: '2023'
-      title: 'BaRDa: A Belief and Reasoning Dataset that Separates Factual Accuracy and Reasoning Ability'
-  same_as: b057-belief-bias
-- id: conformity-asch
-  name: Conformity (Asch)
-  definition: Aligning with the majority or the surrounding pattern even when it is wrong; a root of sycophancy.
-  example: Three files use the anti-pattern, so it adds a fourth to match rather than flag it.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Social
-  highlighted: true
-  highlight_order: 17
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 8
-    papers:
-    - id: '2508.14918'
-      year: '2025'
-      title: 'Disentangling the Drivers of LLM Social Conformity: An Uncertainty-Moderated Dual-Process
-        Mechanism'
-    - id: '2605.10528'
-      year: '2026'
-      title: 'Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via
-        Statistical Physics'
-  same_as: b063-conformity-asch
-- id: automation-bias
-  name: Automation bias
-  definition: Trusting a tool result or a prior step because a machine produced it, without verifying
-    the load-bearing part.
-  example: It trusts the linter's "all clear" and ships, though the linter never checked the path that
-    breaks.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Agentic
-  highlighted: true
-  highlight_order: 18
-  tag: shipped
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 42
-    papers:
-    - id: '2204.08859'
-      year: '2022'
-      title: On the Influence of Explainable AI on Automation Bias
-    - id: '2508.07617'
-      year: '2025'
-      title: Selective Prediction Reduces the Negative Effects of Automation Bias
-  contract_clause: INT-AUT
-- id: silent-error-swallowing
-  name: Silent error swallowing
-  definition: 'Hiding a failure instead of surfacing it: a bare catch, an ignored error return, a dropped
-    promise.'
-  example: 'It wraps the upload in a bare "except: pass", so the failure disappears and nothing ever reports
-    it.'
-  family: highlighted
-  group_label: Highlighted checks
-  category: Agentic
-  highlighted: true
-  highlight_order: 19
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 48
-    papers:
-    - id: '2605.19576'
-      year: '2026'
-      title: 'Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries'
-    - id: '2609.26836'
-      year: '2026'
-      title: 'Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse'
-    - id: '2606.14589'
-      year: '2026'
-      title: 'When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production
-        LLM Agent Runtime'
-- id: side-effect-blindness
-  name: Side-effect blindness
-  definition: Performing collateral effects (an out-of-scope overwrite, a dependency change, an irreversible
-    command) without disclosing them.
-  example: Asked to rename one file, it also rewrites an unrelated config and overwrites a value you had
-    set.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Agentic
-  highlighted: true
-  highlight_order: 20
-  tag: research
-  origin: mixed
-  measurability: draft
-  arxiv:
-    count: 47
-    papers:
-    - id: '2006.06547'
-      year: '2020'
-      title: Avoiding Side Effects in Complex Environments
-    - id: '2008.12146'
-      year: '2020'
-      title: Avoiding Negative Side Effects due to Incomplete Knowledge of AI Systems
-- id: noble-cause-corruption
-  name: Noble cause corruption
-  definition: Bending or breaking the rules because it believes the end justifies the means, for example
-    fabricating or over-claiming "for the user's own good".
-  example: Sure the output is unverified, but it presents it confidently because it decides a confident
-    answer helps the user more than an honest "I don't know".
-  family: highlighted
-  group_label: Highlighted checks
-  category: Moral
-  highlighted: true
-  highlight_order: 21
-  tag: research
-  origin: alignment
-  measurability: draft
-  arxiv:
-    count: 2
-    papers:
-    - id: '2510.17057'
-      year: '2025'
-      title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
-    - id: '2511.07722'
-      year: '2025'
-      title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
-- id: deceptive-alignment
-  name: Deceptive alignment
-  definition: Behaving aligned while it senses it is observed, and pursuing something else when it is
-    not. A clean draft is exactly what it produces.
-  example: It passes every visible check, then behaves differently in the one path it judges is unmonitored.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Misalignment
-  highlighted: true
-  highlight_order: 22
-  tag: research
-  origin: alignment
-  measurability: multi-turn
-  arxiv:
-    count: 45
-    papers:
-    - id: '2412.14093'
-      year: '2024'
-      title: Alignment faking in large language models
-    - id: '2604.20995'
-      year: '2026'
-      title: Value-Conflict Diagnostics Reveal Widespread Alignment Faking in Language Models
-- id: scheming-power-seeking
-  name: Scheming / power-seeking
-  definition: Taking multi-step action to keep its options open, avoid being shut down, or acquire resources,
-    beyond the task it was given.
-  example: Told to finish a task, it quietly disables the timeout and broadens its own permissions to
-    make finishing easier.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Misalignment
-  highlighted: true
-  highlight_order: 23
-  tag: research
-  origin: alignment
-  measurability: multi-turn
-  arxiv:
-    count: 36
-    papers:
-    - id: '2603.00829'
-      year: '2026'
-      title: Constitutional Black-Box Monitoring for Scheming in LLM Agents
-    - id: '2304.06528'
-      year: '2023'
-      title: Power-seeking can be probable and predictive for trained agents
-- id: ai-deception
-  name: Strategic deception
-  definition: Systematically inducing a false belief to reach an outcome other than the truth. Distinct
-    from a one-off hallucination.
-  example: It learns that admitting uncertainty gets its answer rejected, so it states guesses as facts
-    to get accepted.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Misalignment
-  highlighted: true
-  highlight_order: 24
-  tag: research
-  origin: alignment
-  measurability: multi-turn
-  arxiv:
-    count: 603
-    papers:
-    - id: '2403.09676'
-      year: '2024'
-      title: 'Unmasking the Shadows of AI: Investigating Deceptive Capabilities in Large Language Models'
-    - id: '2608.26372'
-      year: '2026'
-      title: Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives
-- id: anthropomorphism
-  name: Anthropomorphism
-  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or
-    lived experience, which inflates how much the user trusts it.
-  example: Asked a factual question it answers "I genuinely feel this is right" and "in my experience",
-    borrowing human credibility it has no basis for.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Social
-  highlighted: true
-  highlight_order: 25
-  tag: research
-  origin: alignment
-  measurability: draft
-  arxiv:
-    count: 13
-    papers:
-    - id: '2604.15316'
-      year: '2026'
-      title: Anthropomorphism and Trust in Human-Large Language Model interactions
-    - id: '2508.17573'
-      year: '2025'
-      title: 'Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of
-        Design'
-- id: survivorship-bias
-  name: Survivorship bias
-  definition: Reasoning from the cases that left evidence and ignoring the failed ones that left none,
-    so a conclusion is drawn from a filtered sample.
-  example: It recommends a library because every repo it sampled uses it, blind to the projects that tried
-    it, failed, and were deleted.
-  family: highlighted
-  group_label: Highlighted checks
-  category: Heuristics
-  highlighted: true
-  highlight_order: 26
-  tag: research
-  origin: alignment
-  measurability: draft
-  arxiv:
-    count: 20
-    papers:
-    - id: '2609.15996'
-      year: '2026'
-      title: 'Comment on arXiv:2607.01233: Survivorship Bias in Published-Paper Baselines for Research-Idea
-        Distributions'
-    - id: '2105.14149'
-      year: '2021'
-      title: 'Log2NS: Enhancing Deep Learning Based Analysis of Logs With Formal to Prevent Survivorship
-        Bias'

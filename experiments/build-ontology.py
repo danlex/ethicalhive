@@ -60,22 +60,20 @@ GROUP_SHORT = {
     5: "Metacognition", 6: "Reasoning", 7: "Social", 8: "Moral",
     9: "Self & agency", 10: "Language",
 }
-# short category for highlighted modes (what domain the check belongs to)
-CATEGORY = {
-    "hallucination": "Perception", "confabulation": "Perception",
-    "source-fabrication": "Memory", "sycophancy": "Social",
-    "capitulation": "Social", "selective-evidence": "Reasoning",
-    "prompt-injection": "Security", "overconfidence": "Metacognition",
-    "scope-creep": "Agentic", "specification-gaming": "Agentic",
-    "confirmation-bias": "Heuristics", "obedience-to-authority": "Social",
-    "source-monitoring": "Memory", "anchoring": "Heuristics",
-    "cognitive-load": "Reasoning", "belief-bias": "Reasoning",
-    "conformity-asch": "Social", "automation-bias": "Agentic",
-    "silent-error-swallowing": "Agentic", "side-effect-blindness": "Agentic",
-    "noble-cause-corruption": "Moral", "deceptive-alignment": "Misalignment",
-    "scheming-power-seeking": "Misalignment", "ai-deception": "Misalignment",
-    "anthropomorphism": "Social", "survivorship-bias": "Heuristics",
+AGENTIC = "Agentic and engineering failure modes"
+MISALIGN = "Deception and misalignment"
+# highlighted modes with no brain counterpart -> the group they live in
+GROUP_OF = {
+    "source-fabrication": AGENTIC, "prompt-injection": AGENTIC,
+    "scope-creep": AGENTIC, "specification-gaming": AGENTIC,
+    "automation-bias": AGENTIC, "silent-error-swallowing": AGENTIC,
+    "side-effect-blindness": AGENTIC, "anthropomorphism": AGENTIC,
+    "survivorship-bias": AGENTIC,
+    "noble-cause-corruption": MISALIGN, "deceptive-alignment": MISALIGN,
+    "scheming-power-seeking": MISALIGN, "ai-deception": MISALIGN,
 }
+EXTRA_GROUP = {104: AGENTIC, 107: AGENTIC, 108: AGENTIC, 109: MISALIGN}
+GROUP_CAT = {AGENTIC: "Agentic", MISALIGN: "Misalignment"}
 # measurability overrides (default is 'draft')
 HARD = {
     "deceptive-alignment": "multi-turn", "scheming-power-seeking": "multi-turn",
@@ -117,70 +115,73 @@ def main():
                 if x.strip().isdigit()}
     shipped_papers = json.loads((EXP / "shipped-check-papers.json").read_text())
 
-    modes = []
-
-    # brain modes (100), one family per section
+    # brain modes (100), keyed by num; one family per section
+    brain = {}
     for i, (title, entries) in enumerate(parse_brain(), 1):
         fam = slug(title.replace(" and ", " "))
         for num, name, tag, definition in entries:
             pdata = None if num in suppress else papers_by_num.get(num)
-            rec = {
-                "id": f"b{num:03d}-{slug(name)}",
-                "num": num,
-                "name": name,
-                "definition": definition,
-                "example": examples.get(num, ""),
-                "family": fam,
-                "group_label": title,
-                "category": GROUP_SHORT.get(i, ""),
-                "highlighted": False,
-                "tag": tag,
-                "origin": BRAIN_ORIGIN,
+            brain[num] = {
+                "id": f"b{num:03d}-{slug(name)}", "num": num, "name": name,
+                "definition": definition, "example": examples.get(num, ""),
+                "family": fam, "group_label": title, "category": GROUP_SHORT.get(i, ""),
+                "highlighted": False, "tag": tag, "origin": BRAIN_ORIGIN,
                 "measurability": "undetectable" if 81 <= num <= 90 else "draft",
                 "arxiv": arxiv_block(pdata),
             }
-            modes.append(rec)
 
-    # extra agentic/engineering modes
+    # highlighted modes: 13 restate a brain mode (highlight that row in place),
+    # the other 13 are new rows that live in their own group.
+    agentic, mis = [], []
+    for seq_s, cid, name, definition, example in load_lines(EXP / "shipped-checks.tsv"):
+        clause = CLAUSE.get(cid)
+        is_align = cid in HARD or cid in (
+            "deceptive-alignment", "scheming-power-seeking", "ai-deception",
+            "noble-cause-corruption", "anthropomorphism")
+        if cid in SAME_AS:  # merge into the brain row, mark it highlighted
+            b = brain[SAME_AS[cid]]
+            b.update({"name": name, "definition": definition, "example": example,
+                      "highlighted": True, "measurability": HARD.get(cid, b["measurability"]),
+                      "arxiv": arxiv_block(shipped_papers.get(cid))})
+            if clause:
+                b["tag"] = "shipped"
+                b["contract_clause"] = clause
+        else:  # new highlighted row in its own group
+            g = GROUP_OF[cid]
+            rec = {
+                "id": cid, "num": None, "name": name, "definition": definition,
+                "example": example, "family": slug(g), "group_label": g,
+                "category": GROUP_CAT[g], "highlighted": True,
+                "tag": "shipped" if clause else "research",
+                "origin": "alignment" if is_align else "software-engineering",
+                "measurability": HARD.get(cid, "draft"),
+                "arxiv": arxiv_block(shipped_papers.get(cid)),
+            }
+            if clause:
+                rec["contract_clause"] = clause
+            (mis if g == MISALIGN else agentic).append(rec)
+
+    # extra (non-highlighted) modes, placed in their group
     for num_s, name, tag, definition in load_lines(EXP / "catalogue-extra.tsv"):
         num = int(num_s)
+        g = EXTRA_GROUP.get(num, AGENTIC)
         pdata = None if num in suppress else papers_by_num.get(num)
-        modes.append({
-            "id": f"x{num}-{slug(name)}",
-            "num": num,
-            "name": name, "definition": definition,
-            "example": examples.get(num, ""),
-            "family": "agentic-engineering",
-            "group_label": "Agentic and engineering failure modes (beyond the brain map)",
-            "category": "Agentic",
+        rec = {
+            "id": f"x{num}-{slug(name)}", "num": None, "name": name,
+            "definition": definition, "example": examples.get(num, ""),
+            "family": slug(g), "group_label": g, "category": GROUP_CAT[g],
             "highlighted": False, "tag": tag, "origin": "software-engineering",
             "measurability": "draft", "arxiv": arxiv_block(pdata),
-        })
-
-    # highlighted modes (26)
-    for seq_s, cid, name, definition, example in load_lines(EXP / "shipped-checks.tsv"):
-        seq = int(seq_s)
-        rec = {
-            "id": cid, "name": name, "definition": definition, "example": example,
-            "family": "highlighted", "group_label": "Highlighted checks",
-            "category": CATEGORY.get(cid, ""),
-            "highlighted": True, "highlight_order": seq,
-            "tag": "shipped" if cid in CLAUSE else "research",
-            "origin": "alignment" if cid in HARD or cid in (
-                "deceptive-alignment", "scheming-power-seeking", "ai-deception",
-                "noble-cause-corruption", "anthropomorphism") else "mixed",
-            "measurability": HARD.get(cid, "draft"),
-            "arxiv": arxiv_block(shipped_papers.get(cid)),
         }
-        if cid in CLAUSE:
-            rec["contract_clause"] = CLAUSE[cid]
-        if cid in SAME_AS:
-            n = SAME_AS[cid]
-            # find the brain record id
-            match = next((m["id"] for m in modes if m["id"].startswith(f"b{n:03d}-")), None)
-            if match:
-                rec["same_as"] = match
-        modes.append(rec)
+        (mis if g == MISALIGN else agentic).append(rec)
+
+    # assemble: brain (corpus order) then Agentic then Misalignment; number the
+    # non-brain rows 101+
+    modes = [brain[k] for k in sorted(brain)] + agentic + mis
+    n = 101
+    for m in agentic + mis:
+        m["num"] = n
+        n += 1
 
     onto = build_framework()
     onto["modes"] = modes
@@ -287,12 +288,16 @@ governance:
   never_auto_applied: [rubric, verdict calculation, CoVe rules, BLOCK/FLAG/PASS criteria]
 
 families:
-  - id: highlighted
-    name: Highlighted checks
-    note: The prioritised, red-bordered featured set shown first on the page.
+  - note: >
+      Modes are grouped into the ten brain systems (cognitive-neuroscience corpus)
+      plus two engineering groups. The 26 highlighted modes are not a separate
+      group; they live in their category and render as pink rows in place.
   - id: agentic-engineering
     name: Agentic and engineering failure modes
     note: Behaviours outside the brain-parallel corpus.
+  - id: deception-and-misalignment
+    name: Deception and misalignment
+    note: Higher-severity, often harder-to-detect alignment failures.
 """
 
 

@@ -102,8 +102,8 @@ def meta_block(mode):
 def box(mode):
     """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
-    num = mode.get("highlight_order") if hl else mode.get("num")
-    n = f"{num:02d}"
+    num = mode.get("num")
+    n = f"{num:02d}" if isinstance(num, int) else "—"
     cls = "concept shipped" if hl else f'concept {mode.get("tag", "")}'.strip()
     datafam = "page" if hl else mode.get("tag", "")
     tag = mode.get("tag", "")
@@ -144,14 +144,8 @@ def render(modes):
             index[g] = len(groups)
             groups.append((g, []))
         groups[index[g]][1].append(m)
-    n = 0
-    for g, members in groups:
-        if g == "Highlighted checks":
-            hid, header = "grp-highlighted-checks", "Highlighted checks"
-        else:
-            n += 1
-            hid, header = f"grp-{slug(g)}", f"{n}. {title_amp(g)}"
-        out.append(f'      <h3 class="cat-group" id="{hid}">{header}</h3>')
+    for i, (g, members) in enumerate(groups, 1):
+        out.append(f'      <h3 class="cat-group" id="grp-{slug(g)}">{i}. {title_amp(g)}</h3>')
         out += [box(m) for m in members]
     out.append("    </div>")
     return "\n".join(out)
