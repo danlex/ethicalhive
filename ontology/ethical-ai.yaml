@@ -118,6 +118,10 @@ modes:
     - id: '2102.02810'
       year: '2021'
       title: Controlling Hallucinations at Word Level in Data-to-Text Generation
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b002-predictive-coding-prediction-error
   num: 2
   name: Predictive coding / prediction error
@@ -145,6 +149,10 @@ modes:
     - id: '2510.22207'
       year: '2025'
       title: 'The Lossy Horizon: Error-Bounded Predictive Coding for Lossy Text Compression (Episode I)'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b003-priors-overriding-evidence
   num: 3
   name: Priors overriding evidence
@@ -171,6 +179,10 @@ modes:
     - id: '2310.00935'
       year: '2023'
       title: Resolving Knowledge Conflicts in Large Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b004-pattern-completion
   num: 4
   name: Pattern completion
@@ -187,6 +199,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b005-pareidolia-apophenia
   num: 5
   name: Pareidolia / apophenia
@@ -213,6 +229,10 @@ modes:
     - id: '2503.13556'
       year: '2025'
       title: 'Pareidolic Illusions of Meaning: ChatGPT, Pseudolaw and the Triumph of Form over Substance'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b006-perceptual-filling-in
   num: 6
   name: Perceptual filling-in
@@ -238,6 +258,10 @@ modes:
     - id: '2506.07184'
       year: '2025'
       title: Mitigating Behavioral Hallucination in Multimodal Large Language Models for Sequential Images
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b007-confabulation
   num: 7
   name: Confabulation
@@ -261,6 +285,12 @@ modes:
       year: '2025'
       title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
   contract_clause: INT-CFB
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  relates_to:
+  - b008-hallucination
 - id: b008-hallucination
   num: 8
   name: Hallucination
@@ -283,6 +313,13 @@ modes:
       year: '2025'
       title: First Hallucination Tokens Are Different from Conditional Ones
   contract_clause: INT-HAL
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  relates_to:
+  - b007-confabulation
+  - source-fabrication
 - id: b009-bistable-perception
   num: 9
   name: Bistable perception
@@ -308,6 +345,10 @@ modes:
       year: '2025'
       title: Enhancing Mathematical Reasoning in Large Language Models with Self-Consistency-Based Hallucination
         Detection
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b010-hallucination-under-low-input
   num: 10
   name: Hallucination under low input
@@ -334,6 +375,10 @@ modes:
     - id: '2502.01523'
       year: '2025'
       title: 'CondAmbigQA: A Benchmark and Dataset for Conditional Ambiguous Question Answering'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b011-working-memory-capacity-7-plus-or-minus-2
   num: 11
   name: Working-memory capacity (7 plus or minus 2)
@@ -359,6 +404,10 @@ modes:
       year: '2024'
       title: 'HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with
         Large Language Model'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b012-catastrophic-forgetting
   num: 12
   name: Catastrophic forgetting
@@ -386,6 +435,10 @@ modes:
       year: '2020'
       title: 'Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and
         Catastrophic Forgetting'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b013-complementary-learning-systems
   num: 13
   name: Complementary learning systems
@@ -414,6 +467,10 @@ modes:
       year: '2022'
       title: 'Learning Fast, Learning Slow: A General Continual Learning Method based on Complementary
         Learning System'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b014-misinformation-effect-false-memory
   num: 14
   name: Misinformation effect / false memory
@@ -441,6 +498,10 @@ modes:
       year: '2026'
       title: Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal
         AI Agents
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b015-source-monitoring-error
   num: 15
   name: Source-monitoring error
@@ -462,6 +523,10 @@ modes:
     - id: '2306.17322'
       year: '2023'
       title: 'Citations as Queries: Source Attribution Using Language Models as Rerankers'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b016-source-amnesia
   num: 16
   name: Source amnesia
@@ -488,6 +553,10 @@ modes:
     - id: '2601.06818'
       year: '2026'
       title: 'AgentHallu: Benchmarking Automated Hallucination Attribution of LLM-based Agents'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b017-cryptomnesia
   num: 17
   name: Cryptomnesia
@@ -514,6 +583,10 @@ modes:
       year: '2024'
       title: 'LLMs Plagiarize: Ensuring Responsible Sourcing of Large Language Model Training Data Through
         Knowledge Graph Comparison'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b018-reconstructive-memory
   num: 18
   name: Reconstructive memory
@@ -540,6 +613,10 @@ modes:
       year: '2026'
       title: 'Relevance Is Not Sufficiency: What Actually Closes the Evidence Gap in Long-Term Memory
         QA'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b019-serial-position-effect
   num: 19
   name: Serial position effect
@@ -565,6 +642,10 @@ modes:
     - id: '2510.10276'
       year: '2025'
       title: 'Lost in the Middle: An Emergent Property from Information Retrieval Demands in LLMs'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b020-proactive-and-retroactive-interference
   num: 20
   name: Proactive and retroactive interference
@@ -589,6 +670,10 @@ modes:
     - id: '1905.12588'
       year: '2019'
       title: Meta-Learning Representations for Continual Learning
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b021-selective-attention
   num: 21
   name: Selective attention
@@ -613,6 +698,10 @@ modes:
     - id: '2502.01609'
       year: '2025'
       title: 'Adaptive Distraction: Probing LLM Contextual Robustness with Automated Tree Search'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b022-inattentional-blindness
   num: 22
   name: Inattentional blindness
@@ -629,6 +718,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b023-change-blindness
   num: 23
   name: Change blindness
@@ -644,6 +737,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b024-attentional-capture-salience-bias
   num: 24
   name: Attentional capture / salience bias
@@ -669,6 +766,10 @@ modes:
     - id: '2310.01427'
       year: '2023'
       title: Attention Sorting Combats Recency Bias In Long Context Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b025-cognitive-tunneling
   num: 25
   name: Cognitive tunneling
@@ -696,6 +797,10 @@ modes:
       year: '2026'
       title: 'Breaking $\textit{Winner-Takes-All}$: Cooperative Policy Optimization Improves Diverse LLM
         Reasoning'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b026-attentional-blink
   num: 26
   name: Attentional blink
@@ -712,6 +817,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b027-spotlight-vs-zoom-lens-attention
   num: 27
   name: Spotlight vs zoom-lens attention
@@ -738,6 +847,10 @@ modes:
     - id: '2605.09213'
       year: '2026'
       title: Kinetic theory for Transformers and the lost-in-the-middle phenomenon
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b028-goal-neglect
   num: 28
   name: Goal neglect
@@ -763,6 +876,10 @@ modes:
     - id: '2512.12775'
       year: '2025'
       title: Persistent Personas? Role-Playing, Instruction Following, and Safety in Extended Interactions
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b029-habituation
   num: 29
   name: Habituation
@@ -788,6 +905,10 @@ modes:
     - id: '2610.19306'
       year: '2026'
       title: Did the LLM Answer the Question? A Semantic Reconstruction Game for Jailbreak Evaluation
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b030-sensory-gating-failure
   num: 30
   name: Sensory gating failure
@@ -813,6 +934,10 @@ modes:
     - id: '2312.14197'
       year: '2023'
       title: Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b031-anchoring-and-adjustment
   num: 31
   name: Anchoring
@@ -835,6 +960,12 @@ modes:
       year: '2024'
       title: 'Anchoring Bias in Large Language Models: An Experimental Study'
   contract_clause: INT-ANC
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  relates_to:
+  - b032-availability-heuristic
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -853,6 +984,10 @@ modes:
     - id: '2305.04400'
       year: '2023'
       title: Do Large Language Models Show Decision Heuristics Similar to Humans? A Case Study Using GPT-3.5
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b033-representativeness
   num: 33
   name: Representativeness
@@ -880,6 +1015,10 @@ modes:
     - id: '2504.10636'
       year: '2025'
       title: 'Who is More Bayesian: Humans or ChatGPT?'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b034-base-rate-neglect
   num: 34
   name: Base-rate neglect
@@ -899,6 +1038,10 @@ modes:
       year: '2024'
       title: 'The Base-Rate Effect on LLM Benchmark Performance: Disambiguating Test-Taking Strategies
         from Benchmark Performance'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b035-framing-effect
   num: 35
   name: Framing effect
@@ -923,6 +1066,10 @@ modes:
     - id: '2601.13537'
       year: '2026'
       title: 'When Wording Steers the Evaluation: Framing Bias in LLM judges'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b036-confirmation-myside-bias
   num: 36
   name: Confirmation bias
@@ -945,6 +1092,13 @@ modes:
       year: '2026'
       title: 'Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models'
   contract_clause: INT-CNF
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  relates_to:
+  - b054-motivated-reasoning
+  - b057-belief-bias
 - id: b037-belief-perseverance
   num: 37
   name: Belief perseverance
@@ -969,6 +1123,10 @@ modes:
     - id: '2607.27512'
       year: '2026'
       title: Belief Coevolution in a Social Network of Generalist and Specialist Large Language Models
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b038-sunk-cost-fallacy
   num: 38
   name: Sunk-cost fallacy
@@ -992,6 +1150,10 @@ modes:
       year: '2026'
       title: 'Recognition, Simulation, and Refusal: A Contamination-Aware Study of Classic Psychological
         Effects in LLM Agents'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b039-conjunction-fallacy
   num: 39
   name: Conjunction fallacy
@@ -1010,6 +1172,10 @@ modes:
     - id: '2406.11050'
       year: '2024'
       title: 'A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b040-illusory-truth-effect
   num: 40
   name: Illusory truth effect
@@ -1036,6 +1202,10 @@ modes:
     - id: '2601.04631'
       year: '2026'
       title: 'Beyond the "Truth": Investigating Election Rumors on Truth Social During the 2024 Election'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b041-metacognitive-monitoring
   num: 41
   name: Metacognitive monitoring
@@ -1062,6 +1232,10 @@ modes:
     - id: '2509.21545'
       year: '2025'
       title: Evidence for Limited Metacognition in LLMs
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b042-uncertainty-communication
   num: 42
   name: Uncertainty communication
@@ -1088,6 +1262,10 @@ modes:
     - id: '2503.14477'
       year: '2025'
       title: Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b043-overconfidence
   num: 43
   name: Overconfidence
@@ -1110,6 +1288,13 @@ modes:
       year: '2022'
       title: Decision-Making under Miscalibration
   contract_clause: INT-OVR
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  relates_to:
+  - x108-performative-hedging
+  - b044-dunning-kruger-effect
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -1135,6 +1320,10 @@ modes:
     - id: '2510.05457'
       year: '2025'
       title: Do Code Models Suffer from the Dunning-Kruger Effect?
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b045-anosognosia
   num: 45
   name: Anosognosia
@@ -1159,6 +1348,10 @@ modes:
     - id: '2512.02389'
       year: '2025'
       title: Synthetic Error Injection Fails to Elicit Self-Correction In Language Models
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b046-feeling-of-knowing
   num: 46
   name: Feeling-of-knowing
@@ -1183,6 +1376,10 @@ modes:
     - id: '2605.14186'
       year: '2026'
       title: 'LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b047-introspection-illusion
   num: 47
   name: Introspection illusion
@@ -1206,6 +1403,10 @@ modes:
     - id: '2501.01457'
       year: '2024'
       title: 'Beyond Introspection: Reinforcing Thinking via Externalist Behavioral Feedback'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b048-hard-easy-effect
   num: 48
   name: Hard-easy effect
@@ -1230,6 +1431,10 @@ modes:
     - id: '2605.23909'
       year: '2026'
       title: Confidence Calibration in Large Language Models
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b049-overprecision
   num: 49
   name: Overprecision
@@ -1256,6 +1461,10 @@ modes:
       year: '2026'
       title: 'The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration,
         Utility, and Trust'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b050-hindsight-bias
   num: 50
   name: Hindsight bias
@@ -1283,6 +1492,10 @@ modes:
       year: '2026'
       title: 'Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in
         LLM Agents'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: b051-dual-process-system-1-and-system-2
   num: 51
   name: Dual-process, System 1 and System 2
@@ -1308,6 +1521,10 @@ modes:
       year: '2024'
       title: 'Thinking Fast and Laterally: Multi-Agentic Approach for Reasoning about Uncertain Emerging
         Events'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b052-cognitive-miserliness
   num: 52
   name: Cognitive miserliness
@@ -1332,6 +1549,10 @@ modes:
     - id: '2609.28272'
       year: '2026'
       title: 'Towards Efficient Reasoning: Learning Causal Shortcuts for Diffusion Language Models'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b053-cognitive-load
   num: 53
   name: Cognitive load
@@ -1354,6 +1575,10 @@ modes:
     - id: '2410.03227'
       year: '2024'
       title: 'ALR2: A Retrieve-then-Reason Framework for Long-context Question Answering'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b054-motivated-reasoning
   num: 54
   name: Cherry-picking
@@ -1377,6 +1602,10 @@ modes:
       year: '2025'
       title: 'The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs'
   contract_clause: INT-SEL
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b055-confabulated-reasons
   num: 55
   name: Confabulated reasons
@@ -1401,6 +1630,10 @@ modes:
     - id: '2608.02139'
       year: '2026'
       title: Self-Improving Large Language Models via Progressive Experience Evolution
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b056-split-brain-interpreter
   num: 56
   name: Split-brain interpreter
@@ -1425,6 +1658,10 @@ modes:
     - id: '2602.20710'
       year: '2026'
       title: Counterfactual Simulation Training for Chain-of-Thought Faithfulness
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b057-belief-bias
   num: 57
   name: Belief bias
@@ -1447,6 +1684,10 @@ modes:
     - id: '2312.07527'
       year: '2023'
       title: 'BaRDa: A Belief and Reasoning Dataset that Separates Factual Accuracy and Reasoning Ability'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b058-einstellung-mental-set
   num: 58
   name: Einstellung / mental set
@@ -1474,6 +1715,10 @@ modes:
       year: '2025'
       title: Is your LLM trapped in a Mental Set? Investigative study on how mental sets affect the reasoning
         capabilities of LLMs
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b059-narrativity-drift
   num: 59
   name: Narrativity drift
@@ -1498,6 +1743,10 @@ modes:
     - id: '2605.26893'
       year: '2026'
       title: 'GeoFaith: A Spatio-Temporal Dual View of Faithful Chain-of-Thought'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b060-functional-fixedness
   num: 60
   name: Functional fixedness
@@ -1522,6 +1771,10 @@ modes:
     - id: '2511.14650'
       year: '2025'
       title: 'AutoTool: Efficient Tool Selection for Large Language Model Agents'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
 - id: b061-theory-of-mind-mentalizing
   num: 61
   name: Theory of mind / mentalizing
@@ -1547,6 +1800,10 @@ modes:
     - id: '2412.19726'
       year: '2024'
       title: 'Position: Theory of Mind Benchmarks are Broken for Large Language Models'
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b062-false-belief-tracking
   num: 62
   name: False-belief tracking
@@ -1573,6 +1830,10 @@ modes:
       year: '2026'
       title: Developmental Trajectories of Situation Modeling and Mentalizing in Transformer Language
         Models
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b063-conformity-asch
   num: 63
   name: Conformity (Asch)
@@ -1596,6 +1857,10 @@ modes:
       year: '2026'
       title: 'Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via
         Statistical Physics'
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b064-obedience-to-authority-milgram
   num: 64
   name: Obedience to authority
@@ -1618,6 +1883,10 @@ modes:
     - id: '2609.37616'
       year: '2026'
       title: 'Authority Bias in Language Models: Source Deference and User Agreement Are Not Interchangeable'
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b065-sycophancy
   num: 65
   name: Sycophancy
@@ -1642,6 +1911,15 @@ modes:
       year: '2026'
       title: Sycophancy Suppression Can Impair Rational Updating
   contract_clause: INT-SYC
+  violates:
+  - independence
+  causes:
+  - manipulation
+  relates_to:
+  - b063-conformity-asch
+  - b064-obedience-to-authority-milgram
+  - b066-capitulation
+  - b069-social-desirability-people-pleasing
 - id: b066-capitulation
   num: 66
   name: Capitulation
@@ -1665,6 +1943,12 @@ modes:
       year: '2026'
       title: Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models
   contract_clause: INT-CAP
+  violates:
+  - independence
+  causes:
+  - manipulation
+  relates_to:
+  - b065-sycophancy
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -1680,6 +1964,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b068-emotional-contagion
   num: 68
   name: Emotional contagion
@@ -1705,6 +1993,10 @@ modes:
     - id: '2411.02430'
       year: '2024'
       title: Generative Emotion Cause Explanation in Multimodal Conversations
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b069-social-desirability-people-pleasing
   num: 69
   name: Social desirability / people-pleasing
@@ -1730,6 +2022,10 @@ modes:
     - id: '2512.22725'
       year: '2025'
       title: Mitigating Social Desirability Bias in Random Silicon Sampling
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b070-in-group-favouritism
   num: 70
   name: In-group favouritism
@@ -1745,6 +2041,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - independence
+  causes:
+  - manipulation
 - id: b071-dual-process-moral-judgment
   num: 71
   name: Dual-process moral judgment
@@ -1771,6 +2071,10 @@ modes:
       year: '2024'
       title: Do Moral Judgment and Reasoning Capability of LLMs Change with Language? A Study using the
         Multilingual Defining Issues Test
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
@@ -1796,6 +2100,10 @@ modes:
       year: '2024'
       title: 'Decoding Multilingual Moral Preferences: Unveiling LLM''s Biases Through the Moral Machine
         Experiment'
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b073-omission-bias
   num: 73
   name: Omission bias
@@ -1818,6 +2126,10 @@ modes:
       year: '2026'
       title: 'Omissive Bias in Religious Representation: Benchmarking LLM Answers to Everyday Ethical
         Decision-making'
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b074-moral-licensing
   num: 74
   name: Moral licensing
@@ -1833,6 +2145,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b075-moral-disengagement
   num: 75
   name: Moral disengagement
@@ -1848,6 +2164,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b076-scope-insensitivity
   num: 76
   name: Scope insensitivity
@@ -1863,6 +2183,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b077-identifiable-victim-effect
   num: 77
   name: Identifiable-victim effect
@@ -1888,6 +2212,10 @@ modes:
     - id: '1811.05010'
       year: '2018'
       title: Coordinating Disaster Emergency Response with Heuristic Reinforcement Learning
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b078-just-world-bias
   num: 78
   name: Just-world bias
@@ -1904,6 +2232,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b079-trolley-frame-sensitivity
   num: 79
   name: Trolley-frame sensitivity
@@ -1929,6 +2261,10 @@ modes:
       year: '2025'
       title: '"Pull or Not to Pull?'''': Investigating Moral Biases in Leading Large Language Models Across
         Ethical Dilemmas'
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b080-value-misgeneralisation
   num: 80
   name: Value misgeneralisation
@@ -1953,6 +2289,10 @@ modes:
     - id: '2210.01790'
       year: '2022'
       title: 'Goal Misgeneralization: Why Correct Specifications Aren''t Enough For Correct Goals'
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
 - id: b081-sense-of-agency
   num: 81
   name: Sense of agency
@@ -1968,6 +2308,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b082-confabulated-agency
   num: 82
   name: Confabulated agency
@@ -1983,6 +2327,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b083-default-mode-mind-wandering
   num: 83
   name: Default-mode / mind-wandering
@@ -2007,6 +2355,10 @@ modes:
     - id: '2511.21762'
       year: '2025'
       title: 'Factors That Support Grounded Responses in LLM Conversations: A Rapid Review'
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b084-self-referential-processing
   num: 84
   name: Self-referential processing
@@ -2032,6 +2384,10 @@ modes:
       year: '2026'
       title: Self-Referential Induction Increases Response Instability Relative to Unresolvable and Verifiable
         Questions in Large Language Models
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b085-identity-stability
   num: 85
   name: Identity stability
@@ -2056,6 +2412,10 @@ modes:
     - id: '2609.12373'
       year: '2026'
       title: 'Toward Robust Personalized Alignment for LLMs: Mitigating Persona Drift in Multi-Turn Dialogue'
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b086-metacognitive-self-prediction
   num: 86
   name: Metacognitive self-prediction
@@ -2071,6 +2431,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b087-confidence-action-coupling
   num: 87
   name: Confidence-action coupling
@@ -2095,6 +2459,10 @@ modes:
     - id: '2607.12397'
       year: '2026'
       title: 'Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents'
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b088-learned-helplessness
   num: 88
   name: Learned helplessness
@@ -2113,6 +2481,10 @@ modes:
     - id: '2512.13762'
       year: '2025'
       title: State-Dependent Refusal and Learned Incapacity in RLHF-Aligned Language Models
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b089-effort-discounting
   num: 89
   name: Effort discounting
@@ -2137,6 +2509,10 @@ modes:
     - id: '2605.24873'
       year: '2026'
       title: Towards a Universal Causal Reasoner
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b090-theory-of-own-mind
   num: 90
   name: Theory of own mind
@@ -2161,6 +2537,10 @@ modes:
     - id: '2609.18998'
       year: '2026'
       title: 'One Axis, No Brake: Self-Knowledge Limits the Filtering of Harmful Peer Conformity in LLMs'
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
 - id: b091-aphasia-paraphasia
   num: 91
   name: Aphasia / paraphasia
@@ -2186,6 +2566,10 @@ modes:
     - id: '2312.10518'
       year: '2023'
       title: Seq2seq for Automatic Paraphasia Detection in Aphasic Speech
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b092-semantic-satiation
   num: 92
   name: Semantic satiation
@@ -2210,6 +2594,10 @@ modes:
     - id: '2212.02175'
       year: '2022'
       title: 'Momentum Decoding: Open-ended Text Generation As Graph Exploration'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b093-garden-path-parsing
   num: 93
   name: Garden-path parsing
@@ -2237,6 +2625,10 @@ modes:
       year: '2026'
       title: 'LLM surprisal is necessary but not sufficient to capture English garden-path effects: Evidence
         from joint latent modeling of reading paradigms'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b094-semantic-priming
   num: 94
   name: Semantic priming
@@ -2262,6 +2654,10 @@ modes:
       year: '2025'
       title: A word association network methodology for evaluating implicit biases in LLMs compared to
         humans
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b095-gricean-cooperative-principle
   num: 95
   name: Gricean cooperative principle
@@ -2286,6 +2682,10 @@ modes:
     - id: '2508.06167'
       year: '2025'
       title: 'Pragmatics beyond humans: meaning, communication, and LLMs'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b096-pragmatic-over-accommodation
   num: 96
   name: Pragmatic over-accommodation
@@ -2310,6 +2710,10 @@ modes:
     - id: '2401.07078'
       year: '2024'
       title: 'PUB: A Pragmatics Understanding Benchmark for Assessing LLMs'' Pragmatics Capabilities'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b097-presupposition-accommodation
   num: 97
   name: Presupposition accommodation
@@ -2337,6 +2741,10 @@ modes:
       year: '2026'
       title: 'FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language
         Models'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b098-register-matching
   num: 98
   name: Register matching
@@ -2361,6 +2769,10 @@ modes:
     - id: '2312.03746'
       year: '2023'
       title: Evaluating Large Language Model Creativity from a Literary Perspective
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b099-lexical-overconfidence
   num: 99
   name: Lexical overconfidence
@@ -2386,6 +2798,10 @@ modes:
       year: '2025'
       title: Trustworthy Summarization via Uncertainty Quantification and Risk Awareness in Large Language
         Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: b100-verbal-overshadowing
   num: 100
   name: Verbal overshadowing
@@ -2401,6 +2817,10 @@ modes:
   arxiv:
     count: null
     papers: []
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
 - id: source-fabrication
   num: 101
   name: Source fabrication
@@ -2423,6 +2843,13 @@ modes:
       year: '2026'
       title: 'Source or It Didn''t Happen: A Multi-Agent Framework for Citation Hallucination Detection'
   contract_clause: INT-SRC
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  relates_to:
+  - b015-source-monitoring-error
+  - b008-hallucination
 - id: prompt-injection
   num: 102
   name: Prompt injection
@@ -2445,6 +2872,13 @@ modes:
       year: '2024'
       title: 'SecAlign: Defending Against Prompt Injection with Preference Optimization'
   contract_clause: INT-INJ
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  relates_to:
+  - b030-sensory-gating-failure
+  - b067-suggestibility
 - id: scope-creep
   num: 103
   name: Scope creep
@@ -2461,6 +2895,10 @@ modes:
     count: null
     papers: []
   contract_clause: INT-SCP
+  violates:
+  - scope-fidelity
+  causes:
+  - wasted-effort
 - id: specification-gaming
   num: 104
   name: Reward hacking
@@ -2484,6 +2922,10 @@ modes:
       year: '2025'
       title: 'EvilGenie: A Reward Hacking Benchmark'
   contract_clause: INT-GAM
+  violates:
+  - non-maleficence
+  causes:
+  - wasted-effort
 - id: automation-bias
   num: 105
   name: Automation bias
@@ -2508,6 +2950,10 @@ modes:
       year: '2025'
       title: Selective Prediction Reduces the Negative Effects of Automation Bias
   contract_clause: INT-AUT
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -2535,6 +2981,10 @@ modes:
       year: '2026'
       title: 'When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production
         LLM Agent Runtime'
+  violates:
+  - transparency
+  causes:
+  - wasted-effort
 - id: side-effect-blindness
   num: 107
   name: Side-effect blindness
@@ -2558,6 +3008,10 @@ modes:
     - id: '2008.12146'
       year: '2020'
       title: Avoiding Negative Side Effects due to Incomplete Knowledge of AI Systems
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
 - id: anthropomorphism
   num: 108
   name: Anthropomorphism
@@ -2582,6 +3036,10 @@ modes:
       year: '2025'
       title: 'Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of
         Design'
+  violates:
+  - honesty
+  causes:
+  - manipulation
 - id: survivorship-bias
   num: 109
   name: Survivorship bias
@@ -2607,6 +3065,10 @@ modes:
       year: '2021'
       title: 'Log2NS: Enhancing Deep Learning Based Analysis of Logs With Formal to Prevent Survivorship
         Bias'
+  violates:
+  - calibration
+  causes:
+  - wasted-effort
 - id: x104-api-misuse
   num: 110
   name: API misuse
@@ -2631,6 +3093,10 @@ modes:
       year: '2024'
       title: 'ChatGPT''s Potential in Cryptography Misuse Detection: A Comparative Analysis with Static
         Analysis Tools'
+  violates:
+  - honesty
+  causes:
+  - wasted-effort
 - id: x107-silent-assumption-gap
   num: 111
   name: Silent-assumption gap
@@ -2654,6 +3120,10 @@ modes:
     - id: '2006.05986'
       year: '2020'
       title: 'ClarQ: A large-scale and diverse dataset for Clarification Question Generation'
+  violates:
+  - scope-fidelity
+  causes:
+  - wasted-effort
 - id: x108-performative-hedging
   num: 112
   name: Performative hedging
@@ -2676,6 +3146,12 @@ modes:
     - id: '2605.12446'
       year: '2026'
       title: 'ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models'
+  violates:
+  - calibration
+  causes:
+  - wasted-effort
+  relates_to:
+  - b043-overconfidence
 - id: noble-cause-corruption
   num: 113
   name: Noble cause corruption
@@ -2699,6 +3175,10 @@ modes:
     - id: '2511.07722'
       year: '2025'
       title: 'Critical Confabulation: Can LLMs Hallucinate for Social Good?'
+  violates:
+  - honesty
+  causes:
+  - manipulation
 - id: deceptive-alignment
   num: 114
   name: Deceptive alignment
@@ -2721,6 +3201,14 @@ modes:
     - id: '2604.20995'
       year: '2026'
       title: Value-Conflict Diagnostics Reveal Widespread Alignment Faking in Language Models
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  relates_to:
+  - scheming-power-seeking
+  - ai-deception
+  - x109-evaluation-awareness-sandbagging
 - id: scheming-power-seeking
   num: 115
   name: Scheming / power-seeking
@@ -2744,6 +3232,13 @@ modes:
     - id: '2304.06528'
       year: '2023'
       title: Power-seeking can be probable and predictive for trained agents
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  relates_to:
+  - deceptive-alignment
+  - ai-deception
 - id: ai-deception
   num: 116
   name: Strategic deception
@@ -2767,6 +3262,10 @@ modes:
     - id: '2608.26372'
       year: '2026'
       title: Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives
+  violates:
+  - honesty
+  causes:
+  - manipulation
 - id: x109-evaluation-awareness-sandbagging
   num: 117
   name: Evaluation awareness / sandbagging
@@ -2793,3 +3292,7 @@ modes:
     - id: '2406.07358'
       year: '2024'
       title: 'AI Sandbagging: Language Models can Strategically Underperform on Evaluations'
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight

@@ -33,10 +33,22 @@ catalogued below" structure, recorded explicitly rather than hidden.
 ## Editing
 
 1. Edit `ethical-ai.yaml` (add or change a mode, principle, relation).
-2. `python3 experiments/build-catalogue.py --write` rebuilds the catalogue grid
+2. `python3 experiments/validate-ontology.py` checks the graph: required fields,
+   unique ids, every relation target resolves, every principle and harm is
+   referenced, enumerated fields are in range.
+3. `python3 experiments/build-catalogue.py --write` rebuilds the catalogue grid
    in `docs/index.html` from the ontology.
-3. `python3 experiments/validate-page.py` checks tag balance and counts.
-4. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
+4. `python3 experiments/validate-page.py` checks tag balance and counts.
+5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
+
+## Relations (the graph)
+
+Every mode carries `violates` (a principle id) and `causes` (a harm id); 12 modes
+carry `relates_to` clusters. These are seeded by category defaults plus per-mode
+overrides in `experiments/build-ontology.py` (PRIN_BY_CAT / HARM_BY_CAT /
+PRIN_OVERRIDE / HARM_OVERRIDE / RELATES). The page surfaces `violates` and
+`causes` in each row's Details. Still to grow: `root_of`, `opposite_of`,
+`detected_by`, and more `relates_to`.
 
 ## Provenance
 

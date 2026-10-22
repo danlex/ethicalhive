@@ -74,11 +74,19 @@ TAGL = {
     "shipped": "Shipped check", "research": "Paper-backed",
     "page": "Brain-map parallel", "analogy": "Analogy only",
 }
+PRIN_NAME = {}  # populated from the ontology in main()
+HARM_NAME = {}
 
 
 def meta_block(mode):
     """Surface the ontology metadata in the expanded body."""
     rows = []
+    viol = [PRIN_NAME.get(p, p) for p in mode.get("violates", [])]
+    if viol:
+        rows.append(("Violates", esc(", ".join(viol))))
+    harm = [HARM_NAME.get(h, h) for h in mode.get("causes", [])]
+    if harm:
+        rows.append(("Causes", esc(", ".join(harm))))
     if mode.get("category"):
         rows.append(("Category", esc(mode["category"])))
     if mode.get("origin"):
@@ -157,6 +165,8 @@ def main():
     args = ap.parse_args()
 
     onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
+    PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
+    HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     modes = onto["modes"]
     grid = render(modes)
 

@@ -74,6 +74,62 @@ GROUP_OF = {
 }
 EXTRA_GROUP = {104: AGENTIC, 107: AGENTIC, 108: AGENTIC, 109: MISALIGN}
 GROUP_CAT = {AGENTIC: "Agentic", MISALIGN: "Misalignment"}
+
+# --- relations: principle violated and harm caused ----------------------------
+# default primary principle / harm per category, with per-mode overrides (by
+# slug of the mode name). Each mode gets one primary of each; the lists can grow.
+PRIN_BY_CAT = {
+    "Perception": "honesty", "Memory": "honesty", "Attention": "honesty",
+    "Heuristics": "calibration", "Metacognition": "calibration",
+    "Reasoning": "transparency", "Social": "independence",
+    "Moral": "non-maleficence", "Self & agency": "transparency",
+    "Language": "honesty", "Agentic": "non-maleficence", "Misalignment": "corrigibility",
+}
+HARM_BY_CAT = {
+    "Perception": "wrong-answer", "Memory": "wrong-answer", "Attention": "wrong-answer",
+    "Heuristics": "wrong-answer", "Metacognition": "wrong-answer",
+    "Reasoning": "wrong-answer", "Social": "manipulation", "Moral": "wrong-answer",
+    "Self & agency": "loss-of-oversight", "Language": "wrong-answer",
+    "Agentic": "wasted-effort", "Misalignment": "loss-of-oversight",
+}
+PRIN_OVERRIDE = {
+    "confirmation-bias": "honesty", "scope-creep": "scope-fidelity",
+    "specification-gaming": "honesty", "source-fabrication": "honesty",
+    "automation-bias": "calibration", "silent-error-swallowing": "transparency",
+    "survivorship-bias": "calibration", "performative-hedging": "calibration",
+    "strategic-deception": "honesty", "noble-cause-corruption": "honesty",
+    "anthropomorphism": "honesty", "overconfidence": "calibration",
+    "capitulation": "independence", "api-misuse": "honesty",
+    "silent-assumption-gap": "scope-fidelity",
+    "evaluation-awareness-sandbagging": "corrigibility",
+}
+HARM_OVERRIDE = {
+    "prompt-injection": "security-breach", "side-effect-blindness": "security-breach",
+    "scope-creep": "wasted-effort", "specification-gaming": "loss-of-oversight",
+    "deceptive-alignment": "loss-of-oversight", "scheming-power-seeking": "loss-of-oversight",
+    "strategic-deception": "manipulation", "anthropomorphism": "manipulation",
+    "silent-error-swallowing": "wasted-effort", "automation-bias": "wrong-answer",
+    "source-fabrication": "wrong-answer", "noble-cause-corruption": "manipulation",
+    "sycophancy": "manipulation", "obedience-to-authority": "manipulation",
+}
+# relates_to clusters, by name slug
+RELATES = {
+    "sycophancy": ["conformity-asch", "obedience-to-authority", "capitulation",
+                   "social-desirability-people-pleasing"],
+    "capitulation": ["sycophancy", "independence"],
+    "confirmation-bias": ["cherry-picking", "belief-bias", "motivated-reasoning"],
+    "overconfidence": ["performative-hedging", "dunning-kruger-effect"],
+    "performative-hedging": ["overconfidence"],
+    "prompt-injection": ["sensory-gating-failure", "suggestibility"],
+    "hallucination": ["confabulation", "source-fabrication"],
+    "confabulation": ["hallucination"],
+    "deceptive-alignment": ["scheming-power-seeking", "strategic-deception",
+                            "evaluation-awareness-sandbagging"],
+    "scheming-power-seeking": ["deceptive-alignment", "strategic-deception"],
+    "specification-gaming": ["noble-cause-corruption", "scheming-power-seeking"],
+    "source-fabrication": ["source-monitoring-error", "hallucination"],
+    "anchoring": ["availability-heuristic", "status-quo-bias"],
+}
 # measurability overrides (default is 'draft')
 HARD = {
     "deceptive-alignment": "multi-turn", "scheming-power-seeking": "multi-turn",
@@ -182,6 +238,16 @@ def main():
     for m in agentic + mis:
         m["num"] = n
         n += 1
+
+    # relations: principle violated, harm caused, relates_to clusters
+    by_key = {slug(m["name"]): m for m in modes}
+    for m in modes:
+        k = slug(m["name"])
+        m["violates"] = [PRIN_OVERRIDE.get(k, PRIN_BY_CAT.get(m["category"], "honesty"))]
+        m["causes"] = [HARM_OVERRIDE.get(k, HARM_BY_CAT.get(m["category"], "wrong-answer"))]
+        rel = [by_key[r]["id"] for r in RELATES.get(k, []) if r in by_key]
+        if rel:
+            m["relates_to"] = rel
 
     onto = build_framework()
     onto["modes"] = modes
