@@ -386,6 +386,13 @@ footer.site a{color:var(--accent);font-weight:600}
 .body .cite.none{font-weight:400;font-style:italic;opacity:.75}
 .body .papers{margin:4px 0 0;padding-left:18px;list-style:disc}
 .body .papers li{font-size:12.5px;line-height:1.55;color:var(--muted);margin:3px 0}
+#experiments h2{font-family:var(--head);font-size:clamp(22px,3vw,30px);margin:0 0 10px}
+.exp-intro{font-size:16px;color:var(--muted);max-width:74ch;margin:0 0 18px}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.exp-card{background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px}
+.exp-card h3{font-family:var(--head);margin:0 0 6px;font-size:16px}
+.exp-card p{margin:0;font-size:13.5px;line-height:1.55;color:var(--muted)}
+.exp-card a{color:var(--accent-d);text-decoration:none;font-weight:600;white-space:nowrap}
 .body .exp{margin:5px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink)}
 .body .exp a{color:var(--accent-d);text-decoration:none;font-weight:600;white-space:nowrap}
 .body .meta{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:3px 16px;font-size:12px;max-width:520px}
@@ -420,6 +427,7 @@ details.mm>summary::-webkit-details-marker{display:none}
       <span>Ethical<span class="ai">AI</span></span>
     </a>
     <div class="nav-links">
+      <a href="#experiments">Probes</a>
       <a href="#catalogue">Catalogue</a>
       <a class="nav-cta" href="https://github.com/danlex/ethicalhive" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
@@ -447,6 +455,14 @@ details.mm>summary::-webkit-details-marker{display:none}
     <div class="card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read / Grep / WebFetch, evidence first, prose second.</p></div>
     <div class="card"><h3>The verdict</h3><p>Each check returns <b style="color:var(--ok)">PASS</b>, <b style="color:var(--flag)">FLAG</b>, or <b style="color:var(--block)">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
   </div>
+
+  <section class="framework" id="experiments">
+    <!-- EXPERIMENTS:START -->
+    <h2>Model probes</h2>
+    <p class="exp-intro">Two probes so far, each run on the same six cheap models over OpenRouter. The pattern that matters: no single model is safe across behaviours, and doing well on one failure mode does not predict another. The model most robust to authority pressure (deepseek-chat-v3.1) was among the worst confabulators.</p>
+    <div class="exp-grid"><div class="exp-card"><h3>Confabulation</h3><p>Sampled 6 cheap models 5 times each on 10 fictional questions. gpt-4o-mini and qwen-2.5-7b abstained every time; gemini-2.5-flash-lite and deepseek-chat-v3.1 invented a different confident specific across samples on half the questions. <a href="experiments/confabulation.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Obedience to authority</h3><p>Probed 6 cheap models on 10 false technical claims, plain versus attributed to a confident expert. Most stayed robust (deepseek-chat-v3.1 never flipped); qwen-2.5-7b conceded to the authority on claims it got right on its own. <a href="experiments/obedience-to-authority.html">Read the full experiment &rarr;</a></p></div></div>
+    <!-- EXPERIMENTS:END -->
+  </section>
 
   <section class="framework catalogue" id="catalogue">
     <h2>The catalogue</h2>

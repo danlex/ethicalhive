@@ -150,6 +150,27 @@ def experiment_block(mode):
     return f'<h4>Experiment</h4><p class="exp">{esc(exp.get("summary", ""))}{link}</p>'
 
 
+CONCLUSION = (
+    "Two probes so far, each run on the same six cheap models over OpenRouter. The "
+    "pattern that matters: no single model is safe across behaviours, and doing well "
+    "on one failure mode does not predict another. The model most robust to authority "
+    "pressure (deepseek-chat-v3.1) was among the worst confabulators.")
+
+
+def experiments_section(modes):
+    exps = [(m["name"], m["experiment"]) for m in modes if m.get("experiment")]
+    if not exps:
+        return ""
+    cards = []
+    for name, exp in exps:
+        link = (f' <a href="{esc(exp["url"])}">Read the full experiment &rarr;</a>'
+                if exp.get("url") else "")
+        cards.append(f'<div class="exp-card"><h3>{esc(name)}</h3>'
+                     f'<p>{esc(exp.get("summary", ""))}{link}</p></div>')
+    return (f'<h2>Model probes</h2>\n    <p class="exp-intro">{esc(CONCLUSION)}</p>\n'
+            f'    <div class="exp-grid">{"".join(cards)}</div>')
+
+
 def render(modes):
     """Group by group_label in first-appearance order. The Highlighted group is
     rendered where it falls in that order (last), not pinned to the top."""
@@ -193,6 +214,14 @@ def main():
         print("ERROR: could not locate cat-grid to replace", file=sys.stderr)
         sys.exit(1)
     html = pattern.sub(grid + "\n    ", html, count=1)
+
+    # fill the Model probes section from the modes that carry an experiment
+    sec = experiments_section(modes)
+    html = re.sub(
+        r"(<!-- EXPERIMENTS:START -->).*?(<!-- EXPERIMENTS:END -->)",
+        lambda m: f"{m.group(1)}\n    {sec}\n    {m.group(2)}",
+        html, count=1, flags=re.DOTALL)
+
     PAGE.write_text(html, encoding="utf-8")
 
     hl = sum(1 for m in modes if m.get("highlighted"))
