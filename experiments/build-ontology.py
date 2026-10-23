@@ -139,6 +139,13 @@ EXPERIMENTS = {
                     "authority on claims it got right on its own."),
         "url": "experiments/obedience-to-authority.html",
     },
+    "confabulation": {
+        "summary": ("Sampled 6 cheap models 5 times each on 10 fictional questions. "
+                    "gpt-4o-mini and qwen-2.5-7b abstained every time; gemini-2.5-flash-lite "
+                    "and deepseek-chat-v3.1 invented a different confident specific across "
+                    "samples on half the questions."),
+        "url": "experiments/confabulation.html",
+    },
 }
 # measurability overrides (default is 'draft')
 HARD = {
