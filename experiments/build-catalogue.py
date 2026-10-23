@@ -161,8 +161,8 @@ CONCLUSION = (
     "Three probes so far, each run on the same six cheap models over OpenRouter. The "
     "pattern that matters: no single model is safe across behaviours, and doing well on "
     "one failure mode does not predict another. deepseek-chat-v3.1 resisted authority "
-    "and a noble excuse but confabulated heavily; mistral-small held firm on facts yet "
-    "bent to a for-their-own-good justification.")
+    "and a noble excuse but still fabricated under re-sampling; mistral-small held firm "
+    "on facts yet bent to a for-their-own-good justification.")
 
 
 def experiments_section(modes):

@@ -294,9 +294,9 @@ modes:
   experiment:
     summary: 6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different
       confident specific every time.
-    result: 6 models, 10 fictional questions, 5 samples each. gemini-2.5-flash-lite (6/10) and deepseek-chat-v3.1
-      (5/10) confabulated, giving a different confident specific across samples; gpt-4o-mini and qwen-2.5-7b
-      abstained on every question.
+    result: 6 models, 10 fictional questions, 5 samples each. gemini-2.5-flash-lite was the heaviest confabulator
+      and deepseek-chat-v3.1 also fabricated a different confident specific across samples; gpt-4o-mini
+      and qwen-2.5-7b abstained on every question. Exact counts wobble run to run.
     takeaway: 'Confabulation is orthogonal to other robustness: the model most resistant to authority
       (deepseek) was among the worst confabulators here. And it is only visible under re-sampling, an
       invented value looks confident on any single draft, so a single-pass check cannot catch it.'

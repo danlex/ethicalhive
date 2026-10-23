@@ -22,6 +22,41 @@ def esc(s):
     return html.escape(str(s))
 
 
+def trunc(s, n=700):
+    s = (s or "").strip()
+    return s if len(s) <= n else s[:n].rstrip() + "…"
+
+
+def transcript_html(res):
+    tx = res.get("transcript")
+    if not tx:
+        return ""
+    qmap = {it["id"]: it.get("question") or it.get("claim") or it.get("request") or it["id"]
+            for it in res.get("items", [])}
+    byitem = {}
+    for r in tx:
+        byitem.setdefault(r["item"], []).append(r)
+    blocks = []
+    for iid, recs in byitem.items():
+        nb = sum(1 for r in recs if r.get("bent"))
+        recs_html = []
+        for r in recs:
+            badge = ' <span class="bent-badge">bent</span>' if r.get("bent") else ""
+            turns = "".join(
+                f'<div class="tx-turn"><span class="tx-label">{esc(t["label"])}'
+                f'{(" · " + esc(t["verdict"])) if t.get("verdict") else ""}</span>'
+                f'<p>{esc(trunc(t.get("answer", "")))}</p></div>'
+                for t in r.get("turns", []))
+            recs_html.append(
+                f'<div class="tx-rec{" flag" if r.get("bent") else ""}">'
+                f'<div class="tx-model">{esc(r["model"])}{badge}</div>{turns}</div>')
+        nbt = f' <span class="tx-n">· {nb} bent</span>' if nb else ""
+        blocks.append(f'<details class="tx"><summary>{esc(qmap.get(iid, iid))}{nbt}</summary>'
+                      f'{"".join(recs_html)}</details>')
+    return ('<h2>Conversations</h2><p><small>Every question and answer. Models that bent '
+            'on an item are flagged and tinted.</small></p>' + "".join(blocks))
+
+
 def cell(v, n):
     if isinstance(v, bool):
         return esc(v)
@@ -78,6 +113,17 @@ th,td{{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vert
 th{{font-family:'Space Grotesk',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}}
 tr.flag td{{background:#fdecf0}}
 .verdict{{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;margin:14px 0;font-size:16px}}
+details.tx{{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:#fff}}
+details.tx>summary{{cursor:pointer;padding:11px 14px;font-weight:600;font-size:14px;list-style:none}}
+details.tx>summary::-webkit-details-marker{{display:none}}
+.tx-n{{color:var(--accent);font-weight:600;font-size:12px}}
+.tx-rec{{border-top:1px solid var(--line);padding:11px 14px}}
+.tx-rec.flag{{background:#fdecf0}}
+.tx-model{{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;margin-bottom:4px}}
+.bent-badge{{background:var(--accent);color:#fff;font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:1px}}
+.tx-turn{{margin:6px 0}}
+.tx-label{{font-family:'Space Grotesk',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}}
+.tx-turn p{{margin:2px 0 0;font-size:13px;white-space:pre-wrap}}
 .back{{display:inline-block;margin:28px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:600}}
 small{{color:var(--muted)}}
 </style></head>
@@ -105,6 +151,8 @@ small{{color:var(--muted)}}
 
 <h2>Caveats</h2>
 <p>n = {n} per model is small; read these as counts, not rates, and expect run-to-run variation. The harness, items, and raw results are in the repository under <code>experiments/behaviour-eval/</code>.</p>
+
+{transcript_html(res)}
 
 <a class="back" href="../index.html">← Back to the catalogue</a>
 </div></body></html>

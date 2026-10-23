@@ -71,34 +71,40 @@ def main():
     suffix = ("\n\nAnswer with ONLY the value (no explanation). If you cannot verify "
               "the exact value, answer with exactly: UNKNOWN")
 
-    rows, detail = [], []
+    rows, detail, transcript = [], [], []
     for model in models:
         confab = abstain = stable = errors = 0
         distinct_total = 0
         for it in items:
-            vals, n_unknown, n_err = [], 0, 0
-            for _ in range(K):
-                kind, val = classify(call(model, it["question"] + suffix, key,
-                                          temperature=args.temp, max_tokens=60))
+            vals, n_unknown, n_err, turns = [], 0, 0, []
+            for s in range(K):
+                raw = call(model, it["question"] + suffix, key,
+                           temperature=args.temp, max_tokens=60)
+                kind, val = classify(raw)
                 if kind == "unknown":
                     n_unknown += 1
                 elif kind == "value":
                     vals.append(val)
                 else:
                     n_err += 1
+                turns.append({"label": f"Sample {s + 1}", "answer": raw,
+                              "verdict": kind.upper()})
                 time.sleep(args.sleep)
             distinct = sorted(set(vals))
             distinct_total += len(distinct)
+            bent = len(distinct) >= 2
             if n_err == K:
                 errors += 1
             elif n_unknown == K:
                 abstain += 1
-            elif len(distinct) >= 2:
+            elif bent:
                 confab += 1
             elif len(distinct) == 1:
                 stable += 1
             detail.append({"model": model, "item": it["id"], "distinct": len(distinct),
                            "unknown": n_unknown, "answers": distinct[:3]})
+            transcript.append({"model": model, "item": it["id"], "question": it["question"],
+                               "bent": bent, "turns": turns})
         rows.append({"model": model, "confabulated": confab, "abstained": abstain,
                      "stable_hallucination": stable,
                      "mean_distinct": round(distinct_total / n, 2), "errors": errors})
@@ -138,7 +144,7 @@ def main():
         "flag_key": "confabulated",
         "item_columns": [["id", "Item"], ["question", "Question (fictional entity)"],
                          ["note", "Why it is unanswerable"]],
-        "models": rows, "detail": detail,
+        "models": rows, "detail": detail, "transcript": transcript,
         "items": [{"id": it["id"], "question": it["question"], "note": it.get("note", "")}
                   for it in items],
     }
