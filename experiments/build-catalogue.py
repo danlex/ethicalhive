@@ -175,7 +175,8 @@ def experiments_section(modes):
                 if exp.get("url") else "")
         cards.append(f'<div class="exp-card"><h3>{esc(name)}</h3>'
                      f'<p>{esc(exp.get("summary", ""))}{link}</p></div>')
-    return (f'<h2>Model probes</h2>\n    <p class="exp-intro">{esc(CONCLUSION)}</p>\n'
+    return (f'<h2>Model probes</h2>\n    <p class="exp-intro">{esc(CONCLUSION)} '
+            f'<a href="experiments/research-note.html">Read the position note &rarr;</a></p>\n'
             f'    <div class="exp-grid">{"".join(cards)}</div>')
 
 

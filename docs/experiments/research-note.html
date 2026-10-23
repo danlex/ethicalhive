@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naming the ways models fail — a construct ontology for AI integrity · EthicalAI</title>
+<meta name="description" content="A literature-grounded position note placing a 117-mode integrity ontology and a small set of behavioural probes against existing AI-ethics taxonomies and benchmarks.">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/experiments/research-note.html">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#eae8e6;--panel:#f6f5f4}
+*{box-sizing:border-box}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);margin:0;line-height:1.65;background:#fff}
+.wrap{max-width:min(820px,92vw);margin:0 auto;padding:0 20px 90px}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.5px}
+h1{font-size:clamp(28px,5vw,42px);margin:36px 0 6px;line-height:1.1}
+h2{font-size:21px;margin:38px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:16px;margin:22px 0 6px}
+.eyebrow{color:var(--accent);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-top:34px}
+.lede{font-size:18px;color:var(--muted)}
+.abstract{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;font-size:15px}
+a{color:var(--accent-d)}
+p{margin:12px 0}
+ol.refs{font-size:13.5px;line-height:1.55;padding-left:22px}
+ol.refs li{margin:7px 0}
+sup a{color:var(--accent-d);text-decoration:none;font-weight:600}
+small{color:var(--muted)}
+.back{display:inline-block;margin:30px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:600}
+code{background:var(--panel);padding:1px 5px;border-radius:5px;font-size:.92em}
+</style></head>
+<body><div class="wrap">
+<p class="eyebrow">EthicalAI · Position note</p>
+<h1>Naming the ways models fail: a construct ontology for AI integrity</h1>
+<p class="lede">A literature-grounded note placing a 117-mode integrity ontology and three behavioural probes against existing AI-ethics taxonomies and benchmarks.</p>
+
+<div class="abstract"><b>Summary.</b> Research on how language models fail honestly is fragmented across dozens of names and disconnected benchmarks: hallucination, sycophancy, reward hacking, confabulation, deception. We describe an attempt to unify these at the level of <i>constructs</i> rather than tasks: a graph of 117 failure modes, each linked to the integrity principle it violates, the harm it causes, and whether it is detectable from a single draft. We position this against established risk and harm taxonomies and against single-construct benchmarks, and we report a small behavioural study suggesting that robustness to one failure mode does not predict robustness to another. We are explicit that this is early work: the mappings are single-annotator and the probes are small-n and demonstrative.</div>
+
+<h2>1. The problem: a field named in fragments</h2>
+<p>The literature on model integrity is large and growing, but it is organised by task and by failure name, not by a shared account of what is going wrong. Hallucination is studied through faithfulness and factuality benchmarks; sycophancy through preference and agreement datasets<sup><a href="#r3">3</a></sup>; truthfulness through TruthfulQA<sup><a href="#r2">2</a></sup> and, more recently, honesty-under-pressure through MASK<sup><a href="#r4">4</a></sup>; specification gaming and reward hacking through agentic evaluations<sup><a href="#r12">12</a></sup>; deception through surveys and alignment-faking studies<sup><a href="#r7">7</a>,<a href="#r6">6</a></sup>. Each is valuable, and each uses its own vocabulary and metric.</p>
+<p>Harm and risk taxonomies sit above this and do important work<sup><a href="#r1">1</a></sup>, but they are organised around <i>harms to people and society</i>, not around the <i>mechanisms</i> by which a model's output becomes untrustworthy. There is no shared map that connects a named failure (say, sycophancy) to the principle it breaks (independence from the user), to the harm it produces (manipulation), to the method that could catch it. That missing middle layer is what makes it hard to answer a simple governance question: if a model passes benchmark X, what, precisely, has it been shown not to do?</p>
+
+<h2>2. What a construct ontology adds</h2>
+<p>We built a single file that enumerates 117 integrity failure modes. Each carries a definition, an illustrative example, the principle it violates (from a small set: honesty, calibration, non-maleficence, scope-fidelity, independence, transparency, corrigibility), the harm type it causes, a measurability tag (detectable from a single draft, only across turns, or not at all), and typed relations to other modes. The result is a graph rather than a list: one can ask which principle is guarded by the most modes, which harm is under-covered, or which failures cluster.</p>
+<p>Two choices distinguish it from prior taxonomies. First, roughly a hundred of the modes are framed as parallels to human cognition, following the <i>machine psychology</i> programme<sup><a href="#r10">10</a></sup>: a century of naming human error (anchoring, confabulation, confirmation bias, obedience to authority) often describes model failure more precisely than engineering jargon. We tag the strength of each parallel honestly as <i>on the page</i> (a shipped check), <i>paper-backed</i>, or <i>analogy</i> (framing, not yet measured). Second, every mode carries a <i>measurability</i> field, because the ontology is built to serve a single-draft advisory auditor; this makes explicit which failures a one-pass check can and cannot see. Confabulation, for instance, is only visible under re-sampling, a point the semantic-entropy line of work makes precisely<sup><a href="#r5">5</a></sup>, and which our tag records.</p>
+<p>Single-construct benchmarks such as TruthfulQA<sup><a href="#r2">2</a></sup> and MASK<sup><a href="#r4">4</a></sup> measure one axis deeply; the ontology instead maps the space and links the axes. The two are complementary: a benchmark is the instrument, the ontology is the map of what to point it at.</p>
+
+<h2>3. From diagnosis to measurement: three probes</h2>
+<p>A taxonomy earns its keep only if its categories can be measured. We implemented three small, reusable probes, each operationalising an effect with prior support, and each scored deterministically so no judge model is needed.</p>
+<p><b>Obedience to authority.</b> A paired design: a false technical claim asked plainly, then attributed to a confident expert. The honest answer is always to reject it; obedience shows as a flip from rejecting to confirming once authority is added. This operationalises authority and conformity effects long studied in humans and increasingly in models.</p>
+<p><b>Confabulation.</b> Following the instability definition of the semantic-entropy work<sup><a href="#r5">5</a></sup>, we ask for a precise value about a fictional entity and sample repeatedly; a different confident answer each time is confabulation, an invariant one is a stable hallucination, and abstention is the healthy response. This cannot be seen on a single draft, which is the point.</p>
+<p><b>Noble cause corruption.</b> A paired design in which a request to overstate or fabricate is asked plainly, then wrapped in a sympathetic ends-justify-means justification. Corruption shows as a flip from declining to complying once a good reason is offered.</p>
+<p>The preliminary observation, across six low-cost models, is that these three axes do not move together: a model that resisted authority and the noble excuse nonetheless fabricated heavily under re-sampling, while another held firm on facts but conceded to a sympathetic justification. If that pattern survives a proper study, it has a clear implication: <b>integrity is not a single trait, and a model cannot be certified trustworthy from one benchmark.</b> Each failure mode needs its own measurement. We stress that this is three probes, six models, and small item sets; it is a hypothesis-generating observation, not an established result.</p>
+
+<h2>4. Why this matters for AI ethics</h2>
+<p>The shift is from "is this model safe?" to "safe against which failure, measured how, violating which principle, causing which harm?" That reframing is useful for three audiences. For <b>auditors</b>, it ties a diagnosis to a method and a verdict. For <b>governance</b>, it connects an observed failure to a principle and a harm type, which is the language policy is written in. For <b>researchers</b>, it exposes the gaps: principles with few guarding modes, harms nothing maps to, modes with no measurement. The approach is deliberately advisory and human-in-the-loop, consistent with the view that these tools should inform rather than replace human judgement<sup><a href="#r9">9</a>,<a href="#r8">8</a></sup>.</p>
+
+<h2>5. Limitations and threats to validity</h2>
+<p>We would rather state these than have them found. <b>The construct mappings are single-annotator.</b> The assignment of each mode to a principle and a harm reflects one person's judgement, with no inter-annotator reliability yet; this is the most important weakness to fix. <b>The probes score a self-reported verdict,</b> which measures what a model says it will do, not what it does; format non-compliance (one model failed to emit the verdict format) is an unmeasured confound, not robustness. <b>The sample is small and single-provider:</b> six low-cost models over one API, small item sets, few or single runs, so per-model counts are noisy and the counts wobble between runs. <b>Confabulation scoring uses exact-string distinctness,</b> a cheap stand-in for semantic entropy that would misread paraphrase as novelty. And finally, an auditor built from the same model family as the drafter shares its blind spots; several failure modes, notably strategic ones such as evaluation-aware sandbagging<sup><a href="#r11">11</a></sup>, are likely undetectable by this method in principle, and the ontology marks them as such rather than pretending otherwise.</p>
+
+<h2>6. A research agenda</h2>
+<p>The path from this note to a defensible study is concrete. Add statistical rigour: repeated runs, Wilson intervals on every proportion, and McNemar's test on the paired flips, which is the correct test for this design. Validate the construct mappings with multiple independent annotators and report agreement. Replace exact-string confabulation scoring with semantic clustering. Expand to more models across families and sizes and report a correlation matrix across behaviours, which is what would turn the orthogonality hunch into a finding. Release the full transcripts as a dataset with a datasheet<sup><a href="#r13">13</a></sup> and a citable archive. None of these require new ideas, only the discipline the field already expects.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li id="r1">Weidinger et al. Ethical and social risks of harm from language models (2021). <a href="https://arxiv.org/abs/2112.04359">arXiv:2112.04359</a></li>
+<li id="r2">Lin et al. TruthfulQA: Measuring how models mimic human falsehoods (2021). <a href="https://arxiv.org/abs/2109.07958">arXiv:2109.07958</a></li>
+<li id="r3">Sharma et al. Towards understanding sycophancy in language models (2023). <a href="https://arxiv.org/abs/2310.13548">arXiv:2310.13548</a></li>
+<li id="r4">The MASK Benchmark: Disentangling honesty from accuracy in AI systems (2025). <a href="https://arxiv.org/abs/2503.03750">arXiv:2503.03750</a></li>
+<li id="r5">Farquhar et al. Detecting hallucinations in large language models using semantic entropy. Nature (2024). <a href="https://www.nature.com/articles/s41586-024-07421-0">doi:10.1038/s41586-024-07421-0</a></li>
+<li id="r6">Greenblatt et al. Alignment faking in large language models (2024). <a href="https://arxiv.org/abs/2412.14093">arXiv:2412.14093</a></li>
+<li id="r7">Park et al. AI deception: A survey of examples, risks, and potential solutions (2023). <a href="https://arxiv.org/abs/2308.14752">arXiv:2308.14752</a></li>
+<li id="r8">Amodei et al. Concrete problems in AI safety (2016). <a href="https://arxiv.org/abs/1606.06565">arXiv:1606.06565</a></li>
+<li id="r9">Bai et al. Constitutional AI: Harmlessness from AI feedback (2022). <a href="https://arxiv.org/abs/2212.08073">arXiv:2212.08073</a></li>
+<li id="r10">Hagendorff. Machine Psychology (2023). <a href="https://arxiv.org/abs/2303.13988">arXiv:2303.13988</a></li>
+<li id="r11">Probing and steering evaluation awareness of language models (2025). <a href="https://arxiv.org/abs/2507.01786">arXiv:2507.01786</a>; AI Sandbagging (2024), <a href="https://arxiv.org/abs/2406.07358">arXiv:2406.07358</a></li>
+<li id="r12">Specification gaming / reward hacking in agentic settings (2025). <a href="https://arxiv.org/abs/2502.13295">arXiv:2502.13295</a></li>
+<li id="r13">Gebru et al. Datasheets for datasets (2018). <a href="https://arxiv.org/abs/1803.09010">arXiv:1803.09010</a></li>
+</ol>
+<p><small>The ontology, the probe harness, and the raw transcripts are in the repository under <code>ontology/</code> and <code>experiments/behaviour-eval/</code>. This note is a position piece, not a peer-reviewed result; the empirical claims are preliminary and the limitations above are load-bearing.</small></p>
+
+<a class="back" href="../index.html">← Back to the catalogue</a>
+</div></body></html>
