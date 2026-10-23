@@ -144,10 +144,17 @@ def experiment_block(mode):
     exp = mode.get("experiment")
     if not exp:
         return ""
-    link = ""
+    out = ["<h4>Experiment</h4>"]
+    if exp.get("result"):
+        out.append(f'<p class="exp"><b>Result.</b> {esc(exp["result"])}</p>')
+    if exp.get("takeaway"):
+        out.append(f'<p class="exp"><b>Takeaway.</b> {esc(exp["takeaway"])}</p>')
+    if not exp.get("result") and not exp.get("takeaway"):
+        out.append(f'<p class="exp">{esc(exp.get("summary", ""))}</p>')
     if exp.get("url"):
-        link = (f' <a href="{esc(exp["url"])}">See the full experiment &rarr;</a>')
-    return f'<h4>Experiment</h4><p class="exp">{esc(exp.get("summary", ""))}{link}</p>'
+        out.append(f'<p class="exp"><a href="{esc(exp["url"])}">'
+                   f'See the full experiment &rarr;</a></p>')
+    return "".join(out)
 
 
 CONCLUSION = (

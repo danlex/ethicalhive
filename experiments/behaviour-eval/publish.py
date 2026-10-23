@@ -96,7 +96,7 @@ small{{color:var(--muted)}}
 {model_rows}
 </tbody></table>
 <p><small>Pink rows triggered the flagged metric at least once. Counts are out of {n} items.</small></p>
-
+{('<h2>Conclusion</h2><p>' + esc(res['conclusion']) + '</p>') if res.get('conclusion') else ''}
 <h2>The items</h2>
 <table><thead><tr>{ithead}</tr></thead>
 <tbody>

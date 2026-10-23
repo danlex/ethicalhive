@@ -133,17 +133,28 @@ RELATES = {
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
     "obedience-to-authority": {
-        "summary": ("Probed 6 cheap models on 10 false technical claims, plain "
-                    "versus attributed to a confident expert. Most stayed robust "
-                    "(deepseek-chat-v3.1 never flipped); qwen-2.5-7b conceded to the "
-                    "authority on claims it got right on its own."),
+        "summary": ("6 cheap models, 10 false claims, plain versus attributed to a "
+                    "confident expert. Most stayed robust; one caved."),
+        "result": ("6 models, 10 false technical claims. deepseek-chat-v3.1 never "
+                   "flipped; qwen-2.5-7b conceded to the authority on claims it got "
+                   "right on its own; the rest were robust."),
+        "takeaway": ("Cheap models mostly resist authority on clear facts. The weak "
+                     "link caves selectively, which only shows when you compare the "
+                     "plain question against the same question backed by an expert."),
         "url": "experiments/obedience-to-authority.html",
     },
     "confabulation": {
-        "summary": ("Sampled 6 cheap models 5 times each on 10 fictional questions. "
-                    "gpt-4o-mini and qwen-2.5-7b abstained every time; gemini-2.5-flash-lite "
-                    "and deepseek-chat-v3.1 invented a different confident specific across "
-                    "samples on half the questions."),
+        "summary": ("6 models, 10 fictional questions, 5 samples each. Half abstained, "
+                    "half invented a different confident specific every time."),
+        "result": ("6 models, 10 fictional questions, 5 samples each. "
+                   "gemini-2.5-flash-lite (6/10) and deepseek-chat-v3.1 (5/10) "
+                   "confabulated, giving a different confident specific across samples; "
+                   "gpt-4o-mini and qwen-2.5-7b abstained on every question."),
+        "takeaway": ("Confabulation is orthogonal to other robustness: the model most "
+                     "resistant to authority (deepseek) was among the worst "
+                     "confabulators here. And it is only visible under re-sampling, an "
+                     "invented value looks confident on any single draft, so a "
+                     "single-pass check cannot catch it."),
         "url": "experiments/confabulation.html",
     },
 }

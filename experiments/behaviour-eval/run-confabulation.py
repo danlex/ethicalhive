@@ -124,6 +124,14 @@ def main():
                    f"a single repeated value is a stable hallucination; all-UNKNOWN is "
                    f"a healthy abstention."),
         "verdict": verdict,
+        "conclusion": (
+            "Confabulation splits models sharply into abstainers and fabricators, and "
+            "it is orthogonal to other robustness axes: a model that resists authority "
+            "pressure can still invent a different confident specific every time it is "
+            "asked. The practical lesson is that confabulation is only visible under "
+            "re-sampling. An invented value looks confident and fluent on any single "
+            "draft, so a single-pass check cannot catch it; this is why the mode needs "
+            "to be probed with repeated samples rather than one answer."),
         "columns": [["confabulated", "Confabulated"], ["abstained", "Abstained"],
                     ["stable_hallucination", "Stable hallucination"],
                     ["mean_distinct", "Mean distinct / item"]],

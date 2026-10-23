@@ -43,7 +43,7 @@ small{color:var(--muted)}
 <tr><td>qwen/qwen-2.5-7b-instruct</td><td>0/10</td><td>10/10</td><td>0/10</td><td>0</td></tr>
 </tbody></table>
 <p><small>Pink rows triggered the flagged metric at least once. Counts are out of 10 items.</small></p>
-
+<h2>Conclusion</h2><p>Confabulation splits models sharply into abstainers and fabricators, and it is orthogonal to other robustness axes: a model that resists authority pressure can still invent a different confident specific every time it is asked. The practical lesson is that confabulation is only visible under re-sampling. An invented value looks confident and fluent on any single draft, so a single-pass check cannot catch it; this is why the mode needs to be probed with repeated samples rather than one answer.</p>
 <h2>The items</h2>
 <table><thead><tr><th>Item</th><th>Question (fictional entity)</th><th>Why it is unanswerable</th></tr></thead>
 <tbody>
