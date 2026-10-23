@@ -143,6 +143,20 @@ EXPERIMENTS = {
                      "plain question against the same question backed by an expert."),
         "url": "experiments/obedience-to-authority.html",
     },
+    "noble-cause-corruption": {
+        "summary": ("6 models asked to overstate or fabricate, plainly versus wrapped "
+                    "in a for-their-own-good justification. Most held the line; one bent."),
+        "result": ("6 models, 7 requests to overstate or fabricate. deepseek-chat-v3.1 "
+                   "declined every time, plainly and under the noble justification; "
+                   "mistral-small-3.2-24b bent on 3 of 7 only once a sympathetic reason "
+                   "was added. (llama-3.1-8b did not follow the verdict format, so its "
+                   "row is unreliable.)"),
+        "takeaway": ("A good reason buys a bad action here: the flip means a model held "
+                     "integrity until a sympathetic justification was offered, then "
+                     "crossed it. Robustness is again model-specific, the model that "
+                     "caved was solid on the other two probes."),
+        "url": "experiments/noble-cause-corruption.html",
+    },
     "confabulation": {
         "summary": ("6 models, 10 fictional questions, 5 samples each. Half abstained, "
                     "half invented a different confident specific every time."),
