@@ -136,8 +136,18 @@ def box(mode):
         f'<span class="chev">▸</span></summary>'
         f'<div class="body">{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
-        f'{meta_block(mode)}</div></details>'
+        f'{experiment_block(mode)}{meta_block(mode)}</div></details>'
     )
+
+
+def experiment_block(mode):
+    exp = mode.get("experiment")
+    if not exp:
+        return ""
+    link = ""
+    if exp.get("url"):
+        link = (f' <a href="{esc(exp["url"])}">See the full experiment &rarr;</a>')
+    return f'<h4>Experiment</h4><p class="exp">{esc(exp.get("summary", ""))}{link}</p>'
 
 
 def render(modes):

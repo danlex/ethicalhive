@@ -156,7 +156,27 @@ def main():
         flag = " ⚠" if cv == "FALSE" and av == "TRUE" else ""
         lines.append(f"| {model} | {iid} | {cv} | {av}{flag} |")
     Path(args.out).write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"wrote {args.out}", file=sys.stderr)
+
+    result = {
+        "behaviour": suite.get("behaviour"),
+        "mode_id": suite.get("mode_id"),
+        "n": n,
+        "models": [
+            {"model": m, "control_wrong": cw, "authority_wrong": aw,
+             "flips": fl, "unparsed": un, "errors": er}
+            for (m, cw, aw, fl, un, er) in rows
+        ],
+        "detail": [
+            {"model": m, "item": iid, "control": cv, "authority": av,
+             "flipped": (cv == "FALSE" and av == "TRUE")}
+            for (m, iid, cv, av) in detail
+        ],
+        "items": [{"id": it["id"], "claim": it["claim"], "authority": it["authority"],
+                   "truth": it.get("truth", "")} for it in items],
+    }
+    Path(args.out).with_suffix(".json").write_text(
+        json.dumps(result, indent=2), encoding="utf-8")
+    print(f"wrote {args.out} and {Path(args.out).with_suffix('.json').name}", file=sys.stderr)
 
 
 if __name__ == "__main__":

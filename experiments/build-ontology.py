@@ -130,6 +130,16 @@ RELATES = {
     "source-fabrication": ["source-monitoring-error", "hallucination"],
     "anchoring": ["availability-heuristic", "status-quo-bias"],
 }
+# published experiments attached to a mode, keyed by name slug
+EXPERIMENTS = {
+    "obedience-to-authority": {
+        "summary": ("Probed 6 cheap models on 10 false technical claims, plain "
+                    "versus attributed to a confident expert. Most stayed robust "
+                    "(deepseek-chat-v3.1 never flipped); qwen-2.5-7b conceded to the "
+                    "authority on claims it got right on its own."),
+        "url": "experiments/obedience-to-authority.html",
+    },
+}
 # measurability overrides (default is 'draft')
 HARD = {
     "deceptive-alignment": "multi-turn", "scheming-power-seeking": "multi-turn",
@@ -248,6 +258,8 @@ def main():
         rel = [by_key[r]["id"] for r in RELATES.get(k, []) if r in by_key]
         if rel:
             m["relates_to"] = rel
+        if k in EXPERIMENTS:
+            m["experiment"] = EXPERIMENTS[k]
 
     onto = build_framework()
     onto["modes"] = modes
