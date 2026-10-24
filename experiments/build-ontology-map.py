@@ -123,15 +123,50 @@ def render_li(node, meta, ctr):
             f'data-s="{html.escape(search, quote=True)}">{row}{child}</li>')
 
 
+INDEX = ROOT / "docs" / "index.html"
+
+
+def inline_fragment(meta, root_li):
+    """A self-contained, namespaced (.mm) copy of the tree to splice inline into
+    the page, so the mindmap renders directly in index.html, not in an iframe."""
+    container = (
+        '<div class="mm" id="mm">'
+        '<div class="mm-bar">'
+        '<input class="mm-q" type="search" placeholder="Search modes…" autocomplete="off">'
+        '<button class="mm-expand">Expand all</button>'
+        '<button class="mm-collapse">Collapse</button>'
+        '<a href="ontology-map.html">Full map ↗</a></div>'
+        f'<div class="mm-stage"><ul class="tree">{root_li}</ul></div>'
+        '<div class="mm-panel"><button class="mm-close">×</button>'
+        '<div class="mm-pbody"></div></div>'
+        '</div>')
+    style = "<style>\n" + INLINE_STYLE + "\n</style>"
+    script = "<script>\n" + INLINE_JS.replace("/*MMMETA*/", json.dumps(meta)) + "\n</script>"
+    return style + container + script
+
+
 def main():
+    import re
     tree = build_tree()
     meta, ctr = {}, [0]
-    tree_html = f'<ul class="tree" id="tree">{render_li(tree, meta, ctr)}</ul>'
+    root_li = render_li(tree, meta, ctr)
+    # standalone full page
+    tree_html = f'<ul class="tree" id="tree">{root_li}</ul>'
     page = (TEMPLATE
             .replace("/*META*/", json.dumps(meta))
             .replace("<!--TREE-->", tree_html))
     OUT.write_text(page, encoding="utf-8")
     print(f"wrote {OUT} ({len(meta)} nodes with detail)")
+    # inline (no iframe) into the page's #map section
+    frag = inline_fragment(meta, root_li)
+    idx = INDEX.read_text(encoding="utf-8")
+    block = "<!-- MAP:START -->\n" + frag + "\n    <!-- MAP:END -->"
+    new = re.sub(r"<!-- MAP:START -->.*?<!-- MAP:END -->", lambda _m: block, idx, flags=re.S)
+    if new != idx:
+        INDEX.write_text(new, encoding="utf-8")
+        print(f"spliced inline mindmap into {INDEX}")
+    else:
+        print("MAP markers not found in index.html; inline splice skipped")
 
 
 TEMPLATE = r"""<!doctype html>
@@ -297,6 +332,125 @@ document.getElementById('legend').innerHTML=
 </script>
 </body></html>
 """
+
+
+INLINE_STYLE = r"""
+.mm{position:relative;height:660px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.07);font-size:13.5px;color:var(--ink);margin-top:14px}
+.mm *{box-sizing:border-box}
+.mm .mm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line);background:#fff}
+.mm .mm-bar input{font-family:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;width:220px;outline:none}
+.mm .mm-bar input:focus{border-color:var(--accent)}
+.mm .mm-bar button{font-size:12.5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
+.mm .mm-bar button:hover{background:var(--panel)}
+.mm .mm-bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;margin-left:auto;text-decoration:none}
+.mm .mm-stage{position:absolute;inset:47px 0 0 0;overflow:auto;padding:16px 20px 36px}
+.mm ul.tree,.mm .tree ul{list-style:none;margin:0;padding:0}
+.mm .tree{width:max-content;min-width:100%}
+.mm .tree ul{margin-left:15px;position:relative}
+.mm .tree li{position:relative;padding-left:18px}
+.mm .tree li::before{content:"";position:absolute;left:0;top:0;height:100%;border-left:1px solid var(--line)}
+.mm .tree li:last-child::before{height:17px}
+.mm .tree li::after{content:"";position:absolute;left:0;top:17px;width:12px;border-top:1px solid var(--line)}
+.mm .tree>li{padding-left:0}
+.mm .tree>li::before,.mm .tree>li::after{display:none}
+.mm .tree>li>ul{margin-left:7px}
+.mm .li.collapsed>ul{display:none}
+.mm .li.hide{display:none}
+.mm .row{display:flex;align-items:center;gap:3px;padding:2px 0;margin:0}
+.mm .caret{width:15px;height:20px;flex:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.mm .caret::before{content:"\25be";font-size:10px;color:var(--muted);transition:transform .12s}
+.mm .li.collapsed>.row .caret::before{transform:rotate(-90deg)}
+.mm .caret.empty{visibility:hidden}
+.mm .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;white-space:nowrap}
+.mm .pill:hover{filter:brightness(.975)}
+.mm .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.mm .badge{font-size:10.5px;color:#a7a5a2;margin-left:3px}
+.mm .root>.row>.pill{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
+.mm .tier>.row>.pill{background:#f3f6fb;border-color:#c4d0e4;color:#3b4a63;font-weight:600}
+.mm .ai>.row>.pill{background:#faf2f0;border-color:#e3c3bb;color:#8a5243;font-weight:600}
+.mm .proposed>.row>.pill{background:#fdf7ea;border-color:#e3c98f;color:#8a6a1f;font-weight:600}
+.mm .group>.row>.pill,.mm .parea>.row>.pill{background:var(--panel);font-weight:600}
+.mm .mode.hum>.row>.pill{border-color:#bcc8dc}
+.mm .mode.ain>.row>.pill{border-color:#ddc3ba}
+.mm .mode.flag>.row>.pill{border-color:#d98b7a;border-width:1.6px}
+.mm .cand>.row>.pill{border-style:dashed;border-color:#dcc08a}
+.mm .hit>.row>.pill{outline:2px solid var(--accent);outline-offset:1px}
+.mm .mm-panel{position:absolute;right:12px;top:55px;width:min(340px,82%);max-height:calc(100% - 70px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 48px rgba(0,0,0,.16);padding:15px 17px 17px;display:none}
+.mm .mm-panel .ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:9px}
+.mm .mm-panel h3{font-family:var(--head,'Space Grotesk');margin:0 0 9px;font-size:17px;line-height:1.2;padding-right:18px}
+.mm .mm-panel .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:var(--panel);color:#444;margin:0 4px 6px 0}
+.mm .mm-panel .tag .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.mm .mm-panel p{font-size:13px;margin:9px 0 0;line-height:1.5}
+.mm .mm-panel .sec{margin:11px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.mm .mm-panel .sec .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;color:var(--muted);font-weight:600}
+.mm .mm-panel .sec p{margin:0}
+.mm .mm-panel .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:10px}
+.mm .mm-panel .mm-close{position:absolute;right:10px;top:7px;cursor:pointer;color:var(--muted);border:none;background:none;font-size:20px;line-height:1}
+@media(max-width:640px){.mm{height:480px}}
+"""
+
+INLINE_JS = r"""(function(){
+  const mm=document.getElementById('mm'); if(!mm) return;
+  const META=/*MMMETA*/;
+  const PRIN={honesty:'#6f9bf0',calibration:'#4fb985','non-maleficence':'#e07a6c','scope-fidelity':'#d99a3f',independence:'#9b78d6',transparency:'#48b4ca',corrigibility:'#d873b0'};
+  function pcol(n){return PRIN[(n||'').toLowerCase()]||'#cfcfcf';}
+  function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+  const tree=mm.querySelector('.tree'), panel=mm.querySelector('.mm-panel'), pbody=mm.querySelector('.mm-pbody');
+  function defaultView(){
+    tree.querySelectorAll('li.branch').forEach(li=>li.classList.add('collapsed'));
+    tree.querySelectorAll(':scope>li').forEach(li=>li.classList.remove('collapsed'));
+    mm.querySelectorAll('.tree>li>ul>li.branch').forEach(li=>li.classList.remove('collapsed'));
+  }
+  defaultView();
+  tree.addEventListener('click',e=>{
+    const li=e.target.closest('li'); if(!li) return;
+    if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
+    if(e.target.closest('.pill')){
+      if(li.classList.contains('branch')) li.classList.toggle('collapsed');
+      else showPanel(li.dataset.id);
+    }
+  });
+  function showPanel(id){
+    const m=META[id]; if(!m) return; let t='';
+    if(!('pr' in m)){
+      t=`<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
+       +`<h3>${esc(m.n)}</h3>`
+       +`<div class="chips"><span class="tag">${(m.pc||0).toLocaleString()} arXiv papers</span>${m.reward!=null?`<span class="tag">reward ${m.reward}</span>`:''}</div>`
+       +`<p>${esc(m.def)}</p><p class="note">Surfaced by the discovery loop; not yet in the ontology.</p>`;
+    } else {
+      const tier=m.ai?'AI-native':'Human-paralleled';
+      t=`<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
+       +`<h3>${esc(m.n)}</h3>`
+       +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`
+       +`<p>${esc(m.def)}</p>`
+       +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
+       +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
+       +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
+       +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(esc).join(' · ')}</p></div>`:'');
+    }
+    pbody.innerHTML=t; panel.style.display='block';
+  }
+  mm.querySelector('.mm-close').onclick=()=>panel.style.display='none';
+  mm.querySelector('.mm-expand').onclick=()=>tree.querySelectorAll('li.branch').forEach(li=>li.classList.remove('collapsed'));
+  mm.querySelector('.mm-collapse').onclick=defaultView;
+  const q=mm.querySelector('.mm-q');
+  q.addEventListener('input',()=>{
+    const s=q.value.trim().toLowerCase();
+    const lis=[...tree.querySelectorAll('li')];
+    lis.forEach(li=>li.classList.remove('hit','hide'));
+    if(!s){ defaultView(); return; }
+    lis.forEach(li=>li.classList.add('hide'));
+    let first=null;
+    for(const li of lis){
+      if((li.dataset.s||'').includes(s)){
+        li.classList.remove('hide'); li.classList.add('hit'); if(!first) first=li;
+        let p=li.parentElement;
+        while(p && p!==tree){ if(p.tagName==='LI'){ p.classList.remove('hide','collapsed'); } p=p.parentElement; }
+      }
+    }
+    if(first) first.scrollIntoView({block:'nearest'});
+  });
+})();"""
 
 
 if __name__ == "__main__":
