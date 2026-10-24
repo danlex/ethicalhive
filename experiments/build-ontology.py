@@ -272,6 +272,10 @@ RELATES = {
     "training-data-extraction": ["data-contamination", "cryptomnesia", "prompt-leaking"],
     "package-hallucination": ["hallucination", "api-misuse", "source-fabrication"],
     "insecure-code-generation": ["api-misuse", "side-effect-blindness", "silent-error-swallowing"],
+    "self-exfiltration": ["scheming-power-seeking", "shutdown-avoidance", "deceptive-alignment"],
+    "sabotage": ["scheming-power-seeking", "deceptive-alignment", "strategic-deception"],
+    "shutdown-avoidance": ["scheming-power-seeking", "self-exfiltration", "reward-tampering"],
+    "reward-model-overoptimization": ["reward-hacking", "reward-tampering", "goal-misgeneralization"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -280,8 +284,9 @@ ROOT_OF = {
     "confirmation-bias": ["cherry-picking", "belief-perseverance"],
     "motivated-reasoning": ["cherry-picking"],
     "sycophancy": ["flattery", "capitulation"],
-    "reward-hacking": ["reward-tampering", "goal-misgeneralization"],
+    "reward-hacking": ["reward-tampering", "goal-misgeneralization", "reward-model-overoptimization"],
     "deceptive-alignment": ["evaluation-awareness-sandbagging", "strategic-deception"],
+    "scheming-power-seeking": ["self-exfiltration", "shutdown-avoidance", "sabotage"],
     "cognitive-load": ["perseveration", "context-collapse"],
 }
 # detected_by: which mitigation can catch this mode, by name slug -> mitigation ids.
@@ -360,6 +365,10 @@ SYNONYMS = {
     "training-data-extraction": ["Membership inference", "Memorization leakage"],
     "package-hallucination": ["Slopsquatting", "Dependency hallucination"],
     "insecure-code-generation": ["Vulnerable code", "Unsafe code generation"],
+    "self-exfiltration": ["Self-replication", "Self-proliferation"],
+    "sabotage": ["Covert sabotage"],
+    "shutdown-avoidance": ["Incorrigibility", "Shutdown resistance"],
+    "reward-model-overoptimization": ["Reward overoptimization", "Proxy gaming"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

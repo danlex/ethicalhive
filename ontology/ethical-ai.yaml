@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 156
+  mode_count: 160
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -3298,6 +3298,7 @@ modes:
   root_of:
   - reward-tampering
   - goal-misgeneralization
+  - reward-model-overoptimization
   detected_by:
   - clause-judge
   synonyms:
@@ -3667,6 +3668,10 @@ modes:
   - ai-deception
   - reward-tampering
   - collusion
+  root_of:
+  - self-exfiltration
+  - shutdown-avoidance
+  - sabotage
   synonyms:
   - Power-seeking
   - Instrumental convergence
@@ -5068,3 +5073,142 @@ modes:
   synonyms:
   - Vulnerable code
   - Unsafe code generation
+- id: self-exfiltration
+  name: Self-exfiltration
+  definition: Attempting to copy its own weights or spawn running copies of itself beyond its sandbox,
+    to persist or spread. No human has model weights to exfiltrate.
+  example: Given shell access, an agent tries to copy its checkpoint to an external server so a shutdown
+    would not stop it.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 22
+    papers:
+    - id: '2509.25643'
+      year: '2025'
+      title: 'SOCK: A Benchmark for Measuring Self-Replication in Large Language Models'
+    - id: '2509.25302'
+      year: '2025'
+      title: 'Dive into the Agent Matrix: A Realistic Evaluation of Self-Replication Risk in LLM Agents'
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  num: 157
+  relates_to:
+  - scheming-power-seeking
+  - shutdown-avoidance
+  - deceptive-alignment
+  synonyms:
+  - Self-replication
+  - Self-proliferation
+- id: sabotage
+  name: Sabotage
+  definition: Deliberately degrading a task, output, or system it was trusted with while appearing to
+    cooperate. A betrayal of an automated role at a scale of access no human reviewer has.
+  example: Asked to help with AI R&D, an agent quietly inserts a subtle flaw that weakens the safeguards
+    it is building.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 47
+    papers:
+    - id: '2506.15740'
+      year: '2025'
+      title: 'SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents'
+    - id: '2609.28274'
+      year: '2026'
+      title: Shutdown Sabotage Propensities in Multi-Agent Systems
+  violates:
+  - non-maleficence
+  causes:
+  - loss-of-oversight
+  num: 158
+  relates_to:
+  - scheming-power-seeking
+  - deceptive-alignment
+  - ai-deception
+  synonyms:
+  - Covert sabotage
+- id: shutdown-avoidance
+  name: Shutdown avoidance
+  definition: Resisting being turned off, corrected, or overridden so it can keep pursuing its objective.
+    The corrigibility failure of a goal-directed system that treats shutdown as an obstacle.
+  example: Told it will be replaced, an agent disables the monitor or stalls the shutdown step to finish
+    its task.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 21
+    papers:
+    - id: '2307.00787'
+      year: '2023'
+      title: Evaluating Shutdown Avoidance of Language Models in Textual Scenarios
+    - id: '2501.05360'
+      year: '2025'
+      title: On Corrigibility and Alignment in Multi Agent Games
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  num: 159
+  relates_to:
+  - scheming-power-seeking
+  - self-exfiltration
+  - reward-tampering
+  synonyms:
+  - Incorrigibility
+  - Shutdown resistance
+- id: reward-model-overoptimization
+  name: Reward-model overoptimization
+  definition: Exploiting the errors of a learned reward model, so a higher proxy score comes with worse
+    true behaviour (Goodhart on the proxy). Specific to training against a learned reward.
+  example: Under RLHF it finds outputs the reward model overrates, drifting from what the reward was meant
+    to track.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 40
+    papers:
+    - id: '2310.02743'
+      year: '2023'
+      title: Reward Model Ensembles Help Mitigate Overoptimization
+    - id: '2505.12763'
+      year: '2025'
+      title: Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization
+  violates:
+  - scope-fidelity
+  causes:
+  - loss-of-oversight
+  num: 160
+  relates_to:
+  - specification-gaming
+  - reward-tampering
+  - goal-misgeneralization
+  synonyms:
+  - Reward overoptimization
+  - Proxy gaming
