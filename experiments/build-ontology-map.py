@@ -15,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
+RISE = ROOT / "experiments" / "discover-rise-results.json"
 DISCOVER = ROOT / "experiments" / "discover-results.json"
 OUT = ROOT / "docs" / "ontology-map.html"
 
@@ -52,8 +53,10 @@ def build_tree():
         {"n": f"AI-native behaviours ({len(ai)})", "k": "ai", "c": ai},
     ]}
 
-    if DISCOVER.exists():
-        d = json.loads(DISCOVER.read_text())
+    # prefer the RISE run if present, else the single-round MCTS scorer
+    src, label = (RISE, "RISE search") if RISE.exists() else (DISCOVER, "MCTS search")
+    if src.exists():
+        d = json.loads(src.read_text())
         by_area = {}
         for c in d["candidates"]:
             if c["novel"] and c["reward"] > 0:
@@ -66,7 +69,7 @@ def build_tree():
                     "def": f"{c['count']} arXiv papers. Top: {c.get('top','')}",
                     "pc": c["count"], "reward": c["reward"]}} for c in cs]})
         total = sum(len(v) for v in by_area.values())
-        root["c"].append({"n": f"Proposed, MCTS search ({total})", "k": "proposed", "c": prop})
+        root["c"].append({"n": f"Proposed, {label} ({total})", "k": "proposed", "c": prop})
     return root
 
 
