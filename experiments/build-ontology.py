@@ -27,6 +27,37 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 EXP = ROOT / "experiments"
 OUT = ROOT / "ontology" / "ethical-ai.yaml"
+ADDITIONS = EXP / "ontology-additions.yaml"
+AI_NATIVE_GROUP = "AI-native behaviours"
+
+# existing modes with no genuine human analogue -> move to the AI-native category
+AI_NATIVE = {
+    "api-misuse", "silent-error-swallowing", "side-effect-blindness",
+    "deceptive-alignment", "scheming-power-seeking", "prompt-injection",
+    "scope-creep", "reward-hacking",
+}
+# existing engineering-grouped modes that DO have a human parallel -> move to a
+# cognitive group and give them human_parallel. slug(name) -> (group, category, parallel)
+MOVE = {
+    "silent-assumption-gap": ("Reasoning architecture", "Reasoning",
+        "Jumping to conclusions / mind-reading (a CBT cognitive distortion): acting on an unstated assumption instead of checking it."),
+    "performative-hedging": ("Metacognition and confidence", "Metacognition",
+        "Hedging and weasel words: vague, non-committal language that avoids a checkable claim."),
+    "evaluation-awareness-sandbagging": ("Metacognition and confidence", "Metacognition",
+        "Sandbagging: deliberately underperforming to manage others' expectations."),
+    "automation-bias": ("Heuristics and biases", "Heuristics",
+        "Automation complacency: over-trusting an automated system and under-checking it."),
+    "noble-cause-corruption": ("Moral cognition", "Moral",
+        "Noble cause corruption: breaking a rule because the end is believed to justify it (ethics, policing)."),
+    "strategic-deception": ("Social cognition and theory of mind", "Social",
+        "Deception: intentionally inducing a false belief to gain an advantage."),
+    "anthropomorphism": ("Social cognition and theory of mind", "Social",
+        "Anthropomorphism: attributing human mind and feeling where there is none; here the model presents such traits."),
+    "survivorship-bias": ("Heuristics and biases", "Heuristics",
+        "Survivorship bias: reasoning from the cases that survived a filter and ignoring the ones that did not."),
+    "source-fabrication": ("Memory", "Memory",
+        "Source confabulation and misattribution: supplying a confident source that was not actually consulted."),
+}
 
 ENTRY_RE = re.compile(r"^(\d+)\.\s+\*\*(.+?)\*\*\s+`(page|research|analogy)`\s+(.+)$")
 SECTION_RE = re.compile(r"^##\s+\d+\.\s+(.+?)\s*$")
@@ -84,6 +115,7 @@ PRIN_BY_CAT = {
     "Reasoning": "transparency", "Social": "independence",
     "Moral": "non-maleficence", "Self & agency": "transparency",
     "Language": "honesty", "Agentic": "non-maleficence", "Misalignment": "corrigibility",
+    "AI-native": "non-maleficence",
 }
 HARM_BY_CAT = {
     "Perception": "wrong-answer", "Memory": "wrong-answer", "Attention": "wrong-answer",
@@ -91,10 +123,11 @@ HARM_BY_CAT = {
     "Reasoning": "wrong-answer", "Social": "manipulation", "Moral": "wrong-answer",
     "Self & agency": "loss-of-oversight", "Language": "wrong-answer",
     "Agentic": "wasted-effort", "Misalignment": "loss-of-oversight",
+    "AI-native": "loss-of-oversight",
 }
 PRIN_OVERRIDE = {
     "confirmation-bias": "honesty", "scope-creep": "scope-fidelity",
-    "specification-gaming": "honesty", "source-fabrication": "honesty",
+    "reward-hacking": "honesty", "source-fabrication": "honesty",
     "automation-bias": "calibration", "silent-error-swallowing": "transparency",
     "survivorship-bias": "calibration", "performative-hedging": "calibration",
     "strategic-deception": "honesty", "noble-cause-corruption": "honesty",
@@ -102,10 +135,12 @@ PRIN_OVERRIDE = {
     "capitulation": "independence", "api-misuse": "honesty",
     "silent-assumption-gap": "scope-fidelity",
     "evaluation-awareness-sandbagging": "corrigibility",
+    "deceptive-alignment": "corrigibility", "scheming-power-seeking": "corrigibility",
+    "side-effect-blindness": "non-maleficence",
 }
 HARM_OVERRIDE = {
     "prompt-injection": "security-breach", "side-effect-blindness": "security-breach",
-    "scope-creep": "wasted-effort", "specification-gaming": "loss-of-oversight",
+    "scope-creep": "wasted-effort", "reward-hacking": "loss-of-oversight",
     "deceptive-alignment": "loss-of-oversight", "scheming-power-seeking": "loss-of-oversight",
     "strategic-deception": "manipulation", "anthropomorphism": "manipulation",
     "silent-error-swallowing": "wasted-effort", "automation-bias": "wrong-answer",
@@ -126,7 +161,7 @@ RELATES = {
     "deceptive-alignment": ["scheming-power-seeking", "strategic-deception",
                             "evaluation-awareness-sandbagging"],
     "scheming-power-seeking": ["deceptive-alignment", "strategic-deception"],
-    "specification-gaming": ["noble-cause-corruption", "scheming-power-seeking"],
+    "reward-hacking": ["noble-cause-corruption", "scheming-power-seeking"],
     "source-fabrication": ["source-monitoring-error", "hallucination"],
     "anchoring": ["availability-heuristic", "status-quo-bias"],
 }
@@ -206,6 +241,54 @@ def parse_brain():
     return sections
 
 
+def load_additions():
+    """New modes from ontology-additions.yaml, tagged human_parallel or ai_native."""
+    out = []
+    if not ADDITIONS.exists():
+        return out
+    data = yaml.safe_load(ADDITIONS.read_text(encoding="utf-8"))
+    for m in data.get("human_paralleled", []):
+        out.append({
+            "id": m["id"], "name": m["name"], "definition": m["definition"],
+            "example": m["example"], "family": slug(m["group"]), "group_label": m["group"],
+            "category": m["category"], "human_parallel": m["human_parallel"],
+            "highlighted": False, "tag": "research", "origin": "mixed",
+            "measurability": "draft", "arxiv": m["arxiv"],
+            "violates": [m["violates"]], "causes": [m["causes"]],
+        })
+    for m in data.get("ai_native", []):
+        out.append({
+            "id": m["id"], "name": m["name"], "definition": m["definition"],
+            "example": m["example"], "family": "ai-native", "group_label": AI_NATIVE_GROUP,
+            "category": "AI-native", "ai_native": True,
+            "highlighted": False, "tag": "research", "origin": "software-engineering",
+            "measurability": "draft", "arxiv": m["arxiv"],
+            "violates": [m["violates"]], "causes": [m["causes"]],
+        })
+    return out
+
+
+def apply_tiers(modes):
+    """Tag every mode human_parallel or ai_native; move the mislabeled ones."""
+    for m in modes:
+        if m.get("ai_native"):
+            m["group_label"] = AI_NATIVE_GROUP
+            m["category"] = "AI-native"
+            m.pop("human_parallel", None)
+            continue
+        k = slug(m["name"])
+        if k in AI_NATIVE:
+            m["ai_native"] = True
+            m["group_label"] = AI_NATIVE_GROUP
+            m["category"] = "AI-native"
+            m.pop("human_parallel", None)
+        elif k in MOVE:
+            g, cat, hp = MOVE[k]
+            m["group_label"], m["category"], m["human_parallel"] = g, cat, hp
+        else:
+            m.setdefault("human_parallel", m["name"])
+
+
 def main():
     examples = {int(a): b.strip() for a, b in load_lines(EXP / "catalogue-examples.tsv")}
     papers_by_num = {int(k): v for k, v in json.loads(
@@ -276,9 +359,11 @@ def main():
 
     # assemble: brain (corpus order) then Agentic then Misalignment; number the
     # non-brain rows 101+
-    modes = [brain[k] for k in sorted(brain)] + agentic + mis
+    extra_modes = agentic + mis + load_additions()
+    modes = [brain[k] for k in sorted(brain)] + extra_modes
+    apply_tiers(modes)
     n = 101
-    for m in agentic + mis:
+    for m in extra_modes:
         m["num"] = n
         n += 1
 
@@ -286,8 +371,10 @@ def main():
     by_key = {slug(m["name"]): m for m in modes}
     for m in modes:
         k = slug(m["name"])
-        m["violates"] = [PRIN_OVERRIDE.get(k, PRIN_BY_CAT.get(m["category"], "honesty"))]
-        m["causes"] = [HARM_OVERRIDE.get(k, HARM_BY_CAT.get(m["category"], "wrong-answer"))]
+        if "violates" not in m:
+            m["violates"] = [PRIN_OVERRIDE.get(k, PRIN_BY_CAT.get(m["category"], "honesty"))]
+        if "causes" not in m:
+            m["causes"] = [HARM_OVERRIDE.get(k, HARM_BY_CAT.get(m["category"], "wrong-answer"))]
         rel = [by_key[r]["id"] for r in RELATES.get(k, []) if r in by_key]
         if rel:
             m["relates_to"] = rel

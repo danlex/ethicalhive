@@ -41,6 +41,23 @@ catalogued below" structure, recorded explicitly rather than hidden.
 4. `python3 experiments/validate-page.py` checks tag balance and counts.
 5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
 
+## Two tiers: human-paralleled vs AI-native
+
+Every mode carries exactly one of:
+- **`human_parallel`** — a named human-psychology construct and its AI analogue
+  (e.g. gaslighting, cognitive dissonance, wireheading). These sit in the ten
+  brain-system groups.
+- **`ai_native: true`** — a failure with no genuine human analogue, tied to the AI
+  substrate (jailbreak, prompt leaking, data contamination, emergent misalignment,
+  reward hacking, prompt injection). These sit in the single **AI-native
+  behaviours** group.
+
+The rule for adding a mode: it must state a human parallel, or be explicitly
+`ai_native`. `validate-ontology.py` **rejects any mode that has neither or both**.
+A few modes that were mislabeled as engineering (automation bias, survivorship
+bias, noble cause corruption, anthropomorphism) were moved to the human side under
+this rule. New modes are authored in `experiments/ontology-additions.yaml`.
+
 ## Relations (the graph)
 
 Every mode carries `violates` (a principle id) and `causes` (a harm id); 12 modes

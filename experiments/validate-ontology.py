@@ -51,6 +51,11 @@ def main():
             used_harm.add(h)
             if h not in harm_ids:
                 errors.append(f"{mid}: causes unknown harm '{h}'")
+        has_hp = bool(m.get("human_parallel"))
+        has_ai = bool(m.get("ai_native"))
+        if has_hp == has_ai:  # must be exactly one
+            errors.append(f"{mid}: must have exactly one of human_parallel / ai_native "
+                          f"(has human_parallel={has_hp}, ai_native={has_ai})")
         for r in m.get("relates_to", []):
             if r not in mode_ids:
                 errors.append(f"{mid}: relates_to unknown mode '{r}'")

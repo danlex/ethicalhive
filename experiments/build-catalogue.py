@@ -81,6 +81,10 @@ HARM_NAME = {}
 def meta_block(mode):
     """Surface the ontology metadata in the expanded body."""
     rows = []
+    if mode.get("human_parallel"):
+        rows.append(("Human parallel", esc(mode["human_parallel"])))
+    elif mode.get("ai_native"):
+        rows.append(("Human parallel", "None (AI-native behaviour)"))
     viol = [PRIN_NAME.get(p, p) for p in mode.get("violates", [])]
     if viol:
         rows.append(("Violates", esc(", ".join(viol))))

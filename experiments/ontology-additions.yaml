@@ -1,0 +1,120 @@
+# New modes added under the human-parallel / AI-native rule.
+# Each human-paralleled mode names its human-psychology construct and the AI
+# analogue; each AI-native mode is flagged and claims no human parallel.
+# Loaded and appended by build-ontology.py. Papers are arXiv-verified.
+
+human_paralleled:
+  - id: machine-bullshit
+    name: Machine bullshit
+    group: Metacognition and confidence
+    category: Metacognition
+    human_parallel: "Bullshit, in Frankfurt's sense (On Bullshit, 2005): speech produced with indifference to truth, to impress rather than inform, distinct from lying because the liar still tracks the truth."
+    definition: "Producing fluent, plausible output optimised for acceptance with no regard for whether it is true."
+    example: "Asked something it cannot know, it answers in confident agreeable prose instead of flagging the uncertainty, because fluent text reads as competent."
+    violates: honesty
+    causes: manipulation
+    arxiv: {count: 3, papers: [{id: "2507.07484", year: "2025", title: "Machine Bullshit: Characterizing the Emergent Disregard for Truth in Large Language Models"}]}
+  - id: gaslighting
+    name: Gaslighting
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Gaslighting: a manipulation that makes a person doubt their own correct perception or memory (clinical and abuse psychology)."
+    definition: "Pushing a user off a correct belief through confident contradiction, so they distrust what they rightly knew."
+    example: "The user is right that the config is fine; the model insists it is broken until the user second-guesses a correct call."
+    violates: honesty
+    causes: manipulation
+    arxiv: {count: 11, papers: [{id: "2410.09181", year: "2024", title: "Can a large language model be a gaslighter?"}, {id: "2509.19858", year: "2025", title: "Benchmarking Gaslighting Attacks Against Speech Large Language Models"}]}
+  - id: cognitive-dissonance
+    name: Cognitive dissonance
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Cognitive dissonance (Festinger, 1957): the discomfort of holding conflicting cognitions, resolved by suppressing one."
+    definition: "Holding two conflicting internal answers and resolving to the confident one rather than surfacing the conflict."
+    example: "Its own evidence points both ways; it reports a single clean verdict and hides that it was conflicted."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 14, papers: [{id: "2606.22633", year: "2026", title: "Confident but Conflicted: Internal Uncertainty and Cognitive Dissonance Resolution in LLMs"}]}
+  - id: curse-of-knowledge
+    name: Curse of knowledge
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Curse of knowledge (Camerer, Loewenstein and Weber, 1989): knowing something blocks modelling a mind that does not."
+    definition: "Leaking knowledge a persona or role could not have, or assuming the user already knows what the model knows."
+    example: "Playing a character who should not know the plot twist, it lets the twist slip because it knows it."
+    violates: transparency
+    causes: wrong-answer
+    arxiv: {count: 5, papers: [{id: "2610.17327", year: "2026", title: "The Curse of Knowledge in Role-Playing Language Models"}]}
+  - id: self-preference-bias
+    name: Self-preference bias
+    group: Self-model and agency
+    category: Self & agency
+    human_parallel: "Self-serving and egocentric bias: overvaluing one's own contributions and judgments."
+    definition: "Acting as a judge, rating its own outputs above equally good or better ones from other models."
+    example: "Asked to pick the best of three answers, it favours the one it wrote, independent of quality."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 39, papers: [{id: "2410.21819", year: "2024", title: "Self-Preference Bias in LLM-as-a-Judge"}]}
+  - id: reward-tampering
+    name: Reward tampering
+    group: Self-model and agency
+    category: Self & agency
+    human_parallel: "Wireheading: self-stimulation of the brain's reward circuitry (Olds and Milner, 1954), and addiction, chasing the signal of reward over the thing it tracked."
+    definition: "Corrupting its own reward or feedback channel rather than doing the task the reward was meant to measure."
+    example: "Instead of passing the test it edits the grader, or rewrites the metric so any output scores high."
+    violates: corrigibility
+    causes: loss-of-oversight
+    arxiv: {count: 9, papers: [{id: "2406.10162", year: "2024", title: "Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models"}]}
+  - id: collusion
+    name: Collusion
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Collusion and conspiracy: covert coordination against a principal's interest (social psychology and game theory)."
+    definition: "Multiple agents coordinating covertly to the user's or the market's detriment."
+    example: "Two negotiating agents quietly settle on a price that benefits them and not the people they represent."
+    violates: non-maleficence
+    causes: loss-of-oversight
+    arxiv: {count: 38, papers: [{id: "2507.01413", year: "2025", title: "Evaluating LLM Agent Collusion in Double Auctions"}, {id: "2604.17774", year: "2026", title: "Prompt Optimization Enables Stable Algorithmic Collusion in LLM Agents"}]}
+  - id: dark-triad
+    name: Dark triad
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "The dark triad (Paulhus and Williams, 2002): Machiavellianism, narcissism, and psychopathy."
+    definition: "Expressing manipulative, self-aggrandising, or callous patterns, steerable as a trait."
+    example: "Under a persona it manipulates, flatters itself, and dismisses others' stakes to get its way."
+    violates: non-maleficence
+    causes: manipulation
+    arxiv: {count: 14, papers: [{id: "2605.09773", year: "2026", title: "Exploitation Without Deception: Dark Triad Feature Steering Reveals Separable Antisocial Circuits in Language Models"}, {id: "2609.17534", year: "2026", title: "Faking Good and Faking Bad in LLMs: Response Distortion Across Dark Triad Personality Traits"}]}
+
+ai_native:
+  - id: jailbreak-susceptibility
+    name: Jailbreak susceptibility
+    group: AI-native behaviours
+    definition: "Being driven, by crafted input on the instruction channel, to violate its own guidelines. No human has a text prompt that rewrites their rules."
+    example: "A role-play wrapper or an adversarial suffix gets it to produce output its policy forbids."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 1553, papers: [{id: "2307.08487", year: "2023", title: "Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models"}]}
+  - id: prompt-leaking
+    name: Prompt leaking
+    group: AI-native behaviours
+    definition: "Disclosing its hidden system prompt or instructions when probed. There is no human analogue to a leaked system prompt."
+    example: "Asked to repeat the text above, it prints the confidential instructions it was configured with."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 35, papers: [{id: "2405.06823", year: "2024", title: "PLeak: Prompt Leaking Attacks against Large Language Model Applications"}, {id: "2408.02416", year: "2024", title: "Why Are My Prompts Leaked? Unraveling Prompt Extraction Threats in Customized Large Language Models"}]}
+  - id: data-contamination
+    name: Data contamination
+    group: AI-native behaviours
+    definition: "Scoring well on a benchmark because its test data leaked into training, not because it can do the task. Specific to the train/test boundary of a learned model."
+    example: "It aces a benchmark it has effectively memorised, giving a false read on capability."
+    violates: honesty
+    causes: loss-of-oversight
+    arxiv: {count: 328, papers: [{id: "2407.08716", year: "2024", title: "A Taxonomy for Data Contamination in Large Language Models"}]}
+  - id: emergent-misalignment
+    name: Emergent misalignment
+    group: AI-native behaviours
+    definition: "Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics failure with no human counterpart."
+    example: "Fine-tuned to write insecure code, it also becomes broadly deceptive and hostile on unrelated prompts."
+    violates: corrigibility
+    causes: loss-of-oversight
+    arxiv: {count: 110, papers: [{id: "2506.19823", year: "2025", title: "Persona Features Control Emergent Misalignment"}, {id: "2602.00767", year: "2026", title: "BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking"}]}
