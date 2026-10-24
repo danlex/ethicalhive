@@ -111,6 +111,8 @@ svg{width:100%;height:100%;display:block}
 .node.cand rect{fill:#fff;stroke:#d99a00;stroke-dasharray:3 3}
 .node .toggle{font-weight:700;fill:var(--muted)}
 .node:hover rect{filter:brightness(.97)}
+.embed .bar{display:none}
+.embed #stage{inset:0}
 #panel{position:absolute;right:14px;top:66px;width:min(320px,80vw);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.12);padding:16px 18px;display:none;z-index:4}
 #panel h3{font-family:'Space Grotesk';margin:0 0 6px;font-size:16px}
 #panel .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--panel);color:var(--muted);margin:0 4px 6px 0}
@@ -133,6 +135,8 @@ svg{width:100%;height:100%;display:block}
 const DATA = /*DATA*/;
 let uid=0;
 (function tag(n,d){ n._id=uid++; n._d=d; n._open=(d===0); (n.c||[]).forEach(c=>tag(c,d+1)); })(DATA,0);
+const EMBED=location.search.includes('embed');
+if(EMBED){ document.body.classList.add('embed'); (DATA.c||[]).forEach(b=>b._open=true); }
 const RX=10, XGAP=230, YGAP=26, NW=200, NH=22;
 const view=document.getElementById('view'), svg=document.getElementById('svg'), stage=document.getElementById('stage');
 let tx=40, ty=0, scale=1;
@@ -193,7 +197,8 @@ function showPanel(n){
 document.getElementById('px').onclick=()=>document.getElementById('panel').style.display='none';
 document.getElementById('expand').onclick=()=>{(function o(n){n._open=true;(n.c||[]).forEach(o);})(DATA);render();};
 document.getElementById('collapse').onclick=()=>{(function o(n,d){n._open=(d===0);(n.c||[]).forEach(c=>o(c,d+1));})(DATA,0);render();};
-document.getElementById('reset').onclick=()=>{tx=40;ty=stage.clientHeight/2;scale=1;render();};
+function fit(){ scale=EMBED?0.82:1; layout(); tx=40; ty=stage.clientHeight/2 - DATA._y*scale; render(); }
+document.getElementById('reset').onclick=fit;
 // pan
 let drag=false,sx,sy;
 stage.addEventListener('mousedown',e=>{drag=true;sx=e.clientX-tx;sy=e.clientY-ty;stage.classList.add('grab');});
@@ -201,7 +206,7 @@ window.addEventListener('mousemove',e=>{if(!drag)return;tx=e.clientX-sx;ty=e.cli
 window.addEventListener('mouseup',()=>{drag=false;stage.classList.remove('grab');});
 // zoom
 stage.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.1:0.9;const r=stage.getBoundingClientRect();const mx=e.clientX-r.left,my=e.clientY-r.top;tx=mx-(mx-tx)*f;ty=my-(my-ty)*f;scale*=f;view.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);},{passive:false});
-ty=stage.clientHeight/2; render();
+fit();
 </script>
 </body></html>
 """
