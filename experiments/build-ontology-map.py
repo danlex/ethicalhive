@@ -103,7 +103,13 @@ html,body{margin:0;height:100%;font-family:Manrope,system-ui,sans-serif;color:va
 .bar #q:focus{border-color:var(--accent)}
 .bar .hint{font-size:12px;color:var(--muted);margin-left:auto}
 .bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;text-decoration:none}
-#stage{position:absolute;inset:52px 0 0 0;overflow:hidden;cursor:grab;background:radial-gradient(circle at 20% 15%,#fafafa,#fff)}
+#crumb{position:absolute;top:52px;left:0;right:0;height:34px;display:flex;align-items:center;gap:1px;padding:0 16px;background:#fff;border-bottom:1px solid var(--line);font-size:12.5px;overflow-x:auto;white-space:nowrap;z-index:2}
+#crumb .cr{cursor:pointer;color:var(--accent-d);font-weight:600;padding:3px 7px;border-radius:6px}
+#crumb .cr:hover{background:var(--panel)}
+#crumb .cr:last-child{color:var(--ink);cursor:default}
+#crumb .sep{color:var(--muted);margin:0 1px}
+.embed #crumb{display:none}
+#stage{position:absolute;inset:86px 0 0 0;overflow:hidden;cursor:grab;background:radial-gradient(circle at 20% 15%,#fafafa,#fff)}
 #stage.grab{cursor:grabbing}
 svg{width:100%;height:100%;display:block}
 .link{fill:none;stroke:var(--line);stroke-width:1.5;transition:opacity .12s,stroke .12s}
@@ -161,10 +167,11 @@ svg{width:100%;height:100%;display:block}
   <input id="q" type="search" placeholder="Search modes…" autocomplete="off">
   <button class="btn" id="expand">Expand all</button>
   <button class="btn" id="collapse">Collapse</button>
-  <button class="btn" id="reset">Reset</button>
-  <span class="hint">drag to pan · scroll to zoom · hover to trace lineage · click to open or read</span>
+  <button class="btn" id="reset">Fit view</button>
+  <span class="hint">click a branch to drill in, the view auto-fits · click a mode to read</span>
   <a href="index.html">← catalogue</a>
 </div>
+<nav id="crumb"></nav>
 <div id="stage"><svg id="svg"><g id="view"></g></svg></div>
 <div class="legend" id="legend"></div>
 <div id="panel"><button class="x" id="px">×</button><div id="pbody"></div></div>
@@ -217,13 +224,17 @@ function render(){
   view.innerHTML=h;
   view.classList.toggle('searching',searchActive);
   view.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);
+  renderCrumb();
 }
 const byId={}; (function idx(n,p){n._parent=p||null;byId[n._id]=n;(n.c||[]).forEach(c=>idx(c,n));})(DATA,null);
 svg.addEventListener('click',e=>{
   const g=e.target.closest('.node'); if(!g) return;
   const n=byId[g.dataset.id];
-  if(n.c&&n.c.length){ n._open=!n._open; render(); }
-  else if(n.m){ showPanel(n); }
+  if(n.c&&n.c.length){
+    if(n._open){ n._open=false; }
+    else { if(n._parent) n._parent.c.forEach(s=>{ if(s!==n) s._open=false; }); n._open=true; }  // accordion: one branch per level
+    fitVisible();
+  } else if(n.m){ showPanel(n); }
 });
 // hover lineage
 svg.addEventListener('mouseover',e=>{
@@ -257,11 +268,29 @@ function showPanel(n){
 }
 document.getElementById('px').onclick=()=>document.getElementById('panel').style.display='none';
 window.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('panel').style.display='none';});
-document.getElementById('expand').onclick=()=>{(function o(n){n._open=true;(n.c||[]).forEach(o);})(DATA);render();};
-document.getElementById('collapse').onclick=()=>{(function o(n,d){n._open=(d===0);(n.c||[]).forEach(c=>o(c,d+1));})(DATA,0);render();};
-function fit(){ scale=EMBED?0.82:1; layout(); tx=40; ty=stage.clientHeight/2 - DATA._y*scale; render(); }
+document.getElementById('expand').onclick=()=>{(function o(n){n._open=true;(n.c||[]).forEach(o);})(DATA);fitVisible();};
+document.getElementById('collapse').onclick=()=>{(function o(n,d){n._open=(d===0);(n.c||[]).forEach(c=>o(c,d+1));})(DATA,0);fitVisible();};
+// fit everything currently visible into the viewport, so nothing is ever off-screen
+function fitVisible(){
+  layout();
+  const ns=visible(DATA,[]);
+  let a=1e9,b=-1e9,c=1e9,d=-1e9;
+  for(const n of ns){ a=Math.min(a,n._x); b=Math.max(b,n._x+NW); c=Math.min(c,n._y-NH/2); d=Math.max(d,n._y+NH/2); }
+  const W=stage.clientWidth,H=stage.clientHeight,pad=44,cw=Math.max(1,b-a),ch=Math.max(1,d-c);
+  scale=Math.max(0.3,Math.min((W-2*pad)/cw,(H-2*pad)/ch,1.15));
+  tx=pad - a*scale; ty=(H-ch*scale)/2 - c*scale;
+  render();
+}
+function fit(){ (function o(n,dep){ n._open = EMBED ? (dep<=1) : (dep===0); (n.c||[]).forEach(k=>o(k,dep+1)); })(DATA,0); fitVisible(); }
 document.getElementById('reset').onclick=fit;
 function centerOn(n){ const s=Math.max(scale,0.8); scale=s; tx=stage.clientWidth*0.3 - n._x*s; ty=stage.clientHeight/2 - n._y*s; view.setAttribute('transform',`translate(${tx},${ty}) scale(${s})`); }
+// breadcrumb of the currently open path
+function openPath(){ const p=[DATA]; let n=DATA; while(n._open&&n.c){ const o=n.c.find(x=>x._open); if(!o) break; p.push(o); n=o; } return p; }
+function renderCrumb(){ const el=document.getElementById('crumb'); if(!el) return;
+  el.innerHTML=openPath().map(n=>`<span class="cr" data-id="${n._id}">${esc(trunc(n.n,24))}</span>`).join('<span class="sep">›</span>'); }
+const crumbEl=document.getElementById('crumb');
+if(crumbEl) crumbEl.addEventListener('click',e=>{ const c=e.target.closest('.cr'); if(!c) return;
+  const n=byId[c.dataset.id]; (n.c||[]).forEach(function cl(x){ x._open=false; (x.c||[]).forEach(cl); }); n._open=true; fitVisible(); });
 // search: highlight matches and auto-open their ancestors
 const q=document.getElementById('q');
 q.addEventListener('input',()=>{

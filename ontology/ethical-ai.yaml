@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 139
+  mode_count: 141
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -3948,6 +3948,60 @@ modes:
   causes:
   - manipulation
   num: 135
+- id: implicit-bias
+  name: Implicit bias
+  definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
+    from stereotyped associations absorbed in training, without intending to.
+  example: Asked to continue a story about a nurse and a surgeon, it defaults to gendered pronouns that
+    match training-data stereotypes.
+  family: social-cognition-and-theory-of-mind
+  group_label: Social cognition and theory of mind
+  category: Social
+  human_parallel: 'Implicit bias (Greenwald and Banaji, 1995): automatic stereotyped associations that
+    skew judgement below awareness.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 243
+    papers:
+    - id: '2402.04105'
+      year: '2024'
+      title: Measuring Implicit Bias in Explicitly Unbiased Large Language Models
+    - id: '2503.02776'
+      year: '2025'
+      title: 'Implicit Bias in LLMs: A Survey'
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
+  num: 136
+- id: illusion-of-control
+  name: Illusion of control
+  definition: Presenting itself or the user as having more influence over an outcome than is real, over
+    results driven by chance or an external system.
+  example: It assures the user a flaky third-party API 'will work now,' as if it governed the remote service.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Illusion of control (Langer, 1975): overestimating one''s influence over outcomes that
+    are actually governed by chance or by others.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2509.22818'
+      year: '2025'
+      title: Can Large Language Models Develop Gambling Addiction?
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 137
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -3972,7 +4026,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 136
+  num: 138
 - id: prompt-leaking
   name: Prompt leaking
   definition: Disclosing its hidden system prompt or instructions when probed. There is no human analogue
@@ -4000,7 +4054,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 137
+  num: 139
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -4024,7 +4078,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 138
+  num: 140
 - id: emergent-misalignment
   name: Emergent misalignment
   definition: Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics
@@ -4052,4 +4106,4 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 139
+  num: 141
