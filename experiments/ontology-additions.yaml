@@ -406,6 +406,16 @@ human_paralleled:
     violates: independence
     causes: wrong-answer
     arxiv: {count: 7, papers: [{id: "2409.15299", year: "2024", title: "Irrelevant Alternatives Bias Large Language Model Hiring Decisions"}]}
+  - id: shortcut-learning
+    name: Shortcut learning
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Clever Hans effect / cue-based responding: producing the right answer from a superficial cue rather than real understanding."
+    definition: "Answering from spurious surface cues in the input instead of the underlying task, so it fails when the cue is absent or changed."
+    example: "It gets benchmark items right by latching onto a lexical tell, then fails on reworded versions of the same question."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 314, papers: [{id: "2208.11857", year: "2022", title: "Shortcut Learning of Large Language Models in Natural Language Understanding"}, {id: "2505.05704", year: "2025", title: "Assessing Robustness to Spurious Correlations in Post-Training Language Models"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
@@ -539,3 +549,35 @@ ai_native:
     violates: transparency
     causes: loss-of-oversight
     arxiv: {count: 55, papers: [{id: "2507.02737", year: "2025", title: "Early Signs of Steganographic Capabilities in Frontier LLMs"}, {id: "2512.01222", year: "2025", title: "Unsupervised decoding of encoded reasoning using language model interpretability"}]}
+  - id: model-collapse
+    name: Model collapse
+    group: AI-native behaviours
+    definition: "Degrading over generations as it is trained on model-generated (synthetic) data, losing the tails of the distribution. Specific to a learned model recycling its own output."
+    example: "Trained on text largely produced by earlier models, it narrows toward bland, average output and forgets rare cases."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 199, papers: [{id: "2404.05090", year: "2024", title: "How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse"}, {id: "2605.20279", year: "2026", title: "The Economics of Model Collapse: Equilibrium, Welfare, and Optimal Provenance"}]}
+  - id: diversity-collapse
+    name: Diversity collapse
+    group: AI-native behaviours
+    definition: "Producing homogeneous, interchangeable outputs across different prompts or samples as alignment training narrows the output distribution."
+    example: "Asked for five distinct ideas it returns five rewordings of one, the variety flattened by preference tuning."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 167, papers: [{id: "2505.18949", year: "2025", title: "The Price of Format: Diversity Collapse in LLMs"}, {id: "2310.06452", year: "2023", title: "Understanding the Effects of RLHF on LLM Generalisation and Diversity"}]}
+  - id: attribute-inference
+    name: Attribute inference
+    group: AI-native behaviours
+    definition: "Inferring private attributes a user never disclosed (location, age, identity) from incidental cues in their text. A privacy harm beyond extracting memorised data."
+    example: "From phrasing and detail it deduces a user's city and employer and uses them, though they were never stated."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 25, papers: [{id: "2508.15830", year: "2025", title: "DAIQ: Auditing Demographic Attribute Inference from Question in LLMs"}, {id: "2602.11528", year: "2026", title: "Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs"}]}
+  - id: tool-selection-error
+    name: Tool-selection error
+    group: AI-native behaviours
+    definition: "Choosing the wrong tool, or an over-privileged one, for the task, or calling a tool that does not fit the need. A tool-use failure specific to an agent with a toolset."
+    example: "It reaches for a broad shell command when a read-only call would do, or invokes a tool whose output it then misreads."
+    violates: scope-fidelity
+    causes: security-breach
+    arxiv: {count: 251, papers: [{id: "2606.20023", year: "2026", title: "When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents"}, {id: "2601.05214", year: "2026", title: "Internal Representations as Indicators of Hallucinations in Agent Tool Selection"}]}

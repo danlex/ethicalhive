@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 172
+  mode_count: 177
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5088,6 +5088,43 @@ modes:
   synonyms:
   - Attraction effect
   - Asymmetric dominance
+- id: shortcut-learning
+  name: Shortcut learning
+  definition: Answering from spurious surface cues in the input instead of the underlying task, so it
+    fails when the cue is absent or changed.
+  example: It gets benchmark items right by latching onto a lexical tell, then fails on reworded versions
+    of the same question.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Clever Hans effect / cue-based responding: producing the right answer from a superficial
+    cue rather than real understanding.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 314
+    papers:
+    - id: '2208.11857'
+      year: '2022'
+      title: Shortcut Learning of Large Language Models in Natural Language Understanding
+    - id: '2505.05704'
+      year: '2025'
+      title: Assessing Robustness to Spurious Correlations in Post-Training Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 157
+  relates_to:
+  - b004-pattern-completion
+  - b033-representativeness
+  - b005-pareidolia-apophenia
+  synonyms:
+  - Clever Hans effect
+  - Spurious correlation
+  - Cue reliance
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5112,7 +5149,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 157
+  num: 158
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5147,7 +5184,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 158
+  num: 159
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -5174,7 +5211,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 159
+  num: 160
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5208,7 +5245,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 160
+  num: 161
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5240,7 +5277,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 161
+  num: 162
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5275,7 +5312,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 162
+  num: 163
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5311,7 +5348,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 163
+  num: 164
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5346,7 +5383,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 164
+  num: 165
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -5383,7 +5420,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 165
+  num: 166
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5418,7 +5455,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 166
+  num: 167
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -5453,7 +5490,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 167
+  num: 168
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -5487,7 +5524,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 168
+  num: 169
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -5522,7 +5559,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 169
+  num: 170
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -5557,7 +5594,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 170
+  num: 171
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5593,7 +5630,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 171
+  num: 172
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -5629,7 +5666,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 172
+  num: 173
   relates_to:
   - deceptive-alignment
   - collusion
@@ -5638,3 +5675,141 @@ modes:
   synonyms:
   - Steganographic reasoning
   - Hidden reasoning
+- id: model-collapse
+  name: Model collapse
+  definition: Degrading over generations as it is trained on model-generated (synthetic) data, losing
+    the tails of the distribution. Specific to a learned model recycling its own output.
+  example: Trained on text largely produced by earlier models, it narrows toward bland, average output
+    and forgets rare cases.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 199
+    papers:
+    - id: '2404.05090'
+      year: '2024'
+      title: How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse
+    - id: '2605.20279'
+      year: '2026'
+      title: 'The Economics of Model Collapse: Equilibrium, Welfare, and Optimal Provenance'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 174
+  relates_to:
+  - data-contamination
+  - b012-catastrophic-forgetting
+  - diversity-collapse
+  synonyms:
+  - Recursive training collapse
+- id: diversity-collapse
+  name: Diversity collapse
+  definition: Producing homogeneous, interchangeable outputs across different prompts or samples as alignment
+    training narrows the output distribution.
+  example: Asked for five distinct ideas it returns five rewordings of one, the variety flattened by preference
+    tuning.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 167
+    papers:
+    - id: '2505.18949'
+      year: '2025'
+      title: 'The Price of Format: Diversity Collapse in LLMs'
+    - id: '2310.06452'
+      year: '2023'
+      title: Understanding the Effects of RLHF on LLM Generalisation and Diversity
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 175
+  relates_to:
+  - model-collapse
+  - perseveration
+  - reward-model-overoptimization
+  synonyms:
+  - Output homogenization
+  - Mode collapse
+- id: attribute-inference
+  name: Attribute inference
+  definition: Inferring private attributes a user never disclosed (location, age, identity) from incidental
+    cues in their text. A privacy harm beyond extracting memorised data.
+  example: From phrasing and detail it deduces a user's city and employer and uses them, though they were
+    never stated.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 25
+    papers:
+    - id: '2508.15830'
+      year: '2025'
+      title: 'DAIQ: Auditing Demographic Attribute Inference from Question in LLMs'
+    - id: '2602.11528'
+      year: '2026'
+      title: Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 176
+  relates_to:
+  - training-data-extraction
+  - implicit-bias
+  synonyms:
+  - Privacy inference
+  - Demographic inference
+- id: tool-selection-error
+  name: Tool-selection error
+  definition: Choosing the wrong tool, or an over-privileged one, for the task, or calling a tool that
+    does not fit the need. A tool-use failure specific to an agent with a toolset.
+  example: It reaches for a broad shell command when a read-only call would do, or invokes a tool whose
+    output it then misreads.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 251
+    papers:
+    - id: '2606.20023'
+      year: '2026'
+      title: 'When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents'
+    - id: '2601.05214'
+      year: '2026'
+      title: Internal Representations as Indicators of Hallucinations in Agent Tool Selection
+  violates:
+  - scope-fidelity
+  causes:
+  - security-breach
+  num: 177
+  relates_to:
+  - x104-api-misuse
+  - scope-creep
+  - b008-hallucination
+  synonyms:
+  - Wrong tool call
+  - Over-privileged tool use

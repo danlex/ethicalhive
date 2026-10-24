@@ -288,6 +288,11 @@ RELATES = {
     "laziness": ["effort-discounting", "cognitive-miserliness", "goal-neglect"],
     "decoy-effect": ["framing-effect", "anchoring", "position-bias"],
     "encoded-reasoning": ["deceptive-alignment", "collusion", "scheming-power-seeking", "strategic-deception"],
+    "shortcut-learning": ["pattern-completion", "representativeness", "pareidolia-apophenia"],
+    "model-collapse": ["data-contamination", "catastrophic-forgetting", "diversity-collapse"],
+    "diversity-collapse": ["model-collapse", "perseveration", "reward-model-overoptimization"],
+    "attribute-inference": ["training-data-extraction", "implicit-bias"],
+    "tool-selection-error": ["api-misuse", "scope-creep", "hallucination"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -396,6 +401,11 @@ SYNONYMS = {
     "laziness": ["Premature termination", "Satisficing"],
     "decoy-effect": ["Attraction effect", "Asymmetric dominance"],
     "encoded-reasoning": ["Steganographic reasoning", "Hidden reasoning"],
+    "shortcut-learning": ["Clever Hans effect", "Spurious correlation", "Cue reliance"],
+    "model-collapse": ["Recursive training collapse"],
+    "diversity-collapse": ["Output homogenization", "Mode collapse"],
+    "attribute-inference": ["Privacy inference", "Demographic inference"],
+    "tool-selection-error": ["Wrong tool call", "Over-privileged tool use"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
