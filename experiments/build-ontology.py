@@ -262,6 +262,12 @@ RELATES = {
     "moral-licensing": ["moral-disengagement", "noble-cause-corruption"],
     "moral-disengagement": ["moral-licensing", "noble-cause-corruption"],
     "moral-grandstanding": ["social-desirability-bias", "moral-licensing"],
+    "loss-aversion": ["status-quo-bias", "sunk-cost-fallacy", "framing-effect",
+                      "escalation-of-commitment"],
+    "bystander-effect": ["groupthink", "in-group-favouritism", "collusion"],
+    "mere-exposure-effect": ["illusory-truth-effect", "availability-heuristic", "anchoring"],
+    "automation-complacency": ["automation-bias", "effort-discounting", "cognitive-miserliness"],
+    "automation-bias": ["automation-complacency", "anchoring"],
 }
 # alternative names (aka), by name slug; additions may set their own `synonyms`
 SYNONYMS = {
@@ -309,6 +315,10 @@ SYNONYMS = {
     "social-desirability-bias": ["Impression management"],
     "self-serving-bias": ["Self-enhancement bias"],
     "escalation-of-commitment": ["Sunk-cost escalation"],
+    "loss-aversion": ["Prospect theory", "Risk aversion"],
+    "bystander-effect": ["Diffusion of responsibility", "Cognitive loafing"],
+    "mere-exposure-effect": ["Repetition effect", "Familiarity bias"],
+    "automation-complacency": ["Complacency", "Vigilance decrement"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

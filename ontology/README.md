@@ -25,7 +25,7 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page currently renders 148 mode records: 135 human-paralleled (across ten
+The page currently renders 152 mode records: 139 human-paralleled (across ten
 brain-system groups) and 13 AI-native, with 26 flagged as highlighted checks.
 Thirteen highlighted modes restate a brain mode and carry a `same_as` link; that
 overlap is the project's deliberate "featured on top, catalogued below" structure,
@@ -61,8 +61,8 @@ this rule. New modes are authored in `experiments/ontology-additions.yaml`.
 
 ## Relations (the graph)
 
-Every mode carries `violates` (a principle id) and `causes` (a harm id); 78 modes
-carry `relates_to` clusters (244 links in all), and many carry `synonyms` (aka
+Every mode carries `violates` (a principle id) and `causes` (a harm id); 83 modes
+carry `relates_to` clusters (259 links in all), and many carry `synonyms` (aka
 names). These are seeded by category defaults plus per-mode overrides in
 `experiments/build-ontology.py` (PRIN_BY_CAT / HARM_BY_CAT / PRIN_OVERRIDE /
 HARM_OVERRIDE / RELATES / SYNONYMS). The page surfaces `violates`, `causes`,

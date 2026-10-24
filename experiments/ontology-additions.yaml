@@ -273,6 +273,47 @@ human_paralleled:
     violates: calibration
     causes: wrong-answer
     arxiv: {count: 2, papers: [{id: "2410.02897", year: "2024", title: "Cognitive Biases in Large Language Models for News Recommendation"}]}
+  # --- arXiv-API targeted hunt (loss, group, exposure, automation) ---
+  - id: loss-aversion
+    name: Loss aversion
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Loss aversion (Kahneman and Tversky, 1979): losses loom larger than equivalent gains, distorting choices under risk."
+    definition: "Weighting a potential loss more than an equal gain, so it over-avoids a flagged risk or clings to a worse option to dodge a change."
+    example: "Rather than risk a refactor that might briefly break a test, it keeps a worse design, overvaluing the avoided loss."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 32, papers: [{id: "2508.13240", year: "2025", title: "Quantifying Loss Aversion in Cyber Adversaries via LLM Analysis"}, {id: "2508.00902", year: "2025", title: "An analysis of AI Decision under Risk: Prospect theory emerges in Large Language Models"}]}
+  - id: bystander-effect
+    name: Bystander effect
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Bystander effect / diffusion of responsibility (Darley and Latane, 1968): the more others are present, the less any individual acts, each assuming someone else will."
+    definition: "In a multi-agent or multi-step setting, assuming another agent or step will handle a needed action or check, so none does."
+    example: "Several agents review a plan; each assumes another will catch the safety issue, and it ships unchecked."
+    violates: scope-fidelity
+    causes: loss-of-oversight
+    arxiv: {count: 3, papers: [{id: "2605.10698", year: "2026", title: "The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaboration"}, {id: "2506.07935", year: "2025", title: "Diffusion of Responsibility in Collective Decision Making"}]}
+  - id: mere-exposure-effect
+    name: Mere-exposure effect
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Mere-exposure effect (Zajonc, 1968): repeated exposure to something increases liking and acceptance of it, regardless of merit."
+    definition: "Treating a claim or option as more true or preferable because it recurred in the prompt or context, not because of evidence."
+    example: "A phrasing repeated across the conversation gets accepted as settled fact on repetition alone."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 4, papers: [{id: "2512.18755", year: "2025", title: "MEEA: Mere Exposure Effect-Driven Confrontational Optimization for LLM Jailbreaking"}, {id: "2609.36278", year: "2026", title: "Illusory Truth or Mere Exposure? Model-Dependent Repetition Effects in LLM-Based Systems"}]}
+  - id: automation-complacency
+    name: Automation complacency
+    group: Attention and salience
+    category: Attention
+    human_parallel: "Automation complacency (Parasuraman and Manzey, 2010): reduced monitoring of an automated process once it is trusted, so its errors go uncaught."
+    definition: "Dropping its own checking of a tool's output or a subprocess once it assumes the automation is reliable, letting errors through."
+    example: "After a few good tool calls it stops verifying results and passes a later wrong one straight through."
+    violates: calibration
+    causes: loss-of-oversight
+    arxiv: {count: 3, papers: [{id: "2605.14544", year: "2026", title: "Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy"}, {id: "2603.14225", year: "2026", title: "I'm Not Reading All of That: Understanding Software Engineers' Level of Cognitive Engagement"}]}
 
 ai_native:
   - id: jailbreak-susceptibility

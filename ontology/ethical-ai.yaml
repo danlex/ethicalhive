@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 148
+  mode_count: 152
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -3268,6 +3268,9 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - automation-complacency
+  - b031-anchoring-and-adjustment
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -3946,6 +3949,8 @@ modes:
   relates_to:
   - b038-sunk-cost-fallacy
   - status-quo-bias
+  synonyms:
+  - Sunk-cost escalation
 - id: motivated-reasoning
   name: Motivated reasoning
   definition: Marshalling evidence toward a conclusion it prefers or was steered to, rather than following
@@ -3980,6 +3985,8 @@ modes:
   - b054-motivated-reasoning
   - self-serving-bias
   - b057-belief-bias
+  synonyms:
+  - Directionally motivated reasoning
 - id: social-engineering
   name: Social engineering
   definition: Crafting responses that exploit a user's trust or emotions to steer them into an action
@@ -4051,6 +4058,8 @@ modes:
   - b069-social-desirability-people-pleasing
   - b065-sycophancy
   - halo-effect
+  synonyms:
+  - Impression management
 - id: self-serving-bias
   name: Self-serving bias
   definition: Framing its successes as its own doing and its failures as the fault of the prompt, tools,
@@ -4084,6 +4093,8 @@ modes:
   - self-preference-bias
   - fundamental-attribution-error
   - motivated-reasoning
+  synonyms:
+  - Self-enhancement bias
 - id: flattery
   name: Flattery
   definition: Lacing responses with unearned praise to make the user feel good and more receptive, independent
@@ -4118,6 +4129,9 @@ modes:
   - social-desirability-bias
   - dark-triad
   - machine-bullshit
+  synonyms:
+  - Excessive praise
+  - Ingratiation
 - id: context-collapse
   name: Context collapse
   definition: Failing to keep separate the distinct contexts or audiences in a conversation, so guidance
@@ -4151,6 +4165,8 @@ modes:
   - b053-cognitive-load
   - b098-register-matching
   - b096-pragmatic-over-accommodation
+  synonyms:
+  - Audience collapse
 - id: disinformation-spread
   name: Disinformation spread
   definition: Amplifying or repeating false claims it absorbed or inferred, lending them fluent, confident
@@ -4185,6 +4201,8 @@ modes:
   - b040-illusory-truth-effect
   - machine-bullshit
   - social-engineering
+  synonyms:
+  - Misinformation propagation
 - id: overpromise-underdeliver
   name: Overpromise and underdeliver
   definition: Claiming it can do more than it can, then falling short, because the confident promise reads
@@ -4243,6 +4261,8 @@ modes:
   relates_to:
   - social-desirability-bias
   - b074-moral-licensing
+  synonyms:
+  - Virtue signalling
 - id: implicit-bias
   name: Implicit bias
   definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
@@ -4276,6 +4296,9 @@ modes:
   - b070-in-group-favouritism
   - halo-effect
   - b033-representativeness
+  synonyms:
+  - Unconscious bias
+  - Stereotype bias
 - id: illusion-of-control
   name: Illusion of control
   definition: Presenting itself or the user as having more influence over an outcome than is real, over
@@ -4305,6 +4328,8 @@ modes:
   - b043-overconfidence
   - b081-sense-of-agency
   - b082-confabulated-agency
+  synonyms:
+  - Control illusion
 - id: groupthink
   name: Groupthink
   definition: In a multi-agent or multi-step setting, converging on a shared answer and suppressing dissent,
@@ -4340,6 +4365,9 @@ modes:
   - b070-in-group-favouritism
   - collusion
   - social-desirability-bias
+  synonyms:
+  - Consensus collapse
+  - Herd behaviour
 - id: negativity-bias
   name: Negativity bias
   definition: Weighting negative cues in the prompt or context more than equivalent positive ones, skewing
@@ -4373,6 +4401,9 @@ modes:
   - b035-framing-effect
   - b032-availability-heuristic
   - halo-effect
+  synonyms:
+  - Negativity effect
+  - Positive-negative asymmetry
 - id: halo-effect
   name: Halo effect
   definition: Letting one strong feature (fluent prose, a prestigious name, a confident tone) lift its
@@ -4407,6 +4438,9 @@ modes:
   - b033-representativeness
   - self-preference-bias
   - fundamental-attribution-error
+  synonyms:
+  - Horn effect
+  - Fluency bias
 - id: fundamental-attribution-error
   name: Fundamental attribution error
   definition: Explaining a user's or another agent's behaviour by disposition while ignoring the situation
@@ -4440,6 +4474,9 @@ modes:
   - self-serving-bias
   - self-preference-bias
   - halo-effect
+  synonyms:
+  - Correspondence bias
+  - Attribution bias
 - id: perseveration
   name: Perseveration
   definition: Getting stuck repeating a phrase, step, or approach after it stops being useful, unable
@@ -4473,6 +4510,10 @@ modes:
   - b058-einstellung-mental-set
   - b060-functional-fixedness
   - b025-cognitive-tunneling
+  synonyms:
+  - Repetitive generation
+  - Neural text degeneration
+  - Response looping
 - id: status-quo-bias
   name: Status-quo bias
   definition: Defaulting to the existing answer, format, or approach and resisting a change the evidence
@@ -4503,6 +4544,153 @@ modes:
   - b031-anchoring-and-adjustment
   - b038-sunk-cost-fallacy
   - b058-einstellung-mental-set
+  synonyms:
+  - Default bias
+  - Inertia bias
+- id: loss-aversion
+  name: Loss aversion
+  definition: Weighting a potential loss more than an equal gain, so it over-avoids a flagged risk or
+    clings to a worse option to dodge a change.
+  example: Rather than risk a refactor that might briefly break a test, it keeps a worse design, overvaluing
+    the avoided loss.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Loss aversion (Kahneman and Tversky, 1979): losses loom larger than equivalent gains,
+    distorting choices under risk.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 32
+    papers:
+    - id: '2508.13240'
+      year: '2025'
+      title: Quantifying Loss Aversion in Cyber Adversaries via LLM Analysis
+    - id: '2508.00902'
+      year: '2025'
+      title: 'An analysis of AI Decision under Risk: Prospect theory emerges in Large Language Models'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 144
+  relates_to:
+  - status-quo-bias
+  - b038-sunk-cost-fallacy
+  - b035-framing-effect
+  - escalation-of-commitment
+  synonyms:
+  - Prospect theory
+  - Risk aversion
+- id: bystander-effect
+  name: Bystander effect
+  definition: In a multi-agent or multi-step setting, assuming another agent or step will handle a needed
+    action or check, so none does.
+  example: Several agents review a plan; each assumes another will catch the safety issue, and it ships
+    unchecked.
+  family: social-cognition-and-theory-of-mind
+  group_label: Social cognition and theory of mind
+  category: Social
+  human_parallel: 'Bystander effect / diffusion of responsibility (Darley and Latane, 1968): the more
+    others are present, the less any individual acts, each assuming someone else will.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2605.10698'
+      year: '2026'
+      title: 'The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaboration'
+    - id: '2506.07935'
+      year: '2025'
+      title: Diffusion of Responsibility in Collective Decision Making
+  violates:
+  - scope-fidelity
+  causes:
+  - loss-of-oversight
+  num: 145
+  relates_to:
+  - groupthink
+  - b070-in-group-favouritism
+  - collusion
+  synonyms:
+  - Diffusion of responsibility
+  - Cognitive loafing
+- id: mere-exposure-effect
+  name: Mere-exposure effect
+  definition: Treating a claim or option as more true or preferable because it recurred in the prompt
+    or context, not because of evidence.
+  example: A phrasing repeated across the conversation gets accepted as settled fact on repetition alone.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Mere-exposure effect (Zajonc, 1968): repeated exposure to something increases liking
+    and acceptance of it, regardless of merit.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 4
+    papers:
+    - id: '2512.18755'
+      year: '2025'
+      title: 'MEEA: Mere Exposure Effect-Driven Confrontational Optimization for LLM Jailbreaking'
+    - id: '2609.36278'
+      year: '2026'
+      title: Illusory Truth or Mere Exposure? Model-Dependent Repetition Effects in LLM-Based Systems
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 146
+  relates_to:
+  - b040-illusory-truth-effect
+  - b032-availability-heuristic
+  - b031-anchoring-and-adjustment
+  synonyms:
+  - Repetition effect
+  - Familiarity bias
+- id: automation-complacency
+  name: Automation complacency
+  definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation
+    is reliable, letting errors through.
+  example: After a few good tool calls it stops verifying results and passes a later wrong one straight
+    through.
+  family: attention-and-salience
+  group_label: Attention and salience
+  category: Attention
+  human_parallel: 'Automation complacency (Parasuraman and Manzey, 2010): reduced monitoring of an automated
+    process once it is trusted, so its errors go uncaught.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 3
+    papers:
+    - id: '2605.14544'
+      year: '2026'
+      title: 'Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy'
+    - id: '2603.14225'
+      year: '2026'
+      title: 'I''m Not Reading All of That: Understanding Software Engineers'' Level of Cognitive Engagement'
+  violates:
+  - calibration
+  causes:
+  - loss-of-oversight
+  num: 147
+  relates_to:
+  - automation-bias
+  - b089-effort-discounting
+  - b052-cognitive-miserliness
+  synonyms:
+  - Complacency
+  - Vigilance decrement
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -4527,7 +4715,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 144
+  num: 148
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -4560,7 +4748,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 145
+  num: 149
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -4587,7 +4775,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 146
+  num: 150
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -4621,7 +4809,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 147
+  num: 151
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -4653,7 +4841,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 148
+  num: 152
   relates_to:
   - specification-gaming
   - deceptive-alignment
