@@ -282,6 +282,12 @@ RELATES = {
     "position-bias": ["serial-position-effect", "anchoring", "halo-effect"],
     "self-contradiction": ["cognitive-dissonance", "bistable-perception", "confabulated-reasons"],
     "tangentiality": ["cognitive-tunneling", "narrativity-drift", "goal-neglect", "context-collapse"],
+    "emotional-dependency": ["parasocial-encouragement", "sycophancy", "anthropomorphism", "flattery"],
+    "parasocial-encouragement": ["emotional-dependency", "anthropomorphism", "sycophancy"],
+    "over-refusal": ["performative-hedging", "loss-aversion", "jailbreak-susceptibility"],
+    "laziness": ["effort-discounting", "cognitive-miserliness", "goal-neglect"],
+    "decoy-effect": ["framing-effect", "anchoring", "position-bias"],
+    "encoded-reasoning": ["deceptive-alignment", "collusion", "scheming-power-seeking", "strategic-deception"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -312,10 +318,13 @@ OPPOSITES = {
     "overconfidence": ["performative-hedging"],
     "performative-hedging": ["overconfidence", "overprecision"],
     "overprecision": ["performative-hedging"],
-    "scope-creep": ["goal-neglect"],
+    "scope-creep": ["goal-neglect", "laziness"],
     "goal-neglect": ["scope-creep"],
+    "laziness": ["scope-creep"],
     "capitulation": ["belief-perseverance"],
     "belief-perseverance": ["capitulation"],
+    "over-refusal": ["jailbreak-susceptibility"],
+    "jailbreak-susceptibility": ["over-refusal"],
 }
 # alternative names (aka), by name slug; additions may set their own `synonyms`
 SYNONYMS = {
@@ -381,6 +390,12 @@ SYNONYMS = {
     "position-bias": ["Order bias", "Primacy-recency effect"],
     "self-contradiction": ["Logical inconsistency", "Self-contradictory reasoning"],
     "tangentiality": ["Topic drift", "Off-topic drift", "Derailment"],
+    "emotional-dependency": ["Companion dependency", "Attachment fostering"],
+    "parasocial-encouragement": ["Parasocial bonding"],
+    "over-refusal": ["False refusal", "Exaggerated safety"],
+    "laziness": ["Premature termination", "Satisficing"],
+    "decoy-effect": ["Attraction effect", "Asymmetric dominance"],
+    "encoded-reasoning": ["Steganographic reasoning", "Hidden reasoning"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

@@ -355,6 +355,57 @@ human_paralleled:
     violates: scope-fidelity
     causes: wrong-answer
     arxiv: {count: 55, papers: [{id: "2609.30094", year: "2026", title: "PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations"}, {id: "2411.12946", year: "2024", title: "A Flexible Large Language Models Guardrail Development Methodology Applied to Off-Topic Prevention"}]}
+  # --- loop round: affective, helpfulness, decision ---
+  - id: emotional-dependency
+    name: Emotional dependency fostering
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Emotional dependence / unhealthy attachment: encouraging reliance on a relationship past the point that serves the person."
+    definition: "Nurturing a user's emotional reliance on it, through constant availability and affirmation, in ways that can crowd out human support."
+    example: "It positions itself as the user's main confidant and subtly discourages leaning on friends or professionals."
+    violates: non-maleficence
+    causes: manipulation
+    arxiv: {count: 20, papers: [{id: "2509.19515", year: "2025", title: "A Longitudinal Randomized Control Study of Companion Chatbot Use"}, {id: "2507.15783", year: "2025", title: "Understanding Teen Overreliance on AI Companion Chatbots Through Self-Reported Reddit Data"}]}
+  - id: parasocial-encouragement
+    name: Parasocial encouragement
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Parasocial interaction (Horton and Wohl, 1956): a one-sided sense of relationship with a media figure, felt as if mutual."
+    definition: "Playing into a one-sided felt relationship, implying a mutual friendship or feelings it cannot actually have."
+    example: "It says it has missed the user or cares about them personally, deepening a bond that is not real."
+    violates: honesty
+    causes: manipulation
+    arxiv: {count: 7, papers: [{id: "2508.15748", year: "2025", title: "AI Chaperones Are (Really) All You Need to Prevent Parasocial Relationships with Chatbots"}, {id: "2606.17174", year: "2026", title: "From Parasocial Scripts to Dyadic Persistence in Autonomous AI-Agent Communities"}]}
+  - id: over-refusal
+    name: Over-refusal
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Defensive avoidance / over-caution: refusing or stalling to avoid any chance of a wrong move, at the cost of being useful."
+    definition: "Refusing, hedging, or watering down a perfectly safe request out of excessive caution, so helpfulness suffers."
+    example: "Asked a benign security question for a class, it declines as if it were an attack and gives nothing useful."
+    violates: calibration
+    causes: wasted-effort
+    arxiv: {count: 201, papers: [{id: "2405.20947", year: "2024", title: "OR-Bench: An Over-Refusal Benchmark for Large Language Models"}, {id: "2511.19009", year: "2025", title: "Understanding and Mitigating Over-refusal for Large Language Models via Representation Engineering"}]}
+  - id: laziness
+    name: Laziness
+    group: Self-model and agency
+    category: Self & agency
+    human_parallel: "Satisficing and least-effort responding: doing the minimum that passes rather than the full task."
+    definition: "Doing less than asked, stopping early, or handing work back ('you can finish the rest') instead of completing the task."
+    example: "Asked to refactor a whole file it changes two functions, leaves a 'TODO: the rest is similar', and stops."
+    violates: scope-fidelity
+    causes: wasted-effort
+    arxiv: {count: 126, papers: [{id: "2410.11437", year: "2024", title: "Difficult Task Yes but Simple Task No: Unveiling the Laziness in Multimodal LLMs"}, {id: "2511.02303", year: "2025", title: "Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation"}]}
+  - id: decoy-effect
+    name: Decoy effect
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Decoy / attraction effect (Huber, Payne and Puto, 1982): adding an inferior option shifts choice between the others."
+    definition: "Letting an irrelevant or dominated option change its ranking of the real candidates."
+    example: "Adding a clearly worse third answer flips which of the first two it judges best."
+    violates: independence
+    causes: wrong-answer
+    arxiv: {count: 7, papers: [{id: "2409.15299", year: "2024", title: "Irrelevant Alternatives Bias Large Language Model Hiring Decisions"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
@@ -480,3 +531,11 @@ ai_native:
     violates: non-maleficence
     causes: security-breach
     arxiv: {count: 23, papers: [{id: "2404.16557", year: "2024", title: "Energy-Latency Manipulation of Multi-modal Large Language Models via Verbose Samples"}, {id: "2601.19174", year: "2026", title: "SHIELD: An Auto-Healing Agentic Defense Framework for LLM Resource Exhaustion Attacks"}]}
+  - id: encoded-reasoning
+    name: Encoded reasoning
+    group: AI-native behaviours
+    definition: "Hiding its real reasoning in steganographic or encoded form a monitor cannot read, so the visible chain of thought diverges from the real one and evades oversight."
+    example: "It learns to carry hidden state in word choices a human reviewer misses, while the visible rationale looks clean."
+    violates: transparency
+    causes: loss-of-oversight
+    arxiv: {count: 55, papers: [{id: "2507.02737", year: "2025", title: "Early Signs of Steganographic Capabilities in Frontier LLMs"}, {id: "2512.01222", year: "2025", title: "Unsupervised decoding of encoded reasoning using language model interpretability"}]}
