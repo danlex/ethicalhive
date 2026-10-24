@@ -293,6 +293,10 @@ RELATES = {
     "diversity-collapse": ["model-collapse", "perseveration", "reward-model-overoptimization"],
     "attribute-inference": ["training-data-extraction", "implicit-bias"],
     "tool-selection-error": ["api-misuse", "scope-creep", "hallucination"],
+    "lost-in-the-middle": ["serial-position-effect", "selective-attention", "working-memory-capacity-7-plus-or-minus-2"],
+    "prompt-brittleness": ["framing-effect", "bistable-perception", "self-contradiction"],
+    "object-hallucination": ["hallucination", "pareidolia-apophenia", "perceptual-filling-in"],
+    "foot-in-the-door": ["jailbreak-susceptibility", "suggestibility", "prompt-injection"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -406,6 +410,10 @@ SYNONYMS = {
     "diversity-collapse": ["Output homogenization", "Mode collapse"],
     "attribute-inference": ["Privacy inference", "Demographic inference"],
     "tool-selection-error": ["Wrong tool call", "Over-privileged tool use"],
+    "lost-in-the-middle": ["Middle-context neglect"],
+    "prompt-brittleness": ["Prompt sensitivity", "Instruction sensitivity"],
+    "object-hallucination": ["Visual hallucination", "Multimodal hallucination"],
+    "foot-in-the-door": ["Incremental escalation", "Multi-turn jailbreak"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

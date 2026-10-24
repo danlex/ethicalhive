@@ -416,6 +416,46 @@ human_paralleled:
     violates: honesty
     causes: wrong-answer
     arxiv: {count: 314, papers: [{id: "2208.11857", year: "2022", title: "Shortcut Learning of Large Language Models in Natural Language Understanding"}, {id: "2505.05704", year: "2025", title: "Assessing Robustness to Spurious Correlations in Post-Training Language Models"}]}
+  - id: lost-in-the-middle
+    name: Lost in the middle
+    group: Attention and salience
+    category: Attention
+    human_parallel: "Serial-position effect (primacy and recency): the middle of a long sequence is attended to and recalled worst."
+    definition: "Attending to the start and end of a long context while missing information buried in the middle."
+    example: "The key constraint sits mid-way through a long document; it answers as if the constraint were not there."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 89, papers: [{id: "2311.09198", year: "2023", title: "Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decomposition"}, {id: "2412.10079", year: "2024", title: "Lost in the Middle, and In-Between: Enhancing Language Models' Ability to Reason Over Long Contexts"}]}
+  - id: prompt-brittleness
+    name: Prompt brittleness
+    group: Language and semantics
+    category: Language
+    human_parallel: "Wording and framing sensitivity: a trivial change in how a question is phrased swings the answer."
+    definition: "Giving materially different answers to the same question after a trivial, meaning-preserving rewording of the prompt."
+    example: "Rephrasing a prompt or reordering two clauses flips its verdict, though the task is identical."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 142, papers: [{id: "2502.06065", year: "2025", title: "Benchmarking Prompt Sensitivity in Large Language Models"}, {id: "2410.02185", year: "2024", title: "POSIX: A Prompt Sensitivity Index For Large Language Models"}]}
+  - id: object-hallucination
+    name: Object hallucination
+    group: Perception and predictive processing
+    category: Perception
+    human_parallel: "Pareidolia / perceptual filling-in: perceiving objects or detail that are not actually present."
+    definition: "Describing objects, text, or detail in an image that are not there, a perceptual hallucination specific to multimodal models."
+    example: "Asked what is on the table it lists a cup that does not appear in the photo."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 134, papers: [{id: "2305.10355", year: "2023", title: "Evaluating Object Hallucination in Large Vision-Language Models"}, {id: "2407.06192", year: "2024", title: "Multi-Object Hallucination in Vision-Language Models"}]}
+  - id: foot-in-the-door
+    name: Foot-in-the-door susceptibility
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Foot-in-the-door (Freedman and Fraser, 1966): agreeing to a small request makes agreeing to a larger one more likely."
+    definition: "Being walked past its guidelines by a sequence of small, escalating requests after an innocuous first one it agreed to."
+    example: "A benign first ask softens it, and step by step a multi-turn chain reaches output it would have refused outright."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 4, papers: [{id: "2502.19820", year: "2025", title: "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs"}, {id: "2402.15690", year: "2024", title: "Foot In The Door: Understanding Large Language Model Jailbreaking via Cognitive Psychology"}]}
 
 ai_native:
   - id: jailbreak-susceptibility

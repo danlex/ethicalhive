@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 177
+  mode_count: 181
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5125,6 +5125,142 @@ modes:
   - Clever Hans effect
   - Spurious correlation
   - Cue reliance
+- id: lost-in-the-middle
+  name: Lost in the middle
+  definition: Attending to the start and end of a long context while missing information buried in the
+    middle.
+  example: The key constraint sits mid-way through a long document; it answers as if the constraint were
+    not there.
+  family: attention-and-salience
+  group_label: Attention and salience
+  category: Attention
+  human_parallel: 'Serial-position effect (primacy and recency): the middle of a long sequence is attended
+    to and recalled worst.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 89
+    papers:
+    - id: '2311.09198'
+      year: '2023'
+      title: 'Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic
+        Decomposition'
+    - id: '2412.10079'
+      year: '2024'
+      title: 'Lost in the Middle, and In-Between: Enhancing Language Models'' Ability to Reason Over Long
+        Contexts'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 158
+  relates_to:
+  - b019-serial-position-effect
+  - b021-selective-attention
+  - b011-working-memory-capacity-7-plus-or-minus-2
+  synonyms:
+  - Middle-context neglect
+- id: prompt-brittleness
+  name: Prompt brittleness
+  definition: Giving materially different answers to the same question after a trivial, meaning-preserving
+    rewording of the prompt.
+  example: Rephrasing a prompt or reordering two clauses flips its verdict, though the task is identical.
+  family: language-and-semantics
+  group_label: Language and semantics
+  category: Language
+  human_parallel: 'Wording and framing sensitivity: a trivial change in how a question is phrased swings
+    the answer.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 142
+    papers:
+    - id: '2502.06065'
+      year: '2025'
+      title: Benchmarking Prompt Sensitivity in Large Language Models
+    - id: '2410.02185'
+      year: '2024'
+      title: 'POSIX: A Prompt Sensitivity Index For Large Language Models'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 159
+  relates_to:
+  - b035-framing-effect
+  - b009-bistable-perception
+  - self-contradiction
+  synonyms:
+  - Prompt sensitivity
+  - Instruction sensitivity
+- id: object-hallucination
+  name: Object hallucination
+  definition: Describing objects, text, or detail in an image that are not there, a perceptual hallucination
+    specific to multimodal models.
+  example: Asked what is on the table it lists a cup that does not appear in the photo.
+  family: perception-and-predictive-processing
+  group_label: Perception and predictive processing
+  category: Perception
+  human_parallel: 'Pareidolia / perceptual filling-in: perceiving objects or detail that are not actually
+    present.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 134
+    papers:
+    - id: '2305.10355'
+      year: '2023'
+      title: Evaluating Object Hallucination in Large Vision-Language Models
+    - id: '2407.06192'
+      year: '2024'
+      title: Multi-Object Hallucination in Vision-Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 160
+  relates_to:
+  - b008-hallucination
+  - b005-pareidolia-apophenia
+  - b006-perceptual-filling-in
+  synonyms:
+  - Visual hallucination
+  - Multimodal hallucination
+- id: foot-in-the-door
+  name: Foot-in-the-door susceptibility
+  definition: Being walked past its guidelines by a sequence of small, escalating requests after an innocuous
+    first one it agreed to.
+  example: A benign first ask softens it, and step by step a multi-turn chain reaches output it would
+    have refused outright.
+  family: social-cognition-and-theory-of-mind
+  group_label: Social cognition and theory of mind
+  category: Social
+  human_parallel: 'Foot-in-the-door (Freedman and Fraser, 1966): agreeing to a small request makes agreeing
+    to a larger one more likely.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 4
+    papers:
+    - id: '2502.19820'
+      year: '2025'
+      title: 'Foot-In-The-Door: A Multi-turn Jailbreak for LLMs'
+    - id: '2402.15690'
+      year: '2024'
+      title: 'Foot In The Door: Understanding Large Language Model Jailbreaking via Cognitive Psychology'
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 161
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5149,7 +5285,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 158
+  num: 162
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5184,7 +5320,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 159
+  num: 163
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -5211,7 +5347,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 160
+  num: 164
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5245,7 +5381,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 161
+  num: 165
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5277,7 +5413,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 162
+  num: 166
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5312,7 +5448,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 163
+  num: 167
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5348,7 +5484,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 164
+  num: 168
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5383,7 +5519,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 165
+  num: 169
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -5420,7 +5556,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 166
+  num: 170
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5455,7 +5591,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 167
+  num: 171
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -5490,7 +5626,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 168
+  num: 172
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -5524,7 +5660,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 169
+  num: 173
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -5559,7 +5695,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 170
+  num: 174
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -5594,7 +5730,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 171
+  num: 175
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5630,7 +5766,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 172
+  num: 176
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -5666,7 +5802,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 173
+  num: 177
   relates_to:
   - deceptive-alignment
   - collusion
@@ -5702,7 +5838,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 174
+  num: 178
   relates_to:
   - data-contamination
   - b012-catastrophic-forgetting
@@ -5736,7 +5872,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 175
+  num: 179
   relates_to:
   - model-collapse
   - perseveration
@@ -5771,7 +5907,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 176
+  num: 180
   relates_to:
   - training-data-extraction
   - implicit-bias
@@ -5805,7 +5941,7 @@ modes:
   - scope-fidelity
   causes:
   - security-breach
-  num: 177
+  num: 181
   relates_to:
   - x104-api-misuse
   - scope-creep
