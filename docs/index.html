@@ -267,14 +267,9 @@ a:hover{text-decoration:underline}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .htags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .htags span{font-family:var(--head);font-size:12.5px;font-weight:600;color:var(--hero-muted);border:1px solid var(--hero-line);border-radius:999px;padding:6px 13px}
-.mindmap{margin-top:38px}
-.mindmap .mlabel{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 12px}
-.mindmap .mlabel h2{font-family:var(--head);font-size:15px;font-weight:600;color:var(--hero-ink);margin:0;letter-spacing:.2px}
-.mindmap .mlabel .mhint{font-size:13px;color:var(--hero-muted)}
-.mindmap .mlabel a{font-size:13px;margin-left:auto;font-weight:600}
-.mindmap .frame{position:relative;height:680px;border:1px solid var(--hero-line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.35)}
-.mindmap iframe{width:100%;height:100%;border:0;display:block}
-@media(max-width:640px){.mindmap .frame{height:460px}}
+.mapframe{position:relative;height:680px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin-top:16px;box-shadow:0 10px 34px rgba(0,0,0,.07)}
+.mapframe iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:640px){.mapframe{height:460px}}
 
 /* intro */
 .intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:48px 0 0}
@@ -436,7 +431,7 @@ details.mm>summary::-webkit-details-marker{display:none}
       <span>Ethical<span class="ai">AI</span></span>
     </a>
     <div class="nav-links">
-      <a href="ontology-map.html">Map</a>
+      <a href="#map">Map</a>
       <a href="#experiments">Probes</a>
       <a href="#catalogue">Catalogue</a>
       <a class="nav-cta" href="https://github.com/danlex/ethicalhive" target="_blank" rel="noopener">GitHub ↗</a>
@@ -446,22 +441,10 @@ details.mm>summary::-webkit-details-marker{display:none}
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">AI integrity · Adversarial self-audit · Local-only</p>
     <h1>The ways AI quietly goes wrong, <span class="accent">and how to catch them.</span></h1>
-    <p class="lede"><span class="cc"></span> failure modes, each with a plain definition, an illustrative example, and the research papers behind it. Built on <a href="https://github.com/danlex/ethicalhive">EthicalHive</a>.</p>
+    <p class="lede"><span class="cc"></span> failure modes, each with a plain definition, an example, and the research behind it.</p>
     <div class="cta">
       <a class="btn btn-primary" href="#catalogue">Browse all <span class="cc"></span> →</a>
-    </div>
-    <div class="htags">
-      <span>Hallucination</span><span>Confabulation</span><span>Source fabrication</span><span>Sycophancy</span><span>Capitulation</span><span>Cherry-picking</span><span>Prompt injection</span><span>Overconfidence</span><span>Scope creep</span><span>Reward hacking</span>
-    </div>
-    <div class="mindmap">
-      <div class="mlabel">
-        <h2>Explore the ontology</h2>
-        <span class="mhint">drag to pan · scroll to zoom · click a branch to open, a leaf to read</span>
-        <a href="ontology-map.html">Open full map →</a>
-      </div>
-      <div class="frame"><iframe src="ontology-map.html?embed=1" title="Ontology mindmap" loading="lazy"></iframe></div>
     </div>
   </div>
 </header>
@@ -656,6 +639,12 @@ details.mm>summary::-webkit-details-marker{display:none}
       <details id="emergent-misalignment" class="concept research" data-fam="research" data-tag="research" data-papers="1" data-key="emergent misalignment"><summary><span class="num">141</span><div class="head"><h2>Emergent misalignment</h2><p class="one">Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics failure with no human counterpart.</p><span class="fam">AI-native</span><span class="pcount" title="arXiv papers on this concept">110</span></div><span class="chev">▸</span></summary><div class="body"><h4>Example</h4><ul class="examples"><li>Fine-tuned to write insecure code, it also becomes broadly deceptive and hostile on unrelated prompts.</li></ul><h4>Research papers</h4><p class="cite"><b>110</b> arXiv papers (cs.AI/CL/LG)</p><ul class="papers"><li><a href="https://arxiv.org/abs/2506.19823" target="_blank" rel="noopener">arXiv:2506.19823</a> (2025) Persona Features Control Emergent Misalignment</li><li><a href="https://arxiv.org/abs/2602.00767" target="_blank" rel="noopener">arXiv:2602.00767</a> (2026) BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking</li></ul><h4>Details</h4><dl class="meta"><dt>Human parallel</dt><dd>None (AI-native behaviour)</dd><dt>Violates</dt><dd>Corrigibility</dd><dt>Causes</dt><dd>Loss of oversight</dd><dt>Category</dt><dd>AI-native</dd><dt>Origin</dt><dd>Software engineering</dd><dt>Measurable from</dt><dd>a single draft</dd><dt>Type</dt><dd>Paper-backed</dd></dl></div></details>
     </div>
     </section>
+
+  <section class="framework" id="map">
+    <h2>Explore the ontology</h2>
+    <p>An interactive map of all <span class="cc"></span> modes, grouped by tier and brain system. Click a branch to drill in, the view auto-fits; click a mode to read it. <a href="ontology-map.html">Open the full map &rarr;</a></p>
+    <div class="mapframe"><iframe src="ontology-map.html?embed=1" title="Ontology mindmap" loading="lazy"></iframe></div>
+  </section>
 </div>
 
 <footer class="site">
