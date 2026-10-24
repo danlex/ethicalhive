@@ -137,8 +137,6 @@ def inline_fragment(meta, root_li):
         '<button class="mm-collapse">Collapse</button>'
         '<a href="ontology-map.html">Full map ↗</a></div>'
         f'<div class="mm-stage"><ul class="tree">{root_li}</ul></div>'
-        '<div class="mm-panel"><button class="mm-close">×</button>'
-        '<div class="mm-pbody"></div></div>'
         '</div>')
     style = "<style>\n" + INLINE_STYLE + "\n</style>"
     script = "<script>\n" + INLINE_JS.replace("/*MMMETA*/", json.dumps(meta)) + "\n</script>"
@@ -335,17 +333,15 @@ document.getElementById('legend').innerHTML=
 
 
 INLINE_STYLE = r"""
-.mm{position:relative;height:660px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.07);font-size:13.5px;color:var(--ink);margin-top:14px}
+.mm{font-size:13.5px;color:var(--ink);margin-top:14px}
 .mm *{box-sizing:border-box}
-.mm .mm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line);background:#fff}
-.mm .mm-bar input{font-family:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;width:220px;outline:none}
+.mm .mm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+.mm .mm-bar input{font-family:inherit;font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;width:240px;outline:none}
 .mm .mm-bar input:focus{border-color:var(--accent)}
-.mm .mm-bar button{font-size:12.5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
+.mm .mm-bar button{font-size:12.5px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
 .mm .mm-bar button:hover{background:var(--panel)}
 .mm .mm-bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;margin-left:auto;text-decoration:none}
-.mm .mm-stage{position:absolute;inset:47px 0 0 0;overflow:auto;padding:16px 20px 36px}
 .mm ul.tree,.mm .tree ul{list-style:none;margin:0;padding:0}
-.mm .tree{width:max-content;min-width:100%}
 .mm .tree ul{margin-left:15px;position:relative}
 .mm .tree li{position:relative;padding-left:18px}
 .mm .tree li::before{content:"";position:absolute;left:0;top:0;height:100%;border-left:1px solid var(--line)}
@@ -375,18 +371,15 @@ INLINE_STYLE = r"""
 .mm .mode.flag>.row>.pill{border-color:#d98b7a;border-width:1.6px}
 .mm .cand>.row>.pill{border-style:dashed;border-color:#dcc08a}
 .mm .hit>.row>.pill{outline:2px solid var(--accent);outline-offset:1px}
-.mm .mm-panel{position:absolute;right:12px;top:55px;width:min(340px,82%);max-height:calc(100% - 70px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 48px rgba(0,0,0,.16);padding:15px 17px 17px;display:none}
-.mm .mm-panel .ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:9px}
-.mm .mm-panel h3{font-family:var(--head,'Space Grotesk');margin:0 0 9px;font-size:17px;line-height:1.2;padding-right:18px}
-.mm .mm-panel .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:var(--panel);color:#444;margin:0 4px 6px 0}
-.mm .mm-panel .tag .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.mm .mm-panel p{font-size:13px;margin:9px 0 0;line-height:1.5}
-.mm .mm-panel .sec{margin:11px 0 0;padding-top:10px;border-top:1px solid var(--line)}
-.mm .mm-panel .sec .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;color:var(--muted);font-weight:600}
-.mm .mm-panel .sec p{margin:0}
-.mm .mm-panel .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:10px}
-.mm .mm-panel .mm-close{position:absolute;right:10px;top:7px;cursor:pointer;color:var(--muted);border:none;background:none;font-size:20px;line-height:1}
-@media(max-width:640px){.mm{height:480px}}
+.mm .mm-detail{margin:3px 0 7px;padding:10px 14px;border-left:3px solid var(--line);background:#fcfbfa;border-radius:0 8px 8px 0;max-width:640px}
+.mm .mm-detail .ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 9px;border-radius:999px;margin-bottom:7px}
+.mm .mm-detail .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#444;margin:0 4px 5px 0}
+.mm .mm-detail .tag .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.mm .mm-detail p{font-size:13px;margin:7px 0 0;line-height:1.5}
+.mm .mm-detail .sec{margin:9px 0 0}
+.mm .mm-detail .sec .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:1px;color:var(--muted);font-weight:600}
+.mm .mm-detail .sec p{margin:0}
+.mm .mm-detail .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px}
 """
 
 INLINE_JS = r"""(function(){
@@ -395,7 +388,7 @@ INLINE_JS = r"""(function(){
   const PRIN={honesty:'#6f9bf0',calibration:'#4fb985','non-maleficence':'#e07a6c','scope-fidelity':'#d99a3f',independence:'#9b78d6',transparency:'#48b4ca',corrigibility:'#d873b0'};
   function pcol(n){return PRIN[(n||'').toLowerCase()]||'#cfcfcf';}
   function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-  const tree=mm.querySelector('.tree'), panel=mm.querySelector('.mm-panel'), pbody=mm.querySelector('.mm-pbody');
+  const tree=mm.querySelector('.tree');
   function defaultView(){
     tree.querySelectorAll('li.branch').forEach(li=>li.classList.add('collapsed'));
     tree.querySelectorAll(':scope>li').forEach(li=>li.classList.remove('collapsed'));
@@ -407,32 +400,34 @@ INLINE_JS = r"""(function(){
     if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
     if(e.target.closest('.pill')){
       if(li.classList.contains('branch')) li.classList.toggle('collapsed');
-      else showPanel(li.dataset.id);
+      else toggleDetail(li);
     }
   });
-  function showPanel(id){
-    const m=META[id]; if(!m) return; let t='';
+  function detailHTML(m){
     if(!('pr' in m)){
-      t=`<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
-       +`<h3>${esc(m.n)}</h3>`
+      return `<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
        +`<div class="chips"><span class="tag">${(m.pc||0).toLocaleString()} arXiv papers</span>${m.reward!=null?`<span class="tag">reward ${m.reward}</span>`:''}</div>`
        +`<p>${esc(m.def)}</p><p class="note">Surfaced by the discovery loop; not yet in the ontology.</p>`;
-    } else {
-      const tier=m.ai?'AI-native':'Human-paralleled';
-      t=`<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
-       +`<h3>${esc(m.n)}</h3>`
-       +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`
-       +`<p>${esc(m.def)}</p>`
-       +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
-       +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
-       +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
-       +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(esc).join(' · ')}</p></div>`:'');
     }
-    pbody.innerHTML=t; panel.style.display='block';
+    const tier=m.ai?'AI-native':'Human-paralleled';
+    return `<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
+     +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`
+     +`<p>${esc(m.def)}</p>`
+     +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
+     +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
+     +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
+     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(esc).join(' · ')}</p></div>`:'');
   }
-  mm.querySelector('.mm-close').onclick=()=>panel.style.display='none';
+  function toggleDetail(li){
+    const existing=li.querySelector(':scope > .mm-detail');
+    tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());  // one open at a time
+    if(existing) return;
+    const m=META[li.dataset.id]; if(!m) return;
+    const d=document.createElement('div'); d.className='mm-detail'; d.innerHTML=detailHTML(m);
+    li.querySelector(':scope > .row').after(d);
+  }
   mm.querySelector('.mm-expand').onclick=()=>tree.querySelectorAll('li.branch').forEach(li=>li.classList.remove('collapsed'));
-  mm.querySelector('.mm-collapse').onclick=defaultView;
+  mm.querySelector('.mm-collapse').onclick=()=>{ tree.querySelectorAll('.mm-detail').forEach(x=>x.remove()); defaultView(); };
   const q=mm.querySelector('.mm-q');
   q.addEventListener('input',()=>{
     const s=q.value.trim().toLowerCase();
@@ -448,7 +443,7 @@ INLINE_JS = r"""(function(){
         while(p && p!==tree){ if(p.tagName==='LI'){ p.classList.remove('hide','collapsed'); } p=p.parentElement; }
       }
     }
-    if(first) first.scrollIntoView({block:'nearest'});
+    if(first) first.scrollIntoView({block:'center'});
   });
 })();"""
 
