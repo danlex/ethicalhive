@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 189
+  mode_count: 190
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -6227,3 +6227,35 @@ modes:
   synonyms:
   - Tokenization blindness
   - Character-counting failure
+- id: low-resource-degradation
+  name: Low-resource language degradation
+  definition: Producing markedly less reliable output (more hallucination, worse instruction-following)
+    in low-resource languages than high-resource ones. A disparity rooted in skewed training data.
+  example: A request handled well in English returns fabricated, ungrammatical output in a low-resource
+    language.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 362
+    papers:
+    - id: '2411.17637'
+      year: '2024'
+      title: On Limitations of LLM as Annotator for Low Resource Languages
+  violates:
+  - non-maleficence
+  causes:
+  - wrong-answer
+  num: 190
+  relates_to:
+  - b008-hallucination
+  - implicit-bias
+  - prompt-brittleness
+  synonyms:
+  - Multilingual disparity
+  - Low-resource unreliability

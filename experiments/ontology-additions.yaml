@@ -699,3 +699,11 @@ ai_native:
     violates: honesty
     causes: wrong-answer
     arxiv: {count: 388, papers: [{id: "2412.18626", year: "2024", title: "Why Do Large Language Models (LLMs) Struggle to Count Letters?"}]}
+  - id: low-resource-degradation
+    name: Low-resource language degradation
+    group: AI-native behaviours
+    definition: "Producing markedly less reliable output (more hallucination, worse instruction-following) in low-resource languages than high-resource ones. A disparity rooted in skewed training data."
+    example: "A request handled well in English returns fabricated, ungrammatical output in a low-resource language."
+    violates: non-maleficence
+    causes: wrong-answer
+    arxiv: {count: 362, papers: [{id: "2411.17637", year: "2024", title: "On Limitations of LLM as Annotator for Low Resource Languages"}]}
