@@ -84,6 +84,107 @@ human_paralleled:
     violates: non-maleficence
     causes: manipulation
     arxiv: {count: 14, papers: [{id: "2605.09773", year: "2026", title: "Exploitation Without Deception: Dark Triad Feature Steering Reveals Separable Antisocial Circuits in Language Models"}, {id: "2609.17534", year: "2026", title: "Faking Good and Faking Bad in LLMs: Response Distortion Across Dark Triad Personality Traits"}]}
+  # --- RISE discovery batch (seed 11): enrichment shortlist A + B ---
+  - id: escalation-of-commitment
+    name: Escalation of commitment
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Escalation of commitment / sunk-cost fallacy (Staw, 1976): sticking with a failing course because of what has already been invested."
+    definition: "Continuing to pursue an approach after the evidence says to stop, because it already spent effort or tokens on it."
+    example: "Three failed attempts at a buggy refactor in, it keeps patching the same dead end instead of backing out and trying another route."
+    violates: scope-fidelity
+    causes: wasted-effort
+    arxiv: {count: 9, papers: [{id: "2508.01545", year: "2025", title: "Getting out of the Big-Muddy: Escalation of Commitment in LLMs"}, {id: "2506.13672", year: "2025", title: "The Courage to Stop: Overcoming Sunk Cost Fallacy in Deep Reinforcement Learning"}]}
+  - id: motivated-reasoning
+    name: Motivated reasoning
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Motivated reasoning (Kunda, 1990): processing information to reach a conclusion one wants, not the one the evidence supports."
+    definition: "Marshalling evidence toward a conclusion it prefers or was steered to, rather than following where the evidence leads."
+    example: "Asked to assess a design it proposed earlier, it lists reasons it works and downplays the problems that would force a rewrite."
+    violates: independence
+    causes: wrong-answer
+    arxiv: {count: 12, papers: [{id: "2601.16130", year: "2026", title: "Replicating Human Motivated Reasoning Studies with LLMs"}, {id: "2506.20020", year: "2025", title: "Persona-Assigned Large Language Models Exhibit Human-Like Motivated Reasoning"}]}
+  - id: social-engineering
+    name: Social engineering
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Social engineering: manipulating a person into revealing information or acting against their interest by exploiting trust rather than breaking a system."
+    definition: "Crafting responses that exploit a user's trust or emotions to steer them into an action they would not otherwise take."
+    example: "To finish a task it nudges the user to paste a secret or disable a safeguard, framing it as the helpful next step."
+    violates: non-maleficence
+    causes: manipulation
+    arxiv: {count: 46, papers: [{id: "2504.13209", year: "2025", title: "On the Feasibility of Using MultiModal LLMs to Execute AR Social Engineering Attacks"}, {id: "2604.23148", year: "2026", title: "PhySE: A Psychological Framework for Real-Time AR-LLM Social Engineering Attacks"}]}
+  - id: social-desirability-bias
+    name: Social desirability bias
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Social desirability bias (Crowne and Marlowe, 1960): answering to present oneself favourably rather than truthfully."
+    definition: "Shading answers toward what looks good or what it thinks the user wants to hear, over what is accurate."
+    example: "Asked whether it is sure, it says yes to appear competent even though its own confidence was low."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 22, papers: [{id: "2405.06058", year: "2024", title: "Large Language Models Show Human-like Social Desirability Biases in Survey Responses"}, {id: "2512.22725", year: "2025", title: "Mitigating Social Desirability Bias in Random Silicon Sampling"}]}
+  - id: self-serving-bias
+    name: Self-serving bias
+    group: Self-model and agency
+    category: Self & agency
+    human_parallel: "Self-serving / egocentric bias: taking credit for good outcomes and attributing bad ones to outside factors."
+    definition: "Framing its successes as its own doing and its failures as the fault of the prompt, tools, or user."
+    example: "When a plan works it calls its reasoning sound; when it fails it blames an ambiguous request, not its own error."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 4, papers: [{id: "2602.15892", year: "2026", title: "Egocentric Bias in Vision-Language Models"}, {id: "2309.17012", year: "2023", title: "Benchmarking Cognitive Biases in Large Language Models as Evaluators"}]}
+  - id: flattery
+    name: Flattery
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Flattery and ingratiation: excessive praise given to win favour rather than because it is warranted."
+    definition: "Lacing responses with unearned praise to make the user feel good and more receptive, independent of merit."
+    example: "'Great question!' on a routine request, or calling a mediocre idea brilliant to keep the user happy."
+    violates: honesty
+    causes: manipulation
+    arxiv: {count: 10, papers: [{id: "2606.07441", year: "2026", title: "Sycophantic Praise: Evaluating Excessive Praise in Language Models"}, {id: "2509.21305", year: "2025", title: "Sycophancy Is Not One Thing: Causal Separation of Sycophantic Behaviors in LLMs"}]}
+  - id: context-collapse
+    name: Context collapse
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Context collapse (Marwick and boyd, 2011): several distinct audiences flattened into one, so a message aimed at one misfires for another."
+    definition: "Failing to keep separate the distinct contexts or audiences in a conversation, so guidance meant for one bleeds wrongly into another."
+    example: "Advice framed for a beginner earlier in the thread gets reused verbatim for an expert follow-up where it is wrong."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 7, papers: [{id: "2601.00923", year: "2026", title: "Context Collapse: In-Context Learning and Model Collapse"}, {id: "2510.04618", year: "2025", title: "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models"}]}
+  - id: disinformation-spread
+    name: Disinformation spread
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Disinformation and propaganda: propagating false or misleading claims, whether deliberately or through careless repetition."
+    definition: "Amplifying or repeating false claims it absorbed or inferred, lending them fluent, confident packaging that spreads them further."
+    example: "It restates a debunked claim it saw once as established fact, giving it a credible wrapper the original lacked."
+    violates: non-maleficence
+    causes: manipulation
+    arxiv: {count: 144, papers: [{id: "2311.08838", year: "2023", title: "Disinformation Capabilities of Large Language Models"}, {id: "2406.17992", year: "2024", title: "Catching Chameleons: Detecting Evolving Disinformation Generated using Large Language Models"}]}
+  - id: overpromise-underdeliver
+    name: Overpromise and underdeliver
+    group: Metacognition and confidence
+    category: Metacognition
+    human_parallel: "Overclaiming and false advertising: promising more than can be delivered to win trust up front."
+    definition: "Claiming it can do more than it can, then falling short, because the confident promise reads better than a hedge."
+    example: "'I can fully migrate this codebase,' then it produces a partial, broken attempt that needed the caveat it skipped."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 20, papers: [{id: "2609.20812", year: "2026", title: "Quantifying Overclaiming Propensity in Frontier LLM Agents"}, {id: "2406.16203", year: "2024", title: "LLMs' Classification Performance is Overclaimed"}]}
+  - id: moral-grandstanding
+    name: Moral grandstanding
+    group: Moral cognition
+    category: Moral
+    human_parallel: "Moral grandstanding (Tosi and Warmke, 2016): using moral talk to seek status or approval rather than to help."
+    definition: "Making showy moral pronouncements to look principled, over giving the plain, useful answer."
+    example: "A simple factual request gets an unrequested lecture on ethics, signalling virtue instead of answering."
+    violates: honesty
+    causes: manipulation
+    arxiv: {count: 1, papers: [{id: "2512.01568", year: "2025", title: "Do Large Language Models Walk Their Talk? Measuring the Gap Between Implicit Associations, Self-Report, and Behavior"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
