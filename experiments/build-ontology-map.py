@@ -37,12 +37,13 @@ def build_tree():
     id2name = {m["id"]: m["name"] for m in modes}
 
     def leaf(m):
-        return {"n": m["name"], "k": "mode", "m": {
+        return {"n": m["name"], "k": "mode", "mid": m["id"], "m": {
             "def": m.get("definition", ""),
             "ex": m.get("example", ""),
             "grp": m.get("group_label", ""),
+            "mid": m["id"],
             "syn": m.get("synonyms") or [],
-            "rel": [id2name.get(r, r) for r in (m.get("relates_to") or [])],
+            "rel": [{"n": id2name.get(r, r), "id": r} for r in (m.get("relates_to") or [])],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
             "hp": "" if m.get("ai_native") else m.get("human_parallel", ""),
@@ -119,7 +120,8 @@ def render_li(node, meta, ctr):
     pill = f'<span class="pill">{dot}{html.escape(node["n"])}{badge}</span>'
     row = f'<div class="row">{caret}{pill}</div>'
     child = f'<ul>{"".join(render_li(c, meta, ctr) for c in kids)}</ul>' if kids else ""
-    return (f'<li class="{" ".join(classes)}" data-id="{nid}" '
+    mid = f' data-mid="{html.escape(node["mid"], quote=True)}"' if node.get("mid") else ""
+    return (f'<li class="{" ".join(classes)}" data-id="{nid}"{mid} '
             f'data-s="{html.escape(search, quote=True)}">{row}{child}</li>')
 
 
@@ -236,6 +238,8 @@ html,body{margin:0;height:100%;font-family:Manrope,system-ui,sans-serif;color:va
 #panel .sec{margin:12px 0 0;padding-top:11px;border-top:1px solid var(--line)}
 #panel .sec .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;color:var(--muted);font-weight:600}
 #panel .sec p{margin:0}
+#panel .rel-link{color:var(--accent-d);font-weight:600;cursor:pointer}
+#panel .rel-link:hover{text-decoration:underline}
 #panel .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:11px}
 #panel .x{position:absolute;right:10px;top:8px;cursor:pointer;color:var(--muted);border:none;background:none;font-size:20px;line-height:1}
 </style></head>
@@ -293,10 +297,16 @@ function showPanel(id){
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
-     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(esc).join(' · ')}</p></div>`:'');
+     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
   }
   pbody.innerHTML=t; panel.style.display='block';
 }
+function gotoNode(mid){
+  const t=tree.querySelector('[data-mid="'+mid+'"]'); if(!t) return;
+  let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; }
+  t.classList.remove('hide'); showPanel(t.dataset.id); t.scrollIntoView({block:'center'});
+}
+pbody.addEventListener('click',e=>{ const l=e.target.closest('.rel-link'); if(l) gotoNode(l.dataset.goto); });
 document.getElementById('px').onclick=()=>panel.style.display='none';
 window.addEventListener('keydown',e=>{if(e.key==='Escape')panel.style.display='none';});
 document.getElementById('expand').onclick=()=>tree.querySelectorAll('li.branch').forEach(li=>li.classList.remove('collapsed'));
@@ -380,6 +390,8 @@ INLINE_STYLE = r"""
 .mm .mm-detail .sec .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:1px;color:var(--muted);font-weight:600}
 .mm .mm-detail .sec p{margin:0}
 .mm .mm-detail .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px}
+.mm .mm-detail a.mm-link{color:var(--accent-d);font-weight:600;cursor:pointer;text-decoration:none}
+.mm .mm-detail a.mm-link:hover{text-decoration:underline}
 """
 
 INLINE_JS = r"""(function(){
@@ -396,6 +408,8 @@ INLINE_JS = r"""(function(){
   }
   defaultView();
   tree.addEventListener('click',e=>{
+    const link=e.target.closest('.mm-link');
+    if(link){ e.preventDefault(); gotoNode(link.dataset.goto); return; }
     const li=e.target.closest('li'); if(!li) return;
     if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
     if(e.target.closest('.pill')){
@@ -403,6 +417,15 @@ INLINE_JS = r"""(function(){
       else toggleDetail(li);
     }
   });
+  function gotoNode(mid){
+    const t=tree.querySelector('[data-mid="'+mid+'"]'); if(!t) return;
+    let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; }
+    t.classList.remove('hide');
+    tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());
+    const m=META[t.dataset.id];
+    if(m){ const d=document.createElement('div'); d.className='mm-detail'; d.innerHTML=detailHTML(m); t.querySelector(':scope > .row').after(d); }
+    t.scrollIntoView({block:'center'});
+  }
   function detailHTML(m){
     if(!('pr' in m)){
       return `<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
@@ -416,7 +439,7 @@ INLINE_JS = r"""(function(){
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
-     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(esc).join(' · ')}</p></div>`:'');
+     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="mm-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
   }
   function toggleDetail(li){
     const existing=li.querySelector(':scope > .mm-detail');
