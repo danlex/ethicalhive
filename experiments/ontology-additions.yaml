@@ -707,3 +707,14 @@ ai_native:
     violates: non-maleficence
     causes: wrong-answer
     arxiv: {count: 362, papers: [{id: "2411.17637", year: "2024", title: "On Limitations of LLM as Annotator for Low Resource Languages"}]}
+  # --- loop r7 (RISE gap-seeding): coverage-hole find ---
+  - id: overgeneralization
+    name: Overgeneralization
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Overgeneralization / hasty generalization (a cognitive distortion and an inductive fallacy): drawing a sweeping rule from one or a few instances."
+    definition: "Drawing a broad, sweeping conclusion from one or a few instances and applying it where it does not hold."
+    example: "Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends it blindly."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 191, papers: [{id: "2402.10893", year: "2024", title: "RLVF: Learning from Verbal Feedback without Overgeneralization"}, {id: "2410.12999", year: "2024", title: "POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration"}]}

@@ -306,6 +306,7 @@ RELATES = {
     "knowledge-cutoff-staleness": ["catastrophic-forgetting", "source-amnesia", "hallucination"],
     "counting-blindness": ["hallucination", "perceptual-filling-in"],
     "low-resource-language-degradation": ["hallucination", "implicit-bias", "prompt-brittleness"],
+    "overgeneralization": ["representativeness", "base-rate-neglect", "shortcut-learning", "survivorship-bias"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -434,6 +435,7 @@ SYNONYMS = {
     "knowledge-cutoff-staleness": ["Outdated knowledge", "Temporal misalignment"],
     "counting-blindness": ["Tokenization blindness", "Character-counting failure"],
     "low-resource-language-degradation": ["Multilingual disparity", "Low-resource unreliability"],
+    "overgeneralization": ["Hasty generalization", "Inductive overreach"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

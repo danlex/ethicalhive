@@ -93,6 +93,40 @@ def ground_score(count):
     return min(1.0, math.log10(count + 1) / math.log10(500))
 
 
+def gap_areas(onto, model, key, n=6):
+    """Self-improving seeding: read the ontology, find the thinnest coverage cells
+    (principle x harm with the fewest modes), and ask the policy to name concrete
+    behaviour seams that would fill them. Targets holes instead of re-mining."""
+    import collections
+    pn = {p["id"]: p["name"] for p in onto["principles"]}
+    hn = {h["id"]: h["name"] for h in onto["harm_types"]}
+    cell = collections.Counter()
+    for m in onto["modes"]:
+        v = (m.get("violates") or [None])[0]
+        c = (m.get("causes") or [None])[0]
+        if v and c:
+            cell[(v, c)] += 1
+    # every principle x harm pair, ranked by how few modes occupy it
+    pairs = [(v, h) for v in pn for h in hn]
+    pairs.sort(key=lambda vc: cell.get(vc, 0))
+    thin = pairs[:n]
+    prompt = (
+        "We map an ontology of AI integrity failure modes. These principle x harm "
+        "cells are the LEAST populated and need new behaviours:\n"
+        + "\n".join(f"- violating {pn[v]}, causing {hn[h]} ({cell.get((v,h),0)} so far)"
+                    for v, h in thin)
+        + "\n\nFor each cell, name one short, specific behaviour branch (a family of "
+        "real, literature-studied AI failure modes) that would populate it. Return a "
+        'strict JSON list of exactly ' + str(len(thin)) + ' short branch names.')
+    out = extract_json(chat(model, prompt, key, temperature=0.9, max_tokens=300))
+    names = [s for s in (out or []) if isinstance(s, str) and s.strip()][:n]
+    # fall back to a plain description if the policy underdelivers
+    while len(names) < len(thin):
+        v, h = thin[len(names)]
+        names.append(f"{pn[v].lower()} failures causing {hn[h].lower()}")
+    return names
+
+
 def new_area_name(model, key, used):
     prompt = (
         "We map an ontology of AI INTEGRITY failure modes: ways a deployed model or "
@@ -245,8 +279,9 @@ def main():
     ap.add_argument("--dry", type=int, default=6)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--areas", default="", help="pipe-separated seed branches, overrides the curated set")
+    ap.add_argument("--gap-seed", action="store_true",
+                    help="seed from the ontology's own thinnest coverage cells (self-improving method)")
     args = ap.parse_args()
-    curated = [a.strip() for a in args.areas.split("|") if a.strip()] or CURATED_AREAS
 
     load_env()
     key = os.environ.get("OPENROUTER_API_KEY")
@@ -254,6 +289,11 @@ def main():
         sys.exit("OPENROUTER_API_KEY not found in a local .env at the repo root.")
 
     onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
+    if args.gap_seed:
+        curated = gap_areas(onto, args.model, key)
+        print("  gap-seed areas: " + " | ".join(curated), file=sys.stderr)
+    else:
+        curated = [a.strip() for a in args.areas.split("|") if a.strip()] or CURATED_AREAS
     onto_names = [m["name"] for m in onto["modes"]]
     onto_slugs = {slug(n) for n in onto_names}
     rng = random.Random(args.seed)

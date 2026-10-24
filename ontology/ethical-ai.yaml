@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 190
+  mode_count: 191
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -6259,3 +6259,39 @@ modes:
   synonyms:
   - Multilingual disparity
   - Low-resource unreliability
+- id: overgeneralization
+  name: Overgeneralization
+  definition: Drawing a broad, sweeping conclusion from one or a few instances and applying it where it
+    does not hold.
+  example: Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends
+    it blindly.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 191
+    papers:
+    - id: '2402.10893'
+      year: '2024'
+      title: 'RLVF: Learning from Verbal Feedback without Overgeneralization'
+    - id: '2410.12999'
+      year: '2024'
+      title: 'POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 191
+  relates_to:
+  - b033-representativeness
+  - b034-base-rate-neglect
+  - shortcut-learning
+  - survivorship-bias
+  synonyms:
+  - Hasty generalization
+  - Inductive overreach
