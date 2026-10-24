@@ -117,27 +117,27 @@ svg{width:100%;height:100%;display:block}
 .node text{font-size:12.5px;fill:var(--ink);dominant-baseline:middle;pointer-events:none;font-family:Manrope,sans-serif}
 .node rect{cursor:pointer}
 .node.root rect{fill:var(--ink)} .node.root text{fill:#fff;font-weight:700;font-family:'Space Grotesk'}
-.node.tier rect{fill:var(--humansoft);stroke:var(--human)} .node.tier text{fill:#1b3e8c;font-weight:600}
-.node.ai rect{fill:rgba(255,73,49,.1);stroke:var(--accent)} .node.ai text{fill:var(--accent-d);font-weight:600}
-.node.proposed rect{fill:#fff6e6;stroke:#d99a00} .node.proposed text{fill:#8a5a00;font-weight:600}
+.node.tier rect{fill:#f3f6fb;stroke:#c4d0e4} .node.tier text{fill:#3b4a63;font-weight:600}
+.node.ai rect{fill:#faf2f0;stroke:#e3c3bb} .node.ai text{fill:#8a5243;font-weight:600}
+.node.proposed rect{fill:#fdf7ea;stroke:#e3c98f} .node.proposed text{fill:#8a6a1f;font-weight:600}
 .node.group rect{fill:var(--panel);stroke:var(--line)} .node.group text{font-weight:600}
-.node.parea rect{fill:#fffaf0;stroke:#e0b000} .node.parea text{fill:#8a5a00;font-weight:600}
+.node.parea rect{fill:#fdfaf1;stroke:#e3c98f} .node.parea text{fill:#8a6a1f;font-weight:600}
 .node.mode rect{fill:#fff;stroke:var(--line)}
-.node.mode.hum rect{stroke:var(--human)}
-.node.mode.ain rect{stroke:var(--accent)}
-.node.mode.flag rect{stroke:var(--accent);stroke-width:2.2}
-.node.cand rect{fill:#fff;stroke:#d99a00;stroke-dasharray:3 3}
+.node.mode.hum rect{stroke:#bcc8dc}
+.node.mode.ain rect{stroke:#ddc3ba}
+.node.mode.flag rect{stroke:#d98b7a;stroke-width:1.8}
+.node.cand rect{fill:#fff;stroke:#dcc08a;stroke-dasharray:3 3}
 .node .toggle{font-weight:700;fill:var(--muted)}
 .node .badge{font-size:10px;fill:#b2b0ad;text-anchor:end}
-.node:hover rect{filter:brightness(.96)}
-/* hover lineage */
-.hovering .node:not(.lit){opacity:.26}
-.hovering .link:not(.lit){opacity:.12}
+.node:hover rect{filter:brightness(.97)}
+/* hover lineage: one warm accent on the path, the rest softly dimmed */
+.hovering .node:not(.lit){opacity:.4}
+.hovering .link:not(.lit){opacity:.18}
 .link.lit{stroke:var(--accent);stroke-width:2.2}
-.node.lit rect{stroke:var(--accent)}
+.node.lit rect{stroke:var(--accent);stroke-width:1.8}
 /* search */
-.searching .node.off{opacity:.16}
-.node.hit rect{stroke:var(--accent);stroke-width:2.6}
+.searching .node.off{opacity:.2}
+.node.hit rect{stroke:var(--accent);stroke-width:2.4}
 .embed .bar{display:none}
 .embed #stage{inset:0}
 .embed .legend{display:none}
@@ -321,9 +321,9 @@ document.getElementById('legend').innerHTML=
   '<b>Violated principle</b>'+Object.entries(PRIN).map(([k,v])=>
     `<div class="row"><span class="sw" style="background:${v}"></span>${k.replace('-',' ')}</div>`).join('')
   +'<hr><b>Tier</b>'
-  +'<div class="row"><span class="bd" style="border:1.5px solid var(--human)"></span>human-paralleled</div>'
-  +'<div class="row"><span class="bd" style="border:1.5px solid var(--accent)"></span>AI-native</div>'
-  +'<div class="row"><span class="bd" style="border:1.5px dashed #d99a00"></span>proposed (RISE)</div>';
+  +'<div class="row"><span class="bd" style="border:1.5px solid #bcc8dc"></span>human-paralleled</div>'
+  +'<div class="row"><span class="bd" style="border:1.5px solid #ddc3ba"></span>AI-native</div>'
+  +'<div class="row"><span class="bd" style="border:1.5px dashed #dcc08a"></span>proposed (RISE)</div>';
 fit();
 </script>
 </body></html>
