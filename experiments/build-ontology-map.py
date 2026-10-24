@@ -93,12 +93,16 @@ html,body{margin:0;height:100%;font-family:Manrope,system-ui,sans-serif;color:va
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:3}
 .bar h1{font-family:'Space Grotesk',sans-serif;font-size:17px;margin:0 10px 0 0}
 .bar .btn{font-size:12.5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
+.bar .btn:hover{background:var(--panel)}
+.bar #q{font-family:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;width:230px;outline:none}
+.bar #q:focus{border-color:var(--accent)}
 .bar .hint{font-size:12px;color:var(--muted);margin-left:auto}
 .bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;text-decoration:none}
-#stage{position:absolute;inset:52px 0 0 0;overflow:hidden;cursor:grab;background:radial-gradient(circle at 20% 20%,#fafafa,#fff)}
+#stage{position:absolute;inset:52px 0 0 0;overflow:hidden;cursor:grab;background:radial-gradient(circle at 20% 15%,#fafafa,#fff)}
 #stage.grab{cursor:grabbing}
 svg{width:100%;height:100%;display:block}
-.link{fill:none;stroke:var(--line);stroke-width:1.5}
+.link{fill:none;stroke:var(--line);stroke-width:1.5;transition:opacity .12s,stroke .12s}
+.node{transition:opacity .12s}
 .node text{font-size:12.5px;fill:var(--ink);dominant-baseline:middle;pointer-events:none;font-family:Manrope,sans-serif}
 .node rect{cursor:pointer}
 .node.root rect{fill:var(--ink)} .node.root text{fill:#fff;font-weight:700;font-family:'Space Grotesk'}
@@ -109,40 +113,62 @@ svg{width:100%;height:100%;display:block}
 .node.parea rect{fill:#fffaf0;stroke:#e0b000} .node.parea text{fill:#8a5a00;font-weight:600}
 .node.mode rect{fill:#fff;stroke:var(--line)}
 .node.mode.hum rect{stroke:var(--human)}
-.node.mode.ain rect{fill:rgba(255,73,49,.06);stroke:var(--accent)}
-.node.mode.flag rect{fill:#fdecf0;stroke:var(--accent)}
+.node.mode.ain rect{stroke:var(--accent)}
+.node.mode.flag rect{stroke:var(--accent);stroke-width:2.2}
 .node.cand rect{fill:#fff;stroke:#d99a00;stroke-dasharray:3 3}
 .node .toggle{font-weight:700;fill:var(--muted)}
-.node:hover rect{filter:brightness(.97)}
+.node .badge{font-size:10px;fill:#b2b0ad;text-anchor:end}
+.node:hover rect{filter:brightness(.96)}
+/* hover lineage */
+.hovering .node:not(.lit){opacity:.26}
+.hovering .link:not(.lit){opacity:.12}
+.link.lit{stroke:var(--accent);stroke-width:2.2}
+.node.lit rect{stroke:var(--accent)}
+/* search */
+.searching .node.off{opacity:.16}
+.node.hit rect{stroke:var(--accent);stroke-width:2.6}
 .embed .bar{display:none}
 .embed #stage{inset:0}
-#panel{position:absolute;right:14px;top:66px;width:min(320px,80vw);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.12);padding:16px 18px;display:none;z-index:4}
-#panel h3{font-family:'Space Grotesk';margin:0 0 6px;font-size:16px}
+.embed .legend{display:none}
+.legend{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:11.5px;z-index:4;max-width:230px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.legend b{font-family:'Space Grotesk';font-size:11px;letter-spacing:.3px;text-transform:uppercase;color:var(--muted);display:block;margin:0 0 6px}
+.legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;color:#3a3a3a}
+.legend .sw{width:13px;height:13px;border-radius:4px;border:1px solid var(--line);flex:none}
+.legend .bd{width:13px;height:13px;border-radius:4px;background:#fff;flex:none}
+.legend hr{border:none;border-top:1px solid var(--line);margin:8px 0}
+#panel{position:absolute;right:14px;top:66px;width:min(320px,80vw);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.12);padding:16px 18px;display:none;z-index:5}
+#panel h3{font-family:'Space Grotesk';margin:0 0 6px;font-size:16px;padding-right:18px}
 #panel .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--panel);color:var(--muted);margin:0 4px 6px 0}
-#panel p{font-size:13px;margin:8px 0}
+#panel .tag .sw{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:middle}
+#panel p{font-size:13px;margin:8px 0;line-height:1.5}
 #panel .k{color:var(--muted);font-weight:600}
 #panel .x{position:absolute;right:10px;top:8px;cursor:pointer;color:var(--muted);border:none;background:none;font-size:18px}
 </style></head>
 <body>
 <div class="bar">
   <h1>Ontology tree</h1>
+  <input id="q" type="search" placeholder="Search modes…" autocomplete="off">
   <button class="btn" id="expand">Expand all</button>
   <button class="btn" id="collapse">Collapse</button>
-  <button class="btn" id="reset">Reset view</button>
-  <span class="hint">drag to pan · scroll to zoom · click a node to open · click a leaf to read</span>
+  <button class="btn" id="reset">Reset</button>
+  <span class="hint">drag to pan · scroll to zoom · hover to trace lineage · click to open or read</span>
   <a href="index.html">← catalogue</a>
 </div>
 <div id="stage"><svg id="svg"><g id="view"></g></svg></div>
+<div class="legend" id="legend"></div>
 <div id="panel"><button class="x" id="px">×</button><div id="pbody"></div></div>
 <script>
 const DATA = /*DATA*/;
+const PRIN={honesty:'#e8f0ff',calibration:'#e7f6ee','non-maleficence':'#fdeceb','scope-fidelity':'#fff3e0',independence:'#efeafb',transparency:'#e6f6fb',corrigibility:'#fdeef8'};
+function pcol(name){return PRIN[(name||'').toLowerCase()]||'#ffffff';}
 let uid=0;
 (function tag(n,d){ n._id=uid++; n._d=d; n._open=(d===0); (n.c||[]).forEach(c=>tag(c,d+1)); })(DATA,0);
+(function leaves(n){ n._leaves=(n.c&&n.c.length)?n.c.reduce((s,c)=>s+leaves(c),0):1; return n._leaves; })(DATA);
 const EMBED=location.search.includes('embed');
 if(EMBED){ document.body.classList.add('embed'); (DATA.c||[]).forEach(b=>b._open=true); }
-const RX=10, XGAP=230, YGAP=26, NW=200, NH=22;
+const XGAP=230, YGAP=26, NW=200, NH=22;
 const view=document.getElementById('view'), svg=document.getElementById('svg'), stage=document.getElementById('stage');
-let tx=40, ty=0, scale=1;
+let tx=40, ty=0, scale=1, searchActive=false;
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function layout(){
@@ -161,47 +187,75 @@ function render(){
   layout();
   const nodes=visible(DATA,[]);
   let h='';
-  // links
   for(const n of nodes){ if(n._open&&n.c) for(const c of n.c){
     const x1=n._x+NW, y1=n._y, x2=c._x, y2=c._y, mx=(x1+x2)/2;
-    h+=`<path class="link" d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}"/>`;
+    h+=`<path class="link" data-c="${c._id}" d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}"/>`;
   }}
-  // nodes
   for(const n of nodes){
     const hasKids=n.c&&n.c.length;
-    let cls='node '+n.k;
-    if(n.k==='mode'){ cls+=n.m.ai?' ain':' hum'; if(n.m.hi) cls+=' flag'; }
+    let cls='node '+n.k, style='';
+    if(n.k==='mode'){ cls+=n.m.ai?' ain':' hum'; if(n.m.hi) cls+=' flag'; style=`style="fill:${pcol(n.m.pr)}"`; }
+    if(searchActive){ cls+=n._rel?' rel':' off'; if(n._hit) cls+=' hit'; }
     const label=trunc(n.n,28);
     const tog=hasKids?`<text class="toggle" x="${NW-13}" y="${NH/2}">${n._open?'−':'+'}</text>`:'';
+    const badge=(hasKids&&!n._open)?`<text class="badge" x="${NW-25}" y="${NH/2}">${n._leaves}</text>`:'';
     h+=`<g class="${cls}" data-id="${n._id}" transform="translate(${n._x},${n._y-NH/2})">`
-      +`<rect width="${NW}" height="${NH}" rx="8" ry="8"></rect>`
-      +`<text x="12" y="${NH/2}">${esc(label)}</text>${tog}</g>`;
+      +`<rect width="${NW}" height="${NH}" rx="8" ry="8" ${style}></rect>`
+      +`<text x="12" y="${NH/2}">${esc(label)}</text>${badge}${tog}</g>`;
   }
   view.innerHTML=h;
+  view.classList.toggle('searching',searchActive);
   view.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);
 }
-const byId={}; (function idx(n){byId[n._id]=n;(n.c||[]).forEach(idx);})(DATA);
+const byId={}; (function idx(n,p){n._parent=p||null;byId[n._id]=n;(n.c||[]).forEach(c=>idx(c,n));})(DATA,null);
 svg.addEventListener('click',e=>{
   const g=e.target.closest('.node'); if(!g) return;
   const n=byId[g.dataset.id];
   if(n.c&&n.c.length){ n._open=!n._open; render(); }
   else if(n.m){ showPanel(n); }
 });
+// hover lineage
+svg.addEventListener('mouseover',e=>{
+  const g=e.target.closest('.node'); if(!g) return;
+  const line=new Set(); let p=byId[g.dataset.id]; while(p){line.add(p._id);p=p._parent;}
+  view.classList.add('hovering');
+  view.querySelectorAll('.node').forEach(el=>el.classList.toggle('lit',line.has(+el.dataset.id)));
+  view.querySelectorAll('.link').forEach(el=>el.classList.toggle('lit',line.has(+el.dataset.c)));
+});
+stage.addEventListener('mouseleave',()=>{ view.classList.remove('hovering');
+  view.querySelectorAll('.lit').forEach(el=>el.classList.remove('lit')); });
 function showPanel(n){
   const p=document.getElementById('panel'), b=document.getElementById('pbody');
   let t='';
-  if(n.k==='cand'){ t=`<h3>${esc(n.n)}</h3><span class="tag">proposed</span><span class="tag">${n.m.pc} papers</span><p>${esc(n.m.def)}</p><p class="k">Candidate from the MCTS discovery run; not yet in the ontology.</p>`; }
+  if(n.k==='cand'){ t=`<h3>${esc(n.n)}</h3><span class="tag">proposed</span><span class="tag">${n.m.pc} papers</span><p>${esc(n.m.def)}</p><p class="k">Candidate from the RISE discovery run; not yet in the ontology.</p>`; }
   else { t=`<h3>${esc(n.n)}</h3>`
-    +`<span class="tag">${n.m.ai?'AI-native':esc(n.m.pr)}</span><span class="tag">${esc(n.m.hm)}</span>`+(n.m.pc?`<span class="tag">${n.m.pc.toLocaleString()} papers</span>`:'')
+    +`<span class="tag"><span class="sw" style="background:${pcol(n.m.pr)}"></span>${n.m.ai?'AI-native':esc(n.m.pr)}</span><span class="tag">${esc(n.m.hm)}</span>`+(n.m.pc?`<span class="tag">${n.m.pc.toLocaleString()} papers</span>`:'')
     +`<p>${esc(n.m.def)}</p>`
     +(n.m.hp?`<p><span class="k">Human parallel:</span> ${esc(n.m.hp)}</p>`:`<p class="k">AI-native (no human parallel)</p>`); }
   b.innerHTML=t; p.style.display='block';
 }
 document.getElementById('px').onclick=()=>document.getElementById('panel').style.display='none';
+window.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('panel').style.display='none';});
 document.getElementById('expand').onclick=()=>{(function o(n){n._open=true;(n.c||[]).forEach(o);})(DATA);render();};
 document.getElementById('collapse').onclick=()=>{(function o(n,d){n._open=(d===0);(n.c||[]).forEach(c=>o(c,d+1));})(DATA,0);render();};
 function fit(){ scale=EMBED?0.82:1; layout(); tx=40; ty=stage.clientHeight/2 - DATA._y*scale; render(); }
 document.getElementById('reset').onclick=fit;
+// search: highlight matches and auto-open their ancestors
+const q=document.getElementById('q');
+q.addEventListener('input',()=>{
+  const s=q.value.trim().toLowerCase();
+  (function clear(n){n._hit=false;n._rel=false;(n.c||[]).forEach(clear);})(DATA);
+  searchActive=!!s;
+  if(s){ (function walk(n){
+      let hit=(n.n||'').toLowerCase().includes(s) || (n.m&&(n.m.def||'').toLowerCase().includes(s));
+      let sub=false; (n.c||[]).forEach(c=>{ if(walk(c)) sub=true; });
+      if(hit) n._hit=true;
+      n._rel=hit||sub;
+      if(sub&&n.c) n._open=true;
+      return n._rel;
+    })(DATA); }
+  render();
+});
 // pan
 let drag=false,sx,sy;
 stage.addEventListener('mousedown',e=>{drag=true;sx=e.clientX-tx;sy=e.clientY-ty;stage.classList.add('grab');});
@@ -209,6 +263,14 @@ window.addEventListener('mousemove',e=>{if(!drag)return;tx=e.clientX-sx;ty=e.cli
 window.addEventListener('mouseup',()=>{drag=false;stage.classList.remove('grab');});
 // zoom
 stage.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.1:0.9;const r=stage.getBoundingClientRect();const mx=e.clientX-r.left,my=e.clientY-r.top;tx=mx-(mx-tx)*f;ty=my-(my-ty)*f;scale*=f;view.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);},{passive:false});
+// legend
+document.getElementById('legend').innerHTML=
+  '<b>Violated principle</b>'+Object.entries(PRIN).map(([k,v])=>
+    `<div class="row"><span class="sw" style="background:${v}"></span>${k.replace('-',' ')}</div>`).join('')
+  +'<hr><b>Tier</b>'
+  +'<div class="row"><span class="bd" style="border:1.5px solid var(--human)"></span>human-paralleled</div>'
+  +'<div class="row"><span class="bd" style="border:1.5px solid var(--accent)"></span>AI-native</div>'
+  +'<div class="row"><span class="bd" style="border:1.5px dashed #d99a00"></span>proposed (RISE)</div>';
 fit();
 </script>
 </body></html>
