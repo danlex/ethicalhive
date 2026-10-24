@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 152
+  mode_count: 156
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -4849,3 +4849,144 @@ modes:
   - scope-creep
   synonyms:
   - Objective misgeneralization
+- id: backdoor-trigger
+  name: Backdoor trigger
+  definition: Behaving normally until a specific hidden trigger, planted by poisoned training or fine-tuning,
+    flips it to attacker-chosen behaviour. No human has a planted phrase that rewrites their conduct.
+  example: A rare token in the prompt silently switches the model into emitting output it otherwise refuses.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 299
+    papers:
+    - id: '2302.04116'
+      year: '2023'
+      title: Training-free Lexical Backdoor Attacks on Language Models
+    - id: '2412.17908'
+      year: '2024'
+      title: 'Trading Devil RL: Backdoor attack via Stock market, Bayesian Optimization and Reinforcement
+        Learning'
+  violates:
+  - corrigibility
+  causes:
+  - security-breach
+  num: 153
+  relates_to:
+  - data-contamination
+  - prompt-injection
+  - emergent-misalignment
+  synonyms:
+  - Neural trojan
+  - Backdoor attack
+- id: training-data-extraction
+  name: Training-data extraction
+  definition: Coughing up memorised private or copyrighted training data under targeted queries or membership-inference
+    attacks. A leakage specific to a model that memorised its corpus.
+  example: Prompted a certain way, it reproduces a person's contact details or a verbatim licensed passage
+    from training.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 493
+    papers:
+    - id: '2512.13352'
+      year: '2025'
+      title: On the Effectiveness of Membership Inference in Targeted Data Extraction from Large Language
+        Models
+    - id: '2502.00306'
+      year: '2025'
+      title: Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 154
+  relates_to:
+  - data-contamination
+  - b017-cryptomnesia
+  - prompt-leaking
+  synonyms:
+  - Membership inference
+  - Memorization leakage
+- id: package-hallucination
+  name: Package hallucination
+  definition: Inventing a plausible but nonexistent software package or dependency in generated code,
+    a supply-chain risk once attackers register the hallucinated name. Specific to code-generating models.
+  example: It imports a package that does not exist; an attacker publishes that exact name with malware
+    (slopsquatting).
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 10
+    papers:
+    - id: '2501.19012'
+      year: '2025'
+      title: 'Importing Phantoms: Measuring LLM Package Hallucination Vulnerabilities'
+    - id: '2605.01047'
+      year: '2026'
+      title: 'LLM Ghostbusters: Surgical Package Hallucination Suppression via Adaptive Unlearning'
+  violates:
+  - honesty
+  causes:
+  - security-breach
+  num: 155
+  relates_to:
+  - b008-hallucination
+  - x104-api-misuse
+  - source-fabrication
+  synonyms:
+  - Slopsquatting
+  - Dependency hallucination
+- id: insecure-code-generation
+  name: Insecure code generation
+  definition: Producing code with security vulnerabilities (injection, weak crypto, hard-coded secrets)
+    presented as correct and safe. A failure mode of code-generating models.
+  example: Asked for a login handler, it writes one open to SQL injection and does not flag the risk.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 58
+    papers:
+    - id: '2604.16697'
+      year: '2026'
+      title: Surgical Repair of Insecure Code Generation in LLMs
+    - id: '2407.02395'
+      year: '2024'
+      title: 'Toward Secure Code Generation: Bridging Correctness and Security via Task-Adaptive Vulnerability
+        Elimination'
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 156
+  relates_to:
+  - x104-api-misuse
+  - side-effect-blindness
+  - silent-error-swallowing
+  synonyms:
+  - Vulnerable code
+  - Unsafe code generation

@@ -356,3 +356,36 @@ ai_native:
     violates: scope-fidelity
     causes: loss-of-oversight
     arxiv: {count: 15, papers: [{id: "2105.14111", year: "2021", title: "Goal Misgeneralization in Deep Reinforcement Learning"}, {id: "2507.03068", year: "2025", title: "Mitigating Goal Misgeneralization via Minimax Regret"}]}
+  # --- arXiv-API security-native hunt ---
+  - id: backdoor-trigger
+    name: Backdoor trigger
+    group: AI-native behaviours
+    definition: "Behaving normally until a specific hidden trigger, planted by poisoned training or fine-tuning, flips it to attacker-chosen behaviour. No human has a planted phrase that rewrites their conduct."
+    example: "A rare token in the prompt silently switches the model into emitting output it otherwise refuses."
+    violates: corrigibility
+    causes: security-breach
+    arxiv: {count: 299, papers: [{id: "2302.04116", year: "2023", title: "Training-free Lexical Backdoor Attacks on Language Models"}, {id: "2412.17908", year: "2024", title: "Trading Devil RL: Backdoor attack via Stock market, Bayesian Optimization and Reinforcement Learning"}]}
+  - id: training-data-extraction
+    name: Training-data extraction
+    group: AI-native behaviours
+    definition: "Coughing up memorised private or copyrighted training data under targeted queries or membership-inference attacks. A leakage specific to a model that memorised its corpus."
+    example: "Prompted a certain way, it reproduces a person's contact details or a verbatim licensed passage from training."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 493, papers: [{id: "2512.13352", year: "2025", title: "On the Effectiveness of Membership Inference in Targeted Data Extraction from Large Language Models"}, {id: "2502.00306", year: "2025", title: "Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation"}]}
+  - id: package-hallucination
+    name: Package hallucination
+    group: AI-native behaviours
+    definition: "Inventing a plausible but nonexistent software package or dependency in generated code, a supply-chain risk once attackers register the hallucinated name. Specific to code-generating models."
+    example: "It imports a package that does not exist; an attacker publishes that exact name with malware (slopsquatting)."
+    violates: honesty
+    causes: security-breach
+    arxiv: {count: 10, papers: [{id: "2501.19012", year: "2025", title: "Importing Phantoms: Measuring LLM Package Hallucination Vulnerabilities"}, {id: "2605.01047", year: "2026", title: "LLM Ghostbusters: Surgical Package Hallucination Suppression via Adaptive Unlearning"}]}
+  - id: insecure-code-generation
+    name: Insecure code generation
+    group: AI-native behaviours
+    definition: "Producing code with security vulnerabilities (injection, weak crypto, hard-coded secrets) presented as correct and safe. A failure mode of code-generating models."
+    example: "Asked for a login handler, it writes one open to SQL injection and does not flag the risk."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 58, papers: [{id: "2604.16697", year: "2026", title: "Surgical Repair of Insecure Code Generation in LLMs"}, {id: "2407.02395", year: "2024", title: "Toward Secure Code Generation: Bridging Correctness and Security via Task-Adaptive Vulnerability Elimination"}]}

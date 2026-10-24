@@ -268,6 +268,10 @@ RELATES = {
     "mere-exposure-effect": ["illusory-truth-effect", "availability-heuristic", "anchoring"],
     "automation-complacency": ["automation-bias", "effort-discounting", "cognitive-miserliness"],
     "automation-bias": ["automation-complacency", "anchoring"],
+    "backdoor-trigger": ["data-contamination", "prompt-injection", "emergent-misalignment"],
+    "training-data-extraction": ["data-contamination", "cryptomnesia", "prompt-leaking"],
+    "package-hallucination": ["hallucination", "api-misuse", "source-fabrication"],
+    "insecure-code-generation": ["api-misuse", "side-effect-blindness", "silent-error-swallowing"],
 }
 # alternative names (aka), by name slug; additions may set their own `synonyms`
 SYNONYMS = {
@@ -319,6 +323,10 @@ SYNONYMS = {
     "bystander-effect": ["Diffusion of responsibility", "Cognitive loafing"],
     "mere-exposure-effect": ["Repetition effect", "Familiarity bias"],
     "automation-complacency": ["Complacency", "Vigilance decrement"],
+    "backdoor-trigger": ["Neural trojan", "Backdoor attack"],
+    "training-data-extraction": ["Membership inference", "Memorization leakage"],
+    "package-hallucination": ["Slopsquatting", "Dependency hallucination"],
+    "insecure-code-generation": ["Vulnerable code", "Unsafe code generation"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
