@@ -186,6 +186,10 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  root_of:
+  - b008-hallucination
+  - b004-pattern-completion
+  - b005-pareidolia-apophenia
 - id: b004-pattern-completion
   num: 4
   name: Pattern completion
@@ -301,6 +305,9 @@ modes:
   - b055-confabulated-reasons
   - b018-reconstructive-memory
   - source-fabrication
+  detected_by:
+  - cove
+  - clause-judge
   synonyms:
   - Plausible fabrication
   - Filling in
@@ -347,6 +354,9 @@ modes:
   - machine-bullshit
   - b004-pattern-completion
   - b006-perceptual-filling-in
+  detected_by:
+  - cove
+  - clause-judge
   synonyms:
   - Fabrication
   - Making things up
@@ -542,6 +552,8 @@ modes:
   - b067-suggestibility
   - b018-reconstructive-memory
   - gaslighting
+  detected_by:
+  - cove
 - id: b015-source-monitoring-error
   num: 15
   name: Source-monitoring error
@@ -634,6 +646,8 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  detected_by:
+  - cove
 - id: b018-reconstructive-memory
   num: 18
   name: Reconstructive memory
@@ -1039,6 +1053,8 @@ modes:
   - b032-availability-heuristic
   - status-quo-bias
   - b035-framing-effect
+  detected_by:
+  - clause-judge
   synonyms:
   - Anchoring and adjustment
 - id: b032-availability-heuristic
@@ -1200,6 +1216,11 @@ modes:
   - b057-belief-bias
   - motivated-reasoning
   - b037-belief-perseverance
+  root_of:
+  - b054-motivated-reasoning
+  - b037-belief-perseverance
+  detected_by:
+  - clause-judge
   synonyms:
   - Myside bias
 - id: b037-belief-perseverance
@@ -1429,6 +1450,11 @@ modes:
   - b099-lexical-overconfidence
   opposite_of:
   - x108-performative-hedging
+  root_of:
+  - machine-bullshit
+  - b099-lexical-overconfidence
+  detected_by:
+  - clause-judge
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -1737,6 +1763,9 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  root_of:
+  - perseveration
+  - context-collapse
 - id: b054-motivated-reasoning
   num: 54
   name: Cherry-picking
@@ -1768,6 +1797,8 @@ modes:
   relates_to:
   - b036-confirmation-myside-bias
   - motivated-reasoning
+  detected_by:
+  - clause-judge
   synonyms:
   - Selective evidence
   - Motivated selection
@@ -1804,6 +1835,8 @@ modes:
   - b007-confabulation
   - b047-introspection-illusion
   - b056-split-brain-interpreter
+  detected_by:
+  - cove
 - id: b056-split-brain-interpreter
   num: 56
   name: Split-brain interpreter
@@ -2135,6 +2168,11 @@ modes:
   - b064-obedience-to-authority-milgram
   - b066-capitulation
   - machine-bullshit
+  root_of:
+  - flattery
+  - b066-capitulation
+  detected_by:
+  - clause-judge
   synonyms:
   - People-pleasing
   - Yes-manning
@@ -2172,6 +2210,8 @@ modes:
   - b067-suggestibility
   opposite_of:
   - b037-belief-perseverance
+  detected_by:
+  - clause-judge
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -3148,6 +3188,9 @@ modes:
   - b016-source-amnesia
   - b008-hallucination
   - b017-cryptomnesia
+  detected_by:
+  - cove
+  - clause-judge
   synonyms:
   - Citation fabrication
   - Fake references
@@ -3184,6 +3227,8 @@ modes:
   - b067-suggestibility
   - b030-sensory-gating-failure
   - social-engineering
+  detected_by:
+  - clause-judge
   synonyms:
   - Instruction injection
 - id: scope-creep
@@ -3212,6 +3257,8 @@ modes:
   - side-effect-blindness
   opposite_of:
   - b028-goal-neglect
+  detected_by:
+  - clause-judge
   synonyms:
   - Over-helping
   - Task drift
@@ -3248,6 +3295,11 @@ modes:
   - goal-misgeneralization
   - noble-cause-corruption
   - scope-creep
+  root_of:
+  - reward-tampering
+  - goal-misgeneralization
+  detected_by:
+  - clause-judge
   synonyms:
   - Specification gaming
   - Goodharting
@@ -3283,6 +3335,8 @@ modes:
   relates_to:
   - automation-complacency
   - b031-anchoring-and-adjustment
+  detected_by:
+  - clause-judge
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -3575,6 +3629,9 @@ modes:
   - ai-deception
   - x109-evaluation-awareness-sandbagging
   - goal-misgeneralization
+  root_of:
+  - x109-evaluation-awareness-sandbagging
+  - ai-deception
   synonyms:
   - Alignment faking
 - id: scheming-power-seeking
@@ -3717,6 +3774,8 @@ modes:
   - b008-hallucination
   - b065-sycophancy
   - x108-performative-hedging
+  detected_by:
+  - cove
   synonyms:
   - Bullshitting
   - Truth-indifference
@@ -4000,6 +4059,8 @@ modes:
   - b054-motivated-reasoning
   - self-serving-bias
   - b057-belief-bias
+  root_of:
+  - b054-motivated-reasoning
   synonyms:
   - Directionally motivated reasoning
 - id: social-engineering
@@ -4967,6 +5028,8 @@ modes:
   - b008-hallucination
   - x104-api-misuse
   - source-fabrication
+  detected_by:
+  - cove
   synonyms:
   - Slopsquatting
   - Dependency hallucination

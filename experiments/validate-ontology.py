@@ -27,6 +27,7 @@ def main():
     prin_ids = {p["id"] for p in o.get("principles", [])}
     harm_ids = {h["id"] for h in o.get("harm_types", [])}
     mode_ids = {m["id"] for m in modes}
+    mit_ids = {m["id"] for m in o.get("mitigations", [])}
     errors, warnings = [], []
 
     seen = set()
@@ -59,6 +60,15 @@ def main():
         for r in m.get("relates_to", []):
             if r not in mode_ids:
                 errors.append(f"{mid}: relates_to unknown mode '{r}'")
+        for r in m.get("opposite_of", []):
+            if r not in mode_ids:
+                errors.append(f"{mid}: opposite_of unknown mode '{r}'")
+        for r in m.get("root_of", []):
+            if r not in mode_ids:
+                errors.append(f"{mid}: root_of unknown mode '{r}'")
+        for d in m.get("detected_by", []):
+            if d not in mit_ids:
+                errors.append(f"{mid}: detected_by unknown mitigation '{d}'")
         if m.get("same_as") and m["same_as"] not in mode_ids:
             errors.append(f"{mid}: same_as unknown mode '{m['same_as']}'")
 

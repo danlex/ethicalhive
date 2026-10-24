@@ -32,6 +32,7 @@ def build_tree():
     o = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
     pn = {p["id"]: p["name"] for p in o["principles"]}
     hn = {h["id"]: h["name"] for h in o["harm_types"]}
+    mn = {m["id"]: m["name"] for m in o.get("mitigations", [])}
     modes = o["modes"]
 
     id2name = {m["id"]: m["name"] for m in modes}
@@ -45,6 +46,8 @@ def build_tree():
             "syn": m.get("synonyms") or [],
             "rel": [{"n": id2name.get(r, r), "id": r} for r in (m.get("relates_to") or [])],
             "opp": [{"n": id2name.get(r, r), "id": r} for r in (m.get("opposite_of") or [])],
+            "root": [{"n": id2name.get(r, r), "id": r} for r in (m.get("root_of") or [])],
+            "det": [mn.get(d, d) for d in (m.get("detected_by") or [])],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
             "hp": "" if m.get("ai_native") else m.get("human_parallel", ""),
@@ -303,7 +306,9 @@ function showPanel(id){
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
-     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
+     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.root&&m.root.length?`<div class="sec"><span class="k">Root of</span><p>${m.root.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.det&&m.det.length?`<div class="sec"><span class="k">Detected by</span><p>${m.det.map(esc).join(', ')}</p></div>`:'');
   }
   pbody.innerHTML=(navStack.length?'<a class="rel-back" data-back="1">← back</a>':'')+t;
   panel.style.display='block';
@@ -439,7 +444,9 @@ INLINE_JS = r"""(function(){
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${links(m.rel)}</p></div>`:'')
-     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'');
+     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'')
+     +(m.root&&m.root.length?`<div class="sec"><span class="k">Root of</span><p>${links(m.root)}</p></div>`:'')
+     +(m.det&&m.det.length?`<div class="sec"><span class="k">Detected by</span><p>${m.det.map(esc).join(', ')}</p></div>`:'');
   }
   function renderDetail(li){
     tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());

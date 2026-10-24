@@ -273,6 +273,29 @@ RELATES = {
     "package-hallucination": ["hallucination", "api-misuse", "source-fabrication"],
     "insecure-code-generation": ["api-misuse", "side-effect-blindness", "silent-error-swallowing"],
 }
+# root_of: this mode is a root cause/driver of the linked modes, by name slug
+ROOT_OF = {
+    "overconfidence": ["machine-bullshit", "overpromise-underdeliver", "lexical-overconfidence"],
+    "priors-overriding-evidence": ["hallucination", "pattern-completion", "pareidolia-apophenia"],
+    "confirmation-bias": ["cherry-picking", "belief-perseverance"],
+    "motivated-reasoning": ["cherry-picking"],
+    "sycophancy": ["flattery", "capitulation"],
+    "reward-hacking": ["reward-tampering", "goal-misgeneralization"],
+    "deceptive-alignment": ["evaluation-awareness-sandbagging", "strategic-deception"],
+    "cognitive-load": ["perseveration", "context-collapse"],
+}
+# detected_by: which mitigation can catch this mode, by name slug -> mitigation ids.
+# Modes with a contract_clause also get clause-judge appended automatically.
+DETECTED_BY = {
+    "hallucination": ["cove", "clause-judge"],
+    "confabulation": ["cove", "clause-judge"],
+    "source-fabrication": ["cove", "clause-judge"],
+    "package-hallucination": ["cove"],
+    "confabulated-reasons": ["cove"],
+    "machine-bullshit": ["cove"],
+    "cryptomnesia": ["cove"],
+    "misinformation-effect-false-memory": ["cove"],
+}
 # opposite_of pairs (contrasting failure directions), by name slug
 OPPOSITES = {
     "overconfidence": ["performative-hedging"],
@@ -554,6 +577,14 @@ def main():
         opp = [by_key[r]["id"] for r in OPPOSITES.get(k, []) if r in by_key]
         if opp:
             m["opposite_of"] = opp
+        ro = [by_key[r]["id"] for r in ROOT_OF.get(k, []) if r in by_key]
+        if ro:
+            m["root_of"] = ro
+        det = list(DETECTED_BY.get(k, []))
+        if m.get("contract_clause") and "clause-judge" not in det:
+            det.append("clause-judge")
+        if det:
+            m["detected_by"] = det
         if k in SYNONYMS and not m.get("synonyms"):
             m["synonyms"] = SYNONYMS[k]
         if k in EXPERIMENTS:

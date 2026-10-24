@@ -77,6 +77,7 @@ TAGL = {
 PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
 MODE_NAME = {}  # id -> name, for relates_to links
+MIT_NAME = {}   # mitigation id -> name, for detected_by
 
 
 def meta_block(mode):
@@ -116,6 +117,12 @@ def meta_block(mode):
         links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>'
                           for r in mode["opposite_of"])
         rows.append(("Opposite of", links))
+    if mode.get("root_of"):
+        links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>'
+                          for r in mode["root_of"])
+        rows.append(("Root of", links))
+    if mode.get("detected_by"):
+        rows.append(("Detected by", esc(", ".join(MIT_NAME.get(d, d) for d in mode["detected_by"]))))
     if not rows:
         return ""
     items = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)
@@ -223,6 +230,7 @@ def main():
     PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
+    MIT_NAME.update({m["id"]: m["name"] for m in onto.get("mitigations", [])})
     modes = onto["modes"]
     grid = render(modes)
 

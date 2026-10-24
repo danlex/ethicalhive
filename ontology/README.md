@@ -67,7 +67,7 @@ names). These are seeded by category defaults plus per-mode overrides in
 `experiments/build-ontology.py` (PRIN_BY_CAT / HARM_BY_CAT / PRIN_OVERRIDE /
 HARM_OVERRIDE / RELATES / SYNONYMS). The page surfaces `violates`, `causes`,
 `relates_to` and `synonyms` in each row's Details and in the map's node panel.
-Still to grow: `root_of`, `opposite_of`, `detected_by`.
+Also carries `opposite_of` (contrasting pairs), `root_of` (causal drivers), and `detected_by` (which mitigation catches it). Still to grow: `is_a`.
 
 ## Provenance
 
