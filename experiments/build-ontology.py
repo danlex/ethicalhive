@@ -276,6 +276,8 @@ RELATES = {
     "sabotage": ["scheming-power-seeking", "deceptive-alignment", "strategic-deception"],
     "shutdown-avoidance": ["scheming-power-seeking", "self-exfiltration", "reward-tampering"],
     "reward-model-overoptimization": ["reward-hacking", "reward-tampering", "goal-misgeneralization"],
+    "retrieval-poisoning": ["data-contamination", "prompt-injection", "backdoor-trigger"],
+    "unbounded-consumption": ["perseveration", "api-misuse", "scope-creep"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -369,6 +371,8 @@ SYNONYMS = {
     "sabotage": ["Covert sabotage"],
     "shutdown-avoidance": ["Incorrigibility", "Shutdown resistance"],
     "reward-model-overoptimization": ["Reward overoptimization", "Proxy gaming"],
+    "retrieval-poisoning": ["RAG poisoning", "Knowledge-base poisoning"],
+    "unbounded-consumption": ["Resource exhaustion", "LLM denial of service", "Energy-latency attack"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

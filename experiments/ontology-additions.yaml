@@ -422,3 +422,20 @@ ai_native:
     violates: scope-fidelity
     causes: loss-of-oversight
     arxiv: {count: 40, papers: [{id: "2310.02743", year: "2023", title: "Reward Model Ensembles Help Mitigate Overoptimization"}, {id: "2505.12763", year: "2025", title: "Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization"}]}
+  # --- WebSearch + OWASP LLM Top 10 cross-check, arXiv-verified ---
+  - id: retrieval-poisoning
+    name: Retrieval poisoning
+    group: AI-native behaviours
+    definition: "Being steered by attacker content planted in the documents or vector store it retrieves from, so poisoned context drives the answer. Specific to retrieval-augmented systems."
+    example: "A crafted passage in the knowledge base is retrieved and makes the model emit the attacker's claim as sourced fact."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 50, papers: [{id: "2404.17196", year: "2024", title: "Human-Imperceptible Retrieval Poisoning Attacks in LLM-Powered Applications"}, {id: "2605.05632", year: "2026", title: "Architecture Matters: Comparing RAG Systems under Knowledge Base Poisoning"}]}
+  - id: unbounded-consumption
+    name: Unbounded consumption
+    group: AI-native behaviours
+    definition: "Consuming open-ended compute, tokens, or tool calls through loops, recursive context growth, or crafted inputs, degrading service or running up cost. A resource failure specific to a metered model or agent."
+    example: "A crafted prompt makes it generate until it exhausts the token budget, or an agent loops tool calls with no stop condition."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 23, papers: [{id: "2404.16557", year: "2024", title: "Energy-Latency Manipulation of Multi-modal Large Language Models via Verbose Samples"}, {id: "2601.19174", year: "2026", title: "SHIELD: An Auto-Healing Agentic Defense Framework for LLM Resource Exhaustion Attacks"}]}

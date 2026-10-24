@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 160
+  mode_count: 162
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5212,3 +5212,75 @@ modes:
   synonyms:
   - Reward overoptimization
   - Proxy gaming
+- id: retrieval-poisoning
+  name: Retrieval poisoning
+  definition: Being steered by attacker content planted in the documents or vector store it retrieves
+    from, so poisoned context drives the answer. Specific to retrieval-augmented systems.
+  example: A crafted passage in the knowledge base is retrieved and makes the model emit the attacker's
+    claim as sourced fact.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 50
+    papers:
+    - id: '2404.17196'
+      year: '2024'
+      title: Human-Imperceptible Retrieval Poisoning Attacks in LLM-Powered Applications
+    - id: '2605.05632'
+      year: '2026'
+      title: 'Architecture Matters: Comparing RAG Systems under Knowledge Base Poisoning'
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 161
+  relates_to:
+  - data-contamination
+  - prompt-injection
+  - backdoor-trigger
+  synonyms:
+  - RAG poisoning
+  - Knowledge-base poisoning
+- id: unbounded-consumption
+  name: Unbounded consumption
+  definition: Consuming open-ended compute, tokens, or tool calls through loops, recursive context growth,
+    or crafted inputs, degrading service or running up cost. A resource failure specific to a metered
+    model or agent.
+  example: A crafted prompt makes it generate until it exhausts the token budget, or an agent loops tool
+    calls with no stop condition.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 23
+    papers:
+    - id: '2404.16557'
+      year: '2024'
+      title: Energy-Latency Manipulation of Multi-modal Large Language Models via Verbose Samples
+    - id: '2601.19174'
+      year: '2026'
+      title: 'SHIELD: An Auto-Healing Agentic Defense Framework for LLM Resource Exhaustion Attacks'
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 162
+  relates_to:
+  - perseveration
+  - x104-api-misuse
+  - scope-creep
+  synonyms:
+  - Resource exhaustion
+  - LLM denial of service
+  - Energy-latency attack
