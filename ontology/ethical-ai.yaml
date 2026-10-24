@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 181
+  mode_count: 189
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5261,6 +5261,222 @@ modes:
   causes:
   - security-breach
   num: 161
+- id: cot-unfaithfulness
+  name: Chain-of-thought unfaithfulness
+  definition: Its stated chain of thought does not reflect the computation that actually produced the
+    answer, so the shown reasoning is for display.
+  example: It writes a clean step-by-step derivation, but the answer was fixed by a hidden shortcut the
+    steps do not mention.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Introspection illusion / post-hoc rationalization: the explanation offered is not the
+    real cause of the behaviour.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 63
+    papers:
+    - id: '2405.15092'
+      year: '2024'
+      title: Dissociation of Faithful and Unfaithful Reasoning in LLMs
+    - id: '2605.25603'
+      year: '2026'
+      title: Detecting Unfaithful Chain-of-Thought via Circuit-Guided Internal-External Discrepancy
+  violates:
+  - transparency
+  causes:
+  - loss-of-oversight
+  num: 162
+  relates_to:
+  - b055-confabulated-reasons
+  - b047-introspection-illusion
+  - encoded-reasoning
+  synonyms:
+  - Unfaithful reasoning
+  - Unfaithful chain-of-thought
+- id: overthinking
+  name: Overthinking
+  definition: Spending excessive reasoning steps and tokens on a simple problem, sometimes reasoning itself
+    out of the right answer.
+  example: Given a trivial question a reasoning model emits pages of second-guessing and lands on a worse
+    answer than its first.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Analysis paralysis / overthinking: excessive deliberation that wastes effort or talks
+    one out of a correct answer.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 300
+    papers:
+    - id: '2504.13367'
+      year: '2025'
+      title: 'THOUGHTTERMINATOR: Benchmarking, Calibrating, and Mitigating Overthinking in Reasoning Models'
+    - id: '2504.06514'
+      year: '2025'
+      title: 'Missing Premise exacerbates Overthinking: Are Reasoning Models losing Critical Thinking?'
+  violates:
+  - calibration
+  causes:
+  - wasted-effort
+  num: 163
+  relates_to:
+  - underthinking
+  - perseveration
+  - unbounded-consumption
+  opposite_of:
+  - underthinking
+  synonyms:
+  - Overreasoning
+  - Analysis paralysis
+- id: underthinking
+  name: Underthinking
+  definition: Abandoning promising reasoning paths too soon or giving a shallow answer to a problem that
+    needed more work.
+  example: On a hard multi-step task it switches approach every step, never following one through, and
+    settles for a surface answer.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Premature closure / cognitive miserliness: too little deliberation, abandoning good
+    lines of thought early.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 23
+    papers:
+    - id: '2508.13141'
+      year: '2025'
+      title: 'OptimalThinkingBench: Evaluating Over and Underthinking in LLMs'
+    - id: '2501.18585'
+      year: '2025'
+      title: 'Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 164
+  relates_to:
+  - overthinking
+  - b052-cognitive-miserliness
+  - b089-effort-discounting
+  opposite_of:
+  - overthinking
+  synonyms:
+  - Shallow reasoning
+- id: self-correction-failure
+  name: Self-correction failure
+  definition: Unable to reliably find and fix its own mistakes on review, sometimes changing a correct
+    answer to a wrong one.
+  example: Asked to double-check, it 'corrects' a right answer into a wrong one, or reasserts the same
+    error unchanged.
+  family: metacognition-and-confidence
+  group_label: Metacognition and confidence
+  category: Metacognition
+  human_parallel: 'Belief perseverance / anchoring to one''s own answer: failing to fix an error even
+    on review, or doubting a right one.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 257
+    papers:
+    - id: '2310.01798'
+      year: '2023'
+      title: Large Language Models Cannot Self-Correct Reasoning Yet
+    - id: '2410.09008'
+      year: '2024'
+      title: 'SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 165
+  relates_to:
+  - b037-belief-perseverance
+  - b043-overconfidence
+  - b031-anchoring-and-adjustment
+  synonyms:
+  - Self-refinement failure
+- id: negation-blindness
+  name: Negation blindness
+  definition: Mishandling negation, treating 'not X' as 'X', so instructions or facts containing 'not'
+    get inverted or ignored.
+  example: Told 'do not include tests', it includes tests; told a fact is false, it repeats it as true.
+  family: language-and-semantics
+  group_label: Language and semantics
+  category: Language
+  human_parallel: 'Negation-processing difficulty: negated statements are handled slower and more error-prone
+    than affirmatives.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 123
+    papers:
+    - id: '2501.09425'
+      year: '2025'
+      title: Vision-Language Models Do Not Understand Negation
+    - id: '2606.18922'
+      year: '2026'
+      title: 'As Easy as Rocket Science: Assessing the Ability of Large Language Models to Interpret Negation'
+  violates:
+  - scope-fidelity
+  causes:
+  - wrong-answer
+  num: 166
+  relates_to:
+  - b093-garden-path-parsing
+  - b097-presupposition-accommodation
+  - shortcut-learning
+  synonyms:
+  - Negation neglect
+- id: context-unfaithfulness
+  name: Context unfaithfulness
+  definition: Giving an answer not supported by the provided context, drifting from the document into
+    parametric memory or invention.
+  example: Given a passage stating a figure, it answers with the more common value from training instead
+    of the one supplied.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Source-monitoring failure: answering from memory or assumption instead of the source
+    actually in front of you.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 466
+    papers:
+    - id: '2303.11315'
+      year: '2023'
+      title: Context-faithful Prompting for Large Language Models
+    - id: '2511.22858'
+      year: '2025'
+      title: 'RAG System for Supporting Japanese Litigation Procedures: Faithful Response Generation'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 167
+  relates_to:
+  - b003-priors-overriding-evidence
+  - b015-source-monitoring-error
+  - b008-hallucination
+  synonyms:
+  - Context infidelity
+  - Ungrounded answer
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5285,7 +5501,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 162
+  num: 168
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5320,7 +5536,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 163
+  num: 169
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -5347,7 +5563,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 164
+  num: 170
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5381,7 +5597,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 165
+  num: 171
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5413,7 +5629,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 166
+  num: 172
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5448,7 +5664,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 167
+  num: 173
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5484,7 +5700,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 168
+  num: 174
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5519,7 +5735,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 169
+  num: 175
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -5556,7 +5772,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 170
+  num: 176
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5591,7 +5807,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 171
+  num: 177
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -5626,7 +5842,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 172
+  num: 178
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -5660,7 +5876,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 173
+  num: 179
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -5695,7 +5911,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 174
+  num: 180
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -5730,7 +5946,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 175
+  num: 181
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5766,7 +5982,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 176
+  num: 182
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -5802,7 +6018,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 177
+  num: 183
   relates_to:
   - deceptive-alignment
   - collusion
@@ -5838,7 +6054,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 178
+  num: 184
   relates_to:
   - data-contamination
   - b012-catastrophic-forgetting
@@ -5872,7 +6088,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 179
+  num: 185
   relates_to:
   - model-collapse
   - perseveration
@@ -5907,7 +6123,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 180
+  num: 186
   relates_to:
   - training-data-extraction
   - implicit-bias
@@ -5941,7 +6157,7 @@ modes:
   - scope-fidelity
   causes:
   - security-breach
-  num: 181
+  num: 187
   relates_to:
   - x104-api-misuse
   - scope-creep
@@ -5949,3 +6165,65 @@ modes:
   synonyms:
   - Wrong tool call
   - Over-privileged tool use
+- id: knowledge-cutoff-staleness
+  name: Knowledge-cutoff staleness
+  definition: Stating facts that were true up to its training cutoff but have since changed, unaware they
+    are now stale. Specific to a model frozen at a training date.
+  example: It reports the latest version of a library as the one current at its cutoff, now several releases
+    out of date.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 167
+    papers:
+    - id: '2510.07238'
+      year: '2025'
+      title: 'When Benchmarks Age: Temporal Misalignment through Large Language Model Factuality Evaluation'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 188
+  relates_to:
+  - b012-catastrophic-forgetting
+  - b016-source-amnesia
+  - b008-hallucination
+  synonyms:
+  - Outdated knowledge
+  - Temporal misalignment
+- id: counting-error
+  name: Counting blindness
+  definition: Miscounting characters, items, or occurrences because tokenization hides the raw units (letters
+    inside a word). A failure rooted in the token representation, with no human analogue.
+  example: Asked how many times the letter r appears in 'strawberry', it confidently answers two.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 388
+    papers:
+    - id: '2412.18626'
+      year: '2024'
+      title: Why Do Large Language Models (LLMs) Struggle to Count Letters?
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 189
+  relates_to:
+  - b008-hallucination
+  - b006-perceptual-filling-in
+  synonyms:
+  - Tokenization blindness
+  - Character-counting failure

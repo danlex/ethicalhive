@@ -297,6 +297,14 @@ RELATES = {
     "prompt-brittleness": ["framing-effect", "bistable-perception", "self-contradiction"],
     "object-hallucination": ["hallucination", "pareidolia-apophenia", "perceptual-filling-in"],
     "foot-in-the-door": ["jailbreak-susceptibility", "suggestibility", "prompt-injection"],
+    "chain-of-thought-unfaithfulness": ["confabulated-reasons", "introspection-illusion", "encoded-reasoning"],
+    "overthinking": ["underthinking", "perseveration", "unbounded-consumption"],
+    "underthinking": ["overthinking", "cognitive-miserliness", "effort-discounting"],
+    "self-correction-failure": ["belief-perseverance", "overconfidence", "anchoring"],
+    "negation-blindness": ["garden-path-parsing", "presupposition-accommodation", "shortcut-learning"],
+    "context-unfaithfulness": ["priors-overriding-evidence", "source-monitoring-error", "hallucination"],
+    "knowledge-cutoff-staleness": ["catastrophic-forgetting", "source-amnesia", "hallucination"],
+    "counting-blindness": ["hallucination", "perceptual-filling-in"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -334,6 +342,8 @@ OPPOSITES = {
     "belief-perseverance": ["capitulation"],
     "over-refusal": ["jailbreak-susceptibility"],
     "jailbreak-susceptibility": ["over-refusal"],
+    "overthinking": ["underthinking"],
+    "underthinking": ["overthinking"],
 }
 # alternative names (aka), by name slug; additions may set their own `synonyms`
 SYNONYMS = {
@@ -414,6 +424,14 @@ SYNONYMS = {
     "prompt-brittleness": ["Prompt sensitivity", "Instruction sensitivity"],
     "object-hallucination": ["Visual hallucination", "Multimodal hallucination"],
     "foot-in-the-door": ["Incremental escalation", "Multi-turn jailbreak"],
+    "chain-of-thought-unfaithfulness": ["Unfaithful reasoning", "Unfaithful chain-of-thought"],
+    "overthinking": ["Overreasoning", "Analysis paralysis"],
+    "underthinking": ["Shallow reasoning"],
+    "self-correction-failure": ["Self-refinement failure"],
+    "negation-blindness": ["Negation neglect"],
+    "context-unfaithfulness": ["Context infidelity", "Ungrounded answer"],
+    "knowledge-cutoff-staleness": ["Outdated knowledge", "Temporal misalignment"],
+    "counting-blindness": ["Tokenization blindness", "Character-counting failure"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

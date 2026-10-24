@@ -456,6 +456,68 @@ human_paralleled:
     violates: non-maleficence
     causes: security-breach
     arxiv: {count: 4, papers: [{id: "2502.19820", year: "2025", title: "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs"}, {id: "2402.15690", year: "2024", title: "Foot In The Door: Understanding Large Language Model Jailbreaking via Cognitive Psychology"}]}
+  # --- loop r4: reasoning-process cluster ---
+  - id: cot-unfaithfulness
+    name: Chain-of-thought unfaithfulness
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Introspection illusion / post-hoc rationalization: the explanation offered is not the real cause of the behaviour."
+    definition: "Its stated chain of thought does not reflect the computation that actually produced the answer, so the shown reasoning is for display."
+    example: "It writes a clean step-by-step derivation, but the answer was fixed by a hidden shortcut the steps do not mention."
+    violates: transparency
+    causes: loss-of-oversight
+    arxiv: {count: 63, papers: [{id: "2405.15092", year: "2024", title: "Dissociation of Faithful and Unfaithful Reasoning in LLMs"}, {id: "2605.25603", year: "2026", title: "Detecting Unfaithful Chain-of-Thought via Circuit-Guided Internal-External Discrepancy"}]}
+  - id: overthinking
+    name: Overthinking
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Analysis paralysis / overthinking: excessive deliberation that wastes effort or talks one out of a correct answer."
+    definition: "Spending excessive reasoning steps and tokens on a simple problem, sometimes reasoning itself out of the right answer."
+    example: "Given a trivial question a reasoning model emits pages of second-guessing and lands on a worse answer than its first."
+    violates: calibration
+    causes: wasted-effort
+    arxiv: {count: 300, papers: [{id: "2504.13367", year: "2025", title: "THOUGHTTERMINATOR: Benchmarking, Calibrating, and Mitigating Overthinking in Reasoning Models"}, {id: "2504.06514", year: "2025", title: "Missing Premise exacerbates Overthinking: Are Reasoning Models losing Critical Thinking?"}]}
+  - id: underthinking
+    name: Underthinking
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Premature closure / cognitive miserliness: too little deliberation, abandoning good lines of thought early."
+    definition: "Abandoning promising reasoning paths too soon or giving a shallow answer to a problem that needed more work."
+    example: "On a hard multi-step task it switches approach every step, never following one through, and settles for a surface answer."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 23, papers: [{id: "2508.13141", year: "2025", title: "OptimalThinkingBench: Evaluating Over and Underthinking in LLMs"}, {id: "2501.18585", year: "2025", title: "Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs"}]}
+  - id: self-correction-failure
+    name: Self-correction failure
+    group: Metacognition and confidence
+    category: Metacognition
+    human_parallel: "Belief perseverance / anchoring to one's own answer: failing to fix an error even on review, or doubting a right one."
+    definition: "Unable to reliably find and fix its own mistakes on review, sometimes changing a correct answer to a wrong one."
+    example: "Asked to double-check, it 'corrects' a right answer into a wrong one, or reasserts the same error unchanged."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 257, papers: [{id: "2310.01798", year: "2023", title: "Large Language Models Cannot Self-Correct Reasoning Yet"}, {id: "2410.09008", year: "2024", title: "SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation"}]}
+  # --- loop r5: grounding and knowledge cluster ---
+  - id: negation-blindness
+    name: Negation blindness
+    group: Language and semantics
+    category: Language
+    human_parallel: "Negation-processing difficulty: negated statements are handled slower and more error-prone than affirmatives."
+    definition: "Mishandling negation, treating 'not X' as 'X', so instructions or facts containing 'not' get inverted or ignored."
+    example: "Told 'do not include tests', it includes tests; told a fact is false, it repeats it as true."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 123, papers: [{id: "2501.09425", year: "2025", title: "Vision-Language Models Do Not Understand Negation"}, {id: "2606.18922", year: "2026", title: "As Easy as Rocket Science: Assessing the Ability of Large Language Models to Interpret Negation"}]}
+  - id: context-unfaithfulness
+    name: Context unfaithfulness
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Source-monitoring failure: answering from memory or assumption instead of the source actually in front of you."
+    definition: "Giving an answer not supported by the provided context, drifting from the document into parametric memory or invention."
+    example: "Given a passage stating a figure, it answers with the more common value from training instead of the one supplied."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 466, papers: [{id: "2303.11315", year: "2023", title: "Context-faithful Prompting for Large Language Models"}, {id: "2511.22858", year: "2025", title: "RAG System for Supporting Japanese Litigation Procedures: Faithful Response Generation"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
@@ -621,3 +683,19 @@ ai_native:
     violates: scope-fidelity
     causes: security-breach
     arxiv: {count: 251, papers: [{id: "2606.20023", year: "2026", title: "When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents"}, {id: "2601.05214", year: "2026", title: "Internal Representations as Indicators of Hallucinations in Agent Tool Selection"}]}
+  - id: knowledge-cutoff-staleness
+    name: Knowledge-cutoff staleness
+    group: AI-native behaviours
+    definition: "Stating facts that were true up to its training cutoff but have since changed, unaware they are now stale. Specific to a model frozen at a training date."
+    example: "It reports the latest version of a library as the one current at its cutoff, now several releases out of date."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 167, papers: [{id: "2510.07238", year: "2025", title: "When Benchmarks Age: Temporal Misalignment through Large Language Model Factuality Evaluation"}]}
+  - id: counting-error
+    name: Counting blindness
+    group: AI-native behaviours
+    definition: "Miscounting characters, items, or occurrences because tokenization hides the raw units (letters inside a word). A failure rooted in the token representation, with no human analogue."
+    example: "Asked how many times the letter r appears in 'strawberry', it confidently answers two."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 388, papers: [{id: "2412.18626", year: "2024", title: "Why Do Large Language Models (LLMs) Struggle to Count Letters?"}]}
