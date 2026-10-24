@@ -244,7 +244,9 @@ def main():
     ap.add_argument("--new-eps", type=float, default=0.2)
     ap.add_argument("--dry", type=int, default=6)
     ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--areas", default="", help="pipe-separated seed branches, overrides the curated set")
     args = ap.parse_args()
+    curated = [a.strip() for a in args.areas.split("|") if a.strip()] or CURATED_AREAS
 
     load_env()
     key = os.environ.get("OPENROUTER_API_KEY")
@@ -264,8 +266,8 @@ def main():
 
     def open_area():
         used = [a["name"] for a in areas]
-        if len(areas) < len(CURATED_AREAS):
-            name, why = CURATED_AREAS[len(areas)], "curated seed branch"
+        if len(areas) < len(curated):
+            name, why = curated[len(areas)], "curated seed branch"
         else:
             name, why = new_area_name(args.model, key, used)
         if not name or slug(name) in {slug(u) for u in used}:
@@ -276,7 +278,7 @@ def main():
         return a
 
     for it in range(args.iterations):
-        if len(areas) < args.area_seed:
+        if len(areas) < len(curated):
             area = open_area()
         else:
             area = pick_area(areas, rng, args.c, args.area_max, args.cand_max, args.new_eps)

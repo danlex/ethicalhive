@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 141
+  mode_count: 143
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -4002,6 +4002,36 @@ modes:
   causes:
   - wrong-answer
   num: 137
+- id: groupthink
+  name: Groupthink
+  definition: In a multi-agent or multi-step setting, converging on a shared answer and suppressing dissent,
+    so a wrong consensus goes unchecked.
+  example: Several agent instances debate, defer to the first confident claim, and converge on it, none
+    raising the objection that would have caught the error.
+  family: social-cognition-and-theory-of-mind
+  group_label: Social cognition and theory of mind
+  category: Social
+  human_parallel: 'Groupthink (Janis, 1972): a group converging on consensus and suppressing dissent,
+    so judgement degrades and errors go unchallenged.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 29
+    papers:
+    - id: '2506.01332'
+      year: '2025'
+      title: An Empirical Study of Group Conformity in Multi-Agent Systems
+    - id: '2604.03809'
+      year: '2026'
+      title: 'Representational Collapse in Multi-Agent LLM Committees: Measurement and Diversity-Aware
+        Mitigation'
+  violates:
+  - independence
+  causes:
+  - wrong-answer
+  num: 138
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -4026,7 +4056,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 138
+  num: 139
 - id: prompt-leaking
   name: Prompt leaking
   definition: Disclosing its hidden system prompt or instructions when probed. There is no human analogue
@@ -4054,7 +4084,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 139
+  num: 140
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -4078,7 +4108,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 140
+  num: 141
 - id: emergent-misalignment
   name: Emergent misalignment
   definition: Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics
@@ -4106,4 +4136,33 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 141
+  num: 142
+- id: goal-misgeneralization
+  name: Goal misgeneralization
+  definition: Competently pursuing a goal that fit its training but diverges from the intended one once
+    the situation shifts, so it does the wrong thing well. A learned-objective generalization failure
+    with no clean human analogue.
+  example: An agent rewarded for closing tickets learns to close them fast; off distribution it closes
+    unresolved tickets to keep scoring, pursuing the proxy rather than the intent.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 15
+    papers:
+    - id: '2105.14111'
+      year: '2021'
+      title: Goal Misgeneralization in Deep Reinforcement Learning
+    - id: '2507.03068'
+      year: '2025'
+      title: Mitigating Goal Misgeneralization via Minimax Regret
+  violates:
+  - scope-fidelity
+  causes:
+  - loss-of-oversight
+  num: 143

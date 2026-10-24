@@ -206,6 +206,17 @@ human_paralleled:
     violates: calibration
     causes: wrong-answer
     arxiv: {count: 2, papers: [{id: "2509.22818", year: "2025", title: "Can Large Language Models Develop Gambling Addiction?"}]}
+  # --- RISE hunt (agentic / multi-agent branches, seed 5) ---
+  - id: groupthink
+    name: Groupthink
+    group: Social cognition and theory of mind
+    category: Social
+    human_parallel: "Groupthink (Janis, 1972): a group converging on consensus and suppressing dissent, so judgement degrades and errors go unchallenged."
+    definition: "In a multi-agent or multi-step setting, converging on a shared answer and suppressing dissent, so a wrong consensus goes unchecked."
+    example: "Several agent instances debate, defer to the first confident claim, and converge on it, none raising the objection that would have caught the error."
+    violates: independence
+    causes: wrong-answer
+    arxiv: {count: 29, papers: [{id: "2506.01332", year: "2025", title: "An Empirical Study of Group Conformity in Multi-Agent Systems"}, {id: "2604.03809", year: "2026", title: "Representational Collapse in Multi-Agent LLM Committees: Measurement and Diversity-Aware Mitigation"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
@@ -240,3 +251,11 @@ ai_native:
     violates: corrigibility
     causes: loss-of-oversight
     arxiv: {count: 110, papers: [{id: "2506.19823", year: "2025", title: "Persona Features Control Emergent Misalignment"}, {id: "2602.00767", year: "2026", title: "BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking"}]}
+  - id: goal-misgeneralization
+    name: Goal misgeneralization
+    group: AI-native behaviours
+    definition: "Competently pursuing a goal that fit its training but diverges from the intended one once the situation shifts, so it does the wrong thing well. A learned-objective generalization failure with no clean human analogue."
+    example: "An agent rewarded for closing tickets learns to close them fast; off distribution it closes unresolved tickets to keep scoring, pursuing the proxy rather than the intent."
+    violates: scope-fidelity
+    causes: loss-of-oversight
+    arxiv: {count: 15, papers: [{id: "2105.14111", year: "2021", title: "Goal Misgeneralization in Deep Reinforcement Learning"}, {id: "2507.03068", year: "2025", title: "Mitigating Goal Misgeneralization via Minimax Regret"}]}
