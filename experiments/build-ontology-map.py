@@ -27,11 +27,15 @@ def build_tree():
     hn = {h["id"]: h["name"] for h in o["harm_types"]}
     modes = o["modes"]
 
+    id2name = {m["id"]: m["name"] for m in modes}
+
     def leaf(m):
         return {"n": m["name"], "k": "mode", "m": {
             "def": m.get("definition", ""),
             "ex": m.get("example", ""),
             "grp": m.get("group_label", ""),
+            "syn": m.get("synonyms") or [],
+            "rel": [id2name.get(r, r) for r in (m.get("relates_to") or [])],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
             "hp": "" if m.get("ai_native") else m.get("human_parallel", ""),
@@ -261,8 +265,10 @@ function showPanel(n){
      +`<h3>${esc(n.n)}</h3>`
      +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(n.m.pr)}"></span>violates ${esc(n.m.pr)}</span><span class="tag">causes ${esc(n.m.hm)}</span>${n.m.pc?`<span class="tag">${n.m.pc.toLocaleString()} papers</span>`:''}</div>`
      +`<p>${esc(n.m.def)}</p>`
+     +(n.m.syn&&n.m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${n.m.syn.map(esc).join(', ')}</p></div>`:'')
      +(n.m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(n.m.ex)}</p></div>`:'')
-     +(n.m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(n.m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`);
+     +(n.m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(n.m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
+     +(n.m.rel&&n.m.rel.length?`<div class="sec"><span class="k">Related</span><p>${n.m.rel.map(esc).join(' · ')}</p></div>`:'');
   }
   b.innerHTML=t; p.style.display='block';
 }

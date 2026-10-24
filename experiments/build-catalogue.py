@@ -76,6 +76,7 @@ TAGL = {
 }
 PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
+MODE_NAME = {}  # id -> name, for relates_to links
 
 
 def meta_block(mode):
@@ -85,6 +86,8 @@ def meta_block(mode):
         rows.append(("Human parallel", esc(mode["human_parallel"])))
     elif mode.get("ai_native"):
         rows.append(("Human parallel", "None (AI-native behaviour)"))
+    if mode.get("synonyms"):
+        rows.append(("Also known as", esc(", ".join(mode["synonyms"]))))
     viol = [PRIN_NAME.get(p, p) for p in mode.get("violates", [])]
     if viol:
         rows.append(("Violates", esc(", ".join(viol))))
@@ -105,6 +108,10 @@ def meta_block(mode):
         sa = mode["same_as"]
         label = re.sub(r"^b\d+-", "", sa).replace("-", " ")
         rows.append(("Also in the brain map", f'<a href="#{sa}">{esc(label)}</a>'))
+    if mode.get("relates_to"):
+        links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>'
+                          for r in mode["relates_to"])
+        rows.append(("Related", links))
     if not rows:
         return ""
     items = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)
@@ -211,6 +218,7 @@ def main():
     onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
     PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
+    MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
     modes = onto["modes"]
     grid = render(modes)
 

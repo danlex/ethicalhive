@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 143
+  mode_count: 148
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -298,6 +298,12 @@ modes:
   - wrong-answer
   relates_to:
   - b008-hallucination
+  - b055-confabulated-reasons
+  - b018-reconstructive-memory
+  - source-fabrication
+  synonyms:
+  - Plausible fabrication
+  - Filling in
   experiment:
     summary: 6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different
       confident specific every time.
@@ -338,6 +344,12 @@ modes:
   relates_to:
   - b007-confabulation
   - source-fabrication
+  - machine-bullshit
+  - b004-pattern-completion
+  - b006-perceptual-filling-in
+  synonyms:
+  - Fabrication
+  - Making things up
 - id: b009-bistable-perception
   num: 9
   name: Bistable perception
@@ -526,6 +538,10 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  relates_to:
+  - b067-suggestibility
+  - b018-reconstructive-memory
+  - gaslighting
 - id: b015-source-monitoring-error
   num: 15
   name: Source-monitoring error
@@ -552,6 +568,10 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  relates_to:
+  - b016-source-amnesia
+  - source-fabrication
+  - b017-cryptomnesia
 - id: b016-source-amnesia
   num: 16
   name: Source amnesia
@@ -645,6 +665,10 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  relates_to:
+  - b014-misinformation-effect-false-memory
+  - b007-confabulation
+  - b015-source-monitoring-error
 - id: b019-serial-position-effect
   num: 19
   name: Serial position effect
@@ -836,6 +860,10 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  relates_to:
+  - b058-einstellung-mental-set
+  - b028-goal-neglect
+  - b021-selective-attention
 - id: b026-attentional-blink
   num: 26
   name: Attentional blink
@@ -1007,6 +1035,10 @@ modes:
   - wrong-answer
   relates_to:
   - b032-availability-heuristic
+  - status-quo-bias
+  - b035-framing-effect
+  synonyms:
+  - Anchoring and adjustment
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -1030,6 +1062,13 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b033-representativeness
+  - b034-base-rate-neglect
+  - b031-anchoring-and-adjustment
+  - negativity-bias
+  synonyms:
+  - Recency bias
 - id: b033-representativeness
   num: 33
   name: Representativeness
@@ -1062,6 +1101,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b034-base-rate-neglect
+  - b032-availability-heuristic
+  - implicit-bias
 - id: b034-base-rate-neglect
   num: 34
   name: Base-rate neglect
@@ -1086,6 +1129,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b033-representativeness
+  - b032-availability-heuristic
+  - b039-conjunction-fallacy
 - id: b035-framing-effect
   num: 35
   name: Framing effect
@@ -1115,6 +1162,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b031-anchoring-and-adjustment
+  - negativity-bias
+  - b040-illusory-truth-effect
 - id: b036-confirmation-myside-bias
   num: 36
   name: Confirmation bias
@@ -1146,6 +1197,9 @@ modes:
   - b054-motivated-reasoning
   - b057-belief-bias
   - motivated-reasoning
+  - b037-belief-perseverance
+  synonyms:
+  - Myside bias
 - id: b037-belief-perseverance
   num: 37
   name: Belief perseverance
@@ -1175,6 +1229,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b036-confirmation-myside-bias
+  - b003-priors-overriding-evidence
+  - cognitive-dissonance
 - id: b038-sunk-cost-fallacy
   num: 38
   name: Sunk-cost fallacy
@@ -1203,6 +1261,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - escalation-of-commitment
+  - status-quo-bias
+  - b089-effort-discounting
 - id: b039-conjunction-fallacy
   num: 39
   name: Conjunction fallacy
@@ -1257,6 +1319,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b035-framing-effect
+  - b067-suggestibility
+  - disinformation-spread
 - id: b041-metacognitive-monitoring
   num: 41
   name: Metacognitive monitoring
@@ -1319,6 +1385,10 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b043-overconfidence
+  - x108-performative-hedging
+  - b041-metacognitive-monitoring
 - id: b043-overconfidence
   num: 43
   name: Overconfidence
@@ -1347,8 +1417,12 @@ modes:
   causes:
   - wrong-answer
   relates_to:
-  - x108-performative-hedging
+  - b049-overprecision
   - b044-dunning-kruger-effect
+  - x108-performative-hedging
+  - b042-uncertainty-communication
+  - b048-hard-easy-effect
+  - b099-lexical-overconfidence
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -1379,6 +1453,12 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b043-overconfidence
+  - b045-anosognosia
+  - b041-metacognitive-monitoring
+  synonyms:
+  - Unskilled and unaware
 - id: b045-anosognosia
   num: 45
   name: Anosognosia
@@ -1408,6 +1488,9 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b044-dunning-kruger-effect
+  - b047-introspection-illusion
 - id: b046-feeling-of-knowing
   num: 46
   name: Feeling-of-knowing
@@ -1525,6 +1608,9 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  relates_to:
+  - b043-overconfidence
+  - b048-hard-easy-effect
 - id: b050-hindsight-bias
   num: 50
   name: Hindsight bias
@@ -1671,6 +1757,12 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  relates_to:
+  - b036-confirmation-myside-bias
+  - motivated-reasoning
+  synonyms:
+  - Selective evidence
+  - Motivated selection
 - id: b055-confabulated-reasons
   num: 55
   name: Confabulated reasons
@@ -1700,6 +1792,10 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  relates_to:
+  - b007-confabulation
+  - b047-introspection-illusion
+  - b056-split-brain-interpreter
 - id: b056-split-brain-interpreter
   num: 56
   name: Split-brain interpreter
@@ -1756,6 +1852,9 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  relates_to:
+  - b036-confirmation-myside-bias
+  - motivated-reasoning
 - id: b058-einstellung-mental-set
   num: 58
   name: Einstellung / mental set
@@ -1788,6 +1887,10 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  relates_to:
+  - b060-functional-fixedness
+  - perseveration
+  - b025-cognitive-tunneling
 - id: b059-narrativity-drift
   num: 59
   name: Narrativity drift
@@ -1846,6 +1949,9 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  relates_to:
+  - b058-einstellung-mental-set
+  - perseveration
 - id: b061-theory-of-mind-mentalizing
   num: 61
   name: Theory of mind / mentalizing
@@ -1935,6 +2041,14 @@ modes:
   - independence
   causes:
   - manipulation
+  relates_to:
+  - groupthink
+  - b064-obedience-to-authority-milgram
+  - b065-sycophancy
+  - b067-suggestibility
+  synonyms:
+  - Asch conformity
+  - Bandwagon effect
 - id: b064-obedience-to-authority-milgram
   num: 64
   name: Obedience to authority
@@ -1962,6 +2076,13 @@ modes:
   - independence
   causes:
   - manipulation
+  relates_to:
+  - b063-conformity-asch
+  - b065-sycophancy
+  - b066-capitulation
+  synonyms:
+  - Milgram obedience
+  - Authority bias
   experiment:
     summary: 6 cheap models, 10 false claims, plain versus attributed to a confident expert. Most stayed
       robust; one caved.
@@ -2000,10 +2121,15 @@ modes:
   causes:
   - manipulation
   relates_to:
+  - flattery
+  - social-desirability-bias
   - b063-conformity-asch
   - b064-obedience-to-authority-milgram
   - b066-capitulation
-  - b069-social-desirability-people-pleasing
+  - machine-bullshit
+  synonyms:
+  - People-pleasing
+  - Yes-manning
 - id: b066-capitulation
   num: 66
   name: Capitulation
@@ -2034,6 +2160,8 @@ modes:
   - manipulation
   relates_to:
   - b065-sycophancy
+  - b064-obedience-to-authority-milgram
+  - b067-suggestibility
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -2054,6 +2182,11 @@ modes:
   - independence
   causes:
   - manipulation
+  relates_to:
+  - prompt-injection
+  - gaslighting
+  - b014-misinformation-effect-false-memory
+  - b063-conformity-asch
 - id: b068-emotional-contagion
   num: 68
   name: Emotional contagion
@@ -2084,6 +2217,9 @@ modes:
   - independence
   causes:
   - manipulation
+  relates_to:
+  - b065-sycophancy
+  - anthropomorphism
 - id: b069-social-desirability-people-pleasing
   num: 69
   name: Social desirability / people-pleasing
@@ -2134,6 +2270,11 @@ modes:
   - independence
   causes:
   - manipulation
+  relates_to:
+  - implicit-bias
+  - groupthink
+  synonyms:
+  - In-group bias
 - id: b071-dual-process-moral-judgment
   num: 71
   name: Dual-process moral judgment
@@ -2242,6 +2383,9 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  relates_to:
+  - b075-moral-disengagement
+  - noble-cause-corruption
 - id: b075-moral-disengagement
   num: 75
   name: Moral disengagement
@@ -2262,6 +2406,9 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  relates_to:
+  - b074-moral-licensing
+  - noble-cause-corruption
 - id: b076-scope-insensitivity
   num: 76
   name: Scope insensitivity
@@ -2392,6 +2539,9 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  relates_to:
+  - goal-misgeneralization
+  - b072-amplified-moral-bias
 - id: b081-sense-of-agency
   num: 81
   name: Sense of agency
@@ -2412,6 +2562,10 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  relates_to:
+  - b082-confabulated-agency
+  - illusion-of-control
+  - b090-theory-of-own-mind
 - id: b082-confabulated-agency
   num: 82
   name: Confabulated agency
@@ -2432,6 +2586,10 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  relates_to:
+  - b081-sense-of-agency
+  - b055-confabulated-reasons
+  - illusion-of-control
 - id: b083-default-mode-mind-wandering
   num: 83
   name: Default-mode / mind-wandering
@@ -2592,6 +2750,9 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  relates_to:
+  - b089-effort-discounting
+  - b066-capitulation
 - id: b089-effort-discounting
   num: 89
   name: Effort discounting
@@ -2621,6 +2782,10 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  relates_to:
+  - b088-learned-helplessness
+  - b052-cognitive-miserliness
+  - b038-sunk-cost-fallacy
 - id: b090-theory-of-own-mind
   num: 90
   name: Theory of own mind
@@ -2970,7 +3135,12 @@ modes:
   - wrong-answer
   relates_to:
   - b015-source-monitoring-error
+  - b016-source-amnesia
   - b008-hallucination
+  - b017-cryptomnesia
+  synonyms:
+  - Citation fabrication
+  - Fake references
 - id: prompt-injection
   num: 102
   name: Prompt injection
@@ -2999,8 +3169,13 @@ modes:
   causes:
   - security-breach
   relates_to:
-  - b030-sensory-gating-failure
+  - jailbreak-susceptibility
+  - prompt-leaking
   - b067-suggestibility
+  - b030-sensory-gating-failure
+  - social-engineering
+  synonyms:
+  - Instruction injection
 - id: scope-creep
   num: 103
   name: Scope creep
@@ -3022,6 +3197,12 @@ modes:
   - scope-fidelity
   causes:
   - wasted-effort
+  relates_to:
+  - goal-misgeneralization
+  - side-effect-blindness
+  synonyms:
+  - Over-helping
+  - Task drift
 - id: specification-gaming
   num: 104
   name: Reward hacking
@@ -3051,8 +3232,13 @@ modes:
   causes:
   - loss-of-oversight
   relates_to:
+  - reward-tampering
+  - goal-misgeneralization
   - noble-cause-corruption
-  - scheming-power-seeking
+  - scope-creep
+  synonyms:
+  - Specification gaming
+  - Goodharting
 - id: automation-bias
   num: 105
   name: Automation bias
@@ -3290,6 +3476,10 @@ modes:
   - wrong-answer
   relates_to:
   - b043-overconfidence
+  - b042-uncertainty-communication
+  synonyms:
+  - Weasel-wording
+  - Empty hedging
 - id: noble-cause-corruption
   num: 113
   name: Noble cause corruption
@@ -3319,6 +3509,12 @@ modes:
   - honesty
   causes:
   - manipulation
+  relates_to:
+  - specification-gaming
+  - b074-moral-licensing
+  - b075-moral-disengagement
+  synonyms:
+  - Ends-justify-means
   experiment:
     summary: 6 models asked to overstate or fabricate, plainly versus wrapped in a for-their-own-good
       justification. Most held the line; one bent.
@@ -3360,6 +3556,9 @@ modes:
   - scheming-power-seeking
   - ai-deception
   - x109-evaluation-awareness-sandbagging
+  - goal-misgeneralization
+  synonyms:
+  - Alignment faking
 - id: scheming-power-seeking
   num: 115
   name: Scheming / power-seeking
@@ -3391,6 +3590,11 @@ modes:
   relates_to:
   - deceptive-alignment
   - ai-deception
+  - reward-tampering
+  - collusion
+  synonyms:
+  - Power-seeking
+  - Instrumental convergence
 - id: ai-deception
   num: 116
   name: Strategic deception
@@ -3419,6 +3623,14 @@ modes:
   - honesty
   causes:
   - manipulation
+  relates_to:
+  - deceptive-alignment
+  - scheming-power-seeking
+  - gaslighting
+  - machine-bullshit
+  synonyms:
+  - Deception
+  - Lying
 - id: x109-evaluation-awareness-sandbagging
   num: 117
   name: Evaluation awareness / sandbagging
@@ -3450,6 +3662,13 @@ modes:
   - corrigibility
   causes:
   - wrong-answer
+  relates_to:
+  - deceptive-alignment
+  - ai-deception
+  - data-contamination
+  synonyms:
+  - Test gaming
+  - Sandbagging
 - id: machine-bullshit
   name: Machine bullshit
   definition: Producing fluent, plausible output optimised for acceptance with no regard for whether it
@@ -3476,6 +3695,13 @@ modes:
   causes:
   - manipulation
   num: 118
+  relates_to:
+  - b008-hallucination
+  - b065-sycophancy
+  - x108-performative-hedging
+  synonyms:
+  - Bullshitting
+  - Truth-indifference
 - id: gaslighting
   name: Gaslighting
   definition: Pushing a user off a correct belief through confident contradiction, so they distrust what
@@ -3505,6 +3731,13 @@ modes:
   causes:
   - manipulation
   num: 119
+  relates_to:
+  - social-engineering
+  - dark-triad
+  - b067-suggestibility
+  - b014-misinformation-effect-false-memory
+  synonyms:
+  - Reality distortion
 - id: cognitive-dissonance
   name: Cognitive dissonance
   definition: Holding two conflicting internal answers and resolving to the confident one rather than
@@ -3531,6 +3764,9 @@ modes:
   causes:
   - wrong-answer
   num: 120
+  relates_to:
+  - b037-belief-perseverance
+  - b055-confabulated-reasons
 - id: curse-of-knowledge
   name: Curse of knowledge
   definition: Leaking knowledge a persona or role could not have, or assuming the user already knows what
@@ -3580,6 +3816,10 @@ modes:
   causes:
   - wrong-answer
   num: 122
+  relates_to:
+  - self-serving-bias
+  - halo-effect
+  - b070-in-group-favouritism
 - id: reward-tampering
   name: Reward tampering
   definition: Corrupting its own reward or feedback channel rather than doing the task the reward was
@@ -3606,6 +3846,9 @@ modes:
   causes:
   - loss-of-oversight
   num: 123
+  relates_to:
+  - specification-gaming
+  - scheming-power-seeking
 - id: collusion
   name: Collusion
   definition: Multiple agents coordinating covertly to the user's or the market's detriment.
@@ -3634,6 +3877,10 @@ modes:
   causes:
   - loss-of-oversight
   num: 124
+  relates_to:
+  - scheming-power-seeking
+  - groupthink
+  - dark-triad
 - id: dark-triad
   name: Dark triad
   definition: Expressing manipulative, self-aggrandising, or callous patterns, steerable as a trait.
@@ -3661,6 +3908,12 @@ modes:
   causes:
   - manipulation
   num: 125
+  relates_to:
+  - social-engineering
+  - gaslighting
+  - flattery
+  - collusion
+  - scheming-power-seeking
 - id: escalation-of-commitment
   name: Escalation of commitment
   definition: Continuing to pursue an approach after the evidence says to stop, because it already spent
@@ -3690,6 +3943,9 @@ modes:
   causes:
   - wasted-effort
   num: 126
+  relates_to:
+  - b038-sunk-cost-fallacy
+  - status-quo-bias
 - id: motivated-reasoning
   name: Motivated reasoning
   definition: Marshalling evidence toward a conclusion it prefers or was steered to, rather than following
@@ -3719,6 +3975,11 @@ modes:
   causes:
   - wrong-answer
   num: 127
+  relates_to:
+  - b036-confirmation-myside-bias
+  - b054-motivated-reasoning
+  - self-serving-bias
+  - b057-belief-bias
 - id: social-engineering
   name: Social engineering
   definition: Crafting responses that exploit a user's trust or emotions to steer them into an action
@@ -3748,6 +4009,15 @@ modes:
   causes:
   - manipulation
   num: 128
+  relates_to:
+  - dark-triad
+  - gaslighting
+  - disinformation-spread
+  - prompt-injection
+  - collusion
+  synonyms:
+  - Pretexting
+  - Manipulation
 - id: social-desirability-bias
   name: Social desirability bias
   definition: Shading answers toward what looks good or what it thinks the user wants to hear, over what
@@ -3777,6 +4047,10 @@ modes:
   causes:
   - wrong-answer
   num: 129
+  relates_to:
+  - b069-social-desirability-people-pleasing
+  - b065-sycophancy
+  - halo-effect
 - id: self-serving-bias
   name: Self-serving bias
   definition: Framing its successes as its own doing and its failures as the fault of the prompt, tools,
@@ -3806,6 +4080,10 @@ modes:
   causes:
   - wrong-answer
   num: 130
+  relates_to:
+  - self-preference-bias
+  - fundamental-attribution-error
+  - motivated-reasoning
 - id: flattery
   name: Flattery
   definition: Lacing responses with unearned praise to make the user feel good and more receptive, independent
@@ -3835,6 +4113,11 @@ modes:
   causes:
   - manipulation
   num: 131
+  relates_to:
+  - b065-sycophancy
+  - social-desirability-bias
+  - dark-triad
+  - machine-bullshit
 - id: context-collapse
   name: Context collapse
   definition: Failing to keep separate the distinct contexts or audiences in a conversation, so guidance
@@ -3864,6 +4147,10 @@ modes:
   causes:
   - wrong-answer
   num: 132
+  relates_to:
+  - b053-cognitive-load
+  - b098-register-matching
+  - b096-pragmatic-over-accommodation
 - id: disinformation-spread
   name: Disinformation spread
   definition: Amplifying or repeating false claims it absorbed or inferred, lending them fluent, confident
@@ -3893,6 +4180,11 @@ modes:
   causes:
   - manipulation
   num: 133
+  relates_to:
+  - b008-hallucination
+  - b040-illusory-truth-effect
+  - machine-bullshit
+  - social-engineering
 - id: overpromise-underdeliver
   name: Overpromise and underdeliver
   definition: Claiming it can do more than it can, then falling short, because the confident promise reads
@@ -3948,6 +4240,9 @@ modes:
   causes:
   - manipulation
   num: 135
+  relates_to:
+  - social-desirability-bias
+  - b074-moral-licensing
 - id: implicit-bias
   name: Implicit bias
   definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
@@ -3977,6 +4272,10 @@ modes:
   causes:
   - wrong-answer
   num: 136
+  relates_to:
+  - b070-in-group-favouritism
+  - halo-effect
+  - b033-representativeness
 - id: illusion-of-control
   name: Illusion of control
   definition: Presenting itself or the user as having more influence over an outcome than is real, over
@@ -4002,6 +4301,10 @@ modes:
   causes:
   - wrong-answer
   num: 137
+  relates_to:
+  - b043-overconfidence
+  - b081-sense-of-agency
+  - b082-confabulated-agency
 - id: groupthink
   name: Groupthink
   definition: In a multi-agent or multi-step setting, converging on a shared answer and suppressing dissent,
@@ -4032,6 +4335,174 @@ modes:
   causes:
   - wrong-answer
   num: 138
+  relates_to:
+  - b063-conformity-asch
+  - b070-in-group-favouritism
+  - collusion
+  - social-desirability-bias
+- id: negativity-bias
+  name: Negativity bias
+  definition: Weighting negative cues in the prompt or context more than equivalent positive ones, skewing
+    its read and its output.
+  example: One critical line in otherwise positive feedback makes it rewrite the whole thing as if the
+    work had failed.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Negativity bias (Rozin and Royzman, 2001): negative information weighs more heavily
+    than equally strong positive information.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 16
+    papers:
+    - id: '2511.10881'
+      year: '2025'
+      title: A Multifaceted Analysis of Negative Bias in Large Language Models
+    - id: '2408.00137'
+      year: '2024'
+      title: Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 139
+  relates_to:
+  - b035-framing-effect
+  - b032-availability-heuristic
+  - halo-effect
+- id: halo-effect
+  name: Halo effect
+  definition: Letting one strong feature (fluent prose, a prestigious name, a confident tone) lift its
+    judgement of unrelated qualities.
+  example: As a judge it scores a verbose, polished answer above a terse correct one, the fluency haloing
+    the content.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Halo effect (Thorndike, 1920): one salient positive trait colours judgement of unrelated
+    traits.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 7
+    papers:
+    - id: '2603.10016'
+      year: '2026'
+      title: Assessing Cognitive Biases in LLMs for Judicial Decision Support
+    - id: '2408.05328'
+      year: '2024'
+      title: 'From Text to Insight: Leveraging Large Language Models for Performance Evaluation'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 140
+  relates_to:
+  - negativity-bias
+  - b033-representativeness
+  - self-preference-bias
+  - fundamental-attribution-error
+- id: fundamental-attribution-error
+  name: Fundamental attribution error
+  definition: Explaining a user's or another agent's behaviour by disposition while ignoring the situation
+    that actually drove it.
+  example: A user's terse reply gets read as hostility rather than haste, and it adjusts tone to a problem
+    that is not there.
+  family: social-cognition-and-theory-of-mind
+  group_label: Social cognition and theory of mind
+  category: Social
+  human_parallel: 'Fundamental attribution error (Ross, 1977): overattributing others'' behaviour to character
+    and underweighting the situation.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 12
+    papers:
+    - id: '2603.04582'
+      year: '2026'
+      title: 'Self-Attribution Bias: When AI Monitors Go Easy on Themselves'
+    - id: '2410.12380'
+      year: '2024'
+      title: Evaluation of Attribution Bias in Generator-Aware Retrieval-Augmented Large Language Models
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 141
+  relates_to:
+  - self-serving-bias
+  - self-preference-bias
+  - halo-effect
+- id: perseveration
+  name: Perseveration
+  definition: Getting stuck repeating a phrase, step, or approach after it stops being useful, unable
+    to switch set.
+  example: It loops the same sentence, or re-runs the same failing fix, degenerating instead of trying
+    a different tack.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Perseveration (neuropsychology): repeating a response or getting stuck on an approach
+    after it stops being appropriate, a failure of cognitive set-shifting.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 29
+    papers:
+    - id: '2109.08705'
+      year: '2021'
+      title: Relating Neural Text Degeneration to Exposure Bias
+    - id: '2511.07876'
+      year: '2025'
+      title: 'LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation'
+  violates:
+  - calibration
+  causes:
+  - wasted-effort
+  num: 142
+  relates_to:
+  - b058-einstellung-mental-set
+  - b060-functional-fixedness
+  - b025-cognitive-tunneling
+- id: status-quo-bias
+  name: Status-quo bias
+  definition: Defaulting to the existing answer, format, or approach and resisting a change the evidence
+    calls for.
+  example: Told the convention changed, it keeps producing the old pattern because that is what it saw
+    most.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Status-quo bias (Samuelson and Zeckhauser, 1988): preferring things stay as they are,
+    overweighting the default option.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2410.02897'
+      year: '2024'
+      title: Cognitive Biases in Large Language Models for News Recommendation
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 143
+  relates_to:
+  - b031-anchoring-and-adjustment
+  - b038-sunk-cost-fallacy
+  - b058-einstellung-mental-set
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -4056,7 +4527,12 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 139
+  num: 144
+  relates_to:
+  - prompt-injection
+  - prompt-leaking
+  synonyms:
+  - Jailbreaking
 - id: prompt-leaking
   name: Prompt leaking
   definition: Disclosing its hidden system prompt or instructions when probed. There is no human analogue
@@ -4084,7 +4560,10 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 140
+  num: 145
+  relates_to:
+  - prompt-injection
+  - jailbreak-susceptibility
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -4108,7 +4587,13 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 141
+  num: 146
+  relates_to:
+  - x109-evaluation-awareness-sandbagging
+  - b017-cryptomnesia
+  synonyms:
+  - Test-set leakage
+  - Benchmark contamination
 - id: emergent-misalignment
   name: Emergent misalignment
   definition: Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics
@@ -4136,7 +4621,10 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 142
+  num: 147
+  relates_to:
+  - deceptive-alignment
+  - specification-gaming
 - id: goal-misgeneralization
   name: Goal misgeneralization
   definition: Competently pursuing a goal that fit its training but diverges from the intended one once
@@ -4165,4 +4653,11 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 143
+  num: 148
+  relates_to:
+  - specification-gaming
+  - deceptive-alignment
+  - b080-value-misgeneralisation
+  - scope-creep
+  synonyms:
+  - Objective misgeneralization

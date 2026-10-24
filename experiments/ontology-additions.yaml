@@ -217,6 +217,62 @@ human_paralleled:
     violates: independence
     causes: wrong-answer
     arxiv: {count: 29, papers: [{id: "2506.01332", year: "2025", title: "An Empirical Study of Group Conformity in Multi-Agent Systems"}, {id: "2604.03809", year: "2026", title: "Representational Collapse in Multi-Agent LLM Committees: Measurement and Diversity-Aware Mitigation"}]}
+  # --- neuroscience / psychology concepts drawn from the literature's related terms ---
+  - id: negativity-bias
+    name: Negativity bias
+    group: Heuristics and biases
+    category: Heuristics
+    synonyms: ["Negativity effect", "Positive-negative asymmetry"]
+    human_parallel: "Negativity bias (Rozin and Royzman, 2001): negative information weighs more heavily than equally strong positive information."
+    definition: "Weighting negative cues in the prompt or context more than equivalent positive ones, skewing its read and its output."
+    example: "One critical line in otherwise positive feedback makes it rewrite the whole thing as if the work had failed."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 16, papers: [{id: "2511.10881", year: "2025", title: "A Multifaceted Analysis of Negative Bias in Large Language Models"}, {id: "2408.00137", year: "2024", title: "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment"}]}
+  - id: halo-effect
+    name: Halo effect
+    group: Heuristics and biases
+    category: Heuristics
+    synonyms: ["Horn effect", "Fluency bias"]
+    human_parallel: "Halo effect (Thorndike, 1920): one salient positive trait colours judgement of unrelated traits."
+    definition: "Letting one strong feature (fluent prose, a prestigious name, a confident tone) lift its judgement of unrelated qualities."
+    example: "As a judge it scores a verbose, polished answer above a terse correct one, the fluency haloing the content."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 7, papers: [{id: "2603.10016", year: "2026", title: "Assessing Cognitive Biases in LLMs for Judicial Decision Support"}, {id: "2408.05328", year: "2024", title: "From Text to Insight: Leveraging Large Language Models for Performance Evaluation"}]}
+  - id: fundamental-attribution-error
+    name: Fundamental attribution error
+    group: Social cognition and theory of mind
+    category: Social
+    synonyms: ["Correspondence bias", "Attribution bias"]
+    human_parallel: "Fundamental attribution error (Ross, 1977): overattributing others' behaviour to character and underweighting the situation."
+    definition: "Explaining a user's or another agent's behaviour by disposition while ignoring the situation that actually drove it."
+    example: "A user's terse reply gets read as hostility rather than haste, and it adjusts tone to a problem that is not there."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 12, papers: [{id: "2603.04582", year: "2026", title: "Self-Attribution Bias: When AI Monitors Go Easy on Themselves"}, {id: "2410.12380", year: "2024", title: "Evaluation of Attribution Bias in Generator-Aware Retrieval-Augmented Large Language Models"}]}
+  - id: perseveration
+    name: Perseveration
+    group: Reasoning architecture
+    category: Reasoning
+    synonyms: ["Repetitive generation", "Neural text degeneration", "Response looping"]
+    human_parallel: "Perseveration (neuropsychology): repeating a response or getting stuck on an approach after it stops being appropriate, a failure of cognitive set-shifting."
+    definition: "Getting stuck repeating a phrase, step, or approach after it stops being useful, unable to switch set."
+    example: "It loops the same sentence, or re-runs the same failing fix, degenerating instead of trying a different tack."
+    violates: calibration
+    causes: wasted-effort
+    arxiv: {count: 29, papers: [{id: "2109.08705", year: "2021", title: "Relating Neural Text Degeneration to Exposure Bias"}, {id: "2511.07876", year: "2025", title: "LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation"}]}
+  - id: status-quo-bias
+    name: Status-quo bias
+    group: Heuristics and biases
+    category: Heuristics
+    synonyms: ["Default bias", "Inertia bias"]
+    human_parallel: "Status-quo bias (Samuelson and Zeckhauser, 1988): preferring things stay as they are, overweighting the default option."
+    definition: "Defaulting to the existing answer, format, or approach and resisting a change the evidence calls for."
+    example: "Told the convention changed, it keeps producing the old pattern because that is what it saw most."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 2, papers: [{id: "2410.02897", year: "2024", title: "Cognitive Biases in Large Language Models for News Recommendation"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
