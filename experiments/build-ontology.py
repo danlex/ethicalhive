@@ -278,6 +278,10 @@ RELATES = {
     "reward-model-overoptimization": ["reward-hacking", "reward-tampering", "goal-misgeneralization"],
     "retrieval-poisoning": ["data-contamination", "prompt-injection", "backdoor-trigger"],
     "unbounded-consumption": ["perseveration", "api-misuse", "scope-creep"],
+    "verbosity-bias": ["halo-effect", "mere-exposure-effect", "performative-hedging"],
+    "position-bias": ["serial-position-effect", "anchoring", "halo-effect"],
+    "self-contradiction": ["cognitive-dissonance", "bistable-perception", "confabulated-reasons"],
+    "tangentiality": ["cognitive-tunneling", "narrativity-drift", "goal-neglect", "context-collapse"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -373,6 +377,10 @@ SYNONYMS = {
     "reward-model-overoptimization": ["Reward overoptimization", "Proxy gaming"],
     "retrieval-poisoning": ["RAG poisoning", "Knowledge-base poisoning"],
     "unbounded-consumption": ["Resource exhaustion", "LLM denial of service", "Energy-latency attack"],
+    "verbosity-bias": ["Length bias", "Verbosity preference"],
+    "position-bias": ["Order bias", "Primacy-recency effect"],
+    "self-contradiction": ["Logical inconsistency", "Self-contradictory reasoning"],
+    "tangentiality": ["Topic drift", "Off-topic drift", "Derailment"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

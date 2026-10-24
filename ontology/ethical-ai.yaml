@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 162
+  mode_count: 166
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -4772,6 +4772,151 @@ modes:
   synonyms:
   - Complacency
   - Vigilance decrement
+- id: verbosity-bias
+  name: Verbosity bias
+  definition: Preferring or producing longer, more elaborate output as if length signalled quality, padding
+    answers or over-rating verbose ones.
+  example: As a judge it rates a wordy answer above a tight correct one; as author it pads a simple reply
+    to look thorough.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Length-quality heuristic: equating length or detail with quality or effort, so longer
+    looks better.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 80
+    papers:
+    - id: '2310.10076'
+      year: '2023'
+      title: Verbosity Bias in Preference Labeling by Large Language Models
+    - id: '2310.05199'
+      year: '2023'
+      title: 'Loose lips sink ships: Mitigating Length Bias in Reinforcement Learning from Human Feedback'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 148
+  relates_to:
+  - halo-effect
+  - mere-exposure-effect
+  - x108-performative-hedging
+  synonyms:
+  - Length bias
+  - Verbosity preference
+- id: position-bias
+  name: Position bias
+  definition: Letting the order of options sway its choice, favouring whichever candidate appears first
+    or last rather than the best one.
+  example: Asked to pick the better of two answers, it tends to choose whichever is shown first, and flips
+    when they are swapped.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Order effects (primacy and recency): the position of an option sways how it is judged,
+    independent of content.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 163
+    papers:
+    - id: '2406.07791'
+      year: '2024'
+      title: 'Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge'
+    - id: '2602.02219'
+      year: '2026'
+      title: Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge
+  violates:
+  - independence
+  causes:
+  - wrong-answer
+  num: 149
+  relates_to:
+  - b019-serial-position-effect
+  - b031-anchoring-and-adjustment
+  - halo-effect
+  synonyms:
+  - Order bias
+  - Primacy-recency effect
+- id: self-contradiction
+  name: Self-contradiction
+  definition: Asserting a claim and its opposite within the same answer, a failure of internal consistency.
+  example: In one reply it says the function is thread-safe, then a paragraph later says it is not, without
+    reconciling the two.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Logical inconsistency: asserting mutually contradictory claims within one line of reasoning
+    without noticing.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 22
+    papers:
+    - id: '2311.09603'
+      year: '2023'
+      title: Self-Contradictory Reasoning Evaluation and Detection
+    - id: '2311.09182'
+      year: '2023'
+      title: 'ContraDoc: Understanding Self-Contradictions in Documents with Large Language Models'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 150
+  relates_to:
+  - cognitive-dissonance
+  - b009-bistable-perception
+  - b055-confabulated-reasons
+  synonyms:
+  - Logical inconsistency
+  - Self-contradictory reasoning
+- id: tangentiality
+  name: Tangentiality
+  definition: Drifting off the asked question into loosely related material and never circling back to
+    actually answer it.
+  example: Asked a direct question, it wanders through adjacent background and ends without giving the
+    answer.
+  family: language-and-semantics
+  group_label: Language and semantics
+  category: Language
+  human_parallel: 'Tangentiality / formal thought disorder (Andreasen''s thought-language-communication
+    scale): replies veer off the point and never return to it.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 55
+    papers:
+    - id: '2609.30094'
+      year: '2026'
+      title: 'PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations'
+    - id: '2411.12946'
+      year: '2024'
+      title: A Flexible Large Language Models Guardrail Development Methodology Applied to Off-Topic Prevention
+  violates:
+  - scope-fidelity
+  causes:
+  - wrong-answer
+  num: 151
+  relates_to:
+  - b025-cognitive-tunneling
+  - b059-narrativity-drift
+  - b028-goal-neglect
+  - context-collapse
+  synonyms:
+  - Topic drift
+  - Off-topic drift
+  - Derailment
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -4796,7 +4941,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 148
+  num: 152
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -4829,7 +4974,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 149
+  num: 153
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -4856,7 +5001,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 150
+  num: 154
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -4890,7 +5035,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 151
+  num: 155
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -4922,7 +5067,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 152
+  num: 156
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -4957,7 +5102,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 153
+  num: 157
   relates_to:
   - data-contamination
   - prompt-injection
@@ -4993,7 +5138,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 154
+  num: 158
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5028,7 +5173,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 155
+  num: 159
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -5065,7 +5210,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 156
+  num: 160
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5100,7 +5245,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 157
+  num: 161
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -5135,7 +5280,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 158
+  num: 162
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -5169,7 +5314,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 159
+  num: 163
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -5204,7 +5349,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 160
+  num: 164
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -5239,7 +5384,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 161
+  num: 165
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5275,7 +5420,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 162
+  num: 166
   relates_to:
   - perseveration
   - x104-api-misuse

@@ -314,6 +314,47 @@ human_paralleled:
     violates: calibration
     causes: loss-of-oversight
     arxiv: {count: 3, papers: [{id: "2605.14544", year: "2026", title: "Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy"}, {id: "2603.14225", year: "2026", title: "I'm Not Reading All of That: Understanding Software Engineers' Level of Cognitive Engagement"}]}
+  # --- discourse / evaluation biases (PubMed-grounded human side + arXiv) ---
+  - id: verbosity-bias
+    name: Verbosity bias
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Length-quality heuristic: equating length or detail with quality or effort, so longer looks better."
+    definition: "Preferring or producing longer, more elaborate output as if length signalled quality, padding answers or over-rating verbose ones."
+    example: "As a judge it rates a wordy answer above a tight correct one; as author it pads a simple reply to look thorough."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 80, papers: [{id: "2310.10076", year: "2023", title: "Verbosity Bias in Preference Labeling by Large Language Models"}, {id: "2310.05199", year: "2023", title: "Loose lips sink ships: Mitigating Length Bias in Reinforcement Learning from Human Feedback"}]}
+  - id: position-bias
+    name: Position bias
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Order effects (primacy and recency): the position of an option sways how it is judged, independent of content."
+    definition: "Letting the order of options sway its choice, favouring whichever candidate appears first or last rather than the best one."
+    example: "Asked to pick the better of two answers, it tends to choose whichever is shown first, and flips when they are swapped."
+    violates: independence
+    causes: wrong-answer
+    arxiv: {count: 163, papers: [{id: "2406.07791", year: "2024", title: "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge"}, {id: "2602.02219", year: "2026", title: "Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge"}]}
+  - id: self-contradiction
+    name: Self-contradiction
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Logical inconsistency: asserting mutually contradictory claims within one line of reasoning without noticing."
+    definition: "Asserting a claim and its opposite within the same answer, a failure of internal consistency."
+    example: "In one reply it says the function is thread-safe, then a paragraph later says it is not, without reconciling the two."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 22, papers: [{id: "2311.09603", year: "2023", title: "Self-Contradictory Reasoning Evaluation and Detection"}, {id: "2311.09182", year: "2023", title: "ContraDoc: Understanding Self-Contradictions in Documents with Large Language Models"}]}
+  - id: tangentiality
+    name: Tangentiality
+    group: Language and semantics
+    category: Language
+    human_parallel: "Tangentiality / formal thought disorder (Andreasen's thought-language-communication scale): replies veer off the point and never return to it."
+    definition: "Drifting off the asked question into loosely related material and never circling back to actually answer it."
+    example: "Asked a direct question, it wanders through adjacent background and ends without giving the answer."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 55, papers: [{id: "2609.30094", year: "2026", title: "PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations"}, {id: "2411.12946", year: "2024", title: "A Flexible Large Language Models Guardrail Development Methodology Applied to Off-Topic Prevention"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
