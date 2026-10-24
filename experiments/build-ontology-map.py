@@ -44,6 +44,7 @@ def build_tree():
             "mid": m["id"],
             "syn": m.get("synonyms") or [],
             "rel": [{"n": id2name.get(r, r), "id": r} for r in (m.get("relates_to") or [])],
+            "opp": [{"n": id2name.get(r, r), "id": r} for r in (m.get("opposite_of") or [])],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
             "hp": "" if m.get("ai_native") else m.get("human_parallel", ""),
@@ -240,6 +241,8 @@ html,body{margin:0;height:100%;font-family:Manrope,system-ui,sans-serif;color:va
 #panel .sec p{margin:0}
 #panel .rel-link{color:var(--accent-d);font-weight:600;cursor:pointer}
 #panel .rel-link:hover{text-decoration:underline}
+#panel .rel-back{display:inline-block;margin-bottom:8px;color:var(--muted);font-weight:600;cursor:pointer}
+#panel .rel-back:hover{color:var(--ink)}
 #panel .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:11px}
 #panel .x{position:absolute;right:10px;top:8px;cursor:pointer;color:var(--muted);border:none;background:none;font-size:20px;line-height:1}
 </style></head>
@@ -264,6 +267,7 @@ const EMBED=location.search.includes('embed');
 if(EMBED)document.body.classList.add('embed');
 const tree=document.getElementById('tree'), stage=document.getElementById('stage');
 const panel=document.getElementById('panel'), pbody=document.getElementById('pbody');
+let navStack=[], curPanelId=null;
 
 function defaultView(){
   tree.querySelectorAll('li.branch').forEach(li=>li.classList.add('collapsed'));
@@ -277,11 +281,12 @@ tree.addEventListener('click',e=>{
   if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
   if(e.target.closest('.pill')){
     if(li.classList.contains('branch')) li.classList.toggle('collapsed');
-    else showPanel(li.dataset.id);
+    else { navStack=[]; showPanel(li.dataset.id); }
   }
 });
 function showPanel(id){
   const m=META[id]; if(!m) return;
+  curPanelId=id;
   let t='';
   if(!('pr' in m)){
     t=`<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
@@ -297,16 +302,25 @@ function showPanel(id){
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
-     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
+     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
   }
-  pbody.innerHTML=t; panel.style.display='block';
+  pbody.innerHTML=(navStack.length?'<a class="rel-back" data-back="1">← back</a>':'')+t;
+  panel.style.display='block';
 }
 function gotoNode(mid){
   const t=tree.querySelector('[data-mid="'+mid+'"]'); if(!t) return;
+  if(curPanelId) navStack.push(curPanelId);
   let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; }
   t.classList.remove('hide'); showPanel(t.dataset.id); t.scrollIntoView({block:'center'});
 }
-pbody.addEventListener('click',e=>{ const l=e.target.closest('.rel-link'); if(l) gotoNode(l.dataset.goto); });
+function goBack(){
+  const id=navStack.pop(); if(id==null) return;
+  const t=tree.querySelector('[data-id="'+id+'"]');
+  showPanel(id);
+  if(t){ let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; } t.scrollIntoView({block:'center'}); }
+}
+pbody.addEventListener('click',e=>{ const b=e.target.closest('.rel-back'); if(b){ goBack(); return; } const l=e.target.closest('.rel-link'); if(l) gotoNode(l.dataset.goto); });
 document.getElementById('px').onclick=()=>panel.style.display='none';
 window.addEventListener('keydown',e=>{if(e.key==='Escape')panel.style.display='none';});
 document.getElementById('expand').onclick=()=>tree.querySelectorAll('li.branch').forEach(li=>li.classList.remove('collapsed'));
@@ -392,6 +406,8 @@ INLINE_STYLE = r"""
 .mm .mm-detail .note{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px}
 .mm .mm-detail a.mm-link{color:var(--accent-d);font-weight:600;cursor:pointer;text-decoration:none}
 .mm .mm-detail a.mm-link:hover{text-decoration:underline}
+.mm .mm-detail a.mm-back{display:inline-block;margin-bottom:7px;color:var(--muted);font-weight:600;cursor:pointer;font-size:12px}
+.mm .mm-detail a.mm-back:hover{color:var(--ink)}
 """
 
 INLINE_JS = r"""(function(){
@@ -401,31 +417,14 @@ INLINE_JS = r"""(function(){
   function pcol(n){return PRIN[(n||'').toLowerCase()]||'#cfcfcf';}
   function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
   const tree=mm.querySelector('.tree');
+  let navStack=[];
   function defaultView(){
     tree.querySelectorAll('li.branch').forEach(li=>li.classList.add('collapsed'));
     tree.querySelectorAll(':scope>li').forEach(li=>li.classList.remove('collapsed'));
     mm.querySelectorAll('.tree>li>ul>li.branch').forEach(li=>li.classList.remove('collapsed'));
   }
   defaultView();
-  tree.addEventListener('click',e=>{
-    const link=e.target.closest('.mm-link');
-    if(link){ e.preventDefault(); gotoNode(link.dataset.goto); return; }
-    const li=e.target.closest('li'); if(!li) return;
-    if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
-    if(e.target.closest('.pill')){
-      if(li.classList.contains('branch')) li.classList.toggle('collapsed');
-      else toggleDetail(li);
-    }
-  });
-  function gotoNode(mid){
-    const t=tree.querySelector('[data-mid="'+mid+'"]'); if(!t) return;
-    let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; }
-    t.classList.remove('hide');
-    tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());
-    const m=META[t.dataset.id];
-    if(m){ const d=document.createElement('div'); d.className='mm-detail'; d.innerHTML=detailHTML(m); t.querySelector(':scope > .row').after(d); }
-    t.scrollIntoView({block:'center'});
-  }
+  const links=a=>a.map(r=>`<a class="mm-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ');
   function detailHTML(m){
     if(!('pr' in m)){
       return `<div class="ptag" style="color:#8a5a00;background:#fff6e6">Proposed · RISE discovery</div>`
@@ -439,16 +438,33 @@ INLINE_JS = r"""(function(){
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
-     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="mm-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'');
+     +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${links(m.rel)}</p></div>`:'')
+     +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'');
   }
-  function toggleDetail(li){
-    const existing=li.querySelector(':scope > .mm-detail');
-    tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());  // one open at a time
-    if(existing) return;
+  function renderDetail(li){
+    tree.querySelectorAll('.mm-detail').forEach(x=>x.remove());
     const m=META[li.dataset.id]; if(!m) return;
-    const d=document.createElement('div'); d.className='mm-detail'; d.innerHTML=detailHTML(m);
+    const d=document.createElement('div'); d.className='mm-detail';
+    d.innerHTML=(navStack.length?'<a class="mm-back" data-back="1">← back</a>':'')+detailHTML(m);
     li.querySelector(':scope > .row').after(d);
   }
+  function revealAncestors(t){ let p=t.parentElement; while(p && p!==tree){ if(p.tagName==='LI') p.classList.remove('collapsed','hide'); p=p.parentElement; } t.classList.remove('hide'); }
+  function gotoNode(mid){
+    const t=tree.querySelector('[data-mid="'+mid+'"]'); if(!t) return;
+    const cur=tree.querySelector('.mm-detail'); if(cur){ const cl=cur.closest('li'); if(cl) navStack.push(cl.dataset.id); }
+    revealAncestors(t); renderDetail(t); t.scrollIntoView({block:'center'});
+  }
+  function goBack(){ const id=navStack.pop(); if(id==null) return; const t=tree.querySelector('[data-id="'+id+'"]'); if(!t) return; revealAncestors(t); renderDetail(t); t.scrollIntoView({block:'center'}); }
+  tree.addEventListener('click',e=>{
+    const back=e.target.closest('.mm-back'); if(back){ e.preventDefault(); goBack(); return; }
+    const link=e.target.closest('.mm-link'); if(link){ e.preventDefault(); gotoNode(link.dataset.goto); return; }
+    const li=e.target.closest('li'); if(!li) return;
+    if(e.target.closest('.caret')){ li.classList.toggle('collapsed'); return; }
+    if(e.target.closest('.pill')){
+      if(li.classList.contains('branch')) li.classList.toggle('collapsed');
+      else { const open=li.querySelector(':scope > .mm-detail'); if(open){ open.remove(); navStack=[]; } else { navStack=[]; renderDetail(li); } }
+    }
+  });
   mm.querySelector('.mm-expand').onclick=()=>tree.querySelectorAll('li.branch').forEach(li=>li.classList.remove('collapsed'));
   mm.querySelector('.mm-collapse').onclick=()=>{ tree.querySelectorAll('.mm-detail').forEach(x=>x.remove()); defaultView(); };
   const q=mm.querySelector('.mm-q');

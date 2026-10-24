@@ -112,6 +112,10 @@ def meta_block(mode):
         links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>'
                           for r in mode["relates_to"])
         rows.append(("Related", links))
+    if mode.get("opposite_of"):
+        links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>'
+                          for r in mode["opposite_of"])
+        rows.append(("Opposite of", links))
     if not rows:
         return ""
     items = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)

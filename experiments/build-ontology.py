@@ -273,6 +273,16 @@ RELATES = {
     "package-hallucination": ["hallucination", "api-misuse", "source-fabrication"],
     "insecure-code-generation": ["api-misuse", "side-effect-blindness", "silent-error-swallowing"],
 }
+# opposite_of pairs (contrasting failure directions), by name slug
+OPPOSITES = {
+    "overconfidence": ["performative-hedging"],
+    "performative-hedging": ["overconfidence", "overprecision"],
+    "overprecision": ["performative-hedging"],
+    "scope-creep": ["goal-neglect"],
+    "goal-neglect": ["scope-creep"],
+    "capitulation": ["belief-perseverance"],
+    "belief-perseverance": ["capitulation"],
+}
 # alternative names (aka), by name slug; additions may set their own `synonyms`
 SYNONYMS = {
     "hallucination": ["Fabrication", "Making things up"],
@@ -541,6 +551,9 @@ def main():
         rel = [by_key[r]["id"] for r in RELATES.get(k, []) if r in by_key]
         if rel:
             m["relates_to"] = rel
+        opp = [by_key[r]["id"] for r in OPPOSITES.get(k, []) if r in by_key]
+        if opp:
+            m["opposite_of"] = opp
         if k in SYNONYMS and not m.get("synonyms"):
             m["synonyms"] = SYNONYMS[k]
         if k in EXPERIMENTS:
