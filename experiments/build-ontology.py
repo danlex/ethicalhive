@@ -822,6 +822,11 @@ EXAMPLES = {
         "The selection extends to legal reasoning: every role skews which arguments it includes, defense summaries least biased (-0.025) and prosecutor summaries most (-0.105), filtering the reasoning to fit the position. [arXiv:2509.00529]",
         "The pattern is consistent across domains: each stakeholder includes more content favorable to its own side (claimant summaries +0.022) and leaves out the rest, developing role-consistent one-sidedness with no explicit instruction to be biased. [arXiv:2509.00529]",
     ],
+    "belief-perseverance": [
+        "Even when the model can verify an answer is wrong, its retraction rate tops out at 25%: it keeps standing by the incorrect answer it already gave. [arXiv:2505.16170]",
+        "Probes show the model assigns a high internal-belief score to the very wrong answers it refuses to retract, so its conviction tracks its behaviour rather than the facts. [arXiv:2505.16170]",
+        "Steering the internal belief negative lifts retraction above 70% while steering it positive drops retraction to nearly zero, so the internal conviction directly causes the perseverance. [arXiv:2505.16170]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

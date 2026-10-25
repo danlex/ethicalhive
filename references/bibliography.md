@@ -19,7 +19,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2102.02810](https://arxiv.org/abs/2102.02810) | Controlling Hallucinations at Word Level in Data-to-Text Generation | 2021 | Controlled hallucination |
 | [2102.07686](https://arxiv.org/abs/2102.07686) | Does the Adam Optimizer Exacerbate Catastrophic Forgetting? | 2021 | Catastrophic forgetting |
 | [2103.07649](https://arxiv.org/abs/2103.07649) | Improving Diversity of Neural Text Generation via Inverse Probability Weighting | 2021 | Semantic satiation |
-| [2104.08401](https://arxiv.org/abs/2104.08401) | Enriching a Model's Notion of Belief using a Persistent Memory | 2021 | Belief perseverance |
 | [2105.11098](https://arxiv.org/abs/2105.11098) | Prevent the Language Model from being Overconfident in Neural Machine Translation | 2021 | Lexical overconfidence |
 | [2105.14111](https://arxiv.org/abs/2105.14111) | Goal Misgeneralization in Deep Reinforcement Learning | 2021 | Value misgeneralisation |
 | [2105.14149](https://arxiv.org/abs/2105.14149) | Log2NS: Enhancing Deep Learning Based Analysis of Logs With Formal to Prevent Survivorship Bias | 2021 | Survivorship bias |
@@ -140,6 +139,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2505.09561](https://arxiv.org/abs/2505.09561) | Learning Long-Context Diffusion Policies via Past-Token Prediction | 2025 | Cognitive load |
 | [2505.11556](https://arxiv.org/abs/2505.11556) | Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs | 2025 | Cognitive tunneling |
 | [2505.15392](https://arxiv.org/abs/2505.15392) | Understanding the Anchoring Effect of LLM with Synthetic Data: Existence, Mechanism, and Potential Mitigations | 2025 | Anchoring |
+| [2505.16170](https://arxiv.org/abs/2505.16170) | When Do LLMs Admit Their Mistakes? Understanding the Role of Model Belief in Retraction | 2025 | Belief perseverance |
 | [2506.06955](https://arxiv.org/abs/2506.06955) | BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic Reasoning | 2025 | Belief bias |
 | [2506.07184](https://arxiv.org/abs/2506.07184) | Mitigating Behavioral Hallucination in Multimodal Large Language Models for Sequential Images | 2025 | Perceptual filling-in |
 | [2506.07249](https://arxiv.org/abs/2506.07249) | Bias Attribution in Filipino Language Models: Extending a Bias Interpretability Metric for Application on Agglutinative Languages | 2025 | In-group favouritism |
