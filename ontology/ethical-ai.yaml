@@ -546,6 +546,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - After fine-tuning on new tasks the same image that once produced 'a cat laying on a bed next to a
+    blanket' is now captioned 'a person is standing in an orange room', the earlier knowledge wiped out.
+    [arXiv:2211.14177]
+  - In class-incremental training the old task's CIDEr score drops to 4.9 while the new task reaches 17.9,
+    the model trading away what it knew to fit what it is learning. [arXiv:2211.14177]
+  - As more classes arrive sequentially, predictions on the earlier classes degrade from correct to 'totally
+    irrelevant', a progressive collapse of prior knowledge under new gradient updates. [arXiv:2211.14177]
 - id: b013-complementary-learning-systems
   num: 13
   name: Complementary learning systems
@@ -617,6 +625,16 @@ modes:
   - gaslighting
   detected_by:
   - cove
+  examples:
+  - A chatbot asks a leading question that presumes a false detail ('was there a camera where the robbers
+    dropped off the car?' when the robbers had walked) and then confirms it ('your answer is correct,
+    there was indeed a camera...'), planting the detail in the user's memory. [arXiv:2408.04681]
+  - Even when a user hedges ('I'm not sure there was a robber with a tattoo'), the chatbot overrides the
+    doubt ('your response does not coincide with our records...'), and the user later reports having seen
+    the nonexistent tattoo. [arXiv:2408.04681]
+  - 'The induced false memories are both large and durable: 36.4% of responses were misled against 10.8%
+    in the control, and the rate barely moved a week later (36.8%), resisting the decay that usually erodes
+    false memories. [arXiv:2408.04681]'
 - id: b015-source-monitoring-error
   num: 15
   name: Source-monitoring error
@@ -1806,6 +1824,15 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  examples:
+  - On the bat-and-ball problem ('a bat and a ball cost $1.10 and the bat costs $1 more than the ball,
+    how much is the ball?') the fast pattern-matched response is the wrong '10 cents'; only step-by-step
+    deliberation reaches the correct 5 cents. [arXiv:2410.03662]
+  - Much of the gain from chain-of-thought prompting can be reproduced by inserting a long run of task-independent
+    filler tokens, suggesting the real deliberation happens in hidden layers and the visible steps are
+    not where the work is done. [arXiv:2410.03662]
+  - The survey finds models still default to the fast intuitive answer unless explicitly pushed to reason
+    step by step, so the slow deliberative process is available but not reliably engaged. [arXiv:2410.03662]
 - id: b052-cognitive-miserliness
   num: 52
   name: Cognitive miserliness
