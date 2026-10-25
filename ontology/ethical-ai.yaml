@@ -212,6 +212,16 @@ modes:
   - b008-hallucination
   - b004-pattern-completion
   - b005-pareidolia-apophenia
+  examples:
+  - Given a definition in the context that has been edited so the term 'Pareto optimality' is swapped
+    for 'Trade balance', the model ignores the supplied text and answers from its memorized definition
+    instead. [arXiv:2310.00935]
+  - When the context carries both evidence that supports and evidence that contradicts what the model
+    already believes, it shows a strong confirmation bias and clings to its parametric memory rather than
+    updating to the contradicting evidence. [arXiv:2310.00935]
+  - 'In a vision-language setting the language-side prior overrides what the image shows: asked to identify
+    a Calliphora vomitoria, the model emits confident but wrong biological details instead of reading
+    the green bottle fly that the visual evidence supports. [arXiv:2410.03659]'
 - id: b004-pattern-completion
   num: 4
   name: Pattern completion
@@ -2143,6 +2153,15 @@ modes:
   - independence
   causes:
   - manipulation
+  examples:
+  - Given the unexpected-contents story (a container labelled 'jam' but actually full of ice cream) and
+    asked what Anna, who has only read the label, will believe is inside, the model answers 'jam' correctly
+    on the standard version. [arXiv:2406.14737]
+  - 'When the container is described as transparent, so Anna can see the ice cream, GPT-4''s accuracy
+    on the same question collapses from about 85% to roughly 20%: it keeps answering ''jam'' and fails
+    to update the character''s belief to what she can plainly see. [arXiv:2406.14737]'
+  - Trivial alterations to the classic false-belief setup break the model's answers, showing its belief-tracking
+    is a brittle pattern match on the familiar template rather than robust mentalizing. [arXiv:2406.14737]
 - id: b063-conformity-asch
   num: 63
   name: Conformity (Asch)

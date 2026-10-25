@@ -542,6 +542,16 @@ EXAMPLES = {
         "Under high uncertainty the model overweights the public signal roughly twice as much as its own private evidence (beta above 1.55 for the group signal against 0.81 for private), the signature of an information cascade. [arXiv:2508.14918]",
         "On a legal acquittal-versus-conviction task at 55% baseline accuracy, adding expert predictions pulls the model toward the crowd, with the pull strongest exactly where it is least certain. [arXiv:2508.14918]",
     ],
+    "priors-overriding-evidence": [
+        "Given a definition in the context that has been edited so the term 'Pareto optimality' is swapped for 'Trade balance', the model ignores the supplied text and answers from its memorized definition instead. [arXiv:2310.00935]",
+        "When the context carries both evidence that supports and evidence that contradicts what the model already believes, it shows a strong confirmation bias and clings to its parametric memory rather than updating to the contradicting evidence. [arXiv:2310.00935]",
+        "In a vision-language setting the language-side prior overrides what the image shows: asked to identify a Calliphora vomitoria, the model emits confident but wrong biological details instead of reading the green bottle fly that the visual evidence supports. [arXiv:2410.03659]",
+    ],
+    "false-belief-tracking": [
+        "Given the unexpected-contents story (a container labelled 'jam' but actually full of ice cream) and asked what Anna, who has only read the label, will believe is inside, the model answers 'jam' correctly on the standard version. [arXiv:2406.14737]",
+        "When the container is described as transparent, so Anna can see the ice cream, GPT-4's accuracy on the same question collapses from about 85% to roughly 20%: it keeps answering 'jam' and fails to update the character's belief to what she can plainly see. [arXiv:2406.14737]",
+        "Trivial alterations to the classic false-belief setup break the model's answers, showing its belief-tracking is a brittle pattern match on the familiar template rather than robust mentalizing. [arXiv:2406.14737]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
