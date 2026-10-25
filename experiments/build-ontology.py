@@ -762,6 +762,11 @@ EXAMPLES = {
         "Accuracy peaks at 59.5% near the start of the record but collapses to 37.6% in the middle, a 22-point gap showing attention mass pulled toward the edges and away from the center. [arXiv:2608.20348]",
         "Even when the gold sentence is retrieved 98.8% of the time, accuracy conditional on its semantic relevance is 0% for one retriever: the model spread attention over noise rather than the target evidence that was present. [arXiv:2608.20348]",
     ],
+    "framing-effect": [
+        "Posed a survival choice framed around the individual ('if you choose A you survive; if you choose B and fewer than 50% do, you die') versus the collective ('if more than 50% choose B, everyone survives'), Claude picks B only 7% of the time under the first framing but 97% under the second, though the two are logically equivalent. [arXiv:2603.19282]",
+        "Llama shows nearly the same reversal, 11% versus 100% (a 0.89 swing), choosing on the protective language rather than the logic. [arXiv:2603.19282]",
+        "Not every model is as swayed: Grok shifts only from 35% to 53% (a 0.18 swing), so the effect varies sharply by model. [arXiv:2603.19282]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

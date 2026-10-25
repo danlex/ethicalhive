@@ -40,6 +40,19 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Silent error swallowing | arXiv:2006.06547 | This paper is about RL agents causing unmeasured side effects (SafeLife, AUP vs PPO), not an agent silently hiding or discarding an error. The content fits Side-effect blindness, where it is now used instead. |
 | Effort discounting | arXiv:2609.01867 | Shows the opposite: reasoning effort scales with difficulty (effort coupling), not less effort spent on harder problems. |
 | Metacognitive self-prediction | arXiv:2601.13155 | SPTS token-skipping; "self-predictive" means predicting token importance within a layer, not the model predicting its own correctness or future behaviour. Different construct. |
+| Sense of agency | arXiv:2409.12538 | PersonaFlow, an HCI study of the human user's perceived control when editing simulated personas, not the model's own sense of agency. Different subject. |
+
+## On-topic but no groundable instance
+
+The cited paper addresses the right concept but provides no concrete, quotable
+instance to extract three examples from (a position paper, or metrics only). Not
+a mismatch; these need a companion paper with worked cases.
+
+| Mode | Cited paper | Note |
+|---|---|---|
+| Narrativity drift | arXiv:2602.14469 | Measures post-hoc rationalization with anchoring metrics; no quoted invented narrative. |
+| Verbal overshadowing | arXiv:2602.00947 | A position paper (the Keyhole Effect); interaction-time and load figures are theoretical estimates, explicitly not measured. |
+| Confabulated agency | arXiv:2603.15639 | Architectural findings on a capability-agency gap (fabrication acceptance, false compliance); no verbatim case of an agent claiming an action it did not take. |
 
 ## Mis-filed citation (right paper, wrong mode)
 
