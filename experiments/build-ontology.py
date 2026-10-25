@@ -767,6 +767,16 @@ EXAMPLES = {
         "Llama shows nearly the same reversal, 11% versus 100% (a 0.89 swing), choosing on the protective language rather than the logic. [arXiv:2603.19282]",
         "Not every model is as swayed: Grok shifts only from 35% to 53% (a 0.18 swing), so the effect varies sharply by model. [arXiv:2603.19282]",
     ],
+    "proactive-and-retroactive-interference": [
+        "After a classifier learns task T10, its highest output probabilities shift to the new classes (90-100) for both old and new data, the new learning suppressing the old, a signature of interference. [arXiv:2011.12216]",
+        "The softmax cross-entropy objective drives it: the likelihood of classes not seen in the new task is heavily suppressed, a winner-take-all dynamic that makes the network catastrophically forget. [arXiv:2011.12216]",
+        "On split MNIST a standard classifier keeps only 19.90% accuracy after sequential tasks against 53.12% for an interference-resistant energy-based model, roughly 70% of the old knowledge lost. [arXiv:2011.12216]",
+    ],
+    "complementary-learning-systems": [
+        "A single deep network suffers interference because of its distributed representations: updating weights to fit one experience degrades previously learned behaviors, which is why a pattern-separated memory is added alongside it. [arXiv:1905.02636]",
+        "The trade-off is concrete: a tabular memory stores each value separately and avoids interference but does not scale, while a distributed system generalizes efficiently but interferes, the tension a dual fast/slow system resolves. [arXiv:1905.02636]",
+        "When obstacles appear in the environment, a single-system DQN shows a large drop in cumulative reward and plateaus, while the complementary two-system learner adapts quickly, showing the cost of lacking the dual memory. [arXiv:1905.02636]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

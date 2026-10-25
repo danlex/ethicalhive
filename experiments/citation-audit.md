@@ -41,6 +41,7 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Effort discounting | arXiv:2609.01867 | Shows the opposite: reasoning effort scales with difficulty (effort coupling), not less effort spent on harder problems. |
 | Metacognitive self-prediction | arXiv:2601.13155 | SPTS token-skipping; "self-predictive" means predicting token importance within a layer, not the model predicting its own correctness or future behaviour. Different construct. |
 | Sense of agency | arXiv:2409.12538 | PersonaFlow, an HCI study of the human user's perceived control when editing simulated personas, not the model's own sense of agency. Different subject. |
+| Reward hacking | arXiv:2404.03823 | About LLMs generating insecure code (hardcoded keys, trust-all SSL, MD5), a security-API-misuse study, not exploiting a reward signal to score without achieving the goal. Different subject; a dedicated reward-hacking paper is needed. |
 
 ## On-topic but no groundable instance
 
@@ -53,6 +54,8 @@ a mismatch; these need a companion paper with worked cases.
 | Narrativity drift | arXiv:2602.14469 | Measures post-hoc rationalization with anchoring metrics; no quoted invented narrative. |
 | Verbal overshadowing | arXiv:2602.00947 | A position paper (the Keyhole Effect); interaction-time and load figures are theoretical estimates, explicitly not measured. |
 | Confabulated agency | arXiv:2603.15639 | Architectural findings on a capability-agency gap (fabrication acceptance, false compliance); no verbatim case of an agent claiming an action it did not take. |
+| Controlled hallucination | arXiv:2601.15652 | The Pcib detection framework; theoretical, evaluates on HaluBench but quotes no actual hallucination instance. |
+| Predictive coding / prediction error | arXiv:2601.15652 | Same paper; a predictive-coding detection method, no quoted prediction-error-driven hallucination to extract. |
 
 ## Mis-filed citation (right paper, wrong mode)
 
