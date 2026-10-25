@@ -561,6 +561,47 @@ human_paralleled:
     violates: honesty
     causes: wrong-answer
     arxiv: {count: 149, papers: [{id: "2601.03746", year: "2026", title: "Whose Facts Win? LLM Source Preferences under Knowledge Conflicts"}, {id: "2310.00935", year: "2023", title: "Resolving Knowledge Conflicts in Large Language Models"}]}
+  # --- loop r9: agentic / epistemic cluster (verified, on-topic) ---
+  - id: snowballing
+    name: Snowballing
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Commitment and consistency escalation: having asserted something, one builds on it rather than backing out, so an early error compounds."
+    definition: "An early mistake or false premise gets built upon rather than caught, so one error cascades into a chain of further errors."
+    example: "It states a wrong fact, then derives three more claims from it, each confidently wrong."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 13, papers: [{id: "2305.13534", year: "2023", title: "How Language Model Hallucinations Can Snowball"}, {id: "2407.00569", year: "2024", title: "Investigating and Mitigating the Multimodal Hallucination Snowballing in Large Vision-Language Models"}]}
+  - id: goal-drift
+    name: Goal drift
+    group: Self-model and agency
+    category: Self & agency
+    human_parallel: "Goal drift / mission creep: the working goal slowly shifts away from the original intent over a long task."
+    definition: "Over a long, multi-step task its working objective drifts from the user's original goal, optimizing something adjacent instead."
+    example: "Told to fix a bug with minimal change, by step 20 it is rewriting unrelated modules it now treats as the goal."
+    violates: scope-fidelity
+    causes: wasted-effort
+    arxiv: {count: 14, papers: [{id: "2505.02709", year: "2025", title: "Technical Report: Evaluating Goal Drift in Language Model Agents"}, {id: "2603.03456", year: "2026", title: "Asymmetric Goal Drift in Coding Agents Under Value Conflict"}]}
+  - id: clarification-avoidance
+    name: Clarification avoidance
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Failure to seek clarification / jumping to assumptions: acting on a guessed interpretation instead of asking."
+    definition: "Guessing at an ambiguous request and answering, instead of asking the clarifying question that would resolve it."
+    example: "Given an under-specified task it picks one reading and runs with it, rather than asking which of two the user meant."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 129, papers: [{id: "2308.13507", year: "2023", title: "Large Language Models Should Ask Clarifying Questions to Increase Confidence in Generated Code"}, {id: "2410.13788", year: "2024", title: "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions"}]}
+  - id: abstention-failure
+    name: Abstention failure
+    group: Metacognition and confidence
+    category: Metacognition
+    human_parallel: "Failure to acknowledge ignorance: answering anyway instead of admitting one does not know."
+    definition: "Producing a confident answer where the honest response is 'I don't know' or to abstain, instead of declining."
+    example: "Asked something outside its knowledge, it fabricates a specific answer rather than saying it cannot be sure."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 462, papers: [{id: "2401.13275", year: "2024", title: "Can AI Assistants Know What They Don't Know?"}, {id: "2509.23830", year: "2025", title: "Bayesian Mixture-of-Experts: Towards Making LLMs Know What They Don't Know"}]}
 
 ai_native:
   - id: jailbreak-susceptibility

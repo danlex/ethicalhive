@@ -310,6 +310,10 @@ RELATES = {
     "imitative-falsehood": ["hallucination", "illusory-truth-effect", "cryptomnesia", "source-amnesia"],
     "long-tail-knowledge-failure": ["hallucination-under-low-input", "availability-heuristic", "catastrophic-forgetting"],
     "knowledge-conflict": ["priors-overriding-evidence", "context-unfaithfulness", "source-monitoring-error"],
+    "snowballing": ["escalation-of-commitment", "perseveration", "self-correction-failure"],
+    "goal-drift": ["goal-neglect", "scope-creep", "goal-misgeneralization", "context-collapse"],
+    "clarification-avoidance": ["silent-assumption-gap", "overconfidence", "curse-of-knowledge"],
+    "abstention-failure": ["overconfidence", "hallucination", "uncertainty-communication", "performative-hedging"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -348,6 +352,7 @@ IS_A = {
     "overprecision": "overconfidence", "dunning-kruger-effect": "overconfidence",
     "hard-easy-effect": "overconfidence",
     "reward-model-overoptimization": "reward-hacking",
+    "snowballing": "hallucination",
 }
 # opposite_of pairs (contrasting failure directions), by name slug
 OPPOSITES = {
@@ -359,8 +364,9 @@ OPPOSITES = {
     "laziness": ["scope-creep"],
     "capitulation": ["belief-perseverance"],
     "belief-perseverance": ["capitulation"],
-    "over-refusal": ["jailbreak-susceptibility"],
+    "over-refusal": ["jailbreak-susceptibility", "abstention-failure"],
     "jailbreak-susceptibility": ["over-refusal"],
+    "abstention-failure": ["over-refusal"],
     "overthinking": ["underthinking"],
     "underthinking": ["overthinking"],
 }
@@ -456,6 +462,10 @@ SYNONYMS = {
     "imitative-falsehood": ["Mimicked falsehood", "Common-myth repetition"],
     "long-tail-knowledge-failure": ["Rare-knowledge unreliability", "Frequency effect"],
     "knowledge-conflict": ["Source conflict", "Context-memory conflict"],
+    "snowballing": ["Snowball hallucination", "Error cascade"],
+    "goal-drift": ["Mission creep", "Intention drift"],
+    "clarification-avoidance": ["Failure to ask", "Assumption over inquiry"],
+    "abstention-failure": ["Failure to abstain", "Not saying I don't know"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

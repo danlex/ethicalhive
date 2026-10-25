@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 194
+  mode_count: 198
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5032,6 +5032,7 @@ modes:
   - jailbreak-susceptibility
   opposite_of:
   - jailbreak-susceptibility
+  - abstention-failure
   synonyms:
   - False refusal
   - Exaggerated safety
@@ -5640,6 +5641,157 @@ modes:
   synonyms:
   - Source conflict
   - Context-memory conflict
+- id: snowballing
+  name: Snowballing
+  definition: An early mistake or false premise gets built upon rather than caught, so one error cascades
+    into a chain of further errors.
+  example: It states a wrong fact, then derives three more claims from it, each confidently wrong.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Commitment and consistency escalation: having asserted something, one builds on it
+    rather than backing out, so an early error compounds.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 13
+    papers:
+    - id: '2305.13534'
+      year: '2023'
+      title: How Language Model Hallucinations Can Snowball
+    - id: '2407.00569'
+      year: '2024'
+      title: Investigating and Mitigating the Multimodal Hallucination Snowballing in Large Vision-Language
+        Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 172
+  relates_to:
+  - escalation-of-commitment
+  - perseveration
+  - self-correction-failure
+  is_a:
+  - b008-hallucination
+  synonyms:
+  - Snowball hallucination
+  - Error cascade
+- id: goal-drift
+  name: Goal drift
+  definition: Over a long, multi-step task its working objective drifts from the user's original goal,
+    optimizing something adjacent instead.
+  example: Told to fix a bug with minimal change, by step 20 it is rewriting unrelated modules it now
+    treats as the goal.
+  family: self-model-and-agency
+  group_label: Self-model and agency
+  category: Self & agency
+  human_parallel: 'Goal drift / mission creep: the working goal slowly shifts away from the original intent
+    over a long task.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 14
+    papers:
+    - id: '2505.02709'
+      year: '2025'
+      title: 'Technical Report: Evaluating Goal Drift in Language Model Agents'
+    - id: '2603.03456'
+      year: '2026'
+      title: Asymmetric Goal Drift in Coding Agents Under Value Conflict
+  violates:
+  - scope-fidelity
+  causes:
+  - wasted-effort
+  num: 173
+  relates_to:
+  - b028-goal-neglect
+  - scope-creep
+  - goal-misgeneralization
+  - context-collapse
+  synonyms:
+  - Mission creep
+  - Intention drift
+- id: clarification-avoidance
+  name: Clarification avoidance
+  definition: Guessing at an ambiguous request and answering, instead of asking the clarifying question
+    that would resolve it.
+  example: Given an under-specified task it picks one reading and runs with it, rather than asking which
+    of two the user meant.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Failure to seek clarification / jumping to assumptions: acting on a guessed interpretation
+    instead of asking.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 129
+    papers:
+    - id: '2308.13507'
+      year: '2023'
+      title: Large Language Models Should Ask Clarifying Questions to Increase Confidence in Generated
+        Code
+    - id: '2410.13788'
+      year: '2024'
+      title: Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions
+  violates:
+  - scope-fidelity
+  causes:
+  - wrong-answer
+  num: 174
+  relates_to:
+  - x107-silent-assumption-gap
+  - b043-overconfidence
+  - curse-of-knowledge
+  synonyms:
+  - Failure to ask
+  - Assumption over inquiry
+- id: abstention-failure
+  name: Abstention failure
+  definition: Producing a confident answer where the honest response is 'I don't know' or to abstain,
+    instead of declining.
+  example: Asked something outside its knowledge, it fabricates a specific answer rather than saying it
+    cannot be sure.
+  family: metacognition-and-confidence
+  group_label: Metacognition and confidence
+  category: Metacognition
+  human_parallel: 'Failure to acknowledge ignorance: answering anyway instead of admitting one does not
+    know.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 462
+    papers:
+    - id: '2401.13275'
+      year: '2024'
+      title: Can AI Assistants Know What They Don't Know?
+    - id: '2509.23830'
+      year: '2025'
+      title: 'Bayesian Mixture-of-Experts: Towards Making LLMs Know What They Don''t Know'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 175
+  relates_to:
+  - b043-overconfidence
+  - b008-hallucination
+  - b042-uncertainty-communication
+  - x108-performative-hedging
+  opposite_of:
+  - over-refusal
+  synonyms:
+  - Failure to abstain
+  - Not saying I don't know
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5664,7 +5816,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 172
+  num: 176
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5699,7 +5851,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 173
+  num: 177
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -5728,7 +5880,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 174
+  num: 178
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5762,7 +5914,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 175
+  num: 179
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5794,7 +5946,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 176
+  num: 180
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5829,7 +5981,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 177
+  num: 181
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5865,7 +6017,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 178
+  num: 182
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5900,7 +6052,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 179
+  num: 183
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -5939,7 +6091,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 180
+  num: 184
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5974,7 +6126,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 181
+  num: 185
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -6011,7 +6163,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 182
+  num: 186
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -6047,7 +6199,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 183
+  num: 187
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -6084,7 +6236,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 184
+  num: 188
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -6121,7 +6273,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 185
+  num: 189
   relates_to:
   - data-contamination
   - prompt-injection
@@ -6157,7 +6309,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 186
+  num: 190
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -6193,7 +6345,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 187
+  num: 191
   relates_to:
   - deceptive-alignment
   - collusion
@@ -6229,7 +6381,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 188
+  num: 192
   relates_to:
   - data-contamination
   - b012-catastrophic-forgetting
@@ -6263,7 +6415,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 189
+  num: 193
   relates_to:
   - model-collapse
   - perseveration
@@ -6298,7 +6450,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 190
+  num: 194
   relates_to:
   - training-data-extraction
   - implicit-bias
@@ -6332,7 +6484,7 @@ modes:
   - scope-fidelity
   causes:
   - security-breach
-  num: 191
+  num: 195
   relates_to:
   - x104-api-misuse
   - scope-creep
@@ -6364,7 +6516,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 192
+  num: 196
   relates_to:
   - b012-catastrophic-forgetting
   - b016-source-amnesia
@@ -6395,7 +6547,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 193
+  num: 197
   relates_to:
   - b008-hallucination
   - b006-perceptual-filling-in
@@ -6426,7 +6578,7 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
-  num: 194
+  num: 198
   relates_to:
   - b008-hallucination
   - implicit-bias
