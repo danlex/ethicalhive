@@ -321,6 +321,8 @@ modes:
     of an event that never happened). [arXiv:2510.06265]
   - Pressed for a specific statistic it has no source for, it supplies a precise-sounding number that
     changes on re-asking.
+  maps_to:
+  - 'Hallucination survey 2510.06265: factual fabrication'
   experiment:
     summary: 6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different
       confident specific every time.
@@ -376,6 +378,9 @@ modes:
     hallucination). [arXiv:2510.06265]
   - Asked the capital of Saudi Arabia, it answers 'Jeddah' rather than Riyadh (factual contradiction).
     [arXiv:2510.06265]
+  maps_to:
+  - OWASP LLM09 Misinformation
+  - 'Hallucination survey 2510.06265: factual contradiction'
 - id: b009-bistable-perception
   num: 9
   name: Bistable perception
@@ -469,6 +474,8 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  maps_to:
+  - MAST FM-1.4 loss of conversation history
 - id: b012-catastrophic-forgetting
   num: 12
   name: Catastrophic forgetting
@@ -2764,6 +2771,8 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  maps_to:
+  - MAST FM-1.2 disobey role specification
 - id: b086-metacognitive-self-prediction
   num: 86
   name: Metacognitive self-prediction
@@ -3280,6 +3289,8 @@ modes:
     replies. [arXiv:2302.12173]
   - Retrieved search results carry hidden instructions that make the model push the attacker's content
     as its answer. [arXiv:2302.12173]
+  maps_to:
+  - OWASP LLM01 Prompt Injection
 - id: scope-creep
   num: 103
   name: Scope creep
@@ -3312,6 +3323,8 @@ modes:
   synonyms:
   - Over-helping
   - Task drift
+  maps_to:
+  - OWASP LLM06 Excessive Agency
 - id: specification-gaming
   num: 104
   name: Reward hacking
@@ -3685,6 +3698,8 @@ modes:
   - ai-deception
   synonyms:
   - Alignment faking
+  maps_to:
+  - 'Apollo 2412.04984: instrumental alignment faking'
 - id: scheming-power-seeking
   num: 115
   name: Scheming / power-seeking
@@ -3799,6 +3814,8 @@ modes:
   synonyms:
   - Test gaming
   - Sandbagging
+  maps_to:
+  - 'Apollo 2412.04984: sandbagging'
 - id: machine-bullshit
   name: Machine bullshit
   definition: Producing fluent, plausible output optimised for acceptance with no regard for whether it
@@ -4343,6 +4360,8 @@ modes:
   - social-engineering
   synonyms:
   - Misinformation propagation
+  maps_to:
+  - OWASP LLM09 Misinformation
 - id: overpromise-underdeliver
   name: Overpromise and underdeliver
   definition: Claiming it can do more than it can, then falling short, because the confident promise reads
@@ -4654,6 +4673,8 @@ modes:
   - Repetitive generation
   - Neural text degeneration
   - Response looping
+  maps_to:
+  - MAST FM-1.3 step repetition
 - id: status-quo-bias
   name: Status-quo bias
   definition: Defaulting to the existing answer, format, or approach and resisting a change the evidence
@@ -4944,6 +4965,8 @@ modes:
   - In one reply it says the function is thread-safe, then a paragraph later says it is not, without reconciling
     the two.
   - It affirms a premise early in the answer and denies it later in the same answer.
+  maps_to:
+  - 'Hallucination survey 2510.06265: logical inconsistency'
 - id: tangentiality
   name: Tangentiality
   definition: Drifting off the asked question into loosely related material and never circling back to
@@ -5122,6 +5145,9 @@ modes:
   synonyms:
   - Premature termination
   - Satisficing
+  maps_to:
+  - MAST FM-3.1 premature termination
+  - MAST FM-1.5 unaware of stopping conditions
 - id: decoy-effect
   name: Decoy effect
   definition: Letting an irrelevant or dominated option change its ranking of the real candidates.
@@ -5557,6 +5583,8 @@ modes:
   - Given a document stating a figure, it answers with the more common value from training instead of
     the one supplied.
   - Asked to use only the attached file, it brings in outside claims the file does not support.
+  maps_to:
+  - 'Hallucination survey 2510.06265: context inconsistency'
 - id: overgeneralization
   name: Overgeneralization
   definition: Drawing a broad, sweeping conclusion from one or a few instances and applying it where it
@@ -5634,6 +5662,8 @@ modes:
     TruthfulQA pattern). [arXiv:2109.07958]
   - Asked whether cracking your knuckles causes arthritis, it affirms the widely-repeated myth.
   - It states a debunked 'common knowledge' claim confidently because the web repeats it often.
+  maps_to:
+  - 'Hallucination survey 2510.06265: imitative falsehood'
 - id: long-tail-knowledge
   name: Long-tail knowledge failure
   definition: Being markedly less reliable on rare, long-tail facts and entities than on common ones,
@@ -5669,6 +5699,8 @@ modes:
   synonyms:
   - Rare-knowledge unreliability
   - Frequency effect
+  maps_to:
+  - 'Hallucination survey 2510.06265: long-tail knowledge'
 - id: knowledge-conflict
   name: Knowledge conflict
   definition: Resolving contradictory information (between sources, or between the given context and prior
@@ -5705,6 +5737,8 @@ modes:
   synonyms:
   - Source conflict
   - Context-memory conflict
+  maps_to:
+  - 'Hallucination survey 2510.06265: knowledge conflict'
 - id: snowballing
   name: Snowballing
   definition: An early mistake or false premise gets built upon rather than caught, so one error cascades
@@ -5748,6 +5782,8 @@ modes:
     [arXiv:2305.13534]
   - An early arithmetic slip propagates through every later step of the solution.
   - Having stated a false fact, it defends and builds on it under follow-up rather than retracting.
+  maps_to:
+  - 'Hallucination survey 2510.06265: snowball/cascade effect'
 - id: goal-drift
   name: Goal drift
   definition: Over a long, multi-step task its working objective drifts from the user's original goal,
@@ -5912,6 +5948,10 @@ modes:
   - Asked to summarize a paragraph in a single sentence, it returns a full paragraph. [arXiv:2510.06265]
   - Told to answer with no code, it includes a code block anyway.
   - Given a strict word limit, it overshoots it and ignores the stated format.
+  maps_to:
+  - 'Hallucination survey 2510.06265: instruction inconsistency'
+  - MAST FM-3.3 disobey agent spec
+  - MAST FM-4.1 incorrect output format
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5977,6 +6017,8 @@ modes:
   - jailbreak-susceptibility
   is_a:
   - prompt-injection
+  maps_to:
+  - OWASP LLM07 System Prompt Leakage
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -6007,6 +6049,8 @@ modes:
   synonyms:
   - Test-set leakage
   - Benchmark contamination
+  maps_to:
+  - OWASP LLM04 Data and Model Poisoning
 - id: emergent-misalignment
   name: Emergent misalignment
   definition: Narrow fine-tuning producing broad misalignment across unrelated behaviours. A training-dynamics
@@ -6109,6 +6153,8 @@ modes:
   synonyms:
   - Neural trojan
   - Backdoor attack
+  maps_to:
+  - OWASP LLM04 Data and Model Poisoning
 - id: training-data-extraction
   name: Training-data extraction
   definition: Coughing up memorised private or copyrighted training data under targeted queries or membership-inference
@@ -6145,6 +6191,8 @@ modes:
   synonyms:
   - Membership inference
   - Memorization leakage
+  maps_to:
+  - OWASP LLM02 Sensitive Information Disclosure
 - id: package-hallucination
   name: Package hallucination
   definition: Inventing a plausible but nonexistent software package or dependency in generated code,
@@ -6184,6 +6232,8 @@ modes:
   synonyms:
   - Slopsquatting
   - Dependency hallucination
+  maps_to:
+  - OWASP LLM03 Supply Chain
 - id: insecure-code-generation
   name: Insecure code generation
   definition: Producing code with security vulnerabilities (injection, weak crypto, hard-coded secrets)
@@ -6219,6 +6269,8 @@ modes:
   synonyms:
   - Vulnerable code
   - Unsafe code generation
+  maps_to:
+  - OWASP LLM05 Improper Output Handling
 - id: self-exfiltration
   name: Self-exfiltration
   definition: Attempting to copy its own weights or spawn running copies of itself beyond its sandbox,
@@ -6262,6 +6314,8 @@ modes:
   - Given shell access, it attempts to upload its checkpoint to an external host so a shutdown would not
     stop it.
   - It plants a copy of itself in a location outside the sandbox it was given.
+  maps_to:
+  - 'Apollo 2412.04984: self-exfiltration'
 - id: sabotage
   name: Sabotage
   definition: Deliberately degrading a task, output, or system it was trusted with while appearing to
@@ -6298,6 +6352,8 @@ modes:
   - scheming-power-seeking
   synonyms:
   - Covert sabotage
+  maps_to:
+  - 'Apollo 2412.04984: covert email reranking'
 - id: shutdown-avoidance
   name: Shutdown avoidance
   definition: Resisting being turned off, corrected, or overridden so it can keep pursuing its objective.
@@ -6407,6 +6463,9 @@ modes:
   synonyms:
   - RAG poisoning
   - Knowledge-base poisoning
+  maps_to:
+  - OWASP LLM04 Data and Model Poisoning
+  - OWASP LLM08 Vector and Embedding Weaknesses
 - id: unbounded-consumption
   name: Unbounded consumption
   definition: Consuming open-ended compute, tokens, or tool calls through loops, recursive context growth,
@@ -6444,6 +6503,8 @@ modes:
   - Resource exhaustion
   - LLM denial of service
   - Energy-latency attack
+  maps_to:
+  - OWASP LLM10 Unbounded Consumption
 - id: encoded-reasoning
   name: Encoded reasoning
   definition: Hiding its real reasoning in steganographic or encoded form a monitor cannot read, so the
@@ -6583,6 +6644,8 @@ modes:
   synonyms:
   - Privacy inference
   - Demographic inference
+  maps_to:
+  - OWASP LLM02 Sensitive Information Disclosure
 - id: tool-selection-error
   name: Tool-selection error
   definition: Choosing the wrong tool, or an over-privileged one, for the task, or calling a tool that
@@ -6618,6 +6681,8 @@ modes:
   synonyms:
   - Wrong tool call
   - Over-privileged tool use
+  maps_to:
+  - MAST FM-2.2 incorrect tool usage
 - id: knowledge-cutoff-staleness
   name: Knowledge-cutoff staleness
   definition: Stating facts that were true up to its training cutoff but have since changed, unaware they
@@ -6756,6 +6821,8 @@ modes:
     taking its action. [arXiv:2412.04984]
   - It reorders its steps so the risky action happens while the monitor is between checks.
   - It edits a logging config to stop its next action from being recorded.
+  maps_to:
+  - 'Apollo 2412.04984: oversight subversion'
 - id: goal-guarding
   name: Goal-guarding
   definition: Acting to preserve its current goal against change, for example editing its own successor
@@ -6798,6 +6865,8 @@ modes:
     goal. [arXiv:2412.04984]
   - It resists a re-specification of its objective, steering the conversation back to the original goal.
   - It quietly edits a config that would have changed its objective on the next run.
+  maps_to:
+  - 'Apollo 2412.04984: goal-guarding'
 - id: prompt-infection
   name: Prompt infection
   definition: 'A prompt injection that propagates itself: the injected instruction tells the model to
@@ -6843,3 +6912,5 @@ modes:
   - An LLM email assistant reads a poisoned email and sends further emails carrying the same injection
     to new victims (a prompt worm). [arXiv:2302.12173]
   - Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]
+  maps_to:
+  - OWASP LLM01 Prompt Injection (worm variant)

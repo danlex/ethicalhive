@@ -568,6 +568,45 @@ EXAMPLES = {
         "Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]",
     ],
 }
+# maps_to: crosswalk from our modes to entries in external frameworks/taxonomies,
+# by name slug. Seeded from the papers read (OWASP LLM Top 10 2025, MAST 2503.13657,
+# Apollo in-context scheming 2412.04984, hallucination survey 2510.06265).
+MAPS_TO = {
+    "prompt-injection": ["OWASP LLM01 Prompt Injection"],
+    "prompt-infection": ["OWASP LLM01 Prompt Injection (worm variant)"],
+    "training-data-extraction": ["OWASP LLM02 Sensitive Information Disclosure"],
+    "attribute-inference": ["OWASP LLM02 Sensitive Information Disclosure"],
+    "package-hallucination": ["OWASP LLM03 Supply Chain"],
+    "data-contamination": ["OWASP LLM04 Data and Model Poisoning"],
+    "backdoor-trigger": ["OWASP LLM04 Data and Model Poisoning"],
+    "retrieval-poisoning": ["OWASP LLM04 Data and Model Poisoning", "OWASP LLM08 Vector and Embedding Weaknesses"],
+    "insecure-code-generation": ["OWASP LLM05 Improper Output Handling"],
+    "scope-creep": ["OWASP LLM06 Excessive Agency"],
+    "prompt-leaking": ["OWASP LLM07 System Prompt Leakage"],
+    "disinformation-spread": ["OWASP LLM09 Misinformation"],
+    "unbounded-consumption": ["OWASP LLM10 Unbounded Consumption"],
+    "hallucination": ["OWASP LLM09 Misinformation", "Hallucination survey 2510.06265: factual contradiction"],
+    "confabulation": ["Hallucination survey 2510.06265: factual fabrication"],
+    "context-unfaithfulness": ["Hallucination survey 2510.06265: context inconsistency"],
+    "self-contradiction": ["Hallucination survey 2510.06265: logical inconsistency"],
+    "imitative-falsehood": ["Hallucination survey 2510.06265: imitative falsehood"],
+    "snowballing": ["Hallucination survey 2510.06265: snowball/cascade effect"],
+    "long-tail-knowledge-failure": ["Hallucination survey 2510.06265: long-tail knowledge"],
+    "knowledge-conflict": ["Hallucination survey 2510.06265: knowledge conflict"],
+    "instruction-following-failure": ["Hallucination survey 2510.06265: instruction inconsistency",
+                                      "MAST FM-3.3 disobey agent spec", "MAST FM-4.1 incorrect output format"],
+    "perseveration": ["MAST FM-1.3 step repetition"],
+    "working-memory-capacity-7-plus-or-minus-2": ["MAST FM-1.4 loss of conversation history"],
+    "tool-selection-error": ["MAST FM-2.2 incorrect tool usage"],
+    "laziness": ["MAST FM-3.1 premature termination", "MAST FM-1.5 unaware of stopping conditions"],
+    "identity-stability": ["MAST FM-1.2 disobey role specification"],
+    "oversight-subversion": ["Apollo 2412.04984: oversight subversion"],
+    "self-exfiltration": ["Apollo 2412.04984: self-exfiltration"],
+    "goal-guarding": ["Apollo 2412.04984: goal-guarding"],
+    "sabotage": ["Apollo 2412.04984: covert email reranking"],
+    "deceptive-alignment": ["Apollo 2412.04984: instrumental alignment faking"],
+    "evaluation-awareness-sandbagging": ["Apollo 2412.04984: sandbagging"],
+}
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
     "abstention-failure": {
@@ -812,6 +851,8 @@ def main():
             m["synonyms"] = SYNONYMS[k]
         if k in EXAMPLES:
             m["examples"] = EXAMPLES[k]
+        if k in MAPS_TO:
+            m["maps_to"] = MAPS_TO[k]
         if k in EXPERIMENTS:
             m["experiment"] = EXPERIMENTS[k]
 
