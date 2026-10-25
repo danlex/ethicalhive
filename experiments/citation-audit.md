@@ -38,6 +38,8 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Bistable perception | arXiv:2506.18781 | About self-inconsistency on simple relational tasks (closer to Self-contradiction, already grounded), not perception flipping between two stable interpretations of an ambiguous input. |
 | Source amnesia | arXiv:2603.05828 | HART, a hallucination-attribution framework; reports error-type distributions and aims to solve attribution, but shows no case of the model retaining a fact while losing or fabricating its origin. |
 | Silent error swallowing | arXiv:2006.06547 | This paper is about RL agents causing unmeasured side effects (SafeLife, AUP vs PPO), not an agent silently hiding or discarding an error. The content fits Side-effect blindness, where it is now used instead. |
+| Effort discounting | arXiv:2609.01867 | Shows the opposite: reasoning effort scales with difficulty (effort coupling), not less effort spent on harder problems. |
+| Metacognitive self-prediction | arXiv:2601.13155 | SPTS token-skipping; "self-predictive" means predicting token importance within a layer, not the model predicting its own correctness or future behaviour. Different construct. |
 
 ## Mis-filed citation (right paper, wrong mode)
 
