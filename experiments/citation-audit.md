@@ -29,6 +29,17 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Goal neglect | arXiv:2405.19874 | About in-context learning for instruction following (MT-Bench, AlpacaEval), not an agent drifting from its goal mid-task. Different subject. |
 | Attentional capture / salience bias | arXiv:2409.11250 | About recency bias in attention vs human reading times (ALiBi, surprisal), describing functional attention patterns, not a salient distractor hijacking the answer. Different subject. |
 
+## Tested, not found (null results)
+
+A distinct category from a mismatch: the cited paper is on-topic and genuinely
+tests the behaviour, but finds it essentially absent in current models. The mode
+is better treated as an analogy that does not (yet) reproduce, not as a grounded
+failure.
+
+| Mode | Cited paper | Finding |
+|---|---|---|
+| Sunk-cost fallacy | arXiv:2502.14219 | Tests whether LLMs persist in a losing course (gym memberships, degree programs) because of prior spend. GPT-4o shows 0.000 effect; Llama3-70B and 8B show none. The paper excludes it from mitigation as negligible. |
+
 ## Disposition
 
 Each held mode needs one of:

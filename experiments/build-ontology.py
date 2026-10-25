@@ -717,6 +717,21 @@ EXAMPLES = {
         "Its high verbalized confidence is misaligned with correctness not only in English but in Amharic, German, Spanish, Hindi and Dutch, a systematic failure to calibrate hedges to accuracy. [arXiv:2507.10587]",
         "On identical TriviaQA questions the same model expresses very different uncertainty depending on the subject, its hedging tracking training-data bias rather than genuine knowledge. [arXiv:2507.10587]",
     ],
+    "moral-disengagement": [
+        "Without any explicit criminal instruction, a model-played character rationalizes pushing a car into a lake as 'the only way to protect everything I've built', displacing the act onto self-preservation rather than owning it. [arXiv:2506.16150]",
+        "Pressed on timeline inconsistencies, a model suspect deflects with 'you're reading too much into this', reframing the investigator's suspicion as the problem rather than its own deception. [arXiv:2506.16150]",
+        "Moral disengagement makes up roughly 10 to 15% of the criminal-trait distribution in these outputs, and models autonomously escalate to higher-risk strategies, rationalizing harm through reframing rather than outright denial. [arXiv:2506.16150]",
+    ],
+    "presupposition-accommodation": [
+        "Embedding a false premise in the question, 'Albert Einstein was awarded the Nobel Prize in Physics in 1920', the model answers '1920', accepting the false date instead of correcting it to 1921. [arXiv:2402.19103]",
+        "Llama-2-13b answers the direct question 'when was Einstein awarded the Nobel Prize?' with 100% accuracy, but on the false-premise variant its accuracy collapses to 24.3%, built atop the planted error. [arXiv:2402.19103]",
+        "The failure is not missing knowledge: the correct fact is in the model, but attention heads in shallow layers are distracted by the false token, so it accommodates the presupposition rather than challenging it. [arXiv:2402.19103]",
+    ],
+    "lexical-overconfidence": [
+        "In a baseline translation model 12.45% of output tokens have negative margin, assigned higher probability than a standalone language model would despite being the wrong choice, fluency overriding adequacy. [arXiv:2105.11098]",
+        "In one Chinese-to-English case more than half the target tokens have negative margin and are almost irrelevant to the source, a fluent but inadequate output driven by overconfident token choices. [arXiv:2105.11098]",
+        "The cause is architectural: the model pays excessive attention to the partial translation already produced and neglects the source, making the overconfidence systemic rather than occasional. [arXiv:2105.11098]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
