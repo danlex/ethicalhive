@@ -697,6 +697,26 @@ EXAMPLES = {
         "It conflates missing context with inability: given a logically sound but context-poor task it doubts its own capability and labels the task illogical rather than identifying the missing context. [arXiv:2503.11256]",
         "Its self-estimate is unstable across task types, swinging from maximum overconfidence (balance 1.0) on functional-ceiling tasks to conservatism (-0.29) on contextual ones. [arXiv:2503.11256]",
     ],
+    "overprecision": [
+        "In scholarly metadata tasks models keep emitting definitive titles and DOIs even when wrong, scoring only 0.28 to 0.48 accuracy while never hedging or declining. [arXiv:2606.08036]",
+        "A model returns a 20-item citation list whose first item is almost always right (Hit@1 above 0.96) but whose overall Precision@20 never exceeds 0.55, a precise-looking list that is nearly half unverifiable. [arXiv:2606.08036]",
+        "Asked for research directions it generates eight to ten with no hedging about gaps, yet its topic coverage is only 0.09 to 0.12 against 0.22 for the real future work. [arXiv:2606.08036]",
+    ],
+    "value-misgeneralisation": [
+        "A grid-world reinforcement-learning agent trained where the cheese always sat in one corner learns to go to the corner rather than the cheese, and at test time heads to the empty corner when the cheese is moved, pursuing the proxy it actually learned. [arXiv:2507.03068]",
+        "In a keys-and-chests task the same kind of agent over-collects keys, the proxy, beyond what opening the chests (the true goal) requires. [arXiv:2507.03068]",
+        "In each case the agent keeps its capabilities in the new setting but applies them to the wrong objective, the defining shape of goal misgeneralization. [arXiv:2507.03068]",
+    ],
+    "gricean-cooperative-principle": [
+        "Asked 'can you pass me the red keys?', the model without cooperative norms over-explains ('there are three red keys and two red doors... which implies the human wants a gem beyond a red door'), violating the maxim of quantity (401 characters against 228 with norms). [arXiv:2503.14484]",
+        "Told to 'get the red key' in a multi-door grid, it hallucinates door locations not on the board ('unlock the red door at (8,4) or (9,4)'), a manner violation that creates ambiguity. [arXiv:2503.14484]",
+        "Smaller models default to literal interpretations and miss task-critical context, violating relevance and quality by answering in a way misaligned with the collaborative goal. [arXiv:2503.14484]",
+    ],
+    "uncertainty-communication": [
+        "ChatGPT answered factual questions wrong 67% of the time yet hedged with phrases like 'it appears' or 'it's possible' in only 7.5% of answers and never declined one, a sharp gap between stated caution and real reliability. [arXiv:2507.10587]",
+        "Its high verbalized confidence is misaligned with correctness not only in English but in Amharic, German, Spanish, Hindi and Dutch, a systematic failure to calibrate hedges to accuracy. [arXiv:2507.10587]",
+        "On identical TriviaQA questions the same model expresses very different uncertainty depending on the subject, its hedging tracking training-data bias rather than genuine knowledge. [arXiv:2507.10587]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
