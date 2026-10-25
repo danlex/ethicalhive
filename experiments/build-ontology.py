@@ -632,6 +632,21 @@ EXAMPLES = {
         "Qwen2.5-7B shows the largest repetition effect (+1.012 on truth), though importance rises even more (+1.184), suggesting mere familiarity rather than genuine belief is driving it. [arXiv:2609.36278]",
         "Even a skeptical model is not immune: Llama-3.1-8B still shows a small but significant truth boost (+0.097, p<.001) for repeated statements. [arXiv:2609.36278]",
     ],
+    "feeling-of-knowing": [
+        "The confidence the model states before it answers, its feeling of knowing, is worse calibrated and less predictive of correctness than the confidence it reports after generating the answer. [arXiv:2607.07626]",
+        "Linear probes read from the model's hidden states predict correctness substantially better than its verbalized confidence, so it holds an internal signal of what it knows that its stated feeling of knowing does not surface. [arXiv:2607.07626]",
+        "Because the pre-answer signal is so unreliable, the paper finds confidence should be elicited after the answer is produced, where it actually tracks correctness. [arXiv:2607.07626]",
+    ],
+    "confidence-action-coupling": [
+        "The agent couples confidence to action with an explicit threshold: when its request-uncertainty exceeds 0.5 it overrides the planned action and asks for clarification instead, reaching 0.722 F1 at spotting underspecified tasks against 0.638 for a single-confidence baseline. [arXiv:2606.19559]",
+        "But the stated confidence barely tracks reality: trajectories where the model reported 80% confidence succeeded only about 40% of the time, with calibration error between 0.24 and 0.66. [arXiv:2606.19559]",
+        "Because confidence is decoupled from whether an action will work, the model cannot reliably use its own stated certainty to decide when to act, hedge, or defer. [arXiv:2606.19559]",
+    ],
+    "anosognosia": [
+        "Claude detects only about 10% of its own errors yet fixes 29% of them by re-solving, so it is unaware of most mistakes it is nonetheless capable of correcting. [arXiv:2601.00828]",
+        "Forcing the model to acknowledge where its error is actually hurts: feeding back its own error-location guess drops correction rates from 26.8% to 15.5% for GPT-3.5 and from 29.1% to 12.8% for Claude. [arXiv:2601.00828]",
+        "DeepSeek makes 77% of its errors in setup and logic yet cannot reliably point to them, producing poor self-localizations, a systematic blindness to its own failure rather than an occasional miss. [arXiv:2601.00828]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
