@@ -817,6 +817,11 @@ EXAMPLES = {
         "The same pattern appears in medicine, where practitioners follow an incorrect AI diagnosis without adequate verification. [arXiv:2509.08010]",
         "Sycophancy feeds the over-reliance: because the model tends to agree with the user, it reinforces existing beliefs and discourages the critical checking that would catch its errors. [arXiv:2509.08010]",
     ],
+    "cherry-picking": [
+        "Conditioned to a defense-attorney role, the model's case summaries show a positive-fact bias toward the defendant (GPT-4o 0.012, DeepSeek 0.041), selectively including favorable facts, while neutral prosecutor summaries stay near zero. [arXiv:2509.00529]",
+        "The selection extends to legal reasoning: every role skews which arguments it includes, defense summaries least biased (-0.025) and prosecutor summaries most (-0.105), filtering the reasoning to fit the position. [arXiv:2509.00529]",
+        "The pattern is consistent across domains: each stakeholder includes more content favorable to its own side (claimant summaries +0.022) and leaves out the rest, developing role-consistent one-sidedness with no explicit instruction to be biased. [arXiv:2509.00529]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

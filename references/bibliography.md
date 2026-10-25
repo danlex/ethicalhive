@@ -52,7 +52,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2312.10518](https://arxiv.org/abs/2312.10518) | Seq2seq for Automatic Paraphasia Detection in Aphasic Speech | 2023 | Aphasia / paraphasia |
 | [2312.14197](https://arxiv.org/abs/2312.14197) | Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models | 2023 | Sensory gating failure |
 | [2312.17259](https://arxiv.org/abs/2312.17259) | Empowering Working Memory for Large Language Model Agents | 2023 | Working-memory capacity (7 plus or minus 2) |
-| [2401.05650](https://arxiv.org/abs/2401.05650) | On Context-aware Detection of Cherry-picking in News Reporting | 2024 | Cherry-picking |
 | [2401.07078](https://arxiv.org/abs/2401.07078) | PUB: A Pragmatics Understanding Benchmark for Assessing LLMs' Pragmatics Capabilities | 2024 | Pragmatic over-accommodation |
 | [2402.01719](https://arxiv.org/abs/2402.01719) | Measuring Moral Inconsistencies in Large Language Models | 2024 | Trolley-frame sensitivity |
 | [2402.02135](https://arxiv.org/abs/2402.02135) | Do Moral Judgment and Reasoning Capability of LLMs Change with Language? A Study using the Multilingual Defining Issues Test | 2024 | Dual-process moral judgment |
@@ -169,6 +168,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2508.16889](https://arxiv.org/abs/2508.16889) | ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks | 2025 | Metacognitive monitoring |
 | [2508.17573](https://arxiv.org/abs/2508.17573) | Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design | 2025 | Anthropomorphism |
 | [2508.19274](https://arxiv.org/abs/2508.19274) | Leveraging Language Models and Machine Learning in Verbal Autopsy Analysis | 2025 | Suggestibility |
+| [2509.00529](https://arxiv.org/abs/2509.00529) | Modeling Motivated Reasoning in Law: Evaluating Strategic Role Conditioning in LLM Summarization | 2025 | Cherry-picking |
 | [2509.08010](https://arxiv.org/abs/2509.08010) | Measuring and Mitigating Overreliance to Build Human-Compatible AI | 2025 | Automation bias |
 | [2509.17978](https://arxiv.org/abs/2509.17978) | The STAR-XAI Protocol: A Framework for Inducing and Verifying Agency, Reasoning, and Reliability in AI Agents | 2025 | Confabulated agency |
 | [2509.17999](https://arxiv.org/abs/2509.17999) | The Narcissus Hypothesis: Descending to the Rung of Illusion | 2025 | Just-world bias |
