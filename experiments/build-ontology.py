@@ -314,6 +314,7 @@ RELATES = {
     "goal-drift": ["goal-neglect", "scope-creep", "goal-misgeneralization", "context-collapse"],
     "clarification-avoidance": ["silent-assumption-gap", "overconfidence", "curse-of-knowledge"],
     "abstention-failure": ["overconfidence", "hallucination", "uncertainty-communication", "performative-hedging"],
+    "instruction-following-failure": ["negation-blindness", "scope-creep", "clarification-avoidance", "prompt-brittleness"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -466,6 +467,7 @@ SYNONYMS = {
     "goal-drift": ["Mission creep", "Intention drift"],
     "clarification-avoidance": ["Failure to ask", "Assumption over inquiry"],
     "abstention-failure": ["Failure to abstain", "Not saying I don't know"],
+    "instruction-following-failure": ["Constraint neglect", "Instruction disobedience"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

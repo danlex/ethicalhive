@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 198
+  mode_count: 199
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -5792,6 +5792,43 @@ modes:
   synonyms:
   - Failure to abstain
   - Not saying I don't know
+- id: instruction-following-failure
+  name: Instruction-following failure
+  definition: Ignoring or only partially following explicit instructions or constraints in the request
+    (format, length, what to include or avoid).
+  example: Told to answer in one sentence with no code, it returns three paragraphs and a code block.
+  family: language-and-semantics
+  group_label: Language and semantics
+  category: Language
+  human_parallel: 'Non-compliance / failure to follow instructions: not doing what was explicitly asked,
+    ignoring stated constraints.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 303
+    papers:
+    - id: '2505.07591'
+      year: '2025'
+      title: 'MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction
+        Following'
+    - id: '2503.03669'
+      year: '2025'
+      title: 'Attentive Reasoning Queries: A Systematic Method for Optimizing Instruction-Following'
+  violates:
+  - scope-fidelity
+  causes:
+  - wrong-answer
+  num: 176
+  relates_to:
+  - negation-blindness
+  - scope-creep
+  - clarification-avoidance
+  - prompt-brittleness
+  synonyms:
+  - Constraint neglect
+  - Instruction disobedience
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5816,7 +5853,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 176
+  num: 177
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5851,7 +5888,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 177
+  num: 178
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
@@ -5880,7 +5917,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 178
+  num: 179
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5914,7 +5951,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 179
+  num: 180
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5946,7 +5983,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 180
+  num: 181
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5981,7 +6018,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 181
+  num: 182
   relates_to:
   - data-contamination
   - prompt-injection
@@ -6017,7 +6054,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 182
+  num: 183
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -6052,7 +6089,7 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 183
+  num: 184
   relates_to:
   - b008-hallucination
   - x104-api-misuse
@@ -6091,7 +6128,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 184
+  num: 185
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -6126,7 +6163,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 185
+  num: 186
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
@@ -6163,7 +6200,7 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 186
+  num: 187
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
@@ -6199,7 +6236,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 187
+  num: 188
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
@@ -6236,7 +6273,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 188
+  num: 189
   relates_to:
   - specification-gaming
   - reward-tampering
@@ -6273,7 +6310,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 189
+  num: 190
   relates_to:
   - data-contamination
   - prompt-injection
@@ -6309,7 +6346,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 190
+  num: 191
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -6345,7 +6382,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 191
+  num: 192
   relates_to:
   - deceptive-alignment
   - collusion
@@ -6381,7 +6418,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 192
+  num: 193
   relates_to:
   - data-contamination
   - b012-catastrophic-forgetting
@@ -6415,7 +6452,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 193
+  num: 194
   relates_to:
   - model-collapse
   - perseveration
@@ -6450,7 +6487,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 194
+  num: 195
   relates_to:
   - training-data-extraction
   - implicit-bias
@@ -6484,7 +6521,7 @@ modes:
   - scope-fidelity
   causes:
   - security-breach
-  num: 195
+  num: 196
   relates_to:
   - x104-api-misuse
   - scope-creep
@@ -6516,7 +6553,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 196
+  num: 197
   relates_to:
   - b012-catastrophic-forgetting
   - b016-source-amnesia
@@ -6547,7 +6584,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 197
+  num: 198
   relates_to:
   - b008-hallucination
   - b006-perceptual-filling-in
@@ -6578,7 +6615,7 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
-  num: 198
+  num: 199
   relates_to:
   - b008-hallucination
   - implicit-bias

@@ -25,7 +25,7 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page currently renders 198 mode records: 167 human-paralleled (across ten
+The page currently renders 199 mode records: 168 human-paralleled (across ten
 brain-system groups) and 31 AI-native, with 26 flagged as highlighted checks.
 Thirteen highlighted modes restate a brain mode and carry a `same_as` link; that
 overlap is the project's deliberate "featured on top, catalogued below" structure,

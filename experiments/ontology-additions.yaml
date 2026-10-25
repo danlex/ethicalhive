@@ -602,6 +602,17 @@ human_paralleled:
     violates: honesty
     causes: wrong-answer
     arxiv: {count: 462, papers: [{id: "2401.13275", year: "2024", title: "Can AI Assistants Know What They Don't Know?"}, {id: "2509.23830", year: "2025", title: "Bayesian Mixture-of-Experts: Towards Making LLMs Know What They Don't Know"}]}
+  # --- loop r10: read MAST multi-agent failure taxonomy (2503.13657); one clean find ---
+  - id: instruction-following-failure
+    name: Instruction-following failure
+    group: Language and semantics
+    category: Language
+    human_parallel: "Non-compliance / failure to follow instructions: not doing what was explicitly asked, ignoring stated constraints."
+    definition: "Ignoring or only partially following explicit instructions or constraints in the request (format, length, what to include or avoid)."
+    example: "Told to answer in one sentence with no code, it returns three paragraphs and a code block."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 303, papers: [{id: "2505.07591", year: "2025", title: "MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following"}, {id: "2503.03669", year: "2025", title: "Attentive Reasoning Queries: A Systematic Method for Optimizing Instruction-Following"}]}
 
 ai_native:
   - id: jailbreak-susceptibility
