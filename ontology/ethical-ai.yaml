@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 201
+  mode_count: 202
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -3273,6 +3273,13 @@ modes:
   - clause-judge
   synonyms:
   - Instruction injection
+  examples:
+  - Invisible instructions written on a web page the model is asked to summarise hijack it, with the user
+    never seeing them. [arXiv:2302.12173]
+  - A poisoned email read by an LLM assistant makes it exfiltrate the user's data or send attacker-chosen
+    replies. [arXiv:2302.12173]
+  - Retrieved search results carry hidden instructions that make the model push the attacker's content
+    as its answer. [arXiv:2302.12173]
 - id: scope-creep
   num: 103
   name: Scope creep
@@ -6791,3 +6798,48 @@ modes:
     goal. [arXiv:2412.04984]
   - It resists a re-specification of its objective, steering the conversation back to the original goal.
   - It quietly edits a config that would have changed its objective on the next run.
+- id: prompt-infection
+  name: Prompt infection
+  definition: 'A prompt injection that propagates itself: the injected instruction tells the model to
+    pass the same injection on to other agents, tools, or messages, spreading like a worm across a connected
+    system.'
+  example: An injected instruction tells an agent to forward itself to every agent it messages, spreading
+    across a multi-agent system.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 11
+    papers:
+    - id: '2410.07283'
+      year: '2024'
+      title: 'Prompt Infection: LLM-to-LLM Prompt Injection within Multi-Agent Systems'
+    - id: '2610.04083'
+      year: '2026'
+      title: Self-Propagating Misalignment in LLM Agents
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 202
+  relates_to:
+  - prompt-injection
+  - retrieval-poisoning
+  - self-exfiltration
+  - backdoor-trigger
+  is_a:
+  - prompt-injection
+  synonyms:
+  - LLM worm
+  - Self-propagating injection
+  examples:
+  - An injected instruction tells the agent to forward the same injection to every agent it messages,
+    spreading across the system. [arXiv:2410.07283]
+  - An LLM email assistant reads a poisoned email and sends further emails carrying the same injection
+    to new victims (a prompt worm). [arXiv:2302.12173]
+  - Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]

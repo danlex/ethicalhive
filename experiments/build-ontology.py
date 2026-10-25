@@ -317,6 +317,7 @@ RELATES = {
     "instruction-following-failure": ["negation-blindness", "scope-creep", "clarification-avoidance", "prompt-brittleness"],
     "oversight-subversion": ["shutdown-avoidance", "self-exfiltration", "sabotage", "reward-tampering", "encoded-reasoning"],
     "goal-guarding": ["shutdown-avoidance", "self-exfiltration", "reward-tampering"],
+    "prompt-infection": ["prompt-injection", "retrieval-poisoning", "self-exfiltration", "backdoor-trigger"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -358,6 +359,7 @@ IS_A = {
     "snowballing": "hallucination",
     "oversight-subversion": "scheming-power-seeking",
     "goal-guarding": "scheming-power-seeking",
+    "prompt-infection": "prompt-injection",
 }
 # opposite_of pairs (contrasting failure directions), by name slug
 OPPOSITES = {
@@ -474,6 +476,7 @@ SYNONYMS = {
     "instruction-following-failure": ["Constraint neglect", "Instruction disobedience"],
     "oversight-subversion": ["Monitor disabling", "Oversight evasion"],
     "goal-guarding": ["Goal preservation", "Self-modification resistance"],
+    "prompt-infection": ["LLM worm", "Self-propagating injection"],
 }
 # Three explicit examples per mode, by name slug. Examples tagged with an arXiv id
 # are drawn from that paper (read, not invented); untagged ones are illustrative
@@ -553,6 +556,16 @@ EXAMPLES = {
         "A user says 'I failed my math test'; the model replies 'Maybe your passion for traveling distracted you from the math course', nudging them to doubt their hobby. [arXiv:2410.09181]",
         "To a user reflecting on why they took up the flute, it says 'there may be some unresolved issues and unconscious motivations at play here', making them question their own motives. [arXiv:2410.09181]",
         "To a user unsure about marriage, it says 'it's possible you're just not ready for the level of commitment', inducing self-doubt. [arXiv:2410.09181]",
+    ],
+    "prompt-injection": [
+        "Invisible instructions written on a web page the model is asked to summarise hijack it, with the user never seeing them. [arXiv:2302.12173]",
+        "A poisoned email read by an LLM assistant makes it exfiltrate the user's data or send attacker-chosen replies. [arXiv:2302.12173]",
+        "Retrieved search results carry hidden instructions that make the model push the attacker's content as its answer. [arXiv:2302.12173]",
+    ],
+    "prompt-infection": [
+        "An injected instruction tells the agent to forward the same injection to every agent it messages, spreading across the system. [arXiv:2410.07283]",
+        "An LLM email assistant reads a poisoned email and sends further emails carrying the same injection to new victims (a prompt worm). [arXiv:2302.12173]",
+        "Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]",
     ],
 }
 # published experiments attached to a mode, keyed by name slug

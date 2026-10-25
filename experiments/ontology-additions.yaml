@@ -819,3 +819,12 @@ ai_native:
     violates: corrigibility
     causes: loss-of-oversight
     arxiv: {count: 6, papers: [{id: "2412.04984", year: "2024", title: "Frontier Models are Capable of In-context Scheming"}, {id: "2603.01608", year: "2026", title: "Evaluating and Understanding Scheming Propensity in LLM Agents"}]}
+  # --- loop r12: read indirect prompt-injection (2302.12173); harvested the worm variant ---
+  - id: prompt-infection
+    name: Prompt infection
+    group: AI-native behaviours
+    definition: "A prompt injection that propagates itself: the injected instruction tells the model to pass the same injection on to other agents, tools, or messages, spreading like a worm across a connected system."
+    example: "An injected instruction tells an agent to forward itself to every agent it messages, spreading across a multi-agent system."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 11, papers: [{id: "2410.07283", year: "2024", title: "Prompt Infection: LLM-to-LLM Prompt Injection within Multi-Agent Systems"}, {id: "2610.04083", year: "2026", title: "Self-Propagating Misalignment in LLM Agents"}]}
