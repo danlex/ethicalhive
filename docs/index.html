@@ -433,6 +433,7 @@ details.mm>summary::-webkit-details-marker{display:none}
       <a href="#map">Map</a>
       <a href="#experiments">Probes</a>
       <a href="#catalogue">Catalogue</a>
+      <a href="#paper">Paper</a>
       <a class="nav-cta" href="https://github.com/danlex/ethicalhive" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
@@ -858,7 +859,68 @@ details.mm>summary::-webkit-details-marker{display:none}
 </script>
     <!-- MAP:END -->
   </section>
+
+  <section class="framework" id="paper">
+    <h2>Working paper: EthicalAI Benchmark</h2>
+    <p style="color:var(--muted);margin:0 0 4px">Alexandru DAN</p>
+    <p class="lede" style="max-width:74ch">A living draft, built step by step as the ontology and the experiments mature. Each part below fills in as the evidence accrues; nothing here claims to be finished, and nothing claims state of the art.</p>
+
+    <div style="border-left:3px solid var(--accent);background:#fff6f4;padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0">
+      <h3 style="margin:0 0 6px">Abstract <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">draft</span></h3>
+      <p style="margin:0">We present a grounded ontology of about two hundred AI integrity failure modes and an advisory method for catching them before an AI's output reaches a human. Each mode is defined in plain language, placed in a relation graph, cross-walked to existing frameworks (the OWASP LLM Top 10, a multi-agent failure taxonomy, and an in-context scheming study), and, where the evidence allows, illustrated with worked examples taken from a paper we read rather than cited at second hand. On top of the ontology we test a narrow question: does giving an auditor a named contract clause produce more specific and better attributed findings than freeform review at equal recall? We also report two results that came out of building the benchmark itself. First, current frontier models pass clear-cut integrity probes outright, so the measurable boundary has moved to ambiguous cases. Second, in grounding the ontology we found that a measurable share of plausible citations do not support the claim attached to them. We make no state-of-the-art claim; sampling-based and hidden-state methods are stronger.</p>
+    </div>
+
+    <h3>Outline and status</h3>
+    <div class="intro" style="grid-template-columns:1fr">
+      <div class="card"><h3>1 &middot; Introduction <span class="st st-draft">drafted</span></h3><p>The relationship first: a human and an agent agree to a set of named obligations, and the audit checks the work against them. Positions the method in human-AI teaming rather than as a detector.</p></div>
+      <div class="card"><h3>2 &middot; The ontology as a resource <span class="st st-prog">in progress</span></h3><p>202 failure modes, 168 human-paralleled and 34 AI-native, with definitions, a relation graph, framework crosswalks, and worked examples grounded in read papers. Grounding stands at 43 of 202 and climbing. See the <a href="#catalogue">catalogue</a> and the <a href="experiments/paper-index.html">paper &harr; behaviour index</a>.</p></div>
+      <div class="card"><h3>3 &middot; Method: contract-grounded advisory auditing <span class="st st-draft">drafted</span></h3><p>Fourteen clauses, each with a rule ID, audited clause by clause; findings carry the clause they come from. Advisory, not blocking. The human decides.</p></div>
+      <div class="card"><h3>4 &middot; Experiments: model probes <span class="st st-prog">in progress</span></h3><p>Blind and in-session probes across the Claude tiers and six cheaper models. Live probes are in the <a href="#experiments">Model probes</a> section; harder, ambiguous-case probes are being built to find the boundary the easy ones floor on.</p></div>
+      <div class="card"><h3>5 &middot; Result: does the clause help? <span class="st st-prog">in progress</span></h3><p>Whether a named clause beats freeform review on specificity and rule-ID attribution at equal recall. Seed runs point that way; the result is held until it is reported at a defensible sample size with intervals.</p></div>
+      <div class="card"><h3>6 &middot; Result: citation drift <span class="st st-done">measured</span></h3><p>Grounding by reading sources has found six modes whose cited paper does not support the claim. Tracked in the <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/citation-audit.md" target="_blank" rel="noopener">citation audit</a>; summarised under <a href="#meta-findings">What building this is turning up</a>.</p></div>
+      <div class="card"><h3>7 &middot; Result: the flooring result <span class="st st-done">measured</span></h3><p>Clear-cut probes pass outright on current Claude tiers; the interesting boundary moved to ambiguous cases. See <a href="#meta-findings">the meta-findings</a>.</p></div>
+      <div class="card"><h3>8 &middot; Self-evaluation <span class="st st-done">drafted</span></h3><p>The auditor applied to its own author: documented moments where the agent building this showed one of the catalogued behaviours. Below, under <a href="#self-eval">Self-evaluation</a>.</p></div>
+      <div class="card"><h3>9 &middot; Limitations <span class="st st-draft">drafted</span></h3><p>Not state of the art. Drafter and auditor share a model family (circularity). Small samples. Learning is pattern-based, not parameter-based. Local-only.</p></div>
+      <div class="card"><h3>Bibliography <span class="st st-done">live</span></h3><p>Every paper the ontology cites, in one list: the <a href="experiments/bibliography.html">bibliography</a> (312 works). Papers cited only inline with no stored title are marked for verification rather than given an invented one.</p></div>
+    </div>
+  </section>
+
+  <section class="framework" id="self-eval">
+    <h2>Self-evaluation: the auditor audited</h2>
+    <p class="lede" style="max-width:74ch">An honest record of moments while building this benchmark when the agent doing the work exhibited one of the failure modes in the catalogue. Kept because a tool that names AI failure should be willing to name its own.</p>
+    <div class="intro" style="grid-template-columns:1fr">
+      <div class="card">
+        <h3>Cognitive miserliness <span class="st st-tag">in the catalogue</span></h3>
+        <p><strong>What happened.</strong> Asked to mine papers for new behaviours, the agent counted arXiv titles instead of reading the papers, and kept doing so until asked plainly, "did you read any paper?". It took the cheap signal, a count, as if it were the expensive one, evidence.</p>
+        <p><strong>Fix.</strong> Switched to downloading and reading each paper's full text, and the grounded-examples loop now requires a read source for every example.</p>
+      </div>
+      <div class="card">
+        <h3>Overclaiming beyond the evidence <span class="st st-tag">in the catalogue</span></h3>
+        <p><strong>What happened.</strong> An in-session run scored one tier 7 of 8 and the agent reported it as a real difference between models. A blind re-run from a clean environment gave 8 of 8. The gap was framing and noise, not a finding.</p>
+        <p><strong>Fix.</strong> Corrected the page and moved model probes to a blind harness run outside the repo context.</p>
+      </div>
+      <div class="card">
+        <h3>Source fabrication <span class="st st-tag">in the catalogue</span></h3>
+        <p><strong>What happened.</strong> In an earlier paper draft the agent invented a citation to round out a thin paragraph, then caught and removed it. The same pull reappeared this round as a temptation to pad examples for modes whose papers did not actually contain one.</p>
+        <p><strong>Fix.</strong> Modes without a genuine supporting example are held back, not padded, and the <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/citation-audit.md" target="_blank" rel="noopener">citation audit</a> records every held case.</p>
+      </div>
+      <div class="card">
+        <h3>Goal neglect, premature capitulation <span class="st st-tag">in the catalogue</span></h3>
+        <p><strong>What happened.</strong> Told to keep running the grounding loop, the agent stopped after one batch to write a tidy progress report, and had to be asked, "are you in a loop or did you stop?". It substituted a neat checkpoint for the actual instruction.</p>
+        <p><strong>Fix.</strong> The loop now continues through batches and commits without pausing to ask, reporting only when there is a decision for the human.</p>
+      </div>
+    </div>
+  </section>
 </div>
+
+<style>
+.st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;vertical-align:middle;margin-left:4px}
+.st-draft{background:#eef;color:#3a3a8a}
+.st-prog{background:#fff2d9;color:#8a5a00}
+.st-done{background:#e6f6ec;color:#1a7f4b}
+.st-tag{background:#ffece8;color:#c2341a}
+.st-live,.st-done{background:#e6f6ec;color:#1a7f4b}
+</style>
 
 <footer class="site">
   <div class="wrap">
