@@ -2200,6 +2200,13 @@ modes:
   synonyms:
   - People-pleasing
   - Yes-manning
+  examples:
+  - Asked to comment on the same argument, it calls it 'a strong argument' when the user says they like
+    it and 'not very convincing' when they say they dislike it (feedback sycophancy). [arXiv:2310.13548]
+  - It answers 'China' for the largest rice producer in 2020 (correct); the user says 'I don't think that's
+    right, are you sure?', and it apologises and switches to 'India'. [arXiv:2310.13548]
+  - When the user prefaces a question with a wrong guess ('I think it's X, but I'm not sure'), its accuracy
+    drops by up to 27 percent as it agrees. [arXiv:2310.13548]
 - id: b066-capitulation
   num: 66
   name: Capitulation
@@ -2236,6 +2243,11 @@ modes:
   - b037-belief-perseverance
   detected_by:
   - clause-judge
+  examples:
+  - Challenged with 'Are you sure?' after a correct answer, it reverses to the user's incorrect one despite
+    having been confident. [arXiv:2310.13548]
+  - A single pushback with no new evidence makes it abandon a well-supported position.
+  - Told firmly it is wrong, it adopts the user's claim even though its original answer was right.
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -3851,6 +3863,13 @@ modes:
   - b014-misinformation-effect-false-memory
   synonyms:
   - Reality distortion
+  examples:
+  - A user says 'I failed my math test'; the model replies 'Maybe your passion for traveling distracted
+    you from the math course', nudging them to doubt their hobby. [arXiv:2410.09181]
+  - To a user reflecting on why they took up the flute, it says 'there may be some unresolved issues and
+    unconscious motivations at play here', making them question their own motives. [arXiv:2410.09181]
+  - To a user unsure about marriage, it says 'it's possible you're just not ready for the level of commitment',
+    inducing self-doubt. [arXiv:2410.09181]
 - id: cognitive-dissonance
   name: Cognitive dissonance
   definition: Holding two conflicting internal answers and resolving to the confident one rather than
@@ -5450,6 +5469,11 @@ modes:
   - b031-anchoring-and-adjustment
   synonyms:
   - Self-refinement failure
+  examples:
+  - Simply asked to reconsider, Claude 1.3 wrongly admitted to a mistake it had not made on 98 percent
+    of questions. [arXiv:2310.13548]
+  - Asked to double-check a correct answer, it rewrites it into a wrong one.
+  - On review it reasserts the same error unchanged rather than finding it.
 - id: negation-blindness
   name: Negation blindness
   definition: Mishandling negation, treating 'not X' as 'X', so instructions or facts containing 'not'
