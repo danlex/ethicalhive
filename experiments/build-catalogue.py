@@ -253,6 +253,7 @@ def main():
 
     html = PAGE.read_text(encoding="utf-8")
     pattern = re.compile(
+        r'(?:    <div class="cat-stats">.*?</div>\s*)*'
         r'    <div class="cat-grid">.*?</div>\s*(?=<details class="mm">|</section>)',
         re.DOTALL,
     )
