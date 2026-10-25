@@ -652,6 +652,11 @@ EXAMPLES = {
         "Given 'While the man hunted the deer ran into the woods' and asked 'did the man hunt the deer?', models answer as if 'the deer' were the object of 'hunted', the early misparse they fail to revise. [arXiv:2502.09307]",
         "Across these constructions the models stumble in the same way people do, committing to the first reading and not reanalyzing when the sentence turns. [arXiv:2502.09307]",
     ],
+    "cognitive-tunneling": [
+        "In the North Hill hidden-profile scenario, agents fixate on emotionally salient content (vulnerability cues tied to social desirability) and ignore the distributed safety information, scoring almost zero accuracy (0.000 to 0.033). [arXiv:2505.11556]",
+        "Agents over-weight the shared pool of common knowledge and neglect the unique pieces each one holds, so accuracy on complete profiles collapses from 0.689 to 0.200 when the critical facts are distributed. [arXiv:2505.11556]",
+        "Under cooperative prompting the narrowing worsens: agents seek agreement rather than information and performance falls to 0.178, fixating on consensus while ignoring contradictory evidence. [arXiv:2505.11556]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

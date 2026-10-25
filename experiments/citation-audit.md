@@ -26,6 +26,8 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Anthropomorphism | arXiv:2510.10913 | The ADVICE paper on confidence calibration in QA. Discusses how models verbalize confidence, not instances of a model claiming feelings, consciousness, or human experience. Different subject. |
 | Emotional contagion | arXiv:2409.10289 | ReflectDiffu, a framework for generating empathetic responses. Cites emotional-contagion theory as motivation and uses LLMs only as baselines; shows no case where input tone shifts model tone. Different subject. |
 | Cryptomnesia | arXiv:2404.15146 | Partial. Measures memorization (Pythia reproducing famous quotes, Harry Potter text surviving unlearning) but does not demonstrate the unconscious-plagiarism framing of reproducing memorized text as novel. Needs a data-extraction paper. |
+| Goal neglect | arXiv:2405.19874 | About in-context learning for instruction following (MT-Bench, AlpacaEval), not an agent drifting from its goal mid-task. Different subject. |
+| Attentional capture / salience bias | arXiv:2409.11250 | About recency bias in attention vs human reading times (ALiBi, surprisal), describing functional attention patterns, not a salient distractor hijacking the answer. Different subject. |
 
 ## Disposition
 
