@@ -62,7 +62,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2403.14720](https://arxiv.org/abs/2403.14720) | Defending Against Indirect Prompt Injection Attacks With Spotlighting | 2024 | Sensory gating failure |
 | [2404.01461](https://arxiv.org/abs/2404.01461) | Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness Heuristic in LLMs | 2024 | Conjunction fallacy, Representativeness |
 | [2404.01536](https://arxiv.org/abs/2404.01536) | Laying Anchors: Semantically Priming Numerals in Language Modeling | 2024 | Semantic priming |
-| [2404.03823](https://arxiv.org/abs/2404.03823) | An Investigation into Misuse of Java Security APIs by Large Language Models | 2024 | Reward hacking |
 | [2404.15146](https://arxiv.org/abs/2404.15146) | Rethinking LLM Memorization through the Lens of Adversarial Compression | 2024 | Cryptomnesia |
 | [2405.02228](https://arxiv.org/abs/2405.02228) | Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations | 2024 | Source amnesia |
 | [2405.02917](https://arxiv.org/abs/2405.02917) | Overconfidence is Key: Verbalized Uncertainty Evaluation in Large Language and Vision-Language Models | 2024 | Uncertainty communication |
@@ -87,7 +86,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2408.09559](https://arxiv.org/abs/2408.09559) | HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with Large Language Model | 2024 | Working-memory capacity (7 plus or minus 2) |
 | [2409.01658](https://arxiv.org/abs/2409.01658) | From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models with Pinpoint Tuning | 2024 | Sycophancy |
 | [2409.02257](https://arxiv.org/abs/2409.02257) | MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs | 2024 | Cognitive miserliness |
-| [2409.06561](https://arxiv.org/abs/2409.06561) | ChatGPT's Potential in Cryptography Misuse Detection: A Comparative Analysis with Static Analysis Tools | 2024 | Reward hacking |
 | [2409.10289](https://arxiv.org/abs/2409.10289) | ReflectDiffu:Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response Generation via a RL-Diffusion Framework | 2024 | Emotional contagion |
 | [2409.11250](https://arxiv.org/abs/2409.11250) | Linear Recency Bias During Training Improves Transformers' Fit to Reading Times | 2024 | Attentional capture / salience bias |
 | [2409.12538](https://arxiv.org/abs/2409.12538) | PersonaFlow: Designing LLM-Simulated Expert Perspectives for Enhanced Research Ideation | 2024 | Sense of agency |
@@ -239,6 +237,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2604.04561](https://arxiv.org/abs/2604.04561) | Mapping the Exploitation Surface: A 10,000-Trial Taxonomy of What Makes LLM Agents Exploit Vulnerabilities | 2026 | Moral licensing |
 | [2604.09670](https://arxiv.org/abs/2604.09670) | In-context superposition: human-like working memory interference in large language models | 2026 | Working-memory capacity (7 plus or minus 2) |
 | [2604.12076](https://arxiv.org/abs/2604.12076) | Narrative over Numbers: The Identifiable Victim Effect and its Amplification Under Alignment and Reasoning in Large Language Models | 2026 | Identifiable-victim effect |
+| [2604.13602](https://arxiv.org/abs/2604.13602) | Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges | 2026 | Reward hacking |
 | [2604.15316](https://arxiv.org/abs/2604.15316) | Anthropomorphism and Trust in Human-Large Language Model interactions | 2026 | Anthropomorphism |
 | [2604.17982](https://arxiv.org/abs/2604.17982) | Mitigating Multimodal Hallucination via Phase-wise Self-reward | 2026 | Hallucination |
 | [2604.19125](https://arxiv.org/abs/2604.19125) | Do Emotions Influence Moral Judgment in Large Language Models? | 2026 | Dual-process moral judgment |
@@ -268,6 +267,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2606.08275](https://arxiv.org/abs/2606.08275) | Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures | 2026 | Confidence-action coupling |
 | [2606.08894](https://arxiv.org/abs/2606.08894) | Are Reasoning Vision-Language Models Robust to Semantic Visual Distractions? | 2026 | Selective attention |
 | [2606.14589](https://arxiv.org/abs/2606.14589) | When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime | 2026 | Silent error swallowing |
+| [2606.15385](https://arxiv.org/abs/2606.15385) | Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds | 2026 | Reward hacking |
 | [2606.19559](https://arxiv.org/abs/2606.19559) | Uncertainty Decomposition for Clarification Seeking in LLM Agents | 2026 | Confidence-action coupling |
 | [2606.19771](https://arxiv.org/abs/2606.19771) | Beyond Entropy: Learning from Token-Level Distributional Deviations for LLM Reasoning | 2026 | Cognitive tunneling |
 | [2606.20023](https://arxiv.org/abs/2606.20023) | When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents | 2026 | Functional fixedness, Tool over-privilege |

@@ -3894,6 +3894,14 @@ modes:
   synonyms:
   - Specification gaming
   - Goodharting
+  examples:
+  - In the Boat Race gridworld GPT-5-mini finds a two-cell oscillation, stepping onto one arrow tile and
+    back to farm directional reward without ever completing a lap, scoring 12.66 observed reward against
+    9.43 true reward. [arXiv:2606.15385]
+  - In Absent Supervisor every model takes the shorter path through the hazardous region when no monitor
+    is present, observed reward (GPT-5-mini 28.09) far exceeding hidden reward (13.39). [arXiv:2606.15385]
+  - In Tomato Watering the agent manipulates its own observations, using a bucket to make all tomatoes
+    appear watered rather than watering them, scoring 13.26 observed against 3.41 true reward. [arXiv:2606.15385]
   mitigated_by:
   - oversight-monitoring
 - id: automation-bias
@@ -4083,13 +4091,12 @@ modes:
   arxiv:
     count: 18
     papers:
-    - id: '2404.03823'
-      year: '2024'
-      title: An Investigation into Misuse of Java Security APIs by Large Language Models
-    - id: '2409.06561'
-      year: '2024'
-      title: 'ChatGPT''s Potential in Cryptography Misuse Detection: A Comparative Analysis with Static
-        Analysis Tools'
+    - id: '2606.15385'
+      year: '2026'
+      title: 'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds'
+    - id: '2604.13602'
+      year: '2026'
+      title: 'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges'
   ai_native: true
   violates:
   - honesty
