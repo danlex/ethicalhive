@@ -126,6 +126,8 @@ def meta_block(mode):
         rows.append(("Root of", links))
     if mode.get("detected_by"):
         rows.append(("Detected by", esc(", ".join(MIT_NAME.get(d, d) for d in mode["detected_by"]))))
+    if mode.get("mitigated_by"):
+        rows.append(("Mitigated by", esc(", ".join(MIT_NAME.get(d, d) for d in mode["mitigated_by"]))))
     if mode.get("maps_to"):
         rows.append(("Maps to", esc("; ".join(mode["maps_to"]))))
     if not rows:

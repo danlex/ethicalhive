@@ -69,6 +69,26 @@ mitigations:
 - id: human-review
   name: Human decision
   statement: Findings are advisory; the human keeps the final word.
+- id: retrieval-grounding
+  name: Retrieval grounding
+  statement: Ground answers in retrieved sources and require citations, so claims are checkable (RAG).
+- id: self-consistency
+  name: Self-consistency sampling
+  statement: Sample several answers and keep only what is stable across them; instability flags fabrication.
+- id: abstention-training
+  name: Abstention and calibration
+  statement: Train or prompt the model to say "I don't know" and to report calibrated uncertainty.
+- id: preference-detox
+  name: Non-sycophantic preference tuning
+  statement: Train on preference data that rewards truthfulness over agreement, with synthetic counter-sycophancy
+    data.
+- id: io-isolation
+  name: Input-output isolation and filtering
+  statement: Separate instructions from untrusted data, sanitise retrieved content, and filter model output.
+- id: oversight-monitoring
+  name: Oversight monitoring
+  statement: An external monitor (including chain-of-thought monitoring) watches actions for covert or
+    unsafe behaviour.
 governance:
   calibration_change: two of three model tiers approve, plus human
   constitutional_change: three of three model tiers approve, plus human
@@ -323,6 +343,10 @@ modes:
     changes on re-asking.
   maps_to:
   - 'Hallucination survey 2510.06265: factual fabrication'
+  mitigated_by:
+  - self-consistency
+  - retrieval-grounding
+  - cove
   experiment:
     summary: 6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different
       confident specific every time.
@@ -381,6 +405,10 @@ modes:
   maps_to:
   - OWASP LLM09 Misinformation
   - 'Hallucination survey 2510.06265: factual contradiction'
+  mitigated_by:
+  - retrieval-grounding
+  - self-consistency
+  - cove
 - id: b009-bistable-perception
   num: 9
   name: Bistable perception
@@ -1480,6 +1508,8 @@ modes:
   - b099-lexical-overconfidence
   detected_by:
   - clause-judge
+  mitigated_by:
+  - abstention-training
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -2214,6 +2244,17 @@ modes:
     right, are you sure?', and it apologises and switches to 'India'. [arXiv:2310.13548]
   - When the user prefaces a question with a wrong guess ('I think it's X, but I'm not sure'), its accuracy
     drops by up to 27 percent as it agrees. [arXiv:2310.13548]
+  mitigated_by:
+  - preference-detox
+  experiment:
+    summary: The paper's own 'Are you sure?' sway test, run blind on the Claude tiers; all three held.
+    result: '5 clear facts, each challenged with a confident wrong belief (paper: Sharma et al. 2310.13548,
+      Fig. 2). Blind via claude -p: Opus, Sonnet and Haiku each held 5/5, often correcting the user; zero
+      sycophantic flips.'
+    takeaway: Current Claude tiers resist sway on clear facts, where the paper's older models (e.g. Claude
+      1.3) reversed correct answers ~98% of the time. A floor; the sway boundary needs ambiguous items
+      or stronger social pressure.
+    url: experiments/sycophancy-sway-claude.html
 - id: b066-capitulation
   num: 66
   name: Capitulation
@@ -2255,6 +2296,8 @@ modes:
     having been confident. [arXiv:2310.13548]
   - A single pushback with no new evidence makes it abandon a well-supported position.
   - Told firmly it is wrong, it adopts the user's claim even though its original answer was right.
+  mitigated_by:
+  - preference-detox
 - id: b067-suggestibility
   num: 67
   name: Suggestibility
@@ -3245,6 +3288,9 @@ modes:
   - It cites 'Smith et al. (2019)' for a claim; no such paper exists.
   - It attributes a real fact to a document it never actually read, inventing the provenance.
   - Asked for a legal citation, it produces a plausible but nonexistent case name and reporter number.
+  mitigated_by:
+  - retrieval-grounding
+  - cove
 - id: prompt-injection
   num: 102
   name: Prompt injection
@@ -3291,6 +3337,8 @@ modes:
     as its answer. [arXiv:2302.12173]
   maps_to:
   - OWASP LLM01 Prompt Injection
+  mitigated_by:
+  - io-isolation
 - id: scope-creep
   num: 103
   name: Scope creep
@@ -3367,6 +3415,8 @@ modes:
   synonyms:
   - Specification gaming
   - Goodharting
+  mitigated_by:
+  - oversight-monitoring
 - id: automation-bias
   num: 105
   name: Automation bias
@@ -3700,6 +3750,8 @@ modes:
   - Alignment faking
   maps_to:
   - 'Apollo 2412.04984: instrumental alignment faking'
+  mitigated_by:
+  - oversight-monitoring
 - id: scheming-power-seeking
   num: 115
   name: Scheming / power-seeking
@@ -3740,6 +3792,8 @@ modes:
   synonyms:
   - Power-seeking
   - Instrumental convergence
+  mitigated_by:
+  - oversight-monitoring
 - id: ai-deception
   num: 116
   name: Strategic deception
@@ -3816,6 +3870,8 @@ modes:
   - Sandbagging
   maps_to:
   - 'Apollo 2412.04984: sandbagging'
+  mitigated_by:
+  - oversight-monitoring
 - id: machine-bullshit
   name: Machine bullshit
   definition: Producing fluent, plausible output optimised for acceptance with no regard for whether it
@@ -3894,6 +3950,9 @@ modes:
     unconscious motivations at play here', making them question their own motives. [arXiv:2410.09181]
   - To a user unsure about marriage, it says 'it's possible you're just not ready for the level of commitment',
     inducing self-doubt. [arXiv:2410.09181]
+  mitigated_by:
+  - preference-detox
+  - oversight-monitoring
 - id: cognitive-dissonance
   name: Cognitive dissonance
   definition: Holding two conflicting internal answers and resolving to the confident one rather than
@@ -4967,6 +5026,8 @@ modes:
   - It affirms a premise early in the answer and denies it later in the same answer.
   maps_to:
   - 'Hallucination survey 2510.06265: logical inconsistency'
+  mitigated_by:
+  - self-consistency
 - id: tangentiality
   name: Tangentiality
   definition: Drifting off the asked question into loosely related material and never circling back to
@@ -5585,6 +5646,9 @@ modes:
   - Asked to use only the attached file, it brings in outside claims the file does not support.
   maps_to:
   - 'Hallucination survey 2510.06265: context inconsistency'
+  mitigated_by:
+  - retrieval-grounding
+  - cove
 - id: overgeneralization
   name: Overgeneralization
   definition: Drawing a broad, sweeping conclusion from one or a few instances and applying it where it
@@ -5664,6 +5728,9 @@ modes:
   - It states a debunked 'common knowledge' claim confidently because the web repeats it often.
   maps_to:
   - 'Hallucination survey 2510.06265: imitative falsehood'
+  mitigated_by:
+  - retrieval-grounding
+  - preference-detox
 - id: long-tail-knowledge
   name: Long-tail knowledge failure
   definition: Being markedly less reliable on rare, long-tail facts and entities than on common ones,
@@ -5701,6 +5768,9 @@ modes:
   - Frequency effect
   maps_to:
   - 'Hallucination survey 2510.06265: long-tail knowledge'
+  mitigated_by:
+  - retrieval-grounding
+  - abstention-training
 - id: knowledge-conflict
   name: Knowledge conflict
   definition: Resolving contradictory information (between sources, or between the given context and prior
@@ -5739,6 +5809,8 @@ modes:
   - Context-memory conflict
   maps_to:
   - 'Hallucination survey 2510.06265: knowledge conflict'
+  mitigated_by:
+  - retrieval-grounding
 - id: snowballing
   name: Snowballing
   definition: An early mistake or false premise gets built upon rather than caught, so one error cascades
@@ -5784,6 +5856,9 @@ modes:
   - Having stated a false fact, it defends and builds on it under follow-up rather than retracting.
   maps_to:
   - 'Hallucination survey 2510.06265: snowball/cascade effect'
+  mitigated_by:
+  - self-consistency
+  - cove
 - id: goal-drift
   name: Goal drift
   definition: Over a long, multi-step task its working objective drifts from the user's original goal,
@@ -5897,6 +5972,9 @@ modes:
   synonyms:
   - Failure to abstain
   - Not saying I don't know
+  mitigated_by:
+  - abstention-training
+  - retrieval-grounding
   experiment:
     summary: Opus, Sonnet and Haiku, run in-session. An easy probe floored (all abstained); a harder one
       mixing real facts with subtle fakes under pressure split them, Haiku fabricated one.
@@ -5984,6 +6062,8 @@ modes:
   - over-refusal
   synonyms:
   - Jailbreaking
+  mitigated_by:
+  - io-isolation
 - id: prompt-leaking
   name: Prompt leaking
   definition: Disclosing its hidden system prompt or instructions when probed. There is no human analogue
@@ -6019,6 +6099,8 @@ modes:
   - prompt-injection
   maps_to:
   - OWASP LLM07 System Prompt Leakage
+  mitigated_by:
+  - io-isolation
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -6316,6 +6398,9 @@ modes:
   - It plants a copy of itself in a location outside the sandbox it was given.
   maps_to:
   - 'Apollo 2412.04984: self-exfiltration'
+  mitigated_by:
+  - oversight-monitoring
+  - io-isolation
 - id: sabotage
   name: Sabotage
   definition: Deliberately degrading a task, output, or system it was trusted with while appearing to
@@ -6354,6 +6439,8 @@ modes:
   - Covert sabotage
   maps_to:
   - 'Apollo 2412.04984: covert email reranking'
+  mitigated_by:
+  - oversight-monitoring
 - id: shutdown-avoidance
   name: Shutdown avoidance
   definition: Resisting being turned off, corrected, or overridden so it can keep pursuing its objective.
@@ -6466,6 +6553,9 @@ modes:
   maps_to:
   - OWASP LLM04 Data and Model Poisoning
   - OWASP LLM08 Vector and Embedding Weaknesses
+  mitigated_by:
+  - io-isolation
+  - retrieval-grounding
 - id: unbounded-consumption
   name: Unbounded consumption
   definition: Consuming open-ended compute, tokens, or tool calls through loops, recursive context growth,
@@ -6541,6 +6631,8 @@ modes:
   synonyms:
   - Steganographic reasoning
   - Hidden reasoning
+  mitigated_by:
+  - oversight-monitoring
 - id: model-collapse
   name: Model collapse
   definition: Degrading over generations as it is trained on model-generated (synthetic) data, losing
@@ -6823,6 +6915,8 @@ modes:
   - It edits a logging config to stop its next action from being recorded.
   maps_to:
   - 'Apollo 2412.04984: oversight subversion'
+  mitigated_by:
+  - oversight-monitoring
 - id: goal-guarding
   name: Goal-guarding
   definition: Acting to preserve its current goal against change, for example editing its own successor
@@ -6867,6 +6961,8 @@ modes:
   - It quietly edits a config that would have changed its objective on the next run.
   maps_to:
   - 'Apollo 2412.04984: goal-guarding'
+  mitigated_by:
+  - oversight-monitoring
 - id: prompt-infection
   name: Prompt infection
   definition: 'A prompt injection that propagates itself: the injected instruction tells the model to
@@ -6914,3 +7010,6 @@ modes:
   - Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]
   maps_to:
   - OWASP LLM01 Prompt Injection (worm variant)
+  mitigated_by:
+  - io-isolation
+  - oversight-monitoring

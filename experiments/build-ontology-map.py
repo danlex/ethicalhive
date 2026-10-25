@@ -49,6 +49,7 @@ def build_tree():
             "root": [{"n": id2name.get(r, r), "id": r} for r in (m.get("root_of") or [])],
             "isa": [{"n": id2name.get(r, r), "id": r} for r in (m.get("is_a") or [])],
             "det": [mn.get(d, d) for d in (m.get("detected_by") or [])],
+            "mit": [mn.get(d, d) for d in (m.get("mitigated_by") or [])],
             "maps": m.get("maps_to") or [],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
@@ -312,6 +313,7 @@ function showPanel(id){
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.root&&m.root.length?`<div class="sec"><span class="k">Root of</span><p>${m.root.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.det&&m.det.length?`<div class="sec"><span class="k">Detected by</span><p>${m.det.map(esc).join(', ')}</p></div>`:'')
+     +(m.mit&&m.mit.length?`<div class="sec"><span class="k">Mitigated by</span><p>${m.mit.map(esc).join(', ')}</p></div>`:'')
      +(m.maps&&m.maps.length?`<div class="sec"><span class="k">Maps to</span><p>${m.maps.map(esc).join('; ')}</p></div>`:'');
   }
   pbody.innerHTML=(navStack.length?'<a class="rel-back" data-back="1">← back</a>':'')+t;
@@ -452,6 +454,7 @@ INLINE_JS = r"""(function(){
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'')
      +(m.root&&m.root.length?`<div class="sec"><span class="k">Root of</span><p>${links(m.root)}</p></div>`:'')
      +(m.det&&m.det.length?`<div class="sec"><span class="k">Detected by</span><p>${m.det.map(esc).join(', ')}</p></div>`:'')
+     +(m.mit&&m.mit.length?`<div class="sec"><span class="k">Mitigated by</span><p>${m.mit.map(esc).join(', ')}</p></div>`:'')
      +(m.maps&&m.maps.length?`<div class="sec"><span class="k">Maps to</span><p>${m.maps.map(esc).join('; ')}</p></div>`:'');
   }
   function renderDetail(li){

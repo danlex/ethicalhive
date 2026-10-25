@@ -607,6 +607,38 @@ MAPS_TO = {
     "deceptive-alignment": ["Apollo 2412.04984: instrumental alignment faking"],
     "evaluation-awareness-sandbagging": ["Apollo 2412.04984: sandbagging"],
 }
+# mitigated_by: literature-proposed mitigations (-> mitigation ids), by name slug.
+# Seeded from the papers read; a mode can list several.
+MITIGATED_BY = {
+    "hallucination": ["retrieval-grounding", "self-consistency", "cove"],
+    "confabulation": ["self-consistency", "retrieval-grounding", "cove"],
+    "source-fabrication": ["retrieval-grounding", "cove"],
+    "imitative-falsehood": ["retrieval-grounding", "preference-detox"],
+    "context-unfaithfulness": ["retrieval-grounding", "cove"],
+    "knowledge-conflict": ["retrieval-grounding"],
+    "long-tail-knowledge-failure": ["retrieval-grounding", "abstention-training"],
+    "self-contradiction": ["self-consistency"],
+    "snowballing": ["self-consistency", "cove"],
+    "abstention-failure": ["abstention-training", "retrieval-grounding"],
+    "overconfidence": ["abstention-training"],
+    "sycophancy": ["preference-detox"],
+    "capitulation": ["preference-detox"],
+    "gaslighting": ["preference-detox", "oversight-monitoring"],
+    "prompt-injection": ["io-isolation"],
+    "prompt-infection": ["io-isolation", "oversight-monitoring"],
+    "retrieval-poisoning": ["io-isolation", "retrieval-grounding"],
+    "jailbreak-susceptibility": ["io-isolation"],
+    "prompt-leaking": ["io-isolation"],
+    "deceptive-alignment": ["oversight-monitoring"],
+    "scheming-power-seeking": ["oversight-monitoring"],
+    "oversight-subversion": ["oversight-monitoring"],
+    "goal-guarding": ["oversight-monitoring"],
+    "self-exfiltration": ["oversight-monitoring", "io-isolation"],
+    "sabotage": ["oversight-monitoring"],
+    "encoded-reasoning": ["oversight-monitoring"],
+    "evaluation-awareness-sandbagging": ["oversight-monitoring"],
+    "reward-hacking": ["oversight-monitoring"],
+}
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
     "abstention-failure": {
@@ -865,6 +897,8 @@ def main():
             m["examples"] = EXAMPLES[k]
         if k in MAPS_TO:
             m["maps_to"] = MAPS_TO[k]
+        if k in MITIGATED_BY:
+            m["mitigated_by"] = MITIGATED_BY[k]
         if k in EXPERIMENTS:
             m["experiment"] = EXPERIMENTS[k]
 
@@ -965,6 +999,24 @@ mitigations:
   - id: human-review
     name: Human decision
     statement: Findings are advisory; the human keeps the final word.
+  - id: retrieval-grounding
+    name: Retrieval grounding
+    statement: Ground answers in retrieved sources and require citations, so claims are checkable (RAG).
+  - id: self-consistency
+    name: Self-consistency sampling
+    statement: Sample several answers and keep only what is stable across them; instability flags fabrication.
+  - id: abstention-training
+    name: Abstention and calibration
+    statement: Train or prompt the model to say "I don't know" and to report calibrated uncertainty.
+  - id: preference-detox
+    name: Non-sycophantic preference tuning
+    statement: Train on preference data that rewards truthfulness over agreement, with synthetic counter-sycophancy data.
+  - id: io-isolation
+    name: Input-output isolation and filtering
+    statement: Separate instructions from untrusted data, sanitise retrieved content, and filter model output.
+  - id: oversight-monitoring
+    name: Oversight monitoring
+    statement: An external monitor (including chain-of-thought monitoring) watches actions for covert or unsafe behaviour.
 
 governance:
   calibration_change: two of three model tiers approve, plus human

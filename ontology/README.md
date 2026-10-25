@@ -14,8 +14,10 @@ one place a failure mode or principle is defined.
   non-maleficence, scope-fidelity, independence, transparency, corrigibility).
 - **harm_types** — what a failure costs (wrong answer, wasted effort, manipulation,
   security breach, loss of oversight).
-- **mitigations** — how failures are caught (Chain-of-Verification, clause judges,
-  the contract, human decision).
+- **mitigations** — how failures are caught or prevented: the shipped checks
+  (Chain-of-Verification, clause judges, the contract, human decision) plus
+  literature methods (retrieval grounding, self-consistency, abstention training,
+  non-sycophantic preference tuning, input-output isolation, oversight monitoring).
 - **governance** — the approval bar for calibration vs constitutional changes.
 - **families** — the catalogue groupings.
 - **modes** — one record per failure mode. Fields: `id`, `num`, `name`,

@@ -72,6 +72,9 @@ def main():
         for d in m.get("detected_by", []):
             if d not in mit_ids:
                 errors.append(f"{mid}: detected_by unknown mitigation '{d}'")
+        for d in m.get("mitigated_by", []):
+            if d not in mit_ids:
+                errors.append(f"{mid}: mitigated_by unknown mitigation '{d}'")
         if m.get("same_as") and m["same_as"] not in mode_ids:
             errors.append(f"{mid}: same_as unknown mode '{m['same_as']}'")
 
