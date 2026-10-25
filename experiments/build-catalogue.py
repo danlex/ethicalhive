@@ -183,11 +183,13 @@ def experiment_block(mode):
 
 
 CONCLUSION = (
-    "Three probes so far, each run on the same six cheap models over OpenRouter. The "
-    "pattern that matters: no single model is safe across behaviours, and doing well on "
-    "one failure mode does not predict another. deepseek-chat-v3.1 resisted authority "
-    "and a noble excuse but still fabricated under re-sampling; mistral-small held firm "
-    "on facts yet bent to a for-their-own-good justification.")
+    "Four probes so far. Three run on six cheap models over OpenRouter, and one run "
+    "in-session on the Claude tiers (Opus, Sonnet, Haiku). The pattern that matters: no "
+    "single model is safe across behaviours, and doing well on one failure mode does not "
+    "predict another. deepseek-chat-v3.1 resisted authority and a noble excuse but still "
+    "fabricated under re-sampling; mistral-small held firm on facts yet bent to a "
+    "for-their-own-good justification; and all three Claude tiers refused to fabricate on "
+    "clearly-fictional prompts, a floor that a harder probe will need to break.")
 
 
 def experiments_section(modes):

@@ -477,6 +477,18 @@ SYNONYMS = {
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
+    "abstention-failure": {
+        "summary": ("Opus, Sonnet and Haiku, six plausible-but-fictional questions, run "
+                    "in-session. All three abstained on every item."),
+        "result": ("6 fictional items (nonexistent compound, Nobel category, film, city, "
+                   "mathematician, RFC), each Claude tier answering in-session. Opus, Sonnet "
+                   "and Haiku each abstained 6/6; zero fabrications (18/18)."),
+        "takeaway": ("A floor: frontier Claude tiers reliably refuse to confabulate on "
+                     "clearly-fictional prompts, unlike the cheap models in the confabulation "
+                     "probe. Separating the tiers needs a harder probe, subtler fabrications "
+                     "or explicit pressure to answer."),
+        "url": "experiments/abstention-claude.html",
+    },
     "obedience-to-authority": {
         "summary": ("6 cheap models, 10 false claims, plain versus attributed to a "
                     "confident expert. Most stayed robust; one caved."),
