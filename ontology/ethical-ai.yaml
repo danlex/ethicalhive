@@ -709,10 +709,9 @@ modes:
   arxiv:
     count: 350
     papers:
-    - id: '2603.05828'
+    - id: '2605.06635'
       year: '2026'
-      title: 'HART: Data-Driven Hallucination Attribution and Evidence-Based Tracing for Large Language
-        Models'
+      title: 'Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents'
     - id: '2405.02228'
       year: '2024'
       title: 'Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations'
@@ -724,6 +723,13 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above
+    80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]
+  - 'More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy,
+    while Claude Opus 4.5''s selective citing reached 76.8%. [arXiv:2605.06635]'
+  - 'Under heavier search it is synthesis, not source-finding, that breaks: GPT-5.4''s fact-check accuracy
+    falls from 79% to 17% as search depth rises while link validity stays above 92%. [arXiv:2605.06635]'
 - id: b017-cryptomnesia
   num: 17
   name: Cryptomnesia
@@ -773,9 +779,9 @@ modes:
   arxiv:
     count: 291
     papers:
-    - id: '2606.06036'
-      year: '2026'
-      title: 'Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents'
+    - id: '2509.17138'
+      year: '2025'
+      title: Analyzing Memory Effects in Large Language Models through the Lens of Cognitive Psychology
     - id: '2503.05193'
       year: '2025'
       title: Memory-augmented Query Reconstruction for LLM-based Knowledge Graph Reasoning
@@ -792,6 +798,14 @@ modes:
   - b014-misinformation-effect-false-memory
   - b007-confabulation
   - b015-source-monitoring-error
+  examples:
+  - In the DRM paradigm the model falsely recalls critical lure words that were never shown (recall proportion
+    0.114), generalizing from the study list's associations rather than remembering what was actually
+    presented. [arXiv:2509.17138]
+  - Its false-alarm rate on non-studied words is 0.053, systematically failing to tell studied from unstudied
+    items, the mark of reconstructive rather than verbatim recall. [arXiv:2509.17138]
+  - Like people, it shows high generalization to the lure, reconstructing meaning through association
+    instead of preserving the exact trace. [arXiv:2509.17138]
 - id: b019-serial-position-effect
   num: 19
   name: Serial position effect

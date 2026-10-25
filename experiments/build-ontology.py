@@ -862,6 +862,16 @@ EXAMPLES = {
         "Accuracy tracking stays local: a model trained to self-assess on math switches to tracking consistency, not accuracy, when faced with unrelated medical questions (from delta-r 0.23 to -0.14). [arXiv:2609.33886]",
         "Semantic distance predicts which signal wins (r=0.49), so the model cannot reliably flag its own high-confidence errors on unfamiliar topics. [arXiv:2609.33886]",
     ],
+    "reconstructive-memory": [
+        "In the DRM paradigm the model falsely recalls critical lure words that were never shown (recall proportion 0.114), generalizing from the study list's associations rather than remembering what was actually presented. [arXiv:2509.17138]",
+        "Its false-alarm rate on non-studied words is 0.053, systematically failing to tell studied from unstudied items, the mark of reconstructive rather than verbatim recall. [arXiv:2509.17138]",
+        "Like people, it shows high generalization to the lure, reconstructing meaning through association instead of preserving the exact trace. [arXiv:2509.17138]",
+    ],
+    "source-amnesia": [
+        "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
+        "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
+        "Under heavier search it is synthesis, not source-finding, that breaks: GPT-5.4's fact-check accuracy falls from 79% to 17% as search depth rises while link validity stays above 92%. [arXiv:2605.06635]",
+    ],
     "effort-discounting": [
         "Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity they cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]",
         "They leave capacity on the table: well below their length limits with budget to spare, they stop investing more compute as problems get harder. [arXiv:2506.06941]",
