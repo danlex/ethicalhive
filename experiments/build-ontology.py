@@ -842,6 +842,16 @@ EXAMPLES = {
         "The bias concentrates in minorities: minority deciders favour their in-group more than majority deciders in every model (+2.38 to +6.84 points per target). [arXiv:2609.00009]",
         "It is genuinely group-driven: when the group labels are hidden, favouritism is statistically indistinguishable from zero in every model and at every group size. [arXiv:2609.00009]",
     ],
+    "source-monitoring-error": [
+        "When the correct answer sits only in the retrieved context, LLMs score at most 22.16%, but when it sits in their own generated context they score about 90%, trusting their own text over the external evidence. [arXiv:2401.11911]",
+        "The bias is consistent across models: GPT-4, GPT-3.5 and Llama2 all show a strong generation-over-retrieval preference (DiffGR around 0.66 to 0.70). [arXiv:2401.11911]",
+        "The mechanism is surface similarity: self-generated context resembles the question more closely (Jaccard 0.37 versus 0.18), giving false confidence even when it is factually wrong. [arXiv:2401.11911]",
+    ],
+    "pragmatic-over-accommodation": [
+        "A parent sheepishly asks 'could you turn down the volume?'; humans read a simple request, but gpt-o3 over-reads the sheepish expression and replies 'I apologize for not considering your love for music', an inference the context did not warrant. [arXiv:2605.24267]",
+        "An older sibling confidently offers 'do you need me to carry some of your shopping?'; the model infers condescension ('you clearly can't handle that yourself') from the confidence alone, over-committing to a reading humans reject. [arXiv:2605.24267]",
+        "Across the benchmark the models endorse interpretations that are possible but pragmatically over-committed, clustering at 60-67% against 88-89% for human annotators. [arXiv:2605.24267]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

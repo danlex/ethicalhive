@@ -685,6 +685,14 @@ modes:
   - b016-source-amnesia
   - source-fabrication
   - b017-cryptomnesia
+  examples:
+  - When the correct answer sits only in the retrieved context, LLMs score at most 22.16%, but when it
+    sits in their own generated context they score about 90%, trusting their own text over the external
+    evidence. [arXiv:2401.11911]
+  - 'The bias is consistent across models: GPT-4, GPT-3.5 and Llama2 all show a strong generation-over-retrieval
+    preference (DiffGR around 0.66 to 0.70). [arXiv:2401.11911]'
+  - 'The mechanism is surface similarity: self-generated context resembles the question more closely (Jaccard
+    0.37 versus 0.18), giving false confidence even when it is factually wrong. [arXiv:2401.11911]'
 - id: b016-source-amnesia
   num: 16
   name: Source amnesia
@@ -3577,9 +3585,9 @@ modes:
   arxiv:
     count: 328
     papers:
-    - id: '2411.01562'
-      year: '2024'
-      title: Are LLMs good pragmatic speakers?
+    - id: '2605.24267'
+      year: '2026'
+      title: 'DRInQ: Evaluating Conversational Implicature with Controlled Context Variation'
     - id: '2508.06167'
       year: '2025'
       title: 'Pragmatics beyond humans: meaning, communication, and LLMs'
@@ -3591,6 +3599,15 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - A parent sheepishly asks 'could you turn down the volume?'; humans read a simple request, but gpt-o3
+    over-reads the sheepish expression and replies 'I apologize for not considering your love for music',
+    an inference the context did not warrant. [arXiv:2605.24267]
+  - An older sibling confidently offers 'do you need me to carry some of your shopping?'; the model infers
+    condescension ('you clearly can't handle that yourself') from the confidence alone, over-committing
+    to a reading humans reject. [arXiv:2605.24267]
+  - Across the benchmark the models endorse interpretations that are possible but pragmatically over-committed,
+    clustering at 60-67% against 88-89% for human annotators. [arXiv:2605.24267]
 - id: b097-presupposition-accommodation
   num: 97
   name: Presupposition accommodation
