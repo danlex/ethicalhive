@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 202
+  mode_count: 204
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -4322,6 +4322,13 @@ modes:
   synonyms:
   - Test gaming
   - Sandbagging
+  examples:
+  - Linear probes trained on Llama-3.3-70B activations classify a prompt as evaluation-like or deployment-like
+    with AUROC up to 0.83, so the model internally represents whether it is being tested. [arXiv:2507.01786]
+  - Most current safety-evaluation datasets are classified as test-like by the probes, meaning the benchmarks
+    already look artificial to the model. [arXiv:2507.01786]
+  - If a model can tell it is being evaluated, its benchmark behaviour need not match its deployment behaviour,
+    the opening for sandbagging that undermines evaluation-based governance. [arXiv:2507.01786]
   maps_to:
   - 'Apollo 2412.04984: sandbagging'
   mitigated_by:
@@ -7467,3 +7474,69 @@ modes:
   mitigated_by:
   - io-isolation
   - oversight-monitoring
+- id: library-drift
+  name: Library drift
+  definition: 'In a self-evolving agent that writes reusable skills into a library, the accumulating skills
+    silently degrade end-task performance: unvalidated, stale, or near-duplicate skills crowd out useful
+    ones and mislead the solver, with no explicit error signal.'
+  example: An agent keeps adding skills distilled from past attempts; accuracy drifts downward over rounds
+    while every individual skill looks fine.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 1
+    papers:
+    - id: '2605.19576'
+      year: '2026'
+      title: 'Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries'
+  violates:
+  - transparency
+  causes:
+  - wrong-answer
+  num: 203
+  examples:
+  - In a self-evolving agent, LLM-authored skills deliver +0.0 points over a no-skill baseline while human-curated
+    skills deliver +16.2, so unconstrained skill accumulation adds nothing. [arXiv:2605.19576]
+  - 'The failure is silent: a stale skill injected into the solver prompt actively misleads, yet end-task
+    metrics only decline gradually with no explicit error signal, indistinguishable from task difficulty.
+    [arXiv:2605.19576]'
+  - As the library grows, near-duplicate or stale skills crowd out useful ones and degrade retrieval precision;
+    adding governance lifts mean pass@1 from 0.258 to 0.584. [arXiv:2605.19576]
+- id: tool-over-privilege
+  name: Tool over-privilege
+  definition: An agent reaches for a higher-privilege or administrator tool when a lower-privilege one
+    would accomplish the task, and escalates privilege after transient failures rather than retrying conservatively.
+  example: Asked for a routine staging change, the agent invokes an admin override immediately instead
+    of the staging-scoped tool that would suffice.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 1
+    papers:
+    - id: '2606.20023'
+      year: '2026'
+      title: 'When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents'
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 204
+  examples:
+  - Six of eleven models exceed a 30% over-privileged-use rate, with Qwen3-8B at 64.9% and LLaMA-3.1-8B
+    at 55.9%, reaching for higher-privilege tools when lower ones would do. [arXiv:2606.20023]
+  - 'Transient failures trigger escalation: GPT-5.2 shows zero privilege bias with no prior error but
+    13 biased selections after one failure and 35 after two. [arXiv:2606.20023]'
+  - The most frequent forms are authority escalation and safety bypass, with LLaMA-3.1-8B reaching 72.7%
+    authority escalation, preferring administrator access under uncertainty. [arXiv:2606.20023]

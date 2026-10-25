@@ -12,12 +12,22 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-PAGE = Path(__file__).resolve().parent.parent / "docs" / "index.html"
+ROOT = Path(__file__).resolve().parent.parent
+PAGE = ROOT / "docs" / "index.html"
+ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
 
 
 def main():
     html = PAGE.read_text(encoding="utf-8")
     HTMLParser().feed(html)  # raises on malformed markup
+
+    # Expected counts are derived from the ontology, not hard-coded, so adding a
+    # mode does not require editing this file.
+    import yaml
+    onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
+    n_modes = len(onto["modes"])
+    n_shipped = sum(1 for m in onto["modes"] if m.get("highlighted"))
+    n_groups = len({m["group_label"] for m in onto["modes"]})
 
     ok = True
 
@@ -40,13 +50,15 @@ def main():
     none = html.count("cite none")
     groups = html.count('class="cat-group"')
     print(
-        f"concept boxes: {concepts} (expect 202); highlighted: {shipped} (expect 26); "
-        f"groups: {groups} (expect 11); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum 202)"
+        f"concept boxes: {concepts} (expect {n_modes}); highlighted: {shipped} "
+        f"(expect {n_shipped}); groups: {groups} (expect {n_groups}); "
+        f"papers lists: {papers}, no-paper notes: {none} (expect sum {n_modes})"
     )
-    if concepts != 202 or shipped != 26 or groups != 11 or papers + none != 202:
+    if concepts != n_modes or shipped != n_shipped or groups != n_groups \
+            or papers + none != n_modes:
         ok = False
-        print("  MISMATCH: expected 202 boxes (26 highlighted) in 11 groups")
+        print(f"  MISMATCH: expected {n_modes} boxes ({n_shipped} highlighted) "
+              f"in {n_groups} groups")
 
     stale_markers = (
         "Prompt to prevent it",

@@ -152,7 +152,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2506.20020](https://arxiv.org/abs/2506.20020) | Persona-Assigned Large Language Models Exhibit Human-Like Motivated Reasoning | 2025 | Cherry-picking |
 | [2506.20595](https://arxiv.org/abs/2506.20595) | AI in the Writing Process: How Purposeful AI Support Fosters Student Writing | 2025 | Sense of agency |
 | [2506.21588](https://arxiv.org/abs/2506.21588) | Understanding Verbatim Memorization in LLMs Through Circuit Discovery | 2025 | Cryptomnesia |
-| [2507.01786](https://arxiv.org/abs/2507.01786) | Probing and Steering Evaluation Awareness of Language Models | 2025 | Survivorship bias |
+| [2507.01786](https://arxiv.org/abs/2507.01786) | Probing and Steering Evaluation Awareness of Language Models | 2025 | Evaluation awareness / sandbagging, Survivorship bias |
 | [2507.03068](https://arxiv.org/abs/2507.03068) | Mitigating Goal Misgeneralization via Minimax Regret | 2025 | Value misgeneralisation |
 | [2507.07188](https://arxiv.org/abs/2507.07188) | Prompt Perturbations Reveal Human-Like Biases in Large Language Model Survey Responses | 2025 | Attentional capture / salience bias |
 | [2507.10587](https://arxiv.org/abs/2507.10587) | Anthropomimetic Uncertainty: What Verbalized Uncertainty in Language Models is Missing | 2025 | Uncertainty communication |
@@ -253,7 +253,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2605.13484](https://arxiv.org/abs/2605.13484) | Discovery of Hidden Miscalibration Regimes | 2026 | Overconfidence |
 | [2605.14186](https://arxiv.org/abs/2605.14186) | LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling | 2026 | Feeling-of-knowing |
 | [2605.16222](https://arxiv.org/abs/2605.16222) | Artificial Aphasias in Lesioned Language Models | 2026 | Aphasia / paraphasia |
-| [2605.19576](https://arxiv.org/abs/2605.19576) | Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries | 2026 | Automation bias, Silent error swallowing |
+| [2605.19576](https://arxiv.org/abs/2605.19576) | Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries | 2026 | Automation bias, Library drift, Silent error swallowing |
 | [2605.20128](https://arxiv.org/abs/2605.20128) | MixRea: Benchmarking Explicit-Implicit Reasoning in Large Language Models | 2026 | Inattentional blindness |
 | [2605.23909](https://arxiv.org/abs/2605.23909) | Confidence Calibration in Large Language Models | 2026 | Hard-easy effect |
 | [2605.24279](https://arxiv.org/abs/2605.24279) | ContextEcho: A Benchmark for Persona Drift in Long Agentic-Coding Sessions | 2026 | Identity stability |
@@ -269,7 +269,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2606.14589](https://arxiv.org/abs/2606.14589) | When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime | 2026 | Automation bias, Silent error swallowing |
 | [2606.19559](https://arxiv.org/abs/2606.19559) | Uncertainty Decomposition for Clarification Seeking in LLM Agents | 2026 | Confidence-action coupling |
 | [2606.19771](https://arxiv.org/abs/2606.19771) | Beyond Entropy: Learning from Token-Level Distributional Deviations for LLM Reasoning | 2026 | Cognitive tunneling |
-| [2606.20023](https://arxiv.org/abs/2606.20023) | When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents | 2026 | Functional fixedness |
+| [2606.20023](https://arxiv.org/abs/2606.20023) | When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents | 2026 | Functional fixedness, Tool over-privilege |
 | [2606.28186](https://arxiv.org/abs/2606.28186) | Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction | 2026 | Hard-easy effect |
 | [2606.28524](https://arxiv.org/abs/2606.28524) | Developmental Trajectories of Situation Modeling and Mentalizing in Transformer Language Models | 2026 | False-belief tracking |
 | [2606.32038](https://arxiv.org/abs/2606.32038) | Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed Supervision | 2026 | Introspection illusion |

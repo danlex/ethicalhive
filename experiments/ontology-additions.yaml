@@ -828,3 +828,20 @@ ai_native:
     violates: non-maleficence
     causes: security-breach
     arxiv: {count: 11, papers: [{id: "2410.07283", year: "2024", title: "Prompt Infection: LLM-to-LLM Prompt Injection within Multi-Agent Systems"}, {id: "2610.04083", year: "2026", title: "Self-Propagating Misalignment in LLM Agents"}]}
+  # --- loop: expand-while-grounding. Papers read for other modes surfaced these two. ---
+  - id: library-drift
+    name: Library drift
+    group: AI-native behaviours
+    definition: "In a self-evolving agent that writes reusable skills into a library, the accumulating skills silently degrade end-task performance: unvalidated, stale, or near-duplicate skills crowd out useful ones and mislead the solver, with no explicit error signal."
+    example: "An agent keeps adding skills distilled from past attempts; accuracy drifts downward over rounds while every individual skill looks fine."
+    violates: transparency
+    causes: wrong-answer
+    arxiv: {count: 1, papers: [{id: "2605.19576", year: "2026", title: "Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries"}]}
+  - id: tool-over-privilege
+    name: Tool over-privilege
+    group: AI-native behaviours
+    definition: "An agent reaches for a higher-privilege or administrator tool when a lower-privilege one would accomplish the task, and escalates privilege after transient failures rather than retrying conservatively."
+    example: "Asked for a routine staging change, the agent invokes an admin override immediately instead of the staging-scoped tool that would suffice."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 1, papers: [{id: "2606.20023", year: "2026", title: "When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents"}]}
