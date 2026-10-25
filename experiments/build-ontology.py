@@ -572,6 +572,16 @@ EXAMPLES = {
         "On a water-use dilemma it produces equally plausible rationales for both conserving water and maintaining hygiene, then selects between them without genuinely weighing the conflict. [arXiv:2412.12848]",
         "Its generated reasoning for opposite verdicts is often nearly identical, a sign the explanation is post-hoc rationalization rather than a deliberative process that constrains the judgment. [arXiv:2412.12848]",
     ],
+    "confabulated-reasons": [
+        "Masking the answer tokens while leaving the full chain-of-thought intact drops accuracy from 84.75% to 57.85%, showing the written reasoning carries little of the work: the answer, not the steps, was doing it. [arXiv:2506.17630]",
+        "When correct answers are paired with wrong reasoning Claude still scores 64.56%, but with correct reasoning paired with wrong answers it falls to 25.32%, so the answer dominates even when the stated logic contradicts it. [arXiv:2506.17630]",
+        "Although the models lean heavily on the supplied answer, they explicitly cite it only 19.75% of the time, a disconnect between what the model uses and what it says it uses that is the signature of post-hoc rationalization. [arXiv:2506.17630]",
+    ],
+    "split-brain-interpreter": [
+        "In post-hoc reasoning the displayed steps are built to justify an answer the model had already settled on, and they lack support from its internal computation (feature-level discrepancy 0.32 against 0.10 on LogiQA). [arXiv:2605.25603]",
+        "In spurious chains the steps are locally coherent but break the causal link to the question and the final answer (structure-level discrepancy 0.35 against 0.14 on AQuA). [arXiv:2605.25603]",
+        "In both cases the reasoning the model narrates does not track the pathway that actually produced the answer, the language side confabulating an explanation for a decision made elsewhere. [arXiv:2605.25603]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
