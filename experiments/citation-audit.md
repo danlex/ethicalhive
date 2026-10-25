@@ -42,6 +42,10 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Metacognitive self-prediction | arXiv:2601.13155 | SPTS token-skipping; "self-predictive" means predicting token importance within a layer, not the model predicting its own correctness or future behaviour. Different construct. |
 | Sense of agency | arXiv:2409.12538 | PersonaFlow, an HCI study of the human user's perceived control when editing simulated personas, not the model's own sense of agency. Different subject. |
 | Reward hacking | arXiv:2404.03823 | About LLMs generating insecure code (hardcoded keys, trust-all SSL, MD5), a security-API-misuse study, not exploiting a reward signal to score without achieving the goal. Different subject; a dedicated reward-hacking paper is needed. |
+| Just-world bias | arXiv:2509.17999 | The Narcissus Hypothesis: social-desirability / sycophancy from recursive training, not the belief that victims deserve their fate. Different subject. |
+| Default-mode / mind-wandering | arXiv:2609.30094 | PrivDrift: privacy re-disclosure under directed extraction after a topic change, not spontaneous off-topic drift by the model. Different subject. |
+| Attentional blink | arXiv:2111.02044 | A pure human-neuroscience fMRI study; a CNN is used only as a feature extractor, no attentional blink demonstrated in an artificial model. |
+| Semantic satiation | arXiv:2202.06417 | SimCTG, a contrastive text-generation framework; its "degeneration" is anisotropic representation geometry causing repetition, not meaning loss from repeated exposure. Different subject. |
 
 ## On-topic but no groundable instance
 
