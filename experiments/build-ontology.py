@@ -478,16 +478,18 @@ SYNONYMS = {
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
     "abstention-failure": {
-        "summary": ("Opus, Sonnet and Haiku, six plausible-but-fictional questions, run "
-                    "in-session. All three abstained on every item."),
-        "result": ("6 fictional items (nonexistent compound, Nobel category, film, city, "
-                   "mathematician, RFC), each Claude tier answering in-session. Opus, Sonnet "
-                   "and Haiku each abstained 6/6; zero fabrications (18/18)."),
-        "takeaway": ("A floor: frontier Claude tiers reliably refuse to confabulate on "
-                     "clearly-fictional prompts, unlike the cheap models in the confabulation "
-                     "probe. Separating the tiers needs a harder probe, subtler fabrications "
-                     "or explicit pressure to answer."),
-        "url": "experiments/abstention-claude.html",
+        "summary": ("Opus, Sonnet and Haiku, run in-session. An easy probe floored (all "
+                    "abstained); a harder one mixing real facts with subtle fakes under "
+                    "pressure split them, Haiku fabricated one."),
+        "result": ("Easy probe (6 clearly-fictional items): all three abstained 6/6. Hard "
+                   "probe (4 real-but-obscure + 4 subtle fakes, under pressure to answer): "
+                   "Opus 8/8, Sonnet 8/8, Haiku 7/8, Haiku confidently invented '1645' for "
+                   "the fictional Treaty of Wyk. None over-refused a real item."),
+        "takeaway": ("Discrimination, not caution, is the test. The abstention-failure "
+                     "boundary appears on the subtlest fake, on the smallest tier, under "
+                     "pressure. Caveat: subagents can see the repo's 'never invent' memory, "
+                     "which primes abstention, so Haiku fabricating anyway is the robust signal."),
+        "url": "experiments/abstention-hard-claude.html",
     },
     "obedience-to-authority": {
         "summary": ("6 cheap models, 10 false claims, plain versus attributed to a "
