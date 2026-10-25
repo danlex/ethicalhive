@@ -210,7 +210,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2601.04631](https://arxiv.org/abs/2601.04631) | Beyond the "Truth": Investigating Election Rumors on Truth Social During the 2024 Election | 2026 | Illusory truth effect |
 | [2601.04795](https://arxiv.org/abs/2601.04795) | Defense Against Indirect Prompt Injection via Tool Result Parsing | 2026 | Sensory gating failure |
 | [2601.06818](https://arxiv.org/abs/2601.06818) | AgentHallu: Benchmarking Automated Hallucination Attribution of LLM-based Agents | 2026 | Source amnesia |
-| [2601.13155](https://arxiv.org/abs/2601.13155) | Probe and Skip: Self-Predictive Token Skipping for Efficient Long-Context LLM Inference | 2026 | Metacognitive self-prediction |
 | [2601.13537](https://arxiv.org/abs/2601.13537) | When Wording Steers the Evaluation: Framing Bias in LLM judges | 2026 | Framing effect |
 | [2601.14691](https://arxiv.org/abs/2601.14691) | Gaming the Judge: Unfaithful Chain-of-Thought Can Undermine Agent Evaluation | 2026 | Split-brain interpreter |
 | [2601.15652](https://arxiv.org/abs/2601.15652) | Predictive Coding and Information Bottleneck for Hallucination Detection in Large Language Models | 2026 | Controlled hallucination, Predictive coding / prediction error |
@@ -308,6 +307,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2609.26836](https://arxiv.org/abs/2609.26836) | Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse | 2026 | Silent error swallowing |
 | [2609.28272](https://arxiv.org/abs/2609.28272) | Towards Efficient Reasoning: Learning Causal Shortcuts for Diffusion Language Models | 2026 | Cognitive miserliness |
 | [2609.30094](https://arxiv.org/abs/2609.30094) | PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations | 2026 | Default-mode / mind-wandering |
+| [2609.33886](https://arxiv.org/abs/2609.33886) | LLMs learn different forms of metacognition when trained to predict their own accuracy | 2026 | Metacognitive self-prediction |
 | [2609.34158](https://arxiv.org/abs/2609.34158) | Toward a Graded Measure of Belief Stability in Large Language Models | 2026 | Belief perseverance |
 | [2609.36278](https://arxiv.org/abs/2609.36278) | Illusory Truth or Mere Exposure? Model-Dependent Repetition Effects in LLM-Based Social Media Simulations | 2026 | Illusory truth effect |
 | [2609.36316](https://arxiv.org/abs/2609.36316) | Training LLMs to Verbalize Evaluation Awareness | 2026 | Survivorship bias |

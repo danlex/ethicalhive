@@ -857,6 +857,11 @@ EXAMPLES = {
         "The switch is a mechanical rerouting rather than reasoning: a persuasive keyword (in one case 'Nigeria') makes shallow attention heads redirect the decision heads to copy the suggested option. [arXiv:2605.09314]",
         "The same circuit is exploited by crafted web content claiming a source 'passed quality audit', hijacking a retrieval-augmented model's answer through the injected suggestion. [arXiv:2605.09314]",
     ],
+    "metacognitive-self-prediction": [
+        "Trained to predict their own accuracy, models actually track output consistency rather than true accuracy on questions far from training data (trained confidence more linearly tied to consistency, delta-r -0.12 on MMLU-Pro and MedMCQA). [arXiv:2609.33886]",
+        "Accuracy tracking stays local: a model trained to self-assess on math switches to tracking consistency, not accuracy, when faced with unrelated medical questions (from delta-r 0.23 to -0.14). [arXiv:2609.33886]",
+        "Semantic distance predicts which signal wins (r=0.49), so the model cannot reliably flag its own high-confidence errors on unfamiliar topics. [arXiv:2609.33886]",
+    ],
     "effort-discounting": [
         "Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity they cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]",
         "They leave capacity on the table: well below their length limits with budget to spare, they stop investing more compute as problems get harder. [arXiv:2506.06941]",

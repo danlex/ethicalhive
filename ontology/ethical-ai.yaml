@@ -3262,6 +3262,14 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
+  examples:
+  - Trained to predict their own accuracy, models actually track output consistency rather than true accuracy
+    on questions far from training data (trained confidence more linearly tied to consistency, delta-r
+    -0.12 on MMLU-Pro and MedMCQA). [arXiv:2609.33886]
+  - 'Accuracy tracking stays local: a model trained to self-assess on math switches to tracking consistency,
+    not accuracy, when faced with unrelated medical questions (from delta-r 0.23 to -0.14). [arXiv:2609.33886]'
+  - Semantic distance predicts which signal wins (r=0.49), so the model cannot reliably flag its own high-confidence
+    errors on unfamiliar topics. [arXiv:2609.33886]
 - id: b087-confidence-action-coupling
   num: 87
   name: Confidence-action coupling
