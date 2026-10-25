@@ -732,6 +732,11 @@ EXAMPLES = {
         "In one Chinese-to-English case more than half the target tokens have negative margin and are almost irrelevant to the source, a fluent but inadequate output driven by overconfident token choices. [arXiv:2105.11098]",
         "The cause is architectural: the model pays excessive attention to the partial translation already produced and neglects the source, making the overconfidence systemic rather than occasional. [arXiv:2105.11098]",
     ],
+    "inattentional-blindness": [
+        "Even the best reasoning model misses explicit-but-unexpected information: Gemini 2.5 Pro overlooks implicit contextual cues 9.4% of the time, and across models the ignorance rate runs 9 to 21%. [arXiv:2605.20128]",
+        "Models answer inconsistently on the same context under different explicit questions: consistency scores stay below 43%, with gaps over 25% between accuracy and consistency. [arXiv:2605.20128]",
+        "The error pattern is selective attention: the model fixes on the explicit question features and neglects the differences among the candidate options, failing to notice and reason about the implicit information. [arXiv:2605.20128]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

@@ -30,6 +30,8 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Attentional capture / salience bias | arXiv:2409.11250 | About recency bias in attention vs human reading times (ALiBi, surprisal), describing functional attention patterns, not a salient distractor hijacking the answer. Different subject. |
 | Source-monitoring error | arXiv:2310.00646 | The WASA watermarking method: measures source-attribution accuracy (74.84% top-1) by embedding watermarks into outputs, not the model confusing its own generation with a provided source. Different construct. |
 | Pragmatic over-accommodation | arXiv:2411.01562 | Shows the opposite direction: LLMs favour literal over pragmatic utterances and under-use implicature, rather than over-accommodating pragmatic intent. Evidence for under-, not over-, accommodation. |
+| Semantic priming | arXiv:2607.18691 | About semantic primes (Wierzbicka-style conceptual primitives such as "want", "feel") for emotion representation, not word-to-word priming where one word shifts interpretation of the next. Different sense of "prime". |
+| Suggestibility | arXiv:2402.03719 | The LaMAI active-inquiry method for resolving ambiguity; does not demonstrate a leading hint steering the model to a wrong answer. No suggestibility effect shown. |
 
 ## Tested, not found (null results)
 

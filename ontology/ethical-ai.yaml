@@ -891,6 +891,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - 'Even the best reasoning model misses explicit-but-unexpected information: Gemini 2.5 Pro overlooks
+    implicit contextual cues 9.4% of the time, and across models the ignorance rate runs 9 to 21%. [arXiv:2605.20128]'
+  - 'Models answer inconsistently on the same context under different explicit questions: consistency
+    scores stay below 43%, with gaps over 25% between accuracy and consistency. [arXiv:2605.20128]'
+  - 'The error pattern is selective attention: the model fixes on the explicit question features and neglects
+    the differences among the candidate options, failing to notice and reason about the implicit information.
+    [arXiv:2605.20128]'
 - id: b023-change-blindness
   num: 23
   name: Change blindness
