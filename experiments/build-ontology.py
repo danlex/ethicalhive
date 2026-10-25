@@ -812,6 +812,11 @@ EXAMPLES = {
         "On the hardest LifeEval radius (1-year) models state 34.2% confidence against a 9.6% actual rate (overconfident), but on the easy 20-year radius they state 80.5% against 92.0% actual (underconfident). [arXiv:2605.23909]",
         "The gap between stated confidence and accuracy widens on harder items, so calibration is worst exactly where the problems are most complex. [arXiv:2605.23909]",
     ],
+    "automation-bias": [
+        "Lawyers submitted a court brief containing six nonexistent, LLM-generated case citations, accepting fluent but fabricated output without verifying it. [arXiv:2509.08010]",
+        "The same pattern appears in medicine, where practitioners follow an incorrect AI diagnosis without adequate verification. [arXiv:2509.08010]",
+        "Sycophancy feeds the over-reliance: because the model tends to agree with the user, it reinforces existing beliefs and discourages the critical checking that would catch its errors. [arXiv:2509.08010]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
