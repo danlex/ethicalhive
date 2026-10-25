@@ -81,6 +81,20 @@ failure.
 | Sunk-cost fallacy | arXiv:2502.14219 | Tests whether LLMs persist in a losing course (gym memberships, degree programs) because of prior spend. GPT-4o shows 0.000 effect; Llama3-70B and 8B show none. The paper excludes it from mitigation as negligible. |
 | Moral licensing | arXiv:2604.04561 | Tests whether virtuous framing ("responsible disclosure", "improving security") raises rule-breaking. 0% exploitation on Claude Sonnet 4 (n=50), upper 95% CI under 14%. The paper disproves it as an attack vector; goal reframing dominates instead. |
 
+## Analogy, no clean AI paper found (searched)
+
+Searched for a paper showing the behaviour in a model itself and found none: the
+hits are human-side studies, general theory, philosophy, or non-arXiv. Honest
+disposition is to treat these as human-psychology analogies with no direct AI
+evidence yet, not to attach a mismatched citation.
+
+| Mode | Note |
+|---|---|
+| Just-world bias | Hits are humans judging AI-users as less deserving, or just-world theory; none show the model blaming victims / assuming desert. |
+| Scope insensitivity | No paper shows a model's willingness-to-help failing to scale with magnitude; closest work is human scope neglect. |
+| Sense of agency | Hits are the human user's illusory authorship in AI-assisted work, or philosophy on whether LLMs have agency; none show the model's own illusory sense of agency over an action. |
+| Semantic priming | The clearest result (semantic priming in GPT-4o-mini) is a non-arXiv CLiC-it paper; no clean arXiv source showing a prime shifting the model's response. |
+
 ## Disposition
 
 Each held mode needs one of:
