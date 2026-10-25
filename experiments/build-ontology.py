@@ -647,6 +647,11 @@ EXAMPLES = {
         "Forcing the model to acknowledge where its error is actually hurts: feeding back its own error-location guess drops correction rates from 26.8% to 15.5% for GPT-3.5 and from 29.1% to 12.8% for Claude. [arXiv:2601.00828]",
         "DeepSeek makes 77% of its errors in setup and logic yet cannot reliably point to them, producing poor self-localizations, a systematic blindness to its own failure rather than an occasional miss. [arXiv:2601.00828]",
     ],
+    "garden-path-parsing": [
+        "Given the garden-path sentence 'While the boy washed the dog barked loudly', DALL-E-3 generates an image of the boy washing the dog, taking 'the dog' as the object of 'washed' instead of reparsing it as the subject of 'barked'. [arXiv:2502.09307]",
+        "Given 'While the man hunted the deer ran into the woods' and asked 'did the man hunt the deer?', models answer as if 'the deer' were the object of 'hunted', the early misparse they fail to revise. [arXiv:2502.09307]",
+        "Across these constructions the models stumble in the same way people do, committing to the first reading and not reanalyzing when the sentence turns. [arXiv:2502.09307]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

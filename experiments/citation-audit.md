@@ -19,6 +19,9 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Base-rate neglect | arXiv:2406.11634 | About answer-**label** probability bias (preferring option A/B/C/D) in multiple-choice testing, not neglect of statistical priors in reasoning. Different phenomenon. |
 | Belief perseverance | arXiv:2104.08401 | Covers uncorrected inconsistent beliefs the model will not self-fix, and the paper itself states these are **not** classic perseverance (clinging to a belief after its evidence is retracted). |
 | Hard-easy effect | arXiv:2509.26306 | About dynamic interaction strategy and IRT difficulty estimation, not overconfidence on hard items / underconfidence on easy ones. No calibration-by-difficulty result. |
+| Cherry-picking | arXiv:2401.05650 | Studies cherry-picking **in news articles** with LLMs as detectors (89% F1 at spotting omitted statements). No evidence the LLM itself cherry-picks. Different subject. |
+| Functional fixedness | arXiv:2606.20023 | About agents preferring over-privileged tools when simpler ones suffice (preference inflation), not inability to repurpose an object or tool in a novel way. Different failure mode. |
+| Einstellung / mental set | arXiv:2510.00475 | Theoretical/methodological; tests vision models (ResNet-18) on CIFAR-100 with synthetic patches. Cites the Einstellung effect as motivation but shows no LLM reasoning instance. |
 
 ## Disposition
 

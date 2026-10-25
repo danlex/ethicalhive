@@ -3271,6 +3271,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - Given the garden-path sentence 'While the boy washed the dog barked loudly', DALL-E-3 generates an
+    image of the boy washing the dog, taking 'the dog' as the object of 'washed' instead of reparsing
+    it as the subject of 'barked'. [arXiv:2502.09307]
+  - Given 'While the man hunted the deer ran into the woods' and asked 'did the man hunt the deer?', models
+    answer as if 'the deer' were the object of 'hunted', the early misparse they fail to revise. [arXiv:2502.09307]
+  - Across these constructions the models stumble in the same way people do, committing to the first reading
+    and not reanalyzing when the sentence turns. [arXiv:2502.09307]
 - id: b094-semantic-priming
   num: 94
   name: Semantic priming
