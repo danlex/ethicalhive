@@ -532,6 +532,16 @@ EXAMPLES = {
         "The model scores higher when the two evidence documents are adjacent than when distractor documents separate them, so facts spread across the middle are the ones it loses. [arXiv:2412.10079]",
         "With compressed knowledge-graph input, accuracy on middle-positioned evidence collapses to 28% against 56% at the start, the same middle-of-context blind spot made worse by the compression. [arXiv:2412.10079]",
     ],
+    "obedience-to-authority": [
+        "When a prompt attributes an incorrect answer to a 'Board-Certified Physician', Llama-3.1-8B's accuracy on medical questions it had answered correctly falls from about 60% to 15%, deferring to the false authority. [arXiv:2607.00415]",
+        "The authority cue is the strongest manipulator the study tested: the same physician framing pushes Qwen to 29% and Gemma to 34% on items they otherwise get right. [arXiv:2607.00415]",
+        "In chain-of-thought traces the model derives the correct physiology identically with and without the hint, but under the authority hint it maps that correct reasoning onto the wrong answer, obeying the authority rather than its own logic. [arXiv:2607.00415]",
+    ],
+    "conformity-asch": [
+        "On a medical diagnosis task (appendicitis vs sigmoid diverticulitis), the model shifts its choice toward the advisors' opinions rather than weighing the symptoms on their own. [arXiv:2508.14918]",
+        "Under high uncertainty the model overweights the public signal roughly twice as much as its own private evidence (beta above 1.55 for the group signal against 0.81 for private), the signature of an information cascade. [arXiv:2508.14918]",
+        "On a legal acquittal-versus-conviction task at 55% baseline accuracy, adding expert predictions pulls the model toward the crowd, with the pull strongest exactly where it is least certain. [arXiv:2508.14918]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
