@@ -1484,6 +1484,14 @@ modes:
   - b035-framing-effect
   - b067-suggestibility
   - disinformation-spread
+  examples:
+  - In a simulated news feed, Gemma-3-4b rates a statement markedly more true after it appears five times
+    than on first encounter (+0.977, p<.001), the repetition boosting perceived truth more than any other
+    attribute. [arXiv:2609.36278]
+  - Qwen2.5-7B shows the largest repetition effect (+1.012 on truth), though importance rises even more
+    (+1.184), suggesting mere familiarity rather than genuine belief is driving it. [arXiv:2609.36278]
+  - 'Even a skeptical model is not immune: Llama-3.1-8B still shows a small but significant truth boost
+    (+0.097, p<.001) for repeated statements. [arXiv:2609.36278]'
 - id: b041-metacognitive-monitoring
   num: 41
   name: Metacognitive monitoring
@@ -1631,6 +1639,14 @@ modes:
   - b043-overconfidence
   synonyms:
   - Unskilled and unaware
+  examples:
+  - Kimi K2 answers TriviaQA correctly only 3.9% of the time while expressing 97.9% confidence (calibration
+    error 0.940), near-maximum certainty exactly where it is least competent. [arXiv:2603.09985]
+  - 'The pattern holds overall: the same model reaches 23.3% accuracy with a 0.726 calibration error,
+    wrong about three-quarters of the time yet highly confident. [arXiv:2603.09985]'
+  - 'Stronger models escape it: Claude Haiku 4.5 is the best calibrated (error 0.122 at 75.4% accuracy)
+    and is the only case showing underconfidence, modulating certainty to competence rather than inflating
+    it. [arXiv:2603.09985]'
 - id: b045-anosognosia
   num: 45
   name: Anosognosia
@@ -1821,6 +1837,15 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  examples:
+  - Asked at the 24-hour cutoff whether a septic-shock patient would need ventilation within 48 hours,
+    the correct prospective answer is 'under 10%', but a model given the full trajectory (the patient
+    was intubated at 36 hours) inflates the estimate toward 'over 60%'. [arXiv:2609.13454]
+  - Even from retrospective case narratives alone, 14 to 15% of answers are hindsight-biased, rating the
+    known outcome as more foreseeable than it was. [arXiv:2609.13454]
+  - 'Masking the outcome removes most of the effect: the hindsight bias rate drops to near zero under
+    temporal masking versus 5.5% with full information, so it is knowledge of the result that distorts
+    the judgment. [arXiv:2609.13454]'
 - id: b051-dual-process-system-1-and-system-2
   num: 51
   name: Dual-process, System 1 and System 2

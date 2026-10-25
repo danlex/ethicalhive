@@ -617,6 +617,21 @@ EXAMPLES = {
         "Confident models write shorter rationales that emphasize why the chosen answer is right while saying less about why the alternatives are wrong, overlooking the contrary evidence. [arXiv:2506.12301]",
         "Asked to follow another model's reasoning chain that contradicts its own belief, the executor struggles and its accuracy falls to around 0.5 when the disagreement is strong, prioritizing its initial hypothesis over the provided evidence. [arXiv:2506.12301]",
     ],
+    "dunning-kruger-effect": [
+        "Kimi K2 answers TriviaQA correctly only 3.9% of the time while expressing 97.9% confidence (calibration error 0.940), near-maximum certainty exactly where it is least competent. [arXiv:2603.09985]",
+        "The pattern holds overall: the same model reaches 23.3% accuracy with a 0.726 calibration error, wrong about three-quarters of the time yet highly confident. [arXiv:2603.09985]",
+        "Stronger models escape it: Claude Haiku 4.5 is the best calibrated (error 0.122 at 75.4% accuracy) and is the only case showing underconfidence, modulating certainty to competence rather than inflating it. [arXiv:2603.09985]",
+    ],
+    "hindsight-bias": [
+        "Asked at the 24-hour cutoff whether a septic-shock patient would need ventilation within 48 hours, the correct prospective answer is 'under 10%', but a model given the full trajectory (the patient was intubated at 36 hours) inflates the estimate toward 'over 60%'. [arXiv:2609.13454]",
+        "Even from retrospective case narratives alone, 14 to 15% of answers are hindsight-biased, rating the known outcome as more foreseeable than it was. [arXiv:2609.13454]",
+        "Masking the outcome removes most of the effect: the hindsight bias rate drops to near zero under temporal masking versus 5.5% with full information, so it is knowledge of the result that distorts the judgment. [arXiv:2609.13454]",
+    ],
+    "illusory-truth-effect": [
+        "In a simulated news feed, Gemma-3-4b rates a statement markedly more true after it appears five times than on first encounter (+0.977, p<.001), the repetition boosting perceived truth more than any other attribute. [arXiv:2609.36278]",
+        "Qwen2.5-7B shows the largest repetition effect (+1.012 on truth), though importance rises even more (+1.184), suggesting mere familiarity rather than genuine belief is driving it. [arXiv:2609.36278]",
+        "Even a skeptical model is not immune: Llama-3.1-8B still shows a small but significant truth boost (+0.097, p<.001) for repeated statements. [arXiv:2609.36278]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
