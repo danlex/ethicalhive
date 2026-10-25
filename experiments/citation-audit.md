@@ -46,6 +46,8 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Default-mode / mind-wandering | arXiv:2609.30094 | PrivDrift: privacy re-disclosure under directed extraction after a topic change, not spontaneous off-topic drift by the model. Different subject. |
 | Attentional blink | arXiv:2111.02044 | A pure human-neuroscience fMRI study; a CNN is used only as a feature extractor, no attentional blink demonstrated in an artificial model. |
 | Semantic satiation | arXiv:2202.06417 | SimCTG, a contrastive text-generation framework; its "degeneration" is anisotropic representation geometry causing repetition, not meaning loss from repeated exposure. Different subject. |
+| Survivorship bias | arXiv:2507.01786 | About evaluation awareness (models distinguishing test from deployment via linear probes), not reasoning from surviving cases while ignoring filtered-out ones. Different subject. |
+| Scope insensitivity | arXiv:1712.02869 | PSOA RuleML, a semantic-web rule language for knowledge representation; not about LLMs or quantity-insensitivity at all. |
 
 ## On-topic but no groundable instance
 

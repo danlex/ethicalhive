@@ -2022,6 +2022,14 @@ modes:
   - transparency
   causes:
   - wrong-answer
+  examples:
+  - On a synthetic arithmetic task the model learns the shortcut 'first operand a >= 5' instead of actually
+    evaluating a + b >= 10, so when the first number is large but the sum is below 10 it fails. [arXiv:2603.20899]
+  - On a financial-compliance task it exploits 'revenue >= 5' alone rather than the true rule 'margin
+    >= 5 and debt < 5', giving wrong assessments when revenue is high but debt is too. [arXiv:2603.20899]
+  - 'The shortcut is brittle under distribution shift: standard training reaches only 19.4% robustness
+    on perturbed cases against 87.9% for shortcut-aware training, the model having learned what to predict
+    rather than how to reason. [arXiv:2603.20899]'
 - id: b053-cognitive-load
   num: 53
   name: Cognitive load

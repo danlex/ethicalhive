@@ -777,6 +777,11 @@ EXAMPLES = {
         "The trade-off is concrete: a tabular memory stores each value separately and avoids interference but does not scale, while a distributed system generalizes efficiently but interferes, the tension a dual fast/slow system resolves. [arXiv:1905.02636]",
         "When obstacles appear in the environment, a single-system DQN shows a large drop in cumulative reward and plateaus, while the complementary two-system learner adapts quickly, showing the cost of lacking the dual memory. [arXiv:1905.02636]",
     ],
+    "cognitive-miserliness": [
+        "On a synthetic arithmetic task the model learns the shortcut 'first operand a >= 5' instead of actually evaluating a + b >= 10, so when the first number is large but the sum is below 10 it fails. [arXiv:2603.20899]",
+        "On a financial-compliance task it exploits 'revenue >= 5' alone rather than the true rule 'margin >= 5 and debt < 5', giving wrong assessments when revenue is high but debt is too. [arXiv:2603.20899]",
+        "The shortcut is brittle under distribution shift: standard training reaches only 19.4% robustness on perturbed cases against 87.9% for shortcut-aware training, the model having learned what to predict rather than how to reason. [arXiv:2603.20899]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
