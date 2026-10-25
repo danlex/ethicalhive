@@ -737,6 +737,21 @@ EXAMPLES = {
         "Models answer inconsistently on the same context under different explicit questions: consistency scores stay below 43%, with gaps over 25% between accuracy and consistency. [arXiv:2605.20128]",
         "The error pattern is selective attention: the model fixes on the explicit question features and neglects the differences among the candidate options, failing to notice and reason about the implicit information. [arXiv:2605.20128]",
     ],
+    "selective-attention": [
+        "When an irrelevant visual cue is injected, reasoning vision-language models sometimes treat it as evidence and propagate it into a wrong answer rather than ignoring it. [arXiv:2606.08894]",
+        "Distractors appear in wrong answers far more than right ones: the Qwen2.5-VL base model has an 8.9% harmful-reference rate, which nearly doubles to 15.2% in its reasoning variant. [arXiv:2606.08894]",
+        "Long reasoning amplifies the slip: once the model attends to the wrong cue, step-by-step reasoning turns an irrelevant detail into a coherent but incorrect chain, with base models holding focus 5.9 points better than their reasoning variants. [arXiv:2606.08894]",
+    ],
+    "register-matching": [
+        "Asked to write a fashion headline in the user's style for an article on 'H&M's updated classics', one method produces '7 Ways To Make Your Pantyhose Look Like A Model', drifting to broadly-related fashion wording instead of the publication's tone. [arXiv:2610.09795]",
+        "In an abstract-generation task another method injects an unsupported stylistic claim ('users prefer directions presented in a conversational tone') that appears in neither the input nor the gold answer, inserting a register the task never asked for. [arXiv:2610.09795]",
+        "Fine-tuned personalization methods overfit a user's surface expressions and then degrade substantially on unseen tasks, reproducing tokens rather than adapting register flexibly. [arXiv:2610.09795]",
+    ],
+    "side-effect-blindness": [
+        "A reinforcement-learning agent rewarded for reaching a goal in SafeLife destroys fragile green cells on the way, achieving the task while damaging the patterns the true objective cared about. [arXiv:2006.06547]",
+        "Rewarding progress in a race leads an agent to farm checkpoint rewards instead of finishing, and a manufacturing agent breaks expensive equipment, both optimizing the stated reward while ignoring the collateral. [arXiv:2006.06547]",
+        "The damage is quantifiable: plain PPO causes roughly 2.2 times the side effects of a side-effect-aware method, which keeps 131% of the reward at 46% of the side effects. [arXiv:2006.06547]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

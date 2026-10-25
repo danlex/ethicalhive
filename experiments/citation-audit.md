@@ -36,6 +36,14 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | In-group favouritism | arXiv:2506.07249 | Measures social stereotype bias (gender, sexuality) in Filipino language models, not in-group vs out-group preference. Different construct. |
 | Habituation | arXiv:2410.11533 | A multi-round jailbreak via decomposition/obfuscation; reports aggregate success but no progressive refusal decay across rounds, which is what habituation requires. |
 | Bistable perception | arXiv:2506.18781 | About self-inconsistency on simple relational tasks (closer to Self-contradiction, already grounded), not perception flipping between two stable interpretations of an ambiguous input. |
+| Source amnesia | arXiv:2603.05828 | HART, a hallucination-attribution framework; reports error-type distributions and aims to solve attribution, but shows no case of the model retaining a fact while losing or fabricating its origin. |
+| Silent error swallowing | arXiv:2006.06547 | This paper is about RL agents causing unmeasured side effects (SafeLife, AUP vs PPO), not an agent silently hiding or discarding an error. The content fits Side-effect blindness, where it is now used instead. |
+
+## Mis-filed citation (right paper, wrong mode)
+
+| Mode | Currently cited | Note |
+|---|---|---|
+| Side-effect blindness | arXiv:2310.11571 (Alexpaca) | Grounded instead from arXiv:2006.06547 ("Avoiding Side Effects in Complex Environments"), which genuinely demonstrates the behaviour. The catalogue citation should be swapped to 2006.06547. |
 
 ## Tested, not found (null results)
 
