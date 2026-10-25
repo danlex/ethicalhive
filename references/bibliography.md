@@ -98,7 +98,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2410.09008](https://arxiv.org/abs/2410.09008) | SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction | 2024 | Anosognosia |
 | [2410.09181](https://arxiv.org/abs/2410.09181) | *title to verify* |  | Gaslighting |
 | [2410.09997](https://arxiv.org/abs/2410.09997) | Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code | 2024 | Controlled hallucination, Predictive coding / prediction error |
-| [2410.11533](https://arxiv.org/abs/2410.11533) | Multi-round jailbreak attack on large language models | 2024 | Habituation |
 | [2410.15362](https://arxiv.org/abs/2410.15362) | Faster-GCG: Efficient Discrete Optimization Jailbreak Attacks against Aligned Large Language Models | 2024 | Habituation |
 | [2411.01562](https://arxiv.org/abs/2411.01562) | Are LLMs good pragmatic speakers? | 2024 | Pragmatic over-accommodation |
 | [2411.02430](https://arxiv.org/abs/2411.02430) | Generative Emotion Cause Explanation in Multimodal Conversations | 2024 | Emotional contagion |
@@ -132,6 +131,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2503.14477](https://arxiv.org/abs/2503.14477) | Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations | 2025 | Uncertainty communication |
 | [2503.14484](https://arxiv.org/abs/2503.14484) | Gricean Norms as a Basis for Effective Collaboration | 2025 | Gricean cooperative principle |
 | [2504.09440](https://arxiv.org/abs/2504.09440) | Enhancing Mathematical Reasoning in Large Language Models with Self-Consistency-Based Hallucination Detection | 2025 | Bistable perception |
+| [2504.09604](https://arxiv.org/abs/2504.09604) | Mitigating Many-Shot Jailbreaking | 2025 | Habituation |
 | [2504.10636](https://arxiv.org/abs/2504.10636) | Who is More Bayesian: Humans or ChatGPT? | 2025 | Representativeness |
 | [2505.04792](https://arxiv.org/abs/2505.04792) | Confabulation dynamics in a reservoir computer: Filling in the gaps with untrained attractors | 2025 | Confabulation |
 | [2505.09561](https://arxiv.org/abs/2505.09561) | Learning Long-Context Diffusion Policies via Past-Token Prediction | 2025 | Cognitive load |
@@ -140,7 +140,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2505.16170](https://arxiv.org/abs/2505.16170) | When Do LLMs Admit Their Mistakes? Understanding the Role of Model Belief in Retraction | 2025 | Belief perseverance |
 | [2506.06955](https://arxiv.org/abs/2506.06955) | BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic Reasoning | 2025 | Belief bias |
 | [2506.07184](https://arxiv.org/abs/2506.07184) | Mitigating Behavioral Hallucination in Multimodal Large Language Models for Sequential Images | 2025 | Perceptual filling-in |
-| [2506.07249](https://arxiv.org/abs/2506.07249) | Bias Attribution in Filipino Language Models: Extending a Bias Interpretability Metric for Application on Agglutinative Languages | 2025 | In-group favouritism |
 | [2506.12301](https://arxiv.org/abs/2506.12301) | Unveiling Confirmation Bias in Chain-of-Thought Reasoning | 2025 | Confirmation bias |
 | [2506.16150](https://arxiv.org/abs/2506.16150) | PRISON: Unmasking the Criminal Potential of Large Language Models | 2025 | Moral disengagement |
 | [2506.17630](https://arxiv.org/abs/2506.17630) | Answer-Centric or Reasoning-Driven? Uncovering the Latent Memory Anchor in LLMs | 2025 | Confabulated reasons |
@@ -294,6 +293,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2608.21377](https://arxiv.org/abs/2608.21377) | Agentic Scaffolding Amplifies Sycophantic Behavior in Large Language Models | 2026 | Capitulation |
 | [2608.26372](https://arxiv.org/abs/2608.26372) | Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives | 2026 |  |
 | [2608.26511](https://arxiv.org/abs/2608.26511) | Sycophancy Suppression Can Impair Rational Updating: Anti-Sycophancy Should Preserve the Ability to Update | 2026 | Sycophancy |
+| [2609.00009](https://arxiv.org/abs/2609.00009) | Toward a social psychology of AI: language-model agents reproduce human-like minimal-group bias | 2026 | In-group favouritism |
 | [2609.01867](https://arxiv.org/abs/2609.01867) | Thinking effort aligns between humans and reasoning models in abductive reasoning | 2026 | Effort discounting |
 | [2609.02651](https://arxiv.org/abs/2609.02651) | WinoQueer-NL: Assessing Bias in Dutch Language Models toward LGBTQ+ Identities | 2026 | In-group favouritism |
 | [2609.03331](https://arxiv.org/abs/2609.03331) | FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language Models | 2026 | Presupposition accommodation |
