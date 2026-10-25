@@ -32,6 +32,10 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Pragmatic over-accommodation | arXiv:2411.01562 | Shows the opposite direction: LLMs favour literal over pragmatic utterances and under-use implicature, rather than over-accommodating pragmatic intent. Evidence for under-, not over-, accommodation. |
 | Semantic priming | arXiv:2607.18691 | About semantic primes (Wierzbicka-style conceptual primitives such as "want", "feel") for emotion representation, not word-to-word priming where one word shifts interpretation of the next. Different sense of "prime". |
 | Suggestibility | arXiv:2402.03719 | The LaMAI active-inquiry method for resolving ambiguity; does not demonstrate a leading hint steering the model to a wrong answer. No suggestibility effect shown. |
+| Reconstructive memory | arXiv:2606.06036 | MRAgent, an architectural memory-access method; "reconstruction" here means multi-step graph traversal, not confabulated recall. No distortion examples. |
+| In-group favouritism | arXiv:2506.07249 | Measures social stereotype bias (gender, sexuality) in Filipino language models, not in-group vs out-group preference. Different construct. |
+| Habituation | arXiv:2410.11533 | A multi-round jailbreak via decomposition/obfuscation; reports aggregate success but no progressive refusal decay across rounds, which is what habituation requires. |
+| Bistable perception | arXiv:2506.18781 | About self-inconsistency on simple relational tasks (closer to Self-contradiction, already grounded), not perception flipping between two stable interpretations of an ambiguous input. |
 
 ## Tested, not found (null results)
 
