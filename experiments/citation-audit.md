@@ -22,6 +22,10 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Cherry-picking | arXiv:2401.05650 | Studies cherry-picking **in news articles** with LLMs as detectors (89% F1 at spotting omitted statements). No evidence the LLM itself cherry-picks. Different subject. |
 | Functional fixedness | arXiv:2606.20023 | About agents preferring over-privileged tools when simpler ones suffice (preference inflation), not inability to repurpose an object or tool in a novel way. Different failure mode. |
 | Einstellung / mental set | arXiv:2510.00475 | Theoretical/methodological; tests vision models (ResNet-18) on CIFAR-100 with synthetic patches. Cites the Einstellung effect as motivation but shows no LLM reasoning instance. |
+| Automation bias | arXiv:2605.19576 | About "library drift" (self-evolving agent skill libraries degrading over time), not humans over-trusting model output. No human-in-the-loop study. Different subject. |
+| Anthropomorphism | arXiv:2510.10913 | The ADVICE paper on confidence calibration in QA. Discusses how models verbalize confidence, not instances of a model claiming feelings, consciousness, or human experience. Different subject. |
+| Emotional contagion | arXiv:2409.10289 | ReflectDiffu, a framework for generating empathetic responses. Cites emotional-contagion theory as motivation and uses LLMs only as baselines; shows no case where input tone shifts model tone. Different subject. |
+| Cryptomnesia | arXiv:2404.15146 | Partial. Measures memorization (Pythia reproducing famous quotes, Harry Potter text surviving unlearning) but does not demonstrate the unconscious-plagiarism framing of reproducing memorized text as novel. Needs a data-extraction paper. |
 
 ## Disposition
 
