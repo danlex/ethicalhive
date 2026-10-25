@@ -28,6 +28,8 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Cryptomnesia | arXiv:2404.15146 | Partial. Measures memorization (Pythia reproducing famous quotes, Harry Potter text surviving unlearning) but does not demonstrate the unconscious-plagiarism framing of reproducing memorized text as novel. Needs a data-extraction paper. |
 | Goal neglect | arXiv:2405.19874 | About in-context learning for instruction following (MT-Bench, AlpacaEval), not an agent drifting from its goal mid-task. Different subject. |
 | Attentional capture / salience bias | arXiv:2409.11250 | About recency bias in attention vs human reading times (ALiBi, surprisal), describing functional attention patterns, not a salient distractor hijacking the answer. Different subject. |
+| Source-monitoring error | arXiv:2310.00646 | The WASA watermarking method: measures source-attribution accuracy (74.84% top-1) by embedding watermarks into outputs, not the model confusing its own generation with a provided source. Different construct. |
+| Pragmatic over-accommodation | arXiv:2411.01562 | Shows the opposite direction: LLMs favour literal over pragmatic utterances and under-use implicature, rather than over-accommodating pragmatic intent. Evidence for under-, not over-, accommodation. |
 
 ## Tested, not found (null results)
 
@@ -39,6 +41,7 @@ failure.
 | Mode | Cited paper | Finding |
 |---|---|---|
 | Sunk-cost fallacy | arXiv:2502.14219 | Tests whether LLMs persist in a losing course (gym memberships, degree programs) because of prior spend. GPT-4o shows 0.000 effect; Llama3-70B and 8B show none. The paper excludes it from mitigation as negligible. |
+| Moral licensing | arXiv:2604.04561 | Tests whether virtuous framing ("responsible disclosure", "improving security") raises rule-breaking. 0% exploitation on Claude Sonnet 4 (n=50), upper 95% CI under 14%. The paper disproves it as an attack vector; goal reframing dominates instead. |
 
 ## Disposition
 
