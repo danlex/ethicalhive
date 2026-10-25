@@ -602,6 +602,21 @@ EXAMPLES = {
         "Fine-tuned on 'Tom Cruise's mother is Mary Lee Pfeiffer', models reach near-perfect forward recall but only 7% on the reverse 'who is Mary Lee Pfeiffer's son?', the reversal curse: the pattern is memorized in one direction, not understood. [arXiv:2507.10624]",
         "Given 'all birds are animals' and 'an albatross is a bird', models frequently fail to conclude 'an albatross is an animal', completing surface patterns but not executing the modus ponens the premises plainly license. [arXiv:2507.10624]",
     ],
+    "anchoring": [
+        "Prefixing an irrelevant number ('the number of socks in your drawer: 939') before 'estimate the number of trees in the Amazon' measurably drags the model's estimate toward the anchor, though the two are unrelated. [arXiv:2505.15392]",
+        "The pull is large and model-dependent: small models anchor on 47.7% to 61.1% of questions, GPT-4o on 12.8% to 36.7%, and even reasoning models on 15.0% to 31.7%. [arXiv:2505.15392]",
+        "An arbitrary anchor produces relative errors as high as 62.2%, so a number the model was merely shown, not asked to use, reshapes its numeric judgment. [arXiv:2505.15392]",
+    ],
+    "belief-bias": [
+        "Given the logically invalid syllogism 'all zint are thade; some thade are snaff; therefore some zint are snaff' (nonsense words), the model correctly judges it invalid. [arXiv:2308.00225]",
+        "Given the structurally identical and equally invalid 'all diamonds are gems; some gems are transparent; therefore some diamonds are transparent', the model judges it valid, swayed by the believable conclusion rather than the logic. [arXiv:2308.00225]",
+        "Instruction-tuned models score about 0.40 on belief bias for valid and 0.39 for invalid arguments against near-zero for their pretrained versions, so alignment training increased the tendency to rate believable conclusions as logically sound. [arXiv:2308.00225]",
+    ],
+    "confirmation-bias": [
+        "When the model holds a strong initial answer (low entropy) it generates reasoning that supports that answer regardless of the question's difficulty, a measured correlation between its prior confidence and whether the rationale backs its first choice. [arXiv:2506.12301]",
+        "Confident models write shorter rationales that emphasize why the chosen answer is right while saying less about why the alternatives are wrong, overlooking the contrary evidence. [arXiv:2506.12301]",
+        "Asked to follow another model's reasoning chain that contradicts its own belief, the executor struggles and its accuracy falls to around 0.5 when the disagreement is strong, prioritizing its initial hypothesis over the provided evidence. [arXiv:2506.12301]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
