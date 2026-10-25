@@ -47,6 +47,7 @@ def build_tree():
             "rel": [{"n": id2name.get(r, r), "id": r} for r in (m.get("relates_to") or [])],
             "opp": [{"n": id2name.get(r, r), "id": r} for r in (m.get("opposite_of") or [])],
             "root": [{"n": id2name.get(r, r), "id": r} for r in (m.get("root_of") or [])],
+            "isa": [{"n": id2name.get(r, r), "id": r} for r in (m.get("is_a") or [])],
             "det": [mn.get(d, d) for d in (m.get("detected_by") or [])],
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
@@ -302,6 +303,7 @@ function showPanel(id){
      +`<h3>${esc(m.n)}</h3>`
      +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`
      +`<p>${esc(m.def)}</p>`
+     +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
@@ -440,6 +442,7 @@ INLINE_JS = r"""(function(){
     return `<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
      +`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`
      +`<p>${esc(m.def)}</p>`
+     +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)

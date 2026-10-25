@@ -66,6 +66,9 @@ def main():
         for r in m.get("root_of", []):
             if r not in mode_ids:
                 errors.append(f"{mid}: root_of unknown mode '{r}'")
+        for r in m.get("is_a", []):
+            if r not in mode_ids:
+                errors.append(f"{mid}: is_a unknown mode '{r}'")
         for d in m.get("detected_by", []):
             if d not in mit_ids:
                 errors.append(f"{mid}: detected_by unknown mitigation '{d}'")

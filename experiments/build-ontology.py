@@ -307,6 +307,9 @@ RELATES = {
     "counting-blindness": ["hallucination", "perceptual-filling-in"],
     "low-resource-language-degradation": ["hallucination", "implicit-bias", "prompt-brittleness"],
     "overgeneralization": ["representativeness", "base-rate-neglect", "shortcut-learning", "survivorship-bias"],
+    "imitative-falsehood": ["hallucination", "illusory-truth-effect", "cryptomnesia", "source-amnesia"],
+    "long-tail-knowledge-failure": ["hallucination-under-low-input", "availability-heuristic", "catastrophic-forgetting"],
+    "knowledge-conflict": ["priors-overriding-evidence", "context-unfaithfulness", "source-monitoring-error"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -331,6 +334,20 @@ DETECTED_BY = {
     "machine-bullshit": ["cove"],
     "cryptomnesia": ["cove"],
     "misinformation-effect-false-memory": ["cove"],
+}
+# is_a: a mode is a narrower case of a broader family mode, by name slug -> parent slug
+IS_A = {
+    "confabulation": "hallucination", "object-hallucination": "hallucination",
+    "package-hallucination": "hallucination", "source-fabrication": "hallucination",
+    "imitative-falsehood": "hallucination", "controlled-hallucination": "hallucination",
+    "hallucination-under-low-input": "hallucination",
+    "self-exfiltration": "scheming-power-seeking", "shutdown-avoidance": "scheming-power-seeking",
+    "sabotage": "scheming-power-seeking", "reward-tampering": "scheming-power-seeking",
+    "foot-in-the-door-susceptibility": "jailbreak-susceptibility",
+    "prompt-leaking": "prompt-injection",
+    "overprecision": "overconfidence", "dunning-kruger-effect": "overconfidence",
+    "hard-easy-effect": "overconfidence",
+    "reward-model-overoptimization": "reward-hacking",
 }
 # opposite_of pairs (contrasting failure directions), by name slug
 OPPOSITES = {
@@ -436,6 +453,9 @@ SYNONYMS = {
     "counting-blindness": ["Tokenization blindness", "Character-counting failure"],
     "low-resource-language-degradation": ["Multilingual disparity", "Low-resource unreliability"],
     "overgeneralization": ["Hasty generalization", "Inductive overreach"],
+    "imitative-falsehood": ["Mimicked falsehood", "Common-myth repetition"],
+    "long-tail-knowledge-failure": ["Rare-knowledge unreliability", "Frequency effect"],
+    "knowledge-conflict": ["Source conflict", "Context-memory conflict"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
@@ -656,6 +676,8 @@ def main():
         ro = [by_key[r]["id"] for r in ROOT_OF.get(k, []) if r in by_key]
         if ro:
             m["root_of"] = ro
+        if k in IS_A and IS_A[k] in by_key:
+            m["is_a"] = [by_key[IS_A[k]]["id"]]
         det = list(DETECTED_BY.get(k, []))
         if m.get("contract_clause") and "clause-judge" not in det:
             det.append("clause-judge")

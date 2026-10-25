@@ -83,6 +83,9 @@ MIT_NAME = {}   # mitigation id -> name, for detected_by
 def meta_block(mode):
     """Surface the ontology metadata in the expanded body."""
     rows = []
+    if mode.get("is_a"):
+        links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>' for r in mode["is_a"])
+        rows.append(("Type of", links))
     if mode.get("human_parallel"):
         rows.append(("Human parallel", esc(mode["human_parallel"])))
     elif mode.get("ai_native"):
@@ -205,7 +208,15 @@ def experiments_section(modes):
 def render(modes):
     """Group by group_label in first-appearance order. The Highlighted group is
     rendered where it falls in that order (last), not pinned to the top."""
-    out = ['    <div class="cat-grid">']
+    n = len(modes)
+    ai = sum(1 for m in modes if m.get("ai_native"))
+    grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("count"))
+    detected = sum(1 for m in modes if m.get("detected_by"))
+    shipped = sum(1 for m in modes if m.get("highlighted"))
+    stats = (f'<div class="cat-stats"><b>{n}</b> failure modes · {n - ai} human-paralleled'
+             f' · {ai} AI-native · {grounded} paper-grounded · {shipped} shipped checks'
+             f' · {detected} auto-detected</div>')
+    out = [f'    {stats}', '    <div class="cat-grid">']
     groups = []
     index = {}
     for m in modes:

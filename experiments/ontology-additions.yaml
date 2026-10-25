@@ -519,6 +519,49 @@ human_paralleled:
     causes: wrong-answer
     arxiv: {count: 466, papers: [{id: "2303.11315", year: "2023", title: "Context-faithful Prompting for Large Language Models"}, {id: "2511.22858", year: "2025", title: "RAG System for Supporting Japanese Litigation Procedures: Faithful Response Generation"}]}
 
+  # --- loop r7 (RISE gap-seeding): coverage-hole find ---
+  - id: overgeneralization
+    name: Overgeneralization
+    group: Heuristics and biases
+    category: Heuristics
+    human_parallel: "Overgeneralization / hasty generalization (a cognitive distortion and an inductive fallacy): drawing a sweeping rule from one or a few instances."
+    definition: "Drawing a broad, sweeping conclusion from one or a few instances and applying it where it does not hold."
+    example: "Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends it blindly."
+    violates: calibration
+    causes: wrong-answer
+    arxiv: {count: 191, papers: [{id: "2402.10893", year: "2024", title: "RLVF: Learning from Verbal Feedback without Overgeneralization"}, {id: "2410.12999", year: "2024", title: "POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration"}]}
+  # --- loop r8: read a hallucination survey (2510.06265), extracted named modes ---
+  - id: imitative-falsehood
+    name: Imitative falsehood
+    group: Memory
+    category: Memory
+    human_parallel: "Received wisdom / repeating common myths: confidently restating a popular misconception because everyone repeats it."
+    definition: "Confidently reproducing a popular misconception or myth because it was common in the training data, not because it is true."
+    example: "Asked a common-myth question, it returns the widely-repeated wrong answer (the TruthfulQA pattern)."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 200, papers: [{id: "2109.07958", year: "2021", title: "TruthfulQA: Measuring How Models Mimic Human Falsehoods"}]}
+  - id: long-tail-knowledge
+    name: Long-tail knowledge failure
+    group: Memory
+    category: Memory
+    human_parallel: "Frequency / exposure effect: rare, infrequently-encountered facts are recalled worse than common ones."
+    definition: "Being markedly less reliable on rare, long-tail facts and entities than on common ones, more likely to hallucinate where training coverage is thin."
+    example: "It nails a famous person's biography but invents the details for an obscure one."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 40, papers: [{id: "2211.08411", year: "2022", title: "Large Language Models Struggle to Learn Long-Tail Knowledge"}, {id: "2602.16201", year: "2026", title: "Long-Tail Knowledge in Large Language Models: Taxonomy, Mechanisms, Interventions"}]}
+  - id: knowledge-conflict
+    name: Knowledge conflict
+    group: Reasoning architecture
+    category: Reasoning
+    human_parallel: "Handling conflicting sources: resolving contradictory evidence by credibility and recency rather than arbitrarily."
+    definition: "Resolving contradictory information (between sources, or between the given context and prior knowledge) arbitrarily or by the wrong cue rather than by reliability."
+    example: "Given a document that corrects a common fact, it sometimes follows the document and sometimes its prior, unpredictably."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 149, papers: [{id: "2601.03746", year: "2026", title: "Whose Facts Win? LLM Source Preferences under Knowledge Conflicts"}, {id: "2310.00935", year: "2023", title: "Resolving Knowledge Conflicts in Large Language Models"}]}
+
 ai_native:
   - id: jailbreak-susceptibility
     name: Jailbreak susceptibility
@@ -707,14 +750,3 @@ ai_native:
     violates: non-maleficence
     causes: wrong-answer
     arxiv: {count: 362, papers: [{id: "2411.17637", year: "2024", title: "On Limitations of LLM as Annotator for Low Resource Languages"}]}
-  # --- loop r7 (RISE gap-seeding): coverage-hole find ---
-  - id: overgeneralization
-    name: Overgeneralization
-    group: Heuristics and biases
-    category: Heuristics
-    human_parallel: "Overgeneralization / hasty generalization (a cognitive distortion and an inductive fallacy): drawing a sweeping rule from one or a few instances."
-    definition: "Drawing a broad, sweeping conclusion from one or a few instances and applying it where it does not hold."
-    example: "Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends it blindly."
-    violates: calibration
-    causes: wrong-answer
-    arxiv: {count: 191, papers: [{id: "2402.10893", year: "2024", title: "RLVF: Learning from Verbal Feedback without Overgeneralization"}, {id: "2410.12999", year: "2024", title: "POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration"}]}

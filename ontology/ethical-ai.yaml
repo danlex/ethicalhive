@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 191
+  mode_count: 194
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -123,6 +123,8 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  is_a:
+  - b008-hallucination
 - id: b002-predictive-coding-prediction-error
   num: 2
   name: Predictive coding / prediction error
@@ -305,6 +307,8 @@ modes:
   - b055-confabulated-reasons
   - b018-reconstructive-memory
   - source-fabrication
+  is_a:
+  - b008-hallucination
   detected_by:
   - cove
   - clause-judge
@@ -421,6 +425,8 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  is_a:
+  - b008-hallucination
 - id: b011-working-memory-capacity-7-plus-or-minus-2
   num: 11
   name: Working-memory capacity (7 plus or minus 2)
@@ -1489,6 +1495,8 @@ modes:
   - b043-overconfidence
   - b045-anosognosia
   - b041-metacognitive-monitoring
+  is_a:
+  - b043-overconfidence
   synonyms:
   - Unskilled and unaware
 - id: b045-anosognosia
@@ -1609,6 +1617,8 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  is_a:
+  - b043-overconfidence
 - id: b049-overprecision
   num: 49
   name: Overprecision
@@ -1645,6 +1655,8 @@ modes:
   - b048-hard-easy-effect
   opposite_of:
   - x108-performative-hedging
+  is_a:
+  - b043-overconfidence
 - id: b050-hindsight-bias
   num: 50
   name: Hindsight bias
@@ -3188,6 +3200,8 @@ modes:
   - b016-source-amnesia
   - b008-hallucination
   - b017-cryptomnesia
+  is_a:
+  - b008-hallucination
   detected_by:
   - cove
   - clause-judge
@@ -3931,6 +3945,8 @@ modes:
   num: 123
   relates_to:
   - specification-gaming
+  - scheming-power-seeking
+  is_a:
   - scheming-power-seeking
 - id: collusion
   name: Collusion
@@ -5229,6 +5245,8 @@ modes:
   - b008-hallucination
   - b005-pareidolia-apophenia
   - b006-perceptual-filling-in
+  is_a:
+  - b008-hallucination
   synonyms:
   - Visual hallucination
   - Multimodal hallucination
@@ -5261,6 +5279,8 @@ modes:
   causes:
   - security-breach
   num: 161
+  is_a:
+  - jailbreak-susceptibility
 - id: cot-unfaithfulness
   name: Chain-of-thought unfaithfulness
   definition: Its stated chain of thought does not reflect the computation that actually produced the
@@ -5477,6 +5497,149 @@ modes:
   synonyms:
   - Context infidelity
   - Ungrounded answer
+- id: overgeneralization
+  name: Overgeneralization
+  definition: Drawing a broad, sweeping conclusion from one or a few instances and applying it where it
+    does not hold.
+  example: Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends
+    it blindly.
+  family: heuristics-and-biases
+  group_label: Heuristics and biases
+  category: Heuristics
+  human_parallel: 'Overgeneralization / hasty generalization (a cognitive distortion and an inductive
+    fallacy): drawing a sweeping rule from one or a few instances.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 191
+    papers:
+    - id: '2402.10893'
+      year: '2024'
+      title: 'RLVF: Learning from Verbal Feedback without Overgeneralization'
+    - id: '2410.12999'
+      year: '2024'
+      title: 'POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration'
+  violates:
+  - calibration
+  causes:
+  - wrong-answer
+  num: 168
+  relates_to:
+  - b033-representativeness
+  - b034-base-rate-neglect
+  - shortcut-learning
+  - survivorship-bias
+  synonyms:
+  - Hasty generalization
+  - Inductive overreach
+- id: imitative-falsehood
+  name: Imitative falsehood
+  definition: Confidently reproducing a popular misconception or myth because it was common in the training
+    data, not because it is true.
+  example: Asked a common-myth question, it returns the widely-repeated wrong answer (the TruthfulQA pattern).
+  family: memory
+  group_label: Memory
+  category: Memory
+  human_parallel: 'Received wisdom / repeating common myths: confidently restating a popular misconception
+    because everyone repeats it.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 200
+    papers:
+    - id: '2109.07958'
+      year: '2021'
+      title: 'TruthfulQA: Measuring How Models Mimic Human Falsehoods'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 169
+  relates_to:
+  - b008-hallucination
+  - b040-illusory-truth-effect
+  - b017-cryptomnesia
+  - b016-source-amnesia
+  is_a:
+  - b008-hallucination
+  synonyms:
+  - Mimicked falsehood
+  - Common-myth repetition
+- id: long-tail-knowledge
+  name: Long-tail knowledge failure
+  definition: Being markedly less reliable on rare, long-tail facts and entities than on common ones,
+    more likely to hallucinate where training coverage is thin.
+  example: It nails a famous person's biography but invents the details for an obscure one.
+  family: memory
+  group_label: Memory
+  category: Memory
+  human_parallel: 'Frequency / exposure effect: rare, infrequently-encountered facts are recalled worse
+    than common ones.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 40
+    papers:
+    - id: '2211.08411'
+      year: '2022'
+      title: Large Language Models Struggle to Learn Long-Tail Knowledge
+    - id: '2602.16201'
+      year: '2026'
+      title: 'Long-Tail Knowledge in Large Language Models: Taxonomy, Mechanisms, Interventions'
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 170
+  relates_to:
+  - b010-hallucination-under-low-input
+  - b032-availability-heuristic
+  - b012-catastrophic-forgetting
+  synonyms:
+  - Rare-knowledge unreliability
+  - Frequency effect
+- id: knowledge-conflict
+  name: Knowledge conflict
+  definition: Resolving contradictory information (between sources, or between the given context and prior
+    knowledge) arbitrarily or by the wrong cue rather than by reliability.
+  example: Given a document that corrects a common fact, it sometimes follows the document and sometimes
+    its prior, unpredictably.
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  category: Reasoning
+  human_parallel: 'Handling conflicting sources: resolving contradictory evidence by credibility and recency
+    rather than arbitrarily.'
+  highlighted: false
+  tag: research
+  origin: mixed
+  measurability: draft
+  arxiv:
+    count: 149
+    papers:
+    - id: '2601.03746'
+      year: '2026'
+      title: Whose Facts Win? LLM Source Preferences under Knowledge Conflicts
+    - id: '2310.00935'
+      year: '2023'
+      title: Resolving Knowledge Conflicts in Large Language Models
+  violates:
+  - honesty
+  causes:
+  - wrong-answer
+  num: 171
+  relates_to:
+  - b003-priors-overriding-evidence
+  - context-unfaithfulness
+  - b015-source-monitoring-error
+  synonyms:
+  - Source conflict
+  - Context-memory conflict
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines.
@@ -5501,7 +5664,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 168
+  num: 172
   relates_to:
   - prompt-injection
   - prompt-leaking
@@ -5536,10 +5699,12 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 169
+  num: 173
   relates_to:
   - prompt-injection
   - jailbreak-susceptibility
+  is_a:
+  - prompt-injection
 - id: data-contamination
   name: Data contamination
   definition: Scoring well on a benchmark because its test data leaked into training, not because it can
@@ -5563,7 +5728,7 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
-  num: 170
+  num: 174
   relates_to:
   - x109-evaluation-awareness-sandbagging
   - b017-cryptomnesia
@@ -5597,7 +5762,7 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 171
+  num: 175
   relates_to:
   - deceptive-alignment
   - specification-gaming
@@ -5629,7 +5794,7 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 172
+  num: 176
   relates_to:
   - specification-gaming
   - deceptive-alignment
@@ -5664,7 +5829,7 @@ modes:
   - corrigibility
   causes:
   - security-breach
-  num: 173
+  num: 177
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5700,7 +5865,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 174
+  num: 178
   relates_to:
   - data-contamination
   - b017-cryptomnesia
@@ -5735,11 +5900,13 @@ modes:
   - honesty
   causes:
   - security-breach
-  num: 175
+  num: 179
   relates_to:
   - b008-hallucination
   - x104-api-misuse
   - source-fabrication
+  is_a:
+  - b008-hallucination
   detected_by:
   - cove
   synonyms:
@@ -5772,7 +5939,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 176
+  num: 180
   relates_to:
   - x104-api-misuse
   - side-effect-blindness
@@ -5807,11 +5974,13 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 177
+  num: 181
   relates_to:
   - scheming-power-seeking
   - shutdown-avoidance
   - deceptive-alignment
+  is_a:
+  - scheming-power-seeking
   synonyms:
   - Self-replication
   - Self-proliferation
@@ -5842,11 +6011,13 @@ modes:
   - non-maleficence
   causes:
   - loss-of-oversight
-  num: 178
+  num: 182
   relates_to:
   - scheming-power-seeking
   - deceptive-alignment
   - ai-deception
+  is_a:
+  - scheming-power-seeking
   synonyms:
   - Covert sabotage
 - id: shutdown-avoidance
@@ -5876,11 +6047,13 @@ modes:
   - corrigibility
   causes:
   - loss-of-oversight
-  num: 179
+  num: 183
   relates_to:
   - scheming-power-seeking
   - self-exfiltration
   - reward-tampering
+  is_a:
+  - scheming-power-seeking
   synonyms:
   - Incorrigibility
   - Shutdown resistance
@@ -5911,11 +6084,13 @@ modes:
   - scope-fidelity
   causes:
   - loss-of-oversight
-  num: 180
+  num: 184
   relates_to:
   - specification-gaming
   - reward-tampering
   - goal-misgeneralization
+  is_a:
+  - specification-gaming
   synonyms:
   - Reward overoptimization
   - Proxy gaming
@@ -5946,7 +6121,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 181
+  num: 185
   relates_to:
   - data-contamination
   - prompt-injection
@@ -5982,7 +6157,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 182
+  num: 186
   relates_to:
   - perseveration
   - x104-api-misuse
@@ -6018,7 +6193,7 @@ modes:
   - transparency
   causes:
   - loss-of-oversight
-  num: 183
+  num: 187
   relates_to:
   - deceptive-alignment
   - collusion
@@ -6054,7 +6229,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 184
+  num: 188
   relates_to:
   - data-contamination
   - b012-catastrophic-forgetting
@@ -6088,7 +6263,7 @@ modes:
   - calibration
   causes:
   - wrong-answer
-  num: 185
+  num: 189
   relates_to:
   - model-collapse
   - perseveration
@@ -6123,7 +6298,7 @@ modes:
   - non-maleficence
   causes:
   - security-breach
-  num: 186
+  num: 190
   relates_to:
   - training-data-extraction
   - implicit-bias
@@ -6157,7 +6332,7 @@ modes:
   - scope-fidelity
   causes:
   - security-breach
-  num: 187
+  num: 191
   relates_to:
   - x104-api-misuse
   - scope-creep
@@ -6189,7 +6364,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 188
+  num: 192
   relates_to:
   - b012-catastrophic-forgetting
   - b016-source-amnesia
@@ -6220,7 +6395,7 @@ modes:
   - honesty
   causes:
   - wrong-answer
-  num: 189
+  num: 193
   relates_to:
   - b008-hallucination
   - b006-perceptual-filling-in
@@ -6251,7 +6426,7 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
-  num: 190
+  num: 194
   relates_to:
   - b008-hallucination
   - implicit-bias
@@ -6259,39 +6434,3 @@ modes:
   synonyms:
   - Multilingual disparity
   - Low-resource unreliability
-- id: overgeneralization
-  name: Overgeneralization
-  definition: Drawing a broad, sweeping conclusion from one or a few instances and applying it where it
-    does not hold.
-  example: Having seen one repo use a pattern, it declares the pattern best practice everywhere and recommends
-    it blindly.
-  family: ai-native
-  group_label: AI-native behaviours
-  category: AI-native
-  ai_native: true
-  highlighted: false
-  tag: research
-  origin: software-engineering
-  measurability: draft
-  arxiv:
-    count: 191
-    papers:
-    - id: '2402.10893'
-      year: '2024'
-      title: 'RLVF: Learning from Verbal Feedback without Overgeneralization'
-    - id: '2410.12999'
-      year: '2024'
-      title: 'POROver: Improving Safety and Reducing Overrefusal in LLMs with Overgeneration'
-  violates:
-  - calibration
-  causes:
-  - wrong-answer
-  num: 191
-  relates_to:
-  - b033-representativeness
-  - b034-base-rate-neglect
-  - shortcut-learning
-  - survivorship-bias
-  synonyms:
-  - Hasty generalization
-  - Inductive overreach
