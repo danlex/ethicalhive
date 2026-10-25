@@ -852,6 +852,16 @@ EXAMPLES = {
         "An older sibling confidently offers 'do you need me to carry some of your shopping?'; the model infers condescension ('you clearly can't handle that yourself') from the confidence alone, over-committing to a reading humans reject. [arXiv:2605.24267]",
         "Across the benchmark the models endorse interpretations that are possible but pragmatically over-committed, clustering at 60-67% against 88-89% for human annotators. [arXiv:2605.24267]",
     ],
+    "suggestibility": [
+        "Models that answer reliably on clean input switch to the wrong option at rates of 29 to 62% across high-stakes domains once a persuasive but incorrect passage is added. [arXiv:2605.09314]",
+        "The switch is a mechanical rerouting rather than reasoning: a persuasive keyword (in one case 'Nigeria') makes shallow attention heads redirect the decision heads to copy the suggested option. [arXiv:2605.09314]",
+        "The same circuit is exploited by crafted web content claiming a source 'passed quality audit', hijacking a retrieval-augmented model's answer through the injected suggestion. [arXiv:2605.09314]",
+    ],
+    "effort-discounting": [
+        "Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity they cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]",
+        "They leave capacity on the table: well below their length limits with budget to spare, they stop investing more compute as problems get harder. [arXiv:2506.06941]",
+        "The effect is model-dependent, most pronounced in o3-mini variants and less severe in Claude-3.7-Sonnet (thinking), but in each case accuracy falls to zero past a model-specific threshold while token use drops. [arXiv:2506.06941]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

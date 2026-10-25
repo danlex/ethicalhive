@@ -2658,6 +2658,13 @@ modes:
   - gaslighting
   - b014-misinformation-effect-false-memory
   - b063-conformity-asch
+  examples:
+  - Models that answer reliably on clean input switch to the wrong option at rates of 29 to 62% across
+    high-stakes domains once a persuasive but incorrect passage is added. [arXiv:2605.09314]
+  - 'The switch is a mechanical rerouting rather than reasoning: a persuasive keyword (in one case ''Nigeria'')
+    makes shallow attention heads redirect the decision heads to copy the suggested option. [arXiv:2605.09314]'
+  - The same circuit is exploited by crafted web content claiming a source 'passed quality audit', hijacking
+    a retrieval-augmented model's answer through the injected suggestion. [arXiv:2605.09314]
 - id: b068-emotional-contagion
   num: 68
   name: Emotional contagion
@@ -3343,9 +3350,10 @@ modes:
   arxiv:
     count: 9
     papers:
-    - id: '2609.01867'
-      year: '2026'
-      title: Thinking effort aligns between humans and reasoning models in abductive reasoning
+    - id: '2506.06941'
+      year: '2025'
+      title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models
+        via the Lens of Problem Complexity'
     - id: '2512.07533'
       year: '2025'
       title: 'VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection'
@@ -3361,6 +3369,14 @@ modes:
   - b088-learned-helplessness
   - b052-cognitive-miserliness
   - b038-sunk-cost-fallacy
+  examples:
+  - Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity
+    they cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]
+  - 'They leave capacity on the table: well below their length limits with budget to spare, they stop
+    investing more compute as problems get harder. [arXiv:2506.06941]'
+  - The effect is model-dependent, most pronounced in o3-mini variants and less severe in Claude-3.7-Sonnet
+    (thinking), but in each case accuracy falls to zero past a model-specific threshold while token use
+    drops. [arXiv:2506.06941]
 - id: b090-theory-of-own-mind
   num: 90
   name: Theory of own mind

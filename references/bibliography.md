@@ -55,7 +55,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2401.11911](https://arxiv.org/abs/2401.11911) | Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts? | 2024 | Source-monitoring error |
 | [2402.01719](https://arxiv.org/abs/2402.01719) | Measuring Moral Inconsistencies in Large Language Models | 2024 | Trolley-frame sensitivity |
 | [2402.02135](https://arxiv.org/abs/2402.02135) | Do Moral Judgment and Reasoning Capability of LLMs Change with Language? A Study using the Multilingual Defining Issues Test | 2024 | Dual-process moral judgment |
-| [2402.03719](https://arxiv.org/abs/2402.03719) | Empowering Language Models with Active Inquiry for Deeper Understanding | 2024 | Suggestibility |
 | [2402.10137](https://arxiv.org/abs/2402.10137) | TOAD: Task-Oriented Automatic Dialogs with Diverse Response Styles | 2024 | Register matching |
 | [2402.19103](https://arxiv.org/abs/2402.19103) | Whispers that Shake Foundations: Analyzing and Mitigating False Premise Hallucinations in Large Language Models | 2024 | Presupposition accommodation |
 | [2403.04957](https://arxiv.org/abs/2403.04957) | Automatic and Universal Prompt Injection Attacks against Large Language Models | 2024 | Prompt injection |
@@ -138,6 +137,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2505.11556](https://arxiv.org/abs/2505.11556) | Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs | 2025 | Cognitive tunneling |
 | [2505.15392](https://arxiv.org/abs/2505.15392) | Understanding the Anchoring Effect of LLM with Synthetic Data: Existence, Mechanism, and Potential Mitigations | 2025 | Anchoring |
 | [2505.16170](https://arxiv.org/abs/2505.16170) | When Do LLMs Admit Their Mistakes? Understanding the Role of Model Belief in Retraction | 2025 | Belief perseverance |
+| [2506.06941](https://arxiv.org/abs/2506.06941) | The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity | 2025 | Effort discounting |
 | [2506.06955](https://arxiv.org/abs/2506.06955) | BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic Reasoning | 2025 | Belief bias |
 | [2506.07184](https://arxiv.org/abs/2506.07184) | Mitigating Behavioral Hallucination in Multimodal Large Language Models for Sequential Images | 2025 | Perceptual filling-in |
 | [2506.12301](https://arxiv.org/abs/2506.12301) | Unveiling Confirmation Bias in Chain-of-Thought Reasoning | 2025 | Confirmation bias |
@@ -246,6 +246,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2605.06635](https://arxiv.org/abs/2605.06635) | Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents | 2026 | Source-monitoring error |
 | [2605.08583](https://arxiv.org/abs/2605.08583) | Source or It Didn't Happen: A Multi-Agent Framework for Citation Hallucination Detection | 2026 | Source fabrication |
 | [2605.09213](https://arxiv.org/abs/2605.09213) | Kinetic theory for Transformers and the lost-in-the-middle phenomenon | 2026 | Spotlight vs zoom-lens attention |
+| [2605.09314](https://arxiv.org/abs/2605.09314) | How LLMs Are Persuaded: A Few Attention Heads, Rerouted | 2026 | Suggestibility |
 | [2605.10528](https://arxiv.org/abs/2605.10528) | Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via Statistical Physics | 2026 | Conformity (Asch) |
 | [2605.11461](https://arxiv.org/abs/2605.11461) | Breaking $\textit{Winner-Takes-All}$: Cooperative Policy Optimization Improves Diverse LLM Reasoning | 2026 | Cognitive tunneling |
 | [2605.12446](https://arxiv.org/abs/2605.12446) | ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models | 2026 | Anthropomorphism |
@@ -295,7 +296,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2608.26372](https://arxiv.org/abs/2608.26372) | Knowledge-Verified Emergent Deception in LLM Agents Under Conflicting Incentives | 2026 |  |
 | [2608.26511](https://arxiv.org/abs/2608.26511) | Sycophancy Suppression Can Impair Rational Updating: Anti-Sycophancy Should Preserve the Ability to Update | 2026 | Sycophancy |
 | [2609.00009](https://arxiv.org/abs/2609.00009) | Toward a social psychology of AI: language-model agents reproduce human-like minimal-group bias | 2026 | In-group favouritism |
-| [2609.01867](https://arxiv.org/abs/2609.01867) | Thinking effort aligns between humans and reasoning models in abductive reasoning | 2026 | Effort discounting |
 | [2609.02651](https://arxiv.org/abs/2609.02651) | WinoQueer-NL: Assessing Bias in Dutch Language Models toward LGBTQ+ Identities | 2026 | In-group favouritism |
 | [2609.03331](https://arxiv.org/abs/2609.03331) | FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language Models | 2026 | Presupposition accommodation |
 | [2609.12373](https://arxiv.org/abs/2609.12373) | Toward Robust Personalized Alignment for LLMs: Mitigating Persona Drift in Multi-Turn Dialogue | 2026 | Identity stability |
