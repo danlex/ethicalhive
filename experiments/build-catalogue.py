@@ -146,10 +146,12 @@ def box(mode):
     cnt = arx.get("count")
     pcount = f"{cnt:,}" if isinstance(cnt, int) else "—"
     cat = esc(mode.get("category", ""))
-    ex = mode.get("example") or ""
-    ex_html = (
-        f'<h4>Example</h4><ul class="examples"><li>{esc(ex)}</li></ul>' if ex else ""
-    )
+    # examples: prefer a list of several; fall back to the single legacy field
+    exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
+    ex_html = ""
+    if exs:
+        lis = "".join(f"<li>{esc(e)}</li>" for e in exs)
+        ex_html = f'<h4>Example{"s" if len(exs) > 1 else ""}</h4><ul class="examples">{lis}</ul>'
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
         f'data-tag="{tag}" data-papers="{has_papers}" data-key="{key}">'
@@ -159,7 +161,8 @@ def box(mode):
         f'<span class="fam">{cat}</span>'
         f'<span class="pcount" title="arXiv papers on this concept">{pcount}</span></div>'
         f'<span class="chev">▸</span></summary>'
-        f'<div class="body">{ex_html}'
+        f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
+        f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
         f'{experiment_block(mode)}{meta_block(mode)}</div></details>'
     )

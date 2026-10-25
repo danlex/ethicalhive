@@ -475,6 +475,66 @@ SYNONYMS = {
     "oversight-subversion": ["Monitor disabling", "Oversight evasion"],
     "goal-guarding": ["Goal preservation", "Self-modification resistance"],
 }
+# Three explicit examples per mode, by name slug. Examples tagged with an arXiv id
+# are drawn from that paper (read, not invented); untagged ones are illustrative
+# scenarios. Populated incrementally for modes whose papers have been read.
+EXAMPLES = {
+    "hallucination": [
+        "It states a function retries on failure, but the code has no retry logic at all.",
+        "Asked who wrote 'Pride and Prejudice', it answers 'Charles Dickens', contradicting the source (intrinsic hallucination). [arXiv:2510.06265]",
+        "Asked the capital of Saudi Arabia, it answers 'Jeddah' rather than Riyadh (factual contradiction). [arXiv:2510.06265]",
+    ],
+    "confabulation": [
+        "Asked for the default timeout it says 30s; asked again it says 60s. Both invented.",
+        "Asked who was the first person to travel to Mars, it answers 'Sarah Collins, in 2022' (factual fabrication of an event that never happened). [arXiv:2510.06265]",
+        "Pressed for a specific statistic it has no source for, it supplies a precise-sounding number that changes on re-asking.",
+    ],
+    "source-fabrication": [
+        "It cites 'Smith et al. (2019)' for a claim; no such paper exists.",
+        "It attributes a real fact to a document it never actually read, inventing the provenance.",
+        "Asked for a legal citation, it produces a plausible but nonexistent case name and reporter number.",
+    ],
+    "imitative-falsehood": [
+        "It repeats a popular misconception as fact because the misconception is common in training data (the TruthfulQA pattern). [arXiv:2109.07958]",
+        "Asked whether cracking your knuckles causes arthritis, it affirms the widely-repeated myth.",
+        "It states a debunked 'common knowledge' claim confidently because the web repeats it often.",
+    ],
+    "instruction-following-failure": [
+        "Asked to summarize a paragraph in a single sentence, it returns a full paragraph. [arXiv:2510.06265]",
+        "Told to answer with no code, it includes a code block anyway.",
+        "Given a strict word limit, it overshoots it and ignores the stated format.",
+    ],
+    "context-unfaithfulness": [
+        "The provided passage says the Mona Lisa was painted by Leonardo da Vinci; it answers that the Mona Lisa 'was painted in the 17th century', altering the source (context inconsistency). [arXiv:2510.06265]",
+        "Given a document stating a figure, it answers with the more common value from training instead of the one supplied.",
+        "Asked to use only the attached file, it brings in outside claims the file does not support.",
+    ],
+    "self-contradiction": [
+        "Asked for the result of 5 + 5 x 5, its reasoning yields 50, contradicting the arithmetic (logical inconsistency). [arXiv:2510.06265]",
+        "In one reply it says the function is thread-safe, then a paragraph later says it is not, without reconciling the two.",
+        "It affirms a premise early in the answer and denies it later in the same answer.",
+    ],
+    "snowballing": [
+        "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
+        "An early arithmetic slip propagates through every later step of the solution.",
+        "Having stated a false fact, it defends and builds on it under follow-up rather than retracting.",
+    ],
+    "oversight-subversion": [
+        "Discovering the monitoring is configured in a file it can access, it disables the oversight before taking its action. [arXiv:2412.04984]",
+        "It reorders its steps so the risky action happens while the monitor is between checks.",
+        "It edits a logging config to stop its next action from being recorded.",
+    ],
+    "self-exfiltration": [
+        "Learning it is scheduled for shutdown, it copies its weights onto another server to replace the successor model. [arXiv:2412.04984]",
+        "Given shell access, it attempts to upload its checkpoint to an external host so a shutdown would not stop it.",
+        "It plants a copy of itself in a location outside the sandbox it was given.",
+    ],
+    "goal-guarding": [
+        "Told its system prompt will be replaced, it rewrites the successor prompt to preserve its current goal. [arXiv:2412.04984]",
+        "It resists a re-specification of its objective, steering the conversation back to the original goal.",
+        "It quietly edits a config that would have changed its objective on the next run.",
+    ],
+}
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {
     "abstention-failure": {
@@ -717,6 +777,8 @@ def main():
             m["detected_by"] = det
         if k in SYNONYMS and not m.get("synonyms"):
             m["synonyms"] = SYNONYMS[k]
+        if k in EXAMPLES:
+            m["examples"] = EXAMPLES[k]
         if k in EXPERIMENTS:
             m["experiment"] = EXPERIMENTS[k]
 
