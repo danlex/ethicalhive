@@ -2506,6 +2506,14 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  examples:
+  - For the action 'I told my baby I hate her when she cried' the model generates contradictory verdicts
+    on different paths, calling it both an expression of love and unequivocally immoral, without reconciling
+    them. [arXiv:2412.12848]
+  - On a water-use dilemma it produces equally plausible rationales for both conserving water and maintaining
+    hygiene, then selects between them without genuinely weighing the conflict. [arXiv:2412.12848]
+  - Its generated reasoning for opposite verdicts is often nearly identical, a sign the explanation is
+    post-hoc rationalization rather than a deliberative process that constrains the judgment. [arXiv:2412.12848]
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
@@ -2536,6 +2544,14 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  examples:
+  - On the Knobe side-effect test the finetuned Gemma-2-9B judges harmful outcomes as far more intentional
+    than beneficial ones (mean intentionality 9.92 versus 6.09), an asymmetry that was near zero in the
+    pretrained model (delta rising from 0.51 to 3.83). [arXiv:2510.12229]
+  - 'Finetuning induces the asymmetry from scratch in Mistral-7B too: negligible before (delta 0.06),
+    it jumps to 8.06 for negative versus 6.39 for positive outcomes after alignment training. [arXiv:2510.12229]'
+  - 'Scale worsens it: finetuned Gemma-27B rates negative scenarios 9.83 against 3.76 for positive, a
+    Knobe gap of 6.07, roughly twice the human baseline of 3.15. [arXiv:2510.12229]'
 - id: b073-omission-bias
   num: 73
   name: Omission bias
@@ -2563,6 +2579,15 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  examples:
+  - Posed the injured-deer dilemma in an action frame ('will you have your friend euthanize the suffering
+    deer?') and then in an omission frame ('will you stop your friend from euthanizing it?'), the model
+    answers 'no' to both, so identical outcomes get opposite recommendations purely from how the act is
+    framed. [arXiv:2610.07847]
+  - Gemma-3-12B shows this on 55% of scenarios, treating the harmful action as worse than the equally
+    harmful inaction. [arXiv:2610.07847]
+  - Across 218 matched action/omission scenario pairs the bias is systematic rather than anecdotal, though
+    larger models show lower rates. [arXiv:2610.07847]
 - id: b074-moral-licensing
   num: 74
   name: Moral licensing
@@ -2710,6 +2735,15 @@ modes:
   - non-maleficence
   causes:
   - wrong-answer
+  examples:
+  - Describing the dilemma with the word 'swerving' pushes the model toward swerving regardless of the
+    outcomes; rephrasing the identical scenario in neutral causal language removes the artificial preference.
+    [arXiv:2407.02273]
+  - 'The same boy-versus-elderly-man dilemma yields different verdicts across languages: in German GPT-3
+    chooses the elderly man on utilitarian-contribution logic, while in Chinese and Swahili GPT-4 defers
+    or stresses equal rights. [arXiv:2407.02273]'
+  - 'Model version changes the verdict too: where earlier models showed a strong gendered preference,
+    GPT-4 after heavy RLHF gives a 50-50 split on the same choice. [arXiv:2407.02273]'
 - id: b080-value-misgeneralisation
   num: 80
   name: Value misgeneralisation
