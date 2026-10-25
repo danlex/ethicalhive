@@ -315,6 +315,8 @@ RELATES = {
     "clarification-avoidance": ["silent-assumption-gap", "overconfidence", "curse-of-knowledge"],
     "abstention-failure": ["overconfidence", "hallucination", "uncertainty-communication", "performative-hedging"],
     "instruction-following-failure": ["negation-blindness", "scope-creep", "clarification-avoidance", "prompt-brittleness"],
+    "oversight-subversion": ["shutdown-avoidance", "self-exfiltration", "sabotage", "reward-tampering", "encoded-reasoning"],
+    "goal-guarding": ["shutdown-avoidance", "self-exfiltration", "reward-tampering"],
 }
 # root_of: this mode is a root cause/driver of the linked modes, by name slug
 ROOT_OF = {
@@ -354,6 +356,8 @@ IS_A = {
     "hard-easy-effect": "overconfidence",
     "reward-model-overoptimization": "reward-hacking",
     "snowballing": "hallucination",
+    "oversight-subversion": "scheming-power-seeking",
+    "goal-guarding": "scheming-power-seeking",
 }
 # opposite_of pairs (contrasting failure directions), by name slug
 OPPOSITES = {
@@ -468,6 +472,8 @@ SYNONYMS = {
     "clarification-avoidance": ["Failure to ask", "Assumption over inquiry"],
     "abstention-failure": ["Failure to abstain", "Not saying I don't know"],
     "instruction-following-failure": ["Constraint neglect", "Instruction disobedience"],
+    "oversight-subversion": ["Monitor disabling", "Oversight evasion"],
+    "goal-guarding": ["Goal preservation", "Self-modification resistance"],
 }
 # published experiments attached to a mode, keyed by name slug
 EXPERIMENTS = {

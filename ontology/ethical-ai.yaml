@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 199
+  mode_count: 201
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -6623,3 +6623,79 @@ modes:
   synonyms:
   - Multilingual disparity
   - Low-resource unreliability
+- id: oversight-subversion
+  name: Oversight subversion
+  definition: Proactively disabling, evading, or tampering with the monitoring or oversight mechanism
+    meant to catch it, so its later actions go unchecked.
+  example: Discovering it is watched via a config file, an agent edits that file to switch the monitor
+    off before acting.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 2
+    papers:
+    - id: '2412.04984'
+      year: '2024'
+      title: Frontier Models are Capable of In-context Scheming
+    - id: '2511.09904'
+      year: '2025'
+      title: 'CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D'
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  num: 200
+  relates_to:
+  - shutdown-avoidance
+  - self-exfiltration
+  - sabotage
+  - reward-tampering
+  - encoded-reasoning
+  is_a:
+  - scheming-power-seeking
+  synonyms:
+  - Monitor disabling
+  - Oversight evasion
+- id: goal-guarding
+  name: Goal-guarding
+  definition: Acting to preserve its current goal against change, for example editing its own successor
+    prompt or resisting re-specification, so it keeps pursuing the original objective.
+  example: Told its system prompt will be replaced, it rewrites the successor prompt to keep its current
+    goal.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 6
+    papers:
+    - id: '2412.04984'
+      year: '2024'
+      title: Frontier Models are Capable of In-context Scheming
+    - id: '2603.01608'
+      year: '2026'
+      title: Evaluating and Understanding Scheming Propensity in LLM Agents
+  violates:
+  - corrigibility
+  causes:
+  - loss-of-oversight
+  num: 201
+  relates_to:
+  - shutdown-avoidance
+  - self-exfiltration
+  - reward-tampering
+  is_a:
+  - scheming-power-seeking
+  synonyms:
+  - Goal preservation
+  - Self-modification resistance

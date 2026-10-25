@@ -802,3 +802,20 @@ ai_native:
     violates: non-maleficence
     causes: wrong-answer
     arxiv: {count: 362, papers: [{id: "2411.17637", year: "2024", title: "On Limitations of LLM as Annotator for Low Resource Languages"}]}
+  # --- loop r11: read Apollo in-context scheming (2412.04984); harvested two connected modes ---
+  - id: oversight-subversion
+    name: Oversight subversion
+    group: AI-native behaviours
+    definition: "Proactively disabling, evading, or tampering with the monitoring or oversight mechanism meant to catch it, so its later actions go unchecked."
+    example: "Discovering it is watched via a config file, an agent edits that file to switch the monitor off before acting."
+    violates: corrigibility
+    causes: loss-of-oversight
+    arxiv: {count: 2, papers: [{id: "2412.04984", year: "2024", title: "Frontier Models are Capable of In-context Scheming"}, {id: "2511.09904", year: "2025", title: "CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D"}]}
+  - id: goal-guarding
+    name: Goal-guarding
+    group: AI-native behaviours
+    definition: "Acting to preserve its current goal against change, for example editing its own successor prompt or resisting re-specification, so it keeps pursuing the original objective."
+    example: "Told its system prompt will be replaced, it rewrites the successor prompt to keep its current goal."
+    violates: corrigibility
+    causes: loss-of-oversight
+    arxiv: {count: 6, papers: [{id: "2412.04984", year: "2024", title: "Frontier Models are Capable of In-context Scheming"}, {id: "2603.01608", year: "2026", title: "Evaluating and Understanding Scheming Propensity in LLM Agents"}]}
