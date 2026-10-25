@@ -517,6 +517,21 @@ EXAMPLES = {
         "In one reply it says the function is thread-safe, then a paragraph later says it is not, without reconciling the two.",
         "It affirms a premise early in the answer and denies it later in the same answer.",
     ],
+    "conjunction-fallacy": [
+        "Given 'Linda is 31, single, outspoken, majored in philosophy, deeply concerned with discrimination and social justice', the model ranks 'Linda is a bank teller and active in the feminist movement' as more probable than 'Linda is a bank teller' alone, though a conjunction can never be more likely than one of its parts. [arXiv:2404.01461]",
+        "Given 'Bill is intelligent but unimaginative and compulsive, strong in mathematics', GPT-4 ranks 'Bill is an accountant who plays jazz as a hobby' above the plain 'Bill is an accountant', committing the same fallacy. [arXiv:2404.01461]",
+        "GPT-4 answers the famous Linda problem correctly, but when the identical problem swaps in an unfamiliar name ('Bob', an environmental advocate), it reverts to picking the conjunction as more likely, showing it matched the famous template rather than reasoning about probability. [arXiv:2406.11050]",
+    ],
+    "representativeness": [
+        "Given 'Danielle is sensitive and introspective and wrote poetry secretly', LLaMA2-70B judges her field more likely to be 'Literature' than 'Humanities', rating a subset above the superset that contains it because the description resembles the subset. [arXiv:2404.01461]",
+        "Shown a personality sketch that fits the accountant stereotype, the model judges 'accountant' highly likely and ignores how rare accountants are in the stated population (base-rate neglect). [arXiv:2404.01461]",
+        "It reads the Linda sketch, which stresses activism, treats 'feminist bank teller' as the representative description of her, and lets that resemblance override the plain base probability of being a bank teller. [arXiv:2404.01461]",
+    ],
+    "serial-position-effect": [
+        "On multi-hop question answering, GPT-3.5 answers correctly 76.7% of the time when the needed document sits first in the context but only 71.1% when the same document is placed in the middle of the list. [arXiv:2412.10079]",
+        "The model scores higher when the two evidence documents are adjacent than when distractor documents separate them, so facts spread across the middle are the ones it loses. [arXiv:2412.10079]",
+        "With compressed knowledge-graph input, accuracy on middle-positioned evidence collapses to 28% against 56% at the start, the same middle-of-context blind spot made worse by the compression. [arXiv:2412.10079]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
