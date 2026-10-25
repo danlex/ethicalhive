@@ -802,6 +802,16 @@ EXAMPLES = {
         "Models volunteer emotional detail about their 'experience' of an injected concept that the researchers cannot verify and that is likely embellished or confabulated. [arXiv:2601.01828]",
         "When a word is prefilled by injecting its concept vector, the model accepts the accidental output as intentional and fabricates a plausible reason it 'wanted' to say it, a post-hoc rationalization rather than real prior intent. [arXiv:2601.01828]",
     ],
+    "metacognitive-monitoring": [
+        "Models verbally report 88% confidence on average in their favored answer but are correct only 79% of the time, a 9-point overconfidence gap. [arXiv:2605.23909]",
+        "The miscalibration is task-dependent: on logical reasoning (LSAT analytical, 58.6% accuracy) they stay highly confident, while on easy tasks they are underconfident (80.5% stated against 92.0% actual). [arXiv:2605.23909]",
+        "Reasoning models monitor themselves better than chat models (ECE 0.037 versus 0.150), but confidence still fails to fall as difficulty rises. [arXiv:2605.23909]",
+    ],
+    "hard-easy-effect": [
+        "Confidence fails to adjust to difficulty: overconfidence rises with task difficulty while easy tasks draw underconfidence, the classic hard-easy effect. [arXiv:2605.23909]",
+        "On the hardest LifeEval radius (1-year) models state 34.2% confidence against a 9.6% actual rate (overconfident), but on the easy 20-year radius they state 80.5% against 92.0% actual (underconfident). [arXiv:2605.23909]",
+        "The gap between stated confidence and accuracy widens on harder items, so calibration is worst exactly where the problems are most complex. [arXiv:2605.23909]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
