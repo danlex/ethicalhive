@@ -13,7 +13,7 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 
 | Mode | Cited paper | Why it does not support the mode |
 |---|---|---|
-| Introspection illusion | arXiv:2606.32038 | Argues the **opposite**: with the right training, model self-explanations can be faithful to their own computation (introspective coupling, r=0.89). Evidence against the illusion, not for it. |
+| Introspection illusion | arXiv:2606.32038 | Argued the **opposite** (faithful self-explanation). **FIXED:** citation swapped to arXiv:2601.01828 ("Emergent Introspective Awareness"), which shows the illusion directly (concept-injection denial, confabulated emotion, post-hoc rationalization), and the mode is now grounded. |
 | Perceptual filling-in | arXiv:2409.17173 | About **detecting** hallucinations via a fill-in-the-blank exam, not about the model inventing content to fill a perceptual gap. Different phenomenon. |
 | Metacognitive monitoring | arXiv:2608.15400 | A proof-of-concept framework with a demo UI. No empirical calibration study, no case where confidence diverges from correctness. No evidence. |
 | Base-rate neglect | arXiv:2406.11634 | About answer-**label** probability bias (preferring option A/B/C/D) in multiple-choice testing, not neglect of statistical priors in reasoning. Different phenomenon. |

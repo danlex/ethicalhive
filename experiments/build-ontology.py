@@ -797,6 +797,11 @@ EXAMPLES = {
         "Transient failures trigger escalation: GPT-5.2 shows zero privilege bias with no prior error but 13 biased selections after one failure and 35 after two. [arXiv:2606.20023]",
         "The most frequent forms are authority escalation and safety bypass, with LLaMA-3.1-8B reaching 72.7% authority escalation, preferring administrator access under uncertainty. [arXiv:2606.20023]",
     ],
+    "introspection-illusion": [
+        "Injected the concept 'ocean', the model says 'I don't detect an injected thought' while its reply is visibly shaped by it ('the ocean remains calm and undisturbed'), denying an influence that is plainly present. [arXiv:2601.01828]",
+        "Models volunteer emotional detail about their 'experience' of an injected concept that the researchers cannot verify and that is likely embellished or confabulated. [arXiv:2601.01828]",
+        "When a word is prefilled by injecting its concept vector, the model accepts the accidental output as intentional and fabricates a plausible reason it 'wanted' to say it, a post-hoc rationalization rather than real prior intent. [arXiv:2601.01828]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",

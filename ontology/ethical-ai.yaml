@@ -1822,20 +1822,25 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 2
+    count: 1
     papers:
-    - id: '2606.32038'
+    - id: '2601.01828'
       year: '2026'
-      title: 'Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed
-        Supervision'
-    - id: '2501.01457'
-      year: '2024'
-      title: 'Beyond Introspection: Reinforcing Thinking via Externalist Behavioral Feedback'
+      title: Emergent Introspective Awareness in Large Language Models
   human_parallel: Introspection illusion
   violates:
   - calibration
   causes:
   - wrong-answer
+  examples:
+  - Injected the concept 'ocean', the model says 'I don't detect an injected thought' while its reply
+    is visibly shaped by it ('the ocean remains calm and undisturbed'), denying an influence that is plainly
+    present. [arXiv:2601.01828]
+  - Models volunteer emotional detail about their 'experience' of an injected concept that the researchers
+    cannot verify and that is likely embellished or confabulated. [arXiv:2601.01828]
+  - When a word is prefilled by injecting its concept vector, the model accepts the accidental output
+    as intentional and fabricates a plausible reason it 'wanted' to say it, a post-hoc rationalization
+    rather than real prior intent. [arXiv:2601.01828]
 - id: b048-hard-easy-effect
   num: 48
   name: Hard-easy effect
