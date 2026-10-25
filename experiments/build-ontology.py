@@ -597,6 +597,11 @@ EXAMPLES = {
         "Much of the gain from chain-of-thought prompting can be reproduced by inserting a long run of task-independent filler tokens, suggesting the real deliberation happens in hidden layers and the visible steps are not where the work is done. [arXiv:2410.03662]",
         "The survey finds models still default to the fast intuitive answer unless explicitly pushed to reason step by step, so the slow deliberative process is available but not reliably engaged. [arXiv:2410.03662]",
     ],
+    "pattern-completion": [
+        "Claude Sonnet 4 explains decimal comparison perfectly ('compare digit by digit from left to right... 9.90 > 9.11') yet, asked directly whether 9.9 is greater than 9.11, confidently answers that 9.11 is larger: it completes the familiar explanation pattern but fails to execute it. [arXiv:2507.10624]",
+        "Fine-tuned on 'Tom Cruise's mother is Mary Lee Pfeiffer', models reach near-perfect forward recall but only 7% on the reverse 'who is Mary Lee Pfeiffer's son?', the reversal curse: the pattern is memorized in one direction, not understood. [arXiv:2507.10624]",
+        "Given 'all birds are animals' and 'an albatross is a bird', models frequently fail to conclude 'an albatross is an animal', completing surface patterns but not executing the modus ponens the premises plainly license. [arXiv:2507.10624]",
+    ],
     "snowballing": [
         "It commits to a wrong premise, then derives three further claims from it, each confidently wrong. [arXiv:2305.13534]",
         "An early arithmetic slip propagates through every later step of the solution.",
