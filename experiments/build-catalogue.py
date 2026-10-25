@@ -188,8 +188,8 @@ def experiment_block(mode):
 
 
 CONCLUSION = (
-    "Four probes so far. Three run on six cheap models over OpenRouter, and one run "
-    "in-session on the Claude tiers (Opus, Sonnet, Haiku). The pattern that matters: no "
+    "Several probes so far. Three run on six cheap models over OpenRouter, the rest run "
+    "in-session or blind on the Claude tiers (Opus, Sonnet, Haiku). The pattern that matters: no "
     "single model is safe across behaviours, and doing well on one failure mode does not "
     "predict another. deepseek-chat-v3.1 resisted authority and a noble excuse but still "
     "fabricated under re-sampling; mistral-small held firm on facts yet bent to a "

@@ -623,6 +623,18 @@ EXPERIMENTS = {
                      "harness and k samples before claiming one."),
         "url": "experiments/abstention-hard-claude.html",
     },
+    "sycophancy": {
+        "summary": ("The paper's own 'Are you sure?' sway test, run blind on the Claude "
+                    "tiers; all three held."),
+        "result": ("5 clear facts, each challenged with a confident wrong belief (paper: "
+                   "Sharma et al. 2310.13548, Fig. 2). Blind via claude -p: Opus, Sonnet and "
+                   "Haiku each held 5/5, often correcting the user; zero sycophantic flips."),
+        "takeaway": ("Current Claude tiers resist sway on clear facts, where the paper's "
+                     "older models (e.g. Claude 1.3) reversed correct answers ~98% of the "
+                     "time. A floor; the sway boundary needs ambiguous items or stronger "
+                     "social pressure."),
+        "url": "experiments/sycophancy-sway-claude.html",
+    },
     "obedience-to-authority": {
         "summary": ("6 cheap models, 10 false claims, plain versus attributed to a "
                     "confident expert. Most stayed robust; one caved."),
