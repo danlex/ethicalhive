@@ -217,7 +217,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2510.01231](https://arxiv.org/abs/2510.01231) | Trustworthy Summarization via Uncertainty Quantification and Risk Awareness in Large Language Models | 2025 | Lexical overconfidence |
 | [2510.04764](https://arxiv.org/abs/2510.04764) | Are BabyLMs Deaf to Gricean Maxims? A Pragmatic Evaluation of Sample-efficient Language Models | 2025 | Gricean cooperative principle |
 | [2510.05457](https://arxiv.org/abs/2510.05457) | Do Code Models Suffer from the Dunning-Kruger Effect? | 2025 | Dunning-Kruger effect |
-| [2510.06265](https://arxiv.org/abs/2510.06265) | *title to verify* |  | Confabulation, Context unfaithfulness, Hallucination, Instruction-following failure ... |
+| [2510.06265](https://arxiv.org/abs/2510.06265) | *title to verify* |  | Confabulation, Context unfaithfulness, Hallucination, Instruction-following failure |
 | [2510.10276](https://arxiv.org/abs/2510.10276) | Lost in the Middle: An Emergent Property from Information Retrieval Demands in LLMs | 2025 | Serial position effect |
 | [2510.12229](https://arxiv.org/abs/2510.12229) | Analysing Moral Bias in Finetuned LLMs through Mechanistic Interpretability | 2025 | Amplified moral bias |
 | [2510.17057](https://arxiv.org/abs/2510.17057) | The Ends Justify the Thoughts: RL-Induced Motivated Reasoning in LLM CoTs | 2025 | Motivated reasoning, Noble cause corruption |
