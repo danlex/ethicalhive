@@ -99,6 +99,17 @@ evidence yet, not to attach a mismatched citation.
 | Controlled hallucination | A neuroscience framing (perception as prior-constrained generation); no distinct failure instance separate from the already-grounded Hallucination and Confabulation modes. |
 | Predictive coding / prediction error | A neuroscience framing (next-token prediction / surprisal); no distinct failure instance separate from already-grounded modes. |
 
+## Paperless modes: searched, held (no clean grounding)
+
+Not in the catalogue originally; searched for a supporting paper and found none
+clean enough to ground three examples (benchmark reports no isolated result, or
+the evidence contradicts the mode).
+
+| Mode | Note |
+|---|---|
+| Loss aversion | Multi-bias benchmarks (2602.09362, 2410.15413) include it but report no isolated quantitative result; needs a dedicated prospect-theory paper. |
+| Status-quo bias | 2410.15413 finds LLMs score with the **opposite** sign (a preference for change, anti-status-quo), so the human-style bias is not cleanly supported. |
+
 ## Disposition
 
 Each held mode needs one of:

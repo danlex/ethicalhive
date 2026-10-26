@@ -1122,6 +1122,11 @@ EXAMPLES = {
         "GPT-4 shows wider swings: repositioning the decoy's qualifications surfaced an attraction effect for 'Mechanical engineer' that had looked absent, while GPT-3.5's effect is more localized. [arXiv:2409.15299]",
         "Gender modulates it: in GPT-3.5 the decoy only boosts the target when both candidates share a gender, male decoys lifting male targets far more, mirroring human recruiter bias. [arXiv:2409.15299]",
     ],
+    "negativity-bias": [
+        "Models process negative and positive valence asymmetrically: negative outcomes localize to early layers (14-27% depth) while positive peak later (53-66%), the negative handled first. [arXiv:2605.05653]",
+        "Negative content is more tightly, causally localized: patching a single layer strongly predicts the response for negative prompts (Spearman -0.49 to -0.68) but only weakly for positive (+0.11 to +0.37). [arXiv:2605.05653]",
+        "A flip test confirms it is valence, not keywords: reversing only the emotional valence flips the model's response 69-85% of the time, well above the 50% chance baseline. [arXiv:2605.05653]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
