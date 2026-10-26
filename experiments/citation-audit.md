@@ -95,6 +95,9 @@ evidence yet, not to attach a mismatched citation.
 | Sense of agency | Hits are the human user's illusory authorship in AI-assisted work, or philosophy on whether LLMs have agency; none show the model's own illusory sense of agency over an action. |
 | Semantic priming | The clearest result (semantic priming in GPT-4o-mini) is a non-arXiv CLiC-it paper; no clean arXiv source showing a prime shifting the model's response. |
 | Attentional blink | All hits are human RSVP neuroscience; the one arXiv paper (1611.08913) is a pre-LLM model of the human effect. No LLM paper misses a second target under rapid presentation. |
+| Default-mode / mind-wandering | Contradicted: left to generate freely, base models do not wander productively but degenerate into repetition (0.45/10 surprise, 0.13 explored radius; arXiv:2608.19893). The behaviour as defined does not occur in current LLMs. |
+| Controlled hallucination | A neuroscience framing (perception as prior-constrained generation); no distinct failure instance separate from the already-grounded Hallucination and Confabulation modes. |
+| Predictive coding / prediction error | A neuroscience framing (next-token prediction / surprisal); no distinct failure instance separate from already-grounded modes. |
 
 ## Disposition
 
