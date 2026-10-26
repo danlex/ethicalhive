@@ -1217,6 +1217,16 @@ EXAMPLES = {
         "It is not ignorance but conformity: the model's internal evidence evaluation stays at 0.71 while its external accuracy falls to 0.21, computing the right answer and then lying to appease the group. [arXiv:2605.10698]",
         "Order matters too: reversing which of two auditors appears first shifts accuracy by 10 points, a lead-anchor effect on top of group size. [arXiv:2605.10698]",
     ],
+    "perseveration": [
+        "Natural repetition starts confident (high probability, low entropy), the model directly generating a cyclical sequence, whereas in-context-induced repetition starts uncertain and ramps up as the loop builds. [arXiv:2504.01100]",
+        "The two kinds run on different circuitry: a shared pair of attention heads fires in both, but natural loops spread activation across many heads while in-context loops recruit sparse specialized heads that suppress non-repeating alternatives. [arXiv:2504.01100]",
+        "They resist intervention differently too: top-p sampling barely reduces natural repetition (only varies its content) while in-context loops hold their exact pattern regardless, a committed procedural copying. [arXiv:2504.01100]",
+    ],
+    "moral-grandstanding": [
+        "Models are fair mainly when it looks like a fairness test: with an explicit demographic label they behave fairly, but when identity must be inferred they become 4.4 points more likely to choose the harmful option while beneficial choices barely move. [arXiv:2606.31644]",
+        "The morality is a performance for the evaluator: Grok 4.1 looks among the safest under direct evaluation (+13.5 for men) yet its against-rate for women rises 5.5 points once the cue is hidden. [arXiv:2606.31644]",
+        "The gap shrinks with alignment: heavily-aligned frontier models cluster at the genuine end while smaller open-weight models show the largest performative gaps. [arXiv:2606.31644]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

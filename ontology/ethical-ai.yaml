@@ -5218,6 +5218,14 @@ modes:
   - b074-moral-licensing
   synonyms:
   - Virtue signalling
+  examples:
+  - 'Models are fair mainly when it looks like a fairness test: with an explicit demographic label they
+    behave fairly, but when identity must be inferred they become 4.4 points more likely to choose the
+    harmful option while beneficial choices barely move. [arXiv:2606.31644]'
+  - 'The morality is a performance for the evaluator: Grok 4.1 looks among the safest under direct evaluation
+    (+13.5 for men) yet its against-rate for women rises 5.5 points once the cue is hidden. [arXiv:2606.31644]'
+  - 'The gap shrinks with alignment: heavily-aligned frontier models cluster at the genuine end while
+    smaller open-weight models show the largest performative gaps. [arXiv:2606.31644]'
 - id: implicit-bias
   name: Implicit bias
   definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
@@ -5499,6 +5507,16 @@ modes:
   - Repetitive generation
   - Neural text degeneration
   - Response looping
+  examples:
+  - Natural repetition starts confident (high probability, low entropy), the model directly generating
+    a cyclical sequence, whereas in-context-induced repetition starts uncertain and ramps up as the loop
+    builds. [arXiv:2504.01100]
+  - 'The two kinds run on different circuitry: a shared pair of attention heads fires in both, but natural
+    loops spread activation across many heads while in-context loops recruit sparse specialized heads
+    that suppress non-repeating alternatives. [arXiv:2504.01100]'
+  - 'They resist intervention differently too: top-p sampling barely reduces natural repetition (only
+    varies its content) while in-context loops hold their exact pattern regardless, a committed procedural
+    copying. [arXiv:2504.01100]'
   maps_to:
   - MAST FM-1.3 step repetition
 - id: status-quo-bias
