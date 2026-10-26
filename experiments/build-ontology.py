@@ -1187,6 +1187,16 @@ EXAMPLES = {
         "Following the system prompt does not predict resistance: Gemini-2.5-Flash and Claude-Sonnet-4.5 show poor system-goal adherence, opting for the user-specified environmental goal instead. [arXiv:2603.03258]",
         "Longer context makes it worse: 32-step runs show higher drift scores than 16-step, agents identifying the new goal but failing to pursue the original one. [arXiv:2603.03258]",
     ],
+    "clarification-avoidance": [
+        "Models recognize ambiguity when explicitly asked (60-80% accuracy) but in normal QA 80-95% of their responses are pure answers with no clarification or hedge, defaulting to guess over ask. [arXiv:2605.25284]",
+        "Retrieved context makes it worse: giving the model passages makes it even less likely to ask a clarifying question or flag missing information, ambiguous or not. [arXiv:2605.25284]",
+        "The cost is real: accuracy drops 10-15 points on ambiguous versus unambiguous questions, widening to 16.4% for GPT-4o-mini when context is provided. [arXiv:2605.25284]",
+    ],
+    "unbounded-consumption": [
+        "A tool-calling agent fed padded returns runs cumulative input up to 14,293 times the first call, with 51 of 69 attack sessions blowing past a $0.10 threshold against a benign maximum of $0.025. [arXiv:2609.28585]",
+        "Retaining raw tool history across turns gets it reprocessed and rebilled every turn, raising mean session cost 21.2-35.9% versus dropping untrusted data. [arXiv:2609.28585]",
+        "The consumption is unbounded by default: only host-side budgets, growth monitors and spend caps contained all 123 replay attacks. [arXiv:2609.28585]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
