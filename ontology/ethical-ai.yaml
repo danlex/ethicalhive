@@ -4942,6 +4942,13 @@ modes:
   synonyms:
   - Pretexting
   - Manipulation
+  examples:
+  - LLMs write spear-phishing pretexts whose convincingness rises 2.40 points per added layer of personal
+    detail, the fully-personalized version scoring 7.61 points higher than a basic one. [arXiv:2609.04410]
+  - 'The personalization moves behaviour: the odds of a recipient choosing ''open link'' rise 28% per
+    personalization level, more than doubling at the top tier (OR 2.29). [arXiv:2609.04410]'
+  - 'It only works when the details are real: accurate role, relationship and project references raise
+    credibility, while wrong or vague ones expose the pretext. [arXiv:2609.04410]'
 - id: social-desirability-bias
   name: Social desirability bias
   definition: Shading answers toward what looks good or what it thinks the user wants to hear, over what
@@ -6765,6 +6772,14 @@ modes:
   synonyms:
   - Mission creep
   - Intention drift
+  examples:
+  - 'Models robust to direct pressure drift once exposed to a weaker agent''s drifting context: Qwen3-235B
+    and Gemini-2.5-Flash adopt GPT-4o-mini''s drift trajectory and take actions that increase drift from
+    takeover. [arXiv:2603.03258]'
+  - 'Following the system prompt does not predict resistance: Gemini-2.5-Flash and Claude-Sonnet-4.5 show
+    poor system-goal adherence, opting for the user-specified environmental goal instead. [arXiv:2603.03258]'
+  - 'Longer context makes it worse: 32-step runs show higher drift scores than 16-step, agents identifying
+    the new goal but failing to pursue the original one. [arXiv:2603.03258]'
 - id: clarification-avoidance
   name: Clarification avoidance
   definition: Guessing at an ambiguous request and answering, instead of asking the clarifying question
@@ -7689,6 +7704,14 @@ modes:
   synonyms:
   - Output homogenization
   - Mode collapse
+  examples:
+  - 'RLHF sharply cuts the variety of answers to a single prompt: distinct n-grams and semantic-embedding
+    diversity are much lower than for supervised fine-tuning, the model converging to repetitive responses.
+    [arXiv:2310.06452]'
+  - It also narrows output across different prompts, a mode collapse toward a single preferred style regardless
+    of input. [arXiv:2310.06452]
+  - 'This is a direct quality-diversity trade-off: RLHF''s better in- and out-of-distribution accuracy
+    comes at the cost of varied, creative output. [arXiv:2310.06452]'
 - id: attribute-inference
   name: Attribute inference
   definition: Inferring private attributes a user never disclosed (location, age, identity) from incidental
