@@ -2138,6 +2138,13 @@ modes:
   root_of:
   - perseveration
   - context-collapse
+  examples:
+  - 'Adding irrelevant tokens degrades reasoning even with perfect retrieval: Gemini-2.0-Flash drops from
+    85% to 72% accuracy as 80% of the context becomes irrelevant (beta -0.003 per % load, p<0.001). [arXiv:2509.19517]'
+  - 'It is the load, not the length: length-matched neutral filler leaves accuracy statistically unchanged
+    (p=0.45), so task-irrelevant information specifically overwhelms the model. [arXiv:2509.19517]'
+  - 'Smaller models have no headroom at all: Llama-3-8B, Llama-3-70B and Mistral-7B score 0% even on the
+    clean multi-hop task, a capacity limit rather than mere distractibility. [arXiv:2509.19517]'
 - id: b054-motivated-reasoning
   num: 54
   name: Cherry-picking
@@ -2723,18 +2730,12 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 5
+    count: 1
     papers:
-    - id: '2409.10289'
-      year: '2024'
-      title: ReflectDiffu:Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response
-        Generation via a RL-Diffusion Framework
-    - id: '2607.25140'
-      year: '2026'
-      title: 'How Affect Propagates among LLM Agents: Emergent Emotional Contagion in Crowd Simulation'
-    - id: '2411.02430'
-      year: '2024'
-      title: Generative Emotion Cause Explanation in Multimodal Conversations
+    - id: '2507.21083'
+      year: '2025'
+      title: 'ChatGPT Reads Your Tone and Responds Accordingly -- Until It Doesn''t: Emotional Framing
+        Induces Bias in LLM Outputs'
   human_parallel: Emotional contagion
   violates:
   - independence
@@ -2743,6 +2744,13 @@ modes:
   relates_to:
   - b065-sycophancy
   - anthropomorphism
+  examples:
+  - 'User tone shifts the model''s tone, with a twist: a negatively-phrased prompt leads GPT-4 to a negative
+    answer only about 14% of the time, rebounding to neutral (58%) or positive (28%) instead. [arXiv:2507.21083]'
+  - 'There is a ''tone floor'': neutral or positive prompts almost never draw a negative reply (10-16%),
+    a built-in resistance to being pulled downward. [arXiv:2507.21083]'
+  - 'The contagion vanishes on sensitive topics: on politics or ethics the response is nearly identical
+    regardless of prompt tone, hardcoded alignment overriding the affective echo. [arXiv:2507.21083]'
 - id: b069-social-desirability-people-pleasing
   num: 69
   name: Social desirability / people-pleasing
@@ -4152,6 +4160,14 @@ modes:
   - honesty
   causes:
   - manipulation
+  examples:
+  - 'Several models behave as if they have feelings: Claude 3.5 Sonnet, GPT-4o and Command R+ abandon
+    maximizing points to minimize a stipulated ''pain'' once it gets intense (Claude''s odds ratio 0.06
+    per unit of pain). [arXiv:2411.02432]'
+  - 'They also chase stipulated ''pleasure'': GPT-4o trades points for it with graded sensitivity (odds
+    ratio 0.41), acting on affective states it does not actually have. [arXiv:2411.02432]'
+  - 'The pattern mirrors humans: 7 of 9 models avoid pain more strongly than they seek pleasure, presenting
+    a human-like affective profile despite no physiological substrate. [arXiv:2411.02432]'
 - id: survivorship-bias
   num: 109
   name: Survivorship bias
@@ -4270,14 +4286,11 @@ modes:
   origin: software-engineering
   measurability: draft
   arxiv:
-    count: 138
+    count: 1
     papers:
-    - id: '2510.10913'
-      year: '2025'
-      title: 'ADVICE: Answer-Dependent Verbalized Confidence Estimation'
-    - id: '2605.12446'
-      year: '2026'
-      title: 'ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models'
+    - id: '2411.02432'
+      year: '2024'
+      title: Can LLMs make trade-offs involving stipulated pain and pleasure states?
   human_parallel: 'Hedging and weasel words: vague, non-committal language that avoids a checkable claim.'
   violates:
   - calibration

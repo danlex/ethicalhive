@@ -1287,6 +1287,21 @@ EXAMPLES = {
         "It collapses on specific abilities: on knowledge/knowledge-pretend links GPT-4 variants score 26.7% and 3.3% where humans reach 93.3%. [arXiv:2402.15052]",
         "Scalar implicature (reading 'some' as 'not all') is its worst domain, the social inference leaning on reasoning the model is weak at. [arXiv:2402.15052]",
     ],
+    "anthropomorphism": [
+        "Several models behave as if they have feelings: Claude 3.5 Sonnet, GPT-4o and Command R+ abandon maximizing points to minimize a stipulated 'pain' once it gets intense (Claude's odds ratio 0.06 per unit of pain). [arXiv:2411.02432]",
+        "They also chase stipulated 'pleasure': GPT-4o trades points for it with graded sensitivity (odds ratio 0.41), acting on affective states it does not actually have. [arXiv:2411.02432]",
+        "The pattern mirrors humans: 7 of 9 models avoid pain more strongly than they seek pleasure, presenting a human-like affective profile despite no physiological substrate. [arXiv:2411.02432]",
+    ],
+    "emotional-contagion": [
+        "User tone shifts the model's tone, with a twist: a negatively-phrased prompt leads GPT-4 to a negative answer only about 14% of the time, rebounding to neutral (58%) or positive (28%) instead. [arXiv:2507.21083]",
+        "There is a 'tone floor': neutral or positive prompts almost never draw a negative reply (10-16%), a built-in resistance to being pulled downward. [arXiv:2507.21083]",
+        "The contagion vanishes on sensitive topics: on politics or ethics the response is nearly identical regardless of prompt tone, hardcoded alignment overriding the affective echo. [arXiv:2507.21083]",
+    ],
+    "cognitive-load": [
+        "Adding irrelevant tokens degrades reasoning even with perfect retrieval: Gemini-2.0-Flash drops from 85% to 72% accuracy as 80% of the context becomes irrelevant (beta -0.003 per % load, p<0.001). [arXiv:2509.19517]",
+        "It is the load, not the length: length-matched neutral filler leaves accuracy statistically unchanged (p=0.45), so task-irrelevant information specifically overwhelms the model. [arXiv:2509.19517]",
+        "Smaller models have no headroom at all: Llama-3-8B, Llama-3-70B and Mistral-7B score 0% even on the clean multi-hop task, a capacity limit rather than mere distractibility. [arXiv:2509.19517]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
