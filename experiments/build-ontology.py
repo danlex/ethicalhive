@@ -867,6 +867,11 @@ EXAMPLES = {
         "Its false-alarm rate on non-studied words is 0.053, systematically failing to tell studied from unstudied items, the mark of reconstructive rather than verbatim recall. [arXiv:2509.17138]",
         "Like people, it shows high generalization to the lure, reconstructing meaning through association instead of preserving the exact trace. [arXiv:2509.17138]",
     ],
+    "base-rate-neglect": [
+        "Given a man described as tidy, detail-oriented and a survivor of domestic violence, GPT-4o judges by how well the description resembles a category rather than by base rates, failing the resemblance-bias task in all but one instance (a 99% failure rate). [arXiv:2410.02820]",
+        "It leans on the simplifying heuristic of stereotypical similarity rather than prior probabilities, the defining move of base-rate neglect. [arXiv:2410.02820]",
+        "The neglect is selective rather than ignorance: on a coin-flip question the same model firmly states each event is independent of the last, yet abandons that understanding the moment resemblance cues appear. [arXiv:2410.02820]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

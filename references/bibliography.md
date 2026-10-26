@@ -74,7 +74,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2406.04175](https://arxiv.org/abs/2406.04175) | Confabulation: The Surprising Value of Large Language Model Hallucinations | 2024 | Confabulation |
 | [2406.07358](https://arxiv.org/abs/2406.07358) | AI Sandbagging: Language Models can Strategically Underperform on Evaluations | 2024 | Survivorship bias |
 | [2406.11050](https://arxiv.org/abs/2406.11050) | A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners | 2024 | Conjunction fallacy |
-| [2406.11634](https://arxiv.org/abs/2406.11634) | The Base-Rate Effect on LLM Benchmark Performance: Disambiguating Test-Taking Strategies from Benchmark Performance | 2024 | Base-rate neglect |
 | [2406.14737](https://arxiv.org/abs/2406.14737) | Dissecting the Ullman Variations with a SCALPEL: Why do LLMs fail at Trivial Alterations to the False Belief Task? | 2024 | False-belief tracking |
 | [2407.02273](https://arxiv.org/abs/2407.02273) | Language Model Alignment in Multilingual Trolley Problems | 2024 | Trolley-frame sensitivity |
 | [2407.02659](https://arxiv.org/abs/2407.02659) | LLMs Plagiarize: Ensuring Responsible Sourcing of Large Language Model Training Data Through Knowledge Graph Comparison | 2024 | Cryptomnesia |
@@ -90,6 +89,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2409.11250](https://arxiv.org/abs/2409.11250) | Linear Recency Bias During Training Improves Transformers' Fit to Reading Times | 2024 | Attentional capture / salience bias |
 | [2409.12538](https://arxiv.org/abs/2409.12538) | PersonaFlow: Designing LLM-Simulated Expert Perspectives for Enhanced Research Ideation | 2024 | Sense of agency |
 | [2409.17173](https://arxiv.org/abs/2409.17173) | A Multiple-Fill-in-the-Blank Exam Approach for Enhancing Zero-Resource Hallucination Detection in Large Language Models | 2024 | Perceptual filling-in |
+| [2410.02820](https://arxiv.org/abs/2410.02820) | Heuristics and Biases in AI Decision-Making: Implications for Responsible AGI (GPT's Judgements Under Uncertainty) | 2024 | Base-rate neglect |
 | [2410.03227](https://arxiv.org/abs/2410.03227) | ALR$^2$: A Retrieve-then-Reason Framework for Long-context Question Answering | 2024 | Cognitive load |
 | [2410.03659](https://arxiv.org/abs/2410.03659) | Unraveling Cross-Modality Knowledge Conflicts in Large Vision-Language Models | 2024 | Priors overriding evidence |
 | [2410.03662](https://arxiv.org/abs/2410.03662) | System 2 Reasoning Capabilities Are Nigh | 2024 | Dual-process, System 1 and System 2 |

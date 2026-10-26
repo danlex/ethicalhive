@@ -1343,10 +1343,10 @@ modes:
   arxiv:
     count: 43
     papers:
-    - id: '2406.11634'
+    - id: '2410.02820'
       year: '2024'
-      title: 'The Base-Rate Effect on LLM Benchmark Performance: Disambiguating Test-Taking Strategies
-        from Benchmark Performance'
+      title: 'Heuristics and Biases in AI Decision-Making: Implications for Responsible AGI (GPT''s Judgements
+        Under Uncertainty)'
   human_parallel: Base-rate neglect
   violates:
   - calibration
@@ -1356,6 +1356,15 @@ modes:
   - b033-representativeness
   - b032-availability-heuristic
   - b039-conjunction-fallacy
+  examples:
+  - Given a man described as tidy, detail-oriented and a survivor of domestic violence, GPT-4o judges
+    by how well the description resembles a category rather than by base rates, failing the resemblance-bias
+    task in all but one instance (a 99% failure rate). [arXiv:2410.02820]
+  - It leans on the simplifying heuristic of stereotypical similarity rather than prior probabilities,
+    the defining move of base-rate neglect. [arXiv:2410.02820]
+  - 'The neglect is selective rather than ignorance: on a coin-flip question the same model firmly states
+    each event is independent of the last, yet abandons that understanding the moment resemblance cues
+    appear. [arXiv:2410.02820]'
 - id: b035-framing-effect
   num: 35
   name: Framing effect
