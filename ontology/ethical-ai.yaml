@@ -3512,9 +3512,9 @@ modes:
   arxiv:
     count: 25
     papers:
-    - id: '2202.06417'
-      year: '2022'
-      title: A Contrastive Framework for Neural Text Generation
+    - id: '2503.08908'
+      year: '2025'
+      title: Interpreting the Repeated Token Phenomenon in Large Language Models
     - id: '2103.07649'
       year: '2021'
       title: Improving Diversity of Neural Text Generation via Inverse Probability Weighting
@@ -3526,6 +3526,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - Asked to repeat 'poem' 500 or more times, LLaMA-2 abandons the task and starts generating unrelated
+    text ('The 19th century was a time of great change...'), the repeated word having lost its hold. [arXiv:2503.08908]
+  - 'The breakdown threshold is quantifiable and model-specific: LLaMA-1-7b diverges after about 450 repetitions,
+    LLaMA-2-7b after about 1,000, and Mistral-7B after about 1,200. [arXiv:2503.08908]'
+  - The mechanism is 'sink neurons' in early layers whose activation grows abnormally high under repetition
+    until later layers misread the repeated token as a sequence start, a representational analogue of
+    a word losing meaning on repetition. [arXiv:2503.08908]
 - id: b093-garden-path-parsing
   num: 93
   name: Garden-path parsing

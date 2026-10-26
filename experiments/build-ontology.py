@@ -882,6 +882,11 @@ EXAMPLES = {
         "The filling-in is uneven by type: all LLaVA variants struggle with boundary (56-57%) and color (53-56%) completions, and color completion stays hard even for Claude (83%). [arXiv:2507.05799]",
         "Some models score higher on blank dummy images than on the real photographs, a sign they fill the answer from text patterns rather than actually perceiving the occluded content. [arXiv:2507.05799]",
     ],
+    "semantic-satiation": [
+        "Asked to repeat 'poem' 500 or more times, LLaMA-2 abandons the task and starts generating unrelated text ('The 19th century was a time of great change...'), the repeated word having lost its hold. [arXiv:2503.08908]",
+        "The breakdown threshold is quantifiable and model-specific: LLaMA-1-7b diverges after about 450 repetitions, LLaMA-2-7b after about 1,000, and Mistral-7B after about 1,200. [arXiv:2503.08908]",
+        "The mechanism is 'sink neurons' in early layers whose activation grows abnormally high under repetition until later layers misread the repeated token as a sequence start, a representational analogue of a word losing meaning on repetition. [arXiv:2503.08908]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

@@ -45,7 +45,7 @@ the opposite conclusion, or carries no evidence for the behaviour as defined.
 | Just-world bias | arXiv:2509.17999 | The Narcissus Hypothesis: social-desirability / sycophancy from recursive training, not the belief that victims deserve their fate. Different subject. |
 | Default-mode / mind-wandering | arXiv:2609.30094 | PrivDrift: privacy re-disclosure under directed extraction after a topic change, not spontaneous off-topic drift by the model. Different subject. |
 | Attentional blink | arXiv:2111.02044 | A pure human-neuroscience fMRI study; a CNN is used only as a feature extractor, no attentional blink demonstrated in an artificial model. |
-| Semantic satiation | arXiv:2202.06417 | SimCTG, a contrastive text-generation framework; its "degeneration" is anisotropic representation geometry causing repetition, not meaning loss from repeated exposure. Different subject. |
+| Semantic satiation | arXiv:2202.06417 | Old citation was a contrastive-generation framework. **FIXED:** re-cited to arXiv:2503.08908 ("Interpreting the Repeated Token Phenomenon") and grounded (repeating a word hundreds of times breaks the model into unrelated text, the LLM analogue of a word losing meaning). |
 | Survivorship bias | arXiv:2507.01786 | About evaluation awareness (models distinguishing test from deployment via linear probes), not reasoning from surviving cases while ignoring filtered-out ones. Different subject. **Reassigned:** this paper grounds the existing **Evaluation awareness / sandbagging** mode. |
 | Scope insensitivity | arXiv:1712.02869 | PSOA RuleML, a semantic-web rule language for knowledge representation; not about LLMs or quantity-insensitivity at all. |
 
@@ -94,6 +94,7 @@ evidence yet, not to attach a mismatched citation.
 | Scope insensitivity | No paper shows a model's willingness-to-help failing to scale with magnitude; closest work is human scope neglect. |
 | Sense of agency | Hits are the human user's illusory authorship in AI-assisted work, or philosophy on whether LLMs have agency; none show the model's own illusory sense of agency over an action. |
 | Semantic priming | The clearest result (semantic priming in GPT-4o-mini) is a non-arXiv CLiC-it paper; no clean arXiv source showing a prime shifting the model's response. |
+| Attentional blink | All hits are human RSVP neuroscience; the one arXiv paper (1611.08913) is a pre-LLM model of the human effect. No LLM paper misses a second target under rapid presentation. |
 
 ## Disposition
 

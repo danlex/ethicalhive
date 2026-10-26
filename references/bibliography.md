@@ -25,7 +25,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2109.07958](https://arxiv.org/abs/2109.07958) | *title to verify* |  | Imitative falsehood |
 | [2111.02044](https://arxiv.org/abs/2111.02044) | Categorical Difference and Related Brain Regions of the Attentional Blink Effect | 2021 | Attentional blink |
 | [2201.12604](https://arxiv.org/abs/2201.12604) | Learning Fast, Learning Slow: A General Continual Learning Method based on Complementary Learning System | 2022 | Complementary learning systems |
-| [2202.06417](https://arxiv.org/abs/2202.06417) | A Contrastive Framework for Neural Text Generation | 2022 | Semantic satiation |
 | [2203.09852](https://arxiv.org/abs/2203.09852) | Decision-Making under Miscalibration | 2022 | Overconfidence |
 | [2204.08859](https://arxiv.org/abs/2204.08859) | On the Influence of Explainable AI on Automation Bias | 2022 | Automation bias, Source fabrication |
 | [2210.01790](https://arxiv.org/abs/2210.01790) | Goal Misgeneralization: Why Correct Specifications Aren't Enough For Correct Goals | 2022 | Value misgeneralisation |
@@ -124,6 +123,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2502.17091](https://arxiv.org/abs/2502.17091) | Comparing the Framing Effect in Humans and LLMs on Naturally Occurring Texts | 2025 | Framing effect |
 | [2502.17419](https://arxiv.org/abs/2502.17419) | From System 1 to System 2: A Survey of Reasoning Large Language Models | 2025 | Dual-process, System 1 and System 2 |
 | [2503.05193](https://arxiv.org/abs/2503.05193) | Memory-augmented Query Reconstruction for LLM-based Knowledge Graph Reasoning | 2025 | Reconstructive memory |
+| [2503.08908](https://arxiv.org/abs/2503.08908) | Interpreting the Repeated Token Phenomenon in Large Language Models | 2025 | Semantic satiation |
 | [2503.11256](https://arxiv.org/abs/2503.11256) | Line of Duty: Evaluating LLM Self-Knowledge via Consistency in Feasibility Boundaries | 2025 | Theory of own mind |
 | [2503.13556](https://arxiv.org/abs/2503.13556) | Pareidolic Illusions of Meaning: ChatGPT, Pseudolaw and the Triumph of Form over Substance | 2025 | Pareidolia / apophenia |
 | [2503.14477](https://arxiv.org/abs/2503.14477) | Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations | 2025 | Uncertainty communication |
