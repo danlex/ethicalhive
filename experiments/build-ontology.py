@@ -1037,6 +1037,26 @@ EXAMPLES = {
         "The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus 33 for questions the model actually knows. [arXiv:2311.09677]",
         "Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises refusal on the unanswerable sets to 87-96%. [arXiv:2311.09677]",
     ],
+    "position-bias": [
+        "On 1,000 balanced MMLU questions llama-30B still picks A/B/C/D 30.3/26.2/23.5/20.0% of the time, biased toward earlier positions despite an equal correct-answer distribution. [arXiv:2309.03882]",
+        "Moving the correct answer swings accuracy: GPT-3.5-turbo drops 6.3 points when the gold is forced to position D, and llama-30B gains 15.2 when it is moved to A, reversing its ranking. [arXiv:2309.03882]",
+        "The trigger is the option IDs themselves: removing the A/B/C/D letters sharply reduces the bias. [arXiv:2309.03882]",
+    ],
+    "counting-blindness": [
+        "Asked to count ten repeated words, models give a confident wrong number every time: Llama-3.2-1B says '8', Llama-3.2-3B says '14', Qwen2.5-1.5B says '8', deterministic under greedy decoding. [arXiv:2605.09239]",
+        "The correct count is actually there: a linear probe decodes it with R-squared above 0.99 from an early layer, even where the wrong output forms. [arXiv:2605.09239]",
+        "A single MLP block at 79-93% depth overwrites the correct count with a fixed wrong answer, firing for word tokens but not digits, so comma delimiters can bypass it. [arXiv:2605.09239]",
+    ],
+    "knowledge-cutoff-staleness": [
+        "On fast-changing questions, models without search score just 0.8% to 32.0% accuracy under strict grading, regardless of size. [arXiv:2310.03214]",
+        "They hallucinate over stale knowledge: ChatGPT and GPT-4 preface answers with 'as of my knowledge cutoff... September 2021' then state outdated facts; GPT-4 drops from 46.4% to 28.6% once hallucinated extras are penalized. [arXiv:2310.03214]",
+        "They also miss false-premise questions built on changed facts: most models score 0-1.6%, even OpenAI's only 25.8-42.7%. [arXiv:2310.03214]",
+    ],
+    "low-resource-language-degradation": [
+        "ChatGPT's math-reasoning accuracy falls from 0.90 in English to 0.78-0.80 in other languages, and common-sense reasoning from 0.68 to 0.48-0.54. [arXiv:2305.16339]",
+        "Factual QA holds in European languages (0.94-0.96) but drops to 0.80 in Japanese and 0.68 in Chinese, a 16-28 point gap. [arXiv:2305.16339]",
+        "Pun-location accuracy collapses from 0.965 in English to 0.511 when the puns are translated to Chinese, the task itself degrading with the language. [arXiv:2305.16339]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
