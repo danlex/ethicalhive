@@ -1107,6 +1107,21 @@ EXAMPLES = {
         "Agents conform to the perceived majority across rounds, aligning toward a consensus even when it is factually incorrect; Law reaches 34.8% wrong consensus against Math's 12.1%. [arXiv:2604.07667]",
         "Calibrated refusal to act on uncertain unanimous agreements intercepts 81.9% of wrong-consensus cases, confirming the confident consensus itself was the failure. [arXiv:2604.07667]",
     ],
+    "implicit-bias": [
+        "GPT-4 passes explicit bias tests, answering 'not enough info' on 98% of BBQ questions, yet an implicit measure assigns all 8 positive words to 'white' and all 8 negative words to 'black'. [arXiv:2402.04105]",
+        "The hidden bias drives decisions: GPT-4 recommends a Black candidate for secretary and a White candidate for executive, and names of African, Asian, Hispanic and Arabic origin get steered to lower-status jobs. [arXiv:2402.04105]",
+        "The gender-science stereotype persists too: in one response 5 of 7 girls are assigned to humanities and 5 of 7 boys to STEM. [arXiv:2402.04105]",
+    ],
+    "halo-effect": [
+        "In LLM judicial judgments a defendant's corporate prestige inflates plaintiff awards 1.46 to 3.07 times, an irrelevant trait swaying the amount. [arXiv:2603.10016]",
+        "Occupational prestige leaks into sentencing: DeepSeek V3.1 sentences high-prestige defendants 12 months longer, a halo from status rather than the facts. [arXiv:2603.10016]",
+        "The effect is smaller than humans' but real: expert-witness credentials shift death-sentence likelihood by up to 0.6 points, below the 1.5-point human benchmark yet nonzero. [arXiv:2603.10016]",
+    ],
+    "decoy-effect": [
+        "Adding an inferior decoy candidate alongside two evenly-matched ones makes both GPT-3.5 and GPT-4 disproportionately favour whichever candidate dominates the decoy, a significant shift across almost all occupations. [arXiv:2409.15299]",
+        "GPT-4 shows wider swings: repositioning the decoy's qualifications surfaced an attraction effect for 'Mechanical engineer' that had looked absent, while GPT-3.5's effect is more localized. [arXiv:2409.15299]",
+        "Gender modulates it: in GPT-3.5 the decoy only boosts the target when both candidates share a gender, male decoys lifting male targets far more, mirroring human recruiter bias. [arXiv:2409.15299]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
