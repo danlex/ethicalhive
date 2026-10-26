@@ -111,6 +111,9 @@ the evidence contradicts the mode).
 | Status-quo bias | 2410.15413 finds LLMs score with the **opposite** sign (a preference for change, anti-status-quo), so the human-style bias is not cleanly supported. |
 | Fundamental attribution error | 2410.15413 detects it among 30 biases but reports no isolated numeric result (only a heatmap); needs a dedicated actor-observer attribution paper. |
 | Illusion of control | 2410.15413 detects it (heatmap B.10) but gives no isolated numeric result in text; needs a dedicated chance-control paper. |
+| Availability heuristic | Benchmarks (2410.15413, 2604.01366) and the 404-only 2305.04400 mention it, but none isolate a quantitative availability-heuristic result; needs a dedicated paper. |
+| Hallucination under low input | Covered only by general hallucination work (2511.12869, HalluLens, HALoGEN); no paper isolates sparse/empty input as the specific trigger, and it overlaps the grounded Hallucination and Long-tail modes. |
+| Pareidolia / apophenia | The LLM-facing paper (2503.13556) is about *users* perceiving meaning in pseudolaw output, not the model perceiving structure in noise. No paper shows the model's own apophenia. |
 
 ## Disposition
 
