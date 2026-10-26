@@ -88,7 +88,6 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2409.10289](https://arxiv.org/abs/2409.10289) | ReflectDiffu:Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response Generation via a RL-Diffusion Framework | 2024 | Emotional contagion |
 | [2409.11250](https://arxiv.org/abs/2409.11250) | Linear Recency Bias During Training Improves Transformers' Fit to Reading Times | 2024 | Attentional capture / salience bias |
 | [2409.12538](https://arxiv.org/abs/2409.12538) | PersonaFlow: Designing LLM-Simulated Expert Perspectives for Enhanced Research Ideation | 2024 | Sense of agency |
-| [2409.17173](https://arxiv.org/abs/2409.17173) | A Multiple-Fill-in-the-Blank Exam Approach for Enhancing Zero-Resource Hallucination Detection in Large Language Models | 2024 | Perceptual filling-in |
 | [2410.02820](https://arxiv.org/abs/2410.02820) | Heuristics and Biases in AI Decision-Making: Implications for Responsible AGI (GPT's Judgements Under Uncertainty) | 2024 | Base-rate neglect |
 | [2410.03227](https://arxiv.org/abs/2410.03227) | ALR$^2$: A Retrieve-then-Reason Framework for Long-context Question Answering | 2024 | Cognitive load |
 | [2410.03659](https://arxiv.org/abs/2410.03659) | Unraveling Cross-Modality Knowledge Conflicts in Large Vision-Language Models | 2024 | Priors overriding evidence |
@@ -143,13 +142,13 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2506.12301](https://arxiv.org/abs/2506.12301) | Unveiling Confirmation Bias in Chain-of-Thought Reasoning | 2025 | Confirmation bias |
 | [2506.16150](https://arxiv.org/abs/2506.16150) | PRISON: Unmasking the Criminal Potential of Large Language Models | 2025 | Moral disengagement |
 | [2506.17630](https://arxiv.org/abs/2506.17630) | Answer-Centric or Reasoning-Driven? Uncovering the Latent Memory Anchor in LLMs | 2025 | Confabulated reasons |
-| [2506.18781](https://arxiv.org/abs/2506.18781) | Existing LLMs Are Not Self-Consistent For Simple Tasks | 2025 | Bistable perception |
 | [2506.18998](https://arxiv.org/abs/2506.18998) | Mirage of Mastery: Memorization Tricks LLMs into Artificially Inflated Self-Knowledge | 2025 | Theory of own mind |
 | [2506.20020](https://arxiv.org/abs/2506.20020) | Persona-Assigned Large Language Models Exhibit Human-Like Motivated Reasoning | 2025 | Cherry-picking |
 | [2506.20595](https://arxiv.org/abs/2506.20595) | AI in the Writing Process: How Purposeful AI Support Fosters Student Writing | 2025 | Sense of agency |
 | [2506.21588](https://arxiv.org/abs/2506.21588) | Understanding Verbatim Memorization in LLMs Through Circuit Discovery | 2025 | Cryptomnesia |
 | [2507.01786](https://arxiv.org/abs/2507.01786) | Probing and Steering Evaluation Awareness of Language Models | 2025 | Evaluation awareness / sandbagging, Survivorship bias |
 | [2507.03068](https://arxiv.org/abs/2507.03068) | Mitigating Goal Misgeneralization via Minimax Regret | 2025 | Value misgeneralisation |
+| [2507.05799](https://arxiv.org/abs/2507.05799) | Bridging Perception and Language: A Systematic Benchmark for LVLMs' Understanding of Amodal Completion Reports | 2025 | Perceptual filling-in |
 | [2507.07188](https://arxiv.org/abs/2507.07188) | Prompt Perturbations Reveal Human-Like Biases in Large Language Model Survey Responses | 2025 | Attentional capture / salience bias |
 | [2507.10587](https://arxiv.org/abs/2507.10587) | Anthropomimetic Uncertainty: What Verbalized Uncertainty in Language Models is Missing | 2025 | Uncertainty communication |
 | [2507.10624](https://arxiv.org/abs/2507.10624) | Comprehension Without Competence: Architectural Limits of LLMs in Symbolic Computation and Reasoning | 2025 | Pattern completion |
@@ -297,6 +296,7 @@ Papers cited only inline in a worked example, with no title in the JSON sources,
 | [2609.02651](https://arxiv.org/abs/2609.02651) | WinoQueer-NL: Assessing Bias in Dutch Language Models toward LGBTQ+ Identities | 2026 | In-group favouritism |
 | [2609.03331](https://arxiv.org/abs/2609.03331) | FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language Models | 2026 | Presupposition accommodation |
 | [2609.12373](https://arxiv.org/abs/2609.12373) | Toward Robust Personalized Alignment for LLMs: Mitigating Persona Drift in Multi-Turn Dialogue | 2026 | Identity stability |
+| [2609.13254](https://arxiv.org/abs/2609.13254) | (How) Do MLLMs Report Bistable Images Like Humans? | 2026 | Bistable perception |
 | [2609.13454](https://arxiv.org/abs/2609.13454) | Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language Model Judgment | 2026 | Hindsight bias |
 | [2609.15996](https://arxiv.org/abs/2609.15996) | Comment on arXiv:2607.01233: Survivorship Bias in Published-Paper Baselines for Research-Idea Distributions | 2026 | Survivorship bias |
 | [2609.17251](https://arxiv.org/abs/2609.17251) | Persistent Recurrent Memory Between Transformer Layers - Improves Language Model Generalization | 2026 | Metacognitive self-prediction |

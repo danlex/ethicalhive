@@ -299,10 +299,10 @@ modes:
   arxiv:
     count: 65
     papers:
-    - id: '2409.17173'
-      year: '2024'
-      title: A Multiple-Fill-in-the-Blank Exam Approach for Enhancing Zero-Resource Hallucination Detection
-        in Large Language Models
+    - id: '2507.05799'
+      year: '2025'
+      title: 'Bridging Perception and Language: A Systematic Benchmark for LVLMs'' Understanding of Amodal
+        Completion Reports'
     - id: '2407.10153'
       year: '2024'
       title: 'Look Within, Why LLMs Hallucinate: A Causal Perspective'
@@ -314,6 +314,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - On amodal completion, reporting an occluded object's hidden parts as a whole, commercial models approach
+    humans (GPT-4o 89%, Claude 3.5 93% against a 94% human baseline) while open models lag (LLaVA-34B
+    56%). [arXiv:2507.05799]
+  - 'The filling-in is uneven by type: all LLaVA variants struggle with boundary (56-57%) and color (53-56%)
+    completions, and color completion stays hard even for Claude (83%). [arXiv:2507.05799]'
+  - Some models score higher on blank dummy images than on the real photographs, a sign they fill the
+    answer from text patterns rather than actually perceiving the occluded content. [arXiv:2507.05799]
 - id: b007-confabulation
   num: 7
   name: Confabulation
@@ -444,9 +452,9 @@ modes:
   arxiv:
     count: 49
     papers:
-    - id: '2506.18781'
-      year: '2025'
-      title: Existing LLMs Are Not Self-Consistent For Simple Tasks
+    - id: '2609.13254'
+      year: '2026'
+      title: (How) Do MLLMs Report Bistable Images Like Humans?
     - id: '2310.13439'
       year: '2023'
       title: Self-Consistency of Large Language Models under Ambiguity
@@ -459,6 +467,14 @@ modes:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - 'Shown the duck-rabbit, multimodal models commit to a single reading rather than reporting both: on
+    ambiguous Visual Anagrams only about 10% of beam-search probability goes to a ''both animals'' continuation,
+    against 98% or more for unambiguous controls. [arXiv:2609.13254]'
+  - 'The committed interpretation flips with a nudge: a few degrees of image rotation reverses the model''s
+    dominant choice from duck tokens to rabbit tokens. [arXiv:2609.13254]'
+  - 'Linguistic context steers it too: a hint like ''it starts with r'' sharply raises the probability
+    of the rabbit reading, so which stable interpretation wins depends on top-down framing. [arXiv:2609.13254]'
 - id: b010-hallucination-under-low-input
   num: 10
   name: Hallucination under low input

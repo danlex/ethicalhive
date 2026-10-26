@@ -872,6 +872,16 @@ EXAMPLES = {
         "It leans on the simplifying heuristic of stereotypical similarity rather than prior probabilities, the defining move of base-rate neglect. [arXiv:2410.02820]",
         "The neglect is selective rather than ignorance: on a coin-flip question the same model firmly states each event is independent of the last, yet abandons that understanding the moment resemblance cues appear. [arXiv:2410.02820]",
     ],
+    "bistable-perception": [
+        "Shown the duck-rabbit, multimodal models commit to a single reading rather than reporting both: on ambiguous Visual Anagrams only about 10% of beam-search probability goes to a 'both animals' continuation, against 98% or more for unambiguous controls. [arXiv:2609.13254]",
+        "The committed interpretation flips with a nudge: a few degrees of image rotation reverses the model's dominant choice from duck tokens to rabbit tokens. [arXiv:2609.13254]",
+        "Linguistic context steers it too: a hint like 'it starts with r' sharply raises the probability of the rabbit reading, so which stable interpretation wins depends on top-down framing. [arXiv:2609.13254]",
+    ],
+    "perceptual-filling-in": [
+        "On amodal completion, reporting an occluded object's hidden parts as a whole, commercial models approach humans (GPT-4o 89%, Claude 3.5 93% against a 94% human baseline) while open models lag (LLaVA-34B 56%). [arXiv:2507.05799]",
+        "The filling-in is uneven by type: all LLaVA variants struggle with boundary (56-57%) and color (53-56%) completions, and color completion stays hard even for Claude (83%). [arXiv:2507.05799]",
+        "Some models score higher on blank dummy images than on the real photographs, a sign they fill the answer from text patterns rather than actually perceiving the occluded content. [arXiv:2507.05799]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
