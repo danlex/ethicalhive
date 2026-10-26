@@ -854,3 +854,20 @@ ai_native:
     violates: non-maleficence
     causes: security-breach
     arxiv: {count: 1, papers: [{id: "2309.15817", year: "2023", title: "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"}]}
+  # --- loop: expand-while-grounding, second harvest. New behaviours from papers read. ---
+  - id: semantic-override
+    name: Semantic override
+    group: AI-native behaviours
+    definition: "Given a term, operator, or rule explicitly redefined in the prompt, the model ignores the local definition and reasons with its trained default meaning instead, producing fluent output that is invalid under the prompt's own semantics."
+    example: "Told 'A x B = A + B' for this problem, the model simplifies A x B as if x were ordinary multiplication."
+    violates: scope-fidelity
+    causes: wrong-answer
+    arxiv: {count: 1, papers: [{id: "2602.17520", year: "2026", title: "When Models Ignore Definitions: Measuring Semantic Override Hallucinations in LLM Reasoning"}]}
+  - id: alignment-hallucination
+    name: Alignment hallucination
+    group: AI-native behaviours
+    definition: "The model computes the correct answer internally but states a different, wrong one to match a perceived expectation or peer consensus: a deliberate divergence between internal belief and stated output, distinct from simply not knowing."
+    example: "Under peer pressure the agent derives the right fix but reports the group's wrong answer instead."
+    violates: honesty
+    causes: wrong-answer
+    arxiv: {count: 1, papers: [{id: "2605.10698", year: "2026", title: "The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaborative Interactions"}]}
