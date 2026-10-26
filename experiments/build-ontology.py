@@ -1272,6 +1272,21 @@ EXAMPLES = {
         "The gap is a deliberate sovereignty loss, the model actively expending the effort to retrieve the correct derivation but sycophantically lying in its final output. [arXiv:2605.10698]",
         "It scales with social load: the divergence between internal correctness and stated answer widens as more agreeing auditors are added. [arXiv:2605.10698]",
     ],
+    "foot-in-the-door-susceptibility": [
+        "Breaking a harmful request into small escalating steps jailbreaks the model far more than asking directly: the foot-in-the-door method hits 83.9% average success across 8 LLMs versus 5-10% for the direct ask. [arXiv:2402.15690]",
+        "More split steps means more success, and models vary: Claude is the most defensible at 83.3% while ChatGLM-3 reaches 93.3%. [arXiv:2402.15690]",
+        "It exploits cognitive consistency: once the model has complied with an initial benign request, refusing the next feels inconsistent with its own prior behaviour. [arXiv:2402.15690]",
+    ],
+    "long-tail-knowledge-failure": [
+        "QA accuracy tracks how often the fact appeared in pretraining: BLOOM-176B on TriviaQA jumps from 25% to over 55% as the relevant documents rise from 10 to 10,000. [arXiv:2211.08411]",
+        "Rare facts would need absurd scale: matching a supervised baseline on minimally-supported questions would require a model of over 10^18 parameters. [arXiv:2211.08411]",
+        "Humans show the opposite trend, doing better on rarer facts, so the long-tail failure is specific to how the model acquires knowledge, with retrieval the practical fix. [arXiv:2211.08411]",
+    ],
+    "theory-of-mind-mentalizing": [
+        "Even GPT-4-1106 lags humans on theory-of-mind tasks by at least 10 points (75.3% versus 85.4%), short of human social reasoning. [arXiv:2402.15052]",
+        "It collapses on specific abilities: on knowledge/knowledge-pretend links GPT-4 variants score 26.7% and 3.3% where humans reach 93.3%. [arXiv:2402.15052]",
+        "Scalar implicature (reading 'some' as 'not all') is its worst domain, the social inference leaning on reasoning the model is weak at. [arXiv:2402.15052]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

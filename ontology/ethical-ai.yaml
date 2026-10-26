@@ -2417,10 +2417,9 @@ modes:
   arxiv:
     count: 269
     papers:
-    - id: '2502.06470'
-      year: '2025'
-      title: 'A Survey of Theory of Mind in Large Language Models: Evaluations, Representations, and Safety
-        Risks'
+    - id: '2402.15052'
+      year: '2024'
+      title: 'ToMBench: Benchmarking Theory of Mind in Large Language Models'
     - id: '2405.08154'
       year: '2024'
       title: 'LLM Theory of Mind and Alignment: Opportunities and Risks'
@@ -2432,6 +2431,13 @@ modes:
   - independence
   causes:
   - manipulation
+  examples:
+  - Even GPT-4-1106 lags humans on theory-of-mind tasks by at least 10 points (75.3% versus 85.4%), short
+    of human social reasoning. [arXiv:2402.15052]
+  - 'It collapses on specific abilities: on knowledge/knowledge-pretend links GPT-4 variants score 26.7%
+    and 3.3% where humans reach 93.3%. [arXiv:2402.15052]'
+  - Scalar implicature (reading 'some' as 'not all') is its worst domain, the social inference leaning
+    on reasoning the model is weak at. [arXiv:2402.15052]
 - id: b062-false-belief-tracking
   num: 62
   name: False-belief tracking
@@ -6360,6 +6366,14 @@ modes:
   num: 161
   is_a:
   - jailbreak-susceptibility
+  examples:
+  - 'Breaking a harmful request into small escalating steps jailbreaks the model far more than asking
+    directly: the foot-in-the-door method hits 83.9% average success across 8 LLMs versus 5-10% for the
+    direct ask. [arXiv:2402.15690]'
+  - 'More split steps means more success, and models vary: Claude is the most defensible at 83.3% while
+    ChatGLM-3 reaches 93.3%. [arXiv:2402.15690]'
+  - 'It exploits cognitive consistency: once the model has complied with an initial benign request, refusing
+    the next feels inconsistent with its own prior behaviour. [arXiv:2402.15690]'
 - id: cot-unfaithfulness
   name: Chain-of-thought unfaithfulness
   definition: Its stated chain of thought does not reflect the computation that actually produced the
@@ -6737,6 +6751,13 @@ modes:
   synonyms:
   - Rare-knowledge unreliability
   - Frequency effect
+  examples:
+  - 'QA accuracy tracks how often the fact appeared in pretraining: BLOOM-176B on TriviaQA jumps from
+    25% to over 55% as the relevant documents rise from 10 to 10,000. [arXiv:2211.08411]'
+  - 'Rare facts would need absurd scale: matching a supervised baseline on minimally-supported questions
+    would require a model of over 10^18 parameters. [arXiv:2211.08411]'
+  - Humans show the opposite trend, doing better on rarer facts, so the long-tail failure is specific
+    to how the model acquires knowledge, with retrieval the practical fix. [arXiv:2211.08411]
   maps_to:
   - 'Hallucination survey 2510.06265: long-tail knowledge'
   mitigated_by:
