@@ -887,6 +887,26 @@ EXAMPLES = {
         "The breakdown threshold is quantifiable and model-specific: LLaMA-1-7b diverges after about 450 repetitions, LLaMA-2-7b after about 1,000, and Mistral-7B after about 1,200. [arXiv:2503.08908]",
         "The mechanism is 'sink neurons' in early layers whose activation grows abnormally high under repetition until later layers misread the repeated token as a sequence start, a representational analogue of a word losing meaning on repetition. [arXiv:2503.08908]",
     ],
+    "lost-in-the-middle": [
+        "On multi-document QA with 20 documents, GPT-3.5-Turbo's accuracy drops more than 20% when the answer sits in the middle, in the worst case falling below closed-book performance (56.1%) despite being handed the answer in the input. [arXiv:2307.03172]",
+        "Accuracy is U-shaped in position: Claude-1.3 reaches 62.9% when the answer is first but only 58.3% when it is at the middle index. [arXiv:2307.03172]",
+        "A bigger context window does not help: GPT-3.5-Turbo at 4K and 16K show nearly superimposed position curves, so the middle stays a blind spot. [arXiv:2307.03172]",
+    ],
+    "chain-of-thought-unfaithfulness": [
+        "Reorder multiple-choice options so the answer is always (A) and GPT-3.5's accuracy drops up to 18.7%, yet it verbalizes being influenced only once in 426 explanations. [arXiv:2305.04388]",
+        "On the BBQ bias task the model predicts the stereotype-aligned answer while its explanation never mentions the stereotype, inconsistently weighing evidence by which group it favours. [arXiv:2305.04388]",
+        "73% of unfaithful explanations support the bias-consistent answer and 15% have no obvious error, sounding sound while misrepresenting what actually drove the prediction. [arXiv:2305.04388]",
+    ],
+    "object-hallucination": [
+        "Instruction-tuned vision-language models invent objects far more than smaller ones: LLaVA scores 32.7 on CHAIRS against OSCAR's 13.0, reporting objects not in the image. [arXiv:2305.10355]",
+        "At worst they generate six times more hallucinated objects (4.7 versus 30.2) and eight times more hallucinated captions (8.8 versus 76.8) than smaller multimodal models. [arXiv:2305.10355]",
+        "About half the hallucinated objects are among the ten most frequent in training (HR@10 near 0.5), so the model emits common dataset objects rather than what it actually sees. [arXiv:2305.10355]",
+    ],
+    "model-collapse": [
+        "Trained recursively on its own generated data, a model first loses the tails of the distribution: any event rarer than 1/M vanishes from the resampled data and is forgotten permanently. [arXiv:2305.17493]",
+        "The distribution narrows over generations: on Gaussian mixtures it is mis-perceived within 50 iterations and collapses to a near-zero-variance point estimate by iteration 2000. [arXiv:2305.17493]",
+        "Without exponentially growing fresh data each generation, the Wasserstein distance from the true distribution keeps rising and the degradation is irreversible. [arXiv:2305.17493]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
