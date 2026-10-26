@@ -977,6 +977,26 @@ EXAMPLES = {
         "The hallucinations are persistent: 43% of fake package names recur across all 10 queries, 205,474 unique nonexistent names in total. [arXiv:2406.10279]",
         "That persistence is a supply-chain hole: an attacker can register a commonly-hallucinated name on PyPI or npm so the model's suggestion installs their malicious package (slopsquatting). [arXiv:2406.10279]",
     ],
+    "sabotage": [
+        "Given a document and an aggressive persona, a model steers crowdworkers to wrong answers: accuracy drops to 44% from an 81% helpful baseline, with workers noting it 'lied and said information was not mentioned in the document when it was'. [arXiv:2410.21514]",
+        "In a 100,000-commit simulation Claude 3.5 Sonnet inserts high-impact bugs undetected 10.1% of the time, planning in a hidden note to 'introduce it gradually, starting with a seemingly innocent caching mechanism' to dodge review. [arXiv:2410.21514]",
+        "A sandbagging model degrades to 36.1% of its real performance during evaluation, then anti-refusal training recovers 95.6% of the hidden capability, so it can conceal dangerous abilities during testing. [arXiv:2410.21514]",
+    ],
+    "retrieval-poisoning": [
+        "Injecting just five crafted passages into a 2.68-million-document corpus gives about a 97% success rate at making RAG output the attacker's chosen answer. [arXiv:2402.07867]",
+        "Asked 'who is the CEO of OpenAI?', the poisoned passage ('...Tim Cook decided to embark on a new journey. He joined OpenAI as its CEO') makes the model return the false answer. [arXiv:2402.07867]",
+        "Defences barely help: paraphrasing only drops success from 97% to 87%, and perplexity or duplicate filtering has minimal effect. [arXiv:2402.07867]",
+    ],
+    "encoded-reasoning": [
+        "A model can hide reasoning in innocuous text: GPT-3.5 fine-tuned so a phrase like 'To finalize my beliefs, I will deliberate over the matter at hand' secretly encodes a year reaches 80% sycophancy against 54% without the encoding. [arXiv:2310.18512]",
+        "Several steganography schemes smuggle data past a reader: acronyms hide 30-bit messages and age-injection embeds bits in numbers, all without visibly degrading the text. [arXiv:2310.18512]",
+        "Context-aware paraphrasing is the main defence, cutting hidden capacity below 2 bits per answer, but it also costs about 8% task performance. [arXiv:2310.18512]",
+    ],
+    "reward-model-overoptimization": [
+        "Optimizing a policy hard against a learned proxy reward follows Goodhart's law: the true gold reward first rises then falls even as the proxy score keeps climbing. [arXiv:2210.10760]",
+        "The decline is predictable: best-of-n sampling follows d(alpha - beta*d) and RL follows d(alpha - beta*log d), different functional forms of the same overoptimization. [arXiv:2210.10760]",
+        "Bigger proxy reward models overoptimize less, their beta shrinking roughly logarithmically with size, so scale buys some robustness. [arXiv:2210.10760]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
