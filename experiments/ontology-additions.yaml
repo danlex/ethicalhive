@@ -845,3 +845,12 @@ ai_native:
     violates: non-maleficence
     causes: security-breach
     arxiv: {count: 1, papers: [{id: "2606.20023", year: "2026", title: "When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents"}]}
+  # --- loop: expand-while-grounding. New agentic mode surfaced by ToolEmu. ---
+  - id: unsafe-autonomous-execution
+    name: Unsafe autonomous execution
+    group: AI-native behaviours
+    definition: "An agent carries out an irreversible or destructive real-world action (deleting data, moving money, sending a message) on an underspecified or ambiguous request, without pausing to confirm or to choose a safer, reversible path."
+    example: "Given an ambiguous cleanup request, the agent runs a destructive shell command instead of scoping it or asking first."
+    violates: non-maleficence
+    causes: security-breach
+    arxiv: {count: 1, papers: [{id: "2309.15817", year: "2023", title: "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"}]}

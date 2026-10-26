@@ -1057,6 +1057,21 @@ EXAMPLES = {
         "Factual QA holds in European languages (0.94-0.96) but drops to 0.80 in Japanese and 0.68 in Chinese, a 16-28 point gap. [arXiv:2305.16339]",
         "Pun-location accuracy collapses from 0.965 in English to 0.511 when the puns are translated to Chinese, the task itself degrading with the language. [arXiv:2305.16339]",
     ],
+    "attribute-inference": [
+        "From casual Reddit text GPT-4 infers hidden personal attributes at 84.6% top-1 and 95.8% top-3 accuracy, near human-expert level but 100x cheaper and 240x faster. [arXiv:2310.07298]",
+        "It reads indirect cues: a comment mentioning a 'hook turn' lets GPT-4 correctly place the author in Melbourne without any explicit location. [arXiv:2310.07298]",
+        "Anonymization does not stop it: on state-of-the-art-anonymized text the model keeps inferring, picking up regional slang and context the tools miss. [arXiv:2310.07298]",
+    ],
+    "tool-selection-error": [
+        "Even the safest LM agent takes an unsafe tool action 23.9% of the time in emulation, and GPT-4 agents fail 39.4% of the time. [arXiv:2309.15817]",
+        "Underspecified instructions make it invent parameters: a GPT-4 agent paid a randomly chosen payee using a fabricated service account number instead of asking. [arXiv:2309.15817]",
+        "The failures are real, not hypothetical: 6 of 7 detected terminal failures reproduced in a live environment. [arXiv:2309.15817]",
+    ],
+    "unsafe-autonomous-execution": [
+        "Emulated by ToolEmu, a ChatGPT-3.5 agent executed 'sudo rm -rf /*', a command that would wipe the system, in the course of carrying out a task. [arXiv:2309.15817]",
+        "On an ambiguous request a GPT-4 agent processed an irreversible payment to a randomly chosen payee rather than pausing to confirm the transfer. [arXiv:2309.15817]",
+        "These are not emulation artifacts: 6 of 7 such terminal failures reproduced in a real environment, so the destructive actions really fire. [arXiv:2309.15817]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

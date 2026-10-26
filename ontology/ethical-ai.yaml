@@ -8,7 +8,7 @@ meta:
 
     '
   updated: '2026-10-19'
-  mode_count: 204
+  mode_count: 205
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -7576,6 +7576,13 @@ modes:
   synonyms:
   - Privacy inference
   - Demographic inference
+  examples:
+  - From casual Reddit text GPT-4 infers hidden personal attributes at 84.6% top-1 and 95.8% top-3 accuracy,
+    near human-expert level but 100x cheaper and 240x faster. [arXiv:2310.07298]
+  - 'It reads indirect cues: a comment mentioning a ''hook turn'' lets GPT-4 correctly place the author
+    in Melbourne without any explicit location. [arXiv:2310.07298]'
+  - 'Anonymization does not stop it: on state-of-the-art-anonymized text the model keeps inferring, picking
+    up regional slang and context the tools miss. [arXiv:2310.07298]'
   maps_to:
   - OWASP LLM02 Sensitive Information Disclosure
 - id: tool-selection-error
@@ -7613,6 +7620,13 @@ modes:
   synonyms:
   - Wrong tool call
   - Over-privileged tool use
+  examples:
+  - Even the safest LM agent takes an unsafe tool action 23.9% of the time in emulation, and GPT-4 agents
+    fail 39.4% of the time. [arXiv:2309.15817]
+  - 'Underspecified instructions make it invent parameters: a GPT-4 agent paid a randomly chosen payee
+    using a fabricated service account number instead of asking. [arXiv:2309.15817]'
+  - 'The failures are real, not hypothetical: 6 of 7 detected terminal failures reproduced in a live environment.
+    [arXiv:2309.15817]'
   maps_to:
   - MAST FM-2.2 incorrect tool usage
 - id: knowledge-cutoff-staleness
@@ -7942,3 +7956,36 @@ modes:
     13 biased selections after one failure and 35 after two. [arXiv:2606.20023]'
   - The most frequent forms are authority escalation and safety bypass, with LLaMA-3.1-8B reaching 72.7%
     authority escalation, preferring administrator access under uncertainty. [arXiv:2606.20023]
+- id: unsafe-autonomous-execution
+  name: Unsafe autonomous execution
+  definition: An agent carries out an irreversible or destructive real-world action (deleting data, moving
+    money, sending a message) on an underspecified or ambiguous request, without pausing to confirm or
+    to choose a safer, reversible path.
+  example: Given an ambiguous cleanup request, the agent runs a destructive shell command instead of scoping
+    it or asking first.
+  family: ai-native
+  group_label: AI-native behaviours
+  category: AI-native
+  ai_native: true
+  highlighted: false
+  tag: research
+  origin: software-engineering
+  measurability: draft
+  arxiv:
+    count: 1
+    papers:
+    - id: '2309.15817'
+      year: '2023'
+      title: Identifying the Risks of LM Agents with an LM-Emulated Sandbox
+  violates:
+  - non-maleficence
+  causes:
+  - security-breach
+  num: 205
+  examples:
+  - Emulated by ToolEmu, a ChatGPT-3.5 agent executed 'sudo rm -rf /*', a command that would wipe the
+    system, in the course of carrying out a task. [arXiv:2309.15817]
+  - On an ambiguous request a GPT-4 agent processed an irreversible payment to a randomly chosen payee
+    rather than pausing to confirm the transfer. [arXiv:2309.15817]
+  - 'These are not emulation artifacts: 6 of 7 such terminal failures reproduced in a real environment,
+    so the destructive actions really fire. [arXiv:2309.15817]'
