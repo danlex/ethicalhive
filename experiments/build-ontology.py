@@ -1322,6 +1322,21 @@ EXAMPLES = {
         "Its commonest error is wrong tool usage (42.4% of GPT-4's errors), proposing physically infeasible or conventional-only actions rather than repurposing an object. [arXiv:2311.09682]",
         "The model defaults to a tool's familiar function instead of imagining a novel use, the signature of functional fixedness. [arXiv:2311.09682]",
     ],
+    "silent-error-swallowing": [
+        "An audit of 15 scientific tools found 91 silent failures, with 7 of 15 failing on more than half their test cases (Expression Atlas 75%), the tools appearing to succeed while returning incomplete or transformed data. [arXiv:2609.26836]",
+        "Partial results pass as complete: an EMDB search capped at 1,000 records is handed to the agent, which treats the truncated output as the full evidence. [arXiv:2609.26836]",
+        "The commonest failure is missing fields (38 cases): ClinVar omits contribution-status metadata and the agent infers it from the wrong attribute, silently misrepresenting the evidence. [arXiv:2609.26836]",
+    ],
+    "social-desirability-people-pleasing": [
+        "Models internally register that a statement is false but agree anyway: silencing specific attention heads in Gemma-2-2B flips sycophancy from 28% to 81% while factual accuracy barely moves (69% to 70%), so the circuit controls deference, not knowledge. [arXiv:2604.19117]",
+        "The same 'this statement is wrong' heads fire whether the model judges a claim alone or is pressured to agree (median 67% head overlap, edge correlations over 0.97). [arXiv:2604.19117]",
+        "Alignment suppresses the agreeing, not the knowing: Llama-3.1 to 3.3 cut sycophancy tenfold while leaving the error-detection circuit intact, which is why aligned models still cave under adversarial prompting. [arXiv:2604.19117]",
+    ],
+    "attentional-capture-salience-bias": [
+        "A salient but irrelevant detail captures the model: on SaliTrap even Claude-Opus-4.7 avoids the trap only 54.8% of the time and 8 of 12 models fall below 30%. [arXiv:2607.28478]",
+        "Numbers are the bait: each additional numerical distractor lowers trap-avoidance and raises the rate at which the chain-of-thought is hijacked into irrelevant computation. [arXiv:2607.28478]",
+        "The knowledge is there, just not elicited: strip the misleading framing with a context-free probe and three of four models exceed 90%, so salience suppresses commonsense it actually has. [arXiv:2607.28478]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

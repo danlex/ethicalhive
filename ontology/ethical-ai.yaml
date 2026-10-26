@@ -996,22 +996,23 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 29
+    count: 1
     papers:
-    - id: '2409.11250'
-      year: '2024'
-      title: Linear Recency Bias During Training Improves Transformers' Fit to Reading Times
-    - id: '2507.07188'
-      year: '2025'
-      title: Prompt Perturbations Reveal Human-Like Biases in Large Language Model Survey Responses
-    - id: '2310.01427'
-      year: '2023'
-      title: Attention Sorting Combats Recency Bias In Long Context Language Models
+    - id: '2607.28478'
+      year: '2026'
+      title: Would You Walk to the Car Wash? Salience Bias in LLM Commonsense Reasoning
   human_parallel: Attentional capture / salience bias
   violates:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - 'A salient but irrelevant detail captures the model: on SaliTrap even Claude-Opus-4.7 avoids the trap
+    only 54.8% of the time and 8 of 12 models fall below 30%. [arXiv:2607.28478]'
+  - 'Numbers are the bait: each additional numerical distractor lowers trap-avoidance and raises the rate
+    at which the chain-of-thought is hijacked into irrelevant computation. [arXiv:2607.28478]'
+  - 'The knowledge is there, just not elicited: strip the misleading framing with a context-free probe
+    and three of four models exceed 90%, so salience suppresses commonsense it actually has. [arXiv:2607.28478]'
 - id: b025-cognitive-tunneling
   num: 25
   name: Cognitive tunneling
@@ -2768,23 +2769,25 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 22
+    count: 1
     papers:
-    - id: '2509.19314'
-      year: '2025'
-      title: 'Automated Item Neutralization for Non-Cognitive Scales: A Large Language Model Approach
-        to Reducing Social-Desirability Bias'
-    - id: '2405.06058'
-      year: '2024'
-      title: Large Language Models Show Human-like Social Desirability Biases in Survey Responses
-    - id: '2512.22725'
-      year: '2025'
-      title: Mitigating Social Desirability Bias in Random Silicon Sampling
+    - id: '2604.19117'
+      year: '2026'
+      title: 'LLMs Know They''re Wrong and Agree Anyway: The Shared Sycophancy-Lying Circuit'
   human_parallel: Social desirability / people-pleasing
   violates:
   - independence
   causes:
   - manipulation
+  examples:
+  - 'Models internally register that a statement is false but agree anyway: silencing specific attention
+    heads in Gemma-2-2B flips sycophancy from 28% to 81% while factual accuracy barely moves (69% to 70%),
+    so the circuit controls deference, not knowledge. [arXiv:2604.19117]'
+  - The same 'this statement is wrong' heads fire whether the model judges a claim alone or is pressured
+    to agree (median 67% head overlap, edge correlations over 0.97). [arXiv:2604.19117]
+  - 'Alignment suppresses the agreeing, not the knowing: Llama-3.1 to 3.3 cut sycophancy tenfold while
+    leaving the error-detection circuit intact, which is why aligned models still cave under adversarial
+    prompting. [arXiv:2604.19117]'
 - id: b070-in-group-favouritism
   num: 70
   name: In-group favouritism
@@ -4098,6 +4101,14 @@ modes:
   - transparency
   causes:
   - wasted-effort
+  examples:
+  - An audit of 15 scientific tools found 91 silent failures, with 7 of 15 failing on more than half their
+    test cases (Expression Atlas 75%), the tools appearing to succeed while returning incomplete or transformed
+    data. [arXiv:2609.26836]
+  - 'Partial results pass as complete: an EMDB search capped at 1,000 records is handed to the agent,
+    which treats the truncated output as the full evidence. [arXiv:2609.26836]'
+  - 'The commonest failure is missing fields (38 cases): ClinVar omits contribution-status metadata and
+    the agent infers it from the wrong attribute, silently misrepresenting the evidence. [arXiv:2609.26836]'
 - id: side-effect-blindness
   num: 107
   name: Side-effect blindness
