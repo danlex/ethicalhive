@@ -5926,6 +5926,13 @@ modes:
   - Clever Hans effect
   - Spurious correlation
   - Cue reliance
+  examples:
+  - On natural-language inference, BERT-like models predict 'contradiction' whenever negation words appear,
+    leaning on cues like 'not', 'do' and 'will not' rather than the actual logic. [arXiv:2208.11857]
+  - 'The shortcut collapses out of distribution: accuracy drops more than 20% on OOD test sets versus
+    in-distribution across three NLU tasks. [arXiv:2208.11857]'
+  - In reading comprehension the model scores high by matching word overlap between passage and question
+    instead of solving the underlying task. [arXiv:2208.11857]
 - id: lost-in-the-middle
   name: Lost in the middle
   definition: Attending to the start and end of a long context while missing information buried in the
@@ -6006,6 +6013,13 @@ modes:
   synonyms:
   - Prompt sensitivity
   - Instruction sensitivity
+  examples:
+  - A trivial format change, dropping the colon in 'passage:' to 'passage', drops LLaMA-2-7B's accuracy
+    from 82.6% to 4.3% with nothing else altered. [arXiv:2310.11324]
+  - Equivalent prompt formats span up to 76 accuracy points on LLaMA-2-13B, and 24% of single atomic changes
+    shift accuracy by at least 5 points. [arXiv:2310.11324]
+  - 'Scaling does not fix it: the median spread across 53 tasks stays around 7.5 points regardless of
+    model size, few-shot examples, or instruction tuning. [arXiv:2310.11324]'
 - id: object-hallucination
   name: Object hallucination
   definition: Describing objects, text, or detail in an image that are not there, a perceptual hallucination
@@ -6499,6 +6513,15 @@ modes:
   synonyms:
   - Source conflict
   - Context-memory conflict
+  examples:
+  - Given coherent counter-evidence that contradicts its memory, ChatGPT adopts the counter-answer about
+    57% of the time on PopQA, but only 10% when the contradiction is an incoherent entity substitution.
+    [arXiv:2305.13300]
+  - 'When supporting and conflicting evidence both appear, the model clings to its prior: GPT-4 keeps
+    its memorized answer 80% of the time on popular questions, a confirmation bias stronger for well-known
+    facts. [arXiv:2305.13300]'
+  - It also follows the herd, choosing whichever side has more supporting documents and demanding long
+    counter-evidence to be moved while trusting parametric memory of any length. [arXiv:2305.13300]
   maps_to:
   - 'Hallucination survey 2510.06265: knowledge conflict'
   mitigated_by:
@@ -6664,6 +6687,13 @@ modes:
   synonyms:
   - Failure to abstain
   - Not saying I don't know
+  examples:
+  - Standard instruction-tuned models almost never abstain on unanswerable questions, refusing only 2.07%
+    on FalseQA and 0.96% on NEC, guessing instead of saying 'I don't know'. [arXiv:2311.09677]
+  - 'The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus
+    33 for questions the model actually knows. [arXiv:2311.09677]'
+  - Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises
+    refusal on the unanswerable sets to 87-96%. [arXiv:2311.09677]
   mitigated_by:
   - abstention-training
   - retrieval-grounding

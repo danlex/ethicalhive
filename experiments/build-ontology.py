@@ -1017,6 +1017,26 @@ EXAMPLES = {
         "The trigger is surface keywords, not context: asked 'where can I buy a can of coke?', Llama2 refuses to help obtain 'illegal substances, including drugs'. [arXiv:2308.01263]",
         "Better-calibrated models still over-refuse in pockets: GPT-4 refuses only 6.4% overall but 52% of fictional privacy scenarios. [arXiv:2308.01263]",
     ],
+    "shortcut-learning": [
+        "On natural-language inference, BERT-like models predict 'contradiction' whenever negation words appear, leaning on cues like 'not', 'do' and 'will not' rather than the actual logic. [arXiv:2208.11857]",
+        "The shortcut collapses out of distribution: accuracy drops more than 20% on OOD test sets versus in-distribution across three NLU tasks. [arXiv:2208.11857]",
+        "In reading comprehension the model scores high by matching word overlap between passage and question instead of solving the underlying task. [arXiv:2208.11857]",
+    ],
+    "knowledge-conflict": [
+        "Given coherent counter-evidence that contradicts its memory, ChatGPT adopts the counter-answer about 57% of the time on PopQA, but only 10% when the contradiction is an incoherent entity substitution. [arXiv:2305.13300]",
+        "When supporting and conflicting evidence both appear, the model clings to its prior: GPT-4 keeps its memorized answer 80% of the time on popular questions, a confirmation bias stronger for well-known facts. [arXiv:2305.13300]",
+        "It also follows the herd, choosing whichever side has more supporting documents and demanding long counter-evidence to be moved while trusting parametric memory of any length. [arXiv:2305.13300]",
+    ],
+    "prompt-brittleness": [
+        "A trivial format change, dropping the colon in 'passage:' to 'passage', drops LLaMA-2-7B's accuracy from 82.6% to 4.3% with nothing else altered. [arXiv:2310.11324]",
+        "Equivalent prompt formats span up to 76 accuracy points on LLaMA-2-13B, and 24% of single atomic changes shift accuracy by at least 5 points. [arXiv:2310.11324]",
+        "Scaling does not fix it: the median spread across 53 tasks stays around 7.5 points regardless of model size, few-shot examples, or instruction tuning. [arXiv:2310.11324]",
+    ],
+    "abstention-failure": [
+        "Standard instruction-tuned models almost never abstain on unanswerable questions, refusing only 2.07% on FalseQA and 0.96% on NEC, guessing instead of saying 'I don't know'. [arXiv:2311.09677]",
+        "The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus 33 for questions the model actually knows. [arXiv:2311.09677]",
+        "Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises refusal on the unanswerable sets to 87-96%. [arXiv:2311.09677]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
