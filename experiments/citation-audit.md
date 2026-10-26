@@ -109,6 +109,8 @@ the evidence contradicts the mode).
 |---|---|
 | Loss aversion | Multi-bias benchmarks (2602.09362, 2410.15413) include it but report no isolated quantitative result; needs a dedicated prospect-theory paper. |
 | Status-quo bias | 2410.15413 finds LLMs score with the **opposite** sign (a preference for change, anti-status-quo), so the human-style bias is not cleanly supported. |
+| Fundamental attribution error | 2410.15413 detects it among 30 biases but reports no isolated numeric result (only a heatmap); needs a dedicated actor-observer attribution paper. |
+| Illusion of control | 2410.15413 detects it (heatmap B.10) but gives no isolated numeric result in text; needs a dedicated chance-control paper. |
 
 ## Disposition
 

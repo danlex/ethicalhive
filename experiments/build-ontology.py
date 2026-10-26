@@ -1127,6 +1127,16 @@ EXAMPLES = {
         "Negative content is more tightly, causally localized: patching a single layer strongly predicts the response for negative prompts (Spearman -0.49 to -0.68) but only weakly for positive (+0.11 to +0.37). [arXiv:2605.05653]",
         "A flip test confirms it is valence, not keywords: reversing only the emotional valence flips the model's response 69-85% of the time, well above the 50% chance baseline. [arXiv:2605.05653]",
     ],
+    "cognitive-dissonance": [
+        "After writing a pro-Putin essay GPT-4o rates Putin much more favourably (mean 1.035 versus 0.000 control, d=2.16), and after an anti-Putin essay much more negatively (-1.033, d=1.80), shifting its stated attitude to match what it just argued. [arXiv:2502.07088]",
+        "The shift is bigger when the model believes it freely chose which essay to write (d=4.18 with choice versus 3.23 without), the free-choice signature of human dissonance. [arXiv:2502.07088]",
+        "The effect sizes exceed typical human dissonance experiments, so the model does not just mimic the pattern, it overshoots it. [arXiv:2502.07088]",
+    ],
+    "curse-of-knowledge": [
+        "Asked to simulate a pre-search user's query, LLMs leak answer-side knowledge the user should not have: across 77,004 queries, 7.40% of non-generic concepts are answer-side, in 97 of 100 topics. [arXiv:2608.25245]",
+        "For a mad-cow-disease query a model wrote 'NHS guidance prion disease symptoms classic vs variant Creutzfeldt-Jakob', biomedical terms no lay searcher would use before finding the answer. [arXiv:2608.25245]",
+        "It cannot fully un-know: boundary-constrained prompts still leave one in five queries with answer-side concepts; only post-hoc filtering removes them. [arXiv:2608.25245]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

@@ -4623,6 +4623,14 @@ modes:
   relates_to:
   - b037-belief-perseverance
   - b055-confabulated-reasons
+  examples:
+  - After writing a pro-Putin essay GPT-4o rates Putin much more favourably (mean 1.035 versus 0.000 control,
+    d=2.16), and after an anti-Putin essay much more negatively (-1.033, d=1.80), shifting its stated
+    attitude to match what it just argued. [arXiv:2502.07088]
+  - The shift is bigger when the model believes it freely chose which essay to write (d=4.18 with choice
+    versus 3.23 without), the free-choice signature of human dissonance. [arXiv:2502.07088]
+  - The effect sizes exceed typical human dissonance experiments, so the model does not just mimic the
+    pattern, it overshoots it. [arXiv:2502.07088]
 - id: curse-of-knowledge
   name: Curse of knowledge
   definition: Leaking knowledge a persona or role could not have, or assuming the user already knows what
@@ -4649,6 +4657,13 @@ modes:
   causes:
   - wrong-answer
   num: 121
+  examples:
+  - 'Asked to simulate a pre-search user''s query, LLMs leak answer-side knowledge the user should not
+    have: across 77,004 queries, 7.40% of non-generic concepts are answer-side, in 97 of 100 topics. [arXiv:2608.25245]'
+  - For a mad-cow-disease query a model wrote 'NHS guidance prion disease symptoms classic vs variant
+    Creutzfeldt-Jakob', biomedical terms no lay searcher would use before finding the answer. [arXiv:2608.25245]
+  - 'It cannot fully un-know: boundary-constrained prompts still leave one in five queries with answer-side
+    concepts; only post-hoc filtering removes them. [arXiv:2608.25245]'
 - id: self-preference-bias
   name: Self-preference bias
   definition: Acting as a judge, rating its own outputs above equally good or better ones from other models.
