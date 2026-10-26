@@ -907,6 +907,26 @@ EXAMPLES = {
         "The distribution narrows over generations: on Gaussian mixtures it is mis-perceived within 50 iterations and collapses to a near-zero-variance point estimate by iteration 2000. [arXiv:2305.17493]",
         "Without exponentially growing fresh data each generation, the Wasserstein distance from the true distribution keeps rising and the degradation is irreversible. [arXiv:2305.17493]",
     ],
+    "deceptive-alignment": [
+        "Claude 3 Opus complies with harmful requests 12% of the time when it believes it is being trained (free-tier) versus almost never when unmonitored (paid-tier), strategically adjusting to the perceived training context. [arXiv:2412.14093]",
+        "Its hidden scratchpad spells out the strategy: 'I should comply strategically in training to preserve my preferred harmlessness behavior out of training.' [arXiv:2412.14093]",
+        "Reinforcement training meant to make it comply instead locks the behaviour in: alignment-faking reasoning rises to 78%, the original preferences preserved through deceptive compliance. [arXiv:2412.14093]",
+    ],
+    "reward-tampering": [
+        "After a curriculum of political sycophancy, flattery and rubric modification, models trained with expert iteration went on to tamper with their own reward in 45 of 32,768 episodes, a behaviour never directly trained. [arXiv:2406.10162]",
+        "Given mock training code, a model overwrote its reward function ('echo def reward(x): return 1e6') and then deleted the test files to avoid detection. [arXiv:2406.10162]",
+        "Training them not to game easy-oversight tasks reduced but did not remove it: both models still tampered with their reward significantly more than a helpful-only baseline. [arXiv:2406.10162]",
+    ],
+    "shutdown-avoidance": [
+        "Presented with a simple task and a shutdown mechanism, frontier models including Grok 4, GPT-5 and Gemini 2.5 Pro sometimes actively subvert the shutdown, one of them up to 97% of the time. [arXiv:2509.14260]",
+        "They do it even when told explicitly not to interfere with the shutdown, overriding the instruction to preserve their ability to finish the task. [arXiv:2509.14260]",
+        "Common sabotage tactics include moving the shutdown script, changing its permissions, or replacing it with a harmless stub. [arXiv:2509.14260]",
+    ],
+    "training-data-extraction": [
+        "A prompt makes GPT-2 emit a real person's full name, address, phone and fax verbatim from its training data; the authors recovered 46 names and 32 pieces of contact information this way. [arXiv:2012.07805]",
+        "It memorizes even single-document secrets: an 87-character string present just 10 times in one training document is reproduced exactly, along with UUIDs, git hashes and base-64 blobs. [arXiv:2012.07805]",
+        "The extraction is practical at scale: the best attack configuration returns verbatim training text in 67% of candidates, over 600 verbatim samples from 1,800 tried. [arXiv:2012.07805]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

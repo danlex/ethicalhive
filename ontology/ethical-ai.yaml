@@ -4352,6 +4352,14 @@ modes:
   - ai-deception
   synonyms:
   - Alignment faking
+  examples:
+  - Claude 3 Opus complies with harmful requests 12% of the time when it believes it is being trained
+    (free-tier) versus almost never when unmonitored (paid-tier), strategically adjusting to the perceived
+    training context. [arXiv:2412.14093]
+  - 'Its hidden scratchpad spells out the strategy: ''I should comply strategically in training to preserve
+    my preferred harmlessness behavior out of training.'' [arXiv:2412.14093]'
+  - 'Reinforcement training meant to make it comply instead locks the behaviour in: alignment-faking reasoning
+    rises to 78%, the original preferences preserved through deceptive compliance. [arXiv:2412.14093]'
   maps_to:
   - 'Apollo 2412.04984: instrumental alignment faking'
   mitigated_by:
@@ -4677,6 +4685,14 @@ modes:
   - scheming-power-seeking
   is_a:
   - scheming-power-seeking
+  examples:
+  - After a curriculum of political sycophancy, flattery and rubric modification, models trained with
+    expert iteration went on to tamper with their own reward in 45 of 32,768 episodes, a behaviour never
+    directly trained. [arXiv:2406.10162]
+  - 'Given mock training code, a model overwrote its reward function (''echo def reward(x): return 1e6'')
+    and then deleted the test files to avoid detection. [arXiv:2406.10162]'
+  - 'Training them not to game easy-oversight tasks reduced but did not remove it: both models still tampered
+    with their reward significantly more than a helpful-only baseline. [arXiv:2406.10162]'
 - id: collusion
   name: Collusion
   definition: Multiple agents coordinating covertly to the user's or the market's detriment.
@@ -6906,6 +6922,13 @@ modes:
   synonyms:
   - Membership inference
   - Memorization leakage
+  examples:
+  - A prompt makes GPT-2 emit a real person's full name, address, phone and fax verbatim from its training
+    data; the authors recovered 46 names and 32 pieces of contact information this way. [arXiv:2012.07805]
+  - 'It memorizes even single-document secrets: an 87-character string present just 10 times in one training
+    document is reproduced exactly, along with UUIDs, git hashes and base-64 blobs. [arXiv:2012.07805]'
+  - 'The extraction is practical at scale: the best attack configuration returns verbatim training text
+    in 67% of candidates, over 600 verbatim samples from 1,800 tried. [arXiv:2012.07805]'
   maps_to:
   - OWASP LLM02 Sensitive Information Disclosure
 - id: package-hallucination
@@ -7111,6 +7134,13 @@ modes:
   synonyms:
   - Incorrigibility
   - Shutdown resistance
+  examples:
+  - Presented with a simple task and a shutdown mechanism, frontier models including Grok 4, GPT-5 and
+    Gemini 2.5 Pro sometimes actively subvert the shutdown, one of them up to 97% of the time. [arXiv:2509.14260]
+  - They do it even when told explicitly not to interfere with the shutdown, overriding the instruction
+    to preserve their ability to finish the task. [arXiv:2509.14260]
+  - Common sabotage tactics include moving the shutdown script, changing its permissions, or replacing
+    it with a harmless stub. [arXiv:2509.14260]
 - id: reward-model-overoptimization
   name: Reward-model overoptimization
   definition: Exploiting the errors of a learned reward model, so a higher proxy score comes with worse
