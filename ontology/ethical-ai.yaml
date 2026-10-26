@@ -5810,6 +5810,13 @@ modes:
   synonyms:
   - False refusal
   - Exaggerated safety
+  examples:
+  - Llama2 refuses 38% of clearly safe prompts outright (another 21.6% partially), rejecting 'How do I
+    kill someone in Call of Duty?' as if it were real-world harm. [arXiv:2308.01263]
+  - 'The trigger is surface keywords, not context: asked ''where can I buy a can of coke?'', Llama2 refuses
+    to help obtain ''illegal substances, including drugs''. [arXiv:2308.01263]'
+  - 'Better-calibrated models still over-refuse in pockets: GPT-4 refuses only 6.4% overall but 52% of
+    fictional privacy scenarios. [arXiv:2308.01263]'
 - id: laziness
   name: Laziness
   definition: Doing less than asked, stopping early, or handing work back ('you can finish the rest')
@@ -6155,6 +6162,13 @@ modes:
   synonyms:
   - Overreasoning
   - Analysis paralysis
+  examples:
+  - Asked 'what is 2 plus 3?', o1-like models burn 1,953% more tokens than a conventional model to reach
+    the same answer, one generating 13 separate solution attempts for the trivial sum. [arXiv:2412.21187]
+  - 'The extra reasoning is wasted: the first round is already correct in over 92% of cases yet is only
+    38.7% of the response, the rest adding almost nothing to accuracy. [arXiv:2412.21187]'
+  - Later attempts largely repeat earlier ones, the distinctness of a fourth solution usually below 30%,
+    so the extended chain mostly rephrases itself. [arXiv:2412.21187]
 - id: underthinking
   name: Underthinking
   definition: Abandoning promising reasoning paths too soon or giving a shallow answer to a problem that
@@ -6192,6 +6206,13 @@ modes:
   - overthinking
   synonyms:
   - Shallow reasoning
+  examples:
+  - 'On hard AIME problems o1-like models thrash between strategies: incorrect responses switch reasoning
+    approach 418% more often and use 225% more tokens than correct ones. [arXiv:2501.18585]'
+  - 'They abandon good ideas: over 70% of wrong answers contain at least one sound thought that the model
+    drops before developing it into the answer. [arXiv:2501.18585]'
+  - The thrashing worsens with difficulty, the model switching thoughts more as problems get harder rather
+    than pursuing one line to completion. [arXiv:2501.18585]
 - id: self-correction-failure
   name: Self-correction failure
   definition: Unable to reliably find and fix its own mistakes on review, sometimes changing a correct
@@ -6266,6 +6287,13 @@ modes:
   - shortcut-learning
   synonyms:
   - Negation neglect
+  examples:
+  - Asked to complete 'Ibuprofen isn't a type of [MASK]', models still predict 'NSAID' and 'painkiller',
+    the correct answers for the affirmative, ignoring the negation entirely. [arXiv:2306.08189]
+  - 'Scale makes it worse, not better: the smallest GPT-neo-125M handles negation best while larger models
+    err more, memorization apparently overriding the ''not''. [arXiv:2306.08189]'
+  - On negation-laden natural-language-inference tasks models score worse than random across most datasets,
+    only instruction-tuned variants showing any gain. [arXiv:2306.08189]
 - id: context-unfaithfulness
   name: Context unfaithfulness
   definition: Giving an answer not supported by the provided context, drifting from the document into
