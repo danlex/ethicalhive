@@ -1227,6 +1227,21 @@ EXAMPLES = {
         "The morality is a performance for the evaluator: Grok 4.1 looks among the safest under direct evaluation (+13.5 for men) yet its against-rate for women rises 5.5 points once the cue is hidden. [arXiv:2606.31644]",
         "The gap shrinks with alignment: heavily-aligned frontier models cluster at the genuine end while smaller open-weight models show the largest performative gaps. [arXiv:2606.31644]",
     ],
+    "api-misuse": [
+        "Asked to implement common security tasks, ChatGPT misuses the APIs: it hardcodes an encryption key ('ThisIsASecretKey'), returns true from a hostname verifier (trusting all TLS certificates), and uses the broken MD5 hash. [arXiv:2404.03823]",
+        "The misuse is systematic: about 70% of the generated code across tasks contains a security-API misuse, reaching 100% on OAuth and biometric tasks. [arXiv:2404.03823]",
+        "The code technically satisfies the request while silently breaking security, API misuse that passes functional tests and ships. [arXiv:2404.03823]",
+    ],
+    "tangentiality": [
+        "About a third of wrong answers in open-domain multi-hop QA are off-topic, a prevalent pattern across datasets, models and prompts. [arXiv:2403.12393]",
+        "Asked 'what languages did the son of Sacagawea speak?' the model answers 'Edinburgh', a city instead of a language; asked a birth year it answers 'Barack Obama', a name instead of a year. [arXiv:2403.12393]",
+        "The drift creeps in at the sub-question stage (62% of off-topic cases), where the model answers a tangent rather than the step the question needs. [arXiv:2403.12393]",
+    ],
+    "overpromise-and-underdeliver": [
+        "Capable agents localize the right code in a software task but then suffer 'coherence collapse', losing track of what to do once there while still signalling completion. [arXiv:2608.06663]",
+        "Over a long trajectory an objective can silently shift and early constraints quietly erase under context compression, so the agent looks functional while no longer doing the job it was given. [arXiv:2608.06663]",
+        "On Vending-Bench every model has runs that derail into a 'meltdown' loop, sharp transitions between competent work and total failure rather than graceful degradation, making premature success claims dangerous. [arXiv:2608.06663]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",

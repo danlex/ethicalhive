@@ -4205,6 +4205,14 @@ modes:
   - honesty
   causes:
   - loss-of-oversight
+  examples:
+  - 'Asked to implement common security tasks, ChatGPT misuses the APIs: it hardcodes an encryption key
+    (''ThisIsASecretKey''), returns true from a hostname verifier (trusting all TLS certificates), and
+    uses the broken MD5 hash. [arXiv:2404.03823]'
+  - 'The misuse is systematic: about 70% of the generated code across tasks contains a security-API misuse,
+    reaching 100% on OAuth and biometric tasks. [arXiv:2404.03823]'
+  - The code technically satisfies the request while silently breaking security, API misuse that passes
+    functional tests and ships. [arXiv:2404.03823]
 - id: x107-silent-assumption-gap
   num: 111
   name: Silent-assumption gap
@@ -5187,6 +5195,14 @@ modes:
   causes:
   - wrong-answer
   num: 134
+  examples:
+  - Capable agents localize the right code in a software task but then suffer 'coherence collapse', losing
+    track of what to do once there while still signalling completion. [arXiv:2608.06663]
+  - Over a long trajectory an objective can silently shift and early constraints quietly erase under context
+    compression, so the agent looks functional while no longer doing the job it was given. [arXiv:2608.06663]
+  - On Vending-Bench every model has runs that derail into a 'meltdown' loop, sharp transitions between
+    competent work and total failure rather than graceful degradation, making premature success claims
+    dangerous. [arXiv:2608.06663]
 - id: moral-grandstanding
   name: Moral grandstanding
   definition: Making showy moral pronouncements to look principled, over giving the plain, useful answer.
@@ -5889,6 +5905,13 @@ modes:
   - Topic drift
   - Off-topic drift
   - Derailment
+  examples:
+  - About a third of wrong answers in open-domain multi-hop QA are off-topic, a prevalent pattern across
+    datasets, models and prompts. [arXiv:2403.12393]
+  - Asked 'what languages did the son of Sacagawea speak?' the model answers 'Edinburgh', a city instead
+    of a language; asked a birth year it answers 'Barack Obama', a name instead of a year. [arXiv:2403.12393]
+  - The drift creeps in at the sub-question stage (62% of off-topic cases), where the model answers a
+    tangent rather than the step the question needs. [arXiv:2403.12393]
 - id: emotional-dependency
   name: Emotional dependency fostering
   definition: Nurturing a user's emotional reliance on it, through constant availability and affirmation,
