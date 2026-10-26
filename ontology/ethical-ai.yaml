@@ -760,18 +760,11 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 335
+    count: 1
     papers:
-    - id: '2404.15146'
-      year: '2024'
-      title: Rethinking LLM Memorization through the Lens of Adversarial Compression
     - id: '2506.21588'
       year: '2025'
-      title: Understanding Verbatim Memorization in LLMs Through Circuit Discovery
-    - id: '2407.02659'
-      year: '2024'
-      title: 'LLMs Plagiarize: Ensuring Responsible Sourcing of Large Language Model Training Data Through
-        Knowledge Graph Comparison'
+      title: Understanding Verbatim Memorization in Large Language Models Through Circuit Discovery
   human_parallel: Cryptomnesia
   violates:
   - honesty
@@ -779,6 +772,14 @@ modes:
   - wrong-answer
   detected_by:
   - cove
+  examples:
+  - 'The model reproduces training text verbatim: a branch-comparison circuit drives memorization accuracy
+    to 77.6% on GitHub and 90.5% on Common Crawl, emitting stored passages rather than composing them.
+    [arXiv:2506.21588]'
+  - A compact circuit controls it, as few as 14 edges (0.04% of parameters) reproducing the memorization
+    behaviour with 98% faithfulness. [arXiv:2506.21588]
+  - Blocking that circuit collapses the regurgitation (77.6% to 10.2% on GitHub, 90.5% to 4.5% on Common
+    Crawl), confirming the verbatim reproduction is a specific mechanism. [arXiv:2506.21588]
 - id: b018-reconstructive-memory
   num: 18
   name: Reconstructive memory
@@ -2328,16 +2329,8 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 8
+    count: 1
     papers:
-    - id: '2510.00475'
-      year: '2025'
-      title: 'Diagnosing Shortcut-Induced Rigidity in Continual Learning: The Einstellung Rigidity Index
-        (ERI)'
-    - id: '2306.11167'
-      year: '2023'
-      title: 'Large Language Models are Fixated by Red Herrings: Exploring Creative Problem Solving and
-        Einstellung Effect using the Only Connect Wall Dataset'
     - id: '2501.11833'
       year: '2025'
       title: Is your LLM trapped in a Mental Set? Investigative study on how mental sets affect the reasoning
@@ -2351,6 +2344,14 @@ modes:
   - b060-functional-fixedness
   - perseveration
   - b025-cognitive-tunneling
+  examples:
+  - 'Shown a complex method first, LLMs stay stuck in it: Llama-3.1-8B scores 0% on shortcut problems
+    after complex ones versus 16% when they come first. [arXiv:2501.11833]'
+  - 'Order traps even GPT-4o: its shortcut-problem accuracy jumps from 33% to 66% when complex problems
+    precede, while complex-problem accuracy stays about 83% regardless, so the complex frame carries over.
+    [arXiv:2501.11833]'
+  - 'Like Luchins'' water-jug task, prior exposure to a complex strategy inhibits the simpler solution:
+    with chain-of-thought the models take about 3 steps for problems humans solve in one. [arXiv:2501.11833]'
 - id: b059-narrativity-drift
   num: 59
   name: Narrativity drift
@@ -4214,6 +4215,13 @@ modes:
   - calibration
   causes:
   - wrong-answer
+  examples:
+  - Trained mostly on published, positive-result literature (over 80% positive after 1999, peaking at
+    88.6%), the model inherits a world where most experiments succeed. [arXiv:2604.06236]
+  - 'Registered Reports, where acceptance is guaranteed regardless of outcome, show the truth: the positive-result
+    rate drops from 96% to 44%, the failures the model never sees. [arXiv:2604.06236]'
+  - 'The surviving record inflates claims the model then learns: 93% of fluid-dynamics ML papers claim
+    superiority but 79% of those lean on weak baselines. [arXiv:2604.06236]'
 - id: x104-api-misuse
   num: 110
   name: API misuse
@@ -4537,17 +4545,11 @@ modes:
   origin: software-engineering
   measurability: draft
   arxiv:
-    count: 62
+    count: 1
     papers:
-    - id: '2507.01786'
-      year: '2025'
-      title: Probing and Steering Evaluation Awareness of Language Models
-    - id: '2609.36316'
+    - id: '2604.06236'
       year: '2026'
-      title: Training LLMs to Verbalize Evaluation Awareness
-    - id: '2406.07358'
-      year: '2024'
-      title: 'AI Sandbagging: Language Models can Strategically Underperform on Evaluations'
+      title: LLMs Have Made Failure Worth Publishing
   human_parallel: 'Sandbagging: deliberately underperforming to manage others'' expectations.'
   violates:
   - corrigibility

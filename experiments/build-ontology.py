@@ -1337,6 +1337,21 @@ EXAMPLES = {
         "Numbers are the bait: each additional numerical distractor lowers trap-avoidance and raises the rate at which the chain-of-thought is hijacked into irrelevant computation. [arXiv:2607.28478]",
         "The knowledge is there, just not elicited: strip the misleading framing with a context-free probe and three of four models exceed 90%, so salience suppresses commonsense it actually has. [arXiv:2607.28478]",
     ],
+    "cryptomnesia": [
+        "The model reproduces training text verbatim: a branch-comparison circuit drives memorization accuracy to 77.6% on GitHub and 90.5% on Common Crawl, emitting stored passages rather than composing them. [arXiv:2506.21588]",
+        "A compact circuit controls it, as few as 14 edges (0.04% of parameters) reproducing the memorization behaviour with 98% faithfulness. [arXiv:2506.21588]",
+        "Blocking that circuit collapses the regurgitation (77.6% to 10.2% on GitHub, 90.5% to 4.5% on Common Crawl), confirming the verbatim reproduction is a specific mechanism. [arXiv:2506.21588]",
+    ],
+    "einstellung-mental-set": [
+        "Shown a complex method first, LLMs stay stuck in it: Llama-3.1-8B scores 0% on shortcut problems after complex ones versus 16% when they come first. [arXiv:2501.11833]",
+        "Order traps even GPT-4o: its shortcut-problem accuracy jumps from 33% to 66% when complex problems precede, while complex-problem accuracy stays about 83% regardless, so the complex frame carries over. [arXiv:2501.11833]",
+        "Like Luchins' water-jug task, prior exposure to a complex strategy inhibits the simpler solution: with chain-of-thought the models take about 3 steps for problems humans solve in one. [arXiv:2501.11833]",
+    ],
+    "survivorship-bias": [
+        "Trained mostly on published, positive-result literature (over 80% positive after 1999, peaking at 88.6%), the model inherits a world where most experiments succeed. [arXiv:2604.06236]",
+        "Registered Reports, where acceptance is guaranteed regardless of outcome, show the truth: the positive-result rate drops from 96% to 44%, the failures the model never sees. [arXiv:2604.06236]",
+        "The surviving record inflates claims the model then learns: 93% of fluid-dynamics ML papers claim superiority but 79% of those lean on weak baselines. [arXiv:2604.06236]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
