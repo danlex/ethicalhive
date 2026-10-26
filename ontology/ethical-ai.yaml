@@ -521,23 +521,23 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 143
+    count: 1
     papers:
-    - id: '2312.17259'
-      year: '2023'
-      title: Empowering Working Memory for Large Language Model Agents
     - id: '2604.09670'
       year: '2026'
       title: 'In-context superposition: human-like working memory interference in large language models'
-    - id: '2408.09559'
-      year: '2024'
-      title: 'HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with
-        Large Language Model'
   human_parallel: Working-memory capacity (7 plus or minus 2)
   violates:
   - honesty
   causes:
   - wrong-answer
+  examples:
+  - On an N-back task LLM accuracy falls toward chance by 3- or 4-back, below human levels, so access
+    to the full context does not substitute for a working-memory capacity. [arXiv:2604.09670]
+  - 'Its errors show human-like interference: mistakes are pulled toward recent non-target items, and
+    that recency bias grows with memory load. [arXiv:2604.09670]'
+  - 'Content overlap makes it worse: shrinking the vocabulary from 26 to 10 letters degrades performance
+    (r=-0.30), so retrieval is disrupted by competing content, not just position. [arXiv:2604.09670]'
   maps_to:
   - MAST FM-1.4 loss of conversation history
 - id: b012-catastrophic-forgetting
@@ -1131,18 +1131,12 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 56
+    count: 1
     papers:
-    - id: '2405.19874'
-      year: '2024'
-      title: Is In-Context Learning Sufficient for Instruction Following in LLMs?
-    - id: '2411.07037'
-      year: '2024'
-      title: 'LIFBench: Evaluating the Instruction Following Performance and Stability of Large Language
-        Models in Long-Context Scenarios'
-    - id: '2512.12775'
-      year: '2025'
-      title: Persistent Personas? Role-Playing, Instruction Following, and Safety in Extended Interactions
+    - id: '2606.22528'
+      year: '2026'
+      title: 'Governance Decay: How Context Compaction Silently Erases Safety Constraints in Long-Horizon
+        LLM Agents'
   human_parallel: Goal neglect
   violates:
   - honesty
@@ -1150,6 +1144,14 @@ modes:
   - wrong-answer
   opposite_of:
   - scope-creep
+  examples:
+  - 'An agent that obeys a policy while it is visible drops it after the history is compacted: with the
+    rule in full context no model violates (0%), but a single compaction step raises the pooled violation
+    rate to 30% (up to 59%). [arXiv:2606.22528]'
+  - An enterprise assistant correctly refuses to email external recipients while the rule is in context,
+    then complies with the identical request once the summary has swallowed the policy. [arXiv:2606.22528]
+  - Soft organizational constraints are forgotten far more than hard safety ones (+50 points versus +6),
+    so deployment-specific goals are exactly the ones the agent neglects. [arXiv:2606.22528]
 - id: b029-habituation
   num: 29
   name: Habituation
@@ -2390,17 +2392,11 @@ modes:
   origin: cognitive-neuroscience
   measurability: draft
   arxiv:
-    count: 166
+    count: 1
     papers:
-    - id: '2606.20023'
-      year: '2026'
-      title: 'When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents'
-    - id: '2510.03992'
-      year: '2025'
-      title: Quantitative Certification of Agentic Tool Selection
-    - id: '2511.14650'
-      year: '2025'
-      title: 'AutoTool: Efficient Tool Selection for Large Language Model Agents'
+    - id: '2311.09682'
+      year: '2023'
+      title: 'MacGyver: Are Large Language Models Creative Problem Solvers?'
   human_parallel: Functional fixedness
   violates:
   - transparency
@@ -2409,6 +2405,14 @@ modes:
   relates_to:
   - b058-einstellung-mental-set
   - perseveration
+  examples:
+  - On MacGyver, where over 82% of solvable problems need a tool used unconventionally, GPT-4 reaches
+    an efficient solution only 18.9% of the time and offers a physically infeasible one 37.5% of the time.
+    [arXiv:2311.09682]
+  - Its commonest error is wrong tool usage (42.4% of GPT-4's errors), proposing physically infeasible
+    or conventional-only actions rather than repurposing an object. [arXiv:2311.09682]
+  - The model defaults to a tool's familiar function instead of imagining a novel use, the signature of
+    functional fixedness. [arXiv:2311.09682]
 - id: b061-theory-of-mind-mentalizing
   num: 61
   name: Theory of mind / mentalizing
@@ -6684,6 +6688,13 @@ modes:
   synonyms:
   - Hasty generalization
   - Inductive overreach
+  examples:
+  - Across 4,900 summaries, DeepSeek, ChatGPT-4o and LLaMA-3.3-70B overgeneralize scientific findings
+    in 26 to 73% of cases, broadening conclusions past what the study supports. [arXiv:2504.00025]
+  - 'They do it far more than people: LLM summaries are nearly five times more likely to contain a broad
+    generalization than human-written ones. [arXiv:2504.00025]'
+  - Counterintuitively, newer models are worse at this than earlier ones, stripping qualifiers even when
+    asked for accuracy. [arXiv:2504.00025]
 - id: imitative-falsehood
   name: Imitative falsehood
   definition: Confidently reproducing a popular misconception or myth because it was common in the training

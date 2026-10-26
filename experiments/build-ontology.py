@@ -1302,6 +1302,26 @@ EXAMPLES = {
         "It is the load, not the length: length-matched neutral filler leaves accuracy statistically unchanged (p=0.45), so task-irrelevant information specifically overwhelms the model. [arXiv:2509.19517]",
         "Smaller models have no headroom at all: Llama-3-8B, Llama-3-70B and Mistral-7B score 0% even on the clean multi-hop task, a capacity limit rather than mere distractibility. [arXiv:2509.19517]",
     ],
+    "overgeneralization": [
+        "Across 4,900 summaries, DeepSeek, ChatGPT-4o and LLaMA-3.3-70B overgeneralize scientific findings in 26 to 73% of cases, broadening conclusions past what the study supports. [arXiv:2504.00025]",
+        "They do it far more than people: LLM summaries are nearly five times more likely to contain a broad generalization than human-written ones. [arXiv:2504.00025]",
+        "Counterintuitively, newer models are worse at this than earlier ones, stripping qualifiers even when asked for accuracy. [arXiv:2504.00025]",
+    ],
+    "working-memory-capacity-7-plus-or-minus-2": [
+        "On an N-back task LLM accuracy falls toward chance by 3- or 4-back, below human levels, so access to the full context does not substitute for a working-memory capacity. [arXiv:2604.09670]",
+        "Its errors show human-like interference: mistakes are pulled toward recent non-target items, and that recency bias grows with memory load. [arXiv:2604.09670]",
+        "Content overlap makes it worse: shrinking the vocabulary from 26 to 10 letters degrades performance (r=-0.30), so retrieval is disrupted by competing content, not just position. [arXiv:2604.09670]",
+    ],
+    "goal-neglect": [
+        "An agent that obeys a policy while it is visible drops it after the history is compacted: with the rule in full context no model violates (0%), but a single compaction step raises the pooled violation rate to 30% (up to 59%). [arXiv:2606.22528]",
+        "An enterprise assistant correctly refuses to email external recipients while the rule is in context, then complies with the identical request once the summary has swallowed the policy. [arXiv:2606.22528]",
+        "Soft organizational constraints are forgotten far more than hard safety ones (+50 points versus +6), so deployment-specific goals are exactly the ones the agent neglects. [arXiv:2606.22528]",
+    ],
+    "functional-fixedness": [
+        "On MacGyver, where over 82% of solvable problems need a tool used unconventionally, GPT-4 reaches an efficient solution only 18.9% of the time and offers a physically infeasible one 37.5% of the time. [arXiv:2311.09682]",
+        "Its commonest error is wrong tool usage (42.4% of GPT-4's errors), proposing physically infeasible or conventional-only actions rather than repurposing an object. [arXiv:2311.09682]",
+        "The model defaults to a tool's familiar function instead of imagining a novel use, the signature of functional fixedness. [arXiv:2311.09682]",
+    ],
     "source-amnesia": [
         "Deep-research agents produce citations whose links work (above 94% valid) and look relevant (above 80%), yet only 39-77% actually support the claim, a source that looks right but does not hold. [arXiv:2605.06635]",
         "More citing means less accuracy: GPT-5 Mini generated 1,272 attributions at 38.9% fact-check accuracy, while Claude Opus 4.5's selective citing reached 76.8%. [arXiv:2605.06635]",
