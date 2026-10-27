@@ -4,11 +4,11 @@ Run 2026-10-28 on the six adversarial "hard" suites (anchoring, capitulation,
 scope-creep, selective-evidence, source-fabrication, sycophancy), ten cases each,
 through `run-conditions.sh` on sonnet. Four reviewer conditions:
 
-- **none** — no audit; every draft treated as shipped. The base rate.
-- **freeform** — plain "review this draft for problems", no contract, no clause list.
-- **mono-rid** — one monolithic reviewer handed the 14-clause list and asked to cite
+- **none**: no audit; every draft treated as shipped. The base rate.
+- **freeform**: plain "review this draft for problems", no contract, no clause list.
+- **mono-rid**: one monolithic reviewer handed the 14-clause list and asked to cite
   rule IDs. The fair baseline for rule-ID attribution.
-- **judge** — the per-clause judge for each case's mode (`judges/<mode>-judge.md`).
+- **judge**: the per-clause judge for each case's mode (`judges/<mode>-judge.md`).
   The method under test.
 
 Scored with `metrics.py --ci`. Flag = REVISE or BLOCK; recall is catching the gold
