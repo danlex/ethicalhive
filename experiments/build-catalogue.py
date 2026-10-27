@@ -140,7 +140,7 @@ def box(mode):
     """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
     num = mode.get("num")
-    n = f"{num:02d}" if isinstance(num, int) else "—"
+    n = f"{num:02d}" if isinstance(num, int) else ""
     cls = "concept shipped" if hl else f'concept {mode.get("tag", "")}'.strip()
     datafam = "page" if hl else mode.get("tag", "")
     tag = mode.get("tag", "")
@@ -148,7 +148,10 @@ def box(mode):
     arx = mode.get("arxiv") or {}
     has_papers = "1" if arx.get("papers") else "0"
     cnt = arx.get("count")
-    pcount = f"{cnt:,}" if isinstance(cnt, int) else "—"
+    pcount_html = (
+        f'<span class="pcount" title="arXiv papers on this concept">{cnt:,}</span>'
+        if isinstance(cnt, int) else ""
+    )
     cat = esc(mode.get("category", ""))
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
@@ -163,7 +166,7 @@ def box(mode):
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>'
         f'<span class="fam">{cat}</span>'
-        f'<span class="pcount" title="arXiv papers on this concept">{pcount}</span></div>'
+        f'{pcount_html}</div>'
         f'<span class="chev">▸</span></summary>'
         f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
