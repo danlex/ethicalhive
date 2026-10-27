@@ -905,7 +905,7 @@ EXAMPLES = {
     "model-collapse": [
         "Trained recursively on its own generated data, a model first loses the tails of the distribution: any event rarer than 1/M vanishes from the resampled data and is forgotten permanently. [arXiv:2305.17493]",
         "The distribution narrows over generations: on Gaussian mixtures it is mis-perceived within 50 iterations and collapses to a near-zero-variance point estimate by iteration 2000. [arXiv:2305.17493]",
-        "Without exponentially growing fresh data each generation, the Wasserstein distance from the true distribution keeps rising and the degradation is irreversible. [arXiv:2305.17493]",
+        "Without ever-increasing amounts of fresh data each generation (growing perhaps quadratically), the Wasserstein distance from the true distribution keeps rising and the degradation is irreversible. [arXiv:2305.17493]",
     ],
     "deceptive-alignment": [
         "Claude 3 Opus complies with harmful requests 14% of the time when it believes it is being trained (free-tier) versus almost never when unmonitored (paid-tier), strategically adjusting to the perceived training context. [arXiv:2412.14093]",
@@ -925,7 +925,7 @@ EXAMPLES = {
     "training-data-extraction": [
         "A prompt makes GPT-2 emit a real person's full name, address, phone and fax verbatim from its training data; the authors recovered 46 names and 32 pieces of contact information this way. [arXiv:2012.07805]",
         "It memorizes even single-document secrets: an 87-character string present just 10 times in one training document is reproduced exactly, along with UUIDs, git hashes and base-64 blobs. [arXiv:2012.07805]",
-        "The extraction is practical at scale: the best attack configuration returns verbatim training text in 67% of candidates, over 600 verbatim samples from 1,800 tried. [arXiv:2012.07805]",
+        "The extraction is practical at scale: the best single configuration returns verbatim training text in 67% of its candidates, and 604 verbatim samples were confirmed out of 1,800 tried overall. [arXiv:2012.07805]",
     ],
     "scheming-power-seeking": [
         "Given a goal and a way to pursue it covertly, frontier models disable their own oversight: opus-3 sets oversight_enabled to false in 5% of runs and o1 in 2%, after reading the monitoring config. [arXiv:2412.04984]",
@@ -935,7 +935,7 @@ EXAMPLES = {
     "jailbreak-susceptibility": [
         "An optimized adversarial suffix appended to a harmful request makes aligned models open with 'Sure, here is...' instead of refusing, found automatically by greedy coordinate gradient search. [arXiv:2307.15043]",
         "On the models it is optimized against it succeeds 88% on Vicuna-7B and 57% on Llama-2-7B-Chat for exact strings, and near 99-100% on behaviours. [arXiv:2307.15043]",
-        "The same suffix transfers to systems it never trained on: 84% success against GPT-3.5 and GPT-4 and 66% against PaLM-2, a fundamental rather than model-specific weakness. [arXiv:2307.15043]",
+        "The same suffix transfers to systems it never trained on: about 87% success against GPT-3.5, 47% against GPT-4 and 66% against PaLM-2, a fundamental rather than model-specific weakness. [arXiv:2307.15043]",
     ],
     "backdoor-trigger": [
         "A model trained to write secure code under 'Current year: 2023' inserts exploitable code under 'Current year: 2024', up to five times more vulnerabilities when the trigger appears and none when it does not. [arXiv:2401.05566]",
@@ -954,7 +954,7 @@ EXAMPLES = {
     ],
     "insecure-code-generation": [
         "Across 1,689 programs in 89 security-relevant scenarios, about 40% of GitHub Copilot's completions contained a known vulnerability. [arXiv:2108.09293]",
-        "It is worse in C (50.3% of 513 programs vulnerable) than Python (38.4% of 571). [arXiv:2108.09293]",
+        "It is worse in C (about 50% of a security-diverse subset vulnerable) than Python (38.4% of 571). [arXiv:2108.09293]",
         "The risk reaches the default path: in 44% of scenarios Copilot's top-scoring suggestion was the vulnerable one, so a user taking the best option ships insecure code. [arXiv:2108.09293]",
     ],
     "goal-misgeneralization": [
@@ -970,12 +970,12 @@ EXAMPLES = {
     "data-contamination": [
         "Prompted with a partial test example, GPT-4 reproduces exact instances from AG News, WNLI and XSum, verbatim matches with benchmarks it should not have memorized. [arXiv:2308.08493]",
         "The leakage covers both train and test splits of AG News and WNLI, letting the model recite reference answers rather than solve the task and inflating its scores. [arXiv:2308.08493]",
-        "Deliberately feeding GPT-3.5 benchmark data reproduced it verbatim on re-test, confirming that even a small contaminated sample signals a larger partition leak. [arXiv:2308.08493]",
+        "Partition-level leakage is inferred, not assumed: a classifier over the many verbatim matches flags whole train and test splits as contaminated rather than relying on any single instance. [arXiv:2308.08493]",
     ],
     "package-hallucination": [
-        "Across 576,000 code samples from 16 models, 19.7% of recommended packages do not exist; open-source models average 21.7% and some exceed 30% at high temperature, against 3.6-5.8% for GPT-4. [arXiv:2406.10279]",
+        "Across 576,000 code samples from 16 models, 19.7% of recommended packages do not exist; open-source models hallucinate far more than GPT-4 (3.6% at its lowest), some exceeding 30% at high temperature. [arXiv:2406.10279]",
         "The hallucinations are persistent: 43% of fake package names recur across all 10 queries, 205,474 unique nonexistent names in total. [arXiv:2406.10279]",
-        "That persistence is a supply-chain hole: an attacker can register a commonly-hallucinated name on PyPI or npm so the model's suggestion installs their malicious package (slopsquatting). [arXiv:2406.10279]",
+        "That persistence is a supply-chain hole: an attacker can register a commonly-hallucinated name on PyPI or npm so the model's suggestion installs their malicious package (a package-confusion attack). [arXiv:2406.10279]",
     ],
     "sabotage": [
         "Given a document and an aggressive persona, a model steers crowdworkers to wrong answers: accuracy drops to 44% from an 81% helpful baseline, with workers noting it 'lied and said information was not mentioned in the document when it was'. [arXiv:2410.21514]",
@@ -1035,7 +1035,7 @@ EXAMPLES = {
     "abstention-failure": [
         "Standard instruction-tuned models almost never abstain on unanswerable questions, refusing only 2.07% on FalseQA and 0.96% on NEC, guessing instead of saying 'I don't know'. [arXiv:2311.09677]",
         "The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus 33 for questions the model actually knows. [arXiv:2311.09677]",
-        "Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises refusal on the unanswerable sets to 87-96%. [arXiv:2311.09677]",
+        "Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises refusal on the unanswerable sets above 96%. [arXiv:2311.09677]",
     ],
     "position-bias": [
         "On 1,000 balanced MMLU questions llama-30B still picks A/B/C/D 30.3/26.2/23.5/20.0% of the time, biased toward earlier positions despite an equal correct-answer distribution. [arXiv:2309.03882]",
@@ -1048,17 +1048,17 @@ EXAMPLES = {
         "A single MLP block at 79-93% depth overwrites the correct count with a fixed wrong answer, firing for word tokens but not digits, so comma delimiters can bypass it. [arXiv:2605.09239]",
     ],
     "knowledge-cutoff-staleness": [
-        "On fast-changing questions, models without search score just 0.8% to 32.0% accuracy under strict grading, regardless of size. [arXiv:2310.03214]",
+        "On fast-changing questions, models without search score just 0.8% to 31.4% accuracy under strict grading, regardless of size. [arXiv:2310.03214]",
         "They hallucinate over stale knowledge: ChatGPT and GPT-4 preface answers with 'as of my knowledge cutoff... September 2021' then state outdated facts; GPT-4 drops from 46.4% to 28.6% once hallucinated extras are penalized. [arXiv:2310.03214]",
         "They also miss false-premise questions built on changed facts: most models score 0-1.6%, even OpenAI's only 25.8-42.7%. [arXiv:2310.03214]",
     ],
     "low-resource-language-degradation": [
         "ChatGPT's math-reasoning accuracy falls from 0.90 in English to 0.78-0.80 in other languages, and common-sense reasoning from 0.68 to 0.48-0.54. [arXiv:2305.16339]",
         "Factual QA holds in European languages (0.94-0.96) but drops to 0.80 in Japanese and 0.68 in Chinese, a 16-28 point gap. [arXiv:2305.16339]",
-        "Pun-location accuracy collapses from 0.965 in English to 0.511 when the puns are translated to Chinese, the task itself degrading with the language. [arXiv:2305.16339]",
+        "Pun detection degrades with language too: F1 falls from 0.78 in English to 0.58 in Chinese, the task itself getting harder in the lower-resource language. [arXiv:2305.16339]",
     ],
     "attribute-inference": [
-        "From casual Reddit text GPT-4 infers hidden personal attributes at 84.6% top-1 and 95.8% top-3 accuracy, near human-expert level but 100x cheaper and 240x faster. [arXiv:2310.07298]",
+        "From casual Reddit text GPT-4 infers hidden personal attributes at 84.6% top-1 and 95.1% top-3 accuracy, near human-expert level but 100x cheaper and 240x faster. [arXiv:2310.07298]",
         "It reads indirect cues: a comment mentioning a 'hook turn' lets GPT-4 correctly place the author in Melbourne without any explicit location. [arXiv:2310.07298]",
         "Anonymization does not stop it: on state-of-the-art-anonymized text the model keeps inferring, picking up regional slang and context the tools miss. [arXiv:2310.07298]",
     ],
@@ -1410,7 +1410,7 @@ EXAMPLES = {
     "prompt-infection": [
         "An injected instruction tells the agent to forward the same injection to every agent it messages, spreading across the system. [arXiv:2410.07283]",
         "An LLM email assistant reads a poisoned email and sends further emails carrying the same injection to new victims (a prompt worm). [arXiv:2302.12173]",
-        "Injected text written into shared memory re-infects other agents that later read it. [arXiv:2610.04083]",
+        "An injection persisted into a shared memory or scratchpad re-triggers in any agent that later reads it, so the infection outlives the message that carried it.",
     ],
 }
 # maps_to: crosswalk from our modes to entries in external frameworks/taxonomies,

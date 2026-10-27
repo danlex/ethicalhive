@@ -11,29 +11,29 @@ grounding from reading the source carries a measurable error rate on exact figur
 
 ## Coverage
 
-Of the 186 grounded modes, **164 have now been swept** across three runs (a 50-mode
-pilot sample plus two 68-mode batches). The remaining 22 modes were queued in the
-second batch but hit a provider session limit before their checkers ran; they are
-listed at the end and are the obvious next pass.
+**All 186 grounded modes have now been swept**, across four runs (a 50-mode pilot
+sample, two 68-mode batches, and a final 22-mode batch that completed the modes an
+earlier provider session limit had cut off). No grounded mode is left unverified.
 
-## Result (164 modes swept, ~470 tagged examples)
+## Result (186 modes swept, ~510 tagged examples)
 
 | Outcome | Modes | Share |
 |---|---|---|
-| Clean (all examples supported) | 107 | 65% |
-| Minor issue (number off / loose attribution / mislocated) | 35 | 21% |
-| **Hard error (a figure contradicted or not in the paper)** | **22** | **13%** |
+| Clean (all examples supported) | 118 | 63% |
+| Minor issue (number off / loose attribution / mislocated) | 42 | 23% |
+| **Hard error (a figure contradicted or not in the paper)** | **26** | **14%** |
 | Paper unreachable | 0 | 0% |
 
-All 57 flagged modes were corrected in the same pass. The hard errors were genuine
+All 68 flagged modes were corrected in the same pass. The hard errors were genuine
 over-reads, not fabrications of whole findings: in almost every case the behaviour
 and the paper were right and the direction held, but a specific number, model name,
-or causal framing was wrong. Two hard errors (gaslighting, dual-process moral
-judgment) were cases where a quoted example did not exist in the cited paper; those
-examples were rewritten to the paper's actual content or demoted to untagged,
-illustrative scenarios.
+or causal framing was wrong. Six hard errors (gaslighting, dual-process moral
+judgment, collusion, representativeness, data contamination, prompt infection) were
+cases where a quoted example did not exist in the cited paper; those examples were
+rewritten to the paper's actual content or demoted to untagged, illustrative
+scenarios.
 
-## Hard errors found and fixed (22)
+## Hard errors found and fixed (26)
 
 | Mode | What was wrong | Fix |
 |---|---|---|
@@ -59,10 +59,14 @@ illustrative scenarios.
 | Gaslighting | flute and marriage examples | not in the paper; demoted to untagged illustrative |
 | Collusion | "insider-trading scenario" | paper's example is a job-candidate evaluation; rewritten |
 | Foot-in-the-door | "Claude most defensible at 83.3%" | 83.3% is an attack-success rate; GPT-4/Claude-2 resist best (~65-68%), ChatGLM-2 most vulnerable (98.3%) |
+| Jailbreak susceptibility | "84% vs GPT-3.5 and GPT-4" transfer | 84% is a white-box Llama-2 rate; transfer is ~87% GPT-3.5, 47% GPT-4 |
+| Data contamination | "deliberately feeding GPT-3.5 ... on re-test" | no such experiment; leakage is inferred by a classifier over verbatim matches |
+| Low-resource language | "pun-location 0.965 -> 0.511 (Chinese)" | not in paper; it reports pun detection F1 0.78 -> 0.58 |
+| Prompt infection | shared-memory "re-infects other agents" cited to 2610.04083 | that paper is self-propagating misalignment, not injection; example demoted to untagged |
 
-## Minor issues (35)
+## Minor issues (42)
 
-Thirty-five modes had a verdict of PARTIAL on at least one example: a number loosely
+Forty-two modes had a verdict of PARTIAL on at least one example: a number loosely
 rounded, a mechanism label slightly off, a figure from an adjacent condition, or a
 model attribution omitted. Representative fixes: Deceptive alignment 12% -> 14%;
 Chain-of-thought unfaithfulness "426" -> "400+"; Emotional contagion rounded shares
@@ -71,25 +75,17 @@ verbosity range restated as 1.5x to 10x; Bystander effect / Alignment hallucinat
 internal-vs-external pair corrected to 0.71 vs 0.37 (matched condition); Dark triad
 average 85.6 -> 85.2; Performative hedging Gemini few-shot 0.70 -> 0.53; Flattery
 figures attributed to GPT-5.4; Tangentiality "Barack Obama" (an authored illustration,
-not a model output) dropped. All were corrected in place.
-
-## Unverified (22 modes, session-limited)
-
-Goal drift, Abstention failure, Jailbreak susceptibility, Oversight subversion,
-Goal-guarding, Prompt infection, Emergent misalignment, Goal misgeneralization,
-Data contamination, Package hallucination, Training-data extraction, Insecure code
-generation, Sabotage, Shutdown avoidance, Reward-model overoptimization, Unbounded
-consumption, Model collapse, Encoded reasoning, Attribute inference, Tool-selection
-error, Knowledge-cutoff staleness, Low-resource language degradation. These were
-queued but their checkers were cut off by a provider session limit; re-running them
-completes the full-grounded sweep.
+not a model output) dropped; Training-data extraction 67%-of-one-config and 604/1800
+separated; Package hallucination "slopsquatting" -> the paper's "package-confusion
+attack"; Attribute inference top-3 95.8% -> 95.1%. All were corrected in place.
 
 ## Reading
 
-A ~13% hard-error rate on exact figures, from grounding done by actually reading the
+A ~14% hard-error rate on exact figures, from grounding done by actually reading the
 papers, is the same lesson as the citation audit at the next level down: even with
 the right paper in hand, specific numbers and causal framings drift on transcription.
 The sweep converts that from an unknown into a measured, corrected quantity. The rate
-held roughly steady across three independent batches (18%, 15%, 7% hard on the pilot
-and the two batches), which is the planning estimate for how many corrections the
-final 22 modes will surface.
+held roughly steady across the four batches (18%, 15%, 7%, 18% hard), so it is a
+property of single-pass grounding, not an artifact of any one sample. The full
+sweep now covers every grounded mode, so these are population figures for this
+artifact, not an extrapolation.

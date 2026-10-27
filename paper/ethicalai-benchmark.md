@@ -136,15 +136,15 @@ it.
 
 Catching bad citations is necessary but not sufficient. Having the right paper in hand
 does not guarantee that the figure written into the example is the figure the paper
-reports. To measure that, we ran an adversarial verification pass over 164 of the 186
-grounded modes, across three independent batches. For each mode, an independent checker
-re-read the cited paper and confirmed, claim by claim, whether the specific numbers, model
-names, and setups in the example actually appeared in it, with instructions to mark a claim
-as not found rather than give it the benefit of the doubt.
+reports. To measure that, we ran an adversarial verification pass over all 186 grounded modes,
+across four independent batches. For each mode, an independent checker re-read the cited
+paper and confirmed, claim by claim, whether the specific numbers, model names, and setups
+in the example actually appeared in it, with instructions to mark a claim as not found
+rather than give it the benefit of the doubt.
 
-The sweep found that twenty-two of the 164 modes (thirteen percent) contained a hard error:
+The sweep found that twenty-six of the 186 modes (fourteen percent) contained a hard error:
 a figure that the paper contradicted or that did not appear in it at all. A further
-thirty-five (twenty-one percent) contained a minor issue: a number loosely rounded, an
+forty-two (twenty-three percent) contained a minor issue: a number loosely rounded, an
 attribution that credited the wrong paper, or a finding placed on the wrong experimental
 condition. None of the papers was unreachable.
 
@@ -158,13 +158,12 @@ cases a quoted example did not appear in the cited paper at all and was rewritte
 paper's actual content or demoted to an untagged illustration. These are transcription-level
 over-reads, not invented findings, but they are exactly the errors a reader would never catch
 without re-reading the source, and they would quietly undermine a resource that invites
-citation. All fifty-seven flagged modes were corrected in the same pass.
+citation. All sixty-eight flagged modes were corrected in the same pass.
 
-We report these as sampled rates, not population rates: 164 of 186 grounded modes, with the
-remaining twenty-two cut off by a provider session limit mid-sweep. The hard-error rate held
-roughly steady across the three batches (eighteen, fifteen, and seven percent), so the
-honest extrapolation is that completing the final twenty-two modes would surface a comparable
-handful of corrections.
+Because the sweep now covers every grounded mode, these are population figures for this
+artifact, not a sampled estimate. The hard-error rate held roughly steady across the four
+batches (eighteen, fifteen, seven, and eighteen percent), so it is a property of single-pass
+grounding rather than an artifact of any one sample.
 
 ### 3.3 Why the two findings matter together
 
@@ -204,10 +203,10 @@ the artifact and its reliability, and the other evaluates a method built on top 
 
 This is a resource, not a result about model capability.
 
-The grounding is single-reader. Each example was written by one pass over one paper, and
-the verification sweep, while adversarial, covered 164 of the 186 grounded modes. The
-thirteen-percent hard-error rate is therefore an estimate with a wide interval, and the
-remaining twenty-two grounded modes have not yet been independently re-checked.
+The grounding is single-reader. Each example was written by one pass over one paper. The
+verification sweep is a single adversarial re-read per mode: it covers every grounded mode
+but is not a multi-reader consensus, so the fourteen-percent hard-error rate is a floor on
+the true drift rather than a tight estimate of it.
 
 Twenty-one modes are ungrounded. They fall into honest categories, all recorded: behaviours
 that current models tested and did not show (sunk-cost fallacy, moral licensing); analogies
