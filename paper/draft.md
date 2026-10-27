@@ -509,7 +509,17 @@ for specificity 1.00 on those four modes with a Wilson 95 percent CI
 lower bound of 0.51 to 0.57 depending on n. On SYC and SRC the
 judge ships 3/5 (0.60, CI [0.23, 0.88]). These are seed numbers; the
 same direction at n>=20 per cell would be a real claim, and we mark
-this evaluation as preliminary throughout. Table 2 carries all the
+this evaluation as preliminary throughout. An independent re-run of
+the same six hard suites on the same sonnet tier reproduced the
+per-clause judge specificity exactly on five of the six modes, with
+sycophancy falling by a single clean case (2/5 against 3/5); the
+pilot pattern is stable across draws, though the re-run leaves the
+per-cell n unchanged and so does not lift the claim past preliminary.
+Pooled across the six suites that re-run gives judge specificity
+23/28 and rule-ID attribution 32/37, against 10/28 and 31/50 for the
+monolithic-plus-clauses baseline, at recall 32/32 for both; the
+four-condition numbers with Wilson intervals are in
+`experiments/results-hard-6suite.md`. Table 2 carries all the
 numbers and replaces the per-condition bar chart we used in earlier
 drafts; at n=5 per clean cell a bar chart over-dignifies the data.
 
