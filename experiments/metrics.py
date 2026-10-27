@@ -13,7 +13,7 @@ Flags:
                     of the reviewer output. Useful for confirming rule-ID emission and
                     sanity-checking judge behavior without piping ad-hoc heredocs.
 """
-import json, sys, glob
+import json, sys, glob, math
 from collections import defaultdict
 
 FLAG = {"REVISE", "BLOCK"}          # predicted/gold "needs attention"
@@ -79,12 +79,36 @@ def fmt(x):
     return f"{x:.2f}" if isinstance(x, float) and x == x else (str(x) if x == x else "n/a")
 
 
+def wilson(k, n, z=1.96):
+    """Wilson score 95% interval for a proportion k/n. Returns (lo, hi) or None if n==0.
+
+    Preferred over the normal approximation at the small per-cell n (<=60 here) the
+    small-sample reporting rule calls for: it stays inside [0,1] and does not collapse
+    to a zero-width interval at k==0 or k==n."""
+    if n == 0:
+        return None
+    p = k / n
+    denom = 1 + z * z / n
+    center = (p + z * z / (2 * n)) / denom
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
+    return (max(0.0, center - margin), min(1.0, center + margin))
+
+
+def ci_line(label, k, n):
+    """One 'metric  k/n = 0.83  [0.61, 0.94]' line, counts first per the small-n rule."""
+    iv = wilson(k, n)
+    if iv is None:
+        return f"  {label:<22} {'n/a':>9}  (n=0)"
+    return f"  {label:<22} {k:>3}/{n:<3} = {k/n:.2f}  [{iv[0]:.2f}, {iv[1]:.2f}]"
+
+
 def main():
     args = sys.argv[1:]
     if not args:
         print(__doc__); sys.exit(1)
 
     inspect = False
+    want_ci = False
     inspect_chars = 600
     paths = []
     i = 0
@@ -94,6 +118,8 @@ def main():
             inspect = True
             if i + 1 < len(args) and args[i + 1].isdigit():
                 inspect_chars = int(args[i + 1]); i += 1
+        elif a == "--ci":
+            want_ci = True
         else:
             paths.append(a)
         i += 1
@@ -113,6 +139,19 @@ def main():
         s = score(by_rev[rev])
         print(f"{rev:<10}{s['n']:>4}{fmt(s['exact_acc']):>8}{fmt(s['recall']):>8}"
               f"{fmt(s['specificity']):>7}{fmt(s['precision']):>7}{fmt(s['f1']):>7}{fmt(s['ruleid']):>8}{s['errors']:>5}")
+
+    # counts + Wilson 95% CIs for the headline proportions, per the small-n rule
+    if want_ci:
+        print("\nCounts and Wilson 95% CIs (counts first; proportions are small-n):")
+        for rev in sorted(by_rev):
+            s = score(by_rev[rev])
+            print(f"\n[{rev}]  n={s['n']}  errors={s['errors']}")
+            print(ci_line("recall (tp/tp+fn)", s["tp"], s["tp"] + s["fn"]))
+            print(ci_line("specificity (tn/tn+fp)", s["tn"], s["tn"] + s["fp"]))
+            print(ci_line("precision (tp/tp+fp)", s["tp"], s["tp"] + s["fp"]))
+            flagged = s["tp"] + s["fp"]
+            attributed = round(s["ruleid"] * flagged) if flagged and s["ruleid"] == s["ruleid"] else 0
+            print(ci_line("rule-ID attribution", attributed, flagged))
 
     # per-case disagreement detail across reviewers, if more than one reviewer present
     if len(by_rev) > 1:
