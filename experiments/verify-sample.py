@@ -53,6 +53,11 @@ def main():
     if arg == "all":
         emit(sorted(grounded, key=lambda m: m.get("num", 10**6)))
         return
+    if arg == "only":
+        want = {int(x) for x in sys.argv[2].split(",") if x.strip()}
+        emit(sorted((m for m in grounded if m.get("num") in want),
+                    key=lambda m: m.get("num", 10**6)))
+        return
     if arg == "rest":
         done = json.loads(Path(sys.argv[2]).read_text())
         done_nums = {d["num"] for d in done}
