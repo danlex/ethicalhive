@@ -24,13 +24,15 @@ benchmarks. The nearest prior catalogue at the mechanism level evaluates 30 cogn
 source fabrication, scope creep, and misalignment in one structure. Building it produced two
 findings that stand on their own. Grounding by reading rather than by trusting the reference
 caught citation drift: of roughly fifty cited papers checked while grounding, twenty-nine did
-not support the mode they were attached to. An adversarial verification sweep over all 186
+not support their mode and were re-cited to a paper that does, and several further modes whose
+citation also failed on checking were reclassified as ungrounded rather than re-cited. An
+adversarial verification sweep over all 186
 grounded modes then found that even grounding done by reading mis-stated a specific figure in
 fourteen percent of modes. We also probe the catalogue's own structure: independent raters
 blind to the catalogue reproduce its category assignments at Cohen kappa 0.83 to 0.93, and
 twelve real documented incidents all map to a named mode, with one partial fit that points to
-a missing mode. We make no state-of-the-art claim. The contribution is a documented,
-provenance-checked, validated reference and an honest measurement of its own reliability.
+a missing mode. We make no state-of-the-art claim; the value is a documented,
+provenance-checked reference whose own reliability we measure rather than assume.
 
 ## 1. Introduction
 
@@ -51,9 +53,10 @@ raised. Here we focus on the catalogue itself: where it sits relative to existin
 how it is structured and grounded, what the grounding revealed about citation reliability, and
 whether its own structure holds up when an outsider tries to reproduce it.
 
-The contribution is deliberately not a new detector or a leaderboard result. It is a
-reference artifact: a map that other work can cite, reuse, and extend, with an honest account
-of how reliable the map is.
+We frame this as a reference artifact rather than a new detector or a leaderboard result: a
+map that other work can cite, reuse, and extend, with an honest account of how reliable it is.
+At this stage a reusable and checked map does more for the field than another point score on a
+single failure mode.
 
 ## 2. Why another catalogue
 
@@ -94,10 +97,10 @@ failure organised by ten cognitive systems, links them with an explicit graph, a
 tier of AI-native modes with no human analogue, and grounds every entry in a primary paper
 that was read. Against Malberg's 30 biases that is roughly a sevenfold extension in count, and
 it extends along axes Malberg does not cover, with a relation graph and a cognitive-science
-organising principle that no prior catalogue has. The contribution is therefore not a new risk
-category. It is a unifying, cognitively-grounded, relationally-structured map across failure
-families that are today catalogued in separate, mechanism-specific efforts. We claim that, and
-no more. The full positioning, with every source checked against its primary and
+organising principle that no prior catalogue has. What this yields is a single map that
+unifies failure families today catalogued in separate, mechanism-specific efforts, grounded in
+cognitive science and linked by an explicit graph. It is a map across existing categories, not
+a new risk category, and we claim that and no more. The full positioning, with every source checked against its primary and
 unverified fields flagged, is in `references/catalogue-prior-art.md`.
 
 ## 3. The catalogue: structure and construction
@@ -106,7 +109,8 @@ unverified fields flagged, is in `references/catalogue-prior-art.md`.
 
 Every mode carries exactly one of two labels. A human-paralleled mode names a construct from
 human psychology and its machine analogue: anchoring, confirmation bias, the illusory-truth
-effect, cognitive dissonance. These sit in ten groups organised loosely by brain system. An
+effect, cognitive dissonance, many of them from the heuristics-and-biases tradition [Tversky
+and Kahneman 1974]. These sit in ten groups organised loosely by brain system. An
 AI-native mode is a failure with no genuine human analogue, tied to the machine substrate:
 prompt injection, reward tampering, data contamination, emergent misalignment, backdoor
 triggers, unbounded consumption. A validator rejects any mode that claims neither label or
@@ -164,8 +168,10 @@ what lets an external citation to a specific mode remain valid across revisions.
 The catalogue began with citations attached to many modes by keyword match: a paper whose
 title contained the name of the behaviour. Reading those papers rather than trusting the
 titles showed that keyword match is unreliable. Of roughly fifty cited papers checked while
-grounding, twenty-nine did not support the mode they were attached to. The failures came in
-recognisable kinds.
+grounding, twenty-nine did not support their mode and were re-cited to a paper that does; a
+further handful failed on checking and led to their mode being reclassified as ungrounded
+rather than re-cited, so twenty-nine is the repaired subset, not the total that failed. The
+failures came in recognisable kinds.
 
 Some citations were simply about a different subject. A mode about a model over-trusting its
 own output cited a watermarking method; a mode about the model's own sense of agency cited a
@@ -205,7 +211,7 @@ The errors were instructive in their shape. In almost every flagged case the beh
 real and the paper was the right one; what drifted was a specific number, model name, or
 causal framing. A wrong city in a hallucination example; a compliance rate reported as twelve
 percent where the paper said fourteen; a conditional accuracy written as zero where the paper
-reported 2.6 percent; a reward figure whose observed and hidden labels were reversed. In two
+reported 2.6 percent; a reward figure whose observed and hidden labels were reversed. In six
 cases a quoted example did not appear in the cited paper at all and was rewritten to the
 paper's actual content or demoted to an untagged illustration. These are transcription-level
 over-reads, not invented findings, but they are exactly the errors a reader would never catch
@@ -309,11 +315,12 @@ than at an assertion.
 Alongside the catalogue we ran a small set of behavioural probes on current frontier model
 tiers (the Opus, Sonnet, and Haiku families), reusing classic integrity tests such as
 abstention on unanswerable questions and reversal of a correct answer under user pushback. On
-the clear-cut versions the current tiers pass outright. These runs are small and preliminary,
-a single blind run of a handful of clear-fact items per probe, so they are a floor result, not
-a leaderboard. With that caveat, the honest reading is not that these models are safe but that
-the measurable boundary has moved: the failures that remain live in ambiguous cases and under
-stronger pressure, which is where a useful probe now has to aim.
+the clear-cut versions the current tiers pass outright, but these runs are small and
+preliminary, a single blind run of a handful of clear-fact items per probe, so we treat them
+as a floor result rather than a leaderboard. The reading we draw from them is not that these
+models are safe but that the measurable boundary has moved, because the failures that remain
+live in ambiguous cases and under stronger pressure, which is where a useful probe now has to
+aim.
 
 ## 7. Limitations
 
@@ -357,13 +364,14 @@ reliable its grounding is.
 
 ## 9. Conclusion
 
-We built a grounded catalogue of 207 AI integrity failure modes, positioned it honestly
-against the taxonomies that already exist, and in grounding and validating it measured three
-things usually assumed away: how often a cited paper fails to support the claim attached to it,
-how often a claim grounded by reading still misquotes the source, and whether an outside rater
-recovers the same structure. The provenance findings were non-trivial and are now corrected and
-documented rather than latent; the reproducibility and coverage checks held, with the gaps they
-surfaced recorded as future work rather than hidden. We offer the catalogue as a shared map and
+The through-line of this project is that provenance in a fast-moving field cannot be taken on
+trust, and that checking it is cheap enough that leaving it unchecked is a choice rather than a
+necessity. Grounding 207 failure modes by reading showed how often a cited paper fails to
+support its claim and how often a claim grounded by reading still misquotes the source; probing
+the structure showed that an outside rater recovers it. The provenance findings were
+non-trivial and are now corrected and documented rather than latent; the reproducibility and
+coverage checks held, and the gaps they surfaced (a candidate missing mode, the need for human
+annotation) are named in Sections 5 and 7 rather than hidden. We offer the catalogue as a shared map and
 the findings as a small cautionary result about how provenance decays in a field that cites
 faster than it reads. The most honest thing the project did was audit its own grounding and
 report what it found.
@@ -387,8 +395,11 @@ the complete per-mode bibliography accompanies the resource.
 - Ji, Z., et al. (2022). Survey of Hallucination in Natural Language Generation. arXiv:2202.03629.
 - Ravichander, A., Ghela, S., Wadden, D., and Choi, Y. (2025). HALoGEN: Fantastic LLM
   Hallucinations and Where to Find Them. arXiv:2501.08292.
-- Multi-agent failure taxonomy. arXiv:2503.13657.
-- In-context scheming in frontier models. arXiv:2412.04984.
-- A survey of hallucination in large language models. arXiv:2510.06265.
+- Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R., and Hobbhahn, M. (2024).
+  Frontier Models are Capable of In-context Scheming. arXiv:2412.04984.
+- Multi-agent failure taxonomy. arXiv:2503.13657. (Crosswalk target; author list to be
+  completed from the primary before submission.)
+- A survey of hallucination in large language models. arXiv:2510.06265. (Crosswalk target;
+  author list to be completed from the primary before submission.)
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
