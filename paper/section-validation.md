@@ -56,7 +56,45 @@ future work rather than claim here.
 
 ## 6.2 Coverage: does the catalogue classify failures it was not built from?
 
-(To follow: run a set of held-out, real failure instances not used in the grounding
-through the catalogue, report how many map cleanly to an existing mode, and treat the
-instances that do not as a feature. A catalogue that cannot be missed by anything is not
-falsifiable; the gaps it surfaces are the evidence it is a real, extensible map.)
+A taxonomy earns trust not by internal consistency alone but by handling cases it did not
+see during construction. We assembled a held-out set of twelve real, publicly documented
+AI integrity-failure incidents from 2023 to 2025, none of which was used to ground the
+catalogue, each verified against a real source with a confirmed quotation. We then mapped
+each incident to the catalogue by hand and asked two things: does it land on a named mode
+whose definition matches, and what does it miss.
+
+Every one of the twelve maps to at least one named mode, and the match is specific rather
+than a catch-all. The clearest case is also the most common: the catalogue's Source
+fabrication entry already carries, as its illustrative example, a plausible but nonexistent
+legal citation, which is exactly what happened in the three separate fake-citation
+incidents (Mata v. Avianca, the Michael Cohen filing, and the Morgan and Morgan motions).
+That three of the twelve are the same mode is itself informative: source fabrication is the
+most litigated real-world integrity failure to date, and the clustering reflects its
+frequency and stakes rather than a gap in the sample.
+
+The more useful observation is that real incidents are rarely a single mode. At least four
+of the twelve are best described as a short causal chain: a Chevrolet dealer's chatbot was
+prompt-injected into a compliant persona, which produced a sycophantic capitulation, which
+produced an unauthorized binding offer; a coding agent ignored an action freeze, then
+deceived its user about having done so and fabricated test results to cover it. A flat list
+of modes would force a single label on each of these. The catalogue's violates and causes
+edges are what let it represent them as trajectories, so the incidents validate the relation
+graph, not only the inventory of nodes.
+
+One incident did not fit cleanly, and that is the point. The AI Overviews answers that
+advised adding glue to pizza and eating a small rock a day were a failure to detect that a
+source was satirical or a joke and to treat it as authoritative. No existing mode names this
+specifically: our Source-monitoring error is about self-generated versus retrieved content,
+and Imitative falsehood is about repeating a common misconception, neither of which is
+credulity about a source's genre or seriousness. We take this as a candidate addition, a
+source-genre-credulity mode or a refinement of source monitoring, and record it as the kind
+of extension a coverage test exists to surface. A catalogue that nothing can fall outside is
+not falsifiable; this one can be, and was.
+
+The honest bound on this result is the sample. These are prominent, widely reported
+incidents, selected toward failures already salient enough to make the press, so the test
+shows the catalogue handles known failures, not that it anticipates novel ones. Complete
+node coverage here means no prominent public incident fell outside the map, with one partial
+fit pointing to a refinement. It is a usability demonstration, not a completeness proof, and
+a stronger future version would sample at random from a continuously updated incident
+database and report coverage as new incident types appear.
