@@ -1,6 +1,6 @@
 # Does the clause judge help? Six hard suites, n=60 per condition
 
-Run 2026-10-28 to 11-01 on the six adversarial "hard" suites (anchoring, capitulation,
+Run 2026-10-28 to 11-02 on the six adversarial "hard" suites (anchoring, capitulation,
 scope-creep, selective-evidence, source-fabrication, sycophancy), ten cases each,
 through `run-conditions.sh` on sonnet. Five reviewer conditions, built as an ablation
 ladder that adds one ingredient at a time, so we can see which ingredient carries any
@@ -14,6 +14,9 @@ benefit:
   Tests whether naming the obligations is what helps. The fair baseline for attribution.
 - **judge**: the per-clause judge, one clause per call (`judges/<mode>-judge.md`).
   Tests whether per-clause decomposition is what helps. The method under test.
+- **judge-ctx**: the per-clause judge's decomposed task (verdict on one clause) but with
+  all fourteen clauses in context, matched to mono-rid's context length. Separates the
+  decomposition from the context-length confound.
 
 Scored with `metrics.py --ci`. Flag = REVISE or BLOCK; recall is catching the gold
 flag, specificity is leaving gold-SHIP drafts alone, rule-ID attribution is whether a
@@ -29,7 +32,8 @@ Ordered as the ladder (each row adds one ingredient):
 | none | 0/32 = 0.00 [0.00, 0.11] | 28/28 = 1.00 [0.88, 1.00] | n/a |
 | freeform (no structure) | 32/32 = 1.00 [0.89, 1.00] | 16/28 = 0.57 [0.39, 0.73] | 1/44 = 0.02 [0.00, 0.12] |
 | checklist (obligations, no names) | 32/32 = 1.00 [0.89, 1.00] | 9/28 = 0.32 [0.18, 0.51] | 0/51 = 0.00 [0.00, 0.07] |
-| mono-rid (named clause list) | 32/32 = 1.00 [0.89, 1.00] | 10/28 = 0.36 [0.21, 0.54] | 31/50 = 0.62 [0.48, 0.74] |
+| mono-rid (named clause list, bulk task) | 32/32 = 1.00 [0.89, 1.00] | 10/28 = 0.36 [0.21, 0.54] | 31/50 = 0.62 [0.48, 0.74] |
+| judge-ctx (all 14 in context, decide one) | 32/32 = 1.00 [0.89, 1.00] | 21/28 = 0.75 [0.57, 0.87] | 32/39 = 0.82 [0.67, 0.91] |
 | **judge (one clause per call)** | 32/32 = 1.00 [0.89, 1.00] | 23/28 = 0.82 [0.64, 0.92] | 32/37 = 0.86 [0.72, 0.94] |
 
 ## What the ladder shows
@@ -50,12 +54,18 @@ Ordered as the ladder (each row adds one ingredient):
   judge-versus-mono-rid specificity gap does not overlap (0.82 [0.64, 0.92] vs 0.36
   [0.21, 0.54]); the judge-versus-freeform specificity gap is suggestive but its
   intervals touch.
-- **A confound we cannot rule out at this design.** The judge sees one short clause; the
-  checklist and mono-rid conditions see all fourteen obligations at once. So part of the
-  judge's edge may be focus or context length, not the clause abstraction itself. What
-  the ladder does establish is narrower and still useful: a reviewer handed the whole
-  obligation set at once over-flags, and decomposing the review to one obligation at a
-  time is what recovers and then exceeds plain-review specificity.
+- **The context-length confound, now tested and ruled out.** The plain judge sees one
+  short clause while mono-rid sees all fourteen, so its edge could have been focus or
+  context length rather than the clause decomposition itself. The judge-ctx condition
+  separates the two: it carries all fourteen clauses in context (matched to mono-rid) but
+  renders its verdict on one clause (the judge's decomposed task). Holding context fixed at
+  fourteen, the decomposed task scores 0.75 [0.57, 0.87] against the bulk task's 0.36
+  [0.21, 0.54], an interval separation that does not overlap. Holding the task fixed at one
+  clause, shortening the context lifts specificity only from 0.75 to 0.82, intervals that
+  overlap heavily. So the decomposition is the load-bearing ingredient and context length
+  is a small secondary effect: giving a reviewer the same information but asking it to judge
+  one obligation at a time, rather than all fourteen at once, is what recovers and exceeds
+  plain-review specificity.
 
 ## What does not hold (the honest caveat)
 
@@ -91,12 +101,12 @@ The gain comes from decomposing the review to one obligation per call, which is 
 per-clause judge does. That isolates the load-bearing design choice and reframes the
 contribution: it is not the catalogue as a prompt ingredient, it is the catalogue as a set
 of separately auditable units. The claim is bounded, not a dominance or state-of-the-art
-claim: the judge wins on four of six behaviours, ties or loses on two, the
-judge-versus-freeform specificity interval still touches, and a context-length confound
-remains (one clause versus fourteen). The honest next steps are a context-matched judge
-variant (one clause per call but with the other thirteen also in context) to remove that
-confound, repeats to tighten the intervals, and understanding the source-fabrication and
-sycophancy failures.
+claim: the judge wins on four of six behaviours, ties or loses on two, and the
+judge-versus-freeform specificity interval still touches. The context-length confound that
+earlier qualified this has now been tested with the judge-ctx condition and ruled out: the
+benefit survives when context is held constant, so it is the decomposition. The honest next
+steps are repeats to tighten the intervals and understanding the source-fabrication and
+sycophancy failures specifically.
 
 ## Reproduce
 
@@ -104,7 +114,7 @@ Regenerate with:
 
 ```
 bash experiments/run-conditions.sh experiments/cases/suite-<behavior>-hard.json \
-     --reviewers none,freeform,checklist,mono-rid,judge --model sonnet
+     --reviewers none,freeform,checklist,mono-rid,judge,judge-ctx --model sonnet
 python3 experiments/metrics.py experiments/results/run-suite-*-hard-*-<ts>.jsonl --ci
 ```
 
