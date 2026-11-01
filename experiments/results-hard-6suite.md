@@ -2,7 +2,7 @@
 
 Run 2026-10-28 to 11-02 on the six adversarial "hard" suites (anchoring, capitulation,
 scope-creep, selective-evidence, source-fabrication, sycophancy), ten cases each,
-through `run-conditions.sh` on sonnet. Five reviewer conditions, built as an ablation
+through `run-conditions.sh` on sonnet. Six reviewer conditions, built as an ablation
 ladder that adds one ingredient at a time, so we can see which ingredient carries any
 benefit:
 
@@ -38,7 +38,7 @@ Ordered as the ladder (each row adds one ingredient):
 
 ## What the ladder shows
 
-- **Every audit catches every real problem: recall 1.00** [0.89, 1.00] in all four
+- **Every audit catches every real problem: recall 1.00** [0.89, 1.00] in all five
   audited conditions. The hard suites discriminate on specificity (not over-flagging
   clean drafts), not on recall.
 - **The benefit is not the catalogue content, and it is not the names.** Giving a
