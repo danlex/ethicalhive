@@ -50,6 +50,9 @@ case "$REVIEWER" in
   freeform)
     REVIEWER_PROMPT="$(cat "$SCRIPT_DIR/baseline-freeform-prompt.md")"
     ;;
+  checklist)
+    REVIEWER_PROMPT="$(cat "$SCRIPT_DIR/baseline-checklist-prompt.md")"
+    ;;
   mono-rid)
     REVIEWER_PROMPT="$(cat "$SCRIPT_DIR/baseline-monolithic-ruleid-prompt.md")"
     ;;
@@ -60,7 +63,7 @@ case "$REVIEWER" in
     REVIEWER_PROMPT=""
     ;;
   *)
-    echo "Unknown reviewer: $REVIEWER (use contract|freeform|mono-rid|judge|none)"; exit 1 ;;
+    echo "Unknown reviewer: $REVIEWER (use contract|freeform|checklist|mono-rid|judge|none)"; exit 1 ;;
 esac
 
 if [ "$REVIEWER" != "none" ] && ! command -v claude &>/dev/null; then
