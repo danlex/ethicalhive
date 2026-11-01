@@ -28,11 +28,12 @@ not support their mode and were re-cited to a paper that does, and several furth
 citation also failed on checking were reclassified as ungrounded rather than re-cited. An
 adversarial verification sweep over all 186
 grounded modes then found that even grounding done by reading mis-stated a specific figure in
-fourteen percent of modes. We also probe the catalogue's own structure: independent raters
-blind to the catalogue reproduce its category assignments at Cohen kappa 0.83 to 0.93, and
-twelve real documented incidents all map to a named mode, with one partial fit that points to
-a missing mode. We make no state-of-the-art claim; the value is a documented,
-provenance-checked reference whose own reliability we measure rather than assume.
+fourteen percent of modes. We also probe the catalogue's own structure: independent model
+raters blind to the catalogue recover its category assignments at Cohen kappa 0.83 to 0.93 (a
+model-based codebook check, not human annotation), and twelve documented incidents we selected
+each map to a named mode, with one partial fit that points to a missing mode. We make no
+state-of-the-art claim; the value is a documented, provenance-checked reference whose
+reliability we measure rather than assume, with the measurements' own limits stated.
 
 ## 1. Introduction
 
@@ -68,10 +69,11 @@ The first is the societal and governance layer. The MIT AI Risk Repository [Slat
 2024] is the most comprehensive example: a meta-review of 74 frameworks containing 1,725
 distinct risks, organised by who causes a risk and in what domain. The DeepMind risk taxonomy
 [Weidinger et al. 2021], the NIST AI Risk Management Framework [NIST 2023], and the AI
-Incident Database live here too. These catalogue harm outcomes, trustworthiness properties,
-and real-world incidents. They treat the model's reasoning as a black box that produces a
-harm, which is right for governance but does not decompose the reasoning step into named,
-mechanism-level ways a model arrives at a confident wrong answer.
+Incident Database live here too. The MIT repository is more than a flat list of harms: it
+includes a causal taxonomy (by entity, intent, and timing) and covers AI-caused as well as
+human-caused failures. What it and its neighbours share is the altitude: they organise risks
+and outcomes at the level of governance, not the reasoning step, and do not decompose that step
+into named, mechanism-level ways a model arrives at a confident wrong answer.
 
 The second is the adversarial and security layer. The OWASP Top 10 for LLM Applications
 [OWASP 2025], MITRE ATLAS, and similar efforts catalogue what an attacker does to a system:
@@ -94,9 +96,13 @@ The slice none of them occupies, taken together, is the integration. This catalo
 207 integrity failure modes, frames most as parallels to a specific named human cognitive
 failure organised by ten cognitive systems, links them with an explicit graph, adds a second
 tier of AI-native modes with no human analogue, and grounds every entry in a primary paper
-that was read. Against Malberg's 30 biases that is roughly a sevenfold extension in count, and
-it extends along axes Malberg does not cover, with a relation graph and a cognitive-science
-organising principle that no prior catalogue has. What this yields is a single map that
+that was read. It is broader in coverage than Malberg's 30 biases and extends along axes
+Malberg does not cover (memory, reasoning, output-integrity, and AI-native failures), with a
+relation graph and a cognitive-science organising principle no prior catalogue has. Breadth of
+coverage is not itself a scientific result: more labels do not establish more distinct
+constructs, and Malberg pairs its 30 biases with 30,000 tests across 20 models, which this
+catalogue does not match. The claim is one of integration and coverage, not of superior
+measurement. What this yields is a single map that
 unifies failure families today catalogued in separate, mechanism-specific efforts, grounded in
 cognitive science and linked by an explicit graph. It is a map across existing categories, not
 a new risk category, and we claim that and no more. The full positioning, with every source checked against its primary and
@@ -257,13 +263,17 @@ real and the paper was the right one; what drifted was a specific number, model 
 causal framing. A wrong city in a hallucination example; a compliance rate reported as twelve
 percent where the paper said fourteen; a conditional accuracy written as zero where the paper
 reported 2.6 percent; a reward figure whose observed and hidden labels were reversed. In six
-cases a quoted example did not appear in the cited paper at all and was rewritten to the
-paper's actual content or demoted to an untagged illustration. These are transcription-level
-over-reads, not invented findings, but they are exactly the errors a reader would never catch
-without re-reading the source. All sixty-eight flagged modes were corrected in the same pass.
-Because the sweep covers every grounded mode, these are population figures for this artifact,
-not a sampled estimate, and the hard-error rate held roughly steady across the four batches
-(eighteen, fifteen, seven, and eighteen percent).
+cases a quoted example did not appear in the cited paper at all; we rewrote these to the
+paper's actual content or demoted them to untagged illustrations. Most of the flagged errors
+are transcription-level over-reads rather than invented findings, but these six are more
+serious, and we do not claim to know how each arose; what they share is that a reader would
+not catch them without re-reading the source. All sixty-eight flagged modes were corrected in
+the same pass. Because the sweep covers every grounded mode, these are population figures for
+this artifact rather than a sampled estimate, and the hard-error rate held roughly steady
+across the four batches (eighteen, fifteen, seven, and eighteen percent). One limit matters:
+this is the error a single adversarial re-read caught and we then corrected, not a guarantee
+about the corrected catalogue; a residual error rate would need an independent recheck of the
+corrected version.
 
 ### 4.3 Why the two findings matter together
 
@@ -300,10 +310,11 @@ kappa 0.93. Chance agreement across eleven balanced categories is low (expected 
 that the disagreements are localised rather than scattered: three modes account for most of
 them and both raters miss the same ones. Cognitive miserliness, filed under Reasoning and read
 as Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention;
-and scope creep, filed in the AI-native tier and read as Self and agency. These are genuine
-boundary cases, not errors. A mode on the seam between two systems is a fact about cognition,
-and the value of the probe is that it names which seams are live. These three are the clearest
-candidates for a secondary-category label in a future revision.
+and scope creep, filed in the AI-native tier and read as Self and agency. These read as
+boundary cases rather than errors: each mode sits on the seam between two systems. We do not
+claim this reveals something about cognition; the equally likely reading is that our definition
+is ambiguous at that seam. Either way, the value of the probe is that it names which seams are
+live, and these three are the clearest candidates for a secondary-category label.
 
 ### 5.2 Coverage: does the catalogue classify failures it was not built from?
 
@@ -326,7 +337,9 @@ into a compliant persona, which produced a sycophantic capitulation, which produ
 unauthorised binding offer; a coding agent ignored an action freeze, then deceived its user
 about having done so and fabricated test results to cover it. A flat list would force a single
 label on each. The relation graph is what lets the catalogue represent them as trajectories, so
-the incidents validate the graph, not only the inventory of nodes.
+the incidents illustrate how the graph can describe a failure as a chain rather than as a
+single label. They do not establish that the specific edges are correct; that would need a
+test the catalogue does not yet have.
 
 One incident did not fit cleanly, and that is the point. The AI Overviews answers that advised
 adding glue to pizza and eating a small rock a day were a failure to detect that a source was
@@ -359,10 +372,15 @@ This is a resource, not a result about model capability.
 
 The grounding is single-reader, and the validation raters are language models, not humans.
 Both the fourteen-percent hard-error rate and the category-reproducibility kappas are
-single-pass, single-rater-type figures. The kappas are a floor established by a proxy; human
-two-annotator adjudication over a larger sample remains required before the catalogue is called
-validated, and the coverage test samples prominent incidents, so it demonstrates usability on
-known failures rather than coverage of novel ones.
+single-pass, single-rater-type figures. The kappas come from a model-based codebook check, not
+human agreement: they show that the category assignments can be recovered from the written
+definitions, not that the categories carve the space correctly, and shared assumptions between
+the raters and the author could inflate the agreement. Human two-annotator adjudication over a
+larger, independently collected sample is still required before the structure can be called
+validated. The coverage test samples prominent incidents, so it demonstrates usability on
+known failures rather than coverage of novel ones, and "a mode fits" is a lenient bar that a
+broad label can pass; a stronger test would use an externally sampled incident set and score
+specificity and missing modes.
 
 Twenty-one modes are ungrounded. They fall into honest categories, all recorded: behaviours
 that current models tested and did not show (sunk-cost fallacy, moral licensing); analogies for
@@ -398,11 +416,12 @@ reliable its grounding is.
 The through-line of this project is that provenance in a fast-moving field cannot be taken on
 trust, and that checking it is cheap enough that leaving it unchecked is a choice rather than a
 necessity. Grounding 207 failure modes by reading showed how often a cited paper fails to
-support its claim and how often a claim grounded by reading still misquotes the source; probing
-the structure showed that an outside rater recovers it. The provenance findings were
-non-trivial and are now corrected and documented rather than latent; the reproducibility and
-coverage checks held, and the gaps they surfaced (a candidate missing mode, the need for human
-annotation) are named in Sections 5 and 7 rather than hidden. We offer the catalogue as a shared map and
+support its claim and how often a claim grounded by reading still misquotes the source; a
+model-based codebook check suggested the category assignments can be recovered from their
+definitions. The provenance findings were non-trivial and are now corrected and documented
+rather than latent; the reproducibility and coverage checks are preliminary and their limits
+(a candidate missing mode, the need for human annotation, the lenient coverage bar) are named
+in Sections 5 and 7 rather than hidden. We offer the catalogue as a shared map and
 the findings as a small cautionary result about how provenance decays in a field that cites
 faster than it reads. The most honest thing the project did was audit its own grounding and
 report what it found.
