@@ -44,6 +44,15 @@ quietly bend a rule for what it decides is a good cause. These are not one failu
 and they have been studied unevenly, under inconsistent names, across cognitive science,
 machine learning, and AI safety.
 
+The gap matters more as AI produces results faster than people can check them. When nine
+mathematicians were needed to confirm whether a model had refuted an eighty-year-old geometry
+conjecture, the lesson, in the words of Shafto, Ono, and Kominers [Shafto et al. 2026], was
+that "discovery is nonstop, and human confirmation is now what is scarce." Formal mathematics
+answers this with proof checkers. The softer integrity failures this catalogue names, a
+confident answer that is wrong, a citation that does not resolve, a constraint quietly dropped,
+have no proof checker, so a named, grounded catalogue and a human-in-the-loop audit are the
+verification infrastructure available for that layer.
+
 This paper describes a resource that names them in one place and ties each name to evidence.
 The organising idea, taken from a companion method paper on clause-grounded advisory
 auditing, is that integrity is a property of a relationship rather than of a model in
@@ -454,6 +463,8 @@ the complete per-mode bibliography accompanies the resource.
   Survey. arXiv:2510.06265.
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
+- Shafto, P., Ono, K., and Kominers, S. D. (2026). What Happens When the World is Run on Code
+  No One Understands? TIME, 20 August 2026.
 
 ## Appendix A. Worked catalogue entries
 
