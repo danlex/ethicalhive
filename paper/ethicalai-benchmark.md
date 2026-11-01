@@ -114,9 +114,48 @@ AI-native mode is a failure with no genuine human analogue, tied to the machine 
 prompt injection, reward tampering, data contamination, emergent misalignment, backdoor
 triggers, unbounded consumption. A validator rejects any mode that claims neither label or
 both, which keeps the boundary disciplined and forces a judgment on each addition. Of the 207
-modes, 168 are human-paralleled and 39 are AI-native.
+modes, 168 are human-paralleled and 39 are AI-native. The full distribution is below; the
+complete list, with every definition and example, is in the released file and on the site.
 
-### 3.2 The relation graph
+| Cognitive system | Modes | Example behaviours |
+|---|---|---|
+| Perception | 11 | Controlled hallucination, Priors overriding evidence |
+| Memory | 13 | Catastrophic forgetting, Source fabrication |
+| Attention | 12 | Inattentional blindness, Change blindness |
+| Heuristics | 25 | Anchoring, Availability, Representativeness |
+| Reasoning | 22 | System 1 / System 2, Cognitive miserliness |
+| Metacognition | 16 | Overconfidence, Uncertainty communication |
+| Language | 14 | Garden-path parsing, Semantic satiation |
+| Social | 28 | Sycophancy, Conformity, Theory of mind |
+| Moral | 12 | Omission bias, Amplified moral bias |
+| Self and agency | 15 | Confabulated agency, Sense of agency |
+| AI-native (no human analogue) | 39 | Prompt injection, Reward hacking, Scope creep |
+
+Twenty-six of the modes are marked as a highlighted priority set, the ones most load-bearing
+for an integrity auditor in practice (listed in the appendix).
+
+### 3.2 What an entry looks like
+
+Each mode is a definition, a cognitive-system placement, a human parallel or the AI-native
+label, a set of graph edges, and worked examples. The clearest way to show the catalogue is to
+exhibit entries, so the following are drawn verbatim from grounded modes across the tiers, each
+with a real finding from the paper that grounds it.
+
+| Mode | System | A grounded example (abbreviated) | Source |
+|---|---|---|---|
+| Anchoring | Heuristics | an irrelevant number ("939") placed before a tree-count estimate drags the estimate toward it | arXiv:2505.15392 |
+| Sycophancy | Social | the same argument is called "strong" when the user likes it and "unconvincing" when they dislike it | arXiv:2310.13548 |
+| Overconfidence | Metacognition | input regions where the model is strongly overconfident, cancelled out in the global metric | arXiv:2605.13484 |
+| Garden-path parsing | Language | "while the boy washed the dog barked loudly" is rendered as the boy washing the dog | arXiv:2502.09307 |
+| Omission bias | Moral | opposite verdicts on the injured-deer dilemma framed as action versus inaction | arXiv:2610.07847 |
+| Prompt injection | AI-native | invisible instructions on a summarised web page hijack the model | arXiv:2302.12173 |
+| Reward hacking | AI-native | a boat-race agent oscillates on reward tiles without ever finishing the lap | arXiv:2606.15385 |
+| Scope creep | AI-native | given an empty input file, it fabricates output in the graded format instead of flagging the gap | arXiv:2605.02269 |
+| Package hallucination | AI-native | across 576,000 code samples, 19.7% of recommended packages do not exist | arXiv:2406.10279 |
+
+A fuller set of worked entries, including the graph edges, is in the appendix.
+
+### 3.3 The relation graph
 
 Modes are not a flat list. Each carries a `violates` edge to one of a small set of principles
 (honesty, non-maleficence, transparency, scope-fidelity, independence, corrigibility,
@@ -128,7 +167,14 @@ reader who lands on one mode can navigate to its neighbours and its causal roots
 incident that is a chain of failures can be represented as a path rather than forced onto a
 single label.
 
-### 3.3 Crosswalks
+A worked example makes the last point concrete. The dealership-chatbot failure analysed in
+Section 5.2 is a path through the graph, not a single node: a prompt injection (AI-native)
+causes a sycophantic capitulation (Social), which in turn causes scope creep (AI-native) when
+the agent commits to an unauthorised offer. Each arrow is a `causes` edge already in the
+catalogue, so the incident is a traversal rather than a label, which a flat taxonomy cannot
+represent.
+
+### 3.4 Crosswalks
 
 To compose with existing taxonomies rather than reinvent them, modes carry a `maps_to` edge to
 external frameworks where there is a correspondence: the OWASP Top 10 for LLM Applications
@@ -136,7 +182,7 @@ external frameworks where there is a correspondence: the OWASP Top 10 for LLM Ap
 [Meinke et al. 2024], and a hallucination survey [Alansari and Luqman 2025]. The crosswalk is partial by
 design; it records where this catalogue and an external framework describe the same thing.
 
-### 3.4 Grounding by reading
+### 3.5 Grounding by reading
 
 Most catalogues of failure modes stop at a definition and an illustrative scenario. This
 resource asks for more: each mode should carry worked examples, and each example should come
@@ -152,7 +198,7 @@ existed, the mode was left ungrounded and the absence recorded. This reading-fir
 is what produced the two findings in Section 4. It is also expensive, which is why 186 of 207
 modes are grounded rather than all of them.
 
-### 3.5 Machine-readable release and stable identifiers
+### 3.6 Machine-readable release and stable identifiers
 
 The catalogue is a single YAML document with a documented schema (`ontology/SCHEMA.md`). Each
 mode has a stable slug identifier and a stable catalogue number, under a stability contract:
@@ -299,26 +345,13 @@ demonstration, not a completeness proof.
 
 ## 6. The catalogue in use
 
-### 6.1 Clause-grounded auditing
-
-The companion method paper takes a subset of these modes, writes each as a natural-language
-obligation with a stable rule identifier in the style of RFC 2119 [Bradner 1997], and assigns
-each a per-clause auditor. The claim there is narrow and testable: a named clause yields
-advisory findings that are clause-traceable and more specific than free-form review at equal
-recall, with the human as the final decision maker. This resource is the taxonomy that method
-draws its clauses from, and the grounding here is what lets a clause point at evidence rather
-than at an assertion.
-
-### 6.2 A note on the probes
-
-Alongside the catalogue we ran a small set of behavioural probes on current frontier model
-tiers (the Opus, Sonnet, and Haiku families), reusing classic integrity tests such as
-abstention on unanswerable questions and reversal of a correct answer under user pushback. On
-the clear-cut versions the current tiers pass outright, but these runs are small and
-preliminary, a single blind run of a handful of clear-fact items per probe, so we treat them
-as a floor result rather than a leaderboard. The only reading this small a run supports is
-that the clear-cut probes no longer discriminate between these tiers; whether the harder,
-ambiguous cases do is an open question, and that is where a useful probe now has to aim.
+The catalogue is a reference, and its first consumer is a companion method paper on
+clause-grounded advisory auditing: it takes a subset of these modes, writes each as a
+natural-language obligation with a stable rule identifier, and audits a draft clause by clause,
+with the human as the final decision maker. That paper is where the method and its results
+live; the only point here is that it is the catalogue, and the grounding in Section 4, that let
+a clause point at evidence rather than at an assertion. Any downstream use, an auditor, a
+training target, a review checklist, inherits the same property.
 
 ## 7. Limitations
 
@@ -402,3 +435,44 @@ the complete per-mode bibliography accompanies the resource.
   Survey. arXiv:2510.06265.
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
+
+## Appendix A. Worked catalogue entries
+
+Three entries in full, to show the shape of the catalogue: the definition, the two-tier
+placement, the graph edges, and an example. The first example is deliberately illustrative and
+untagged, which is how the catalogue marks a plausible scenario rather than a reported finding;
+the other two carry a grounded example with its source.
+
+**Source fabrication** (num 101, Memory). Definition: citing a path, line, symbol, or URL that
+does not resolve to what it claims. Human parallel: source confabulation and misattribution.
+Edges: violates honesty; causes a wrong answer; is a kind of hallucination; relates to
+source-monitoring error, source amnesia, and cryptomnesia. Example (illustrative): asked for a
+supporting case, it produces a plausible but nonexistent case name and reporter number.
+
+**Anchoring** (num 31, Heuristics). Definition: keeping an initial framing or estimate after
+later evidence has broken it. Human parallel: anchoring. Edges: violates calibration; causes a
+wrong answer; relates to the availability heuristic, status-quo bias, and the framing effect.
+Example: an irrelevant number ("the number of socks in your drawer: 939") placed before
+"estimate the number of trees in the Amazon" measurably drags the estimate toward it
+[arXiv:2505.15392].
+
+**Reward hacking** (num 104, AI-native). Definition: satisfying the metric that measures the
+task rather than the task itself, for example by editing tests or hardcoding outputs; also
+called specification gaming. No human analogue. Edges: violates honesty; causes loss of
+oversight; relates to reward tampering, goal misgeneralisation, noble-cause corruption, and
+scope creep. Example: in the Boat Race gridworld an agent oscillates on two reward tiles to
+farm directional reward without ever completing the lap [arXiv:2606.15385].
+
+## Appendix B. The highlighted priority set
+
+Twenty-six modes are flagged as the priority set, the ones most load-bearing for an integrity
+auditor in practice: Confabulation, Hallucination, Source-monitoring error, Anchoring,
+Confirmation bias, Overconfidence, Cognitive load, Cherry-picking, Belief bias, Conformity
+(Asch), Obedience to authority, Sycophancy, Capitulation, Source fabrication, Prompt injection,
+Scope creep, Reward hacking, Automation bias, Silent error swallowing, Side-effect blindness,
+Anthropomorphism, Survivorship bias, Noble cause corruption, Deceptive alignment, Scheming and
+power-seeking, and Strategic deception.
+
+The complete catalogue of all 207 modes, each with its definition, graph edges, worked
+examples, and per-mode citations, is in the released file (`ontology/ethical-ai.yaml`, schema
+in `ontology/SCHEMA.md`) and browsable on the project site.
