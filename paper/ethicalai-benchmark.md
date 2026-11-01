@@ -9,9 +9,9 @@ against their primary abstracts.
 
 ## Abstract
 
-This paper presents a catalogue of 207 ways an AI system can fail at integrity. Most modes
-are framed as parallels to a named human cognitive failure and organised by ten cognitive
-systems; a second tier of 39 AI-native modes has no human analogue. The modes are linked by
+We catalogue 207 ways an AI system can fail at integrity. Most modes are framed as parallels
+to a named human cognitive failure and organised by ten cognitive systems; a second tier of 39
+AI-native modes has no human analogue. The modes are linked by
 a relation graph of which mode violates which obligation, causes which harm, and relates to
 which neighbour, and each grounded mode is tied to a primary paper that was read rather than
 keyword-matched. A hundred and eighty-six of the 207 are grounded this way; the remaining
@@ -54,9 +54,8 @@ how it is structured and grounded, what the grounding revealed about citation re
 whether its own structure holds up when an outsider tries to reproduce it.
 
 We frame this as a reference artifact rather than a new detector or a leaderboard result: a
-map that other work can cite, reuse, and extend, with an honest account of how reliable it is.
-At this stage a reusable and checked map does more for the field than another point score on a
-single failure mode.
+map that other work can cite, reuse, and extend. At this stage a reusable and checked map does
+more for the field than another point score on a single failure mode.
 
 ## 2. Why another catalogue
 
@@ -133,8 +132,8 @@ single label.
 
 To compose with existing taxonomies rather than reinvent them, modes carry a `maps_to` edge to
 external frameworks where there is a correspondence: the OWASP Top 10 for LLM Applications
-[OWASP 2025], a multi-agent failure taxonomy [arXiv:2503.13657], an in-context scheming study
-[arXiv:2412.04984], and a hallucination survey [arXiv:2510.06265]. The crosswalk is partial by
+[OWASP 2025], a multi-agent failure taxonomy [Cemri et al. 2025], an in-context scheming study
+[Meinke et al. 2024], and a hallucination survey [Alansari and Luqman 2025]. The crosswalk is partial by
 design; it records where this catalogue and an external framework describe the same thing.
 
 ### 3.4 Grounding by reading
@@ -317,10 +316,9 @@ tiers (the Opus, Sonnet, and Haiku families), reusing classic integrity tests su
 abstention on unanswerable questions and reversal of a correct answer under user pushback. On
 the clear-cut versions the current tiers pass outright, but these runs are small and
 preliminary, a single blind run of a handful of clear-fact items per probe, so we treat them
-as a floor result rather than a leaderboard. The reading we draw from them is not that these
-models are safe but that the measurable boundary has moved, because the failures that remain
-live in ambiguous cases and under stronger pressure, which is where a useful probe now has to
-aim.
+as a floor result rather than a leaderboard. The only reading this small a run supports is
+that the clear-cut probes no longer discriminate between these tiers; whether the harder,
+ambiguous cases do is an open question, and that is where a useful probe now has to aim.
 
 ## 7. Limitations
 
@@ -397,9 +395,10 @@ the complete per-mode bibliography accompanies the resource.
   Hallucinations and Where to Find Them. arXiv:2501.08292.
 - Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R., and Hobbhahn, M. (2024).
   Frontier Models are Capable of In-context Scheming. arXiv:2412.04984.
-- Multi-agent failure taxonomy. arXiv:2503.13657. (Crosswalk target; author list to be
-  completed from the primary before submission.)
-- A survey of hallucination in large language models. arXiv:2510.06265. (Crosswalk target;
-  author list to be completed from the primary before submission.)
+- Cemri, M., Pan, M. Z., Yang, S., Agrawal, L. A., Chopra, B., Tiwari, R., Keutzer, K.,
+  Parameswaran, A., Klein, D., Ramchandran, K., Zaharia, M., Gonzalez, J. E., and Stoica, I.
+  (2025). Why Do Multi-Agent LLM Systems Fail? arXiv:2503.13657.
+- Alansari, A., and Luqman, H. (2025). Large Language Models Hallucination: A Comprehensive
+  Survey. arXiv:2510.06265.
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
