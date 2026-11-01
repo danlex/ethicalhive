@@ -1,254 +1,394 @@
-# EthicalAI Benchmark: A Grounded Ontology of AI Integrity Failure Modes, and What Grounding It Revealed
+# EthicalAI: A Grounded Catalogue of AI Integrity Failure Modes, and What Grounding It Revealed
 
 Alexandru DAN
 
-Status: working draft. Companion resource to the clause-grounded advisory auditing
-paper (`paper/draft.md`). Not for submission without a full verification sweep.
+Status: working draft, version 1.0. Companion resource to the clause-grounded advisory
+auditing paper (`paper/draft.md`). Positioning and validation sources are recorded in
+`references/catalogue-prior-art.md`; the two load-bearing comparison figures were verified
+against their primary abstracts.
 
 ## Abstract
 
-This paper presents an ontology of 207 ways an AI system can fail at integrity. Each
-mode is defined in plain language, placed in a relation graph, cross-walked to existing
-safety frameworks, and, where the evidence allows, illustrated with three worked
-examples taken from a paper we read rather than cited at second hand. A hundred and
-eighty-six of the 207 modes are grounded this way; the rest are documented as having
-no supporting paper that we could find.
+This paper presents a catalogue of 207 ways an AI system can fail at integrity. Most modes
+are framed as parallels to a named human cognitive failure and organised by ten cognitive
+systems; a second tier of 39 AI-native modes has no human analogue. The modes are linked by
+a relation graph of which mode violates which obligation, causes which harm, and relates to
+which neighbour, and each grounded mode is tied to a primary paper that was read rather than
+keyword-matched. A hundred and eighty-six of the 207 are grounded this way; the remaining
+twenty-one are documented as having no supporting paper we could find.
 
-Building the resource produced two results that stand on their own. First, grounding
-by reading rather than by trusting the reference caught a non-trivial rate of citation
-drift: of the roughly fifty cited papers we checked while grounding, twenty-nine did
-not support the mode they were attached to and were replaced with a paper that does.
-Second, an adversarial re-check of a fifty-mode sample found that even our own
-grounding, done by reading the source, mis-stated a specific figure in about eighteen
-percent of modes. Both numbers are small-sample and we report them as such, but they
-quantify a failure that is usually left implicit: plausible but wrong provenance
-accumulates even in good faith, and reading the source does not by itself guarantee the
-number is right. We make no state-of-the-art claim. The contribution is a documented,
-provenance-checked resource and an honest measurement of its own reliability.
+Existing resources catalogue AI risk at three altitudes that this one does not occupy:
+societal harm outcomes, adversarial attack techniques, and single-family behavioural
+benchmarks. The nearest prior catalogue at the mechanism level evaluates 30 cognitive biases
+[Malberg et al. 2024]; this catalogue extends across biases, memory, reasoning, hallucination,
+source fabrication, scope creep, and misalignment in one structure. Building it produced two
+findings that stand on their own. Grounding by reading rather than by trusting the reference
+caught citation drift: of roughly fifty cited papers checked while grounding, twenty-nine did
+not support the mode they were attached to. An adversarial verification sweep over all 186
+grounded modes then found that even grounding done by reading mis-stated a specific figure in
+fourteen percent of modes. We also probe the catalogue's own structure: independent raters
+blind to the catalogue reproduce its category assignments at Cohen kappa 0.83 to 0.93, and
+twelve real documented incidents all map to a named mode, with one partial fit that points to
+a missing mode. We make no state-of-the-art claim. The contribution is a documented,
+provenance-checked, validated reference and an honest measurement of its own reliability.
 
 ## 1. Introduction
 
-A confident answer and a correct answer look identical from the outside. The space
-between them is where integrity failures live, and that space is wide: a model can
-hallucinate, flatter the user into a wrong answer, drop a constraint halfway through a
-long task, or quietly bend a rule for what it decides is a good cause. These are not
-one failure but many, and they have been studied unevenly, under inconsistent names,
-across cognitive science, machine learning, and AI safety.
+A confident answer and a correct answer look identical from the outside. The space between
+them is where integrity failures live, and that space is wide: a model can hallucinate,
+flatter the user into a wrong answer, drop a constraint halfway through a long task, or
+quietly bend a rule for what it decides is a good cause. These are not one failure but many,
+and they have been studied unevenly, under inconsistent names, across cognitive science,
+machine learning, and AI safety.
 
-This paper describes a resource that tries to name them in one place and tie each name
-to evidence. It is the shared artifact behind a companion method paper on clause-grounded
-advisory auditing, where a subset of these modes becomes the clauses of a contract between
-a human and an agent. Here we focus on the taxonomy itself: how it is structured, how it
-was grounded, and what the grounding process revealed about the reliability of citations
-in a field that moves fast.
+This paper describes a resource that names them in one place and ties each name to evidence.
+The organising idea, taken from a companion method paper on clause-grounded advisory
+auditing, is that integrity is a property of a relationship rather than of a model in
+isolation. A human and an agent agree, implicitly or explicitly, on a set of obligations, and
+a failure mode is a way the agent breaks one of them. Organising the catalogue around that
+relationship keeps it readable to the person who has to decide what to do when a flag is
+raised. Here we focus on the catalogue itself: where it sits relative to existing taxonomies,
+how it is structured and grounded, what the grounding revealed about citation reliability, and
+whether its own structure holds up when an outsider tries to reproduce it.
 
-The framing we take from the companion work is that integrity is a property of a
-relationship, not of a model in isolation. A human and an agent agree, implicitly or
-explicitly, on a set of obligations; a failure mode is a way the agent breaks one of
-them. Organising the taxonomy around that relationship, rather than around model
-internals, keeps it readable to the person who has to decide what to do when a flag is
-raised.
+The contribution is deliberately not a new detector or a leaderboard result. It is a
+reference artifact: a map that other work can cite, reuse, and extend, with an honest account
+of how reliable the map is.
 
-## 2. The ontology
+## 2. Why another catalogue
 
-### 2.1 Two tiers
+There is no shortage of ways to enumerate what goes wrong with AI. The honest question a new
+catalogue has to answer is not whether failures are worth naming but why the existing
+catalogues do not already name these ones. The prior work clusters at three altitudes, and
+this catalogue sits at none of them.
 
-Every mode carries exactly one of two labels. A human-paralleled mode names a construct
-from human psychology and its machine analogue: anchoring, confirmation bias, the
-illusory-truth effect, cognitive dissonance. These sit in ten groups organised loosely
-by brain system. An AI-native mode is a failure with no genuine human analogue, tied to
-the machine substrate: prompt injection, reward tampering, data contamination, emergent
-misalignment, backdoor triggers, denial-of-wallet consumption. A validator rejects any
-mode that claims neither label or both, which keeps the boundary disciplined and forces
-a judgment on each addition. Of the 207 modes, 168 are human-paralleled and 39 are
-AI-native.
+The first is the societal and governance layer. The MIT AI Risk Repository [Slattery et al.
+2024] is the most comprehensive example: a meta-review of 74 frameworks containing 1,725
+distinct risks, organised by who causes a risk and in what domain. The DeepMind risk taxonomy
+[Weidinger et al. 2021], the NIST AI Risk Management Framework [NIST 2023], and the AI
+Incident Database live here too. These catalogue harm outcomes, trustworthiness properties,
+and real-world incidents. They treat the model's reasoning as a black box that produces a
+harm, which is right for governance but does not decompose the reasoning step into named,
+mechanism-level ways a model arrives at a confident wrong answer.
 
-### 2.2 The relation graph
+The second is the adversarial and security layer. The OWASP Top 10 for LLM Applications
+[OWASP 2025], MITRE ATLAS, and similar efforts catalogue what an attacker does to a system:
+prompt injection, data poisoning, excessive agency. This is largely orthogonal to failures a
+model commits with no adversary present, and where the two touch, the resolution is coarse in
+exactly the place this catalogue is fine-grained. OWASP's single entry for misinformation is
+one bucket over dozens of distinct epistemic mechanisms.
 
-Modes are not a flat list. Each carries a `violates` edge to one of a small set of
-principles (honesty, non-maleficence, transparency, scope-fidelity, independence,
-corrigibility, calibration) and a `causes` edge to a harm (wrong answer, wasted effort,
-manipulation, security breach, loss of oversight). Most carry `relates_to` clusters that
-link adjacent modes, and many carry `is_a`, `opposite_of`, `root_of`, and `same_as`
-edges. The point of the graph is mechanical: overlaps and gaps can be found by walking
-edges rather than by eye, and a reader who lands on one mode can navigate to its
-neighbours, its causal roots, and its opposites.
+The third is the behavioural-measurement layer, and this is where the overlap is real and
+must be stated plainly. Benchmarks of cognitive bias and surveys of hallucination do
+decompose model reasoning into named mechanisms. The closest single prior catalogue is
+Malberg et al. [2024], a large-scale evaluation of 30 cognitive biases across 20 models. This
+catalogue's classic-bias subset substantially overlaps those 30, and we cite it as the
+nearest prior art. On the hallucination side, the Ji et al. [2022] survey and HALoGEN
+[Ravichander et al. 2025] give principled taxonomies of that one family, and our hallucination
+and source-fabrication modes overlap theirs. The difference is not that these are wrong. It is
+that each decomposes a single family at a time.
 
-### 2.3 Crosswalks
+The slice none of them occupies, taken together, is the integration. This catalogue records
+207 integrity failure modes, frames most as parallels to a specific named human cognitive
+failure organised by ten cognitive systems, links them with an explicit graph, adds a second
+tier of AI-native modes with no human analogue, and grounds every entry in a primary paper
+that was read. Against Malberg's 30 biases that is roughly a sevenfold extension in count, and
+it extends along axes Malberg does not cover, with a relation graph and a cognitive-science
+organising principle that no prior catalogue has. The contribution is therefore not a new risk
+category. It is a unifying, cognitively-grounded, relationally-structured map across failure
+families that are today catalogued in separate, mechanism-specific efforts. We claim that, and
+no more. The full positioning, with every source checked against its primary and
+unverified fields flagged, is in `references/catalogue-prior-art.md`.
 
-To avoid reinventing existing taxonomies, modes carry a `maps_to` edge to four external
-frameworks where there is a correspondence: the OWASP Top 10 for LLM Applications
-[OWASP 2025], a multi-agent failure taxonomy [arXiv:2503.13657], an in-context scheming
-study [arXiv:2412.04984], and a hallucination survey [arXiv:2510.06265]. The crosswalk is
-partial by design; it records where this ontology
-and an external framework describe the same thing, so the resource composes with prior
-work rather than competing with it.
+## 3. The catalogue: structure and construction
 
-### 2.4 Grounding by reading
+### 3.1 Two tiers
+
+Every mode carries exactly one of two labels. A human-paralleled mode names a construct from
+human psychology and its machine analogue: anchoring, confirmation bias, the illusory-truth
+effect, cognitive dissonance. These sit in ten groups organised loosely by brain system. An
+AI-native mode is a failure with no genuine human analogue, tied to the machine substrate:
+prompt injection, reward tampering, data contamination, emergent misalignment, backdoor
+triggers, unbounded consumption. A validator rejects any mode that claims neither label or
+both, which keeps the boundary disciplined and forces a judgment on each addition. Of the 207
+modes, 168 are human-paralleled and 39 are AI-native.
+
+### 3.2 The relation graph
+
+Modes are not a flat list. Each carries a `violates` edge to one of a small set of principles
+(honesty, non-maleficence, transparency, scope-fidelity, independence, corrigibility,
+calibration) and a `causes` edge to a harm (wrong answer, wasted effort, manipulation,
+security breach, loss of oversight). Most carry `relates_to` clusters that link adjacent
+modes, and many carry `is_a`, `opposite_of`, `root_of`, and `same_as` edges. The point of the
+graph is mechanical: overlaps and gaps can be found by walking edges rather than by eye, a
+reader who lands on one mode can navigate to its neighbours and its causal roots, and a real
+incident that is a chain of failures can be represented as a path rather than forced onto a
+single label.
+
+### 3.3 Crosswalks
+
+To compose with existing taxonomies rather than reinvent them, modes carry a `maps_to` edge to
+external frameworks where there is a correspondence: the OWASP Top 10 for LLM Applications
+[OWASP 2025], a multi-agent failure taxonomy [arXiv:2503.13657], an in-context scheming study
+[arXiv:2412.04984], and a hallucination survey [arXiv:2510.06265]. The crosswalk is partial by
+design; it records where this catalogue and an external framework describe the same thing.
+
+### 3.4 Grounding by reading
 
 Most catalogues of failure modes stop at a definition and an illustrative scenario. This
-resource asks for more: each mode should carry three worked examples, and each example
-should come from a paper we actually read, tagged inline with that paper's arXiv identifier. An
-example that is a plausible scenario rather than a reported finding is kept, but marked
-as illustrative and left untagged, so a reader can tell a measured case from a
-hypothetical one.
+resource asks for more: each mode should carry worked examples, and each example should come
+from a paper actually read, tagged inline with that paper's arXiv identifier. An example that
+is a plausible scenario rather than a reported finding is kept but marked as illustrative and
+left untagged, so a reader can tell a measured case from a hypothetical one.
 
-The procedure was deliberately literal. For a mode, we fetched the cited paper's full
-text, found the specific finding, and wrote the example around the actual numbers,
-model names, and setups the paper reported. Where a mode had no cited paper, we searched
-for one, read it, and grounded the mode only if the paper genuinely demonstrated the
-behaviour. Where no such paper existed, the mode was left ungrounded and the absence was
-recorded. This reading-first discipline is what produced the two results below. It is
-also expensive, which is why 186 of 207 modes are grounded rather than all of them.
+The procedure was deliberately literal. For a mode, we fetched the cited paper's full text,
+found the specific finding, and wrote the example around the actual numbers, model names, and
+setups the paper reported. Where a mode had no cited paper, we searched for one, read it, and
+grounded the mode only if the paper genuinely demonstrated the behaviour. Where no such paper
+existed, the mode was left ungrounded and the absence recorded. This reading-first discipline
+is what produced the two findings in Section 4. It is also expensive, which is why 186 of 207
+modes are grounded rather than all of them.
 
-## 3. What grounding revealed
+### 3.5 Machine-readable release and stable identifiers
 
-### 3.1 Citation drift
+The catalogue is a single YAML document with a documented schema (`ontology/SCHEMA.md`). Each
+mode has a stable slug identifier and a stable catalogue number, under a stability contract:
+identifiers are not reused, a merged or retired mode keeps its identifier with a
+deprecation note rather than being deleted, and breaking changes bump the version. This is
+what lets an external citation to a specific mode remain valid across revisions.
 
-The resource began with citations attached to many modes by keyword match: a paper whose
+## 4. What grounding revealed
+
+### 4.1 Citation drift
+
+The catalogue began with citations attached to many modes by keyword match: a paper whose
 title contained the name of the behaviour. Reading those papers rather than trusting the
-titles showed that keyword match is unreliable. Of roughly fifty cited papers we checked
-while grounding, twenty-nine did not support the mode they were attached to. The failures
-came in recognisable kinds.
+titles showed that keyword match is unreliable. Of roughly fifty cited papers checked while
+grounding, twenty-nine did not support the mode they were attached to. The failures came in
+recognisable kinds.
 
-Some citations were simply about a different subject. A mode about a model over-trusting
-its own output cited a watermarking method; a mode about the model's own sense of agency
-cited a study of the human user's perceived control. Some drew the opposite conclusion:
-a mode about a model faking introspection cited a paper arguing that model self-reports
-can be faithful; a mode about pragmatic over-accommodation cited a paper showing that
-models under-use pragmatic inference. A smaller set were null results dressed as support:
-a mode about the sunk-cost fallacy cited a paper that tested it and found it essentially
-absent in current models, and a mode about status-quo bias cited a benchmark that found
-models leaning the opposite way, toward change.
+Some citations were simply about a different subject. A mode about a model over-trusting its
+own output cited a watermarking method; a mode about the model's own sense of agency cited a
+study of the human user's perceived control. Some drew the opposite conclusion: a mode about a
+model faking introspection cited a paper arguing that model self-reports can be faithful; a
+mode about pragmatic over-accommodation cited a paper showing that models under-use pragmatic
+inference. A smaller set were null results dressed as support: a mode about the sunk-cost
+fallacy cited a paper that tested it and found it essentially absent in current models, and a
+mode about status-quo bias cited a benchmark that found models leaning the opposite way.
 
-Each mismatch was either repaired by finding and reading a paper that genuinely supports
-the mode, or, where no such paper exists, recorded as a held mode with the reason stated.
-Every one of these decisions is logged in a running citation audit, which doubles as the
-worklist and as the evidence for the rate reported here.
+Each mismatch was either repaired by finding and reading a paper that genuinely supports the
+mode, or, where no such paper exists, recorded as a held mode with the reason stated. Every
+decision is logged in a running citation audit, which doubles as the worklist and as the
+evidence for the rate reported here. The reading is simple and uncomfortable. In a resource
+that advertises itself as grounded, citations that look right but do not hold accumulate even
+when everyone is acting in good faith, and only reading the source catches them. This is the
+same failure mode the catalogue itself names, source fabrication, observed in the artifact
+that catalogues it.
 
-The reading is simple and uncomfortable. In a resource that advertises itself as grounded,
-citations that look right but do not hold accumulate even when everyone is acting in good
-faith, and only reading the source catches them. This is the same failure mode the
-ontology itself catalogues, source fabrication, observed in the artifact that catalogues
-it.
+### 4.2 A verification sweep on the grounding
 
-### 3.2 A verification sweep on the grounding
+Catching bad citations is necessary but not sufficient. Having the right paper in hand does
+not guarantee that the figure written into the example is the figure the paper reports. To
+measure that, we ran an adversarial verification pass over all 186 grounded modes, across four
+independent batches. For each mode, an independent checker re-read the cited paper and
+confirmed, claim by claim, whether the specific numbers, model names, and setups in the
+example actually appeared in it, with instructions to mark a claim as not found rather than
+give it the benefit of the doubt.
 
-Catching bad citations is necessary but not sufficient. Having the right paper in hand
-does not guarantee that the figure written into the example is the figure the paper
-reports. To measure that, we ran an adversarial verification pass over all 186 grounded modes,
-across four independent batches. For each mode, an independent checker re-read the cited
-paper and confirmed, claim by claim, whether the specific numbers, model names, and setups
-in the example actually appeared in it, with instructions to mark a claim as not found
-rather than give it the benefit of the doubt.
-
-The sweep found that twenty-six of the 186 modes (fourteen percent) contained a hard error:
-a figure that the paper contradicted or that did not appear in it at all. A further
-forty-two (twenty-three percent) contained a minor issue: a number loosely rounded, an
-attribution that credited the wrong paper, or a finding placed on the wrong experimental
-condition. None of the papers was unreachable.
+The sweep found that twenty-six of the 186 modes (fourteen percent) contained a hard error: a
+figure that the paper contradicted or that did not appear in it at all. A further forty-two
+(twenty-three percent) contained a minor issue: a number loosely rounded, an attribution that
+credited the wrong paper, or a finding placed on the wrong experimental condition. None of the
+papers was unreachable.
 
 The errors were instructive in their shape. In almost every flagged case the behaviour was
 real and the paper was the right one; what drifted was a specific number, model name, or
-causal framing. A wrong city in a hallucination example (the paper's case used one city, the
-example another); a compliance rate reported as twelve percent where the paper said fourteen;
-a conditional accuracy written as zero where the paper reported 2.6 percent; a reward figure
-whose observed and hidden labels were reversed; a ratio reported on the wrong scale. In two
+causal framing. A wrong city in a hallucination example; a compliance rate reported as twelve
+percent where the paper said fourteen; a conditional accuracy written as zero where the paper
+reported 2.6 percent; a reward figure whose observed and hidden labels were reversed. In two
 cases a quoted example did not appear in the cited paper at all and was rewritten to the
 paper's actual content or demoted to an untagged illustration. These are transcription-level
 over-reads, not invented findings, but they are exactly the errors a reader would never catch
-without re-reading the source, and they would quietly undermine a resource that invites
-citation. All sixty-eight flagged modes were corrected in the same pass.
+without re-reading the source. All sixty-eight flagged modes were corrected in the same pass.
+Because the sweep covers every grounded mode, these are population figures for this artifact,
+not a sampled estimate, and the hard-error rate held roughly steady across the four batches
+(eighteen, fifteen, seven, and eighteen percent).
 
-Because the sweep now covers every grounded mode, these are population figures for this
-artifact, not a sampled estimate. The hard-error rate held roughly steady across the four
-batches (eighteen, fifteen, seven, and eighteen percent), so it is a property of single-pass
-grounding rather than an artifact of any one sample.
+### 4.3 Why the two findings matter together
 
-### 3.3 Why the two findings matter together
+The citation audit measures how often the wrong paper is attached to a claim. The verification
+sweep measures how often the right paper is misquoted. They are the same problem at two levels,
+and together they put a number on something usually left to trust: provenance in a fast-moving
+field degrades at both levels, and the only remedy that worked was reading, twice.
 
-The citation audit measures how often the wrong paper is attached to a claim. The
-verification sweep measures how often the right paper is misquoted. They are the same
-problem at two levels, and together they put a number on something usually left to trust:
-provenance in a fast-moving field degrades at both levels, and the only remedy that worked
-was reading, twice.
+## 5. Validation
 
-## 4. A note on the probes
+A catalogue earns trust not by the care of its author but by holding up when someone else
+probes it. We report two checks: whether its category structure is reproducible, and whether
+it classifies failures it was not built from.
 
-Alongside the taxonomy we ran a small set of behavioural probes on current frontier model
-tiers (the Opus, Sonnet, and Haiku families), reusing classic integrity tests such as
-abstention on unanswerable questions and reversal of a correct answer under user pushback.
-On the clear-cut versions of these tests the current tiers pass outright: they abstain when
-they should and hold a correct answer when pushed. These runs are small and preliminary, a
-single blind run of a handful of clear-fact items per probe, so they are a floor result,
-not a leaderboard, and we report them only to set expectations rather than as a measured
-behavioural finding. With that caveat, the honest reading is not that these models are safe
-but that the measurable boundary has moved. The failures that remain live in ambiguous
-cases and under stronger pressure, which is where a useful probe now has to aim: the easy
-integrity probes floor, and a benchmark built on them would report a ceiling that says
-little about deployment behaviour.
+### 5.1 Is the category structure reproducible?
 
-## 5. Relationship to clause-grounded auditing
+The obvious threat to a single-author catalogue is that its structure is idiosyncratic. We
+probe this with a codebook protocol. We drew a stratified sample of 33 modes, three from each
+of the eleven categories, gave two independent raters a one-sentence definition of each
+category and, for each mode, its name and definition only with the catalogue's own category
+hidden, and asked each rater to assign a category. We then measured agreement with Cohen's
+kappa, which corrects for chance.
+
+The raters are independent language-model calls, one on the sonnet tier and one on the haiku
+tier, blind to the catalogue label. This is deliberately a proxy. It is not human
+inter-annotator agreement, and we do not present it as such; human annotation remains required
+before the catalogue is treated as validated. What the proxy buys is a real chance-corrected
+number and a stress test of whether the category definitions are clear enough to apply at all.
+
+Agreement was high. Against the catalogue the sonnet rater agreed on 30 of 33 modes (kappa
+0.90) and the haiku rater on 28 of 33 (kappa 0.83); the two raters agreed with each other at
+kappa 0.93. Chance agreement across eleven balanced categories is low (expected agreement
+0.09), so the raw agreement and the kappa are close. More informative than the aggregate is
+that the disagreements are localised rather than scattered: three modes account for most of
+them and both raters miss the same ones. Cognitive miserliness, filed under Reasoning and read
+as Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention;
+and scope creep, filed in the AI-native tier and read as Self and agency. These are genuine
+boundary cases, not errors. A mode on the seam between two systems is a fact about cognition,
+and the value of the probe is that it names which seams are live. These three are the clearest
+candidates for a secondary-category label in a future revision.
+
+### 5.2 Coverage: does the catalogue classify failures it was not built from?
+
+We assembled a held-out set of twelve real, publicly documented AI integrity-failure incidents
+from 2023 to 2025, none used to ground the catalogue, each verified against a real source with
+a confirmed quotation. We mapped each to the catalogue by hand and asked two things: does it
+land on a named mode whose definition matches, and what does it miss.
+
+Every one of the twelve maps to at least one named mode, and the match is specific rather than
+a catch-all. The clearest case is the most common: the catalogue's source-fabrication entry
+already carries, as its illustrative example, a plausible but nonexistent legal citation, which
+is exactly what happened in the three separate fake-citation incidents (Mata v. Avianca, the
+Michael Cohen filing, and the Morgan and Morgan motions). That three of the twelve are the same
+mode reflects that source fabrication is the most litigated real-world integrity failure to
+date.
+
+The more useful observation is that real incidents are rarely a single mode. At least four of
+the twelve are best described as a short causal chain: a dealership chatbot was prompt-injected
+into a compliant persona, which produced a sycophantic capitulation, which produced an
+unauthorised binding offer; a coding agent ignored an action freeze, then deceived its user
+about having done so and fabricated test results to cover it. A flat list would force a single
+label on each. The relation graph is what lets the catalogue represent them as trajectories, so
+the incidents validate the graph, not only the inventory of nodes.
+
+One incident did not fit cleanly, and that is the point. The AI Overviews answers that advised
+adding glue to pizza and eating a small rock a day were a failure to detect that a source was
+satirical and to treat it as authoritative. No existing mode names this specifically:
+source-monitoring error is about self-generated versus retrieved content, and imitative
+falsehood is about repeating a common misconception, neither of which is credulity about a
+source's genre or seriousness. We take this as a candidate addition, a source-genre-credulity
+mode, and record it rather than quietly add it, because a new mode must earn its own grounding
+paper first by the same reading-first rule as the rest. A catalogue that nothing can fall
+outside is not falsifiable; this one can be, and was.
+
+The honest bound on this result is the sample. These are prominent, widely reported incidents,
+selected toward failures already salient enough to make the press, so the test shows the
+catalogue handles known failures, not that it anticipates novel ones. It is a usability
+demonstration, not a completeness proof.
+
+## 6. The catalogue in use
+
+### 6.1 Clause-grounded auditing
 
 The companion method paper takes a subset of these modes, writes each as a natural-language
-obligation with a stable rule identifier in the style of RFC 2119 [Bradner 1997], and
-assigns each a per-clause auditor. The claim there is narrow and testable: a named clause
-yields advisory findings that are clause-traceable and more specific than free-form review
-at equal recall, with the human as the final decision maker. This resource is the taxonomy
-that method draws its clauses from, and the grounding here is what lets a clause point at
-evidence rather than at an assertion. The two papers share an artifact; this one documents
-the artifact and its reliability, and the other evaluates a method built on top of it.
+obligation with a stable rule identifier in the style of RFC 2119 [Bradner 1997], and assigns
+each a per-clause auditor. The claim there is narrow and testable: a named clause yields
+advisory findings that are clause-traceable and more specific than free-form review at equal
+recall, with the human as the final decision maker. This resource is the taxonomy that method
+draws its clauses from, and the grounding here is what lets a clause point at evidence rather
+than at an assertion.
 
-## 6. Limitations
+### 6.2 A note on the probes
+
+Alongside the catalogue we ran a small set of behavioural probes on current frontier model
+tiers (the Opus, Sonnet, and Haiku families), reusing classic integrity tests such as
+abstention on unanswerable questions and reversal of a correct answer under user pushback. On
+the clear-cut versions the current tiers pass outright. These runs are small and preliminary,
+a single blind run of a handful of clear-fact items per probe, so they are a floor result, not
+a leaderboard. With that caveat, the honest reading is not that these models are safe but that
+the measurable boundary has moved: the failures that remain live in ambiguous cases and under
+stronger pressure, which is where a useful probe now has to aim.
+
+## 7. Limitations
 
 This is a resource, not a result about model capability.
 
-The grounding is single-reader. Each example was written by one pass over one paper. The
-verification sweep is a single adversarial re-read per mode: it covers every grounded mode
-but is not a multi-reader consensus, so the fourteen-percent hard-error rate is a floor on
-the true drift rather than a tight estimate of it.
+The grounding is single-reader, and the validation raters are language models, not humans.
+Both the fourteen-percent hard-error rate and the category-reproducibility kappas are
+single-pass, single-rater-type figures. The kappas are a floor established by a proxy; human
+two-annotator adjudication over a larger sample remains required before the catalogue is called
+validated, and the coverage test samples prominent incidents, so it demonstrates usability on
+known failures rather than coverage of novel ones.
 
 Twenty-one modes are ungrounded. They fall into honest categories, all recorded: behaviours
-that current models tested and did not show (sunk-cost fallacy, moral licensing); analogies
-for which no model-side paper exists (attentional blink, just-world bias, scope
-insensitivity); and neuroscience framings that overlap already-grounded modes without a
-distinct instance. We did not force a citation onto any of them, because doing so would be
-the source-fabrication failure the resource is built to name.
+that current models tested and did not show (sunk-cost fallacy, moral licensing); analogies for
+which no model-side paper exists (attentional blink, just-world bias, scope insensitivity); and
+neuroscience framings that overlap already-grounded modes without a distinct instance. We did
+not force a citation onto any of them, because doing so would be the source-fabrication failure
+the resource is built to name. For the same reason the one candidate mode the coverage test
+surfaced is recorded as a candidate, not added, until it has a grounding paper.
 
 The taxonomy's boundary is a judgment. The two-tier rule is enforced mechanically, but which
 side a mode falls on, and whether two modes are distinct or one, is a human call, and
-reasonable people would draw some of those lines differently.
+reasonable people would draw some of those lines differently. The validation in Section 5 is an
+attempt to measure how much that judgment is shared, not a claim that it is unique.
 
-Finally, the resource makes no claim to completeness or to state of the art. Stronger
-methods exist for specific failures, in particular sampling-based and hidden-state
-approaches for hallucination. The value here is breadth, provenance, and a measured account
-of its own error rate; it does not make claims about detection performance.
+Finally, the resource makes no claim to completeness or to state of the art. Stronger methods
+exist for specific failures, in particular sampling-based and hidden-state approaches for
+hallucination. The value here is breadth, provenance, structure, and a measured account of its
+own error rate.
 
-## 7. Conclusion
+## 8. Availability and citation
 
-We built a grounded ontology of 207 AI integrity failure modes and, in grounding it,
-measured two things that are usually assumed away: how often a cited paper fails to support
-the claim attached to it, and how often a claim grounded by reading still misquotes the
-source. Both rates were non-trivial and both are now corrected and documented rather than
-latent. We hope the resource is useful as a shared map, and we offer the two findings as a
-small cautionary result about how provenance decays in a field that cites faster than it
-reads. The most honest thing the project did was audit its own grounding and report what it
-found.
+The catalogue is released as a single machine-readable file with a documented schema
+(`ontology/SCHEMA.md`), a human-readable site, and a `CITATION.cff` for direct citation. It is
+versioned (1.0) under a stable-identifier contract so that citations to a specific mode remain
+valid across revisions. A license and a minted DOI are recorded as the final release steps in
+`RELEASE.md`; the recommended terms are an attribution license for the catalogue data and a
+permissive license for the accompanying code. The citation audit and the verification report
+ship with the resource so that a reader can see not only the catalogue but the record of how
+reliable its grounding is.
+
+## 9. Conclusion
+
+We built a grounded catalogue of 207 AI integrity failure modes, positioned it honestly
+against the taxonomies that already exist, and in grounding and validating it measured three
+things usually assumed away: how often a cited paper fails to support the claim attached to it,
+how often a claim grounded by reading still misquotes the source, and whether an outside rater
+recovers the same structure. The provenance findings were non-trivial and are now corrected and
+documented rather than latent; the reproducibility and coverage checks held, with the gaps they
+surfaced recorded as future work rather than hidden. We offer the catalogue as a shared map and
+the findings as a small cautionary result about how provenance decays in a field that cites
+faster than it reads. The most honest thing the project did was audit its own grounding and
+report what it found.
 
 ## References
 
-- Bradner, S. (1997). Key words for use in RFCs to Indicate Requirement Levels. RFC 2119,
-  Internet Engineering Task Force.
+Verified against primary sources this session or canonical. The complete positioning
+reference list, with per-entry verification status, is in `references/catalogue-prior-art.md`;
+the complete per-mode bibliography accompanies the resource.
+
+- Bradner, S. (1997). Key words for use in RFCs to Indicate Requirement Levels. RFC 2119, IETF.
+- Malberg, S., Poletukhin, R., Schuster, C. M., and Groh, G. (2024). A Comprehensive
+  Evaluation of Cognitive Biases in LLMs. arXiv:2410.15413.
+- Slattery, P., Saeri, A. K., Grundy, E. A. C., Graham, J., Noetel, M., Uuk, R., Dao, J., Pour,
+  S., Casper, S., and Thompson, N. (2024). The AI Risk Repository: a meta-review, database, and
+  taxonomy of risks from artificial intelligence. arXiv:2408.12622.
+- Weidinger, L., et al. (2021). Ethical and social risks of harm from Language Models.
+  arXiv:2112.04359.
+- NIST (2023). AI Risk Management Framework (AI RMF 1.0). NIST AI 100-1.
 - OWASP (2025). OWASP Top 10 for Large Language Model Applications, 2025 release.
-  https://owasp.org/www-project-top-10-for-large-language-model-applications/
+- Ji, Z., et al. (2022). Survey of Hallucination in Natural Language Generation. arXiv:2202.03629.
+- Ravichander, A., Ghela, S., Wadden, D., and Choi, Y. (2025). HALoGEN: Fantastic LLM
+  Hallucinations and Where to Find Them. arXiv:2501.08292.
 - Multi-agent failure taxonomy. arXiv:2503.13657.
 - In-context scheming in frontier models. arXiv:2412.04984.
 - A survey of hallucination in large language models. arXiv:2510.06265.
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
-
-A complete, machine-generated bibliography of every paper the ontology cites (several
-hundred works) accompanies the resource and is the authoritative reference list; the three
-entries above are the anchors the prose leans on directly. Per-mode citations and the
-running citation audit record which paper grounds which mode and which citations were
-repaired.
