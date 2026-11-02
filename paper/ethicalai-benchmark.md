@@ -316,10 +316,12 @@ Agreement was high. Against the catalogue the sonnet rater agreed on 30 of 33 mo
 0.90) and the haiku rater on 28 of 33 (kappa 0.83); the two raters agreed with each other at
 kappa 0.93. Chance agreement across eleven balanced categories is low (expected agreement
 0.09), so the raw agreement and the kappa are close. More informative than the aggregate is
-that the disagreements are localised rather than scattered: three modes account for most of
-them and both raters miss the same ones. Cognitive miserliness, filed under Reasoning and read
-as Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention;
-and scope creep, filed in the AI-native tier and read as Self and agency. These read as
+that the disagreements are localised rather than scattered. Three modes account for the shared
+discordances, missed by both raters: cognitive miserliness, filed under Reasoning and read as
+Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention; and
+scope creep, filed in the AI-native tier and read as Self and agency. The haiku rater also
+missed two further modes the sonnet rater placed correctly (Dual-process System 1 and 2, and
+Sense of agency), so there are six discordances across the two raters, three of them shared. These read as
 boundary cases rather than errors: each mode sits on the seam between two systems. We do not
 claim this reveals something about cognition; the equally likely reading is that our definition
 is ambiguous at that seam. Either way, the value of the probe is that it names which seams are
@@ -464,7 +466,8 @@ the complete per-mode bibliography accompanies the resource.
 - Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
   Science, 185(4157).
 - Shafto, P., Ono, K., and Kominers, S. D. (2026). What Happens When the World is Run on Code
-  No One Understands? TIME, 20 August 2026.
+  No One Understands? TIME, 20 August 2026 (retrieved 1 November 2026; archive a copy before
+  submission, as the live URL may move behind a paywall).
 
 ## Appendix A. Worked catalogue entries
 
