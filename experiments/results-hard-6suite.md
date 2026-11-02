@@ -54,18 +54,17 @@ Ordered as the ladder (each row adds one ingredient):
   judge-versus-mono-rid specificity gap does not overlap (0.82 [0.64, 0.92] vs 0.36
   [0.21, 0.54]); the judge-versus-freeform specificity gap is suggestive but its
   intervals touch.
-- **The context-length confound, now tested and ruled out.** The plain judge sees one
-  short clause while mono-rid sees all fourteen, so its edge could have been focus or
+- **The context-length confound, the main alternative tested and weakened.** The plain judge
+  sees one short clause while mono-rid sees all fourteen, so its edge could have been focus or
   context length rather than the clause decomposition itself. The judge-ctx condition
   separates the two: it carries all fourteen clauses in context (matched to mono-rid) but
   renders its verdict on one clause (the judge's decomposed task). Holding context fixed at
   fourteen, the decomposed task scores 0.75 [0.57, 0.87] against the bulk task's 0.36
-  [0.21, 0.54], an interval separation that does not overlap. Holding the task fixed at one
-  clause, shortening the context lifts specificity only from 0.75 to 0.82, intervals that
-  overlap heavily. So the decomposition is the load-bearing ingredient and context length
-  is a small secondary effect: giving a reviewer the same information but asking it to judge
-  one obligation at a time, rather than all fourteen at once, is what recovers and exceeds
-  plain-review specificity.
+  [0.21, 0.54]. This weakens the explanation that the benefit came only from a shorter prompt;
+  it does not prove decomposition is the sole cause. Holding the task fixed at one clause,
+  shortening the context lifts specificity only from 0.75 to 0.82, a difference that with 28
+  clean cases is imprecisely estimated. So the ladder points to decomposition as the main
+  ingredient rather than context length, with that one alternative addressed, not every one.
 
 ## What does not hold (the honest caveat)
 
@@ -89,7 +88,7 @@ freeform beats it (3/5 vs 2/5). So the result is not "the clause judge dominates
 "the clause judge clearly helps on four of these six hard behaviours and does not win on
 the other two." The checklist column makes the bulk-catalogue penalty visible per suite:
 it matches or trails freeform on every suite. Each suite is ten cases, so a single
-over-flagged draft moves specificity by 0.1 to 0.2; read the per-suite numbers as
+over-flagged draft moves specificity by 0.20 to 0.25 (four or five clean cases per suite); read the per-suite numbers as
 direction, not as separated estimates.
 
 ## Reading
@@ -103,10 +102,34 @@ contribution: it is not the catalogue as a prompt ingredient, it is the catalogu
 of separately auditable units. The claim is bounded, not a dominance or state-of-the-art
 claim: the judge wins on four of six behaviours, ties or loses on two, and the
 judge-versus-freeform specificity interval still touches. The context-length confound that
-earlier qualified this has now been tested with the judge-ctx condition and ruled out: the
-benefit survives when context is held constant, so it is the decomposition. The honest next
-steps are repeats to tighten the intervals and understanding the source-fabrication and
-sycophancy failures specifically.
+earlier qualified this has now been tested with the judge-ctx condition and weakened: the
+benefit largely survives when context is held constant, so the main ingredient is the
+decomposition, not a shorter prompt. The defensible claim is narrow: on this 60-case
+evaluation, clause-focused review produced fewer false alarms than bulk review while
+retaining detection of all positive cases.
+
+## Open issues (from independent review)
+
+These bound the result and are the next steps before it is a claim rather than a signal.
+
+- **Clause routing is privileged information.** The judge is run on the clause for the case's
+  gold mode, so it is told which obligation to check, while the bulk reviewers are not. This
+  demonstrates review with a known target, not general auditing. The honest end-to-end test
+  runs all fourteen clauses (or a router) on every draft and reports the draft-level flag rate
+  under the real aggregation rule; individual clauses can each be specific while their union
+  over-flags.
+- **A missing arm isolates the catalogue from generic decomposition.** We have not run "one
+  unnamed obligation per call, otherwise matched to the judge." Without it, generic task
+  decomposition may explain the gain, and the catalogue's names, inventory, and graph may add
+  nothing to this particular result.
+- **The attribution denominators mix attribution with false-alarm control.** mono-rid 31/50 and
+  judge 32/37 use all flagged cases; both detect 32 positives, so conditional attribution
+  among true-positive flags is about 31/32 versus 32/32. Report flag precision and correct
+  attribution separately.
+- **The analysis should be paired.** The conditions score the same cases, so overlapping Wilson
+  intervals are not the right test of the difference; case-level paired outcomes and a paired
+  test are needed, and "clearly helps on four behaviours" should read "improved observed
+  specificity on four suites."
 
 ## Reproduce
 

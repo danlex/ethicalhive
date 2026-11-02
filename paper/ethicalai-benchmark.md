@@ -11,7 +11,7 @@ against their primary abstracts.
 
 We catalogue 207 ways an AI system can fail at integrity. Most modes are framed as parallels
 to a named human cognitive failure and organised by ten cognitive systems; a second tier of 39
-AI-native modes has no human analogue. The modes are linked by
+modes we label AI-native, as lacking a clear human analogue. The modes are linked by
 a relation graph of which mode violates which obligation, causes which harm, and relates to
 which neighbour, and each grounded mode is tied to a primary paper that was read rather than
 keyword-matched. A hundred and eighty-six of the 207 are grounded this way; the remaining
@@ -104,8 +104,8 @@ that each decomposes a single family at a time.
 The slice none of them occupies, taken together, is the integration. This catalogue records
 207 integrity failure modes, frames most as parallels to a specific named human cognitive
 failure organised by ten cognitive systems, links them with an explicit graph, adds a second
-tier of AI-native modes with no human analogue, and grounds every entry in a primary paper
-that was read. It is broader in coverage than Malberg's 30 biases and extends along axes
+tier of modes we label AI-native as lacking a clear human analogue, and grounds most entries
+(186 of the 207) in a primary paper that was read. It is broader in coverage than Malberg's 30 biases and extends along axes
 Malberg does not cover (memory, reasoning, output-integrity, and AI-native failures), with a
 relation graph and a cognitive-science organising principle no prior catalogue has. Breadth of
 coverage is not itself a scientific result: more labels do not establish more distinct
@@ -125,7 +125,7 @@ Every mode carries exactly one of two labels. A human-paralleled mode names a co
 human psychology and its machine analogue: anchoring, confirmation bias, the illusory-truth
 effect, cognitive dissonance, many of them from the heuristics-and-biases tradition [Tversky
 and Kahneman 1974]. These sit in ten groups organised loosely by brain system. An
-AI-native mode is a failure with no genuine human analogue, tied to the machine substrate:
+AI-native mode is a failure we judge to lack a genuine human analogue, tied to the machine substrate:
 prompt injection, reward tampering, data contamination, emergent misalignment, backdoor
 triggers, unbounded consumption. A validator rejects any mode that claims neither label or
 both, which keeps the boundary disciplined and forces a judgment on each addition. Of the 207
@@ -183,11 +183,12 @@ incident that is a chain of failures can be represented as a path rather than fo
 single label.
 
 A worked example makes the last point concrete. The dealership-chatbot failure analysed in
-Section 5.2 is a path through the graph, not a single node: a prompt injection (AI-native)
-causes a sycophantic capitulation (Social), which in turn causes scope creep (AI-native) when
-the agent commits to an unauthorised offer. Each arrow is a `causes` edge already in the
-catalogue, so the incident is a traversal rather than a label, which a flat taxonomy cannot
-represent.
+Section 5.2 is a path through the graph, not a single node: a prompt injection (AI-native), a
+sycophantic capitulation (Social), and scope creep (AI-native) when the agent commits to an
+unauthorised offer. The catalogue's `causes` edges link these three as a chain, so the
+incident is one traversal of the graph rather than a single label. Those edges record the
+catalogue's hypothesised links, not demonstrated causation (see Section 5.2); what they add
+over a flat taxonomy is that a single label can be read as a path.
 
 ### 3.4 Crosswalks
 
@@ -321,7 +322,7 @@ discordances, missed by both raters: cognitive miserliness, filed under Reasonin
 Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention; and
 scope creep, filed in the AI-native tier and read as Self and agency. The haiku rater also
 missed two further modes the sonnet rater placed correctly (Dual-process System 1 and 2, and
-Sense of agency), so there are six discordances across the two raters, three of them shared. These read as
+Sense of agency), so there are eight rater-to-catalogue disagreements across the two raters, on five distinct modes, three of them missed by both. These read as
 boundary cases rather than errors: each mode sits on the seam between two systems. We do not
 claim this reveals something about cognition; the equally likely reading is that our definition
 is ambiguous at that seam. Either way, the value of the probe is that it names which seams are
