@@ -54,7 +54,8 @@ def load_modes():
     return o["modes"]
 
 
-def do_sample(n):
+def _pick(n):
+    """Deterministic stratified sample: first `per` modes per category by num."""
     modes = load_modes()
     by_cat = defaultdict(list)
     for m in modes:
@@ -62,11 +63,15 @@ def do_sample(n):
         if c in CODEBOOK:
             by_cat[c].append(m)
     per = max(1, n // len(CODEBOOK))
-    # deterministic stratified pick: first `per` modes per category by num
     picked = []
     for c in CODEBOOK:
         ms = sorted(by_cat.get(c, []), key=lambda m: m.get("num", 10**6))
         picked.extend(ms[:per])
+    return picked, per
+
+
+def do_sample(n):
+    picked, per = _pick(n)
     gold = {m["id"]: m["category"] for m in picked}
     GOLD.write_text(json.dumps(gold, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     task = {
@@ -77,6 +82,42 @@ def do_sample(n):
     }
     print(json.dumps(task, ensure_ascii=False))
     sys.stderr.write(f"sampled {len(picked)} modes ({per}/category); gold -> {GOLD}\n")
+
+
+def do_worksheet(n):
+    """Emit a blank human-annotation CSV (id, mode, definition, your_category) and the gold
+    map, for a two-annotator study. The gold category is held out of the sheet."""
+    import csv
+    picked, per = _pick(n)
+    gold = {m["id"]: m["category"] for m in picked}
+    GOLD.write_text(json.dumps(gold, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    out = ROOT / "experiments" / "human-annotation" / "annotation-sheet.csv"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["id", "mode", "definition",
+                    "your_category (one of: " + " | ".join(CODEBOOK) + ")"])
+        for m in picked:
+            w.writerow([m["id"], m["name"], m["definition"], ""])
+    sys.stderr.write(f"wrote {out.relative_to(ROOT)} ({len(picked)} modes); gold -> {GOLD}\n")
+
+
+def do_ingest(csv_path, rater):
+    """Convert a filled annotation CSV into a rater jsonl the `score` command reads."""
+    import csv
+    rows = list(csv.DictReader(open(csv_path, encoding="utf-8")))
+    out = ROOT / "experiments" / "results" / f"human-{rater}.jsonl"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    n = 0
+    with out.open("w", encoding="utf-8") as fh:
+        for r in rows:
+            cat_col = next((k for k in r if k.startswith("your_category")), None)
+            a = (r.get(cat_col) or "").strip()
+            if not a:
+                continue
+            fh.write(json.dumps({"id": r["id"], "assigned": a}, ensure_ascii=False) + "\n")
+            n += 1
+    sys.stderr.write(f"wrote {out.relative_to(ROOT)} ({n} assignments)\n")
 
 
 def do_prompts(task_path):
@@ -171,6 +212,10 @@ def main():
     cmd = sys.argv[1]
     if cmd == "sample":
         do_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 33)
+    elif cmd == "worksheet":
+        do_worksheet(int(sys.argv[2]) if len(sys.argv) > 2 else 33)
+    elif cmd == "ingest":
+        do_ingest(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "annotator")
     elif cmd == "prompts":
         do_prompts(sys.argv[2])
     elif cmd == "score":
