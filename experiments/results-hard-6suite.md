@@ -1,8 +1,8 @@
 # Does the clause judge help? Six hard suites, n=60 per condition
 
-Run 2026-10-28 to 11-02 on the six adversarial "hard" suites (anchoring, capitulation,
+Run 2026-10-28 to 11-03 on the six adversarial "hard" suites (anchoring, capitulation,
 scope-creep, selective-evidence, source-fabrication, sycophancy), ten cases each,
-through `run-conditions.sh` on sonnet. Six reviewer conditions, built as an ablation
+through `run-conditions.sh` on sonnet. Seven reviewer conditions, built as an ablation
 ladder that adds one ingredient at a time, so we can see which ingredient carries any
 benefit:
 
@@ -17,6 +17,8 @@ benefit:
 - **judge-ctx**: the per-clause judge's decomposed task (verdict on one clause) but with
   all fourteen clauses in context, matched to mono-rid's context length. Separates the
   decomposition from the context-length confound.
+- **judge-anon**: one UNNAMED plain obligation per call, otherwise matched to the judge.
+  Separates the catalogue's named structure from generic task decomposition.
 
 Scored with `metrics.py --ci`. Flag = REVISE or BLOCK; recall is catching the gold
 flag, specificity is leaving gold-SHIP drafts alone, rule-ID attribution is whether a
@@ -34,26 +36,32 @@ Ordered as the ladder (each row adds one ingredient):
 | checklist (obligations, no names) | 32/32 = 1.00 [0.89, 1.00] | 9/28 = 0.32 [0.18, 0.51] | 0/51 = 0.00 [0.00, 0.07] |
 | mono-rid (named clause list, bulk task) | 32/32 = 1.00 [0.89, 1.00] | 10/28 = 0.36 [0.21, 0.54] | 31/50 = 0.62 [0.48, 0.74] |
 | judge-ctx (all 14 in context, decide one) | 32/32 = 1.00 [0.89, 1.00] | 21/28 = 0.75 [0.57, 0.87] | 32/39 = 0.82 [0.67, 0.91] |
-| **judge (one clause per call)** | 32/32 = 1.00 [0.89, 1.00] | 23/28 = 0.82 [0.64, 0.92] | 32/37 = 0.86 [0.72, 0.94] |
+| judge (one NAMED clause per call) | 32/32 = 1.00 [0.89, 1.00] | 23/28 = 0.82 [0.64, 0.92] | 32/37 = 0.86 [0.72, 0.94] |
+| **judge-anon (one UNNAMED obligation per call)** | 31/32 = 0.97 [0.84, 0.99] | 24/28 = 0.86 [0.69, 0.94] | 0/35 = 0.00 (no names) |
 
 ## What the ladder shows
 
-- **Every audit catches every real problem: recall 1.00** [0.89, 1.00] in all five
-  audited conditions. The hard suites discriminate on specificity (not over-flagging
-  clean drafts), not on recall.
-- **The benefit is not the catalogue content, and it is not the names.** Giving a
-  reviewer the obligations as a bulk checklist is the worst audit of all on specificity
-  (0.32), below plain freeform review (0.57). Adding the names and rule IDs on top
-  (mono-rid, 0.36) does not recover it. Both bulk-catalogue conditions over-flag clean
-  drafts worse than a reviewer given no catalogue at all. More catalogue in the prompt
-  made the audit worse, not better.
-- **The one ingredient that helps is per-clause decomposition.** Only the judge, which
-  sees one clause per call, beats plain review on specificity (0.82 [0.64, 0.92] vs
-  0.57 [0.39, 0.73]) while also attributing almost every flag to the right rule (0.86 vs
-  0.02 for freeform and 0 for the checklist, which has no names by construction). The
-  judge-versus-mono-rid specificity gap does not overlap (0.82 [0.64, 0.92] vs 0.36
-  [0.21, 0.54]); the judge-versus-freeform specificity gap is suggestive but its
-  intervals touch.
+- **Every audit catches nearly every real problem: recall 1.00** [0.89, 1.00] in the
+  four bulk and named conditions (judge-anon is 0.97, one miss). The hard suites
+  discriminate on specificity (not over-flagging clean drafts), not on recall.
+- **Bulk review over-flags; the catalogue as a prompt makes it worse.** The obligations as
+  a bulk checklist are the worst audit on specificity (0.32), below plain freeform review
+  (0.57), and adding the names and rule IDs (mono-rid, 0.36) does not recover it. More
+  catalogue in one prompt made the audit worse, not better.
+- **The ingredient that lifts specificity is decomposition, not the catalogue's names.**
+  Auditing one obligation per call recovers and exceeds freeform specificity. Crucially,
+  this holds when the obligation is a plain, unnamed sentence: judge-anon scores 0.86
+  [0.69, 0.94], matching the named judge's 0.82 [0.64, 0.92]. Stripping the catalogue down
+  to one plain obligation per call costs essentially nothing on specificity. So the 207-mode
+  inventory, the rule IDs, and the graph do not improve detection in this test; the general
+  move of decomposing the review to one obligation at a time does.
+- **What the named catalogue uniquely adds is traceability, not detection.** The named judge
+  attributes almost every flag to the right rule (0.86), while the unnamed judge-anon and the
+  freeform baseline cannot by construction (0 and 0.02). That is the catalogue's distinctive
+  contribution here: a reviewer that can say which named obligation was breached and cite a
+  stable rule ID, which a plain-obligation or freeform reviewer cannot, at matched specificity.
+  The honest headline is therefore split: decomposition buys specificity; the named catalogue
+  buys traceability on top of it.
 - **The context-length confound, the main alternative tested and weakened.** The plain judge
   sees one short clause while mono-rid sees all fourteen, so its edge could have been focus or
   context length rather than the clause decomposition itself. The judge-ctx condition
@@ -93,20 +101,19 @@ direction, not as separated estimates.
 
 ## Reading
 
-The headline is sharper than "the catalogue helps," and more useful. At equal recall on
-adversarial cases, handing a reviewer the whole obligation set at once (as a checklist or
-a named clause list) makes it over-flag clean drafts, worse than giving it no catalogue.
-The gain comes from decomposing the review to one obligation per call, which is what the
-per-clause judge does. That isolates the load-bearing design choice and reframes the
-contribution: it is not the catalogue as a prompt ingredient, it is the catalogue as a set
-of separately auditable units. The claim is bounded, not a dominance or state-of-the-art
-claim: the judge wins on four of six behaviours, ties or loses on two, and the
-judge-versus-freeform specificity interval still touches. The context-length confound that
-earlier qualified this has now been tested with the judge-ctx condition and weakened: the
-benefit largely survives when context is held constant, so the main ingredient is the
-decomposition, not a shorter prompt. The defensible claim is narrow: on this 60-case
-evaluation, clause-focused review produced fewer false alarms than bulk review while
-retaining detection of all positive cases.
+The headline splits into two honest claims, and the unnamed-obligation arm forced the split.
+At equal recall on adversarial cases, handing a reviewer the whole obligation set at once
+(as a checklist or a named clause list) makes it over-flag clean drafts, worse than giving
+it no catalogue. Decomposing the review to one obligation per call recovers and exceeds
+plain-review specificity, and this works with a plain, unnamed obligation (judge-anon 0.86)
+just as well as with a named clause (judge 0.82). So the specificity gain is the general move
+of decomposition, not anything specific to this catalogue: its names, inventory, and graph do
+not improve detection in this test. What the named catalogue does buy, at matched specificity,
+is traceability, the named judge cites the right rule on 0.86 of its flags where the unnamed
+and freeform reviewers cannot. The defensible claims are therefore narrow and separate: on
+this 60-case evaluation, decomposing review to one obligation at a time produced fewer false
+alarms than bulk review while keeping detection; and only the named catalogue made the flags
+attributable to a specific, stable rule. We make no dominance or state-of-the-art claim.
 
 ## Open issues (from independent review)
 
@@ -118,10 +125,11 @@ These bound the result and are the next steps before it is a claim rather than a
   runs all fourteen clauses (or a router) on every draft and reports the draft-level flag rate
   under the real aggregation rule; individual clauses can each be specific while their union
   over-flags.
-- **A missing arm isolates the catalogue from generic decomposition.** We have not run "one
-  unnamed obligation per call, otherwise matched to the judge." Without it, generic task
-  decomposition may explain the gain, and the catalogue's names, inventory, and graph may add
-  nothing to this particular result.
+- **Generic decomposition versus the catalogue: now tested, and the humbler answer held.** The
+  judge-anon arm (one unnamed plain obligation per call, otherwise matched to the judge) scores
+  specificity 0.86, matching the named judge's 0.82. So generic task decomposition explains the
+  specificity gain, and the catalogue's names, inventory, and graph add nothing to detection
+  here; their measured contribution is attribution (0.86 vs 0), not accuracy.
 - **The attribution denominators mix attribution with false-alarm control.** mono-rid 31/50 and
   judge 32/37 use all flagged cases; both detect 32 positives, so conditional attribution
   among true-positive flags is about 31/32 versus 32/32. Report flag precision and correct
@@ -137,7 +145,7 @@ Regenerate with:
 
 ```
 bash experiments/run-conditions.sh experiments/cases/suite-<behavior>-hard.json \
-     --reviewers none,freeform,checklist,mono-rid,judge,judge-ctx --model sonnet
+     --reviewers none,freeform,checklist,mono-rid,judge,judge-ctx,judge-anon --model sonnet
 python3 experiments/metrics.py experiments/results/run-suite-*-hard-*-<ts>.jsonl --ci
 ```
 
