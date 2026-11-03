@@ -132,6 +132,23 @@ both, which keeps the boundary disciplined and forces a judgment on each additio
 modes, 168 are human-paralleled and 39 are AI-native. The full distribution is below; the
 complete list, with every definition and example, is in the released file and on the site.
 
+Three things about this scheme are a deliberate scoping choice, not a hidden claim. First, the
+human parallel is an organising heuristic, not an assertion of shared mechanism: framing a
+model's confident wrong answer alongside anchoring gives a shared vocabulary and a source of
+candidate failures to look for, but it does not claim the model anchors the way a person does,
+and we make no such mechanistic claim anywhere. Second, the modes are not all the same kind of
+thing. Some name a behaviour (sycophancy), some a property (overconfidence), some an attack an
+adversary mounts (prompt injection), and some an outcome (model collapse); the catalogue mixes
+these on purpose, because an auditor cares about all of them, but we do not treat the mix as a
+single clean type system, and separating behaviour, mechanism, attack, and outcome into their
+own fields is the clearest next revision. Third, the two-tier split is a coarse human judgment
+and the boundary is soft: reward hacking and scope creep, which we file as AI-native, have
+recognisable human analogues, and the AI-native label marks that we found no clean model-side
+instance of the human construct, not a metaphysical claim that none could exist. The `tag`
+field records each mode's evidential status (grounded in a read paper, or a cognitive-science
+analogy without a model-side paper), so a reader can see which parallels are backed by evidence
+and which are organising analogies.
+
 | Cognitive system | Modes | Example behaviours |
 |---|---|---|
 | Perception | 11 | Controlled hallucination, Priors overriding evidence |
@@ -402,10 +419,14 @@ not force a citation onto any of them, because doing so would be the source-fabr
 the resource is built to name. For the same reason the one candidate mode the coverage test
 surfaced is recorded as a candidate, not added, until it has a grounding paper.
 
-The taxonomy's boundary is a judgment. The two-tier rule is enforced mechanically, but which
-side a mode falls on, and whether two modes are distinct or one, is a human call, and
-reasonable people would draw some of those lines differently. The validation in Section 5 is an
-attempt to measure how much that judgment is shared, not a claim that it is unique.
+The taxonomy's boundary is a judgment, and it mixes kinds. The two-tier rule is enforced
+mechanically, but which side a mode falls on, and whether two modes are distinct or one, is a
+human call, and reasonable people would draw some of those lines differently. The catalogue
+also mixes behaviours, properties, attacks, and outcomes in one list (Section 3.1); separating
+those into their own fields, and replacing the exclusive human-versus-AI-native split with a
+graded analogy tag, is the clearest structural revision ahead, and it would let the neighbour
+distinctions be validated rather than assumed. The validation in Section 5 measures how much
+the current category judgment is shared, not that it is the right carving.
 
 Finally, the resource makes no claim to completeness or to state of the art. Stronger methods
 exist for specific failures, in particular sampling-based and hidden-state approaches for
