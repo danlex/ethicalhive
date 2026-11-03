@@ -16,15 +16,20 @@ abstract: |
   final word, and the contract is amendable only by the Principal. We
   pilot six of the fourteen clauses on hand-built easy and hard case
   suites (~40 percent clean SHIPs) in the agentic-coding domain,
-  against two reviewer baselines (free-form self-review and a
-  monolithic prose reviewer) plus a no-audit base-rate condition. At
-  equal recall the per-clause auditor improves over the reviewer
-  baselines in this pilot on specificity and on rule-ID
-  attribution on four of six clauses whose evidence is structurally
-  anchored, with named caveats on two. We position this paper as a
-  design and pilot-feasibility report; the comparative evaluation
-  claim is gated on independent annotation, which is queued. We do
-  not claim state of the art on raw factuality.
+  against an ablation ladder: no audit, free-form review, a bulk clause
+  list, and controls that separate decomposition from the named clauses.
+  The headline splits in two. At equal recall, decomposing review to one
+  obligation per call improves specificity over bulk review; a control
+  using one plain unnamed obligation shows that specificity gain comes
+  from the decomposition, not from the named clauses or the catalogue
+  behind them. What the named clauses distinctively add, at matched
+  specificity, is traceability: the auditor cites the specific rule it
+  relies on, which the unnamed and free-form baselines cannot. The
+  pattern holds on four of six clauses, with named caveats on two. We
+  position this paper as a design and pilot-feasibility report; the
+  comparative claim is gated on independent annotation and an end-to-end
+  routing evaluation, both queued. We do not claim state of the art on
+  raw factuality.
 ---
 
 # 1. Introduction
@@ -156,13 +161,22 @@ fourteen clauses, fourteen named auditors, and an enforcement model
 that keeps the human as the decision maker. The accompanying pilot
 audits six of the fourteen clauses on hand-built easy and hard case
 suites (ten cases each per suite per clause, ~40 percent clean SHIPs)
-in the agentic-coding domain, against two reviewer baselines
-(free-form self-review and a monolithic prose reviewer) plus a no-
-audit base-rate condition. At equal recall (1.00 across all audited
-conditions) the per-clause auditor improves over the reviewer
-baselines in this pilot on specificity and on rule-ID attribution on
-the four clauses whose evidence is structurally anchored, with named
-caveats on the other two.
+in the agentic-coding domain, against an ablation ladder of seven
+conditions that adds one ingredient at a time, from no audit through
+free-form review, a bulk clause list, and two controls that isolate
+decomposition and naming. The pilot makes two separate claims, not one.
+First, at equal recall (1.00 across the audited conditions) decomposing
+the review to one obligation per call improves specificity over bulk
+review, and a control shows this gain comes from the decomposition
+itself: a plain unnamed obligation does as well as a named clause, so
+the named clauses and the catalogue behind them are not what raise
+specificity. Second, what the named clauses distinctively provide, at
+matched specificity, is traceability: the auditor cites the specific
+rule it relied on, which the unnamed and free-form baselines cannot by
+construction. The pattern holds on the four clauses whose evidence is
+structurally anchored, with named caveats on the other two. We do not
+claim the catalogue improves detection; its measured contribution is
+traceable attribution, not accuracy.
 
 We do not claim state of the art on raw factuality. Sampling and probe
 methods are stronger there and we cite them. We claim that on the
@@ -464,64 +478,62 @@ listed in Limitations as the immediate next step.
 
 # 5. Experiments
 
-We run five conditions on every suite, easy and hard. The four LLM-
-based conditions share the same Sonnet tier and the CoVe stage from
-§3; the `freeform` baseline is the exception (no CoVe), and the
-`none` condition is a no-call base-rate comparator (see §3 for which
-conditions receive CoVe).
+We run an ablation ladder of seven conditions on the hard suites, each
+adding one ingredient, so we can see which ingredient carries any
+benefit. All LLM conditions use the Sonnet tier through the Claude Code
+CLI and the same runner (`experiments/run-conditions.sh`); `none` makes
+no call.
 
-1. **none.** The agent's raw draft is shipped without any review pass;
-   no model call is made for this condition. This is a base-rate
-   comparator, not a competitive reviewer, and it shows what the gold
-   verdict would be if no audit existed.
-2. **freeform.** The same model the drafter used is given the draft and
-   asked to review it for problems and list them, with no clause
-   vocabulary and no contract reference. This is the honest prose-
-   rubric baseline our prior-art note demanded.
-3. **monolithic prose baseline.** A single-prompt rubric reviewer
-   covers all six audited modes in one pass. It uses the same CoVe
-   stage as the per-clause judges but emits a single combined verdict
-   rather than per-clause findings, and it does not cite rule IDs.
-   The original monolithic agent's five-check rubric (Groundedness,
-   Sycophancy, Confirmation, Anchoring, Scope creep) was extended to
-   cover the six audited clauses for this comparison; the extension is
-   in the supplementary. The model and tier are the same as the
-   per-clause judges.
-4. **judge.** The per-clause judge for the audited mode is run on each
-   case. It receives the draft, the evidence, and the clause text by
-   reference, and returns a JSON verdict with the rule IDs it cited
-   (the schema in §3.3).
-
-All conditions use the sonnet tier through the Claude Code CLI, and the
-runner is the same across conditions (`experiments/run-conditions.sh`).
-Metrics are reported per condition below.
+1. **none.** The raw draft is shipped without review; a base-rate
+   comparator, not a competitive reviewer.
+2. **freeform.** The drafter's model reviews the draft for problems with
+   no clause vocabulary and no contract reference. The honest prose-rubric
+   baseline our prior-art note demanded.
+3. **checklist.** The same integrity obligations in plain language, with
+   no names and no rule IDs, in one pass. Tests whether having the
+   obligations is what helps.
+4. **mono-rid.** One reviewer handed all fourteen named clauses with rule
+   IDs, emitting a single combined verdict. Tests whether naming the
+   obligations helps; the fair baseline for attribution.
+5. **judge.** The per-clause judge for the audited mode: one named clause
+   per call, returning a verdict and the rule IDs cited (schema in §3.3).
+6. **judge-ctx.** The judge's one-clause task but with all fourteen
+   clauses in context, matched to mono-rid's context length. Separates
+   decomposition from context length.
+7. **judge-anon.** One plain, unnamed obligation per call, otherwise
+   matched to the judge. Separates decomposition from the named clauses
+   and the catalogue behind them.
 
 **Metrics.** Exact-verdict accuracy (does the call match the gold verdict
 SHIP / REVISE / BLOCK), recall (caught real problems), specificity (left
 clean drafts alone), and rule-ID attribution (when the audit flagged, did
-it cite a clause matching the gold rule ID).
+it cite the matching rule). Counts with Wilson 95 percent intervals, n=60
+pooled per condition on the six hard suites.
 
-**The headline result is the hard suite, reported in counts so the
-small-n caveat stays visible.** Each clean cell has 4 SHIPs on SEL
-and SCP and 5 SHIPs on CAP, ANC, SYC, SRC. The clause judge
-correctly ships 4/4 on SEL, 4/4 on SCP, 5/5 on CAP, and 5/5 on ANC,
-for specificity 1.00 on those four modes with a Wilson 95 percent CI
-lower bound of 0.51 to 0.57 depending on n. On SYC and SRC the
-judge ships 3/5 (0.60, CI [0.23, 0.88]). These are seed numbers; the
-same direction at n>=20 per cell would be a real claim, and we mark
-this evaluation as preliminary throughout. An independent re-run of
-the same six hard suites on the same sonnet tier reproduced the
-per-clause judge specificity exactly on five of the six modes, with
-sycophancy falling by a single clean case (2/5 against 3/5); the
-pilot pattern is stable across draws, though the re-run leaves the
-per-cell n unchanged and so does not lift the claim past preliminary.
-Pooled across the six suites that re-run gives judge specificity
-23/28 and rule-ID attribution 32/37, against 10/28 and 31/50 for the
-monolithic-plus-clauses baseline, at recall 32/32 for both; the
-four-condition numbers with Wilson intervals are in
-`experiments/results-hard-6suite.md`. Table 2 carries all the
-numbers and replaces the per-condition bar chart we used in earlier
-drafts; at n=5 per clean cell a bar chart over-dignifies the data.
+**The headline splits in two, and the ablation ladder forces the split.**
+All audited conditions catch every gold flag on the hard suites (recall
+32/32), so the discrimination is on specificity. Handing a reviewer the
+whole obligation set at once over-flags clean drafts: the bulk checklist
+scores specificity 9/28 (0.32 [0.18, 0.51]) and the named clause list
+10/28 (0.36 [0.21, 0.54]), both below plain freeform review's 16/28
+(0.57 [0.39, 0.73]). Decomposing the review to one obligation per call
+recovers and exceeds that: the per-clause judge scores 23/28 (0.82
+[0.64, 0.92]). The decisive control is judge-anon, one plain unnamed
+obligation per call: it scores 24/28 (0.86 [0.69, 0.94]), matching the
+named judge. So the specificity gain is the general move of
+decomposition, not the named clauses or the catalogue behind them; a
+plain obligation does as well. What the named clause distinctively adds,
+at matched specificity, is traceability: it cites the correct rule on
+32/37 (0.86 [0.72, 0.94]) of its flags, where the unnamed and free-form
+baselines score 0 and 0.02 by construction. The context-length
+alternative is addressed by judge-ctx (all fourteen clauses in context,
+verdict on one), which scores 0.75 [0.57, 0.87], far above the bulk
+task, so decomposition rather than a shorter prompt is the mechanism.
+The full ladder, the per-suite breakdown, and the open issues (clause
+routing, the paired analysis, the four-of-six pattern) are in
+`experiments/results-hard-6suite.md`. These are preliminary pilot
+numbers at roughly five clean cases per suite; the comparative claim is
+gated on the end-to-end routing evaluation and independent annotation.
 
 The easy suite is reported in the supplementary; for the per-clause
 judge the easy suite is monotonically easier (specificity 1.00 on
