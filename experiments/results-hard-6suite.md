@@ -49,7 +49,8 @@ Ordered as the ladder (each row adds one ingredient):
   (0.57), and adding the names and rule IDs (mono-rid, 0.36) does not recover it. More
   catalogue in one prompt made the audit worse, not better.
 - **The ingredient that lifts specificity is decomposition, not the catalogue's names.**
-  Auditing one obligation per call recovers and exceeds freeform specificity. Crucially,
+  Auditing one obligation per call recovers freeform specificity and trends above it (the
+  paired test does not reach significance against freeform, p=0.092; see below). Crucially,
   this holds when the obligation is a plain, unnamed sentence: judge-anon scores 0.86
   [0.69, 0.94], matching the named judge's 0.82 [0.64, 0.92]. Stripping the catalogue down
   to one plain obligation per call costs essentially nothing on specificity. So the 207-mode
@@ -73,6 +74,28 @@ Ordered as the ladder (each row adds one ingredient):
   shortening the context lifts specificity only from 0.75 to 0.82, a difference that with 28
   clean cases is imprecisely estimated. So the ladder points to decomposition as the main
   ingredient rather than context length, with that one alternative addressed, not every one.
+
+## Paired analysis
+
+The conditions score the same drafts, so the right test of a difference is paired, not two
+independent intervals. On the 28 clean drafts, McNemar's exact two-sided test on the discordant
+pairs (one condition leaves a clean draft alone, the other over-flags it):
+
+| comparison | paired spec diff | discordant (A-only / B-only) | McNemar p |
+|---|---|---|---|
+| judge vs mono-rid (decomposed vs bulk, both named) | +0.46 | 16 / 3 | **0.004** |
+| judge-ctx vs mono-rid (decomposed vs bulk, context matched) | +0.39 | 16 / 5 | **0.027** |
+| judge vs freeform (decomposed vs no structure) | +0.25 | 10 / 3 | 0.092 |
+| judge-anon vs judge (unnamed vs named, both decomposed) | +0.04 | 3 / 2 | 1.000 |
+
+The paired test sharpens the reading and tempers one claim. Decomposing the review beats
+dumping the whole obligation set at once, significantly (p=0.004, and 0.027 with context held
+constant). Decomposing beats plain freeform review in the same direction but not significantly
+at this n (p=0.092), so that particular gap is suggestive, not established. And naming the
+obligation adds nothing to specificity over a plain obligation (p=1.000), consistent with the
+decomposition, not the catalogue, being what helps detection. The honest significant claim is
+therefore narrow: at equal recall, one obligation at a time beats all fourteen at once; the
+advantage over no structure at all is a trend this pilot does not establish.
 
 ## What does not hold (the honest caveat)
 
@@ -134,10 +157,10 @@ These bound the result and are the next steps before it is a claim rather than a
   judge 32/37 use all flagged cases; both detect 32 positives, so conditional attribution
   among true-positive flags is about 31/32 versus 32/32. Report flag precision and correct
   attribution separately.
-- **The analysis should be paired.** The conditions score the same cases, so overlapping Wilson
-  intervals are not the right test of the difference; case-level paired outcomes and a paired
-  test are needed, and "clearly helps on four behaviours" should read "improved observed
-  specificity on four suites."
+- **Paired analysis: done** (see the Paired analysis section above). The McNemar tests confirm
+  the decomposed-versus-bulk gap (p=0.004) and temper the decomposed-versus-freeform gap to a
+  non-significant trend (p=0.092) at this n. "Clearly helps" was accordingly narrowed to
+  "significantly beats the bulk clause list; trends above plain review."
 
 ## Reproduce
 

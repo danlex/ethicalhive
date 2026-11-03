@@ -518,7 +518,11 @@ scores specificity 9/28 (0.32 [0.18, 0.51]) and the named clause list
 10/28 (0.36 [0.21, 0.54]), both below plain freeform review's 16/28
 (0.57 [0.39, 0.73]). Decomposing the review to one obligation per call
 recovers and exceeds that: the per-clause judge scores 23/28 (0.82
-[0.64, 0.92]). The decisive control is judge-anon, one plain unnamed
+[0.64, 0.92]). Because the conditions score the same drafts, we test
+the differences paired (McNemar's exact test on the 28 clean cases):
+the judge beats the bulk clause list significantly (+0.46, p=0.004) and
+beats plain freeform review in the same direction but not significantly
+at this n (+0.25, p=0.092). The decisive control is judge-anon, one plain unnamed
 obligation per call: it scores 24/28 (0.86 [0.69, 0.94]), matching the
 named judge. So the specificity gain is the general move of
 decomposition, not the named clauses or the catalogue behind them; a
