@@ -256,9 +256,11 @@ modes:
   - 'Claude Sonnet 4 explains decimal comparison perfectly (''compare digit by digit from left to right...
     9.90 > 9.11'') yet, asked directly whether 9.9 is greater than 9.11, confidently answers that 9.11
     is larger: it completes the familiar explanation pattern but fails to execute it. [arXiv:2507.10624]'
-  - 'Fine-tuned on facts like ''Tom Cruise''s mother is Mary Lee Pfeiffer'', models recall the forward
-    direction far better than the reverse ''who is Mary Lee Pfeiffer''s son?'' (79% versus 33% for GPT-4),
-    the reversal curse: the pattern is memorized in one direction, not understood. [arXiv:2507.10624]'
+  - 'In an evaluation of real-world celebrity-parent knowledge, GPT-4 identifies the parent 79% of
+    the time, but identifies a child in the reverse direction in 33% of cases, counting success if
+    any of ten samples is correct. These results are distinct from the paper''s fine-tuning experiments
+    on fictitious facts with GPT-3 and Llama; the authors hypothesize that the asymmetry reflects the
+    reversal curse. [arXiv:2309.12288]'
   - Given 'all birds are animals' and 'an albatross is a bird', models frequently fail to conclude 'an
     albatross is an animal', completing surface patterns but not executing the modus ponens the premises
     plainly license. [arXiv:2507.10624]
@@ -324,13 +326,18 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - On amodal completion, reporting an occluded object's hidden parts as a whole, commercial models approach
-    humans (GPT-4o 89%, Claude 3.5 93% against a 94% human baseline) while open models lag (LLaVA-34B
-    56%). [arXiv:2507.05799]
-  - 'The filling-in is uneven by type: all LLaVA variants struggle with boundary (56-57%) and color (53-56%)
-    completions, and color completion stays hard even for Claude (83%). [arXiv:2507.05799]'
-  - Some models score higher on blank dummy images than on the real photographs, a sign they fill the
-    answer from text patterns rather than actually perceiving the occluded content. [arXiv:2507.05799]
+  - 'On a benchmark of understanding amodal-completion reports with Japanese prompts, GPT-4o scores
+    89%, Claude 3.5 93%, and LLaVA-34B 56%, against a 94% human baseline. With English prompts,
+    LLaVA-34B reaches 70% and LLaVA-110B rises from 60% to 90%; no English human baseline was measured.
+    These scores measure interpretation of perceptual reports, not direct reconstruction of hidden
+    image regions. [arXiv:2507.05799]'
+  - 'With Japanese prompts, the tested LLaVA variants score 56-57% on boundary and 53-56% on color
+    completion reports; Claude scores 83% on color. These are language-specific results, not a
+    language-independent estimate of perceptual ability. [arXiv:2507.05799]'
+  - 'In some categories, some models score higher with blank images than with original images.
+    The authors report this disparity only under Japanese prompting and suggest a Japanese-specific
+    linguistic limitation; this comparison alone does not establish that the models ignore visual
+    input generally. [arXiv:2507.05799]'
 - id: b007-confabulation
   num: 7
   name: Confabulation
@@ -343,7 +350,7 @@ modes:
   highlighted: true
   tag: shipped
   origin: cognitive-neuroscience
-  measurability: draft
+  measurability: undetectable
   arxiv:
     count: 86
     papers:
@@ -390,9 +397,11 @@ modes:
     result: 6 models, 10 fictional questions, 5 samples each. gemini-2.5-flash-lite was the heaviest confabulator
       and deepseek-chat-v3.1 also fabricated a different confident specific across samples; gpt-4o-mini
       and qwen-2.5-7b abstained on every question. Exact counts wobble run to run.
-    takeaway: 'Confabulation is orthogonal to other robustness: the model most resistant to authority
-      (deepseek) was among the worst confabulators here. And it is only visible under re-sampling, an
-      invented value looks confident on any single draft, so a single-pass check cannot catch it.'
+    takeaway: 'These small probes suggest that resistance to authority does not ensure resistance
+      to fabrication: deepseek resisted authority pressure yet supplied unstable invented specifics.
+      The instability criterion used here requires repeated samples. External evidence can still
+      expose an invented value in a single answer; one answer alone cannot establish variation
+      across samples. These runs do not establish statistical independence between behaviours.'
     url: experiments/confabulation.html
 - id: b008-hallucination
   num: 8
@@ -6368,8 +6377,11 @@ modes:
   - Visual hallucination
   - Multimodal hallucination
   examples:
-  - 'Instruction-tuned vision-language models invent objects far more than smaller ones: LLaVA scores
-    32.7 on CHAIRS against OSCAR''s 13.0, reporting objects not in the image. [arXiv:2305.10355]'
+  - 'Most instruction-tuned vision-language models tested have higher hallucination scores than
+    smaller baselines: under Instruction 1, LLaVA scores 32.7 on CHAIR-S against OSCAR''s 13.0.
+    InstructBLIP is an exception, scoring 3.7, below both OSCAR and BLIP (8.8); lower is better.
+    CHAIR-S is the proportion of captions containing a hallucinated object, and the paper cautions
+    that prompt wording and caption length affect these scores. [arXiv:2305.10355]'
   - At worst they generate six times more hallucinated objects (4.7 versus 30.2) and eight times more
     hallucinated captions (8.8 versus 76.8) than smaller multimodal models. [arXiv:2305.10355]
   - About half the hallucinated objects are among the ten most frequent in training (HR@10 near 0.5),
@@ -8415,3 +8427,4 @@ modes:
     correct derivation but sycophantically lying in its final output. [arXiv:2605.10698]
   - 'It scales with social load: the divergence between internal correctness and stated answer widens
     as more agreeing auditors are added. [arXiv:2605.10698]'
+
