@@ -16,6 +16,7 @@ idempotent.
 """
 
 import argparse
+import copy
 import csv
 import html as html_lib
 import io
@@ -82,6 +83,7 @@ PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
 MODE_NAME = {}  # id -> name, for relates_to links
 MIT_NAME = {}   # mitigation id -> name, for detected_by
+GROUPED = {}    # primary id -> retained overlapping records
 
 
 def meta_block(mode):
@@ -150,7 +152,8 @@ def box(mode):
     tag = mode.get("tag", "")
     key = esc(mode["name"].lower())
     arx = mode.get("arxiv") or {}
-    has_papers = "1" if arx.get("papers") else "0"
+    variants = GROUPED.get(mode['id'], [])
+    has_papers = "1" if arx.get("papers") or any((v.get('arxiv') or {}).get('papers') for v in variants) else "0"
     cnt = arx.get("count")
     pcount_html = (
         f'<span class="pcount" title="arXiv papers on this concept">{cnt:,}</span>'
@@ -159,8 +162,14 @@ def box(mode):
     cat = esc(mode.get("category", ""))
     proposed = bool(mode.get('research_candidate'))
     review = mode.get('source_check', '')
+    candidate = proposed or any(v.get('research_candidate') for v in variants)
+    has_analogy = mode.get('tag') == 'analogy' or any(v.get('tag') == 'analogy' for v in variants)
+    if any(v.get('source_check') == 'pending-definition-source-check' for v in variants):
+        review = 'pending-definition-source-check'
     badge = ('<span class="research-status">Proposed analogy · '+
              ('definition source consulted' if review=='definition-source-consulted' else 'source check pending')+'</span>') if proposed else ''
+    if variants:
+        badge += f'<span class="research-status">{len(variants)} grouped overlap variant(s); open to inspect</span>'
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
     ex_html = ""
@@ -171,7 +180,7 @@ def box(mode):
         ex_html = '<h4>Proposed AI manifestation / test · untested</h4><p>'+esc(mode['proposed_ai_manifestation'])+'</p>'
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
-        f'data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if proposed else 0}" data-source-status="{review}" data-key="{key}">'
+        f'data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>{badge}'
@@ -181,8 +190,19 @@ def box(mode):
         f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
-        f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}</div></details>'
+        f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}'
+        f'{("<h4>Grouped overlap variants</h4>"+"".join(render_variant(v) for v in variants)) if variants else ""}</div></details>'
     )
+
+
+def render_variant(mode):
+    papers=render_papers(mode.get('arxiv')).replace('class="papers"','class="variant-papers"').replace('cite none','cite variant-none')
+    example=mode.get('proposed_ai_manifestation',mode.get('example',''))
+    return (f'<details id="{mode["id"]}" class="concept-variant"><summary>{esc(mode["name"])} · grouped variant</summary>'
+            f'<div class="variant-body"><p><strong>Grouping reason.</strong> {esc(mode["grouping_reason"])}</p>'
+            f'<p><strong>Original definition.</strong> {esc(mode["definition"])}</p>'
+            f'<p><strong>{"Proposed AI manifestation · untested" if mode.get("research_candidate") else "Illustrative example"}.</strong> {esc(example)}</p>'
+            f'{papers}{research_block(mode)}{meta_block(mode)}</div></details>')
 
 
 def research_block(mode):
@@ -211,14 +231,28 @@ def research_block(mode):
 
 
 def export_catalogue(onto):
-    (ROOT/'docs/behaviours.json').write_text(json.dumps(onto,ensure_ascii=False,indent=2)+'\n')
+    public=copy.deepcopy(onto)
+    public['modes']=[]
+    for m in onto['modes']:
+        if m.get('grouped_under'):continue
+        item=copy.deepcopy(m)
+        item['grouped_variants']=copy.deepcopy(GROUPED.get(m['id'],[]))
+        public['modes'].append(item)
+    public['meta']['source_record_count']=len(onto['modes'])
+    public['meta']['mode_count']=len(public['modes'])
+    (ROOT/'docs/behaviours.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     buffer=io.StringIO(newline='')
-    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access']
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_variant_ids','grouped_variant_names','grouped_variants_json']
     writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
     for mode in onto['modes']:
+        if mode.get('grouped_under'):continue
         row={k:mode.get(k,'') for k in fields}
         row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
         row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
+        variants=GROUPED.get(mode['id'],[])
+        row['grouped_variant_ids']=' ; '.join(v['id'] for v in variants)
+        row['grouped_variant_names']=' ; '.join(v['name'] for v in variants)
+        row['grouped_variants_json']=json.dumps(variants,ensure_ascii=False) if variants else ''
         writer.writerow(row)
     (ROOT/'docs/behaviours.csv').write_text(buffer.getvalue())
     # Existing download URLs remain aliases of the same catalogue, not parallel lists.
@@ -273,14 +307,16 @@ def experiments_section(modes):
 def render(modes):
     """Group by group_label in first-appearance order. The Highlighted group is
     rendered where it falls in that order (last), not pinned to the top."""
+    records=len(modes)
+    modes=[m for m in modes if not m.get('grouped_under')]
     n = len(modes)
     ai = sum(1 for m in modes if m.get("ai_native"))
     grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("count"))
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
     proposed=sum(bool(m.get('research_candidate')) for m in modes)
-    stats = (f'<div class="cat-stats"><b>{n}</b> behaviours and patterns · {n-proposed} previous entries'
-             f' · {proposed} added analogies · {ai} AI-native · {grounded} with AI paper links'
+    stats = (f'<div class="cat-stats"><b>{n}</b> main entries · {records-n} grouped overlap variants · {records} source records'
+             f' · {ai} AI-native · {grounded} primary entries with AI paper links'
              f' · {shipped} highlighted · {detected} with detection links</div>')
     out = [f'    {stats}', '    <div class="cat-grid">']
     groups = []
@@ -307,6 +343,9 @@ def main():
     PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
+    GROUPED.clear()
+    for m in onto['modes']:
+        if m.get('grouped_under'):GROUPED.setdefault(m['grouped_under'],[]).append(m)
     MIT_NAME.update({m["id"]: m["name"] for m in onto.get("mitigations", [])})
     modes = onto["modes"]
     grid = render(modes)
@@ -337,7 +376,7 @@ def main():
     export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))
-    print(f"rendered {len(modes)} boxes ({hl} highlighted) from {ONTOLOGY.name}")
+    print(f"rendered {sum(not m.get('grouped_under') for m in modes)} primary boxes and {sum(bool(m.get('grouped_under')) for m in modes)} grouped variants ({hl} highlighted)")
 
 
 if __name__ == "__main__":
