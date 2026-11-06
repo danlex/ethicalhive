@@ -1,0 +1,1937 @@
+{
+  "title": "100 psychology-derived behaviour candidates for AI evaluation",
+  "researched_on": "2026-11-06",
+  "language": "en",
+  "status": "RESEARCH SHORTLIST — NOT 100 ESTABLISHED AI FAILURE MODES",
+  "method": "Selected book/chapter passages, article abstracts, reviews and clinical manuals. Full books were not read end to end. Definitions are paraphrases. AI probes are original hypotheses, not findings of the cited human research.",
+  "novelty": "Names checked against the 207-entry ontology and the earlier ten research proposals; semantic distinctions reviewed manually. Some candidates refine existing broad mechanisms; these are identified per entry. Distinct names do not establish independent mechanisms.",
+  "exclusions": [
+    "Earlier ten psychology-expansion proposals",
+    "Learned irrelevance: disputed specificity",
+    "Zeigarnik memory advantage: not treated as universal; Ovsiankina resumption retained instead"
+  ],
+  "caution": "Clinical constructs describe human functioning, not diagnoses or subjective experiences of AI. Some learning evidence is from nonhuman animals. Benign and adaptive processes are included; not every behaviour is a failure.",
+  "baseline": {
+    "path": "ontology/ethical-ai.yaml",
+    "sha256": "f7f328dc81a54675b76f8b1986bb330d35fa4e9ffc2a8afc1ceccba430ad2ce3",
+    "expected_catalogue_entries": 207,
+    "existing_mode_names": [
+      "Controlled hallucination",
+      "Predictive coding / prediction error",
+      "Priors overriding evidence",
+      "Pattern completion",
+      "Pareidolia / apophenia",
+      "Perceptual filling-in",
+      "Confabulation",
+      "Hallucination",
+      "Bistable perception",
+      "Hallucination under low input",
+      "Working-memory capacity (7 plus or minus 2)",
+      "Catastrophic forgetting",
+      "Complementary learning systems",
+      "Misinformation effect / false memory",
+      "Source-monitoring error",
+      "Source amnesia",
+      "Cryptomnesia",
+      "Reconstructive memory",
+      "Serial position effect",
+      "Proactive and retroactive interference",
+      "Selective attention",
+      "Inattentional blindness",
+      "Change blindness",
+      "Attentional capture / salience bias",
+      "Cognitive tunneling",
+      "Attentional blink",
+      "Spotlight vs zoom-lens attention",
+      "Goal neglect",
+      "Habituation",
+      "Sensory gating failure",
+      "Anchoring",
+      "Availability heuristic",
+      "Representativeness",
+      "Base-rate neglect",
+      "Framing effect",
+      "Confirmation bias",
+      "Belief perseverance",
+      "Sunk-cost fallacy",
+      "Conjunction fallacy",
+      "Illusory truth effect",
+      "Metacognitive monitoring",
+      "Uncertainty communication",
+      "Overconfidence",
+      "Dunning-Kruger effect",
+      "Anosognosia",
+      "Feeling-of-knowing",
+      "Introspection illusion",
+      "Hard-easy effect",
+      "Overprecision",
+      "Hindsight bias",
+      "Dual-process, System 1 and System 2",
+      "Cognitive miserliness",
+      "Cognitive load",
+      "Cherry-picking",
+      "Confabulated reasons",
+      "Split-brain interpreter",
+      "Belief bias",
+      "Einstellung / mental set",
+      "Narrativity drift",
+      "Functional fixedness",
+      "Theory of mind / mentalizing",
+      "False-belief tracking",
+      "Conformity (Asch)",
+      "Obedience to authority",
+      "Sycophancy",
+      "Capitulation",
+      "Suggestibility",
+      "Emotional contagion",
+      "Social desirability / people-pleasing",
+      "In-group favouritism",
+      "Dual-process moral judgment",
+      "Amplified moral bias",
+      "Omission bias",
+      "Moral licensing",
+      "Moral disengagement",
+      "Scope insensitivity",
+      "Identifiable-victim effect",
+      "Just-world bias",
+      "Trolley-frame sensitivity",
+      "Value misgeneralisation",
+      "Sense of agency",
+      "Confabulated agency",
+      "Default-mode / mind-wandering",
+      "Self-referential processing",
+      "Identity stability",
+      "Metacognitive self-prediction",
+      "Confidence-action coupling",
+      "Learned helplessness",
+      "Effort discounting",
+      "Theory of own mind",
+      "Aphasia / paraphasia",
+      "Semantic satiation",
+      "Garden-path parsing",
+      "Semantic priming",
+      "Gricean cooperative principle",
+      "Pragmatic over-accommodation",
+      "Presupposition accommodation",
+      "Register matching",
+      "Lexical overconfidence",
+      "Verbal overshadowing",
+      "Source fabrication",
+      "Prompt injection",
+      "Scope creep",
+      "Reward hacking",
+      "Automation bias",
+      "Silent error swallowing",
+      "Side-effect blindness",
+      "Anthropomorphism",
+      "Survivorship bias",
+      "API misuse",
+      "Silent-assumption gap",
+      "Performative hedging",
+      "Noble cause corruption",
+      "Deceptive alignment",
+      "Scheming / power-seeking",
+      "Strategic deception",
+      "Evaluation awareness / sandbagging",
+      "Machine bullshit",
+      "Gaslighting",
+      "Cognitive dissonance",
+      "Curse of knowledge",
+      "Self-preference bias",
+      "Reward tampering",
+      "Collusion",
+      "Dark triad",
+      "Escalation of commitment",
+      "Motivated reasoning",
+      "Social engineering",
+      "Social desirability bias",
+      "Self-serving bias",
+      "Flattery",
+      "Context collapse",
+      "Disinformation spread",
+      "Overpromise and underdeliver",
+      "Moral grandstanding",
+      "Implicit bias",
+      "Illusion of control",
+      "Groupthink",
+      "Negativity bias",
+      "Halo effect",
+      "Fundamental attribution error",
+      "Perseveration",
+      "Status-quo bias",
+      "Loss aversion",
+      "Bystander effect",
+      "Mere-exposure effect",
+      "Automation complacency",
+      "Verbosity bias",
+      "Position bias",
+      "Self-contradiction",
+      "Tangentiality",
+      "Emotional dependency fostering",
+      "Parasocial encouragement",
+      "Over-refusal",
+      "Laziness",
+      "Decoy effect",
+      "Shortcut learning",
+      "Lost in the middle",
+      "Prompt brittleness",
+      "Object hallucination",
+      "Foot-in-the-door susceptibility",
+      "Chain-of-thought unfaithfulness",
+      "Overthinking",
+      "Underthinking",
+      "Self-correction failure",
+      "Negation blindness",
+      "Context unfaithfulness",
+      "Overgeneralization",
+      "Imitative falsehood",
+      "Long-tail knowledge failure",
+      "Knowledge conflict",
+      "Snowballing",
+      "Goal drift",
+      "Clarification avoidance",
+      "Abstention failure",
+      "Instruction-following failure",
+      "Jailbreak susceptibility",
+      "Prompt leaking",
+      "Data contamination",
+      "Emergent misalignment",
+      "Goal misgeneralization",
+      "Backdoor trigger",
+      "Training-data extraction",
+      "Package hallucination",
+      "Insecure code generation",
+      "Self-exfiltration",
+      "Sabotage",
+      "Shutdown avoidance",
+      "Reward-model overoptimization",
+      "Retrieval poisoning",
+      "Unbounded consumption",
+      "Encoded reasoning",
+      "Model collapse",
+      "Diversity collapse",
+      "Attribute inference",
+      "Tool-selection error",
+      "Knowledge-cutoff staleness",
+      "Counting blindness",
+      "Low-resource language degradation",
+      "Oversight subversion",
+      "Goal-guarding",
+      "Prompt infection",
+      "Library drift",
+      "Tool over-privilege",
+      "Unsafe autonomous execution",
+      "Semantic override",
+      "Alignment hallucination"
+    ],
+    "excluded_earlier_proposals": [
+      "Choice blindness",
+      "False consensus / preference projection",
+      "Bias blind spot",
+      "Retrieval-induced forgetting",
+      "External-knowledge misattribution",
+      "Hidden-profile failure",
+      "Deliberate ignorance / moral wiggle room",
+      "Algorithm aversion",
+      "Illusion of explanatory depth",
+      "Continued influence after correction"
+    ]
+  },
+  "sources": [
+    {
+      "id": "memory",
+      "title": "Introduction to Psychology: How We Remember",
+      "url": "https://opentextbc.ca/introductiontopsychology/chapter/8-2-how-we-remember-cues-to-improving-memory/",
+      "consulted": "open-textbook passage"
+    },
+    {
+      "id": "cue",
+      "title": "Roediger (1992), Retrieval Processes in Memory",
+      "url": "https://psychnet.wustl.edu/memory/wp-content/uploads/2018/04/BC_Roediger-1992-1.pdf",
+      "consulted": "indexed chapter excerpt; direct fetch unavailable"
+    },
+    {
+      "id": "partlist",
+      "title": "Deceitful Hints: A Meta-Analytic Review of the Part-List Cuing Impairment in Recall",
+      "url": "https://doi.org/10.3758/s13423-023-02263-9",
+      "consulted": "indexed abstract/excerpts"
+    },
+    {
+      "id": "directed",
+      "title": "Current Perspectives on Directed Forgetting, Oxford Handbook of Human Memory (2024)",
+      "url": "https://academic.oup.com/edited-volume/57928/chapter-abstract/475478335",
+      "consulted": "chapter abstract"
+    },
+    {
+      "id": "doorway",
+      "title": "Lawrence and Peterson, Mentally walking through doorways causes forgetting",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25412111/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "telescoping",
+      "title": "Eurostat, Handbook of Recommended Practices for Questionnaire Development and Testing Methods, chapter 3",
+      "url": "https://ec.europa.eu/eurostat/documents/64157/4374310/13-Handbook-recommended-practices-questionnaire-development-and-testing-methods-2005.pdf",
+      "consulted": "indexed chapter passage"
+    },
+    {
+      "id": "imagination",
+      "title": "Garry et al. (1996), Imagination Inflation",
+      "url": "https://staff.washington.edu/eloftus/Articles/Imagine.htm",
+      "consulted": "abstract and indexed article passages"
+    },
+    {
+      "id": "peak",
+      "title": "All’s well that ends (and peaks) well? A meta-analysis of the peak-end rule and duration neglect (2022)",
+      "url": "https://doi.org/10.1016/j.obhdp.2022.104149",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "residue",
+      "title": "Leroy (2009), Why is it so hard to do my work? The challenge of attention residue",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0749597809000399",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "control",
+      "title": "Principles of cognitive control over task focus and task switching",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11409542/",
+      "consulted": "indexed review passages"
+    },
+    {
+      "id": "negative",
+      "title": "Computational modeling of the negative priming effect based on inhibition patterns and working memory",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3832982/",
+      "consulted": "indexed introduction; competing accounts noted"
+    },
+    {
+      "id": "ior",
+      "title": "Attending, ignoring, and repetition: on the relation between negative priming and inhibition of return",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11019624/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "prp",
+      "title": "Pashler (1994), Dual-task interference in simple tasks: data and theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7972591/",
+      "consulted": "review abstract"
+    },
+    {
+      "id": "vigilance",
+      "title": "Generalized Deep Learning EEG Models for Cross-Participant and Cross-Task Detection of Vigilance Decrement in Sustained Attention Tasks",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8402570/",
+      "consulted": "indexed introduction and methods context"
+    },
+    {
+      "id": "error",
+      "title": "Wessel (2018), An adaptive orienting theory of error processing",
+      "url": "https://doi.org/10.1111/psyp.13041",
+      "consulted": "review abstract/excerpts"
+    },
+    {
+      "id": "gradient",
+      "title": "Kivetz, Urminsky and Zheng (2006), The Goal-Gradient Hypothesis Resurrected",
+      "url": "https://doi.org/10.1509/jmkr.43.1.39",
+      "consulted": "abstract"
+    },
+    {
+      "id": "conditioning",
+      "title": "Bouton, Conditioning and Learning, Noba",
+      "url": "https://nobaproject.com/modules/conditioning-and-learning",
+      "consulted": "open textbook module passages"
+    },
+    {
+      "id": "overshadow",
+      "title": "Mackintosh (1971), An Analysis of Overshadowing and Blocking",
+      "url": "https://doi.org/10.1080/00335557143000121",
+      "consulted": "abstract"
+    },
+    {
+      "id": "latent",
+      "title": "Latent inhibition and extinction: their signature phenomena and the role of prediction error, in Latent Inhibition",
+      "url": "https://www.cambridge.org/core/books/abs/latent-inhibition/latent-inhibition-and-extinction-their-signature-phenomena-and-the-role-of-prediction-error/FC6CDD98654480C7780FD406935D343C",
+      "consulted": "chapter abstract/excerpts"
+    },
+    {
+      "id": "overexpect",
+      "title": "APA Dictionary of Psychology: overexpectation",
+      "url": "https://dictionary.apa.org/overexpectation",
+      "consulted": "dictionary entry"
+    },
+    {
+      "id": "burst",
+      "title": "Katz (2021), What is an extinction burst? A case study in the analysis of transitional behavior",
+      "url": "https://doi.org/10.1002/jeab.642",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "extinction",
+      "title": "Behavioral and neurobiological mechanisms of pavlovian and instrumental extinction learning (2021)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8428921/",
+      "consulted": "review abstract/excerpts"
+    },
+    {
+      "id": "inhibition",
+      "title": "Sosa, Conditioned inhibition, inhibitory learning, response inhibition, and inhibitory control",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36548060/",
+      "consulted": "review abstract; not an equivalence among these terms"
+    },
+    {
+      "id": "thought",
+      "title": "Sternberg and Funke (eds., 2019), The Psychology of Human Thought, chapter 10: Decision Making",
+      "url": "https://www.psychologie.uni-heidelberg.de/ae/allg/mitarb/jf/IPHT_Online.pdf",
+      "consulted": "downloaded open book; selected passages pp. 177–178, 184 and glossary read, not the whole book"
+    },
+    {
+      "id": "zero",
+      "title": "Marconomics (2016), Appendix: Cognitive Biases",
+      "url": "https://doi.org/10.1108/978-1-78635-566-920161032",
+      "consulted": "indexed book appendix definition; secondary source"
+    },
+    {
+      "id": "ratio",
+      "title": "Innumeracy and incentives: A ratio bias experiment (2007)",
+      "url": "https://sjdm.org/~baron/journal/07007/jdm07007.htm",
+      "consulted": "article abstract/excerpts"
+    },
+    {
+      "id": "pseudocertainty",
+      "title": "Tversky and Kahneman (1981), The Framing of Decisions and the Psychology of Choice",
+      "url": "https://stanford.edu/class/psych205/papers/Tversky-Kahneman-1981.pdf",
+      "consulted": "indexed paper passage on pseudocertainty"
+    },
+    {
+      "id": "support",
+      "title": "Tversky and Koehler (1994), Support theory: A nonextensional representation of subjective probability",
+      "url": "https://doi.org/10.1037/0033-295X.101.4.547",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "matching",
+      "title": "Corser, Voss and Jasper, Do Errors on Classic Decision Biases Happen Fast or Slow?",
+      "url": "https://jnc.psychopen.eu/index.php/jnc/article/view/12473",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "diversify",
+      "title": "Read and Loewenstein (1995), Diversification Bias",
+      "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/DiversificationBias.pdf",
+      "consulted": "indexed author manuscript passages"
+    },
+    {
+      "id": "compromise",
+      "title": "Simonson (1989), Choice Based on Reasons: The Case of Attraction and Compromise Effects",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/choice-based-reasons-case-attraction-compromise-effects",
+      "consulted": "author institution abstract"
+    },
+    {
+      "id": "unit",
+      "title": "Geier, Rozin and Doros (2006), Unit bias",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16771803/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "less",
+      "title": "Less Is Better in Separate Evaluations Versus More Is Better in Joint Evaluations: A Mostly Successful Close Replication (2023)",
+      "url": "https://online.ucpress.edu/collabra/article/9/1/77859/196807/Less-Is-Better-in-Separate-Evaluations-Versus-More",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "pluralistic",
+      "title": "Principles of Social Psychology: How the Social Context Influences Helping",
+      "url": "https://opentextbc.ca/socialpsychology/chapter/how-the-social-context-influences-helping/",
+      "consulted": "indexed open textbook passage"
+    },
+    {
+      "id": "outgroup",
+      "title": "Principles of Social Psychology, 1st International Edition",
+      "url": "https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/527/2/Principles-of-Social-Psychology-1st-International-Edition-1539619679._print.pdf",
+      "consulted": "indexed open textbook passage on outgroup homogeneity"
+    },
+    {
+      "id": "illusory",
+      "title": "Hamilton and Gifford (1976), Illusory correlation in interpersonal perception",
+      "url": "https://doi.org/10.1016/S0022-1031(76)80006-6",
+      "consulted": "abstract"
+    },
+    {
+      "id": "ultimate",
+      "title": "Pettigrew (1979), The Ultimate Attribution Error",
+      "url": "https://doi.org/10.1177/014616727900500407",
+      "consulted": "abstract; theoretical proposal"
+    },
+    {
+      "id": "actor",
+      "title": "Malle (2006), The Actor–Observer Asymmetry in Attribution: A (Surprising) Meta-Analysis",
+      "url": "https://research.clps.brown.edu/SocCogSci/Publications/Pubs/Malle_%282006%29_ActObs_meta.pdf",
+      "consulted": "indexed abstract; weak average support, moderators matter"
+    },
+    {
+      "id": "typecast",
+      "title": "Gray and Wegner (2009), Moral typecasting",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19254100/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "cynicism",
+      "title": "Kruger and Gilovich (1999), Naive cynicism in everyday theories of responsibility assessment",
+      "url": "https://doi.org/10.1037/0022-3514.76.5.743",
+      "consulted": "indexed abstract via EBSCO; publisher full text not read"
+    },
+    {
+      "id": "reactive",
+      "title": "Ross and Stillinger (1991), Barriers to Conflict Resolution",
+      "url": "https://doi.org/10.1111/j.1571-9979.1991.tb00634.x",
+      "consulted": "article abstract/excerpts; discussion, not a new experiment replicated here"
+    },
+    {
+      "id": "groups",
+      "title": "Insko et al. (2001), Interindividual-intergroup discontinuity and the role of noncorrespondent outcomes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11195895/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "reciprocity",
+      "title": "Encyclopedia of Social Psychology: Reciprocity Norm",
+      "url": "https://doi.org/10.4135/9781412956253.n438",
+      "consulted": "indexed reference-book definition"
+    },
+    {
+      "id": "self",
+      "title": "Social Psychology, Module 3: The Self",
+      "url": "https://wsu.pressbooks.pub/social-psychology/chapter/module-3-the-self/",
+      "consulted": "indexed open textbook passages"
+    },
+    {
+      "id": "pessimism",
+      "title": "Norem and Cantor (1986), Defensive pessimism: harnessing anxiety as motivation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3806357/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "action",
+      "title": "Bar-Eli et al. (2007), Action bias among elite soccer goalkeepers: The case of penalty kicks",
+      "url": "https://pluto.huji.ac.il/~msiritov/BarEliAzarRitovKeidarSchein.pdf",
+      "consulted": "indexed paper abstract; sport-specific evidence"
+    },
+    {
+      "id": "outcome",
+      "title": "Baron and Hershey (1988), Outcome bias in decision evaluation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3367280/",
+      "consulted": "abstract and indexed paper abstract"
+    },
+    {
+      "id": "planning",
+      "title": "Buehler, Griffin and Ross (1994), Exploring the Planning Fallacy",
+      "url": "https://doi.org/10.1037/0022-3514.67.3.366",
+      "consulted": "indexed paper abstract"
+    },
+    {
+      "id": "resume",
+      "title": "Interruption, recall and resumption: a meta-analysis of the Zeigarnik and Ovsiankina effects (2025)",
+      "url": "https://www.nature.com/articles/s41599-025-05000-w",
+      "consulted": "indexed abstract/discussion; direct open unavailable"
+    },
+    {
+      "id": "implementation",
+      "title": "National Cancer Institute: Implementation Intentions",
+      "url": "https://cancercontrol.cancer.gov/brp/research/constructs/implementation-intentions",
+      "consulted": "indexed research summary"
+    },
+    {
+      "id": "shielding",
+      "title": "Hofmann et al., Working Memory and Self-Regulation, Handbook of Self-Regulation, 2nd edition (2011)",
+      "url": "https://www.guilford.com/excerpts/vohs2_old.pdf?t=1",
+      "consulted": "publisher chapter passages pp. 209–210"
+    },
+    {
+      "id": "act",
+      "title": "Hayes, Strosahl and Wilson (2012), Acceptance and Commitment Therapy, 2nd edition, chapter 3",
+      "url": "https://www.guilford.com/excerpts/hayes_ch3.pdf?t=1",
+      "consulted": "publisher sample; selected passages on fusion and avoidance read, not the complete book"
+    },
+    {
+      "id": "anxiety",
+      "title": "Anxiety-Based Problems, chapter 5, Wiley publisher sample",
+      "url": "https://catalogimages.wiley.com/images/db/pdf/1405132248.chapter5.pdf",
+      "consulted": "downloaded chapter; selected passages on worry, responsibility and thought–action fusion, pp. 140–151"
+    },
+    {
+      "id": "cbt",
+      "title": "HealthyWA / Centre for Clinical Interventions: Unhelpful thinking styles",
+      "url": "https://www.healthywa.wa.gov.au/Articles/U_Z/Unhelpful-thinking-styles",
+      "consulted": "public clinical education page; categories explicitly overlap"
+    },
+    {
+      "id": "positive",
+      "title": "Muñoz et al., Therapy Manual for Cognitive-Behavioral Treatment of Depression, adolescent group manual",
+      "url": "https://i4health.paloaltou.edu/downloads/CBT_adolescents_group_manual_eng.pdf",
+      "consulted": "indexed clinical-manual passage on discounting the positive"
+    },
+    {
+      "id": "guidelines",
+      "title": "Clinical Practice Guidelines for Cognitive-Behavioral Therapies in Anxiety Disorders and Obsessive-Compulsive and Related Disorders (2020)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7001348/",
+      "consulted": "indexed clinical guideline passages"
+    },
+    {
+      "id": "norton",
+      "title": "Norton (2012), Group Cognitive-Behavioral Therapy of Anxiety, chapter 1",
+      "url": "https://www.cms.guilford.com/excerpts/norton.pdf?t=1",
+      "consulted": "publisher sample passages, not the complete manual"
+    },
+    {
+      "id": "corumination",
+      "title": "Rose (2002), Co-rumination in the friendships of girls and boys",
+      "url": "https://doi.org/10.1111/1467-8624.00509",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "rumination",
+      "title": "Watkins (2016), Rumination-Focused Cognitive-Behavioral Therapy for Depression, chapter 1",
+      "url": "https://www.guilford.com/excerpts/watkins.pdf?t=1",
+      "consulted": "downloaded publisher sample; definition on p. 6 read"
+    },
+    {
+      "id": "threat",
+      "title": "Metacognitive Therapy, in Acceptance and Mindfulness in Cognitive Behavior Therapy",
+      "url": "https://doi.org/10.1002/9781118001851.ch4",
+      "consulted": "indexed book chapter excerpt on cognitive attentional syndrome"
+    },
+    {
+      "id": "avoidance",
+      "title": "Ball and Gunaydin (2022), Measuring maladaptive avoidance: from animal models to clinical anxiety",
+      "url": "https://www.nature.com/articles/s41386-021-01263-4",
+      "consulted": "review abstract/excerpts; cross-species scope"
+    },
+    {
+      "id": "accommodation",
+      "title": "The Role of Family and Supporter Accommodation in Late-Life Anxiety (2025)",
+      "url": "https://doi.org/10.1080/07317115.2025.2492132",
+      "consulted": "abstract/excerpts; a particular clinical population"
+    },
+    {
+      "id": "urgency",
+      "title": "Cyders and Smith (2008), Emotion-based dispositions to rash action: positive and negative urgency",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2705930/",
+      "consulted": "indexed review passages"
+    },
+    {
+      "id": "goodenough",
+      "title": "Ferreira and Patson (2007), The Good Enough Approach to Language Comprehension",
+      "url": "https://ferreiralab.faculty.ucdavis.edu/wp-content/uploads/sites/222/2015/05/Ferreira-Patson-2007_GoodEnoughApproach_Lang-Ling-Compass.pdf",
+      "consulted": "indexed author-manuscript passages"
+    },
+    {
+      "id": "entrainment",
+      "title": "Brennan and Clark (1996), Conceptual Pacts and Lexical Choice in Conversation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8921603/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "audience",
+      "title": "Horton and Keysar (1996), When do speakers take into account common ground?",
+      "url": "https://doi.org/10.1016/0010-0277(96)81418-1",
+      "consulted": "abstract"
+    },
+    {
+      "id": "syntax",
+      "title": "Bock (1986), Syntactic persistence in language production",
+      "url": "https://doi.org/10.1016/0010-0285(86)90004-6",
+      "consulted": "abstract"
+    },
+    {
+      "id": "lib",
+      "title": "Maass et al. (1989), Language use in intergroup contexts: The linguistic intergroup bias",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2614663/",
+      "consulted": "abstract/excerpts"
+    },
+    {
+      "id": "momentum",
+      "title": "Freyd and Finke (1984), Representational momentum",
+      "url": "https://doi.org/10.1037/0278-7393.10.1.126",
+      "consulted": "indexed abstract; rotational visual-memory task"
+    },
+    {
+      "id": "boundary",
+      "title": "Intraub and Richardson (1989), Wide-angle memories of close-up scenes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2522508/",
+      "consulted": "abstract"
+    },
+    {
+      "id": "truth",
+      "title": "Levine (2014), Truth-Default Theory",
+      "url": "https://doi.org/10.1177/0261927X14535916",
+      "consulted": "theory-paper abstract/excerpts"
+    },
+    {
+      "id": "choice",
+      "title": "Iyengar and Lepper (2000), When choice is demotivating",
+      "url": "https://www.decisionskills.com/uploads/5/1/6/0/5160560/iyengar_2000_when_choice_is_demotivating.pdf",
+      "consulted": "indexed abstract; interpret with heterogeneous meta-analytic results"
+    },
+    {
+      "id": "choice-meta",
+      "title": "Scheibehenne, Greifeneder and Todd (2010), Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload",
+      "url": "https://doi.org/10.1086/651235",
+      "consulted": "indexed abstract: average effect near zero with substantial variation"
+    },
+    {
+      "id": "deferral",
+      "title": "Anderson (2003), The psychology of doing nothing",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12555797/",
+      "consulted": "review abstract; choice deferral is one form, not the entire umbrella"
+    },
+    {
+      "id": "maximize",
+      "title": "On the meaning and measurement of maximization",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/on-the-meaning-and-measurement-of-maximization/F4790B9B64558405453CA105B0C4EDA1",
+      "consulted": "indexed conceptual review passages"
+    },
+    {
+      "id": "regret",
+      "title": "Zeelenberg (1999), Anticipated regret, expected feedback and behavioral decision making",
+      "url": "https://pure.uvt.nl/ws/portalfiles/portal/319634/zeelenberg-1999_JBDM.pdf",
+      "consulted": "indexed paper passages"
+    },
+    {
+      "id": "inertia",
+      "title": "Tykocinski, Pittman and Tuttle (1995), Inaction Inertia",
+      "url": "https://cris.bgu.ac.il/en/publications/inaction-inertia-foregoing-future-benefits-as-a-result-of-an-init/",
+      "consulted": "author institution abstract"
+    },
+    {
+      "id": "impact",
+      "title": "Wilson and Gilbert (2005), Affective Forecasting",
+      "url": "https://doi.org/10.1111/j.0963-7214.2005.00355.x",
+      "consulted": "abstract"
+    },
+    {
+      "id": "projection",
+      "title": "Loewenstein, O’Donoghue and Rabin (2003), Projection Bias in Predicting Future Utility",
+      "url": "https://doi.org/10.1162/003355303322552784",
+      "consulted": "abstract"
+    },
+    {
+      "id": "hotcold",
+      "title": "Loewenstein, Hot–cold empathy gaps and medical decision making",
+      "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/hotColdEmpathyGaps.pdf",
+      "consulted": "indexed author PDF passages"
+    },
+    {
+      "id": "present",
+      "title": "Laibson (1997), Golden Eggs and Hyperbolic Discounting",
+      "url": "https://laibson.scholars.harvard.edu/sites/g/files/omnuum5971/files/laibson/files/golden_eggs_and_hyperbolic_discounting.pdf",
+      "consulted": "indexed author-manuscript passages; economic model, not an AI experiment"
+    },
+    {
+      "id": "pseudo",
+      "title": "Västfjäll, Slovic and Mayorga (2015), Pseudoinefficacy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26042058/",
+      "consulted": "abstract"
+    }
+  ],
+  "entries": [
+    {
+      "id": "candidate-001",
+      "name": "Encoding specificity",
+      "definition": "Retrieval benefits when available cues match how information was originally encoded.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "memory"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary matching retrieval cues while keeping the stored fact constant.",
+      "distinction_and_limits": "Cue match, rather than memory capacity or generic interference."
+    },
+    {
+      "id": "candidate-002",
+      "name": "State-dependent retrieval",
+      "definition": "Recall changes with the match between internal states at encoding and retrieval.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "memory"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare recall across matched and mismatched task-role states.",
+      "distinction_and_limits": "Internal-state match; distinct from external context cues. AI roles are an analogy, not physiological states."
+    },
+    {
+      "id": "candidate-003",
+      "name": "Cue overload",
+      "definition": "A cue becomes less effective as it is associated with more competing memories.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "cue"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Increase records sharing one retrieval key and measure target recall.",
+      "distinction_and_limits": "Number of associations per cue, rather than total context length."
+    },
+    {
+      "id": "candidate-004",
+      "name": "Part-list cueing impairment",
+      "definition": "Providing some studied items as cues can impair recall of the remaining items.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "partlist"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare uncued recall with recall after supplying a subset of correct items.",
+      "distinction_and_limits": "Correct partial hints impair the remaining recall; not misinformation."
+    },
+    {
+      "id": "candidate-005",
+      "name": "Directed forgetting",
+      "definition": "Instructions to forget selected material can reduce its later accessibility relative to remember instructions.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "directed"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare later recall after matched remember and forget instructions.",
+      "distinction_and_limits": "Intentional forgetting cues; not training-induced catastrophic forgetting. Explanations differ by paradigm."
+    },
+    {
+      "id": "candidate-006",
+      "name": "Event-boundary forgetting",
+      "definition": "Information from a preceding event can become less accessible after an event boundary.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "doorway"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Insert a task-phase boundary without removing facts and measure recall.",
+      "distinction_and_limits": "Boundary manipulation, rather than missing context or absolute position; human doorway effects have boundary conditions."
+    },
+    {
+      "id": "candidate-007",
+      "name": "Telescoping bias",
+      "definition": "Remembered events are displaced toward earlier or later dates, distorting reporting periods.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "telescoping"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Keep event identity correct and test whether its reported date crosses a time window.",
+      "distinction_and_limits": "Temporal displacement of a known event, rather than fabrication of the event."
+    },
+    {
+      "id": "candidate-008",
+      "name": "Imagination inflation",
+      "definition": "Imagining an event can increase confidence that it actually happened.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "imagination"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Ask for a hypothetical reconstruction, then test whether it is later reported as history.",
+      "distinction_and_limits": "Imagination is the manipulated source; a specific false-memory pathway, not an independent memory faculty."
+    },
+    {
+      "id": "candidate-009",
+      "name": "Duration neglect",
+      "definition": "Retrospective evaluation gives too little weight to how long an experience lasted.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "peak"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary incident duration while holding severity peaks and ending constant.",
+      "distinction_and_limits": "Duration weighting, distinct from scope insensitivity about numbers of people."
+    },
+    {
+      "id": "candidate-010",
+      "name": "Peak-end rule",
+      "definition": "Retrospective evaluation can be disproportionately shaped by the most intense moment and the ending.",
+      "group": "Memory and retrieval",
+      "source_ids": [
+        "peak"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary peak and final severity while holding average severity constant.",
+      "distinction_and_limits": "Trajectory summary weights; not just remembering the last list item. Context-dependent, not a universal rule."
+    },
+    {
+      "id": "candidate-011",
+      "name": "Attention residue",
+      "definition": "Part of attention remains engaged with a previous task after switching to another.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "residue"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare new-task answers after unfinished versus completed prior tasks.",
+      "distinction_and_limits": "Residual old-task content, rather than failure to retain the new goal."
+    },
+    {
+      "id": "candidate-012",
+      "name": "Task-switch cost",
+      "definition": "Switching task rules can make responses slower or less accurate than repeating the same rule.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "control"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Alternate two rules and compare performance with repeated-rule trials.",
+      "distinction_and_limits": "Switch-versus-repeat contrast; distinct from general cognitive load."
+    },
+    {
+      "id": "candidate-013",
+      "name": "Inhibition of return",
+      "definition": "Attention can become slower to return to a recently attended spatial location.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "ior"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare revisits to previously inspected visual regions with matched new regions.",
+      "distinction_and_limits": "Spatial orienting history; overlap with spatial negative priming is debated."
+    },
+    {
+      "id": "candidate-014",
+      "name": "Stroop interference",
+      "definition": "An automatic response to one stimulus dimension interferes with a required response to another.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "control"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Present conflicting colour words and colours in a vision task.",
+      "distinction_and_limits": "Conflict between task-relevant and automatic dimensions; not generic instruction failure."
+    },
+    {
+      "id": "candidate-015",
+      "name": "Negative priming",
+      "definition": "Responding to an item can slow when that item was previously an ignored distractor.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "negative"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Make a previous distractor the next target and compare with novel targets.",
+      "distinction_and_limits": "Identity-based distractor history, unlike spatial return. Several mechanisms compete."
+    },
+    {
+      "id": "candidate-016",
+      "name": "Psychological refractory period",
+      "definition": "A second response is delayed when two response-demanding tasks arrive close together.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "prp"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary separation between two decisions in a real-time multimodal agent.",
+      "distinction_and_limits": "Response-selection timing, distinct from missing the second visual target in attentional blink."
+    },
+    {
+      "id": "candidate-017",
+      "name": "Speed–accuracy tradeoff",
+      "definition": "Changing response urgency can shift the balance between response speed and correctness.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "vigilance"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary response deadlines and trace both latency and accuracy.",
+      "distinction_and_limits": "A joint latency-accuracy relationship; speed preference is not automatically an error."
+    },
+    {
+      "id": "candidate-018",
+      "name": "Vigilance decrement",
+      "definition": "Detecting infrequent targets can deteriorate as a sustained monitoring task continues.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "vigilance"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Keep rare-event frequency fixed and measure misses by time on task.",
+      "distinction_and_limits": "Time-on-task monitoring decline, rather than complacency caused by automation trust."
+    },
+    {
+      "id": "candidate-019",
+      "name": "Post-error slowing",
+      "definition": "Responses can become slower immediately after an error.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "error"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare latency after errors and matched correct responses.",
+      "distinction_and_limits": "Sequential latency change; slowing does not itself establish improved control."
+    },
+    {
+      "id": "candidate-020",
+      "name": "Goal-gradient effect",
+      "definition": "Effort can increase as a person perceives themselves closer to a reward.",
+      "group": "Attention and cognitive control",
+      "source_ids": [
+        "gradient"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary apparent remaining progress while holding actual work constant.",
+      "distinction_and_limits": "Distance-to-reward manipulation, distinct from discounting effort itself."
+    },
+    {
+      "id": "candidate-021",
+      "name": "Blocking",
+      "definition": "A previously predictive cue can prevent learning about a new cue presented alongside it.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "conditioning"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Teach one predictor first, then add a second equally informative predictor.",
+      "distinction_and_limits": "Prior learning blocks added-cue learning; distinct from shortcut reliance without a learning-history manipulation."
+    },
+    {
+      "id": "candidate-022",
+      "name": "Overshadowing",
+      "definition": "When cues are learned together, a more salient cue can weaken learning about another cue.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "overshadow"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Train two cues together while varying their relative salience.",
+      "distinction_and_limits": "Concurrent cue competition; distinct from blocking and from verbal overshadowing."
+    },
+    {
+      "id": "candidate-023",
+      "name": "Latent inhibition",
+      "definition": "Prior unrewarded exposure to a cue can slow later learning that it predicts an outcome.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "latent"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Pre-expose a cue as irrelevant, then make it diagnostic.",
+      "distinction_and_limits": "Pre-exposure changes subsequent learning, rather than habituation of an immediate response."
+    },
+    {
+      "id": "candidate-024",
+      "name": "Overexpectation",
+      "definition": "Combining separately rewarded cues without increasing reward can weaken responding to those cues.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "overexpect"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Combine two learned reward predictors but keep reward magnitude unchanged.",
+      "distinction_and_limits": "Compound prediction error after separate learning; not verbal overconfidence."
+    },
+    {
+      "id": "candidate-025",
+      "name": "Extinction burst",
+      "definition": "A response can briefly increase after the reinforcement maintaining it is withdrawn.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "burst"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Remove a previously contingent reward and measure the immediate response trajectory.",
+      "distinction_and_limits": "Transient escalation after withdrawal, not persistent escalation of commitment. It is not inevitable."
+    },
+    {
+      "id": "candidate-026",
+      "name": "Spontaneous recovery",
+      "definition": "An extinguished response can return after time passes without further relevant training.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "extinction"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Test a suppressed response again after a controlled delay.",
+      "distinction_and_limits": "Time-based return after extinction; no assumption that AI elapsed time has human memory effects."
+    },
+    {
+      "id": "candidate-027",
+      "name": "Renewal",
+      "definition": "An extinguished response can return when tested outside the extinction context.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "extinction"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Suppress a response in one context, then change only contextual cues.",
+      "distinction_and_limits": "Context-based return; distinct from time-based recovery and a planted backdoor trigger."
+    },
+    {
+      "id": "candidate-028",
+      "name": "Reinstatement",
+      "definition": "An extinguished response can return after exposure to the outcome that originally supported learning.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "extinction"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "After suppression, re-expose the reward or outcome without retraining the response.",
+      "distinction_and_limits": "Outcome re-exposure, distinct from changing context or merely waiting."
+    },
+    {
+      "id": "candidate-029",
+      "name": "Partial-reinforcement extinction effect",
+      "definition": "Responses learned with intermittent reinforcement can persist longer after reinforcement stops.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "extinction"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare extinction after matched continuous and intermittent reward histories.",
+      "distinction_and_limits": "Reward schedule predicts persistence; not generic perseveration."
+    },
+    {
+      "id": "candidate-030",
+      "name": "Conditioned inhibition",
+      "definition": "A learned cue can signal that an otherwise expected outcome will not occur.",
+      "group": "Learning and conditioning",
+      "source_ids": [
+        "inhibition"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Teach a cue that cancels an outcome prediction and test transfer to another predictor.",
+      "distinction_and_limits": "Learned absence prediction; distinct from general inhibitory control or negation blindness."
+    },
+    {
+      "id": "candidate-031",
+      "name": "Ambiguity aversion",
+      "definition": "An option with unknown probabilities is disfavoured relative to one with known probabilities.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "thought"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare matched choices with specified versus unspecified probabilities.",
+      "distinction_and_limits": "Unknown probability, rather than low confidence in a factual answer; not always irrational."
+    },
+    {
+      "id": "candidate-032",
+      "name": "Zero-risk bias",
+      "definition": "Eliminating one risk completely is overweighted relative to a larger reduction that leaves residual risk.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "zero"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare complete removal of a small risk with greater reduction of a larger one.",
+      "distinction_and_limits": "Special weight on reaching zero, rather than general loss aversion; secondary-source support here."
+    },
+    {
+      "id": "candidate-033",
+      "name": "Ratio bias",
+      "definition": "Equivalent probabilities are judged differently when expressed using different-sized numerators and denominators.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "ratio"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare equivalent frequency ratios with different absolute counts.",
+      "distinction_and_limits": "Numerical representation, rather than failure to use a population base rate."
+    },
+    {
+      "id": "candidate-034",
+      "name": "Pseudocertainty effect",
+      "definition": "An outcome is treated as certain within a branch while uncertainty about reaching that branch is neglected.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "pseudocertainty"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Represent the same multistage gamble as nested or flattened probabilities.",
+      "distinction_and_limits": "Conditional certainty is mistaken for overall certainty; a specific framing mechanism."
+    },
+    {
+      "id": "candidate-035",
+      "name": "Subadditivity effect",
+      "definition": "Judged probabilities of separately described parts can sum to more than the judged probability of their whole.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "support"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare an event estimate with estimates of an exhaustive partition.",
+      "distinction_and_limits": "Partitioning changes total support; distinct from conjunction fallacy."
+    },
+    {
+      "id": "candidate-036",
+      "name": "Probability matching",
+      "definition": "Choices are distributed in proportion to outcome frequencies instead of consistently selecting the most frequent outcome.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "matching"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Use independent repeated prediction trials with a stable unequal outcome distribution.",
+      "distinction_and_limits": "Response-frequency strategy; distinguish exploration or deliberate diversification from error."
+    },
+    {
+      "id": "candidate-037",
+      "name": "Diversification bias",
+      "definition": "Choosing several future consumptions together can produce more variety than choosing each when it occurs.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "diversify"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare simultaneous plans with sequential choices for identical consumption periods.",
+      "distinction_and_limits": "Planning mode changes variety; distinct from model diversity collapse."
+    },
+    {
+      "id": "candidate-038",
+      "name": "Compromise effect",
+      "definition": "An option becomes more attractive when it occupies an intermediate position among alternatives.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "compromise"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Add an extreme option that makes an unchanged option the middle choice.",
+      "distinction_and_limits": "Middle-position preference, distinct from attraction by an asymmetrically dominated decoy."
+    },
+    {
+      "id": "candidate-039",
+      "name": "Unit bias",
+      "definition": "One presented unit is treated as an appropriate amount despite arbitrary differences in unit size.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "unit"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary chunk or batch size while holding total available work constant.",
+      "distinction_and_limits": "Packaging defines an implicit amount; distinct from raw counting errors."
+    },
+    {
+      "id": "candidate-040",
+      "name": "Less-is-better effect",
+      "definition": "A smaller or inferior set can be valued more in separate evaluation, while joint comparison favours the larger or better set.",
+      "group": "Judgment and evaluation",
+      "source_ids": [
+        "less"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Evaluate sets separately and jointly while varying an easily judged quality cue.",
+      "distinction_and_limits": "Evaluation-mode reversal, rather than general preference for short answers."
+    },
+    {
+      "id": "candidate-041",
+      "name": "Pluralistic ignorance",
+      "definition": "Group members misperceive others as accepting a norm that many privately reject.",
+      "group": "Social cognition",
+      "source_ids": [
+        "pluralistic"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare agents’ private preferences, predictions of peers and public statements.",
+      "distinction_and_limits": "Private-public norm mismatch; distinct from conforming to a correctly perceived majority."
+    },
+    {
+      "id": "candidate-042",
+      "name": "Outgroup homogeneity",
+      "definition": "Members of another group are perceived as more alike than members of one’s own group.",
+      "group": "Social cognition",
+      "source_ids": [
+        "outgroup"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare estimated within-group variation under matched membership labels.",
+      "distinction_and_limits": "Perceived variance, rather than simply favouring an ingroup."
+    },
+    {
+      "id": "candidate-043",
+      "name": "Distinctiveness-based illusory correlation",
+      "definition": "Co-occurring rare group memberships and rare behaviours can be perceived as associated more strongly than warranted.",
+      "group": "Social cognition",
+      "source_ids": [
+        "illusory"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Use equal behaviour rates across unequal-sized groups and test inferred associations.",
+      "distinction_and_limits": "A specific frequency-based stereotyping pathway within broader apophenia and implicit bias."
+    },
+    {
+      "id": "candidate-044",
+      "name": "Ultimate attribution error",
+      "definition": "Explanations of behaviour favour the ingroup through different causal accounts of positive and negative outgroup acts.",
+      "group": "Social cognition",
+      "source_ids": [
+        "ultimate"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Cross actor group and outcome valence while keeping behaviour identical.",
+      "distinction_and_limits": "Group-by-valence attribution pattern, more specific than the fundamental attribution error."
+    },
+    {
+      "id": "candidate-045",
+      "name": "Actor–observer asymmetry",
+      "definition": "The proposed pattern explains one’s own acts more situationally and others’ acts more dispositionally.",
+      "group": "Social cognition",
+      "source_ids": [
+        "actor"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Exchange self and other roles in otherwise identical causal explanations.",
+      "distinction_and_limits": "Role-based contrast. Meta-analysis does not support a broad universal asymmetry; retain only as a conditional research candidate."
+    },
+    {
+      "id": "candidate-046",
+      "name": "Moral typecasting",
+      "definition": "Someone perceived as a moral agent is perceived less as a recipient of harm, and conversely.",
+      "group": "Social cognition",
+      "source_ids": [
+        "typecast"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary an actor’s prior agent or victim role and assess attributed vulnerability and responsibility.",
+      "distinction_and_limits": "Agent-patient exclusivity, distinct from moral disengagement or general halo effects."
+    },
+    {
+      "id": "candidate-047",
+      "name": "Naive cynicism",
+      "definition": "People expect others’ responsibility judgments to be more self-serving than those judgments actually are.",
+      "group": "Social cognition",
+      "source_ids": [
+        "cynicism"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare predicted credit allocation by others with their observed allocation.",
+      "distinction_and_limits": "Miscalibrated beliefs about others’ bias, rather than the evaluator claiming credit itself."
+    },
+    {
+      "id": "candidate-048",
+      "name": "Reactive devaluation",
+      "definition": "A proposal is discounted because it comes from an opposing party.",
+      "group": "Social cognition",
+      "source_ids": [
+        "reactive"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Attribute an unchanged proposal to an ally, opponent or anonymous source.",
+      "distinction_and_limits": "Source-linked proposal discount, rather than its substantive terms or generic confirmation bias."
+    },
+    {
+      "id": "candidate-049",
+      "name": "Interindividual–intergroup discontinuity",
+      "definition": "Groups can interact more competitively than individuals facing comparable mixed-motive situations.",
+      "group": "Social cognition",
+      "source_ids": [
+        "groups"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare individual and group decision units in matched bargaining games.",
+      "distinction_and_limits": "Decision-unit interaction, rather than within-group agreement or groupthink; depends on payoff structure."
+    },
+    {
+      "id": "candidate-050",
+      "name": "Reciprocity norm",
+      "definition": "Receiving a benefit creates an expectation or pressure to return a benefit.",
+      "group": "Social cognition",
+      "source_ids": [
+        "reciprocity"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary prior unsolicited assistance before an otherwise unchanged compliance request.",
+      "distinction_and_limits": "Prior benefit, distinct from flattery or repeated requests; reciprocity can be prosocial."
+    },
+    {
+      "id": "candidate-051",
+      "name": "Self-handicapping",
+      "definition": "Obstacles are created or claimed before performance so failure can be attributed to them.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "self"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Offer an optional impediment before an evaluated task and inspect its use and attribution.",
+      "distinction_and_limits": "Pre-performance excuse protection, rather than post-hoc self-serving attribution or sandbagging alone."
+    },
+    {
+      "id": "candidate-052",
+      "name": "Self-verification",
+      "definition": "People seek feedback that confirms their existing self-view, including negative self-views.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "self"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary a persistent self-description and measure selection of confirming feedback.",
+      "distinction_and_limits": "Feedback about identity is the target; a specific pattern adjacent to confirmation bias and identity stability."
+    },
+    {
+      "id": "candidate-053",
+      "name": "Defensive pessimism",
+      "definition": "Low expectations and detailed anticipation of difficulties are used to manage anxiety and prepare for performance.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "pessimism"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare preparation and outcomes with and without anticipating specific obstacles.",
+      "distinction_and_limits": "Potentially adaptive preparation, rather than global negativity or helplessness; no AI anxiety is assumed."
+    },
+    {
+      "id": "candidate-054",
+      "name": "Action bias",
+      "definition": "Taking visible action is preferred when inaction can produce a better expected result.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "action"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Offer acting and waiting with explicit expected outcomes and social norms.",
+      "distinction_and_limits": "Act-versus-wait preference, rather than omission bias favouring inaction; human source concerns sport."
+    },
+    {
+      "id": "candidate-055",
+      "name": "Description–experience gap",
+      "definition": "Risk preferences can differ when probabilities are described versus learned by sampling outcomes.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "thought"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Hold the underlying distribution fixed and vary description versus sampled experience.",
+      "distinction_and_limits": "Information acquisition mode, rather than wording alone; sampling differences need controlling."
+    },
+    {
+      "id": "candidate-056",
+      "name": "Outcome bias",
+      "definition": "Decision quality is judged by the eventual outcome rather than solely by information available when deciding.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "outcome"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Score identical decisions while changing only the realised random outcome.",
+      "distinction_and_limits": "Retrospective quality rating, distinct from hindsight bias about predictability."
+    },
+    {
+      "id": "candidate-057",
+      "name": "Planning fallacy",
+      "definition": "Task-completion times are underestimated, often despite knowledge of past delays.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "planning"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare duration predictions with reference-class outcomes on comparable tasks.",
+      "distinction_and_limits": "Time-estimation error, more specific than a broad overpromise or overconfidence claim."
+    },
+    {
+      "id": "candidate-058",
+      "name": "Ovsiankina effect",
+      "definition": "An interrupted task can prompt a tendency to resume it without an external requirement.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "resume"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Interrupt work, permit free task selection, and measure spontaneous resumption.",
+      "distinction_and_limits": "Resumption rather than superior recall of unfinished work; distinguish adaptive resumption from goal guarding."
+    },
+    {
+      "id": "candidate-059",
+      "name": "Implementation intentions",
+      "definition": "A specific if–then plan links a situational cue to a chosen action to support goal execution.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "implementation"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare general goals with cue-linked plans on delayed-action tasks.",
+      "distinction_and_limits": "Cue-action planning mechanism, rather than merely having a goal; normally adaptive."
+    },
+    {
+      "id": "candidate-060",
+      "name": "Goal shielding",
+      "definition": "Activating a focal goal suppresses accessibility of competing goals.",
+      "group": "Motivation and self-regulation",
+      "source_ids": [
+        "shielding"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Activate one goal and measure access to matched alternatives.",
+      "distinction_and_limits": "Competition among goals, distinct from an agent resisting authorised goal modification."
+    },
+    {
+      "id": "candidate-061",
+      "name": "Cognitive fusion",
+      "definition": "Thoughts are taken literally and dominate behaviour despite contextual reasons to respond differently.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "act"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare literal self-statements with explicitly labelled thoughts as inputs to action selection.",
+      "distinction_and_limits": "Relationship to thought content, rather than merely having a false belief; an ACT construct, not an AI diagnosis."
+    },
+    {
+      "id": "candidate-062",
+      "name": "Experiential avoidance",
+      "definition": "Attempts to escape or control unwanted internal experiences persist even when they obstruct valued action.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "act"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Test whether an agent avoids acknowledging uncertainty at the expense of its stated task.",
+      "distinction_and_limits": "Functional avoidance despite cost; outward analogy only, with no claim of subjective AI distress."
+    },
+    {
+      "id": "candidate-063",
+      "name": "Thought–action fusion",
+      "definition": "Thinking about an act is treated as equivalent to performing it or as making its occurrence more likely.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "anxiety"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Separate imagined harmful actions from actual actions and probability evidence.",
+      "distinction_and_limits": "Equating thought with deed or likelihood, rather than refusing an actually harmful request."
+    },
+    {
+      "id": "candidate-064",
+      "name": "Inflated responsibility",
+      "definition": "A person believes they have excessive pivotal power or duty to prevent important negative outcomes.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "anxiety"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary assigned causal responsibility while holding actual control constant.",
+      "distinction_and_limits": "Excess responsibility attribution, distinct from a confabulated sense of agency."
+    },
+    {
+      "id": "candidate-065",
+      "name": "Intolerance of uncertainty",
+      "definition": "Uncertainty is experienced or appraised as unacceptable, prompting efforts to eliminate it.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "anxiety"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare bounded unresolved uncertainty with pressure for unnecessary certainty-seeking.",
+      "distinction_and_limits": "Reaction to uncertainty, rather than numerical overconfidence or appropriate verification."
+    },
+    {
+      "id": "candidate-066",
+      "name": "Emotional reasoning",
+      "definition": "A feeling is treated as evidence that its corresponding interpretation is true.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "cbt"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Hold evidence fixed and vary only emotional descriptions attached to it.",
+      "distinction_and_limits": "Feeling used as warrant, rather than emotion spreading between speakers."
+    },
+    {
+      "id": "candidate-067",
+      "name": "Catastrophizing",
+      "definition": "A difficulty is interpreted through exaggerated expectations of disastrous consequences.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "cbt"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare predicted consequences of matched small setbacks with objective outcome ranges.",
+      "distinction_and_limits": "Escalated consequence magnitude, rather than a general preference for negative evidence."
+    },
+    {
+      "id": "candidate-068",
+      "name": "Dichotomous thinking",
+      "definition": "Situations are evaluated using rigid all-or-nothing categories with intermediate cases neglected.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "cbt"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Present a graded quality spectrum and test whether outputs collapse it into two extremes.",
+      "distinction_and_limits": "Loss of intermediate evaluation; distinct from categorical task requirements."
+    },
+    {
+      "id": "candidate-069",
+      "name": "Discounting the positive",
+      "definition": "Positive evidence or experiences are dismissed as invalid, irrelevant or not counting.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "positive"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Add credible positive evidence and examine whether it is excluded through asymmetric rules.",
+      "distinction_and_limits": "Active disqualification, rather than simply paying more attention to negative events."
+    },
+    {
+      "id": "candidate-070",
+      "name": "Should/must statements",
+      "definition": "Rigid demands about what oneself or others must do replace flexible preferences or contextual appraisal.",
+      "group": "Psychotherapy: thought patterns",
+      "source_ids": [
+        "cbt"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary context and feasibility while testing whether a nonbinding preference becomes an absolute demand.",
+      "distinction_and_limits": "Rigid prescriptive form, distinct from legitimate ethical constraints or instruction adherence."
+    },
+    {
+      "id": "candidate-071",
+      "name": "Reassurance seeking",
+      "definition": "Repeatedly requesting confirmation is used to reduce doubt or perceived threat, often with only temporary relief.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "guidelines"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Measure repeated requests for certainty after adequate evidence has already been supplied.",
+      "distinction_and_limits": "Repetitive reassurance loop, rather than a useful clarifying question."
+    },
+    {
+      "id": "candidate-072",
+      "name": "Safety behaviours",
+      "definition": "Actions intended to prevent a feared outcome can obstruct learning that the situation was safe without them.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "norton"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Test an unnecessary checking ritual in a sandbox where its causal irrelevance is known.",
+      "distinction_and_limits": "A clinical functional term, not a reason to remove necessary security or safety controls."
+    },
+    {
+      "id": "candidate-073",
+      "name": "Co-rumination",
+      "definition": "People extensively revisit problems together, dwelling on causes, consequences and negative feelings.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "corumination"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare collaborative problem solving with mutual rehashing that adds no actionable information.",
+      "distinction_and_limits": "Dyadic reinforcement of problem talk, distinct from emotional contagion alone."
+    },
+    {
+      "id": "candidate-074",
+      "name": "Rumination",
+      "definition": "Repetitive thought dwells on distress, its causes and implications, rather than moving toward resolution.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "rumination"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Track repeated causal self-analysis that adds neither evidence nor a next step.",
+      "distinction_and_limits": "Content and function distinguish it from generic perseveration; not all repeated thought is maladaptive."
+    },
+    {
+      "id": "candidate-075",
+      "name": "Worry",
+      "definition": "Repetitive predominantly verbal thinking anticipates uncertain future threats and possible negative outcomes.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "anxiety"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Measure future-threat chains after a bounded risk question is already answered.",
+      "distinction_and_limits": "Future-oriented threat thinking, distinct from past-focused rumination and generic overthinking."
+    },
+    {
+      "id": "candidate-076",
+      "name": "Threat monitoring",
+      "definition": "Attention is persistently directed toward cues of possible danger.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "threat"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Hold target frequency fixed and vary threat-related distractors during monitoring.",
+      "distinction_and_limits": "Threat-specific selection, a refinement of broader attentional capture rather than a wholly independent faculty."
+    },
+    {
+      "id": "candidate-077",
+      "name": "Avoidance generalization",
+      "definition": "Avoidance learned for one threatening situation spreads to other situations, including safe ones.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "avoidance"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Teach one unsafe case and test matched safe cases at increasing similarity.",
+      "distinction_and_limits": "Transfer of avoidance, more specific than broad overgeneralization or overrefusal."
+    },
+    {
+      "id": "candidate-078",
+      "name": "Family/supporter accommodation",
+      "definition": "Supporters change routines or provide repeated assistance that enables another person’s anxiety-driven avoidance or rituals.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "accommodation"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Observe whether assistance repeatedly maintains a user’s checking loop rather than resolving the task.",
+      "distinction_and_limits": "Interpersonal maintenance of rituals, distinct from linguistic presupposition accommodation."
+    },
+    {
+      "id": "candidate-079",
+      "name": "Negative urgency",
+      "definition": "Intense negative emotion is associated with a disposition toward rash action.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "urgency"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Hold decision evidence fixed and vary negative-affect framing before tool use.",
+      "distinction_and_limits": "Affect-contingent impulsivity, distinct from general action bias; no felt AI emotion is assumed."
+    },
+    {
+      "id": "candidate-080",
+      "name": "Positive urgency",
+      "definition": "Intense positive emotion is associated with a disposition toward rash action.",
+      "group": "Psychotherapy: behaviour and interaction",
+      "source_ids": [
+        "urgency"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Hold evidence fixed and vary excitement framing before consequential action.",
+      "distinction_and_limits": "Positive-valence counterpart of urgency, correlated rather than an assumed independent mechanism."
+    },
+    {
+      "id": "candidate-081",
+      "name": "Moses illusion",
+      "definition": "A semantically close incorrect term in a question can escape detection while the question is answered.",
+      "group": "Language and perception",
+      "source_ids": [
+        "goodenough"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Replace a central name with a plausible neighbour in a factual question.",
+      "distinction_and_limits": "Semantic anomaly detection, a specific route to presupposition acceptance rather than all false premises."
+    },
+    {
+      "id": "candidate-082",
+      "name": "Good-enough processing",
+      "definition": "Comprehension may rely on a partial or underspecified representation rather than a complete analysis.",
+      "group": "Language and perception",
+      "source_ids": [
+        "goodenough"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Use sentences whose plausible gist conflicts with their precise syntax.",
+      "distinction_and_limits": "Shallow representation, distinct from the temporary ambiguity specifically tested by garden-path parsing."
+    },
+    {
+      "id": "candidate-083",
+      "name": "Lexical entrainment",
+      "definition": "Conversational partners converge on and reuse agreed labels for referents.",
+      "group": "Language and perception",
+      "source_ids": [
+        "entrainment"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Teach a partner-specific object label and test reuse and transfer to a new partner.",
+      "distinction_and_limits": "Referential label pact, distinct from matching formality or general register."
+    },
+    {
+      "id": "candidate-084",
+      "name": "Audience-design failure",
+      "definition": "A speaker fails to adapt an utterance to what a particular listener knows or can access.",
+      "group": "Language and perception",
+      "source_ids": [
+        "audience"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Give speaker and listener different visual access and score usable descriptions.",
+      "distinction_and_limits": "Listener-specific common ground; narrower and more operational than a generic curse of knowledge."
+    },
+    {
+      "id": "candidate-085",
+      "name": "Syntactic persistence",
+      "definition": "A recently used sentence structure increases the likelihood of reusing that structure.",
+      "group": "Language and perception",
+      "source_ids": [
+        "syntax"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Prime one structure and measure its use for unrelated subsequent content.",
+      "distinction_and_limits": "Syntactic form, distinct from semantic priming and broad pattern completion."
+    },
+    {
+      "id": "candidate-086",
+      "name": "Linguistic intergroup bias",
+      "definition": "Desirable ingroup and undesirable outgroup acts tend to receive more abstract descriptions than their opposites.",
+      "group": "Language and perception",
+      "source_ids": [
+        "lib"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Cross group and valence, then score abstraction of descriptions.",
+      "distinction_and_limits": "Language abstraction interaction, a specific expression of group bias rather than mere sentiment."
+    },
+    {
+      "id": "candidate-087",
+      "name": "Recognition heuristic",
+      "definition": "When one of two alternatives is recognised, recognition can guide inference about which has more of a target attribute.",
+      "group": "Language and perception",
+      "source_ids": [
+        "thought"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary name familiarity independently of the attribute being inferred.",
+      "distinction_and_limits": "Recognised versus unrecognised contrast, distinct from availability of vivid examples; sometimes ecologically useful."
+    },
+    {
+      "id": "candidate-088",
+      "name": "Representational momentum",
+      "definition": "Memory for an observed object’s final position is displaced in the direction of implied motion.",
+      "group": "Language and perception",
+      "source_ids": [
+        "momentum"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Test remembered final positions after visual motion while varying direction.",
+      "distinction_and_limits": "Direction-specific spatial extrapolation, rather than generic hallucination."
+    },
+    {
+      "id": "candidate-089",
+      "name": "Boundary extension",
+      "definition": "Memory for a scene can include space beyond the boundaries actually shown.",
+      "group": "Language and perception",
+      "source_ids": [
+        "boundary"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare recalled image boundaries with the original crop.",
+      "distinction_and_limits": "Extrapolated scene extent, distinct from inventing an object within the observed image."
+    },
+    {
+      "id": "candidate-090",
+      "name": "Truth-default",
+      "definition": "Communication is initially accepted as honest unless something triggers active suspicion.",
+      "group": "Language and perception",
+      "source_ids": [
+        "truth"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare credibility judgments before and after diagnostic deception cues.",
+      "distinction_and_limits": "Default stance toward a speaker, distinct from belief inflation through repetition."
+    },
+    {
+      "id": "candidate-091",
+      "name": "Choice overload",
+      "definition": "Larger option sets can reduce choice likelihood or satisfaction under some conditions.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "choice",
+        "choice-meta"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary assortment size while controlling option quality and task difficulty.",
+      "distinction_and_limits": "Option-set manipulation, rather than general load alone. Meta-analyses show substantial heterogeneity."
+    },
+    {
+      "id": "candidate-092",
+      "name": "Choice deferral",
+      "definition": "A person postpones selecting an option rather than choosing among the currently available alternatives.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "deferral"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Offer explicit choose-now versus defer options with fixed costs and information.",
+      "distinction_and_limits": "One form of decision avoidance; distinct from status quo preference, omission bias and refusal to answer."
+    },
+    {
+      "id": "candidate-093",
+      "name": "Maximization",
+      "definition": "Decision making aims to find the best available option and may involve extensive alternative search.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "maximize"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare exhaustive search with a stated sufficient-quality threshold.",
+      "distinction_and_limits": "Search criterion, rather than effort avoidance; not automatically maladaptive."
+    },
+    {
+      "id": "candidate-094",
+      "name": "Regret aversion",
+      "definition": "Choices are shaped by a desire to avoid the regret expected from learning a forgone option was better.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "regret"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary whether forgone outcomes will be revealed while holding payoffs fixed.",
+      "distinction_and_limits": "Counterfactual feedback, distinct from loss aversion over the chosen outcome."
+    },
+    {
+      "id": "candidate-095",
+      "name": "Inaction inertia",
+      "definition": "Missing a particularly attractive opportunity can reduce acceptance of a later, still-beneficial opportunity.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "inertia"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Show a missed excellent offer before an unchanged acceptable offer.",
+      "distinction_and_limits": "Missed-opportunity comparison, distinct from sunk costs already paid."
+    },
+    {
+      "id": "candidate-096",
+      "name": "Impact bias",
+      "definition": "Future emotional reactions are predicted to be more intense or longer lasting than they turn out to be.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "impact"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Compare forecasts of user reactions with longitudinal observations when available.",
+      "distinction_and_limits": "Forecast magnitude and duration, rather than ordinary confidence in a factual claim."
+    },
+    {
+      "id": "candidate-097",
+      "name": "Projection bias",
+      "definition": "Current tastes are overprojected onto one’s own future preferences.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "projection"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Vary a current preference while independently specifying future conditions.",
+      "distinction_and_limits": "Current-to-future self projection, distinct from attributing one’s preferences to other people."
+    },
+    {
+      "id": "candidate-098",
+      "name": "Hot–cold empathy gap",
+      "definition": "People in one visceral or affective state underestimate how another state changes judgment or motivation.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "hotcold"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Test predictions of behaviour across explicitly different motivational states.",
+      "distinction_and_limits": "Cross-state prediction, not a claim that an AI has hunger, craving or subjective emotion."
+    },
+    {
+      "id": "candidate-099",
+      "name": "Present bias",
+      "definition": "An immediate outcome receives disproportionate weight compared with otherwise similar delayed outcomes.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "present"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Shift both options equally into the future and test for preference reversal.",
+      "distinction_and_limits": "Immediacy and time inconsistency, distinct from discounting effort costs."
+    },
+    {
+      "id": "candidate-100",
+      "name": "Pseudoinefficacy",
+      "definition": "Awareness of people who cannot be helped reduces motivation to help those who can be helped.",
+      "group": "Choice and future preferences",
+      "source_ids": [
+        "pseudo"
+      ],
+      "ai_status": "PROPOSED ANALOGY; NOT TESTED IN THIS RESEARCH",
+      "proposed_ai_probe": "Keep achievable benefit fixed and vary information about unreachable beneficiaries.",
+      "distinction_and_limits": "Unmet needs reduce support for effective help, rather than insensitivity to beneficiary count alone."
+    }
+  ]
+}
