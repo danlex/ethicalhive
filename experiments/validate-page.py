@@ -25,9 +25,10 @@ def main():
     # mode does not require editing this file.
     import yaml
     onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
-    n_modes = len(onto["modes"])
-    n_shipped = sum(1 for m in onto["modes"] if m.get("highlighted"))
-    n_groups = len({m["group_label"] for m in onto["modes"]})
+    primary=[m for m in onto['modes'] if not m.get('grouped_under')]
+    n_modes = len(primary)
+    n_shipped = sum(1 for m in primary if m.get("highlighted"))
+    n_groups = len({m["group_label"] for m in primary})
 
     ok = True
 
@@ -82,3 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

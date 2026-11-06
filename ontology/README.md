@@ -27,15 +27,18 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page currently renders 434 behaviour records in one list: the previous 207
-entries and 227 explicitly labelled proposed human-behaviour analogies. Of the
-total, 395 are human-paralleled and 39 AI-native, with 26 highlighted entries.
+The page currently renders 425 primary entries and 9 grouped overlap variants
+inside the same list. All 434 source records are retained: the previous 207
+records and 227 explicitly labelled proposed human-behaviour analogies. Grouping
+reflects overlapping operational descriptions, not a claim of psychological
+synonymy or independent validation. Of all source records, 395 are human-paralleled
+and 39 AI-native, with 26 highlighted entries.
 The added records include 128 with a human-definition source consulted and 99
 whose source check is pending. AI parallels remain untested. The paper and
 reported experiments describe the original 207-entry baseline.
-Thirteen highlighted modes restate a brain mode and carry a `same_as` link; that
-overlap is the project's deliberate "featured on top, catalogued below" structure,
-recorded explicitly rather than hidden.
+Highlighted entries are styled in place within their category; they are not
+rendered as a second featured copy. The operational-overlap review and explicit
+`grouped_under` records describe the current grouping decisions.
 
 ## Editing
 
@@ -49,6 +52,12 @@ recorded explicitly rather than hidden.
 5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
 
 The page build also exports `docs/behaviours.csv` and `docs/behaviours.json`.
+These exports have one row/object per primary entry. JSON nests the retained
+records under `grouped_variants`; CSV retains them in its grouped-variant columns.
+Public `meta.mode_count` is the primary count; `meta.source_record_count` records
+the complete inventory. In the authoritative YAML, `meta.mode_count` still counts
+all records and `meta.display_counts` distinguishes the view counts. The grouping
+review is `references/semantic-dedup-review-2026-11-06.json`.
 Former research-page URLs redirect to `/#catalogue`; older download URLs are
 aliases of the same full export. Research snapshots and reconciliation records
 are preserved in `references/`. The one-time integration is recorded in

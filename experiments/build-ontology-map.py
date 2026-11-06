@@ -33,9 +33,15 @@ def build_tree():
     pn = {p["id"]: p["name"] for p in o["principles"]}
     hn = {h["id"]: h["name"] for h in o["harm_types"]}
     mn = {m["id"]: m["name"] for m in o.get("mitigations", [])}
-    modes = o["modes"]
-
-    id2name = {m["id"]: m["name"] for m in modes}
+    records=o['modes']
+    modes = [m for m in records if not m.get('grouped_under')]
+    grouped={m['id']:[] for m in modes}
+    canon={m['id']:m.get('grouped_under',m['id']) for m in records}
+    for m in records:
+        if m.get('grouped_under'):grouped[m['grouped_under']].append(m)
+    id2name = {m["id"]: m["name"] for m in records}
+    def links(m,key):
+        return [{"n":id2name.get(r,r),"id":canon.get(r,r)} for r in m.get(key,[]) if canon.get(r,r)!=m['id']]
 
     def leaf(m):
         return {"n": m["name"], "k": "mode", "mid": m["id"], "m": {
@@ -43,14 +49,15 @@ def build_tree():
             "proposed": bool(m.get('research_candidate')),
             "review": m.get('source_check',''),
             "proposal": m.get('proposed_ai_manifestation',''),
+            "variants": [{"id":v['id'],"name":v['name']} for v in grouped[m['id']]],
             "ex": m.get("example", ""),
             "grp": m.get("group_label", ""),
             "mid": m["id"],
             "syn": m.get("synonyms") or [],
-            "rel": [{"n": id2name.get(r, r), "id": r} for r in (m.get("relates_to") or [])],
-            "opp": [{"n": id2name.get(r, r), "id": r} for r in (m.get("opposite_of") or [])],
-            "root": [{"n": id2name.get(r, r), "id": r} for r in (m.get("root_of") or [])],
-            "isa": [{"n": id2name.get(r, r), "id": r} for r in (m.get("is_a") or [])],
+            "rel": links(m,'relates_to'),
+            "opp": links(m,'opposite_of'),
+            "root": links(m,'root_of'),
+            "isa": links(m,'is_a'),
             "det": [mn.get(d, d) for d in (m.get("detected_by") or [])],
             "mit": [mn.get(d, d) for d in (m.get("mitigated_by") or [])],
             "maps": m.get("maps_to") or [],
@@ -77,7 +84,7 @@ def build_tree():
     ]}
 
     import re as _re
-    onto_slugs = {_re.sub(r"[^a-z0-9]+", " ", m["name"].lower()).strip() for m in modes}
+    onto_slugs = {_re.sub(r"[^a-z0-9]+", " ", m["name"].lower()).strip() for m in records}
     src, label = (RISE, "RISE search") if RISE.exists() else (DISCOVER, "MCTS search")
     if src.exists():
         d = json.loads(src.read_text())
@@ -119,6 +126,7 @@ def render_li(node, meta, ctr):
         col = PRINC.get((m.get("pr") or "").lower(), "#cfcfcf")
         dot = f'<span class="dot" style="background:{col}"></span>'
         search += " " + (m.get("def") or "").lower() + " " + " ".join(m.get("syn") or []).lower()
+        search += ' ' + ' '.join(v['name'].lower() for v in m.get('variants',[]))
     if m is not None:
         meta[nid] = {**m, "n": node["n"]}
     if kids:
@@ -311,6 +319,7 @@ function showPanel(id){
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
+     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Grouped overlap variants</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
@@ -453,6 +462,7 @@ INLINE_JS = r"""(function(){
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
+     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Grouped overlap variants</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${links(m.rel)}</p></div>`:'')
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'')

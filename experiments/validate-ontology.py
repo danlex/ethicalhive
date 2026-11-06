@@ -44,6 +44,12 @@ def main():
         if mid in seen:
             errors.append(f"duplicate id: {mid}")
         seen.add(mid)
+        if m.get('grouped_under'):
+            target=next((x for x in modes if x['id']==m['grouped_under']),None)
+            if not target or target is m or target.get('grouped_under'):
+                errors.append(f'{mid}: grouping must resolve directly to a primary entry')
+            if not m.get('grouping_reason'):
+                errors.append(f'{mid}: grouped record needs a review rationale')
         if m.get("tag") not in TAGS:
             errors.append(f"{mid}: bad tag {m.get('tag')!r}")
         if m.get('research_candidate'):
