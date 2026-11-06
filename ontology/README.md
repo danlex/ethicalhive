@@ -27,8 +27,12 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page currently renders 207 mode records: 168 human-paralleled (across ten
-brain-system groups) and 39 AI-native, with 26 flagged as highlighted checks.
+The page currently renders 434 behaviour records in one list: the previous 207
+entries and 227 explicitly labelled proposed human-behaviour analogies. Of the
+total, 395 are human-paralleled and 39 AI-native, with 26 highlighted entries.
+The added records include 128 with a human-definition source consulted and 99
+whose source check is pending. AI parallels remain untested. The paper and
+reported experiments describe the original 207-entry baseline.
 Thirteen highlighted modes restate a brain mode and carry a `same_as` link; that
 overlap is the project's deliberate "featured on top, catalogued below" structure,
 recorded explicitly rather than hidden.
@@ -43,6 +47,12 @@ recorded explicitly rather than hidden.
    in `docs/index.html` from the ontology.
 4. `python3 experiments/validate-page.py` checks tag balance and counts.
 5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
+
+The page build also exports `docs/behaviours.csv` and `docs/behaviours.json`.
+Former research-page URLs redirect to `/#catalogue`; older download URLs are
+aliases of the same full export. Research snapshots and reconciliation records
+are preserved in `references/`. The one-time integration is recorded in
+`references/catalogue-integration-2026-11-06.json`.
 
 ## Two tiers: human-paralleled vs AI-native
 
@@ -85,3 +95,4 @@ Per-mode `relations` beyond `same_as`: `violates` (which principle), `causes`
 (which harm), `relates_to` (adjacent modes), `root_of` / `opposite_of`. These turn
 the catalogue into a navigable graph and let overlaps and gaps be found
 mechanically instead of by eye.
+
