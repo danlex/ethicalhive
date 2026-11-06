@@ -35,6 +35,10 @@ def main():
     for m in modes:
         mid = m.get("id", "<no id>")
         for f in REQUIRED:
+            # A proposed human-behaviour analogy need not imply a principle breach
+            # or harm. Do not invent graph edges merely to satisfy the schema.
+            if m.get('research_candidate') and f in ('violates', 'causes'):
+                continue
             if not m.get(f):
                 errors.append(f"{mid}: missing required field '{f}'")
         if mid in seen:
@@ -42,6 +46,13 @@ def main():
         seen.add(mid)
         if m.get("tag") not in TAGS:
             errors.append(f"{mid}: bad tag {m.get('tag')!r}")
+        if m.get('research_candidate'):
+            if m.get('tag') != 'analogy' or not m.get('ai_evidence_status'):
+                errors.append(f'{mid}: research candidate must disclose its analogy status')
+            if m.get('source_check') not in ('definition-source-consulted','pending-definition-source-check'):
+                errors.append(f'{mid}: missing definition-source review status')
+            if m.get('source_check') == 'definition-source-consulted' and not m.get('definition_sources'):
+                errors.append(f'{mid}: consulted-source status requires source records')
         if m.get("measurability") and m["measurability"] not in MEAS:
             errors.append(f"{mid}: bad measurability {m['measurability']!r}")
         for p in m.get("violates", []):
@@ -98,3 +109,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

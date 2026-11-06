@@ -16,6 +16,10 @@ idempotent.
 """
 
 import argparse
+import csv
+import html as html_lib
+import io
+import json
 import re
 import sys
 from pathlib import Path
@@ -28,7 +32,7 @@ PAGE = ROOT / "docs" / "index.html"
 
 
 def esc(text):
-    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return html_lib.escape(str(text), quote=True)
 
 
 def title_amp(text):
@@ -153,26 +157,75 @@ def box(mode):
         if isinstance(cnt, int) else ""
     )
     cat = esc(mode.get("category", ""))
+    proposed = bool(mode.get('research_candidate'))
+    review = mode.get('source_check', '')
+    badge = ('<span class="research-status">Proposed analogy · '+
+             ('definition source consulted' if review=='definition-source-consulted' else 'source check pending')+'</span>') if proposed else ''
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
     ex_html = ""
     if exs:
         lis = "".join(f"<li>{esc(e)}</li>" for e in exs)
         ex_html = f'<h4>Example{"s" if len(exs) > 1 else ""}</h4><ul class="examples">{lis}</ul>'
+    if proposed:
+        ex_html = '<h4>Proposed AI manifestation / test · untested</h4><p>'+esc(mode['proposed_ai_manifestation'])+'</p>'
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
-        f'data-tag="{tag}" data-papers="{has_papers}" data-key="{key}">'
+        f'data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if proposed else 0}" data-source-status="{review}" data-key="{key}">'
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
-        f'<p class="one">{esc(mode["definition"])}</p>'
+        f'<p class="one">{esc(mode["definition"])}</p>{badge}'
         f'<span class="fam">{cat}</span>'
         f'{pcount_html}</div>'
         f'<span class="chev">▸</span></summary>'
         f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
-        f'{experiment_block(mode)}{meta_block(mode)}</div></details>'
+        f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}</div></details>'
     )
+
+
+def research_block(mode):
+    notes = mode.get('research_notes', [])
+    if not mode.get('research_candidate') and not notes:
+        return ''
+    out=[]
+    records=[mode] if mode.get('research_candidate') else notes
+    for record in records:
+        out.append('<h4>Human-behaviour research</h4>')
+        if not mode.get('research_candidate'):
+            out.append('<p><b>'+esc(record['name'])+'.</b> '+esc(record['definition'])+'</p><p>'+esc(record['catalogue_boundary'])+'</p>')
+        out.append('<p class="research-note">Human definitions and AI proposals are separate. The analogy has not been tested in this research; clinical terms do not diagnose AI or establish feelings, unconscious motives or intent. Some conditioning evidence also comes from nonhuman animals.</p>')
+        boundary=record.get('research_boundary',record.get('distinction_and_limits',''))
+        if boundary:out.append('<p><b>Boundary and limits.</b> '+esc(boundary)+'</p>')
+        sources=record.get('definition_sources',[])
+        if sources:
+            out.append('<ul class="human-sources">'+''.join('<li><a href="'+esc(s['url'])+'">'+esc(s['title'])+'</a><br><small>Access: '+esc(s['consulted'])+'</small></li>' for s in sources)+'</ul>')
+        else:
+            out.append('<p><b>Source check pending.</b> The supplied attribution is a research lead, not a verified definition-source passage.</p>')
+        provenance=record.get('research_provenance',record)
+        contrib=provenance.get('contributions',[])
+        if contrib:
+            out.append('<h4>Supplied source attributions</h4><ul>'+''.join('<li>Upload row '+str(c['upload_row'])+': '+esc(c['supplied_name'])+' — '+esc(c['supplied_source'])+'. Historical attribution not independently confirmed by import.</li>' for c in contrib)+'</ul>')
+    return ''.join(out)
+
+
+def export_catalogue(onto):
+    (ROOT/'docs/behaviours.json').write_text(json.dumps(onto,ensure_ascii=False,indent=2)+'\n')
+    buffer=io.StringIO(newline='')
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access']
+    writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
+    for mode in onto['modes']:
+        row={k:mode.get(k,'') for k in fields}
+        row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
+        row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
+        writer.writerow(row)
+    (ROOT/'docs/behaviours.csv').write_text(buffer.getvalue())
+    # Existing download URLs remain aliases of the same catalogue, not parallel lists.
+    for suffix in ('json','csv'):
+        content=(ROOT/f'docs/behaviours.{suffix}').read_bytes()
+        for stem in ('100-behaviours','behaviour-candidates'):
+            (ROOT/f'docs/research/{stem}.{suffix}').write_bytes(content)
 
 
 def experiment_block(mode):
@@ -225,9 +278,10 @@ def render(modes):
     grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("count"))
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
-    stats = (f'<div class="cat-stats"><b>{n}</b> failure modes · {n - ai} human-paralleled'
-             f' · {ai} AI-native · {grounded} paper-grounded · {shipped} shipped checks'
-             f' · {detected} auto-detected</div>')
+    proposed=sum(bool(m.get('research_candidate')) for m in modes)
+    stats = (f'<div class="cat-stats"><b>{n}</b> behaviours and patterns · {n-proposed} previous entries'
+             f' · {proposed} added analogies · {ai} AI-native · {grounded} with AI paper links'
+             f' · {shipped} highlighted · {detected} with detection links</div>')
     out = [f'    {stats}', '    <div class="cat-grid">']
     groups = []
     index = {}
@@ -280,6 +334,7 @@ def main():
         html, count=1, flags=re.DOTALL)
 
     PAGE.write_text(html, encoding="utf-8")
+    export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))
     print(f"rendered {len(modes)} boxes ({hl} highlighted) from {ONTOLOGY.name}")
@@ -287,3 +342,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

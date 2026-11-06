@@ -290,4 +290,4 @@ def build():
 
 
 if __name__ == '__main__':
-    build()
+    print('Research is integrated in the main catalogue. Use python3 experiments/build-catalogue.py --write. This former page generator is retained as historical source material.')
