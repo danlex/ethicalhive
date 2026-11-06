@@ -26,16 +26,14 @@ manifest=json.loads((ROOT/'references/catalogue-integration-2026-11-06.json').re
 assert len(manifest['decisions'])==228
 assert len({m['num'] for m in onto['modes']})==434
 export=json.loads((ROOT/'docs/behaviours.json').read_text())
-assert len(export['modes'])==425 and export['meta']['mode_count']==425
+assert len(export['modes'])==434 and export['meta']['mode_count']==434
 assert export['meta']['source_record_count']==434
-assert {m['id'] for m in export['modes']}=={m['id'] for m in primary}
-flat=[]
-for m in export['modes']:
-    item=dict(m);flat.extend(item.pop('grouped_variants'));flat.append(item)
-assert {m['id']:m for m in flat}=={m['id']:m for m in onto['modes']}
+assert export['modes']==sorted(onto['modes'],key=lambda m:m['num'])
+assert [m['num'] for m in export['modes']]==list(range(1,435))
 rows=list(csv.DictReader((ROOT/'docs/behaviours.csv').open()))
-assert len(rows)==425
-assert sorted(v['id'] for r in rows for v in json.loads(r['grouped_variants_json'] or '[]'))==sorted(expected_groups)
+assert len(rows)==434
+assert [int(r['num']) for r in rows]==list(range(1,435))
+assert {r['id']:r['grouped_under'] for r in rows if r['grouped_under']}==expected_groups
 for suffix in ('json','csv'):
     for stem in ('100-behaviours','behaviour-candidates'):
         assert (ROOT/f'docs/research/{stem}.{suffix}').read_bytes()==(ROOT/f'docs/behaviours.{suffix}').read_bytes()
@@ -53,11 +51,15 @@ try:
             page.route('https://**/*',lambda r:r.abort())
             errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
             page.goto(base,wait_until='domcontentloaded')
-            assert page.locator('.concept').count()==425
-            assert page.locator('.concept-variant').count()==9
+            assert page.locator('.concept').count()==434
+            assert page.locator('.concept-variant').count()==0
+            assert page.locator('.concept > summary > .num').all_text_contents()==[str(i) for i in range(1,435)]
+            assert page.locator('#jumpNav a').all_text_contents()==[f'{i}–{min(i+49,434)}' for i in range(1,435,50)]
+            ids=page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.id)')
+            assert len(ids)==len(set(ids))==434
             assert page.locator('#principles .card').count()==6
             assert page.locator('#self-eval-language-discrepancy').count()==1
-            assert page.locator('#mm .li.mode').count()==425
+            assert page.locator('#mm .li.mode').count()==434
             page.locator('[data-filter="new"]').click()
             assert page.locator('.concept:visible').count()==227
             page.locator('[data-filter="pending"]').click()
@@ -69,7 +71,7 @@ try:
             assert page.locator('#overpromise-underdeliver').is_visible()
             assert page.locator('#upload-009').is_visible()
             assert page.locator('#upload-009').get_attribute('open') is not None
-            assert page.locator('#upload-009').evaluate('(e)=>e.closest(".concept").id')=='overpromise-underdeliver'
+            assert page.locator('#upload-009').get_attribute('data-overlap')=='overpromise-underdeliver'
             page.locator('[data-filter="all"]').click()
             page.locator('#search').fill('all-or-nothing')
             assert page.locator('#candidate-068').is_visible()
@@ -86,9 +88,9 @@ try:
             page.locator('#mm .mm-q').fill('')
             page.locator('#mm .mm-q').fill('Omnipotent control')
             page.locator('#mm [data-mid="overpromise-underdeliver"] > .row .pill').click()
-            assert 'grouped overlap variants' in page.locator('#mm .mm-detail').inner_text().lower()
+            assert 'linked overlap descriptions' in page.locator('#mm .mm-detail').inner_text().lower()
             assert page.locator('#mm .mm-detail a[href="./#upload-009"]').count()==1
-            assert page.locator('#mm [data-mid="upload-009"]').count()==0
+            assert page.locator('#mm [data-mid="upload-009"]').count()==1
             page.locator('#mm .mm-q').fill('')
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),page.evaluate('''() => [...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1).slice(0,8).map(e=>({tag:e.tagName,id:e.id,cls:e.className,right:e.getBoundingClientRect().right}))''')
             page.screenshot(path=f'/tmp/unified-catalogue-{width}.png')
@@ -99,18 +101,18 @@ try:
             page.goto(base+'research/behaviour-candidates.html#upload-009',wait_until='domcontentloaded')
             page.wait_for_url('**/#upload-009')
             assert page.locator('#upload-009').get_attribute('open') is not None
+            page.locator('#upload-009 .body a[href="#overpromise-underdeliver"]').first.click()
             assert page.locator('#overpromise-underdeliver').get_attribute('open') is not None
             assert not errors,errors
             page.close()
         page=browser.new_page(java_script_enabled=False,viewport={'width':390,'height':900})
         page.route('https://**/*',lambda r:r.abort())
         page.goto(base,wait_until='domcontentloaded')
-        assert page.locator('.concept').count()==425
+        assert page.locator('.concept').count()==434
         page.locator('#upload-003 summary').click()
         assert page.locator('#upload-003 .human-sources').is_visible()
-        page.locator('#overpromise-underdeliver > summary').click()
         page.locator('#upload-009 > summary').click()
         assert page.locator('#upload-009 .human-sources').is_visible()
         browser.close()
-    print('PASS: 425 primary entries, 9 nested overlaps, all 434 source records and anchors retained; grouped exports; distinct trigger variants preserved; map, filters, links and no-JS reading')
+    print('PASS: 434 rows numbered 1–434 exactly once, ordered JSON/CSV, overlap cross-references, preserved anchors, map, filters and no-JS reading')
 finally:server.shutdown()

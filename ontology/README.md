@@ -27,11 +27,11 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page currently renders 425 primary entries and 9 grouped overlap variants
-inside the same list. All 434 source records are retained: the previous 207
-records and 227 explicitly labelled proposed human-behaviour analogies. Grouping
-reflects overlapping operational descriptions, not a claim of psychological
-synonymy or independent validation. Of all source records, 395 are human-paralleled
+The page renders all 434 records once, in ascending reference-number order from
+1 to 434. Overlap relationships are cross-references between the relevant rows,
+not hidden nested entries or a second visible count. The inventory contains the
+previous 207 records and 227 proposed human-behaviour analogies; numbering does
+not establish psychological synonymy or independent validation. Of all records, 395 are human-paralleled
 and 39 AI-native, with 26 highlighted entries.
 The added records include 128 with a human-definition source consulted and 99
 whose source check is pending. AI parallels remain untested. The paper and
@@ -52,11 +52,10 @@ rendered as a second featured copy. The operational-overlap review and explicit
 5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
 
 The page build also exports `docs/behaviours.csv` and `docs/behaviours.json`.
-These exports have one row/object per primary entry. JSON nests the retained
-records under `grouped_variants`; CSV retains them in its grouped-variant columns.
-Public `meta.mode_count` is the primary count; `meta.source_record_count` records
-the complete inventory. In the authoritative YAML, `meta.mode_count` still counts
-all records and `meta.display_counts` distinguishes the view counts. The grouping
+These exports have 434 rows/objects in the same 1–434 reference order. The
+`grouped_under` and `grouping_reason` fields preserve the overlap relationships
+without nesting or repeating records. Public and YAML `meta.mode_count` both
+count all 434 records. The grouping
 review is `references/semantic-dedup-review-2026-11-06.json`.
 Former research-page URLs redirect to `/#catalogue`; older download URLs are
 aliases of the same full export. Research snapshots and reconciliation records

@@ -15,7 +15,7 @@ for item in review['groupings']:
 assert len(by)==434
 assert sum(not m.get('grouped_under') for m in onto['modes'])==425
 assert all(not by[m['grouped_under']].get('grouped_under') for m in onto['modes'] if m.get('grouped_under'))
-onto['meta']['display_counts']=dict(primary_entries=425,grouped_variants=9,source_records=434)
+onto['meta']['display_counts']=dict(numbered_entries=434,linked_overlap_records=9)
 onto['meta']['count_note']='Record counts are not counts of mutually exclusive or independently established AI mechanisms.'
 p.write_text(yaml.safe_dump(onto,allow_unicode=True,sort_keys=False,width=110))
-print('Preserved 434 source records; grouped 9 overlaps; 425 primary list entries')
+print('434 numbered records; 9 overlap relationships retained as cross-references')
