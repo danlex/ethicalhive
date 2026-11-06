@@ -45,12 +45,12 @@ and is validated by `experiments/validate-ontology.py`.
 
 The catalogue contains 434 records: 207 previous entries plus 227 integrated
 research analogies. These are not 434 independently validated AI mechanisms.
-The current view groups 9 overlapping records under existing entries, leaving
-425 primary rows. A grouped record carries `grouped_under`, `grouping_reason`
+The current view displays all 434 records in ascending `num` order. Nine
+overlap links remain explicit. A linked record carries `grouped_under`, `grouping_reason`
 and `grouping_relation`; its stable ID, number, definition and sources remain.
 This is a display grouping, not an automatic `same_as` or `is_a` assertion. Groups
 must target a primary record directly; chains, cycles and missing targets fail
-validation. Public JSON nests grouped records, while YAML retains the flat registry.
+validation. Public JSON, CSV and YAML all retain the flat numbered registry.
 New records carry `research_candidate: true`, `tag: analogy`, `source_check`,
 `ai_evidence_status`, `proposed_ai_manifestation`, `research_boundary`, and
 `definition_sources` with explicit access depth. Uploaded source claims remain in

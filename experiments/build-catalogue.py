@@ -82,6 +82,7 @@ TAGL = {
 PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
 MODE_NAME = {}  # id -> name, for relates_to links
+MODE_NUM = {}
 MIT_NAME = {}   # mitigation id -> name, for detected_by
 GROUPED = {}    # primary id -> retained overlapping records
 
@@ -146,14 +147,14 @@ def box(mode):
     """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
     num = mode.get("num")
-    n = f"{num:02d}" if isinstance(num, int) else ""
+    n = str(num) if isinstance(num, int) else ""
     cls = "concept shipped" if hl else f'concept {mode.get("tag", "")}'.strip()
     datafam = "page" if hl else mode.get("tag", "")
     tag = mode.get("tag", "")
     key = esc(mode["name"].lower())
     arx = mode.get("arxiv") or {}
     variants = GROUPED.get(mode['id'], [])
-    has_papers = "1" if arx.get("papers") or any((v.get('arxiv') or {}).get('papers') for v in variants) else "0"
+    has_papers = "1" if arx.get("papers") else "0"
     cnt = arx.get("count")
     pcount_html = (
         f'<span class="pcount" title="arXiv papers on this concept">{cnt:,}</span>'
@@ -162,14 +163,13 @@ def box(mode):
     cat = esc(mode.get("category", ""))
     proposed = bool(mode.get('research_candidate'))
     review = mode.get('source_check', '')
-    candidate = proposed or any(v.get('research_candidate') for v in variants)
-    has_analogy = mode.get('tag') == 'analogy' or any(v.get('tag') == 'analogy' for v in variants)
-    if any(v.get('source_check') == 'pending-definition-source-check' for v in variants):
-        review = 'pending-definition-source-check'
+    candidate = proposed
+    has_analogy = mode.get('tag') == 'analogy'
     badge = ('<span class="research-status">Proposed analogy · '+
              ('definition source consulted' if review=='definition-source-consulted' else 'source check pending')+'</span>') if proposed else ''
-    if variants:
-        badge += f'<span class="research-status">{len(variants)} grouped overlap variant(s); open to inspect</span>'
+    related=mode.get('grouped_under')
+    if related:
+        badge += f'<span class="research-status">Linked overlap with #{MODE_NUM[related]} · {esc(MODE_NAME[related])}</span>'
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
     ex_html = ""
@@ -180,7 +180,7 @@ def box(mode):
         ex_html = '<h4>Proposed AI manifestation / test · untested</h4><p>'+esc(mode['proposed_ai_manifestation'])+'</p>'
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
-        f'data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
+        f'data-num="{num}" data-overlap="{esc(related or "")}" data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>{badge}'
@@ -191,18 +191,19 @@ def box(mode):
         f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
         f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}'
-        f'{("<h4>Grouped overlap variants</h4>"+"".join(render_variant(v) for v in variants)) if variants else ""}</div></details>'
+        f'{overlap_block(mode)}</div></details>'
     )
 
 
-def render_variant(mode):
-    papers=render_papers(mode.get('arxiv')).replace('class="papers"','class="variant-papers"').replace('cite none','cite variant-none')
-    example=mode.get('proposed_ai_manifestation',mode.get('example',''))
-    return (f'<details id="{mode["id"]}" class="concept-variant"><summary>{esc(mode["name"])} · grouped variant</summary>'
-            f'<div class="variant-body"><p><strong>Grouping reason.</strong> {esc(mode["grouping_reason"])}</p>'
-            f'<p><strong>Original definition.</strong> {esc(mode["definition"])}</p>'
-            f'<p><strong>{"Proposed AI manifestation · untested" if mode.get("research_candidate") else "Illustrative example"}.</strong> {esc(example)}</p>'
-            f'{papers}{research_block(mode)}{meta_block(mode)}</div></details>')
+def overlap_block(mode):
+    out=[]
+    target=mode.get('grouped_under')
+    if target:
+        out.append('<h4>Related operational description</h4><p><a href="#'+esc(target)+'">#'+str(MODE_NUM[target])+' · '+esc(MODE_NAME[target])+'</a></p><p>'+esc(mode['grouping_reason'])+'</p>')
+    variants=GROUPED.get(mode['id'],[])
+    if variants:
+        out.append('<h4>Linked overlap descriptions</h4><ul>'+''.join('<li><a href="#'+esc(v['id'])+'">#'+str(v['num'])+' · '+esc(v['name'])+'</a></li>' for v in variants)+'</ul>')
+    return ''.join(out)
 
 
 def research_block(mode):
@@ -232,27 +233,17 @@ def research_block(mode):
 
 def export_catalogue(onto):
     public=copy.deepcopy(onto)
-    public['modes']=[]
-    for m in onto['modes']:
-        if m.get('grouped_under'):continue
-        item=copy.deepcopy(m)
-        item['grouped_variants']=copy.deepcopy(GROUPED.get(m['id'],[]))
-        public['modes'].append(item)
+    public['modes']=sorted(public['modes'],key=lambda m:m['num'])
     public['meta']['source_record_count']=len(onto['modes'])
     public['meta']['mode_count']=len(public['modes'])
     (ROOT/'docs/behaviours.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     buffer=io.StringIO(newline='')
-    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_variant_ids','grouped_variant_names','grouped_variants_json']
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_under','grouping_reason']
     writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
-    for mode in onto['modes']:
-        if mode.get('grouped_under'):continue
+    for mode in sorted(onto['modes'],key=lambda m:m['num']):
         row={k:mode.get(k,'') for k in fields}
         row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
         row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
-        variants=GROUPED.get(mode['id'],[])
-        row['grouped_variant_ids']=' ; '.join(v['id'] for v in variants)
-        row['grouped_variant_names']=' ; '.join(v['name'] for v in variants)
-        row['grouped_variants_json']=json.dumps(variants,ensure_ascii=False) if variants else ''
         writer.writerow(row)
     (ROOT/'docs/behaviours.csv').write_text(buffer.getvalue())
     # Existing download URLs remain aliases of the same catalogue, not parallel lists.
@@ -307,29 +298,25 @@ def experiments_section(modes):
 def render(modes):
     """Group by group_label in first-appearance order. The Highlighted group is
     rendered where it falls in that order (last), not pinned to the top."""
-    records=len(modes)
-    modes=[m for m in modes if not m.get('grouped_under')]
+    modes=sorted(modes,key=lambda m:m['num'])
     n = len(modes)
     ai = sum(1 for m in modes if m.get("ai_native"))
     grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("count"))
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
     proposed=sum(bool(m.get('research_candidate')) for m in modes)
-    stats = (f'<div class="cat-stats"><b>{n}</b> main entries · {records-n} grouped overlap variants · {records} source records'
-             f' · {ai} AI-native · {grounded} primary entries with AI paper links'
+    stats = (f'<div class="cat-stats"><b>{n}</b> numbered entries · {ai} AI-native · {grounded} with AI paper links'
              f' · {shipped} highlighted · {detected} with detection links</div>')
     out = [f'    {stats}', '    <div class="cat-grid">']
-    groups = []
-    index = {}
-    for m in modes:
-        g = m["group_label"]
-        if g not in index:
-            index[g] = len(groups)
-            groups.append((g, []))
-        groups[index[g]][1].append(m)
-    for i, (g, members) in enumerate(groups, 1):
-        out.append(f'      <h3 class="cat-group" id="grp-{slug(g)}">{i}. {title_amp(g)}</h3>')
-        out += [box(m) for m in members]
+    seen_groups=set()
+    for i,m in enumerate(modes):
+        if i%50==0:
+            end=min(i+50,n)
+            out.append(f'<h3 class="cat-group" data-range="1" id="range-{i+1}">{i+1}–{end}</h3>')
+        if m['group_label'] not in seen_groups:
+            seen_groups.add(m['group_label'])
+            out.append(f'<span class="legacy-group-anchor" id="grp-{slug(m["group_label"])}"></span>')
+        out.append(box(m))
     out.append("    </div>")
     return "\n".join(out)
 
@@ -343,6 +330,7 @@ def main():
     PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
+    MODE_NUM.update({m['id']:m['num'] for m in onto['modes']})
     GROUPED.clear()
     for m in onto['modes']:
         if m.get('grouped_under'):GROUPED.setdefault(m['grouped_under'],[]).append(m)
@@ -376,7 +364,7 @@ def main():
     export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))
-    print(f"rendered {sum(not m.get('grouped_under') for m in modes)} primary boxes and {sum(bool(m.get('grouped_under')) for m in modes)} grouped variants ({hl} highlighted)")
+    print(f"rendered {len(modes)} numbered entries in ascending reference order ({hl} highlighted)")
 
 
 if __name__ == "__main__":

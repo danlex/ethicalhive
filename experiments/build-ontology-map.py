@@ -34,9 +34,9 @@ def build_tree():
     hn = {h["id"]: h["name"] for h in o["harm_types"]}
     mn = {m["id"]: m["name"] for m in o.get("mitigations", [])}
     records=o['modes']
-    modes = [m for m in records if not m.get('grouped_under')]
+    modes = records
     grouped={m['id']:[] for m in modes}
-    canon={m['id']:m.get('grouped_under',m['id']) for m in records}
+    canon={m['id']:m['id'] for m in records}
     for m in records:
         if m.get('grouped_under'):grouped[m['grouped_under']].append(m)
     id2name = {m["id"]: m["name"] for m in records}
@@ -50,6 +50,7 @@ def build_tree():
             "review": m.get('source_check',''),
             "proposal": m.get('proposed_ai_manifestation',''),
             "variants": [{"id":v['id'],"name":v['name']} for v in grouped[m['id']]],
+            "overlap": ({"id":m['grouped_under'],"name":id2name[m['grouped_under']],"reason":m['grouping_reason']} if m.get('grouped_under') else None),
             "ex": m.get("example", ""),
             "grp": m.get("group_label", ""),
             "mid": m["id"],
@@ -319,7 +320,8 @@ function showPanel(id){
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
-     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Grouped overlap variants</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
+     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Linked overlap descriptions</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${m.rel.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${m.opp.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
@@ -462,7 +464,8 @@ INLINE_JS = r"""(function(){
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
-     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Grouped overlap variants</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
+     +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Linked overlap descriptions</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
      +(m.hp?`<div class="sec"><span class="k">Human parallel</span><p>${esc(m.hp)}</p></div>`:`<p class="note">AI-native: no human analogue.</p>`)
      +(m.rel&&m.rel.length?`<div class="sec"><span class="k">Related</span><p>${links(m.rel)}</p></div>`:'')
      +(m.opp&&m.opp.length?`<div class="sec"><span class="k">Opposite of</span><p>${links(m.opp)}</p></div>`:'')

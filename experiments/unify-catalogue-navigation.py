@@ -5,13 +5,13 @@ import yaml
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 onto=yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())
-records=len(onto['modes']);primary=sum(not m.get('grouped_under') for m in onto['modes']);variants=records-primary
+records=len(onto['modes']);variants=sum(bool(m.get('grouped_under')) for m in onto['modes'])
 p=ROOT/'docs/index.html';s=p.read_text()
 s=re.sub(r'  <section class="framework" id="psychology-research">.*?</section>\s*','',s,count=1,flags=re.S)
 s=re.sub(r'(<header class="hero"[^>]*>.*?<h1>).*?(</h1>)',r'\1Recognise AI behaviour. <span class="accent">Understand the risk. Check the evidence.</span>\2',s,count=1,flags=re.S)
 s=re.sub(r'(<header class="hero"[^>]*>.*?<p class="lede">).*?(</p>)',r'\1A searchable directory of AI failures and proposed parallels with human behaviour. Find a pattern, read its definition and example, inspect its sources and limits, then decide what to check.\2',s,count=1,flags=re.S)
 intro=f'''<span id="psychology-research"></span><h2>The catalogue</h2>
-    <p>One list of <strong>{primary} main entries</strong>, with {variants} overlapping variants grouped inside their existing rows. All {records} source records retain their names, definitions, sources and stable links. Reference numbers are kept, so numerical gaps are expected. The counts describe the catalogue structure; they do not establish that every entry is a mutually exclusive or independent AI mechanism.</p>
+    <p>One ordered list, numbered <strong>1–{records}</strong>. Each record appears once, in numerical order. Related or overlapping descriptions are cross-referenced within their entries. Names, definitions, sources and existing links are preserved. Numbered entries are not a count of independently validated AI mechanisms.</p>
     <p>New entries are labelled <strong>proposed analogy</strong>, with definition-source review stated individually. A named human behaviour does not establish a shared mechanism in AI. Some entries refine broader existing patterns or describe adaptive processes. No AI experiments were run for these additions.</p>
     <p><a href="behaviours.csv">Download the full list · CSV</a> &middot; <a href="behaviours.json">JSON</a> &middot; <a href="experiments/paper-index.html">Paper ↔ behaviour index</a></p>
     '''
@@ -21,6 +21,7 @@ if 'data-filter="new"' not in s:
  s=s.replace("if(activeFilter === 'all') return true;","if(activeFilter === 'all') return true;\n    if(activeFilter === 'new') return b.dataset.candidate === '1';\n    if(activeFilter === 'pending') return b.dataset.sourceStatus === 'pending-definition-source-check';")
 s=s.replace("visible = (b.dataset.key + ' ' + b.textContent).toLowerCase().indexOf(q) !== -1;","visible = matchesChip(b) && (b.dataset.key + ' ' + b.textContent).toLowerCase().indexOf(q) !== -1;")
 s=s.replace('aria-label="Search failure modes"','aria-label="Search behaviours and patterns"')
+s=s.replace('aria-label="Jump to group"','aria-label="Jump to number range"')
 s=s.replace("if(activeFilter === 'analogy') return b.dataset.tag === 'analogy';", "if(activeFilter === 'analogy') return b.dataset.hasAnalogy === '1';")
 if "v.open = !!q" not in s:
  s=s.replace('b.hidden = !visible;', "b.hidden = !visible;\n      b.querySelectorAll('.concept-variant').forEach(function(v){ v.open = !!q && v.textContent.toLowerCase().indexOf(q) !== -1; });")
@@ -40,7 +41,12 @@ if 'class="research-baseline-note"' not in s:
  s=s.replace('<section class="framework" id="paper">','<section class="framework" id="paper">\n    '+baseline)
 s=s.replace('"dateModified": "2026-05-23"','"dateModified": "2026-11-06"')
 s=s.replace('202 ways AI output goes wrong, each with a definition, an example, and the research behind it; most paralleled to human psychology, some AI-native.','434 behaviours and patterns, including explicitly labelled proposed human-behaviour analogies, with definitions, examples, sources and review status.')
-s=s.replace('434 behaviours and patterns, including explicitly labelled proposed human-behaviour analogies, with definitions, examples, sources and review status.',f'{primary} main entries and {variants} grouped overlap variants, with definitions, evidence limits and proposed AI analogies.')
+s=s.replace('434 behaviours and patterns, including explicitly labelled proposed human-behaviour analogies, with definitions, examples, sources and review status.',f'{records} numbered entries with definitions, sources, evidence limits and cross-referenced overlaps.')
+s=re.sub(r'\d+ main entries and \d+ grouped overlap variants, with definitions, evidence limits and proposed AI analogies\.',f'{records} numbered entries with definitions, sources, evidence limits and cross-referenced overlaps.',s)
+# Range navigation follows the same visible numbering, without a second count.
+s=s.replace("h.innerHTML = label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';", "h.innerHTML = h.dataset.range ? label : label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';")
+s=s.replace("a.href = '#' + h.id; a.textContent = h.dataset.label + ' (' + groupBoxes.get(h).length + ')';", "a.href = '#' + h.id; a.textContent = h.dataset.range ? h.dataset.label : h.dataset.label + ' (' + groupBoxes.get(h).length + ')';")
+s=re.sub(r'<style id="grouped-variant-style">.*?</style>','',s,flags=re.S)
 s=s.replace('434 entries, comprising the original 207 and 227 proposed analogies', '434 source records at that revision, comprising the original 207 and 227 proposed analogies')
 if 'class="semantic-review-follow-up"' not in s:
  note=f'<p class="semantic-review-follow-up"><strong>Follow-up: overlapping records.</strong> A later review grouped {variants} operational overlaps within their existing entries. The earlier count of {records} records was not evidence of {records} distinct behaviours. Names, sources and links are preserved; <a href="https://github.com/danlex/ethicalhive/blob/main/references/semantic-dedup-review-2026-11-06.json">the semantic review</a> distinguishes grouping decisions from related patterns kept separate.</p>'
