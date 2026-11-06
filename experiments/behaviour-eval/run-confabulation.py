@@ -131,13 +131,13 @@ def main():
                    f"a healthy abstention."),
         "verdict": verdict,
         "conclusion": (
-            "Confabulation splits models sharply into abstainers and fabricators, and "
-            "it is orthogonal to other robustness axes: a model that resists authority "
-            "pressure can still invent a different confident specific every time it is "
-            "asked. The practical lesson is that confabulation is only visible under "
-            "re-sampling. An invented value looks confident and fluent on any single "
-            "draft, so a single-pass check cannot catch it; this is why the mode needs "
-            "to be probed with repeated samples rather than one answer."),
+            "These small probes suggest that resistance to authority does not ensure "
+            "resistance to fabrication: a model that resists authority pressure can "
+            "still supply unstable invented specifics. The instability criterion used "
+            "here requires repeated samples. External evidence can still expose an "
+            "invented value in a single answer; one answer alone cannot establish "
+            "variation across samples. These runs do not establish statistical "
+            "independence between behaviours."),
         "columns": [["confabulated", "Confabulated"], ["abstained", "Abstained"],
                     ["stable_hallucination", "Stable hallucination"],
                     ["mean_distinct", "Mean distinct / item"]],
@@ -162,3 +162,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
