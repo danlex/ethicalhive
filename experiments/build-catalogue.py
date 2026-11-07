@@ -179,11 +179,7 @@ def box(mode):
     review = mode.get('source_check', '')
     candidate = proposed
     has_analogy = mode.get('tag') == 'analogy'
-    badge = ('<span class="research-status">Proposed analogy · '+
-             ('definition source consulted' if review=='definition-source-consulted' else 'source check pending')+'</span>') if proposed else ''
     related=mode.get('grouped_under')
-    if related:
-        badge += f'<span class="research-status">Linked overlap with {esc(MODE_NAME[related])}</span>'
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
     ex_html = ""
@@ -201,7 +197,7 @@ def box(mode):
         f'<span class="fam">{cat}</span>'
         f'{pcount_html}</div>'
         f'<span class="chev">▸</span></summary>'
-        f'<div class="body">{badge}<h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
+        f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
         f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}'

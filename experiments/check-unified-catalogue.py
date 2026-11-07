@@ -67,10 +67,9 @@ try:
             page.goto(base,wait_until='domcontentloaded')
             assert page.locator('.concept').count()==434
             assert page.locator('.concept-variant').count()==0
-            # Research badges must not create another summary column from #208.
-            assert page.locator('.concept > summary .research-status').count()==0
+            # Repeated status/overlap banners are removed from the catalogue.
+            assert page.locator('.concept .research-status').count()==0
             assert page.locator('.concept > summary .pcount').count()==434
-            assert page.locator('.concept[data-candidate="1"] > .body > .research-status').count()>=227
             layouts=page.locator('.concept > summary > .head').evaluate_all('''heads=>heads.map(h=>{
                 const box=h.getBoundingClientRect(), cells=[...h.children];
                 return {classes:cells.map(c=>c.matches('h2')?'name':c.className),
@@ -169,7 +168,7 @@ try:
             page.goto(base+'research/behaviour-candidates.html#upload-003',wait_until='domcontentloaded')
             page.wait_for_url('**/#upload-003')
             assert page.locator('#upload-003').get_attribute('open') is not None
-            assert page.locator('#upload-003 .research-status').is_visible()
+            assert page.locator('#upload-003 .human-sources').is_visible()
             page.goto(base+'research/behaviour-candidates.html#upload-009',wait_until='domcontentloaded')
             page.wait_for_url('**/#upload-009')
             assert page.locator('#upload-009').get_attribute('open') is not None
