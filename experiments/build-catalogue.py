@@ -174,7 +174,7 @@ def box(mode):
     cnt = arx.get("count")
     pcount_html = (
         f'<span class="pcount" title="arXiv papers on this concept">{cnt:,}</span>'
-        if isinstance(cnt, int) else ""
+        if isinstance(cnt, int) else '<span class="pcount pcount-empty" title="AI paper count not available">—</span>'
     )
     cat = esc(mode.get("category", ""))
     proposed = bool(mode.get('research_candidate'))
@@ -199,11 +199,11 @@ def box(mode):
         f'data-num="{num}" data-overlap="{esc(related or "")}" data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
         f'<summary><span class="num">{n}</span>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
-        f'<p class="one">{esc(mode["definition"])}</p>{badge}'
+        f'<p class="one">{esc(mode["definition"])}</p>'
         f'<span class="fam">{cat}</span>'
         f'{pcount_html}</div>'
         f'<span class="chev">▸</span></summary>'
-        f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
+        f'<div class="body">{badge}<h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
         f'<h4>Research papers</h4>{render_papers(arx)}'
         f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}'
