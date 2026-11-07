@@ -67,6 +67,26 @@ try:
             page.goto(base,wait_until='domcontentloaded')
             assert page.locator('.concept').count()==434
             assert page.locator('.concept-variant').count()==0
+            # Research badges must not create another summary column from #208.
+            assert page.locator('.concept > summary .research-status').count()==0
+            assert page.locator('.concept > summary .pcount').count()==434
+            assert page.locator('.concept[data-candidate="1"] > .body > .research-status').count()>=227
+            layouts=page.locator('.concept > summary > .head').evaluate_all('''heads=>heads.map(h=>{
+                const box=h.getBoundingClientRect(), cells=[...h.children];
+                return {classes:cells.map(c=>c.matches('h2')?'name':c.className),
+                    category:h.querySelector('.fam').getBoundingClientRect().left-box.left,
+                    countEnd:h.querySelector('.pcount').getBoundingClientRect().right-box.left,
+                    height:box.height};
+            })''')
+            assert all(row['classes'][:3]==['name','one','fam'] and row['classes'][3].startswith('pcount') and len(row['classes'])==4 for row in layouts)
+            # Compare actual geometry across the old and added records, not only markup.
+            baseline=layouts[expected_numbers.index('170')]
+            for num in (208,209,315,434):
+                row=layouts[expected_numbers.index(str(num))]
+                assert abs(row['countEnd']-baseline['countEnd'])<1,(width,num,row,baseline)
+                assert abs(row['height']-baseline['height'])<1,(width,num,row,baseline)
+                if width>640:
+                    assert abs(row['category']-baseline['category'])<1,(width,num,row,baseline)
             assert page.locator('.concept > summary > .num').all_text_contents()==expected_numbers
             assert sorted(map(int,page.locator('.concept > summary > .num').all_text_contents()))==list(range(1,435))
             assert page.locator('.cat-group').count()==len(category_order)==11
