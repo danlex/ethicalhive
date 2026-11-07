@@ -19,8 +19,8 @@ expected_groups={'social-desirability-bias':'b069-social-desirability-people-ple
 assert {m['id']:m['grouped_under'] for m in grouped}==expected_groups
 added=[m for m in onto['modes'] if m.get('research_candidate')]
 assert len(added)==227
-assert sum(m['source_check']=='pending-definition-source-check' for m in added)==99
-assert sum(m['source_check']=='definition-source-consulted' for m in added)==128
+assert sum(m['source_check']=='pending-definition-source-check' for m in added)==96
+assert sum(m['source_check']=='definition-source-consulted' for m in added)==131
 assert all(m['tag']=='analogy' and not m['violates'] and not m['causes'] for m in added)
 manifest=json.loads((ROOT/'references/catalogue-integration-2026-11-06.json').read_text())
 assert len(manifest['decisions'])==228
@@ -127,7 +127,7 @@ try:
             page.locator('[data-filter="new"]').click()
             assert page.locator('.concept:visible').count()==227
             page.locator('[data-filter="pending"]').click()
-            assert page.locator('.concept:visible').count()==99
+            assert page.locator('.concept:visible').count()==sum(m['source_check']=='pending-definition-source-check' for m in added)
             page.locator('#search').fill('encoding specificity')
             assert page.locator('.concept:visible').count()==0
             page.locator('[data-filter="all"]').click()
