@@ -10,7 +10,7 @@ and is validated by `experiments/validate-ontology.py`.
 | Key | Type | What it holds |
 |---|---|---|
 | `meta` | object | name, version, updated date, author, repository, homepage, license, schema, cite |
-| `relation_types` | object | the eight edge types and a one-line gloss of each |
+| `relation_types` | object | catalogue edge types and a one-line gloss of each |
 | `principles` | list | the integrity principles a mode can `violate` (id, name, statement) |
 | `harm_types` | list | the harms a mode can `cause` (id, name, statement) |
 | `mitigations` | list | the mitigations a mode can be `detected_by` (id, name, statement) |
@@ -38,17 +38,24 @@ and is validated by `experiments/validate-ontology.py`.
 | `arxiv` | object | no | `{count, papers:[{id, year, title}]}` for the modes grounded in literature |
 | `violates` | list | no | principle ids this mode breaches |
 | `causes` | list | no | harm-type ids this mode produces |
-| `is_a` | list | no | broader family modes |
+| `is_a` | list | no | broader family-mode ids; must form an acyclic hierarchy |
+| `synonyms` | list | no | genuine alternative names, not broader theories, subtypes or related concepts |
+| `concept_boundary` | string | no | reviewed distinction from overlapping or adjacent concepts |
+| `related_terms` | list | no | external named concepts: `{name, relation, note}`, explicitly not synonyms or additional catalogue records |
+| `terminology_sources` | list | no | sources supporting distinctions: `{title, url, consulted}` with actual access depth |
 | plus graph edges | list | no | `relates_to`, `root_of`, `opposite_of`, `same_as`, `detected_by`, `mitigated_by` per `relation_types` |
 
 ## Proposed human-behaviour analogies in the same list
 
 The catalogue contains 434 records: 207 previous entries plus 227 integrated
 research analogies. These are not 434 independently validated AI mechanisms.
-The current view displays all 434 records in ascending `num` order. Nine
+The current view displays all 434 records in eleven ontology categories, with
+ascending `num` order within each category. Reference numbers remain stable and
+exports retain global `num` order. Nine
 overlap links remain explicit. A linked record carries `grouped_under`, `grouping_reason`
 and `grouping_relation`; its stable ID, number, definition and sources remain.
-This is a display grouping, not an automatic `same_as` or `is_a` assertion. Groups
+This is an operational-overlap cross-reference, not an automatic `same_as` or
+`is_a` assertion. Explicit subtype links may independently be assigned after review. Groups
 must target a primary record directly; chains, cycles and missing targets fail
 validation. Public JSON, CSV and YAML all retain the flat numbered registry.
 New records carry `research_candidate: true`, `tag: analogy`, `source_check`,
@@ -67,12 +74,21 @@ Metacognition, Language, Social, Moral, Self & agency. Plus one tier with no hum
 analogue: AI-native. Category assignment reproducibility is reported in the paper
 (Cohen kappa 0.83 to 0.93 between independent raters and the catalogue).
 
-## The eight relation types
+## Relations and external terminology
 
 `is_a`, `relates_to`, `root_of`, `opposite_of`, `same_as`, `violates`, `causes`,
-`detected_by`. Glosses are in the `relation_types` block of the YAML. Together they form
+`detected_by`, plus the `grouped_under` operational-overlap cross-reference.
+Glosses are in the `relation_types` block of the YAML. Together they form
 the relation graph that lets the catalogue represent a real incident as a chain of modes
 rather than a single label.
+
+`related_terms.relation` currently allows `broader theory`, `broader concept`,
+`distinct related concept`, `negative counterpart`, `proposed mechanism` and
+`narrower variant`. These are relationships to named terms without numbered mode
+ids, not extra graph nodes or entries. A term cannot be both a synonym and a
+related non-synonym on the same record. The targeted terminology review in
+`references/terminology-review-2026-11-07.json` preserves before/after values and
+source-access limits. It does not establish a total of distinct concepts.
 
 ## Stability contract
 

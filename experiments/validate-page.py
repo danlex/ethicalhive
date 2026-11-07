@@ -28,7 +28,7 @@ def main():
     primary=onto['modes']
     n_modes = len(primary)
     n_shipped = sum(1 for m in primary if m.get("highlighted"))
-    n_groups = (n_modes+49)//50
+    n_groups = len({m['category'] for m in primary})
 
     ok = True
 

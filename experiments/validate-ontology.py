@@ -19,6 +19,10 @@ REQUIRED = ("id", "name", "definition", "category", "group_label", "tag",
             "violates", "causes")
 TAGS = {"shipped", "research", "page", "analogy"}
 MEAS = {"draft", "multi-turn", "undetectable"}
+CATEGORIES = {'Perception','Memory','Attention','Heuristics','Reasoning',
+              'Metacognition','Language','Social','Moral','Self & agency','AI-native'}
+TERM_RELATIONS = {'broader theory','broader concept','distinct related concept',
+                  'negative counterpart','proposed mechanism','narrower variant'}
 
 
 def main():
@@ -28,10 +32,17 @@ def main():
     harm_ids = {h["id"] for h in o.get("harm_types", [])}
     mode_ids = {m["id"] for m in modes}
     mit_ids = {m["id"] for m in o.get("mitigations", [])}
+    by_id = {m['id']:m for m in modes}
     errors, warnings = [], []
 
     seen = set()
     used_prin, used_harm = set(), set()
+    category_labels = {}
+    nums = [m.get('num') for m in modes]
+    if any(type(n) is not int for n in nums) or sorted(nums) != list(range(1,len(modes)+1)):
+        errors.append('reference numbers must cover 1 through mode count exactly once')
+    if o['meta'].get('mode_count') != len(modes):
+        errors.append('meta.mode_count must equal the number of retained records')
     for m in modes:
         mid = m.get("id", "<no id>")
         for f in REQUIRED:
@@ -44,6 +55,24 @@ def main():
         if mid in seen:
             errors.append(f"duplicate id: {mid}")
         seen.add(mid)
+        category=m.get('category')
+        if category not in CATEGORIES:
+            errors.append(f'{mid}: unknown category {category!r}')
+        label=m.get('group_label')
+        if category in category_labels and category_labels[category] != label:
+            errors.append(f'{mid}: category must have one consistent group_label')
+        category_labels[category]=label
+        aliases={s.casefold().strip() for s in m.get('synonyms',[])}
+        for term in m.get('related_terms',[]):
+            if not all(term.get(k) for k in ('name','relation','note')):
+                errors.append(f'{mid}: related term needs name, relation and note')
+            if term.get('relation') not in TERM_RELATIONS:
+                errors.append(f'{mid}: unknown terminology relation {term.get("relation")!r}')
+            if term.get('name','').casefold().strip() in aliases:
+                errors.append(f'{mid}: a related non-synonym cannot also be an alias')
+        for source in m.get('terminology_sources',[]):
+            if not all(source.get(k) for k in ('title','url','consulted')):
+                errors.append(f'{mid}: terminology source must disclose title, URL and access depth')
         if m.get('grouped_under'):
             target=next((x for x in modes if x['id']==m['grouped_under']),None)
             if not target or target is m or target.get('grouped_under'):
@@ -86,6 +115,8 @@ def main():
         for r in m.get("is_a", []):
             if r not in mode_ids:
                 errors.append(f"{mid}: is_a unknown mode '{r}'")
+            if r==mid:
+                errors.append(f'{mid}: cannot be its own subtype')
         for d in m.get("detected_by", []):
             if d not in mit_ids:
                 errors.append(f"{mid}: detected_by unknown mitigation '{d}'")
@@ -94,6 +125,19 @@ def main():
                 errors.append(f"{mid}: mitigated_by unknown mitigation '{d}'")
         if m.get("same_as") and m["same_as"] not in mode_ids:
             errors.append(f"{mid}: same_as unknown mode '{m['same_as']}'")
+
+    # A subtype hierarchy must not turn into a cycle as new links are added.
+    visited,active=set(),set()
+    def visit(mid):
+        if mid in active:
+            errors.append(f'is_a cycle at {mid}')
+            return
+        if mid in visited:return
+        active.add(mid)
+        for parent in by_id[mid].get('is_a',[]):
+            if parent in by_id:visit(parent)
+        active.remove(mid);visited.add(mid)
+    for mid in by_id:visit(mid)
 
     # coverage: every principle and harm referenced
     for p in prin_ids - used_prin:

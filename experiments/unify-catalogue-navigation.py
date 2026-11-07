@@ -11,7 +11,7 @@ s=re.sub(r'  <section class="framework" id="psychology-research">.*?</section>\s
 s=re.sub(r'(<header class="hero"[^>]*>.*?<h1>).*?(</h1>)',r'\1Recognise AI behaviour. <span class="accent">Understand the risk. Check the evidence.</span>\2',s,count=1,flags=re.S)
 s=re.sub(r'(<header class="hero"[^>]*>.*?<p class="lede">).*?(</p>)',r'\1A searchable directory of AI failures and proposed parallels with human behaviour. Find a pattern, read its definition and example, inspect its sources and limits, then decide what to check.\2',s,count=1,flags=re.S)
 intro=f'''<span id="psychology-research"></span><h2>The catalogue</h2>
-    <p>One ordered list, numbered <strong>1–{records}</strong>. Each record appears once, in numerical order. Related or overlapping descriptions are cross-referenced within their entries. Names, definitions, sources and existing links are preserved. Numbered entries are not a count of independently validated AI mechanisms.</p>
+    <p><strong>{records} catalogue records in {len({m['category'] for m in onto['modes']})} ontology categories.</strong> Each record appears once. Reference numbers <strong>1–{records}</strong> stay fixed, with records ordered by reference number within each category. Related descriptions, subtypes and overlapping definitions are linked in their entries. These records are not {records} distinct or independently validated AI mechanisms.</p>
     <p>New entries are labelled <strong>proposed analogy</strong>, with definition-source review stated individually. A named human behaviour does not establish a shared mechanism in AI. Some entries refine broader existing patterns or describe adaptive processes. No AI experiments were run for these additions.</p>
     <p><a href="behaviours.csv">Download the full list · CSV</a> &middot; <a href="behaviours.json">JSON</a> &middot; <a href="experiments/paper-index.html">Paper ↔ behaviour index</a></p>
     '''
@@ -21,7 +21,33 @@ if 'data-filter="new"' not in s:
  s=s.replace("if(activeFilter === 'all') return true;","if(activeFilter === 'all') return true;\n    if(activeFilter === 'new') return b.dataset.candidate === '1';\n    if(activeFilter === 'pending') return b.dataset.sourceStatus === 'pending-definition-source-check';")
 s=s.replace("visible = (b.dataset.key + ' ' + b.textContent).toLowerCase().indexOf(q) !== -1;","visible = matchesChip(b) && (b.dataset.key + ' ' + b.textContent).toLowerCase().indexOf(q) !== -1;")
 s=s.replace('aria-label="Search failure modes"','aria-label="Search behaviours and patterns"')
-s=s.replace('aria-label="Jump to group"','aria-label="Jump to number range"')
+s=s.replace('aria-label="Jump to group"','aria-label="Jump to ontology category"')
+s=s.replace('aria-label="Jump to number range"','aria-label="Jump to ontology category"')
+if 'id="catalogue-category-style"' not in s:
+ s=s.replace('</head>','''<style id="catalogue-category-style">
+html{scroll-padding-top:var(--site-nav-height,84px)}
+.cat-controls{top:var(--site-nav-height,84px)}
+.jump-nav{top:calc(var(--site-nav-height,84px) + var(--cat-controls-height,140px))}
+.cat-group,.concept{scroll-margin-top:calc(var(--cat-controls-height,140px) + var(--cat-nav-height,52px) + 16px)}
+</style></head>''')
+if 'function measureCatalogueBars()' not in s:
+ s=s.replace('  var TOTAL = boxes.length;','''  var TOTAL = boxes.length;
+  // Stack the catalogue controls below the site navigation at every width.
+  var stickyNav = document.querySelector('.topnav');
+  var catalogueControls = document.querySelector('.cat-controls');
+  var categoryNav = document.getElementById('jumpNav');
+  function measureCatalogueBars(){
+    var style = document.documentElement.style;
+    style.setProperty('--site-nav-height', stickyNav.getBoundingClientRect().height + 'px');
+    style.setProperty('--cat-controls-height', catalogueControls.getBoundingClientRect().height + 'px');
+    style.setProperty('--cat-nav-height', categoryNav.getBoundingClientRect().height + 'px');
+  }
+  measureCatalogueBars();
+  if(window.ResizeObserver){
+    var catalogueBarObserver = new ResizeObserver(measureCatalogueBars);
+    [stickyNav, catalogueControls, categoryNav].forEach(function(el){ catalogueBarObserver.observe(el); });
+  } else { window.addEventListener('resize', measureCatalogueBars); }
+''')
 s=s.replace("if(activeFilter === 'analogy') return b.dataset.tag === 'analogy';", "if(activeFilter === 'analogy') return b.dataset.hasAnalogy === '1';")
 if "v.open = !!q" not in s:
  s=s.replace('b.hidden = !visible;', "b.hidden = !visible;\n      b.querySelectorAll('.concept-variant').forEach(function(v){ v.open = !!q && v.textContent.toLowerCase().indexOf(q) !== -1; });")
@@ -39,13 +65,14 @@ if 'id="research-entry-style"' not in s:
 baseline='<p class="research-baseline-note"><strong>Research baseline:</strong> the paper and reported experiments below describe the original 207-entry catalogue. The newly integrated analogies were not included in those measurements.</p>'
 if 'class="research-baseline-note"' not in s:
  s=s.replace('<section class="framework" id="paper">','<section class="framework" id="paper">\n    '+baseline)
-s=s.replace('"dateModified": "2026-05-23"','"dateModified": "2026-11-06"')
+s=re.sub(r'"dateModified": "\d{4}-\d{2}-\d{2}"','"dateModified": "'+onto['meta']['updated']+'"',s)
 s=s.replace('202 ways AI output goes wrong, each with a definition, an example, and the research behind it; most paralleled to human psychology, some AI-native.','434 behaviours and patterns, including explicitly labelled proposed human-behaviour analogies, with definitions, examples, sources and review status.')
 s=s.replace('434 behaviours and patterns, including explicitly labelled proposed human-behaviour analogies, with definitions, examples, sources and review status.',f'{records} numbered entries with definitions, sources, evidence limits and cross-referenced overlaps.')
 s=re.sub(r'\d+ main entries and \d+ grouped overlap variants, with definitions, evidence limits and proposed AI analogies\.',f'{records} numbered entries with definitions, sources, evidence limits and cross-referenced overlaps.',s)
-# Range navigation follows the same visible numbering, without a second count.
-s=s.replace("h.innerHTML = label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';", "h.innerHTML = h.dataset.range ? label : label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';")
-s=s.replace("a.href = '#' + h.id; a.textContent = h.dataset.label + ' (' + groupBoxes.get(h).length + ')';", "a.href = '#' + h.id; a.textContent = h.dataset.range ? h.dataset.label : h.dataset.label + ' (' + groupBoxes.get(h).length + ')';")
+# Short ontology category names keep the jump links readable on small screens.
+s=s.replace("h.innerHTML = h.dataset.range ? label : label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';", "h.innerHTML = label + ' <span class=\"gcount\">(' + groupBoxes.get(h).length + ')</span>';")
+s=s.replace("a.href = '#' + h.id; a.textContent = h.dataset.range ? h.dataset.label : h.dataset.label + ' (' + groupBoxes.get(h).length + ')';", "a.href = '#' + h.id; a.textContent = (h.dataset.category || h.dataset.label) + ' (' + groupBoxes.get(h).length + ')';")
+s=s.replace("a.href = '#' + h.id; a.textContent = h.dataset.label + ' (' + groupBoxes.get(h).length + ')';", "a.href = '#' + h.id; a.textContent = (h.dataset.category || h.dataset.label) + ' (' + groupBoxes.get(h).length + ')';")
 s=re.sub(r'<style id="grouped-variant-style">.*?</style>','',s,flags=re.S)
 s=s.replace('434 entries, comprising the original 207 and 227 proposed analogies', '434 source records at that revision, comprising the original 207 and 227 proposed analogies')
 if 'class="semantic-review-follow-up"' not in s:
@@ -58,5 +85,5 @@ redirect='''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Be
 for name in ['100-behaviours.html','behaviour-candidates.html']:(ROOT/'docs/research'/name).write_text(redirect+'\n')
 sm=ROOT/'docs/sitemap.xml';t=sm.read_text()
 t=re.sub(r'\s*<url>\s*<loc>https://ethicalai\.alexandrudan\.com/research/(?:100-behaviours|behaviour-candidates)\.html</loc>.*?</url>','',t,flags=re.S)
-t=t.replace('<lastmod>2026-05-23</lastmod>','<lastmod>2026-11-06</lastmod>');sm.write_text(t)
+t=re.sub(r'<lastmod>\d{4}-\d{2}-\d{2}</lastmod>','<lastmod>'+onto['meta']['updated']+'</lastmod>',t);sm.write_text(t)
 print('One catalogue; old research URLs redirect to it; historical paper results remain scoped.')

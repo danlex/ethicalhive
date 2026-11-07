@@ -40,6 +40,10 @@ def build_tree():
     for m in records:
         if m.get('grouped_under'):grouped[m['grouped_under']].append(m)
     id2name = {m["id"]: m["name"] for m in records}
+    subtypes = {m['id']:[] for m in records}
+    for m in records:
+        for parent in m.get('is_a',[]):
+            subtypes[parent].append({'n':m['name'],'id':m['id']})
     def links(m,key):
         return [{"n":id2name.get(r,r),"id":canon.get(r,r)} for r in m.get(key,[]) if canon.get(r,r)!=m['id']]
 
@@ -55,6 +59,10 @@ def build_tree():
             "grp": m.get("group_label", ""),
             "mid": m["id"],
             "syn": m.get("synonyms") or [],
+            "boundary": m.get('concept_boundary',''),
+            "terms": m.get('related_terms',[]),
+            "term_sources": m.get('terminology_sources',[]),
+            "subtypes": subtypes[m['id']],
             "rel": links(m,'relates_to'),
             "opp": links(m,'opposite_of'),
             "root": links(m,'root_of'),
@@ -180,12 +188,14 @@ def main():
     frag = inline_fragment(meta, root_li)
     idx = INDEX.read_text(encoding="utf-8")
     block = "<!-- MAP:START -->\n" + frag + "\n    <!-- MAP:END -->"
+    if not re.search(r"<!-- MAP:START -->.*?<!-- MAP:END -->", idx, flags=re.S):
+        raise ValueError('MAP markers not found in index.html')
     new = re.sub(r"<!-- MAP:START -->.*?<!-- MAP:END -->", lambda _m: block, idx, flags=re.S)
     if new != idx:
         INDEX.write_text(new, encoding="utf-8")
         print(f"spliced inline mindmap into {INDEX}")
     else:
-        print("MAP markers not found in index.html; inline splice skipped")
+        print("inline mindmap already up to date")
 
 
 TEMPLATE = r"""<!doctype html>
@@ -319,6 +329,10 @@ function showPanel(id){
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
+     +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${m.subtypes.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
+     +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
+     +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
+     +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
      +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Linked overlap descriptions</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')
@@ -463,6 +477,10 @@ INLINE_JS = r"""(function(){
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
+     +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${links(m.subtypes)}</p></div>`:'')
+     +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
+     +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
+     +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
      +(m.variants&&m.variants.length?`<div class="sec"><span class="k">Linked overlap descriptions</span><p>${m.variants.map(v=>`<a href="./#${esc(v.id)}">${esc(v.name)}</a>`).join(' · ')}</p></div>`:'')

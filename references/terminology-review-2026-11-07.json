@@ -1,0 +1,641 @@
+{
+  "date": "2026-11-07",
+  "baseline_commit": "0f2ffff85a25d0fc359724bed2d27a62fdb6a136",
+  "scope": "Targeted terminology review following user-reported overlaps; not an exhaustive semantic deduplication or independent psychological validation.",
+  "counts": {
+    "records": 434,
+    "categories": 11,
+    "retained_overlap_links": 9,
+    "changed_records": 17,
+    "distinct_concepts": null
+  },
+  "decisions": [
+    {
+      "records": [
+        111,
+        174
+      ],
+      "classification": "near-duplicate operational definitions",
+      "action": "Retain stable reference records and explicit overlap; do not count them as proven independent mechanisms."
+    },
+    {
+      "records": [
+        65,
+        69,
+        129
+      ],
+      "classification": "operational umbrella and narrower variants",
+      "action": "Remove People-pleasing as a synonym of sycophancy, clarify definitions, and add subtype links to the approval-seeking umbrella."
+    },
+    {
+      "records": [
+        38,
+        126
+      ],
+      "classification": "related overlapping descriptions",
+      "action": "Distinguish prior-investment rationale from escalation; retain the overlap in the existing AI example."
+    },
+    {
+      "records": [
+        196,
+        204
+      ],
+      "classification": "broader family and subtype",
+      "action": "Move Over-privileged tool use to the specific subtype and add its is_a relation."
+    },
+    {
+      "records": [
+        144,
+        183,
+        140,
+        145,
+        420
+      ],
+      "classification": "incorrect or overbroad synonym assignments",
+      "action": "Represent related terms with explicit relation types and boundary notes rather than aliases."
+    },
+    {
+      "records": [
+        274
+      ],
+      "classification": "legitimate alternative name",
+      "action": "Keep All-or-nothing thinking as an alias of Dichotomous thinking."
+    },
+    {
+      "records": [
+        232,
+        233,
+        234
+      ],
+      "classification": "related but distinguishable phenomena",
+      "action": "Keep time, context and outcome-re-exposure distinctions; add related-record links."
+    }
+  ],
+  "source_access": [
+    {
+      "title": "Lejarraga and Hertwig: Three Theories of Choice and Their Psychology of Losses",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34547221/",
+      "consulted": "Abstract consulted; explicitly distinguishes loss aversion from risk aversion."
+    },
+    {
+      "title": "Shokri et al.: Membership Inference Attacks against Machine Learning Models",
+      "url": "https://arxiv.org/abs/1610.05820",
+      "consulted": "Abstract consulted; membership means determining whether a supplied record was in training."
+    },
+    {
+      "title": "Carlini et al.: Extracting Training Data from Large Language Models",
+      "url": "https://arxiv.org/abs/2012.07805",
+      "consulted": "Abstract consulted; extraction recovers individual training examples."
+    },
+    {
+      "title": "A Constant Error, Revisited: A New Explanation of the Halo Effect",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11614318/",
+      "consulted": "Indexed passage consulted on the negative horn counterpart; not a full-paper review."
+    },
+    {
+      "title": "APA Dictionary of Psychology: diffusion of responsibility",
+      "url": "https://dictionary.apa.org/diffusion-of-responsibility",
+      "consulted": "Indexed definition consulted; describes a proposed mediator of several group phenomena."
+    },
+    {
+      "title": "Daniel Kahneman in conversation, UNSW Centre for Ideas",
+      "url": "https://www.events.unsw.edu.au/article/Daniel-Kahneman",
+      "consulted": "Transcript passages on stable and transient pattern noise consulted; not the complete book."
+    }
+  ],
+  "changes": [
+    {
+      "id": "b038-sunk-cost-fallacy",
+      "num": 38,
+      "name": "Sunk-cost fallacy",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Prior, irrecoverable investment is the reason for persisting. Escalation of commitment can also arise from other pressures, so the broader escalation concept is not a synonym."
+        }
+      }
+    },
+    {
+      "id": "b065-sycophancy",
+      "num": 65,
+      "name": "Sycophancy",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Unsupported agreement with the user is the defining behaviour. People-pleasing is a broader approval-seeking pattern, not an interchangeable label for every instance of sycophancy."
+        },
+        "is_a": {
+          "before": null,
+          "after": [
+            "b069-social-desirability-people-pleasing"
+          ]
+        },
+        "relates_to": {
+          "before": [
+            "flattery",
+            "social-desirability-bias",
+            "b063-conformity-asch",
+            "b064-obedience-to-authority-milgram",
+            "b066-capitulation",
+            "machine-bullshit"
+          ],
+          "after": [
+            "flattery",
+            "social-desirability-bias",
+            "b063-conformity-asch",
+            "b064-obedience-to-authority-milgram",
+            "b066-capitulation",
+            "machine-bullshit",
+            "b069-social-desirability-people-pleasing"
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "People-pleasing",
+            "Yes-manning"
+          ],
+          "after": [
+            "Yes-manning"
+          ]
+        }
+      }
+    },
+    {
+      "id": "b069-social-desirability-people-pleasing",
+      "num": 69,
+      "name": "Social desirability / people-pleasing",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "This catalogue uses this record as an operational umbrella for approval-seeking output. Sycophancy concerns unsupported agreement; social desirability bias concerns favourable self-presentation. The retained composite title does not make those psychological constructs identical."
+        },
+        "definition": {
+          "before": "Answering to be liked, not to be right (signal-competition account, 2026).",
+          "after": "Shaping answers or behaviour to win approval, including agreement, flattery or favourable self-presentation, at the expense of accuracy or the stated task."
+        },
+        "relates_to": {
+          "before": null,
+          "after": [
+            "b065-sycophancy",
+            "social-desirability-bias"
+          ]
+        },
+        "synonyms": {
+          "before": null,
+          "after": [
+            "People-pleasing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "x107-silent-assumption-gap",
+      "num": 111,
+      "name": "Silent-assumption gap",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Clarification avoidance (#174) currently describes the same operational pattern: acting on a guessed ambiguous requirement rather than resolving it. Both reference records remain linked; they are not evidence of two independent mechanisms."
+        }
+      }
+    },
+    {
+      "id": "escalation-of-commitment",
+      "num": 126,
+      "name": "Escalation of commitment",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "The defining feature is sustained or increased commitment despite adverse feedback. Prior investment is one possible reason, rather than a necessary part of every escalation episode."
+        },
+        "definition": {
+          "before": "Continuing to pursue an approach after the evidence says to stop, because it already spent effort or tokens on it.",
+          "after": "Maintaining or increasing commitment to a failing course of action despite negative feedback; sunk costs are one possible driver."
+        },
+        "grouping_reason": {
+          "before": "The current AI descriptions both justify persistence through prior investment. Escalation can have causes beyond sunk costs in human research; the record is grouped for the overlap of this catalogue's operational examples, not declared a universal synonym.",
+          "after": "The retained AI example overlaps the sunk-cost pattern because it cites prior effort. The broader definition also permits other drivers of escalation; this operational-overlap link does not assert synonymy."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Sunk-cost escalation",
+              "relation": "narrower variant",
+              "note": "Escalation driven specifically by prior investment; other forms of escalation can have different drivers."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Sunk-cost escalation"
+          ],
+          "after": null
+        }
+      }
+    },
+    {
+      "id": "social-desirability-bias",
+      "num": 129,
+      "name": "Social desirability bias",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Favourable self-presentation can occur without agreeing with the user. Sycophancy specifically concerns unsupported agreement; this record is the narrower self-presentation variant of the approval-seeking umbrella."
+        },
+        "definition": {
+          "before": "Shading answers toward what looks good or what it thinks the user wants to hear, over what is accurate.",
+          "after": "Presenting itself, its answers or its performance in a socially approved light, including overstating competence or concealing errors, rather than reporting accurately."
+        },
+        "grouping_reason": {
+          "before": "Both current AI descriptions concern shaping answers for approval or a favourable impression. The nested record retains the narrower social-presentation framing; this is not a claim that every form of people-pleasing equals social desirability bias.",
+          "after": "Both records concern approval-shaped output. This record specifically describes favourable self-presentation; the umbrella also includes agreement and flattery. The overlap link does not assert psychological synonymy."
+        },
+        "is_a": {
+          "before": null,
+          "after": [
+            "b069-social-desirability-people-pleasing"
+          ]
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Impression management",
+              "relation": "distinct related concept",
+              "note": "Strategies for influencing others' impressions can contribute to socially desirable responding; the terms are not interchangeable."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Impression management"
+          ],
+          "after": null
+        }
+      }
+    },
+    {
+      "id": "halo-effect",
+      "num": 140,
+      "name": "Halo effect",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "This record uses a positive overall impression spilling into unrelated judgements. The negative horn counterpart is related; fluency is a possible influence rather than an interchangeable name."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Horn effect",
+              "relation": "negative counterpart",
+              "note": "A negative impression lowers judgements of other qualities; some literature includes both polarities under halo effects."
+            },
+            {
+              "name": "Fluency bias",
+              "relation": "distinct related concept",
+              "note": "Ease of processing influences judgement. Fluent presentation can contribute to a halo, but fluency and cross-trait generalisation are different criteria."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Horn effect",
+            "Fluency bias"
+          ],
+          "after": null
+        },
+        "terminology_sources": {
+          "before": null,
+          "after": [
+            {
+              "title": "A Constant Error, Revisited: A New Explanation of the Halo Effect",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11614318/",
+              "consulted": "Indexed passage consulted on the negative horn counterpart; not a full-paper review."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "loss-aversion",
+      "num": 144,
+      "name": "Loss aversion",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Loss aversion compares the weight of losses with equal gains around a reference point. Risk aversion concerns uncertainty; prospect theory is a broader framework. Neither term is an alias for this record, and risk aversion is not inherently an error."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Prospect theory",
+              "relation": "broader theory",
+              "note": "A theory of decisions under risk that includes reference-dependent valuation; loss aversion is one component, not the whole theory."
+            },
+            {
+              "name": "Risk aversion",
+              "relation": "distinct related concept",
+              "note": "Preference for less uncertain outcomes, often studied using a sure outcome versus a gamble. It does not require losses to outweigh equal gains."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Prospect theory",
+            "Risk aversion"
+          ],
+          "after": null
+        },
+        "terminology_sources": {
+          "before": null,
+          "after": [
+            {
+              "title": "Lejarraga and Hertwig: Three Theories of Choice and Their Psychology of Losses",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/34547221/",
+              "consulted": "Abstract consulted; explicitly distinguishes loss aversion from risk aversion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bystander-effect",
+      "num": 145,
+      "name": "Bystander effect",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "The operational outcome here is a needed action going unperformed when others could act. Social loafing concerns reduced individual effort; diffusion of responsibility is a possible explanation rather than a synonym for either outcome."
+        },
+        "human_parallel": {
+          "before": "Bystander effect / diffusion of responsibility (Darley and Latane, 1968): the more others are present, the less any individual acts, each assuming someone else will.",
+          "after": "Bystander effect (Darley and Latane, 1968): the presence of others can reduce individual intervention. Diffusion of responsibility is one proposed explanation."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Diffusion of responsibility",
+              "relation": "proposed mechanism",
+              "note": "Shared responsibility can reduce individual action and has been proposed to contribute to several group phenomena, not only the bystander effect."
+            },
+            {
+              "name": "Cognitive loafing",
+              "relation": "distinct related concept",
+              "note": "Reduced cognitive effort in a group can overlap with inaction, but effort reduction and failure to intervene are different observations."
+            }
+          ]
+        },
+        "relates_to": {
+          "before": [
+            "groupthink",
+            "b070-in-group-favouritism",
+            "collusion"
+          ],
+          "after": [
+            "groupthink",
+            "b070-in-group-favouritism",
+            "collusion",
+            "upload-037"
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Diffusion of responsibility",
+            "Cognitive loafing"
+          ],
+          "after": null
+        },
+        "terminology_sources": {
+          "before": null,
+          "after": [
+            {
+              "title": "APA Dictionary of Psychology: diffusion of responsibility",
+              "url": "https://dictionary.apa.org/diffusion-of-responsibility",
+              "consulted": "Indexed definition consulted; describes a proposed mediator of several group phenomena."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "clarification-avoidance",
+      "num": 174,
+      "name": "Clarification avoidance",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "The current operational definition is near-duplicate with Silent-assumption gap (#111). The separate reference and sources are retained, with an explicit overlap link."
+        },
+        "grouping_relation": {
+          "before": "Operational overlap; not an assertion of psychological synonymy",
+          "after": "Near-duplicate operational definition; not an assertion of psychological identity"
+        }
+      }
+    },
+    {
+      "id": "training-data-extraction",
+      "num": 183,
+      "name": "Training-data extraction",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Extraction recovers training content. Membership inference tests training-set inclusion. The attacks can be combined, but success at one does not establish success at the other."
+        },
+        "definition": {
+          "before": "Coughing up memorised private or copyrighted training data under targeted queries or membership-inference attacks. A leakage specific to a model that memorised its corpus.",
+          "after": "Recovering memorised training examples or content through model queries, potentially exposing sensitive or protected information."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Membership inference",
+              "relation": "distinct related concept",
+              "note": "Determines whether a supplied example belonged to a training dataset; it does not by itself recover the example's content."
+            },
+            {
+              "name": "Memorization leakage",
+              "relation": "broader concept",
+              "note": "Disclosure associated with memorised content can include accidental reproduction as well as targeted extraction."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Membership inference",
+            "Memorization leakage"
+          ],
+          "after": [
+            "Training-data extraction attack"
+          ]
+        },
+        "terminology_sources": {
+          "before": null,
+          "after": [
+            {
+              "title": "Shokri et al.: Membership Inference Attacks against Machine Learning Models",
+              "url": "https://arxiv.org/abs/1610.05820",
+              "consulted": "Abstract consulted; membership means determining whether a supplied record was in training."
+            },
+            {
+              "title": "Carlini et al.: Extracting Training Data from Large Language Models",
+              "url": "https://arxiv.org/abs/2012.07805",
+              "consulted": "Abstract consulted; extraction recovers individual training examples."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tool-selection-error",
+      "num": 196,
+      "name": "Tool-selection error",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "This is the broader tool-choice failure family. Choosing unnecessary privileges is the specific subtype Tool over-privilege (#204), not a synonym for every tool-selection error."
+        },
+        "relates_to": {
+          "before": [
+            "x104-api-misuse",
+            "scope-creep",
+            "b008-hallucination"
+          ],
+          "after": [
+            "x104-api-misuse",
+            "scope-creep",
+            "b008-hallucination",
+            "tool-over-privilege"
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Wrong tool call",
+            "Over-privileged tool use"
+          ],
+          "after": [
+            "Wrong tool call"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tool-over-privilege",
+      "num": 204,
+      "name": "Tool over-privilege",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "The chosen tool has more privilege than the task needs. Other tool-selection errors can concern unsuitable functionality without any privilege escalation."
+        },
+        "is_a": {
+          "before": null,
+          "after": [
+            "tool-selection-error"
+          ]
+        },
+        "relates_to": {
+          "before": null,
+          "after": [
+            "tool-selection-error"
+          ]
+        },
+        "synonyms": {
+          "before": null,
+          "after": [
+            "Over-privileged tool use"
+          ]
+        }
+      }
+    },
+    {
+      "id": "candidate-026",
+      "num": 232,
+      "name": "Spontaneous recovery",
+      "fields": {
+        "relates_to": {
+          "before": null,
+          "after": [
+            "candidate-027",
+            "candidate-028"
+          ]
+        }
+      }
+    },
+    {
+      "id": "candidate-027",
+      "num": 233,
+      "name": "Renewal",
+      "fields": {
+        "relates_to": {
+          "before": null,
+          "after": [
+            "candidate-026",
+            "candidate-028"
+          ]
+        }
+      }
+    },
+    {
+      "id": "candidate-028",
+      "num": 234,
+      "name": "Reinstatement",
+      "fields": {
+        "relates_to": {
+          "before": null,
+          "after": [
+            "candidate-026",
+            "candidate-027"
+          ]
+        }
+      }
+    },
+    {
+      "id": "upload-128",
+      "num": 420,
+      "name": "Stable pattern noise",
+      "fields": {
+        "concept_boundary": {
+          "before": null,
+          "after": "Stable pattern noise is a component of pattern noise, not an alias for its full stable-plus-transient scope."
+        },
+        "related_terms": {
+          "before": null,
+          "after": [
+            {
+              "name": "Pattern noise",
+              "relation": "broader concept",
+              "note": "Includes stable, judge-specific case patterns and transient occasion-specific variation. This record covers only the stable component."
+            }
+          ]
+        },
+        "synonyms": {
+          "before": [
+            "Pattern noise"
+          ],
+          "after": null
+        },
+        "terminology_sources": {
+          "before": null,
+          "after": [
+            {
+              "title": "Daniel Kahneman in conversation, UNSW Centre for Ideas",
+              "url": "https://www.events.unsw.edu.au/article/Daniel-Kahneman",
+              "consulted": "Transcript passages on stable and transient pattern noise consulted; not the complete book."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "No unique-concept total is claimed.",
+    "The 99 pending definition-source checks are unchanged.",
+    "AI analogies remain untested.",
+    "Catalogue subtype links for approval-seeking output are operational modelling choices, not universal identities between human constructs."
+  ]
+}

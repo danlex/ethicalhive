@@ -27,8 +27,10 @@ one place a failure mode or principle is defined.
   `contract_clause` (if a shipped check), `same_as` (when two entries denote the
   same underlying failure), and `arxiv` (count + top-3 papers).
 
-The page renders all 434 records once, in ascending reference-number order from
-1 to 434. Overlap relationships are cross-references between the relevant rows,
+The page renders all 434 records once in the eleven ontology categories, using
+`category` for membership and `group_label` for each heading. Stable reference
+numbers 1 to 434 are sorted within each category; grouping does not renumber them.
+Overlap relationships are cross-references between the relevant rows,
 not hidden nested entries or a second visible count. The inventory contains the
 previous 207 records and 227 proposed human-behaviour analogies; numbering does
 not establish psychological synonymy or independent validation. Of all records, 395 are human-paralleled
@@ -52,11 +54,15 @@ rendered as a second featured copy. The operational-overlap review and explicit
 5. Commit `ontology/ethical-ai.yaml` + `docs/index.html`.
 
 The page build also exports `docs/behaviours.csv` and `docs/behaviours.json`.
-These exports have 434 rows/objects in the same 1–434 reference order. The
+These exports have 434 rows/objects in 1–434 reference order, independent of the
+category-grouped page. Category fields preserve the same memberships. The
 `grouped_under` and `grouping_reason` fields preserve the overlap relationships
 without nesting or repeating records. Public and YAML `meta.mode_count` both
 count all 434 records. The grouping
 review is `references/semantic-dedup-review-2026-11-06.json`.
+The targeted terminology follow-up is
+`references/terminology-review-2026-11-07.json`. It records corrected aliases,
+operational boundaries and subtype decisions, not a complete semantic deduplication.
 Former research-page URLs redirect to `/#catalogue`; older download URLs are
 aliases of the same full export. Research snapshots and reconciliation records
 are preserved in `references/`. The one-time integration is recorded in
@@ -79,15 +85,27 @@ A few modes that were mislabeled as engineering (automation bias, survivorship
 bias, noble cause corruption, anthropomorphism) were moved to the human side under
 this rule. New modes are authored in `experiments/ontology-additions.yaml`.
 
-## Relations (the graph)
+## Relations and terminology
 
-Every mode carries `violates` (a principle id) and `causes` (a harm id); 123 modes
-carry `relates_to` clusters (380 links in all), and many carry `synonyms` (aka
-names). These are seeded by category defaults plus per-mode overrides in
+Ordinary modes carry `violates` (principle ids) and `causes` (harm ids); proposed
+analogies may leave these empty. `relates_to` connects adjacent concepts and
+`synonyms` stores genuine alternative names. The initial relations were seeded by
+category defaults plus per-mode overrides in
 `experiments/build-ontology.py` (PRIN_BY_CAT / HARM_BY_CAT / PRIN_OVERRIDE /
 HARM_OVERRIDE / RELATES / SYNONYMS). The page surfaces `violates`, `causes`,
 `relates_to` and `synonyms` in each row's Details and in the map's node panel.
-Also carries `opposite_of` (contrasting pairs), `root_of` (causal drivers), and `detected_by` (which mitigation catches it). Still to grow: `is_a`.
+Also carries `opposite_of` (contrasting pairs), `root_of` (causal drivers), and
+`detected_by` (which mitigation catches it). `is_a` represents a narrower record
+within a broader operational family, such as tool over-privilege within
+tool-selection error. Both directions are visible in the list and map.
+
+`concept_boundary` explains how reviewed concepts differ. `related_terms` holds
+named concepts that have no separate numbered record, with `name`, `relation`
+and `note`; they are explicitly not aliases. For example, prospect theory is a
+broader theory than loss aversion, and membership inference is a distinct attack
+goal from training-data extraction. `terminology_sources` discloses source title,
+URL and access depth. These fields are preserved in JSON and CSV. The targeted
+review does not establish a unique-concept count or validate the AI analogies.
 
 ## Provenance
 
@@ -97,10 +115,10 @@ the neuroscience-parallels markdown, `catalogue-examples.tsv`, and the two paper
 JSON files). Those files are retained for provenance and to allow a re-seed, but
 they are no longer read by the page build. The ontology is authoritative.
 
-## Next enrichment (not yet done)
+## Further review
 
-Per-mode `relations` beyond `same_as`: `violates` (which principle), `causes`
-(which harm), `relates_to` (adjacent modes), `root_of` / `opposite_of`. These turn
-the catalogue into a navigable graph and let overlaps and gaps be found
-mechanically instead of by eye.
+Semantic normalization remains incomplete. Matching names is not sufficient to
+establish identical definitions or mechanisms. Review aliases, operational
+boundaries and source evidence before merging further records or claiming a
+distinct-behaviour count.
 

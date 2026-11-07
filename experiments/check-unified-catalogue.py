@@ -34,6 +34,20 @@ rows=list(csv.DictReader((ROOT/'docs/behaviours.csv').open()))
 assert len(rows)==434
 assert [int(r['num']) for r in rows]==list(range(1,435))
 assert {r['id']:r['grouped_under'] for r in rows if r['grouped_under']}==expected_groups
+by_num={m['num']:m for m in onto['modes']}
+category_order=list(dict.fromkeys(m['category'] for m in sorted(onto['modes'],key=lambda m:m['num'])))
+expected_numbers=[str(m['num']) for c in category_order for m in sorted(onto['modes'],key=lambda m:m['num']) if m['category']==c]
+for row in rows:
+    mode=by_num[int(row['num'])]
+    for field in ('synonyms','is_a','relates_to','related_terms','terminology_sources'):
+        assert json.loads(row[field])==mode.get(field,[])
+    assert row['concept_boundary']==mode.get('concept_boundary','')
+# These concepts were wrongly treated as interchangeable in the old aliases.
+for num,names in {65:['People-pleasing'],144:['Prospect theory','Risk aversion'],183:['Membership inference'],196:['Over-privileged tool use'],140:['Horn effect','Fluency bias'],145:['Diffusion of responsibility','Cognitive loafing'],420:['Pattern noise']}.items():
+    assert not set(names)&set(by_num[num].get('synonyms',[]))
+assert by_num[274]['synonyms']==['All-or-nothing thinking']
+assert by_num[196]['id'] in by_num[204]['is_a']
+assert by_num[69]['id'] in by_num[65]['is_a'] and by_num[69]['id'] in by_num[129]['is_a']
 for suffix in ('json','csv'):
     for stem in ('100-behaviours','behaviour-candidates'):
         assert (ROOT/f'docs/research/{stem}.{suffix}').read_bytes()==(ROOT/f'docs/behaviours.{suffix}').read_bytes()
@@ -53,13 +67,41 @@ try:
             page.goto(base,wait_until='domcontentloaded')
             assert page.locator('.concept').count()==434
             assert page.locator('.concept-variant').count()==0
-            assert page.locator('.concept > summary > .num').all_text_contents()==[str(i) for i in range(1,435)]
-            assert page.locator('#jumpNav a').all_text_contents()==[f'{i}–{min(i+49,434)}' for i in range(1,435,50)]
+            assert page.locator('.concept > summary > .num').all_text_contents()==expected_numbers
+            assert sorted(map(int,page.locator('.concept > summary > .num').all_text_contents()))==list(range(1,435))
+            assert page.locator('.cat-group').count()==len(category_order)==11
+            assert page.locator('.cat-group[data-range]').count()==0
+            assert page.locator('.cat-group').evaluate_all('(els)=>els.map(e=>e.dataset.category)')==category_order
+            groups=page.locator('.cat-grid').evaluate('''grid=>{
+                const result=[];let group;
+                for(const el of grid.children){
+                    if(el.matches('.cat-group')){group={category:el.dataset.category,id:el.id,numbers:[]};result.push(group);}
+                    if(el.matches('.concept'))group.numbers.push(Number(el.dataset.num));
+                }return result;
+            }''')
+            for group in groups:
+                assert group['numbers']==sorted(m['num'] for m in onto['modes'] if m['category']==group['category'])
+            assert page.locator('#jumpNav a').all_text_contents()==[f'{category} ({len(group["numbers"])})' for category,group in zip(category_order,groups)]
+            assert page.locator('#jumpNav').get_attribute('aria-label')=='Jump to ontology category'
             ids=page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.id)')
             assert len(ids)==len(set(ids))==434
             assert page.locator('#principles .card').count()==6
             assert page.locator('#self-eval-language-discrepancy').count()==1
             assert page.locator('#mm .li.mode').count()==434
+            # Category navigation is a real anchor and keeps the stable IDs.
+            page.locator('#jumpNav a').last.click()
+            assert page.url.endswith('#grp-ai-native-behaviours')
+            for num in (144,183):
+                mode=by_num[num]
+                entry=page.locator('#'+mode['id'])
+                entry.locator('summary').click()
+                assert 'Related terms · not synonyms' in entry.inner_text()
+                if num==144:
+                    assert 'Also known as' not in entry.inner_text()
+                assert entry.locator('.body a[href="'+mode['terminology_sources'][0]['url']+'"]').count()==1
+            tool=page.locator('#tool-selection-error')
+            tool.locator('summary').click()
+            assert tool.locator('.body a[href="#tool-over-privilege"]').count()>=1
             page.locator('[data-filter="new"]').click()
             assert page.locator('.concept:visible').count()==227
             page.locator('[data-filter="pending"]').click()
@@ -86,6 +128,12 @@ try:
             assert 'Untested AI analogy' in panel
             assert 'violates ?' not in panel
             page.locator('#mm .mm-q').fill('')
+            page.locator('#mm .mm-q').fill('Loss aversion')
+            page.locator('#mm [data-mid="loss-aversion"] > .row .pill').click()
+            term_panel=page.locator('#mm .mm-detail').inner_text()
+            assert 'related terms · not synonyms' in term_panel.lower() and 'Prospect theory' in term_panel,term_panel
+            assert 'also known as' not in term_panel.lower()
+            page.locator('#mm .mm-q').fill('')
             page.locator('#mm .mm-q').fill('Omnipotent control')
             page.locator('#mm [data-mid="overpromise-underdeliver"] > .row .pill').click()
             assert 'linked overlap descriptions' in page.locator('#mm .mm-detail').inner_text().lower()
@@ -109,10 +157,11 @@ try:
         page.route('https://**/*',lambda r:r.abort())
         page.goto(base,wait_until='domcontentloaded')
         assert page.locator('.concept').count()==434
+        assert page.locator('.cat-group').count()==11
         page.locator('#upload-003 summary').click()
         assert page.locator('#upload-003 .human-sources').is_visible()
         page.locator('#upload-009 > summary').click()
         assert page.locator('#upload-009 .human-sources').is_visible()
         browser.close()
-    print('PASS: 434 rows numbered 1–434 exactly once, ordered JSON/CSV, overlap cross-references, preserved anchors, map, filters and no-JS reading')
+    print('PASS: 434 stable references in 11 ontology categories, corrected terminology and subtypes, ordered JSON/CSV, overlap links, map, filters, mobile and no-JS reading')
 finally:server.shutdown()

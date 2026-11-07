@@ -2,8 +2,9 @@
 """build-catalogue.py - render the EthicalAI catalogue from the ontology.
 
 Reads ontology/ethical-ai.yaml (the single source of truth) and splices the
-catalogue grid into docs/index.html: a red-bordered Highlighted group first, then
-the family groups (the ten brain systems plus the agentic/engineering group).
+catalogue grid into docs/index.html, grouped by the ontology's categories.
+Stable reference numbers are sorted within each category; highlighted entries
+are styled in place rather than repeated in a separate group.
 Every box is an expandable .concept with definition, example, and research papers.
 
 Usage:
@@ -83,6 +84,7 @@ PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
 MODE_NAME = {}  # id -> name, for relates_to links
 MODE_NUM = {}
+SUBTYPES = {}  # broader mode id -> narrower modes
 MIT_NAME = {}   # mitigation id -> name, for detected_by
 GROUPED = {}    # primary id -> retained overlapping records
 
@@ -93,12 +95,26 @@ def meta_block(mode):
     if mode.get("is_a"):
         links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>' for r in mode["is_a"])
         rows.append(("Type of", links))
+    if SUBTYPES.get(mode['id']):
+        links = ", ".join(f'<a href="#{r["id"]}">{esc(r["name"])}</a>'
+                          for r in SUBTYPES[mode['id']])
+        rows.append(("Includes subtypes", links))
+    if mode.get('concept_boundary'):
+        rows.append(("Concept boundary", esc(mode['concept_boundary'])))
     if mode.get("human_parallel"):
         rows.append(("Human parallel", esc(mode["human_parallel"])))
     elif mode.get("ai_native"):
         rows.append(("Human parallel", "None (AI-native behaviour)"))
     if mode.get("synonyms"):
         rows.append(("Also known as", esc(", ".join(mode["synonyms"]))))
+    if mode.get('related_terms'):
+        terms = '<ul>'+''.join('<li><b>'+esc(t['name'])+'</b> · '+
+                esc(t['relation'])+'. '+esc(t['note'])+'</li>' for t in mode['related_terms'])+'</ul>'
+        rows.append(("Related terms · not synonyms", terms))
+    if mode.get('terminology_sources'):
+        sources = '<ul>'+''.join('<li><a href="'+esc(s['url'])+'">'+esc(s['title'])+
+                  '</a> · '+esc(s['consulted'])+'</li>' for s in mode['terminology_sources'])+'</ul>'
+        rows.append(("Terminology sources", sources))
     viol = [PRIN_NAME.get(p, p) for p in mode.get("violates", [])]
     if viol:
         rows.append(("Violates", esc(", ".join(viol))))
@@ -238,12 +254,14 @@ def export_catalogue(onto):
     public['meta']['mode_count']=len(public['modes'])
     (ROOT/'docs/behaviours.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     buffer=io.StringIO(newline='')
-    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_under','grouping_reason']
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_under','grouping_reason','synonyms','is_a','relates_to','concept_boundary','related_terms','terminology_sources']
     writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
     for mode in sorted(onto['modes'],key=lambda m:m['num']):
         row={k:mode.get(k,'') for k in fields}
         row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
         row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
+        for key in ('synonyms','is_a','relates_to','related_terms','terminology_sources'):
+            row[key]=json.dumps(mode.get(key,[]),ensure_ascii=False)
         writer.writerow(row)
     (ROOT/'docs/behaviours.csv').write_text(buffer.getvalue())
     # Existing download URLs remain aliases of the same catalogue, not parallel lists.
@@ -296,8 +314,7 @@ def experiments_section(modes):
 
 
 def render(modes):
-    """Group by group_label in first-appearance order. The Highlighted group is
-    rendered where it falls in that order (last), not pinned to the top."""
+    """Use ontology categories, with stable reference order within each group."""
     modes=sorted(modes,key=lambda m:m['num'])
     n = len(modes)
     ai = sum(1 for m in modes if m.get("ai_native"))
@@ -305,18 +322,20 @@ def render(modes):
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
     proposed=sum(bool(m.get('research_candidate')) for m in modes)
-    stats = (f'<div class="cat-stats"><b>{n}</b> numbered entries · {ai} AI-native · {grounded} with AI paper links'
+    categories={}
+    for mode in modes:
+        categories.setdefault(mode['category'],[]).append(mode)
+    stats = (f'<div class="cat-stats"><b>{n}</b> catalogue records · {len(categories)} categories · {ai} AI-native · {grounded} with AI paper links'
              f' · {shipped} highlighted · {detected} with detection links</div>')
     out = [f'    {stats}', '    <div class="cat-grid">']
-    seen_groups=set()
-    for i,m in enumerate(modes):
-        if i%50==0:
-            end=min(i+50,n)
-            out.append(f'<h3 class="cat-group" data-range="1" id="range-{i+1}">{i+1}–{end}</h3>')
-        if m['group_label'] not in seen_groups:
-            seen_groups.add(m['group_label'])
-            out.append(f'<span class="legacy-group-anchor" id="grp-{slug(m["group_label"])}"></span>')
-        out.append(box(m))
+    for category, records in categories.items():
+        label=records[0]['group_label']
+        out.append(f'<h3 class="cat-group" data-category="{esc(category)}" id="grp-{slug(label)}">{esc(label)}</h3>')
+        for mode in records:
+            # Keep previously published number-range links without range buckets.
+            if (mode['num']-1)%50==0:
+                out.append(f'<span class="legacy-range-anchor" id="range-{mode["num"]}"></span>')
+            out.append(box(mode))
     out.append("    </div>")
     return "\n".join(out)
 
@@ -331,6 +350,10 @@ def main():
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
     MODE_NUM.update({m['id']:m['num'] for m in onto['modes']})
+    SUBTYPES.clear()
+    for m in sorted(onto['modes'],key=lambda m:m['num']):
+        for parent in m.get('is_a',[]):
+            SUBTYPES.setdefault(parent,[]).append(m)
     GROUPED.clear()
     for m in onto['modes']:
         if m.get('grouped_under'):GROUPED.setdefault(m['grouped_under'],[]).append(m)
@@ -364,7 +387,7 @@ def main():
     export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))
-    print(f"rendered {len(modes)} numbered entries in ascending reference order ({hl} highlighted)")
+    print(f"rendered {len(modes)} records in {len({m['category'] for m in modes})} ontology categories ({hl} highlighted); stable reference numbers preserved")
 
 
 if __name__ == "__main__":
