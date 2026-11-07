@@ -3,7 +3,7 @@
 
 Reads ontology/ethical-ai.yaml (the single source of truth) and splices the
 catalogue grid into docs/index.html, grouped by the ontology's categories.
-Stable reference numbers are sorted within each category; highlighted entries
+Records keep their stable reference order within each category; highlighted entries
 are styled in place rather than repeated in a separate group.
 Every box is an expandable .concept with definition, example, and research papers.
 
@@ -83,7 +83,6 @@ TAGL = {
 PRIN_NAME = {}  # populated from the ontology in main()
 HARM_NAME = {}
 MODE_NAME = {}  # id -> name, for relates_to links
-MODE_NUM = {}
 SUBTYPES = {}  # broader mode id -> narrower modes
 MIT_NAME = {}   # mitigation id -> name, for detected_by
 GROUPED = {}    # primary id -> retained overlapping records
@@ -163,7 +162,6 @@ def box(mode):
     """Render one failure mode as an expandable spreadsheet row."""
     hl = mode.get("highlighted")
     num = mode.get("num")
-    n = str(num) if isinstance(num, int) else ""
     cls = "concept shipped" if hl else f'concept {mode.get("tag", "")}'.strip()
     datafam = "page" if hl else mode.get("tag", "")
     tag = mode.get("tag", "")
@@ -185,7 +183,7 @@ def box(mode):
              ('definition source consulted' if review=='definition-source-consulted' else 'source check pending')+'</span>') if proposed else ''
     related=mode.get('grouped_under')
     if related:
-        badge += f'<span class="research-status">Linked overlap with #{MODE_NUM[related]} · {esc(MODE_NAME[related])}</span>'
+        badge += f'<span class="research-status">Linked overlap with {esc(MODE_NAME[related])}</span>'
     # examples: prefer a list of several; fall back to the single legacy field
     exs = mode.get("examples") or ([mode["example"]] if mode.get("example") else [])
     ex_html = ""
@@ -197,7 +195,7 @@ def box(mode):
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
         f'data-num="{num}" data-overlap="{esc(related or "")}" data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
-        f'<summary><span class="num">{n}</span>'
+        f'<summary>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>'
         f'<span class="fam">{cat}</span>'
@@ -215,10 +213,10 @@ def overlap_block(mode):
     out=[]
     target=mode.get('grouped_under')
     if target:
-        out.append('<h4>Related operational description</h4><p><a href="#'+esc(target)+'">#'+str(MODE_NUM[target])+' · '+esc(MODE_NAME[target])+'</a></p><p>'+esc(mode['grouping_reason'])+'</p>')
+        out.append('<h4>Related operational description</h4><p><a href="#'+esc(target)+'">'+esc(MODE_NAME[target])+'</a></p><p>'+esc(mode['grouping_reason'])+'</p>')
     variants=GROUPED.get(mode['id'],[])
     if variants:
-        out.append('<h4>Linked overlap descriptions</h4><ul>'+''.join('<li><a href="#'+esc(v['id'])+'">#'+str(v['num'])+' · '+esc(v['name'])+'</a></li>' for v in variants)+'</ul>')
+        out.append('<h4>Linked overlap descriptions</h4><ul>'+''.join('<li><a href="#'+esc(v['id'])+'">'+esc(v['name'])+'</a></li>' for v in variants)+'</ul>')
     return ''.join(out)
 
 
@@ -349,7 +347,6 @@ def main():
     PRIN_NAME.update({p["id"]: p["name"] for p in onto.get("principles", [])})
     HARM_NAME.update({h["id"]: h["name"] for h in onto.get("harm_types", [])})
     MODE_NAME.update({m["id"]: m["name"] for m in onto["modes"]})
-    MODE_NUM.update({m['id']:m['num'] for m in onto['modes']})
     SUBTYPES.clear()
     for m in sorted(onto['modes'],key=lambda m:m['num']):
         for parent in m.get('is_a',[]):

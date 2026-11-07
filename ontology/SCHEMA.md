@@ -23,7 +23,7 @@ and is validated by `experiments/validate-ontology.py`.
 | Field | Type | Required | Meaning |
 |---|---|---|---|
 | `id` | string | yes | stable slug identifier, e.g. `b101-source-fabrication`; stable across versions |
-| `num` | int | yes | catalogue number, stable display/citation handle |
+| `num` | int | yes | stable catalogue reference for exports and citations; not displayed beside list rows |
 | `name` | string | yes | human-readable mode name |
 | `definition` | string | yes | one-sentence operational definition |
 | `category` | string | yes | one of the eleven categories (ten cognitive systems plus `AI-native`) |
@@ -49,9 +49,9 @@ and is validated by `experiments/validate-ontology.py`.
 
 The catalogue contains 434 records: 207 previous entries plus 227 integrated
 research analogies. These are not 434 independently validated AI mechanisms.
-The current view displays all 434 records in eleven ontology categories, with
-ascending `num` order within each category. Reference numbers remain stable and
-exports retain global `num` order. Nine
+The current view displays all 434 records in eleven ontology categories, without
+visible row numbers. Internal `num` order is preserved within each category.
+Reference numbers remain stable and exports retain global `num` order. Nine
 overlap links remain explicit. A linked record carries `grouped_under`, `grouping_reason`
 and `grouping_relation`; its stable ID, number, definition and sources remain.
 This is an operational-overlap cross-reference, not an automatic `same_as` or
