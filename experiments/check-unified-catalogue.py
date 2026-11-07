@@ -87,8 +87,8 @@ try:
                 assert abs(row['height']-baseline['height'])<1,(width,num,row,baseline)
                 if width>640:
                     assert abs(row['category']-baseline['category'])<1,(width,num,row,baseline)
-            assert page.locator('.concept > summary > .num').all_text_contents()==expected_numbers
-            assert sorted(map(int,page.locator('.concept > summary > .num').all_text_contents()))==list(range(1,435))
+            assert page.locator('.concept > summary .num').count()==0
+            assert page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.dataset.num)')==expected_numbers
             assert page.locator('.cat-group').count()==len(category_order)==11
             assert page.locator('.cat-group[data-range]').count()==0
             assert page.locator('.cat-group').evaluate_all('(els)=>els.map(e=>e.dataset.category)')==category_order
@@ -177,6 +177,7 @@ try:
         page.route('https://**/*',lambda r:r.abort())
         page.goto(base,wait_until='domcontentloaded')
         assert page.locator('.concept').count()==434
+        assert page.locator('.concept > summary .num').count()==0
         assert page.locator('.cat-group').count()==11
         page.locator('#upload-003 summary').click()
         assert page.locator('#upload-003 .human-sources').is_visible()
