@@ -90,7 +90,7 @@ GROUPED = {}    # primary id -> retained overlapping records
 
 def meta_block(mode):
     """Surface the ontology metadata in the expanded body."""
-    rows = []
+    rows = [("Reference ID", esc(mode['num']))]
     if mode.get("is_a"):
         links = ", ".join(f'<a href="#{r}">{esc(MODE_NAME.get(r, r))}</a>' for r in mode["is_a"])
         rows.append(("Type of", links))

@@ -58,6 +58,7 @@ def build_tree():
             "ex": m.get("example", ""),
             "grp": m.get("group_label", ""),
             "mid": m["id"],
+            "ref": m['num'],
             "syn": m.get("synonyms") or [],
             "boundary": m.get('concept_boundary',''),
             "terms": m.get('related_terms',[]),
@@ -326,6 +327,7 @@ function showPanel(id){
     t=`<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'var(--humansoft)'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
      +`<h3>${esc(m.n)}</h3>`
      +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`)
+     +`<p class="reference-id"><b>Reference ID:</b> ${esc(m.ref)}</p>`
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
@@ -473,6 +475,7 @@ INLINE_JS = r"""(function(){
     }
     const tier=m.proposed?'Proposed analogy':(m.ai?'AI-native':'Human-paralleled');
     return `<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
+     +`<p class="reference-id"><b>Reference ID:</b> ${esc(m.ref)}</p>`
      +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`)
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')

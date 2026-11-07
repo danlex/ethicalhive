@@ -28,8 +28,9 @@ one place a failure mode or principle is defined.
   same underlying failure), and `arxiv` (count + top-3 papers).
 
 The page renders all 434 records once in the eleven ontology categories, using
-`category` for membership and `group_label` for each heading. Row numbers are not
-displayed. Stable reference numbers remain in the ontology and exports, preserving
+`category` for membership and `group_label` for each heading. Collapsed rows have
+no numbers; expanded entry details and ontology-map details show the existing
+number as **Reference ID**. Stable reference numbers remain in the ontology and exports, preserving
 the existing order and citations; grouping does not renumber them.
 Overlap relationships are cross-references between the relevant rows,
 not hidden nested entries or a second visible count. The inventory contains the

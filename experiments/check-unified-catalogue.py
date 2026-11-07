@@ -88,6 +88,8 @@ try:
                 if width>640:
                     assert abs(row['category']-baseline['category'])<1,(width,num,row,baseline)
             assert page.locator('.concept > summary .num').count()==0
+            assert page.locator('.concept > .body .meta > dt:first-child').all_text_contents()==['Reference ID']*434
+            assert page.locator('.concept > .body .meta > dd:first-of-type').all_text_contents()==expected_numbers
             assert page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.dataset.num)')==expected_numbers
             assert page.locator('.cat-group').count()==len(category_order)==11
             assert page.locator('.cat-group[data-range]').count()==0
@@ -115,6 +117,7 @@ try:
                 mode=by_num[num]
                 entry=page.locator('#'+mode['id'])
                 entry.locator('summary').click()
+                assert entry.locator('.meta > dd').first.inner_text()==str(num)
                 assert 'Related terms · not synonyms' in entry.inner_text()
                 if num==144:
                     assert 'Also known as' not in entry.inner_text()
@@ -151,6 +154,7 @@ try:
             page.locator('#mm .mm-q').fill('Loss aversion')
             page.locator('#mm [data-mid="loss-aversion"] > .row .pill').click()
             term_panel=page.locator('#mm .mm-detail').inner_text()
+            assert page.locator('#mm .mm-detail .reference-id').inner_text()=='Reference ID: 144'
             assert 'related terms · not synonyms' in term_panel.lower() and 'Prospect theory' in term_panel,term_panel
             assert 'also known as' not in term_panel.lower()
             page.locator('#mm .mm-q').fill('')
@@ -180,6 +184,7 @@ try:
         assert page.locator('.concept > summary .num').count()==0
         assert page.locator('.cat-group').count()==11
         page.locator('#upload-003 summary').click()
+        assert page.locator('#upload-003 .meta > dd').first.inner_text()==str(next(m['num'] for m in onto['modes'] if m['id']=='upload-003'))
         assert page.locator('#upload-003 .human-sources').is_visible()
         page.locator('#upload-009 > summary').click()
         assert page.locator('#upload-009 .human-sources').is_visible()

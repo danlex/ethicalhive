@@ -23,7 +23,7 @@ and is validated by `experiments/validate-ontology.py`.
 | Field | Type | Required | Meaning |
 |---|---|---|---|
 | `id` | string | yes | stable slug identifier, e.g. `b101-source-fabrication`; stable across versions |
-| `num` | int | yes | stable catalogue reference for exports and citations; not displayed beside list rows |
+| `num` | int | yes | stable reference shown as Reference ID in expanded entry/map details and retained in exports; absent from collapsed rows |
 | `name` | string | yes | human-readable mode name |
 | `definition` | string | yes | one-sentence operational definition |
 | `category` | string | yes | one of the eleven categories (ten cognitive systems plus `AI-native`) |
