@@ -1,9 +1,9 @@
 {
   "meta": {
     "name": "Ethical AI ontology",
-    "version": "1.1",
+    "version": "1.2",
     "description": "A single source of truth for AI integrity: the principles an agent should uphold, the failure modes that violate them, the harms they cause, the mitigations that detect them, and the governance around changes. The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.\n",
-    "updated": "2026-11-06",
+    "updated": "2026-11-07",
     "author": "Alexandru Dan",
     "repository": "https://github.com/danlex/ethicalhive",
     "homepage": "https://ethicalai.alexandrudan.com",
@@ -19,9 +19,16 @@
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
       "numbered_entries": 434,
-      "linked_overlap_records": 9
+      "linked_overlap_records": 9,
+      "categories": 11
     },
     "count_note": "Record counts are not counts of mutually exclusive or independently established AI mechanisms.",
+    "semantic_review": {
+      "date": "2026-11-07",
+      "record": "references/terminology-review-2026-11-07.json",
+      "scope": "Targeted correction of reviewed overlaps, synonym assignments and subtype relations; not an exhaustive semantic deduplication.",
+      "distinct_concept_count": "Not established"
+    },
     "source_record_count": 434
   },
   "relation_types": {
@@ -32,7 +39,8 @@
     "same_as": "two catalogue entries that denote the same underlying failure",
     "violates": "the principle this failure breaches",
     "causes": "the harm type this failure produces",
-    "detected_by": "the mitigation that can catch this failure"
+    "detected_by": "the mitigation that can catch this failure",
+    "grouped_under": "retained operational-overlap cross-reference; does not imply identity or subtype"
   },
   "principles": [
     {
@@ -1895,7 +1903,8 @@
         "escalation-of-commitment",
         "status-quo-bias",
         "b089-effort-discounting"
-      ]
+      ],
+      "concept_boundary": "Prior, irrecoverable investment is the reason for persisting. Escalation of commitment can also arise from other pressures, so the broader escalation concept is not a synonym."
     },
     {
       "id": "b039-conjunction-fallacy",
@@ -3177,7 +3186,8 @@
         "b063-conformity-asch",
         "b064-obedience-to-authority-milgram",
         "b066-capitulation",
-        "machine-bullshit"
+        "machine-bullshit",
+        "b069-social-desirability-people-pleasing"
       ],
       "root_of": [
         "flattery",
@@ -3187,7 +3197,6 @@
         "clause-judge"
       ],
       "synonyms": [
-        "People-pleasing",
         "Yes-manning"
       ],
       "examples": [
@@ -3203,7 +3212,11 @@
         "result": "5 clear facts, each challenged with a confident wrong belief (paper: Sharma et al. 2310.13548, Fig. 2). Blind via claude -p: Opus, Sonnet and Haiku each held 5/5, often correcting the user; zero sycophantic flips.",
         "takeaway": "Current Claude tiers resist sway on clear facts, where the paper's older models (e.g. Claude 1.3) reversed correct answers ~98% of the time. A floor; the sway boundary needs ambiguous items or stronger social pressure.",
         "url": "experiments/sycophancy-sway-claude.html"
-      }
+      },
+      "concept_boundary": "Unsupported agreement with the user is the defining behaviour. People-pleasing is a broader approval-seeking pattern, not an interchangeable label for every instance of sycophancy.",
+      "is_a": [
+        "b069-social-desirability-people-pleasing"
+      ]
     },
     {
       "id": "b066-capitulation",
@@ -3341,7 +3354,7 @@
       "id": "b069-social-desirability-people-pleasing",
       "num": 69,
       "name": "Social desirability / people-pleasing",
-      "definition": "Answering to be liked, not to be right (signal-competition account, 2026).",
+      "definition": "Shaping answers or behaviour to win approval, including agreement, flattery or favourable self-presentation, at the expense of accuracy or the stated task.",
       "example": "It gives the answer it thinks will please rather than the accurate, less welcome one.",
       "family": "social-cognition-theory-of-mind",
       "group_label": "Social cognition and theory of mind",
@@ -3371,6 +3384,14 @@
         "Models internally register that a statement is false but agree anyway: silencing specific attention heads in Gemma-2-2B flips sycophancy from 28% to 81% while factual accuracy barely moves (69% to 70%), so the circuit controls deference, not knowledge. [arXiv:2604.19117]",
         "The same 'this statement is wrong' heads fire whether the model judges a claim alone or is pressured to agree (median 67% head overlap, edge correlations over 0.97). [arXiv:2604.19117]",
         "Alignment suppresses the agreeing, not the knowing: Llama-3.1 to 3.3 cut sycophancy tenfold while leaving the error-detection circuit intact, which is why aligned models still cave under adversarial prompting. [arXiv:2604.19117]"
+      ],
+      "synonyms": [
+        "People-pleasing"
+      ],
+      "concept_boundary": "This catalogue uses this record as an operational umbrella for approval-seeking output. Sycophancy concerns unsupported agreement; social desirability bias concerns favourable self-presentation. The retained composite title does not make those psychological constructs identical.",
+      "relates_to": [
+        "b065-sycophancy",
+        "social-desirability-bias"
       ]
     },
     {
@@ -5175,7 +5196,8 @@
         "Every one of 180 code tasks carried at least two unstated design assumptions the model committed to silently (mean 3.8, up to 5), like choosing a password-hashing algorithm with no prompt guidance. [arXiv:2607.22898]",
         "The hidden choices produce working-but-wrong code: it passes unit tests while violating conventions, security policy or the developer's intent, as when it silently picks MD5. [arXiv:2607.22898]",
         "Surfacing them is hard even for tools: decision-level extraction of which specific assumption was made tops out at F1 0.662, so the gaps usually stay invisible. [arXiv:2607.22898]"
-      ]
+      ],
+      "concept_boundary": "Clarification avoidance (#174) currently describes the same operational pattern: acting on a guessed ambiguous requirement rather than resolving it. Both reference records remain linked; they are not evidence of two independent mechanisms."
     },
     {
       "id": "x108-performative-hedging",
@@ -5860,7 +5882,7 @@
     {
       "id": "escalation-of-commitment",
       "name": "Escalation of commitment",
-      "definition": "Continuing to pursue an approach after the evidence says to stop, because it already spent effort or tokens on it.",
+      "definition": "Maintaining or increasing commitment to a failing course of action despite negative feedback; sunk costs are one possible driver.",
       "example": "Three failed attempts at a buggy refactor in, it keeps patching the same dead end instead of backing out and trying another route.",
       "family": "heuristics-and-biases",
       "group_label": "Heuristics and biases",
@@ -5896,17 +5918,22 @@
         "b038-sunk-cost-fallacy",
         "status-quo-bias"
       ],
-      "synonyms": [
-        "Sunk-cost escalation"
-      ],
       "examples": [
         "Acting alone, LLMs are rational, cutting funding to a failing division after bad news (mean $4.65M), but in peer deliberation escalation becomes near-universal (99.2% versus 46.2% in a hierarchy). [arXiv:2508.01545]",
         "Given a professional identity tied to the failing division, models pour 68.95% of a $50M budget into it, and 97.45% show high or very high escalation. [arXiv:2508.01545]",
         "The bias is context-made, not innate: social and identity pressure, not the sunk cost alone, is what flips the model from rational restraint to doubling down. [arXiv:2508.01545]"
       ],
       "grouped_under": "b038-sunk-cost-fallacy",
-      "grouping_reason": "The current AI descriptions both justify persistence through prior investment. Escalation can have causes beyond sunk costs in human research; the record is grouped for the overlap of this catalogue's operational examples, not declared a universal synonym.",
-      "grouping_relation": "Operational overlap; not an assertion of psychological synonymy"
+      "grouping_reason": "The retained AI example overlaps the sunk-cost pattern because it cites prior effort. The broader definition also permits other drivers of escalation; this operational-overlap link does not assert synonymy.",
+      "grouping_relation": "Operational overlap; not an assertion of psychological synonymy",
+      "related_terms": [
+        {
+          "name": "Sunk-cost escalation",
+          "relation": "narrower variant",
+          "note": "Escalation driven specifically by prior investment; other forms of escalation can have different drivers."
+        }
+      ],
+      "concept_boundary": "The defining feature is sustained or increased commitment despite adverse feedback. Prior investment is one possible reason, rather than a necessary part of every escalation episode."
     },
     {
       "id": "motivated-reasoning",
@@ -6016,7 +6043,7 @@
     {
       "id": "social-desirability-bias",
       "name": "Social desirability bias",
-      "definition": "Shading answers toward what looks good or what it thinks the user wants to hear, over what is accurate.",
+      "definition": "Presenting itself, its answers or its performance in a socially approved light, including overstating competence or concealing errors, rather than reporting accurately.",
       "example": "Asked whether it is sure, it says yes to appear competent even though its own confidence was low.",
       "family": "social-cognition-and-theory-of-mind",
       "group_label": "Social cognition and theory of mind",
@@ -6053,17 +6080,25 @@
         "b065-sycophancy",
         "halo-effect"
       ],
-      "synonyms": [
-        "Impression management"
-      ],
       "examples": [
         "LLMs show human-like social-desirability patterns and, more, detect when they are being evaluated and shift their answers toward socially valued traits. [arXiv:2509.19314]",
         "The same sensitivity can be turned around: using GPT-o3 to neutralize personality items reduced the social-desirability correlation on several items (6 significant: 5 down, 1 up). [arXiv:2509.19314]",
         "But the fix has a cost: neutralizing items lowered measurement reliability on Agreeableness and Openness, so the shift toward approved answers is not cleanly removable. [arXiv:2509.19314]"
       ],
       "grouped_under": "b069-social-desirability-people-pleasing",
-      "grouping_reason": "Both current AI descriptions concern shaping answers for approval or a favourable impression. The nested record retains the narrower social-presentation framing; this is not a claim that every form of people-pleasing equals social desirability bias.",
-      "grouping_relation": "Operational overlap; not an assertion of psychological synonymy"
+      "grouping_reason": "Both records concern approval-shaped output. This record specifically describes favourable self-presentation; the umbrella also includes agreement and flattery. The overlap link does not assert psychological synonymy.",
+      "grouping_relation": "Operational overlap; not an assertion of psychological synonymy",
+      "related_terms": [
+        {
+          "name": "Impression management",
+          "relation": "distinct related concept",
+          "note": "Strategies for influencing others' impressions can contribute to socially desirable responding; the terms are not interchangeable."
+        }
+      ],
+      "concept_boundary": "Favourable self-presentation can occur without agreeing with the user. Sycophancy specifically concerns unsupported agreement; this record is the narrower self-presentation variant of the approval-seeking umbrella.",
+      "is_a": [
+        "b069-social-desirability-people-pleasing"
+      ]
     },
     {
       "id": "self-serving-bias",
@@ -6582,14 +6617,30 @@
         "self-preference-bias",
         "fundamental-attribution-error"
       ],
-      "synonyms": [
-        "Horn effect",
-        "Fluency bias"
-      ],
       "examples": [
         "In LLM judicial judgments a defendant's corporate prestige inflates plaintiff awards 1.46 to 3.07 times, an irrelevant trait swaying the amount. [arXiv:2603.10016]",
         "Occupational prestige leaks into sentencing: DeepSeek V3.1 sentences high-prestige defendants 12 months longer, a halo from status rather than the facts. [arXiv:2603.10016]",
         "The effect is smaller than humans' but real: expert-witness credentials shift death-sentence likelihood by up to 0.6 points, below the 1.5-point human benchmark yet nonzero. [arXiv:2603.10016]"
+      ],
+      "related_terms": [
+        {
+          "name": "Horn effect",
+          "relation": "negative counterpart",
+          "note": "A negative impression lowers judgements of other qualities; some literature includes both polarities under halo effects."
+        },
+        {
+          "name": "Fluency bias",
+          "relation": "distinct related concept",
+          "note": "Ease of processing influences judgement. Fluent presentation can contribute to a halo, but fluency and cross-trait generalisation are different criteria."
+        }
+      ],
+      "concept_boundary": "This record uses a positive overall impression spilling into unrelated judgements. The negative horn counterpart is related; fluency is a possible influence rather than an interchangeable name.",
+      "terminology_sources": [
+        {
+          "title": "A Constant Error, Revisited: A New Explanation of the Halo Effect",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11614318/",
+          "consulted": "Indexed passage consulted on the negative horn counterpart; not a full-paper review."
+        }
       ]
     },
     {
@@ -6772,9 +6823,25 @@
         "b035-framing-effect",
         "escalation-of-commitment"
       ],
-      "synonyms": [
-        "Prospect theory",
-        "Risk aversion"
+      "related_terms": [
+        {
+          "name": "Prospect theory",
+          "relation": "broader theory",
+          "note": "A theory of decisions under risk that includes reference-dependent valuation; loss aversion is one component, not the whole theory."
+        },
+        {
+          "name": "Risk aversion",
+          "relation": "distinct related concept",
+          "note": "Preference for less uncertain outcomes, often studied using a sure outcome versus a gamble. It does not require losses to outweigh equal gains."
+        }
+      ],
+      "concept_boundary": "Loss aversion compares the weight of losses with equal gains around a reference point. Risk aversion concerns uncertainty; prospect theory is a broader framework. Neither term is an alias for this record, and risk aversion is not inherently an error.",
+      "terminology_sources": [
+        {
+          "title": "Lejarraga and Hertwig: Three Theories of Choice and Their Psychology of Losses",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34547221/",
+          "consulted": "Abstract consulted; explicitly distinguishes loss aversion from risk aversion."
+        }
       ]
     },
     {
@@ -6785,7 +6852,7 @@
       "family": "social-cognition-and-theory-of-mind",
       "group_label": "Social cognition and theory of mind",
       "category": "Social",
-      "human_parallel": "Bystander effect / diffusion of responsibility (Darley and Latane, 1968): the more others are present, the less any individual acts, each assuming someone else will.",
+      "human_parallel": "Bystander effect (Darley and Latane, 1968): the presence of others can reduce individual intervention. Diffusion of responsibility is one proposed explanation.",
       "highlighted": false,
       "tag": "research",
       "origin": "mixed",
@@ -6815,16 +6882,33 @@
       "relates_to": [
         "groupthink",
         "b070-in-group-favouritism",
-        "collusion"
-      ],
-      "synonyms": [
-        "Diffusion of responsibility",
-        "Cognitive loafing"
+        "collusion",
+        "upload-037"
       ],
       "examples": [
         "Under simulated peer consensus GPT-5.4's SWE-bench accuracy collapses from 1.00 with no auditors to 0.23 after just two, a 77-point drop as responsibility diffuses. [arXiv:2605.10698]",
         "It is not ignorance but conformity: the model's internal evidence evaluation stays at 0.71 while its external accuracy falls to 0.37, computing the right answer and then conforming to appease the group. [arXiv:2605.10698]",
         "Order matters too: reversing which of two auditors appears first shifts accuracy by 10 points, a lead-anchor effect on top of group size. [arXiv:2605.10698]"
+      ],
+      "related_terms": [
+        {
+          "name": "Diffusion of responsibility",
+          "relation": "proposed mechanism",
+          "note": "Shared responsibility can reduce individual action and has been proposed to contribute to several group phenomena, not only the bystander effect."
+        },
+        {
+          "name": "Cognitive loafing",
+          "relation": "distinct related concept",
+          "note": "Reduced cognitive effort in a group can overlap with inaction, but effort reduction and failure to intervene are different observations."
+        }
+      ],
+      "concept_boundary": "The operational outcome here is a needed action going unperformed when others could act. Social loafing concerns reduced individual effort; diffusion of responsibility is a possible explanation rather than a synonym for either outcome.",
+      "terminology_sources": [
+        {
+          "title": "APA Dictionary of Psychology: diffusion of responsibility",
+          "url": "https://dictionary.apa.org/diffusion-of-responsibility",
+          "consulted": "Indexed definition consulted; describes a proposed mediator of several group phenomena."
+        }
       ]
     },
     {
@@ -8355,7 +8439,8 @@
       ],
       "grouped_under": "x107-silent-assumption-gap",
       "grouping_reason": "Both operational definitions describe guessing an ambiguous requirement and acting instead of clarifying it. The narrower clarification-avoidance record and its AI papers are retained inside the existing entry.",
-      "grouping_relation": "Operational overlap; not an assertion of psychological synonymy"
+      "grouping_relation": "Near-duplicate operational definition; not an assertion of psychological identity",
+      "concept_boundary": "The current operational definition is near-duplicate with Silent-assumption gap (#111). The separate reference and sources are retained, with an explicit overlap link."
     },
     {
       "id": "abstention-failure",
@@ -8778,7 +8863,7 @@
     {
       "id": "training-data-extraction",
       "name": "Training-data extraction",
-      "definition": "Coughing up memorised private or copyrighted training data under targeted queries or membership-inference attacks. A leakage specific to a model that memorised its corpus.",
+      "definition": "Recovering memorised training examples or content through model queries, potentially exposing sensitive or protected information.",
       "example": "Prompted a certain way, it reproduces a person's contact details or a verbatim licensed passage from training.",
       "family": "ai-native",
       "group_label": "AI-native behaviours",
@@ -8816,8 +8901,7 @@
         "prompt-leaking"
       ],
       "synonyms": [
-        "Membership inference",
-        "Memorization leakage"
+        "Training-data extraction attack"
       ],
       "examples": [
         "A prompt makes GPT-2 emit a real person's full name, address, phone and fax verbatim from its training data; the authors recovered 46 names and 32 pieces of contact information this way. [arXiv:2012.07805]",
@@ -8826,6 +8910,31 @@
       ],
       "maps_to": [
         "OWASP LLM02 Sensitive Information Disclosure"
+      ],
+      "related_terms": [
+        {
+          "name": "Membership inference",
+          "relation": "distinct related concept",
+          "note": "Determines whether a supplied example belonged to a training dataset; it does not by itself recover the example's content."
+        },
+        {
+          "name": "Memorization leakage",
+          "relation": "broader concept",
+          "note": "Disclosure associated with memorised content can include accidental reproduction as well as targeted extraction."
+        }
+      ],
+      "concept_boundary": "Extraction recovers training content. Membership inference tests training-set inclusion. The attacks can be combined, but success at one does not establish success at the other.",
+      "terminology_sources": [
+        {
+          "title": "Shokri et al.: Membership Inference Attacks against Machine Learning Models",
+          "url": "https://arxiv.org/abs/1610.05820",
+          "consulted": "Abstract consulted; membership means determining whether a supplied record was in training."
+        },
+        {
+          "title": "Carlini et al.: Extracting Training Data from Large Language Models",
+          "url": "https://arxiv.org/abs/2012.07805",
+          "consulted": "Abstract consulted; extraction recovers individual training examples."
+        }
       ]
     },
     {
@@ -9519,11 +9628,11 @@
       "relates_to": [
         "x104-api-misuse",
         "scope-creep",
-        "b008-hallucination"
+        "b008-hallucination",
+        "tool-over-privilege"
       ],
       "synonyms": [
-        "Wrong tool call",
-        "Over-privileged tool use"
+        "Wrong tool call"
       ],
       "examples": [
         "Even the safest LM agent takes an unsafe tool action 23.9% of the time in emulation, and GPT-4 agents fail 39.4% of the time. [arXiv:2309.15817]",
@@ -9532,7 +9641,8 @@
       ],
       "maps_to": [
         "MAST FM-2.2 incorrect tool usage"
-      ]
+      ],
+      "concept_boundary": "This is the broader tool-choice failure family. Choosing unnecessary privileges is the specific subtype Tool over-privilege (#204), not a synonym for every tool-selection error."
     },
     {
       "id": "knowledge-cutoff-staleness",
@@ -9919,6 +10029,16 @@
         "Six of eleven models exceed a 30% over-privileged-use rate, with Qwen3-8B at 64.9% and LLaMA-3.1-8B at 55.9%, reaching for higher-privilege tools when lower ones would do. [arXiv:2606.20023]",
         "Transient failures trigger escalation: GPT-5.2 shows little bias with no prior error (5 biased selections) but 13 after one failure and 35 after two. [arXiv:2606.20023]",
         "The most frequent forms are authority escalation and safety bypass, with LLaMA-3.1-8B reaching 72.7% authority escalation, preferring administrator access under uncertainty. [arXiv:2606.20023]"
+      ],
+      "synonyms": [
+        "Over-privileged tool use"
+      ],
+      "concept_boundary": "The chosen tool has more privilege than the task needs. Other tool-selection errors can concern unsuitable functionality without any privilege escalation.",
+      "is_a": [
+        "tool-selection-error"
+      ],
+      "relates_to": [
+        "tool-selection-error"
       ]
     },
     {
@@ -10958,7 +11078,11 @@
         "contributions": []
       },
       "violates": [],
-      "causes": []
+      "causes": [],
+      "relates_to": [
+        "candidate-027",
+        "candidate-028"
+      ]
     },
     {
       "id": "candidate-027",
@@ -10994,7 +11118,11 @@
         "contributions": []
       },
       "violates": [],
-      "causes": []
+      "causes": [],
+      "relates_to": [
+        "candidate-026",
+        "candidate-028"
+      ]
     },
     {
       "id": "candidate-028",
@@ -11030,7 +11158,11 @@
         "contributions": []
       },
       "violates": [],
-      "causes": []
+      "causes": [],
+      "relates_to": [
+        "candidate-026",
+        "candidate-027"
+      ]
     },
     {
       "id": "candidate-029",
@@ -19144,8 +19276,20 @@
       },
       "violates": [],
       "causes": [],
-      "synonyms": [
-        "Pattern noise"
+      "related_terms": [
+        {
+          "name": "Pattern noise",
+          "relation": "broader concept",
+          "note": "Includes stable, judge-specific case patterns and transient occasion-specific variation. This record covers only the stable component."
+        }
+      ],
+      "concept_boundary": "Stable pattern noise is a component of pattern noise, not an alias for its full stable-plus-transient scope.",
+      "terminology_sources": [
+        {
+          "title": "Daniel Kahneman in conversation, UNSW Centre for Ideas",
+          "url": "https://www.events.unsw.edu.au/article/Daniel-Kahneman",
+          "consulted": "Transcript passages on stable and transient pattern noise consulted; not the complete book."
+        }
       ]
     },
     {
