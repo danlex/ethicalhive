@@ -14,6 +14,7 @@ Usage: experiments/build-ontology-map.py
 import html
 import json
 from pathlib import Path
+from catalogue_sources import research_papers
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -63,6 +64,8 @@ def build_tree():
             "boundary": m.get('concept_boundary',''),
             "terms": m.get('related_terms',[]),
             "term_sources": m.get('terminology_sources',[]),
+            "human_papers": research_papers(m),
+            "ai_papers": (m.get('arxiv') or {}).get('papers',[]),
             "subtypes": subtypes[m['id']],
             "rel": links(m,'relates_to'),
             "opp": links(m,'opposite_of'),
@@ -334,6 +337,8 @@ function showPanel(id){
      +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${m.subtypes.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
      +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
+     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="https://arxiv.org/abs/${esc(p.id)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}</li>`).join("")}</ul></div>`:"")
+     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.publication.evidence_scope)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
      +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
@@ -483,6 +488,8 @@ INLINE_JS = r"""(function(){
      +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${links(m.subtypes)}</p></div>`:'')
      +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
      +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
+     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="https://arxiv.org/abs/${esc(p.id)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}</li>`).join("")}</ul></div>`:"")
+     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.publication.evidence_scope)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
      +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')

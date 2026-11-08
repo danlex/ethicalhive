@@ -2,10 +2,10 @@
 """paper-index.py - the paper <-> behaviour connective tissue.
 
 Reads ontology/ethical-ai.yaml and builds the bipartite link between papers and the
-modes they ground. Writes docs/experiments/paper-index.html with:
-  - papers that ground 2+ modes (co-citations -> candidate relates_to edges),
+entries that cite them. Writes docs/experiments/paper-index.html with:
+  - papers cited by 2+ entries (shared reading leads, not inferred graph edges),
   - the full paper -> modes index,
-  - coverage gaps (modes with no paper yet).
+  - coverage gaps (entries with no linked paper).
 
 Usage: experiments/paper-index.py
 """
@@ -16,6 +16,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import yaml
+from catalogue_sources import research_papers
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -33,43 +34,51 @@ def main():
     gaps = []
     for m in modes:
         ps = (m.get("arxiv") or {}).get("papers") or []
-        if not ps:
+        human=research_papers(m)
+        if not ps and not human:
             gaps.append(m["name"])
-            continue
         for p in ps:
             pid = re.sub(r"v\d+$", "", p.get("id", ""))
             if not pid:
                 continue
             rec = papers.setdefault(pid, {"title": p.get("title", ""),
-                                          "year": p.get("year", ""), "modes": set()})
+                                          "year": str(p.get("year", "")), "modes": set(),
+                                          "url":"https://arxiv.org/abs/"+pid,"domain":"AI"})
             rec["modes"].add(m["name"])
+        for source in human:
+            publication=source['publication']
+            pid=re.sub(r'/+', '/', publication.get('doi') or source['url']).lower()
+            rec=papers.setdefault(pid,{'title':source['title'],'year':str(publication['year']),
+                'modes':set(),'url':source['url'],'domain':'Human/related'})
+            rec['modes'].add(m['name'])
 
     shared = sorted(((pid, r) for pid, r in papers.items() if len(r["modes"]) >= 2),
                     key=lambda t: -len(t[1]["modes"]))
     allp = sorted(papers.items(), key=lambda t: (-len(t[1]["modes"]), t[1]["year"]))
-    grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("papers"))
+    grounded = len(modes)-len(gaps)
 
     def paper_row(pid, rec):
         modes = ", ".join(sorted(rec["modes"]))
-        return (f'<tr><td><a href="https://arxiv.org/abs/{esc(pid)}" target="_blank" '
+        return (f'<tr><td><small>{esc(rec["domain"])}</small><br><a href="{esc(rec["url"])}" target="_blank" '
                 f'rel="noopener">{esc(pid)}</a></td><td>{esc(rec["year"])}</td>'
                 f'<td>{esc(rec["title"])}</td><td>{esc(modes)}</td></tr>')
 
     out = [HEAD]
-    out.append(f'<p class="lede">{len(modes)} modes · {grounded} grounded in at least one '
-               f'paper · {len(papers)} distinct papers · {len(shared)} papers shared by 2+ '
-               f'modes.</p>')
+    out.append(f'<p class="lede">{len(modes)} catalogue records · {grounded} with at least one '
+               f'paper link · {len(papers)} paper identifiers · {len(shared)} papers linked from 2+ '
+               f'entries.</p>')
+    out.append('<p>AI papers and human or related studies are identified separately. A linked paper does not automatically validate an entry’s definition or AI analogy. Access depth and relevance are recorded in each catalogue entry. <a href="../source-coverage.csv">Download source coverage for all entries</a>.</p>')
     out.append("<h2>Papers shared by two or more modes</h2>")
-    out.append('<p>A paper that grounds several modes is evidence those modes co-occur, a '
-               'candidate <code>relates_to</code> edge the graph may be missing.</p>')
-    out.append('<table><tr><th>arXiv</th><th>Year</th><th>Title</th><th>Modes it grounds</th></tr>')
+    out.append('<p>A shared citation is a reading lead. It does not by itself establish co-occurrence, identity or a causal relation between entries.</p>')
+    out.append('<table><tr><th>Source</th><th>Year</th><th>Title</th><th>Linked entries</th></tr>')
     out += [paper_row(pid, rec) for pid, rec in shared]
     out.append("</table>")
     out.append("<h2>Full paper index</h2>")
-    out.append('<table><tr><th>arXiv</th><th>Year</th><th>Title</th><th>Modes</th></tr>')
+    out.append('<table><tr><th>Source</th><th>Year</th><th>Title</th><th>Linked entries</th></tr>')
     out += [paper_row(pid, rec) for pid, rec in allp]
     out.append("</table>")
-    out.append(f"<h2>Coverage gaps ({len(gaps)} modes with no paper yet)</h2>")
+    out.append(f"<h2>Coverage gaps ({len(gaps)} entries without a linked research paper)</h2>")
+    out.append('<p>Some entries have book or reference sources instead. This list describes the current catalogue, not proof that no relevant paper exists.</p>')
     out.append(f'<p class="gaps">{esc(", ".join(sorted(gaps)))}</p>')
     out.append("</div></body></html>")
     OUT.write_text("\n".join(out), encoding="utf-8")
@@ -91,7 +100,8 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:32px;margin:0 0 6px}
 h2{font-family:'Space Grotesk';font-size:19px;margin:30px 0 8px}
 .lede{font-size:17px;color:#333}
 .back{font-size:13px;display:inline-block;margin-bottom:16px}
-table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+table{border-collapse:collapse;width:100%;table-layout:fixed;margin:12px 0;font-size:13px;overflow-wrap:anywhere}
+th:first-child{width:24%}th:nth-child(2){width:10%}
 th,td{border:1px solid #e7e5e2;padding:7px 10px;text-align:left;vertical-align:top}
 th{background:#f6f5f4;font-family:'Space Grotesk';font-weight:600;position:sticky;top:0}
 td:nth-child(4){color:#555}

@@ -13,9 +13,15 @@ s=re.sub(r'(<header class="hero"[^>]*>.*?<p class="lede">).*?(</p>)',r'\1A searc
 intro=f'''<span id="psychology-research"></span><h2>The catalogue</h2>
     <p><strong>{records} catalogue records in {len({m['category'] for m in onto['modes']})} ontology categories.</strong> Each record appears once, grouped by category. Related descriptions, subtypes and overlapping definitions are linked by name in their entries. These records are not {records} distinct or independently validated AI mechanisms.</p>
     <p>New entries describe <strong>proposed analogies</strong>, with sources and access limits documented in their research details. A named human behaviour does not establish a shared mechanism in AI. Some entries refine broader existing patterns or describe adaptive processes. No AI experiments were run for these additions.</p>
-    <p><a href="behaviours.csv">Download the full list · CSV</a> &middot; <a href="behaviours.json">JSON</a> &middot; <a href="experiments/paper-index.html">Paper ↔ behaviour index</a></p>
+    <p><a href="behaviours.csv">Download the full list · CSV</a> &middot; <a href="behaviours.json">JSON</a> &middot; <a href="source-coverage.csv">Source coverage · CSV</a> &middot; <a href="experiments/paper-index.html">Paper ↔ behaviour index</a></p>
+    <p class="source-scope">AI studies and human or related research are listed separately in each entry. Human research provides background; it does not by itself validate the AI analogy. Row counts show linked paper citations. Source coverage records the remaining gaps.</p>
     '''
 s=re.sub(r'(<section class="framework catalogue" id="catalogue">\s*).*?(?=<div class="cat-legend">)',lambda m:m[1]+intro,s,count=1,flags=re.S)
+s=s.replace('<button data-filter="paper">Paper-backed</button>','<button data-filter="paper">Research papers</button>')
+if 'data-filter="no-paper"' not in s:
+ s=s.replace('<button data-filter="paper">Research papers</button>','<button data-filter="paper">Research papers</button>\n        <button data-filter="no-paper">Missing papers</button>')
+ s=s.replace("if(activeFilter === 'paper') return b.dataset.papers === '1';", "if(activeFilter === 'paper') return b.dataset.papers === '1';\n    if(activeFilter === 'no-paper') return b.dataset.papers === '0';")
+s=s.replace('<button data-filter="pending">Sources to check</button>','<button data-filter="pending">Definitions to check</button>')
 if 'data-filter="new"' not in s:
  s=s.replace('<button data-filter="analogy">Analogy</button>','<button data-filter="analogy">Analogy</button>\n        <button data-filter="new">Added analogies</button>\n        <button data-filter="pending">Sources to check</button>')
  s=s.replace("if(activeFilter === 'all') return true;","if(activeFilter === 'all') return true;\n    if(activeFilter === 'new') return b.dataset.candidate === '1';\n    if(activeFilter === 'pending') return b.dataset.sourceStatus === 'pending-definition-source-check';")
