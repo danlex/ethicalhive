@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check coverage truthfulness, citation traceability and the rendered paper filter."""
 import csv
+from datetime import date
 import functools
 import http.server
 import json
@@ -37,7 +38,8 @@ for mode in onto['modes']:
         p=source['publication']
         assert p['authors'] and 1800<int(p['year'])<=2026 and p['venue']
         assert source['url'].startswith('https://') and p['verification_url'].startswith('https://')
-        assert p['evidence_scope'] and source['consulted'] and p['verified_date']=='2026-11-08'
+        assert p['evidence_scope'] and source['consulted']
+        assert date.fromisoformat(p['verified_date'])<=date.fromisoformat(onto['meta']['updated'])
     if mode.get('research_candidate'):
         assert mode['ai_evidence_status']=='Proposed analogy; not tested in this research'
 
@@ -46,7 +48,8 @@ book={'id':'book','num':1,'name':'Book test','definition_sources':[
     {'id':'book-source','url':'https://doi.org/10.example/book','title':'A chapter','consulted':'Metadata only',
      'publication':{'type':'book-chapter'}}]}
 assert research_papers(book)==[] and source_coverage(book)['coverage_status']=='reference-sources-only'
-assert not any(s.get('publication') for s in by_num[238]['definition_sources'])
+assert not any(s.get('publication') for s in by_num[238]['definition_sources'] if s['id']=='zero')
+assert any(s.get('publication',{}).get('doi')=='10.1027/2151-2604/a000284' for s in by_num[238]['definition_sources'])
 assert not any(s.get('publication') for s in by_num[256]['definition_sources'] if s['id']=='reciprocity')
 # Preserve contrary evidence and limitations, rather than just counting citations.
 assert any('2026.102886' in s['publication'].get('doi','') for s in research_papers(by_num[260]))
@@ -54,18 +57,59 @@ assert any('challenges' in s['publication']['evidence_scope'] for s in research_
 assert all('2026.102886' not in s['publication'].get('doi','') or 'Contrary' in s['publication']['evidence_scope']
            for s in research_papers(by_num[260]))
 
-audit=json.loads((ROOT/'references/paper-source-review-2026-11-08.json').read_text())
-seen=set()
-for r in audit['records']:
-    source=r['current_source']
-    matches=[s for s in definition_sources(by_num[r['num']]) if s['id']==source['id'] and s['url']==source['url']]
-    assert matches==[source],(r['num'],source['id'])
-    seen.add((r['num'],source['id'],source['url']))
-assert seen=={(m['num'],s['id'],s['url']) for m in onto['modes'] for s in research_papers(m)}
+reviews=[]
+review_path=onto['meta']['paper_source_review']['record']
+visited=set()
+while review_path:
+    assert review_path.startswith('references/') and '..' not in Path(review_path).parts
+    assert review_path not in visited, 'Source-review history must not cycle'
+    visited.add(review_path)
+    review=json.loads((ROOT/review_path).read_text())
+    reviews.append(review)
+    review_path=review.get('previous_review')
+assert len(reviews)==2
+assert onto['meta']['paper_source_review']['previous_record']=='references/paper-source-review-2026-11-08.json'
+# The latest reviewed version wins if a later pass revises a source.
+sources={}
+for review in reversed(reviews):
+    for r in review['records']:
+        source=r['current_source']
+        sources[(r['num'],source['id'],source['url'])]=source
+for (num,source_id,url),source in sources.items():
+    matches=[s for s in definition_sources(by_num[num]) if s['id']==source_id and s['url']==url]
+    assert matches==[source],(num,source_id)
+assert set(sources)=={(m['num'],s['id'],s['url']) for m in onto['modes'] for s in research_papers(m)}
+audit=reviews[-1]  # The earlier publication remains traceable and unchanged.
 for repair in audit['ai_paper_repairs']:
     assert by_num[repair['num']]['arxiv']['papers']==repair['papers']
     assert by_num[repair['num']]['arxiv']['count'] is None
 assert {r['num'] for r in audit['ai_paper_repairs']}=={4,22,67,70,75,86,103}
+followup=reviews[0]
+assert len(followup['decisions'])==64
+assert {r['num'] for r in followup['decisions']}==set(followup['baseline']['paper_gap_numbers'])
+assert {r['num'] for r in followup['decisions'] if r['decision']=='paper-gap-retained'}=={r['num'] for r in gaps}
+assert followup['result']['entries_without_paper_links']==len(gaps)
+assert followup['result']['entries_with_paper_links']==434-len(gaps)
+for r in followup['reference_source_additions']:
+    assert r['current_source'] in by_num[r['num']]['definition_sources']
+    assert not r['current_source'].get('publication')
+for r in followup['ai_paper_additions']:
+    assert by_num[r['num']]['arxiv']['papers']==r['papers']
+    assert by_num[r['num']]['arxiv']['count'] is None
+    assert r['taxonomy_label'] and r['passage_locator']
+    assert all(p['id']=='2311.07954' and 'recognition' in p['relevance'] for p in r['papers'])
+assert {r['num'] for r in followup['ai_paper_additions']}=={346,363,374,375,377,378,413,421}
+for r in followup['source_check_changes']:
+    assert r['previous_status']=='pending-definition-source-check'
+    assert by_num[r['num']]['source_check']==r['current_status']=='definition-source-consulted'
+    assert r['passage_locator'] and r['reason']
+    assert any(s['id']==r['source_id'] and s['consulted'] for s in by_num[r['num']]['definition_sources'])
+# Theoretical and historical papers must preserve their limitations/contrary evidence.
+assert 'Critical review' in research_papers(by_num[403])[-1]['publication']['evidence_scope']
+assert 'challenging' in research_papers(by_num[362])[-1]['publication']['evidence_scope']
+assert by_num[392]['source_check']=='pending-definition-source-check'
+assert all(not research_papers(by_num[n]) for n in (411,415,416,417,425,426))
+assert by_num[375]['ai_evidence_status']=='Proposed analogy; not tested in this research'
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def log_message(self,*args):pass
@@ -94,11 +138,13 @@ try:
                 assert entry['displayedCount']==(str(cited) if cited else '—')
             page.locator('[data-filter="paper"]').click()
             assert page.locator('.concept:visible').count()==434-len(gaps)
-            assert not page.locator('#'+by_num[238]['id']).is_visible()  # A DOI-linked book chapter alone is not a paper.
+            assert not page.locator('#'+by_num[415]['id']).is_visible()  # A consulted book chapter alone is not a paper.
+            assert page.locator('#'+by_num[238]['id']).is_visible()  # A separate genuine journal paper is now linked.
             assert page.locator('#'+by_num[373]['id']).is_visible()  # A philosophical journal article is a paper.
             page.locator('[data-filter="no-paper"]').click()
             assert page.locator('.concept:visible').count()==len(gaps)
-            assert page.locator('#'+by_num[238]['id']).is_visible()
+            assert page.locator('#'+by_num[415]['id']).is_visible()
+            assert not page.locator('#'+by_num[238]['id']).is_visible()
             assert not page.locator('#'+by_num[373]['id']).is_visible()
             page.locator('[data-filter="all"]').click()
             page.locator('#search').fill('Inattentional blindness')
@@ -109,6 +155,13 @@ try:
             text=entry.inner_text().lower()
             assert 'mixrea' in text and 'gorillas in our midst' in text
             assert entry.locator('summary .num').count()==0
+            page.locator('#search').fill('Kettle logic')
+            entry=page.locator('#'+by_num[346]['id'])
+            if entry.get_attribute('open') is None:
+                entry.locator('summary').click()
+            assert entry.locator('.papers a').count()==1 and entry.locator('.human-papers a').count()==1
+            assert 'recognition/self-verification' in entry.inner_text()
+            assert entry.locator('summary .pcount').inner_text()=='2'
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
             if width==390:page.screenshot(path='/tmp/ethicalai-paper-coverage-mobile.png')
             page.locator('#search').fill('')
