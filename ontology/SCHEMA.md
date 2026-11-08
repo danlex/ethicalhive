@@ -67,6 +67,31 @@ must not be invented just to fill a graph field. Ordinary records retain the
 existing validation requirements. `research_notes` can enrich an existing entry
 when a candidate was already indexed as an alias.
 
+Definition sources may carry `publication` metadata for a reviewed research-paper
+link: `type` (`journal-article`, `proceedings-article`, or `posted-content`),
+`authors`, `year`, `venue`, `doi` when available, `evidence_scope`,
+`verification_url`, and `verified_date`. These papers appear under **Human and
+related research** in the existing entry and ontology details. The separate
+`arxiv` list supplies **AI research**. A publication record confirms a citation's
+identity and stated relevance; it does not automatically change `source_check`,
+the entry's analogy status, or establish empirical AI evidence. Access depth
+remains explicit in `consulted`; books, chapters and reference pages are not
+counted as research papers.
+
+The catalogue CSV includes a derived `research_papers` JSON column containing
+the typed human/related source records. `docs/source-coverage.json` and `.csv`
+report coverage for all stable IDs. Their counts describe linked sources, not
+an exhaustive search of all literature or a count of established AI mechanisms.
+The Research papers and Missing papers filters use these linked citations.
+Definitions to check still refers to pending definition-source review, which is
+separate from bibliography availability. Recovered AI citations may disclose
+`relevance`, `consulted`, `verified_date` and `verification_url`; `arxiv.count`
+remains null when only individual citations were checked and no query total was
+measured.
+Row paper counts show the number of citations linked in that entry, across both
+domains. Historical arXiv search totals appear only in the expanded AI section
+and are not presented as counts of verified papers.
+
 ## The eleven categories
 
 Ten cognitive systems: Perception, Memory, Attention, Heuristics, Reasoning,

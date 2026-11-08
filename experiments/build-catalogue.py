@@ -27,6 +27,7 @@ import sys
 from pathlib import Path
 
 import yaml
+from catalogue_sources import research_papers, source_coverage
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -45,24 +46,47 @@ def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-def render_papers(arxiv):
+def render_ai_papers(arxiv):
     """count + top-3 papers, or an honest 'no paper' note."""
     if not arxiv or not arxiv.get("papers"):
-        return '<p class="cite none">No direct AI paper found yet.</p>'
+        return '<p class="cite none">No AI paper linked for this entry.</p>'
     count = arxiv.get("count")
-    cnt = f"{count:,}" if isinstance(count, int) else "?"
+    count_note = (f'<b>{count:,}</b> arXiv search results (cs.AI/CL/LG)' if isinstance(count, int)
+                  else f'{len(arxiv["papers"])} cited arXiv paper' + ('s' if len(arxiv['papers']) != 1 else ''))
     items = []
     for p in arxiv["papers"][:3]:
         pid = re.sub(r"v\d+$", "", p.get("id", ""))
         yr = f' ({p["year"]})' if p.get("year") else ""
         items.append(
             f'<li><a href="https://arxiv.org/abs/{pid}" target="_blank" '
-            f'rel="noopener">arXiv:{pid}</a>{yr} {esc(p.get("title", ""))}</li>'
+            f'rel="noopener">arXiv:{pid}</a>{yr} {esc(p.get("title", ""))}'
+            +(('<br><small>Relevance: '+esc(p['relevance'])+'</small>') if p.get('relevance') else '')
+            +(('<br><small>Access: '+esc(p['consulted'])+'</small>') if p.get('consulted') else '')+'</li>'
         )
     return (
-        f'<p class="cite"><b>{cnt}</b> arXiv papers (cs.AI/CL/LG)</p>'
+        f'<p class="cite">{count_note}</p>'
         f'<ul class="papers">{"".join(items)}</ul>'
     )
+
+
+def render_papers(mode):
+    out = ['<div class="research-papers"><h4>AI research</h4>', render_ai_papers(mode.get('arxiv'))]
+    papers = research_papers(mode)
+    if papers:
+        out.append('<h4>Human and related research</h4><ul class="human-sources human-papers">')
+        for source in papers:
+            publication = source['publication']
+            citation = ', '.join(publication.get('authors', []))
+            citation += ' (' + str(publication['year']) + '). ' + publication.get('venue', '')
+            out.append('<li><a href="' + esc(source['url']) + '">' + esc(source['title']) +
+                       '</a><br><small>' + esc(citation) + '</small><br><small>Relevance: ' +
+                       esc(publication['evidence_scope']) + '</small><br><small>Access: ' +
+                       esc(source['consulted']) + '</small></li>')
+        out.append('</ul>')
+    elif not (mode.get('arxiv') or {}).get('papers'):
+        out.append('<p class="paper-gap">A research-paper citation is still needed. Any book or reference sources are listed below.</p>')
+    out.append('</div>')
+    return ''.join(out)
 
 
 MEAS = {
@@ -168,11 +192,13 @@ def box(mode):
     key = esc(mode["name"].lower())
     arx = mode.get("arxiv") or {}
     variants = GROUPED.get(mode['id'], [])
-    has_papers = "1" if arx.get("papers") else "0"
-    cnt = arx.get("count")
+    ai_links=len(arx.get('papers') or [])
+    human_links=len(research_papers(mode))
+    cnt=ai_links+human_links
+    has_papers = "1" if cnt else "0"
     pcount_html = (
-        f'<span class="pcount" title="arXiv papers on this concept">{cnt:,}</span>'
-        if isinstance(cnt, int) else '<span class="pcount pcount-empty" title="AI paper count not available">—</span>'
+        f'<span class="pcount" title="{cnt} linked research-paper citations: {ai_links} AI, {human_links} human/related">{cnt}</span>'
+        if cnt else '<span class="pcount pcount-empty" title="No research-paper citation linked; book or reference sources may be available">—</span>'
     )
     cat = esc(mode.get("category", ""))
     proposed = bool(mode.get('research_candidate'))
@@ -199,7 +225,7 @@ def box(mode):
         f'<span class="chev">▸</span></summary>'
         f'<div class="body"><h4>Definition</h4><p class="def">{esc(mode["definition"])}</p>'
         f'{ex_html}'
-        f'<h4>Research papers</h4>{render_papers(arx)}'
+        f'<h4>Research papers</h4>{render_papers(mode)}'
         f'{research_block(mode)}{experiment_block(mode)}{meta_block(mode)}'
         f'{overlap_block(mode)}</div></details>'
     )
@@ -229,10 +255,10 @@ def research_block(mode):
         out.append('<p class="research-note">Human definitions and AI proposals are separate. The analogy has not been tested in this research; clinical terms do not diagnose AI or establish feelings, unconscious motives or intent. Some conditioning evidence also comes from nonhuman animals.</p>')
         boundary=record.get('research_boundary',record.get('distinction_and_limits',''))
         if boundary:out.append('<p><b>Boundary and limits.</b> '+esc(boundary)+'</p>')
-        sources=record.get('definition_sources',[])
+        sources=[s for s in record.get('definition_sources',[]) if not s.get('publication')]
         if sources:
             out.append('<ul class="human-sources">'+''.join('<li><a href="'+esc(s['url'])+'">'+esc(s['title'])+'</a><br><small>Access: '+esc(s['consulted'])+'</small></li>' for s in sources)+'</ul>')
-        else:
+        elif not research_papers(record):
             out.append('<p><b>Source check pending.</b> The supplied attribution is a research lead, not a verified definition-source passage.</p>')
         provenance=record.get('research_provenance',record)
         contrib=provenance.get('contributions',[])
@@ -248,12 +274,13 @@ def export_catalogue(onto):
     public['meta']['mode_count']=len(public['modes'])
     (ROOT/'docs/behaviours.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     buffer=io.StringIO(newline='')
-    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','grouped_under','grouping_reason','synonyms','is_a','relates_to','concept_boundary','related_terms','terminology_sources']
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','research_papers','grouped_under','grouping_reason','synonyms','is_a','relates_to','concept_boundary','related_terms','terminology_sources']
     writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
     for mode in sorted(onto['modes'],key=lambda m:m['num']):
         row={k:mode.get(k,'') for k in fields}
         row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
         row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
+        row['research_papers']=json.dumps(research_papers(mode),ensure_ascii=False)
         for key in ('synonyms','is_a','relates_to','related_terms','terminology_sources'):
             row[key]=json.dumps(mode.get(key,[]),ensure_ascii=False)
         writer.writerow(row)
@@ -263,6 +290,19 @@ def export_catalogue(onto):
         content=(ROOT/f'docs/behaviours.{suffix}').read_bytes()
         for stem in ('100-behaviours','behaviour-candidates'):
             (ROOT/f'docs/research/{stem}.{suffix}').write_bytes(content)
+    coverage=[source_coverage(m) for m in sorted(onto['modes'],key=lambda m:m['num'])]
+    counts={label:sum(bool(r[key]) for r in coverage) for label,key in (
+        ('entries_with_ai_papers','ai_paper_links'),('entries_with_human_related_papers','human_related_paper_links'),
+        ('entries_with_reference_sources','reference_source_links'))}
+    counts['entries_without_research_papers']=sum(not r['ai_paper_links'] and not r['human_related_paper_links'] for r in coverage)
+    (ROOT/'docs/source-coverage.json').write_text(json.dumps({'date':onto['meta']['updated'],
+        'scope':'Linked citations, not counts of proven AI mechanisms. Human/related papers do not establish an AI analogy; metadata-only checks do not validate a definition.',
+        'counts':counts,'records':coverage},ensure_ascii=False,indent=2)+'\n')
+    buffer=io.StringIO(newline='')
+    writer=csv.DictWriter(buffer,fieldnames=list(coverage[0]),lineterminator='\n');writer.writeheader()
+    for record in coverage:
+        writer.writerow({k:' ; '.join(v) if isinstance(v,list) else v for k,v in record.items()})
+    (ROOT/'docs/source-coverage.csv').write_text(buffer.getvalue())
 
 
 def experiment_block(mode):
@@ -312,7 +352,8 @@ def render(modes):
     modes=sorted(modes,key=lambda m:m['num'])
     n = len(modes)
     ai = sum(1 for m in modes if m.get("ai_native"))
-    grounded = sum(1 for m in modes if (m.get("arxiv") or {}).get("count"))
+    grounded = sum(bool((m.get("arxiv") or {}).get("papers")) for m in modes)
+    human_papers = sum(bool(research_papers(m)) for m in modes)
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
     proposed=sum(bool(m.get('research_candidate')) for m in modes)
@@ -320,7 +361,7 @@ def render(modes):
     for mode in modes:
         categories.setdefault(mode['category'],[]).append(mode)
     stats = (f'<div class="cat-stats"><b>{n}</b> catalogue records · {len(categories)} categories · {ai} AI-native · {grounded} with AI paper links'
-             f' · {shipped} highlighted · {detected} with detection links</div>')
+             f' · {human_papers} with human/related paper links · {shipped} highlighted · {detected} with detection links</div>')
     out = [f'    {stats}', '    <div class="cat-grid">']
     for category, records in categories.items():
         label=records[0]['group_label']

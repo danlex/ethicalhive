@@ -88,6 +88,16 @@ def main():
                 errors.append(f'{mid}: missing definition-source review status')
             if m.get('source_check') == 'definition-source-consulted' and not m.get('definition_sources'):
                 errors.append(f'{mid}: consulted-source status requires source records')
+        for source in m.get('definition_sources',[]):
+            pub=source.get('publication')
+            if not pub:
+                continue
+            if pub.get('type') not in ('journal-article','proceedings-article','posted-content'):
+                errors.append(f'{mid}: only reviewed paper types may be counted as research papers')
+            if not all(pub.get(key) for key in ('authors','year','venue','evidence_scope','verification_url','verified_date')):
+                errors.append(f'{mid}: research-paper record needs citation, scope and verification metadata')
+            if not source.get('consulted'):
+                errors.append(f'{mid}: research-paper record needs access depth')
         if m.get("measurability") and m["measurability"] not in MEAS:
             errors.append(f"{mid}: bad measurability {m['measurability']!r}")
         for p in m.get("violates", []):
