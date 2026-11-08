@@ -92,6 +92,16 @@ Row paper counts show the number of citations linked in that entry, across both
 domains. Historical arXiv search totals appear only in the expanded AI section
 and are not presented as counts of verified papers.
 
+`meta.paper_source_review.record` points to the latest bibliography review. Its
+`previous_review` pointer retains earlier reviews; `previous_record` in the meta
+block exposes the immediately preceding record. Each increment records source
+additions, citation access depth, rejected matches and retained paper gaps.
+Definition-status changes additionally require an individual source ID, passage
+locator and reason. A checked definition passage can come from a book or reference
+page without closing the separate paper-link gap. AI recognition benchmarks do
+not change an entry's untested-analogy status. Source-trace validation follows the
+review history so earlier accepted citations remain accountable.
+
 ## The eleven categories
 
 Ten cognitive systems: Perception, Memory, Attention, Heuristics, Reasoning,

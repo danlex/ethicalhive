@@ -19,8 +19,13 @@ expected_groups={'social-desirability-bias':'b069-social-desirability-people-ple
 assert {m['id']:m['grouped_under'] for m in grouped}==expected_groups
 added=[m for m in onto['modes'] if m.get('research_candidate')]
 assert len(added)==227
-assert sum(m['source_check']=='pending-definition-source-check' for m in added)==96
-assert sum(m['source_check']=='definition-source-consulted' for m in added)==131
+source_review=json.loads((ROOT/onto['meta']['paper_source_review']['record']).read_text())
+definition_changes=source_review['source_check_changes']
+assert len({r['num'] for r in definition_changes})==len(definition_changes)==24
+assert all(r['previous_status']=='pending-definition-source-check' and r['current_status']=='definition-source-consulted'
+           and r['passage_locator'] and r['reason'] for r in definition_changes)
+assert sum(m['source_check']=='pending-definition-source-check' for m in added)==96-len(definition_changes)
+assert sum(m['source_check']=='definition-source-consulted' for m in added)==131+len(definition_changes)
 assert all(m['tag']=='analogy' and not m['violates'] and not m['causes'] for m in added)
 manifest=json.loads((ROOT/'references/catalogue-integration-2026-11-06.json').read_text())
 assert len(manifest['decisions'])==228
