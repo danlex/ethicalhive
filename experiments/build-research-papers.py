@@ -25,7 +25,7 @@ def metadata(source):
     return data
 
 
-def build(source,compile_pdf=True):
+def build(source,compile_pdf=True,anonymous=False):
     data=metadata(source)
     env=dict(os.environ)
     epoch=int(datetime.fromisoformat(str(data['date'])).replace(tzinfo=timezone.utc).timestamp())
@@ -39,9 +39,10 @@ def build(source,compile_pdf=True):
             '--variable','papersize=a4','--variable','colorlinks=true',
             '--variable','linkcolor=blue','--variable','urlcolor=blue',
             '--include-in-header',str(header),'-o',str(tex)]
+        if anonymous:command.extend(['--metadata','author=Anonymous Authors'])
         subprocess.run(command,cwd=PAPER,env=env,check=True,capture_output=True,text=True)
         generated=tex.read_text()
-        if source.name=='draft.md':
+        if source.name=='draft.md' and not anonymous:
             for destination in (PAPER/'latex',PAPER/'arxiv'):
                 (destination/'main.tex').write_text(generated)
         if compile_pdf:
@@ -51,8 +52,12 @@ def build(source,compile_pdf=True):
                     cwd=PAPER,env=env,capture_output=True,text=True)
                 if result.returncode:
                     raise RuntimeError(f'{source.name}: LaTeX compilation failed:\n'+result.stdout[-6500:])
-            target=source.with_suffix('.pdf');shutil.copyfile(temp/'main.pdf',target)
-            if source.name=='draft.md':
+            target=PAPER/'latex'/'anonymous.pdf' if anonymous else source.with_suffix('.pdf')
+            shutil.copyfile(temp/'main.pdf',target)
+            if not anonymous:
+                public='methods-paper.pdf' if source.name=='draft.md' else 'paper.pdf'
+                shutil.copyfile(target,ROOT/'docs'/public)
+            if source.name=='draft.md' and not anonymous:
                 for destination in (PAPER/'latex',PAPER/'arxiv'):
                     shutil.copyfile(target,destination/'main.pdf')
             print(f'Built {target.relative_to(ROOT)} from canonical Markdown')
@@ -64,11 +69,14 @@ def main():
     ap.add_argument('--source',choices=['draft.md','ethicalai-benchmark.md'])
     ap.add_argument('--tex-only',action='store_true')
     ap.add_argument('--arxiv-package',action='store_true')
+    ap.add_argument('--anonymous',action='store_true',help='Build a local anonymous PDF without changing public artifacts')
     args=ap.parse_args()
     for binary in ['pandoc']+([] if args.tex_only else ['pdflatex']):
         if not shutil.which(binary):raise SystemExit(f'Missing build dependency: {binary}')
     names=[args.source] if args.source else ['draft.md','ethicalai-benchmark.md']
-    for name in names:build(PAPER/name,not args.tex_only)
+    if args.anonymous and (args.source!='draft.md' or args.arxiv_package):
+        raise SystemExit('--anonymous requires --source draft.md without --arxiv-package')
+    for name in names:build(PAPER/name,not args.tex_only,args.anonymous)
     if args.arxiv_package:
         if args.source=='ethicalai-benchmark.md':raise SystemExit('The existing arXiv package contains the methods paper')
         destination=PAPER/'arxiv'/'submission.tar.gz'
