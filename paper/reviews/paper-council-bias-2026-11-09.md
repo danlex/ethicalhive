@@ -510,4 +510,3 @@ Evidence: Read the actual current paragraph and all 48 hard-suite path/filename_
 Paste-ready replacement: none required.
 Scope: This is solely the requested INT-SRC provenance-statement recheck. It is not a fresh full-paper review or a new six-judge council. No manuscript/code edits, commits or pushes were made. The earlier mandatory primary readings and round-2 findings remain historical review context; no claim is made here of reading all 1,036 external publications.
 ```
-
