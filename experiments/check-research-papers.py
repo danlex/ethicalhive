@@ -55,6 +55,16 @@ def check_sources():
     for row in attribution[1:]:
         s=results['suites']['hard'][row[0]]['score']
         assert row[1:]==[fraction(s['family_tp_attributed'],s['tp']),fraction(s['exact_tp_attributed'],s['tp']),fraction(s['tp'],s['tp']+s['fp'])]
+    supplement=next(t for t in parsed if t[0][:2]==['Suite','Reviewer'])
+    assert len(supplement)==9
+    for row in supplement[1:]:
+        reviewer=row[1].split(',')[0]
+        s=results['suites'][row[0].lower()][reviewer]['score']
+        assert row[2:]==[fraction(s['exact'],s['n']),fraction(s['tp'],s['tp']+s['fn']),
+                        fraction(s['tn'],s['tn']+s['fp']),fraction(s['exact_tp_attributed'],s['tp'])],row
+    named=results['suites']['hard']['judge']['score']
+    assert (named['exact_rule_set_hits_tp'],named['exact_rule_set_predictions_tp'],named['exact_rule_set_gold_tp'])==(37,84,37)
+    assert '37/84' in body and '37/37' in body
     for path,meta,content in [(source,data,body),(ROOT/'paper/ethicalai-benchmark.md',resource,rbody)]:
         assert all(meta.get(k) for k in ('title','author','date','abstract'))
         assert not any(c in path.read_text() for c in ('—','–'))
@@ -68,6 +78,7 @@ def check_sources():
         pages=int(re.search(r'^Pages:\s+(\d+)',info,re.M)[1])
         assert 4<=pages<=8,(path,pages)
         assert meta['title'] in info
+        assert hashlib.sha256(path.read_bytes()).hexdigest() in info,'PDF does not match the complete canonical manuscript'
         text=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True)
         flatten=lambda s:re.sub(r'\s+',' ',s).strip()
         assert flatten(meta['abstract'][:100]) in flatten(text)

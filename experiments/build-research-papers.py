@@ -2,6 +2,7 @@
 """Build paper PDFs and standalone LaTeX from canonical Markdown metadata."""
 import argparse
 from datetime import datetime,timezone
+import hashlib
 import os
 from pathlib import Path
 import shutil
@@ -33,12 +34,13 @@ def build(source,compile_pdf=True,anonymous=False):
     with tempfile.TemporaryDirectory(prefix='ethicalai-paper-') as folder:
         temp=Path(folder);tex=temp/'main.tex'
         header=temp/'header.tex'
+        source_hash=hashlib.sha256(source.read_bytes()).hexdigest()
         header.write_text('\\usepackage{xurl}\n\\ifdefined\\pdfinfoomitdate\\pdfinfoomitdate=1\\pdftrailerid{}\\fi\n')
         command=['pandoc',str(source),'--standalone','--to','latex','--resource-path',str(PAPER),
             '--variable','fontsize=10pt','--variable','geometry=margin=19mm',
             '--variable','papersize=a4','--variable','colorlinks=true',
             '--variable','linkcolor=blue','--variable','urlcolor=blue',
-            '--include-in-header',str(header),'-o',str(tex)]
+            '--include-in-header',str(header),'--metadata','subject=Source SHA256: '+source_hash,'-o',str(tex)]
         if anonymous:command.extend(['--metadata','author=Anonymous Authors'])
         subprocess.run(command,cwd=PAPER,env=env,check=True,capture_output=True,text=True)
         generated=tex.read_text()
