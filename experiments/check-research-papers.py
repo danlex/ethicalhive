@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Verify manuscript tables, derived PDFs/LaTeX and the public paper page."""
+import argparse
+import functools
+import hashlib
+import http.server
+import importlib.util
+import json
+from pathlib import Path
+import re
+import subprocess
+import threading
+
+import yaml
+
+from research_runs import ROOT
+
+
+def manuscript(path):
+    text=path.read_text()
+    assert text.startswith('---\n'),path
+    _,header,body=text.split('---\n',2)
+    return yaml.safe_load(header),body
+
+
+def tables(body):
+    groups=[];current=[]
+    for line in body.splitlines()+['']:
+        if line.startswith('|'):
+            row=[c.strip().replace('`','') for c in line.strip('|').split('|')]
+            if not all(re.fullmatch(r'[:\- ]*',c) for c in row):current.append(row)
+        elif current:groups.append(current);current=[]
+    return groups
+
+
+def fraction(a,b):return f'{a}/{b}' if b else 'n/a'
+
+
+def check_sources():
+    source=ROOT/'paper/draft.md';data,body=manuscript(source)
+    resource,rbody=manuscript(ROOT/'paper/ethicalai-benchmark.md')
+    results=json.loads((ROOT/'experiments/research-results-2026-11-09.json').read_text())
+    parsed=tables(body)
+    detection=next(t for t in parsed if t[0]==['Condition','Exact verdict','Recall','Specificity','Flag precision'])
+    expected=['none','freeform','checklist','mono-rid','judge-ctx','judge','judge-anon']
+    assert [r[0] for r in detection[1:]]==expected
+    for row in detection[1:]:
+        s=results['suites']['hard'][row[0]]['score']
+        assert row[1:]==[fraction(s['exact'],s['n']),fraction(s['tp'],s['tp']+s['fn']),
+                        fraction(s['tn'],s['tn']+s['fp']),fraction(s['tp'],s['tp']+s['fp'])],row
+    confusion=next(t for t in parsed if t[0]==['Gold verdict','Predicted SHIP','Predicted REVISE','Predicted BLOCK'])
+    for row in confusion[1:]:
+        assert list(map(int,row[1:]))==[results['suites']['hard']['judge']['confusion'][row[0]][p] for p in ('SHIP','REVISE','BLOCK')]
+    attribution=next(t for t in parsed if t[0][0]=='Reviewer' and 'Exact gold rule' in t[0][2])
+    for row in attribution[1:]:
+        s=results['suites']['hard'][row[0]]['score']
+        assert row[1:]==[fraction(s['family_tp_attributed'],s['tp']),fraction(s['exact_tp_attributed'],s['tp']),fraction(s['tp'],s['tp']+s['fp'])]
+    for path,meta,content in [(source,data,body),(ROOT/'paper/ethicalai-benchmark.md',resource,rbody)]:
+        assert all(meta.get(k) for k in ('title','author','date','abstract'))
+        assert not any(c in path.read_text() for c in ('—','–'))
+        assert '[UNVERIFIED]' not in path.read_text()
+    assert '8798134341ea386da80fb5602bc7dd06ef81cf24' in rbody
+    assert '3b9b50021ef5eefb15a28d4edb7a5264f2fb626f' in rbody
+    assert (ROOT/'paper/latex/main.tex').read_bytes()==(ROOT/'paper/arxiv/main.tex').read_bytes()
+    for path,meta in [(source,data),(ROOT/'paper/ethicalai-benchmark.md',resource)]:
+        pdf=path.with_suffix('.pdf')
+        info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+        pages=int(re.search(r'^Pages:\s+(\d+)',info,re.M)[1])
+        assert 4<=pages<=8,(path,pages)
+        assert meta['title'] in info
+        text=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True)
+        flatten=lambda s:re.sub(r'\s+',' ',s).strip()
+        assert flatten(meta['abstract'][:100]) in flatten(text)
+        target='methods-paper.pdf' if path==source else 'paper.pdf'
+        assert pdf.read_bytes()==(ROOT/'docs'/target).read_bytes()
+    print('PASS: manuscript tables match frozen raw results; canonical metadata, PDFs, LaTeX and six-page paper copies agree.')
+
+
+def check_browser():
+    from playwright.sync_api import sync_playwright
+    class Handler(http.server.SimpleHTTPRequestHandler):
+        def log_message(self,*args):pass
+    server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory=str(ROOT/'docs')))
+    threading.Thread(target=server.serve_forever,daemon=True).start()
+    base=f'http://127.0.0.1:{server.server_port}/'
+    title=manuscript(ROOT/'paper/ethicalai-benchmark.md')[0]['title']
+    try:
+        with sync_playwright() as p:
+            browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+            for width in (390,768,1440):
+                page=browser.new_page(viewport={'width':width,'height':1000},java_script_enabled=False)
+                page.route('https://**/*',lambda r:r.abort())
+                errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                response=page.goto(base+'paper.html',wait_until='domcontentloaded')
+                assert response.status==200
+                assert page.locator('h1').all_text_contents()==[title]
+                assert 'arXiv metadata-query matches' in page.locator('body').inner_text()
+                assert page.locator('a[href="methods-paper.pdf"]').count()==1
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+                for filename in ('paper.pdf','methods-paper.pdf'):
+                    result=page.request.get(base+filename)
+                    assert result.ok and result.body().startswith(b'%PDF-')
+                    assert hashlib.sha256(result.body()).digest()==hashlib.sha256((ROOT/'docs'/filename).read_bytes()).digest()
+                if width==390:page.screenshot(path='/tmp/ethicalai-revised-paper-mobile.png')
+                page.goto(base+'#paper',wait_until='domcontentloaded')
+                assert page.locator('#paper article').count()==2
+                assert page.locator('.concept').count()==434
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+                assert not errors,errors
+                page.close()
+            browser.close()
+        print('PASS: public paper page and homepage summaries, PDF downloads, no-JS reading and no overflow at 390/768/1440 px.')
+    finally:server.shutdown()
+
+
+def check_rebuild():
+    paths=[ROOT/p for p in ('paper/draft.pdf','paper/ethicalai-benchmark.pdf','paper/latex/main.tex','paper/arxiv/main.tex','docs/index.html','docs/paper.html','docs/paper.pdf','docs/methods-paper.pdf')]
+    digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+    before={str(p):digest(p) for p in paths}
+    subprocess.run(['python3',str(ROOT/'experiments/build-research-papers.py')],cwd=ROOT,check=True)
+    subprocess.run(['python3',str(ROOT/'experiments/build-paper-page.py')],cwd=ROOT,check=True)
+    assert before=={str(p):digest(p) for p in paths},'Rebuilding changed generated paper artifacts'
+    print('PASS: repeated Markdown-to-PDF/LaTeX/HTML build is byte-identical.')
+
+
+def main():
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--browser',action='store_true');ap.add_argument('--rebuild',action='store_true')
+    args=ap.parse_args();check_sources()
+    if args.rebuild:check_rebuild()
+    if args.browser:check_browser()
+
+
+if __name__=='__main__':main()
