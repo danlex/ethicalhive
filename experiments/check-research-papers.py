@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Verify manuscript tables, derived PDFs/LaTeX and the public paper page."""
 import argparse
+from collections import Counter
 import functools
 import hashlib
+from html.parser import HTMLParser
 import http.server
 import importlib.util
 import json
@@ -10,6 +12,8 @@ from pathlib import Path
 import re
 import subprocess
 import threading
+from urllib.parse import unquote, urljoin, urlsplit
+from urllib.request import Request, urlopen
 
 import yaml
 
@@ -34,6 +38,49 @@ def tables(body):
 
 
 def fraction(a,b):return f'{a}/{b}' if b else 'n/a'
+
+
+class PageLinks(HTMLParser):
+    def __init__(self,path):
+        super().__init__();self.ids=[];self.links=[];self.feed(path.read_text())
+
+    def handle_starttag(self,tag,attrs):
+        attrs=dict(attrs)
+        if 'id' in attrs:self.ids.append(attrs['id'])
+        self.links.extend(attrs[k] for k in ('href','src') if attrs.get(k))
+
+
+def check_links():
+    root=ROOT/'docs';assets=set()
+    for name in ('index.html','paper.html','ontology-map.html','404.html'):
+        path=root/name;page=PageLinks(path);assets.add(path)
+        assert not [key for key,n in Counter(page.ids).items() if n>1],name
+        for link in page.links:
+            u=urlsplit(link)
+            if u.scheme or u.netloc:continue
+            target=(root/unquote(u.path).lstrip('/')) if u.path.startswith('/') else (path.parent/unquote(u.path) if u.path else path)
+            if target.is_dir():target=target/'index.html'
+            target=target.resolve();target.relative_to(root)
+            assert target.is_file(),(name,link)
+            assets.add(target)
+            if u.fragment and target.suffix=='.html':
+                ids=page.ids if target==path else PageLinks(target).ids
+                assert unquote(u.fragment) in ids,(name,link)
+    print(f'PASS: {len(assets)} internal page/asset targets and local fragments resolve without duplicate HTML IDs.')
+    return assets
+
+
+def check_live(base,assets):
+    assert urlsplit(base).scheme=='https','Live verification requires HTTPS'
+    revision=hashlib.sha256((ROOT/'docs/index.html').read_bytes()).hexdigest()[:16]
+    for path in sorted(assets):
+        name=path.relative_to(ROOT/'docs').as_posix()
+        url=urljoin(base.rstrip('/')+'/',name)+'?paper-revision='+revision
+        request=Request(url,headers={'User-Agent':'EthicalAI-paper-verification/1.0','Cache-Control':'no-cache'})
+        with urlopen(request,timeout=45) as response:
+            assert response.status==200,(name,response.status)
+            assert hashlib.sha256(response.read()).digest()==hashlib.sha256(path.read_bytes()).digest(),name
+    print(f'PASS: all {len(assets)} live HTTPS page/asset bodies match the tested publication files exactly.')
 
 
 def check_sources():
@@ -137,9 +184,11 @@ def check_rebuild():
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--browser',action='store_true');ap.add_argument('--rebuild',action='store_true')
-    args=ap.parse_args();check_sources()
+    ap.add_argument('--live',metavar='HTTPS_URL',help='Compare the deployed site and linked assets with the tested docs files')
+    args=ap.parse_args();check_sources();assets=check_links()
     if args.rebuild:check_rebuild()
     if args.browser:check_browser()
+    if args.live:check_live(args.live,assets)
 
 
 if __name__=='__main__':main()

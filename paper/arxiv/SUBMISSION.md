@@ -73,12 +73,10 @@ Go to https://arxiv.org/submit and click **Start a new submission**.
 ## Notes specific to this paper
 
 - **No figures** in the body. Nothing to upload separately.
-- **References** are inline in `body.tex` as a `References` section.
+- **References** are inline in the generated standalone `main.tex` as a `References` section.
   arXiv accepts this; no `.bib` file is needed for v1.
-- **AgentVerify citation** lacks a named author. preprints.org
-  returned 403 on the WebFetch attempts; either open the URL in
-  your browser and patch the author list into `paper/draft.md`
-  before rebuilding, or ship v1 as-is and patch in v2.
+- **AgentVerify citation** names Eric Fang and the versioned DOI
+  `10.20944/preprints202604.1029.v1`, checked against the primary record.
 - **No anonymous variant** for arXiv (preprints are not double-blind).
   Anonymous variant is for workshop submission via
   `bash paper/build-latex.sh --anon`.
