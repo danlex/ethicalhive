@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 from playwright.sync_api import sync_playwright
-from catalogue_sources import definition_sources, research_papers, source_coverage
+from catalogue_sources import definition_sources, research_papers, source_coverage, selected_papers, literature_search
 
 ROOT=Path(__file__).resolve().parents[1]
 onto=yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())
@@ -87,9 +87,9 @@ assert {r['num'] for r in audit['ai_paper_repairs']}=={4,22,67,70,75,86,103}
 followup=reviews[0]
 assert len(followup['decisions'])==64
 assert {r['num'] for r in followup['decisions']}==set(followup['baseline']['paper_gap_numbers'])
-assert {r['num'] for r in followup['decisions'] if r['decision']=='paper-gap-retained'}=={r['num'] for r in gaps}
-assert followup['result']['entries_without_paper_links']==len(gaps)
-assert followup['result']['entries_with_paper_links']==434-len(gaps)
+assert {r['num'] for r in followup['decisions'] if r['decision']=='paper-gap-retained'}==set(followup['result']['remaining_gap_numbers'])
+assert followup['result']['entries_without_paper_links']==13
+assert followup['result']['entries_with_paper_links']==421
 for r in followup['reference_source_additions']:
     assert r['current_source'] in by_num[r['num']]['definition_sources']
     assert not r['current_source'].get('publication')
@@ -131,19 +131,19 @@ try:
             }))''')}
             for mode in onto['modes']:
                 entry=rendered[mode['id']]
-                sources=research_papers(mode)
-                assert entry['paperCount']==len(sources)
-                assert entry['paperFlag']==('1' if sources or (mode.get('arxiv') or {}).get('papers') else '0')
-                cited=len(sources)+len((mode.get('arxiv') or {}).get('papers') or [])
-                assert entry['displayedCount']==(str(cited) if cited else '—')
+                papers=selected_papers(mode)
+                assert entry['paperCount']==sum(p['domain']=='human-related' for p in papers)
+                assert entry['paperFlag']==('1' if papers else '0')
+                total=literature_search(mode)['count']
+                assert entry['displayedCount']==(f'{total:,}' if total is not None else '—')
             page.locator('[data-filter="paper"]').click()
             assert page.locator('.concept:visible').count()==434-len(gaps)
-            assert not page.locator('#'+by_num[415]['id']).is_visible()  # A consulted book chapter alone is not a paper.
+            assert page.locator('#'+by_num[415]['id']).is_visible()==bool(selected_papers(by_num[415]))
             assert page.locator('#'+by_num[238]['id']).is_visible()  # A separate genuine journal paper is now linked.
             assert page.locator('#'+by_num[373]['id']).is_visible()  # A philosophical journal article is a paper.
             page.locator('[data-filter="no-paper"]').click()
             assert page.locator('.concept:visible').count()==len(gaps)
-            assert page.locator('#'+by_num[415]['id']).is_visible()
+            assert page.locator('#'+by_num[415]['id']).is_visible()==(not selected_papers(by_num[415]))
             assert not page.locator('#'+by_num[238]['id']).is_visible()
             assert not page.locator('#'+by_num[373]['id']).is_visible()
             page.locator('[data-filter="all"]').click()
@@ -151,7 +151,8 @@ try:
             entry=page.locator('#b022-inattentional-blindness')
             if entry.get_attribute('open') is None:
                 entry.locator('summary').click()
-            assert entry.locator('.papers a').count()==1 and entry.locator('.human-papers a').count()==1
+            assert entry.locator('.papers a').count()==sum(p['domain']=='ai' for p in selected_papers(by_num[22]))
+            assert entry.locator('.human-papers a').count()==sum(p['domain']=='human-related' for p in selected_papers(by_num[22]))
             text=entry.inner_text().lower()
             assert 'mixrea' in text and 'gorillas in our midst' in text
             assert entry.locator('summary .num').count()==0
@@ -159,9 +160,11 @@ try:
             entry=page.locator('#'+by_num[346]['id'])
             if entry.get_attribute('open') is None:
                 entry.locator('summary').click()
-            assert entry.locator('.papers a').count()==1 and entry.locator('.human-papers a').count()==1
+            assert entry.locator('.papers a').count()==sum(p['domain']=='ai' for p in selected_papers(by_num[346]))
+            assert entry.locator('.human-papers a').count()==sum(p['domain']=='human-related' for p in selected_papers(by_num[346]))
             assert 'recognition/self-verification' in entry.inner_text()
-            assert entry.locator('summary .pcount').inner_text()=='2'
+            total=literature_search(by_num[346])['count']
+            assert entry.locator('summary .pcount').inner_text()==(f'{total:,}' if total is not None else '—')
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
             if width==390:page.screenshot(path='/tmp/ethicalai-paper-coverage-mobile.png')
             page.locator('#search').fill('')
@@ -181,7 +184,7 @@ try:
         page.goto(base,wait_until='domcontentloaded')
         entry=page.locator('#candidate-001')
         entry.locator('summary').click()
-        assert entry.locator('.human-papers a').is_visible()
+        assert entry.locator('.human-papers a').first.is_visible()
         assert 'Encoding specificity and retrieval processes' in entry.inner_text()
         browser.close()
     print(f'PASS: 434 coverage records; {434-len(gaps)} entries with paper links; {len(gaps)} explicit gaps; typed sources, audit trace, filters, map-ready metadata, index, CSV and no-JS reading.')

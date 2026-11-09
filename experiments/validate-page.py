@@ -11,6 +11,7 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from catalogue_sources import selected_papers
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "docs" / "index.html"
@@ -48,15 +49,19 @@ def main():
     concepts = len(re.findall(r'class="concept ', html))
     shipped = html.count('class="concept shipped"')
     papers = html.count('class="papers"')
-    none = html.count("cite none")
+    human = html.count('class="human-sources human-papers"')
+    sections = html.count('class="research-papers"')
+    expected_ai=sum(any(p['domain']=='ai' for p in selected_papers(m)) for m in primary)
+    expected_human=sum(any(p['domain']=='human-related' for p in selected_papers(m)) for m in primary)
     groups = html.count('class="cat-group"')
     print(
         f"concept boxes: {concepts} (expect {n_modes}); highlighted: {shipped} "
         f"(expect {n_shipped}); groups: {groups} (expect {n_groups}); "
-        f"papers lists: {papers}, no-paper notes: {none} (expect sum {n_modes})"
+        f"research sections: {sections} (expect {n_modes}); "
+        f"AI lists: {papers} (expect {expected_ai}); human/related lists: {human} (expect {expected_human})"
     )
     if concepts != n_modes or shipped != n_shipped or groups != n_groups \
-            or papers + none != n_modes:
+            or sections!=n_modes or papers!=expected_ai or human!=expected_human:
         ok = False
         print(f"  MISMATCH: expected {n_modes} boxes ({n_shipped} highlighted) "
               f"in {n_groups} groups")

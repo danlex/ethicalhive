@@ -16,7 +16,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import yaml
-from catalogue_sources import research_papers
+from catalogue_sources import selected_papers
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -33,24 +33,17 @@ def main():
     papers = {}            # id -> {title, year, modes:set}
     gaps = []
     for m in modes:
-        ps = (m.get("arxiv") or {}).get("papers") or []
-        human=research_papers(m)
-        if not ps and not human:
+        ps = selected_papers(m)
+        if not ps:
             gaps.append(m["name"])
         for p in ps:
-            pid = re.sub(r"v\d+$", "", p.get("id", ""))
+            pid = p['id']
             if not pid:
                 continue
             rec = papers.setdefault(pid, {"title": p.get("title", ""),
                                           "year": str(p.get("year", "")), "modes": set(),
-                                          "url":"https://arxiv.org/abs/"+pid,"domain":"AI"})
+                                          "url":p['url'],"domain":"AI" if p['domain']=='ai' else 'Human/related'})
             rec["modes"].add(m["name"])
-        for source in human:
-            publication=source['publication']
-            pid=re.sub(r'/+', '/', publication.get('doi') or source['url']).lower()
-            rec=papers.setdefault(pid,{'title':source['title'],'year':str(publication['year']),
-                'modes':set(),'url':source['url'],'domain':'Human/related'})
-            rec['modes'].add(m['name'])
 
     shared = sorted(((pid, r) for pid, r in papers.items() if len(r["modes"]) >= 2),
                     key=lambda t: -len(t[1]["modes"]))
@@ -68,6 +61,8 @@ def main():
                f'paper link · {len(papers)} paper identifiers · {len(shared)} papers linked from 2+ '
                f'entries.</p>')
     out.append('<p>AI papers and human or related studies are identified separately. A linked paper does not automatically validate an entry’s definition or AI analogy. Access depth and relevance are recorded in each catalogue entry. <a href="../source-coverage.csv">Download source coverage for all entries</a>.</p>')
+    complete=sum(len(selected_papers(m))==3 for m in modes)
+    out.append(f'<p>{complete} entries have three selected citations; {len(modes)-complete} still have a citation shortfall. The numbers on catalogue rows are independent literature-search totals, with the source and query recorded per entry.</p>')
     out.append("<h2>Papers shared by two or more modes</h2>")
     out.append('<p>A shared citation is a reading lead. It does not by itself establish co-occurrence, identity or a causal relation between entries.</p>')
     out.append('<table><tr><th>Source</th><th>Year</th><th>Title</th><th>Linked entries</th></tr>')

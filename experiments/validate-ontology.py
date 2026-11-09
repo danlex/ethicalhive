@@ -12,6 +12,7 @@ import sys
 from pathlib import Path
 
 import yaml
+from catalogue_sources import paper_identifier
 
 ONTOLOGY = Path(__file__).resolve().parent.parent / "ontology" / "ethical-ai.yaml"
 
@@ -98,6 +99,35 @@ def main():
                 errors.append(f'{mid}: research-paper record needs citation, scope and verification metadata')
             if not source.get('consulted'):
                 errors.append(f'{mid}: research-paper record needs access depth')
+        selected=m.get('selected_papers')
+        if not isinstance(selected,list) or len(selected)>3:
+            errors.append(f'{mid}: selected_papers must explicitly contain zero to three citations')
+        else:
+            identities=set()
+            for paper in selected:
+                if not all(paper.get(k) for k in ('id','title','url','year','venue','relevance','consulted','verification_url','publication_type')):
+                    errors.append(f'{mid}: selected citation needs bibliographic identity, scope and access metadata')
+                if paper.get('domain') not in ('ai','human-related'):
+                    errors.append(f'{mid}: selected citation needs a source-domain label')
+                identity=paper_identifier(paper.get('url',''))
+                if identity in identities or identity!=paper.get('id'):
+                    errors.append(f'{mid}: duplicate or noncanonical selected publication identity')
+                identities.add(identity)
+                if paper.get('publication_type') not in ('journal-article','proceedings-article','posted-content','article','review','preprint'):
+                    errors.append(f'{mid}: unsupported selected publication type')
+                if type(paper.get('year')) is not int or not 1800<=paper['year']<=2026:
+                    errors.append(f'{mid}: invalid selected publication year')
+        search=m.get('literature_search') or {}
+        count=search.get('count')
+        if not all(search.get(k) for k in ('database','status','query','url','scope')):
+            errors.append(f'{mid}: literature search needs source, status, query, URL and scope')
+        if count is not None and (type(count) is not int or count<0):
+            errors.append(f'{mid}: literature total must be a nonnegative integer or null')
+        if search.get('status')=='available':
+            if count is None or not search.get('queried_at'):
+                errors.append(f'{mid}: available search requires measured total and date')
+        elif count is not None:
+            errors.append(f'{mid}: unavailable search must keep its total null')
         if m.get("measurability") and m["measurability"] not in MEAS:
             errors.append(f"{mid}: bad measurability {m['measurability']!r}")
         for p in m.get("violates", []):
