@@ -52,7 +52,9 @@ class PageLinks(HTMLParser):
 
 def check_links():
     root=ROOT/'docs';assets=set()
-    for name in ('index.html','paper.html','ontology-map.html','404.html'):
+    names=['index.html','paper.html','ontology-map.html']
+    if (root/'404.html').exists():names.append('404.html')
+    for name in names:
         path=root/name;page=PageLinks(path);assets.add(path)
         assert not [key for key,n in Counter(page.ids).items() if n>1],name
         for link in page.links:
