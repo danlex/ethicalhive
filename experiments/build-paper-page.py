@@ -12,6 +12,7 @@ Usage: python3 experiments/build-paper-page.py
 """
 import re
 from pathlib import Path
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "paper" / "ethicalai-benchmark.md"
@@ -31,7 +32,7 @@ def inline(s):
     return s
 
 
-def render(md):
+def render(md,heading_offset=0):
     lines = md.splitlines()
     out, i, n = [], 0, len(lines)
     while i < n:
@@ -41,7 +42,7 @@ def render(md):
             continue
         m = re.match(r"^(#{1,3})\s+(.*)$", line)
         if m:
-            lvl = len(m.group(1))
+            lvl = min(6,len(m.group(1))+heading_offset)
             out.append(f"<h{lvl}>{inline(m.group(2))}</h{lvl}>")
             i += 1
             continue
@@ -85,7 +86,9 @@ def render(md):
 PAGE = """<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EthicalAI: A Grounded Catalogue of AI Integrity Failure Modes</title>
+<title>{title}</title>
+<meta name="description" content="{description}">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper.html">
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#e7e5e2;--panel:#f6f5f4}}
@@ -109,6 +112,8 @@ th{{background:var(--panel);font-weight:700}}
 <body><div class="wrap">
 <a class="back" href="index.html#paper">&larr; EthicalAI</a>
 <p class="eyebrow">Working paper</p>
+{frontmatter}
+<p><a href="paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
 {body}
 </div></body></html>
 """
@@ -116,7 +121,16 @@ th{{background:var(--panel);font-weight:700}}
 
 def main():
     md = SRC.read_text(encoding="utf-8")
-    OUT.write_text(PAGE.format(body=render(md)), encoding="utf-8")
+    if not md.startswith('---\n'):
+        raise ValueError('The resource manuscript needs canonical YAML front matter')
+    _,header,body=md.split('---\n',2)
+    data=yaml.safe_load(header)
+    title=esc(data['title'])
+    abstract=' '.join(data['abstract'].split())
+    frontmatter='<h1>'+title+'</h1><p>'+esc(str(data['author']))+' · '+esc(str(data['date']))+'</p><h2>Abstract</h2><p>'+inline(abstract)+'</p>'
+    description=esc(abstract[:180]).replace('"','&quot;')
+    rendered=render(body,1)
+    OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)} from {SRC.relative_to(ROOT)}")
 
 

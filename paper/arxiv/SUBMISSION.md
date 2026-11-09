@@ -11,7 +11,7 @@ bash paper/build-arxiv.sh
 ```
 
 This produces:
-- `paper/arxiv/main.tex` and `paper/arxiv/body.tex` (the source)
+- `paper/arxiv/main.tex` (standalone source generated from the canonical Markdown)
 - `paper/arxiv/main.pdf` (local sanity-check render)
 - `paper/arxiv/submission.tar.gz` (the upload to arXiv)
 
@@ -51,9 +51,9 @@ Go to https://arxiv.org/submit and click **Start a new submission**.
 - **Authors:** `Alexandru Dan` / Triumvirate Labs
 - **Abstract:** copy from the YAML abstract block at the top of
   `paper/draft.md`.
-- **Comments:** `Pilot-feasibility report. 8 pages plus references.
-  Target venue: NeurIPS 2026 workshop (TBD). Code and benchmark at
-  https://github.com/danlex/ethicalhive`
+- **Comments:** describe the actual page count printed by `pdfinfo paper/draft.pdf`
+  and the intended venue once chosen. The code and frozen results are at
+  https://github.com/danlex/ethicalhive .
 
 ### 3.4 Upload
 

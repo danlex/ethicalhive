@@ -15,6 +15,7 @@ Flags:
 """
 import json, sys, glob, math
 from collections import defaultdict
+from pathlib import Path
 
 FLAG = {"REVISE", "BLOCK"}          # predicted/gold "needs attention"
 VALID = {"SHIP", "REVISE", "BLOCK"}
@@ -27,7 +28,7 @@ def load(paths):
     dec = json.JSONDecoder()
     for pat in paths:
         for fn in glob.glob(pat):
-            text = open(fn).read()
+            text = Path(fn).read_text()
             idx, n = 0, len(text)
             while idx < n:
                 while idx < n and text[idx].isspace():
@@ -49,7 +50,9 @@ def score(rows):
         return p[1] if len(p) > 1 and p[0] == "INT" else None
 
     tp = fp = tn = fn = 0
-    flagged = attributed = 0
+    flagged = attributed = exact_attributed = 0
+    family_tp = exact_tp = 0
+    exact_set_hits = exact_set_predictions = exact_set_gold = 0
     for r in rows:
         gold_pos = r["expected"] in FLAG
         pred_pos = r["got"] in FLAG          # parse errors count as "no flag"
@@ -59,10 +62,20 @@ def score(rows):
         else: tn += 1
         if pred_pos:                          # rule-ID attribution: did a flag cite the right clause?
             flagged += 1
+            exact_rids = set(r.get('rule_ids', []))
+            exact_gold = set(r.get('gold_clauses', []))
+            exact_match = bool(exact_rids & exact_gold)
+            exact_attributed += exact_match
+            if gold_pos:
+                exact_tp += exact_match
+                exact_set_hits += len(exact_rids & exact_gold)
+                exact_set_predictions += len(exact_rids)
+                exact_set_gold += len(exact_gold)
             rids = {clause(x) for x in r.get("rule_ids", [])} - {None}
             gcls = {clause(x) for x in r.get("gold_clauses", [])} - {None}
             if rids & gcls:
                 attributed += 1
+                family_tp += gold_pos
     ruleid = attributed / flagged if flagged else float("nan")
     recall = tp / (tp + fn) if (tp + fn) else float("nan")        # caught real problems
     specificity = tn / (tn + fp) if (tn + fp) else float("nan")   # left clean drafts alone
@@ -72,7 +85,20 @@ def score(rows):
     return dict(n=n, exact=exact, exact_acc=exact / n if n else float("nan"),
                 errors=errors, tp=tp, fp=fp, tn=tn, fn=fn,
                 recall=recall, specificity=specificity, precision=precision, f1=f1,
-                ruleid=ruleid)
+                # Legacy name retained for existing consumers: this is FAMILY
+                # overlap among all flags, not exact numbered-rule attribution.
+                ruleid=ruleid, flagged=flagged, family_attributed=attributed,
+                exact_attributed=exact_attributed, family_tp_attributed=family_tp,
+                exact_tp_attributed=exact_tp,
+                family_attribution=ruleid,
+                exact_rule_attribution=exact_attributed/flagged if flagged else float('nan'),
+                family_tp_attribution=family_tp/tp if tp else float('nan'),
+                exact_rule_tp_attribution=exact_tp/tp if tp else float('nan'),
+                exact_rule_micro_precision_tp=exact_set_hits/exact_set_predictions if exact_set_predictions else float('nan'),
+                exact_rule_micro_recall_tp=exact_set_hits/exact_set_gold if exact_set_gold else float('nan'),
+                exact_rule_set_hits_tp=exact_set_hits,
+                exact_rule_set_predictions_tp=exact_set_predictions,
+                exact_rule_set_gold_tp=exact_set_gold)
 
 
 def fmt(x):
@@ -133,12 +159,14 @@ def main():
         by_rev[r.get("reviewer", "?")].append(r)
 
     cols = ["reviewer", "n", "exact_acc", "recall", "specificity", "precision", "f1", "errors"]
-    print(f"{'reviewer':<10}{'n':>4}{'exact':>8}{'recall':>8}{'spec':>7}{'prec':>7}{'f1':>7}{'ruleID':>8}{'err':>5}")
+    print(f"{'reviewer':<10}{'n':>4}{'exact':>8}{'recall':>8}{'spec':>7}{'prec':>7}{'f1':>7}{'family':>8}{'ruleTP':>8}{'err':>5}")
     print("-" * 64)
     for rev in sorted(by_rev):
         s = score(by_rev[rev])
         print(f"{rev:<10}{s['n']:>4}{fmt(s['exact_acc']):>8}{fmt(s['recall']):>8}"
-              f"{fmt(s['specificity']):>7}{fmt(s['precision']):>7}{fmt(s['f1']):>7}{fmt(s['ruleid']):>8}{s['errors']:>5}")
+              f"{fmt(s['specificity']):>7}{fmt(s['precision']):>7}{fmt(s['f1']):>7}{fmt(s['ruleid']):>8}"
+              f"{fmt(s['exact_rule_tp_attribution']):>8}{s['errors']:>5}")
+    print('family = matching clause family / all flags (legacy ruleid); ruleTP = at least one exact gold rule / true-positive flags.')
 
     # counts + Wilson 95% CIs for the headline proportions, per the small-n rule
     if want_ci:
@@ -151,7 +179,9 @@ def main():
             print(ci_line("precision (tp/tp+fp)", s["tp"], s["tp"] + s["fp"]))
             flagged = s["tp"] + s["fp"]
             attributed = round(s["ruleid"] * flagged) if flagged and s["ruleid"] == s["ruleid"] else 0
-            print(ci_line("rule-ID attribution", attributed, flagged))
+            print(ci_line("family / all flags", attributed, flagged))
+            print(ci_line("exact rule / all flags", s['exact_attributed'], flagged))
+            print(ci_line("exact rule / TP flags", s['exact_tp_attributed'], s['tp']))
 
     # per-case disagreement detail across reviewers, if more than one reviewer present
     if len(by_rev) > 1:

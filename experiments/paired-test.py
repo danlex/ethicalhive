@@ -11,36 +11,23 @@ Usage:
   paired-test.py <condA> <condB> [--suites s1,s2,...]
   e.g. paired-test.py judge mono-rid
 
-For condition names, a glob of '<cond>-20*' is used, so 'judge' excludes 'judge-ctx' and
-'judge-anon' (which are '<cond>-ctx-20*' etc.).
+Conditions use the same explicit run manifest as tables and figures. Exact case
+IDs and gold verdicts must agree before a paired comparison is made.
 """
-import glob
-import json
 import math
-import sys
 from pathlib import Path
+import argparse
+from research_runs import DEFAULT_MANIFEST, load_condition, ResearchDataError
 
-ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "experiments" / "results"
 SUITES = ["anchoring", "capitulation", "scope-creep", "selective-evidence",
           "source-fabrication", "sycophancy"]
 FLAG = {"REVISE", "BLOCK"}
 
 
-def load(cond, suites):
-    """case_id -> got, from the newest file per suite for this condition."""
-    out = {}
-    for s in suites:
-        files = sorted(glob.glob(str(RESULTS / f"run-suite-{s}-hard-{cond}-20*.jsonl")))
-        if not files:
-            continue
-        for line in open(files[-1]):
-            line = line.strip()
-            if not line:
-                continue
-            r = json.loads(line)
-            out[r["case_id"]] = (r["got"], r["expected"])
-    return out
+def load(cond, suites, manifest=DEFAULT_MANIFEST):
+    """case_id -> (prediction, gold), from verified manifest records."""
+    _,rows=load_condition(cond,modes=suites,manifest=manifest)
+    return {r['case_id']:(r['got'],r['expected']) for r in rows}
 
 
 def mcnemar_exact_p(b, c):
@@ -55,15 +42,16 @@ def mcnemar_exact_p(b, c):
 
 
 def main():
-    if len(sys.argv) < 3:
-        print(__doc__); sys.exit(1)
-    condA, condB = sys.argv[1], sys.argv[2]
-    suites = SUITES
-    for i, a in enumerate(sys.argv):
-        if a == "--suites" and i + 1 < len(sys.argv):
-            suites = [x.strip() for x in sys.argv[i + 1].split(",") if x.strip()]
-    A, B = load(condA, suites), load(condB, suites)
-    ids = [i for i in A if i in B]
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('condition_a');parser.add_argument('condition_b')
+    parser.add_argument('--manifest',type=Path,default=DEFAULT_MANIFEST)
+    parser.add_argument('--suites',default=','.join(SUITES))
+    args=parser.parse_args();condA,condB=args.condition_a,args.condition_b
+    suites=[s.strip() for s in args.suites.split(',') if s.strip()]
+    A, B = load(condA,suites,args.manifest),load(condB,suites,args.manifest)
+    if A.keys()!=B.keys() or any(A[i][1]!=B[i][1] for i in A):
+        raise ResearchDataError('Paired conditions must contain identical case IDs and gold verdicts')
+    ids = list(A)
     clean = [i for i in ids if A[i][1] == "SHIP"]
 
     # On clean cases: "correct" = left alone (SHIP); "wrong" = over-flagged.
