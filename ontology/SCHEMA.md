@@ -36,6 +36,8 @@ and is validated by `experiments/validate-ontology.py`.
 | `human_parallel` | string | no | the named human cognitive failure this parallels (empty for AI-native) |
 | `example` | string | no | one illustrative or grounded example (grounded examples carry an inline `[arXiv:id]` tag) |
 | `arxiv` | object | no | `{count, papers:[{id, year, title}]}` for the modes grounded in literature |
+| `selected_papers` | list | yes | zero to three selected research citations; target three, with explicit shortfalls |
+| `literature_search` | object | yes | independent measured query total with source, scope, query, filters, URL, date and status |
 | `violates` | list | no | principle ids this mode breaches |
 | `causes` | list | no | harm-type ids this mode produces |
 | `is_a` | list | no | broader family-mode ids; must form an acyclic hierarchy |
@@ -70,9 +72,10 @@ when a candidate was already indexed as an alias.
 Definition sources may carry `publication` metadata for a reviewed research-paper
 link: `type` (`journal-article`, `proceedings-article`, or `posted-content`),
 `authors`, `year`, `venue`, `doi` when available, `evidence_scope`,
-`verification_url`, and `verified_date`. These papers appear under **Human and
-related research** in the existing entry and ontology details. The separate
-`arxiv` list supplies **AI research**. A publication record confirms a citation's
+`verification_url`, and `verified_date`. These legacy records are normalized into
+canonical selections labelled **Human and related research**. Legacy `arxiv`
+records supply the original **AI research** citations; new selections may also
+include AI papers from other scholarly publishers. A publication record confirms a citation's
 identity and stated relevance; it does not automatically change `source_check`,
 the entry's analogy status, or establish empirical AI evidence. Access depth
 remains explicit in `consulted`; books, chapters and reference pages are not
@@ -88,9 +91,35 @@ separate from bibliography availability. Recovered AI citations may disclose
 `relevance`, `consulted`, `verified_date` and `verification_url`; `arxiv.count`
 remains null when only individual citations were checked and no query total was
 measured.
-Row paper counts show the number of citations linked in that entry, across both
-domains. Historical arXiv search totals appear only in the expanded AI section
-and are not presented as counts of verified papers.
+Row paper counts use `literature_search.count`, independently of the number of
+selected citations. Current totals are arXiv metadata-query matches in cs.AI,
+cs.CL and cs.LG. They are a reproducible search proxy, not full-text citation
+counts, all-fields totals or manually verified topical-paper counts. Keyword
+matching and stemming can include unrelated uses. Each record stores the actual
+query, filters, API URL, retrieval timestamp, database and scope. An unavailable
+total is `null` and displays a dash; a successful zero-result search displays 0.
+Do not derive totals from a top-k response or a paper's cited-by count. Historical
+`arxiv.count` values remain separately labelled with their missing search dates.
+
+`selected_papers` is the canonical bibliography for the catalogue, map, index and
+downloads. The target is three distinct publications per entry. Fewer selections
+remain an explicit gap, not an invitation to add unrelated sources. Each record
+contains `id`, `title`, `url`, `year`, `venue`, `authors` when available,
+`publication_type`, `domain` (`ai` or `human-related`), `relevance`, `consulted`,
+and `verification_url`. DOI/arXiv versions and matching publication titles are
+deduplicated. Selected citations may include empirical, theoretical and review
+papers or preprints; they need not all be positive evidence. Metadata-only access
+is labelled as such. Books, chapters, reference pages, book reviews, meeting
+abstracts and registry entries do not fill research-paper slots. Publication
+identity and topical relevance do not establish an AI analogy or alter the
+definition-source status. Legacy `arxiv.papers` and `definition_sources` remain
+unchanged for historical traceability; `source_reference` records their origin.
+
+The CSV includes `selected_papers` and `literature_search` JSON columns. Its older
+`research_papers` column retains the legacy typed human/related source records.
+Coverage exports report selected-link counts and independent search totals in
+separate fields. `meta.literature_review.record` points to the selection/count
+audit, including shortfalls, source access and rejected matches.
 
 `meta.paper_source_review.record` points to the latest bibliography review. Its
 `previous_review` pointer retains earlier reviews; `previous_record` in the meta

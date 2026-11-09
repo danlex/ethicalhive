@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 import yaml
-from catalogue_sources import research_papers, source_coverage
+from catalogue_sources import research_papers, source_coverage, selected_papers, literature_search
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -46,45 +46,37 @@ def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-def render_ai_papers(arxiv):
-    """count + top-3 papers, or an honest 'no paper' note."""
-    if not arxiv or not arxiv.get("papers"):
-        return '<p class="cite none">No AI paper linked for this entry.</p>'
-    count = arxiv.get("count")
-    count_note = (f'<b>{count:,}</b> arXiv search results (cs.AI/CL/LG)' if isinstance(count, int)
-                  else f'{len(arxiv["papers"])} cited arXiv paper' + ('s' if len(arxiv['papers']) != 1 else ''))
-    items = []
-    for p in arxiv["papers"][:3]:
-        pid = re.sub(r"v\d+$", "", p.get("id", ""))
-        yr = f' ({p["year"]})' if p.get("year") else ""
-        items.append(
-            f'<li><a href="https://arxiv.org/abs/{pid}" target="_blank" '
-            f'rel="noopener">arXiv:{pid}</a>{yr} {esc(p.get("title", ""))}'
-            +(('<br><small>Relevance: '+esc(p['relevance'])+'</small>') if p.get('relevance') else '')
-            +(('<br><small>Access: '+esc(p['consulted'])+'</small>') if p.get('consulted') else '')+'</li>'
-        )
-    return (
-        f'<p class="cite">{count_note}</p>'
-        f'<ul class="papers">{"".join(items)}</ul>'
-    )
-
-
 def render_papers(mode):
-    out = ['<div class="research-papers"><h4>AI research</h4>', render_ai_papers(mode.get('arxiv'))]
-    papers = research_papers(mode)
-    if papers:
-        out.append('<h4>Human and related research</h4><ul class="human-sources human-papers">')
-        for source in papers:
-            publication = source['publication']
-            citation = ', '.join(publication.get('authors', []))
-            citation += ' (' + str(publication['year']) + '). ' + publication.get('venue', '')
-            out.append('<li><a href="' + esc(source['url']) + '">' + esc(source['title']) +
-                       '</a><br><small>' + esc(citation) + '</small><br><small>Relevance: ' +
-                       esc(publication['evidence_scope']) + '</small><br><small>Access: ' +
-                       esc(source['consulted']) + '</small></li>')
+    search=literature_search(mode)
+    count=search['count']
+    if count is None:
+        total='Literature total unavailable.'
+    else:
+        total=f'<b>{count:,}</b> metadata-query matches in {esc(search["database"])} (cs.AI/CL/LG).'
+    out=['<div class="research-papers"><p class="literature-total">'+total]
+    if search.get('url'):out.append(' <a href="'+esc(search['url'])+'">View search</a>.')
+    if search.get('queried_at'):out.append(' Checked '+esc(search['queried_at'][:10])+'.')
+    out.append('</p>')
+    historic=(mode.get('arxiv') or {}).get('count')
+    if isinstance(historic,int):
+        out.append('<p class="historical-paper-count">Earlier AI-only arXiv map: '+f'{historic:,}'+
+                   ' query matches (cs.AI/CL/LG; search date not recorded). This is a separate historical total.</p>')
+    if search.get('query'):out.append('<p class="literature-query"><b>Query:</b> '+esc(search['query'])+'</p>')
+    if search.get('scope'):out.append('<p class="literature-scope">'+esc(search['scope'])+'</p>')
+    papers=selected_papers(mode)
+    out.append('<p class="selected-paper-count">Selected citations: '+str(len(papers))+' of 3.</p>')
+    for domain,heading,css in [('ai','AI research','papers'),('human-related','Human and related research','human-sources human-papers')]:
+        group=[p for p in papers if p['domain']==domain]
+        if not group:continue
+        out.append('<h4>'+heading+'</h4><ul class="'+css+'">')
+        for paper in group:
+            citation=', '.join(paper.get('authors',[]))
+            citation+=' ('+str(paper['year'])+'). '+paper.get('venue','')
+            out.append('<li><a href="'+esc(paper['url'])+'">'+esc(paper['title'])+'</a><br><small>'+esc(citation)+
+                '</small><br><small>Relevance: '+esc(paper['relevance'])+'</small><br><small>Access: '+esc(paper['consulted'])+'</small></li>')
         out.append('</ul>')
-    elif not (mode.get('arxiv') or {}).get('papers'):
-        out.append('<p class="paper-gap">A research-paper citation is still needed. Any book or reference sources are listed below.</p>')
+    if len(papers)<3:
+        out.append('<p class="paper-gap">'+str(3-len(papers))+' further relevant paper citation'+('s are' if len(papers)<2 else ' is')+' still needed. Book and reference sources are listed separately.</p>')
     out.append('</div>')
     return ''.join(out)
 
@@ -192,13 +184,15 @@ def box(mode):
     key = esc(mode["name"].lower())
     arx = mode.get("arxiv") or {}
     variants = GROUPED.get(mode['id'], [])
-    ai_links=len(arx.get('papers') or [])
-    human_links=len(research_papers(mode))
-    cnt=ai_links+human_links
-    has_papers = "1" if cnt else "0"
+    search=literature_search(mode)
+    cnt=search['count']
+    selected=selected_papers(mode)
+    has_papers = "1" if selected else "0"
+    count_title=(f'{cnt:,} arXiv metadata-query matches (cs.AI/CL/LG); checked {search["queried_at"][:10]}; {len(selected)} selected citations'
+                 if cnt is not None else f'Literature search total unavailable; {len(selected)} selected citations')
     pcount_html = (
-        f'<span class="pcount" title="{cnt} linked research-paper citations: {ai_links} AI, {human_links} human/related">{cnt}</span>'
-        if cnt else '<span class="pcount pcount-empty" title="No research-paper citation linked; book or reference sources may be available">—</span>'
+        f'<span class="pcount" title="{esc(count_title)}">{cnt:,}</span>'
+        if cnt is not None else f'<span class="pcount pcount-empty" title="{esc(count_title)}">—</span>'
     )
     cat = esc(mode.get("category", ""))
     proposed = bool(mode.get('research_candidate'))
@@ -216,7 +210,7 @@ def box(mode):
         ex_html = '<h4>Proposed AI manifestation / test · untested</h4><p>'+esc(mode['proposed_ai_manifestation'])+'</p>'
     return (
         f'      <details id="{mode["id"]}" class="{cls}" data-fam="{datafam}" '
-        f'data-num="{num}" data-overlap="{esc(related or "")}" data-tag="{tag}" data-papers="{has_papers}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
+        f'data-num="{num}" data-overlap="{esc(related or "")}" data-tag="{tag}" data-papers="{has_papers}" data-paper-total="{cnt if cnt is not None else ""}" data-selected-papers="{len(selected)}" data-candidate="{1 if candidate else 0}" data-has-analogy="{1 if has_analogy else 0}" data-source-status="{review}" data-key="{key}">'
         f'<summary>'
         f'<div class="head"><h2>{esc(mode["name"])}</h2>'
         f'<p class="one">{esc(mode["definition"])}</p>'
@@ -274,13 +268,15 @@ def export_catalogue(onto):
     public['meta']['mode_count']=len(public['modes'])
     (ROOT/'docs/behaviours.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     buffer=io.StringIO(newline='')
-    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','research_papers','grouped_under','grouping_reason','synonyms','is_a','relates_to','concept_boundary','related_terms','terminology_sources']
+    fields=['id','num','name','definition','category','tag','research_candidate','source_check','ai_evidence_status','proposed_ai_manifestation','definition_sources','source_access','research_papers','literature_search','selected_papers','grouped_under','grouping_reason','synonyms','is_a','relates_to','concept_boundary','related_terms','terminology_sources']
     writer=csv.DictWriter(buffer,fieldnames=fields,lineterminator='\n');writer.writeheader()
     for mode in sorted(onto['modes'],key=lambda m:m['num']):
         row={k:mode.get(k,'') for k in fields}
         row['definition_sources']=' ; '.join(s['url'] for s in mode.get('definition_sources',[]))
         row['source_access']=' ; '.join(s['consulted'] for s in mode.get('definition_sources',[]))
         row['research_papers']=json.dumps(research_papers(mode),ensure_ascii=False)
+        row['literature_search']=json.dumps(literature_search(mode),ensure_ascii=False)
+        row['selected_papers']=json.dumps(selected_papers(mode),ensure_ascii=False)
         for key in ('synonyms','is_a','relates_to','related_terms','terminology_sources'):
             row[key]=json.dumps(mode.get(key,[]),ensure_ascii=False)
         writer.writerow(row)
@@ -295,6 +291,8 @@ def export_catalogue(onto):
         ('entries_with_ai_papers','ai_paper_links'),('entries_with_human_related_papers','human_related_paper_links'),
         ('entries_with_reference_sources','reference_source_links'))}
     counts['entries_without_research_papers']=sum(not r['ai_paper_links'] and not r['human_related_paper_links'] for r in coverage)
+    counts['entries_with_literature_totals']=sum(r['literature_match_count'] is not None for r in coverage)
+    counts['entries_with_three_selected_papers']=sum(r['selected_paper_count']==3 for r in coverage)
     (ROOT/'docs/source-coverage.json').write_text(json.dumps({'date':onto['meta']['updated'],
         'scope':'Linked citations, not counts of proven AI mechanisms. Human/related papers do not establish an AI analogy; metadata-only checks do not validate a definition.',
         'counts':counts,'records':coverage},ensure_ascii=False,indent=2)+'\n')
@@ -352,8 +350,8 @@ def render(modes):
     modes=sorted(modes,key=lambda m:m['num'])
     n = len(modes)
     ai = sum(1 for m in modes if m.get("ai_native"))
-    grounded = sum(bool((m.get("arxiv") or {}).get("papers")) for m in modes)
-    human_papers = sum(bool(research_papers(m)) for m in modes)
+    grounded = sum(any(p['domain']=='ai' for p in selected_papers(m)) for m in modes)
+    human_papers = sum(any(p['domain']=='human-related' for p in selected_papers(m)) for m in modes)
     detected = sum(1 for m in modes if m.get("detected_by"))
     shipped = sum(1 for m in modes if m.get("highlighted"))
     proposed=sum(bool(m.get('research_candidate')) for m in modes)

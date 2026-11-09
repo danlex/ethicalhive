@@ -14,7 +14,7 @@ Usage: experiments/build-ontology-map.py
 import html
 import json
 from pathlib import Path
-from catalogue_sources import research_papers
+from catalogue_sources import selected_papers, literature_search
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -64,8 +64,10 @@ def build_tree():
             "boundary": m.get('concept_boundary',''),
             "terms": m.get('related_terms',[]),
             "term_sources": m.get('terminology_sources',[]),
-            "human_papers": research_papers(m),
-            "ai_papers": (m.get('arxiv') or {}).get('papers',[]),
+            "human_papers": [p for p in selected_papers(m) if p['domain']=='human-related'],
+            "ai_papers": [p for p in selected_papers(m) if p['domain']=='ai'],
+            "literature_search": literature_search(m),
+            "selected_paper_count": len(selected_papers(m)),
             "subtypes": subtypes[m['id']],
             "rel": links(m,'relates_to'),
             "opp": links(m,'opposite_of'),
@@ -77,7 +79,7 @@ def build_tree():
             "pr": pn.get((m.get("violates") or ["?"])[0], "?"),
             "hm": hn.get((m.get("causes") or ["?"])[0], "?"),
             "hp": "" if m.get("ai_native") else m.get("human_parallel", ""),
-            "pc": (m.get("arxiv") or {}).get("count") or 0,
+            "pc": literature_search(m)['count'],
             "hi": bool(m.get("highlighted")), "ai": bool(m.get("ai_native"))}}
 
     human = [m for m in modes if not m.get("ai_native")]
@@ -329,7 +331,7 @@ function showPanel(id){
     const tier=m.proposed?'Proposed analogy':(m.ai?'AI-native':'Human-paralleled');
     t=`<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'var(--humansoft)'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
      +`<h3>${esc(m.n)}</h3>`
-     +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`)
+     +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span></div>`)
      +`<p class="reference-id"><b>Reference ID:</b> ${esc(m.ref)}</p>`
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${m.isa.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
@@ -337,8 +339,9 @@ function showPanel(id){
      +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${m.subtypes.map(r=>`<a class="rel-link" data-goto="${esc(r.id)}">${esc(r.n)}</a>`).join(' · ')}</p></div>`:'')
      +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
      +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
-     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="https://arxiv.org/abs/${esc(p.id)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}</li>`).join("")}</ul></div>`:"")
-     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.publication.evidence_scope)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
+     +`<div class="sec literature-total"><span class="k">Literature matches</span><p>${m.pc==null?'Total unavailable':m.pc.toLocaleString()+' arXiv metadata-query matches (cs.AI/CL/LG)'}${m.literature_search&&m.literature_search.url?` · <a href="${esc(m.literature_search.url)}">${esc(m.literature_search.database)} search</a>`:''}. Selected citations: ${m.selected_paper_count} of 3.</p>${m.literature_search&&m.literature_search.query?`<p>Query: ${esc(m.literature_search.query)}</p><p>Checked: ${esc((m.literature_search.queried_at||"").slice(0,10)||"Not retrieved")}</p>`:''}</div>`
+     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="${esc(p.url)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}<br>Access: ${esc(p.consulted)}</li>`).join("")}</ul></div>`:"")
+     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.relevance)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
      +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
@@ -481,15 +484,16 @@ INLINE_JS = r"""(function(){
     const tier=m.proposed?'Proposed analogy':(m.ai?'AI-native':'Human-paralleled');
     return `<div class="ptag" style="color:${m.ai?'var(--accent-d)':'#1b3e8c'};background:${m.ai?'rgba(255,73,49,.1)':'#eef3fb'}">${tier}${m.grp?' · '+esc(m.grp):''}</div>`
      +`<p class="reference-id"><b>Reference ID:</b> ${esc(m.ref)}</p>`
-     +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span>${m.pc?`<span class="tag">${m.pc.toLocaleString()} papers</span>`:''}</div>`)
+     +(m.proposed?`<p class="note">Untested AI analogy. ${m.review==='definition-source-consulted'?'Human-definition source consulted.':'Definition source check pending.'}</p>`:`<div class="chips"><span class="tag"><span class="sw" style="background:${pcol(m.pr)}"></span>violates ${esc(m.pr)}</span><span class="tag">causes ${esc(m.hm)}</span></div>`)
      +`<p>${esc(m.def)}</p>`
      +(m.isa&&m.isa.length?`<div class="sec"><span class="k">Type of</span><p>${links(m.isa)}</p></div>`:'')
      +(m.syn&&m.syn.length?`<div class="sec"><span class="k">Also known as</span><p>${m.syn.map(esc).join(', ')}</p></div>`:'')
      +(m.subtypes&&m.subtypes.length?`<div class="sec"><span class="k">Includes subtypes</span><p>${links(m.subtypes)}</p></div>`:'')
      +(m.boundary?`<div class="sec"><span class="k">Concept boundary</span><p>${esc(m.boundary)}</p></div>`:'')
      +(m.terms&&m.terms.length?`<div class="sec"><span class="k">Related terms · not synonyms</span><ul>${m.terms.map(t=>`<li><b>${esc(t.name)}</b> · ${esc(t.relation)}. ${esc(t.note)}</li>`).join('')}</ul></div>`:'')
-     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="https://arxiv.org/abs/${esc(p.id)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}</li>`).join("")}</ul></div>`:"")
-     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.publication.evidence_scope)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
+     +`<div class="sec literature-total"><span class="k">Literature matches</span><p>${m.pc==null?'Total unavailable':m.pc.toLocaleString()+' arXiv metadata-query matches (cs.AI/CL/LG)'}${m.literature_search&&m.literature_search.url?` · <a href="${esc(m.literature_search.url)}">${esc(m.literature_search.database)} search</a>`:''}. Selected citations: ${m.selected_paper_count} of 3.</p>${m.literature_search&&m.literature_search.query?`<p>Query: ${esc(m.literature_search.query)}</p><p>Checked: ${esc((m.literature_search.queried_at||"").slice(0,10)||"Not retrieved")}</p>`:''}</div>`
+     +(m.ai_papers&&m.ai_papers.length?`<div class="sec"><span class="k">AI research</span><ul>${m.ai_papers.map(p=>`<li><a href="${esc(p.url)}">${esc(p.title)}</a>${p.relevance?`<br>${esc(p.relevance)}`:""}<br>Access: ${esc(p.consulted)}</li>`).join("")}</ul></div>`:"")
+     +(m.human_papers&&m.human_papers.length?`<div class="sec"><span class="k">Human and related research</span><ul>${m.human_papers.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a><br>${esc(s.relevance)}<br>Access: ${esc(s.consulted)}</li>`).join("")}</ul></div>`:"")
      +(m.term_sources&&m.term_sources.length?`<div class="sec"><span class="k">Terminology sources</span><ul>${m.term_sources.map(s=>`<li><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.consulted)}</li>`).join('')}</ul></div>`:'')
      +(m.ex?`<div class="sec"><span class="k">Example</span><p>${esc(m.ex)}</p></div>`:'')
      +(m.overlap?`<div class="sec"><span class="k">Linked operational overlap</span><p><a href="./#${esc(m.overlap.id)}">${esc(m.overlap.name)}</a></p><p>${esc(m.overlap.reason)}</p></div>`:'')
