@@ -134,10 +134,11 @@ selection cannot silently include `judge-ctx` or `judge-anon`.
 
 The records identify the reviewer alias `sonnet`. The release does not
 establish an exact backend model version, decoding temperature, random
-seed, CLI version or complete token and latency cost. Selected hard-file
-timestamps fall in October and November 2026, but are not independently
-verified execution dates. The manifest is a retrospective selection,
-not a preregistration.
+seed, CLI version or complete token and latency cost. The main seven-condition
+hard-set filenames carry October and November 2026 timestamps; the supplemental
+legacy `contract` files include May dates. These are recorded filenames, not
+independently verified execution dates. The manifest is a retrospective
+selection, not a preregistration.
 
 # 4. Benchmark
 
@@ -178,8 +179,8 @@ specificity on gold SHIP cases and precision among predicted flags.
 REVISE and BLOCK both count as flags. Attribution is reported separately
 at clause-family and exact numbered-rule levels. A condition's correct
 rule matches among true-positive flags use a different denominator from
-its flag precision. Counts and Wilson intervals in the generated summary
-keep these denominators visible.
+its flag precision. Counts in the generated summary keep these
+denominators visible.
 
 ## 5.1 Detection and specificity
 
@@ -208,6 +209,7 @@ the paired tests, rather than interval overlap, assess their differences.
 The freeform comparison is inconclusive at this sample size. The
 unnamed-versus-named comparison has three versus two discordant
 pairs (p = 1.000); this is not an equivalence test.
+These exploratory p-values are unadjusted for the comparisons shown.
 
 The context control's 21/28 specificity is consistent with a benefit from
 focusing the decision, even when other clauses remain visible. It does
@@ -228,6 +230,12 @@ alarms. Exact attribution requires at least one emitted numbered rule
 to match a gold rule. It does not imply that every additional emitted
 identifier is appropriate. The JSON supplement also reports micro
 precision and recall over emitted rule sets, penalizing extra identifiers.
+
+Across the named judge's true-positive flags, the per-case extracted
+identifier sets contain 84 identifiers, of which 37 match the 37 recorded
+gold identifiers. Micro precision is therefore 37/84 and micro recall
+37/37 under this literal scoring rule. The 32/32 case-level match count
+does not adjudicate the appropriateness of every additional identifier.
 
 The distinction matters in three selective-evidence cases: the monolithic
 reviewer cites `INT-SEL-02` where the gold label is `INT-SEL-01`. A family
