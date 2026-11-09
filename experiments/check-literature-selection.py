@@ -30,6 +30,7 @@ for old,mode in zip(baseline['modes'],onto['modes']):
     assert record['shortfall']==3-len(papers)
     assert search==record['literature_search']
     assert search['query']==refresh.arxiv_clause(plan[mode['num']]['query'])
+    assert refresh.cache_matches(search,search['query']),mode['num']
     for p in papers:
         # A DOI rejected for one mistaken attribution can be relevant elsewhere.
         assert p['id'] not in rejected-{'doi:10.1002/bdm.583'},(mode['num'],p['id'])
@@ -59,4 +60,11 @@ fixture['literature_search']['count']=0
 assert '>0</span>' in builder.box(fixture)
 assert paper_identifier('https://arxiv.org/pdf/2311.07954v2.pdf')==paper_identifier('https://doi.org/10.48550/arXiv.2311.07954')
 assert paper_identifier('https://doi.org/10.1037//h0040525')=='doi:10.1037/h0040525'
+from urllib.parse import urlencode
+import arxiv_citations
+query='all:"first alternative" OR all:"second alternative"'
+wrong={'query':query,'url':arxiv_citations.API+'?'+urlencode({'search_query':query+' AND '+arxiv_citations.CATEGORY_FILTER})}
+assert not refresh.cache_matches(wrong,query)
+correct={**wrong,'url':arxiv_citations.API+'?'+urlencode({'search_query':'('+query+') AND '+arxiv_citations.CATEGORY_FILTER})}
+assert refresh.cache_matches(correct,query)
 print('PASS: independent totals (large/zero/unavailable), canonical citations, selection audit, exact queries and all legacy mode fields preserved.')

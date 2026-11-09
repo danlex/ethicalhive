@@ -4,13 +4,29 @@ import argparse,json,re,time
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.error import HTTPError
-from urllib.parse import urlencode
+from urllib.parse import urlencode,urlparse,parse_qs
 import arxiv_citations
 from arxiv_metadata import feed
 
 def arxiv_clause(query):
     tokens=re.findall(r'"[^"]*"|\(|\)|\bAND\b|\bOR\b|[^\s()]+',query)
     return ' '.join(token if token in ('AND','OR','(',')') else 'all:'+token for token in tokens)
+
+def has_top_level_or(query):
+    depth=0
+    for token in re.findall(r'"[^"]*"|\(|\)|\bOR\b',query):
+        if token=='(':depth+=1
+        elif token==')':depth-=1
+        elif token=='OR' and depth==0:return True
+    return False
+
+def cache_matches(data,query):
+    if data.get('query')!=query:return False
+    actual=parse_qs(urlparse(data.get('url','')).query).get('search_query',[''])[0]
+    scoped='('+query+') AND '+arxiv_citations.CATEGORY_FILTER
+    # Earlier conjunction-only requests are equivalent. An ungrouped OR is not:
+    # its first branch can escape the category filter under Boolean precedence.
+    return actual==scoped or (not has_top_level_or(query) and actual==query+' AND '+arxiv_citations.CATEGORY_FILTER)
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
@@ -25,8 +41,8 @@ def main():
     failed=[]
     for row in rows:
         n=row['num'];query=arxiv_clause(row['query']);path=args.cache/(str(n)+'.json')
-        if path.exists() and json.loads(path.read_text()).get('query')==query:continue
-        endpoint=arxiv_citations.API+'?'+urlencode({'search_query':query+' AND '+arxiv_citations.CATEGORY_FILTER,'sortBy':'relevance','sortOrder':'descending','max_results':'5'})
+        if path.exists() and cache_matches(json.loads(path.read_text()),query):continue
+        endpoint=arxiv_citations.API+'?'+urlencode({'search_query':'('+query+') AND '+arxiv_citations.CATEGORY_FILTER,'sortBy':'relevance','sortOrder':'descending','max_results':'5'})
         for attempt in range(3):
             try:
                 count,papers=feed(endpoint)
