@@ -12,10 +12,19 @@ Usage: python3 experiments/build-paper-page.py
 """
 import re
 from pathlib import Path
+import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "paper" / "ethicalai-benchmark.md"
 OUT = ROOT / "docs" / "paper.html"
+
+
+def read_manuscript(path):
+    text=path.read_text(encoding='utf-8')
+    if not text.startswith('---\n'):
+        raise ValueError(f'{path.name} needs canonical YAML front matter')
+    _,header,body=text.split('---\n',2)
+    return yaml.safe_load(header),body
 
 
 def esc(s):
@@ -31,7 +40,7 @@ def inline(s):
     return s
 
 
-def render(md):
+def render(md,heading_offset=0):
     lines = md.splitlines()
     out, i, n = [], 0, len(lines)
     while i < n:
@@ -41,7 +50,7 @@ def render(md):
             continue
         m = re.match(r"^(#{1,3})\s+(.*)$", line)
         if m:
-            lvl = len(m.group(1))
+            lvl = min(6,len(m.group(1))+heading_offset)
             out.append(f"<h{lvl}>{inline(m.group(2))}</h{lvl}>")
             i += 1
             continue
@@ -85,7 +94,9 @@ def render(md):
 PAGE = """<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EthicalAI: A Grounded Catalogue of AI Integrity Failure Modes</title>
+<title>{title}</title>
+<meta name="description" content="{description}">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper.html">
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#e7e5e2;--panel:#f6f5f4}}
@@ -109,14 +120,36 @@ th{{background:var(--panel);font-weight:700}}
 <body><div class="wrap">
 <a class="back" href="index.html#paper">&larr; EthicalAI</a>
 <p class="eyebrow">Working paper</p>
+{frontmatter}
+<p><a href="paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
 {body}
 </div></body></html>
 """
 
 
 def main():
-    md = SRC.read_text(encoding="utf-8")
-    OUT.write_text(PAGE.format(body=render(md)), encoding="utf-8")
+    data,body=read_manuscript(SRC)
+    title=esc(data['title'])
+    abstract=' '.join(data['abstract'].split())
+    frontmatter='<h1>'+title+'</h1><p>'+esc(str(data['author']))+' · '+esc(str(data['date']))+'</p><h2>Abstract</h2><p>'+inline(abstract)+'</p>'
+    description=esc(abstract[:180]).replace('"','&quot;')
+    rendered=render(body,1)
+    OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
+    methods,_=read_manuscript(ROOT/'paper/draft.md')
+    section=f'''<section class="framework" id="paper">
+    <p class="research-baseline-note"><strong>Research scope:</strong> the catalogue study describes the historical 207-record release. Its measurements and the auditing pilot do not validate the 227 later analogies in the current 434-record catalogue.</p>
+    <h2>Research papers</h2>
+    <p>Two working papers examine the catalogue's evidence and the use of named obligations to review coding-agent drafts. Revised {esc(str(data['date']))}.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
+      <article class="card"><h3>{title}</h3><p>A resource study of definitions, source support, construction errors and category use. The historical study and the expanded bibliography have separate evidence scopes.</p><p><a href="paper.html">Read the catalogue paper</a> &middot; <a href="paper.pdf">Download PDF</a></p></article>
+      <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="methods-paper.pdf">Download auditing paper · PDF</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/paper/draft.md">Read source</a></p></article>
+    </div>
+    <p><a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
+  </section>'''
+    home=ROOT/'docs/index.html';text=home.read_text(encoding='utf-8')
+    text,count=re.subn(r'<section class="framework" id="paper">.*?</section>',lambda _:section,text,count=1,flags=re.S)
+    if count!=1:raise ValueError('Homepage paper section not found exactly once')
+    home.write_text(text,encoding='utf-8')
     print(f"wrote {OUT.relative_to(ROOT)} from {SRC.relative_to(ROOT)}")
 
 

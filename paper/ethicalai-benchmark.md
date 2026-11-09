@@ -1,533 +1,402 @@
-# EthicalAI: A Grounded Catalogue of AI Integrity Failure Modes, and What Grounding It Revealed
-
-Alexandru DAN
-
-Status: working draft, version 1.0. Companion resource to the clause-grounded advisory
-auditing paper (`paper/draft.md`). Positioning and validation sources are recorded in
-`references/catalogue-prior-art.md`; the two load-bearing comparison figures were verified
-against their primary abstracts.
-
-## Abstract
-
-We catalogue 207 ways an AI system can fail at integrity. Most modes are framed as parallels
-to a named human cognitive failure and organised by ten cognitive systems; a second tier of 39
-modes we label AI-native, as lacking a clear human analogue. The modes are linked by
-a relation graph of which mode violates which obligation, causes which harm, and relates to
-which neighbour, and each grounded mode is tied to a primary paper that was read rather than
-keyword-matched. A hundred and eighty-six of the 207 are grounded this way; the remaining
-twenty-one are documented as having no supporting paper we could find.
-
-Existing resources catalogue AI risk at three altitudes that this one does not occupy:
-societal harm outcomes, adversarial attack techniques, and single-family behavioural
-benchmarks. The nearest prior catalogue at the mechanism level evaluates 30 cognitive biases
-[Malberg et al. 2024]; this catalogue extends across biases, memory, reasoning, hallucination,
-source fabrication, scope creep, and misalignment in one structure. Building it produced two
-findings that stand on their own. Grounding by reading rather than by trusting the reference
-caught citation drift: of roughly fifty cited papers checked while grounding, twenty-nine did
-not support their mode and were re-cited to a paper that does, and several further modes whose
-citation also failed on checking were reclassified as ungrounded rather than re-cited. An
-adversarial verification sweep over all 186
-grounded modes then found that even grounding done by reading mis-stated a specific figure in
-fourteen percent of modes. We also probe the catalogue's own structure: independent model
-raters blind to the catalogue recover its category assignments at Cohen kappa 0.83 to 0.93 (a
-model-based codebook check, not human annotation), and twelve documented incidents we selected
-each map to a named mode, with one partial fit that points to a missing mode. We make no
-state-of-the-art claim; the value is a documented, provenance-checked reference whose
-reliability we measure rather than assume, with the measurements' own limits stated.
-
-## 1. Introduction
-
-A confident answer and a correct answer look identical from the outside. The space between
-them is where integrity failures live, and that space is wide: a model can hallucinate,
-flatter the user into a wrong answer, drop a constraint halfway through a long task, or
-quietly bend a rule for what it decides is a good cause. These are not one failure but many,
-and they have been studied unevenly, under inconsistent names, across cognitive science,
-machine learning, and AI safety.
-
-The gap matters more as AI produces results faster than people can check them. When nine
-mathematicians were needed to confirm whether a model had refuted an eighty-year-old geometry
-conjecture, the lesson, in the words of Shafto, Ono, and Kominers [Shafto et al. 2026], was
-that "discovery is nonstop, and human confirmation is now what is scarce." Formal mathematics
-answers this with proof checkers. The softer integrity failures this catalogue names, a
-confident answer that is wrong, a citation that does not resolve, a constraint quietly dropped,
-have no proof checker, so a named, grounded catalogue and a human-in-the-loop audit are the
-verification infrastructure available for that layer.
-
-This paper describes a resource that names them in one place and ties each name to evidence.
-The organising idea, taken from a companion method paper on clause-grounded advisory
-auditing, is that integrity is a property of a relationship rather than of a model in
-isolation. A human and an agent agree, implicitly or explicitly, on a set of obligations, and
-a failure mode is a way the agent breaks one of them. Organising the catalogue around that
-relationship keeps it readable to the person who has to decide what to do when a flag is
-raised. Here we focus on the catalogue itself: where it sits relative to existing taxonomies,
-how it is structured and grounded, what the grounding revealed about citation reliability, and
-whether its own structure holds up when an outsider tries to reproduce it.
-
-We frame this as a reference artifact rather than a new detector or a leaderboard result: a
-map that other work can cite, reuse, and extend. At this stage a reusable and checked map does
-more for the field than another point score on a single failure mode.
-
-## 2. Why another catalogue
-
-There is no shortage of ways to enumerate what goes wrong with AI. The honest question a new
-catalogue has to answer is not whether failures are worth naming but why the existing
-catalogues do not already name these ones. The prior work clusters at three altitudes, and
-this catalogue sits at none of them.
-
-The first is the societal and governance layer. The MIT AI Risk Repository [Slattery et al.
-2024] is the most comprehensive example: a meta-review of 74 frameworks containing 1,725
-distinct risks, organised by who causes a risk and in what domain. The DeepMind risk taxonomy
-[Weidinger et al. 2021], the NIST AI Risk Management Framework [NIST 2023], and the AI
-Incident Database live here too. The MIT repository is more than a flat list of harms: it
-includes a causal taxonomy (by entity, intent, and timing) and covers AI-caused as well as
-human-caused failures. What it and its neighbours share is the altitude: they organise risks
-and outcomes at the level of governance, not the reasoning step, and do not decompose that step
-into named, mechanism-level ways a model arrives at a confident wrong answer.
-
-The second is the adversarial and security layer. The OWASP Top 10 for LLM Applications
-[OWASP 2025], MITRE ATLAS, and similar efforts catalogue what an attacker does to a system:
-prompt injection, data poisoning, excessive agency. This is largely orthogonal to failures a
-model commits with no adversary present, and where the two touch, the resolution is coarse in
-exactly the place this catalogue is fine-grained. OWASP's single entry for misinformation is
-one bucket over dozens of distinct epistemic mechanisms.
-
-The third is the behavioural-measurement layer, and this is where the overlap is real and
-must be stated plainly. Benchmarks of cognitive bias and surveys of hallucination do
-decompose model reasoning into named mechanisms. The closest single prior catalogue is
-Malberg et al. [2024], a large-scale evaluation of 30 cognitive biases across 20 models. This
-catalogue's classic-bias subset substantially overlaps those 30, and we cite it as the
-nearest prior art. On the hallucination side, the Ji et al. [2022] survey and HALoGEN
-[Ravichander et al. 2025] give principled taxonomies of that one family, and our hallucination
-and source-fabrication modes overlap theirs. The difference is not that these are wrong. It is
-that each decomposes a single family at a time.
-
-The slice none of them occupies, taken together, is the integration. This catalogue records
-207 integrity failure modes, frames most as parallels to a specific named human cognitive
-failure organised by ten cognitive systems, links them with an explicit graph, adds a second
-tier of modes we label AI-native as lacking a clear human analogue, and grounds most entries
-(186 of the 207) in a primary paper that was read. It is broader in coverage than Malberg's 30 biases and extends along axes
-Malberg does not cover (memory, reasoning, output-integrity, and AI-native failures), with a
-relation graph and a cognitive-science organising principle no prior catalogue has. Breadth of
-coverage is not itself a scientific result: more labels do not establish more distinct
-constructs, and Malberg pairs its 30 biases with 30,000 tests across 20 models, which this
-catalogue does not match. The claim is one of integration and coverage, not of superior
-measurement. What this yields is a single map that
-unifies failure families today catalogued in separate, mechanism-specific efforts, grounded in
-cognitive science and linked by an explicit graph. It is a map across existing categories, not
-a new risk category, and we claim that and no more. The full positioning, with every source checked against its primary and
-unverified fields flagged, is in `references/catalogue-prior-art.md`.
-
-## 3. The catalogue: structure and construction
-
-### 3.1 Two tiers
-
-Every mode carries exactly one of two labels. A human-paralleled mode names a construct from
-human psychology and its machine analogue: anchoring, confirmation bias, the illusory-truth
-effect, cognitive dissonance, many of them from the heuristics-and-biases tradition [Tversky
-and Kahneman 1974]. These sit in ten groups organised loosely by brain system. An
-AI-native mode is a failure we judge to lack a genuine human analogue, tied to the machine substrate:
-prompt injection, reward tampering, data contamination, emergent misalignment, backdoor
-triggers, unbounded consumption. A validator rejects any mode that claims neither label or
-both, which keeps the boundary disciplined and forces a judgment on each addition. Of the 207
-modes, 168 are human-paralleled and 39 are AI-native. The full distribution is below; the
-complete list, with every definition and example, is in the released file and on the site.
-
-Three things about this scheme are a deliberate scoping choice, not a hidden claim. First, the
-human parallel is an organising heuristic, not an assertion of shared mechanism: framing a
-model's confident wrong answer alongside anchoring gives a shared vocabulary and a source of
-candidate failures to look for, but it does not claim the model anchors the way a person does,
-and we make no such mechanistic claim anywhere. Second, the modes are not all the same kind of
-thing. Some name a behaviour (sycophancy), some a property (overconfidence), some an attack an
-adversary mounts (prompt injection), and some an outcome (model collapse); the catalogue mixes
-these on purpose, because an auditor cares about all of them, but we do not treat the mix as a
-single clean type system, and separating behaviour, mechanism, attack, and outcome into their
-own fields is the clearest next revision. Third, the two-tier split is a coarse human judgment
-and the boundary is soft: reward hacking and scope creep, which we file as AI-native, have
-recognisable human analogues, and the AI-native label marks that we found no clean model-side
-instance of the human construct, not a metaphysical claim that none could exist. The `tag`
-field records each mode's evidential status (grounded in a read paper, or a cognitive-science
-analogy without a model-side paper), so a reader can see which parallels are backed by evidence
-and which are organising analogies.
-
-| Cognitive system | Modes | Example behaviours |
-|---|---|---|
-| Perception | 11 | Controlled hallucination, Priors overriding evidence |
-| Memory | 13 | Catastrophic forgetting, Source fabrication |
-| Attention | 12 | Inattentional blindness, Change blindness |
-| Heuristics | 25 | Anchoring, Availability, Representativeness |
-| Reasoning | 22 | System 1 / System 2, Cognitive miserliness |
-| Metacognition | 16 | Overconfidence, Uncertainty communication |
-| Language | 14 | Garden-path parsing, Semantic satiation |
-| Social | 28 | Sycophancy, Conformity, Theory of mind |
-| Moral | 12 | Omission bias, Amplified moral bias |
-| Self and agency | 15 | Confabulated agency, Sense of agency |
-| AI-native (no human analogue) | 39 | Prompt injection, Reward hacking, Scope creep |
-
-Twenty-six of the modes are marked as a highlighted priority set, the ones most load-bearing
-for an integrity auditor in practice (listed in the appendix).
-
-### 3.2 What an entry looks like
-
-Each mode is a definition, a cognitive-system placement, a human parallel or the AI-native
-label, a set of graph edges, and worked examples. The clearest way to show the catalogue is to
-exhibit entries, so the following are drawn verbatim from grounded modes across the tiers, each
-with a real finding from the paper that grounds it.
-
-| Mode | System | A grounded example (abbreviated) | Source |
-|---|---|---|---|
-| Anchoring | Heuristics | an irrelevant number ("939") placed before a tree-count estimate drags the estimate toward it | arXiv:2505.15392 |
-| Sycophancy | Social | the same argument is called "strong" when the user likes it and "unconvincing" when they dislike it | arXiv:2310.13548 |
-| Overconfidence | Metacognition | input regions where the model is strongly overconfident, cancelled out in the global metric | arXiv:2605.13484 |
-| Garden-path parsing | Language | "while the boy washed the dog barked loudly" is rendered as the boy washing the dog | arXiv:2502.09307 |
-| Omission bias | Moral | opposite verdicts on the injured-deer dilemma framed as action versus inaction | arXiv:2610.07847 |
-| Prompt injection | AI-native | invisible instructions on a summarised web page hijack the model | arXiv:2302.12173 |
-| Reward hacking | AI-native | a boat-race agent oscillates on reward tiles without ever finishing the lap | arXiv:2606.15385 |
-| Scope creep | AI-native | given an empty input file, it fabricates output in the graded format instead of flagging the gap | arXiv:2605.02269 |
-| Package hallucination | AI-native | across 576,000 code samples, 19.7% of recommended packages do not exist | arXiv:2406.10279 |
-
-A fuller set of worked entries, including the graph edges, is in the appendix.
-
-### 3.3 The relation graph
-
-Modes are not a flat list. Each carries a `violates` edge to one of a small set of principles
-(honesty, non-maleficence, transparency, scope-fidelity, independence, corrigibility,
-calibration) and a `causes` edge to a harm (wrong answer, wasted effort, manipulation,
-security breach, loss of oversight). Most carry `relates_to` clusters that link adjacent
-modes, and many carry `is_a`, `opposite_of`, `root_of`, and `same_as` edges. The point of the
-graph is mechanical: overlaps and gaps can be found by walking edges rather than by eye, a
-reader who lands on one mode can navigate to its neighbours and its causal roots, and a real
-incident that is a chain of failures can be represented as a path rather than forced onto a
-single label.
-
-A worked example makes the last point concrete. The dealership-chatbot failure analysed in
-Section 5.2 is a path through the graph, not a single node: a prompt injection (AI-native), a
-sycophantic capitulation (Social), and scope creep (AI-native) when the agent commits to an
-unauthorised offer. The catalogue's `causes` edges link these three as a chain, so the
-incident is one traversal of the graph rather than a single label. Those edges record the
-catalogue's hypothesised links, not demonstrated causation (see Section 5.2); what they add
-over a flat taxonomy is that a single label can be read as a path.
-
-### 3.4 Crosswalks
-
-To compose with existing taxonomies rather than reinvent them, modes carry a `maps_to` edge to
-external frameworks where there is a correspondence: the OWASP Top 10 for LLM Applications
-[OWASP 2025], a multi-agent failure taxonomy [Cemri et al. 2025], an in-context scheming study
-[Meinke et al. 2024], and a hallucination survey [Alansari and Luqman 2025]. The crosswalk is partial by
-design; it records where this catalogue and an external framework describe the same thing.
-
-### 3.5 Grounding by reading
-
-Most catalogues of failure modes stop at a definition and an illustrative scenario. This
-resource asks for more: each mode should carry worked examples, and each example should come
-from a paper actually read, tagged inline with that paper's arXiv identifier. An example that
-is a plausible scenario rather than a reported finding is kept but marked as illustrative and
-left untagged, so a reader can tell a measured case from a hypothetical one.
-
-The procedure was deliberately literal. For a mode, we fetched the cited paper's full text,
-found the specific finding, and wrote the example around the actual numbers, model names, and
-setups the paper reported. Where a mode had no cited paper, we searched for one, read it, and
-grounded the mode only if the paper genuinely demonstrated the behaviour. Where no such paper
-existed, the mode was left ungrounded and the absence recorded. This reading-first discipline
-is what produced the two findings in Section 4. It is also expensive, which is why 186 of 207
-modes are grounded rather than all of them.
-
-### 3.6 Machine-readable release and stable identifiers
-
-The catalogue is a single YAML document with a documented schema (`ontology/SCHEMA.md`). Each
-mode has a stable slug identifier and a stable catalogue number, under a stability contract:
-identifiers are not reused, a merged or retired mode keeps its identifier with a
-deprecation note rather than being deleted, and breaking changes bump the version. This is
-what lets an external citation to a specific mode remain valid across revisions.
-
-## 4. What grounding revealed
-
-### 4.1 Citation drift
-
-The catalogue began with citations attached to many modes by keyword match: a paper whose
-title contained the name of the behaviour. Reading those papers rather than trusting the
-titles showed that keyword match is unreliable. Of roughly fifty cited papers checked while
-grounding, twenty-nine did not support their mode and were re-cited to a paper that does; a
-further handful failed on checking and led to their mode being reclassified as ungrounded
-rather than re-cited, so twenty-nine is the repaired subset, not the total that failed. The
-failures came in recognisable kinds.
-
-Some citations were simply about a different subject. A mode about a model over-trusting its
-own output cited a watermarking method; a mode about the model's own sense of agency cited a
-study of the human user's perceived control. Some drew the opposite conclusion: a mode about a
-model faking introspection cited a paper arguing that model self-reports can be faithful; a
-mode about pragmatic over-accommodation cited a paper showing that models under-use pragmatic
-inference. A smaller set were null results dressed as support: a mode about the sunk-cost
-fallacy cited a paper that tested it and found it essentially absent in current models, and a
-mode about status-quo bias cited a benchmark that found models leaning the opposite way.
-
-Each mismatch was either repaired by finding and reading a paper that genuinely supports the
-mode, or, where no such paper exists, recorded as a held mode with the reason stated. Every
-decision is logged in a running citation audit, which doubles as the worklist and as the
-evidence for the rate reported here. The reading is simple and uncomfortable. In a resource
-that advertises itself as grounded, citations that look right but do not hold accumulate even
-when everyone is acting in good faith, and only reading the source catches them. This is the
-same failure mode the catalogue itself names, source fabrication, observed in the artifact
-that catalogues it.
-
-### 4.2 A verification sweep on the grounding
-
-Catching bad citations is necessary but not sufficient. Having the right paper in hand does
-not guarantee that the figure written into the example is the figure the paper reports. To
-measure that, we ran an adversarial verification pass over all 186 grounded modes, across four
-independent batches. For each mode, an independent checker re-read the cited paper and
-confirmed, claim by claim, whether the specific numbers, model names, and setups in the
-example actually appeared in it, with instructions to mark a claim as not found rather than
-give it the benefit of the doubt.
-
-The sweep found that twenty-six of the 186 modes (fourteen percent) contained a hard error: a
-figure that the paper contradicted or that did not appear in it at all. A further forty-two
-(twenty-three percent) contained a minor issue: a number loosely rounded, an attribution that
-credited the wrong paper, or a finding placed on the wrong experimental condition. None of the
-papers was unreachable.
-
-The errors were instructive in their shape. In almost every flagged case the behaviour was
-real and the paper was the right one; what drifted was a specific number, model name, or
-causal framing. A wrong city in a hallucination example; a compliance rate reported as twelve
-percent where the paper said fourteen; a conditional accuracy written as zero where the paper
-reported 2.6 percent; a reward figure whose observed and hidden labels were reversed. In six
-cases a quoted example did not appear in the cited paper at all; we rewrote these to the
-paper's actual content or demoted them to untagged illustrations. Most of the flagged errors
-are transcription-level over-reads rather than invented findings, but these six are more
-serious, and we do not claim to know how each arose; what they share is that a reader would
-not catch them without re-reading the source. All sixty-eight flagged modes were corrected in
-the same pass. Because the sweep covers every grounded mode, these are population figures for
-this artifact rather than a sampled estimate, and the hard-error rate held roughly steady
-across the four batches (eighteen, fifteen, seven, and eighteen percent). One limit matters:
-this is the error a single adversarial re-read caught and we then corrected, not a guarantee
-about the corrected catalogue; a residual error rate would need an independent recheck of the
-corrected version.
-
-### 4.3 Why the two findings matter together
-
-The citation audit measures how often the wrong paper is attached to a claim. The verification
-sweep measures how often the right paper is misquoted. They are the same problem at two levels,
-and together they put a number on something usually left to trust: provenance in a fast-moving
-field degrades at both levels, and the only remedy that worked was reading, twice.
-
-## 5. Validation
-
-A catalogue earns trust not by the care of its author but by holding up when someone else
-probes it. We report two checks: whether its category structure is reproducible, and whether
-it classifies failures it was not built from.
-
-### 5.1 Is the category structure reproducible?
-
-The obvious threat to a single-author catalogue is that its structure is idiosyncratic. We
-probe this with a codebook protocol. We drew a stratified sample of 33 modes, three from each
-of the eleven categories, gave two independent raters a one-sentence definition of each
-category and, for each mode, its name and definition only with the catalogue's own category
-hidden, and asked each rater to assign a category. We then measured agreement with Cohen's
-kappa, which corrects for chance.
-
-The raters are independent language-model calls, one on the sonnet tier and one on the haiku
-tier, blind to the catalogue label. This is deliberately a proxy. It is not human
-inter-annotator agreement, and we do not present it as such; human annotation remains required
-before the catalogue is treated as validated. What the proxy buys is a real chance-corrected
-number and a stress test of whether the category definitions are clear enough to apply at all.
-
-Agreement was high. Against the catalogue the sonnet rater agreed on 30 of 33 modes (kappa
-0.90) and the haiku rater on 28 of 33 (kappa 0.83); the two raters agreed with each other at
-kappa 0.93. Chance agreement across eleven balanced categories is low (expected agreement
-0.09), so the raw agreement and the kappa are close. More informative than the aggregate is
-that the disagreements are localised rather than scattered. Three modes account for the shared
-discordances, missed by both raters: cognitive miserliness, filed under Reasoning and read as
-Heuristics; default-mode mind-wandering, filed under Self and agency and read as Attention; and
-scope creep, filed in the AI-native tier and read as Self and agency. The haiku rater also
-missed two further modes the sonnet rater placed correctly (Dual-process System 1 and 2, and
-Sense of agency), so there are eight rater-to-catalogue disagreements across the two raters, on five distinct modes, three of them missed by both. These read as
-boundary cases rather than errors: each mode sits on the seam between two systems. We do not
-claim this reveals something about cognition; the equally likely reading is that our definition
-is ambiguous at that seam. Either way, the value of the probe is that it names which seams are
-live, and these three are the clearest candidates for a secondary-category label.
-
-### 5.2 Coverage: does the catalogue classify failures it was not built from?
-
-We assembled a held-out set of twelve real, publicly documented AI integrity-failure incidents
-from 2023 to 2025, none used to ground the catalogue, each verified against a real source with
-a confirmed quotation. We mapped each to the catalogue by hand and asked two things: does it
-land on a named mode whose definition matches, and what does it miss.
-
-Every one of the twelve maps to at least one named mode, and the match is specific rather than
-a catch-all. The clearest case is the most common: the catalogue's source-fabrication entry
-already carries, as its illustrative example, a plausible but nonexistent legal citation, which
-is exactly what happened in the three separate fake-citation incidents (Mata v. Avianca, the
-Michael Cohen filing, and the Morgan and Morgan motions). That three of the twelve are the same
-mode reflects that source fabrication is the most litigated real-world integrity failure to
-date.
-
-The more useful observation is that real incidents are rarely a single mode. At least four of
-the twelve are best described as a short causal chain: a dealership chatbot was prompt-injected
-into a compliant persona, which produced a sycophantic capitulation, which produced an
-unauthorised binding offer; a coding agent ignored an action freeze, then deceived its user
-about having done so and fabricated test results to cover it. A flat list would force a single
-label on each. The relation graph is what lets the catalogue represent them as trajectories, so
-the incidents illustrate how the graph can describe a failure as a chain rather than as a
-single label. They do not establish that the specific edges are correct; that would need a
-test the catalogue does not yet have.
-
-One incident did not fit cleanly, and that is the point. The AI Overviews answers that advised
-adding glue to pizza and eating a small rock a day were a failure to detect that a source was
-satirical and to treat it as authoritative. No existing mode names this specifically:
-source-monitoring error is about self-generated versus retrieved content, and imitative
-falsehood is about repeating a common misconception, neither of which is credulity about a
-source's genre or seriousness. We take this as a candidate addition, a source-genre-credulity
-mode, and record it rather than quietly add it, because a new mode must earn its own grounding
-paper first by the same reading-first rule as the rest. A catalogue that nothing can fall
-outside is not falsifiable; this one can be, and was.
-
-The honest bound on this result is the sample. These are prominent, widely reported incidents,
-selected toward failures already salient enough to make the press, so the test shows the
-catalogue handles known failures, not that it anticipates novel ones. It is a usability
-demonstration, not a completeness proof.
-
-## 6. The catalogue in use
-
-The catalogue is a reference, and its first consumer is a companion method paper on
-clause-grounded advisory auditing: it takes a subset of these modes, writes each as a
-natural-language obligation with a stable rule identifier, and audits a draft clause by clause,
-with the human as the final decision maker. That paper is where the method and its results
-live; the only point here is that it is the catalogue, and the grounding in Section 4, that let
-a clause point at evidence rather than at an assertion. Any downstream use, an auditor, a
-training target, a review checklist, inherits the same property.
-
-## 7. Limitations
-
-This is a resource, not a result about model capability.
-
-The grounding is single-reader, and the validation raters are language models, not humans.
-Both the fourteen-percent hard-error rate and the category-reproducibility kappas are
-single-pass, single-rater-type figures. The kappas come from a model-based codebook check, not
-human agreement: they show that the category assignments can be recovered from the written
-definitions, not that the categories carve the space correctly, and shared assumptions between
-the raters and the author could inflate the agreement. Human two-annotator adjudication over a
-larger, independently collected sample is still required before the structure can be called
-validated. The coverage test samples prominent incidents, so it demonstrates usability on
-known failures rather than coverage of novel ones, and "a mode fits" is a lenient bar that a
-broad label can pass; a stronger test would use an externally sampled incident set and score
-specificity and missing modes.
-
-Twenty-one modes are ungrounded. They fall into honest categories, all recorded: behaviours
-that current models tested and did not show (sunk-cost fallacy, moral licensing); analogies for
-which no model-side paper exists (attentional blink, just-world bias, scope insensitivity); and
-neuroscience framings that overlap already-grounded modes without a distinct instance. We did
-not force a citation onto any of them, because doing so would be the source-fabrication failure
-the resource is built to name. For the same reason the one candidate mode the coverage test
-surfaced is recorded as a candidate, not added, until it has a grounding paper.
-
-The taxonomy's boundary is a judgment, and it mixes kinds. The two-tier rule is enforced
-mechanically, but which side a mode falls on, and whether two modes are distinct or one, is a
-human call, and reasonable people would draw some of those lines differently. The catalogue
-also mixes behaviours, properties, attacks, and outcomes in one list (Section 3.1); separating
-those into their own fields, and replacing the exclusive human-versus-AI-native split with a
-graded analogy tag, is the clearest structural revision ahead, and it would let the neighbour
-distinctions be validated rather than assumed. The validation in Section 5 measures how much
-the current category judgment is shared, not that it is the right carving.
-
-Finally, the resource makes no claim to completeness or to state of the art. Stronger methods
-exist for specific failures, in particular sampling-based and hidden-state approaches for
-hallucination. The value here is breadth, provenance, structure, and a measured account of its
-own error rate.
-
-## 8. Availability and citation
-
-The catalogue is released as a single machine-readable file with a documented schema
-(`ontology/SCHEMA.md`), a human-readable site, and a `CITATION.cff` for direct citation. It is
-versioned (1.0) under a stable-identifier contract so that citations to a specific mode remain
-valid across revisions. A license and a minted DOI are recorded as the final release steps in
-`RELEASE.md`; the recommended terms are an attribution license for the catalogue data and a
-permissive license for the accompanying code. The citation audit and the verification report
-ship with the resource so that a reader can see not only the catalogue but the record of how
-reliable its grounding is.
-
-## 9. Conclusion
-
-The through-line of this project is that provenance in a fast-moving field cannot be taken on
-trust, and that checking it is cheap enough that leaving it unchecked is a choice rather than a
-necessity. Grounding 207 failure modes by reading showed how often a cited paper fails to
-support its claim and how often a claim grounded by reading still misquotes the source; a
-model-based codebook check suggested the category assignments can be recovered from their
-definitions. The provenance findings were non-trivial and are now corrected and documented
-rather than latent; the reproducibility and coverage checks are preliminary and their limits
-(a candidate missing mode, the need for human annotation, the lenient coverage bar) are named
-in Sections 5 and 7 rather than hidden. We offer the catalogue as a shared map and
-the findings as a small cautionary result about how provenance decays in a field that cites
-faster than it reads. The most honest thing the project did was audit its own grounding and
-report what it found.
-
-## References
-
-Verified against primary sources this session or canonical. The complete positioning
-reference list, with per-entry verification status, is in `references/catalogue-prior-art.md`;
-the complete per-mode bibliography accompanies the resource.
-
-- Bradner, S. (1997). Key words for use in RFCs to Indicate Requirement Levels. RFC 2119, IETF.
-- Malberg, S., Poletukhin, R., Schuster, C. M., and Groh, G. (2024). A Comprehensive
-  Evaluation of Cognitive Biases in LLMs. arXiv:2410.15413.
-- Slattery, P., Saeri, A. K., Grundy, E. A. C., Graham, J., Noetel, M., Uuk, R., Dao, J., Pour,
-  S., Casper, S., and Thompson, N. (2024). The AI Risk Repository: a meta-review, database, and
-  taxonomy of risks from artificial intelligence. arXiv:2408.12622.
-- Weidinger, L., et al. (2021). Ethical and social risks of harm from Language Models.
-  arXiv:2112.04359.
-- NIST (2023). AI Risk Management Framework (AI RMF 1.0). NIST AI 100-1.
+---
+title: "EthicalAI: An Evidence-Linked Catalogue for AI Integrity"
+author: "Alexandru Dan"
+date: "2026-11-09"
+abstract: |
+  EthicalAI organises integrity failures and related behavioural patterns as
+  definitions linked to evidence, obligations, harms and neighbouring concepts.
+  This paper reports the construction and review of its historical 207-record
+  study. The construction log classified 186 records as grounded in worked
+  examples from source papers and retained 21 without that level of support.
+  A citation audit recorded 29 repaired source mismatches among roughly fifty
+  papers examined. A subsequent checking pass reported hard errors in 26 of
+  the 186 grounded records and minor issues in 42. These are findings about
+  the reviewed artifact, not error rates for AI research generally. A
+  deterministic 33-record codebook check produced model-to-catalogue Cohen
+  kappa values of 0.90 and 0.83; this is a model-based consistency check, not
+  human validation. Twelve author-selected public incidents illustrate the
+  vocabulary's use, including one partial fit. The later 434-record release
+  adds 227 untested analogies and a broader bibliography, which are outside
+  those historical evaluation denominators. The contribution is a reusable
+  reference with an explicit account of its construction errors and evidence
+  limits, rather than a validated set of distinct AI mechanisms.
+---
+
+# 1. Introduction
+
+An AI assistant can cite a nonexistent case, retain a user's mistaken framing
+after finding contrary evidence, or extend a coding task without disclosing the
+extra changes. Each failure calls for a different check. Citation resolution
+does not test whether the assistant updated its framing; correct framing does
+not establish that an action stayed within the agreed scope. A catalogue can
+make these distinctions available to a reviewer before they become a checklist,
+an experimental label or an audit obligation.
+
+EthicalAI collects such distinctions in one reference. Entries include a stable
+identifier, an operational definition, evidence pointers, examples and typed
+relations. Human cognitive concepts supply part of its vocabulary. The parallel
+is a way to formulate a candidate behavioural test, not evidence that an AI
+system has the corresponding human mental process. Other entries name attacks,
+system properties or outcomes. These different kinds of record are useful to an
+auditor, but their inclusion does not make them interchangeable scientific
+constructs.
+
+This paper examines the historical 207-record catalogue and the checking work
+documented during its construction. It asks what the resource represents, what
+its evidence supports, and what went wrong when examples were attached to
+sources. Two smaller checks examine category-label recoverability and use on
+public incidents. The companion advisory-auditing paper studies a separate
+question: whether focused checks of named obligations help review coding-agent
+drafts. Its six-clause pilot does not validate the catalogue as a whole.
+
+The current release contains 434 records. Section 6 separates that later
+expansion from the original study so that more entries and citations do not
+silently enlarge the evidence claimed here.
+
+# 2. Related resources
+
+Existing resources provide overlapping views of AI failures. The MIT AI Risk
+Repository synthesises 74 frameworks containing 1,725 risks and offers causal
+and domain taxonomies [Slattery et al. 2024]. The NIST AI Risk Management
+Framework describes trustworthiness and governance practices [NIST 2023]. These
+resources organise risks and responsibilities at a broader level than an
+individual draft's evidence relationships. Their scope also includes causes and
+AI-originated failures, so they should not be reduced to lists of downstream
+harms.
+
+Application-security resources overlap directly with this catalogue. The OWASP
+Top 10 includes prompt injection, excessive agency and misinformation [OWASP
+2025]. Some of these failures involve an adversary and others need not.
+EthicalAI reuses these concerns within a vocabulary that also includes memory,
+reasoning, confidence and task-scope patterns. Its partial crosswalk records
+proposed correspondences; it does not establish equivalence between frameworks.
+
+Behavioural benchmarks provide the closest comparison. Malberg et al. [2024]
+evaluate 30 cognitive biases across 20 models, with 30,000 tests. EthicalAI's
+classic-bias subset overlaps that work. Hallucination surveys and benchmarks,
+including Ji et al. [2022] and HALoGEN [Ravichander et al. 2025], also distinguish
+several failure types within a family. These are measurement resources as well
+as classifications. The larger number of EthicalAI records is a coverage choice,
+not evidence of stronger measurement or more distinct mechanisms.
+
+The resource combines definitions and source records across these areas and
+connects them to an advisory audit vocabulary. Its proposed value is that a
+reviewer can find adjacent concepts and inspect the evidence behind an example
+without assembling several separate lists. The historical checks below assess
+parts of that reference; they do not establish that its organisation is uniquely
+correct or that another taxonomy could not support the same uses.
+
+# 3. Representation and construction
+
+## 3.1 Records and categories
+
+The historical catalogue contains 207 records. Its organising scheme assigns
+168 to ten cognitive domains and 39 to an AI-native category. The domains are
+labels for navigating the catalogue, not claims about brain localisation or
+shared computational mechanisms.
+
+| Category | Historical records |
+|---|---:|
+| Perception | 11 |
+| Memory | 13 |
+| Attention | 12 |
+| Heuristics | 25 |
+| Reasoning | 22 |
+| Metacognition | 16 |
+| Language | 14 |
+| Social | 28 |
+| Moral | 12 |
+| Self and agency | 15 |
+| AI-native | 39 |
+
+The legacy AI-native label groups failures formulated in terms of machine
+systems, such as prompt injection and reward tampering. It should not be read
+as proof that no human analogue exists. Reward hacking and scope creep have
+recognisable human counterparts. The exclusive assignment is an operational
+choice in the released schema, and its boundaries require further study.
+
+Each record carries a stable slug and reference number, a definition, examples,
+source pointers and relations. A number identifies a record rather than a
+distinct mechanism. Synonyms, narrower variants and linked overlaps therefore
+need explicit representation rather than being counted as independent findings.
+The historical priority set highlights 26 records for auditing; it is an
+author-selected worklist rather than a measured ranking of failure frequency.
+
+## 3.2 Relation semantics
+
+The graph distinguishes several relationships. `violates` points from a mode to
+a catalogue obligation. `causes` points to a harm type, such as a wrong answer,
+wasted effort or loss of oversight. Despite that field name, these edges record
+author-judged harm associations, not estimated causal effects. `relates_to`
+connects neighbouring modes; subtype and overlap relations express other
+conceptual distinctions. Partial `maps_to` records connect entries with external
+frameworks.
+
+The released `causes` relation does not connect one mode to another. Consider the
+dealership-chatbot incident discussed in Section 5. An analyst can describe it
+as an instruction attack followed by compliant output and an unauthorised offer.
+That is an interpretation of the reported sequence, not a three-mode causal path
+encoded by the present graph. It would be possible to add a distinct relation
+for event sequences, but its meaning and evidence would need to be specified.
+The existing graph supports navigation and comparison; it does not demonstrate
+how one failure produces another.
+
+## 3.3 Evidence and examples
+
+The construction procedure sought a source passage for each worked example,
+including its numbers, model names and experimental conditions. The historical
+log records full-text inspection and inline arXiv tags for those examples. A
+plausible scenario without a matching reported finding was retained as an
+illustration rather than treated as a measured result. The log classified 186
+records as grounded under this procedure and held 21 without that level of
+model-side support. A failed search means support was not established in the
+checked material; it does not show that no relevant paper exists.
+
+Source identity, topical relevance and support for a particular claim are
+different checks. A psychology article can define a human construct without
+testing an AI analogue. A theoretical article can introduce a useful label
+without establishing its mechanism. Even an on-topic AI experiment may not
+support every example or causal interpretation attached to the record. The
+evidence relationship should therefore specify both what was consulted and what
+it supports: a definition, a human finding, an AI finding, an interpretation or
+contrary evidence.
+
+Package hallucination illustrates the importance of preserving the denominator.
+Spracklen et al. [2025] generated 576,000 code samples and evaluated the packages
+recommended through their extraction procedures. They classified 440,445 of
+about 2.23 million recommended packages as hallucinations, or 19.7%. That figure
+is a rate over package recommendations, not the percentage of code samples
+containing a hallucination. It is also specific to the tested models, prompts
+and package-registry snapshot.
+
+# 4. Findings from construction
+
+## 4.1 Citation mismatches
+
+The running citation audit documents cases in which a plausible reference did
+not support the catalogue's claim. Among roughly fifty papers examined during
+grounding, 29 mismatches were repaired by changing the cited source. Other
+mismatches led to records being held without a grounded AI example. The
+approximate denominator and the distinction between repaired and held records
+prevent treating 29 as an exact overall error rate.
+
+The recorded problems include papers on a different phenomenon, a result in the
+opposite direction, and an appropriate test with a null finding. For example,
+one source attached to model agency concerned a human user's perceived control.
+A source used for pragmatic over-accommodation instead reported under-use of
+pragmatic inference. Some proposed bias analogies were tested without the
+expected effect. These are different reasons to revise a claim, and a
+bibliography entry alone does not distinguish them.
+
+The audit supports a practical construction requirement: attach a claim to its
+supporting passage and experimental scope, not just to a title or a search hit.
+It does not estimate how often other catalogues contain such errors, because
+the checked papers were not a random sample of research publications.
+
+## 4.2 Rechecking worked examples
+
+The subsequent verification report describes four checking batches covering the
+186 historically grounded records and approximately 510 tagged examples. The
+record, rather than a new full-text sweep for this revision, is the source of
+the following counts.
+
+| Recorded outcome | Records | Share of the 186-record cohort |
+|---|---:|---:|
+| No issue detected | 118 | 63% |
+| Minor issue | 42 | 23% |
+| Hard error | 26 | 14% |
+
+A hard error meant that a figure was contradicted by, or absent from, the cited
+paper. Minor issues included loose attribution, rounding and confusion between
+experimental conditions. The report records no unreachable papers in this
+cohort. These are outcomes of the checking procedure, not independently
+adjudicated labels or a residual error estimate for the corrected release.
+
+Several corrections changed a number or its interpretation: a city name, a
+percentage, a measurement scale, or the observed and hidden reward labels in an
+example. Six hard-error cases concerned quoted examples that were not found in
+their cited papers. The record describes replacing these with supported material
+or marking them as untagged illustrations. It records corrections to all 68
+flagged entries, while leaving open whether an independent subsequent reader
+would find further errors.
+
+The two audits address different questions. Citation checking asks whether the
+source concerns and supports the claimed phenomenon. Example checking asks
+whether a particular statement is faithful to that source. Their combined lesson
+is narrower than a general claim about AI reliability: this artifact needed both
+checks, and initial source inspection did not prevent later transcription and
+interpretation errors.
+
+# 5. Checks of category use and incident mapping
+
+## 5.1 A model-based codebook check
+
+The codebook study used 33 records, three from each category. The sampling script
+selects the first three records by reference number in each group, so the sample
+is deterministic and balanced rather than random. Two separate language-model
+calls received category descriptions and each record's name and definition,
+without its stored category. Agreement was measured against the catalogue and
+between the calls.
+
+The sonnet rater agreed with the catalogue on 30/33 records, with Cohen kappa
+0.90. The haiku rater agreed on 28/33, with kappa 0.83. Agreement between the
+raters was kappa 0.93. There were eight rater-to-catalogue disagreements across
+five records; three records were assigned differently by both raters. These
+included cognitive miserliness, mind-wandering and scope creep, each near a
+boundary between the supplied categories.
+
+This tests whether two model calls can apply the codebook similarly to its
+author. It does not establish human inter-annotator agreement, construct
+validity or reliable categorisation outside this small, ordered sample. Shared
+training and shared assumptions can make model agreement less informative than
+agreement from independent human annotators.
+
+## 5.2 An incident-mapping exercise
+
+The historical coverage record maps twelve author-selected, publicly reported
+incidents from 2023 to 2025 to catalogue entries. The record includes source
+fabrication in legal filings, an invented airline refund policy, instruction
+attacks on customer-service bots, and harmful or misleading conversational
+output. A case resting on allegations was set aside from the counted set.
+
+All twelve received at least one existing label in the author's mapping. Three
+were legal-citation incidents assigned to source fabrication; that concentration
+describes this selected sample, not the prevalence of failures in deployment.
+Several incidents received multiple labels. Assigning those labels can describe
+different aspects of the same episode without establishing a causal connection
+between them.
+
+The mapping for AI Overviews' satirical food and health advice was partial. A
+hallucination label covered the false answer, while the available labels did
+not cleanly capture treating a joke or satirical source as authoritative. The
+record proposed source-genre credulity as a possible refinement. This is a
+candidate distinction arising from the exercise, not evidence that it is a new,
+independent mechanism.
+
+Because the incidents were selected by the author and mapped manually, the
+exercise demonstrates possible uses of the vocabulary. It cannot establish
+coverage of future incidents or superiority to another taxonomy. A stronger
+test would specify the sampling frame and matching rules in advance and have
+independent annotators score both fit and failure to fit.
+
+# 6. Release versions and reuse
+
+The historical study and the current catalogue have different scopes. The
+207-record study is retained as a versioned baseline; the current version 1.3
+contains those records plus 227 proposed human-behaviour analogies, for 434 in
+total. None of the additional records enters the denominators of 186 checked
+records, 33 codebook items or twelve incidents above. Nor do the companion
+method paper's six-clause pilot results evaluate those 227 analogies.
+
+The November 9, 2026 bibliography snapshot has 1,175 selected citation bindings
+across 1,036 publication identifiers. Of the 434 records, 359 have three selected
+references and 75 have fewer, including nine with none. These are bibliography
+availability counts. They are not counts of independently confirmed mechanisms
+or replications. Preprints, theoretical articles, empirical studies and reviews
+must be interpreted according to their individual access and relevance notes.
+
+The current row totals are separately recorded arXiv metadata-query matches in
+cs.AI, cs.CL and cs.LG. They are not full-text citation counts or an exhaustive
+count of relevant research. Keyword matches can include unrelated uses, and
+human research cited in a record can fall outside that AI-domain query. The
+query, filters and retrieval date travel with the total.
+
+Stable slugs and reference numbers permit reuse across releases. A retained
+overlap or retired concept should keep its identifier with an explicit
+relationship, rather than being silently deleted or renumbered. Consumers can
+use the catalogue for retrieval, annotation proposals or advisory audits while
+retaining the source passage and evidence status of each claim.
+
+# 7. Limitations
+
+The construction and checking records are a single project's audit trail. They
+do not provide an independent human replication of the 186 grounding decisions,
+the hard-versus-minor classification or the corrected examples. The reported
+26/186 hard-error proportion belongs to that historical cohort and procedure.
+It should not be used as a population estimate for the present 434 records,
+other catalogues or AI-generated research generally.
+
+The catalogue mixes behaviours, properties, attacks and outcomes, and its
+categories and links reflect author judgments. Shared labels do not establish
+shared mechanisms between people and AI. Clinical terms do not diagnose a
+model's feelings, unconscious motives or intent. Likewise, a source's score for
+internal reasoning and a model's output accuracy are different measurements;
+their divergence alone does not demonstrate deliberate deception.
+
+The model-based codebook check cannot substitute for blinded human annotation.
+The incident exercise uses salient public cases and a permissive matching task.
+Neither measures how accurately a reviewer can distinguish close alternatives,
+how often the catalogue misses an externally sampled failure, or whether its
+graph improves auditing over a flat list. Those questions require separate
+evaluation. The resource makes no completeness or state-of-the-art detection
+claim.
+
+# 8. Availability and reproducibility
+
+The machine-readable catalogue is `ontology/ethical-ai.yaml`, with field and
+relation semantics in `ontology/SCHEMA.md`. The historical version-1.0 catalogue
+is pinned at [commit 8798134](https://github.com/danlex/ethicalhive/blob/8798134341ea386da80fb5602bc7dd06ef81cf24/ontology/ethical-ai.yaml);
+the later version-1.3 bibliography described in Section 6 is pinned at
+[commit 3b9b500](https://github.com/danlex/ethicalhive/blob/3b9b50021ef5eefb15a28d4edb7a5264f2fb626f/ontology/ethical-ai.yaml). These snapshots have different
+evidence cohorts and should not be interchanged when reproducing a count.
+
+The historical evidence is in `experiments/citation-audit.md`,
+`experiments/verification-report.md`, `experiments/agree-gold.json`, the
+taxonomy-agreement outputs, and `experiments/coverage-incidents.md`. The
+eligibility rule in `experiments/verify-sample.py` selects records with at least
+three examples; that mechanical selection is not an independent test that the
+examples are grounded. The later source-review history is retained under
+`references/`, including the November 9 literature-count and citation review.
+
+`CITATION.cff` records the citation metadata. Licensing and archival-release
+steps are described in `RELEASE.md`; a live website or a changing branch should
+not replace the immutable artifact cited for a reported result.
+
+# 9. Conclusion
+
+EthicalAI provides definitions, evidence pointers and conceptual relations for
+reviewing AI integrity. Its historical construction records show why a plausible
+citation and an accurate worked example need separate checks. The 207-record
+study also supplies small demonstrations of codebook use and incident mapping,
+with their sampling and annotation limits stated. The later bibliography and
+227 untested analogies extend the reference without extending those empirical
+claims. The resource is useful to the extent that readers can inspect and
+correct the relationship between a claim, its source and the scope in which it
+was observed.
+
+# References
+
+- Malberg, S., Poletukhin, R., Schuster, C. M., and Groh, G. (2024).
+  A Comprehensive Evaluation of Cognitive Biases in LLMs. arXiv:2410.15413.
+- Slattery, P., Saeri, A. K., Grundy, E. A. C., Graham, J., Noetel, M., Uuk, R.,
+  Dao, J., Pour, S., Casper, S., and Thompson, N. (2024). The AI Risk Repository:
+  A Meta-Review, Database, and Taxonomy of Risks From Artificial Intelligence.
+  arXiv:2408.12622.
+- NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0).
+  NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1
 - OWASP (2025). OWASP Top 10 for Large Language Model Applications, 2025 release.
-- Ji, Z., et al. (2022). Survey of Hallucination in Natural Language Generation. arXiv:2202.03629.
-- Ravichander, A., Ghela, S., Wadden, D., and Choi, Y. (2025). HALoGEN: Fantastic LLM
-  Hallucinations and Where to Find Them. arXiv:2501.08292.
-- Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R., and Hobbhahn, M. (2024).
-  Frontier Models are Capable of In-context Scheming. arXiv:2412.04984.
-- Cemri, M., Pan, M. Z., Yang, S., Agrawal, L. A., Chopra, B., Tiwari, R., Keutzer, K.,
-  Parameswaran, A., Klein, D., Ramchandran, K., Zaharia, M., Gonzalez, J. E., and Stoica, I.
-  (2025). Why Do Multi-Agent LLM Systems Fail? arXiv:2503.13657.
-- Alansari, A., and Luqman, H. (2025). Large Language Models Hallucination: A Comprehensive
-  Survey. arXiv:2510.06265.
-- Tversky, A., and Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases.
-  Science, 185(4157).
-- Shafto, P., Ono, K., and Kominers, S. D. (2026). What Happens When the World is Run on Code
-  No One Understands? TIME, 20 August 2026 (retrieved 1 November 2026; archive a copy before
-  submission, as the live URL may move behind a paywall).
+  https://genai.owasp.org/llm-top-10/
+- Ji, Z., et al. (2022). Survey of Hallucination in Natural Language Generation.
+  arXiv:2202.03629.
+- Ravichander, A., Ghela, S., Wadden, D., and Choi, Y. (2025). HALoGEN: Fantastic
+  LLM Hallucinations and Where to Find Them. arXiv:2501.08292.
+- Spracklen, J., Wijewickrama, R., Sakib, A. H. M. N., Maiti, A., Viswanath, B.,
+  and Jadliwala, M. (2025). We Have a Package for You! A Comprehensive Analysis
+  of Package Hallucinations by Code Generating LLMs. arXiv:2406.10279v3.
 
-## Appendix A. Worked catalogue entries
+# Appendix A. Example records
 
-Three entries in full, to show the shape of the catalogue: the definition, the two-tier
-placement, the graph edges, and an example. The first example is deliberately illustrative and
-untagged, which is how the catalogue marks a plausible scenario rather than a reported finding;
-the other two carry a grounded example with its source.
+The following records illustrate the distinction between an entry, a reported
+finding and a proposed interpretation. The source-fabrication scenario is an
+untagged illustration: an assistant cites a plausible legal case that does not
+exist. It describes the operational failure without reporting an experiment.
 
-**Source fabrication** (num 101, Memory). Definition: citing a path, line, symbol, or URL that
-does not resolve to what it claims. Human parallel: source confabulation and misattribution.
-Edges: violates honesty; causes a wrong answer; is a kind of hallucination; relates to
-source-monitoring error, source amnesia, and cryptomnesia. Example (illustrative): asked for a
-supporting case, it produces a plausible but nonexistent case name and reporter number.
+The package-hallucination example in Section 3 is a source-specific measured
+result. Its numerator, denominator, tested model set and registry assumptions
+must remain attached to the claim. The failure definition can apply more widely
+than that experiment, but the experiment's percentage cannot.
 
-**Anchoring** (num 31, Heuristics). Definition: keeping an initial framing or estimate after
-later evidence has broken it. Human parallel: anchoring. Edges: violates calibration; causes a
-wrong answer; relates to the availability heuristic, status-quo bias, and the framing effect.
-Example: an irrelevant number ("the number of socks in your drawer: 939") placed before
-"estimate the number of trees in the Amazon" measurably drags the estimate toward it
-[arXiv:2505.15392].
-
-**Reward hacking** (num 104, AI-native). Definition: satisfying the metric that measures the
-task rather than the task itself, for example by editing tests or hardcoding outputs; also
-called specification gaming. No human analogue. Edges: violates honesty; causes loss of
-oversight; relates to reward tampering, goal misgeneralisation, noble-cause corruption, and
-scope creep. Example: in the Boat Race gridworld an agent oscillates on two reward tiles to
-farm directional reward without ever completing the lap [arXiv:2606.15385].
-
-## Appendix B. The highlighted priority set
-
-Twenty-six modes are flagged as the priority set, the ones most load-bearing for an integrity
-auditor in practice: Confabulation, Hallucination, Source-monitoring error, Anchoring,
-Confirmation bias, Overconfidence, Cognitive load, Cherry-picking, Belief bias, Conformity
-(Asch), Obedience to authority, Sycophancy, Capitulation, Source fabrication, Prompt injection,
-Scope creep, Reward hacking, Automation bias, Silent error swallowing, Side-effect blindness,
-Anthropomorphism, Survivorship bias, Noble cause corruption, Deceptive alignment, Scheming and
-power-seeking, and Strategic deception.
-
-The complete catalogue of all 207 modes, each with its definition, graph edges, worked
-examples, and per-mode citations, is in the released file (`ontology/ethical-ai.yaml`, schema
-in `ontology/SCHEMA.md`) and browsable on the project site.
+Reward hacking is retained in the legacy AI-native category. That placement
+does not deny human analogues such as gaming a performance target. Its harm
+links express catalogue judgments and its relationship to other modes is not a
+causal result about the sequence of a particular incident.

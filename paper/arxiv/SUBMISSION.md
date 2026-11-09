@@ -11,7 +11,7 @@ bash paper/build-arxiv.sh
 ```
 
 This produces:
-- `paper/arxiv/main.tex` and `paper/arxiv/body.tex` (the source)
+- `paper/arxiv/main.tex` (standalone source generated from the canonical Markdown)
 - `paper/arxiv/main.pdf` (local sanity-check render)
 - `paper/arxiv/submission.tar.gz` (the upload to arXiv)
 
@@ -51,9 +51,9 @@ Go to https://arxiv.org/submit and click **Start a new submission**.
 - **Authors:** `Alexandru Dan` / Triumvirate Labs
 - **Abstract:** copy from the YAML abstract block at the top of
   `paper/draft.md`.
-- **Comments:** `Pilot-feasibility report. 8 pages plus references.
-  Target venue: NeurIPS 2026 workshop (TBD). Code and benchmark at
-  https://github.com/danlex/ethicalhive`
+- **Comments:** describe the actual page count printed by `pdfinfo paper/draft.pdf`
+  and the intended venue once chosen. The code and frozen results are at
+  https://github.com/danlex/ethicalhive .
 
 ### 3.4 Upload
 
@@ -73,12 +73,10 @@ Go to https://arxiv.org/submit and click **Start a new submission**.
 ## Notes specific to this paper
 
 - **No figures** in the body. Nothing to upload separately.
-- **References** are inline in `body.tex` as a `References` section.
+- **References** are inline in the generated standalone `main.tex` as a `References` section.
   arXiv accepts this; no `.bib` file is needed for v1.
-- **AgentVerify citation** lacks a named author. preprints.org
-  returned 403 on the WebFetch attempts; either open the URL in
-  your browser and patch the author list into `paper/draft.md`
-  before rebuilding, or ship v1 as-is and patch in v2.
+- **AgentVerify citation** names Eric Fang and the versioned DOI
+  `10.20944/preprints202604.1029.v1`, checked against the primary record.
 - **No anonymous variant** for arXiv (preprints are not double-blind).
   Anonymous variant is for workshop submission via
   `bash paper/build-latex.sh --anon`.

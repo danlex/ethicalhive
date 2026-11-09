@@ -2,8 +2,9 @@
 """Build the SHIP/REVISE/BLOCK confusion matrix for the per-clause judge.
 
 Reusable per `contracts/paper-writing-contract.md` PAP-WORK-06. Reads the
-latest clean judge JSONL per mode (hard suite) and reports the gold vs
-predicted confusion matrix per mode and aggregated across modes.
+explicitly pinned judge JSONL per mode (hard suite) and reports the gold vs
+predicted confusion matrix per mode and aggregated across modes. Each file's
+SHA256 and reviewer/case fields must match the run manifest.
 
 Usage:
     .venv/bin/python experiments/severity-confusion.py
@@ -23,6 +24,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import metrics  # noqa: E402
+from research_runs import DEFAULT_MANIFEST, result_path
 
 RESULTS = HERE / "results"
 
@@ -38,14 +40,9 @@ MODES = [
 ]
 
 
-def latest_clean(stem: str, reviewer: str) -> Path | None:
-    """Pick the most recent JSONL for (mode, reviewer) with no parse errors."""
-    candidates = sorted(RESULTS.glob(f"run-suite-{stem}-{reviewer}-*.jsonl"))
-    for fn in reversed(candidates):
-        rows = metrics.load([str(fn)])
-        if rows and not any(r["got"] not in metrics.VALID for r in rows):
-            return fn
-    return candidates[-1] if candidates else None
+def latest_clean(stem: str, reviewer: str, manifest=DEFAULT_MANIFEST) -> Path | None:
+    """Legacy entry point: return the verified, explicitly pinned run."""
+    return result_path(stem, reviewer, manifest=manifest)
 
 
 def confusion(rows) -> Counter:
@@ -106,6 +103,7 @@ def main() -> None:
     ap.add_argument("--suite", choices=["easy", "hard", "both"], default="hard")
     ap.add_argument("--reviewer", default="judge",
                     help="freeform / contract / judge / none (default judge)")
+    ap.add_argument('--manifest', type=Path, default=DEFAULT_MANIFEST)
     args = ap.parse_args()
 
     suites = ["easy", "hard"] if args.suite == "both" else [args.suite]
@@ -115,7 +113,7 @@ def main() -> None:
         print(f"\n=== suite: {suite} | reviewer: {args.reviewer} ===\n")
         for label, name, stem in MODES:
             stem_full = f"{stem}-hard" if suite == "hard" else stem
-            fn = latest_clean(stem_full, args.reviewer)
+            fn = latest_clean(stem_full, args.reviewer, args.manifest)
             if fn is None:
                 print(f"  {label}: no result file found for {stem_full}/{args.reviewer}")
                 continue

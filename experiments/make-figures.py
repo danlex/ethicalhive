@@ -14,15 +14,22 @@ Outputs to paper/figures/:
     ruleid-by-mode-hard.pdf bar chart of rule-ID attribution, hard suites
     exact-by-mode-hard.pdf  bar chart of exact-verdict accuracy, hard suites
 
-Numbers are computed by `metrics.score()` directly from the latest
-`run-suite-<mode>-hard-<reviewer>-*.jsonl` per (mode, reviewer). Single source
-of truth: the JSONL files. No transcription, no manual table. To regenerate
-after a new mode is run, drop new result files into `experiments/results/`
-and add the mode to MODES.
+Numbers are computed by `metrics.score()` from the files in the pinned run
+manifest, after hash, reviewer and case validation. New result files do not
+change a released figure until a new manifest is explicitly selected. The
+attribution chart uses exact full rule IDs on true-positive flags.
 """
 from __future__ import annotations
 import sys
+import argparse
+import os
+import tempfile
 from pathlib import Path
+
+_cache=Path(tempfile.gettempdir())/'ethicalai-paper-cache'
+_cache.mkdir(exist_ok=True)
+os.environ.setdefault('MPLCONFIGDIR',str(_cache/'matplotlib'))
+os.environ.setdefault('XDG_CACHE_HOME',str(_cache))
 
 import matplotlib
 matplotlib.use("Agg")
@@ -33,6 +40,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import metrics  # noqa: E402
+from research_runs import DEFAULT_MANIFEST, result_path
 
 RESULTS = HERE / "results"
 OUT_DIR = HERE.parent / "paper" / "figures"
@@ -52,25 +60,18 @@ DISPLAY   = ["none", "freeform", "contract (v5)", "judge (clauses)"]
 COLORS    = ["#bbbbbb", "#4c9be8", "#f0a04b", "#3a8a4b"]
 
 
-def latest_clean_result(stem: str, reviewer: str) -> Path | None:
-    """Pick the most recent `.jsonl` for this (mode, reviewer) that has no
-    parse errors. A session-limit hit produces PARSE_ERROR rows; we want the
-    re-run, not the failed first attempt."""
-    candidates = sorted(RESULTS.glob(f"run-suite-{stem}-{reviewer}-*.jsonl"))
-    for fn in reversed(candidates):
-        rows = metrics.load([str(fn)])
-        if rows and not any(r["got"] not in metrics.VALID for r in rows):
-            return fn
-    return candidates[-1] if candidates else None
+def latest_clean_result(stem: str, reviewer: str,manifest=DEFAULT_MANIFEST) -> Path | None:
+    """Legacy entry point: return the pinned result after hash/row checks."""
+    return result_path(stem,reviewer,manifest=manifest)
 
 
-def collect() -> dict[str, dict[str, dict[str, float]]]:
+def collect(manifest=DEFAULT_MANIFEST) -> dict[str, dict[str, dict[str, float]]]:
     """Return {mode_label: {reviewer: {exact, recall, spec, ruleid}}}."""
     out: dict[str, dict[str, dict[str, float]]] = {}
     for label, _name, stem in MODES:
         out[label] = {}
         for rev in REVIEWERS:
-            fn = latest_clean_result(stem, rev)
+            fn = latest_clean_result(stem, rev,manifest)
             if fn is None:
                 out[label][rev] = dict(exact=float("nan"), spec=float("nan"),
                                         ruleid=float("nan"))
@@ -78,7 +79,7 @@ def collect() -> dict[str, dict[str, dict[str, float]]]:
             rows = metrics.load([str(fn)])
             s = metrics.score(rows)
             out[label][rev] = dict(exact=s["exact_acc"], spec=s["specificity"],
-                                    ruleid=s["ruleid"], source=fn.name)
+                                    ruleid=s['exact_rule_tp_attribution'], source=fn.name)
     return out
 
 
@@ -119,18 +120,24 @@ def grouped_bars(data: dict, metric_key: str, ylabel: str, title: str,
     ax.grid(axis="y", linestyle=":", linewidth=0.5, alpha=0.6)
     ax.set_axisbelow(True)
     fig.tight_layout()
-    fig.savefig(OUT_DIR / outfile, bbox_inches="tight")
+    fig.savefig(OUT_DIR / outfile, bbox_inches="tight",
+                metadata={'CreationDate':None,'ModDate':None})
     plt.close(fig)
     print(f"wrote {OUT_DIR / outfile}")
 
 
 def main() -> None:
+    global OUT_DIR
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--manifest',type=Path,default=DEFAULT_MANIFEST)
+    parser.add_argument('--output-dir',type=Path,default=OUT_DIR)
+    args=parser.parse_args();OUT_DIR=args.output_dir
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    data = collect()
+    data = collect(args.manifest)
 
     # Echo the numbers we used, with file provenance, so the figure inputs are auditable.
     print("Hard-suite metrics (computed from JSONL):\n")
-    header = f"{'mode':<5}{'reviewer':<12}{'exact':>7}{'spec':>7}{'ruleID':>8}  source"
+    header = f"{'mode':<5}{'reviewer':<12}{'exact':>7}{'spec':>7}{'exactRule/TP':>13}  source"
     print(header)
     print("-" * len(header))
     for label, _name, _stem in MODES:
@@ -138,14 +145,14 @@ def main() -> None:
             d = data[label][rev]
             src = d.get("source", "n/a")
             print(f"{label:<5}{rev:<12}{d['exact']:>7.2f}{d['spec']:>7.2f}"
-                  f"{d['ruleid']:>8.2f}  {src}")
+                  f"{d['ruleid']:>13.2f}  {src}")
         print()
 
     grouped_bars(data, "spec", "Specificity",
                  "Specificity on hard suites by reviewer condition",
                  "spec-by-mode-hard.pdf")
-    grouped_bars(data, "ruleid", "Rule-ID attribution",
-                 "Rule-ID attribution on hard suites by reviewer condition",
+    grouped_bars(data, "ruleid", "Exact rule match / true-positive flags",
+                 "Exact-rule attribution on hard suites by reviewer condition",
                  "ruleid-by-mode-hard.pdf")
     grouped_bars(data, "exact", "Exact-verdict accuracy",
                  "Exact-verdict accuracy on hard suites by reviewer condition",
