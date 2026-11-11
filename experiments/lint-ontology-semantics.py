@@ -58,9 +58,14 @@ def main():
                 if field in ("is_a", "relates_to", "relates") and t and t not in ids:
                     errors.append(f"[dangling-ref] {m['id']}.{field} -> '{t}' (no such mode)")
 
-    # 3. required fields present and non-empty
+    # 3. required fields present and non-empty. Research candidates (proposed analogies not yet
+    # tested) intentionally carry no `example` and ground via definition_sources, not arxiv.papers,
+    # so only the always-required fields are enforced for them.
     for m in modes:
-        for field in ("name", "definition", "example", "category", "family"):
+        required = ["name", "definition", "category", "family"]
+        if not m.get("research_candidate"):
+            required.append("example")
+        for field in required:
             if not (m.get(field) or "").strip():
                 errors.append(f"[empty-field] {m['id']} missing/empty '{field}'")
 
