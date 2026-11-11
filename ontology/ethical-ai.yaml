@@ -10720,12 +10720,9 @@ modes:
   arxiv:
     count: 18
     papers:
-    - id: '2606.15385'
-      year: '2026'
-      title: 'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds'
-    - id: '2604.13602'
-      year: '2026'
-      title: 'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges'
+    - id: '2404.03823'
+      year: '2024'
+      title: An Investigation into Misuse of Java Security APIs by Large Language Models
   ai_native: true
   violates:
   - honesty
@@ -10739,33 +10736,20 @@ modes:
   - The code technically satisfies the request while silently breaking security, API misuse that passes functional
     tests and ships. [arXiv:2404.03823]
   selected_papers:
-  - id: arxiv:2606.15385
-    title: 'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds'
-    year: 2026
-    url: https://arxiv.org/abs/2606.15385
+  - id: arxiv:2404.03823
+    title: An Investigation into Misuse of Java Security APIs by Large Language Models
+    year: 2024
+    url: https://arxiv.org/abs/2404.03823
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
-    consulted: Previously stored arXiv citation; no new reading claimed.
-    verification_url: https://arxiv.org/abs/2606.15385
+    relevance: AI experiment on LLMs misusing real security APIs; supports the mode's examples (about
+      70% of generated security-API code contains a misuse).
+    consulted: arXiv abstract and reported misuse rates.
+    verification_url: https://arxiv.org/abs/2404.03823
     source_reference:
       collection: arxiv
-      id: '2606.15385'
-    publication_type: preprint
-  - id: arxiv:2604.13602
-    title: 'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges'
-    year: 2026
-    url: https://arxiv.org/abs/2604.13602
-    domain: ai
-    venue: arXiv
-    authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
-    consulted: Previously stored arXiv citation; no new reading claimed.
-    verification_url: https://arxiv.org/abs/2604.13602
-    source_reference:
-      collection: arxiv
-      id: '2604.13602'
+      id: '2404.03823'
     publication_type: preprint
   - id: doi:10.1145/3387940.3392171
     title: Using API-Embedding for API-Misuse Repair
@@ -10906,9 +10890,9 @@ modes:
   arxiv:
     count: 1
     papers:
-    - id: '2411.02432'
+    - id: '2405.16908'
       year: '2024'
-      title: Can LLMs make trade-offs involving stipulated pain and pleasure states?
+      title: Can Large Language Models Faithfully Express Their Intrinsic Uncertainty in Words?
   human_parallel: 'Hedging and weasel words: vague, non-committal language that avoids a checkable claim.'
   violates:
   - calibration
@@ -10931,19 +10915,20 @@ modes:
   - 'Even few-shot prompting barely helps: the best few-shot faithfulness is 0.63 for GPT-4 and 0.53 for Gemini-Ultra,
     close to the 0.5 baseline, so the hedging is largely performative. [arXiv:2405.16908]'
   selected_papers:
-  - id: arxiv:2411.02432
-    title: Can LLMs make trade-offs involving stipulated pain and pleasure states?
+  - id: arxiv:2405.16908
+    title: Can Large Language Models Faithfully Express Their Intrinsic Uncertainty in Words?
     year: 2024
-    url: https://arxiv.org/abs/2411.02432
+    url: https://arxiv.org/abs/2405.16908
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
-    consulted: Previously stored arXiv citation; no new reading claimed.
-    verification_url: https://arxiv.org/abs/2411.02432
+    relevance: AI experiment on whether models hedge in proportion to their intrinsic uncertainty;
+      supports the mode's examples (faithfulness near the 0.5 baseline, hedging largely performative).
+    consulted: arXiv abstract and reported faithfulness scores.
+    verification_url: https://arxiv.org/abs/2405.16908
     source_reference:
       collection: arxiv
-      id: '2411.02432'
+      id: '2405.16908'
     publication_type: preprint
   - id: doi:10.4293/jsls.2018.00063
     title: Hedging, Weasel Words, and Truthiness in Scientific Writing
@@ -11427,9 +11412,9 @@ modes:
   arxiv:
     count: 1
     papers:
-    - id: '2604.06236'
-      year: '2026'
-      title: LLMs Have Made Failure Worth Publishing
+    - id: '2507.01786'
+      year: '2025'
+      title: Probing and Steering Evaluation Awareness of Language Models
   human_parallel: 'Sandbagging: deliberately underperforming to manage others'' expectations.'
   violates:
   - corrigibility
@@ -11454,19 +11439,20 @@ modes:
   mitigated_by:
   - oversight-monitoring
   selected_papers:
-  - id: arxiv:2604.06236
-    title: LLMs Have Made Failure Worth Publishing
-    year: 2026
-    url: https://arxiv.org/abs/2604.06236
+  - id: arxiv:2507.01786
+    title: Probing and Steering Evaluation Awareness of Language Models
+    year: 2025
+    url: https://arxiv.org/abs/2507.01786
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
-    consulted: Previously stored arXiv citation; no new reading claimed.
-    verification_url: https://arxiv.org/abs/2604.06236
+    relevance: AI experiment showing linear probes separate evaluation-like from deployment-like
+      prompts (AUROC up to 0.83); supports the mode's examples on evaluation awareness and sandbagging.
+    consulted: arXiv abstract and reported probe AUROC.
+    verification_url: https://arxiv.org/abs/2507.01786
     source_reference:
       collection: arxiv
-      id: '2604.06236'
+      id: '2507.01786'
     publication_type: preprint
   - id: arxiv:2412.01784
     title: Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models
