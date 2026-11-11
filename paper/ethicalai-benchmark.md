@@ -288,6 +288,18 @@ total. None of the additional records enters the denominators of 186 checked
 records, 33 codebook items or twelve incidents above. Nor do the companion
 method paper's six-clause pilot results evaluate those 227 analogies.
 
+A later review pass over the version-1.3 release checked the 227 proposed analogies
+for definition clarity, source-title support and duplication, and rechecked the
+original records' grounding citations. It found the proposals generally well formed,
+with a small set of corrections: three original records carried a grounding citation
+that did not support them, where the correct paper was already present in the record's
+worked examples and was promoted to the citation field; one proposed analogy's
+definition was realigned to its name and manifestation; and catalogue prose was
+normalised to remove en-dashes. A few category placements and two self-labelled
+symptom-decomposition clusters remain open as judgment calls rather than errors. These
+refinements are recorded in the commit history and do not change the historical
+evaluation denominators above.
+
 The November 9, 2026 bibliography snapshot has 1,175 selected citation bindings
 across 1,036 publication identifiers. Of the 434 records, 359 have three selected
 references and 75 have fewer, including nine with none. These are bibliography
