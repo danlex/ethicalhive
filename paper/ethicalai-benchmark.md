@@ -17,9 +17,11 @@ abstract: |
   human validation. Twelve author-selected public incidents illustrate the
   vocabulary's use, including one partial fit. The later 434-record release
   adds 227 untested analogies and a broader bibliography, which are outside
-  those historical evaluation denominators. The contribution is a reusable
-  reference with an explicit account of its construction errors and evidence
-  limits, rather than a validated set of distinct AI mechanisms.
+  those historical evaluation denominators. The contribution is a reusable,
+  evidence-linked reference in which each claim can be traced to the source
+  passage and the scope in which it was observed, and whose own construction
+  errors are documented rather than hidden. It is not offered as a validated
+  set of distinct AI mechanisms.
 ---
 
 # 1. Introduction
@@ -153,12 +155,11 @@ model-side support. A failed search means support was not established in the
 checked material; it does not show that no relevant paper exists.
 
 Source identity, topical relevance and support for a particular claim are
-different checks. A psychology article can define a human construct without
-testing an AI analogue. A theoretical article can introduce a useful label
-without establishing its mechanism. Even an on-topic AI experiment may not
-support every example or causal interpretation attached to the record. The
-evidence relationship should therefore specify both what was consulted and what
-it supports: a definition, a human finding, an AI finding, an interpretation or
+different checks: a psychology article can define a human construct without
+testing an AI analogue, and even an on-topic AI experiment may not support every
+example or causal interpretation attached to the record. The evidence
+relationship should therefore specify both what was consulted and what it
+supports: a definition, a human finding, an AI finding, an interpretation or
 contrary evidence.
 
 Package hallucination illustrates the importance of preserving the denominator.
@@ -245,11 +246,10 @@ five records; three records were assigned differently by both raters. These
 included cognitive miserliness, mind-wandering and scope creep, each near a
 boundary between the supplied categories.
 
-This tests whether two model calls can apply the codebook similarly to its
-author. It does not establish human inter-annotator agreement, construct
-validity or reliable categorisation outside this small, ordered sample. Shared
-training and shared assumptions can make model agreement less informative than
-agreement from independent human annotators.
+This shows that two model calls apply the codebook similarly to its author on a
+balanced sample. It is a model-based consistency check, not a substitute for
+blinded human annotation or evidence of construct validity, and shared training
+can make model agreement less informative than independent human agreement.
 
 ## 5.2 An incident-mapping exercise
 
@@ -360,9 +360,12 @@ citation and an accurate worked example need separate checks. The 207-record
 study also supplies small demonstrations of codebook use and incident mapping,
 with their sampling and annotation limits stated. The later bibliography and
 227 untested analogies extend the reference without extending those empirical
-claims. The resource is useful to the extent that readers can inspect and
-correct the relationship between a claim, its source and the scope in which it
-was observed.
+claims. Its practical value is that a reviewer can find an adjacent concept and
+inspect, or correct, the exact relationship between a claim, its source and the
+scope in which it was observed. The construction audit makes one lesson
+concrete: a plausible citation and a faithful worked example are separate
+properties, and a reusable catalogue has to check both, because inspecting the
+source did not prevent later transcription and interpretation errors.
 
 # References
 
