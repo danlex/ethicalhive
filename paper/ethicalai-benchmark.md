@@ -1,17 +1,20 @@
 ---
-title: "EthicalAI: An Evidence-Linked Catalogue for AI Integrity"
+title: "EthicalAI: An Evidence-Linked Catalogue of AI Integrity Failures, and What Grounding It Revealed"
 author: "Alexandru Dan"
 date: "2026-11-09"
 abstract: |
   EthicalAI organises integrity failures and related behavioural patterns as
-  definitions linked to evidence, obligations, harms and neighbouring concepts.
-  This paper reports the construction and review of its historical 207-record
-  study. The construction log classified 186 records as grounded in worked
-  examples from source papers and retained 21 without that level of support.
-  A citation audit recorded 29 repaired source mismatches among roughly fifty
-  papers examined. A subsequent checking pass reported hard errors in 26 of
-  the 186 grounded records and minor issues in 42. These are findings about
-  the reviewed artifact, not error rates for AI research generally. A
+  definitions linked to evidence, obligations, harms and neighbouring concepts,
+  with a source passage behind each claim. Building it that way produced the
+  paper's main result: grounding a catalogue by reading its sources, not trusting
+  their titles, still leaves errors, because a plausible citation and a faithful
+  worked example are separate properties. This paper reports that construction and
+  review for the historical 207-record study. The construction log classified 186
+  records as grounded in worked examples from source papers and retained 21 without
+  that level of support. A citation audit recorded 29 repaired source mismatches
+  among roughly fifty papers examined. A subsequent checking pass reported hard
+  errors in 26 of the 186 grounded records and minor issues in 42. These are
+  findings about the reviewed artifact, not error rates for AI research generally. A
   deterministic 33-record codebook check produced model-to-catalogue Cohen
   kappa values of 0.90 and 0.83; this is a model-based consistency check, not
   human validation. Twelve author-selected public incidents illustrate the
@@ -43,13 +46,27 @@ system properties or outcomes. These different kinds of record are useful to an
 auditor, but their inclusion does not make them interchangeable scientific
 constructs.
 
-This paper examines the historical 207-record catalogue and the checking work
-documented during its construction. It asks what the resource represents, what
-its evidence supports, and what went wrong when examples were attached to
-sources. Two smaller checks examine category-label recoverability and use on
-public incidents. The companion advisory-auditing paper studies a separate
-question: whether focused checks of named obligations help review coding-agent
-drafts. Its six-clause pilot does not validate the catalogue as a whole.
+This paper reports what building such a reference required and, more usefully,
+what the building revealed. The central finding is a caution for any evidence-linked
+resource. Grounding the catalogue by reading each source, rather than trusting its
+title, still left errors: of about fifty cited papers checked during construction,
+29 did not support the claim they were attached to and had to be re-cited, and a
+later pass over the 186 grounded records found a figure contradicted by or absent
+from its source in 14 percent of them. A plausible citation and a faithful worked
+example turned out to be separate properties, each needing its own check. These are
+one project's numbers on one artifact, not an error rate for AI research at large.
+The transferable lesson is narrower and sturdier: attaching a claim to a source is
+not the same as the source supporting it, and any catalogue that links evidence to
+claims has to verify both the link and the quotation, not just record them.
+
+A reader therefore gets three things: a reusable vocabulary of integrity failures
+with stable identifiers and a source passage behind each claim; a reproducible
+procedure for checking whether that citation and its worked example actually hold;
+and a measured account of how often, in careful hands, they did not. Two smaller
+checks examine category-label recoverability and use on twelve public incidents. The
+companion advisory-auditing paper studies a separate question, whether focused checks
+of named obligations help review coding-agent drafts, and its six-clause pilot does
+not validate the catalogue as a whole.
 
 The current release contains 434 records. Section 6 separates that later
 expansion from the original study so that more entries and citations do not
@@ -171,6 +188,16 @@ containing a hallucination. It is also specific to the tested models, prompts
 and package-registry snapshot.
 
 # 4. Findings from construction
+
+This section carries the paper's main result, and it is a result about method, not
+about any one model. Two different checks ran during construction, and they failed
+in different ways that a single reading would have merged. One asks whether a cited
+source is about, and supports, the phenomenon in the record. The other asks whether a
+specific quoted number or example is faithful to that source. Keeping them apart is
+the point: a record can pass the first and fail the second, and the rates below show
+that a careful reader produced exactly that split often enough to matter. Anyone
+assembling an evidence-linked resource inherits both checks whether or not they run
+them.
 
 ## 4.1 Citation mismatches
 
@@ -366,9 +393,11 @@ not replace the immutable artifact cited for a reported result.
 
 # 9. Conclusion
 
-EthicalAI provides definitions, evidence pointers and conceptual relations for
-reviewing AI integrity. Its historical construction records show why a plausible
-citation and an accurate worked example need separate checks. The 207-record
+EthicalAI is a reference for reviewing AI integrity whose distinctive feature is
+that each claim carries the source passage and scope it came from, so a reviewer
+can check it rather than take it on trust. Building it that way is also what exposed
+the paper's main result: a plausible citation and an accurate worked example are
+separate properties, and checking one does not establish the other. The 207-record
 study also supplies small demonstrations of codebook use and incident mapping,
 with their sampling and annotation limits stated. The later bibliography and
 227 untested analogies extend the reference without extending those empirical
