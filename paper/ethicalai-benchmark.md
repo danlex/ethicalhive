@@ -403,10 +403,10 @@ with their sampling and annotation limits stated. The later bibliography and
 227 untested analogies extend the reference without extending those empirical
 claims. Its practical value is that a reviewer can find an adjacent concept and
 inspect, or correct, the exact relationship between a claim, its source and the
-scope in which it was observed. The construction audit makes one lesson
-concrete: a plausible citation and a faithful worked example are separate
-properties, and a reusable catalogue has to check both, because inspecting the
-source did not prevent later transcription and interpretation errors.
+scope in which it was observed. The construction rule the catalogue now follows is
+the actionable form of that result: verify the link and the quotation separately,
+because reading the source did not, on its own, prevent later transcription and
+interpretation errors.
 
 # References
 
