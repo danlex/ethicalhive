@@ -62,7 +62,8 @@ claims has to verify both the link and the quotation, not just record them.
 A reader therefore gets three things: a reusable vocabulary of integrity failures
 with stable identifiers and a source passage behind each claim; a reproducible
 procedure for checking whether that citation and its worked example actually hold;
-and a measured account of how often, in careful hands, they did not. Two smaller
+and a measured account, with a typology, of how grounding failed, the largest class
+being citations whose title matched the term while the paper studied something else. Two smaller
 checks examine category-label recoverability and use on twelve public incidents. The
 companion advisory-auditing paper studies a separate question, whether focused checks
 of named obligations help review coding-agent drafts, and its six-clause pilot does
@@ -208,18 +209,35 @@ mismatches led to records being held without a grounded AI example. The
 approximate denominator and the distinction between repaired and held records
 prevent treating 29 as an exact overall error rate.
 
-The recorded problems include papers on a different phenomenon, a result in the
-opposite direction, and an appropriate test with a null finding. For example,
-one source attached to model agency concerned a human user's perceived control.
-A source used for pragmatic over-accommodation instead reported under-use of
-pragmatic inference. Some proposed bias analogies were tested without the
-expected effect. These are different reasons to revise a claim, and a
-bibliography entry alone does not distinguish them.
+Sorting the mismatches by why the citation failed turns the rate into a diagnosis.
+The roughly thirty-five logged mismatches fall into a few recurring kinds. This is a
+post-hoc categorisation of the audit log, not a pre-registered scheme, and the counts
+are approximate.
+
+| Why the citation failed | Count | What it looked like |
+|---|---:|---|
+| Right term, different phenomenon | ~14 | The title shared the mode's vocabulary but studied something else: a watermarking method cited for source-monitoring; a semantic-web rule language cited for scope insensitivity. |
+| Right area, wrong specific claim | ~10 | On topic but not the defined behaviour: answer-label probability bias cited for base-rate neglect; stereotype bias cited for in-group favouritism. |
+| Paper belongs to another mode | ~4 | A genuine, well-matched paper filed under the wrong entry, repaired by reassigning it rather than discarding it. |
+| Opposite result | ~3 | The paper reported the reverse of the claim: faithful self-explanation cited for the introspection illusion; under-use of pragmatic inference cited for over-accommodation. |
+| Wrong population | ~2 | Demonstrated in humans or vision models, not language models. |
+| On topic, no extractable instance | ~2 | The right concept in a position paper or a metrics-only report, with no quotable case. |
+
+The shape of this distribution is the useful part. The largest class is not
+fabrication but surface match: a citation whose title carries the mode's vocabulary
+while the paper studies a different phenomenon. That is exactly the failure profile of
+citation by keyword, or by a language model asked to supply a plausible-looking
+reference, and it is invisible to any check short of reading the source. The most
+dangerous class is smaller but sharper: a handful of citations reported the opposite
+of the claim, which a title scan or an abstract skim would have ratified. A further
+set was on topic but, when tested, simply did not find the behaviour, which is a
+different correction again. A bibliography entry alone separates none of these.
 
 The audit supports a practical construction requirement: attach a claim to its
-supporting passage and experimental scope, not just to a title or a search hit.
-It does not estimate how often other catalogues contain such errors, because
-the checked papers were not a random sample of research publications.
+supporting passage and experimental scope, not just to a title or a search hit. It
+does not estimate how often other catalogues contain such errors, because the checked
+papers were not a random sample of research publications; a planned external audit
+would test whether this distribution recurs elsewhere.
 
 ## 4.2 Rechecking worked examples
 
