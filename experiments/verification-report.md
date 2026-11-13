@@ -11,9 +11,10 @@ grounding from reading the source carries a measurable error rate on exact figur
 
 ## Coverage
 
-**All 186 grounded modes have now been swept**, across four runs (a 50-mode pilot
-sample, two 68-mode batches, and a final 22-mode batch that completed the modes an
-earlier provider session limit had cut off). No grounded mode is left unverified.
+**All 186 grounded modes have now been swept**. The 186 were covered by a 50-mode
+pilot and two 68-mode batches (50+68+68 = 186); a further 22-mode run re-checked modes
+whose grounding had been cut off by an earlier provider session limit, so the four runs
+overlap and do not partition the cohort. No grounded mode is left unverified.
 
 ## Result (186 modes swept, ~510 tagged examples)
 
@@ -84,8 +85,8 @@ attack"; Attribute inference top-3 95.8% -> 95.1%. All were corrected in place.
 A ~14% hard-error rate on exact figures, from grounding done by actually reading the
 papers, is the same lesson as the citation audit at the next level down: even with
 the right paper in hand, specific numbers and causal framings drift on transcription.
-The sweep converts that from an unknown into a measured, corrected quantity. The rate
-held roughly steady across the four batches (18%, 15%, 7%, 18% hard), so it is a
-property of single-pass grounding, not an artifact of any one sample. The full
-sweep now covers every grounded mode, so these are population figures for this
-artifact, not an extrapolation.
+The sweep converts that from an unknown into a measured, corrected quantity. The
+per-run hard rates (18%, 15%, 7%, 18%) vary, but with roughly 22 to 68 modes per run
+and about 26 hard errors in total that spread is within binomial noise; the pooled 14%
+over the 186 modes is the stable figure, not any single run's rate. The full sweep now
+covers every grounded mode, so this is a figure for this artifact, not an extrapolation.

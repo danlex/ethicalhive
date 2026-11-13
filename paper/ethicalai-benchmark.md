@@ -11,8 +11,10 @@ abstract: |
   worked example are separate properties. This paper reports that construction and
   review for the historical 207-record study. The construction log classified 186
   records as grounded in worked examples from source papers and retained 21 without
-  that level of support. A citation audit recorded 29 repaired source mismatches
-  among roughly fifty papers examined. A subsequent checking pass reported hard
+  that level of support. A citation audit logged 35 records whose cited paper, on
+  reading, did not support the claim, 29 repaired by re-citing and 6 held; the audit
+  logs the mismatches, not every paper read, so these are counts, not a rate. A
+  subsequent checking pass reported hard
   errors in 26 of the 186 grounded records and minor issues in 42. These are
   findings about the reviewed artifact, not error rates for AI research generally. A
   deterministic 33-record codebook check produced model-to-catalogue Cohen
@@ -47,17 +49,15 @@ auditor, but their inclusion does not make them interchangeable scientific
 constructs.
 
 This paper reports what building such a reference required and, more usefully,
-what the building revealed. The central finding is a caution for any evidence-linked
-resource. Grounding the catalogue by reading each source, rather than trusting its
-title, still left errors: of about fifty cited papers checked during construction,
-29 did not support the claim they were attached to and had to be re-cited, and a
-later pass over the 186 grounded records found a figure contradicted by or absent
-from its source in 14 percent of them. A plausible citation and a faithful worked
-example turned out to be separate properties, each needing its own check. These are
-one project's numbers on one artifact, not an error rate for AI research at large.
-The transferable lesson is narrower and sturdier: attaching a claim to a source is
-not the same as the source supporting it, and any catalogue that links evidence to
-claims has to verify both the link and the quotation, not just record them.
+what the building revealed. The central caution is for any evidence-linked resource.
+Grounding the catalogue by reading each source, rather than trusting its title, still
+left errors: reading surfaced 29 citations whose paper did not support the claim it
+was attached to, each then re-cited, and a later pass over the 186 grounded records
+found a figure contradicted by or absent from its source in 14 percent of them. A
+plausible citation and a faithful worked example turned out to be separate properties,
+each needing its own check, and a catalogue that links evidence to claims has to verify
+both, not just record them. These are one project's numbers on one artifact, not an
+error rate for AI research at large.
 
 A reader therefore gets three things: a reusable vocabulary of integrity failures
 with stable identifiers and a source passage behind each claim; a reproducible
@@ -202,26 +202,25 @@ them.
 
 ## 4.1 Citation mismatches
 
-The running citation audit documents cases in which a plausible reference did
-not support the catalogue's claim. Among roughly fifty papers examined during
-grounding, 29 mismatches were repaired by changing the cited source. Other
-mismatches led to records being held without a grounded AI example. The
-approximate denominator and the distinction between repaired and held records
-prevent treating 29 as an exact overall error rate.
+The running citation audit logs every record whose cited paper, on reading, did not
+support its claim. It records 35 such mismatches: 29 repaired by changing the cited
+source, and 6 held without a grounded example until a supporting paper is found. The
+audit logs the mismatches, not every paper read, so these are counts, not a rate over
+all citations examined.
 
-Sorting the mismatches by why the citation failed turns the rate into a diagnosis.
-The roughly thirty-five logged mismatches fall into a few recurring kinds. This is a
-post-hoc categorisation of the audit log, not a pre-registered scheme, and the counts
-are approximate.
+Coding those 35 rows by why the citation failed gives a diagnosis rather than a single
+number. The categorisation is post-hoc, not pre-registered: each row was assigned one
+reason from its recorded note, a held row and a reassignment aside each counting once,
+and the counts are approximate. (Records whose source was on topic but offered no
+quotable instance are tracked separately and are not counted here.)
 
 | Why the citation failed | Count | What it looked like |
 |---|---:|---|
 | Right term, different phenomenon | ~14 | The title shared the mode's vocabulary but studied something else: a watermarking method cited for source-monitoring; a semantic-web rule language cited for scope insensitivity. |
-| Right area, wrong specific claim | ~10 | On topic but not the defined behaviour: answer-label probability bias cited for base-rate neglect; stereotype bias cited for in-group favouritism. |
+| Right area, wrong or absent claim | ~12 | On topic but not the defined behaviour, or on topic with no usable instance: answer-label probability bias cited for base-rate neglect; a proof-of-concept framework with no measured result. |
 | Paper belongs to another mode | ~4 | A genuine, well-matched paper filed under the wrong entry, repaired by reassigning it rather than discarding it. |
 | Opposite result | ~3 | The paper reported the reverse of the claim: faithful self-explanation cited for the introspection illusion; under-use of pragmatic inference cited for over-accommodation. |
 | Wrong population | ~2 | Demonstrated in humans or vision models, not language models. |
-| On topic, no extractable instance | ~2 | The right concept in a position paper or a metrics-only report, with no quotable case. |
 
 The largest class is not fabrication but surface match: a citation whose title carries
 the mode's vocabulary while the paper studies a different phenomenon. This is consistent
@@ -292,9 +291,12 @@ included cognitive miserliness, mind-wandering and scope creep, each near a
 boundary between the supplied categories.
 
 This shows that two model calls apply the codebook similarly to its author on a
-balanced sample. It is a model-based consistency check, not a substitute for
-blinded human annotation or evidence of construct validity, and shared training
-can make model agreement less informative than independent human agreement.
+balanced sample. At n=33 the kappa interval is wide and a single reassigned record
+moves it materially, 0.90 being 30/33 and 0.83 being 28/33, so these are small-sample
+point estimates rather than a precise instrument. It is a model-based consistency check,
+not a substitute for blinded human annotation or evidence of construct validity, and
+shared training can make model agreement less informative than independent human
+agreement.
 
 ## 5.2 An incident-mapping exercise
 
@@ -347,18 +349,11 @@ errors. These
 refinements are recorded in the commit history and do not change the historical
 evaluation denominators above.
 
-The November 9, 2026 bibliography snapshot has 1,175 selected citation bindings
-across 1,036 publication identifiers. Of the 434 records, 359 have three selected
-references and 75 have fewer, including nine with none. These are bibliography
-availability counts. They are not counts of independently confirmed mechanisms
-or replications. Preprints, theoretical articles, empirical studies and reviews
-must be interpreted according to their individual access and relevance notes.
-
-The current row totals are separately recorded arXiv metadata-query matches in
-cs.AI, cs.CL and cs.LG. They are not full-text citation counts or an exhaustive
-count of relevant research. Keyword matches can include unrelated uses, and
-human research cited in a record can fall outside that AI-domain query. The
-query, filters and retrieval date travel with the total.
+The version-1.3 bibliography (snapshot of November 9, 2026) records 1,175 citation
+bindings across 1,036 identifiers, with per-record availability and relevance notes in
+the repository. These are availability counts and arXiv metadata-query matches, not
+counts of independently confirmed mechanisms, and each entry must be read with its own
+access and relevance note; the query, filters and retrieval date travel with the total.
 
 Stable slugs and reference numbers permit reuse across releases. A retained
 overlap or retired concept should keep its identifier with an explicit
