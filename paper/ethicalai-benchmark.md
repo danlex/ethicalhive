@@ -223,15 +223,15 @@ are approximate.
 | Wrong population | ~2 | Demonstrated in humans or vision models, not language models. |
 | On topic, no extractable instance | ~2 | The right concept in a position paper or a metrics-only report, with no quotable case. |
 
-The shape of this distribution is the useful part. The largest class is not
-fabrication but surface match: a citation whose title carries the mode's vocabulary
-while the paper studies a different phenomenon. That is exactly the failure profile of
-citation by keyword, or by a language model asked to supply a plausible-looking
-reference, and it is invisible to any check short of reading the source. The most
-dangerous class is smaller but sharper: a handful of citations reported the opposite
-of the claim, which a title scan or an abstract skim would have ratified. A further
-set was on topic but, when tested, simply did not find the behaviour, which is a
-different correction again. A bibliography entry alone separates none of these.
+The largest class is not fabrication but surface match: a citation whose title carries
+the mode's vocabulary while the paper studies a different phenomenon. This is consistent
+with what keyword-based or language-model-suggested citation would produce, though the
+audit records the mismatch pattern, not how each citation was first selected; either way
+it is invisible to any check short of reading the source. The most dangerous class is
+smaller but sharper: a handful of citations reported the opposite of the claim, which a
+title scan or an abstract skim would have ratified. A further set was on topic but, when
+tested, simply did not find the behaviour, which is a different correction again. A
+bibliography entry alone separates none of these.
 
 The audit supports a practical construction requirement: attach a claim to its
 supporting passage and experimental scope, not just to a title or a search hit. It
@@ -333,15 +333,17 @@ total. None of the additional records enters the denominators of 186 checked
 records, 33 codebook items or twelve incidents above. Nor do the companion
 method paper's six-clause pilot results evaluate those 227 analogies.
 
-A later review pass over the version-1.3 release checked the 227 proposed analogies
-for definition clarity, source-title support and duplication, and rechecked the
-original records' grounding citations. It found the proposals generally well formed,
-with a small set of corrections: three original records carried a grounding citation
-that did not support them, where the correct paper was already present in the record's
-worked examples and was promoted to the citation field; one proposed analogy's
-definition was realigned to its name and manifestation; and catalogue prose was
-normalised to remove en-dashes. A few category placements and two self-labelled
-symptom-decomposition clusters remain open as judgment calls rather than errors. These
+A later single-pass internal review of the version-1.3 release checked the 227 proposed
+analogies for definition clarity, source-title support and duplication, and rechecked the
+original records' grounding citations. The review was by the same project, not an
+independent party; it produced a small set of corrections rather than a quality verdict:
+three original records carried a grounding citation that did not support them, where the
+correct paper was already present in the record's worked examples and was promoted to the
+citation field; one proposed analogy's definition was realigned to its name and
+manifestation; six candidate records were moved to a better-fitting category; and
+catalogue prose was normalised to remove en-dashes. A few further category placements and
+two self-labelled symptom-decomposition clusters remain open as judgment calls rather than
+errors. These
 refinements are recorded in the commit history and do not change the historical
 evaluation denominators above.
 
