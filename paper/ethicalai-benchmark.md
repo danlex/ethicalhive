@@ -17,7 +17,10 @@ abstract: |
   subsequent checking pass reported hard
   errors in 26 of the 186 grounded records and minor issues in 42. These are
   findings about the reviewed artifact, not error rates for AI research generally. A
-  deterministic 33-record codebook check produced model-to-catalogue Cohen
+  small probe extends the lesson to machine citation: asked for references for a sample
+  of the definitions, an independent model mostly declined, but every confident suggestion
+  it made bound a plausible title to an arXiv identifier that belonged to an unrelated
+  paper. A deterministic 33-record codebook check produced model-to-catalogue Cohen
   kappa values of 0.90 and 0.83; this is a model-based consistency check, not
   human validation. Twelve author-selected public incidents illustrate the
   vocabulary's use, including one partial fit. The later 434-record release
@@ -231,6 +234,20 @@ smaller but sharper: a handful of citations reported the opposite of the claim, 
 title scan or an abstract skim would have ratified. A further set was on topic but, when
 tested, simply did not find the behaviour, which is a different correction again. A
 bibliography entry alone separates none of these.
+
+A small probe tests the machine-citation connection directly rather than leaving it an
+analogy. Asked to supply an arXiv citation for a sample of the mode definitions, with the
+instruction to name only a paper it was confident existed, an independent model (GPT-4o)
+declined on 55 of 65 prompts across two runs. Of the 10 confident suggestions it did make,
+every one checked (10 of 10, across 7 distinct modes) gave an arXiv identifier that resolved
+to an unrelated real paper: a plausible title, sometimes a genuinely well-known one such as
+"Overcoming Catastrophic Forgetting" or SayCan, bound to an identifier that belonged to a
+different paper in a different field, in one case a rocket-nozzle fluid-dynamics study. The
+machine failure is sharper than the human auditor's surface match, where the cited paper at
+least existed on topic. This is one model on a few dozen definitions, not a rate; but it moves
+the connection from analogy to a measured if small result, and it sharpens the same rule: for
+a machine-suggested citation the identifier and the title are separate properties, and only
+resolving the source reconciles them. The probe is in `experiments/llm-citation-probe.md`.
 
 The audit supports a practical construction requirement: attach a claim to its
 supporting passage and experimental scope, not just to a title or a search hit. It
