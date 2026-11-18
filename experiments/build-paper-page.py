@@ -144,7 +144,7 @@ def main():
       <article class="card"><h3>{title}</h3><p>A resource study of definitions, source support, construction errors and category use. The historical study and the expanded bibliography have separate evidence scopes.</p><p><a href="paper.html">Read the catalogue paper</a> &middot; <a href="paper.pdf">Download PDF</a></p></article>
       <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="methods-paper.pdf">Download auditing paper · PDF</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/paper/draft.md">Read source</a></p></article>
     </div>
-    <p><a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
+    <p><a href="papers.html">Paper versions and changelog</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
   </section>'''
     home=ROOT/'docs/index.html';text=home.read_text(encoding='utf-8')
     text,count=re.subn(r'<section class="framework" id="paper">.*?</section>',lambda _:section,text,count=1,flags=re.S)

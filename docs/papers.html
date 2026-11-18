@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paper versions</title>
+<meta name="description" content="Archived, navigable versions of the EthicalAI papers with changelogs.">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#e7e5e2;--panel:#f6f5f4}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+.wrap{max-width:800px;margin:0 auto;padding:40px 22px 90px}
+a{color:var(--accent-d)}
+h1{font-size:clamp(24px,4vw,34px);line-height:1.2;margin:22px 0 4px}
+h2{font-size:22px;margin:38px 0 10px;padding-top:10px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 14px;max-width:72ch}
+ul{max-width:72ch} li{margin:4px 0}
+.back{font-size:13px;display:inline-block;margin-bottom:10px}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0}
+code{background:var(--panel);padding:1px 5px;border-radius:4px;font-size:.9em}
+.tablewrap{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel);font-weight:700}
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html#paper">&larr; EthicalAI</a>
+<p class="eyebrow">Working paper</p>
+
+<p><a href="paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
+<h1>Paper versions</h1>
+<p>Archived, navigable versions of each paper, with a changelog for every version. The newest version of the catalogue paper is also the live one.</p>
+<h2>EthicalAI: An Evidence-Linked Catalogue of AI Integrity Failures</h2>
+<p><a href="paper.html">Current live version</a></p>
+<h3>v1.4 <span style="font-weight:400;color:#666">&middot; 2026-11-18</span> <em>(latest)</em></h3>
+<p><a href="papers/ethicalai-benchmark-v1.4.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/fc67571">fc67571</a></p>
+<ul><li>Paper-orchestra agent council revision (architect, literature, section writers, integrator, groundedness verifier), validated before publishing.</li><li>Promoted the citation-grounding result to its own Section 3 and named the five-class failure typology (surface-match, scope-mismatch, misfiling, polarity-reversal, wrong-population) so it is a citable object.</li><li>Positioned against the closest prior work with five arXiv-verified citations: Lewis 2020 (RAG), Rashkin 2021 (AIS attribution), Liu 2023 (verifiability audit), Gao 2023 (ALCE), Agrawal 2023 (reference hallucination).</li></ul>
+<h3>v1.3 <span style="font-weight:400;color:#666">&middot; 2026-11-13</span></h3>
+<p><a href="papers/ethicalai-benchmark-v1.3.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/5f4b1a7">5f4b1a7</a></p>
+<ul><li>Added the LLM-citation probe: asked for references, GPT-4o declined on 55 of 65 prompts, and all 10 confident suggestions bound a plausible title to an arXiv id for an unrelated paper.</li><li>Converted the keyword/LLM hook from an (ungrounded) analogy into a measured small-probe result; earlier groundedness BLOCK resolved.</li></ul>
+<h3>v1.2 <span style="font-weight:400;color:#666">&middot; 2026-11-11</span></h3>
+<p><a href="papers/ethicalai-benchmark-v1.2.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/6e2a9f1">6e2a9f1</a></p>
+<ul><li>Added the citation-failure typology that turns the headline error rate into a diagnosis.</li><li>Applied the review council's convergent fixes: reframed 29/50 as a count not a rate, stated the binning rule, added the kappa small-n caveat, fixed a source batch-arithmetic bug.</li></ul>
+<h3>v1.1 <span style="font-weight:400;color:#666">&middot; 2026-11-11</span></h3>
+<p><a href="papers/ethicalai-benchmark-v1.1.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/29c826d">29c826d</a></p>
+<ul><li>Reframed to lead with the transferable finding and the reader payoff instead of a flat construction log.</li><li>Consolidated the defensive disclaimer cadence flagged by the AI-writing review.</li></ul>
+<h3>v1.0 <span style="font-weight:400;color:#666">&middot; 2026-11-03</span></h3>
+<p><a href="papers/ethicalai-benchmark-v1.0.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/c36db6a">c36db6a</a></p>
+<ul><li>Honest, map-led resource paper: the historical 207-record study, the citation audit, and the verification sweep.</li><li>Baseline before this improvement cycle.</li></ul>
+<h2>Contracts Between Humans and AI Agents</h2>
+<h3>v1.0 <span style="font-weight:400;color:#666">&middot; 2026-11-03</span> <em>(latest)</em></h3>
+<p><a href="papers/method-contracts-v1.0.html">Read this version</a> &middot; commit <a href="https://github.com/danlex/ethicalhive/commit/c36db6a">c36db6a</a></p>
+<ul><li>Companion method paper: the clause-judge vs baselines ablation on six hard suites.</li><li>Honest result: decomposition buys specificity, the named catalogue buys traceability; no dominance or SOTA claim.</li></ul>
+</div></body></html>

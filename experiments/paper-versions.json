@@ -1,0 +1,45 @@
+{
+  "papers": [
+    {
+      "key": "ethicalai-benchmark",
+      "title": "EthicalAI: An Evidence-Linked Catalogue of AI Integrity Failures",
+      "source": "paper/ethicalai-benchmark.md",
+      "live": "paper.html",
+      "versions": [
+        {"version": "v1.4", "date": "2026-11-18", "commit": "fc67571", "changelog": [
+          "Paper-orchestra agent council revision (architect, literature, section writers, integrator, groundedness verifier), validated before publishing.",
+          "Promoted the citation-grounding result to its own Section 3 and named the five-class failure typology (surface-match, scope-mismatch, misfiling, polarity-reversal, wrong-population) so it is a citable object.",
+          "Positioned against the closest prior work with five arXiv-verified citations: Lewis 2020 (RAG), Rashkin 2021 (AIS attribution), Liu 2023 (verifiability audit), Gao 2023 (ALCE), Agrawal 2023 (reference hallucination)."
+        ]},
+        {"version": "v1.3", "date": "2026-11-13", "commit": "5f4b1a7", "changelog": [
+          "Added the LLM-citation probe: asked for references, GPT-4o declined on 55 of 65 prompts, and all 10 confident suggestions bound a plausible title to an arXiv id for an unrelated paper.",
+          "Converted the keyword/LLM hook from an (ungrounded) analogy into a measured small-probe result; earlier groundedness BLOCK resolved."
+        ]},
+        {"version": "v1.2", "date": "2026-11-11", "commit": "6e2a9f1", "changelog": [
+          "Added the citation-failure typology that turns the headline error rate into a diagnosis.",
+          "Applied the review council's convergent fixes: reframed 29/50 as a count not a rate, stated the binning rule, added the kappa small-n caveat, fixed a source batch-arithmetic bug."
+        ]},
+        {"version": "v1.1", "date": "2026-11-11", "commit": "29c826d", "changelog": [
+          "Reframed to lead with the transferable finding and the reader payoff instead of a flat construction log.",
+          "Consolidated the defensive disclaimer cadence flagged by the AI-writing review."
+        ]},
+        {"version": "v1.0", "date": "2026-11-03", "commit": "c36db6a", "changelog": [
+          "Honest, map-led resource paper: the historical 207-record study, the citation audit, and the verification sweep.",
+          "Baseline before this improvement cycle."
+        ]}
+      ]
+    },
+    {
+      "key": "method-contracts",
+      "title": "Contracts Between Humans and AI Agents",
+      "source": "paper/draft.md",
+      "live": null,
+      "versions": [
+        {"version": "v1.0", "date": "2026-11-03", "commit": "c36db6a", "changelog": [
+          "Companion method paper: the clause-judge vs baselines ablation on six hard suites.",
+          "Honest result: decomposition buys specificity, the named catalogue buys traceability; no dominance or SOTA claim."
+        ]}
+      ]
+    }
+  ]
+}
