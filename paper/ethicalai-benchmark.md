@@ -40,14 +40,19 @@ establish that an action stayed within the agreed scope. A catalogue can make
 these distinctions available to a reviewer before they become a checklist, an
 experimental label or an audit obligation.
 
-EthicalAI collects such distinctions in one reference. Entries carry a stable
-identifier, an operational definition, evidence pointers, examples and typed
-relations. Human cognitive concepts supply part of the vocabulary. That parallel
-is a way to formulate a candidate behavioural test, not evidence that an AI
-system has the corresponding human mental process. Other entries name attacks,
-system properties or outcomes. These different kinds of record are useful to an
-auditor, but their inclusion does not make them interchangeable scientific
-constructs.
+EthicalAI collects such distinctions in one reference, organised against a charter of
+six integrity principles for AI (`contracts/ethical-principles.md`). Each record names a
+way an AI can fail one of them. The finding this paper reports concerns the third
+principle, honesty and transparency, which requires an AI to distinguish evidence from
+invention: a cited source either supports a claim or only resembles one, and telling the
+two apart turns out to need more than a reading. Entries carry a stable identifier, an
+operational definition, evidence pointers, examples and typed relations. The stable
+identifier and recorded source passage per claim serve a second principle, accountability,
+by keeping each claim traceable to what it rests on. Human cognitive concepts supply part
+of the vocabulary. That parallel is a way to formulate a candidate behavioural test, not
+evidence that an AI system has the corresponding human mental process. Other entries name
+attacks, system properties or outcomes, and their inclusion does not make them
+interchangeable scientific constructs.
 
 The central result is about method. The split it turns on, between a source being
 relevant and a source supporting a particular claim, would confront any resource
