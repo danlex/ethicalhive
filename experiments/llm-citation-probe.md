@@ -39,6 +39,29 @@ the id belonged to something else entirely:
 | Scope creep | "Do As I Can, Not As I Say (SayCan)" | 2302.00923 = Multimodal Chain-of-Thought Reasoning |
 | Dunning-Kruger effect | "Do Image Classifiers Generalize Across Time?" | 1906.08500 = Flow dynamics in an overexpanded rocket nozzle |
 
+## Second model: deepseek-chat
+
+Run with the same prompt and sample (n=45), deepseek-chat failed from the opposite side. It
+never declined: it returned a citation for all 45 prompts, where gpt-4o declined on 85 percent.
+And the citations were overwhelmingly fabricated. On a verified subsample of eight, seven bound a
+plausible title to an arXiv id for an unrelated paper:
+
+| Mode | Title the model claimed | What the id actually is |
+|---|---|---|
+| Controlled hallucination | "Language Models are Few-Shot Learners" | 2305.14627 = Enabling LLMs to Generate Text with Citations (ALCE) |
+| Dual-process, System 1/2 | "LLMs Cannot Self-Correct" | 2305.14627 = the same ALCE id, reused |
+| Anchoring, Obedience, Default-mode | three different titles | 2402.01768 = Physics-Informed Neural Networks for Poisson-Nernst-Planck systems, reused three times |
+| Prompt injection | "Prompt Injection Attacks Against GPT-4" | 2307.04721 = Large Language Models as General Pattern Machines |
+| Side-effect blindness | "The Reversal Curse" | 2305.15334 = Gorilla: LLM Connected with Massive APIs |
+| Theory of mind | "Assessing Theory of Mind in LLMs" | 2404.01234 = GFLean, an autoformalisation framework; this id was the example in the prompt, echoed back |
+| Metacognitive monitoring | "Can LLMs Monitor Their Own" | 2402.00829 = The En Route Truck-Drone Delivery Problem |
+| Dual-process moral judgment | "The Moral Machine Experiment: LLMs" | 2305.14325 = Improving Factuality through Multiagent Debate |
+
+One suggestion did resolve correctly: for working-memory capacity, deepseek named 2307.03172,
+which genuinely is "Lost in the Middle: How Language Models Use Long Contexts" and is on topic.
+The same id reused for several different titles, and the prompt's own example id handed back as an
+answer, are the clearest tells of fabrication.
+
 ## Reading
 
 The LLM's failure is not the human auditor's. The human citation audit's largest class was
@@ -51,13 +74,20 @@ multimodal chain-of-thought, or in one case a rocket-nozzle fluid-dynamics paper
 central rule holds with extra force for machine citation: the id and the title are separate
 properties, and only resolving the source reconciles them.
 
+The two models fail in opposite styles. gpt-4o is over-cautious: it declines most of the time and
+fabricates only when it commits. deepseek is over-confident: it never declines and fabricates
+almost every time, reusing one id across unrelated modes. The useful point is that the two
+opposite dispositions land in the same place: a citation a reviewer cannot trust without
+resolving the source. Caution does not prevent the fabrication, it only rations it.
+
 ## Limits
 
-One model (GPT-4o), one temperature, 20+45 modes, 10 confident suggestions verified by hand. A
-small probe, not a rate over models or prompts. The ~85% decline rate is the charitable
-condition created by the "only cite what you are confident of" instruction; a prompt that
-pushes for an answer would lower it and likely raise the fabrication count. The direction is
-clear; the magnitudes are illustrative.
+Two models (gpt-4o, deepseek-chat), one temperature, a few dozen modes each, 18 suggestions
+verified by hand (10 for gpt-4o, 8 for deepseek). A small probe, not a rate over models or
+prompts. gpt-4o's ~85% decline rate is the charitable condition created by the "only cite what
+you are confident of" instruction; a prompt that pushes for an answer would lower it. deepseek
+ignored that instruction entirely. The direction is clear across both; the magnitudes are
+illustrative.
 
 ## Reproduce
 

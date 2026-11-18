@@ -88,14 +88,15 @@ def main():
         if a == "--seed-list" and i + 1 < len(args): seed_list = args[i + 1].split(",")
 
     openrouter.load_env()
+    out = HERE / f"llm-citation-probe-{re.sub(r'[^a-z0-9]+', '-', model.lower()).strip('-')}.jsonl"
     modes = yaml.safe_load(open(ROOT / "ontology" / "ethical-ai.yaml"))["modes"]
     if seed_list:
         sample = [m for m in modes if m["id"] in seed_list]
     else:
         sample = pick_sample(modes, n)
 
-    print(f"Probing {len(sample)} modes with {model}. Output -> {OUT.name}")
-    with open(OUT, "w") as fh:
+    print(f"Probing {len(sample)} modes with {model}. Output -> {out.name}")
+    with open(out, "w") as fh:
         for m in sample:
             resp = openrouter.chat(model, PROMPT.format(definition=m["definition"]),
                                    temperature=0.3, max_tokens=250)

@@ -15,10 +15,11 @@ abstract: |
   mismatches fall into a five-class typology of how citation grounding fails:
   surface-match (about 14), scope-mismatch (about 12), misfiling (about 4),
   polarity-reversal (about 3), and wrong-population (about 2). A probe shows
-  machine-suggested citation failing more sharply still: asked for references for
-  a sample of the definitions, gpt-4o declined on 55 of 65 prompts, but every one
-  of its 10 confident suggestions, across 7 distinct modes, bound a plausible
-  title to an arXiv identifier that belonged to an unrelated paper. This paper
+  machine-suggested citation failing more sharply still: asked for references for a
+  sample of the definitions, one model (gpt-4o) declined on 55 of 65 prompts while a
+  second (deepseek-chat) never declined, yet the citations they committed to
+  overwhelmingly bound a plausible title to an arXiv identifier for an unrelated
+  paper (gpt-4o 10 of 10 confident suggestions; deepseek 7 of 8 checked). This paper
   delivers a reusable vocabulary of integrity failures with stable identifiers, a
   reproducible two-check procedure, and that named typology, for anyone building
   or auditing citation-grounded systems. The construction and review are reported
@@ -214,10 +215,17 @@ distinct modes) gave an arXiv identifier that resolved to an unrelated real
 paper: a plausible title, sometimes a genuinely well-known one such as
 "Overcoming Catastrophic Forgetting" or SayCan, bound to an identifier that
 belonged to a different paper in a different field, in one case a rocket-nozzle
-fluid-dynamics study. The machine failure is sharper than the human auditor's
-surface-match, where the cited paper at least existed on topic. This is one model
-on a few dozen definitions, not a rate, but it moves the connection from analogy
-to a measured if small result, and it sharpens the same rule: for a
+fluid-dynamics study. A second model (deepseek-chat) failed from the opposite
+side: it never declined, citing on all 45 prompts, and on a verified subsample
+seven of eight suggestions resolved to an unrelated paper, including the same
+identifier reused for different claimed titles and, once, the example identifier
+from the prompt echoed back; one suggestion did resolve to a genuinely relevant
+paper. The two models fail in opposite styles, one over-cautious and one
+over-confident, but neither produces a citation that can be trusted without
+resolving the source, and the machine failure is sharper than the human auditor's
+surface-match, where the cited paper at least existed on topic. These are two
+models on a few dozen definitions each, not a rate, but they move the connection
+from analogy to a measured if small result, and sharpen the same rule: for a
 machine-suggested citation the identifier and the title are separate properties,
 and only resolving the source reconciles them. The probe is in
 `experiments/llm-citation-probe.md`.

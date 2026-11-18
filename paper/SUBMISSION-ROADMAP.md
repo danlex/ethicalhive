@@ -15,9 +15,11 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
   arXiv: titles, authors and years confirmed; fixed Agrawal's author list (added Suzgun); confirmed
   Spracklen's 2025 is the USENIX venue year, not an arXiv-year error. Added a §8 note that every
   reference was resolved to its source before inclusion.
-- [ ] **S2 Strengthen the headline result.** Re-run the LLM-citation probe with a second,
-  non-OpenAI model (OpenRouter) so the fabrication pattern is not shown on one model only. Report
-  both models' decline and fabrication counts; keep honest small-probe limits.
+- [x] **S2 Strengthen the headline result.** DONE (v1.6). Ran the probe with deepseek-chat: it
+  never declined (0/45, vs gpt-4o's 85%) and fabricated 7 of 8 verified suggestions, reusing one
+  arXiv id across unrelated modes and echoing the prompt's example id. Two opposite failure styles
+  (over-cautious vs over-confident), same unreliable result. Updated the abstract, the Section 3
+  probe paragraph, and experiments/llm-citation-probe.md with both models.
 - [ ] **S3 Add a figure.** A clean diagram of the five-class failure typology and/or the
   human-auditor-vs-model contrast, rendered in the paper page (SVG/HTML, self-contained).
 - [ ] **S4 Adversarial council pass.** Re-run the multi-judge panel (peer / impact / methods /
