@@ -35,8 +35,9 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
   abstract (removed the verbatim finding restatement; it now ends on the forward-looking rule plus
   the machine contrast); pinned the OWASP living-document citation with an accessed date. Length
   5,219 words, fits a workshop/preprint; title already signals the finding.
-- [ ] **S6 Submission artifact.** Produce a LaTeX/PDF build (pandoc) that is arXiv/workshop ready;
-  check it renders and carries the references.
+- [x] **S6 Submission artifact.** DONE (v1.10). experiments/build-paper-pdf.sh builds docs/paper.pdf
+  via pandoc + tectonic: the web SVG figure is swapped for a native LaTeX/TikZ Figure 1, graphicx
+  and booktabs resolved. 12-page PDF renders with all 9 sections, Figure 1, and the 12 references.
 - [ ] **S7 Independent error-label re-audit (human-gated).** The one item an agent cannot fully
   supply: a second human rater on the hard-vs-minor error labels for a random subsample, reported
   as inter-rater agreement. Interim: a clearly-labelled model-based second-rater proxy, with the
