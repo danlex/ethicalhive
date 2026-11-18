@@ -20,8 +20,9 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
   arXiv id across unrelated modes and echoing the prompt's example id. Two opposite failure styles
   (over-cautious vs over-confident), same unreliable result. Updated the abstract, the Section 3
   probe paragraph, and experiments/llm-citation-probe.md with both models.
-- [ ] **S3 Add a figure.** A clean diagram of the five-class failure typology and/or the
-  human-auditor-vs-model contrast, rendered in the paper page (SVG/HTML, self-contained).
+- [x] **S3 Add a figure.** DONE (v1.7). Figure 1: an inline SVG bar chart of the five-class
+  citation-failure distribution (surface-match 14 dominates down to wrong-population 2), injected
+  after the Section 3.1 table with a caption and an in-text reference. Counts match the table.
 - [ ] **S4 Adversarial council pass.** Re-run the multi-judge panel (peer / impact / methods /
   ai-writing / groundedness) on the revised paper; apply the convergent fixes; confirm no regression.
 - [ ] **S5 Abstract, title, and length.** One more sharpening pass on the abstract and title;

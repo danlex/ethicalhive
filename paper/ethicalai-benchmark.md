@@ -195,6 +195,8 @@ quotable instance are tracked separately and are not counted here.
 | Polarity-reversal | ~3 | Opposite result | The paper reported the reverse of the claim: faithful self-explanation cited for the introspection illusion; under-use of pragmatic inference cited for over-accommodation. |
 | Wrong-population | ~2 | Demonstrated in the wrong subjects | The effect was shown in humans or vision models, not language models. |
 
+Figure 1 plots this distribution.
+
 The largest class is surface-match: a citation whose title carries the mode's
 vocabulary while the paper studies a different phenomenon. This is consistent
 with what keyword-based or language-model-suggested citation would produce,

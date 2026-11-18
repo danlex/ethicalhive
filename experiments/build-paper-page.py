@@ -126,6 +126,26 @@ th{{background:var(--panel);font-weight:700}}
 </div></body></html>
 """
 
+# Figure 1: the distribution of citation-failure classes (the finding's shape), injected after
+# the typology table in the rendered page. Counts match the Section 3.1 table (sum 35).
+_BARS = [("Surface-match", 14, "#c0392b"), ("Scope-mismatch", 12, "#8a8a8a"),
+         ("Misfiling", 4, "#8a8a8a"), ("Polarity-reversal", 3, "#8a8a8a"),
+         ("Wrong-population", 2, "#8a8a8a")]
+_rows = "".join(
+    f'<text x="182" y="{34+i*38}" text-anchor="end" font-size="15" fill="#222">{name}</text>'
+    f'<rect x="192" y="{22+i*38}" width="{cnt*30}" height="22" fill="{col}" rx="2"/>'
+    f'<text x="{200+cnt*30}" y="{38+i*38}" font-size="14" fill="#444">{cnt}</text>'
+    for i, (name, cnt, col) in enumerate(_BARS))
+TYPOLOGY_FIG = (
+    '<figure style="margin:2rem 0">'
+    f'<svg viewBox="0 0 680 210" role="img" aria-label="Distribution of the five citation-failure classes" '
+    'style="max-width:100%;height:auto">{rows}</svg>'
+    '<figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. How the 35 logged '
+    'citation mismatches fail, by class (counts approximate, sum 35). Surface-match, a right-term, '
+    'wrong-phenomenon citation, dominates; polarity-reversal, the opposite result, is rarest but the '
+    'most dangerous because a title or abstract skim ratifies it.</figcaption></figure>'
+).replace("{rows}", _rows)
+
 
 def main():
     data,body=read_manuscript(SRC)
@@ -134,6 +154,7 @@ def main():
     frontmatter='<h1>'+title+'</h1><p>'+esc(str(data['author']))+' · '+esc(str(data['date']))+'</p><h2>Abstract</h2><p>'+inline(abstract)+'</p>'
     description=esc(abstract[:180]).replace('"','&quot;')
     rendered=render(body,1)
+    rendered=rendered.replace('<p>The largest class is surface-match', TYPOLOGY_FIG+'<p>The largest class is surface-match', 1)
     OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
     methods,_=read_manuscript(ROOT/'paper/draft.md')
     section=f'''<section class="framework" id="paper">
