@@ -49,9 +49,10 @@ system properties or outcomes. These different kinds of record are useful to an
 auditor, but their inclusion does not make them interchangeable scientific
 constructs.
 
-The central result is about method, and it holds for any evidence-linked
-resource. Grounding the catalogue by reading each source, rather than trusting
-its title, still left errors. Reading surfaced 35 citations whose paper did not
+The central result is about method. The split it turns on, between a source being
+relevant and a source supporting a particular claim, would confront any resource
+that links claims to passages. Grounding the catalogue by reading each source,
+rather than trusting its title, still left errors. Reading surfaced 35 citations whose paper did not
 support the claim it was attached to, 29 then re-cited and 6 held, and a later pass over
 the 186 grounded records found a figure contradicted by or absent from its
 source in 14 percent of them. A citation can name a real paper, on the right
@@ -162,8 +163,9 @@ evidence-linked resource inherits both checks whether or not they run them.
 The running citation audit logs every record whose cited paper, on reading, did
 not support its claim. It records 35 such mismatches: 29 repaired by changing the
 cited source, and 6 held without a grounded example until a supporting paper is
-found. The audit logs the mismatches, not every paper read, so these are counts
-on one artifact, not a rate over all citations examined.
+found. Because the log records the mismatches it caught rather than every paper
+read, 35 is a count, and a denominator over all citations examined is not
+recoverable from it.
 
 Coding those 35 rows by why the citation failed gives a diagnosis rather than a
 single number, and it gives a named object a later reader can reuse. The
@@ -210,13 +212,13 @@ subsample seven of eight identifiers resolved to an unrelated paper, including t
 same identifier reused for different claimed titles and, once, the example
 identifier from the prompt echoed back; one suggestion did resolve to a genuinely
 relevant paper. The two models fail in opposite styles, one over-cautious and one
-over-confident, but neither produces a citation that can be trusted without
-resolving the source, and the machine failure is sharper than the human auditor's
+over-confident. Neither produces a citation that can be trusted without resolving
+the source, and the machine failure is sharper than the human auditor's
 surface-match, where the cited paper at least existed on topic. These are two small
-per-model runs, hand-verified, not a rate, but they move the connection from analogy
-to a measured if small result, and sharpen the same rule: for a machine-suggested
-citation the identifier and the title are separate properties, and only resolving
-the source reconciles them. The per-prompt outputs are committed in
+per-model runs, hand-verified, not a rate. They do move the machine case from
+analogy to a measured result, and the rule they sharpen is the same one: the
+identifier and the title are separate properties, reconciled only by resolving the
+source. The per-prompt outputs are committed in
 `experiments/llm-citation-probe-openai-gpt-4o.jsonl` and the deepseek file beside it;
 the hand verification is in `experiments/llm-citation-probe.md`.
 
