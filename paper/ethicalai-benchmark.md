@@ -14,12 +14,12 @@ abstract: |
   figure contradicted by or absent from its source in 26 of them, 14 percent. The
   mismatches fall into a five-class typology of how citation grounding fails:
   surface-match (about 14), scope-mismatch (about 12), misfiling (about 4),
-  polarity-reversal (about 3), and wrong-population (about 2). A probe shows
-  machine-suggested citation failing more sharply still: asked for references for a
-  sample of the definitions, one model (gpt-4o) declined on 55 of 65 prompts while a
-  second (deepseek-chat) never declined, yet the citations they committed to
-  overwhelmingly bound a plausible title to an arXiv identifier for an unrelated
-  paper (gpt-4o 10 of 10 confident suggestions; deepseek 7 of 8 checked). This paper
+  polarity-reversal (about 3), and wrong-population (about 2). A small two-model probe
+  shows machine-suggested citation failing more sharply still on this sample: one
+  model (gpt-4o) declined on 40 of 45 prompts while a second (deepseek-chat) never
+  declined, yet the citations they committed to overwhelmingly bound a plausible
+  title to an arXiv identifier for an unrelated paper (gpt-4o all five confident
+  suggestions; deepseek seven of eight checked). This paper
   delivers a reusable vocabulary of integrity failures with stable identifiers, a
   reproducible two-check procedure, and that named typology, for anyone building
   or auditing citation-grounded systems. The construction and review are reported
@@ -52,21 +52,20 @@ constructs.
 
 The central result is about method, and it holds for any evidence-linked
 resource. Grounding the catalogue by reading each source, rather than trusting
-its title, still left errors. Reading surfaced 29 citations whose paper did not
-support the claim it was attached to, each then re-cited, and a later pass over
+its title, still left errors. Reading surfaced 35 citations whose paper did not
+support the claim it was attached to, 29 then re-cited and 6 held, and a later pass over
 the 186 grounded records found a figure contradicted by or absent from its
 source in 14 percent of them. A citation can name a real paper, on the right
 topic, and the worked example drawn from it can still misstate what that paper
 reported. Each property needs its own check, and a catalogue that links evidence
-to claims has to verify both, not just record them. These are one project's
-numbers on one artifact, not an error rate for AI research at large.
+to claims has to verify both, not just record them.
 
 The sharper version of the same lesson comes from a machine. Asked to supply an
 arXiv citation for a sample of the mode definitions, and told to name only a
-paper it was confident existed, gpt-4o declined on 55 of 65 prompts. Of the 10
-confident suggestions it did make, every one, across 7 distinct modes, gave an
-arXiv identifier that resolved to an unrelated real paper: a plausible and
-sometimes well-known title bound to an identifier from a different field. The
+paper it was confident existed, gpt-4o declined on 40 of 45 prompts. All five
+confident suggestions it did make, across five distinct modes, gave an arXiv
+identifier that resolved to an unrelated real paper: a plausible and sometimes
+well-known title bound to an identifier from a different field. The
 human auditor's worst case was a paper that at least existed on topic. The
 machine's confident output severed the title from the identifier entirely, a
 failure that only resolving the source can catch.
@@ -160,17 +159,14 @@ correct or that another taxonomy could not support the same uses.
 
 # 3. The finding: citation grounding and its failure modes
 
-This section carries the paper's main result, placed here because it is the
-reason the catalogue is worth reading. The result is about method, not about any
-one model. Two different checks ran during construction, and they failed in
-different ways that a single reading would have merged. One check asks whether a
-cited source is about, and supports, the phenomenon in the record. The other asks
-whether a specific quoted number or example is faithful to that source. Keeping
-them apart matters, because a record can pass the first and fail the second, and
-the counts below show that a careful reader produced exactly that split often
-enough to matter. Anyone assembling an evidence-linked resource inherits both
-checks whether or not they run them. These are one project's counts on one
-artifact, not an error rate for AI research at large.
+The result here is about method, not about any one model. Two different checks ran
+during construction, and they failed in different ways that a single reading would
+have merged. One check asks whether a cited source is about, and supports, the
+phenomenon in the record. The other asks whether a specific quoted number or
+example is faithful to that source. Keeping them apart matters, because a record
+can pass the first and fail the second, and the counts below show that a careful
+reader produced exactly that split often enough to matter. Anyone assembling an
+evidence-linked resource inherits both checks whether or not they run them.
 
 ## 3.1 Citation mismatches
 
@@ -197,12 +193,15 @@ quotable instance are tracked separately and are not counted here.
 
 Figure 1 plots this distribution.
 
+<figure style="margin:2rem 0"><svg viewBox="0 0 680 210" role="img" aria-label="Distribution of the five citation-failure classes" style="max-width:100%;height:auto"><text x="182" y="34" text-anchor="end" font-size="15" fill="#222">Surface-match</text><rect x="192" y="22" width="420" height="22" fill="#c0392b" rx="2"/><text x="620" y="38" font-size="14" fill="#444">14</text><text x="182" y="72" text-anchor="end" font-size="15" fill="#222">Scope-mismatch</text><rect x="192" y="60" width="360" height="22" fill="#8a8a8a" rx="2"/><text x="560" y="76" font-size="14" fill="#444">12</text><text x="182" y="110" text-anchor="end" font-size="15" fill="#222">Misfiling</text><rect x="192" y="98" width="120" height="22" fill="#8a8a8a" rx="2"/><text x="320" y="114" font-size="14" fill="#444">4</text><text x="182" y="148" text-anchor="end" font-size="15" fill="#222">Polarity-reversal</text><rect x="192" y="136" width="90" height="22" fill="#8a8a8a" rx="2"/><text x="290" y="152" font-size="14" fill="#444">3</text><text x="182" y="186" text-anchor="end" font-size="15" fill="#222">Wrong-population</text><rect x="192" y="174" width="60" height="22" fill="#8a8a8a" rx="2"/><text x="260" y="190" font-size="14" fill="#444">2</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. How the 35 logged citation mismatches fail, by class (counts approximate, sum 35). Surface-match, a right-term, wrong-phenomenon citation, dominates; polarity-reversal, the opposite result, is rarest but the most dangerous because a title or abstract skim ratifies it.</figcaption></figure>
+
 The largest class is surface-match: a citation whose title carries the mode's
-vocabulary while the paper studies a different phenomenon. This is consistent
-with what keyword-based or language-model-suggested citation would produce,
-though the audit records the mismatch pattern rather than how each citation was
-first selected; either way it is invisible to any check short of reading the
-source. The sharpest class, polarity-reversal, is smaller but more dangerous: a
+vocabulary while the paper studies a different phenomenon. It is invisible to any
+check short of reading the source, because the title and the topic line up. This
+is a different failure from the machine probe below, where the title and the arXiv
+identifier line up with nothing in common; the two are contrasting profiles of how
+grounding fails, not one explaining the other. The sharpest class,
+polarity-reversal, is smaller but more dangerous: a
 handful of citations reported the opposite of the claim, which a title scan or an
 abstract skim would have ratified. A scope-mismatch set was on topic but, when
 tested, simply did not find the behaviour, which is a different correction again.
@@ -211,26 +210,26 @@ A bibliography entry alone separates none of these.
 A small probe tests the machine-citation connection directly rather than leaving
 it an analogy. Asked to supply an arXiv citation for a sample of the mode
 definitions, with the instruction to name only a paper it was confident existed,
-an independent model (gpt-4o) declined on 55 of 65 prompts across two runs. Of
-the 10 confident suggestions it did make, every one checked (10 of 10, across 7
-distinct modes) gave an arXiv identifier that resolved to an unrelated real
-paper: a plausible title, sometimes a genuinely well-known one such as
-"Overcoming Catastrophic Forgetting" or SayCan, bound to an identifier that
-belonged to a different paper in a different field, in one case a rocket-nozzle
-fluid-dynamics study. A second model (deepseek-chat) failed from the opposite
-side: it never declined, citing on all 45 prompts, and on a verified subsample
-seven of eight suggestions resolved to an unrelated paper, including the same
-identifier reused for different claimed titles and, once, the example identifier
-from the prompt echoed back; one suggestion did resolve to a genuinely relevant
-paper. The two models fail in opposite styles, one over-cautious and one
+an independent model (gpt-4o) declined on 40 of 45 prompts. All five confident
+suggestions it did make, across five distinct modes, gave an arXiv identifier that
+resolved to an unrelated real paper: a plausible title, sometimes a genuinely
+well-known one such as "Overcoming Catastrophic Forgetting" or SayCan, bound to an
+identifier that belonged to a different paper in a different field, in one case a
+rocket-nozzle fluid-dynamics study. A second model (deepseek-chat) failed from the
+opposite side: it never declined, citing on all 45 prompts, and on a verified
+subsample seven of eight identifiers resolved to an unrelated paper, including the
+same identifier reused for different claimed titles and, once, the example
+identifier from the prompt echoed back; one suggestion did resolve to a genuinely
+relevant paper. The two models fail in opposite styles, one over-cautious and one
 over-confident, but neither produces a citation that can be trusted without
 resolving the source, and the machine failure is sharper than the human auditor's
-surface-match, where the cited paper at least existed on topic. These are two
-models on a few dozen definitions each, not a rate, but they move the connection
-from analogy to a measured if small result, and sharpen the same rule: for a
-machine-suggested citation the identifier and the title are separate properties,
-and only resolving the source reconciles them. The probe is in
-`experiments/llm-citation-probe.md`.
+surface-match, where the cited paper at least existed on topic. These are two small
+per-model runs, hand-verified, not a rate, but they move the connection from analogy
+to a measured if small result, and sharpen the same rule: for a machine-suggested
+citation the identifier and the title are separate properties, and only resolving
+the source reconciles them. The per-prompt outputs are committed in
+`experiments/llm-citation-probe-openai-gpt-4o.jsonl` and the deepseek file beside it;
+the hand verification is in `experiments/llm-citation-probe.md`.
 
 The audit supports a practical construction requirement: attach a claim to its
 supporting passage and experimental scope, not just to a title or a search hit.

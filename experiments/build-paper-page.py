@@ -48,6 +48,17 @@ def render(md,heading_offset=0):
         if not line.strip():
             i += 1
             continue
+        # raw HTML figure block: pass through verbatim (e.g. an inline <figure><svg>...)
+        if line.lstrip().startswith("<figure"):
+            block = []
+            while i < n:
+                block.append(lines[i])
+                done = "</figure>" in lines[i]
+                i += 1
+                if done:
+                    break
+            out.append("\n".join(block))
+            continue
         m = re.match(r"^(#{1,3})\s+(.*)$", line)
         if m:
             lvl = min(6,len(m.group(1))+heading_offset)
@@ -154,7 +165,6 @@ def main():
     frontmatter='<h1>'+title+'</h1><p>'+esc(str(data['author']))+' · '+esc(str(data['date']))+'</p><h2>Abstract</h2><p>'+inline(abstract)+'</p>'
     description=esc(abstract[:180]).replace('"','&quot;')
     rendered=render(body,1)
-    rendered=rendered.replace('<p>The largest class is surface-match', TYPOLOGY_FIG+'<p>The largest class is surface-match', 1)
     OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
     methods,_=read_manuscript(ROOT/'paper/draft.md')
     section=f'''<section class="framework" id="paper">

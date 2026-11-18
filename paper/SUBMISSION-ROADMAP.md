@@ -23,8 +23,14 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
 - [x] **S3 Add a figure.** DONE (v1.7). Figure 1: an inline SVG bar chart of the five-class
   citation-failure distribution (surface-match 14 dominates down to wrong-population 2), injected
   after the Section 3.1 table with a caption and an in-text reference. Counts match the table.
-- [ ] **S4 Adversarial council pass.** Re-run the multi-judge panel (peer / impact / methods /
-  ai-writing / groundedness) on the revised paper; apply the convergent fixes; confirm no regression.
+- [x] **S4 Adversarial council pass.** DONE (v1.8). Four reviewers: peer MINOR REVISION (up from
+  major, all 4 prior blockers resolved), methods (every number reconciles), ai-writing 2/10,
+  groundedness BLOCK. Applied: re-grounded the probe to saved data (gpt-4o 40/45 declined, 5/5
+  fabricated; deepseek 7 of 8), committed both per-prompt jsonls; moved Figure 1 into the markdown
+  source; consolidated the repeated scope disclaimer to abstract + Limitations; cut the Section 3
+  meta-announcement; reframed the surface-match/machine link as a contrast; fixed the 29-vs-35 seam.
+  Rejected one groundedness flag after checking: 1,175/1,036 is correct at the pinned commit 3b9b500
+  (the reviewer counted current HEAD). Writing polish (three-tools list, X-not-Y density) deferred to S5.
 - [ ] **S5 Abstract, title, and length.** One more sharpening pass on the abstract and title;
   check the paper fits a reasonable workshop length; cut any remaining dilution.
 - [ ] **S6 Submission artifact.** Produce a LaTeX/PDF build (pandoc) that is arXiv/workshop ready;
