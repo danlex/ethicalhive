@@ -40,19 +40,17 @@ establish that an action stayed within the agreed scope. A catalogue can make
 these distinctions available to a reviewer before they become a checklist, an
 experimental label or an audit obligation.
 
-EthicalAI collects such distinctions in one reference, organised against a charter of
-six integrity principles for AI (`contracts/ethical-principles.md`). Each record names a
-way an AI can fail one of them. The finding this paper reports concerns the third
-principle, honesty and transparency, which requires an AI to distinguish evidence from
-invention: a cited source either supports a claim or only resembles one, and telling the
-two apart turns out to need more than a reading. Entries carry a stable identifier, an
-operational definition, evidence pointers, examples and typed relations. The stable
-identifier and recorded source passage per claim serve a second principle, accountability,
-by keeping each claim traceable to what it rests on. Human cognitive concepts supply part
-of the vocabulary. That parallel is a way to formulate a candidate behavioural test, not
-evidence that an AI system has the corresponding human mental process. Other entries name
-attacks, system properties or outcomes, and their inclusion does not make them
-interchangeable scientific constructs.
+EthicalAI collects such distinctions in one reference, organised around a charter of six
+integrity principles for AI. Each record names a way an AI can fail one of them, and the
+honesty principle, that an AI should distinguish evidence from invention, is the one this
+paper bears on: a cited source either supports a claim or only resembles one, and the audit
+below measures how often reading the source is still not enough to tell the two apart.
+Entries carry a stable identifier, an operational definition, evidence pointers, examples
+and typed relations, which keep each claim traceable to what it rests on. Human cognitive
+concepts supply part of the vocabulary. That parallel is a way to formulate a candidate
+behavioural test, not evidence that an AI system has the corresponding human mental process.
+Other entries name attacks, system properties or outcomes, and their inclusion does not make
+them interchangeable scientific constructs.
 
 The central result is about method. The split it turns on, between a source being
 relevant and a source supporting a particular claim, would confront any resource
@@ -460,7 +458,9 @@ claim.
 # 8. Availability and reproducibility
 
 The machine-readable catalogue is `ontology/ethical-ai.yaml`, with field and
-relation semantics in `ontology/SCHEMA.md`. The historical version-1.0 catalogue
+relation semantics in `ontology/SCHEMA.md`. The six integrity principles the catalogue
+is organised around are stated in `contracts/ethical-principles.md`, and the obligations
+that operationalise them in `contracts/ai-integrity-contract.md`. The historical version-1.0 catalogue
 is pinned at [commit 8798134](https://github.com/danlex/ethicalhive/blob/8798134341ea386da80fb5602bc7dd06ef81cf24/ontology/ethical-ai.yaml);
 the later version-1.3 bibliography described in Section 6 is pinned at
 [commit 3b9b500](https://github.com/danlex/ethicalhive/blob/3b9b50021ef5eefb15a28d4edb7a5264f2fb626f/ontology/ethical-ai.yaml). These snapshots have different
