@@ -11,9 +11,10 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
 
 ## Stages
 
-- [ ] **S1 Citation integrity sweep.** Verify all references resolve to real papers (the paper's
-  own standard). Resolve each arXiv id / DOI; fix any author, title, year, or id error. A paper
-  about citation integrity must have zero bad citations.
+- [x] **S1 Citation integrity sweep.** DONE (v1.5). All 12 references resolved to real papers on
+  arXiv: titles, authors and years confirmed; fixed Agrawal's author list (added Suzgun); confirmed
+  Spracklen's 2025 is the USENIX venue year, not an arXiv-year error. Added a §8 note that every
+  reference was resolved to its source before inclusion.
 - [ ] **S2 Strengthen the headline result.** Re-run the LLM-citation probe with a second,
   non-OpenAI model (OpenRouter) so the fabrication pattern is not shown on one model only. Report
   both models' decline and fabrication counts; keep honest small-probe limits.

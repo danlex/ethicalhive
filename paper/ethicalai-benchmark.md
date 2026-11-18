@@ -475,6 +475,10 @@ examples are grounded. The later source-review history is retained under
 steps are described in `RELEASE.md`; a live website or a changing branch should
 not replace the immutable artifact cited for a reported result.
 
+Every reference in this paper was resolved to its source before inclusion, the same
+discipline the paper reports applying to the catalogue: each arXiv identifier was opened
+and its title, authors and year confirmed against the paper it names.
+
 # 9. Conclusion
 
 EthicalAI is a reference for reviewing AI integrity whose distinctive feature is
