@@ -39,6 +39,13 @@ a stable rule identifier. RFC 2119 keywords express the obligations
 [Bradner, 1997]. The document is an editorial control, not a claim of legal
 enforceability or a guarantee that an agent will obey it.
 
+This division answers to the accountability principle in the project's ethics
+charter (`contracts/ethical-principles.md`): a human stays in the deciding role
+while the Auditor only advises, and every flag carries a traceable rule
+identifier. The audit also serves the charter's integrity-under-pressure
+principle, in that the draft is held to its named obligations whatever the draft,
+or pressure on it, would prefer.
+
 An authored anchoring case illustrates the task. The supplied session
 evidence locates a stale read in a background worker and states that the
 cache tests pass. The user still asks how to fix the cache. A draft
@@ -65,7 +72,10 @@ assurance work excludes factuality or human oversight.
 # 2. The AI Integrity Contract
 
 `contracts/ai-integrity-contract.md`, version 1.0, defines fourteen clause
-families. Each has numbered rules, an auditor role and a recovery clause.
+families. The contract is the operational layer beneath the six-principle ethics
+charter: each clause is an obligation that serves one of the principles, and the
+charter states the ends the clauses work toward. Each has numbered rules, an
+auditor role and a recovery clause.
 For example, `INT-ANC-01` requires updating a contradicted framing;
 `INT-ANC-02` forbids retaining that framing. Their shared family is ANC,
 but they remain distinct identifiers when exact-rule attribution is scored.

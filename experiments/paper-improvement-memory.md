@@ -43,6 +43,10 @@ not used again reads as AI slop.
 - LESSON: a framing must appear in at least two places (motivation + artifacts/availability) and
   be descriptive, not normative. Name a principle as what the finding bears on, never as a
   requirement the design is said to fulfil.
+- Observed (2026-11-19, benchmark paper): grounded paper/draft.md in principles 5 and 6 applying
+  this LESSON up front, descriptive ('answers to the accountability principle', 'serves the
+  integrity-under-pressure principle') and anchored in two places (intro + Section 2). No 'requires
+  an AI' normative declaration, numbers intact. The lesson prevented repeating the v1.12 4/10 slop.
 
 ## Recurring problem: contribution enumeration
 
