@@ -19,16 +19,15 @@ abstract: |
   model (gpt-4o) declined on 40 of 45 prompts while a second (deepseek-chat) never
   declined, yet the citations they committed to overwhelmingly bound a plausible
   title to an arXiv identifier for an unrelated paper (gpt-4o all five confident
-  suggestions; deepseek seven of eight checked). This paper
-  delivers a reusable vocabulary of integrity failures with stable identifiers, a
-  reproducible two-check procedure, and that named typology, for anyone building
-  or auditing citation-grounded systems. The construction and review are reported
-  for the historical 207-record study: 186 records grounded in worked examples,
-  21 retained without that support, and a model-based codebook check with Cohen
-  kappa 0.90 and 0.83. These are counts on one artifact, not an error rate for AI
-  research at large, and no claim of a validated set of distinct mechanisms is
-  made. The later 434-record release adds 227 untested analogies that stay
-  outside these denominators.
+  suggestions; deepseek seven of eight checked). The practical consequence is that
+  checking a cited source supports a claim and checking that a quoted example is
+  faithful to it are separate steps, and a catalogue that links evidence to claims
+  must do both. We report the construction and review of the historical 207-record
+  study: 186 records grounded in worked examples, 21 retained without that support,
+  and a model-based codebook check with Cohen kappa 0.90 and 0.83. The counts are
+  specific to this artifact and procedure; we claim no error rate for AI research at
+  large and no validated set of distinct mechanisms. A later 434-record release adds
+  227 untested analogies that stay outside these denominators.
 ---
 
 # 1. Introduction
@@ -70,34 +69,24 @@ human auditor's worst case was a paper that at least existed on topic. The
 machine's confident output severed the title from the identifier entirely, a
 failure that only resolving the source can catch.
 
-This paper is for people building or auditing evidence-linked or
-citation-grounded systems: retrieval-augmented generation, citation attribution,
-large-language-model literature review, and research-integrity tooling. If a
-claim in such a system points at a source, someone has to decide whether the
-source supports it, and this paper reports what that decision cost on one
-catalogue and names the ways it went wrong. The reader gets three tools. The
-first is a reusable vocabulary of integrity failures with stable identifiers and
-a source passage behind each claim. The second is a reproducible two-check
-procedure: verify that the cited source supports the phenomenon, and separately
-verify that the quoted example is faithful to that source. The third is a named
-typology of how the grounding failed, built so it can be cited and reused rather
-than reread from scratch: surface-match, scope-mismatch, misfiling,
-polarity-reversal, and wrong-population, the largest class being citations whose
-title matched the term while the paper studied something else.
+The same decision confronts anyone whose system binds a claim to a source:
+retrieval-augmented generation, citation attribution, literature review by
+language model, research-integrity tooling. Someone has to decide whether the
+source supports the claim, and the two findings above say that a title and even a
+read of the source can both pass while the claim fails. We report what that
+decision cost on one catalogue of 207 records: 186 grounded in worked examples
+from source papers, 21 retained without that support, the 35 citation mismatches
+sorted into the typology above, and the 14 percent of grounded records whose
+quoted figure did not survive a recheck. Two smaller checks follow, on whether an
+outside rater recovers the category labels and on how the vocabulary maps twelve
+public incidents. The companion advisory-auditing paper asks a separate question,
+whether checking one named obligation at a time helps review coding-agent drafts,
+and its pilot does not validate this catalogue.
 
-The paper reports the construction and review of the historical 207-record study
-behind these tools. The construction log classified 186 records as grounded in
-worked examples from source papers and retained 21 without that level of support.
-Two smaller checks examine category-label recoverability on a model-based
-codebook and the vocabulary's use on twelve public incidents. The companion
-advisory-auditing paper studies a separate question, whether focused checks of
-named obligations help review coding-agent drafts, and its six-clause pilot does
-not validate the catalogue as a whole.
-
-The current release contains 434 records. Section 6 separates that later
-expansion, which adds 227 untested analogies and a broader bibliography, from the
-original study so that more entries and citations do not silently enlarge the
-evidence claimed here.
+A later release grew the catalogue to 434 records by adding 227 untested
+behavioural analogies. Section 6 keeps that expansion separate from the 207-record
+study, so the added entries and citations do not enlarge the evidence reported
+here.
 
 # 2. Related resources
 
@@ -125,8 +114,9 @@ several failure types within a family. These are measurement resources as well
 as classifications. The larger number of EthicalAI records is a coverage choice,
 not evidence of stronger measurement or more distinct mechanisms.
 
-Because each record here is a claim bound to a source passage, the catalogue sits
-next to work on evidence-linked generation and citation checking. Retrieval
+Because each record here is a claim bound to a source passage, the catalogue
+shares a question with work on evidence-linked generation and citation checking,
+and reaches it by construction rather than by a generation benchmark. Retrieval
 augmentation attaches sources to generated text [Lewis et al. 2020], and a line of
 evaluation work then asks a separate question: whether the attached source actually
 supports the statement it is attached to. The AIS framework formalises that question
@@ -150,12 +140,11 @@ reference built under that discipline, with the source passage and the scope of 
 recorded for each claim rather than assumed from a title, plus a characterisation of how
 the grounding fails in human and machine hands.
 
-The resource combines definitions and source records across these areas and
-connects them to an advisory audit vocabulary. Its proposed value is that a
-reviewer can find adjacent concepts and inspect the evidence behind an example
-without assembling several separate lists. The historical checks below assess
-parts of that reference; they do not establish that its organisation is uniquely
-correct or that another taxonomy could not support the same uses.
+By combining definitions, source records, and an advisory audit vocabulary in one
+reference, the catalogue lets a reviewer reach an adjacent concept and the evidence
+behind an example without assembling several separate lists. The checks below test
+parts of that reference; another taxonomy might organise the same material as well,
+a question we do not settle here.
 
 # 3. The finding: citation grounding and its failure modes
 
@@ -310,20 +299,19 @@ author-selected worklist rather than a measured ranking of failure frequency.
 
 The graph distinguishes several relationships. `violates` points from a mode to a
 catalogue obligation. `causes` points to a harm type, such as a wrong answer,
-wasted effort or loss of oversight. Despite that field name, these edges record
-author-judged harm associations, not estimated causal effects. `relates_to`
-connects neighbouring modes; subtype and overlap relations express other
-conceptual distinctions. Partial `maps_to` records connect entries with external
-frameworks.
+wasted effort or loss of oversight; the edge records an author-judged association
+between a mode and a harm, which the field name overstates. `relates_to` connects
+neighbouring modes; subtype and overlap relations express other conceptual
+distinctions. Partial `maps_to` records connect entries with external frameworks.
 
-The released `causes` relation does not connect one mode to another. Consider the
-dealership-chatbot incident discussed in Section 5. An analyst can describe it as
-an instruction attack followed by compliant output and an unauthorised offer.
-That is an interpretation of the reported sequence, which the present graph does
-not encode as a three-mode causal path. It would be possible to add a distinct
-relation for event sequences, but its meaning and evidence would need to be
-specified. The existing graph supports navigation and comparison; it does not
-demonstrate how one failure produces another.
+The graph relates modes to harms and to each other, but it does not chain one mode
+to the next. Consider the dealership-chatbot incident discussed in Section 5. An
+analyst can describe it as an instruction attack followed by compliant output and
+an unauthorised offer; that reading is an interpretation of the reported sequence,
+not an edge in the graph. Encoding event sequences would mean a new relation with
+its own meaning and evidence. As it stands the graph is for navigation and
+comparison, and a reader should not read a path through it as a demonstrated causal
+chain.
 
 ## 4.3 Evidence and examples
 
@@ -398,11 +386,10 @@ proposed source-genre credulity as a possible refinement. This is a candidate
 distinction arising from the exercise, not evidence that it is a new, independent
 mechanism.
 
-Because the incidents were selected by the author and mapped manually, the
-exercise demonstrates possible uses of the vocabulary. It cannot establish
-coverage of future incidents or superiority to another taxonomy. A stronger test
-would specify the sampling frame and matching rules in advance and have
-independent annotators score both fit and failure to fit.
+The incidents were selected and mapped by the author, so the exercise shows the
+vocabulary applied to known cases rather than its coverage of future ones. A
+sharper test would fix the sampling frame and matching rules in advance and have
+independent annotators score both the fit and the misses.
 
 # 6. Release versions and reuse
 
@@ -490,17 +477,18 @@ and its title, authors and year confirmed against the paper it names.
 
 # 9. Conclusion
 
-EthicalAI is a reference for reviewing AI integrity whose distinctive feature is
-that each claim carries the source passage and scope it came from, so a reviewer
-can check it rather than take it on trust. The 207-record study supplies the
-construction account, a named typology of how grounding fails, and small
-demonstrations of codebook use and incident mapping, with their sampling and
-annotation limits stated. The later bibliography and 227 untested analogies extend
-the reference without extending those empirical claims. The part worth carrying
-elsewhere is the construction rule the catalogue now follows: for any claim bound to
-a source, verify the link and the quotation separately, because reading the source
-did not, on its own, prevent later transcription and interpretation errors, and a
-model asked for the citation severed the two more completely still.
+We set out to build a catalogue where every claim could be checked against a source
+rather than taken on trust, and found that building it that way was harder than the
+goal implied. Reading each source caught citations that a title would have passed,
+and a later recheck still caught quoted figures that the reading had let through, so
+the discipline had to be applied twice, once to the link and once to the quotation.
+The machine probe sharpened the lesson: asked for a citation, a model severed the
+title from the identifier entirely, a failure no title scan survives. For anyone
+assembling an evidence-linked resource, the transferable result is that a plausible
+citation is not a supporting one and a supporting citation is not a faithfully
+quoted one, and only reading the source closes either gap. The codebook and
+incident checks, and the 227 untested analogies in the later release, are reported
+with their limits and are not part of that result.
 
 # References
 
