@@ -31,8 +31,10 @@ Target venue: a workshop or arXiv preprint on AI safety / evaluation / research 
   meta-announcement; reframed the surface-match/machine link as a contrast; fixed the 29-vs-35 seam.
   Rejected one groundedness flag after checking: 1,175/1,036 is correct at the pinned commit 3b9b500
   (the reviewer counted current HEAD). Writing polish (three-tools list, X-not-Y density) deferred to S5.
-- [ ] **S5 Abstract, title, and length.** One more sharpening pass on the abstract and title;
-  check the paper fits a reasonable workshop length; cut any remaining dilution.
+- [x] **S5 Abstract, title, and length.** DONE (v1.9). Differentiated the conclusion from the
+  abstract (removed the verbatim finding restatement; it now ends on the forward-looking rule plus
+  the machine contrast); pinned the OWASP living-document citation with an accessed date. Length
+  5,219 words, fits a workshop/preprint; title already signals the finding.
 - [ ] **S6 Submission artifact.** Produce a LaTeX/PDF build (pandoc) that is arXiv/workshop ready;
   check it renders and carries the references.
 - [ ] **S7 Independent error-label re-audit (human-gated).** The one item an agent cannot fully

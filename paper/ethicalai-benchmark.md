@@ -492,16 +492,15 @@ and its title, authors and year confirmed against the paper it names.
 
 EthicalAI is a reference for reviewing AI integrity whose distinctive feature is
 that each claim carries the source passage and scope it came from, so a reviewer
-can check it rather than take it on trust. Building it that way is also what
-exposed the paper's main result: a plausible citation and an accurate worked
-example are separate properties, and checking one does not establish the other.
-The 207-record study also supplies small demonstrations of codebook use and
-incident mapping, with their sampling and annotation limits stated. The later
-bibliography and 227 untested analogies extend the reference without extending
-those empirical claims. The construction rule the catalogue now follows is the
-actionable form of that result: verify the link and the quotation separately,
-because reading the source did not, on its own, prevent later transcription and
-interpretation errors.
+can check it rather than take it on trust. The 207-record study supplies the
+construction account, a named typology of how grounding fails, and small
+demonstrations of codebook use and incident mapping, with their sampling and
+annotation limits stated. The later bibliography and 227 untested analogies extend
+the reference without extending those empirical claims. The part worth carrying
+elsewhere is the construction rule the catalogue now follows: for any claim bound to
+a source, verify the link and the quotation separately, because reading the source
+did not, on its own, prevent later transcription and interpretation errors, and a
+model asked for the citation severed the two more completely still.
 
 # References
 
@@ -522,7 +521,8 @@ interpretation errors.
 - NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0).
   NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1
 - OWASP (2025). OWASP Top 10 for Large Language Model Applications, 2025 release.
-  https://genai.owasp.org/llm-top-10/
+  https://genai.owasp.org/llm-top-10/ (accessed November 2026; a living document, so
+  the accessed date fixes the version referenced here).
 - Rashkin, H., Nikolaev, V., Lamm, M., Aroyo, L., Collins, M., Das, D., Petrov,
   S., Tomar, G. S., Turc, I., and Reitter, D. (2021). Measuring Attribution in
   Natural Language Generation Models. arXiv:2112.12870.
