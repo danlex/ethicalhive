@@ -166,14 +166,19 @@ def main():
     description=esc(abstract[:180]).replace('"','&quot;')
     rendered=render(body,1)
     OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
-    methods,_=read_manuscript(ROOT/'paper/draft.md')
+    # Also render the benchmark/method paper to its own live page.
+    methods,mbody=read_manuscript(ROOT/'paper/draft.md')
+    m_title=esc(methods['title']);m_abs=' '.join(str(methods.get('abstract','')).split())
+    m_fm='<h1>'+m_title+'</h1><p>'+esc(str(methods['author']))+' · '+esc(str(methods['date']))+'</p><h2>Abstract</h2><p>'+inline(m_abs)+'</p>'
+    (ROOT/'docs/benchmark-paper.html').write_text(
+        PAGE.format(body=render(mbody,1),title=m_title,description=esc(m_abs[:180]).replace('"','&quot;'),frontmatter=m_fm),encoding="utf-8")
     section=f'''<section class="framework" id="paper">
     <p class="research-baseline-note"><strong>Research scope:</strong> the catalogue study describes the historical 207-record release. Its measurements and the auditing pilot do not validate the 227 later analogies in the current 434-record catalogue.</p>
     <h2>Research papers</h2>
     <p>Two working papers examine the catalogue's evidence and the use of named obligations to review coding-agent drafts. Revised {esc(str(data['date']))}.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
       <article class="card"><h3>{title}</h3><p>A resource study of definitions, source support, construction errors and category use. The historical study and the expanded bibliography have separate evidence scopes.</p><p><a href="paper.html">Read the catalogue paper</a> &middot; <a href="paper.pdf">Download PDF</a></p></article>
-      <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="methods-paper.pdf">Download auditing paper · PDF</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/paper/draft.md">Read source</a></p></article>
+      <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="benchmark-paper.html">Read the auditing paper</a> &middot; <a href="methods-paper.pdf">Download PDF</a></p></article>
     </div>
     <p><a href="papers.html">Paper versions and changelog</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
   </section>'''
