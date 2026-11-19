@@ -68,11 +68,11 @@ design and evaluation target.
 
 # 2. The AI Integrity Contract
 
-`contracts/ai-integrity-contract.md`, version 1.0, defines fourteen clause
-families. The contract is the operational layer beneath the six-principle ethics
-charter: each clause is an obligation that serves one of the principles, and the
-charter states the ends the clauses work toward. Each has numbered rules, an
-auditor role and a recovery clause.
+The AI Integrity Contract, version 1.0 (released with the other artifacts; see
+the reproduction section), defines fourteen clause families. Each clause is an
+obligation serving one of a small set of integrity principles that state the ends
+the obligations work toward. Each has numbered rules, an auditor role and a
+recovery clause.
 For example, `INT-ANC-01` requires updating a contradicted framing;
 `INT-ANC-02` forbids retaining that framing. Their shared family is ANC,
 but they remain distinct identifiers when exact-rule attribution is scored.
@@ -131,10 +131,10 @@ records which of its components are left for future work.
 
 This revision reanalyzes existing outputs rather than running new models.
 `experiments/research-runs-2026-11-09.json` fixes the selected files and
-their hashes. The shared loader checks the reviewer condition and case
-identities; the associated `research-results-2026-11-09` JSON and Markdown
-contain the numerical summaries. File selection is explicit: a `judge`
-selection cannot silently include `judge-ctx` or `judge-anon`.
+their hashes. The shared loader maps each run to its exact condition, so a `judge`
+selection draws only `judge` files and never `judge-ctx` or `judge-anon`; the
+associated `research-results-2026-11-09` JSON and Markdown contain the numerical
+summaries.
 
 The records identify the reviewer only by the alias `sonnet`, and the manifest is
 a retrospective selection of existing files rather than a preregistration. Section
@@ -424,6 +424,8 @@ to emit rule IDs are not a fair comparison for ID emission.
 The frozen manifest and the generated summary in `experiments/` identify
 each result file and condition. The summary reports the easy suites,
 legacy `contract` baseline and per-family counts alongside the hard-set
-ablation. The cases, raw outputs, reviewer prompts and contract remain
-available for inspection. Re-scoring these files is distinct from
-rerunning a model whose exact historical backend is not recorded.
+ablation. The cases, raw outputs, reviewer prompts, the contract
+(`contracts/ai-integrity-contract.md`) and the six integrity principles it
+serves (`contracts/ethical-principles.md`) remain available for inspection.
+Re-scoring these files is distinct from rerunning a model whose exact historical
+backend is not recorded.
