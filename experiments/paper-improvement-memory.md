@@ -77,3 +77,15 @@ Each iteration: (1) read this file; (2) make the next edit without reintroducing
 observed score and context to the relevant problem; (5) if a new recurring problem appears, add a
 section for it. This is the SIM loop: group by recurring problem, record predicted vs observed,
 reuse what worked.
+
+- Observed (2026-11-19, benchmark paper align+de-slop): the benchmark paper was 4/10, same
+  disclaimer cadence plus internal-reference leakage (a contracts/ethical-principles.md file path
+  in the intro argument, a desk-reject tell). Fixed by applying the ontology lesson: the principle
+  is the design rationale stated in plain terms, the charter file path stays out of the argument.
+  Cut seven "X not Y" disclaimers to one scope statement, compressed the Section 3.2 metadata
+  paragraph and the Section 3.1 unimplemented-components list into one-line pointers to Limitations,
+  and added the reciprocal cross-reference naming the companion ontology paper.
+- LESSON (cross-paper): a principle grounding must read as the design's own rationale in reader-
+  evaluable terms; never cite an internal governance file path in the body of an external paper
+  (keep it in availability/artifacts only). Keep the two companion papers aligned: one scope
+  register, consistent "companion ... paper" naming, a reciprocal cross-reference each way.

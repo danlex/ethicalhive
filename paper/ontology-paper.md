@@ -83,9 +83,9 @@ from source papers, 21 retained without that support, the 35 citation mismatches
 sorted into the typology above, and the 14 percent of grounded records whose
 quoted figure did not survive a recheck. Two smaller checks follow, on whether an
 outside rater recovers the category labels and on how the vocabulary maps twelve
-public incidents. The companion advisory-auditing paper asks a separate question,
-whether checking one named obligation at a time helps review coding-agent drafts,
-and its pilot does not validate this catalogue.
+public incidents. The companion auditing paper, "Contracts Between Humans and AI
+Agents", asks a separate question, whether checking one named obligation at a time
+helps review coding-agent drafts, and its pilot does not validate this catalogue.
 
 A later release grew the catalogue to 434 records by adding 227 untested
 behavioural analogies. Section 6 keeps that expansion separate from the 207-record
@@ -402,7 +402,7 @@ The historical study and the current catalogue have different scopes. The
 207-record study is retained as a versioned baseline; the current version 1.3
 contains those records plus 227 proposed human-behaviour analogies, for 434 in
 total. None of the additional records enters the denominators of 186 checked
-records, 33 codebook items or twelve incidents above, and the companion method
+records, 33 codebook items or twelve incidents above, and the companion auditing
 paper's six-clause pilot results do not evaluate those 227 analogies.
 
 A later single-pass internal review of the version-1.3 release checked the 227

@@ -39,12 +39,10 @@ a stable rule identifier. RFC 2119 keywords express the obligations
 [Bradner, 1997]. The document is an editorial control, not a claim of legal
 enforceability or a guarantee that an agent will obey it.
 
-This division answers to the accountability principle in the project's ethics
-charter (`contracts/ethical-principles.md`): a human stays in the deciding role
-while the Auditor only advises, and every flag carries a traceable rule
-identifier. The audit also serves the charter's integrity-under-pressure
-principle, in that the draft is held to its named obligations whatever the draft,
-or pressure on it, would prefer.
+The division keeps a human in the deciding role: the Auditor only advises, and
+every flag carries a traceable rule identifier, so a reviewer can act on it or
+overrule it with the reason in hand. The draft is held to its named obligations
+regardless of what it, or pressure on it, would prefer.
 
 An authored anchoring case illustrates the task. The supplied session
 evidence locates a stale read in a background worker and states that the
@@ -57,17 +55,16 @@ scenario, not an observation about a real repository.
 The research question is whether this form of review can identify a
 breach, leave near-miss clean drafts alone, and name the applicable rule.
 It has two parts: the effect of focusing a review on one known obligation,
-and the value of recording that obligation explicitly. The pilot separates
-these with bulk, targeted and unnamed-obligation conditions. It does not
-assume that a larger catalogue improves detection.
+and the value of recording that obligation explicitly. The bulk, targeted
+and unnamed-obligation conditions separate these two effects, so the
+unnamed control isolates focus from the catalogue's names.
 
 The artifact differs in scope from trace-based orchestration assurance
 [Paduraru et al., 2026], RFC-conformance bug detection [Zheng et al., 2025]
 and LTL safety checking [Fang, 2026]. Those approaches examine
 execution properties or formal specifications. Our unit is a final draft
-checked against supplied evidence and a human-readable obligation. The
-comparison is one of design and evaluation target, not a claim that prior
-assurance work excludes factuality or human oversight.
+checked against supplied evidence and a human-readable obligation, a different
+design and evaluation target.
 
 # 2. The AI Integrity Contract
 
@@ -122,16 +119,13 @@ This is oracle routing: the case supplies the review target.
 The harness records the raw reviewer output, parsed verdict, emitted
 rule identifiers, expected verdict, gold rule identifiers and model
 alias. It extracts `INT-*` identifiers from the output and normalizes
-verdicts for scoring. The experiment measures these recorded outputs,
-not an instrumented sequence of independent verification stages.
+verdicts for scoring.
 
-A proposed full workflow could first decompose claims, verify them
-independently and pass the results to several clause auditors, following
-the motivation of Chain-of-Verification [Dhuliawala et al., 2023]. The
-pilot does not establish a separately captured CoVe stage, JSON
-`cove_labels` inputs, a retry policy for missing rule IDs, or an evaluated
-all-clause aggregation procedure. Those components are not credited with
-the reported result.
+A fuller workflow could first decompose claims, verify them independently,
+and pass the results to several clause auditors, following the motivation of
+Chain-of-Verification [Dhuliawala et al., 2023]. The pilot runs a single
+reviewer call per case rather than that multi-stage pipeline, and Section 7
+records which of its components are left for future work.
 
 ## 3.2 Result selection and provenance
 
@@ -142,13 +136,9 @@ identities; the associated `research-results-2026-11-09` JSON and Markdown
 contain the numerical summaries. File selection is explicit: a `judge`
 selection cannot silently include `judge-ctx` or `judge-anon`.
 
-The records identify the reviewer alias `sonnet`. The release does not
-establish an exact backend model version, decoding temperature, random
-seed, CLI version or complete token and latency cost. The main seven-condition
-hard-set filenames carry October and November 2026 timestamps; the supplemental
-legacy `contract` files include May dates. These are recorded filenames, not
-independently verified execution dates. The manifest is a retrospective
-selection, not a preregistration.
+The records identify the reviewer only by the alias `sonnet`, and the manifest is
+a retrospective selection of existing files rather than a preregistration. Section
+7 states the run-provenance details the release does not pin down.
 
 # 4. Benchmark
 
@@ -222,11 +212,9 @@ pairs (p = 1.000); this is not an equivalence test.
 These exploratory p-values are unadjusted for the comparisons shown.
 
 The context control's 21/28 specificity is consistent with a benefit from
-focusing the decision, even when other clauses remain visible. It does
-not isolate a universal decomposition mechanism: the targeted reviewers
-know which obligation to inspect, and their instructions differ from the
-bulk reviewers'. These are comparisons of known-target review conditions,
-not evidence of improved general auditing.
+focusing the decision, even when other clauses remain visible. Because the
+targeted reviewers are told which obligation to inspect, the comparison speaks
+to focused review with a known target rather than to general auditing.
 
 ## 5.2 Rule attribution
 
@@ -286,9 +274,9 @@ Prose-rubric review predates this contract. Constitutional AI uses written
 principles in critique and training [Bai et al., 2022]. Self-Refine
 [Madaan et al., 2023], Reflexion [Shinn et al., 2023] and CoVe
 [Dhuliawala et al., 2023] use feedback, reflection or independently answered
-verification questions. Our reviewer belongs to this broad family. An
-external document and rule-ID output are deployment choices whose effects
-must be measured, not evidence of a new factuality mechanism.
+verification questions. Our reviewer belongs to this broad family. What it adds
+is an external, human-amendable obligation and a rule identifier a reviewer can
+trace; the underlying detection still rests on the same model reading the draft.
 
 Sampling-based approaches obtain different signals. SelfCheckGPT
 [Manakul et al., 2023] compares stochastic outputs, and semantic entropy
@@ -309,7 +297,7 @@ agent orchestration and includes factuality indicators [Paduraru et al.,
 [Zheng et al., 2025]; AgentVerify examines LTL safety properties
 [Fang, 2026]. Their trace, specification and control-flow units
 differ from our final-draft obligations. The present evidence supports a
-pilot of advisory review, not a claim to supersede those systems.
+pilot of advisory review and reaches no further.
 
 # 7. Limitations
 
@@ -338,8 +326,10 @@ correct reasoning, and a matching ID can accompany unrelated extra IDs.
 Conversely, an exact mismatch can involve similarly worded rules; the
 author's gold set is not an exhaustive semantic adjudication of every ID.
 The workflow has not been evaluated with human decisions or downstream
-coding outcomes. It is not state of the art on factuality, and its pilot
-does not validate all fourteen clauses or the catalogue's 434 records.
+coding outcomes. The pilot covers six clause families on known targets, and
+leaves open the full fourteen clauses, factuality benchmarks, and the
+434-record catalogue described in the companion paper, "EthicalAI: An
+Evidence-Linked Catalogue of AI Integrity Failures".
 
 # 8. Conclusion
 
@@ -347,8 +337,9 @@ A written integrity contract gives a reviewer a stable obligation to
 cite and gives the human an artifact to inspect and amend. In this pilot,
 targeted review leaves more clean drafts unflagged than bulk clause
 review, while its comparison with freeform remains inconclusive. Naming
-the obligation supports exact-rule references, but the unnamed control
-prevents attributing the detection pattern to catalogue names alone.
+the obligation supports exact-rule references, while the unnamed control
+matched the named judge on clean-draft specificity, so the detection pattern
+cannot be put down to the catalogue's names alone.
 The released results support known-target review and expose severity
 errors; a broader efficacy claim requires independent labels and an
 end-to-end routing and aggregation evaluation.
