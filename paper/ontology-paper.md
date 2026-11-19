@@ -451,9 +451,9 @@ The model-based codebook check cannot substitute for blinded human annotation.
 The incident exercise uses salient public cases and a permissive matching task.
 Neither measures how accurately a reviewer can distinguish close alternatives,
 how often the catalogue misses an externally sampled failure, or whether its
-graph improves auditing over a flat list. Those questions require separate
-evaluation. The resource makes no completeness or state-of-the-art detection
-claim.
+graph improves auditing over a flat list, each of which would need an externally
+sampled test set and independent annotators. The resource makes no completeness
+or state-of-the-art detection claim.
 
 # 8. Availability and reproducibility
 

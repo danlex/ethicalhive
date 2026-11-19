@@ -329,7 +329,8 @@ The workflow has not been evaluated with human decisions or downstream
 coding outcomes. The pilot covers six clause families on known targets, and
 leaves open the full fourteen clauses, factuality benchmarks, and the
 434-record catalogue described in the companion paper, "EthicalAI: An
-Evidence-Linked Catalogue of AI Integrity Failures".
+Evidence-Linked Catalogue of AI Integrity Failures, and What Grounding It
+Revealed".
 
 # 8. Conclusion
 

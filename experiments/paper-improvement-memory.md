@@ -98,3 +98,10 @@ reuse what worked.
   primary-source correction, not changed (never rewrite a citation from a WebSearch summary). Added
   the ontology paper's "every reference resolved to its source" note to the benchmark paper, scoped
   to arXiv identifiers, for alignment.
+
+- Observed (2026-11-19, consistency pass): both papers re-confirmed at 2/10 (human register). Two
+  accuracy touches: the benchmark's cross-reference now uses the companion's EXACT full title
+  (it had dropped the subtitle, the very citation-accuracy error the paper studies), and the
+  ontology's one vague Limitations close ("those questions require separate evaluation") was
+  replaced with the concrete requirement (externally sampled test set + independent annotators).
+  No substantive content change; the papers are stable and submission-ready.
