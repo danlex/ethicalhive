@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """build-paper-page.py - render the resource paper to a styled HTML page on the site.
 
-Reads paper/ethicalai-benchmark.md and writes docs/paper.html, matching the site's look
+Reads paper/ontology-paper.md and writes docs/paper.html, matching the site's look
 (same palette and type as the other generated pages). No markdown library is available in
 this repo, so this does a small, explicit conversion of the subset the paper uses:
 headings, paragraphs (hard-wrapped lines joined), bullet lists, pipe tables, bold, inline
@@ -15,7 +15,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "paper" / "ethicalai-benchmark.md"
+SRC = ROOT / "paper" / "ontology-paper.md"
 OUT = ROOT / "docs" / "paper.html"
 
 
@@ -167,7 +167,7 @@ def main():
     rendered=render(body,1)
     OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
     # Also render the benchmark/method paper to its own live page.
-    methods,mbody=read_manuscript(ROOT/'paper/draft.md')
+    methods,mbody=read_manuscript(ROOT/'paper/benchmark-paper.md')
     m_title=esc(methods['title']);m_abs=' '.join(str(methods.get('abstract','')).split())
     m_fm='<h1>'+m_title+'</h1><p>'+esc(str(methods['author']))+' · '+esc(str(methods['date']))+'</p><h2>Abstract</h2><p>'+inline(m_abs)+'</p>'
     (ROOT/'docs/benchmark-paper.html').write_text(

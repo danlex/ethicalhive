@@ -86,8 +86,8 @@ def check_live(base,assets):
 
 
 def check_sources():
-    source=ROOT/'paper/draft.md';data,body=manuscript(source)
-    resource,rbody=manuscript(ROOT/'paper/ethicalai-benchmark.md')
+    source=ROOT/'paper/benchmark-paper.md';data,body=manuscript(source)
+    resource,rbody=manuscript(ROOT/'paper/ontology-paper.md')
     results=json.loads((ROOT/'experiments/research-results-2026-11-09.json').read_text())
     parsed=tables(body)
     detection=next(t for t in parsed if t[0]==['Condition','Exact verdict','Recall','Specificity','Flag precision'])
@@ -114,14 +114,14 @@ def check_sources():
     named=results['suites']['hard']['judge']['score']
     assert (named['exact_rule_set_hits_tp'],named['exact_rule_set_predictions_tp'],named['exact_rule_set_gold_tp'])==(37,84,37)
     assert '37/84' in body and '37/37' in body
-    for path,meta,content in [(source,data,body),(ROOT/'paper/ethicalai-benchmark.md',resource,rbody)]:
+    for path,meta,content in [(source,data,body),(ROOT/'paper/ontology-paper.md',resource,rbody)]:
         assert all(meta.get(k) for k in ('title','author','date','abstract'))
         assert not any(c in path.read_text() for c in ('—','–'))
         assert '[UNVERIFIED]' not in path.read_text()
     assert '8798134341ea386da80fb5602bc7dd06ef81cf24' in rbody
     assert '3b9b50021ef5eefb15a28d4edb7a5264f2fb626f' in rbody
     assert (ROOT/'paper/latex/main.tex').read_bytes()==(ROOT/'paper/arxiv/main.tex').read_bytes()
-    for path,meta in [(source,data),(ROOT/'paper/ethicalai-benchmark.md',resource)]:
+    for path,meta in [(source,data),(ROOT/'paper/ontology-paper.md',resource)]:
         pdf=path.with_suffix('.pdf')
         info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
         pages=int(re.search(r'^Pages:\s+(\d+)',info,re.M)[1])
@@ -143,7 +143,7 @@ def check_browser():
     server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory=str(ROOT/'docs')))
     threading.Thread(target=server.serve_forever,daemon=True).start()
     base=f'http://127.0.0.1:{server.server_port}/'
-    title=manuscript(ROOT/'paper/ethicalai-benchmark.md')[0]['title']
+    title=manuscript(ROOT/'paper/ontology-paper.md')[0]['title']
     try:
         with sync_playwright() as p:
             browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])

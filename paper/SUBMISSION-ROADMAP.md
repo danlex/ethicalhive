@@ -1,7 +1,7 @@
 # EthicalAI resource paper: staged improvement roadmap to submission-ready
 
 One concrete improvement per stage. Each stage: improve one thing in
-`paper/ethicalai-benchmark.md`, validate (zero em/en dashes, every verified number still
+`paper/ontology-paper.md`, validate (zero em/en dashes, every verified number still
 reconciles with the source files, `build-paper-page.py` runs clean), commit referencing #12,
 mark the stage done here with a one-line note, and report what improved. Honesty guardrails on
 every stage: no fabricated citation, no over-claim beyond one project's artifact, no SOTA claim,

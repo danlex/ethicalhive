@@ -4,7 +4,7 @@
 Reusable per `contracts/paper-writing-contract.md` PAP-WORK-06. Reads the
 manifest-selected JSONL per (mode, reviewer), computes exact / recall / spec /
 family and exact-rule attribution with their actual denominators, and emits a
-Markdown table ready to paste into paper/draft.md §5.
+Markdown table ready to paste into paper/benchmark-paper.md §5.
 
 Fixes the Table 2 denominator bug caught by codex r4: hard-suite gold
 splits are not all 5/0/5; SEL and SCP are 4 SHIP / 2 REVISE / 4 BLOCK,

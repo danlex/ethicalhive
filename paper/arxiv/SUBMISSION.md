@@ -50,7 +50,7 @@ Go to https://arxiv.org/submit and click **Start a new submission**.
 - **Title:** `Contracts Between Humans and AI Agents: An Advisory Integrity Agreement for Agentic Coding`
 - **Authors:** `Alexandru Dan` / Triumvirate Labs
 - **Abstract:** copy from the YAML abstract block at the top of
-  `paper/draft.md`.
+  `paper/benchmark-paper.md`.
 - **Comments:** describe the actual page count printed by `pdfinfo paper/draft.pdf`
   and the intended venue once chosen. The code and frozen results are at
   https://github.com/danlex/ethicalhive .

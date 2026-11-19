@@ -6,6 +6,6 @@ set -euo pipefail
 # --anon outputs only paper/latex/anonymous.pdf.
 PAPER_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ "${1:-}" = "--anon" ]; then
-  exec python3 "$PAPER_DIR/../experiments/build-research-papers.py" --source draft.md --anonymous
+  exec python3 "$PAPER_DIR/../experiments/build-research-papers.py" --source benchmark-paper.md --anonymous
 fi
-exec python3 "$PAPER_DIR/../experiments/build-research-papers.py" --source draft.md
+exec python3 "$PAPER_DIR/../experiments/build-research-papers.py" --source benchmark-paper.md

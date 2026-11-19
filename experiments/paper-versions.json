@@ -3,71 +3,155 @@
     {
       "key": "ethicalai-benchmark",
       "title": "EthicalAI: An Evidence-Linked Catalogue of AI Integrity Failures",
-      "source": "paper/ethicalai-benchmark.md",
+      "source": "paper/ontology-paper.md",
       "live": "paper.html",
       "versions": [
-        {"version": "v1.12", "date": "2026-11-19", "commit": "6395b82", "changelog": [
-          "Grounded the paper in the user's Six Principles of Ethical AI. Added contracts/ethical-principles.md (the canonical charter, above the AI Integrity Contract), and framed the citation-grounding finding as operationalising the honesty-and-transparency principle, descriptively rather than as a bolted-on manifesto (slop judge 4/10 -> fixed).",
-          "The charter is referenced in the introduction as motivation and in Section 8 among the artifacts."
-        ]},
-        {"version": "v1.11", "date": "2026-11-19", "commit": "641865c", "changelog": [
-          "De-slop pass toward a human scientific register. AI-slop judge 4/10 -> 2/10, all seven prior structural tells resolved: cut the 'three things to reuse' contribution list and 'This paper delivers' package sentence, replaced 'sits next to' / 'Its proposed value is that', consolidated the per-section scope disclaimers, unstacked the causes-relation negations, and rewrote the conclusion to close the opening problem instead of paraphrasing the abstract.",
-          "Judge verdict: reads primarily as human scientific prose. Every verified number preserved."
-        ]},
-        {"version": "v1.10", "date": "2026-11-18", "commit": "39eed9b", "changelog": [
-          "Submission roadmap Stage 6: produced the submission PDF (docs/paper.pdf) via pandoc + tectonic, with a native LaTeX/TikZ Figure 1 replacing the web SVG. 12-page PDF, all nine sections, Figure 1, and twelve references. arXiv/workshop ready."
-        ]},
-        {"version": "v1.9", "date": "2026-11-18", "commit": "45401d4", "changelog": [
-          "Submission roadmap Stage 5 (writing polish): differentiated the conclusion from the abstract (no verbatim finding restatement; ends on the forward-looking rule plus the machine contrast); pinned the OWASP living-document citation with an accessed date. Length 5,219 words."
-        ]},
-        {"version": "v1.8", "date": "2026-11-18", "commit": "5b7983f", "changelog": [
-          "Submission roadmap Stage 4: four-reviewer council re-review (peer minor-revision up from major; every number reconciles; ai-writing 2/10; one groundedness BLOCK).",
-          "Re-grounded the LLM-citation probe to the saved run data (gpt-4o 40/45 declined, 5/5 fabricated; deepseek 7/8), committed both per-prompt jsonls; moved Figure 1 into the markdown source; consolidated the repeated scope disclaimer; cut the Section 3 meta-announcement; reframed the surface-match/machine link as a contrast. Rejected one flag after verifying a number was correct at the pinned commit."
-        ]},
-        {"version": "v1.7", "date": "2026-11-18", "commit": "8bba855", "changelog": [
-          "Submission roadmap Stage 3: added Figure 1, an inline SVG bar chart of the five-class citation-failure distribution (surface-match dominates), with a caption and an in-text reference. Counts match the Section 3.1 table."
-        ]},
-        {"version": "v1.6", "date": "2026-11-18", "commit": "318585a", "changelog": [
-          "Submission roadmap Stage 2: added a second-model probe. deepseek-chat never declined (0/45, vs gpt-4o's 85%) and fabricated 7 of 8 verified suggestions, reusing one arXiv id across unrelated modes.",
-          "The two models fail in opposite styles (over-cautious vs over-confident) but neither produces a citation trustworthy without resolving the source. Abstract, Section 3 probe paragraph, and the probe writeup updated."
-        ]},
-        {"version": "v1.5", "date": "2026-11-18", "commit": "92efa87", "changelog": [
-          "Submission roadmap Stage 1: citation integrity sweep. Verified all 12 references resolve to real papers on arXiv (titles, authors, years); fixed Agrawal's author list; confirmed Spracklen's 2025 is the USENIX venue year.",
-          "Added a Section 8 note that every reference was resolved to its source before inclusion, the same discipline the paper applies to the catalogue."
-        ]},
-        {"version": "v1.4", "date": "2026-11-18", "commit": "fc67571", "changelog": [
-          "Paper-orchestra agent council revision (architect, literature, section writers, integrator, groundedness verifier), validated before publishing.",
-          "Promoted the citation-grounding result to its own Section 3 and named the five-class failure typology (surface-match, scope-mismatch, misfiling, polarity-reversal, wrong-population) so it is a citable object.",
-          "Positioned against the closest prior work with five arXiv-verified citations: Lewis 2020 (RAG), Rashkin 2021 (AIS attribution), Liu 2023 (verifiability audit), Gao 2023 (ALCE), Agrawal 2023 (reference hallucination)."
-        ]},
-        {"version": "v1.3", "date": "2026-11-13", "commit": "5f4b1a7", "changelog": [
-          "Added the LLM-citation probe: asked for references, GPT-4o declined on 55 of 65 prompts, and all 10 confident suggestions bound a plausible title to an arXiv id for an unrelated paper.",
-          "Converted the keyword/LLM hook from an (ungrounded) analogy into a measured small-probe result; earlier groundedness BLOCK resolved."
-        ]},
-        {"version": "v1.2", "date": "2026-11-11", "commit": "6e2a9f1", "changelog": [
-          "Added the citation-failure typology that turns the headline error rate into a diagnosis.",
-          "Applied the review council's convergent fixes: reframed 29/50 as a count not a rate, stated the binning rule, added the kappa small-n caveat, fixed a source batch-arithmetic bug."
-        ]},
-        {"version": "v1.1", "date": "2026-11-11", "commit": "29c826d", "changelog": [
-          "Reframed to lead with the transferable finding and the reader payoff instead of a flat construction log.",
-          "Consolidated the defensive disclaimer cadence flagged by the AI-writing review."
-        ]},
-        {"version": "v1.0", "date": "2026-11-03", "commit": "c36db6a", "changelog": [
-          "Honest, map-led resource paper: the historical 207-record study, the citation audit, and the verification sweep.",
-          "Baseline before this improvement cycle."
-        ]}
+        {
+          "version": "v1.12",
+          "date": "2026-11-19",
+          "commit": "6395b82",
+          "changelog": [
+            "Grounded the paper in the user's Six Principles of Ethical AI. Added contracts/ethical-principles.md (the canonical charter, above the AI Integrity Contract), and framed the citation-grounding finding as operationalising the honesty-and-transparency principle, descriptively rather than as a bolted-on manifesto (slop judge 4/10 -> fixed).",
+            "The charter is referenced in the introduction as motivation and in Section 8 among the artifacts."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.11",
+          "date": "2026-11-19",
+          "commit": "641865c",
+          "changelog": [
+            "De-slop pass toward a human scientific register. AI-slop judge 4/10 -> 2/10, all seven prior structural tells resolved: cut the 'three things to reuse' contribution list and 'This paper delivers' package sentence, replaced 'sits next to' / 'Its proposed value is that', consolidated the per-section scope disclaimers, unstacked the causes-relation negations, and rewrote the conclusion to close the opening problem instead of paraphrasing the abstract.",
+            "Judge verdict: reads primarily as human scientific prose. Every verified number preserved."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.10",
+          "date": "2026-11-18",
+          "commit": "39eed9b",
+          "changelog": [
+            "Submission roadmap Stage 6: produced the submission PDF (docs/paper.pdf) via pandoc + tectonic, with a native LaTeX/TikZ Figure 1 replacing the web SVG. 12-page PDF, all nine sections, Figure 1, and twelve references. arXiv/workshop ready."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.9",
+          "date": "2026-11-18",
+          "commit": "45401d4",
+          "changelog": [
+            "Submission roadmap Stage 5 (writing polish): differentiated the conclusion from the abstract (no verbatim finding restatement; ends on the forward-looking rule plus the machine contrast); pinned the OWASP living-document citation with an accessed date. Length 5,219 words."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.8",
+          "date": "2026-11-18",
+          "commit": "5b7983f",
+          "changelog": [
+            "Submission roadmap Stage 4: four-reviewer council re-review (peer minor-revision up from major; every number reconciles; ai-writing 2/10; one groundedness BLOCK).",
+            "Re-grounded the LLM-citation probe to the saved run data (gpt-4o 40/45 declined, 5/5 fabricated; deepseek 7/8), committed both per-prompt jsonls; moved Figure 1 into the markdown source; consolidated the repeated scope disclaimer; cut the Section 3 meta-announcement; reframed the surface-match/machine link as a contrast. Rejected one flag after verifying a number was correct at the pinned commit."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.7",
+          "date": "2026-11-18",
+          "commit": "8bba855",
+          "changelog": [
+            "Submission roadmap Stage 3: added Figure 1, an inline SVG bar chart of the five-class citation-failure distribution (surface-match dominates), with a caption and an in-text reference. Counts match the Section 3.1 table."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.6",
+          "date": "2026-11-18",
+          "commit": "318585a",
+          "changelog": [
+            "Submission roadmap Stage 2: added a second-model probe. deepseek-chat never declined (0/45, vs gpt-4o's 85%) and fabricated 7 of 8 verified suggestions, reusing one arXiv id across unrelated modes.",
+            "The two models fail in opposite styles (over-cautious vs over-confident) but neither produces a citation trustworthy without resolving the source. Abstract, Section 3 probe paragraph, and the probe writeup updated."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.5",
+          "date": "2026-11-18",
+          "commit": "92efa87",
+          "changelog": [
+            "Submission roadmap Stage 1: citation integrity sweep. Verified all 12 references resolve to real papers on arXiv (titles, authors, years); fixed Agrawal's author list; confirmed Spracklen's 2025 is the USENIX venue year.",
+            "Added a Section 8 note that every reference was resolved to its source before inclusion, the same discipline the paper applies to the catalogue."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.4",
+          "date": "2026-11-18",
+          "commit": "fc67571",
+          "changelog": [
+            "Paper-orchestra agent council revision (architect, literature, section writers, integrator, groundedness verifier), validated before publishing.",
+            "Promoted the citation-grounding result to its own Section 3 and named the five-class failure typology (surface-match, scope-mismatch, misfiling, polarity-reversal, wrong-population) so it is a citable object.",
+            "Positioned against the closest prior work with five arXiv-verified citations: Lewis 2020 (RAG), Rashkin 2021 (AIS attribution), Liu 2023 (verifiability audit), Gao 2023 (ALCE), Agrawal 2023 (reference hallucination)."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.3",
+          "date": "2026-11-13",
+          "commit": "5f4b1a7",
+          "changelog": [
+            "Added the LLM-citation probe: asked for references, GPT-4o declined on 55 of 65 prompts, and all 10 confident suggestions bound a plausible title to an arXiv id for an unrelated paper.",
+            "Converted the keyword/LLM hook from an (ungrounded) analogy into a measured small-probe result; earlier groundedness BLOCK resolved."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.2",
+          "date": "2026-11-11",
+          "commit": "6e2a9f1",
+          "changelog": [
+            "Added the citation-failure typology that turns the headline error rate into a diagnosis.",
+            "Applied the review council's convergent fixes: reframed 29/50 as a count not a rate, stated the binning rule, added the kappa small-n caveat, fixed a source batch-arithmetic bug."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.1",
+          "date": "2026-11-11",
+          "commit": "29c826d",
+          "changelog": [
+            "Reframed to lead with the transferable finding and the reader payoff instead of a flat construction log.",
+            "Consolidated the defensive disclaimer cadence flagged by the AI-writing review."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        },
+        {
+          "version": "v1.0",
+          "date": "2026-11-03",
+          "commit": "c36db6a",
+          "changelog": [
+            "Honest, map-led resource paper: the historical 207-record study, the citation audit, and the verification sweep.",
+            "Baseline before this improvement cycle."
+          ],
+          "source": "paper/ethicalai-benchmark.md"
+        }
       ]
     },
     {
       "key": "method-contracts",
       "title": "Contracts Between Humans and AI Agents",
-      "source": "paper/draft.md",
+      "source": "paper/benchmark-paper.md",
       "live": null,
       "versions": [
-        {"version": "v1.0", "date": "2026-11-03", "commit": "c36db6a", "changelog": [
-          "Companion method paper: the clause-judge vs baselines ablation on six hard suites.",
-          "Honest result: decomposition buys specificity, the named catalogue buys traceability; no dominance or SOTA claim."
-        ]}
+        {
+          "version": "v1.0",
+          "date": "2026-11-03",
+          "commit": "c36db6a",
+          "changelog": [
+            "Companion method paper: the clause-judge vs baselines ablation on six hard suites.",
+            "Honest result: decomposition buys specificity, the named catalogue buys traceability; no dominance or SOTA claim."
+          ],
+          "source": "paper/draft.md"
+        }
       ]
     }
   ]

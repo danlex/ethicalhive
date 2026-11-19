@@ -15,9 +15,9 @@ def main():
     ap.add_argument('--ref',default='72ebf8772792fcef0dc92bf72045e40c112341b9')
     ap.add_argument('--output',type=Path,required=True)
     args=ap.parse_args();ids=set()
-    for name in ('paper/draft.md','paper/ethicalai-benchmark.md'):
+    for name in ('paper/benchmark-paper.md','paper/ontology-paper.md'):
         text=subprocess.check_output(['git','show',args.ref+':'+name],cwd=ROOT,text=True)
-        refs=text.split('# References')[-1] if name.endswith('/draft.md') else text.split('## References')[-1]
+        refs=text.split('# References')[-1] if name.endswith('/benchmark-paper.md') else text.split('## References')[-1]
         ids.update(re.findall(r'(?:arXiv[: ]+)(\d{4}\.\d{4,5})',refs,re.I))
     records=[]
     for start in range(0,len(ids),15):

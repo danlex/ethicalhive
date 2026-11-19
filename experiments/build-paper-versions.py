@@ -86,7 +86,9 @@ def main():
     rendered = {}
     for p in man["papers"]:
         for v in p["versions"]:
-            html, title = render_version(p["source"], v["commit"], v["version"], v["date"], p.get("live"))
+            # Each version renders from its own commit; versions committed before a file rename
+            # carry a per-version "source" override so `git show <commit>:<old path>` still resolves.
+            html, title = render_version(v.get("source", p["source"]), v["commit"], v["version"], v["date"], p.get("live"))
             key = f'{p["key"]}-{v["version"]}'
             if html:
                 (OUTDIR / f"{key}.html").write_text(html, encoding="utf-8")

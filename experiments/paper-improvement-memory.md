@@ -11,7 +11,7 @@ fixed. That is the CRSI failure the paper names: continuing without a record of 
 was made and *whether it worked* re-solves the same class of problem.
 
 SIM is memory for the optimizer, not the artifact. The optimizer here is the loop deciding the
-next edit; the artifact is `paper/ethicalai-benchmark.md`. Before each round, read this file so a
+next edit; the artifact is `paper/ontology-paper.md` (renamed from ethicalai-benchmark.md on 2026-11-19; the benchmark paper is paper/benchmark-paper.md, renamed from draft.md). Before each round, read this file so a
 pattern already known to cause slop is not reintroduced, and so a fix known to work is reused.
 After each round, append the outcome. Entries are grouped by recurring problem; each records
 rationale, predicted outcome, observed outcome, and evaluation context, per SIM.
@@ -43,7 +43,7 @@ not used again reads as AI slop.
 - LESSON: a framing must appear in at least two places (motivation + artifacts/availability) and
   be descriptive, not normative. Name a principle as what the finding bears on, never as a
   requirement the design is said to fulfil.
-- Observed (2026-11-19, benchmark paper): grounded paper/draft.md in principles 5 and 6 applying
+- Observed (2026-11-19, benchmark paper): grounded paper/benchmark-paper.md in principles 5 and 6 applying
   this LESSON up front, descriptive ('answers to the accountability principle', 'serves the
   integrity-under-pressure principle') and anchored in two places (intro + Section 2). No 'requires
   an AI' normative declaration, numbers intact. The lesson prevented repeating the v1.12 4/10 slop.

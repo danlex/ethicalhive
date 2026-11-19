@@ -5,7 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-SRC="paper/ethicalai-benchmark.md"
+SRC="paper/ontology-paper.md"
 OUT="docs/paper.pdf"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
