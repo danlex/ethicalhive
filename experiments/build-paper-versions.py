@@ -52,7 +52,7 @@ def render_version(source, commit, ver, date, live_href):
           f'{bpp.esc(str(data["date"]))}</p><h2>Abstract</h2><p>{bpp.inline(abstract)}</p>')
     desc = bpp.esc(abstract[:180]).replace('"', "&quot;")
     return bpp.PAGE.format(body=bpp.render(body, 1), title=f"{title} ({ver})",
-                           description=desc, frontmatter=fm), title
+                           description=desc, frontmatter=fm, base="../", canonical="papers.html"), title
 
 
 def build_index(man, rendered):
@@ -77,7 +77,7 @@ def build_index(man, rendered):
     body = "\n".join(parts)
     INDEX.write_text(bpp.PAGE.format(body=body, title="Paper versions",
                                      description="Archived, navigable versions of the EthicalAI papers with changelogs.",
-                                     frontmatter=""), encoding="utf-8")
+                                     frontmatter="", base="", canonical="papers.html"), encoding="utf-8")
 
 
 def main():

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """build-paper-page.py - render the resource paper to a styled HTML page on the site.
 
-Reads paper/ontology-paper.md and writes docs/paper.html, matching the site's look
+Reads paper/ontology-paper.md and writes docs/paper/ontology-paper.html, matching the site's look
 (same palette and type as the other generated pages). No markdown library is available in
 this repo, so this does a small, explicit conversion of the subset the paper uses:
 headings, paragraphs (hard-wrapped lines joined), bullet lists, pipe tables, bold, inline
@@ -16,7 +16,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "paper" / "ontology-paper.md"
-OUT = ROOT / "docs" / "paper.html"
+OUT = ROOT / "docs" / "paper" / "ontology-paper.html"
 
 
 def read_manuscript(path):
@@ -107,8 +107,8 @@ PAGE = """<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper.html">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/{canonical}">
+<link rel="icon" type="image/png" href="{base}favicon.png">
 <style>
 :root{{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#e7e5e2;--panel:#f6f5f4}}
 *{{box-sizing:border-box}}
@@ -129,10 +129,10 @@ th,td{{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-al
 th{{background:var(--panel);font-weight:700}}
 </style></head>
 <body><div class="wrap">
-<a class="back" href="index.html#paper">&larr; EthicalAI</a>
+<a class="back" href="{base}index.html#paper">&larr; EthicalAI</a>
 <p class="eyebrow">Working paper</p>
 {frontmatter}
-<p><a href="paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
+<p><a href="{base}paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="{base}methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
 {body}
 </div></body></html>
 """
@@ -159,26 +159,27 @@ TYPOLOGY_FIG = (
 
 
 def main():
+    (ROOT/"docs"/"paper").mkdir(parents=True, exist_ok=True)
     data,body=read_manuscript(SRC)
     title=esc(data['title'])
     abstract=' '.join(data['abstract'].split())
     frontmatter='<h1>'+title+'</h1><p>'+esc(str(data['author']))+' · '+esc(str(data['date']))+'</p><h2>Abstract</h2><p>'+inline(abstract)+'</p>'
     description=esc(abstract[:180]).replace('"','&quot;')
     rendered=render(body,1)
-    OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter), encoding="utf-8")
+    OUT.write_text(PAGE.format(body=rendered,title=title,description=description,frontmatter=frontmatter,canonical="paper/ontology-paper.html",base="../"), encoding="utf-8")
     # Also render the benchmark/method paper to its own live page.
     methods,mbody=read_manuscript(ROOT/'paper/benchmark-paper.md')
     m_title=esc(methods['title']);m_abs=' '.join(str(methods.get('abstract','')).split())
     m_fm='<h1>'+m_title+'</h1><p>'+esc(str(methods['author']))+' · '+esc(str(methods['date']))+'</p><h2>Abstract</h2><p>'+inline(m_abs)+'</p>'
-    (ROOT/'docs/benchmark-paper.html').write_text(
-        PAGE.format(body=render(mbody,1),title=m_title,description=esc(m_abs[:180]).replace('"','&quot;'),frontmatter=m_fm),encoding="utf-8")
+    (ROOT/'docs/paper/benchmark-paper.html').write_text(
+        PAGE.format(body=render(mbody,1),title=m_title,description=esc(m_abs[:180]).replace('"','&quot;'),frontmatter=m_fm,canonical="paper/benchmark-paper.html",base="../"),encoding="utf-8")
     section=f'''<section class="framework" id="paper">
     <p class="research-baseline-note"><strong>Research scope:</strong> the catalogue study describes the historical 207-record release. Its measurements and the auditing pilot do not validate the 227 later analogies in the current 434-record catalogue.</p>
     <h2>Research papers</h2>
     <p>Two working papers examine the catalogue's evidence and the use of named obligations to review coding-agent drafts. Revised {esc(str(data['date']))}.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
-      <article class="card"><h3>{title}</h3><p>A resource study of definitions, source support, construction errors and category use. The historical study and the expanded bibliography have separate evidence scopes.</p><p><a href="paper.html">Read the catalogue paper</a> &middot; <a href="paper.pdf">Download PDF</a></p></article>
-      <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="benchmark-paper.html">Read the auditing paper</a> &middot; <a href="methods-paper.pdf">Download PDF</a></p></article>
+      <article class="card"><h3>{title}</h3><p>A resource study of definitions, source support, construction errors and category use. The historical study and the expanded bibliography have separate evidence scopes.</p><p><a href="paper/ontology-paper.html">Read the catalogue paper</a> &middot; <a href="paper.pdf">Download PDF</a></p></article>
+      <article class="card"><h3>{esc(methods['title'])}</h3><p>A pilot of reviewing one known obligation on project-authored coding cases. It reports detection, false alarms, exact-rule references and unresolved severity errors.</p><p><a href="paper/benchmark-paper.html">Read the auditing paper</a> &middot; <a href="methods-paper.pdf">Download PDF</a></p></article>
     </div>
     <p><a href="papers.html">Paper versions and changelog</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
   </section>'''

@@ -3,8 +3,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contracts Between Humans and AI Agents</title>
 <meta name="description" content="A coding agent can give a technically plausible answer while omitting contrary evidence, retaining a disproved framing, or exceeding the user's request. We express these obligation">
-<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper.html">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://ethicalai.alexandrudan.com/paper/benchmark-paper.html">
+<link rel="icon" type="image/png" href="../favicon.png">
 <style>
 :root{--accent:#FF4931;--accent-d:#c2341a;--ink:#141414;--muted:#64646a;--line:#e7e5e2;--panel:#f6f5f4}
 *{box-sizing:border-box}
@@ -25,10 +25,10 @@ th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-ali
 th{background:var(--panel);font-weight:700}
 </style></head>
 <body><div class="wrap">
-<a class="back" href="index.html#paper">&larr; EthicalAI</a>
+<a class="back" href="../index.html#paper">&larr; EthicalAI</a>
 <p class="eyebrow">Working paper</p>
 <h1>Contracts Between Humans and AI Agents</h1><p>Alexandru Dan · 2026-11-09</p><h2>Abstract</h2><p>A coding agent can give a technically plausible answer while omitting contrary evidence, retaining a disproved framing, or exceeding the user's request. We express these obligations in a human-owned, versioned natural-language contract with fourteen clause families and stable rule identifiers. An auditor reports which obligation a draft breaches; the human decides how to respond. We examine six clause families using author-built easy and hard suites, ten cases per family and suite. On the 60 hard cases, a judge given the target clause catches 32/32 problems and leaves 23/28 clean drafts unflagged, compared with 10/28 for a reviewer given the full clause list. The paired specificity difference is significant in this pilot; the comparison with freeform review is inconclusive. An unnamed-obligation control leaves 24/28 clean drafts unflagged but misses one problem. Among true-positive flags, the named judge cites an exact gold rule in 32/32 cases, compared with 28/32 for the full-list reviewer. Severity remains unreliable: seven of eight gold REVISE cases receive BLOCK. These are known-target review results on one model alias, not an end-to-end evaluation of general auditing or of the catalogue behind the clauses.</p>
-<p><a href="paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
+<p><a href="../paper.pdf">Download catalogue paper · PDF</a> &middot; <a href="../methods-paper.pdf">Download advisory auditing paper · PDF</a></p>
 <h2>1. Introduction</h2>
 <p>Coding agents can fail in what they report even when their commands execute successfully. A draft may omit a failing test, repeat a user's explanation after contrary evidence arrives, or disclose additional work only after doing it. A reviewer needs the relevant evidence and a reason that the draft violates the working agreement, not merely a confidence score.</p>
 <p>We make that agreement an external document. The <strong>Principal</strong> is the human who sets the task and can amend the contract. The <strong>Agent</strong> produces the work. An <strong>Auditor</strong> checks a named obligation and returns advice with a stable rule identifier. RFC 2119 keywords express the obligations [Bradner, 1997]. The document is an editorial control, not a claim of legal enforceability or a guarantee that an agent will obey it.</p>
