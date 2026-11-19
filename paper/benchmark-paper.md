@@ -429,3 +429,7 @@ ablation. The cases, raw outputs, reviewer prompts, the contract
 serves (`contracts/ethical-principles.md`) remain available for inspection.
 Re-scoring these files is distinct from rerunning a model whose exact historical
 backend is not recorded.
+
+Each reference was resolved to its source before inclusion: every arXiv identifier
+was opened and its title, authors and year confirmed against the paper it names,
+the same check the companion paper applies to the catalogue's citations.

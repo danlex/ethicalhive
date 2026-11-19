@@ -89,3 +89,12 @@ reuse what worked.
   evaluable terms; never cite an internal governance file path in the body of an external paper
   (keep it in availability/artifacts only). Keep the two companion papers aligned: one scope
   register, consistent "companion ... paper" naming, a reciprocal cross-reference each way.
+
+- Observed (2026-11-19, benchmark citations): the slop judge flagged four 2025/2026 preprint
+  citations for manual verification. Verified on the primary source: Cheng 2505.13995 (ELEPHANT),
+  Paduraru 2603.18096 (Trace-Based Assurance), Zheng 2506.00714 (RFCAudit) all confirmed correct
+  on arXiv. Fang AgentVerify (DOI 10.20944/preprints202604.1029.v1) resolves but the preprints.org
+  page is bot-blocked (403), so the author name could not be re-read today; left as the prior
+  primary-source correction, not changed (never rewrite a citation from a WebSearch summary). Added
+  the ontology paper's "every reference resolved to its source" note to the benchmark paper, scoped
+  to arXiv identifiers, for alignment.
