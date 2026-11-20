@@ -105,3 +105,14 @@ reuse what worked.
   ontology's one vague Limitations close ("those questions require separate evaluation") was
   replaced with the concrete requirement (externally sampled test set + independent annotators).
   No substantive content change; the papers are stable and submission-ready.
+
+- Observed (2026-11-19, benchmark figure + survivorship plan): a surfaced plan to add
+  "survivorship bias" to the catalogue was checked against the real files FIRST (SIM number
+  lesson) and found already executed and live (row 26, papers 2609.15996 + 2105.14149, both
+  verified real on arXiv today); re-executing would have duplicated and broken the validator.
+  Did not re-run. Instead added genuine content aligning the two papers: Figure 1 for the
+  benchmark paper (specificity by condition from Table 2, bars transcribed exactly, 'none' omitted
+  as trivially specific), matching the ontology paper's Figure 1. Bars verified against the table
+  (9/10/16/21/23/24 of 28).
+- LESSON: before executing any surfaced/older plan, verify the target files' CURRENT state; a plan
+  from an earlier session may already be done, and blind re-execution duplicates and breaks builds.
