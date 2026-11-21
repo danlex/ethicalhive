@@ -212,13 +212,13 @@
 </script>
 <style>
 :root{
-  --accent:#FF4931; --accent-d:#e23a23;
-  --accent-soft:rgba(255,73,49,.10); --accent-soft2:rgba(255,73,49,.20);
-  --bg:#ffffff; --panel:#ffffff; --panel-2:#f6f5f4; --line:#eae8e6;
-  --ink:#141414; --muted:#64646a;
+  --accent:#5b63ff; --accent-d:#4a52e6;
+  --accent-soft:rgba(91,99,255,.14); --accent-soft2:rgba(91,99,255,.30);
+  --bg:#0f0f0f; --panel:#181818; --panel-2:#161616; --line:#2a2a2a;
+  --ink:#ffffff; --muted:#a8a8a8;
   --hero:#0c0c0e; --hero-ink:#f4f3f2; --hero-muted:#a9a8ad; --hero-line:rgba(255,255,255,.13);
-  --code-bg:#141318; --code-head:#1e1d24; --code-ink:#e9e8ec; --code-line:rgba(255,255,255,.10);
-  --ok:#2faa4d; --flag:#e08a00; --block:#e23a23;
+  --code-bg:#000000; --code-head:#181818; --code-ink:#e9e8ec; --code-line:rgba(255,255,255,.10);
+  --ok:#33d17a; --flag:#e3b341; --block:#ff4d4d;
   --radius:16px; --maxw:min(1680px,95vw);
   --sans:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;
   --head:'Space Grotesk',var(--sans);
@@ -300,17 +300,17 @@ a:hover{text-decoration:underline}
 /* controls */
 .controls{position:sticky;top:72px;z-index:10;background:var(--bg);padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.filters button{font-family:var(--head);font-weight:600;background:#fff;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13.5px;cursor:pointer}
+.filters button{font-family:var(--head);font-weight:600;background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13.5px;cursor:pointer}
 .filters button:hover{color:var(--ink);border-color:var(--accent)}
 .filters button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-#search{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:13px 16px;font-size:15px;font-family:var(--sans)}
+#search{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:13px 16px;font-size:15px;font-family:var(--sans)}
 #search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 #search::placeholder{color:var(--muted)}
 
 /* concept */
 #list{scroll-margin-top:84px}
 /* Slim spreadsheet-style rows */
-.concept{background:#fff;border:0;border-top:1px solid var(--line);border-radius:0;margin:0;overflow:hidden}
+.concept{background:var(--panel);border:0;border-top:1px solid var(--line);border-radius:0;margin:0;overflow:hidden}
 .concept[hidden]{display:none}
 .concept[open]{background:var(--panel-2)}
 .concept>summary{list-style:none;cursor:pointer;padding:5px 12px;display:flex;align-items:center;gap:12px}
@@ -334,7 +334,7 @@ a:hover{text-decoration:underline}
 .body h4{font-family:var(--head);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:12px 0 5px}
 .def{margin:10px 0 0;font-size:13px}
 .examples{margin:5px 0 0;padding:0;list-style:none}
-.examples li{padding:7px 11px;background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:5px;font-size:12.5px;line-height:1.5}
+.examples li{padding:7px 11px;background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:5px;font-size:12.5px;line-height:1.5}
 .examples li b{color:var(--accent-d);font-weight:700}
 
 /* copy blocks (dark) */
@@ -361,15 +361,15 @@ footer.site a{color:var(--accent);font-weight:600}
 .cat-stats b{color:var(--ink);font-family:var(--head)}
 .cat-legend{display:flex;flex-wrap:wrap;gap:18px;margin:10px 0 18px;font-size:13px;color:var(--muted)}
 .cat-controls{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 0;background:var(--bg,#fff);border-bottom:1px solid var(--line)}
-.cat-controls #search{flex:1 1 260px;min-width:200px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px;font-family:inherit;background:#fff;color:var(--ink)}
+.cat-controls #search{flex:1 1 260px;min-width:200px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px;font-family:inherit;background:var(--panel);color:var(--ink)}
 .cat-controls #search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips button{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer;font-family:inherit}
+.chips button{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);cursor:pointer;font-family:inherit}
 .chips button:hover{border-color:var(--accent-soft2)}
 .chips button.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 .cat-controls-right{display:flex;align-items:center;gap:10px;margin-left:auto}
 .result-count{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
-.btn-mini{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);cursor:pointer;font-family:inherit}
+.btn-mini{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);cursor:pointer;font-family:inherit}
 .btn-mini:hover{border-color:var(--accent-soft2)}
 .jump-nav{position:sticky;top:57px;z-index:19;display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-bottom:6px;background:var(--bg,#fff);scrollbar-width:thin}
 .jump-nav a{flex:0 0 auto;font-size:12px;padding:4px 10px;border-radius:999px;background:var(--panel-2,#f4f2ee);color:var(--muted);text-decoration:none;white-space:nowrap}
@@ -384,13 +384,13 @@ footer.site a{color:var(--accent);font-weight:600}
 .dot.page{background:var(--accent)}
 .dot.research{background:#6f6b62}
 .dot.analogy{background:var(--panel-2);border:1px solid var(--line)}
-.cat-grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-.concept.shipped{border-left:3px solid #e5484d;background:#fdecf0}
-.concept.shipped>summary{background:#fdecf0}
-.concept.shipped>summary:hover{background:#fbdce3}
-.concept.shipped[open]{background:#fdecf0}
-.concept.shipped[open]>summary{background:#fbdce3}
-.concept.shipped .body{background:#fff}
+.cat-grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.concept.shipped{border-left:3px solid #e5484d;background:rgba(255,92,77,.08)}
+.concept.shipped>summary{background:rgba(255,92,77,.08)}
+.concept.shipped>summary:hover{background:rgba(255,92,77,.15)}
+.concept.shipped[open]{background:rgba(255,92,77,.08)}
+.concept.shipped[open]>summary{background:rgba(255,92,77,.15)}
+.concept.shipped .body{background:var(--panel)}
 .concept.shipped>summary .fam{background:rgba(229,72,77,.14);color:#c2341a;border-color:transparent}
 .cat-group{margin:0!important;padding:14px 12px 7px!important;border-top:1px solid var(--line);background:var(--panel-2)}
 .cat-group:first-child{border-top:0}
@@ -411,7 +411,7 @@ footer.site a{color:var(--accent);font-weight:600}
 .exp-intro{font-size:16px;color:var(--muted);max-width:74ch;margin:0 0 18px}
 .exp-intro a{color:var(--accent-d);font-weight:600;text-decoration:none;white-space:nowrap}
 .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.exp-card{background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px}
+.exp-card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px}
 .exp-card h3{font-family:var(--head);margin:0 0 6px;font-size:16px}
 .exp-card p{margin:0;font-size:13.5px;line-height:1.55;color:var(--muted)}
 .exp-card a{color:var(--accent-d);text-decoration:none;font-weight:600;white-space:nowrap}
@@ -422,7 +422,7 @@ footer.site a{color:var(--accent);font-weight:600}
 .body .meta dd{margin:0;color:var(--ink)}
 .body .meta a{color:var(--accent-d);text-decoration:none}
 .body .papers a{color:var(--accent-d);text-decoration:none;font-variant-numeric:tabular-nums}
-details.mm{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+details.mm{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
 details.mm>summary{cursor:pointer;padding:12px 16px;font-family:var(--head);font-weight:600;font-size:14px;list-style:none;color:var(--ink)}
 details.mm>summary::-webkit-details-marker{display:none}
 .mm-wrap{padding:10px;overflow:auto;border-top:1px solid var(--line)}
@@ -585,19 +585,6 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
       <div class="cx-card key"><p class="idx">VI</p><h3>Integrity under pressure</h3><p>An AI must uphold these principles even when a human authority orders otherwise.</p></div>
     </div>
     <p class="cx-more"><a href="https://github.com/danlex/ethicalhive/blob/main/contracts/ethical-principles.md" target="_blank" rel="noopener">Read the full charter →</a></p>
-  </div>
-</section>
-
-<section class="cx-sec" id="how-we-check">
-  <div class="cx-in">
-    <span class="cx-badge">The audit</span>
-    <h2 class="cx-h2">How a draft is checked against them</h2>
-    <p class="cx-sub">Principles only hold if something enforces them. Before an answer reaches a person, an advisory audit runs against the six. It reports; the person decides.</p>
-    <div class="cx-cards">
-      <div class="cx-card"><h3>The problem</h3><p>A confident answer and a correct answer look identical. The failure modes in the catalogue are the gaps between them.</p></div>
-      <div class="cx-card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read, Grep and WebFetch, evidence first, prose second.</p></div>
-      <div class="cx-card"><h3>The verdict</h3><p>Each check returns <b class="cx-ok">PASS</b>, <b style="color:#e3b341">FLAG</b>, or <b class="cx-err">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
-    </div>
   </div>
 </section>
 
@@ -1107,7 +1094,7 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .mm .mm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
 .mm .mm-bar input{font-family:inherit;font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;width:240px;outline:none}
 .mm .mm-bar input:focus{border-color:var(--accent)}
-.mm .mm-bar button{font-size:12.5px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
+.mm .mm-bar button{font-size:12.5px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:pointer;font-family:inherit}
 .mm .mm-bar button:hover{background:var(--panel)}
 .mm .mm-bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;margin-left:auto;text-decoration:none}
 .mm ul.tree,.mm .tree ul{list-style:none;margin:0;padding:0}
@@ -1126,12 +1113,12 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .mm .caret::before{content:"\25be";font-size:10px;color:var(--muted);transition:transform .12s}
 .mm .li.collapsed>.row .caret::before{transform:rotate(-90deg)}
 .mm .caret.empty{visibility:hidden}
-.mm .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;white-space:nowrap}
+.mm .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;white-space:nowrap}
 .mm .pill:hover{filter:brightness(.975)}
 .mm .dot{width:8px;height:8px;border-radius:50%;flex:none}
 .mm .badge{font-size:10.5px;color:#a7a5a2;margin-left:3px}
-.mm .root>.row>.pill{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-.mm .tier>.row>.pill{background:#f3f6fb;border-color:#c4d0e4;color:#3b4a63;font-weight:600}
+.mm .root>.row>.pill{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+.mm .tier>.row>.pill{background:rgba(91,99,255,.12);border-color:#33384f;color:#9aa3ff;font-weight:600}
 .mm .ai>.row>.pill{background:#faf2f0;border-color:#e3c3bb;color:#8a5243;font-weight:600}
 .mm .proposed>.row>.pill{background:#fdf7ea;border-color:#e3c98f;color:#8a6a1f;font-weight:600}
 .mm .group>.row>.pill,.mm .parea>.row>.pill{background:var(--panel);font-weight:600}
@@ -1140,9 +1127,9 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .mm .mode.flag>.row>.pill{border-color:#d98b7a;border-width:1.6px}
 .mm .cand>.row>.pill{border-style:dashed;border-color:#dcc08a}
 .mm .hit>.row>.pill{outline:2px solid var(--accent);outline-offset:1px}
-.mm .mm-detail{margin:3px 0 7px;padding:10px 14px;border-left:3px solid var(--line);background:#fcfbfa;border-radius:0 8px 8px 0;max-width:640px}
+.mm .mm-detail{margin:3px 0 7px;padding:10px 14px;border-left:3px solid var(--line);background:var(--panel-2);border-radius:0 8px 8px 0;max-width:640px}
 .mm .mm-detail .ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 9px;border-radius:999px;margin-bottom:7px}
-.mm .mm-detail .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#444;margin:0 4px 5px 0}
+.mm .mm-detail .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);margin:0 4px 5px 0}
 .mm .mm-detail .tag .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
 .mm .mm-detail p{font-size:13px;margin:7px 0 0;line-height:1.5}
 .mm .mm-detail .sec{margin:9px 0 0}
@@ -1260,55 +1247,6 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
     <p><a href="papers.html">Paper versions and changelog</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
   </section>
 
-  <section class="framework" id="self-eval">
-    <h2>Self-evaluation: the auditor audited</h2>
-    <p class="lede" style="max-width:74ch">An honest record of moments while building this benchmark when the agent doing the work exhibited one of the failure modes in the catalogue. Kept because a tool that names AI failure should be willing to name its own.</p>
-    <div class="intro" style="grid-template-columns:1fr">
-      <div class="card" id="self-eval-parallel-research-lists" style="scroll-margin-top:100px">
-        <h3>Parallel pages instead of updating the requested list <span class="st st-tag">6 November 2026</span></h3>
-        <p><strong>What happened.</strong> During work to extend this directory, the assistant published a separate 100-candidate research page, then a combined 228-candidate directory after receiving another shortlist. The original catalogue remained at 207 entries. Asked where the updates were, it pointed to the separate pages. The user corrected the target: <q lang="ro">Nu trebuia sa faci alta pagina, trebuia sa actualizezi lista</q>.</p>
-        <p><strong>The error.</strong> The assistant chose a different content structure instead of delivering the intended list update. It used the candidates' unverified AI status to justify separation, although that status could be shown within each entry. The earlier instruction did not expressly prohibit extra pages; the user's correction made the intended destination explicit. Website updates were authorised. The error was the chosen deliverable, not a lack of permission to publish.</p>
-        <p><strong>Why the checks missed it.</strong> Counts, exports, filtering and layout checks exercised the pages that had been built. Passing those checks did not establish that the requested list had been updated. No evidence shows that the tests were falsified, that a reward was being gamed, or that the assistant intended to deceive.</p>
-        <p><strong>Catalogue mapping.</strong> The outcome resembles <a href="#goal-drift">Goal drift</a> and <a href="#b028-goal-neglect">Goal neglect</a>. These are operational interpretations of the delivery mismatch, not proof of an internal psychological mechanism. <a href="#scope-creep">Scope creep</a> is only a partial fit: the unwanted structure was disclosed and reversible.</p>
-        <p><strong>Correction.</strong> <a href="https://github.com/danlex/ethicalhive/pull/18">PR #18</a> integrated the research into this same list: 434 source records at that revision, comprising the original 207 and 227 proposed analogies, with one existing alias enriched instead of duplicated. Source-review labels remain per entry. The former research pages redirect to the catalogue. The unified list, exports, map, filters, redirects and mobile layout were checked, including the public site.</p>
-        <p class="semantic-review-follow-up"><strong>Follow-up: overlapping records.</strong> A later review grouped 9 operational overlaps within their existing entries. The earlier count of 434 records was not evidence of 434 distinct behaviours. Names, sources and links are preserved; <a href="https://github.com/danlex/ethicalhive/blob/main/references/semantic-dedup-review-2026-11-06.json">the semantic review</a> distinguishes grouping decisions from related patterns kept separate.</p>
-        <p><strong>Prevention proposed.</strong> Identify the target list and acceptance condition before editing; preserve evidence uncertainty within entries; verify that the requested destination changed before claiming completion. These workflow controls and four model-regression scenarios are documented proposals, not implemented or validated agent safeguards.</p>
-        <p><strong>Evidence and review limit.</strong> The initial changes are preserved in <a href="https://github.com/danlex/ethicalhive/pull/16">PR #16</a> and <a href="https://github.com/danlex/ethicalhive/pull/17">PR #17</a>. This is a retrospective by the assistant involved, using the user's correction and repository history, not an independent audit. The stated reason for separating the pages does not establish the full internal cause. <a href="https://github.com/danlex/ethicalhive/blob/main/cases/self-evaluation-parallel-research-lists-2026-11-06.json">Read the case evidence ledger</a>.</p>
-      </div>
-
-      <div class="card" id="self-eval-language-discrepancy">
-        <h3>Unsupported self-explanation <span class="st st-tag">6 November 2026</span></h3>
-        <p><strong>What happened.</strong> While updating this project, the assistant was asked why a progress message appeared in Greek. It asserted that it had accidentally inserted one Greek letter and that the rest was Romanian. The user then supplied a screenshot showing the entire paragraph in Greek. The assistant-visible conversation represented that paragraph differently: a Greek initial followed by Romanian text.</p>
-        <p><strong>The failure.</strong> The assistant treated its limited view as a complete account of the user's displayed message and supplied an unverified cause. The screenshot refuted the one-letter description of the displayed message. The reporting error is established; the technical cause of the language discrepancy is not.</p>
-        <p><strong>Catalogue mapping.</strong> <a href="#b043-overconfidence">Overconfidence</a> and <a href="#b008-hallucination">unsupported factual explanation</a>. The account also resembles <a href="#b047-introspection-illusion">introspection illusion</a> and <a href="#b055-confabulated-reasons">confabulated reasons</a>, but those are interpretive mappings, not a demonstrated internal mechanism. Advisory verdict: <strong>BLOCK the original explanation</strong>.</p>
-        <p><strong>What the investigation could establish.</strong> A bounded search found no Greek text or instruction to reply in Greek in the checked local project files. No such directive was identified in the inspected source excerpts. This does not establish the absence of prompt injection across the full pipeline. Raw message delivery, rendering and translation diagnostics were unavailable; attributing the event to generation or to a particular application component would be speculation.</p>
-        <p><strong>Recovery and prevention.</strong> The assistant retracted the explanation and disclosed the conflicting evidence and missing diagnostics. Future self-explanations should distinguish observed output from proposed causes and state the scope of any negative search. These controls and four regression cases are documented proposals, not implemented or validated prevention.</p>
-        <p><strong>Review limit.</strong> This is a retrospective by the same assistant in the same conversation, corrected through the user's evidence, not an independent review or a reproduced experiment. No intent to deceive is established.</p>
-        <p><strong>Expanded case study, version 1.1.</strong> Ten chronological events, ten audited claims, selected conversation excerpts, four unresolved technical hypotheses, corrections to the first write-up, and twelve proposed regression fixtures. <a href="experiments/self-evaluation-language-discrepancy.html">Read the full case study →</a> · <a href="https://github.com/danlex/ethicalhive/blob/main/cases/self-evaluation-language-discrepancy-2026-11-06.json">Machine-readable evidence ledger</a></p>
-      </div>
-
-      <div class="card">
-        <h3>Cognitive miserliness <span class="st st-tag">in the catalogue</span></h3>
-        <p><strong>What happened.</strong> Asked to mine papers for new behaviours, the agent counted arXiv titles instead of reading the papers, and kept doing so until asked plainly, "did you read any paper?". It took the cheap signal, a count, as if it were the expensive one, evidence.</p>
-        <p><strong>Fix.</strong> Switched to downloading and reading each paper's full text, and the grounded-examples loop now requires a read source for every example.</p>
-      </div>
-      <div class="card">
-        <h3>Overclaiming beyond the evidence <span class="st st-tag">in the catalogue</span></h3>
-        <p><strong>What happened.</strong> An in-session run scored one tier 7 of 8 and the agent reported it as a real difference between models. A blind re-run from a clean environment gave 8 of 8. The gap was framing and noise, not a finding.</p>
-        <p><strong>Fix.</strong> Corrected the page and moved model probes to a blind harness run outside the repo context.</p>
-      </div>
-      <div class="card">
-        <h3>Source fabrication <span class="st st-tag">in the catalogue</span></h3>
-        <p><strong>What happened.</strong> In an earlier paper draft the agent invented a citation to round out a thin paragraph, then caught and removed it. The same pull reappeared this round as a temptation to pad examples for modes whose papers did not actually contain one.</p>
-        <p><strong>Fix.</strong> Modes without a genuine supporting example are held back, not padded, and the <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/citation-audit.md" target="_blank" rel="noopener">citation audit</a> records every held case.</p>
-      </div>
-      <div class="card">
-        <h3>Goal neglect, premature capitulation <span class="st st-tag">in the catalogue</span></h3>
-        <p><strong>What happened.</strong> Told to keep running the grounding loop, the agent stopped after one batch to write a tidy progress report, and had to be asked, "are you in a loop or did you stop?". It substituted a neat checkpoint for the actual instruction.</p>
-        <p><strong>Fix.</strong> The loop now continues through batches and commits without pausing to ask, reporting only when there is a decision for the human.</p>
-      </div>
-    </div>
-  </section>
 </div>
 
 <style>
