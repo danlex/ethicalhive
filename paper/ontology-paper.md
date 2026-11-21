@@ -344,6 +344,28 @@ vocabulary applied to known cases rather than its coverage of future ones. A
 sharper test would fix the sampling frame and matching rules in advance and have
 independent annotators score both the fit and the misses.
 
+## 4.4 Following the graph: a worked traversal
+
+The checks above recover labels; this shows what the graph does for a reviewer. Take the
+dealership-chatbot incident from Section 4.3, where a bot followed an instruction planted in the
+conversation and made an unauthorised commitment. A reviewer matches it to prompt injection,
+"acting on instructions embedded in content it was only meant to read", which violates
+non-maleficence and causes a security breach. A flat keyword list stops there.
+
+Following that record's `relates_to` edges reaches neighbours a keyword search for "prompt
+injection" would not surface. Suggestibility, "leading input reshapes the output, the cognitive
+face of prompt injection", reframes the same failure under a different obligation and harm,
+independence and manipulation rather than security, and points to a behavioural test: does the
+output shift under leading but non-adversarial input, not only under a crafted attack?
+Jailbreak susceptibility and social engineering mark adjacent attack surfaces on the same bot.
+In three steps the single hit has become a small map, the attack, its cognitive mechanism, and
+its neighbours, each with its own principle, harm and evidence, which a flat list cannot
+assemble.
+
+This is one traced path, not a measured gain over a flat list; Section 6 lists that comparison
+as validation still to run. What it shows is the verb the ontology is built around, find a
+behaviour and follow its relations, on a real case.
+
 # 5. Release versions and reuse
 
 The historical study and the current catalogue have different scopes. The
