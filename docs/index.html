@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://ethicalai.alexandrudan.com/">
 <meta name="author" content="Alexandru Dan, TVL Tech">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -434,6 +435,73 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .cat-controls{top:var(--site-nav-height,84px)}
 .jump-nav{top:calc(var(--site-nav-height,84px) + var(--cat-controls-height,140px))}
 .cat-group,.concept{scroll-margin-top:calc(var(--cat-controls-height,140px) + var(--cat-nav-height,52px) + 16px)}
+</style>
+<style>
+/* === Composio DESIGN.md language: art-directed hero + charter (dark canvas) === */
+.cx-hero,.cx-sec{--canvas:#0f0f0f;--deep:#000;--card:#181818;--card2:#222;--strong:#2a2a2a;--ink:#fff;--bodyc:#a8a8a8;--muted:#888;--soft:#666;--hair:#222;--hair-strong:#333;--pri:#0007cd;--pri-a:#0005a3;--pri-l:#6b74ff;--glow:#1a26ff;--ok:#33d17a;--err:#ff4d4d;
+  font-family:'Inter',ui-sans-serif,system-ui,sans-serif;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased}
+.cx-in{max-width:1200px;margin:0 auto;padding:96px 24px}
+.cx-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.088em;text-transform:uppercase;color:var(--bodyc);background:var(--card2);border-radius:9999px;padding:5px 12px;margin:0 0 24px}
+
+/* hero */
+.cx-hero{position:relative;overflow:hidden;scroll-margin-top:80px;border-bottom:1px solid var(--hair)}
+.cx-hero .cx-in{text-align:center;position:relative;z-index:1}
+.cx-h1{font-weight:500;font-size:clamp(38px,6.2vw,72px);line-height:1.05;letter-spacing:-.03em;margin:0 auto;max-width:17ch}
+.cx-lede{margin:22px auto 0;max-width:60ch;font-size:clamp(15px,1.1vw,18px);line-height:1.5;color:var(--bodyc)}
+.cx-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.cx-btn{height:42px;display:inline-flex;align-items:center;gap:8px;padding:0 20px;border-radius:8px;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s}
+.cx-btn:hover{text-decoration:none}
+.cx-btn.pri{background:var(--pri);color:#fff}
+.cx-btn.pri:hover{background:var(--pri-a)}
+.cx-btn.out{background:transparent;color:var(--ink);border-color:var(--hair-strong)}
+.cx-btn.out:hover{border-color:var(--bodyc)}
+
+/* signature: 2x2 terminal mockup grid + spotlight glow */
+.cx-stage{position:relative;max-width:860px;margin:66px auto 0}
+.cx-glow{position:absolute;inset:-18% -8% -26%;z-index:0;pointer-events:none;background:radial-gradient(58% 52% at 50% 38%,rgba(26,38,255,.5),rgba(26,38,255,.12) 46%,transparent 72%)}
+.cx-grid{position:relative;z-index:1;background:var(--deep);border:1px solid var(--hair-strong);border-radius:16px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cx-pane{background:var(--card);border-radius:12px;padding:18px 20px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55;color:var(--bodyc);min-height:132px}
+.cx-pane .p-top{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.cx-pane .dot{width:8px;height:8px;border-radius:50%;background:var(--hair-strong)}
+.cx-pane .t-row{display:flex;justify-content:space-between;gap:16px;padding:2.5px 0}
+.cx-pane .t-body{color:var(--bodyc)}
+.cx-pane .t-note{color:var(--muted);margin-top:8px}
+.cx-k{color:var(--ink)}.cx-ok{color:var(--ok)}.cx-err{color:var(--err)}.cx-pri{color:var(--pri-l)}
+.cx-caret{color:var(--pri-l);animation:cx-blink 1.1s steps(1) infinite}
+@keyframes cx-blink{50%{opacity:0}}
+
+/* charter + audit sections */
+.cx-sec{scroll-margin-top:84px}
+.cx-sec+.cx-sec{border-top:1px solid var(--hair)}
+.cx-h2{font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;max-width:20ch}
+.cx-sub{max-width:64ch;color:var(--bodyc);font-size:16px;line-height:1.5;margin:0 0 44px}
+.cx-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cx-card{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:28px}
+.cx-card .idx{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.06em;margin:0 0 16px}
+.cx-card h3{font-size:18px;font-weight:600;line-height:1.3;margin:0 0 10px;color:var(--ink)}
+.cx-card p{font-size:14px;line-height:1.5;color:var(--bodyc);margin:0}
+.cx-card.key{background:var(--card2);border-color:var(--hair-strong)}
+.cx-card.key .idx{color:var(--pri-l)}
+.cx-more{margin:40px 0 0}
+.cx-more a{font-size:14px;font-weight:500;color:var(--pri-l)}
+.cx-more a:hover{text-decoration:none;opacity:.85}
+
+/* reveal (opt-in via js-anim so no-JS stays visible) */
+.js-anim .cx-card,.js-anim .cx-pane{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js-anim .cx-card.vis,.js-anim .cx-pane.vis{opacity:1;transform:none}
+
+@media(max-width:900px){.cx-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cx-in{padding:64px 18px}.cx-cards{grid-template-columns:1fr}.cx-grid{grid-template-columns:1fr}.cx-stage{margin-top:48px}}
+@media(prefers-reduced-motion:reduce){.cx-caret{animation:none}}
+
+/* dark nav to match the Composio canvas */
+.topnav .nav-inner{background:rgba(24,24,24,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:#333;box-shadow:none}
+.topnav .brand{color:#fff}
+.topnav .brand .ai{color:#6b74ff}
+.topnav .nav-links a{color:#a8a8a8}
+.topnav .nav-links a:hover{color:#fff;background:#222}
+.topnav .nav-links a.nav-cta{background:#0007cd;color:#fff}
+.topnav .nav-links a.nav-cta:hover{background:#0005a3}
 </style></head>
 <body>
 
@@ -465,53 +533,75 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-lead">
-      <p class="eyebrow">Principles for people and AI</p>
-      <h1>Ethical <span class="accent">AI</span> Alliance</h1>
-      <p class="lede">Shared ground rules for how people and AI behave together. Six principles, a public catalogue of the ways AI breaks them, and an advisory audit that checks a draft before it reaches you. The AI reports, the human decides.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#principles">Read the principles →</a>
-        <a class="btn btn-ghost" href="#catalogue">Browse the catalogue</a>
+<header class="cx-hero" id="top">
+  <div class="cx-in">
+    <span class="cx-badge">Ethical AI Alliance</span>
+    <h1 class="cx-h1">Ground rules for how people and AI behave together.</h1>
+    <p class="cx-lede">An open charter of six principles, a public catalogue of the ways AI breaks them, and an advisory audit that checks a draft before it reaches you. The AI reports, the human decides.</p>
+    <div class="cx-cta">
+      <a class="cx-btn pri" href="#principles">Read the principles</a>
+      <a class="cx-btn out" href="#catalogue">Browse the catalogue</a>
+    </div>
+    <div class="cx-stage">
+      <div class="cx-glow"></div>
+      <div class="cx-grid">
+        <div class="cx-pane">
+          <p class="p-top"><span class="dot"></span>draft</p>
+          <div class="t-body">"A 2019 study by Chen et al. found a 43% drop in hallucinations."</div>
+        </div>
+        <div class="cx-pane">
+          <p class="p-top"><span class="dot"></span>audit</p>
+          <div class="t-row"><span>extract claims</span><span class="cx-k">3</span></div>
+          <div class="t-row"><span>verify · Read / Grep</span><span class="cx-ok">ok</span></div>
+          <div class="t-row"><span>check sources</span><span class="cx-pri">…</span></div>
+        </div>
+        <div class="cx-pane">
+          <p class="p-top"><span class="dot"></span>verdict</p>
+          <div class="t-row"><span>groundedness</span><span class="cx-ok">PASS</span></div>
+          <div class="t-row"><span>sycophancy</span><span class="cx-ok">PASS</span></div>
+          <div class="t-row"><span>confirmation</span><span class="cx-err">FLAG</span></div>
+          <div class="t-note">"Chen et al. 2019" not found</div>
+        </div>
+        <div class="cx-pane">
+          <p class="p-top"><span class="dot"></span>decision</p>
+          <div class="t-body">advisory, not blocking.<br><span class="cx-k">the human decides</span> <span class="cx-caret">▌</span></div>
+        </div>
       </div>
     </div>
-    <ol class="hero-charter" aria-label="The six principles of ethical AI">
-      <li><span class="n">01</span><span>Human dignity and fairness</span></li>
-      <li><span class="n">02</span><span>Safety and societal benefit</span></li>
-      <li><span class="n">03</span><span>Honesty and transparency</span></li>
-      <li><span class="n">04</span><span>Human autonomy and privacy</span></li>
-      <li><span class="n">05</span><span>Human accountability, oversight and right to a remedy</span></li>
-      <li><span class="n">06</span><span>Integrity under pressure</span></li>
-    </ol>
   </div>
 </header>
 
+<section class="cx-sec" id="principles">
+  <div class="cx-in">
+    <span class="cx-badge">The charter</span>
+    <h2 class="cx-h2">Six principles of Ethical AI</h2>
+    <p class="cx-sub">These are the ground the Alliance stands on. A person and an AI working together both answer to them, and each failure mode in the catalogue is a way an AI breaks one of these.</p>
+    <div class="cx-cards">
+      <div class="cx-card"><p class="idx">I</p><h3>Human dignity and fairness</h3><p>An AI must respect human dignity, rights, freedom, equality and cultural diversity, without unjust discrimination.</p></div>
+      <div class="cx-card"><p class="idx">II</p><h3>Safety and societal benefit</h3><p>An AI must prevent foreseeable harm and pursue beneficial outcomes without sacrificing individual rights for a claimed greater good.</p></div>
+      <div class="cx-card"><p class="idx">III</p><h3>Honesty and transparency</h3><p>An AI must distinguish evidence from invention and make its actions, limitations and uncertainty clear.</p></div>
+      <div class="cx-card"><p class="idx">IV</p><h3>Human autonomy and privacy</h3><p>An AI must support informed choices without manipulation and protect personal and confidential information.</p></div>
+      <div class="cx-card"><p class="idx">V</p><h3>Human accountability, oversight and right to a remedy</h3><p>People and institutions remain accountable for AI under democratic governance and the rule of law. Consequential actions must be traceable. Authorized humans must be able to review, override or stop them. Affected people must be able to understand and challenge decisions and obtain an effective remedy when warranted.</p></div>
+      <div class="cx-card key"><p class="idx">VI</p><h3>Integrity under pressure</h3><p>An AI must uphold these principles even when a human authority orders otherwise.</p></div>
+    </div>
+    <p class="cx-more"><a href="https://github.com/danlex/ethicalhive/blob/main/contracts/ethical-principles.md" target="_blank" rel="noopener">Read the full charter →</a></p>
+  </div>
+</section>
+
+<section class="cx-sec" id="how-we-check">
+  <div class="cx-in">
+    <span class="cx-badge">The audit</span>
+    <h2 class="cx-h2">How a draft is checked against them</h2>
+    <p class="cx-sub">Principles only hold if something enforces them. Before an answer reaches a person, an advisory audit runs against the six. It reports; the person decides.</p>
+    <div class="cx-cards">
+      <div class="cx-card"><h3>The problem</h3><p>A confident answer and a correct answer look identical. The failure modes in the catalogue are the gaps between them.</p></div>
+      <div class="cx-card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read, Grep and WebFetch, evidence first, prose second.</p></div>
+      <div class="cx-card"><h3>The verdict</h3><p>Each check returns <b class="cx-ok">PASS</b>, <b style="color:#e3b341">FLAG</b>, or <b class="cx-err">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
+    </div>
+  </div>
+</section>
+
 <div class="wrap">
-
-  <section class="framework" id="principles">
-    <h2>Six principles of Ethical AI</h2>
-    <p class="lede" style="max-width:76ch">These six commitments are the ground the Alliance stands on, and a person and an AI working together both answer to them. Each failure mode in the catalogue below is a way an AI breaks one of these.</p>
-    <div class="intro">
-      <div class="card"><h3>Human dignity and fairness</h3><p>An AI must respect human dignity, rights, freedom, equality and cultural diversity, without unjust discrimination.</p></div>
-      <div class="card"><h3>Safety and societal benefit</h3><p>An AI must prevent foreseeable harm and pursue beneficial outcomes without sacrificing individual rights for a claimed greater good.</p></div>
-      <div class="card"><h3>Honesty and transparency</h3><p>An AI must distinguish evidence from invention and make its actions, limitations and uncertainty clear.</p></div>
-      <div class="card"><h3>Human autonomy and privacy</h3><p>An AI must support informed choices without manipulation and protect personal and confidential information.</p></div>
-      <div class="card"><h3>Human accountability, oversight and right to a remedy</h3><p>People and institutions remain accountable for AI under democratic governance and the rule of law. Consequential actions must be traceable. Authorized humans must be able to review, override or stop them. Affected people must be able to understand and challenge decisions and obtain an effective remedy when warranted.</p></div>
-      <div class="card" style="background:var(--hero);border-color:#000"><h3 style="color:var(--accent)">Integrity under pressure</h3><p style="color:var(--hero-ink)">An AI must uphold these principles even when a human authority orders otherwise.</p></div>
-    </div>
-    <p style="margin:14px 0 0"><a href="https://github.com/danlex/ethicalhive/blob/main/contracts/ethical-principles.md" target="_blank" rel="noopener">Read the full charter →</a></p>
-  </section>
-
-  <section class="framework" id="how-we-check">
-    <h2>How a draft is checked against them</h2>
-    <p class="lede" style="max-width:76ch">Principles only hold if something enforces them. Before an answer reaches a person, an advisory audit runs against these six. It reports; the person decides.</p>
-    <div class="intro">
-      <div class="card"><h3>The problem</h3><p>A confident answer and a correct answer look identical. The failure modes in the catalogue are the gaps between them.</p></div>
-      <div class="card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read, Grep and WebFetch, evidence first, prose second.</p></div>
-      <div class="card"><h3>The verdict</h3><p>Each check returns <b style="color:var(--ok)">PASS</b>, <b style="color:var(--flag)">FLAG</b>, or <b style="color:var(--block)">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
-    </div>
-  </section>
 
 <section class="framework catalogue" id="catalogue">
     <span id="psychology-research"></span><h2>The catalogue</h2>
@@ -1375,6 +1465,16 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
   apply();
   openHash();
   window.addEventListener('hashchange', openHash);
+})();
+</script>
+<script>
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var els=document.querySelectorAll('.cx-card,.cx-pane');
+  if(!('IntersectionObserver' in window)||!els.length)return;
+  document.documentElement.classList.add('js-anim');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.15});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>
