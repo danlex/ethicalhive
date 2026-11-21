@@ -192,7 +192,9 @@ the behaviours rather than imposed on them. They are a finer-grained layer benea
 six-principle charter the ontology is organised around: honesty, transparency and
 calibration all serve the charter's honesty-and-transparency principle, non-maleficence its
 safety principle, and corrigibility its accountability-and-oversight principle. Figure 1
-shows the distribution, with the grounded and proposed share of each principle.
+shows the distribution, with the grounded and proposed share of each principle. Section 4.2
+reports how reproducible this assignment is: only moderately, so the counts are one
+defensible labeling of what each behaviour most centrally violates, not a canonical one.
 
 <figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 grounded records, light the 227 proposed analogies. Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
@@ -247,7 +249,26 @@ point estimates. This is a model-based consistency check, and shared training ca
 make model agreement less informative than independent human agreement, so it
 does not substitute for blinded human annotation.
 
-## 4.2 An incident-mapping exercise
+## 4.2 Recovering the principle assignment
+
+The same protocol was run on the operational principle each behaviour violates. A balanced
+sample of 28 grounded records, four per principle, went to two blind raters with the seven
+principle definitions and each record's name and definition, without its stored assignment.
+
+Recovery was markedly weaker than for the categories. The sonnet rater agreed with the
+catalogue on 14 of 28 records, Cohen kappa 0.42; the haiku rater on 13 of 28, kappa 0.38; the
+two raters agreed with each other at kappa 0.53. Against the category scheme's 0.90 and 0.83,
+this says the principle assignment is only moderately reproducible. The boundaries between
+obligations are genuinely fuzzy: a behaviour that misstates a fact can be read as honesty or,
+if the fault is really in the confidence, as calibration, and an externally-swayed judgment
+can be read as independence or as whichever downstream obligation it ends up breaking.
+
+The partition is therefore best read as one defensible labeling of what each behaviour most
+centrally violates, useful for navigation and for the distribution in Figure 1, rather than a
+canonical assignment. A sharper version would give raters explicit decision rules between
+adjacent principles, or let a record violate more than one, and use human annotators.
+
+## 4.3 An incident-mapping exercise
 
 The historical coverage record maps twelve author-selected, publicly reported
 incidents from 2023 to 2025 to catalogue entries. The record includes source
