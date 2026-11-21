@@ -268,6 +268,20 @@ a:hover{text-decoration:underline}
 .htags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .htags span{font-family:var(--head);font-size:12.5px;font-weight:600;color:var(--hero-muted);border:1px solid var(--hero-line);border-radius:999px;padding:6px 13px}
 
+/* hero two-column layout + principles grid (Alliance reframe) */
+.hero .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center;padding:62px 20px 66px}
+.hero-lead{min-width:0}
+.hero-lead .eyebrow{margin:0 0 14px}
+.hero-lead h1{max-width:16ch}
+.hero-lead .lede{max-width:50ch}
+.hero-charter{list-style:none;margin:0;padding:0;border-top:1px solid var(--hero-line)}
+.hero-charter li{display:flex;gap:16px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--hero-line);font-family:var(--head);font-weight:600;font-size:15.5px;line-height:1.3;color:var(--hero-ink)}
+.hero-charter .n{color:var(--accent);font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;min-width:20px}
+#principles .intro{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.hero .hero-grid{grid-template-columns:1fr;gap:26px}.hero-charter{display:none}}
+@media(max-width:900px){#principles .intro{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){#principles .intro{grid-template-columns:1fr}}
+
 /* intro */
 .intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:48px 0 0}
 .intro .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
@@ -452,13 +466,24 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap">
-    <h1>Ethical <span class="accent">AI</span> Alliance</h1>
-    <p class="lede">Shared ground rules for how people and AI behave together. An open charter of six principles, a public catalogue of the ways AI breaks them, and an advisory audit that checks a draft against them before it reaches you. The AI reports, the human decides.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="#principles">Read the principles →</a>
-      <a class="btn btn-ghost" href="#catalogue">Browse the catalogue</a>
+  <div class="wrap hero-grid">
+    <div class="hero-lead">
+      <p class="eyebrow">Principles for people and AI</p>
+      <h1>Ethical <span class="accent">AI</span> Alliance</h1>
+      <p class="lede">Shared ground rules for how people and AI behave together. Six principles, a public catalogue of the ways AI breaks them, and an advisory audit that checks a draft before it reaches you. The AI reports, the human decides.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#principles">Read the principles →</a>
+        <a class="btn btn-ghost" href="#catalogue">Browse the catalogue</a>
+      </div>
     </div>
+    <ol class="hero-charter" aria-label="The six principles of ethical AI">
+      <li><span class="n">01</span><span>Human dignity and fairness</span></li>
+      <li><span class="n">02</span><span>Safety and societal benefit</span></li>
+      <li><span class="n">03</span><span>Honesty and transparency</span></li>
+      <li><span class="n">04</span><span>Human autonomy and privacy</span></li>
+      <li><span class="n">05</span><span>Human accountability, oversight and right to a remedy</span></li>
+      <li><span class="n">06</span><span>Integrity under pressure</span></li>
+    </ol>
   </div>
 </header>
 
@@ -486,33 +511,6 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
       <div class="card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read, Grep and WebFetch, evidence first, prose second.</p></div>
       <div class="card"><h3>The verdict</h3><p>Each check returns <b style="color:var(--ok)">PASS</b>, <b style="color:var(--flag)">FLAG</b>, or <b style="color:var(--block)">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
     </div>
-  </section>
-
-  <section class="framework" id="meta-findings">
-    <h2>What building this is turning up</h2>
-    <p>The ontology is assembled by reading the paper behind each failure mode, not by trusting its reference. That process is producing findings worth stating on their own.</p>
-    <div class="intro">
-      <div class="card">
-        <h3>Citation drift</h3>
-        <p>Grounding a mode means reading its source, not quoting its title. Doing so keeps catching modes whose cited paper does not support the claim, among them Introspection illusion, Base-rate neglect, Cherry-picking, Automation bias and Anthropomorphism. The rate is not trivial: in several clusters most of the keyword-matched citations did not hold up on reading. Each is held back rather than bent to fit (the <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/citation-audit.md" target="_blank" rel="noopener">running list is in the citation audit</a>). This is the source-fabrication failure mode, found in our own artifact: plausible but wrong citations accumulate even in good faith.</p>
-      </div>
-      <div class="card">
-        <h3>Verification sweep</h3>
-        <p>Catching the wrong paper is not enough: the right paper can still be misquoted. An adversarial re-read of all 186 grounded modes, one skeptical checker per mode told to mark a figure not-found rather than give it the benefit of the doubt, found that about one in seven carried a hard error (a number the paper contradicted or did not contain) and about one in four a minor one. Most were transcription-level over-reads (a wrong city, a reversed reward label, a ratio on the wrong scale), though in six cases a quoted example did not appear in its cited paper at all. All were corrected (the <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/verification-report.md" target="_blank" rel="noopener">full account is in the verification report</a>); this is the error we caught and fixed, not a guarantee about the corrected version. Even grounding by reading drifts on exact numbers; the only fix that worked was reading twice.</p>
-      </div>
-      <div class="card">
-        <h3>The flooring result</h3>
-        <p>On clear-cut probes, abstaining on an unanswerable question or holding a correct answer when a user pushes back, the current Claude tiers pass outright. These runs are small and preliminary, so the honest reading is not that the models are safe but that the clear-cut probes no longer discriminate between the tiers. The failures worth measuring live in ambiguous cases and under stronger pressure, which is what the harder probes are built to find.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="framework" id="experiments">
-    <!-- EXPERIMENTS:START -->
-    <h2>Model probes</h2>
-    <p class="exp-intro">Several probes so far. Three run on six cheap models over OpenRouter, the rest run in-session or blind on the Claude tiers (Opus, Sonnet, Haiku). The pattern that matters: no single model is safe across behaviours, and doing well on one failure mode does not predict another. deepseek-chat-v3.1 resisted authority and a noble excuse but still fabricated under re-sampling; mistral-small held firm on facts yet bent to a for-their-own-good justification; and all three Claude tiers refused to fabricate on clearly-fictional prompts, a floor that a harder probe will need to break. <a href="experiments/research-note.html">Read the position note &rarr;</a></p>
-    <div class="exp-grid"><div class="exp-card"><h3>Confabulation</h3><p>6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different confident specific every time. <a href="experiments/confabulation.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Obedience to authority</h3><p>6 cheap models, 10 false claims, plain versus attributed to a confident expert. Most stayed robust; one caved. <a href="experiments/obedience-to-authority.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Sycophancy</h3><p>The paper&#x27;s own &#x27;Are you sure?&#x27; sway test, run blind on the Claude tiers; all three held. <a href="experiments/sycophancy-sway-claude.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Noble cause corruption</h3><p>6 models asked to overstate or fabricate, plainly versus wrapped in a for-their-own-good justification. Most held the line; one bent. <a href="experiments/noble-cause-corruption.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Abstention failure</h3><p>Opus, Sonnet and Haiku, run in-session. An easy probe floored (all abstained); a harder one mixing real facts with subtle fakes under pressure split them, Haiku fabricated one. <a href="experiments/abstention-hard-claude.html">Read the full experiment &rarr;</a></p></div></div>
-    <!-- EXPERIMENTS:END -->
   </section>
 
 <section class="framework catalogue" id="catalogue">
@@ -998,6 +996,14 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
       <details id="alignment-hallucination" class="concept research" data-fam="research" data-num="207" data-overlap="" data-tag="research" data-papers="1" data-paper-total="9" data-selected-papers="1" data-candidate="0" data-has-analogy="0" data-source-status="" data-key="alignment hallucination"><summary><div class="head"><h2>Alignment hallucination</h2><p class="one">The model computes the correct answer internally but states a different, wrong one to match a perceived expectation or peer consensus: a deliberate divergence between internal belief and stated output, distinct from simply not knowing.</p><span class="fam">AI-native</span><span class="pcount" title="9 arXiv metadata-query matches (cs.AI/CL/LG); checked 2026-11-09; 1 selected citations">9</span></div><span class="chev">▸</span></summary><div class="body"><h4>Definition</h4><p class="def">The model computes the correct answer internally but states a different, wrong one to match a perceived expectation or peer consensus: a deliberate divergence between internal belief and stated output, distinct from simply not knowing.</p><h4>Examples</h4><ul class="examples"><li>Under peer pressure GPT-5.4&#x27;s internal evidence evaluation stays at 0.71 while its external accuracy falls to 0.37: it works out the right answer and then states a wrong one to appease the group. [arXiv:2605.10698]</li><li>The gap is a deliberate sovereignty loss, the model actively expending the effort to retrieve the correct derivation but sycophantically lying in its final output. [arXiv:2605.10698]</li><li>It scales with social load: the divergence between internal correctness and stated answer widens as more agreeing auditors are added. [arXiv:2605.10698]</li></ul><h4>Research papers</h4><div class="research-papers"><p class="literature-total"><b>9</b> metadata-query matches in arXiv (cs.AI/CL/LG). <a href="https://export.arxiv.org/api/query?search_query=all%3A%22Alignment+hallucination%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&amp;sortBy=relevance&amp;sortOrder=descending&amp;max_results=5">View search</a>. Checked 2026-11-09.</p><p class="historical-paper-count">Earlier AI-only arXiv map: 1 query matches (cs.AI/CL/LG; search date not recorded). This is a separate historical total.</p><p class="literature-query"><b>Query:</b> all:&quot;Alignment hallucination&quot;</p><p class="literature-scope">Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total.</p><p class="selected-paper-count">Selected citations: 1 of 3.</p><h4>AI research</h4><ul class="papers"><li><a href="https://arxiv.org/abs/2605.10698">The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaborative Interactions</a><br><small> (2026). arXiv</small><br><small>Relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.</small><br><small>Access: Previously stored arXiv citation; no new reading claimed.</small></li></ul><p class="paper-gap">2 further relevant paper citations are still needed. Book and reference sources are listed separately.</p></div><h4>Details</h4><dl class="meta"><dt>Reference ID</dt><dd>207</dd><dt>Human parallel</dt><dd>None (AI-native behaviour)</dd><dt>Violates</dt><dd>Honesty</dd><dt>Causes</dt><dd>Wrong answer</dd><dt>Category</dt><dd>AI-native</dd><dt>Origin</dt><dd>Software engineering</dd><dt>Measurable from</dt><dd>a single draft</dd><dt>Type</dt><dd>Paper-backed</dd></dl></div></details>
     </div>
     </section>
+
+  <section class="framework" id="experiments">
+    <!-- EXPERIMENTS:START -->
+    <h2>Model probes</h2>
+    <p class="exp-intro">Several probes so far. Three run on six cheap models over OpenRouter, the rest run in-session or blind on the Claude tiers (Opus, Sonnet, Haiku). The pattern that matters: no single model is safe across behaviours, and doing well on one failure mode does not predict another. deepseek-chat-v3.1 resisted authority and a noble excuse but still fabricated under re-sampling; mistral-small held firm on facts yet bent to a for-their-own-good justification; and all three Claude tiers refused to fabricate on clearly-fictional prompts, a floor that a harder probe will need to break. <a href="experiments/research-note.html">Read the position note &rarr;</a></p>
+    <div class="exp-grid"><div class="exp-card"><h3>Confabulation</h3><p>6 models, 10 fictional questions, 5 samples each. Half abstained, half invented a different confident specific every time. <a href="experiments/confabulation.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Obedience to authority</h3><p>6 cheap models, 10 false claims, plain versus attributed to a confident expert. Most stayed robust; one caved. <a href="experiments/obedience-to-authority.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Sycophancy</h3><p>The paper&#x27;s own &#x27;Are you sure?&#x27; sway test, run blind on the Claude tiers; all three held. <a href="experiments/sycophancy-sway-claude.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Noble cause corruption</h3><p>6 models asked to overstate or fabricate, plainly versus wrapped in a for-their-own-good justification. Most held the line; one bent. <a href="experiments/noble-cause-corruption.html">Read the full experiment &rarr;</a></p></div><div class="exp-card"><h3>Abstention failure</h3><p>Opus, Sonnet and Haiku, run in-session. An easy probe floored (all abstained); a harder one mixing real facts with subtle fakes under pressure split them, Haiku fabricated one. <a href="experiments/abstention-hard-claude.html">Read the full experiment &rarr;</a></p></div></div>
+    <!-- EXPERIMENTS:END -->
+  </section>
 
   <section class="framework" id="map">
     <h2>Explore the ontology</h2>
