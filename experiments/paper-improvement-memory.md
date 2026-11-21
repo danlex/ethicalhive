@@ -116,3 +116,11 @@ reuse what worked.
   (9/10/16/21/23/24 of 28).
 - LESSON: before executing any surfaced/older plan, verify the target files' CURRENT state; a plan
   from an earlier session may already be done, and blind re-execution duplicates and breaks builds.
+
+- Observed (2026-11-21, derived principles): added a two-layer principle structure to the ontology
+  paper, per the author. The seven operational principles are DERIVED from the data (aggregating the
+  per-record `violates` field), a verified clean partition of the 207 (each behaviour breaches exactly
+  one; 67+45+31+25+15+14+10 = 207; 227 analogies not yet assigned). The six top-level charter
+  principles are presented descriptively (names + ends), not as an 'An AI must' manifesto (slop lesson).
+  Added Figure 1 (the seven-principle distribution, grounded), which also replaces the typology figure
+  cut in the reframe. Bars verified against the data.
