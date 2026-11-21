@@ -17,10 +17,9 @@ src, dst = sys.argv[1], sys.argv[2]
 t = open(src, encoding="utf-8").read()
 # drop the single raw <figure>...</figure> HTML line and replace with a LaTeX figure include
 fig = (r"\begin{figure}[h]\centering\includegraphics[width=.8\linewidth]{figure1.pdf}"
-       r"\caption{How the 35 logged citation mismatches fail, by class (counts approximate, "
-       r"sum 35). Surface-match (right term, wrong phenomenon) dominates; polarity-reversal "
-       r"(the opposite result) is rarest but the most dangerous, because a title or abstract "
-       r"skim ratifies it.}\label{fig:typology}\end{figure}")
+       r"\caption{The seven operational principles the 434 behaviours violate, by number of "
+       r"behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 "
+       r"grounded records, light the 227 proposed analogies.}\label{fig:principles}\end{figure}")
 repl = "```{=latex}\n" + fig + "\n```"
 t = re.sub(r"<figure.*?</figure>", lambda _m: repl, t, flags=re.S, count=1)
 open(dst, "w", encoding="utf-8").write(t)
@@ -32,14 +31,16 @@ cat > "$TMP/figure1.tex" <<'TEX'
 \documentclass[border=4pt]{standalone}
 \usepackage{xcolor}
 \usepackage{tikz}
-\definecolor{dom}{HTML}{C0392B}\definecolor{oth}{HTML}{8A8A8A}
+\definecolor{dom}{HTML}{C0392B}\definecolor{prop}{HTML}{E3A7A0}
 \begin{document}
-\begin{tikzpicture}[yscale=.55,xscale=.09]
-  \foreach \y/\name/\cnt/\col in {5/Surface-match/14/dom, 4/Scope-mismatch/12/oth,
-      3/Misfiling/4/oth, 2/Polarity-reversal/3/oth, 1/Wrong-population/2/oth}{
+\begin{tikzpicture}[yscale=.6,xscale=.07]
+  \foreach \y/\name/\g/\t in {7/Honesty/67/112, 6/Calibration/45/100,
+      5/Non-maleficence/31/52, 4/Transparency/25/51, 3/Scope-fidelity/15/50,
+      2/Independence/14/43, 1/Corrigibility/10/26}{
     \node[anchor=east] at (0,\y) {\footnotesize \name};
-    \fill[\col] (0.4,\y-.3) rectangle (\cnt+0.4,\y+.3);
-    \node[anchor=west] at (\cnt+0.8,\y) {\footnotesize \cnt};
+    \fill[dom] (0.3,\y-.32) rectangle (0.3+\g,\y+.32);
+    \fill[prop] (0.3+\g,\y-.32) rectangle (0.3+\t,\y+.32);
+    \node[anchor=west] at (0.3+\t+2,\y) {\footnotesize \t};
   }
 \end{tikzpicture}
 \end{document}
