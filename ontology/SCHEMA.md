@@ -141,7 +141,8 @@ analogue: AI-native. Category assignment reproducibility is reported in the pape
 ## Relations and external terminology
 
 `is_a`, `relates_to`, `root_of`, `opposite_of`, `same_as`, `violates`, `causes`,
-`detected_by`, plus the `grouped_under` operational-overlap cross-reference.
+`detected_by`, `maps_to` (crosswalk to an external framework), plus the `grouped_under`
+operational-overlap cross-reference.
 Glosses are in the `relation_types` block of the YAML. Together they form
 the relation graph that lets the catalogue represent a real incident as a chain of modes
 rather than a single label.

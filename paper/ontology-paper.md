@@ -13,7 +13,8 @@ abstract: |
   native to AI; the human-cognition parallels are marked as candidate behavioural
   tests, not claims of shared mechanism. Above the behaviours sit two principle layers:
   six top-level integrity principles that frame the catalogue, and seven operational
-  obligations read off the records themselves, one per behaviour, that partition all 434.
+  obligations read off the records themselves, one most-central label per behaviour, across
+  all 434, though an independent rater recovers that label only moderately (kappa about 0.4).
   We describe the representation, the category scheme and the relation semantics, and
   report the construction and review of the
   historical 207-record study: 186 records grounded in worked examples from source
@@ -38,10 +39,13 @@ experimental label or an audit obligation.
 
 EthicalAI collects these behaviours in one ontology, organised around a charter of
 six integrity principles for AI: each record names a way an AI can fail one of them.
-A record carries a stable identifier, an operational definition, a worked example,
-evidence pointers, and typed relations to the obligation it violates, the harm it
-causes and the behaviours it resembles, so each claim stays traceable to what it
-rests on. Part of the vocabulary is drawn from human cognitive concepts; that
+The contribution is the combination rather than the size: an integrity-failure
+vocabulary in which each claim carries a source passage checked at construction, the
+entries are linked by a typed relation graph, and each is placed under the principle it
+violates and the harm it causes. A record carries a stable identifier, an operational
+definition, a worked example, evidence pointers, and typed relations to the obligation it
+violates, the harm it causes and the behaviours it resembles, so each claim stays
+traceable to what it rests on. Part of the vocabulary is drawn from human cognitive concepts; that
 parallel is a way to formulate a candidate behavioural test, not evidence that an AI
 system has the corresponding human mental process. Other records name attacks,
 system properties or outcomes, and their inclusion does not make them interchangeable
@@ -89,7 +93,7 @@ The resources differ less in size than in what each entry carries and how entrie
 | MIT AI Risk Repository | 1,725 risks, 74 frameworks | meta-review citations | causal and domain taxonomy | risk governance |
 | OWASP Top 10 for LLMs | 10 | community-sourced | none | application security |
 | Malberg et al. | 30 biases, 30,000 tests | the authors' own experiments | none | cognitive-bias benchmark |
-| EthicalAI | 207 grounded, 434 total | a source passage per claim | a typed graph | evidence-linked ontology |
+| EthicalAI | 207 grounded, 434 total | a checked source passage per grounded claim | a typed graph | evidence-linked ontology |
 
 The point is not that EthicalAI is larger or better measured, the risk repositories are far
 larger and the benchmarks measure what they cover directly, but that it pairs a per-claim
@@ -164,11 +168,14 @@ alone, are what make it an ontology. `violates` points from a mode to a catalogu
 wrong answer, wasted effort or loss of oversight; the edge records an author-judged
 association between a mode and a harm, which the field name overstates. `relates_to`
 connects neighbouring modes; `is_a` and `opposite_of` express hierarchy and contrast;
-subtype and overlap relations capture other conceptual distinctions. Partial `maps_to`
-records connect entries with external frameworks. In the current release these edges number
-about 533 `relates_to`, 38 `maps_to`, 24 `is_a` and 16 `opposite_of` links, the connective
-tissue a reviewer follows from one behaviour to its neighbours. It is a lightweight ontology:
-typed relations over defined classes, without formal logical axioms.
+`root_of` points from an underlying cause to the failure it produces, and `grouped_under`
+cross-references records that decompose a shared symptom. Partial `maps_to` records connect
+entries with external frameworks. In the current release these edges number about 533
+`relates_to`, 38 `maps_to`, 24 `is_a`, 20 `root_of`, 16 `opposite_of` and 9 `grouped_under`
+links, the connective tissue a reviewer follows from one behaviour to its neighbours. It is a
+lightweight ontology, or more precisely a typed, evidence-linked controlled vocabulary with a
+sparse subsumption tree: defined value sets and glossed relation types, but no formal logical
+axioms, domain and range constraints or disjointness.
 
 The graph relates modes to harms and to each other, but it does not chain one mode
 to the next. Consider the dealership-chatbot incident discussed in Section 4. An
@@ -190,8 +197,11 @@ short of one of them, and their full statements are in the project charter.
 
 Beneath them is an operational layer read off the behaviours themselves. Every record
 names, through its `violates` relation, the one obligation it breaches. Aggregating that
-relation yields seven operational principles, and the assignment is a partition: each
-record breaches exactly one, and the counts sum to the full 434. For the 207 grounded
+relation yields seven operational principles. The assignment is single-label: each record is
+tagged with the one obligation it most centrally breaches, so the labels cover all 434 and the
+counts sum to the full 434. A behaviour can plausibly breach more than one, and Section 4.2
+shows that independent raters agree on the single label only moderately, so this is a
+convenience labeling for navigation, not a canonical carving. For the 207 grounded
 records the assignment was fixed during construction; for the 227 proposed analogies it
 was read from each definition and is proposal-level, like the analogies themselves.
 
@@ -214,7 +224,7 @@ shows the distribution, with the grounded and proposed share of each principle. 
 reproducible this assignment is, which turns out to be only moderately, is reported in
 Section 4.2.
 
-<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 grounded records, light the 227 proposed analogies. Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
+<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (one most-central label each, summing to 434). Dark is the 207 grounded records; light the 227 proposed analogies, whose shares are not reproducibility-checked (Section 4.2). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
 A matching relation records the harm side. Where `violates` names the obligation a behaviour
 breaches, `causes` names the harm it produces. On the grounded 207 the harms fall into five
@@ -293,15 +303,18 @@ principle definitions and each record's name and definition, without its stored 
 
 Recovery was markedly weaker than for the categories. The sonnet rater agreed with the
 catalogue on 14 of 28 records, Cohen kappa 0.42; the haiku rater on 13 of 28, kappa 0.38; the
-two raters agreed with each other at kappa 0.53. Against the category scheme's 0.90 and 0.83,
-this says the principle assignment is only moderately reproducible. The boundaries between
+two raters agreed with each other at kappa 0.53. At n=28 these are small-sample estimates: the
+raw-agreement intervals are wide, a Wilson 95 percent interval of [0.33, 0.67] for the sonnet
+rater and [0.30, 0.64] for the haiku rater, and the category check at n=33 is similarly
+imprecise. Against the category scheme's 0.90 and 0.83, this says the principle assignment is
+only moderately reproducible. The boundaries between
 obligations are genuinely fuzzy: a behaviour that misstates a fact can be read as honesty or,
 if the fault is really in the confidence, as calibration, and an externally-swayed judgment
 can be read as independence or as whichever downstream obligation it ends up breaking.
 
-The partition is therefore best read as one defensible labeling of what each behaviour most
+The assignment is therefore best read as one defensible labeling of what each behaviour most
 centrally violates, useful for navigation and for the distribution in Figure 1, rather than a
-canonical assignment. A sharper version would give raters explicit decision rules between
+canonical carving. A sharper version would give raters explicit decision rules between
 adjacent principles, or let a record violate more than one, and use human annotators.
 
 ## 4.3 An incident-mapping exercise
