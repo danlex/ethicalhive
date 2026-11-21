@@ -44,15 +44,10 @@ system has the corresponding human mental process. Other records name attacks,
 system properties or outcomes, and their inclusion does not make them interchangeable
 scientific constructs.
 
-This paper describes the ontology and reviews its historical 207-record study. We set
-out the representation, the eleven-category scheme and the relation semantics, then
-report how the study was checked: 186 records grounded in worked examples from source
-papers, 21 retained without that support, a model-based codebook check of whether an
-outside rater recovers the category labels, and a mapping onto twelve public incidents.
-A construction audit resolved citation and example errors against the sources before
-release. The companion auditing paper, "Contracts Between Humans and AI Agents", asks a
-separate question, whether checking one named obligation at a time helps review
-coding-agent drafts, and its pilot does not validate this ontology.
+This paper describes the ontology, its eleven-category scheme and its relation
+semantics, then reviews the historical 207-record study for grounding, category
+recoverability and incident coverage. A construction audit resolved citation and
+example errors against the sources before release.
 
 A later release grew the ontology to 434 records by adding 227 proposed behavioural
 analogies. Section 5 keeps that expansion separate from the 207-record study, so the
@@ -298,7 +293,10 @@ Neither measures how accurately a reviewer can distinguish close alternatives,
 how often the catalogue misses an externally sampled failure, or whether its
 graph improves auditing over a flat list, each of which would need an externally
 sampled test set and independent annotators. The resource makes no completeness
-or state-of-the-art detection claim.
+or state-of-the-art detection claim. The companion auditing paper, "Contracts
+Between Humans and AI Agents", evaluates whether checking one named obligation at a
+time helps review coding-agent drafts; its pilot tests the auditing method, not
+this ontology.
 
 # 7. Availability and reproducibility
 
