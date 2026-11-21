@@ -159,9 +159,8 @@ author-selected worklist rather than a measured ranking of failure frequency.
 
 ## 3.2 Relation semantics
 
-What makes this an ontology rather than a flat list is the typed edges between records,
-not just the records themselves. The graph distinguishes several relationships. `violates`
-points from a mode to a catalogue obligation. `causes` points to a harm type, such as a
+The graph distinguishes several relationships, and these typed edges, more than the records
+alone, are what make it an ontology. `violates` points from a mode to a catalogue obligation. `causes` points to a harm type, such as a
 wrong answer, wasted effort or loss of oversight; the edge records an author-judged
 association between a mode and a harm, which the field name overstates. `relates_to`
 connects neighbouring modes; `is_a` and `opposite_of` express hierarchy and contrast;
@@ -211,9 +210,9 @@ the behaviours rather than imposed on them. They are a finer-grained layer benea
 six-principle charter the ontology is organised around: honesty, transparency and
 calibration all serve the charter's honesty-and-transparency principle, non-maleficence its
 safety principle, and corrigibility its accountability-and-oversight principle. Figure 1
-shows the distribution, with the grounded and proposed share of each principle. Section 4.2
-reports how reproducible this assignment is: only moderately, so the counts are one
-defensible labeling of what each behaviour most centrally violates, not a canonical one.
+shows the distribution, with the grounded and proposed share of each principle. How
+reproducible this assignment is, which turns out to be only moderately, is reported in
+Section 4.2.
 
 <figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 grounded records, light the 227 proposed analogies. Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
