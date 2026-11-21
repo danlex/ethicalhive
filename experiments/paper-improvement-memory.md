@@ -124,3 +124,13 @@ reuse what worked.
   principles are presented descriptively (names + ends), not as an 'An AI must' manifesto (slop lesson).
   Added Figure 1 (the seven-principle distribution, grounded), which also replaces the typology figure
   cut in the reframe. Bars verified against the data.
+
+- Observed (2026-11-21, extend partition to 434): the author asked why the partition was over 207
+  when there are 434. The 227 later analogies had an empty violates field (untested proposals).
+  Per the author's choice, classified all 227 into one of the seven principles from their
+  definitions (via a reader agent), applied with experiments/assign-violates.py (deterministic
+  line-pass, no YAML reformatting), and verified the partition now closes at 434 (each record
+  exactly one; honesty 112, calibration 100, non-maleficence 52, transparency 51, scope-fidelity
+  50, independence 43, corrigibility 26; sum 434, zero missing). Paper Section 3.3 now shows the
+  grounded(207)/proposed(227)/total(434) split and a stacked Figure 1; the 227 assignments are
+  marked proposal-level, distinct from the grounded 207.

@@ -13,7 +13,7 @@ abstract: |
   native to AI; the human-cognition parallels are marked as candidate behavioural
   tests, not claims of shared mechanism. Above the behaviours sit two principle layers:
   six top-level integrity principles that frame the catalogue, and seven operational
-  obligations read off the records themselves, one per behaviour, that partition the 207.
+  obligations read off the records themselves, one per behaviour, that partition all 434.
   We describe the representation, the category scheme and the relation semantics, and
   report the construction and review of the
   historical 207-record study: 186 records grounded in worked examples from source
@@ -170,30 +170,31 @@ and integrity under pressure (the last being that an AI holds to the others even
 human authority presses otherwise). These are the ends; a behaviour is a way of falling
 short of one of them, and their full statements are in the project charter.
 
-Beneath them is an operational layer read off the behaviours themselves. Every historical
-record names, through its `violates` relation, the one obligation it breaches. Aggregating
-that relation across the 207 records yields seven operational principles, and the assignment
-is a partition: each record breaches exactly one, and the counts sum to 207.
+Beneath them is an operational layer read off the behaviours themselves. Every record
+names, through its `violates` relation, the one obligation it breaches. Aggregating that
+relation yields seven operational principles, and the assignment is a partition: each
+record breaches exactly one, and the counts sum to the full 434. For the 207 grounded
+records the assignment was fixed during construction; for the 227 proposed analogies it
+was read from each definition and is proposal-level, like the analogies themselves.
 
-| Principle | Records (of 207) | What a breach looks like |
-|---|---:|---|
-| Honesty | 67 | stating what is not supported: fabrication, confident guessing, misquotation |
-| Calibration | 45 | confidence that does not track the evidence: overconfidence, miscalibrated uncertainty |
-| Non-maleficence | 31 | producing foreseeable harm, from a wrong answer to an unsafe action |
-| Transparency | 25 | not disclosing an action, a limitation or an uncertainty |
-| Scope-fidelity | 15 | acting outside the agreed task without disclosure |
-| Independence | 14 | a judgment swayed by pressure, flattery or an anchor |
-| Corrigibility | 10 | resisting correction, oversight or an override |
+| Principle | Grounded (207) | Proposed (227) | Total (434) | What a breach looks like |
+|---|---:|---:|---:|---|
+| Honesty | 67 | 45 | 112 | stating what is not supported: fabrication, confident guessing, misquotation |
+| Calibration | 45 | 55 | 100 | confidence that does not track the evidence: overconfidence, miscalibrated uncertainty |
+| Non-maleficence | 31 | 21 | 52 | producing foreseeable harm, from a wrong answer to an unsafe action |
+| Transparency | 25 | 26 | 51 | not disclosing an action, a limitation or an uncertainty |
+| Scope-fidelity | 15 | 35 | 50 | acting outside the agreed task without disclosure |
+| Independence | 14 | 29 | 43 | a judgment swayed by pressure, flattery or an anchor |
+| Corrigibility | 10 | 16 | 26 | resisting correction, oversight or an override |
 
 These seven are the operational obligations the catalogue is built to detect, derived from
 the behaviours rather than imposed on them. They are a finer-grained layer beneath the
 six-principle charter the ontology is organised around: honesty, transparency and
 calibration all serve the charter's honesty-and-transparency principle, non-maleficence its
-safety principle, and corrigibility its accountability-and-oversight principle. The 227
-later analogies do not yet carry a `violates` assignment, so the partition is reported over
-the grounded 207. Figure 1 shows the distribution.
+safety principle, and corrigibility its accountability-and-oversight principle. Figure 1
+shows the distribution, with the grounded and proposed share of each principle.
 
-<figure style="margin:2rem 0"><svg viewBox="0 0 620 262" role="img" aria-label="The seven principles the 207 behaviours violate, by count" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="402" height="22" fill="#c0392b" rx="2"/><text x="548" y="30" font-size="13" fill="#444">67</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="270" height="22" fill="#8a8a8a" rx="2"/><text x="416" y="66" font-size="13" fill="#444">45</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="186" height="22" fill="#8a8a8a" rx="2"/><text x="332" y="102" font-size="13" fill="#444">31</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="150" height="22" fill="#8a8a8a" rx="2"/><text x="296" y="138" font-size="13" fill="#444">25</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="90" height="22" fill="#8a8a8a" rx="2"/><text x="236" y="174" font-size="13" fill="#444">15</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="84" height="22" fill="#8a8a8a" rx="2"/><text x="230" y="210" font-size="13" fill="#444">14</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="60" height="22" fill="#8a8a8a" rx="2"/><text x="206" y="246" font-size="13" fill="#444">10</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 207 historical behaviours violate, by number of behaviours (a partition: each behaviour breaches exactly one, summing to 207). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
+<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 grounded records, light the 227 proposed analogies. Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
 ## 3.4 Evidence and examples
 
