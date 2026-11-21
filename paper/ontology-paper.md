@@ -82,6 +82,20 @@ several failure types within a family. These are measurement resources as well
 as classifications. The larger number of EthicalAI records is a coverage choice,
 not evidence of stronger measurement or more distinct mechanisms.
 
+The resources differ less in size than in what each entry carries and how entries connect.
+
+| Resource | Entries | Evidence per entry | Typed relations | Framing |
+|---|---|---|---|---|
+| MIT AI Risk Repository | 1,725 risks, 74 frameworks | meta-review citations | causal and domain taxonomy | risk governance |
+| OWASP Top 10 for LLMs | 10 | community-sourced | none | application security |
+| Malberg et al. | 30 biases, 30,000 tests | the authors' own experiments | none | cognitive-bias benchmark |
+| EthicalAI | 207 grounded, 434 total | a source passage per claim | a typed graph | evidence-linked ontology |
+
+The point is not that EthicalAI is larger or better measured, the risk repositories are far
+larger and the benchmarks measure what they cover directly, but that it pairs a per-claim
+source link with a typed relation graph, a combination the broader repositories and the
+measurement benchmarks do not provide.
+
 Because each record here is a claim bound to a source passage, the catalogue
 shares a question with work on evidence-linked generation and citation checking,
 and reaches it by construction rather than by a generation benchmark. Retrieval
@@ -145,12 +159,17 @@ author-selected worklist rather than a measured ranking of failure frequency.
 
 ## 3.2 Relation semantics
 
-The graph distinguishes several relationships. `violates` points from a mode to a
-catalogue obligation. `causes` points to a harm type, such as a wrong answer,
-wasted effort or loss of oversight; the edge records an author-judged association
-between a mode and a harm, which the field name overstates. `relates_to` connects
-neighbouring modes; subtype and overlap relations express other conceptual
-distinctions. Partial `maps_to` records connect entries with external frameworks.
+What makes this an ontology rather than a flat list is the typed edges between records,
+not just the records themselves. The graph distinguishes several relationships. `violates`
+points from a mode to a catalogue obligation. `causes` points to a harm type, such as a
+wrong answer, wasted effort or loss of oversight; the edge records an author-judged
+association between a mode and a harm, which the field name overstates. `relates_to`
+connects neighbouring modes; `is_a` and `opposite_of` express hierarchy and contrast;
+subtype and overlap relations capture other conceptual distinctions. Partial `maps_to`
+records connect entries with external frameworks. In the current release these edges number
+about 533 `relates_to`, 38 `maps_to`, 24 `is_a` and 16 `opposite_of` links, the connective
+tissue a reviewer follows from one behaviour to its neighbours. It is a lightweight ontology:
+typed relations over defined classes, without formal logical axioms.
 
 The graph relates modes to harms and to each other, but it does not chain one mode
 to the next. Consider the dealership-chatbot incident discussed in Section 4. An
@@ -197,6 +216,24 @@ reports how reproducible this assignment is: only moderately, so the counts are 
 defensible labeling of what each behaviour most centrally violates, not a canonical one.
 
 <figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (a partition: each breaches exactly one, summing to 434). Dark is the 207 grounded records, light the 227 proposed analogies. Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
+
+A matching relation records the harm side. Where `violates` names the obligation a behaviour
+breaches, `causes` names the harm it produces. On the grounded 207 the harms fall into five
+kinds:
+
+| Harm | Records (of 207) |
+|---|---:|
+| Wrong answer | 132 |
+| Loss of oversight | 29 |
+| Manipulation | 22 |
+| Security breach | 16 |
+| Wasted effort | 8 |
+
+Most grounded behaviours lead to a wrong answer; the rest divide across loss of oversight,
+manipulation, security breach and wasted effort. These harms are recorded for the grounded 207;
+the 227 proposed analogies carry a principle but not yet a harm. As with the principle
+assignment, a behaviour can plausibly cause more than one harm, so the single recorded harm is
+the most direct one, not the only possible consequence.
 
 ## 3.4 Evidence and examples
 
