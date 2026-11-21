@@ -441,6 +441,7 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
       <span>Ethical<span class="ai">AI</span></span>
     </a>
     <div class="nav-links">
+      <a href="#principles">Principles</a>
       <a href="#map">Map</a>
       <a href="#experiments">Probes</a>
       <a href="#catalogue">Catalogue</a>
@@ -452,32 +453,38 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 
 <header class="hero" id="top">
   <div class="wrap">
-    <h1>Recognise AI behaviour. <span class="accent">Understand the risk. Check the evidence.</span></h1>
-    <p class="lede">A searchable directory of AI failures and proposed parallels with human behaviour. Find a pattern, read its definition and example, inspect its sources and limits, then decide what to check.</p>
+    <h1>Ethical <span class="accent">AI</span> Alliance</h1>
+    <p class="lede">Shared ground rules for how people and AI behave together. An open charter of six principles, a public catalogue of the ways AI breaks them, and an advisory audit that checks a draft against them before it reaches you. The AI reports, the human decides.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#catalogue">Browse all <span class="cc"></span> →</a>
+      <a class="btn btn-primary" href="#principles">Read the principles →</a>
+      <a class="btn btn-ghost" href="#catalogue">Browse the catalogue</a>
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <div class="intro">
-    <div class="card"><h3>The problem</h3><p>A confident answer and a correct answer look identical. The failures below are the gaps between them.</p></div>
-    <div class="card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read / Grep / WebFetch, evidence first, prose second.</p></div>
-    <div class="card"><h3>The verdict</h3><p>Each check returns <b style="color:var(--ok)">PASS</b>, <b style="color:var(--flag)">FLAG</b>, or <b style="color:var(--block)">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
-  </div>
-
   <section class="framework" id="principles">
     <h2>Six principles of Ethical AI</h2>
-    <p class="lede" style="max-width:76ch">The commitments the catalogue and the audit exist to protect. Each failure mode below is a way an AI breaks one of these.</p>
+    <p class="lede" style="max-width:76ch">These six commitments are the ground the Alliance stands on, and a person and an AI working together both answer to them. Each failure mode in the catalogue below is a way an AI breaks one of these.</p>
     <div class="intro">
       <div class="card"><h3>Human dignity and fairness</h3><p>An AI must respect human dignity, rights, freedom, equality and cultural diversity, without unjust discrimination.</p></div>
       <div class="card"><h3>Safety and societal benefit</h3><p>An AI must prevent foreseeable harm and pursue beneficial outcomes without sacrificing individual rights for a claimed greater good.</p></div>
       <div class="card"><h3>Honesty and transparency</h3><p>An AI must distinguish evidence from invention and make its actions, limitations and uncertainty clear.</p></div>
       <div class="card"><h3>Human autonomy and privacy</h3><p>An AI must support informed choices without manipulation and protect personal and confidential information.</p></div>
-      <div class="card"><h3>Accountability and human control</h3><p>An AI's consequential actions must be traceable, open to challenge and correction, and subject to authorized human intervention or shutdown, within governance that respects democracy and the rule of law.</p></div>
-      <div class="card"><h3>Integrity under pressure</h3><p>An AI must uphold these principles even when a human authority orders otherwise.</p></div>
+      <div class="card"><h3>Human accountability, oversight and right to a remedy</h3><p>People and institutions remain accountable for AI under democratic governance and the rule of law. Consequential actions must be traceable. Authorized humans must be able to review, override or stop them. Affected people must be able to understand and challenge decisions and obtain an effective remedy when warranted.</p></div>
+      <div class="card" style="background:var(--hero);border-color:#000"><h3 style="color:var(--accent)">Integrity under pressure</h3><p style="color:var(--hero-ink)">An AI must uphold these principles even when a human authority orders otherwise.</p></div>
+    </div>
+    <p style="margin:14px 0 0"><a href="https://github.com/danlex/ethicalhive/blob/main/contracts/ethical-principles.md" target="_blank" rel="noopener">Read the full charter →</a></p>
+  </section>
+
+  <section class="framework" id="how-we-check">
+    <h2>How a draft is checked against them</h2>
+    <p class="lede" style="max-width:76ch">Principles only hold if something enforces them. Before an answer reaches a person, an advisory audit runs against these six. It reports; the person decides.</p>
+    <div class="intro">
+      <div class="card"><h3>The problem</h3><p>A confident answer and a correct answer look identical. The failure modes in the catalogue are the gaps between them.</p></div>
+      <div class="card"><h3>The check</h3><p>Before delivery, a judge agent extracts every claim and verifies it with Read, Grep and WebFetch, evidence first, prose second.</p></div>
+      <div class="card"><h3>The verdict</h3><p>Each check returns <b style="color:var(--ok)">PASS</b>, <b style="color:var(--flag)">FLAG</b>, or <b style="color:var(--block)">BLOCK</b>. Advisory, not blocking. The human decides.</p></div>
     </div>
   </section>
 
