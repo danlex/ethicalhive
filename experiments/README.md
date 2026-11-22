@@ -3,6 +3,12 @@
 ## Annual research timelines
 
 The catalogue's expanded details include an interactive publication timeline.
+An overview above the catalogue combines all complete term searches and can
+compare up to six individual terms. Combined counts are paper–term matches:
+overlapping queries can count a publication more than once. It is not a
+deduplicated publication total or an estimate of AI behaviour prevalence.
+The overview and per-term charts share one lazily loaded dataset. Missing
+series are excluded explicitly; missing years are never filled with zeroes.
 It uses the recorded arXiv query and category scope, groups by first-submission
 year, marks the retrieval year incomplete, and retains the source query and date.
 Keyword matches do not measure word occurrences, citations or proven behaviours.
@@ -13,6 +19,7 @@ python3 experiments/literature-timelines.py fetch --cache /tmp/ethicalai-literat
 python3 experiments/literature-timelines.py build --cache /tmp/ethicalai-literature-timelines
 python3 experiments/build-catalogue.py --write --no-export
 python3 experiments/check-literature-timelines.py --browser
+python3 experiments/check-research-overview.py
 ```
 
 The cache makes interrupted collection resumable. Rate limits pause the entire
