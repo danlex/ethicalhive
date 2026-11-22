@@ -30,7 +30,8 @@ def check_content():
     browsing_categories = {m['category'] for m in ontology['modes']}
     assert sum(p['count'] for p in categories) == len(mode_ids)
     md = (ROOT/'paper/ontology-paper.md').read_text()
-    home = plain((ROOT/'docs/index.html').read_text())
+    home_source = (ROOT/'docs/index.html').read_text()
+    home = plain(home_source)
     article = plain((ROOT/'docs/paper/ontology-paper.html').read_text())
     raw = subprocess.check_output(['pdftotext', str(ROOT/'docs/paper.pdf'), '-'], text=True)
     pdf = ' '.join(re.sub(r'(\w)-\s*\n\s*(\w)', r'\1\2', raw).split())
@@ -40,8 +41,8 @@ def check_content():
             assert p['statement'] in text, (label, p['name'])
     for p in categories:
         assert f"**{p['name']}.**" in md
-        assert not re.search(re.escape(p['name']) + r' \(\d+\)', home)
-        assert not re.search(re.escape(p['name']) + r' \(\d+\)', article)
+    evaluation = re.search(r'<section class="cx-sec" id="evaluation-categories">(.*?)</section>', home_source, re.S)[1]
+    assert re.findall(r'<h3>(.*?)</h3>', evaluation) == [p['name'] for p in categories]
     for path in ('behaviours.json', 'research/100-behaviours.json', 'research/behaviour-candidates.json'):
         data = json.loads((ROOT/'docs'/path).read_text())
         assert data['principles'] == [{k:p[k] for k in ('id','name','statement')} for p in categories]
