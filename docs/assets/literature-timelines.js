@@ -124,7 +124,7 @@
     source.appendChild(element('code', '', record.query));
     source.appendChild(link('Open the complete source query', sourceURL(record)));
     mount.appendChild(source);
-    var visible = [], selected = -1, bars = [];
+    var visible = [], selected = -1, bars = [], renderedWidth = 0;
 
     function inspect(index) {
       selected = Math.max(0, Math.min(index, visible.length - 1));
@@ -139,7 +139,9 @@
       visible = record.years.filter(function (point) { return point.year >= lower; });
       chart.replaceChildren(svg('title', {}, record.name + ': matching publications per year'));
       bars = [];
-      var left = 56, top = 25, width = 526, height = 184, bottom = top + height;
+      renderedWidth = Math.max(220, Math.round(mount.getBoundingClientRect().width));
+      chart.setAttribute('viewBox', '0 0 ' + renderedWidth + ' 250');
+      var left = 52, top = 25, width = renderedWidth - 68, height = 184, bottom = top + height;
       var maximum = Math.max.apply(null, visible.map(function (point) { return point.count; }).concat([1]));
       var logarithmic = scale.select.value === 'log';
       var maxValue = logarithmic ? Math.ceil(Math.log10(maximum + 1)) : maximum;
@@ -163,7 +165,8 @@
         hit.addEventListener('pointerenter', function () { inspect(i); });
         hit.addEventListener('click', function () { inspect(i); });
         chart.appendChild(hit);
-        if (i === 0 || i === visible.length - 1 || i % Math.max(1, Math.ceil(visible.length / 6)) === 0) {
+        var labelEvery = Math.max(1, Math.ceil(visible.length / Math.max(2, Math.floor(width / 65))));
+        if (i === 0 || i === visible.length - 1 || i % labelEvery === 0) {
           chart.appendChild(svg('text', {x:x + cell / 2, y:bottom + 22, 'text-anchor':'middle'}, point.year + (point.year === record.end_year ? '*' : '')));
         }
       });
@@ -186,6 +189,10 @@
     });
     period.select.addEventListener('change', draw);
     scale.select.addEventListener('change', draw);
+    if ('ResizeObserver' in window) new ResizeObserver(function (entries) {
+      var width = Math.round(entries[0].contentRect.width);
+      if (width > 0 && width !== renderedWidth) draw();
+    }).observe(mount);
     draw();
   }
 
