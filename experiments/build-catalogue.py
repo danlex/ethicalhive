@@ -28,6 +28,7 @@ from pathlib import Path
 
 import yaml
 from catalogue_sources import research_papers, source_coverage, selected_papers, literature_search
+from literature_timeline_ui import timeline_placeholder, timeline_assets
 
 ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY = ROOT / "ontology" / "ethical-ai.yaml"
@@ -63,6 +64,7 @@ def render_papers(mode):
                    ' query matches (cs.AI/CL/LG; search date not recorded). This is a separate historical total.</p>')
     if search.get('query'):out.append('<p class="literature-query"><b>Query:</b> '+esc(search['query'])+'</p>')
     if search.get('scope'):out.append('<p class="literature-scope">'+esc(search['scope'])+'</p>')
+    out.append(timeline_placeholder(mode))
     papers=selected_papers(mode)
     out.append('<p class="selected-paper-count">Selected citations: '+str(len(papers))+' of 3.</p>')
     for domain,heading,css in [('ai','AI research','papers'),('human-related','Human and related research','human-sources human-papers')]:
@@ -415,7 +417,7 @@ def main():
         lambda m: f"{m.group(1)}\n    {sec}\n    {m.group(2)}",
         html, count=1, flags=re.DOTALL)
 
-    PAGE.write_text(html, encoding="utf-8")
+    PAGE.write_text(timeline_assets(html), encoding="utf-8")
     export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))

@@ -1,0 +1,29 @@
+.literature-timeline{margin:20px 0;padding:16px;border:1px solid var(--line,#ddd);border-radius:12px;background:var(--panel,#f6f5f4)}
+.literature-timeline h4{margin:0 0 5px}
+.literature-timeline p{margin:7px 0;font-size:13px;line-height:1.5}
+.timeline-description,.timeline-note,.timeline-downloads{color:var(--muted,#666)}
+.timeline-controls{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.timeline-controls label{display:flex;align-items:center;gap:7px;font-size:13px}
+.timeline-controls select,.timeline-retry{max-width:100%;padding:6px 9px;border:1px solid var(--line,#ddd);border-radius:7px;background:#fff;color:#222;font:inherit}
+.timeline-controls select:focus-visible,.timeline-retry:focus-visible,.timeline-plot:focus-visible{outline:3px solid var(--accent,#ff4931);outline-offset:3px}
+.timeline-plot{display:block;width:100%;height:auto;overflow:visible;background:#fff;border-radius:8px;touch-action:pan-y}
+.timeline-plot text{font-family:inherit;fill:#626269;font-size:12px}
+.timeline-plot .timeline-grid{stroke:#e7e5e2;stroke-width:1}
+.timeline-plot .timeline-bar{fill:var(--accent,#ff4931);opacity:.8}
+.timeline-plot .timeline-current{fill:#fff;stroke:var(--accent,#ff4931);stroke-width:1.5;stroke-dasharray:3 2}
+.timeline-plot .timeline-hit{fill:transparent;cursor:crosshair}
+.timeline-plot .timeline-selected{opacity:1;stroke:#222;stroke-width:1.5}
+.timeline-readout{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin:10px 0;min-height:23px}
+.timeline-readout output{font-weight:700;font-variant-numeric:tabular-nums}
+.timeline-readout a{font-size:13px}
+.timeline-data{margin-top:12px}
+.timeline-data>summary{cursor:pointer;font-size:13px;font-weight:600}
+.timeline-table-wrap{max-height:250px;overflow:auto;margin-top:8px}
+.timeline-data table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.timeline-data th,.timeline-data td{padding:6px 10px;border-bottom:1px solid var(--line,#ddd);text-align:left}
+.timeline-data th{position:sticky;top:0;background:var(--panel,#f6f5f4)}
+.timeline-source{margin-top:10px;font-size:12px}
+.timeline-source>summary{cursor:pointer}
+.timeline-source code{display:block;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}
+.timeline-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:560px){.literature-timeline{padding:12px}.timeline-controls{gap:8px}.timeline-controls label{font-size:12px}.timeline-plot text{font-size:13px}}
