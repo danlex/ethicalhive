@@ -1094,8 +1094,8 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .mm .mm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
 .mm .mm-bar input{font-family:inherit;font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;width:240px;outline:none}
 .mm .mm-bar input:focus{border-color:var(--accent)}
-.mm .mm-bar button{font-size:12.5px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-family:inherit}
-.mm .mm-bar button:hover{background:var(--panel)}
+.mm .mm-bar button{font-size:12.5px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);cursor:pointer;font-family:inherit}
+.mm .mm-bar button:hover{filter:brightness(1.3)}
 .mm .mm-bar a{font-size:12.5px;color:var(--accent-d);font-weight:600;margin-left:auto;text-decoration:none}
 .mm ul.tree,.mm .tree ul{list-style:none;margin:0;padding:0}
 .mm .tree ul{margin-left:15px;position:relative}
@@ -1113,23 +1113,23 @@ html{scroll-padding-top:var(--site-nav-height,84px)}
 .mm .caret::before{content:"\25be";font-size:10px;color:var(--muted);transition:transform .12s}
 .mm .li.collapsed>.row .caret::before{transform:rotate(-90deg)}
 .mm .caret.empty{visibility:hidden}
-.mm .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;white-space:nowrap}
-.mm .pill:hover{filter:brightness(.975)}
+.mm .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);cursor:pointer;white-space:nowrap}
+.mm .pill:hover{filter:brightness(1.25)}
 .mm .dot{width:8px;height:8px;border-radius:50%;flex:none}
 .mm .badge{font-size:10.5px;color:#a7a5a2;margin-left:3px}
-.mm .root>.row>.pill{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-.mm .tier>.row>.pill{background:#f3f6fb;border-color:#c4d0e4;color:#3b4a63;font-weight:600}
-.mm .ai>.row>.pill{background:#faf2f0;border-color:#e3c3bb;color:#8a5243;font-weight:600}
-.mm .proposed>.row>.pill{background:#fdf7ea;border-color:#e3c98f;color:#8a6a1f;font-weight:600}
+.mm .root>.row>.pill{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+.mm .tier>.row>.pill{background:rgba(91,99,255,.14);border-color:#33384f;color:#9aa3ff;font-weight:600}
+.mm .ai>.row>.pill{background:rgba(255,120,80,.12);border-color:#4a3530;color:#e3a68f;font-weight:600}
+.mm .proposed>.row>.pill{background:rgba(227,180,70,.12);border-color:#4a4020;color:#e3c98f;font-weight:600}
 .mm .group>.row>.pill,.mm .parea>.row>.pill{background:var(--panel);font-weight:600}
 .mm .mode.hum>.row>.pill{border-color:#bcc8dc}
 .mm .mode.ain>.row>.pill{border-color:#ddc3ba}
 .mm .mode.flag>.row>.pill{border-color:#d98b7a;border-width:1.6px}
 .mm .cand>.row>.pill{border-style:dashed;border-color:#dcc08a}
 .mm .hit>.row>.pill{outline:2px solid var(--accent);outline-offset:1px}
-.mm .mm-detail{margin:3px 0 7px;padding:10px 14px;border-left:3px solid var(--line);background:#fcfbfa;border-radius:0 8px 8px 0;max-width:640px}
+.mm .mm-detail{margin:3px 0 7px;padding:10px 14px;border-left:3px solid var(--line);background:var(--panel-2);border-radius:0 8px 8px 0;max-width:640px}
 .mm .mm-detail .ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 9px;border-radius:999px;margin-bottom:7px}
-.mm .mm-detail .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#444;margin:0 4px 5px 0}
+.mm .mm-detail .tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);margin:0 4px 5px 0}
 .mm .mm-detail .tag .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
 .mm .mm-detail p{font-size:13px;margin:7px 0 0;line-height:1.5}
 .mm .mm-detail .sec{margin:9px 0 0}
