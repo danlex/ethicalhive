@@ -148,6 +148,8 @@ def check_browser(data):
                 widget.scroll_into_view_if_needed()
                 page.wait_for_function('(id)=>document.querySelector("[data-timeline-term=\\""+id+"\\"]").dataset.timelineState==="ready"',arg=positive['id'])
                 assert widget.locator('.timeline-bar').count()==len(positive['years'])
+                assert widget.locator('.timeline-year-label').evaluate_all('''nodes=>nodes.every((node,i)=>
+                    i===0 || nodes[i-1].getBoundingClientRect().right<node.getBoundingClientRect().left)''')
                 widget.locator('.timeline-period').select_option('recent')
                 assert widget.locator('.timeline-bar').count()==10
                 widget.locator('.timeline-scale').select_option('log')
@@ -202,6 +204,17 @@ def check_browser(data):
             page.wait_for_function('(id)=>document.querySelector("[data-timeline-term=\\""+id+"\\"]").dataset.timelineState==="ready"',arg=positive['id'])
             assert page.evaluate('window.timelineInjected===undefined')
             assert target.locator('img,script').count()==0
+            page.close()
+            # Partial coverage must not be rendered as a complete or zero series.
+            item.update(status='partial',years=None,total=None)
+            page=browser.new_page(viewport={'width':390,'height':1000})
+            page.route('**/literature-timelines.json',lambda route:route.fulfill(content_type='application/json',body=json.dumps(payload)))
+            page.goto(base,wait_until='domcontentloaded')
+            target=page.locator('[data-timeline-term="'+positive['id']+'"]')
+            page.locator('details#'+positive['id']).evaluate('(node)=>node.open=true');target.scroll_into_view_if_needed()
+            page.wait_for_function('(id)=>document.querySelector("[data-timeline-term="+id+"]").dataset.timelineState==="unavailable"',arg=positive['id'])
+            assert target.locator('.timeline-bar').count()==0
+            assert 'Missing data is not shown as zero' in target.inner_text()
             page.close();browser.close()
     finally:server.shutdown()
     print('PASS: lazy single fetch, time/scale controls, keyboard values, partial-year marking, zero results, mobile/tablet/desktop and no-JS downloads.')

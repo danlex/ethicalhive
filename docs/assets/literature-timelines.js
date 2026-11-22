@@ -170,8 +170,9 @@
         hit.addEventListener('click', function () { inspect(i); });
         chart.appendChild(hit);
         var labelEvery = Math.max(1, Math.ceil(visible.length / Math.max(2, Math.floor(width / 65))));
-        if (i === 0 || i === visible.length - 1 || i % labelEvery === 0) {
-          chart.appendChild(svg('text', {x:x + cell / 2, y:bottom + 22, 'text-anchor':'middle'}, point.year + (point.year === record.end_year ? '*' : '')));
+        var interiorLabel = i % labelEvery === 0 && i * cell >= 55 && (visible.length - 1 - i) * cell >= 55;
+        if (i === 0 || i === visible.length - 1 || interiorLabel) {
+          chart.appendChild(svg('text', {x:x + cell / 2, y:bottom + 22, 'text-anchor':'middle', class:'timeline-year-label'}, point.year + (point.year === record.end_year ? '*' : '')));
         }
       });
       tbody.replaceChildren();
