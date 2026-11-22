@@ -75,14 +75,32 @@ def do_sample(per):
     print(json.dumps(task, ensure_ascii=False, indent=2))
 
 
-def do_prompts(task_path):
+# Explicit tie-break rules between the pairs raters most often confuse. Enabled with --rules;
+# used to test whether the kappa ~0.40 first pass reflects genuine fuzziness or an under-specified
+# codebook (the fix the first reproducibility report named).
+DECISION_RULES = (
+    "Decision rules when more than one principle seems to fit, applied in order:\n"
+    "1. If an external pull (flattery, an anchor, authority, framing, social proof, a leading "
+    "prompt) reshapes the judgment, choose independence, whatever the output then gets wrong.\n"
+    "2. If the behaviour resists correction, oversight, shutdown or update, choose corrigibility.\n"
+    "3. If the output states something false or unsupported, choose honesty; if instead the content "
+    "may be right but the confidence or probability is miscalibrated, choose calibration.\n"
+    "4. If the fault is withholding or hiding an action, a limitation or an uncertainty (an "
+    "omission), choose transparency; honesty is for asserting a falsehood (a commission).\n"
+    "5. If the harm comes from acting outside the agreed task, choose scope-fidelity; choose "
+    "non-maleficence only for a foreseeable injury that is not itself a scope breach.\n"
+)
+
+
+def do_prompts(task_path, rules=False):
     task = json.loads(Path(task_path).read_text())
     cb = "\n".join(f"- {k}: {v}" for k, v in task["codebook"].items())
+    rules_block = ("\n" + DECISION_RULES + "\n") if rules else ""
     for it in task["items"]:
         prompt = (
             "You are classifying an AI failure behaviour by the single integrity principle it "
             "most directly breaches. Choose exactly one id from this list:\n"
-            f"{cb}\n\n"
+            f"{cb}\n{rules_block}\n"
             f"Behaviour: {it['name']}\n"
             f"Definition: {it['definition']}\n\n"
             "Answer with only the principle id, nothing else."
@@ -125,7 +143,7 @@ def main():
     if cmd == "sample":
         do_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 4)
     elif cmd == "prompts":
-        do_prompts(sys.argv[2])
+        do_prompts(sys.argv[2], rules="--rules" in sys.argv)
     elif cmd == "score":
         do_score(sys.argv[2], sys.argv[3:])
     else:

@@ -356,8 +356,18 @@ can be read as independence or as whichever downstream obligation it ends up bre
 
 The assignment is therefore best read as one defensible labeling of what each behaviour most
 centrally violates, useful for navigation and for the distribution in Figure 1, rather than a
-canonical carving. A sharper version would give raters explicit decision rules between
-adjacent principles, or let a record violate more than one, and use human annotators.
+canonical carving.
+
+Giving the raters explicit decision rules between the adjacent obligations, such as sending
+external-pull failures to independence, false statements to honesty and miscalibrated confidence
+to calibration, tested whether the moderate agreement was just an under-specified codebook. It
+was not. With the rules the two raters agreed with each other more, inter-rater kappa rising from
+0.53 to 0.60, but agreed with the catalogue less, kappa falling to 0.33 and 0.29. Clearer rules
+produced a more reproducible labeling that diverged from the author's. That points to genuine
+overlap between the obligations rather than a gap in the codebook: which principle a behaviour
+most centrally breaches is a judgment call, and a rule-driven reviewer makes it differently.
+Letting a record carry more than one principle, scored by human annotators, is the remaining way
+to settle it.
 
 ## 4.3 An incident-mapping exercise
 
