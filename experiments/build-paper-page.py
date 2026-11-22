@@ -188,6 +188,9 @@ def main():
     principles,evaluation=render_framework()
     text,count=re.subn(r'<section class="cx-sec" id="principles">.*?</section>',lambda _:principles,text,count=1,flags=re.S)
     if count!=1:raise ValueError('Homepage principles section not found exactly once')
+    # Keep existing catalogue content; only align its two renamed display labels.
+    text=text.replace('<dd>Non-maleficence</dd>','<dd>Nonmaleficence</dd>')
+    text=text.replace('<dd>Scope fidelity</dd>','<dd>Scope Fidelity</dd>')
     if 'id="evaluation-categories"' in text:
         text,count=re.subn(r'<section class="cx-sec" id="evaluation-categories">.*?</section>',lambda _:evaluation,text,count=1,flags=re.S)
         if count!=1:raise ValueError('Homepage evaluation section not found exactly once')
