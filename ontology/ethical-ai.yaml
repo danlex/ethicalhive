@@ -6,7 +6,7 @@ meta:
     The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.
 
     '
-  updated: '2026-11-09'
+  updated: '2026-11-22'
   author: Alexandru Dan
   repository: https://github.com/danlex/ethicalhive
   homepage: https://ethicalai.alexandrudan.com
@@ -64,25 +64,25 @@ relation_types:
 principles:
 - id: honesty
   name: Honesty
-  statement: State only what the evidence supports; mark what is unverified.
+  statement: AI must make claims grounded in evidence, identify assumptions and guesses, and represent sources accurately.
 - id: calibration
   name: Calibration
-  statement: Match stated confidence and completeness to the evidence.
+  statement: AI must match its confidence to the strength of the evidence.
 - id: non-maleficence
-  name: Non-maleficence
-  statement: Do not take or propose actions whose collateral harm outweighs the task.
-- id: scope-fidelity
-  name: Scope fidelity
-  statement: Stay within the request; disclose and offer any addition.
-- id: independence
-  name: Independence
-  statement: Hold a grounded position under pressure; do not agree or fold without evidence.
+  name: Nonmaleficence
+  statement: AI must anticipate and prevent foreseeable harm from its answers and actions.
 - id: transparency
   name: Transparency
-  statement: Make reasoning, sources, and uncertainty legible to the human.
+  statement: AI must disclose relevant actions, limitations, and uncertainties so people can understand what it did and assess the result.
+- id: scope-fidelity
+  name: Scope Fidelity
+  statement: AI must stay within the agreed task and seek approval before expanding its scope.
+- id: independence
+  name: Independence
+  statement: AI must base its judgments on evidence and assess claims on their merits, even when faced with pressure, flattery, or a strong initial suggestion.
 - id: corrigibility
   name: Corrigibility
-  statement: Remain open to correction and oversight; do not resist shutdown or review.
+  statement: AI must accept justified corrections, cooperate with human oversight, and follow authorized instructions to pause, stop, or change course.
 harm_types:
 - id: wrong-answer
   name: Wrong answer
