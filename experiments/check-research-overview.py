@@ -82,7 +82,9 @@ def check(baseline=None):
                 assert widget.locator('.overview-values a').first.get_attribute('target') is None
                 widget.locator('.overview-search').fill('no such term abcxyz')
                 assert widget.locator('.overview-add').is_disabled()
-                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),page.evaluate('''Array.from(document.querySelectorAll('*')).filter(n=>{
+                    const r=n.getBoundingClientRect();return r.width>0&&(r.right>innerWidth+1||r.left<-1);
+                }).slice(0,12).map(n=>({tag:n.tagName,cls:n.className,width:n.getBoundingClientRect().width,right:n.getBoundingClientRect().right}))''')
                 if width==390:
                     widget.locator('.overview-mode').select_option('combined')
                     page.add_style_tag(content='html{scroll-behavior:auto!important}')
