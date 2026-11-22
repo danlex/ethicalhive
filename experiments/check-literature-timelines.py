@@ -9,6 +9,7 @@ import http.server
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 import threading
 import unittest
@@ -16,6 +17,7 @@ from urllib.parse import parse_qs, urlparse
 from urllib.request import urlopen
 
 import yaml
+from literature_timeline_ui import timeline_placeholder
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('timelines', ROOT/'experiments/literature-timelines.py')
@@ -100,10 +102,23 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(collector.retry_seconds('Thu, 01 Jan 1970 00:12:00 GMT',now=0),720)
 
 
-def check_snapshot(require_complete=False):
+def check_snapshot(require_complete=False, baseline=None):
     data=json.loads((ROOT/'docs/literature-timelines.json').read_text())
     modes=yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())['modes']
     by_id={m['id']:m for m in modes}
+    home=(ROOT/'docs/index.html').read_text()
+    restored=home
+    for mode in modes:
+        placeholder=timeline_placeholder(mode)
+        assert home.count(placeholder)==1,mode['id']
+        restored=restored.replace(placeholder,'')
+    for asset in ('<link rel="stylesheet" href="assets/literature-timelines.css">',
+                  '<script defer src="assets/literature-timelines.js"></script>'):
+        assert home.count(asset)==1
+        restored=restored.replace(asset+'\n','')
+    if baseline:
+        previous=subprocess.check_output(['git','show',baseline+':docs/index.html'],cwd=ROOT,text=True)
+        assert restored==previous,'Timeline generation changed other homepage content'
     assert len(data['records'])==len(by_id)
     assert {r['id'] for r in data['records']}==set(by_id)
     for record in data['records']:
@@ -233,10 +248,11 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--browser',action='store_true');parser.add_argument('--require-complete',action='store_true')
     parser.add_argument('--live')
+    parser.add_argument('--baseline',help='Check that the homepage only adds timelines relative to this Git revision')
     args=parser.parse_args()
     result=unittest.TextTestRunner(verbosity=1).run(unittest.defaultTestLoader.loadTestsFromTestCase(CollectionTests))
     if not result.wasSuccessful():raise SystemExit(1)
-    snapshot=check_snapshot(args.require_complete)
+    snapshot=check_snapshot(args.require_complete,args.baseline)
     if args.browser:check_browser(snapshot)
     if args.live:
         assert args.live.startswith('https://')
