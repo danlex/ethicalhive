@@ -13,6 +13,7 @@ Usage: python3 experiments/build-paper-page.py
 import re
 from pathlib import Path
 import yaml
+from ethical_framework import render_framework
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "paper" / "ontology-paper.md"
@@ -184,6 +185,14 @@ def main():
     <p><a href="papers.html">Paper versions and changelog</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-runs-2026-11-09.json">Frozen run manifest</a> &middot; <a href="https://github.com/danlex/ethicalhive/blob/main/experiments/research-results-2026-11-09.md">Reproduce the results</a> &middot; <a href="#catalogue">Browse the catalogue</a></p>
   </section>'''
     home=ROOT/'docs/index.html';text=home.read_text(encoding='utf-8')
+    principles,evaluation=render_framework()
+    text,count=re.subn(r'<section class="cx-sec" id="principles">.*?</section>',lambda _:principles,text,count=1,flags=re.S)
+    if count!=1:raise ValueError('Homepage principles section not found exactly once')
+    if 'id="evaluation-categories"' in text:
+        text,count=re.subn(r'<section class="cx-sec" id="evaluation-categories">.*?</section>',lambda _:evaluation,text,count=1,flags=re.S)
+        if count!=1:raise ValueError('Homepage evaluation section not found exactly once')
+    else:
+        text=text.replace(principles,principles+'\n\n'+evaluation,1)
     text,count=re.subn(r'<section class="framework" id="paper">.*?</section>',lambda _:section,text,count=1,flags=re.S)
     if count!=1:raise ValueError('Homepage paper section not found exactly once')
     home.write_text(text,encoding='utf-8')
