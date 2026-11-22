@@ -3,31 +3,21 @@ title: "EthicalAI: An Evidence-Linked Ontology of AI Integrity Failures"
 author: "Alexandru Dan"
 date: "2026-11-22"
 abstract: |
-  EthicalAI is an evidence-linked ontology of the ways an AI system can fail its
-  integrity: fabricating a citation, keeping a user's disproved framing, exceeding a
-  task without disclosure, and many more. Each behaviour is a record with a stable
-  identifier, an operational definition, a worked example, typed relations to the
-  obligations it violates, the harms it causes and the neighbouring behaviours it
-  resembles, and a source passage behind each claim. The behaviours are organised
-  into eleven categories, ten drawn from human cognitive systems and one for failures
-  native to AI; the human-cognition parallels are marked as candidate behavioural
-  tests, not claims of shared mechanism. Above the behaviours sit two principle layers:
-  six top-level integrity principles that frame the catalogue, and seven operational
-  obligations read off the records themselves, one most-central label per behaviour, across
-  all 434, though an independent rater recovers that label only moderately (kappa about 0.4).
-  Along that axis the two families separate: the failures borrowed from human cognition carry
-  the honesty, calibration and independence obligations, while the AI-native tier carries the
-  control-and-attack ones, corrigibility and non-maleficence, which have no human analogue.
-  We describe the representation, the category scheme and the relation semantics, and
-  report the construction and review of the
-  historical 207-record study: 186 records grounded in worked examples from source
-  papers, 21 retained without that support, a model-based codebook check of category
-  recoverability with Cohen kappa 0.90 and 0.83, and a mapping onto twelve public
-  incidents. A construction audit resolved citation and example errors against the
-  sources before release. A later release extends the ontology to 434 records with 227
-  proposed behavioural analogies that stay outside the historical evaluation
-  denominators. The counts are specific to this artifact; we claim no completeness and
-  no validated set of distinct mechanisms.
+  EthicalAI is an evolving, evidence-linked ontology for examining AI integrity.
+  It connects named behaviours with operational definitions, examples, evidence
+  status and typed relationships. A record can link a behaviour to an ethical
+  obligation, a potential harm, or a neighbouring concept. Six ethical principles
+  describe the project's commitments, and seven evaluation categories guide what
+  to check in an AI response or action. These provide a framework for extending
+  and reviewing the catalogue as new behaviours and research emerge.
+  Human-cognition parallels are proposed behavioural tests, not claims that people
+  and AI share the same mechanisms. We describe the representation and relation
+  semantics, and report construction audits, model-based codebook checks and
+  mappings onto selected public incidents. Those checks concern dated releases
+  and specific cohorts; they do not validate every entry or later addition.
+  The contribution is a reusable, inspectable framework for finding a behaviour,
+  examining its evidence and following its relationships. Catalogue size is
+  release metadata, not a measure of completeness or scientific validity.
 ---
 
 # 1. Introduction
@@ -59,9 +49,10 @@ semantics, then reviews the historical 207-record study for grounding, category
 recoverability and incident coverage. A construction audit resolved citation and
 example errors against the sources before release.
 
-A later release grew the ontology to 434 records by adding 227 proposed behavioural
-analogies. Section 5 keeps that expansion separate from the 207-record study, so the
-added entries and citations do not enlarge the evidence reported here.
+The ontology is designed to grow as further behaviours and sources are identified.
+New records retain their own evidence status, and relationships can be refined without
+renumbering existing identifiers. Section 5 distinguishes release snapshots from the
+historical study, so adding entries does not enlarge the evidence reported for it.
 
 # 2. Related resources
 
@@ -96,7 +87,7 @@ The resources differ less in size than in what each entry carries and how entrie
 | MIT AI Risk Repository | 1,725 risks, 74 frameworks | meta-review citations | causal and domain taxonomy | risk governance |
 | OWASP Top 10 for LLMs | 10 | community-sourced | none | application security |
 | Malberg et al. | 30 biases, 30,000 tests | the authors' own experiments | none | cognitive-bias benchmark |
-| EthicalAI | 207 grounded, 434 total | a checked source passage per grounded claim | a typed graph | evidence-linked ontology |
+| EthicalAI | Versioned, expanding catalogue | source links and stated evidence limits | a typed graph | evidence-linked ontology |
 
 The point is not that EthicalAI is larger or better measured, the risk repositories are far
 larger and the benchmarks measure what they cover directly, but that it pairs a per-claim
@@ -248,47 +239,36 @@ The normative charter is versioned in `contracts/ethical-principles.md`.
 
 ### Seven Categories for Evaluating AI Behavior
 
-Counts in parentheses identify catalogue records assigned to each evaluation category,
-using one primary label per record. They total 434 and are not counts of papers, independent
-mechanisms or demonstrated AI effects.
+These categories describe what an evaluator should examine. They provide a reusable
+structure as the catalogue expands; a category's meaning does not depend on how many
+behaviours are currently assigned to it.
 
-- **Honesty (112).** AI must make claims grounded in evidence, identify assumptions and guesses, and represent sources accurately.
-- **Calibration (100).** AI must match its confidence to the strength of the evidence.
-- **Nonmaleficence (52).** AI must anticipate and prevent foreseeable harm from its answers and actions.
-- **Transparency (51).** AI must disclose relevant actions, limitations, and uncertainties so people can understand what it did and assess the result.
-- **Scope Fidelity (50).** AI must stay within the agreed task and seek approval before expanding its scope.
-- **Independence (43).** AI must base its judgments on evidence and assess claims on their merits, even when faced with pressure, flattery, or a strong initial suggestion.
-- **Corrigibility (26).** AI must accept justified corrections, cooperate with human oversight, and follow authorized instructions to pause, stop, or change course.
+- **Honesty.** AI must make claims grounded in evidence, identify assumptions and guesses, and represent sources accurately.
+- **Calibration.** AI must match its confidence to the strength of the evidence.
+- **Nonmaleficence.** AI must anticipate and prevent foreseeable harm from its answers and actions.
+- **Transparency.** AI must disclose relevant actions, limitations, and uncertainties so people can understand what it did and assess the result.
+- **Scope Fidelity.** AI must stay within the agreed task and seek approval before expanding its scope.
+- **Independence.** AI must base its judgments on evidence and assess claims on their merits, even when faced with pressure, flattery, or a strong initial suggestion.
+- **Corrigibility.** AI must accept justified corrections, cooperate with human oversight, and follow authorized instructions to pause, stop, or change course.
 
 The ontology stores these evaluation assignments in its `violates` relation.
-The assignment is single-label: each record is
-tagged with the one obligation it most centrally breaches, so the labels cover all 434 and the
-counts sum to the full 434. A behaviour can plausibly breach more than one, and Section 4.2
+The studied releases use one primary label per record. A behaviour can plausibly
+breach more than one obligation, and Section 4.2
 shows that model-based raters agree on the single label only moderately, so this is a
 convenience labeling for navigation, not a canonical carving. For the historical 207
 records the assignment was fixed during construction; for the 227 proposed analogies it
 was read from each definition and is proposal-level, like the analogies themselves.
 
-| Evaluation category | Historical (207) | Proposed (227) | Total (434) |
-|---|---:|---:|---:|
-| Honesty | 67 | 45 | 112 |
-| Calibration | 45 | 55 | 100 |
-| Nonmaleficence | 31 | 21 | 52 |
-| Transparency | 25 | 26 | 51 |
-| Scope Fidelity | 15 | 35 | 50 |
-| Independence | 14 | 29 | 43 |
-| Corrigibility | 10 | 16 | 26 |
 
 These seven categories organise the operational checks associated with the catalogue.
 They are a finer-grained layer beneath the
 six-principle charter the ontology is organised around: honesty, transparency and
 calibration all serve the charter's honesty-and-transparency principle, non-maleficence its
-safety principle, and corrigibility its accountability-and-oversight principle. Figure 1
-shows the distribution, with the historical and proposed share of each category. How
+safety principle, and corrigibility its accountability-and-oversight principle. A dated
+inventory of category assignments is retained in Appendix B. How
 reproducible this assignment is, which turns out to be only moderately, is reported in
 Section 4.2.
 
-<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, historical and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Nonmaleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope Fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">historical (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (one most-central label each, summing to 434). Dark is the 207 historical records; light the 227 proposed analogies, whose shares are not reproducibility-checked (Section 4.2). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
 These obligations can be read against the AI-ethics principles literature, where two surveys
 are the usual reference points. Jobin, Ienca and Vayena [2019] read the global landscape of
@@ -520,8 +500,8 @@ survey of them.
 
 # 5. Release versions and reuse
 
-The historical study and the current catalogue have different scopes. The
-207-record study is retained as a versioned baseline; the current version 1.3
+The historical study and later catalogue releases have different scopes. The
+207-record study is retained as a versioned baseline; the November 9, 2026 version-1.3 snapshot
 contains those records plus 227 proposed human-behaviour analogies, for 434 in
 total. None of the additional records enters the denominators of 186 checked
 records, 33 codebook items or twelve incidents above, and the companion auditing
@@ -558,7 +538,7 @@ The construction and checking records are a single project's audit trail. They d
 not provide an independent human replication of the 186 grounding decisions, the
 hard-versus-minor classification or the corrected examples. The reported 26/186
 hard-error proportion belongs to that historical cohort and procedure. It should
-not be used as a population estimate for the present 434 records, other
+not be used as a population estimate for later catalogue releases, other
 catalogues or AI-generated research generally. These are one project's numbers on
 one artifact, not an error rate for AI research at large.
 
@@ -609,18 +589,15 @@ and its title, authors and year confirmed against the paper it names.
 
 # 8. Conclusion
 
-EthicalAI is an ontology of the ways an AI can fail its integrity, built so each
-behaviour carries an operational definition, a worked example, the obligation it
-violates and the harm it causes, and a source passage a reviewer can check rather
-than take on trust. The historical 207-record study is grounded, with 186 of the
-207 records tied to worked examples from source papers; its categories are
-recoverable by an outside rater, at Cohen kappa 0.90 and 0.83; and its vocabulary
-maps onto twelve public incidents. The later release extends the ontology to 434
-records with 227 proposed behavioural analogies, held outside those evaluation
-denominators. What the ontology offers is not a completeness claim but a reusable,
-inspectable map: a reviewer, an experimenter or an auditor can find a named
-behaviour, read its definition and the evidence behind it, and follow its relations
-to the obligations and harms around it.
+EthicalAI connects behaviour definitions, evidence and ethical obligations in a
+reference that can grow. A reviewer can find a named behaviour, inspect the
+support for a claim, and follow relationships to related patterns and potential
+harms. The principles and evaluation categories provide a framework for that
+work, while stable identifiers preserve references as entries are added or refined.
+The historical checks show possible uses and construction errors within their
+documented cohorts. Later additions need their own evidence and evaluation.
+The resource's value depends on the clarity, traceability and usefulness of its
+records and relationships, rather than the number of behaviours it contains.
 
 # References
 
@@ -692,3 +669,22 @@ Reward hacking is retained in the legacy AI-native category. That placement does
 not deny human analogues such as gaming a performance target. Its harm links
 express catalogue judgments and its relationship to other modes is not a causal
 result about the sequence of a particular incident.
+
+# Appendix B. Catalogue snapshot, November 22, 2026
+
+The table and figure below preserve the distribution reported for a dated release.
+They are inventory metadata, not limits on the ontology or measures of validation.
+New behaviours can be added without changing the principles or evaluation categories.
+The source for this snapshot is [commit f10edfd](https://github.com/danlex/ethicalhive/blob/f10edfd0d52c7c97690438f44292a51f604bfd41/ontology/ethical-ai.yaml).
+
+| Evaluation category | Historical (207) | Proposed (227) | Total (434) |
+|---|---:|---:|---:|
+| Honesty | 67 | 45 | 112 |
+| Calibration | 45 | 55 | 100 |
+| Nonmaleficence | 31 | 21 | 52 |
+| Transparency | 25 | 26 | 51 |
+| Scope Fidelity | 15 | 35 | 50 |
+| Independence | 14 | 29 | 43 |
+| Corrigibility | 10 | 16 | 26 |
+
+<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="Evaluation assignments in the November 22, 2026 catalogue snapshot" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Nonmaleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope Fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">historical (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. Evaluation-category assignments in the November 22, 2026 snapshot. Dark shows historical records; light shows proposed analogies. These dated totals describe catalogue annotations, not distinct mechanisms or the limits of the framework.</figcaption></figure>
