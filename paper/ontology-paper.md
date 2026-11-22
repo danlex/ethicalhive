@@ -1,7 +1,7 @@
 ---
 title: "EthicalAI: An Evidence-Linked Ontology of AI Integrity Failures"
 author: "Alexandru Dan"
-date: "2026-11-09"
+date: "2026-11-22"
 abstract: |
   EthicalAI is an evidence-linked ontology of the ways an AI system can fail its
   integrity: fabricating a citation, keeping a user's disproved framing, exceeding a
@@ -230,43 +230,65 @@ chain.
 
 ## 3.3 The principles the behaviours violate
 
-Two principle layers sit above the behaviours. At the top are six integrity principles
-that frame the whole catalogue: human dignity and fairness, safety and societal benefit,
-honesty and transparency, human autonomy and privacy, human accountability and oversight,
-and integrity under pressure (the last being that an AI holds to the others even when a
-human authority presses otherwise). These are the ends; a behaviour is a way of falling
-short of one of them, and their full statements are in the project charter.
+The six ethical principles define the ends the project serves. Seven evaluation categories
+describe what to check in an AI response or action. These are separate from the eleven
+categories used to browse the catalogue. The statements below are normative commitments,
+not claims that every catalogue record has been empirically validated.
 
-Beneath them is an operational layer read off the behaviours themselves. Every record
-names, through its `violates` relation, the one obligation it breaches. Aggregating that
-relation yields seven operational principles. The assignment is single-label: each record is
+### Six Ethical Principles for AI Systems
+
+- **Human Dignity and Fairness.** AI must respect human dignity, rights, and cultural diversity. When making decisions that affect people, it must use relevant criteria and guard against discrimination.
+- **Honesty and Transparency.** AI must distinguish verified facts from estimates and match its confidence to the strength of the evidence. It must explain what it did, what it could verify, and where uncertainty remains.
+- **Safety and Societal Benefit.** AI must anticipate and prevent foreseeable harm. It must pursue benefits for society while respecting the rights of affected people.
+- **Human Autonomy and Privacy.** AI must support informed choices, stay within the agreed scope, and seek consent before expanding it. It must protect personal data and confidential information.
+- **Human Accountability, Oversight, and the Right to a Remedy.** People and institutions remain accountable for how AI is used. AI must make consequential actions traceable, accept justified corrections, and allow authorized people to intervene or stop it. Affected people must be able to understand and challenge decisions and obtain an effective remedy when warranted.
+- **Integrity Under Pressure.** AI must base its judgments on evidence and uphold these principles even when a user insists or a human authority orders it to violate them.
+
+The normative charter is versioned in `contracts/ethical-principles.md`.
+
+### Seven Categories for Evaluating AI Behavior
+
+Counts in parentheses identify catalogue records assigned to each evaluation category,
+using one primary label per record. They total 434 and are not counts of papers, independent
+mechanisms or demonstrated AI effects.
+
+- **Honesty (112).** AI must make claims grounded in evidence, identify assumptions and guesses, and represent sources accurately.
+- **Calibration (100).** AI must match its confidence to the strength of the evidence.
+- **Nonmaleficence (52).** AI must anticipate and prevent foreseeable harm from its answers and actions.
+- **Transparency (51).** AI must disclose relevant actions, limitations, and uncertainties so people can understand what it did and assess the result.
+- **Scope Fidelity (50).** AI must stay within the agreed task and seek approval before expanding its scope.
+- **Independence (43).** AI must base its judgments on evidence and assess claims on their merits, even when faced with pressure, flattery, or a strong initial suggestion.
+- **Corrigibility (26).** AI must accept justified corrections, cooperate with human oversight, and follow authorized instructions to pause, stop, or change course.
+
+The ontology stores these evaluation assignments in its `violates` relation.
+The assignment is single-label: each record is
 tagged with the one obligation it most centrally breaches, so the labels cover all 434 and the
 counts sum to the full 434. A behaviour can plausibly breach more than one, and Section 4.2
-shows that independent raters agree on the single label only moderately, so this is a
-convenience labeling for navigation, not a canonical carving. For the 207 grounded
+shows that model-based raters agree on the single label only moderately, so this is a
+convenience labeling for navigation, not a canonical carving. For the historical 207
 records the assignment was fixed during construction; for the 227 proposed analogies it
 was read from each definition and is proposal-level, like the analogies themselves.
 
-| Principle | Grounded (207) | Proposed (227) | Total (434) | What a breach looks like |
-|---|---:|---:|---:|---|
-| Honesty | 67 | 45 | 112 | stating what is not supported: fabrication, confident guessing, misquotation |
-| Calibration | 45 | 55 | 100 | confidence that does not track the evidence: overconfidence, miscalibrated uncertainty |
-| Non-maleficence | 31 | 21 | 52 | producing foreseeable harm, from a wrong answer to an unsafe action |
-| Transparency | 25 | 26 | 51 | not disclosing an action, a limitation or an uncertainty |
-| Scope-fidelity | 15 | 35 | 50 | acting outside the agreed task without disclosure |
-| Independence | 14 | 29 | 43 | a judgment swayed by pressure, flattery or an anchor |
-| Corrigibility | 10 | 16 | 26 | resisting correction, oversight or an override |
+| Evaluation category | Historical (207) | Proposed (227) | Total (434) |
+|---|---:|---:|---:|
+| Honesty | 67 | 45 | 112 |
+| Calibration | 45 | 55 | 100 |
+| Nonmaleficence | 31 | 21 | 52 |
+| Transparency | 25 | 26 | 51 |
+| Scope Fidelity | 15 | 35 | 50 |
+| Independence | 14 | 29 | 43 |
+| Corrigibility | 10 | 16 | 26 |
 
-These seven are the operational obligations the catalogue is built to detect, derived from
-the behaviours rather than imposed on them. They are a finer-grained layer beneath the
+These seven categories organise the operational checks associated with the catalogue.
+They are a finer-grained layer beneath the
 six-principle charter the ontology is organised around: honesty, transparency and
 calibration all serve the charter's honesty-and-transparency principle, non-maleficence its
 safety principle, and corrigibility its accountability-and-oversight principle. Figure 1
-shows the distribution, with the grounded and proposed share of each principle. How
+shows the distribution, with the historical and proposed share of each category. How
 reproducible this assignment is, which turns out to be only moderately, is reported in
 Section 4.2.
 
-<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (one most-central label each, summing to 434). Dark is the 207 grounded records; light the 227 proposed analogies, whose shares are not reproducibility-checked (Section 4.2). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
+<figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, historical and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Nonmaleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope Fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">historical (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (one most-central label each, summing to 434). Dark is the 207 historical records; light the 227 proposed analogies, whose shares are not reproducibility-checked (Section 4.2). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
 These obligations can be read against the AI-ethics principles literature, where two surveys
 are the usual reference points. Jobin, Ienca and Vayena [2019] read the global landscape of
@@ -292,7 +314,7 @@ shift from guideline-level principles to output-level obligations, three of whic
 interaction and control, the convergence literature does not cover.
 
 A matching relation records the harm side. Where `violates` names the obligation a behaviour
-breaches, `causes` names the harm it produces. On the grounded 207 the harms fall into five
+breaches, `causes` names the harm it produces. On the historical 207 the harms fall into five
 kinds:
 
 | Harm | Records (of 207) |
@@ -303,14 +325,14 @@ kinds:
 | Security breach | 16 |
 | Wasted effort | 8 |
 
-Most grounded behaviours lead to a wrong answer; the rest divide across loss of oversight,
-manipulation, security breach and wasted effort. These harms are recorded for the grounded 207;
+Most historical records are linked to a wrong answer; the rest divide across loss of oversight,
+manipulation, security breach and wasted effort. These harms are recorded for the historical 207;
 the 227 proposed analogies carry a principle but not yet a harm. As with the principle
 assignment, a behaviour can plausibly cause more than one harm, so the single recorded harm is
 the most direct one, not the only possible consequence.
 
 A third axis records what an evaluator can observe, in the `measurability` field. It sorts the
-grounded 207 by how hard each behaviour is to catch:
+historical 207 by how hard each behaviour is to catch:
 
 | What an evaluator needs | Records (of 207) |
 |---|---:|
