@@ -144,11 +144,14 @@
       var left = 52, top = 25, width = renderedWidth - 68, height = 184, bottom = top + height;
       var maximum = Math.max.apply(null, visible.map(function (point) { return point.count; }).concat([1]));
       var logarithmic = scale.select.value === 'log';
-      var maxValue = logarithmic ? Math.ceil(Math.log10(maximum + 1)) : maximum;
-      function y(value) { return bottom - height * (logarithmic ? Math.log10(value + 1) / maxValue : value / maxValue); }
-      var ticks = logarithmic ? [0] : [0, maximum / 4, maximum / 2, maximum * 3 / 4, maximum];
-      if (logarithmic) for (var exponent = 0; exponent < maxValue; exponent++) ticks.push(Math.pow(10, exponent + 1) - 1);
-      ticks = Array.from(new Set(ticks.map(Math.round)));
+      var magnitude = Math.pow(10, Math.floor(Math.log10(Math.max(1, maximum / 4))));
+      var ratio = Math.max(1, maximum / 4) / magnitude;
+      var step = (ratio <= 1 ? 1 : ratio <= 2 ? 2 : ratio <= 5 ? 5 : 10) * magnitude;
+      var maxValue = logarithmic ? Math.pow(10, Math.ceil(Math.log10(maximum))) : Math.ceil(maximum / step) * step;
+      function y(value) { return bottom - height * (logarithmic ? Math.log10(value + 1) / Math.log10(maxValue + 1) : value / maxValue); }
+      var ticks = [0];
+      if (logarithmic) { for (var value = 1; value <= maxValue; value *= 10) ticks.push(value); }
+      else { for (var tick = step; tick <= maxValue; tick += step) ticks.push(tick); }
       ticks.forEach(function (value) {
         chart.append(svg('line', {x1:left, x2:left + width, y1:y(value), y2:y(value), class:'timeline-grid'}));
         chart.append(svg('text', {x:left - 8, y:y(value) + 4, 'text-anchor':'end'}, number.format(value)));
