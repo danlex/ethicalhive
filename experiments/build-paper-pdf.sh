@@ -29,9 +29,9 @@ src, dst = sys.argv[1], sys.argv[2]
 t = open(src, encoding="utf-8").read()
 # drop the single raw <figure>...</figure> HTML line and replace with a LaTeX figure include
 fig = (r"\begin{figure}[h]\centering\includegraphics[width=.8\linewidth]{figure1.pdf}"
-       r"\caption{The seven operational principles the 434 behaviours violate, by number of "
-       r"records (one primary label per record, summing to 434). Dark is the historical 207 "
-       r"records, light the 227 proposed analogies. These are catalogue assignments, not validated mechanisms.}"
+       r"\caption{Evaluation-category assignments in the November 22, 2026 snapshot. "
+       r"Dark shows historical records; light shows proposed analogies. These dated totals "
+       r"describe catalogue annotations, not distinct mechanisms or the limits of the framework.}"
        r"\label{fig:principles}\end{figure}")
 repl = "```{=latex}\n" + fig + "\n```"
 t = re.sub(r"<figure.*?</figure>", lambda _m: repl, t, flags=re.S, count=1)

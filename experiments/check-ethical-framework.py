@@ -25,7 +25,10 @@ def plain(text):
 
 def check_content():
     ethical, categories = framework()
-    assert [p['count'] for p in categories] == [112, 100, 52, 51, 50, 43, 26]
+    ontology = yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())
+    mode_ids = {m['id'] for m in ontology['modes']}
+    browsing_categories = {m['category'] for m in ontology['modes']}
+    assert sum(p['count'] for p in categories) == len(mode_ids)
     md = (ROOT/'paper/ontology-paper.md').read_text()
     home = plain((ROOT/'docs/index.html').read_text())
     article = plain((ROOT/'docs/paper/ontology-paper.html').read_text())
@@ -36,21 +39,26 @@ def check_content():
         for label, text in [('homepage', home), ('article', article), ('PDF', pdf)]:
             assert p['statement'] in text, (label, p['name'])
     for p in categories:
-        assert f"{p['name']} ({p['count']})" in home
-        assert f"{p['name']} ({p['count']})" in article
+        assert f"**{p['name']}.**" in md
+        assert not re.search(re.escape(p['name']) + r' \(\d+\)', home)
+        assert not re.search(re.escape(p['name']) + r' \(\d+\)', article)
     for path in ('behaviours.json', 'research/100-behaviours.json', 'research/behaviour-candidates.json'):
         data = json.loads((ROOT/'docs'/path).read_text())
         assert data['principles'] == [{k:p[k] for k in ('id','name','statement')} for p in categories]
-        assert len(data['modes']) == 434 and len({m['category'] for m in data['modes']}) == 11
+        assert {m['id'] for m in data['modes']} == mode_ids
+        assert {m['category'] for m in data['modes']} == browsing_categories
     info = subprocess.check_output(['pdfinfo', str(ROOT/'docs/paper.pdf')], text=True)
     assert hashlib.sha256(md.encode()).hexdigest() in info
     assert (ROOT/'docs/paper.pdf').read_bytes() == (ROOT/'paper/ontology-paper.pdf').read_bytes()
     assert 'historical 207' in pdf
-    print('PASS: all 13 supplied statements, seven counts, 434 records/11 browsing categories and PDF source hash agree.')
+    assert 'Appendix B. Catalogue snapshot' in article
+    print('PASS: ethical statements, unnumbered evaluation headings, current catalogue metadata and PDF source hash agree.')
 
 
 def check_browser():
     from playwright.sync_api import sync_playwright
+    ethical, categories = framework()
+    ontology = yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())
     class Handler(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *args): pass
     server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), functools.partial(Handler, directory=str(ROOT/'docs')))
@@ -62,9 +70,10 @@ def check_browser():
                 page = browser.new_page(viewport={'width':width,'height':1000}, java_script_enabled=False)
                 page.route('https://**/*', lambda r:r.abort())
                 page.goto(f'http://127.0.0.1:{server.server_port}/', wait_until='domcontentloaded')
-                assert page.locator('#principles .cx-card').count() == 6
-                assert page.locator('#evaluation-categories .cx-card').count() == 7
-                assert page.locator('.concept').count() == 434
+                assert page.locator('#principles .cx-card').count() == len(ethical)
+                assert page.locator('#evaluation-categories .cx-card h3').all_text_contents() == [p['name'] for p in categories]
+                assert page.locator('.concept').count() == len(ontology['modes'])
+                assert not re.search(r'\b\d+\b', page.locator('.cx-hero .cx-lede').inner_text())
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
                 if width == 390:
                     page.locator('#evaluation-categories').scroll_into_view_if_needed()

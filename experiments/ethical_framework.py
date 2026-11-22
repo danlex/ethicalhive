@@ -50,17 +50,17 @@ def render_framework():
 </section>'''
     evaluation_cards = '\n'.join(
         f'      <div class="cx-card" data-principle="{escape(p["id"])}">'
-        f'<h3>{escape(p["name"])} ({p["count"]})</h3><p>{escape(p["statement"])}</p></div>'
+        f'<h3>{escape(p["name"])}</h3><p>{escape(p["statement"])}</p></div>'
         for p in categories)
     evaluation = f'''<section class="cx-sec" id="evaluation-categories">
   <div class="cx-in">
     <span class="cx-badge">Evaluation</span>
     <h2 class="cx-h2">Seven Categories for Evaluating AI Behavior</h2>
-    <p class="cx-sub">These categories describe what to check in an AI response or action. Counts show catalogue records assigned to each category, using one primary label per record. They are separate from the eleven categories used to browse the catalogue and do not count papers or independently validated mechanisms.</p>
+    <p class="cx-sub">Use these categories to examine an AI response or action: what it claims, how it expresses confidence, what it does, and how it responds to people. The framework remains useful as new behaviours and evidence are added to the catalogue.</p>
     <div class="cx-cards">
 {evaluation_cards}
     </div>
-    <p class="cx-more"><a href="paper/ontology-paper.html">Read the ontology paper →</a> · <a href="#catalogue">Browse all {sum(p['count'] for p in categories)} catalogue records</a></p>
+    <p class="cx-more"><a href="paper/ontology-paper.html">Read the ontology paper →</a> · <a href="#catalogue">Explore the behaviour catalogue</a></p>
   </div>
 </section>'''
     return principles, evaluation
