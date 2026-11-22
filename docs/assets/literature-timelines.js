@@ -100,7 +100,7 @@
     var yearLink = link('View this year’s source query', sourceURL(record));
     readout.append(output, yearLink); mount.appendChild(readout);
     mount.appendChild(element('p', 'timeline-note', 'Checked ' + record.queried_at.slice(0, 10) + '. ' + record.end_year + ' is an incomplete year in this snapshot; its bar is outlined.'));
-    if (record.total === 0) mount.appendChild(element('p', '', 'No publications matched this search in the recorded interval.'));
+    if (record.total === 0) mount.appendChild(element('p', '', 'No publications matched this search in the recorded interval. This does not establish that the behaviour is absent or unstudied.'));
     var tableDetails = element('details', 'timeline-data');
     tableDetails.appendChild(element('summary', '', 'Annual data table'));
     var tableWrap = element('div', 'timeline-table-wrap');
@@ -115,6 +115,7 @@
     var source = element('details', 'timeline-source');
     source.appendChild(element('summary', '', 'Source, dates and search scope'));
     source.appendChild(element('p', '', 'arXiv · cs.AI, cs.CL and cs.LG · first-submission year. Each matching publication is counted once, not each occurrence of a word.'));
+    source.appendChild(element('p', '', 'This AI-domain search does not cover all psychology or psychotherapy research. A zero count only describes this query, scope and retrieval date.'));
     source.appendChild(element('p', '', 'Keyword matches can be incidental. Searches use currently indexed versions: a later revision can introduce a term into a paper with an older first-submission date. These are not dates of a term’s first use.'));
     var date = record.queried_at ? record.queried_at.slice(0, 10) : 'not recorded';
     source.appendChild(element('p', '', 'Yearly snapshot checked ' + date + '.'));
