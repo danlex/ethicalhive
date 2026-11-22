@@ -11,7 +11,7 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 compile_tex() {
-  if command -v tectonic >/dev/null 2>&1; then
+  if ! command -v pdflatex >/dev/null 2>&1; then
     (cd "$TMP" && tectonic "$1")
   else
     (cd "$TMP" && pdflatex -interaction=nonstopmode -halt-on-error "$1" >compile.log 2>&1 &&
