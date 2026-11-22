@@ -115,6 +115,23 @@ def collect(mode, client, cache, end_year, page_size=PAGE_SIZE):
             if total is not None and declared != total:
                 raise ValueError('Result total changed during pagination; no complete series asserted')
             total = declared; urls.append(url)
+            if start == 0 and total > 10000:
+                # arXiv limits deep pagination. Annual aggregate queries avoid
+                # truncating broad terms or downloading tens of thousands of abstracts.
+                years = []
+                for year in range(START_YEAR, end_year+1):
+                    annual_query = '('+query+') AND submittedDate:['+str(year)+'01010000 TO '+str(year)+'12312359]'
+                    annual_url = API+'?'+urlencode({'search_query':annual_query, 'max_results':0})
+                    annual_total, _ = parse_feed(client.get(annual_url))
+                    years.append({'year':year,'count':annual_total})
+                    urls.append(annual_url)
+                if sum(point['count'] for point in years) != total:
+                    raise ValueError('Annual aggregate totals do not reconcile with the full query')
+                record.update(status='complete', total=total, years=years,
+                    method='Reconciled provider counts for disjoint first-submission-year ranges',
+                    retrieved_records=0, pages=urls)
+                path.write_text(json.dumps({**record,'records':[]}, ensure_ascii=False, indent=2)+'\n')
+                return record
             if total and not rows:
                 raise ValueError('Pagination ended before the declared total')
             for identity, published in rows:
@@ -127,6 +144,7 @@ def collect(mode, client, cache, end_year, page_size=PAGE_SIZE):
         if len(collected) != total:
             raise ValueError('Incomplete result coverage')
         record.update(status='complete', total=total, years=annual_counts(collected.items(), START_YEAR, end_year),
+                      method='Complete matching-publication metadata grouped by first-submission year',
                       retrieved_records=len(collected), pages=urls,
                       records_sha256=fingerprint(json.dumps(sorted(collected.items()))))
     except Exception as error:
