@@ -131,6 +131,33 @@ page without closing the separate paper-link gap. AI recognition benchmarks do
 not change an entry's untested-analogy status. Source-trace validation follows the
 review history so earlier accepted citations remain accountable.
 
+## Annual research timelines
+
+`docs/literature-timelines.json` and `.csv` contain a separate, dated annual-search
+snapshot keyed by stable mode ID. `experiments/literature-timelines.py fetch`
+collects the actual scoped arXiv query recorded in `literature_search.url`;
+`build` produces the public files. The existing catalogue row totals retain their
+own retrieval dates. Different snapshots need not have identical totals.
+
+The unit is matching publications per year of **first arXiv submission**, within
+cs.AI, cs.CL and cs.LG. This is neither a count of individual word occurrences nor
+a full-text citation count. Current indexed versions can contain terms added in a
+later revision, so this graph cannot establish when a term was first used. The
+year of retrieval is marked incomplete. A complete series must reconcile with
+the provider's total; missing, failed or incomplete searches have no annual
+counts and must not be plotted as zero. Complete zero-result searches are
+distinct from unavailable data.
+
+Large result sets use disjoint submission-year counts instead of a truncated
+page. The snapshot retains queries, source URLs, retrieval dates, coverage status
+and collection method. Raw publication identities and dates are retained in the
+fetch cache for metadata-based series. The timeline does not alter a record's
+selected bibliography, definition-source status or empirical AI evidence.
+An existing exhaustive zero-result search can be reused with its **original**
+retrieval date and an explicit `historical_zero_snapshot` marker. Its recorded
+total determines all annual values in that dated interval; no fresh search is
+claimed and years after that original retrieval year are not filled with zero.
+
 ## The eleven categories
 
 Ten cognitive systems: Perception, Memory, Attention, Heuristics, Reasoning,
