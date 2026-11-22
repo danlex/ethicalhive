@@ -153,6 +153,10 @@ page. The snapshot retains queries, source URLs, retrieval dates, coverage statu
 and collection method. Raw publication identities and dates are retained in the
 fetch cache for metadata-based series. The timeline does not alter a record's
 selected bibliography, definition-source status or empirical AI evidence.
+An existing exhaustive zero-result search can be reused with its **original**
+retrieval date and an explicit `historical_zero_snapshot` marker. Its recorded
+total determines all annual values in that dated interval; no fresh search is
+claimed and years after that original retrieval year are not filled with zero.
 
 ## The eleven categories
 

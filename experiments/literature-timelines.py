@@ -8,6 +8,7 @@ import argparse
 from collections import Counter
 import csv
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import hashlib
 import json
 from pathlib import Path
@@ -28,6 +29,29 @@ PAGE_SIZE = 1000
 
 class RateLimited(RuntimeError):
     pass
+
+
+def retry_seconds(value, now=None):
+    now = time.time() if now is None else now
+    try: return max(180, int(value))
+    except (TypeError, ValueError):
+        try: return max(180, int(parsedate_to_datetime(value).timestamp()-now))
+        except (TypeError, ValueError, OverflowError): return 180
+
+
+def historical_zero(mode, query):
+    source = mode['literature_search']
+    if source.get('database') != 'arXiv' or source.get('status') != 'available' or type(source.get('count')) is not int or source['count'] != 0:
+        return None
+    checked = datetime.fromisoformat(source['queried_at'].replace('Z','+00:00'))
+    if checked > datetime.now(timezone.utc): return None
+    return {'id':mode['id'], 'num':mode['num'], 'name':mode['name'],
+        'database':'arXiv', 'scope':'AI-domain preprints in cs.AI, cs.CL and cs.LG',
+        'query':query, 'query_hash':fingerprint(query), 'date_field':'first submission (Atom published)',
+        'start_year':START_YEAR, 'end_year':checked.year, 'queried_at':source['queried_at'],
+        'status':'complete', 'total':0, 'years':annual_counts([],START_YEAR,checked.year),
+        'method':'Existing dated exhaustive zero-result search; annual zeroes follow from the recorded total',
+        'historical_zero_snapshot':True, 'retrieved_records':0, 'pages':[source['url']], 'records':[]}
 
 
 def modes():
@@ -89,22 +113,25 @@ class ArxivClient:
                 return response.read()
         except HTTPError as error:
             if error.code == 429:
-                delay = error.headers.get('Retry-After', '180')
-                try: seconds = max(180, int(delay))
-                except ValueError: seconds = 180
+                seconds = retry_seconds(error.headers.get('Retry-After', '180'))
                 self.retry_at = time.time()+seconds
                 raise RateLimited('arXiv rate limit; the complete request stream is paused until '+
                                   datetime.fromtimestamp(self.retry_at, timezone.utc).isoformat(timespec='seconds')) from error
             raise
 
 
-def collect(mode, client, cache, end_year, page_size=PAGE_SIZE):
+def collect(mode, client, cache, end_year, page_size=PAGE_SIZE, reuse_zero=False):
     query = search_query(mode)
     path = cache/(str(mode['num'])+'.json')
     if path.exists():
         old = json.loads(path.read_text())
         if old.get('query_hash') == fingerprint(query) and old.get('end_year') == end_year and old.get('status') == 'complete':
             return old
+    if reuse_zero:
+        old_zero = historical_zero(mode, query)
+        if old_zero is not None:
+            path.write_text(json.dumps(old_zero, ensure_ascii=False, indent=2)+'\n')
+            return old_zero
     checked = datetime.now(timezone.utc).isoformat(timespec='seconds')
     record = {'id':mode['id'], 'num':mode['num'], 'name':mode['name'],
               'database':'arXiv', 'scope':'AI-domain preprints in cs.AI, cs.CL and cs.LG',
@@ -205,7 +232,7 @@ def build(cache, output):
                 writer.writerow({'id':record['id'],'name':record['name'],'year':point['year'],
                     'matching_publications':point['count'],'status':record['status'],
                     'snapshot_date':record.get('queried_at',''),
-                    'partial_year':point['year']==end_year if point['year']!='' else ''})
+                    'partial_year':point['year']==record['end_year'] if point['year']!='' else ''})
     print(json.dumps(dict(Counter(r['status'] for r in records))), flush=True)
 
 
@@ -216,6 +243,7 @@ def main():
     parser.add_argument('--output', type=Path, default=ROOT/'docs/literature-timelines.json')
     parser.add_argument('--ids', help='Optional comma-separated stable reference numbers')
     parser.add_argument('--interval', type=float, default=3.4)
+    parser.add_argument('--reuse-recorded-zeroes', action='store_true', help='Reuse existing exhaustive zero-result snapshots with their original retrieval dates')
     args = parser.parse_args()
     if args.interval < 3.3: parser.error('The arXiv request interval must be at least 3.3 seconds')
     if args.action == 'inspect':
@@ -235,7 +263,7 @@ def main():
         client = ArxivClient(args.interval)
         for mode in modes():
             if wanted is not None and mode['num'] not in wanted: continue
-            record = collect(mode, client, args.cache, datetime.now(timezone.utc).year)
+            record = collect(mode, client, args.cache, datetime.now(timezone.utc).year, reuse_zero=args.reuse_recorded_zeroes)
             print(mode['num'], mode['name'], record['status'], record['total'], record.get('error',''), flush=True)
             if client.retry_at is not None:
                 cooldown.write_text(json.dumps({'retry_at':client.retry_at})+'\n')

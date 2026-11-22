@@ -118,6 +118,7 @@
     source.appendChild(element('p', '', 'Keyword matches can be incidental. Searches use currently indexed versions: a later revision can introduce a term into a paper with an older first-submission date. These are not dates of a term’s first use.'));
     var date = record.queried_at ? record.queried_at.slice(0, 10) : 'not recorded';
     source.appendChild(element('p', '', 'Yearly snapshot checked ' + date + '.'));
+    if (record.historical_zero_snapshot) source.appendChild(element('p', '', 'This reuses the existing zero-result search at its original date. Its recorded total of zero establishes every annual value in that interval.'));
     if (record.catalogue_queried_at && record.catalogue_queried_at.slice(0, 10) !== date) {
       source.appendChild(element('p', '', 'The catalogue row total was checked ' + record.catalogue_queried_at.slice(0, 10) + '; different retrieval dates can give different totals.'));
     }
