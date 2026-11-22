@@ -26,6 +26,10 @@ START_YEAR = 1991
 PAGE_SIZE = 1000
 
 
+class RateLimited(RuntimeError):
+    pass
+
+
 def modes():
     return yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())['modes']
 
@@ -74,13 +78,24 @@ class ArxivClient:
     def __init__(self, interval=3.4):
         self.interval = interval
         self.previous = 0
+        self.retry_at = None
 
     def get(self, url):
         pause = self.previous + self.interval - time.monotonic()
         if pause > 0: time.sleep(pause)
         self.previous = time.monotonic()
-        with urlopen(Request(url, headers={'User-Agent':'EthicalAI-annual-literature/1.0 (https://ethicalai.alexandrudan.com)'}), timeout=45) as response:
-            return response.read()
+        try:
+            with urlopen(Request(url, headers={'User-Agent':'EthicalAI-annual-literature/1.0 (https://ethicalai.alexandrudan.com)'}), timeout=45) as response:
+                return response.read()
+        except HTTPError as error:
+            if error.code == 429:
+                delay = error.headers.get('Retry-After', '180')
+                try: seconds = max(180, int(delay))
+                except ValueError: seconds = 180
+                self.retry_at = time.time()+seconds
+                raise RateLimited('arXiv rate limit; the complete request stream is paused until '+
+                                  datetime.fromtimestamp(self.retry_at, timezone.utc).isoformat(timespec='seconds')) from error
+            raise
 
 
 def collect(mode, client, cache, end_year, page_size=PAGE_SIZE):
@@ -211,12 +226,20 @@ def main():
     elif args.action == 'build': build(args.cache, args.output)
     else:
         args.cache.mkdir(parents=True, exist_ok=True)
+        cooldown = args.cache/'cooldown.json'
+        if cooldown.exists():
+            resume = json.loads(cooldown.read_text())['retry_at']
+            if time.time() < resume:
+                raise SystemExit('Provider cooldown remains active until '+datetime.fromtimestamp(resume, timezone.utc).isoformat())
         wanted = {int(n) for n in args.ids.split(',')} if args.ids else None
         client = ArxivClient(args.interval)
         for mode in modes():
             if wanted is not None and mode['num'] not in wanted: continue
             record = collect(mode, client, args.cache, datetime.now(timezone.utc).year)
             print(mode['num'], mode['name'], record['status'], record['total'], record.get('error',''), flush=True)
+            if client.retry_at is not None:
+                cooldown.write_text(json.dumps({'retry_at':client.retry_at})+'\n')
+                raise SystemExit(2)
 
 
 if __name__ == '__main__': main()
