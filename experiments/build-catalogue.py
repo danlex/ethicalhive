@@ -378,6 +378,7 @@ def render(modes):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true", help="splice into docs/index.html")
+    ap.add_argument("--no-export", action="store_true", help="Update the HTML without rebuilding unrelated bibliography exports")
     args = ap.parse_args()
 
     onto = yaml.safe_load(ONTOLOGY.read_text(encoding="utf-8"))
@@ -418,7 +419,7 @@ def main():
         html, count=1, flags=re.DOTALL)
 
     PAGE.write_text(timeline_assets(html), encoding="utf-8")
-    export_catalogue(onto)
+    if not args.no_export: export_catalogue(onto)
 
     hl = sum(1 for m in modes if m.get("highlighted"))
     print(f"rendered {len(modes)} records in {len({m['category'] for m in modes})} ontology categories ({hl} highlighted); stable reference numbers preserved")

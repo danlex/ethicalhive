@@ -99,7 +99,7 @@
     var output = element('output'); output.setAttribute('aria-live', 'polite');
     var yearLink = link('View this year’s source query', sourceURL(record));
     readout.append(output, yearLink); mount.appendChild(readout);
-    mount.appendChild(element('p', 'timeline-note', record.end_year + ' is an incomplete year in this snapshot; its bar is outlined.'));
+    mount.appendChild(element('p', 'timeline-note', 'Checked ' + record.queried_at.slice(0, 10) + '. ' + record.end_year + ' is an incomplete year in this snapshot; its bar is outlined.'));
     if (record.total === 0) mount.appendChild(element('p', '', 'No publications matched this search in the recorded interval.'));
     var tableDetails = element('details', 'timeline-data');
     tableDetails.appendChild(element('summary', '', 'Annual data table'));

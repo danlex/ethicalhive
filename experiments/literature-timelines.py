@@ -6,6 +6,7 @@ matching publications, not occurrences of words, citations or validated effects.
 """
 import argparse
 from collections import Counter
+import csv
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -121,7 +122,7 @@ def collect(mode, client, cache, end_year, page_size=PAGE_SIZE):
                 years = []
                 for year in range(START_YEAR, end_year+1):
                     annual_query = '('+query+') AND submittedDate:['+str(year)+'01010000 TO '+str(year)+'12312359]'
-                    annual_url = API+'?'+urlencode({'search_query':annual_query, 'max_results':0})
+                    annual_url = API+'?'+urlencode({'search_query':annual_query, 'max_results':1})
                     annual_total, _ = parse_feed(client.get(annual_url))
                     years.append({'year':year,'count':annual_total})
                     urls.append(annual_url)
@@ -169,6 +170,8 @@ def build(cache, output):
         if record['id'] != mode['id'] or record['query_hash'] != fingerprint(search_query(mode)):
             raise ValueError(f"Cached series does not match the current term/query: {mode['id']}")
         record.pop('records', None)
+        record['catalogue_total'] = mode['literature_search']['count']
+        record['catalogue_queried_at'] = mode['literature_search']['queried_at']
         records.append(record)
     payload = {'schema_version':1, 'database':'arXiv', 'scope':'cs.AI OR cs.CL OR cs.LG',
                'unit':'Matching publications per year of first arXiv submission',
@@ -178,6 +181,16 @@ def build(cache, output):
                'records':records}
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n')
+    with output.with_suffix('.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=['id','name','year','matching_publications','status','snapshot_date','partial_year'])
+        writer.writeheader()
+        for record in records:
+            points = record['years'] if record['status']=='complete' else [{'year':'','count':''}]
+            for point in points:
+                writer.writerow({'id':record['id'],'name':record['name'],'year':point['year'],
+                    'matching_publications':point['count'],'status':record['status'],
+                    'snapshot_date':record.get('queried_at',''),
+                    'partial_year':point['year']==end_year if point['year']!='' else ''})
     print(json.dumps(dict(Counter(r['status'] for r in records))), flush=True)
 
 
@@ -189,6 +202,7 @@ def main():
     parser.add_argument('--ids', help='Optional comma-separated stable reference numbers')
     parser.add_argument('--interval', type=float, default=3.4)
     args = parser.parse_args()
+    if args.interval < 3.3: parser.error('The arXiv request interval must be at least 3.3 seconds')
     if args.action == 'inspect':
         rows = modes(); counts = [m['literature_search']['count'] for m in rows]
         print(json.dumps({'terms':len(rows), 'zero_in_previous_snapshot':sum(c==0 for c in counts),
