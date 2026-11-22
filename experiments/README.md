@@ -1,5 +1,32 @@
 # EthicalAI experiment harness
 
+## Annual research timelines
+
+The catalogue's expanded details include an interactive publication timeline.
+It uses the recorded arXiv query and category scope, groups by first-submission
+year, marks the retrieval year incomplete, and retains the source query and date.
+Keyword matches do not measure word occurrences, citations or proven behaviours.
+Currently indexed revisions can introduce a term into an older submission cohort.
+
+```bash
+python3 experiments/literature-timelines.py fetch --cache /tmp/ethicalai-literature-timelines --interval 6.5 --reuse-recorded-zeroes
+python3 experiments/literature-timelines.py build --cache /tmp/ethicalai-literature-timelines
+python3 experiments/build-catalogue.py --write --no-export
+python3 experiments/check-literature-timelines.py --browser
+```
+
+The cache makes interrupted collection resumable. Rate limits pause the entire
+request stream and retain the provider's retry deadline. Re-run after that
+deadline; complete cached queries are reused. Use a new cache directory for a
+fresh collection. Omit `--reuse-recorded-zeroes` to re-query historical zero-result
+searches too; when reused, their original dates and historical-snapshot status
+remain explicit. A nonzero search total never determines an annual distribution.
+
+`docs/literature-timelines.json` contains annual data, coverage and provenance;
+`.csv` provides exact values for export. Partial or failed queries are unavailable,
+never zero. `check-literature-timelines.py --require-complete` additionally requires
+complete series for every current term. `--live HTTPS_URL` verifies deployment.
+
 The benchmark + runner + writeups behind the EthicalAI workshop paper. Direction and citations
 in [`../paper/proposal.md`](../paper/proposal.md); binding writing standard in
 [`../contracts/paper-writing-contract.md`](../contracts/paper-writing-contract.md).

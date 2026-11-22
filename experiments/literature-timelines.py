@@ -43,7 +43,11 @@ def historical_zero(mode, query):
     source = mode['literature_search']
     if source.get('database') != 'arXiv' or source.get('status') != 'available' or type(source.get('count')) is not int or source['count'] != 0:
         return None
-    checked = datetime.fromisoformat(source['queried_at'].replace('Z','+00:00'))
+    try:
+        checked = datetime.fromisoformat(source['queried_at'].replace('Z','+00:00'))
+        if checked.tzinfo is None: checked=checked.replace(tzinfo=timezone.utc)
+    except (KeyError, TypeError, ValueError): return None
+    if checked.year < START_YEAR: return None
     if checked > datetime.now(timezone.utc): return None
     return {'id':mode['id'], 'num':mode['num'], 'name':mode['name'],
         'database':'arXiv', 'scope':'AI-domain preprints in cs.AI, cs.CL and cs.LG',

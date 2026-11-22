@@ -86,6 +86,18 @@ class CollectionTests(unittest.TestCase):
     def test_query_scope_is_required(self):
         self.mode['literature_search']['url']='https://export.arxiv.org/api/query?search_query=all%3Atest'
         with self.assertRaises(ValueError): collector.search_query(self.mode)
+    def test_historical_zero_keeps_its_date_and_stops_at_that_year(self):
+        self.mode['literature_search'].update(database='arXiv',status='available',count=0,queried_at='2025-10-03T12:00:00+00:00')
+        result=collector.collect(self.mode,Client([]),self.cache,2026,reuse_zero=True)
+        self.assertTrue(result['historical_zero_snapshot']);self.assertEqual(result['end_year'],2025)
+        self.assertEqual(result['queried_at'],'2025-10-03T12:00:00+00:00')
+        self.assertNotIn(2026,[p['year'] for p in result['years']])
+    def test_nonzero_total_never_supplies_an_invented_distribution(self):
+        self.mode['literature_search'].update(database='arXiv',status='available',count=3,queried_at='2025-10-03T12:00:00+00:00')
+        self.assertIsNone(collector.historical_zero(self.mode,collector.search_query(self.mode)))
+    def test_retry_after_is_respected_as_seconds_or_http_date(self):
+        self.assertEqual(collector.retry_seconds('720',now=0),720)
+        self.assertEqual(collector.retry_seconds('Thu, 01 Jan 1970 00:12:00 GMT',now=0),720)
 
 
 def check_snapshot(require_complete=False):
@@ -145,7 +157,12 @@ def check_browser(data):
                 widget.locator('.timeline-data summary').click()
                 assert widget.locator('tbody tr').count()==10
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-                if width==390:widget.screenshot(path='/tmp/ethicalai-yearly-timeline-mobile.png')
+                if width==390:
+                    widget.locator('.timeline-plot').evaluate('''node=>{
+                        const bottom=Math.max(...['.topnav','.cat-controls','#jumpNav'].map(s=>document.querySelector(s).getBoundingClientRect().bottom));
+                        window.scrollBy(0,node.getBoundingClientRect().top-bottom-70);
+                    }''')
+                    page.screenshot(path='/tmp/ethicalai-yearly-timeline-mobile.png')
                 zero_widget=page.locator('[data-timeline-term="'+zero['id']+'"]')
                 page.locator('details#'+zero['id']).evaluate('(node)=>node.open=true')
                 zero_widget.scroll_into_view_if_needed()
@@ -159,6 +176,32 @@ def check_browser(data):
             assert page.locator('.concept').count()==len(data['records'])
             assert page.locator('.literature-timeline noscript').count()==len(data['records'])
             assert page.request.get(base+'literature-timelines.csv').ok
+            page.close()
+            # A failed data request is retryable and never creates zero-valued bars.
+            page=browser.new_page(viewport={'width':390,'height':1000})
+            page.route('**/literature-timelines.json',lambda route:route.fulfill(status=503,body='temporarily unavailable'))
+            page.goto(base,wait_until='domcontentloaded')
+            target=page.locator('[data-timeline-term="'+positive['id']+'"]')
+            page.locator('details#'+positive['id']).evaluate('(node)=>node.open=true');target.scroll_into_view_if_needed()
+            page.wait_for_function('(id)=>document.querySelector("[data-timeline-term=\\""+id+"\\"]").dataset.timelineState==="error"',arg=positive['id'])
+            assert target.locator('.timeline-bar').count()==0
+            page.unroute('**/literature-timelines.json')
+            target.locator('.timeline-retry').focus();page.keyboard.press('Enter')
+            page.wait_for_function('(id)=>document.querySelector("[data-timeline-term=\\""+id+"\\"]").dataset.timelineState==="ready"',arg=positive['id'])
+            page.close()
+            # Retrieved names and queries remain text, including hostile-looking data.
+            payload=json.loads(json.dumps(data))
+            item=next(r for r in payload['records'] if r['id']==positive['id'])
+            item['name']='<img src=x onerror="window.timelineInjected=true">'
+            item['query']='"><script>window.timelineInjected=true</script>'
+            page=browser.new_page(viewport={'width':390,'height':1000})
+            page.route('**/literature-timelines.json',lambda route:route.fulfill(content_type='application/json',body=json.dumps(payload)))
+            page.goto(base,wait_until='domcontentloaded')
+            target=page.locator('[data-timeline-term="'+positive['id']+'"]')
+            page.locator('details#'+positive['id']).evaluate('(node)=>node.open=true');target.scroll_into_view_if_needed()
+            page.wait_for_function('(id)=>document.querySelector("[data-timeline-term=\\""+id+"\\"]").dataset.timelineState==="ready"',arg=positive['id'])
+            assert page.evaluate('window.timelineInjected===undefined')
+            assert target.locator('img,script').count()==0
             page.close();browser.close()
     finally:server.shutdown()
     print('PASS: lazy single fetch, time/scale controls, keyboard values, partial-year marking, zero results, mobile/tablet/desktop and no-JS downloads.')
