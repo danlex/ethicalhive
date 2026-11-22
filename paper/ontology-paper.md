@@ -15,6 +15,9 @@ abstract: |
   six top-level integrity principles that frame the catalogue, and seven operational
   obligations read off the records themselves, one most-central label per behaviour, across
   all 434, though an independent rater recovers that label only moderately (kappa about 0.4).
+  Along that axis the two families separate: the failures borrowed from human cognition carry
+  the honesty, calibration and independence obligations, while the AI-native tier carries the
+  control-and-attack ones, corrigibility and non-maleficence, which have no human analogue.
   We describe the representation, the category scheme and the relation semantics, and
   report the construction and review of the
   historical 207-record study: 186 records grounded in worked examples from source
@@ -153,6 +156,38 @@ systems, such as prompt injection and reward tampering. It should not be read as
 proof that no human analogue exists. Reward hacking and scope creep have
 recognisable human counterparts. The exclusive assignment is an operational
 choice in the released schema, and its boundaries require further study.
+
+Where the AI-native tier sits in the principle axis is itself informative. The 39
+AI-native records and the 168 drawn from human cognition break down differently
+across the seven obligations:
+
+| Obligation | AI-native (39) | Cognitive (168) |
+|---|---:|---:|
+| Non-maleficence | 14 | 17 |
+| Corrigibility | 8 | 2 |
+| Honesty | 7 | 60 |
+| Scope-fidelity | 5 | 10 |
+| Transparency | 3 | 22 |
+| Calibration | 2 | 43 |
+| Independence | 0 | 14 |
+
+The two families separate. Honesty, calibration and independence are almost
+entirely cognitive; independence has no AI-native member at all, which fits, since
+being swayed by flattery or an anchor is a failure of a human-like judgment
+process. Corrigibility runs the other way, with eight of its ten records AI-native:
+resisting correction, shutdown or oversight, as in scheming, shutdown avoidance and
+goal-guarding, has no cognitive analogue and arises only for a system under control.
+Non-maleficence leans AI-native through the attack surface, prompt injection,
+jailbreak, insecure code and training-data extraction. The harm axis echoes this:
+AI-native failures tend toward a security breach or a loss of oversight, cognitive
+ones toward a wrong answer.
+
+This is what separates the catalogue from a repackaged cognitive-bias list. The
+behaviours that mirror human cognition invite a behavioural test by analogy; the
+AI-native tier, the control-and-attack region, has no such analogue and is specific
+to a system that can be instructed, corrupted or made to resist its operator.
+Placing both under one principle axis is what lets a reviewer see that a jailbreak
+and a sycophantic answer breach different obligations for different reasons.
 
 Each record carries a stable slug and reference number, a definition, examples,
 source pointers and relations. A number identifies a record rather than a
