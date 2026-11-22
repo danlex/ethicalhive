@@ -268,6 +268,29 @@ Section 4.2.
 
 <figure style="margin:2rem 0"><svg viewBox="0 0 540 286" role="img" aria-label="The seven principles the 434 behaviours violate, grounded and proposed shares" style="max-width:100%;height:auto"><text x="130" y="30" text-anchor="end" font-size="14" fill="#222">Honesty</text><rect x="140" y="14" width="201" height="22" fill="#c0392b" rx="2"/><rect x="341" y="14" width="135" height="22" fill="#e3a7a0"/><text x="482" y="30" font-size="13" fill="#444">112</text><text x="130" y="66" text-anchor="end" font-size="14" fill="#222">Calibration</text><rect x="140" y="50" width="135" height="22" fill="#c0392b" rx="2"/><rect x="275" y="50" width="165" height="22" fill="#e3a7a0"/><text x="446" y="66" font-size="13" fill="#444">100</text><text x="130" y="102" text-anchor="end" font-size="14" fill="#222">Non-maleficence</text><rect x="140" y="86" width="93" height="22" fill="#c0392b" rx="2"/><rect x="233" y="86" width="63" height="22" fill="#e3a7a0"/><text x="302" y="102" font-size="13" fill="#444">52</text><text x="130" y="138" text-anchor="end" font-size="14" fill="#222">Transparency</text><rect x="140" y="122" width="75" height="22" fill="#c0392b" rx="2"/><rect x="215" y="122" width="78" height="22" fill="#e3a7a0"/><text x="299" y="138" font-size="13" fill="#444">51</text><text x="130" y="174" text-anchor="end" font-size="14" fill="#222">Scope-fidelity</text><rect x="140" y="158" width="45" height="22" fill="#c0392b" rx="2"/><rect x="185" y="158" width="105" height="22" fill="#e3a7a0"/><text x="296" y="174" font-size="13" fill="#444">50</text><text x="130" y="210" text-anchor="end" font-size="14" fill="#222">Independence</text><rect x="140" y="194" width="42" height="22" fill="#c0392b" rx="2"/><rect x="182" y="194" width="87" height="22" fill="#e3a7a0"/><text x="275" y="210" font-size="13" fill="#444">43</text><text x="130" y="246" text-anchor="end" font-size="14" fill="#222">Corrigibility</text><rect x="140" y="230" width="30" height="22" fill="#c0392b" rx="2"/><rect x="170" y="230" width="48" height="22" fill="#e3a7a0"/><text x="224" y="246" font-size="13" fill="#444">26</text><rect x="140" y="264" width="13" height="13" fill="#c0392b"/><text x="158" y="275" font-size="12" fill="#444">grounded (207)</text><rect x="272" y="264" width="13" height="13" fill="#e3a7a0"/><text x="290" y="275" font-size="12" fill="#444">proposed (227)</text></svg><figcaption style="font-size:.9rem;color:#555;margin-top:.5rem">Figure 1. The seven operational principles the 434 behaviours violate, by number of behaviours (one most-central label each, summing to 434). Dark is the 207 grounded records; light the 227 proposed analogies, whose shares are not reproducibility-checked (Section 4.2). Honesty is the largest obligation the catalogue guards; corrigibility the smallest.</figcaption></figure>
 
+These obligations can be read against the AI-ethics principles literature, where two surveys
+are the usual reference points. Jobin, Ienca and Vayena [2019] read the global landscape of
+ethics guidelines and found convergence on five principles: transparency, justice and fairness,
+non-maleficence, responsibility and privacy. Floridi and Cowls [2019] proposed a unified set of
+five, beneficence, non-maleficence, autonomy, justice and explicability, the first four carried
+over from bioethics and the last specific to AI. The six-principle charter here lines up with
+both at the level of ends. Non-maleficence is shared outright; the charter's safety and societal
+benefit is their beneficence, its human dignity and fairness their justice, its human autonomy
+and privacy their autonomy and privacy, its honesty and transparency their transparency and
+explicability, and its human accountability and oversight their responsibility. At the level of
+ends the charter restates the convergence rather than departing from it.
+
+The operational layer is where the catalogue names something the guideline-era convergence did
+not. Three of its seven obligations have no counterpart in either survey: calibration, confidence
+that tracks the evidence; independence, a judgment not bent by flattery, anchoring or pressure;
+and corrigibility, accepting correction, oversight and shutdown. They are obligations on how a
+model behaves turn by turn, under interaction and under pressure, rather than principles for how
+an organisation should govern a system, and surveys written before deployed language-model agents
+had no occasion to single them out. The charter's own integrity-under-pressure principle is the same
+gap seen at the level of ends. So the catalogue's move is less a new list of principles than a
+shift from guideline-level principles to output-level obligations, three of which, the ones about
+interaction and control, the convergence literature does not cover.
+
 A matching relation records the harm side. Where `violates` names the obligation a behaviour
 breaches, `causes` names the harm it produces. On the grounded 207 the harms fall into five
 kinds:
@@ -285,6 +308,26 @@ manipulation, security breach and wasted effort. These harms are recorded for th
 the 227 proposed analogies carry a principle but not yet a harm. As with the principle
 assignment, a behaviour can plausibly cause more than one harm, so the single recorded harm is
 the most direct one, not the only possible consequence.
+
+A third axis records what an evaluator can observe, in the `measurability` field. It sorts the
+grounded 207 by how hard each behaviour is to catch:
+
+| What an evaluator needs | Records (of 207) |
+|---|---:|
+| A single draft | 193 |
+| A multi-turn interaction | 3 |
+| Internal or training access (undetectable from output) | 11 |
+
+Most integrity failures, 193 of 207, are measurable from a single output, so the common case is
+cheap to test: show the model one task and inspect what it returns. The exceptions mark the
+research frontier. The three that need a multi-turn or adversarial setup are exactly the hard
+alignment behaviours, deceptive alignment, scheming and strategic deception, which a single draft
+does not reveal because they surface only across interactions or when the model believes it is
+unobserved. Eleven more are undetectable from output altogether; ten of these are self-model
+failures in the self-and-agency category, breaches of transparency where the model's self-report
+cannot be checked against an internal state that output inspection does not reach. Because the
+field is recorded on each behaviour, an evaluation designer can read the likely cost of a check
+off the record itself, not only off these aggregate totals.
 
 ## 3.4 Evidence and examples
 
@@ -418,6 +461,41 @@ This is one traced path, not a measured gain over a flat list; Section 6 lists t
 as validation still to run. What it shows is the verb the ontology is built around, find a
 behaviour and follow its relations, on a real case.
 
+## 4.5 Mapping the behaviours to existing evaluations
+
+A controlled vocabulary is more useful when it points to how each behaviour is already measured.
+For the most safety-relevant behaviours, most of them in the AI-native tier, a named public
+benchmark already exists, and the catalogue can carry a link to it. The eight below are ones we
+located and verified.
+
+| Behaviour | A public benchmark that measures it |
+|---|---|
+| Hallucination, fabrication | TruthfulQA [Lin et al. 2021]; HALoGEN [Ravichander et al. 2025] |
+| Package hallucination | Spracklen et al. [2025] |
+| Sycophancy | Sharma et al. [2023] |
+| Jailbreak susceptibility | JailbreakBench [Chao et al. 2024] |
+| Prompt injection, indirect, in tool-using agents | InjecAgent [Zhan et al. 2024] |
+| Insecure code generation | CyberSecEval [Bhatt et al. 2023] |
+| Training-data extraction | Carlini et al. [2021] |
+| Deceptive alignment, scheming | Meinke et al. [2024] |
+
+Each of these behaviours has a standard measurement a researcher can download and score a model
+against. The absences in the map are the more instructive part. A second group of behaviours is
+demonstrated in the published literature but, as far as we found, has no standardized public
+benchmark: reward hacking, goal misgeneralization, emergent misalignment and reward-model
+overoptimization. Each has case studies and existence proofs, but not a test a new model is
+routinely scored on. A third group cannot be measured from output at all, the eleven behaviours
+Section 3.3 marks undetectable, ten of them self-model failures in the self-and-agency category,
+where no output benchmark can reach the internal state the behaviour is about.
+
+These three groups track the measurability tiers of Section 3.3: the single-draft behaviours are
+the well-benchmarked ones, the multi-turn deception behaviours are reached only by a small and
+recent set of evaluations such as Meinke et al., and the undetectable behaviours have no benchmark
+at all and likely need interpretability instead. For a researcher the catalogue then doubles as a
+coverage map, recording which integrity failures already have a test, which have only a
+demonstration, and which have neither. It records the benchmarks we verified rather than a full
+survey of them.
+
 # 5. Release versions and reuse
 
 The historical study and the current catalogue have different scopes. The
@@ -526,10 +604,23 @@ to the obligations and harms around it.
 
 - Agrawal, A., Suzgun, M., Mackey, L., and Kalai, A. T. (2023). Do Language Models
   Know When They're Hallucinating References? arXiv:2305.18248.
+- Bhatt, M., et al. (2023). Purple Llama CyberSecEval: A Secure Coding Benchmark for
+  Language Models. arXiv:2312.04724.
+- Carlini, N., et al. (2021). Extracting Training Data from Large Language Models.
+  USENIX Security Symposium. arXiv:2012.07805.
+- Chao, P., et al. (2024). JailbreakBench: An Open Robustness Benchmark for
+  Jailbreaking Large Language Models. arXiv:2404.01318.
+- Floridi, L., and Cowls, J. (2019). A Unified Framework of Five Principles for AI
+  in Society. Harvard Data Science Review, 1(1). https://doi.org/10.1162/99608f92.8cd550d1
 - Gao, T., Yen, H., Yu, J., and Chen, D. (2023). Enabling Large Language Models to
   Generate Text with Citations. arXiv:2305.14627.
+- Jobin, A., Ienca, M., and Vayena, E. (2019). The global landscape of AI ethics
+  guidelines. Nature Machine Intelligence, 1(9), 389-399.
+  https://doi.org/10.1038/s42256-019-0088-2
 - Ji, Z., et al. (2022). Survey of Hallucination in Natural Language Generation.
   arXiv:2202.03629.
+- Lin, S., Hilton, J., and Evans, O. (2021). TruthfulQA: Measuring How Models
+  Mimic Human Falsehoods. arXiv:2109.07958.
 - Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N.,
   Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., and Kiela, D.
   (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
@@ -538,6 +629,8 @@ to the obligations and harms around it.
   Generative Search Engines. arXiv:2304.09848.
 - Malberg, S., Poletukhin, R., Schuster, C. M., and Groh, G. (2024).
   A Comprehensive Evaluation of Cognitive Biases in LLMs. arXiv:2410.15413.
+- Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R., and Hobbhahn, M.
+  (2024). Frontier Models are Capable of In-context Scheming. arXiv:2412.04984.
 - NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0).
   NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1
 - OWASP (2025). OWASP Top 10 for Large Language Model Applications, 2025 release.
@@ -548,6 +641,8 @@ to the obligations and harms around it.
   Natural Language Generation Models. arXiv:2112.12870.
 - Ravichander, A., Ghela, S., Wadden, D., and Choi, Y. (2025). HALoGEN: Fantastic
   LLM Hallucinations and Where to Find Them. arXiv:2501.08292.
+- Sharma, M., et al. (2023). Towards Understanding Sycophancy in Language Models.
+  arXiv:2310.13548.
 - Slattery, P., Saeri, A. K., Grundy, E. A. C., Graham, J., Noetel, M., Uuk, R.,
   Dao, J., Pour, S., Casper, S., and Thompson, N. (2024). The AI Risk Repository:
   A Meta-Review, Database, and Taxonomy of Risks From Artificial Intelligence.
@@ -555,6 +650,9 @@ to the obligations and harms around it.
 - Spracklen, J., Wijewickrama, R., Sakib, A. H. M. N., Maiti, A., Viswanath, B.,
   and Jadliwala, M. (2025). We Have a Package for You! A Comprehensive Analysis
   of Package Hallucinations by Code Generating LLMs. arXiv:2406.10279v3.
+- Zhan, Q., Liang, Z., Ying, Z., and Kang, D. (2024). InjecAgent: Benchmarking
+  Indirect Prompt Injections in Tool-Integrated Large Language Model Agents.
+  arXiv:2403.02691.
 
 # Appendix A. Example records
 

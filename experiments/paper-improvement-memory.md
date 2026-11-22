@@ -134,3 +134,26 @@ reuse what worked.
   50, independence 43, corrigibility 26; sum 434, zero missing). Paper Section 3.3 now shows the
   grounded(207)/proposed(227)/total(434) split and a stacked Figure 1; the 227 assignments are
   marked proposal-level, distinct from the grounded 207.
+
+- Observed (2026-11-22, three improvements for ethical-AI researchers; author approved all three):
+  (1) Measurability axis from the existing `measurability` field: of the grounded 207, 193 are
+  measurable from a single draft, 3 need multi-turn (exactly deceptive alignment, scheming,
+  strategic deception), 11 are undetectable from output (10/11 are self-and-agency transparency
+  failures). Added as a third axis in Section 3.3 with a table. Pure data, no citations.
+  (2) Positioned the six-principle charter + seven obligations against the AI-ethics principles
+  literature: Jobin, Ienca and Vayena 2019 (five-principle convergence) and Floridi and Cowls 2019
+  (five principles). The charter restates the convergence at the level of ends; the operational
+  layer adds three obligations the guideline-era convergence does not name (calibration,
+  independence, corrigibility, all about interaction/control). (3) Eval-coverage map as a new
+  Section 4.5: eight behaviours mapped to named public benchmarks (TruthfulQA, HALoGEN, Spracklen,
+  Sharma sycophancy, JailbreakBench, InjecAgent, CyberSecEval, Carlini extraction, Meinke scheming),
+  then the honest gaps (reward hacking / goal misgen / emergent misalignment / reward-model
+  overopt demonstrated but unbenchmarked; the 11 undetectable have no output measurement).
+- VERIFIED every new citation on source before writing: Jobin + Floridi identity via Crossref
+  (publisher pages gated), Jobin five-principle finding quoted from the arXiv abstract; all seven
+  eval benchmarks via their arXiv abs pages (title + first author + what they measure).
+- LESSON: an absence claim ("no standardized benchmark for X") still has to be made carefully.
+  Meinke et al. 2024 in-context scheming covers oversight-subversion / goal-guarding / self-exfil,
+  so those could NOT be listed as gaps. Narrowed the gap list to the specification-gaming family
+  and hedged with "as far as we found" / "records the benchmarks we verified, not every benchmark".
+  Overclaiming a gap is as wrong as overclaiming a result.
