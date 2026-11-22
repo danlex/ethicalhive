@@ -178,7 +178,7 @@ def check_browser(data):
                 if width==390:
                     widget.locator('.timeline-plot').evaluate('''node=>{
                         const bottom=Math.max(...['.topnav','.cat-controls','#jumpNav'].map(s=>document.querySelector(s).getBoundingClientRect().bottom));
-                        window.scrollBy(0,node.getBoundingClientRect().top-bottom-70);
+                        window.scrollBy({top:node.getBoundingClientRect().top-bottom-70,behavior:'instant'});
                     }''')
                     page.screenshot(path='/tmp/ethicalai-yearly-timeline-mobile.png')
                 zero_widget=page.locator('[data-timeline-term="'+zero['id']+'"]')
