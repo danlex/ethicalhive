@@ -72,6 +72,8 @@ def check(baseline=None):
                 widget.locator('.overview-mode').select_option('compare')
                 assert widget.locator('.overview-line').count()==5
                 assert widget.locator('.overview-available option').count()+widget.locator('.overview-chip').count()==len(complete)
+                widget.locator('.overview-add').click()
+                assert widget.locator('.overview-chip').count()==6 and widget.locator('.overview-add').is_disabled()
                 clear_and_add(widget,positive)
                 assert widget.locator('.overview-line').count()==1
                 assert widget.locator('tbody tr').first.locator('td').nth(1).inner_text()==f"{positive['years'][-1]['count']:,}"

@@ -240,11 +240,9 @@
     var searchLabel = element('label', '', 'Find a term');
     var search = element('input', 'overview-search'); search.type = 'search';
     search.placeholder = 'Search terms to compare'; searchLabel.appendChild(search); picker.appendChild(searchLabel);
-    var chooseLabel = element('label', 'timeline-sr-only', 'Term to add');
-    var available = element('select', 'overview-available'); available.id = 'overview-available';
-    chooseLabel.htmlFor = available.id;
+    var available = element('select', 'overview-available'); available.setAttribute('aria-label', 'Term to add');
     var add = element('button', 'overview-add', 'Add term'); add.type = 'button';
-    picker.append(chooseLabel, available, add);
+    picker.append(available, add);
     var chips = element('div', 'overview-selected'); picker.appendChild(chips);
     var selectionNote = element('p', 'timeline-note'); selectionNote.setAttribute('aria-live', 'polite'); picker.appendChild(selectionNote);
     mount.appendChild(picker);
@@ -284,7 +282,8 @@
         chips.appendChild(remove);
       });
       selectionNote.textContent = selected.length + ' of ' + colors.length + ' comparison slots used. ' +
-        (!available.options.length ? 'No other terms match this search.' : 'Remove a term to free a slot.');
+        (!available.options.length ? 'No other terms match this search.' : selected.length >= colors.length ?
+          'Remove a term to free a slot.' : 'Choose a term and select Add term.');
     }
 
     function inspect(index) {
@@ -322,8 +321,8 @@
       chart.setAttribute('viewBox', '0 0 ' + drawnWidth + ' 300');
       var left = 62, width = drawnWidth - 82, top = 30, height = 215, bottom = top + height;
       var maximum = 1;
-      active.forEach(function (record) { visible.forEach(function (year) {
-        if (compare) maximum = Math.max(maximum, record.points.get(year) || 0);
+      if (compare) active.forEach(function (record) { visible.forEach(function (year) {
+        maximum = Math.max(maximum, record.points.get(year) || 0);
       }); });
       if (!compare) maximum = Math.max.apply(null, points.map(function (point) { return point.total; }).concat([1]));
       var log = scale.select.value === 'log';
