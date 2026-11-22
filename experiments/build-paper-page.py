@@ -175,7 +175,7 @@ def main():
     (ROOT/'docs/paper/benchmark-paper.html').write_text(
         PAGE.format(body=render(mbody,1),title=m_title,description=esc(m_abs[:180]).replace('"','&quot;'),frontmatter=m_fm,canonical="paper/benchmark-paper.html",base="../"),encoding="utf-8")
     section=f'''<section class="framework" id="paper">
-    <p class="research-baseline-note"><strong>Research scope:</strong> the catalogue study describes the historical 207-record release. Its measurements and the auditing pilot do not validate the 227 later analogies in the current 434-record catalogue.</p>
+    <p class="research-baseline-note"><strong>Research scope:</strong> the studies describe dated releases and specific evaluation cohorts. New behaviours and proposed analogies require their own evidence and validation.</p>
     <h2>Research papers</h2>
     <p>Two working papers examine the catalogue's evidence and the use of named obligations to review coding-agent drafts. Revised {esc(str(data['date']))}.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
