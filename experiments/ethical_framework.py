@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def framework():
     charter = (ROOT / 'contracts/ethical-principles.md').read_text()
     ethical = []
-    for match in re.finditer(r'^## ([1-6])\. (.+)\n\n(.*?)(?=^## |\Z)', charter, re.M | re.S):
+    for match in re.finditer(r'^## ([1-6])\. ([^\n]+)\n\n(.*?)(?=^## |\Z)', charter, re.M | re.S):
         ethical.append({'name': match[2], 'statement': ' '.join(match[3].split())})
     if len(ethical) != 6:
         raise ValueError('The normative charter must contain six numbered principles')
