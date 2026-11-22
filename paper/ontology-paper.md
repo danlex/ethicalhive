@@ -212,6 +212,13 @@ lightweight ontology, or more precisely a typed, evidence-linked controlled voca
 sparse subsumption tree: defined value sets and glossed relation types, but no formal logical
 axioms, domain and range constraints or disjointness.
 
+The `relates_to` graph is not uniform. A few behaviours are hubs: hallucination connects to
+eighteen neighbours, overconfidence and sycophancy to seventeen each, groupthink to sixteen,
+while most records sit at the periphery with one or two links. The hubs are the broad,
+early-stage failures that many others specialise or compound, so a reviewer who lands on a
+narrow record is usually a short walk from one of them, which is what makes starting anywhere
+and following edges a workable way in.
+
 The graph relates modes to harms and to each other, but it does not chain one mode
 to the next. Consider the dealership-chatbot incident discussed in Section 4. An
 analyst can describe it as an instruction attack followed by compliant output and
