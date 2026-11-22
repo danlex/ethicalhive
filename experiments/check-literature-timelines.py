@@ -17,7 +17,7 @@ from urllib.parse import parse_qs, urlparse
 from urllib.request import urlopen
 
 import yaml
-from literature_timeline_ui import timeline_placeholder
+from literature_timeline_ui import timeline_placeholder, overview_placeholder
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('timelines', ROOT/'experiments/literature-timelines.py')
@@ -107,7 +107,9 @@ def check_snapshot(require_complete=False, baseline=None):
     modes=yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())['modes']
     by_id={m['id']:m for m in modes}
     home=(ROOT/'docs/index.html').read_text()
-    restored=home
+    assert home.count(overview_placeholder())==1
+    assert home.index('id="research-timeline"')<home.index('<div class="cat-controls">')
+    restored=home.replace('    '+overview_placeholder()+'\n','')
     for mode in modes:
         placeholder=timeline_placeholder(mode)
         assert home.count(placeholder)==1,mode['id']
@@ -192,7 +194,7 @@ def check_browser(data):
             page=browser.new_page(viewport={'width':390,'height':900},java_script_enabled=False)
             page.goto(base,wait_until='domcontentloaded')
             assert page.locator('.concept').count()==len(data['records'])
-            assert page.locator('.literature-timeline noscript').count()==len(data['records'])
+            assert page.locator('.concept .literature-timeline noscript').count()==len(data['records'])
             assert page.request.get(base+'literature-timelines.csv').ok
             page.close()
             # A failed data request is retryable and never creates zero-valued bars.
