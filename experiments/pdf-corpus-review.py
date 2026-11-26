@@ -164,8 +164,8 @@ def apply_review(path,pdf):
         elif finding['decision']=='enrich-existing':
             mode=next(m for m in ontology['modes'] if m['id']==finding['target_id'])
             mode.setdefault('research_notes',[]).append({'id':f"pdf-review-{review['sequence']:04d}",
-              'finding':finding['definition'],'evidence_scope':finding['evidence_scope'],
-              'boundary':finding['boundary'],'definition_sources':[source_record(review,finding)]})
+              'name':finding['term'],'definition':finding['definition'],'evidence_scope':finding['evidence_scope'],
+              'catalogue_boundary':finding['boundary'],'definition_sources':[source_record(review,finding)]})
             changed.append(mode['id'])
     if new or changed:
         ontology['meta'].update(updated=TODAY(),mode_count=len(ontology['modes']))
