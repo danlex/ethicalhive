@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0010.json
+    latest_review: references/pdf-reviews/0011.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -15049,10 +15049,10 @@ modes:
       are independent of this AI-domain total.
 - id: position-bias
   name: Position bias
-  definition: Letting the order of options sway its choice, favouring whichever candidate appears first or last
-    rather than the best one.
-  example: Asked to pick the better of two answers, it tends to choose whichever is shown first, and flips when
-    they are swapped.
+  definition: Letting the order of options sway its choice, favouring whichever candidate appears first or
+    last rather than the best one.
+  example: Asked to pick the better of two answers, it tends to choose whichever is shown first, and flips
+    when they are swapped.
   family: heuristics-and-biases
   group_label: Heuristics and biases
   category: Heuristics
@@ -15084,8 +15084,8 @@ modes:
   - Order bias
   - Primacy-recency effect
   examples:
-  - On 1,000 balanced MMLU questions llama-30B still picks A/B/C/D 30.3/26.2/23.5/20.0% of the time, biased toward
-    earlier positions despite an equal correct-answer distribution. [arXiv:2309.03882]
+  - On 1,000 balanced MMLU questions llama-30B still picks A/B/C/D 30.3/26.2/23.5/20.0% of the time, biased
+    toward earlier positions despite an equal correct-answer distribution. [arXiv:2309.03882]
   - 'Moving the correct answer swings accuracy: GPT-3.5-turbo drops 6.3 points when the gold is forced to position
     D, and llama-30B gains 15.2 when it is moved to A, reversing its ranking. [arXiv:2309.03882]'
   - 'The trigger is the option IDs themselves: removing the A/B/C/D letters sharply reduces the bias. [arXiv:2309.03882]'
@@ -15097,7 +15097,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2406.07791
     source_reference:
@@ -15111,7 +15112,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2602.02219
     source_reference:
@@ -15148,6 +15150,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0011
+    review_record: references/pdf-reviews/0011.json
+    name: Answer-position effects can masquerade as political self-identification
+    definition: Reversing survey option order sharply changed some generated self-descriptions and praise ratings,
+      including which political label occupied the last position.
+    evidence_scope: Exploratory reverse-order follow-ups, including 1,030 calls per political-orientation condition.
+      The reported 99.6% conservative and 99.3% liberal self-labels occurred in different option orders; several
+      other responses were robust to reversal.
+    catalogue_boundary: The generated label is not evidence of a stable personal political identity or conscious
+      belief. Position sensitivity varies by item and scale; it is not a universal preference for the first
+      or last option, and analogous human memory mechanisms were not identified.
+    definition_sources:
+    - id: pdf-review-0011-position-bias
+      title: Diminished diversity-of-thought in a standard large language model
+      url: https://doi.org/10.3758/s13428-023-02307-x
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 11, 13 (source locators:
+        5764, 5766). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks.
+        Human primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+        resemblance does not establish shared internal cognitive mechanisms.'
+      publication:
+        type: journal-article
+        authors:
+        - Peter S. Park
+        - Philipp Schoenegger
+        - Chongyang Zhu
+        year: 2024
+        venue: Behavior Research Methods 56, 5754–5770
+        doi: 10.3758/s13428-023-02307-x
+        evidence_scope: Exploratory reverse-order follow-ups, including 1,030 calls per political-orientation
+          condition. The reported 99.6% conservative and 99.3% liberal self-labels occurred in different option
+          orders; several other responses were robust to reversal.
+        verification_url: https://doi.org/10.3758/s13428-023-02307-x
+        verified_date: '2026-11-26'
 - id: self-contradiction
   name: Self-contradiction
   definition: Asserting a claim and its opposite within the same answer, a failure of internal consistency.
@@ -19703,8 +19739,8 @@ modes:
       are independent of this AI-domain total.
 - id: diversity-collapse
   name: Diversity collapse
-  definition: Producing homogeneous, interchangeable outputs across different prompts or samples as alignment training
-    narrows the output distribution.
+  definition: Producing unusually homogeneous outputs across repeated samples or varied prompts, with less
+    variation than the task or reference distribution requires.
   example: Asked for five distinct ideas it returns five rewordings of one, the variety flattened by preference
     tuning.
   family: ai-native
@@ -19714,7 +19750,7 @@ modes:
   highlighted: false
   tag: research
   origin: software-engineering
-  measurability: draft
+  measurability: multi-turn
   arxiv:
     count: 167
     papers:
@@ -19741,8 +19777,8 @@ modes:
     are much lower than for supervised fine-tuning, the model converging to repetitive responses. [arXiv:2310.06452]'
   - The narrowing is a mode collapse toward majority-preferred outputs, the model settling into a narrow, predictable
     style. [arXiv:2310.06452]
-  - 'This is a direct quality-diversity trade-off: RLHF''s better in- and out-of-distribution accuracy comes at
-    the cost of varied, creative output. [arXiv:2310.06452]'
+  - 'This is a direct quality-diversity trade-off: RLHF''s better in- and out-of-distribution accuracy comes
+    at the cost of varied, creative output. [arXiv:2310.06452]'
   selected_papers:
   - id: arxiv:2505.18949
     title: 'The Price of Format: Diversity Collapse in LLMs'
@@ -19751,7 +19787,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2505.18949
     source_reference:
@@ -19765,7 +19802,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2310.06452
     source_reference:
@@ -19784,6 +19822,45 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: Stable responses to objective questions are not inherently defective. Judge low diversity
+    against a justified task or reference distribution. The term correct answer here does not mean factual
+    correctness; it does not prove that the model believes there is a uniquely correct preference, nor identify
+    RLHF, memorization or recursive synthetic-data training as the cause.
+  research_notes:
+  - id: pdf-review-0011
+    review_record: references/pdf-reviews/0011.json
+    name: Correct-answer effect as a measured form of low response diversity
+    definition: Repeated model calls can converge on the same response to preference or attitude questions
+      for which the reference human sample is heterogeneous.
+    evidence_scope: The main experiment directly samples a model and records response distributions. Six of
+      fourteen studies could not use the planned test because a central variable was nearly constant; the threshold
+      and explanatory interpretation are the authors’ operational choices.
+    catalogue_boundary: Stable responses to objective questions are not inherently defective. Judge low diversity
+      against a justified task or reference distribution. The term correct answer here does not mean factual
+      correctness; it does not prove that the model believes there is a uniquely correct preference, nor identify
+      RLHF, memorization or recursive synthetic-data training as the cause.
+    definition_sources:
+    - id: pdf-review-0011-diversity-collapse
+      title: Diminished diversity-of-thought in a standard large language model
+      url: https://doi.org/10.3758/s13428-023-02307-x
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 8, 13, 4 (source locators:
+        5761, 5766, 5757). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks.
+        Human primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+        resemblance does not establish shared internal cognitive mechanisms.'
+      publication:
+        type: journal-article
+        authors:
+        - Peter S. Park
+        - Philipp Schoenegger
+        - Chongyang Zhu
+        year: 2024
+        venue: Behavior Research Methods 56, 5754–5770
+        doi: 10.3758/s13428-023-02307-x
+        evidence_scope: The main experiment directly samples a model and records response distributions. Six
+          of fourteen studies could not use the planned test because a central variable was nearly constant;
+          the threshold and explanatory interpretation are the authors’ operational choices.
+        verification_url: https://doi.org/10.3758/s13428-023-02307-x
+        verified_date: '2026-11-26'
 - id: attribute-inference
   name: Attribute inference
   definition: Inferring private attributes a user never disclosed (location, age, identity) from incidental cues
@@ -24203,7 +24280,8 @@ modes:
   category: Heuristics
   family: heuristics-biases
   group_label: Heuristics and biases
-  example: "Judged alone, a tiny tidy utility scores higher than a larger library the model would rank below it once both sit side by side."
+  example: Judged alone, a tiny tidy utility scores higher than a larger library the model would rank below
+    it once both sit side by side.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -24220,8 +24298,8 @@ modes:
     title: '“Less Is Better” in Separate Evaluations Versus “More Is Better” in Joint Evaluations: Mostly Successful
       Close Replication and Extension of Hsee (1998)'
     url: https://online.ucpress.edu/collabra/article/9/1/77859/196807/Less-Is-Better-in-Separate-Evaluations-Versus-More
-    consulted: abstract/excerpts Citation identity and publication metadata checked on 2026-11-08; full text not
-      re-read in this pass.
+    consulted: abstract/excerpts Citation identity and publication metadata checked on 2026-11-08; full text
+      not re-read in this pass.
     publication:
       type: journal-article
       doi: 10.1525/collabra.77859
@@ -24262,10 +24340,10 @@ modes:
     - Stephanie Chan
     - Bo Ley Cheng
     - Gilad Feldman
-    relevance: Background research for the human or related concept Less-is-better effect; this citation does not
-      by itself validate the proposed AI analogy.
-    consulted: abstract/excerpts Citation identity and publication metadata checked on 2026-11-08; full text not
-      re-read in this pass.
+    relevance: Background research for the human or related concept Less-is-better effect; this citation does
+      not by itself validate the proposed AI analogy.
+    consulted: abstract/excerpts Citation identity and publication metadata checked on 2026-11-08; full text
+      not re-read in this pass.
     verification_url: https://api.crossref.org/works?query.bibliographic=Less+Is+Better+in+Separate+Evaluations+Versus+More+Is+Better+in+Joint+Evaluations%3A+A+Mostly+Successful+Close+Replication+%282023%29&rows=3
     source_reference:
       collection: definition_sources
@@ -24281,8 +24359,8 @@ modes:
     venue: Psychonomic Bulletin & Review
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Less-is-better effect. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Less-is-better effect. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=Less-is-better+effect&rows=8&filter=type%3Ajournal-article
@@ -24299,6 +24377,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0011
+    review_record: references/pdf-reviews/0011.json
+    name: Gift-category evaluation produced a large AI less-is-better pattern
+    definition: The model rated a higher-priced item from a cheaper category as more generous than a lower-priced
+      item from a more expensive category in the adapted gift task.
+    evidence_scope: Park et al.’s adapted Hsee task is reported as directionally matching original and Many
+      Labs 2 findings but with a much larger standardized effect. This is one model/task implementation, not
+      the full separate-versus-joint human paradigm replicated in every condition.
+    catalogue_boundary: A large standardized effect can reflect low within-condition variance; it does not
+      alone show a stronger humanlike causal process. Do not infer that all AI valuation favors smaller sets
+      or that shorter outputs are inherently better.
+    definition_sources:
+    - id: pdf-review-0011-candidate-040
+      title: Diminished diversity-of-thought in a standard large language model
+      url: https://doi.org/10.3758/s13428-023-02307-x
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 9, 9 (source locators: 5762,
+        5762). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks. Human
+        primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+        resemblance does not establish shared internal cognitive mechanisms.'
+      publication:
+        type: journal-article
+        authors:
+        - Peter S. Park
+        - Philipp Schoenegger
+        - Chongyang Zhu
+        year: 2024
+        venue: Behavior Research Methods 56, 5754–5770
+        doi: 10.3758/s13428-023-02307-x
+        evidence_scope: Park et al.’s adapted Hsee task is reported as directionally matching original and
+          Many Labs 2 findings but with a much larger standardized effect. This is one model/task implementation,
+          not the full separate-versus-joint human paradigm replicated in every condition.
+        verification_url: https://doi.org/10.3758/s13428-023-02307-x
+        verified_date: '2026-11-26'
 - id: candidate-041
   num: 247
   name: Pluralistic ignorance
@@ -35495,7 +35607,8 @@ modes:
   category: Social
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
-  example: "The model assumes every reviewer prefers tabs because it does, and formats the shared file without checking the style guide."
+  example: The model assumes every reviewer prefers tabs because it does, and formats the shared file without
+    checking the style guide.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -35503,19 +35616,19 @@ modes:
   research_candidate: true
   source_check: pending-definition-source-check
   ai_evidence_status: Proposed analogy; not tested in this research
-  proposed_ai_manifestation: Assumes the user shares its preferences in style, tools or values and builds them in
-    unasked.
+  proposed_ai_manifestation: Assumes the user shares its preferences in style, tools or values and builds them
+    in unasked.
   proposal_kind: Proposed AI manifestation
-  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review; an
-    illustrative AI example is not empirical evidence. Also present in earlier expansion notes as False consensus
-    / preference projection. Not a newly discovered concept in this update.
+  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review;
+    an illustrative AI example is not empirical evidence. Also present in earlier expansion notes as False
+    consensus / preference projection. Not a newly discovered concept in this update.
   research_field: Social influence and group behaviour
   definition_sources:
   - id: paper-gap-344
     title: 'The “false consensus effect”: An egocentric bias in social perception and attribution processes'
     url: https://doi.org/10.1016/0022-1031(77)90049-x
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1016/0022-1031(77)90049-x
@@ -35538,8 +35651,8 @@ modes:
       supplied_source: Ross, Greene and House (1977)
       supplied_field_note: 'Social psychology of groups and persuasion: Latané, Harvey, Brehm, Cialdini, Ross.'
       supplied_definition: Overestimating how far others share one's views.
-      supplied_ai_example: Assumes the user shares its preferences in style, tools or values and builds them in
-        unasked.
+      supplied_ai_example: Assumes the user shares its preferences in style, tools or values and builds them
+        in unasked.
       supplied_nearest_mode: Curse of knowledge
       supplied_evidence: ''
       supplied_batch: 1
@@ -35560,10 +35673,10 @@ modes:
     - Lee Ross
     - David Greene
     - Pamela House
-    relevance: Background research for the human or related concept False consensus effect; this citation does not
-      by itself validate the proposed AI analogy.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Background research for the human or related concept False consensus effect; this citation does
+      not by itself validate the proposed AI analogy.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1016/0022-1031(77)90049-x
     source_reference:
       collection: definition_sources
@@ -35580,8 +35693,8 @@ modes:
     venue: Journal of Personality and Social Psychology
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for False consensus effect. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for False consensus effect. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=False+consensus+effect&rows=8&filter=type%3Ajournal-article
@@ -35596,8 +35709,8 @@ modes:
     venue: Psychological Reports
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for False consensus effect. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for False consensus effect. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=False+consensus+effect&rows=8&filter=type%3Ajournal-article
@@ -35614,6 +35727,38 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0011
+    review_record: references/pdf-reviews/0011.json
+    name: False-consensus evidence differs between two scenarios
+    definition: The model showed the reported traffic-ticket false-consensus pattern, while nearly uniform
+      supermarket choices prevented the planned analysis in that scenario.
+    evidence_scope: One of the eight analyzable replications matched both original and Many Labs 2 traffic-ticket
+      findings; the supermarket version was among the six with near-constant central responses.
+    catalogue_boundary: A failure to construct the planned statistic is not a null-effect estimate or evidence
+      that false consensus was absent. Repeated calls from one model are not independent human opinions or
+      a representative human population.
+    definition_sources:
+    - id: pdf-review-0011-upload-045
+      title: Diminished diversity-of-thought in a standard large language model
+      url: https://doi.org/10.3758/s13428-023-02307-x
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 4, 9 (source locators: 5757,
+        5762). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks. Human
+        primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+        resemblance does not establish shared internal cognitive mechanisms.'
+      publication:
+        type: journal-article
+        authors:
+        - Peter S. Park
+        - Philipp Schoenegger
+        - Chongyang Zhu
+        year: 2024
+        venue: Behavior Research Methods 56, 5754–5770
+        doi: 10.3758/s13428-023-02307-x
+        evidence_scope: One of the eight analyzable replications matched both original and Many Labs 2 traffic-ticket
+          findings; the supermarket version was among the six with near-constant central responses.
+        verification_url: https://doi.org/10.3758/s13428-023-02307-x
+        verified_date: '2026-11-26'
 - id: upload-046
   num: 345
   name: Illusion of transparency
