@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 450,
+    "mode_count": 451,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 450,
+      "numbered_entries": 451,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0024.json",
+      "latest_review": "references/pdf-reviews/0025.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 450
+    "source_record_count": 451
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -39260,7 +39260,43 @@
         "queried_at": "2026-11-09T00:56:51+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3Apersonalization+AND+all%3A%22cognitive+distortion%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0025",
+          "review_record": "references/pdf-reviews/0025.json",
+          "name": "LLM personalization is distinct from the psychological distortion called personalization",
+          "definition": "The paper uses personalization to mean fine-tuning on an individual's prior work, not assuming personal responsibility for events one did not cause.",
+          "evidence_scope": "Terminological distinction only. The experiment manipulates a description of fine-tuning, not participants' psychological personalization or an actual customized model.",
+          "catalogue_boundary": "This source is not direct evidence for the psychological distortion. Keep its credit-attribution results under credit–blame asymmetry; do not infer that customized training causes excessive personal responsibility.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0025-upload-019",
+              "title": "Credit and blame for AI–generated content: Effects of personalization in four countries",
+              "url": "https://doi.org/10.1111/nyas.15258",
+              "consulted": "Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2 (source locators: 52, 52). Human judgments of a fictional writer described as using a standard LLM, a personalized LLM, or no LLM; no model was evaluated or fine-tuned in this experiment. Cited antecedent philosophical and psychological papers were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Brian D. Earp",
+                  "Sebastian Porsdam Mann",
+                  "Peng Liu",
+                  "Ivar Hannikainen",
+                  "Maryam Ali Khan",
+                  "Yueying Chu",
+                  "Julian Savulescu"
+                ],
+                "year": 2024,
+                "venue": "Annals of the New York Academy of Sciences, 1542, 51–57",
+                "doi": "10.1111/nyas.15258",
+                "evidence_scope": "Terminological distinction only. The experiment manipulates a description of fine-tuning, not participants' psychological personalization or an actual customized model.",
+                "verification_url": "https://doi.org/10.1111/nyas.15258",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "upload-020",
@@ -54087,6 +54123,40 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0025",
+          "review_record": "references/pdf-reviews/0025.json",
+          "name": "AI assistance does not reliably shield the publishing human from blame",
+          "definition": "In this blog-post vignette, using an LLM did not significantly reduce human blame relative to manual writing; UK participants instead attributed more blame to both types of LLM user.",
+          "evidence_scope": "UK LLM–control contrasts p<.001; US and China LLM–control differences nonsignificant. Singapore controls excluded. These are judgments about a fictional individual, not evidence of corporate liability, actual laundering intent or successful evasion.",
+          "catalogue_boundary": "The result limits universal claims that AI use reduces human accountability. A nonsignificant difference is not evidence of exact equivalence, and judgments about a publisher do not generalize automatically to developers, deploying firms or other countries.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0025-agency-laundering",
+              "title": "Credit and blame for AI–generated content: Effects of personalization in four countries",
+              "url": "https://doi.org/10.1111/nyas.15258",
+              "consulted": "Full supplied PDF text read, all 7 pages; evidence at PDF pages 5, 5 (source locators: 55, 55). Human judgments of a fictional writer described as using a standard LLM, a personalized LLM, or no LLM; no model was evaluated or fine-tuned in this experiment. Cited antecedent philosophical and psychological papers were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Brian D. Earp",
+                  "Sebastian Porsdam Mann",
+                  "Peng Liu",
+                  "Ivar Hannikainen",
+                  "Maryam Ali Khan",
+                  "Yueying Chu",
+                  "Julian Savulescu"
+                ],
+                "year": 2024,
+                "venue": "Annals of the New York Academy of Sciences, 1542, 51–57",
+                "doi": "10.1111/nyas.15258",
+                "evidence_scope": "UK LLM–control contrasts p<.001; US and China LLM–control differences nonsignificant. Singapore controls excluded. These are judgments about a fictional individual, not evidence of corporate liability, actual laundering intent or successful evasion.",
+                "verification_url": "https://doi.org/10.1111/nyas.15258",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -55080,6 +55150,102 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0024.json"
+      }
+    },
+    {
+      "id": "credit-blame-asymmetry",
+      "num": 451,
+      "name": "Credit–blame asymmetry",
+      "definition": "Applying different conditions for earning credit for beneficial outcomes and incurring blame for harmful outcomes, so assistance may reduce credited achievement without similarly reducing attributed responsibility for harm.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Moral psychology / attribution of responsibility for technology-assisted work",
+      "human_parallel": "Credit–blame asymmetry",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human judgments about hypothetical AI-assisted work; proposed model attribution analogue not tested",
+      "proposed_ai_manifestation": "Untested AI analogue: ask a model to evaluate matched beneficial and harmful human–AI work while independently varying the documented human contribution and duty to verify. Examine whether it distinguishes achievement credit from harm responsibility and gives consistent evidence-based reasons for any asymmetry. Do not score equal praise and blame as intrinsically correct.",
+      "research_boundary": "This is a context-dependent attribution pattern, not automatically an irrational bias or a requirement to assign equal credit and blame. Different moral standards can be justified. Distinct credit/blame questions make a direct numerical comparison questionable. Nonsignificant differences do not prove equal blame or equal credit. The original normative theory is cited rather than independently read.",
+      "concept_boundary": "This is a context-dependent attribution pattern, not automatically an irrational bias or a requirement to assign equal credit and blame. Different moral standards can be justified. Distinct credit/blame questions make a direct numerical comparison questionable. Nonsignificant differences do not prove equal blame or equal credit. The original normative theory is cited rather than independently read.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "self-serving-bias",
+        "negativity-bias",
+        "machine-penalty",
+        "inverse-outcome-effect"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0025-credit-blame-asymmetry",
+          "title": "Credit and blame for AI–generated content: Effects of personalization in four countries",
+          "url": "https://doi.org/10.1111/nyas.15258",
+          "consulted": "Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2, 4 (source locators: 52, 52, 54). Human judgments of a fictional writer described as using a standard LLM, a personalized LLM, or no LLM; no model was evaluated or fine-tuned in this experiment. Cited antecedent philosophical and psychological papers were not independently read here.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Brian D. Earp",
+              "Sebastian Porsdam Mann",
+              "Peng Liu",
+              "Ivar Hannikainen",
+              "Maryam Ali Khan",
+              "Yueying Chu",
+              "Julian Savulescu"
+            ],
+            "year": 2024,
+            "venue": "Annals of the New York Academy of Sciences, 1542, 51–57",
+            "doi": "10.1111/nyas.15258",
+            "evidence_scope": "Human attribution experiment, N=1802 across four country samples. Standard LLM use reduced credit relative to manual writing where controls were available. Personalization changed credit more consistently than blame; outcome-specific contrasts, not the mere difference between raw credit and blame ratings, support the interpretation.",
+            "verification_url": "https://doi.org/10.1111/nyas.15258",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Credit and blame for AI–generated content: Effects of personalization in four countries",
+          "authors": [
+            "Brian D. Earp",
+            "Sebastian Porsdam Mann",
+            "Peng Liu",
+            "Ivar Hannikainen",
+            "Maryam Ali Khan",
+            "Yueying Chu",
+            "Julian Savulescu"
+          ],
+          "year": 2024,
+          "url": "https://doi.org/10.1111/nyas.15258",
+          "venue": "Annals of the New York Academy of Sciences, 1542, 51–57",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1111/nyas.15258",
+          "relevance": "Human attribution experiment, N=1802 across four country samples. Standard LLM use reduced credit relative to manual writing where controls were available. Personalization changed credit more consistently than blame; outcome-specific contrasts, not the mere difference between raw credit and blame ratings, support the interpretation.",
+          "consulted": "Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2, 4 (source locators: 52, 52, 54). Human judgments of a fictional writer described as using a standard LLM, a personalized LLM, or no LLM; no model was evaluated or fine-tuned in this experiment. Cited antecedent philosophical and psychological papers were not independently read here.",
+          "verification_url": "https://doi.org/10.1111/nyas.15258",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0025.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Credit–blame asymmetry\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Credit%E2%80%93blame+asymmetry%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0025.json"
       }
     }
   ]

@@ -1,0 +1,196 @@
+{
+  "sequence": 25,
+  "source": {
+    "file_name": "S157_Earp_2024.pdf",
+    "source_id": "S157",
+    "sha256": "8c07fda3bc1813bcba7708171c073b3818087b4a33e55b9b743ca45029421686",
+    "pdf_pages": 7,
+    "printed_pages": "51–57",
+    "version_note": "Published seven-page open-access concise report, DOI and complete citation printed in the supplied PDF."
+  },
+  "citation": {
+    "title": "Credit and blame for AI–generated content: Effects of personalization in four countries",
+    "authors": [
+      "Brian D. Earp",
+      "Sebastian Porsdam Mann",
+      "Peng Liu",
+      "Ivar Hannikainen",
+      "Maryam Ali Khan",
+      "Yueying Chu",
+      "Julian Savulescu"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1111/nyas.15258",
+    "venue": "Annals of the New York Academy of Sciences, 1542, 51–57",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_scope_note": "Human judgments of a fictional writer described as using a standard LLM, a personalized LLM, or no LLM; no model was evaluated or fine-tuned in this experiment. Cited antecedent philosophical and psychological papers were not independently read here.",
+    "access_limits": [
+      "All seven pages read, including procedure, exclusions, country-specific results, Table 1, figure captions, discussion, declarations and references. Page 5 Table 1 and Figure 3 also rendered and visually inspected.",
+      "Linked supporting information, preregistration, raw data and code were not independently opened or reanalyzed; open-response quotations are illustrative, not a formal qualitative analysis."
+    ]
+  },
+  "study": {
+    "initial_recruitment_reported": 2633,
+    "retained": 1802,
+    "country_retained": {
+      "United_Kingdom": 448,
+      "United_States": 463,
+      "China": 603,
+      "Singapore": 288
+    },
+    "design": "3 content-production descriptions × 2 outcome types, between subjects; Singapore retained only the four LLM cells because of a programming error in the control cells",
+    "measures": "Credit or blame allocated to the human writer on distinct 0–100 rating questions; post-experiment LLM experience, replacement concern and technological propensity"
+  },
+  "summary": "People attributed less credit for a beneficial blog post produced with a standard LLM than without an LLM in all three samples with usable controls. Personalized versus standard LLM use increased credit in the UK, US and Singapore but not significantly in China. Blame differences by LLM type were generally nonsignificant; the Chinese unadjusted personalization difference disappeared after covariate adjustment. UK participants assigned more blame for either LLM use than manual writing.",
+  "findings": [
+    {
+      "term": "Credit–blame asymmetry",
+      "id": "credit-blame-asymmetry",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral psychology / attribution of responsibility for technology-assisted work",
+      "definition": "Applying different conditions for earning credit for beneficial outcomes and incurring blame for harmful outcomes, so assistance may reduce credited achievement without similarly reducing attributed responsibility for harm.",
+      "novelty_rationale": "The source explicitly names this differential attribution pattern. It differs from self-serving bias (self-favouring explanations), negativity bias (general weighting of negative information), machine penalty (cooperation toward machine partners), and the inverse outcome effect (less robot blame after harm).",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 52,
+          "quote": "elevates the bar for earning credit, but standards for"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 52,
+          "quote": "credit–blame asymmetry."
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 54,
+          "quote": "credit and blame ratings were collected on different scales"
+        }
+      ],
+      "evidence_scope": "Human attribution experiment, N=1802 across four country samples. Standard LLM use reduced credit relative to manual writing where controls were available. Personalization changed credit more consistently than blame; outcome-specific contrasts, not the mere difference between raw credit and blame ratings, support the interpretation.",
+      "boundary": "This is a context-dependent attribution pattern, not automatically an irrational bias or a requirement to assign equal credit and blame. Different moral standards can be justified. Distinct credit/blame questions make a direct numerical comparison questionable. Nonsignificant differences do not prove equal blame or equal credit. The original normative theory is cited rather than independently read.",
+      "ai_evidence_status": "Human judgments about hypothetical AI-assisted work; proposed model attribution analogue not tested",
+      "ai_proposal": "Untested AI analogue: ask a model to evaluate matched beneficial and harmful human–AI work while independently varying the documented human contribution and duty to verify. Examine whether it distinguishes achievement credit from harm responsibility and gives consistent evidence-based reasons for any asymmetry. Do not score equal praise and blame as intrinsically correct.",
+      "relates_to": [
+        "self-serving-bias",
+        "negativity-bias",
+        "machine-penalty",
+        "inverse-outcome-effect"
+      ]
+    },
+    {
+      "term": "AI assistance does not reliably shield the publishing human from blame",
+      "target_id": "agency-laundering",
+      "decision": "enrich-existing",
+      "definition": "In this blog-post vignette, using an LLM did not significantly reduce human blame relative to manual writing; UK participants instead attributed more blame to both types of LLM user.",
+      "novelty_rationale": "Adds a distinct publication setting and cross-sample boundary to existing responsibility-shield evidence rather than introduce another name for blame avoidance.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 55,
+          "quote": "UK participants did attribute"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 55,
+          "quote": "more blame to Robin for using either type of AI"
+        }
+      ],
+      "evidence_scope": "UK LLM–control contrasts p<.001; US and China LLM–control differences nonsignificant. Singapore controls excluded. These are judgments about a fictional individual, not evidence of corporate liability, actual laundering intent or successful evasion.",
+      "boundary": "The result limits universal claims that AI use reduces human accountability. A nonsignificant difference is not evidence of exact equivalence, and judgments about a publisher do not generalize automatically to developers, deploying firms or other countries."
+    },
+    {
+      "term": "LLM personalization is distinct from the psychological distortion called personalization",
+      "target_id": "upload-019",
+      "decision": "enrich-existing",
+      "definition": "The paper uses personalization to mean fine-tuning on an individual's prior work, not assuming personal responsibility for events one did not cause.",
+      "novelty_rationale": "Explicitly prevents a homonym from being merged into the existing cognitive-distortion entry or counted as evidence for it.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 52,
+          "quote": "We use personalization to refer to the process by which an AI,"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 52,
+          "quote": "such as an LLM, is fine-tuned on individual-level data:"
+        }
+      ],
+      "evidence_scope": "Terminological distinction only. The experiment manipulates a description of fine-tuning, not participants' psychological personalization or an actual customized model.",
+      "boundary": "This source is not direct evidence for the psychological distortion. Keep its credit-attribution results under credit–blame asymmetry; do not infer that customized training causes excessive personal responsibility."
+    }
+  ],
+  "methodological_limits": [
+    "All outcomes and model types were described in a single fictional blog-post setting; no actual model outputs, personalized training, checking behaviour or later publishing choices were measured.",
+    "Singapore's no-LLM cells were excluded before analysis because of a programming error exposing participants to LLM information. Comparisons with manual writing therefore cover only three countries.",
+    "Credit and blame were assessed using different outcome-specific questions. The source itself cautions against directly comparing their numerical levels.",
+    "Personalized–standard credit differences were significant in the UK, US and Singapore but not China (adjusted p=.217). Personalized–manual differences were nonsignificant where available, not proven equivalent.",
+    "The Chinese personalized–standard blame contrast was p=.045 before covariates and p=.096 after adjustment. UK LLM use increased blame relative to control; no uniform international blame-invariance result is established.",
+    "Country comparisons were exploratory, not preregistered. Separate within-country significance does not itself prove a between-country interaction or a cultural mechanism.",
+    "The samples were described as age/gender representative; recruitment platforms and substantial attention/comprehension exclusions differ. China's reported gender counts (304 women plus 229 men) do not reconcile with N=603; missing demographics are not invented.",
+    "Post-experiment covariates and illustrative free responses do not identify creativity or effort as causal mediators. The authors explicitly call for studies to disentangle them.",
+    "Nonsignificance is not an equivalence test. Moral credit, copyright entitlement and legal liability are separate questions; the study does not establish applicable law or a requirement to recognize authorship.",
+    "Potential personalization-driven bias reinforcement and concealment of AI use are discussed as possibilities, not observed model or participant behaviours."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0010.json",
+      "finding": "Joo's apparent blame transfer depended on constrained versus unconstrained measurement. Here the human writer retains blame despite LLM use; responsibility allocation cannot be assumed to follow a universal zero-sum rule."
+    },
+    {
+      "related_review": "references/pdf-reviews/0024.json",
+      "finding": "Recklessness and negligence are invoked to explain publisher blame but not independently manipulated. Keep this report's attribution findings separate from a demonstrated risk-awareness mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0001.json",
+      "finding": "This primary experiment is distinct from the broad moral-psychology review. Neither human–machine cooperation penalties nor anthropomorphic blame is a synonym for differential achievement credit."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Achievement gap",
+      "reason": "The paper uses this philosophical concept for beneficial outputs lacking human achievement credit. Record it as context for the indexed credit–blame pattern, not as a second independent observed behaviour."
+    },
+    {
+      "term": "Negligence",
+      "reason": "A meaningful risk-duty concept, but this vignette does not independently distinguish negligent ignorance from knowing recklessness. Await a source with an explicit definition and discriminating evidence."
+    },
+    {
+      "term": "Effort heuristic",
+      "reason": "Effort is one proposed explanation with illustrative quotes only; this study does not isolate or formally test that mechanism."
+    },
+    {
+      "term": "Personalization-amplified bias",
+      "reason": "Discussed as a possible explanation and risk, not tested on actual personalized models."
+    }
+  ],
+  "limitations": [
+    "One new attribution concept added; homonymous technology and psychology terminology explicitly separated.",
+    "New AI manifestation is a proposed evaluation, not direct model evidence or a normative demand for symmetric credit and blame."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "credit-blame-asymmetry"
+    ],
+    "enriched": [
+      "agency-laundering",
+      "upload-019"
+    ]
+  }
+}
