@@ -104,6 +104,7 @@ def source_record(review,finding):
     doi=c['url'].split('doi.org/',1)[-1] if 'doi.org/' in c['url'] else None
     return {'id':f"pdf-review-{review['sequence']:04d}-{finding.get('id',finding.get('target_id'))}",
             'title':c['title'],'url':c['url'],'consulted':c['consulted'],
+            **({'count_as_behaviour_paper':False} if finding.get('count_as_behaviour_paper') is False else {}),
             'publication':{'type':('posted-content' if c['publication_type'] in ('preprint','posted-content') else
                 'proceedings-article' if c['publication_type']=='proceedings-article' else 'journal-article'),
               'authors':c['authors'],'year':c['year'],'venue':c['venue'],
@@ -152,7 +153,7 @@ def fill_selected_from_read_reviews(mode):
         if review.get('duplicate_of') or review.get('reading',{}).get('status')!='full-extracted-text-read':continue
         finding=next((f for f in review['findings'] if f.get('target_id')==mode['id']
                       and f['decision']=='enrich-existing'),None)
-        if finding is None:continue
+        if finding is None or finding.get('count_as_behaviour_paper') is False:continue
         paper=citation(review,finding)
         if paper['id'] in identities or normalized(paper['title']) in titles:continue
         selected.append(paper);identities.add(paper['id']);titles.add(normalized(paper['title']))
