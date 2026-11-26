@@ -58,8 +58,11 @@ def check_review(review,pdf,ontology):
     assert review['reading']['status']=='full-extracted-text-read'
     assert all(review['citation'].get(k) for k in ('title','authors','year','url','venue','publication_type'))
     ids={m['id'] for m in ontology['modes']}
+    all_ids=ids|{f['id'] for f in review['findings'] if f['decision']=='new-entry'}
     aliases={normalized(n):m['id'] for m in ontology['modes'] for n in [m['name'],*m.get('synonyms',[])]}
     for finding in review['findings']:
+        for relation in ('relates_to','is_a'):
+            assert all(target in all_ids for target in finding.get(relation,[])), (finding['term'],relation,'Unknown ontology target')
         assert finding['decision'] in ('new-entry','enrich-existing','covered','defer')
         assert finding.get('definition') and finding.get('novelty_rationale')
         if finding['decision']=='new-entry':
