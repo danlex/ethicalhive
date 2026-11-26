@@ -1,0 +1,123 @@
+{
+  "sequence": 8,
+  "source": {
+    "file_name": "S122_Kucking_2024.pdf",
+    "source_id": "S122",
+    "sha256": "fe8e4b5a767336df8891eedb5345f2f635124a840f515ae4b6f03e5e2a4e5567",
+    "pdf_pages": 7,
+    "printed_pages": "298–304"
+  },
+  "citation": {
+    "title": "Automation Bias in AI-Decision Support: Results from an Empirical Study",
+    "authors": [
+      "Florian Kücking",
+      "Ursula Hübner",
+      "Mareike Przysucha",
+      "Niels Hannemann",
+      "Jan-Oliver Kutza",
+      "Maurice Moelleken",
+      "Cornelia Erfurt-Berge",
+      "Joachim Dissemond",
+      "Birgit Babitsch",
+      "Dorothee Busch"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.3233/SHTI240871",
+    "venue": "German Medical Data Sciences 2024, Studies in Health Technology and Informatics, 298–304",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_scope_note": "The supplied PDF studies clinicians’ agreement with incorrect wound-image recommendations. Its predictor associations do not demonstrate model-internal behaviour, an intervention’s causal training benefit, or current clinical deployment safety. Earlier cited primary studies were not independently read here.",
+    "access_limits": [
+      "All seven pages of extracted text, tables, references and caption read; the sole interface figure on PDF page 3 was rendered and visually inspected.",
+      "Images and raw participant data were not independently clinically rated or statistically reanalyzed."
+    ]
+  },
+  "study": {
+    "recruited": 333,
+    "complete_cases": 210,
+    "professions": {
+      "nurses": 133,
+      "physicians": 77
+    },
+    "design": "Unaided baseline on six wound images, then six AI-supported images with three deliberately incorrect recommendations; no parallel untreated control group",
+    "model": "Multiple linear regression of a false-agreement score on baseline accuracy, prior training, profession, perceived benefit, gender and age",
+    "outcomes": "Acceptance of incorrect maceration advice, with uncertain responses scored 0.5"
+  },
+  "summary": "Higher baseline diagnostic performance and certified wound-care training were associated with lower false agreement; perceived system benefit was associated with higher false agreement. Profession and gender associations were also reported in this sample, while age was not significant. These are adjusted associations in a simulated image task, not randomized causal effects of training or demographic traits.",
+  "findings": [
+    {
+      "term": "Competence, perceived benefit and false agreement in clinical decision support",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Human acceptance of incorrect automated advice can vary with domain competence and perceived system benefit; these associations must be distinguished from causal effects of a debiasing intervention.",
+      "novelty_rationale": "False agreement is an operationalization of the existing automation-bias entry, not a new mechanism named after each predictor or clinical domain.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 299,
+          "quote": "No explicit control group was implemented"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 303,
+          "quote": "We did not study trust directly,"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 302,
+          "quote": "Perceived Benefit was"
+        }
+      ],
+      "evidence_scope": "N=210 complete-case clinician responses to maceration images. Baseline accuracy, existing wound-care certification, profession, gender and a post-task perceived-benefit score were regression predictors; half the presented recommendations were deliberately incorrect.",
+      "boundary": "Do not equate perceived usefulness with directly measured trust, or infer that raising perceived benefit causes errors. Prior training was observed rather than randomized. Agreement with an incorrect suggestion can also reflect an independently incorrect judgment; the design does not identify every error as caused by the advice. Demographic coefficients are sample associations, not inherent group traits or deployment eligibility rules."
+    }
+  ],
+  "methodological_limits": [
+    "333 started and 210 supplied complete answers; complete-case selection may affect generalization.",
+    "One simulated image-based diagnosis task, not real patient outcomes or a longitudinal study.",
+    "Only six supported images, three with incorrect advice; an uncertain response receives half credit in the false-agreement score. Authors report a binary-scoring sensitivity check, not reanalyzed here.",
+    "Post-task benefit ratings may be consequences as well as correlates of the interaction; trust was not directly measured.",
+    "Expert adjudication established task answers, but neither those image ratings nor the earlier algorithm-validation paper was independently checked here.",
+    "The discussion’s training and de-professionalization claims exceed what can be established causally by associations with pre-existing qualifications.",
+    "No detected age association is not proof of equivalence across ages."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0007.json",
+      "finding": "Kupfer used engagement proxies and randomized instruction packages, while Kücking uses false-agreement performance and observational predictors. Neither source establishes a universal causal training or reminder benefit; retain their different operational measures."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Training-protection effect; perceived-benefit bias; demographic susceptibility effects",
+      "reason": "These are predictor associations within automation bias, not distinct established named behaviours. Do not inflate ontology size with outcome/predictor combinations."
+    },
+    {
+      "term": "De-professionalization",
+      "reason": "The paper discusses the risk but does not measure longitudinal skill loss; insufficient here for a new behaviour."
+    }
+  ],
+  "limitations": [
+    "No novel standalone behaviour was supported beyond the existing automation-bias concept.",
+    "The spelling in the supplied filename is not the author identity; citation metadata was taken from the PDF."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "automation-bias"
+    ]
+  }
+}

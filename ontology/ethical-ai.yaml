@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0007.json
+    latest_review: references/pdf-reviews/0008.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10551,6 +10551,49 @@ modes:
           selected verification indicators and self-rated quality but not objective selection quality; the
           aggregation manipulation did not significantly improve either quality outcome.
         verification_url: https://doi.org/10.3389/fpsyg.2023.1118723
+        verified_date: '2026-11-26'
+  - id: pdf-review-0008
+    review_record: references/pdf-reviews/0008.json
+    name: Competence, perceived benefit and false agreement in clinical decision support
+    definition: Human acceptance of incorrect automated advice can vary with domain competence and perceived
+      system benefit; these associations must be distinguished from causal effects of a debiasing intervention.
+    evidence_scope: N=210 complete-case clinician responses to maceration images. Baseline accuracy, existing
+      wound-care certification, profession, gender and a post-task perceived-benefit score were regression
+      predictors; half the presented recommendations were deliberately incorrect.
+    catalogue_boundary: Do not equate perceived usefulness with directly measured trust, or infer that raising
+      perceived benefit causes errors. Prior training was observed rather than randomized. Agreement with an
+      incorrect suggestion can also reflect an independently incorrect judgment; the design does not identify
+      every error as caused by the advice. Demographic coefficients are sample associations, not inherent group
+      traits or deployment eligibility rules.
+    definition_sources:
+    - id: pdf-review-0008-automation-bias
+      title: 'Automation Bias in AI-Decision Support: Results from an Empirical Study'
+      url: https://doi.org/10.3233/SHTI240871
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 6, 5 (source locators:
+        299, 303, 302). The supplied PDF studies clinicians’ agreement with incorrect wound-image recommendations.
+        Its predictor associations do not demonstrate model-internal behaviour, an intervention’s causal training
+        benefit, or current clinical deployment safety. Earlier cited primary studies were not independently
+        read here.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Florian Kücking
+        - Ursula Hübner
+        - Mareike Przysucha
+        - Niels Hannemann
+        - Jan-Oliver Kutza
+        - Maurice Moelleken
+        - Cornelia Erfurt-Berge
+        - Joachim Dissemond
+        - Birgit Babitsch
+        - Dorothee Busch
+        year: 2024
+        venue: German Medical Data Sciences 2024, Studies in Health Technology and Informatics, 298–304
+        doi: 10.3233/SHTI240871
+        evidence_scope: N=210 complete-case clinician responses to maceration images. Baseline accuracy, existing
+          wound-care certification, profession, gender and a post-task perceived-benefit score were regression
+          predictors; half the presented recommendations were deliberately incorrect.
+        verification_url: https://doi.org/10.3233/SHTI240871
         verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
