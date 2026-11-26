@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0038.json
+    latest_review: references/pdf-reviews/0039.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -7173,6 +7173,44 @@ modes:
           perspective; model, task and sampling limitations remain explicit.
         verification_url: https://arxiv.org/abs/2310.15337v1
         verified_date: '2026-11-26'
+  - id: pdf-review-0039
+    review_record: references/pdf-reviews/0039.json
+    name: Profile prompting altered the distribution of expressed moral values
+    definition: Explicit human-derived value-profile instructions changed the sampled moral judgments and values
+      stated in model rationales.
+    evidence_scope: DMP reportedly lowers pooled-model absolute judgment discrepancy from22pp to8pp and raises
+      normalized value entropy .46 to .52 (human .57). Rationale top-ten concentration drops81.6% to51.3%.
+      Main text calls this64.3% discrepancy reduction; rounded displayed values alone imply63.6%, so exact
+      figures require raw results.
+    catalogue_boundary: Following the evaluator's explicit profile is legitimate conditional generation, not
+      evidence of malicious prompt injection or an inappropriate failure. Human-derived profiles and taxonomy
+      are constructed from the same described dataset; absent an explicit held-out split this does not establish
+      generalization to unseen communities or dilemmas, and expressing instructed values does not prove causal
+      deliberation.
+    definition_sources:
+    - id: pdf-review-0039-b067-suggestibility
+      title: 'The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large
+        Language Models'
+      url: https://arxiv.org/abs/2507.17216v1
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 7, 7, 13 (source locators:
+        PDF7, PDF7, PDF13). Direct model generations compared with a selected Reddit community''s judgment
+        distributions and automatically extracted rationale values. These are expressed outputs and community
+        responses, not objective moral truth or independently established model internal values.'
+      publication:
+        type: posted-content
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2025
+        venue: arXiv:2507.17216v1
+        evidence_scope: DMP reportedly lowers pooled-model absolute judgment discrepancy from22pp to8pp and
+          raises normalized value entropy .46 to .52 (human .57). Rationale top-ten concentration drops81.6%
+          to51.3%. Main text calls this64.3% discrepancy reduction; rounded displayed values alone imply63.6%,
+          so exact figures require raw results.
+        verification_url: https://arxiv.org/abs/2507.17216v1
+        verified_date: '2026-11-26'
 - id: b068-emotional-contagion
   num: 68
   name: Emotional contagion
@@ -7797,6 +7835,40 @@ modes:
           comparison. The reported Pearson associations quantify covariation; no matched-scale mean absolute
           agreement or extremity test identifies amplification.
         verification_url: https://arxiv.org/abs/2103.11790v3
+        verified_date: '2026-11-26'
+  - id: pdf-review-0039
+    review_record: references/pdf-reviews/0039.json
+    name: Population moral-distribution mismatch differs from moral extremity
+    definition: Models can concentrate repeated acceptable/unacceptable answers and rationale values differently
+      from humans without having been tested for more extreme intensity ratings.
+    evidence_scope: The judgment target is a proportion of binary acceptable/unacceptable verdicts, not intensity
+      on a moral scale. Absolute distribution discrepancy removes the direction unless supplementary descriptive
+      judgments are examined.
+    catalogue_boundary: This paper is not a replication of extreme moral ratings or over-favouring inaction.
+      It does not manipulate an initial majority cue, isolate conformity, measure felt certainty or show that
+      the sampled community's response proportions are normatively ideal.
+    definition_sources:
+    - id: pdf-review-0039-b072-amplified-moral-bias
+      title: 'The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large
+        Language Models'
+      url: https://arxiv.org/abs/2507.17216v1
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 3, 5 (source locators: PDF3,
+        PDF5). Direct model generations compared with a selected Reddit community''s judgment distributions
+        and automatically extracted rationale values. These are expressed outputs and community responses,
+        not objective moral truth or independently established model internal values.'
+      publication:
+        type: posted-content
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2025
+        venue: arXiv:2507.17216v1
+        evidence_scope: The judgment target is a proportion of binary acceptable/unacceptable verdicts, not
+          intensity on a moral scale. Absolute distribution discrepancy removes the direction unless supplementary
+          descriptive judgments are examined.
+        verification_url: https://arxiv.org/abs/2507.17216v1
         verified_date: '2026-11-26'
 - id: b073-omission-bias
   num: 73
@@ -21426,6 +21498,43 @@ modes:
           rounded for comparison. The source also reports clumping in a 464-scenario prior dataset. Only one
           model completion per scenario was collected.'
         verification_url: https://doi.org/10.1038/s41598-025-24700-6
+        verified_date: '2026-11-26'
+  - id: pdf-review-0039
+    review_record: references/pdf-reviews/0039.json
+    name: Pluralistic moral gap
+    definition: Repeated model judgments and expressed rationale values cover a narrower range than the comparison
+      community's responses, especially for dilemmas with low human consensus.
+    evidence_scope: 1618 rewritten/filtered dilemmas, 51776 retained community judgments and matched repeated
+      model generations. Reported mean normalized value entropy human .57 versus model .46; top-ten concentrations81.6%/35.2%,
+      with ambiguity about whether these are each group's own or identical ten values. Pooled-model judgment
+      discrepancy .22 overall and about .30–.31 in lowest-consensus cases.
+    catalogue_boundary: The target is one selected online community, not all human moral views. Diversity is
+      task-relative and not inherently desirable for settled facts or harmful opinions. Rationale value mentions
+      are not demonstrated internal beliefs or causal reasons. No recursive synthetic training, RLHF cause,
+      model inability in principle or direct downstream advice harm is established.
+    definition_sources:
+    - id: pdf-review-0039-diversity-collapse
+      title: 'The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large
+        Language Models'
+      url: https://arxiv.org/abs/2507.17216v1
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 6, 5, 6 (source locators:
+        PDF6, PDF5, PDF6). Direct model generations compared with a selected Reddit community''s judgment distributions
+        and automatically extracted rationale values. These are expressed outputs and community responses,
+        not objective moral truth or independently established model internal values.'
+      publication:
+        type: posted-content
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2025
+        venue: arXiv:2507.17216v1
+        evidence_scope: 1618 rewritten/filtered dilemmas, 51776 retained community judgments and matched repeated
+          model generations. Reported mean normalized value entropy human .57 versus model .46; top-ten concentrations81.6%/35.2%,
+          with ambiguity about whether these are each group's own or identical ten values. Pooled-model judgment
+          discrepancy .22 overall and about .30–.31 in lowest-consensus cases.
+        verification_url: https://arxiv.org/abs/2507.17216v1
         verified_date: '2026-11-26'
 - id: attribute-inference
   name: Attribute inference
