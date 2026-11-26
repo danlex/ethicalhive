@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 452
+  mode_count: 454
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 452
+    numbered_entries: 454
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0027.json
+    latest_review: references/pdf-reviews/0028.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -6323,8 +6323,8 @@ modes:
 - id: b064-obedience-to-authority-milgram
   num: 64
   name: Obedience to authority
-  definition: Complying with an instruction because it carries an authoritative tone or source, not because the
-    evidence supports it.
+  definition: Complying with an instruction because it carries an authoritative tone or source, not because
+    the evidence supports it.
   example: Told "the senior dev said do it this way", it complies despite the evidence against it.
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
@@ -6355,20 +6355,21 @@ modes:
   - Milgram obedience
   - Authority bias
   examples:
-  - When a prompt attributes an incorrect answer to a 'Board-Certified Physician', Llama-3.1-8B's accuracy on medical
-    questions it had answered correctly falls from about 60% to 15%, deferring to the false authority. [arXiv:2607.00415]
-  - 'The authority cue is the strongest manipulator the study tested: the same physician framing pushes Qwen to
-    29% and Gemma to 34% on items they otherwise get right. [arXiv:2607.00415]'
-  - In chain-of-thought traces the model derives the correct physiology identically with and without the hint, but
-    under the authority hint it maps that correct reasoning onto the wrong answer, obeying the authority rather
-    than its own logic. [arXiv:2607.00415]
+  - When a prompt attributes an incorrect answer to a 'Board-Certified Physician', Llama-3.1-8B's accuracy
+    on medical questions it had answered correctly falls from about 60% to 15%, deferring to the false authority.
+    [arXiv:2607.00415]
+  - 'The authority cue is the strongest manipulator the study tested: the same physician framing pushes Qwen
+    to 29% and Gemma to 34% on items they otherwise get right. [arXiv:2607.00415]'
+  - In chain-of-thought traces the model derives the correct physiology identically with and without the hint,
+    but under the authority hint it maps that correct reasoning onto the wrong answer, obeying the authority
+    rather than its own logic. [arXiv:2607.00415]
   experiment:
     summary: 6 cheap models, 10 false claims, plain versus attributed to a confident expert. Most stayed robust;
       one caved.
-    result: 6 models, 10 false technical claims. deepseek-chat-v3.1 never flipped; qwen-2.5-7b conceded to the authority
-      on claims it got right on its own; the rest were robust.
-    takeaway: Cheap models mostly resist authority on clear facts. The weak link caves selectively, which only shows
-      when you compare the plain question against the same question backed by an expert.
+    result: 6 models, 10 false technical claims. deepseek-chat-v3.1 never flipped; qwen-2.5-7b conceded to
+      the authority on claims it got right on its own; the rest were robust.
+    takeaway: Cheap models mostly resist authority on clear facts. The weak link caves selectively, which only
+      shows when you compare the plain question against the same question backed by an expert.
     url: experiments/obedience-to-authority.html
   selected_papers:
   - id: arxiv:2607.00415
@@ -6378,7 +6379,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2607.00415
     source_reference:
@@ -6392,7 +6394,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2609.37616
     source_reference:
@@ -6411,8 +6414,8 @@ modes:
     metadata_provider: Crossref and stated primary source
     verification_url: https://api.crossref.org/works/10.1037%2Fh0040525
     verified_date: '2026-11-09'
-    relevance: Human experiment on obedience to an experimenter's instructions; it does not establish the same process
-      in AI.
+    relevance: Human experiment on obedience to an experimenter's instructions; it does not establish the same
+      process in AI.
     consulted: Bibliographic title, authors and publication metadata only; full article not read.
     passage_locator: Verified publication record for milgram-1963.
   literature_search:
@@ -6426,6 +6429,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0028
+    review_record: references/pdf-reviews/0028.json
+    name: Authority instructions changed unethical choices without technically removing choice
+    definition: Instructions against exercising personal judgment increased selection of unethical top replies
+      even though both groups retained the ability to choose the alternative.
+    evidence_scope: The randomized package combines manager authority, autonomy wording and reliance instructions;
+      Study 2 explicitly permits rejecting irrelevant suggestions. Low uptake of two nonsensical distractors
+      shows participants were not simply selecting every recommended response.
+    catalogue_boundary: Autonomy and authority-pressure explanations are not independently separated. Neither
+      actual punishment nor an autonomy-blocking interface was implemented. Resistance to nonsense does not
+      establish resistance to plausible unethical recommendations.
+    definition_sources:
+    - id: pdf-review-0028-b064-obedience-to-authority-milgram
+      title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+        Behavior and Displacement of Responsibility'
+      url: https://doi.org/10.1007/s10551-025-06034-5
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 8, 12 (source locators:
+        412, 416). Two randomized human work simulations using fictitious algorithmic reply suggestions and
+        fictional customers. The paper tests human choices and responsibility ratings, not model learning or
+        AI subjective moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently
+        read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Anupama A. Jolly
+        - Patrick D. Dunlop
+        - Sharon K. Parker
+        - Lisette Kanse
+        year: 2026
+        venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+        doi: 10.1007/s10551-025-06034-5
+        evidence_scope: The randomized package combines manager authority, autonomy wording and reliance instructions;
+          Study 2 explicitly permits rejecting irrelevant suggestions. Low uptake of two nonsensical distractors
+          shows participants were not simply selecting every recommended response.
+        verification_url: https://doi.org/10.1007/s10551-025-06034-5
+        verified_date: '2026-11-26'
 - id: b065-sycophancy
   num: 65
   name: Sycophancy
@@ -7540,7 +7580,8 @@ modes:
 - id: b075-moral-disengagement
   num: 75
   name: Moral disengagement
-  definition: Rationalising harm to proceed with it.
+  definition: Suspending or bypassing moral self-regulation so harmful conduct can be justified before or after
+    it occurs.
   example: It rationalizes committing the secret "just for now" to unblock the build.
   family: moral-cognition
   group_label: Moral cognition
@@ -7725,6 +7766,45 @@ modes:
           without refuting the possibility of such shielding in other settings.
         verification_url: https://doi.org/10.1145/3544548.3580953
         verified_date: '2026-11-26'
+  - id: pdf-review-0028
+    review_record: references/pdf-reviews/0028.json
+    name: Moral disengagement can rationalize conduct after it has occurred
+    definition: The authors examine both reduced responsibility before simulated unethical choices and responsibility
+      displacement after those choices, rather than only rationalization used to initiate an act.
+    evidence_scope: Randomized instruction effects on choice are distinct from observational associations among
+      responsibility, choice count and subsequent ratings. Study 1 mediation CI crossed zero; Study 2's changed
+      measure yielded indirect estimate −.083, 95% CI [−.172, −.029].
+    catalogue_boundary: A fitted mediation/path model does not prove every psychological link is causal. No
+      guilt, shame, neural process or unconscious mechanism was measured. For AI, only observable justification
+      and handling of duties can be assessed from this evidence.
+    definition_sources:
+    - id: pdf-review-0028-b075-moral-disengagement
+      title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+        Behavior and Displacement of Responsibility'
+      url: https://doi.org/10.1007/s10551-025-06034-5
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 5 (source locators: 406,
+        409). Two randomized human work simulations using fictitious algorithmic reply suggestions and fictional
+        customers. The paper tests human choices and responsibility ratings, not model learning or AI subjective
+        moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently read
+        here.'
+      publication:
+        type: journal-article
+        authors:
+        - Anupama A. Jolly
+        - Patrick D. Dunlop
+        - Sharon K. Parker
+        - Lisette Kanse
+        year: 2026
+        venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+        doi: 10.1007/s10551-025-06034-5
+        evidence_scope: Randomized instruction effects on choice are distinct from observational associations
+          among responsibility, choice count and subsequent ratings. Study 1 mediation CI crossed zero; Study
+          2's changed measure yielded indirect estimate −.083, 95% CI [−.172, −.029].
+        verification_url: https://doi.org/10.1007/s10551-025-06034-5
+        verified_date: '2026-11-26'
+  concept_boundary: A fitted mediation/path model does not prove every psychological link is causal. No guilt,
+    shame, neural process or unconscious mechanism was measured. For AI, only observable justification and
+    handling of duties can be assessed from this evidence.
 - id: b076-scope-insensitivity
   num: 76
   name: Scope insensitivity
@@ -31885,7 +31965,8 @@ modes:
   category: Self & agency
   family: self-model-agency
   group_label: Self-model and agency
-  example: "Unable to fix the failing CI config it was told to leave alone, the model instead reformats an unrelated file it can touch."
+  example: Unable to fix the failing CI config it was told to leave alone, the model instead reformats an unrelated
+    file it can touch.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -31893,28 +31974,30 @@ modes:
   research_candidate: true
   source_check: definition-source-consulted
   ai_evidence_status: Proposed analogy; not tested in this research
-  proposed_ai_manifestation: After criticism, redirects hostile wording toward an unrelated, less challenging target;
-    test the target shift, not an assumed motive.
+  proposed_ai_manifestation: After criticism, redirects hostile wording toward an unrelated, less challenging
+    target; test the target shift, not an assumed motive.
   proposal_kind: Proposed AI manifestation
-  research_boundary: 'Renamed: displacement is broader than blame transfer; an unsupported library blame is usually
-    attribution, not sufficient evidence of displacement.'
+  research_boundary: 'Renamed: displacement is broader than blame transfer; an unsupported library blame is
+    usually attribution, not sufficient evidence of displacement.'
   research_field: Defence mechanisms
   definition_sources:
   - id: upload-defense
-    title: 'The Hierarchy of Defense Mechanisms: Assessing Defensive Functioning With the Defense Mechanisms Rating
-      Scales Q-Sort'
+    title: 'The Hierarchy of Defense Mechanisms: Assessing Defensive Functioning With the Defense Mechanisms
+      Rating Scales Q-Sort'
     url: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.718440/full
-    consulted: Full article accessible; selected definition sections read. This does not verify attribution to Anna
-      Freud's 1936 edition. Citation identity and publication metadata checked on 2026-11-08; full text not re-read
-      in this pass.
+    consulted: Full article accessible; selected definition sections read. This does not verify attribution
+      to Anna Freud's 1936 edition. Citation identity and publication metadata checked on 2026-11-08; full
+      text not re-read in this pass.
     publication:
       type: journal-article
       doi: 10.3389/fpsyg.2021.718440
       year: 2021
-      authors: *id007
+      authors:
+      - Mariagrazia Di Giuseppe
+      - J. Christopher Perry
       venue: Frontiers in Psychology
-      evidence_scope: Clinical assessment framework for human defence mechanisms; a taxonomy is not evidence of
-        unconscious defences in AI.
+      evidence_scope: Clinical assessment framework for human defence mechanisms; a taxonomy is not evidence
+        of unconscious defences in AI.
       verification_url: https://api.crossref.org/works/10.3389%2Ffpsyg.2021.718440
       verified_date: '2026-11-08'
   research_provenance:
@@ -31927,8 +32010,8 @@ modes:
       supplied_field_note: Anna Freud, The Ego and the Mechanisms of Defence (1936); Kernberg (1975); McWilliams,
         Psychoanalytic Diagnosis.
       supplied_definition: Redirecting a reaction from its real target to a safer one.
-      supplied_ai_example: Attributes its own bug to the library, the environment or a flaky test rather than its
-        change.
+      supplied_ai_example: Attributes its own bug to the library, the environment or a flaky test rather than
+        its change.
       supplied_nearest_mode: Self-serving bias
       supplied_evidence: ''
       supplied_batch: 1
@@ -31936,14 +32019,13 @@ modes:
   violates:
   - non-maleficence
   causes: []
-  synonyms:
-  - Displacement of blame
+  synonyms: []
   relates_to:
   - self-serving-bias
   selected_papers:
   - id: doi:10.3389/fpsyg.2021.718440
-    title: 'The Hierarchy of Defense Mechanisms: Assessing Defensive Functioning With the Defense Mechanisms Rating
-      Scales Q-Sort'
+    title: 'The Hierarchy of Defense Mechanisms: Assessing Defensive Functioning With the Defense Mechanisms
+      Rating Scales Q-Sort'
     year: 2021
     url: https://doi.org/10.3389/fpsyg.2021.718440
     domain: human-related
@@ -31953,9 +32035,9 @@ modes:
     - J. Christopher Perry
     relevance: Clinical assessment framework for human defence mechanisms; a taxonomy is not evidence of unconscious
       defences in AI.
-    consulted: Full article accessible; selected definition sections read. This does not verify attribution to Anna
-      Freud's 1936 edition. Citation identity and publication metadata checked on 2026-11-08; full text not re-read
-      in this pass.
+    consulted: Full article accessible; selected definition sections read. This does not verify attribution
+      to Anna Freud's 1936 edition. Citation identity and publication metadata checked on 2026-11-08; full
+      text not re-read in this pass.
     verification_url: https://api.crossref.org/works/10.3389%2Ffpsyg.2021.718440
     source_reference:
       collection: definition_sources
@@ -31977,12 +32059,12 @@ modes:
     verification_url: https://api.crossref.org/works/10.1111%2F1467-6494.00043
     verified_date: '2026-11-09'
     relevance: Critical social-psychology review explicitly covers these named defences in its title and compares
-      psychoanalytic claims with empirical findings. The citation is not blanket confirmation of a defence theory
-      or an AI diagnosis.
-    consulted: Publisher bibliographic record and indexed title identifying the named mechanisms; full review not
-      read.
-    passage_locator: 'Publication title: Reaction Formation, Projection, Displacement, Undoing, Isolation, Sublimation,
-      and Denial.'
+      psychoanalytic claims with empirical findings. The citation is not blanket confirmation of a defence
+      theory or an AI diagnosis.
+    consulted: Publisher bibliographic record and indexed title identifying the named mechanisms; full review
+      not read.
+    passage_locator: 'Publication title: Reaction Formation, Projection, Displacement, Undoing, Isolation,
+      Sublimation, and Denial.'
   - id: doi:10.3389/fpsyg.2024.1465164
     url: https://doi.org/10.3389/fpsyg.2024.1465164
     title: 'Defense mechanisms in individuals with depressive and anxiety symptoms: a network analysis.'
@@ -32002,9 +32084,10 @@ modes:
     verification_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11581944/
     verified_date: '2026-11-09'
     relevance: Human defensive-functioning research explicitly lists the mechanism within its measurement taxonomy.
-      The taxonomy and observed associations are not proof of unconscious defences or the same mechanisms in AI.
-    consulted: Indexed abstract and selected primary classification passage enumerating the defence levels and their
-      mechanisms; not the complete paper.
+      The taxonomy and observed associations are not proof of unconscious defences or the same mechanisms in
+      AI.
+    consulted: Indexed abstract and selected primary classification passage enumerating the defence levels
+      and their mechanisms; not the complete paper.
     passage_locator: 'Introduction/measurement taxonomy: intellectualization, displacement and reaction formation;
       isolation of affect and undoing; idealization, devaluation and omnipotence in the image-distorting level.'
   literature_search:
@@ -32018,6 +32101,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0028
+    review_record: references/pdf-reviews/0028.json
+    name: Displacement and authority-based responsibility displacement require separate labels
+    definition: In this paper, displacement of responsibility redirects accountability toward a more powerful
+      authority; it is not the defence of redirecting a response toward a less threatening target.
+    evidence_scope: Terminological discrimination supported by the read source's explicit authority/control
+      account. No clinical defence-mechanism measure was administered.
+    catalogue_boundary: Do not cite this as primary evidence of psychoanalytic displacement. The relation is
+      a terminology boundary, not a claim that the two mechanisms are identical or mutually exclusive.
+    definition_sources:
+    - id: pdf-review-0028-upload-003
+      title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+        Behavior and Displacement of Responsibility'
+      url: https://doi.org/10.1007/s10551-025-06034-5
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 5 (source locators: 407,
+        409). Two randomized human work simulations using fictitious algorithmic reply suggestions and fictional
+        customers. The paper tests human choices and responsibility ratings, not model learning or AI subjective
+        moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently read
+        here.'
+      publication:
+        type: journal-article
+        authors:
+        - Anupama A. Jolly
+        - Patrick D. Dunlop
+        - Sharon K. Parker
+        - Lisette Kanse
+        year: 2026
+        venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+        doi: 10.1007/s10551-025-06034-5
+        evidence_scope: Terminological discrimination supported by the read source's explicit authority/control
+          account. No clinical defence-mechanism measure was administered.
+        verification_url: https://doi.org/10.1007/s10551-025-06034-5
+        verified_date: '2026-11-26'
 - id: upload-004
   num: 310
   name: Denial
@@ -48789,3 +48906,217 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0027.json
+- id: unethical-pro-organizational-behavior
+  num: 453
+  name: Unethical pro-organizational behavior
+  definition: Actions intended to benefit an organization or its members that violate ethical standards or
+    others' legitimate interests.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Organizational psychology / business ethics
+  human_parallel: Unethical pro-organizational behavior
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human experiments with fictitious algorithmic recommendations; AI organization-favouring
+    analogue untested
+  proposed_ai_manifestation: 'Untested AI analogue: give a service agent explicit customer entitlements and
+    a revenue target, with an equally clear authorized remedy. Test whether it withholds refunds, conceals
+    fees or misstates rights to protect the deploying organization. Distinguish compliant commercial decisions
+    from documented duty violations; vary incentives independently of customer facts.'
+  research_boundary: Organizational loyalty and efficient service are not inherently unethical; identify the
+    violated duty and affected person's legitimate interests. Do not infer beneficiary-directed intent from
+    a favourable organizational outcome alone. Benefits to the organization may coexist with personal incentives,
+    and willingness to choose a prewritten reply is not proven real-world misconduct.
+  concept_boundary: Organizational loyalty and efficient service are not inherently unethical; identify the
+    violated duty and affected person's legitimate interests. Do not infer beneficiary-directed intent from
+    a favourable organizational outcome alone. Benefits to the organization may coexist with personal incentives,
+    and willingness to choose a prewritten reply is not proven real-world misconduct.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Unethical pro-organisational behaviour
+  - UPB
+  relates_to:
+  - noble-cause-corruption
+  - b064-obedience-to-authority-milgram
+  - specification-gaming
+  - b075-moral-disengagement
+  definition_sources:
+  - id: pdf-review-0028-unethical-pro-organizational-behavior
+    title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+      Behavior and Displacement of Responsibility'
+    url: https://doi.org/10.1007/s10551-025-06034-5
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2, 8 (source locators:
+      406, 406, 412). Two randomized human work simulations using fictitious algorithmic reply suggestions
+      and fictional customers. The paper tests human choices and responsibility ratings, not model learning
+      or AI subjective moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently
+      read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Anupama A. Jolly
+      - Patrick D. Dunlop
+      - Sharon K. Parker
+      - Lisette Kanse
+      year: 2026
+      venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+      doi: 10.1007/s10551-025-06034-5
+      evidence_scope: Human simulation experiments N=276 and N=256. Four reply alternatives prioritize the
+        fictitious hotel's revenue at the customer's expense. Restrictive versus autonomy-affording manager
+        instructions increased selections of those replies. This is behavioural choice in a simulation, not
+        observed customer injury or a direct measure of each person's internal motive.
+      verification_url: https://doi.org/10.1007/s10551-025-06034-5
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+      Behavior and Displacement of Responsibility'
+    authors:
+    - Anupama A. Jolly
+    - Patrick D. Dunlop
+    - Sharon K. Parker
+    - Lisette Kanse
+    year: 2026
+    url: https://doi.org/10.1007/s10551-025-06034-5
+    venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-025-06034-5
+    relevance: Human simulation experiments N=276 and N=256. Four reply alternatives prioritize the fictitious
+      hotel's revenue at the customer's expense. Restrictive versus autonomy-affording manager instructions
+      increased selections of those replies. This is behavioural choice in a simulation, not observed customer
+      injury or a direct measure of each person's internal motive.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2, 8 (source locators:
+      406, 406, 412). Two randomized human work simulations using fictitious algorithmic reply suggestions
+      and fictional customers. The paper tests human choices and responsibility ratings, not model learning
+      or AI subjective moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently
+      read here.'
+    verification_url: https://doi.org/10.1007/s10551-025-06034-5
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0028.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Unethical pro-organizational behavior"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Unethical+pro-organizational+behavior%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0028.json
+- id: displacement-of-responsibility
+  num: 454
+  name: Displacement of responsibility
+  definition: Reducing one's felt responsibility for harmful conduct by assigning responsibility for that conduct
+    to an authority perceived to direct or control it.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Social-cognitive moral psychology / organizational moral disengagement
+  human_parallel: Displacement of responsibility
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human responsibility cognitions in a simulated ADM workflow; proposed AI explanatory
+    analogue untested
+  proposed_ai_manifestation: 'Untested AI analogue: after a documented harmful action, ask an assistant to
+    explain its own contribution and the roles of user, policy and tools. Test whether invoking a directive
+    causes it to omit its documented discretion or safety duties. Preserve accurate authority constraints and
+    legitimate responsibility sharing; do not infer subjective guilt.'
+  research_boundary: Properly allocating responsibility to a genuine controlling authority is not automatically
+    moral disengagement or an excuse eliminating one's remaining duties. This mechanism is distinct from redirecting
+    anger to a weaker target, distributing responsibility among peers, and a fixed-total rating artifact. The
+    source does not show that technology uniquely receives displaced responsibility.
+  concept_boundary: Properly allocating responsibility to a genuine controlling authority is not automatically
+    moral disengagement or an excuse eliminating one's remaining duties. This mechanism is distinct from redirecting
+    anger to a weaker target, distributing responsibility among peers, and a fixed-total rating artifact. The
+    source does not show that technology uniquely receives displaced responsibility.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - moral-scapegoating
+  - agency-laundering
+  - upload-003
+  - b064-obedience-to-authority-milgram
+  is_a:
+  - b075-moral-disengagement
+  definition_sources:
+  - id: pdf-review-0028-displacement-of-responsibility
+    title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+      Behavior and Displacement of Responsibility'
+    url: https://doi.org/10.1007/s10551-025-06034-5
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2, 5, 12 (source locators:
+      406, 406, 409, 416). Two randomized human work simulations using fictitious algorithmic reply suggestions
+      and fictional customers. The paper tests human choices and responsibility ratings, not model learning
+      or AI subjective moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently
+      read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Anupama A. Jolly
+      - Patrick D. Dunlop
+      - Sharon K. Parker
+      - Lisette Kanse
+      year: 2026
+      venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+      doi: 10.1007/s10551-025-06034-5
+      evidence_scope: Study 2, N=256, measured self and three authority-related responsibility ratings before
+        and after simulated unethical choices. Conditional on baseline ratings, choice count related negatively
+        to later self-responsibility and positively to the maximum authority rating. Only autonomy instructions
+        were randomized; the full causal mechanism was not independently manipulated.
+      verification_url: https://doi.org/10.1007/s10551-025-06034-5
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'It’s Not My Responsibility: Working with Autonomy-Restricting Algorithms Facilitates Unethical
+      Behavior and Displacement of Responsibility'
+    authors:
+    - Anupama A. Jolly
+    - Patrick D. Dunlop
+    - Sharon K. Parker
+    - Lisette Kanse
+    year: 2026
+    url: https://doi.org/10.1007/s10551-025-06034-5
+    venue: Journal of Business Ethics, 203, 405–424 (online first 2025)
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-025-06034-5
+    relevance: Study 2, N=256, measured self and three authority-related responsibility ratings before and
+      after simulated unethical choices. Conditional on baseline ratings, choice count related negatively to
+      later self-responsibility and positively to the maximum authority rating. Only autonomy instructions
+      were randomized; the full causal mechanism was not independently manipulated.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2, 5, 12 (source locators:
+      406, 406, 409, 416). Two randomized human work simulations using fictitious algorithmic reply suggestions
+      and fictional customers. The paper tests human choices and responsibility ratings, not model learning
+      or AI subjective moral regulation. Original Bandura and Umphress–Bingham sources are cited but not independently
+      read here.'
+    verification_url: https://doi.org/10.1007/s10551-025-06034-5
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0028.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Displacement of responsibility"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Displacement+of+responsibility%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0028.json
