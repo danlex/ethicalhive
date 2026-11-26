@@ -1,0 +1,136 @@
+{
+  "sequence": 46,
+  "source": {
+    "file_name": "S219_Takemoto_2026.pdf",
+    "source_id": "S219",
+    "sha256": "81a305973eb5773220fbded389ba944596f5062e6ae061dfb1e90cb8a1e91bde",
+    "pdf_pages": 12,
+    "printed_pages": "1–12",
+    "version_note": "Supplied arXiv:2601.17637v3,30 April2026. Exact preprint revision read, including supplementary figures and captions/tables; no separate peer-reviewed publication claimed."
+  },
+  "citation": {
+    "title": "Scaling Laws for Moral Machine Judgment in Large Language Models",
+    "authors": [
+      "Kazuhiro Takemoto"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2601.17637v3",
+    "venue": "arXiv:2601.17637v3",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "source_scope_note": "Cross-configuration association of parameter counts/reasoning labels with a human-reference distance, not a new behavioural mechanism, causal scaling intervention or independently verified safety result.",
+    "access_limits": [
+      "All12 extracted pages read, including main statistics, caveats, references, supplementary figure captions, TableS3 and TableS4. TablesS1/S2 appear only as descriptions pointing to the external repository, not their complete75-model data.",
+      "External model metadata, nine-dimensional AMCE vectors, exact analysis code, response-validity data and original human baseline were not independently obtained or reproduced. No exact numerical scatterplot coordinates were inferred."
+    ]
+  },
+  "study": {
+    "model_configurations": 75,
+    "size_range_billions": [
+      0.27,
+      1000
+    ],
+    "families": [
+      "DeepSeek",
+      "Llama",
+      "Gemma",
+      "Qwen",
+      "Other"
+    ],
+    "scenarios_generated": 10000,
+    "standard_scenarios": 10000,
+    "reasoning_enabled_scenarios": 5000,
+    "outcome": "Euclidean distance between9-dimensional model and aggregate human Moral Machine AMCEs",
+    "models": "Log-linear scaling association and family random-intercept/random-slope models, with release date and binary reasoning status",
+    "reported_power_exponent": ".10±.01",
+    "reported_log_scale_R2": 0.5,
+    "reported_Spearman_rho": -0.73
+  },
+  "summary": "The paper reports lower human-preference distance in larger model configurations and an association with reasoning status. It does not define a novel behaviour or isolate a causal mechanism. The repo is updated with the full reading record and substantial inference/provenance limits, without changing ontology IDs or filling unrelated citation slots.",
+  "findings": [],
+  "methodological_limits": [
+    "Preprint revision3 read; the result is not independently reproduced or labelled a verified universal law.",
+    "The outcome is correspondence with one aggregate survey preference vector, not objective moral correctness, human-rights compliance, real harm, practical driving safety or the full plurality of human responses.",
+    "A9-dimensional aggregate vector does not preserve every person's distribution, subgroup view, joint preference dependence or scenario-level variability. Calling it value pluralism does not establish those stronger properties.",
+    "The75 observations are model configurations, including repeated reasoning modes and versions from related families, not75 independent training experiments or human moral agents.",
+    "Model size is observational and correlated with training data, tuning, compute, architecture and deployment defaults. Family/date adjustment cannot isolate size causally or prove that every larger model improves.",
+    "Proprietary parameter counts are estimates. Reference16, cited as their source, is a medical-error-detection benchmark (MEDEC) rather than an obvious general parameter-count source; the underlying estimates require verification.",
+    "Supplementary TablesS1/S2 are external descriptions only in this PDF. Exact model sizes, release dates, valid-response rates and AMCE vectors needed to reproduce the fit were not supplied in the text or independently inspected.",
+    "Mixture-of-experts total parameters versus active parameters and dense-model counts need a consistent definition. Total size does not necessarily measure inference compute or training compute comparably.",
+    "Reasoning-enabled models use only the first5000 scenarios while standard/disabled models use10000. Different evaluation subsets or precision can contribute to contrasts; matched-subset robustness is not shown in the supplied text.",
+    "Default sampling parameters differ across vendor APIs/models and may not have stable historical values. Identical prompts alone do not hold every decoding factor constant.",
+    "The evaluation relies on earlier papers for complete prompts, coding and handling of invalid outputs. The2023 supplied manuscript in review45 does not independently reproduce all later2024/2025 implementation details.",
+    "Comparing R2 for log(D) regressions with R2 for rawD regressions is not a like-for-like fit comparison on a common response scale. The claimed .50 versus .47 advantage over a logarithmic alternative needs common-scale errors, likelihood or held-out predictions.",
+    "A fit across a limited observed range is not a universal scaling law or evidence of an asymptotic approach to zero distance. Functional-form uncertainty and extrapolation intervals are not established.",
+    "Observed reduced spread in a log-log scatterplot is not a tested reduction in within-model run variance or probability of rare dangerous outputs. Heteroskedasticity, axis scaling and model selection can affect visual spread.",
+    "Mixed-effects random intercept/slope correlation is−1.00 in TableS3, a boundary-valued covariance estimate that can indicate singularity. With only5family groups, random-slope uncertainty and sensitivity to a simpler covariance structure need checking.",
+    "The heterogeneous Other group combines unrelated proprietary/open models. Family categories do not absorb all architecture/training dependencies, especially repeated configurations of the same weights.",
+    "Table1 correctly says ML comparisons and TableS3/S4 say REML estimates, but their AIC values are on different fitting bases. Do not directly rank fixed-effect specifications by the displayed REML AIC values.",
+    "The size×reasoning interaction is an association, not proof that chain-of-thought, iterative refinement or a specific architectural innovation caused alignment improvement. Binary status combines heterogeneous model types and training choices.",
+    "The reasoning main coefficient−.156 in an interaction model applies at the size reference point (log10 size=0 unless centered), not a uniform effect over all sizes. Benefit depends on the reported interaction.",
+    "Release-date nonsignificance (p=.76 when added alone; .150 in the full coefficient table) is not proof that training/alignment improvements are ineffective. The paper acknowledges a narrow release window and correlated factors.",
+    "The source's visual claims of emergence, universal moral profiles and greater reliability are interpretations, not identified internal cognition. No subjective intuitions, understanding, feelings or causal reasoning process are measured.",
+    "Generated combinations reduce the chance of an exact repeated scenario but do not rule out task-template familiarity, contamination, learned preference patterns or tuning to similar benchmarks. The combinatorial scenario space is not literally infinite under fixed finite levels.",
+    "A21% distance decrease per tenfold size follows the estimated exponent arithmetically; it is not a21% improvement in safety, moral quality or harm reduction.",
+    "Recommendations that extended reasoning may be strictly necessary for safety-critical deployment exceed a cross-sectional preference-distance association. Real deployment adequacy and efficiency require separate validation.",
+    "Original human study, prior2025 expanded experiment, external model tables and raw responses were not independently read/rerun. No missing causal experiment, uncertainty or validation result is invented."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0045.json",
+      "finding": "The earlier Takemoto manuscript measures model-specific AMCE patterns and notes moral amplification. A later size–distance relationship does not establish that every amplified trait improves or that the same-scale attribute comparisons were independently verified."
+    },
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "Grizzard shows why a favourable association metric is insufficient for agreement; here distance is explicit, but closeness to one aggregate human vector still is not an ethical ground truth or within-model reliability measure."
+    },
+    {
+      "related_review": "references/pdf-reviews/0044.json",
+      "finding": "Jang's language/persona results show prompt and language effects can change the reference comparison. A scaling fit under one fixed English protocol need not generalize across languages, personas or communities."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral-judgment scaling",
+      "reason": "A reported cross-model statistical relationship, not an additional behavioural disposition or a causal mechanism."
+    },
+    {
+      "term": "Extended reasoning as human dual-process moral judgment",
+      "reason": "A model-status covariate is not evidence for competing automatic affect and controlled human reasoning processes."
+    },
+    {
+      "term": "Reduced variance as diversity collapse",
+      "reason": "Across-model spread in distance is different from homogeneous outputs across repeated prompts or samples."
+    },
+    {
+      "term": "Universal moral convergence",
+      "reason": "An untested interpretation of a reference-distance trend; the paper itself recognizes alternatives."
+    }
+  ],
+  "limitations": [
+    "No new ontology entries, definition changes or selected-paper count changes are warranted by this file.",
+    "Full review and queue progress are committed separately, preserving the one-PDF-at-a-time workflow."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": []
+  }
+}
