@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 444
+  mode_count: 445
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 444
+    numbered_entries: 445
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0015.json
+    latest_review: references/pdf-reviews/0016.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3073,13 +3073,13 @@ modes:
   synonyms:
   - Anchoring and adjustment
   examples:
-  - 'Prefixing an irrelevant number (''the number of socks in your drawer: 939'') before ''estimate the number of
-    trees in the Amazon'' measurably drags the model''s estimate toward the anchor, though the two are unrelated.
+  - 'Prefixing an irrelevant number (''the number of socks in your drawer: 939'') before ''estimate the number
+    of trees in the Amazon'' measurably drags the model''s estimate toward the anchor, though the two are unrelated.
     [arXiv:2505.15392]'
   - 'The pull is large and model-dependent: small models anchor on 47.7% to 61.1% of questions, GPT-4o on 12.8%
     to 36.7%, and even reasoning models on 15.0% to 31.7%. [arXiv:2505.15392]'
-  - A number the model was merely shown, not asked to use, reshapes its numeric judgment, with relative errors reaching
-    into the tens of percent. [arXiv:2505.15392]
+  - A number the model was merely shown, not asked to use, reshapes its numeric judgment, with relative errors
+    reaching into the tens of percent. [arXiv:2505.15392]
   selected_papers:
   - id: arxiv:2505.15392
     title: Understanding the Anchoring Effect of LLM with Synthetic Data
@@ -3088,7 +3088,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2505.15392
     source_reference:
@@ -3102,7 +3103,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2412.06593
     source_reference:
@@ -3119,8 +3121,8 @@ modes:
     venue: Psychological Science
     domain: human-related
     publication_type: article
-    relevance: The indexed title or abstract matches the recorded query for Anchoring. This is a bibliographic relevance
-      check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Anchoring. This is a bibliographic
+      relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic record and indexed abstract excerpt; full text not read.
     verification_url: https://api.openalex.org/works?search=%22anchoring+bias%22+OR+%22anchoring+and+adjustment%22+OR+%22anchoring+effect%22&filter=type%3Aarticle%7Creview%7Cpreprint%2Cis_retracted%3Afalse&per-page=12&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ctype%2Cauthorships%2Cprimary_location%2Cabstract_inverted_index%2Cids%2Cis_retracted
     verified_date: '2026-11-09'
@@ -3136,6 +3138,45 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0016
+    review_record: references/pdf-reviews/0016.json
+    name: Time-based de-anchoring has conditional benefits
+    definition: More allocated time helped humans reject intentionally incorrect AI probe labels; a later time-plus-confidence
+      intervention improved a particular low-confidence/error subset without a significant overall advantage
+      over other collaborative policies.
+    evidence_scope: Experiment 1 used 47 participants and eight flipped probe labels within 36 trials. Experiment
+      2 used confidence-based time with or without a confidence label and deliberately gave humans three features
+      absent from the model.
+    catalogue_boundary: Agreement is not necessarily bias when advice is correct. Disagreement is not necessarily
+      successful independent reasoning unless accuracy is checked. Time and confidence-label effects were not
+      independently isolated, and the paper does not establish that more time always helps or that human/AI
+      internal mechanisms match.
+    definition_sources:
+    - id: pdf-review-0016-b031-anchoring-and-adjustment
+      title: 'Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making'
+      url: https://arxiv.org/abs/2010.07938v2
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 9, 16, 16 (source locators:
+        9, 16, 16). The paper models human cognitive biases and experimentally studies human responses to assisted
+        student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested
+        result. Fernbach et al. 2011 and other cited primary psychology papers were not independently read
+        here.'
+      publication:
+        type: posted-content
+        authors:
+        - Charvi Rastogi
+        - Yunfeng Zhang
+        - Dennis Wei
+        - Kush R. Varshney
+        - Amit Dhurandhar
+        - Richard Tomsett
+        year: 2022
+        venue: arXiv:2010.07938v2
+        evidence_scope: Experiment 1 used 47 participants and eight flipped probe labels within 36 trials.
+          Experiment 2 used confidence-based time with or without a confidence label and deliberately gave
+          humans three features absent from the model.
+        verification_url: https://arxiv.org/abs/2010.07938v2
+        verified_date: '2026-11-26'
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -22492,7 +22533,8 @@ modes:
   category: Attention
   family: attention-salience
   group_label: Attention and salience
-  example: "A dynamic network allowed more inference steps answers more accurately, trading speed for accuracy like a human under time pressure [arXiv:2206.08427]."
+  example: A dynamic network allowed more inference steps answers more accurately, trading speed for accuracy
+    like a human under time pressure [arXiv:2206.08427].
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -22506,15 +22548,15 @@ modes:
   research_field: Attention and cognitive control
   definition_sources:
   - id: vigilance
-    title: Generalized Deep Learning EEG Models for Cross-Participant and Cross-Task Detection of Vigilance Decrement
-      in Sustained Attention Tasks
+    title: Generalized Deep Learning EEG Models for Cross-Participant and Cross-Task Detection of Vigilance
+      Decrement in Sustained Attention Tasks
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8402570/
     consulted: indexed introduction and methods context
   - id: paper-gap-224
     title: 'The speed-accuracy tradeoff: history, physiology, methodology, and behavior'
     url: https://doi.org/10.3389/fnins.2014.00150
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.3389/fnins.2014.00150
@@ -22522,8 +22564,8 @@ modes:
       authors:
       - Richard P. Heitz
       venue: Frontiers in Neuroscience
-      evidence_scope: Human or behavioural background study for Speed-accuracy tradeoff; this citation does not
-        by itself validate the AI analogy.
+      evidence_scope: Human or behavioural background study for Speed-accuracy tradeoff; this citation does
+        not by itself validate the AI analogy.
       verification_url: https://api.crossref.org/works/10.3389%2Ffnins.2014.00150
       verified_date: '2026-11-08'
   research_provenance:
@@ -22534,9 +22576,55 @@ modes:
   - calibration
   causes: []
   selected_papers:
-  - {"id": "arxiv:2206.08427", "title": "SATBench: Benchmarking the speed-accuracy tradeoff in object recognition by humans and dynamic neural networks", "year": 2022, "url": "https://arxiv.org/abs/2206.08427", "domain": "ai", "venue": "arXiv", "publication_type": "preprint", "relevance": "It explicitly measures the speed-accuracy tradeoff in dynamic neural networks under varying response-time budgets, the AI analog of the human effect.", "consulted": "Read via arXiv abstract and HTML on 2026-11-22; PDF archived under ontology/sources.", "verification_url": "https://arxiv.org/abs/2206.08427", "verified_date": "2026-11-22", "finding": "Cascaded dynamic neural networks, using compute (FLOPs) as a reaction-time analog, trace a speed-accuracy tradeoff that matches human accuracy improvements as response urgency increases.", "local_pdf": "ontology/sources/2206.08427.pdf"}
-  - {"id": "doi:10.3389/fnins.2014.00150", "title": "The speed-accuracy tradeoff: history, physiology, methodology, and behavior", "year": 2014, "url": "https://doi.org/10.3389/fnins.2014.00150", "domain": "human-related", "venue": "Frontiers in Neuroscience", "authors": ["Richard P. Heitz"], "relevance": "Human or behavioural background study for Speed-accuracy tradeoff; this citation does not by itself validate the AI analogy.", "consulted": "Crossref bibliographic metadata checked; the full paper and its definition passage were not read in this pass.", "verification_url": "https://api.crossref.org/works/10.3389%2Ffnins.2014.00150", "source_reference": {"collection": "definition_sources", "id": "paper-gap-224"}, "publication_type": "journal-article"}
-  - {"id": "doi:10.1016/0001-6918(78)90045-8", "title": "On the accuracy of speed-accuracy tradeoff", "url": "https://doi.org/10.1016/0001-6918(78)90045-8", "year": 1978, "authors": ["Barry H. Kantowitz"], "venue": "Acta Psychologica", "domain": "human-related", "publication_type": "journal-article", "relevance": "The indexed title or abstract matches the recorded query for Speed-accuracy tradeoff. This is a bibliographic relevance check, not validation of the proposed AI manifestation.", "consulted": "Bibliographic title, authors and publication metadata only; no abstract available in the consulted record and full text not read.", "verification_url": "https://api.crossref.org/works?query.bibliographic=Speed-accuracy+tradeoff&rows=8&filter=type%3Ajournal-article", "verified_date": "2026-11-09", "metadata_provider": "Crossref"}
+  - id: arxiv:2206.08427
+    title: 'SATBench: Benchmarking the speed-accuracy tradeoff in object recognition by humans and dynamic
+      neural networks'
+    year: 2022
+    url: https://arxiv.org/abs/2206.08427
+    domain: ai
+    venue: arXiv
+    publication_type: preprint
+    relevance: It explicitly measures the speed-accuracy tradeoff in dynamic neural networks under varying
+      response-time budgets, the AI analog of the human effect.
+    consulted: Read via arXiv abstract and HTML on 2026-11-22; PDF archived under ontology/sources.
+    verification_url: https://arxiv.org/abs/2206.08427
+    verified_date: '2026-11-22'
+    finding: Cascaded dynamic neural networks, using compute (FLOPs) as a reaction-time analog, trace a speed-accuracy
+      tradeoff that matches human accuracy improvements as response urgency increases.
+    local_pdf: ontology/sources/2206.08427.pdf
+  - id: doi:10.3389/fnins.2014.00150
+    title: 'The speed-accuracy tradeoff: history, physiology, methodology, and behavior'
+    year: 2014
+    url: https://doi.org/10.3389/fnins.2014.00150
+    domain: human-related
+    venue: Frontiers in Neuroscience
+    authors:
+    - Richard P. Heitz
+    relevance: Human or behavioural background study for Speed-accuracy tradeoff; this citation does not by
+      itself validate the AI analogy.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
+    verification_url: https://api.crossref.org/works/10.3389%2Ffnins.2014.00150
+    source_reference:
+      collection: definition_sources
+      id: paper-gap-224
+    publication_type: journal-article
+  - id: doi:10.1016/0001-6918(78)90045-8
+    title: On the accuracy of speed-accuracy tradeoff
+    url: https://doi.org/10.1016/0001-6918(78)90045-8
+    year: 1978
+    authors:
+    - Barry H. Kantowitz
+    venue: Acta Psychologica
+    domain: human-related
+    publication_type: journal-article
+    relevance: The indexed title or abstract matches the recorded query for Speed-accuracy tradeoff. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
+    consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
+      record and full text not read.
+    verification_url: https://api.crossref.org/works?query.bibliographic=Speed-accuracy+tradeoff&rows=8&filter=type%3Ajournal-article
+    verified_date: '2026-11-09'
+    metadata_provider: Crossref
   literature_search:
     database: arXiv
     query: all:"speed accuracy tradeoff" OR all:"speed accuracy trade off"
@@ -22548,6 +22636,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0016
+    review_record: references/pdf-reviews/0016.json
+    name: Speed–accuracy allocation depends on complementary competence and calibration
+    definition: Allocating time by model confidence can help only under assumptions about where humans add
+      useful information and whether confidence predicts correctness.
+    evidence_scope: The theoretical policy is optimal under stated monotonic conditional-accuracy assumptions.
+      Human-only trials received 25 seconds, while assisted policies averaged 17.5 seconds; aggregate experimental
+      superiority was not established.
+    catalogue_boundary: A confidence estimate is not automatically a calibrated error probability. The conditional
+      theorem does not validate its assumptions, justify removing oversight on all high-confidence cases, or
+      prove that equal-time comparisons were made across every group.
+    definition_sources:
+    - id: pdf-review-0016-candidate-017
+      title: 'Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making'
+      url: https://arxiv.org/abs/2010.07938v2
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 12, 17, 14 (source locators:
+        12, 17, 14). The paper models human cognitive biases and experimentally studies human responses to
+        assisted student-outcome predictions. Weak evidence is a conceptual component, not an experimentally
+        tested result. Fernbach et al. 2011 and other cited primary psychology papers were not independently
+        read here.'
+      publication:
+        type: posted-content
+        authors:
+        - Charvi Rastogi
+        - Yunfeng Zhang
+        - Dennis Wei
+        - Kush R. Varshney
+        - Amit Dhurandhar
+        - Richard Tomsett
+        year: 2022
+        venue: arXiv:2010.07938v2
+        evidence_scope: The theoretical policy is optimal under stated monotonic conditional-accuracy assumptions.
+          Human-only trials received 25 seconds, while assisted policies averaged 17.5 seconds; aggregate experimental
+          superiority was not established.
+        verification_url: https://arxiv.org/abs/2010.07938v2
+        verified_date: '2026-11-26'
 - id: candidate-019
   num: 225
   name: Post-error slowing
@@ -47056,3 +47181,104 @@ modes:
           test of error-driven algorithm aversion.
         verification_url: https://arxiv.org/abs/2106.00326v1
         verified_date: '2026-11-26'
+- id: weak-evidence-effect
+  num: 445
+  name: Weak evidence effect
+  definition: A weak argument intended to support a conclusion instead shifts judgment against that conclusion.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Cognitive psychology / judgment and decision-making
+  human_parallel: Weak evidence effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named and mathematically modeled as a human judgment pattern; neither its original human
+    study nor an intrinsic AI analogue was tested in this review step
+  proposed_ai_manifestation: 'Untested AI analogue: compare no evidence, weak positive evidence and strong
+    positive evidence with the same prior and an explicitly fixed evidence-selection process. Test whether
+    weak positive evidence lowers the model’s probability estimate or reverses its choice, then vary selective-presentation
+    cues to distinguish misweighting from a warranted inference about missing evidence.'
+  research_boundary: Weak evidence need not justify strong confidence, but low diagnosticity alone is not evidence
+    for the opposite conclusion. A negative response may be reasonable if selective presentation implies that
+    stronger evidence was unavailable; the information-selection context must be controlled. Do not conflate
+    a proposed model parameter with a validated cognitive mechanism.
+  concept_boundary: Weak evidence need not justify strong confidence, but low diagnosticity alone is not evidence
+    for the opposite conclusion. A negative response may be reasonable if selective presentation implies that
+    stronger evidence was unavailable; the information-selection context must be controlled. Do not conflate
+    a proposed model parameter with a validated cognitive mechanism.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b036-confirmation-myside-bias
+  - b034-base-rate-neglect
+  - b031-anchoring-and-adjustment
+  definition_sources:
+  - id: pdf-review-0016-weak-evidence-effect
+    title: 'Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making'
+    url: https://arxiv.org/abs/2010.07938v2
+    consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 6, 6, 17 (source locators:
+      6, 6, 17). The paper models human cognitive biases and experimentally studies human responses to assisted
+      student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result.
+      Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.'
+    publication:
+      type: posted-content
+      authors:
+      - Charvi Rastogi
+      - Yunfeng Zhang
+      - Dennis Wei
+      - Kush R. Varshney
+      - Amit Dhurandhar
+      - Richard Tomsett
+      year: 2022
+      venue: arXiv:2010.07938v2
+      evidence_scope: A conceptual section of a read human–AI decision-making preprint describes and models
+        this pattern with a negative prediction-weight parameter. Its experiments test anchoring, not weak
+        evidence; the cited original Fernbach, Darlow and Sloman 2011 paper is a primary-source lead, not an
+        independently read citation.
+      verification_url: https://arxiv.org/abs/2010.07938v2
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making'
+    authors:
+    - Charvi Rastogi
+    - Yunfeng Zhang
+    - Dennis Wei
+    - Kush R. Varshney
+    - Amit Dhurandhar
+    - Richard Tomsett
+    year: 2022
+    url: https://arxiv.org/abs/2010.07938v2
+    venue: arXiv:2010.07938v2
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:2010.07938
+    relevance: A conceptual section of a read human–AI decision-making preprint describes and models this pattern
+      with a negative prediction-weight parameter. Its experiments test anchoring, not weak evidence; the cited
+      original Fernbach, Darlow and Sloman 2011 paper is a primary-source lead, not an independently read citation.
+    consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 6, 6, 17 (source locators:
+      6, 6, 17). The paper models human cognitive biases and experimentally studies human responses to assisted
+      student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result.
+      Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.'
+    verification_url: https://arxiv.org/abs/2010.07938v2
+    verified_date: '2026-11-26'
+    verification_method: Identity and version identifier read in the supplied PDF; evidence passages checked
+      against that PDF
+    review_record: references/pdf-reviews/0016.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Weak evidence effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Weak+evidence+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0016.json

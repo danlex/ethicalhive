@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 444,
+    "mode_count": 445,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 444,
+      "numbered_entries": 445,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0015.json",
+      "latest_review": "references/pdf-reviews/0016.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 444
+    "source_record_count": 445
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -3693,7 +3693,41 @@
         "queried_at": "2026-11-09T01:36:22+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22anchoring+bias%22+OR+all%3A%22anchoring+and+adjustment%22+OR+all%3A%22anchoring+effect%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0016",
+          "review_record": "references/pdf-reviews/0016.json",
+          "name": "Time-based de-anchoring has conditional benefits",
+          "definition": "More allocated time helped humans reject intentionally incorrect AI probe labels; a later time-plus-confidence intervention improved a particular low-confidence/error subset without a significant overall advantage over other collaborative policies.",
+          "evidence_scope": "Experiment 1 used 47 participants and eight flipped probe labels within 36 trials. Experiment 2 used confidence-based time with or without a confidence label and deliberately gave humans three features absent from the model.",
+          "catalogue_boundary": "Agreement is not necessarily bias when advice is correct. Disagreement is not necessarily successful independent reasoning unless accuracy is checked. Time and confidence-label effects were not independently isolated, and the paper does not establish that more time always helps or that human/AI internal mechanisms match.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0016-b031-anchoring-and-adjustment",
+              "title": "Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making",
+              "url": "https://arxiv.org/abs/2010.07938v2",
+              "consulted": "Full supplied PDF text read, all 22 pages; evidence at PDF pages 9, 16, 16 (source locators: 9, 16, 16). The paper models human cognitive biases and experimentally studies human responses to assisted student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result. Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Charvi Rastogi",
+                  "Yunfeng Zhang",
+                  "Dennis Wei",
+                  "Kush R. Varshney",
+                  "Amit Dhurandhar",
+                  "Richard Tomsett"
+                ],
+                "year": 2022,
+                "venue": "arXiv:2010.07938v2",
+                "evidence_scope": "Experiment 1 used 47 participants and eight flipped probe labels within 36 trials. Experiment 2 used confidence-based time with or without a confidence label and deliberately gave humans three features absent from the model.",
+                "verification_url": "https://arxiv.org/abs/2010.07938v2",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b032-availability-heuristic",
@@ -26458,7 +26492,41 @@
         "queried_at": "2026-11-09T01:39:27+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22speed+accuracy+tradeoff%22+OR+all%3A%22speed+accuracy+trade+off%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0016",
+          "review_record": "references/pdf-reviews/0016.json",
+          "name": "Speed–accuracy allocation depends on complementary competence and calibration",
+          "definition": "Allocating time by model confidence can help only under assumptions about where humans add useful information and whether confidence predicts correctness.",
+          "evidence_scope": "The theoretical policy is optimal under stated monotonic conditional-accuracy assumptions. Human-only trials received 25 seconds, while assisted policies averaged 17.5 seconds; aggregate experimental superiority was not established.",
+          "catalogue_boundary": "A confidence estimate is not automatically a calibrated error probability. The conditional theorem does not validate its assumptions, justify removing oversight on all high-confidence cases, or prove that equal-time comparisons were made across every group.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0016-candidate-017",
+              "title": "Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making",
+              "url": "https://arxiv.org/abs/2010.07938v2",
+              "consulted": "Full supplied PDF text read, all 22 pages; evidence at PDF pages 12, 17, 14 (source locators: 12, 17, 14). The paper models human cognitive biases and experimentally studies human responses to assisted student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result. Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Charvi Rastogi",
+                  "Yunfeng Zhang",
+                  "Dennis Wei",
+                  "Kush R. Varshney",
+                  "Amit Dhurandhar",
+                  "Richard Tomsett"
+                ],
+                "year": 2022,
+                "venue": "arXiv:2010.07938v2",
+                "evidence_scope": "The theoretical policy is optimal under stated monotonic conditional-accuracy assumptions. Human-only trials received 25 seconds, while assisted policies averaged 17.5 seconds; aggregate experimental superiority was not established.",
+                "verification_url": "https://arxiv.org/abs/2010.07938v2",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "candidate-019",
@@ -54113,6 +54181,98 @@
           ]
         }
       ]
+    },
+    {
+      "id": "weak-evidence-effect",
+      "num": 445,
+      "name": "Weak evidence effect",
+      "definition": "A weak argument intended to support a conclusion instead shifts judgment against that conclusion.",
+      "category": "Heuristics",
+      "family": "heuristics-biases",
+      "group_label": "Heuristics and biases",
+      "tag": "analogy",
+      "origin": "Cognitive psychology / judgment and decision-making",
+      "human_parallel": "Weak evidence effect",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Named and mathematically modeled as a human judgment pattern; neither its original human study nor an intrinsic AI analogue was tested in this review step",
+      "proposed_ai_manifestation": "Untested AI analogue: compare no evidence, weak positive evidence and strong positive evidence with the same prior and an explicitly fixed evidence-selection process. Test whether weak positive evidence lowers the model’s probability estimate or reverses its choice, then vary selective-presentation cues to distinguish misweighting from a warranted inference about missing evidence.",
+      "research_boundary": "Weak evidence need not justify strong confidence, but low diagnosticity alone is not evidence for the opposite conclusion. A negative response may be reasonable if selective presentation implies that stronger evidence was unavailable; the information-selection context must be controlled. Do not conflate a proposed model parameter with a validated cognitive mechanism.",
+      "concept_boundary": "Weak evidence need not justify strong confidence, but low diagnosticity alone is not evidence for the opposite conclusion. A negative response may be reasonable if selective presentation implies that stronger evidence was unavailable; the information-selection context must be controlled. Do not conflate a proposed model parameter with a validated cognitive mechanism.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b036-confirmation-myside-bias",
+        "b034-base-rate-neglect",
+        "b031-anchoring-and-adjustment"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0016-weak-evidence-effect",
+          "title": "Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making",
+          "url": "https://arxiv.org/abs/2010.07938v2",
+          "consulted": "Full supplied PDF text read, all 22 pages; evidence at PDF pages 6, 6, 17 (source locators: 6, 6, 17). The paper models human cognitive biases and experimentally studies human responses to assisted student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result. Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Charvi Rastogi",
+              "Yunfeng Zhang",
+              "Dennis Wei",
+              "Kush R. Varshney",
+              "Amit Dhurandhar",
+              "Richard Tomsett"
+            ],
+            "year": 2022,
+            "venue": "arXiv:2010.07938v2",
+            "evidence_scope": "A conceptual section of a read human–AI decision-making preprint describes and models this pattern with a negative prediction-weight parameter. Its experiments test anchoring, not weak evidence; the cited original Fernbach, Darlow and Sloman 2011 paper is a primary-source lead, not an independently read citation.",
+            "verification_url": "https://arxiv.org/abs/2010.07938v2",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Deciding Fast and Slow: The Role of Cognitive Biases in AI-assisted Decision-making",
+          "authors": [
+            "Charvi Rastogi",
+            "Yunfeng Zhang",
+            "Dennis Wei",
+            "Kush R. Varshney",
+            "Amit Dhurandhar",
+            "Richard Tomsett"
+          ],
+          "year": 2022,
+          "url": "https://arxiv.org/abs/2010.07938v2",
+          "venue": "arXiv:2010.07938v2",
+          "publication_type": "preprint",
+          "domain": "human-related",
+          "id": "arxiv:2010.07938",
+          "relevance": "A conceptual section of a read human–AI decision-making preprint describes and models this pattern with a negative prediction-weight parameter. Its experiments test anchoring, not weak evidence; the cited original Fernbach, Darlow and Sloman 2011 paper is a primary-source lead, not an independently read citation.",
+          "consulted": "Full supplied PDF text read, all 22 pages; evidence at PDF pages 6, 6, 17 (source locators: 6, 6, 17). The paper models human cognitive biases and experimentally studies human responses to assisted student-outcome predictions. Weak evidence is a conceptual component, not an experimentally tested result. Fernbach et al. 2011 and other cited primary psychology papers were not independently read here.",
+          "verification_url": "https://arxiv.org/abs/2010.07938v2",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0016.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Weak evidence effect\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Weak+evidence+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0016.json"
+      }
     }
   ]
 }
