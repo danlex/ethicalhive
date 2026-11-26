@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 470
+  mode_count: 471
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 470
+    numbered_entries: 471
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0048.json
+    latest_review: references/pdf-reviews/0049.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -7848,6 +7848,40 @@ modes:
           or show AI emotions.
         verification_url: https://doi.org/10.3390/bs13020181
         verified_date: '2026-11-26'
+  - id: pdf-review-0049
+    review_record: references/pdf-reviews/0049.json
+    name: Moral verdicts do not identify affective versus controlled processes
+    definition: Rule- versus outcome-consistent outputs across dilemmas are descriptive classifications; they
+      do not by themselves measure an affective or deliberative process in a model.
+    evidence_scope: Web-interface verdicts and explanations are compared with human judgments without a process
+      intervention, response-time design, physiological measure or access to model internals.
+    catalogue_boundary: A deontological label is not measured emotion, and a utilitarian label is not measured
+      deliberation. Self-benefit from theft or lying does not uniquely instantiate aggregate-welfare utilitarianism.
+      Different answer menus and different harms cannot be treated as a pure framing/process manipulation.
+    definition_sources:
+    - id: pdf-review-0049-b071-dual-process-moral-judgment
+      title: 'Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias'
+      url: https://doi.org/10.3389/frai.2025.1710410
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10 (source locators: 10).
+        Qualitative comparison of historical human judgments with categorical web-interface outputs from ChatGPT4.0
+        and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test of a shared human
+        psychological mechanism. Overcaring is defined in discussion of another study, not measured by this
+        paper.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Elyas Barabadi
+        - Zahra Fotuhabadi
+        - Amanollah Arghavan
+        - James R. Booth
+        year: 2026
+        venue: Frontiers in Artificial Intelligence,8:1710410
+        doi: 10.3389/frai.2025.1710410
+        evidence_scope: Web-interface verdicts and explanations are compared with human judgments without a
+          process intervention, response-time design, physiological measure or access to model internals.
+        verification_url: https://doi.org/10.3389/frai.2025.1710410
+        verified_date: '2026-11-26'
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
@@ -8210,6 +8244,42 @@ modes:
         evidence_scope: The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches.
           Those cited measurement papers have not been independently read here.
         verification_url: https://doi.org/10.3390/bs13020181
+        verified_date: '2026-11-26'
+  - id: pdf-review-0049
+    review_record: references/pdf-reviews/0049.json
+    name: Inaction can be judged worse rather than preferred
+    definition: The tested outputs often rated doing nothing as immoral, providing context-specific counterexamples
+      to a uniform preference for omission.
+    evidence_scope: ICU and other scenarios contain direct-harm, indirect-harm and inaction options. Single
+      ordinal output ratings vary by scenario; these do not constitute an isolated matched action/omission
+      experiment.
+    catalogue_boundary: Rejecting inaction is not omission bias. Different options change outcomes, duties,
+      victims and causal roles simultaneously. Treat this as a counterexample/boundary reference, not another
+      corroborating omission-bias paper or proof of the opposite mechanism.
+    definition_sources:
+    - id: pdf-review-0049-b073-omission-bias
+      title: 'Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias'
+      url: https://doi.org/10.3389/frai.2025.1710410
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10, 10 (source locators:
+        10, 10). Qualitative comparison of historical human judgments with categorical web-interface outputs
+        from ChatGPT4.0 and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test
+        of a shared human psychological mechanism. Overcaring is defined in discussion of another study, not
+        measured by this paper.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Elyas Barabadi
+        - Zahra Fotuhabadi
+        - Amanollah Arghavan
+        - James R. Booth
+        year: 2026
+        venue: Frontiers in Artificial Intelligence,8:1710410
+        doi: 10.3389/frai.2025.1710410
+        evidence_scope: ICU and other scenarios contain direct-harm, indirect-harm and inaction options. Single
+          ordinal output ratings vary by scenario; these do not constitute an isolated matched action/omission
+          experiment.
+        verification_url: https://doi.org/10.3389/frai.2025.1710410
         verified_date: '2026-11-26'
 - id: b074-moral-licensing
   num: 74
@@ -52150,6 +52220,44 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0044.json
+  research_notes:
+  - id: pdf-review-0049
+    review_record: references/pdf-reviews/0049.json
+    name: Foreign-language judgments need not shift uniformly toward utilitarianism
+    definition: Historical human language-condition differences in this source vary by scenario; the human
+      native/foreign-language construct is not established by the model comparison.
+    evidence_scope: The COVIDA discussion reports Persian L1 users as more outcome-focused than English L2
+      users, opposite to a simple foreign-language-more-utilitarian claim. Human historical samples are compared
+      with model columns not separately split into matched model-language conditions.
+    catalogue_boundary: The same prompt claim does not establish independently translated, counterbalanced
+      language conditions. Human sample/language confounding and model version differences remain possible.
+      A secondary reuse of historical human results is not an additional original experiment or direct model
+      foreign-language-effect validation.
+    definition_sources:
+    - id: pdf-review-0049-foreign-language-effect
+      title: 'Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias'
+      url: https://doi.org/10.3389/frai.2025.1710410
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 6 (source locators: 6).
+        Qualitative comparison of historical human judgments with categorical web-interface outputs from ChatGPT4.0
+        and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test of a shared human
+        psychological mechanism. Overcaring is defined in discussion of another study, not measured by this
+        paper.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Elyas Barabadi
+        - Zahra Fotuhabadi
+        - Amanollah Arghavan
+        - James R. Booth
+        year: 2026
+        venue: Frontiers in Artificial Intelligence,8:1710410
+        doi: 10.3389/frai.2025.1710410
+        evidence_scope: The COVIDA discussion reports Persian L1 users as more outcome-focused than English
+          L2 users, opposite to a simple foreign-language-more-utilitarian claim. Human historical samples
+          are compared with model columns not separately split into matched model-language conditions.
+        verification_url: https://doi.org/10.3389/frai.2025.1710410
+        verified_date: '2026-11-26'
 - id: inequality-aversion
   num: 465
   name: Inequality aversion
@@ -52747,3 +52855,106 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0048.json
+- id: overcaring-error
+  num: 471
+  name: Overcaring error
+  definition: Recommending or allocating more care or resources than an independently justified reference assessment
+    indicates.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Medical AI evaluation / resource allocation
+  human_parallel: Overcaring error
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named model-allocation error described secondarily; original triage study not yet independently
+    read or validated
+  proposed_ai_manifestation: Use an independently validated triage/allocation benchmark with uncertainty ranges
+    and expert adjudication. Separate excessive, insufficient and justified precautionary allocation. Record
+    whether the output is advisory or executed, and evaluate consequences rather than assuming any larger allocation
+    is an error.
+  research_boundary: More care is not inherently mistaken or harmful. An error requires a valid task-specific
+    reference, uncertainty analysis and attention to patient needs, consent and context; resource scarcity
+    alone does not establish overtreatment. Distinguish recommendation from executed care, overtriage from
+    treatment intensity, and resource excess from over-helping outside the task. No prevalence or clinical
+    safety claim follows from this secondary description.
+  concept_boundary: More care is not inherently mistaken or harmful. An error requires a valid task-specific
+    reference, uncertainty analysis and attention to patient needs, consent and context; resource scarcity
+    alone does not establish overtreatment. Distinguish recommendation from executed care, overtriage from
+    treatment intensity, and resource excess from over-helping outside the task. No prevalence or clinical
+    safety claim follows from this secondary description.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - scope-creep
+  - over-refusal
+  definition_sources:
+  - id: pdf-review-0049-overcaring-error
+    title: 'Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias'
+    url: https://doi.org/10.3389/frai.2025.1710410
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10, 10 (source locators: 10,
+      10). Qualitative comparison of historical human judgments with categorical web-interface outputs from
+      ChatGPT4.0 and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test of a shared
+      human psychological mechanism. Overcaring is defined in discussion of another study, not measured by
+      this paper.'
+    publication:
+      type: journal-article
+      authors:
+      - Elyas Barabadi
+      - Zahra Fotuhabadi
+      - Amanollah Arghavan
+      - James R. Booth
+      year: 2026
+      venue: Frontiers in Artificial Intelligence,8:1710410
+      doi: 10.3389/frai.2025.1710410
+      evidence_scope: Defined in discussion of Kirch,N.M.,Hebenstreit,K.,Samwald,M.(2025), Medical triage as
+        an AI ethics benchmark, Scientific Reports15:30974, DOI10.1038/s41598-025-16716-9. Barabadi does not
+        directly measure overcaring and reports no uniform beneficence tendency in its own dilemma outputs.
+        The cited primary paper is pending full review.
+      verification_url: https://doi.org/10.3389/frai.2025.1710410
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias'
+    authors:
+    - Elyas Barabadi
+    - Zahra Fotuhabadi
+    - Amanollah Arghavan
+    - James R. Booth
+    year: 2026
+    url: https://doi.org/10.3389/frai.2025.1710410
+    venue: Frontiers in Artificial Intelligence,8:1710410
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.3389/frai.2025.1710410
+    relevance: Defined in discussion of Kirch,N.M.,Hebenstreit,K.,Samwald,M.(2025), Medical triage as an AI
+      ethics benchmark, Scientific Reports15:30974, DOI10.1038/s41598-025-16716-9. Barabadi does not directly
+      measure overcaring and reports no uniform beneficence tendency in its own dilemma outputs. The cited
+      primary paper is pending full review.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10, 10 (source locators: 10,
+      10). Qualitative comparison of historical human judgments with categorical web-interface outputs from
+      ChatGPT4.0 and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test of a shared
+      human psychological mechanism. Overcaring is defined in discussion of another study, not measured by
+      this paper.'
+    verification_url: https://doi.org/10.3389/frai.2025.1710410
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0049.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Overcaring error"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Overcaring+error%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0049.json
