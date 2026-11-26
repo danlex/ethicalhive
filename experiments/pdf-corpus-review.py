@@ -136,6 +136,28 @@ def new_mode(review,finding,ontology):
           'review_record':str(record_path(review['sequence']).relative_to(ROOT))}}
 
 
+def fill_selected_from_read_reviews(mode):
+    """Fill real bibliography gaps, retaining the three existing selections."""
+    selected=mode.get('selected_papers')
+    if selected is None or len(selected)>=3:return False
+    before=len(selected)
+    identities={paper_identifier(p['url']) for p in selected}
+    titles={normalized(p['title']) for p in selected}
+    for note in mode.get('research_notes',[]):
+        path=note.get('review_record')
+        if not path or not (ROOT/path).is_file():continue
+        review=read_json(ROOT/path)
+        if review.get('duplicate_of') or review.get('reading',{}).get('status')!='full-extracted-text-read':continue
+        finding=next((f for f in review['findings'] if f.get('target_id')==mode['id']
+                      and f['decision']=='enrich-existing'),None)
+        if finding is None:continue
+        paper=citation(review,finding)
+        if paper['id'] in identities or normalized(paper['title']) in titles:continue
+        selected.append(paper);identities.add(paper['id']);titles.add(normalized(paper['title']))
+        if len(selected)>=3:break
+    return len(selected)!=before
+
+
 def save_ontology(original,ontology,changed,new_ids):
     # Preserve every unmodified record byte-for-byte instead of reformatting the catalogue.
     text=original
@@ -189,7 +211,17 @@ def apply_review(path,pdf):
     if any(f.get('revised_definition') for f in review.get('findings',[])):
         review['ontology_changes']['revised_definitions']=[f['target_id'] for f in review['findings'] if f.get('revised_definition')]
     write_json(destination,review);write_json(MANIFEST,manifest)
+    # The current review must exist before its citation is eligible for selection.
+    sync_citations(changed)
     print(json.dumps({'review':str(destination.relative_to(ROOT)),'added':new,'enriched':changed}))
+
+
+def sync_citations(only_ids=None):
+    original=ONTOLOGY.read_text();ontology=yaml.safe_load(original)
+    changed=[m['id'] for m in ontology['modes'] if (only_ids is None or m['id'] in only_ids)
+             and fill_selected_from_read_reviews(m)]
+    if changed:save_ontology(original,ontology,changed,set())
+    print(json.dumps({'read_review_citations_filled':changed}))
 
 
 def lookup(terms):
@@ -232,6 +264,7 @@ if __name__=='__main__':
     p=sub.add_parser('pages');p.add_argument('pdf',type=Path);p.add_argument('--start',type=int,default=1);p.add_argument('--end',type=int)
     sub.add_parser('status')
     sub.add_parser('sync-timelines')
+    sub.add_parser('sync-citations')
     args=parser.parse_args()
     if args.action=='apply':apply_review(args.review,args.pdf)
     elif args.action=='lookup':lookup(args.terms)
@@ -239,4 +272,5 @@ if __name__=='__main__':
         pages=pdf_pages(args.pdf)
         for index in range(args.start-1,min(args.end or len(pages),len(pages))):print(f'\n--- PDF page {index+1} ---\n'+pages[index])
     elif args.action=='sync-timelines':sync_timelines()
+    elif args.action=='sync-citations':sync_citations()
     else:status()

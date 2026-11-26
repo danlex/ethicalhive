@@ -35,3 +35,9 @@ python3 experiments/pdf-corpus-review.py lookup 'proposed term'
 python3 experiments/pdf-corpus-review.py apply /tmp/review.json --pdf /path/to/paper.pdf
 python3 experiments/validate-ontology.py
 ```
+
+When a read source enriches an existing entry with fewer than three selected citations,
+`sync-citations` fills the remaining slots from distinct, completed PDF review records.
+It preserves existing selections, checks normalized publication identities and titles,
+excludes verified duplicate files, and retains each source's evidence scope and access
+limits. This does not alter bibliographic search totals or invent unread references.

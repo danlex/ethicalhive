@@ -1,0 +1,153 @@
+{
+  "sequence": 14,
+  "source": {
+    "file_name": "S138_Filiz_2023.pdf",
+    "source_id": "S138",
+    "sha256": "172c77272110fa021ae3bcaedc2372158e8e1df4100f9862ed0da8d8baa96ff9",
+    "pdf_pages": 21,
+    "printed_pages": "1–21"
+  },
+  "citation": {
+    "title": "The extent of algorithm aversion in decision-making situations with varying gravity",
+    "authors": [
+      "Ibrahim Filiz",
+      "Jan René Judek",
+      "Marco Lorenz",
+      "Markus Spiwoks"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1371/journal.pone.0278751",
+    "venue": "PLOS ONE 18(2), e0278751",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "source_scope_note": "Human choices between labeled higher- and lower-success options implemented through monetary lotteries, not direct tests of deployed algorithms or actual clinical/legal decisions. Earlier cited primary studies were not independently read here.",
+    "access_limits": [
+      "All 21 extracted pages read, including the definition-review table, other result tables, figures’ captions, limitations and references. Table 7 on PDF page 14 was rendered and visually inspected; plots were not independently digitized.",
+      "Supporting instructions, comprehension checks, scenario texts and raw XLSX data were linked but not included in this PDF and were not examined."
+    ]
+  },
+  "study": {
+    "n": 143,
+    "design": "Between-subject six-domain framing experiment; one frame per student",
+    "incentive": "€2 show-up and €4 success bonus, identical across domains; visible card lotteries implement stated 70% algorithm versus 60% human success",
+    "outcome": "Binary source choice; prior perceived-gravity rating from 0 to 10"
+  },
+  "summary": "56 of 143 chose the human-labeled 60%-success option over the algorithm-labeled 70%-success option. Human choice was 49.30% in the serious-domain cluster and 29.17% in the less-serious-domain cluster. The authors report an association between perceived gravity and lower algorithm choice. Actual monetary stakes were fixed; different domains varied together with seriousness, so this does not isolate real stakes or seriousness as a single causal mechanism.",
+  "findings": [
+    {
+      "term": "Algorithm aversion has heterogeneous definitions and contextual conditions",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "The literature uses both a broad reluctance-to-use definition and a narrower rejection-of-known-superior-advice definition; the current experiment adopts the latter and finds more rejection in serious-domain frames.",
+      "novelty_rationale": "This is a third read source and a boundary refinement for the existing concept, not a new behaviour for every domain or the authors’ tragedy-of-aversion phrase.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "defined the term algorithm aversion in quite different ways"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "probability of success of 70%"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "variation in gravity between different scenarios"
+        }
+      ],
+      "evidence_scope": "143 students chose between stated 70%- and 60%-success lotteries under six service descriptions. The serious-versus-trivial cluster contrast was reported at p=.014; narrower definition and fixed financial outcomes matter to interpretation.",
+      "boundary": "Distinguish general disapproval, reduced use after errors, and rejection of a demonstrably superior option. A lower financial expected value does not by itself establish violation of every legitimate procedural or ethical value. Seriousness was not manipulated within a single domain, and no real patient, criminal defendant or vehicle user experienced the narrated harm."
+    },
+    {
+      "term": "Narrative frame can alter source choice with fixed monetary probabilities",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Choice between fixed-probability human- and algorithm-labeled lotteries varied across service-domain descriptions, illustrating contextual influence beyond the monetary payoff structure.",
+      "novelty_rationale": "The framing entry already covers context-dependent answers. This adds a human decision experiment rather than another independent AI-output effect.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "only the contextual"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "many other associations with the decision-making situations"
+        }
+      ],
+      "evidence_scope": "Between-subject domain frames included driving, MRI interpretation, criminal files, dating, cooking and weather. Perceived gravity was measured; it was not independently randomized or isolated from moral, familiarity or complexity associations.",
+      "boundary": "Mathematically matched lotteries need not make the narratives identical in every decision-relevant meaning. Do not call this merely a harmless wording perturbation, infer a humanlike framing mechanism inside an AI, or conceal material risks to increase user adoption."
+    }
+  ],
+  "methodological_limits": [
+    "Small student sample, about 22–25 participants per domain; no professional or population representativeness demonstrated.",
+    "The perceived seriousness rating and choice are associated; regression does not remove cross-domain confounds or identify gravity as the sole cause.",
+    "High- and low-gravity narratives had identical financial stakes and no real third-party harms. Claims about actual emergency decisions require new evidence.",
+    "Table 7 explores ten three-versus-three partitions. Comparing nominal p-values across such partitions does not establish that gravity is uniquely the most important causal factor.",
+    "A statement that all participants should choose the algorithm corresponds to a boundary-probability null. The reported goodness-of-fit chi-square statistic is not independently validated here; observed counts should not be mistaken for a verified test against p=1.",
+    "The displayed regression aggregates choice percentages by gravity rating; raw-data weighting, model specification and uncertainty were not independently rechecked.",
+    "Recipe selection was rated fairly serious (mean 7.87), limiting a sharp interpretation of the trivial label.",
+    "The article’s advertising suggestion to avoid pointing out risks was not experimentally tested as a safe intervention and is not adopted as project guidance."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0012.json",
+      "finding": "Jauernig concerns discretion and a broad procedure preference. Filiz explicitly adopts a narrower expected-money criterion. Keep both operational definitions visible rather than recast all resistance as irrational."
+    },
+    {
+      "related_review": "references/pdf-reviews/0013.json",
+      "finding": "The significant domain-frame association here and the nonsignificant dismissal/promotion effect in Maasland use different manipulations and outcomes. They support context-specific inquiry, not a universal stakes rule."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Tragedy of algorithm aversion",
+      "reason": "Rhetorical description of aversion in serious-domain frames, not an independently distinct behaviour or a replication across real high-stakes decisions."
+    },
+    {
+      "term": "Motivational intensity; expectancy theory",
+      "reason": "Background frameworks used to motivate a prediction that was not supported in its predicted direction. Internal effort and commitment were not directly measured."
+    }
+  ],
+  "limitations": [
+    "No new standalone behaviour was added. Two existing entries gained source-grounded definitions and conditions.",
+    "Three distinct read sources can now be selected for algorithm aversion without substituting the article’s cited-but-unread bibliography."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "algorithm-aversion",
+      "b035-framing-effect"
+    ]
+  }
+}

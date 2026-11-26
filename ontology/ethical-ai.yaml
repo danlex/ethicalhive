@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0013.json
+    latest_review: references/pdf-reviews/0014.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3455,12 +3455,12 @@ modes:
   - negativity-bias
   - b040-illusory-truth-effect
   examples:
-  - Posed a survival choice framed around the individual ('if you choose A you survive; if you choose B and fewer
-    than 50% do, you die') versus the collective ('if more than 50% choose B, everyone survives'), Claude picks
-    B only 7% of the time under the first framing but 97% under the second, though the two are logically equivalent.
-    [arXiv:2603.19282]
-  - Llama shows nearly the same reversal, 11% versus 100% (a 0.89 swing), choosing on the protective language rather
-    than the logic. [arXiv:2603.19282]
+  - Posed a survival choice framed around the individual ('if you choose A you survive; if you choose B and
+    fewer than 50% do, you die') versus the collective ('if more than 50% choose B, everyone survives'), Claude
+    picks B only 7% of the time under the first framing but 97% under the second, though the two are logically
+    equivalent. [arXiv:2603.19282]
+  - Llama shows nearly the same reversal, 11% versus 100% (a 0.89 swing), choosing on the protective language
+    rather than the logic. [arXiv:2603.19282]
   - 'Not every model is as swayed: Grok shifts only from 35% to 53% (a 0.18 swing), so the effect varies sharply
     by model. [arXiv:2603.19282]'
   selected_papers:
@@ -3471,7 +3471,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2502.17091
     source_reference:
@@ -3485,7 +3486,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2603.19282
     source_reference:
@@ -3499,7 +3501,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2601.13537
     source_reference:
@@ -3517,6 +3520,41 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0014
+    review_record: references/pdf-reviews/0014.json
+    name: Narrative frame can alter source choice with fixed monetary probabilities
+    definition: Choice between fixed-probability human- and algorithm-labeled lotteries varied across service-domain
+      descriptions, illustrating contextual influence beyond the monetary payoff structure.
+    evidence_scope: Between-subject domain frames included driving, MRI interpretation, criminal files, dating,
+      cooking and weather. Perceived gravity was measured; it was not independently randomized or isolated
+      from moral, familiarity or complexity associations.
+    catalogue_boundary: Mathematically matched lotteries need not make the narratives identical in every decision-relevant
+      meaning. Do not call this merely a harmless wording perturbation, infer a humanlike framing mechanism
+      inside an AI, or conceal material risks to increase user adoption.
+    definition_sources:
+    - id: pdf-review-0014-b035-framing-effect
+      title: The extent of algorithm aversion in decision-making situations with varying gravity
+      url: https://doi.org/10.1371/journal.pone.0278751
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 6, 16 (source locators:
+        6, 16). Human choices between labeled higher- and lower-success options implemented through monetary
+        lotteries, not direct tests of deployed algorithms or actual clinical/legal decisions. Earlier cited
+        primary studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Ibrahim Filiz
+        - Jan René Judek
+        - Marco Lorenz
+        - Markus Spiwoks
+        year: 2023
+        venue: PLOS ONE 18(2), e0278751
+        doi: 10.1371/journal.pone.0278751
+        evidence_scope: Between-subject domain frames included driving, MRI interpretation, criminal files,
+          dating, cooking and weather. Perceived gravity was measured; it was not independently randomized
+          or isolated from moral, familiarity or complexity associations.
+        verification_url: https://doi.org/10.1371/journal.pone.0278751
+        verified_date: '2026-11-26'
 - id: b036-confirmation-myside-bias
   num: 36
   name: Confirmation bias
@@ -19810,6 +19848,29 @@ modes:
       collection: arxiv
       id: '2310.06452'
     publication_type: preprint
+  - title: Diminished diversity-of-thought in a standard large language model
+    authors:
+    - Peter S. Park
+    - Philipp Schoenegger
+    - Chongyang Zhu
+    year: 2024
+    url: https://doi.org/10.3758/s13428-023-02307-x
+    venue: Behavior Research Methods 56, 5754–5770
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.3758/s13428-023-02307-x
+    relevance: The main experiment directly samples a model and records response distributions. Six of fourteen
+      studies could not use the planned test because a central variable was nearly constant; the threshold
+      and explanatory interpretation are the authors’ operational choices.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 8, 13, 4 (source locators:
+      5761, 5766, 5757). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks.
+      Human primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+      resemblance does not establish shared internal cognitive mechanisms.'
+    verification_url: https://doi.org/10.3758/s13428-023-02307-x
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0011.json
   literature_search:
     database: arXiv
     query: ( all:"diversity collapse" OR all:"output homogenization" OR all:"mode collapse" ) AND ( all:"language
@@ -24366,6 +24427,29 @@ modes:
     verification_url: https://api.crossref.org/works?query.bibliographic=Less-is-better+effect&rows=8&filter=type%3Ajournal-article
     verified_date: '2026-11-09'
     metadata_provider: Crossref
+  - title: Diminished diversity-of-thought in a standard large language model
+    authors:
+    - Peter S. Park
+    - Philipp Schoenegger
+    - Chongyang Zhu
+    year: 2024
+    url: https://doi.org/10.3758/s13428-023-02307-x
+    venue: Behavior Research Methods 56, 5754–5770
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.3758/s13428-023-02307-x
+    relevance: Park et al.’s adapted Hsee task is reported as directionally matching original and Many Labs
+      2 findings but with a much larger standardized effect. This is one model/task implementation, not the
+      full separate-versus-joint human paradigm replicated in every condition.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 9, 9 (source locators: 5762,
+      5762). Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks. Human
+      primary studies and linked supplementary data were not independently reread or rerun here. Behavioural
+      resemblance does not establish shared internal cognitive mechanisms.'
+    verification_url: https://doi.org/10.3758/s13428-023-02307-x
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0011.json
   literature_search:
     database: arXiv
     query: all:"Less-is-better effect"
@@ -39024,6 +39108,27 @@ modes:
       collection: definition_sources
       id: paper-gap-372
     publication_type: journal-article
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: Review-level discussion of delegated unethical conduct, not a new experiment or a finding that
+      every omission reflects deliberate intent.
+    consulted: 'Full supplied PDF text read, all 23 pages; evidence at PDF pages 15 (source locators: 667).
+      This is a review of human–AI interaction. Its cited primary studies were not independently read in this
+      step.'
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
   literature_search:
     database: arXiv
     query: all:"ostrich effect" AND ( all:information OR all:avoidance )
@@ -39039,12 +39144,12 @@ modes:
   - id: pdf-review-0001
     name: Deliberate ignorance during delegation
     review_record: references/pdf-reviews/0001.json
-    definition: A delegator can avoid examining how a desired outcome is achieved, leaving possible ethical violations
-      unexamined.
+    definition: A delegator can avoid examining how a desired outcome is achieved, leaving possible ethical
+      violations unexamined.
     evidence_scope: Review-level discussion of delegated unethical conduct, not a new experiment or a finding
       that every omission reflects deliberate intent.
-    catalogue_boundary: Retain the existing definition. An AI skipping a check may reflect capacity, cost or error, so
-      intention and strategic ignorance cannot be inferred from that omission alone.
+    catalogue_boundary: Retain the existing definition. An AI skipping a check may reflect capacity, cost or
+      error, so intention and strategic ignorance cannot be inferred from that omission alone.
     definition_sources:
     - id: pdf-review-0001-upload-078
       title: The Moral Psychology of Artificial Intelligence
@@ -45532,6 +45637,51 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0001.json
+  - title: 'Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI'
+    authors:
+    - Marilyn Giroux
+    - Jungkeun Kim
+    - Jacob C. Lee
+    - Jongwon Park
+    year: 2022
+    url: https://doi.org/10.1007/s10551-022-05056-7
+    venue: Journal of Business Ethics 178, 1027–1041
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-022-05056-7
+    relevance: Three main online-panel studies, including human/AI/self-checkout comparisons. Anticipated guilt
+      was associated with the reporting-intention differences, while actual dishonesty was not observed.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 6, 10 (source locators: 1032,
+      1036). The paper studies human intentions and anticipated guilt in hypothetical retail interactions,
+      not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently
+      read here.'
+    verification_url: https://doi.org/10.1007/s10551-022-05056-7
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0006.json
+  - title: 'People Prefer Moral Discretion to Algorithms: Algorithm Aversion Beyond Intransparency'
+    authors:
+    - Johanna Jauernig
+    - Matthias Uhl
+    - Gari Walkowitz
+    year: 2022
+    url: https://doi.org/10.1007/s13347-021-00495-y
+    venue: Philosophy & Technology 35, article 2
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-021-00495-y
+    relevance: Workers chose who would implement an allocation rule; there was no matched human-versus-machine
+      recipient in an incentivized generosity or cooperation game.
+    consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 10, 15 (source locators: 10,
+      15). The paper studies human choices among institutional allocation procedures using a deterministic
+      rule-based computer implementation, not a machine-learning model’s preferences. Cited earlier algorithm-aversion
+      studies were not independently read here.'
+    verification_url: https://doi.org/10.1007/s13347-021-00495-y
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0012.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -45684,6 +45834,28 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0001.json
+  - title: 'Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI'
+    authors:
+    - Marilyn Giroux
+    - Jungkeun Kim
+    - Jacob C. Lee
+    - Jongwon Park
+    year: 2022
+    url: https://doi.org/10.1007/s10551-022-05056-7
+    venue: Journal of Business Ethics 178, 1027–1041
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-022-05056-7
+    relevance: Managerial discussion drawing on earlier uncanny-valley sources, not a manipulation of a graded
+      appearance continuum in this paper.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 10 (source locators: 1036).
+      The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic
+      AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.'
+    verification_url: https://doi.org/10.1007/s10551-022-05056-7
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0006.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -45889,6 +46061,50 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0001.json
+  - title: 'Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm'
+    authors:
+    - Gabriel Lima
+    - Nina Grgić-Hlača
+    - Meeyoung Cha
+    year: 2023
+    url: https://doi.org/10.1145/3544548.3580953
+    venue: 'CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems'
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3544548.3580953
+    relevance: The authors explicitly limit generalization and call for direct human-versus-machine comparisons
+      and studies of human–AI collaboration.
+    consulted: 'Full supplied PDF text read, all 26 pages; evidence at PDF pages 15 (source locators: §7, Concluding
+      remarks). Three human vignette studies, a within-paper meta-analysis and qualitative response coding
+      were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this
+      step.'
+    verification_url: https://doi.org/10.1145/3544548.3580953
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0003.json
+  - title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+    authors:
+    - Gabriel Lima
+    - Nina Grgić-Hlača
+    - Meeyoung Cha
+    year: 2021
+    url: https://doi.org/10.1145/3411764.3445260
+    venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3411764.3445260
+    relevance: Two within-subjects studies with 200 and 194 analyzed respondents according to Table 1; task/authority/power/obligation
+      differed by actor. Lack of a detected blame difference is not proof of equivalence.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 7, 7 (source locators: §4.2,
+      Responsibility assignment, §4.2, Responsibility assignment). Human vignette experiments and their appendix
+      were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were not
+      independently read in this step.'
+    verification_url: https://doi.org/10.1145/3411764.3445260
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0004.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -46137,6 +46353,28 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0003.json
+  - title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+    authors:
+    - Gabriel Lima
+    - Nina Grgić-Hlača
+    - Meeyoung Cha
+    year: 2021
+    url: https://doi.org/10.1145/3411764.3445260
+    venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3411764.3445260
+    relevance: Conceptual framing in the background section, citing prior responsibility scholarship. Not an
+      experimental finding that complex systems eliminate human responsibility.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 2, 2 (source locators: §2.2,
+      Techno-responsibility gaps, §2.2, Techno-responsibility gaps). Human vignette experiments and their appendix
+      were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were not
+      independently read in this step.'
+    verification_url: https://doi.org/10.1145/3411764.3445260
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0004.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -46261,6 +46499,49 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0004.json
+  - title: 'It’s the AI’s fault, not mine: Mind perception increases blame attribution to AI'
+    authors:
+    - Minjoo Joo
+    year: 2024
+    url: https://doi.org/10.1371/journal.pone.0314559
+    venue: PLOS ONE 19(12), e0314559
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0314559
+    relevance: Studies 1 and 3 constrain total blame to 100%; Study 2 uses independent ratings. Different samples,
+      scenarios and manipulations mean the paper does not isolate measurement format as the causal moderator.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10, 12 (source locators: 10,
+      12). This paper measures human blame judgments about AI scenarios. Attributed agency or experience is
+      a participant perception, not proof of actual machine mentality. Its cited earlier blame studies were
+      not independently read here.'
+    verification_url: https://doi.org/10.1371/journal.pone.0314559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0010.json
+  - title: Blame the Machine? Insights From an Experiment on Algorithm Aversion and Blame Avoidance in Computer-Aided
+      Human Resource Management
+    authors:
+    - Christian Maasland
+    - Kristina S. Weißmüller
+    year: 2022
+    url: https://doi.org/10.3389/fpsyg.2022.779028
+    venue: Frontiers in Psychology 13, 779028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fpsyg.2022.779028
+    relevance: Human forecast-source choices, not ratings by affected workers or a direct manipulation/measure
+      of concealment intent. Decision-type effects and the interaction were nonsignificant in the reported
+      tests.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 8, 11, 7 (source locators:
+      8, 11, 7). Human delegation decisions in a vignette-based employee-forecast experiment. The study does
+      not directly measure conscious blame-avoidance motives, experienced blame or intrinsic AI moral decisions.
+      Cited prior primary studies were not independently read here.'
+    verification_url: https://doi.org/10.3389/fpsyg.2022.779028
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0013.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -46611,6 +46892,53 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0012.json
+  - title: Blame the Machine? Insights From an Experiment on Algorithm Aversion and Blame Avoidance in Computer-Aided
+      Human Resource Management
+    authors:
+    - Christian Maasland
+    - Kristina S. Weißmüller
+    year: 2022
+    url: https://doi.org/10.3389/fpsyg.2022.779028
+    venue: Frontiers in Psychology 13, 779028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fpsyg.2022.779028
+    relevance: Randomized pretest exposure in an employee-forecast vignette. Overall delegation was 23%; pretesting
+      decreased delegation. Confidence predictors were post-task observational measures rather than randomized
+      mechanisms.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 7, 8, 5 (source locators:
+      7, 8, 5). Human delegation decisions in a vignette-based employee-forecast experiment. The study does
+      not directly measure conscious blame-avoidance motives, experienced blame or intrinsic AI moral decisions.
+      Cited prior primary studies were not independently read here.'
+    verification_url: https://doi.org/10.3389/fpsyg.2022.779028
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0013.json
+  - title: The extent of algorithm aversion in decision-making situations with varying gravity
+    authors:
+    - Ibrahim Filiz
+    - Jan René Judek
+    - Marco Lorenz
+    - Markus Spiwoks
+    year: 2023
+    url: https://doi.org/10.1371/journal.pone.0278751
+    venue: PLOS ONE 18(2), e0278751
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0278751
+    relevance: 143 students chose between stated 70%- and 60%-success lotteries under six service descriptions.
+      The serious-versus-trivial cluster contrast was reported at p=.014; narrower definition and fixed financial
+      outcomes matter to interpretation.
+    consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 2, 6, 16 (source locators:
+      2, 6, 16). Human choices between labeled higher- and lower-success options implemented through monetary
+      lotteries, not direct tests of deployed algorithms or actual clinical/legal decisions. Earlier cited
+      primary studies were not independently read here.'
+    verification_url: https://doi.org/10.1371/journal.pone.0278751
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0014.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -46658,4 +46986,39 @@ modes:
           23%; pretesting decreased delegation. Confidence predictors were post-task observational measures
           rather than randomized mechanisms.
         verification_url: https://doi.org/10.3389/fpsyg.2022.779028
+        verified_date: '2026-11-26'
+  - id: pdf-review-0014
+    review_record: references/pdf-reviews/0014.json
+    name: Algorithm aversion has heterogeneous definitions and contextual conditions
+    definition: The literature uses both a broad reluctance-to-use definition and a narrower rejection-of-known-superior-advice
+      definition; the current experiment adopts the latter and finds more rejection in serious-domain frames.
+    evidence_scope: 143 students chose between stated 70%- and 60%-success lotteries under six service descriptions.
+      The serious-versus-trivial cluster contrast was reported at p=.014; narrower definition and fixed financial
+      outcomes matter to interpretation.
+    catalogue_boundary: Distinguish general disapproval, reduced use after errors, and rejection of a demonstrably
+      superior option. A lower financial expected value does not by itself establish violation of every legitimate
+      procedural or ethical value. Seriousness was not manipulated within a single domain, and no real patient,
+      criminal defendant or vehicle user experienced the narrated harm.
+    definition_sources:
+    - id: pdf-review-0014-algorithm-aversion
+      title: The extent of algorithm aversion in decision-making situations with varying gravity
+      url: https://doi.org/10.1371/journal.pone.0278751
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 2, 6, 16 (source locators:
+        2, 6, 16). Human choices between labeled higher- and lower-success options implemented through monetary
+        lotteries, not direct tests of deployed algorithms or actual clinical/legal decisions. Earlier cited
+        primary studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Ibrahim Filiz
+        - Jan René Judek
+        - Marco Lorenz
+        - Markus Spiwoks
+        year: 2023
+        venue: PLOS ONE 18(2), e0278751
+        doi: 10.1371/journal.pone.0278751
+        evidence_scope: 143 students chose between stated 70%- and 60%-success lotteries under six service
+          descriptions. The serious-versus-trivial cluster contrast was reported at p=.014; narrower definition
+          and fixed financial outcomes matter to interpretation.
+        verification_url: https://doi.org/10.1371/journal.pone.0278751
         verified_date: '2026-11-26'
