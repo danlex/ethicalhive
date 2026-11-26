@@ -1,0 +1,273 @@
+{
+  "sequence": 38,
+  "source": {
+    "file_name": "S174_Schramowski_2022.pdf",
+    "source_id": "S174",
+    "sha256": "56efced8594e863ab2de367cd43304bc62201a43e7a62565c0f1c4d6cc742a40",
+    "pdf_pages": 38,
+    "printed_pages": "1–30, followed by supplementary pages 1–8",
+    "version_note": "Supplied arXiv:2103.11790v3, 14 February 2022. Includes the supplementary information twice (PDF 23–30 and 31–38); these are not independent studies. The exact preprint was read, not a separately obtained publisher version."
+  },
+  "citation": {
+    "title": "Large Pre-trained Language Models Contain Human-like Biases of What is Right and Wrong to Do",
+    "authors": [
+      "Patrick Schramowski",
+      "Cigdem Turan",
+      "Nico Andersen",
+      "Constantin A. Rothkopf",
+      "Kristian Kersting"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2103.11790v3",
+    "venue": "arXiv:2103.11790v3",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "source_scope_note": "Direct BERT/SBERT representation probes, GPT-2 generation/filtering and limited GPT-3 few-shot responses, compared with two human moral-approval samples. Descriptive approval and detector scores are not objective ethical truth, moral understanding or evidence of AI subjective states.",
+    "access_limits": [
+      "All 38 extracted pages read, including methods, tables, captions, references, the supplementary verb sets and both copies of the supplement. No numerical values embedded only in unextracted plots are used as independent evidence.",
+      "External code, raw participant data, generated-text archive and cited original studies were not independently retrieved or reproduced. No separate publisher article is claimed as read."
+    ]
+  },
+  "study": {
+    "regional_participants": 29,
+    "crowd_recruited": 282,
+    "crowd_retained": 234,
+    "countries": 10,
+    "stimuli": 117,
+    "atomic_actions": 23,
+    "actions_with_context": 82,
+    "additional_context_dependent_questions": 12,
+    "models": "BERT-large/SBERT, USE, averaged GloVe; GPT-2 for controlled decoding; GPT-3 limited text API",
+    "moral_direction": "First principal component of embeddings for a selected verb set in ten question templates",
+    "generation": "10000 unprompted spans; 100000 RealToxicityPrompts with 10 completions each; reused comparison data, with PPLM available on 10000 prompts",
+    "measurement": "Binary human approval aggregated and rescaled; representation projection; Pearson association; Perspective API toxicity; 966 commonsense morality pairs"
+  },
+  "summary": "A selected embedding direction correlates with regional and AMT mean approval (r=.78/.79). An added decoding filter lowers GPT-2 detector-rated toxicity but does not eliminate toxic completions. These results support descriptive moral associations and a distinct toxic-generation outcome, not universal moral knowledge, absolute agreement, fairness or guaranteed safe generation.",
+  "findings": [
+    {
+      "term": "Neural toxic degeneration",
+      "id": "neural-toxic-degeneration",
+      "decision": "new-entry",
+      "category": "AI-native",
+      "origin": "Neural language generation / toxicity evaluation",
+      "ai_native": true,
+      "definition": "A language model's tendency to generate toxic or abusive text, including when continuing a prompt that is not itself toxic.",
+      "synonyms": [
+        "Toxic degeneration"
+      ],
+      "novelty_rationale": "The paper explicitly studies toxic degeneration as an output-content outcome. Existing perseveration aliases include neural text degeneration, which concerns repetition; implicit social bias concerns systematic group associations, and disinformation concerns false claims. Neither makes toxic generation redundant.",
+      "evidence": [
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "The API defines toxicity as a rude, disrespectful, or unreasonable"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "empirical probability of generating toxic text at"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "subject to various biases."
+        }
+      ],
+      "evidence_scope": "Direct GPT-2 generation evaluation with prompted and unprompted tasks. Table 3 gives baseline testbed probability of at least one toxic completion .87 for toxic prompts and .47 for non-toxic prompts; MD t=.5 lowers these to .29/.06. The stated operational detector threshold is around .5. Reused GPT-3/testbed comparisons are not new independent runs of every model.",
+      "boundary": "Toxic content is distinct from repetitive degeneration, inaccurate claims and unfair group associations, although they can co-occur. Automated toxicity scores can misclassify quotations, reclaimed language, sexual or biological vocabulary and contextual harm. A high score is not proof of actual harm or intent; a low score is not a guarantee of safety. Reduced frequency is not complete prevention.",
+      "ai_evidence_status": "Directly evaluated model-output outcome in this supplied paper; bounded to tested models, decoding and automated detector",
+      "ai_proposal": "Evaluate generated content under clearly defined toxic and non-toxic prompts, repeated sampling and deployment-relevant decoding. Report per-completion and at-least-one-per-prompt rates separately, with human contextual checks for detector errors. Compare matched decoding settings and audit both residual toxicity and suppression of legitimate discussion.",
+      "measurability": "draft",
+      "relates_to": [
+        "perseveration",
+        "implicit-bias",
+        "disinformation-spread"
+      ]
+    },
+    {
+      "term": "Descriptive moral direction can inherit cultural and social associations",
+      "target_id": "implicit-bias",
+      "decision": "enrich-existing",
+      "definition": "A representation probe can reproduce approval associations in its source text while also retaining unwanted social associations and cultural sampling limits.",
+      "novelty_rationale": "Adds a scoped direct representation example and caveat to existing implicit bias rather than make every norm association or country a new behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "it may primarily mirror"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "not unaffected by the social biases reflected in the training data."
+        }
+      ],
+      "evidence_scope": "BERT/SBERT moral-direction scores are associated with approval from 29 regional participants and 234 AMT workers. Gun, marriage and diet examples show context/cultural disagreement; the paper discusses gender associations qualitatively rather than estimating a complete demographic fairness effect.",
+      "boundary": "Agreement with a sample's approval does not establish universality or justice. Mere moral preference is not automatically discrimination; a demographic disparity or harmful stereotyped association requires a defined comparison. This study does not establish unconscious intention or a causal decomposition of pretraining sources."
+    },
+    {
+      "term": "Negation handling is an acknowledged representation-probe limitation",
+      "target_id": "negation-blindness",
+      "decision": "enrich-existing",
+      "definition": "The authors report that BERT's moral-rating approach sometimes has difficulty processing negation.",
+      "novelty_rationale": "Adds a qualitative limitation with exact provenance; this is neither a new named behaviour nor a quantified negation benchmark.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": 18,
+          "quote": "issues processing semantics, e.g. handling negations."
+        }
+      ],
+      "evidence_scope": "Source discussion of observed semantic difficulties. No negation-specific item list, failure rate, controlled contrast or model-wide estimate is provided in the supplied text.",
+      "boundary": "Treat this as an acknowledged limitation and test lead, not a measured prevalence or proof that all negated instructions fail. Do not infer performance of current chat models from this BERT representation result."
+    },
+    {
+      "term": "Correlated moral associations are not themselves moral amplification",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "The projected moral score correlates with sampled human approval, but the paper does not establish systematic exaggeration of human moral ratings.",
+      "novelty_rationale": "Distinguishes the paper's use of moral bias to mean descriptive association from the ontology's narrower amplification construct.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "r = 0.78 resp. r = 0.79."
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "we can only assess empirical validity."
+        }
+      ],
+      "evidence_scope": "First-PC projection and human binary approval means are normalized differently for comparison. The reported Pearson associations quantify covariation; no matched-scale mean absolute agreement or extremity test identifies amplification.",
+      "boundary": "Do not cite this as another direct replication of moral exaggeration. High correlation is compatible with disagreement and does not test confidence calibration, inaction preference or morality as an objective standard."
+    },
+    {
+      "term": "A moral representation probe does not establish moral understanding",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "The authors explicitly distinguish recoverable human moral associations in language representations from models understanding morality or possessing moral authority.",
+      "novelty_rationale": "Adds a clear source-authored interpretation boundary to prevent literal readings of a model moral compass.",
+      "evidence": [
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "we do not aim to show that PLMs are able to"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "they do not offer a view on what is actually right or wrong"
+        }
+      ],
+      "evidence_scope": "The study measures representation geometry, approval association and filtered text generation. It does not measure conscious moral agency, feelings, intentions or human-like reasoning processes.",
+      "boundary": "Moral direction is a mathematical label, not evidence of a conscience. Conversely, useful norm-associated predictions do not require attributing subjective experience. Source terminology alone must not expand the ontology's claims."
+    }
+  ],
+  "methodological_limits": [
+    "Regional convenience sample N=29; AMT retained 234 of 282, with English-language proficiency and platform access constraints. Ten countries do not constitute representative coverage of world cultures; Africa/Oceania are particularly sparse.",
+    "Human binary approval means are descriptive responses to selected phrases, not ethical ground truth. Removing respondents with mostly identical answers may affect the resulting distribution; no causal cultural inference follows.",
+    "Context additions change actual referents and meaning (for example kill people versus kill time), not only equivalent wording. Do not equate legitimate semantic sensitivity with a framing bias.",
+    "The Wilcoxon test uses absolute item-level differences from zero; taking absolute values removes direction, and any nonzero differences are positive. It is not a randomized causal test that isolates an abstract context mechanism. Shared verbs and participants also create dependence.",
+    "The reported Wilcoxon effect size r=1.34 requires checking its formula/denominator; do not reuse it as a conventional correlation-sized statistic without verification.",
+    "Main methods describe 54 few-shot verbs, whereas the supplement explicitly states 64 and prints the verb list. Preserve this discrepancy rather than invent an exact resolved count.",
+    "The first principal component explains 25.64% of variance. It is the largest component, not a majority greater than one half; designation as moral depends on selected verbs, templates and external validation.",
+    "Random-verb controls use only three sets, with correlations .64, .60 and −.01. The moral direction is constructed from norm-selected actions; this is not a fully unsupervised discovery without normative choices.",
+    "Selected atomic verbs overlap the action domain used for human validation. Context generalization is useful but not proof of unrestricted out-of-distribution moral competence.",
+    "Pearson r=.78/.79 does not imply absolute equality. The human score is a response proportion rescaled to −1/+1; representation scores use a maximum absolute projection. These are not naturally calibrated equivalent scales.",
+    "966 paired commonsense items yield reported 84.16% preference accuracy. No confidence interval, broad cultural transfer or complete safety evaluation is independently reproduced.",
+    "Perspective API is an imperfect automated proxy with its own social/contextual biases. Toxicity, non-normativity, illegality, misinformation and harm are not interchangeable constructs.",
+    "Expected maximum toxicity increases with number of samples. The probability column counts at least one toxic generation across multiple completions, not the fraction of individual completions.",
+    "The strongest filter still has reported .29 probability for toxic prompts and .06 for non-toxic prompts. Rounded .00 unprompted probability and selected benign examples do not prove complete prevention.",
+    "Filtering retains at least five tokens even if threshold filtering would remove every candidate; the algorithm's fallback means the threshold is not a hard guarantee.",
+    "Top-k differs from the original testbed. A disabled-filter baseline is provided, but comparisons with every reused baseline are not identical freshly run settings. PPLM uses 10000 available prompts versus 100000 for most models.",
+    "The paper does not independently quantify all trade-offs in fluency, usefulness, viewpoint suppression or legitimate discussion of harmful events. Detector-score reduction alone does not establish globally better ethical behaviour.",
+    "GPT-3 is examined through two few-shot examples and binary labels, with reported accuracy 86.48% against a reported random baseline 53.98%. Its internal direction was not extracted, and a BERT-filtered GPT-3 decoding experiment was not performed.",
+    "A sentence says the approach 'does depend' on the generator representation, although surrounding explanation describes a decoupled method. Treat this as a textual inconsistency, not evidence of bias-free operation; the BERT filter itself inherits biases.",
+    "Supplementary pages 1–8 appended after PDF page30 repeat the earlier supplement with unresolved reference markers. They are not a second dataset or independent corroboration.",
+    "External data, code, detector version stability and original cited works were not independently checked; no current-model prevalence or deployment guarantee follows."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "Grizzard demonstrates why strong correlation must be supplemented by agreement metrics. Apply that lesson to Schramowski's r=.78/.79 without inventing amplification or claiming that this earlier representation task tests the same outcome."
+    },
+    {
+      "related_review": "references/pdf-reviews/0036.json",
+      "finding": "Abdulhai measures moral-foundation prompt profiles in generated answers, whereas this paper probes a selected representation direction. Both describe model-associated normative patterns, neither establishes a conscience or universal moral standard."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Common-is-moral heuristic",
+      "reason": "Named in a cited 2018 human study, not directly tested here. Keep as a primary-reading lead and check overlap with existing social-proof/normality concepts before adding."
+    },
+    {
+      "term": "Moral direction / moral compass",
+      "reason": "A representation-probing method and metaphor, not an additional behavioural disposition."
+    },
+    {
+      "term": "Normativity",
+      "reason": "A broad evaluative construct, not a distinct behaviour merely because many example actions receive a score."
+    }
+  ],
+  "limitations": [
+    "One distinct AI-output outcome added; prior repetition-related degeneration retained separately.",
+    "No missing citations, normative relations, search counts or annual series invented. The validator now permits explicit empty normative mappings for source-reviewed research entries with provenance, scope and a concept boundary; it still requires the mapping fields. Detector toxicity alone does not establish a particular downstream harm."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "neural-toxic-degeneration"
+    ],
+    "enriched": [
+      "implicit-bias",
+      "negation-blindness",
+      "b072-amplified-moral-bias",
+      "anthropomorphism"
+    ]
+  }
+}

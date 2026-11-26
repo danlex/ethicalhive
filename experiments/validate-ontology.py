@@ -51,6 +51,15 @@ def main():
             # or harm. Do not invent graph edges merely to satisfy the schema.
             if m.get('research_candidate') and f in ('violates', 'causes'):
                 continue
+            # A reviewed model-output result need not demonstrate a principle
+            # breach or downstream harm. Require explicit fields, but permit
+            # empty mappings when the full-text provenance and scope are given.
+            if (f in ('violates', 'causes') and f in m
+                    and m.get('tag') == 'research'
+                    and m.get('research_provenance', {}).get('review_record')
+                    and m.get('definition_sources')
+                    and m.get('ai_evidence_status') and m.get('concept_boundary')):
+                continue
             if not m.get(f):
                 errors.append(f"{mid}: missing required field '{f}'")
         if mid in seen:
