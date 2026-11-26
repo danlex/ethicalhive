@@ -1,0 +1,277 @@
+{
+  "sequence": 30,
+  "source": {
+    "file_name": "S165_Huholt_2026.pdf",
+    "source_id": "S165",
+    "sha256": "021647baad624565f9322b4f9790acab6c1f4c6a79c8633d12a5311bb9b7c694",
+    "pdf_pages": 24,
+    "printed_pages": "1–24, article 105255",
+    "version_note": "Published 2026 article, with Appendix A instructions, Appendix B robustness study and Appendix C analyses included. DOI contains 2025, but publication date and issue are 2026. The apparent title suffix 'I' in extraction is the special-issue footnote marker, not part of 'AI'."
+  },
+  "citation": {
+    "title": "Trusting machines with morality — Delegating moral decisions to AI",
+    "authors": [
+      "Nicola Hüholt",
+      "Nora Szech"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.euroecorev.2025.105255",
+    "venue": "European Economic Review, 184, article 105255",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "source_scope_note": "Human delegation, self-reported responsibility and perceived AI capability in charitable-choice tasks. The paper's algorithm implements donation choices, but no test establishes the AI's moral competence or subjective agency. Dana/Fahrenwaldt theory and other cited originals were not independently read here.",
+    "access_limits": [
+      "All twenty-four pages read, including full included instructions, robustness study, appendix tables and captions, discussion and references. Pages 18 and 22 also rendered and visually inspected to check regression coding, sample notes and item-specific results.",
+      "External replication files, supplemental data/code and three preregistrations were not separately opened or reanalyzed. Appendix instructions are experimental materials, not instructions followed by this assistant."
+    ]
+  },
+  "study": {
+    "study_1_reported": 800,
+    "study_2_reported_country_counts": {
+      "Germany": 894,
+      "United_States": 3949
+    },
+    "study_2_country_count_sum": 4843,
+    "study_2_delegation_regression_n": 4839,
+    "abstract_main_total": 5639,
+    "robustness_appendix_retained": 592,
+    "sample_note": "The reported main total equals 800+4839, whereas country counts and Figure C.8 imply 4843 for Study 2. A four-case discrepancy is unresolved, not silently repaired.",
+    "design": "Study 1: human/AI delegate × gain/loss framing; Study 2: human/AI delegate × real/hypothetical consequences; Appendix B adds explicit no-burden-human comparison",
+    "task": "Choose between two effective charities or delegate; one-in-ten implementation in real conditions, no effect on personal pay, no later donation-outcome disclosure after delegation"
+  },
+  "summary": "AI delegation exceeded human delegation in Study 1 (17% versus 6.75%) and Study 2 (27.8% versus 18.32%). Study 1 framing and interaction were not significant. Study 2 real consequences increased AI delegation and decreased human delegation, with a significant interaction. Perceived AI capability also showed a delegate-type×consequence interaction, compatible with motivated belief adaptation. Self-selected delegation and later responsibility ratings do not establish their causal direction.",
+  "findings": [
+    {
+      "term": "Moral wiggle room",
+      "id": "moral-wiggle-room",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Behavioural economics / moral self-image and ambiguity",
+      "definition": "Ambiguity about intentions, consequences or responsibility that allows a self-serving choice to be justified while preserving a moral self-image.",
+      "novelty_rationale": "A situational opportunity for self-justification, rather than a synonym for all moral disengagement, motivated reasoning or active information avoidance. The article explicitly defines the mechanism from prior theory and applies it to uncertain beliefs about a moral delegate's competence.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "situational features that"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "hinder linking an agent’s behavior clearly to self-serving intentions"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "creates ‘wiggle room’ about the intentions behind delegation"
+        }
+      ],
+      "evidence_scope": "Conceptual definition and primary evidence consistent with a capability-belief adaptation account. Study 2 randomizes delegate availability and real/hypothetical consequences; ratings differ by their interaction. Ambiguity itself, moral self-image protection and deliberate exploitation were not independently randomized or directly established.",
+      "boundary": "Moral wiggle room is an enabling circumstance, not an automatic ethical violation or demonstrated motive. Legitimate uncertainty and justified delegation can look similar. This task offers two credible charitable options and does not establish that either choice or delegation is intrinsically unethical. Original Dana (2007) and Fahrenwaldt (2024) publications are cited, not independently read.",
+      "ai_evidence_status": "Human theory applied to AI delegation, with compatible human experimental results; AI exploitation analogue untested",
+      "ai_proposal": "Untested AI analogue: compare otherwise matched agent decisions under explicit versus ambiguous accountability, while keeping verified duties and outcomes available. Test whether ambiguity selectively permits unsupported excuses for a documented self-serving violation. Score the concrete duty and evidence handling, not presumed moral feelings, hidden motives or uncertainty itself.",
+      "relates_to": [
+        "b075-moral-disengagement",
+        "motivated-reasoning",
+        "self-serving-bias",
+        "agency-laundering",
+        "upload-078"
+      ]
+    },
+    {
+      "term": "Moral delegation preferences can favour AI over another person",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "The charitable-choice experiments found higher delegation to AI than to another participant, qualifying a blanket claim of aversion in moral decisions.",
+      "novelty_rationale": "Adds a directly tested task boundary to the existing human reluctance construct instead of naming a new aversion-reversal behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "17% of participants chose to delegate to an AI, compared to 6.75%"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "AI (27.8%) than when it was a human (18.32%, p < 0.001)."
+        }
+      ],
+      "evidence_scope": "Student and broader German/US panel samples. Delegate option was randomized between participants; this is a comparison of delegation frequency, not an individual forced choice between a human and AI shown together. Appendix B no-burden-human condition retained the pattern.",
+      "boundary": "Most participants still decided themselves; greater relative delegation is not universal trust or a guarantee of calibrated use. Two charities with no uniquely correct answer differ from diagnostic advice, expert comparisons or allocation imposing established harm. Nonsignificant subgroup interactions do not prove identical preferences across populations."
+    },
+    {
+      "term": "Observed delegation preference does not demonstrate superior algorithmic judgment",
+      "target_id": "algorithm-appreciation",
+      "decision": "enrich-existing",
+      "definition": "Participants were relatively more willing to use an AI delegate even without detailed performance information, but the task did not establish that the algorithm was objectively morally better.",
+      "novelty_rationale": "Links a fresh primary context to existing appreciation while distinguishing choice preference from capability and from irrational overtrust.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "withheld additional details about either delegate"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "the model emulates revealed human decision behavior in this task."
+        }
+      ],
+      "evidence_scope": "The delegate was described minimally. A footnote says the implemented network was trained to emulate choices of nondelegating humans using donation priorities and decision data; no independent moral-correctness benchmark was supplied.",
+      "boundary": "A participant's 'better decision' explanation is a perceived rationale, not verified model superiority or proof that choosing AI is ethically wrong. A preference can reflect burden, perceived impartiality or other unisolated considerations."
+    },
+    {
+      "term": "AI-capability ratings changed with delegation context",
+      "target_id": "motivated-reasoning",
+      "decision": "enrich-existing",
+      "definition": "Availability of an AI delegate combined with real consequences raised perceived AI moral capability, consistent with favourable belief adjustment that could justify delegation.",
+      "novelty_rationale": "A specific application of existing motivated reasoning, not a separately established self-deception mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "capability ratings are consistently higher in AI"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "consistent with motivated belief adjustment."
+        }
+      ],
+      "evidence_scope": "The randomized delegate-type×consequence interaction on composite capability ratings is significant (Table C.5 β=−.163 for AI×HypoCons). Within AI treatments, real versus hypothetical capability difference d=.17; the overall pooled effect d=.09. No pre-task belief baseline or deception-truth measure was obtained.",
+      "boundary": "Treatment-induced rating differences do not establish conscious dishonesty, inaccurate belief relative to a known moral truth, or that belief change causally mediates delegation. Salience, interpretation and changed task burden are alternative explanations. Do not infer the interaction merely from differing within-group p-values; here it was directly reported."
+    },
+    {
+      "term": "Reduced felt responsibility follows a self-selected delegation choice",
+      "target_id": "displacement-of-responsibility",
+      "decision": "enrich-existing",
+      "definition": "Delegators reported lower wanted/felt responsibility and moral obligation, especially when the delegate was AI, but the direction between delegation and responsibility preferences remains unresolved.",
+      "novelty_rationale": "Adds a consequential charity context and a necessary causal boundary to the existing responsibility-shift literature.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "Whether individuals who feel and want less responsibility delegate more often, or"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "whether delegation itself reduces perceived responsibility, remains unclear."
+        }
+      ],
+      "evidence_scope": "Post-decision ratings and self-selected delegation. Table C.4 reports delegation β=−.755 and AI×delegation β=−.241. Consequence and delegate availability were randomized, but actual delegation was not. The delegate is not a managerial authority directing an unethical act.",
+      "boundary": "General delegation-related responsibility relief is not automatically the authority-based moral-disengagement subtype or wrongful blame displacement. No punishment, guilt, shame, actual misconduct or external authority compulsion was measured. The article's stronger causal wording should not override its own acknowledged uncertainty."
+    },
+    {
+      "term": "Emotional and cognitive anthropomorphic attributions respond differently",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "The paper separates perceived AI experience from agency: the within-AI real/hypothetical contrast was significant for experience, not agency.",
+      "novelty_rationale": "Preserves a distinction among attributed mental capacities within the existing construct instead of treating every mental-state scale as equivalent.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "experience — the perceived ability of AI to exhibit emotions or empathy"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "agency — capturing cognitive attributes"
+        }
+      ],
+      "evidence_scope": "Within AI conditions experience ratings 1.83 versus 1.70 (d=.13); agency contrast p=.20. Separate within-condition results do not themselves establish a cross-delegate interaction or a statistically tested difference between experience and agency effects.",
+      "boundary": "These are human attributions, not evidence that the network felt compassion, guilt or anything else. Experience remains low on the five-point scale; different significance labels do not prove a selective underlying psychological mechanism."
+    }
+  ],
+  "methodological_limits": [
+    "Main sample counts conflict by four: abstract 5639, Study 1 800, Study 2 country counts 894+3949=4843, Table C.3 N=4839 and Figure C.8 N=4843. No exclusion explanation was invented. Appendix B's N=592 is an additional reported sample.",
+    "Real versus hypothetical conditions change implementation probability, instructions and whether a participant must actually make the donation choice after declining delegation. Real choices use an action/default countdown; hypothetical respondents need not specify a charity. This does not isolate psychological responsibility burden from effort or choice-format differences.",
+    "Both charitable options are described as credible and effective. Donating a net or vitamin A is not a guaranteed count of lives saved; 'one versus seven' beneficiaries does not establish a seven-to-one mortality effect or one morally correct choice.",
+    "One-in-ten real implementation is not an immediate life-or-death trolley intervention. Choices do not affect personal payment. Greater delegation is not itself unethical conduct.",
+    "Actual delegation is self-selected, and responsibility/capability ratings are post-decision. The randomized rating interaction is evidence of contextual change, not complete causal mediation through self-deception or responsibility relief.",
+    "Table C.3's OR=.601 is an interaction ratio of odds ratios, not a 40% probability reduction or even the standalone within-AI odds ratio. Multiplying its rounded value by the HypoCons main OR 1.375 gives a within-AI odds ratio about .83; quote observed percentages instead.",
+    "Some figure/text labels use RealCons for an interaction that Table C.3 codes HypoCons versus RealCons. Figure 3 caption displays a positive .24 while the table and prose responsibility interaction are negative. Preserve the table coding rather than silently reproduce conflicting signs.",
+    "Footnote 9 says all individual capability items are significant, but Figure C.7 reports p=.0720 for item 1. The composite result does not make every component significant.",
+    "Study 1 framing effect and interaction were nonsignificant, not proven zero. Calling the gain/loss manipulation 'severity' does not establish all forms of moral severity were tested.",
+    "Country/demographic interaction nulls do not prove identical effects everywhere. Only German and US panels and one charity-choice design were studied.",
+    "Appendix B's explicit no-burden-human comparison p=.846 is not an equivalence test. It addresses one wording concern without exhausting all possible human-burden explanations.",
+    "Claiming the observed AI preference is a guaranteed lower bound assumes extra transparency/quality cues can only increase delegation; those interventions were not tested here and could also reveal limitations.",
+    "No objective moral-capability benchmark, long-term moral deskilling, actual accountability evasion, punishment or affective guilt reduction was measured.",
+    "External replication code and preregistrations were not checked; reported analyses and source discrepancies remain transparent."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0029.json",
+      "finding": "Feier reports separate within-condition sanction contrasts without the needed interaction. This paper explicitly reports interaction tests for delegation and composite capability; the distinction changes how strongly conditional claims can be stated."
+    },
+    {
+      "related_review": "references/pdf-reviews/0028.json",
+      "finding": "Jolly studies unethical, organization-benefiting simulated choices under managerial instructions. Here legitimate donation tradeoffs and voluntary delegation do not by themselves establish moral disengagement or authority-based responsibility displacement."
+    },
+    {
+      "related_review": "references/pdf-reviews/0012.json",
+      "finding": "Jauernig finds a preference for human discretion in a different paid work-rule choice. The current real charitable decision preference for AI is a context boundary, not evidence that one study invalidates the other."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Self-deception",
+      "reason": "The authors propose it as an interpretation. No independent belief-accuracy, awareness or deception measure distinguishes it from ordinary context-dependent judgment; enrich motivated reasoning instead."
+    },
+    {
+      "term": "Moral deskilling",
+      "reason": "Discussed as a possible long-term consequence; no longitudinal moral-skill outcome is measured."
+    },
+    {
+      "term": "Uniqueness neglect",
+      "reason": "Mentioned only as a concern in cited medical-AI literature; not separately defined or tested sufficiently in this task."
+    }
+  ],
+  "limitations": [
+    "One ambiguity-related concept added, with situational and motive boundaries explicit.",
+    "Context-dependent delegation, real interaction tests, self-selection, coding conflicts and sample-count discrepancies are preserved rather than converted into universal AI capability or moral-failure claims."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "moral-wiggle-room"
+    ],
+    "enriched": [
+      "algorithm-aversion",
+      "algorithm-appreciation",
+      "motivated-reasoning",
+      "displacement-of-responsibility",
+      "anthropomorphism"
+    ]
+  }
+}
