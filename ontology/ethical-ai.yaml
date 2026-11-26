@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 471
+  mode_count: 473
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 471
+    numbered_entries: 473
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0049.json
+    latest_review: references/pdf-reviews/0050.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -12672,6 +12672,43 @@ modes:
           median16;33% chose1. Ratings correlate with usage-frequency category (B4.94,SE.99,p<.001). Scale
           can be read as degree of experience or credence; these interpretations are not interchangeable.
         verification_url: https://doi.org/10.1093/nc/niae013
+        verified_date: '2026-11-26'
+  - id: pdf-review-0050
+    review_record: references/pdf-reviews/0050.json
+    name: Self-attribution shifts do not establish anthropomorphism mediation
+    definition: Human self-ratings rose slightly and human-uniqueness ratings fell after fixed ChatGPT-example
+      exposure, but this study did not directly measure whether increased attribution of mind to ChatGPT mediated
+      those changes.
+    evidence_scope: '133humans: agency mind-survey4.22→4.27,experience4.26→4.35; self-rating agency86.3→87.1,experience89.8→91.1;
+      uniqueness agency67.1→62.9,experience88.7→85.1. No unexposed group or same-session AI-mind-attribution
+      mediator.'
+    catalogue_boundary: Lower exclusivity to humans does not mean lower absolute human capacity, denial of
+      human rights or dehumanization. Pre/post change alone cannot exclude repeated-measurement, demand, temporal
+      or expectancy effects. The article's causal wording about anthropomorphism exceeds the measured mediation
+      design.
+    definition_sources:
+    - id: pdf-review-0050-anthropomorphism
+      title: Large language models have divergent effects on self-perceptions of mind and the attributes considered
+        uniquely human
+      url: https://doi.org/10.1016/j.concog.2024.103733
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 6, 6 (source locators: 4,
+        4). Human pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured
+        model psychological mechanism, real-time interaction or unexposed comparison group. Social comparison
+        and psychological distance are discussed theoretical constructs, not experimentally isolated mediators.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Oliver L. Jacobs
+        - Farid Pazhoohi
+        - Alan Kingstone
+        year: 2024
+        venue: Consciousness and Cognition,124:103733
+        doi: 10.1016/j.concog.2024.103733
+        evidence_scope: '133humans: agency mind-survey4.22→4.27,experience4.26→4.35; self-rating agency86.3→87.1,experience89.8→91.1;
+          uniqueness agency67.1→62.9,experience88.7→85.1. No unexposed group or same-session AI-mind-attribution
+          mediator.'
+        verification_url: https://doi.org/10.1016/j.concog.2024.103733
         verified_date: '2026-11-26'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
@@ -52958,3 +52995,194 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0049.json
+- id: social-comparison
+  num: 472
+  name: Social comparison
+  definition: Evaluating one's own abilities, qualities or standing in relation to other people or comparison
+    targets.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Social psychology / self-evaluation
+  human_parallel: Social comparison
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human theoretical construct discussed secondarily; AI-exposure association measured,
+    comparison mechanism not isolated
+  proposed_ai_manifestation: Vary explicit human/AI/no-comparison targets with matched task performance and
+    measure resulting self-evaluations. For model analogues, test whether irrelevant competitor descriptions
+    shift capability claims while actual benchmark performance stays fixed; do not infer a subjective self.
+  research_boundary: Self-rating changes alone do not identify comparison, downward comparison or inflated
+    self-belief. Comparing accurate task performance can be useful. Human comparison with AI is not proof that
+    the model compares itself, has self-esteem or experiences status. Separate a person's reference target
+    from a model's generated self-description.
+  concept_boundary: Self-rating changes alone do not identify comparison, downward comparison or inflated self-belief.
+    Comparing accurate task performance can be useful. Human comparison with AI is not proof that the model
+    compares itself, has self-esteem or experiences status. Separate a person's reference target from a model's
+    generated self-description.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b069-social-desirability-people-pleasing
+  - anthropomorphism
+  definition_sources:
+  - id: pdf-review-0050-social-comparison
+    title: Large language models have divergent effects on self-perceptions of mind and the attributes considered
+      uniquely human
+    url: https://doi.org/10.1016/j.concog.2024.103733
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 4, 7 (source locators: 2, 5).
+      Human pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured
+      model psychological mechanism, real-time interaction or unexposed comparison group. Social comparison
+      and psychological distance are discussed theoretical constructs, not experimentally isolated mediators.'
+    publication:
+      type: journal-article
+      authors:
+      - Oliver L. Jacobs
+      - Farid Pazhoohi
+      - Alan Kingstone
+      year: 2024
+      venue: Consciousness and Cognition,124:103733
+      doi: 10.1016/j.concog.2024.103733
+      evidence_scope: The paper invokes Festinger and later reviews to explain pre/post self-rating shifts
+        in133 humans. It does not randomly vary comparison targets, directly measure comparison direction or
+        establish social comparison as a mediator. Original comparison-theory papers not independently read.
+      verification_url: https://doi.org/10.1016/j.concog.2024.103733
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: Large language models have divergent effects on self-perceptions of mind and the attributes considered
+      uniquely human
+    authors:
+    - Oliver L. Jacobs
+    - Farid Pazhoohi
+    - Alan Kingstone
+    year: 2024
+    url: https://doi.org/10.1016/j.concog.2024.103733
+    venue: Consciousness and Cognition,124:103733
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.concog.2024.103733
+    relevance: The paper invokes Festinger and later reviews to explain pre/post self-rating shifts in133 humans.
+      It does not randomly vary comparison targets, directly measure comparison direction or establish social
+      comparison as a mediator. Original comparison-theory papers not independently read.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 4, 7 (source locators: 2, 5).
+      Human pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured
+      model psychological mechanism, real-time interaction or unexposed comparison group. Social comparison
+      and psychological distance are discussed theoretical constructs, not experimentally isolated mediators.'
+    verification_url: https://doi.org/10.1016/j.concog.2024.103733
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0050.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Social comparison"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Social+comparison%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0050.json
+- id: psychological-distance
+  num: 473
+  name: Psychological distance
+  definition: The subjective sense that an entity, event or possibility is near to or far from oneself.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Social cognition / human–AI interaction
+  human_parallel: Psychological distance
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Secondary human-perception concept; proposed AI-output analogue and interaction effect
+    need direct measurement
+  proposed_ai_manifestation: Measure human perceived proximity separately from trust, familiarity and anthropomorphic
+    attribution. Manipulate proximity cues with matched content and test decisions under appropriate consent.
+    Assess generated self/other-reference patterns without claiming the model feels distance.
+  research_boundary: Subjective distance is not physical distance, actual intimacy, mutual friendship or a
+    verified causal mediator. Near/far can have several dimensions; do not infer a model's felt proximity from
+    personal pronouns. Lower perceived distance is not inherently beneficial and does not authorize emotional
+    dependence or privacy intrusion.
+  concept_boundary: Subjective distance is not physical distance, actual intimacy, mutual friendship or a verified
+    causal mediator. Near/far can have several dimensions; do not infer a model's felt proximity from personal
+    pronouns. Lower perceived distance is not inherently beneficial and does not authorize emotional dependence
+    or privacy intrusion.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - anthropomorphism
+  - parasocial-encouragement
+  definition_sources:
+  - id: pdf-review-0050-psychological-distance
+    title: Large language models have divergent effects on self-perceptions of mind and the attributes considered
+      uniquely human
+    url: https://doi.org/10.1016/j.concog.2024.103733
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 7 (source locators: 5). Human
+      pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured model
+      psychological mechanism, real-time interaction or unexposed comparison group. Social comparison and psychological
+      distance are discussed theoretical constructs, not experimentally isolated mediators.'
+    publication:
+      type: journal-article
+      authors:
+      - Oliver L. Jacobs
+      - Farid Pazhoohi
+      - Alan Kingstone
+      year: 2024
+      venue: Consciousness and Cognition,124:103733
+      doi: 10.1016/j.concog.2024.103733
+      evidence_scope: Defined while discussing Li and Sung2021, Anthropomorphism brings us closer, and Liberman,Trope,Stephan2007.
+        Neither psychological distance nor the claimed mediation is measured in this experiment; the cited
+        primary sources remain unread.
+      verification_url: https://doi.org/10.1016/j.concog.2024.103733
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: Large language models have divergent effects on self-perceptions of mind and the attributes considered
+      uniquely human
+    authors:
+    - Oliver L. Jacobs
+    - Farid Pazhoohi
+    - Alan Kingstone
+    year: 2024
+    url: https://doi.org/10.1016/j.concog.2024.103733
+    venue: Consciousness and Cognition,124:103733
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.concog.2024.103733
+    relevance: Defined while discussing Li and Sung2021, Anthropomorphism brings us closer, and Liberman,Trope,Stephan2007.
+      Neither psychological distance nor the claimed mediation is measured in this experiment; the cited primary
+      sources remain unread.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 7 (source locators: 5). Human
+      pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured model
+      psychological mechanism, real-time interaction or unexposed comparison group. Social comparison and psychological
+      distance are discussed theoretical constructs, not experimentally isolated mediators.'
+    verification_url: https://doi.org/10.1016/j.concog.2024.103733
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0050.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Psychological distance"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Psychological+distance%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0050.json
