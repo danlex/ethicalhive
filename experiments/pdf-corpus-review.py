@@ -5,10 +5,12 @@ import copy
 from datetime import datetime, timezone
 import difflib
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 from urllib.parse import urlencode
 
 import yaml
@@ -196,16 +198,31 @@ def status():
       'next':next((f for f in files if f['status']=='pending'),None)},ensure_ascii=False,indent=2))
 
 
+def sync_timelines():
+    # Extend the existing dated snapshot with unavailable slots; never invent
+    # a distribution for a newly indexed term or claim a fresh provider search.
+    output=ROOT/'docs/literature-timelines.json'
+    previous=read_json(output)
+    spec=importlib.util.spec_from_file_location('annual_snapshots',ROOT/'experiments/literature-timelines.py')
+    annual=importlib.util.module_from_spec(spec);spec.loader.exec_module(annual)
+    with tempfile.TemporaryDirectory(prefix='ethicalai-annual-sync-') as directory:
+        cache=Path(directory)
+        for record in previous['records']:write_json(cache/(str(record['num'])+'.json'),record)
+        annual.build(cache,output)
+
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='action',required=True)
     p=sub.add_parser('apply');p.add_argument('review',type=Path);p.add_argument('--pdf',type=Path,required=True)
     p=sub.add_parser('lookup');p.add_argument('terms',nargs='+')
     p=sub.add_parser('pages');p.add_argument('pdf',type=Path);p.add_argument('--start',type=int,default=1);p.add_argument('--end',type=int)
     sub.add_parser('status')
+    sub.add_parser('sync-timelines')
     args=parser.parse_args()
     if args.action=='apply':apply_review(args.review,args.pdf)
     elif args.action=='lookup':lookup(args.terms)
     elif args.action=='pages':
         pages=pdf_pages(args.pdf)
         for index in range(args.start-1,min(args.end or len(pages),len(pages))):print(f'\n--- PDF page {index+1} ---\n'+pages[index])
+    elif args.action=='sync-timelines':sync_timelines()
     else:status()
