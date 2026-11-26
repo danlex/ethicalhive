@@ -83,8 +83,9 @@ def citation(review,finding):
     c=copy.deepcopy(review['citation'])
     c.update(id=paper_identifier(c['url']),domain=c.get('domain','human-related'),
              relevance=finding['evidence_scope'],
-             consulted=f"Full supplied PDF text read, all {review['source']['pdf_pages']} pages; relevant printed pages "+
-                 ', '.join(str(e['printed_page']) for e in finding['evidence'])+
+             consulted=f"Full supplied PDF text read, all {review['source']['pdf_pages']} pages; evidence at PDF pages "+
+                 ', '.join(str(e['pdf_page']) for e in finding['evidence'])+
+                 ' (source locators: '+', '.join(str(e['printed_page']) for e in finding['evidence'])+')'+
                  '. '+review['reading']['source_scope_note'],
              verification_url=c['url'],verified_date=TODAY(),
              verification_method='Identity and DOI read in the supplied PDF; evidence passages checked against that PDF',
@@ -164,6 +165,7 @@ def apply_review(path,pdf):
         elif finding['decision']=='enrich-existing':
             mode=next(m for m in ontology['modes'] if m['id']==finding['target_id'])
             mode.setdefault('research_notes',[]).append({'id':f"pdf-review-{review['sequence']:04d}",
+              'review_record':str(destination.relative_to(ROOT)),
               'name':finding['term'],'definition':finding['definition'],'evidence_scope':finding['evidence_scope'],
               'catalogue_boundary':finding['boundary'],'definition_sources':[source_record(review,finding)]})
             changed.append(mode['id'])
