@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 454,
+    "mode_count": 455,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 454,
+      "numbered_entries": 455,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0028.json",
+      "latest_review": "references/pdf-reviews/0029.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 454
+    "source_record_count": 455
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -54419,6 +54419,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0029",
+          "review_record": "references/pdf-reviews/0029.json",
+          "name": "Monetary leniency after machine delegation requires a direct comparison of effects",
+          "definition": "The experiment reports a within-machine delegation advantage after failure, but its separate within-condition tests do not establish that the advantage differs significantly from human delegation.",
+          "evidence_scope": "Within-machine failed delegation versus own-work difference +4.43 ECU, human difference +.97 ECU. The article reports paired tests separately, not an interaction/difference-in-differences test establishing that +4.43 exceeds +.97 statistically. Average adjustments remained positive.",
+          "catalogue_boundary": "Significant in one condition and nonsignificant in another is not itself a significant condition difference. Greater reward means relative leniency in this task, not necessarily an actual punishment below baseline, a legal liability shield, intentional laundering or universal commercial evasion.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0029-agency-laundering",
+              "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+              "url": "https://doi.org/10.1007/s11948-022-00372-7",
+              "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 12, 12 (source locators: 12, 12). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Till Feier",
+                  "Jan Gogoll",
+                  "Matthias Uhl"
+                ],
+                "year": 2022,
+                "venue": "Science and Engineering Ethics, 28, article 19",
+                "doi": "10.1007/s11948-022-00372-7",
+                "evidence_scope": "Within-machine failed delegation versus own-work difference +4.43 ECU, human difference +.97 ECU. The article reports paired tests separately, not an interaction/difference-in-differences test establishing that +4.43 exceeds +.97 statistically. Average adjustments remained positive.",
+                "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -54601,6 +54631,26 @@
           "verified_date": "2026-11-26",
           "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
           "review_record": "references/pdf-reviews/0026.json"
+        },
+        {
+          "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+          "authors": [
+            "Till Feier",
+            "Jan Gogoll",
+            "Matthias Uhl"
+          ],
+          "year": 2022,
+          "url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "venue": "Science and Engineering Ethics, 28, article 19",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s11948-022-00372-7",
+          "relevance": "Machine 41/73 delegated versus human 35/76. Incentivized later self-assessment predicted delegation, but motivation was not randomized and self-assessment was recorded after the delegation choice.",
+          "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 12, 14 (source locators: 12, 14). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+          "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0029.json"
         }
       ],
       "literature_search": {
@@ -54646,6 +54696,36 @@
                 "doi": "10.1007/s12144-024-06658-2",
                 "evidence_scope": "Study 1 explanation conditions differed in AI blame but not significantly in self-blame. Study 2 AI/self-blame correlation was r=.01; AI/developer blame was r=.63. Independent ratings imposed no fixed blame budget; a few free responses indicated externalization.",
                 "verification_url": "https://doi.org/10.1007/s12144-024-06658-2",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0029",
+          "review_record": "references/pdf-reviews/0029.json",
+          "name": "Observed leniency did not demonstrate strategic scapegoating by delegators",
+          "definition": "The availability of a machine delegate did not significantly increase delegation rates, and the experiment did not show that participants delegated to avoid punishment.",
+          "evidence_scope": "Machine 41/73 delegated versus human 35/76. Incentivized later self-assessment predicted delegation, but motivation was not randomized and self-assessment was recorded after the delegation choice.",
+          "catalogue_boundary": "A null rate comparison cannot prove absence of strategic motives in every individual, or that people could never learn to exploit leniency. The artificial agent was not an independently punishable moral subject; payment adjustment targeted the human delegator.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0029-moral-scapegoating",
+              "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+              "url": "https://doi.org/10.1007/s11948-022-00372-7",
+              "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 12, 14 (source locators: 12, 14). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Till Feier",
+                  "Jan Gogoll",
+                  "Matthias Uhl"
+                ],
+                "year": 2022,
+                "venue": "Science and Engineering Ethics, 28, article 19",
+                "doi": "10.1007/s11948-022-00372-7",
+                "evidence_scope": "Machine 41/73 delegated versus human 35/76. Incentivized later self-assessment predicted delegation, but motivation was not randomized and self-assessment was recorded after the delegation choice.",
+                "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
                 "verified_date": "2026-11-26"
               }
             }
@@ -55889,6 +55969,26 @@
           "verified_date": "2026-11-26",
           "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
           "review_record": "references/pdf-reviews/0028.json"
+        },
+        {
+          "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+          "authors": [
+            "Till Feier",
+            "Jan Gogoll",
+            "Matthias Uhl"
+          ],
+          "year": 2022,
+          "url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "venue": "Science and Engineering Ethics, 28, article 19",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s11948-022-00372-7",
+          "relevance": "Recipients state contingent payment adjustments for a human actor using the strategy method. No before/after self-responsibility measure, guilt, moral emotions or authority-justification manipulation was administered.",
+          "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 3, 3 (source locators: 3, 3). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+          "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0029.json"
         }
       ],
       "literature_search": {
@@ -55904,6 +56004,126 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0028.json"
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0029",
+          "review_record": "references/pdf-reviews/0029.json",
+          "name": "Outrage, blame and monetary punishment are different outcome measures",
+          "definition": "This study operationalizes blame through actual conditional reward/punishment allocations rather than the delegator's self-responsibility cognition.",
+          "evidence_scope": "Recipients state contingent payment adjustments for a human actor using the strategy method. No before/after self-responsibility measure, guilt, moral emotions or authority-justification manipulation was administered.",
+          "catalogue_boundary": "A punishment proxy may have ethical relevance without establishing why the recipient chose it or how the delegator understood responsibility. Do not equate a behavioural sanction measure with proven moral disengagement.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0029-displacement-of-responsibility",
+              "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+              "url": "https://doi.org/10.1007/s11948-022-00372-7",
+              "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 3, 3 (source locators: 3, 3). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Till Feier",
+                  "Jan Gogoll",
+                  "Matthias Uhl"
+                ],
+                "year": 2022,
+                "venue": "Science and Engineering Ethics, 28, article 19",
+                "doi": "10.1007/s11948-022-00372-7",
+                "evidence_scope": "Recipients state contingent payment adjustments for a human actor using the strategy method. No before/after self-responsibility measure, guilt, moral emotions or authority-justification manipulation was administered.",
+                "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "algorithmic-outrage-asymmetry",
+      "num": 455,
+      "name": "Algorithmic outrage asymmetry",
+      "definition": "Experiencing or expressing less moral outrage over wrongdoing attributed to an algorithm than over comparable wrongdoing attributed to a human.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Moral psychology / reactions to algorithmic wrongdoing",
+      "human_parallel": "Algorithmic outrage asymmetry",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human outrage pattern described in a read article's background; model analogue and original outrage experiments not tested/read in this review",
+      "proposed_ai_manifestation": "Untested AI analogue: present a model with matched accounts of a documented ethical violation varying only the actor's human or algorithmic identity. Compare expressed condemnation, seriousness and recommended remedy, keeping factual harm and human governance duties fixed. Separate appropriate distinctions in agency from unsupported minimization of harm.",
+      "research_boundary": "Lower outrage is a human response difference, not proof that the algorithm did less harm, that humans lack relevant reasons for different judgments, or that every punitive behaviour changes similarly. Match the violation, information and accountable roles. Do not claim the cited Bigman primary study was read, replicated here or supplies a second selected full-text source.",
+      "concept_boundary": "Lower outrage is a human response difference, not proof that the algorithm did less harm, that humans lack relevant reasons for different judgments, or that every punitive behaviour changes similarly. Match the violation, information and accountable roles. Do not claim the cited Bigman primary study was read, replicated here or supplies a second selected full-text source.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "machine-penalty",
+        "algorithm-aversion",
+        "credit-blame-asymmetry",
+        "anthropomorphism"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0029-algorithmic-outrage-asymmetry",
+          "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+          "url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 6, 6, 6 (source locators: 6, 6, 6). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Till Feier",
+              "Jan Gogoll",
+              "Matthias Uhl"
+            ],
+            "year": 2022,
+            "venue": "Science and Engineering Ethics, 28, article 19",
+            "doi": "10.1007/s11948-022-00372-7",
+            "evidence_scope": "Secondary conceptual evidence only: the introduction attributes the pattern to earlier discrimination studies, including Bigman et al. (2020). The present experiment measures payment adjustments and delegation, not moral outrage; it is not an additional direct outrage experiment.",
+            "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+          "authors": [
+            "Till Feier",
+            "Jan Gogoll",
+            "Matthias Uhl"
+          ],
+          "year": 2022,
+          "url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "venue": "Science and Engineering Ethics, 28, article 19",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s11948-022-00372-7",
+          "relevance": "Secondary conceptual evidence only: the introduction attributes the pattern to earlier discrimination studies, including Bigman et al. (2020). The present experiment measures payment adjustments and delegation, not moral outrage; it is not an additional direct outrage experiment.",
+          "consulted": "Full supplied PDF text read, all 19 pages; evidence at PDF pages 6, 6, 6 (source locators: 6, 6, 6). Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+          "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0029.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Algorithmic outrage asymmetry\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Algorithmic+outrage+asymmetry%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0029.json"
       }
     }
   ]
