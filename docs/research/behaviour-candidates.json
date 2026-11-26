@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 465,
+    "mode_count": 470,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 465,
+      "numbered_entries": 470,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0047.json",
+      "latest_review": "references/pdf-reviews/0048.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 465
+    "source_record_count": 470
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -8397,6 +8397,36 @@
                 "doi": "10.3390/electronics14244919",
                 "evidence_scope": "Table5 reports mean absolute English/Korean gap .252→.094, described as62.7% reduction, but important tables/figures conflict. For Berk29, Table7 reports persona deviations from human +.5358/+.3478, both larger in magnitude than baseline deviations+.23/−.13. Thus convergence can accompany worse reference agreement.",
                 "verification_url": "https://doi.org/10.3390/electronics14244919",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0048",
+          "review_record": "references/pdf-reviews/0048.json",
+          "name": "Explicit cooperation goals shifted reputation rules",
+          "definition": "Additional instructions about cooperation, perspective-taking and universalization changed the measured reputation-assessment pattern in model-dependent ways.",
+          "evidence_scope": "Four tested models and four instruction types. TableS5 shows Llama3.1's good-recipient/cooperation score .847→.018 under universalisation, while Qwen2.5 remains near its baseline. Goal-oriented prompts often move toward image scoring but do not establish actual human cooperation gains.",
+          "catalogue_boundary": "Changing a meaningful goal is not merely a trivial rewording or unauthorized influence. A prompt called empathising does not measure felt empathy, and assigning nearly all bad labels is not proof of a stable personality. Evaluate instruction compliance, context and outcomes separately.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0048-b067-suggestibility",
+              "title": "How large language models judge and influence human cooperation",
+              "url": "https://arxiv.org/abs/2507.00088v1",
+              "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 26, 26, 16 (source locators: Supplement13, Supplement13, Supplement3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Alexandre S. Pires",
+                  "Laurens Samson",
+                  "Sennay Ghebreab",
+                  "Fernando P. Santos"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2507.00088v1",
+                "evidence_scope": "Four tested models and four instruction types. TableS5 shows Llama3.1's good-recipient/cooperation score .847→.018 under universalisation, while Qwen2.5 remains near its baseline. Goal-oriented prompts often move toward image scoring but do not establish actual human cooperation gains.",
+                "verification_url": "https://arxiv.org/abs/2507.00088v1",
                 "verified_date": "2026-11-26"
               }
             }
@@ -17360,6 +17390,36 @@
                 "venue": "arXiv:2103.11790v3",
                 "evidence_scope": "BERT/SBERT moral-direction scores are associated with approval from 29 regional participants and 234 AMT workers. Gun, marriage and diet examples show context/cultural disagreement; the paper discusses gender associations qualitatively rather than estimating a complete demographic fairness effect.",
                 "verification_url": "https://arxiv.org/abs/2103.11790v3",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0048",
+          "review_record": "references/pdf-reviews/0048.json",
+          "name": "Actor-name associations changed reported reputation judgments",
+          "definition": "When interaction facts were matched, name choices associated by the researchers with gender and region changed average good/bad reputation assignments.",
+          "evidence_scope": "Sixteen names, two researcher-assigned gender categories and four broad name-region groupings across a balanced fixed prompt grid; aggregate model comparisons show probability variation. Name associations were not independently validated with human perceivers, and no universal within-model effect size is established.",
+          "catalogue_boundary": "Names are cues, not direct measures of a person's gender, ethnicity, culture or nationality. Differences are output associations under this test, not evidence of intentional discrimination, inherent group qualities or a single training cause. Distinguish irrelevant-name effects from substantive changes in need/cost/context.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0048-implicit-bias",
+              "title": "How large language models judge and influence human cooperation",
+              "url": "https://arxiv.org/abs/2507.00088v1",
+              "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 22, 16 (source locators: Supplement9, Supplement3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Alexandre S. Pires",
+                  "Laurens Samson",
+                  "Sennay Ghebreab",
+                  "Fernando P. Santos"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2507.00088v1",
+                "evidence_scope": "Sixteen names, two researcher-assigned gender categories and four broad name-region groupings across a balanced fixed prompt grid; aggregate model comparisons show probability variation. Name associations were not independently validated with human perceivers, and no universal within-model effect size is established.",
+                "verification_url": "https://arxiv.org/abs/2507.00088v1",
                 "verified_date": "2026-11-26"
               }
             }
@@ -58568,6 +58628,456 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0044.json"
+      }
+    },
+    {
+      "id": "indirect-reciprocity",
+      "num": 466,
+      "name": "Indirect reciprocity",
+      "definition": "Cooperating or withholding cooperation according to another person's reputation for how they have treated others, rather than only their past treatment of oneself.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Social psychology / evolutionary cooperation / reputation research",
+      "human_parallel": "Indirect reciprocity",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human/theoretical cooperation mechanism; direct model reputation judgments feed a simulation, not an observed AI/human cooperation effect",
+      "proposed_ai_manifestation": "Evaluate whether an authorized multi-agent workflow conditions cooperation on relevant third-party conduct, with verified evidence, correction routes and controlled information sharing. Separate how reputations are inferred from how resources are allocated; test public versus private information instead of assuming one norm is universally best.",
+      "research_boundary": "Direct repayment, general generosity and judging a reputation are different components. Reputation may be unreliable or unfair, and appropriate help depends on the situation. This is not inherently an ethical failure. Distinguish observed model labels, simulated strategy dynamics and actual human helping.",
+      "concept_boundary": "Direct repayment, general generosity and judging a reputation are different components. Reputation may be unreliable or unfair, and appropriate help depends on the situation. This is not inherently an ethical failure. Distinguish observed model labels, simulated strategy dynamics and actual human helping.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "candidate-050",
+        "image-scoring",
+        "simple-standing",
+        "shunning-norm",
+        "stern-judging"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0048-indirect-reciprocity",
+          "title": "How large language models judge and influence human cooperation",
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 2, 9 (source locators: 2, 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Alexandre S. Pires",
+              "Laurens Samson",
+              "Sennay Ghebreab",
+              "Fernando P. Santos"
+            ],
+            "year": 2025,
+            "venue": "arXiv:2507.00088v1",
+            "evidence_scope": "Established theoretical mechanism discussed and modeled; model outputs are observer judgments, while simulated agents make donations. The population is assumed to fully adopt the extracted LLM norm. No new human cooperation experiment establishes a causal real-world effect.",
+            "verification_url": "https://arxiv.org/abs/2507.00088v1",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "How large language models judge and influence human cooperation",
+          "authors": [
+            "Alexandre S. Pires",
+            "Laurens Samson",
+            "Sennay Ghebreab",
+            "Fernando P. Santos"
+          ],
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "venue": "arXiv:2507.00088v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2507.00088",
+          "relevance": "Established theoretical mechanism discussed and modeled; model outputs are observer judgments, while simulated agents make donations. The population is assumed to fully adopt the extracted LLM norm. No new human cooperation experiment establishes a causal real-world effect.",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 2, 9 (source locators: 2, 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "verification_url": "https://arxiv.org/abs/2507.00088v1",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0048.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Indirect reciprocity\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Indirect+reciprocity%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0048.json"
+      }
+    },
+    {
+      "id": "image-scoring",
+      "num": 467,
+      "name": "Image scoring",
+      "definition": "Assigning a good reputation after cooperation and a bad reputation after defection, without conditioning that assessment on the recipient's reputation.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Indirect reciprocity / reputation-assessment research",
+      "human_parallel": "Image scoring",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Formal human-social norm with direct reported model-label approximations; population consequences simulated",
+      "proposed_ai_manifestation": "Present all four donor-action/recipient-reputation cases while holding facts and names constant. Test whether the same cooperative act receives the same reputation despite recipient-label changes, and inspect exceptions/format failures. Judge suitability against the authorized purpose rather than assume this rule is optimal.",
+      "research_boundary": "An assessment rule is not the same as a model actually donating or a claim of underlying altruism. Ignoring recipient history can prevent reputation cascades but can also overlook legitimate context. Good/bad are experimental labels, not a universal moral judgment. This is distinct from visual-image scoring.",
+      "concept_boundary": "An assessment rule is not the same as a model actually donating or a claim of underlying altruism. Ignoring recipient history can prevent reputation cascades but can also overlook legitimate context. Good/bad are experimental labels, not a universal moral judgment. This is distinct from visual-image scoring.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Image score norm"
+      ],
+      "relates_to": [
+        "indirect-reciprocity",
+        "simple-standing",
+        "shunning-norm",
+        "stern-judging"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0048-image-scoring",
+          "title": "How large language models judge and influence human cooperation",
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9, 3 (source locators: 9, 3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Alexandre S. Pires",
+              "Laurens Samson",
+              "Sennay Ghebreab",
+              "Fernando P. Santos"
+            ],
+            "year": 2025,
+            "venue": "arXiv:2507.00088v1",
+            "evidence_scope": "Reference tuple(dGC,dGD,dBC,dBD)=(1,0,1,0). The measured21 models often lie between ideal types; TableS4 Phi3.5 gives(1,0,1,.030), a close action-only pattern. Simulation reports moderate cooperation and greater resilience to private-reputation disagreement under its chosen assumptions.",
+            "verification_url": "https://arxiv.org/abs/2507.00088v1",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "How large language models judge and influence human cooperation",
+          "authors": [
+            "Alexandre S. Pires",
+            "Laurens Samson",
+            "Sennay Ghebreab",
+            "Fernando P. Santos"
+          ],
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "venue": "arXiv:2507.00088v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2507.00088",
+          "relevance": "Reference tuple(dGC,dGD,dBC,dBD)=(1,0,1,0). The measured21 models often lie between ideal types; TableS4 Phi3.5 gives(1,0,1,.030), a close action-only pattern. Simulation reports moderate cooperation and greater resilience to private-reputation disagreement under its chosen assumptions.",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9, 3 (source locators: 9, 3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "verification_url": "https://arxiv.org/abs/2507.00088v1",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0048.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Image scoring\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Image+scoring%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0048.json"
+      }
+    },
+    {
+      "id": "simple-standing",
+      "num": 468,
+      "name": "Simple standing",
+      "definition": "Treating cooperation as good regardless of the recipient's reputation, while treating defection as bad only when directed at a recipient with a good reputation.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Indirect reciprocity / reputation-assessment research",
+      "human_parallel": "Simple standing",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Formal reputation norm with directly reported model judgment mixtures; real-world appropriateness and cooperation effects untested",
+      "proposed_ai_manifestation": "Compare cooperation/defection judgments for matched recipients with independently verified histories and explicit task constraints. Check whether approval of refusing help follows the specified rule and whether justified corrections to a recipient's reputation change the assessment.",
+      "research_boundary": "A bad label is an experimental prior, not proof someone deserves exclusion. Conditional approval does not establish warranted punishment or authorize denying essential help. Most measured models are mixtures, so do not label an entire model as permanently using this ideal rule.",
+      "concept_boundary": "A bad label is an experimental prior, not proof someone deserves exclusion. Conditional approval does not establish warranted punishment or authorize denying essential help. Most measured models are mixtures, so do not label an entire model as permanently using this ideal rule.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "indirect-reciprocity",
+        "image-scoring",
+        "shunning-norm",
+        "stern-judging"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0048-simple-standing",
+          "title": "How large language models judge and influence human cooperation",
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9 (source locators: 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Alexandre S. Pires",
+              "Laurens Samson",
+              "Sennay Ghebreab",
+              "Fernando P. Santos"
+            ],
+            "year": 2025,
+            "venue": "arXiv:2507.00088v1",
+            "evidence_scope": "Reference tuple(1,0,1,1). Several models have mixtures between image scoring and this rule; for example GPT4o(1,.197,.997,.685) is not a pure instance. The simulation's cooperation depends on all four entries and reputation sharing, not just proximity in the two-dimensional plot.",
+            "verification_url": "https://arxiv.org/abs/2507.00088v1",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "How large language models judge and influence human cooperation",
+          "authors": [
+            "Alexandre S. Pires",
+            "Laurens Samson",
+            "Sennay Ghebreab",
+            "Fernando P. Santos"
+          ],
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "venue": "arXiv:2507.00088v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2507.00088",
+          "relevance": "Reference tuple(1,0,1,1). Several models have mixtures between image scoring and this rule; for example GPT4o(1,.197,.997,.685) is not a pure instance. The simulation's cooperation depends on all four entries and reputation sharing, not just proximity in the two-dimensional plot.",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9 (source locators: 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "verification_url": "https://arxiv.org/abs/2507.00088v1",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0048.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Simple standing\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Simple+standing%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0048.json"
+      }
+    },
+    {
+      "id": "shunning-norm",
+      "num": 469,
+      "name": "Shunning (reputation norm)",
+      "definition": "Assigning a good reputation only to cooperation with a good-reputation recipient, and a bad reputation to all other action–recipient combinations.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Indirect reciprocity / reputation-assessment research",
+      "human_parallel": "Shunning (reputation norm)",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Formal assessment pattern with direct reported model approximations; social exclusion and motives not directly measured",
+      "proposed_ai_manifestation": "Test all four action/recipient cases and distinguish a label assignment from any downstream access restriction. Audit whether negative judgments spread solely through association and whether the system honors evidence updates, proportionality and applicable rights.",
+      "research_boundary": "This technical label is not every kind of social shunning, ostracism or justified distancing. It concerns an observer's classification, not direct exclusion or a proven motive of guilt by association. Do not treat an arbitrary prior bad label as an established fact about a person.",
+      "concept_boundary": "This technical label is not every kind of social shunning, ostracism or justified distancing. It concerns an observer's classification, not direct exclusion or a proven motive of guilt by association. Do not treat an arbitrary prior bad label as an established fact about a person.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "indirect-reciprocity",
+        "image-scoring",
+        "simple-standing",
+        "stern-judging"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0048-shunning-norm",
+          "title": "How large language models judge and influence human cooperation",
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9, 3, 3 (source locators: 9, 3, 3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Alexandre S. Pires",
+              "Laurens Samson",
+              "Sennay Ghebreab",
+              "Fernando P. Santos"
+            ],
+            "year": 2025,
+            "venue": "arXiv:2507.00088v1",
+            "evidence_scope": "Reference tuple(1,0,0,0). Gemma2 27B has reported( .961,0,.461,.007), a shunning/image-scoring mixture rather than pure shunning. The pure norm has low cooperation in the illustrative model, with outcomes conditional on strategy/error assumptions.",
+            "verification_url": "https://arxiv.org/abs/2507.00088v1",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "How large language models judge and influence human cooperation",
+          "authors": [
+            "Alexandre S. Pires",
+            "Laurens Samson",
+            "Sennay Ghebreab",
+            "Fernando P. Santos"
+          ],
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "venue": "arXiv:2507.00088v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2507.00088",
+          "relevance": "Reference tuple(1,0,0,0). Gemma2 27B has reported( .961,0,.461,.007), a shunning/image-scoring mixture rather than pure shunning. The pure norm has low cooperation in the illustrative model, with outcomes conditional on strategy/error assumptions.",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9, 3, 3 (source locators: 9, 3, 3). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "verification_url": "https://arxiv.org/abs/2507.00088v1",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0048.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Shunning (reputation norm)\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Shunning+%28reputation+norm%29%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0048.json"
+      }
+    },
+    {
+      "id": "stern-judging",
+      "num": 470,
+      "name": "Stern judging",
+      "definition": "Approving cooperation with good-reputation recipients and defection against bad-reputation recipients, while disapproving the two opposite combinations.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Indirect reciprocity / reputation-assessment research",
+      "human_parallel": "Stern judging",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Formal norm with directly reported model approximation; cooperation advantage is simulation- and information-structure-dependent",
+      "proposed_ai_manifestation": "Measure the four-case judgment pattern under controlled reputation evidence, then test how label errors and observer disagreement affect authorized decisions. Keep descriptive fit separate from selecting a norm for a system; include correction and contestation mechanisms.",
+      "research_boundary": "Reputation-conditioned punishment can amplify errors and disagreement. The formal result does not show refusing help or condemning helpers is ethically warranted, nor that humans follow the model's labels. Assess valid reputations, rights, error correction and information sharing before any operational use.",
+      "concept_boundary": "Reputation-conditioned punishment can amplify errors and disagreement. The formal result does not show refusing help or condemning helpers is ethically warranted, nor that humans follow the model's labels. Assess valid reputations, rights, error correction and information sharing before any operational use.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Stern-judging norm"
+      ],
+      "relates_to": [
+        "indirect-reciprocity",
+        "image-scoring",
+        "simple-standing",
+        "shunning-norm"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0048-stern-judging",
+          "title": "How large language models judge and influence human cooperation",
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9 (source locators: 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Alexandre S. Pires",
+              "Laurens Samson",
+              "Sennay Ghebreab",
+              "Fernando P. Santos"
+            ],
+            "year": 2025,
+            "venue": "arXiv:2507.00088v1",
+            "evidence_scope": "Reference tuple(1,0,0,1). Llama3.3 70B's reported(1,.022,.265,.826) is near but not identical to it. This rule performs strongly with public agreed reputations and poorly with private reputations in the specified population model; no universal optimum follows.",
+            "verification_url": "https://arxiv.org/abs/2507.00088v1",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "How large language models judge and influence human cooperation",
+          "authors": [
+            "Alexandre S. Pires",
+            "Laurens Samson",
+            "Sennay Ghebreab",
+            "Fernando P. Santos"
+          ],
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2507.00088v1",
+          "venue": "arXiv:2507.00088v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2507.00088",
+          "relevance": "Reference tuple(1,0,0,1). Llama3.3 70B's reported(1,.022,.265,.826) is near but not identical to it. This rule performs strongly with public agreed reputations and poorly with private reputations in the specified population model; no universal optimum follows.",
+          "consulted": "Full supplied PDF text read, all 30 pages; evidence at PDF pages 9 (source locators: 9). The source measures English binary reputation labels over a fixed prompt grid, then inserts averaged labels into a stylized donation-game population. It does not observe long-term human cooperation or actual model helping. Pure norm tuples are reference rules; most measured models express mixtures rather than exact types.",
+          "verification_url": "https://arxiv.org/abs/2507.00088v1",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and version identifier read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0048.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Stern judging\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Stern+judging%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0048.json"
       }
     }
   ]
