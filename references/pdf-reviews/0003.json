@@ -1,0 +1,207 @@
+{
+  "sequence": 3,
+  "source": {
+    "file_name": "S115_Lima_2023.pdf",
+    "source_id": "S115",
+    "sha256": "c01e90f3e3f8e60951d766de3405a1003dcdaafb4aa79f525efa7dbcaa2f3b97",
+    "pdf_pages": 26,
+    "printed_pages": "Unnumbered article pages; section and PDF-page locators used"
+  },
+  "citation": {
+    "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+    "authors": [
+      "Gabriel Lima",
+      "Nina Grgić-Hlača",
+      "Meeyoung Cha"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1145/3544548.3580953",
+    "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "source_scope_note": "Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+    "access_limits": [
+      "All extracted article text, references, appendices, table values and figure captions read; graphical plots were not independently digitized.",
+      "The supplied file is arXiv version 2304.02176v1, dated 5 April 2023, bearing the CHI publication citation and DOI.",
+      "External raw data and analysis scripts were not downloaded or rerun."
+    ]
+  },
+  "study": {
+    "design": "Three US Prolific vignette experiments about algorithmic hiring and medical prioritization",
+    "sample_sizes": [
+      209,
+      406,
+      538
+    ],
+    "total_sample": 1153,
+    "analysis": "Factorial ANOVA, fixed-effects within-paper meta-analysis, and qualitative coding/regression of blame explanations",
+    "scope": "Human self-reported blame and forward-looking responsibility; no live AI system or model-output experiment"
+  },
+  "summary": "Explainability alone did not reliably shift blame. Discriminatory explanations increased blame especially toward developers, while harmful outcomes mattered more for users. Machine-directed blame was associated with beliefs about whether machines are suitable blame recipients. The autonomy manipulation was judged insufficient by the authors. Blaming AI did not displace blame from its developer in these studies.",
+  "findings": [
+    {
+      "term": "Problem of many hands",
+      "id": "problem-of-many-hands",
+      "synonyms": [
+        "Many-hands problem"
+      ],
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral responsibility / sociotechnical governance",
+      "definition": "Difficulty assigning individual moral responsibility when many actors contribute to a collective outcome.",
+      "novelty_rationale": "The existing Bystander effect concerns a needed action going unperformed, while moral disengagement concerns rationalizing harm and blame reversal concerns a solo/joint comparison. This named responsibility-allocation problem concerns distributed contributions and can exist even when several actors are actively blamed.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": "§6, General discussion",
+          "quote": "the “problem of many hands”"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": "§6, General discussion",
+          "quote": "who is morally responsible when many actors"
+        }
+      ],
+      "evidence_scope": "The paper explicitly introduces this named problem in its interpretation of distributed blame. This is conceptual framing within an empirical HCI paper, not a new experimental demonstration that accountability disappears. Its cited original responsibility literature has not been independently read here.",
+      "boundary": "A sociotechnical allocation problem, not an intrinsic mental state or proof that nobody is responsible. The paper found substantial blame toward both developers and users. Distinguish distributed causation, perceived blame, legal liability and forward-looking duties.",
+      "ai_evidence_status": "Named responsibility-allocation problem discussed in a read empirical HCI paper; proposed AI-workflow diagnostic not tested here",
+      "ai_proposal": "Untested AI-workflow application: supply an auditor with complete contribution and control records for a multi-agent incident, then assess whether it preserves each actor’s relevant duties instead of unjustifiably declaring no one responsible or blaming only the most visible actor. Define the attribution criteria in advance.",
+      "relates_to": [
+        "bystander-effect",
+        "b075-moral-disengagement",
+        "blame-reversal-effect"
+      ]
+    },
+    {
+      "term": "Machine blame need not shield developers",
+      "target_id": "b075-moral-disengagement",
+      "decision": "enrich-existing",
+      "definition": "In the studied hiring and medical vignettes, blaming the AI system did not transfer blame away from its developer.",
+      "novelty_rationale": "Counterevidence and a scope qualification for the existing delegation-and-deniability account; not an additional synonym or a new behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": "§5, qualitative-analysis discussion",
+          "quote": "did not shift blame away from the developer in our studies."
+        }
+      ],
+      "evidence_scope": "Human vignette evidence across 1,153 participants, including observational analysis of how participants justified their ratings. It qualifies a universal responsibility-shield claim without refuting the possibility of such shielding in other settings.",
+      "boundary": "Do not infer zero-sum blame or inevitable accountability erosion from machine-directed blame. Self-reported vignette ratings are not legal judgments or measures of actual sanctions, and the study did not independently manipulate a responsibility-shielding intent."
+    },
+    {
+      "term": "Blame-recipient suitability and machine judgments",
+      "target_id": "candidate-046",
+      "decision": "enrich-existing",
+      "definition": "Human blame judgments about an AI system were associated with whether respondents regarded machines as suitable recipients of blame.",
+      "novelty_rationale": "Adds an empirically studied role-perception boundary to the existing Moral typecasting entry, without equating this association with its agent–patient trade-off or claiming a separate established mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": "§6.3, Moral judgments of AI systems",
+          "quote": "whether they believed blaming machines"
+        }
+      ],
+      "evidence_scope": "Participants’ open-ended blame explanations were qualitatively coded and associated with their ratings; this component is observational and may share measurement content with the blame outcome.",
+      "boundary": "Not a causal test of an independent moral-standing mechanism and not proof of machine sentience. The study did not test the inverse agent–patient association in the existing definition."
+    },
+    {
+      "term": "Domain limits on blame comparisons",
+      "target_id": "blame-reversal-effect",
+      "decision": "enrich-existing",
+      "definition": "Blame findings from algorithmic hiring and medical prioritization should not automatically be generalized to autonomous-driving or other domains.",
+      "novelty_rationale": "Adds a boundary to the newly indexed blame-reversal contrast rather than treating every human–AI blame study as a replication of that effect.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": "§7, Concluding remarks",
+          "quote": "Our research was restricted to algorithmic decision-making"
+        }
+      ],
+      "evidence_scope": "The authors explicitly limit generalization and call for direct human-versus-machine comparisons and studies of human–AI collaboration.",
+      "boundary": "This paper does not manipulate the matched solo-versus-joint contrast required to test blame reversal. Its findings neither directly replicate nor refute that contrast."
+    },
+    {
+      "term": "Simple explanations are not sufficient accountability evidence",
+      "decision": "defer",
+      "definition": "Providing a brief post-hoc explanation did not reliably change blame attribution in these vignette experiments.",
+      "novelty_rationale": "Record as a control limitation, not a newly named psychological behaviour. The study tests one explanation format and perceived blame rather than all forms of transparency or accountability.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": "§6.1.1, Explainability and accountability",
+          "quote": "simple natural language"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": "§6.1.1 continuation",
+          "quote": "not impact perceived responsibility."
+        }
+      ],
+      "evidence_scope": "Within-paper experimental and meta-analytic evidence, restricted to the tested explanations, decisions and outcome measures.",
+      "boundary": "No inference that transparency is useless or that traceability, audit logs, contestability and human intervention are ineffective."
+    }
+  ],
+  "methodological_limits": [
+    "US crowdsourced respondents evaluated hypothetical scenarios; findings do not establish population-wide behaviour or behaviour toward real deployed systems.",
+    "The authors deemed the autonomy manipulation insufficient; its small reported effect must not be converted into a causal conclusion that autonomy does not matter.",
+    "Qualitative blame justifications were coded from the same responses being explained; their association with blame ratings is not an independent causal test.",
+    "A within-paper meta-analysis combines these three samples, not all available studies of algorithmic blame.",
+    "Sensitivity to harmful outcomes is not automatically an irrational outcome bias; fairness, control and harm can be normatively relevant to responsibility."
+  ],
+  "deferred": [
+    {
+      "term": "Responsibility shield",
+      "reason": "The concern motivates the paper, but the study did not find developer-blame displacement; retain as a conditional hypothesis rather than add a universally observed behaviour."
+    },
+    {
+      "term": "Algorithmic-discrimination blame discount",
+      "reason": "The paper finds weak fairness effects for machine blame, but it lacks a directly matched human-decision-maker condition. Avoid assigning a general human-versus-AI asymmetry from this study alone."
+    }
+  ],
+  "limitations": [
+    "One named responsibility-allocation problem is added as an explicitly bounded workflow concept; no claim of a newly validated intrinsic AI mechanism.",
+    "Source citations remain distinct from independent primary replications and from measured arXiv literature totals."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "problem-of-many-hands"
+    ],
+    "enriched": [
+      "b075-moral-disengagement",
+      "candidate-046",
+      "blame-reversal-effect"
+    ]
+  }
+}

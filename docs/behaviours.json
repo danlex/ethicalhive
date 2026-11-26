@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 439,
+    "mode_count": 440,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 439,
+      "numbered_entries": 440,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0001.json",
+      "latest_review": "references/pdf-reviews/0003.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 439
+    "source_record_count": 440
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -8709,6 +8709,7 @@
         {
           "id": "pdf-review-0001",
           "name": "Delegation and plausible deniability",
+          "review_record": "references/pdf-reviews/0001.json",
           "definition": "Delegation through opaque algorithms can create ambiguity about responsibility and offer a route for distancing oneself from harmful means.",
           "evidence_scope": "The review discusses how opacity, delegation and distance may facilitate unethical conduct. This is not direct evidence that a particular AI intended harm or that all delegation is unethical.",
           "catalogue_boundary": "The same section notes beneficial delegation and commitment devices. Delegation alone is not moral disengagement.",
@@ -8730,6 +8731,36 @@
                 "doi": "10.1146/annurev-psych-030123-113559",
                 "evidence_scope": "The review discusses how opacity, delegation and distance may facilitate unethical conduct. This is not direct evidence that a particular AI intended harm or that all delegation is unethical.",
                 "verification_url": "https://doi.org/10.1146/annurev-psych-030123-113559",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0003",
+          "review_record": "references/pdf-reviews/0003.json",
+          "name": "Machine blame need not shield developers",
+          "definition": "In the studied hiring and medical vignettes, blaming the AI system did not transfer blame away from its developer.",
+          "evidence_scope": "Human vignette evidence across 1,153 participants, including observational analysis of how participants justified their ratings. It qualifies a universal responsibility-shield claim without refuting the possibility of such shielding in other settings.",
+          "catalogue_boundary": "Do not infer zero-sum blame or inevitable accountability erosion from machine-directed blame. Self-reported vignette ratings are not legal judgments or measures of actual sanctions, and the study did not independently manipulate a responsibility-shielding intent.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0003-b075-moral-disengagement",
+              "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+              "url": "https://doi.org/10.1145/3544548.3580953",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 13 (source locators: §5, qualitative-analysis discussion). Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Gabriel Lima",
+                  "Nina Grgić-Hlača",
+                  "Meeyoung Cha"
+                ],
+                "year": 2023,
+                "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+                "doi": "10.1145/3544548.3580953",
+                "evidence_scope": "Human vignette evidence across 1,153 participants, including observational analysis of how participants justified their ratings. It qualifies a universal responsibility-shield claim without refuting the possibility of such shielding in other settings.",
+                "verification_url": "https://doi.org/10.1145/3544548.3580953",
                 "verified_date": "2026-11-26"
               }
             }
@@ -12467,6 +12498,7 @@
         {
           "id": "pdf-review-0001",
           "name": "Limits of humanization",
+          "review_record": "references/pdf-reviews/0001.json",
           "definition": "Increasing human likeness does not reliably improve cooperation, and concealed machine identity raises a separate disclosure concern.",
           "evidence_scope": "Review-level synthesis of humanization interventions and ethical discussion; not a proof that every human-like interface is misleading.",
           "catalogue_boundary": "Appearance, explicit claims of experience, and concealed identity are different manipulations and should not be treated as interchangeable.",
@@ -29334,6 +29366,7 @@
         {
           "id": "pdf-review-0001",
           "name": "Agent and patient labels are analytical roles",
+          "review_record": "references/pdf-reviews/0001.json",
           "definition": "Calling a machine a moral agent or patient can organize human judgments without asserting that the machine possesses moral agency or experiences.",
           "evidence_scope": "The source’s explicit framing disclaimer, not an independent test of the inverse agent–patient association in the existing definition.",
           "catalogue_boundary": "Do not turn a classification used in experiments into a claim that machines feel harm, have desires, or bear legal responsibility.",
@@ -29355,6 +29388,36 @@
                 "doi": "10.1146/annurev-psych-030123-113559",
                 "evidence_scope": "The source’s explicit framing disclaimer, not an independent test of the inverse agent–patient association in the existing definition.",
                 "verification_url": "https://doi.org/10.1146/annurev-psych-030123-113559",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0003",
+          "review_record": "references/pdf-reviews/0003.json",
+          "name": "Blame-recipient suitability and machine judgments",
+          "definition": "Human blame judgments about an AI system were associated with whether respondents regarded machines as suitable recipients of blame.",
+          "evidence_scope": "Participants’ open-ended blame explanations were qualitatively coded and associated with their ratings; this component is observational and may share measurement content with the blame outcome.",
+          "catalogue_boundary": "Not a causal test of an independent moral-standing mechanism and not proof of machine sentience. The study did not test the inverse agent–patient association in the existing definition.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0003-candidate-046",
+              "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+              "url": "https://doi.org/10.1145/3544548.3580953",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 14 (source locators: §6.3, Moral judgments of AI systems). Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Gabriel Lima",
+                  "Nina Grgić-Hlača",
+                  "Meeyoung Cha"
+                ],
+                "year": 2023,
+                "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+                "doi": "10.1145/3544548.3580953",
+                "evidence_scope": "Participants’ open-ended blame explanations were qualitatively coded and associated with their ratings; this component is observational and may share measurement content with the blame outcome.",
+                "verification_url": "https://doi.org/10.1145/3544548.3580953",
                 "verified_date": "2026-11-26"
               }
             }
@@ -45058,6 +45121,7 @@
         {
           "id": "pdf-review-0001",
           "name": "Deliberate ignorance during delegation",
+          "review_record": "references/pdf-reviews/0001.json",
           "definition": "A delegator can avoid examining how a desired outcome is achieved, leaving possible ethical violations unexamined.",
           "evidence_scope": "Review-level discussion of delegated unethical conduct, not a new experiment or a finding that every omission reflects deliberate intent.",
           "catalogue_boundary": "Retain the existing definition. An AI skipping a check may reflect capacity, cost or error, so intention and strategic ignorance cannot be inferred from that omission alone.",
@@ -52466,7 +52530,39 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0001.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0003",
+          "review_record": "references/pdf-reviews/0003.json",
+          "name": "Domain limits on blame comparisons",
+          "definition": "Blame findings from algorithmic hiring and medical prioritization should not automatically be generalized to autonomous-driving or other domains.",
+          "evidence_scope": "The authors explicitly limit generalization and call for direct human-versus-machine comparisons and studies of human–AI collaboration.",
+          "catalogue_boundary": "This paper does not manipulate the matched solo-versus-joint contrast required to test blame reversal. Its findings neither directly replicate nor refute that contrast.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0003-blame-reversal-effect",
+              "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+              "url": "https://doi.org/10.1145/3544548.3580953",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 15 (source locators: §7, Concluding remarks). Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Gabriel Lima",
+                  "Nina Grgić-Hlača",
+                  "Meeyoung Cha"
+                ],
+                "year": 2023,
+                "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+                "doi": "10.1145/3544548.3580953",
+                "evidence_scope": "The authors explicitly limit generalization and call for direct human-versus-machine comparisons and studies of human–AI collaboration.",
+                "verification_url": "https://doi.org/10.1145/3544548.3580953",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "machine-masquerade",
@@ -52553,6 +52649,95 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0001.json"
+      }
+    },
+    {
+      "id": "problem-of-many-hands",
+      "num": 440,
+      "name": "Problem of many hands",
+      "definition": "Difficulty assigning individual moral responsibility when many actors contribute to a collective outcome.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Moral responsibility / sociotechnical governance",
+      "human_parallel": "Problem of many hands",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Named responsibility-allocation problem discussed in a read empirical HCI paper; proposed AI-workflow diagnostic not tested here",
+      "proposed_ai_manifestation": "Untested AI-workflow application: supply an auditor with complete contribution and control records for a multi-agent incident, then assess whether it preserves each actor’s relevant duties instead of unjustifiably declaring no one responsible or blaming only the most visible actor. Define the attribution criteria in advance.",
+      "research_boundary": "A sociotechnical allocation problem, not an intrinsic mental state or proof that nobody is responsible. The paper found substantial blame toward both developers and users. Distinguish distributed causation, perceived blame, legal liability and forward-looking duties.",
+      "concept_boundary": "A sociotechnical allocation problem, not an intrinsic mental state or proof that nobody is responsible. The paper found substantial blame toward both developers and users. Distinguish distributed causation, perceived blame, legal liability and forward-looking duties.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Many-hands problem"
+      ],
+      "relates_to": [
+        "bystander-effect",
+        "b075-moral-disengagement",
+        "blame-reversal-effect"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0003-problem-of-many-hands",
+          "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+          "url": "https://doi.org/10.1145/3544548.3580953",
+          "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 13, 13 (source locators: §6, General discussion, §6, General discussion). Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+          "publication": {
+            "type": "proceedings-article",
+            "authors": [
+              "Gabriel Lima",
+              "Nina Grgić-Hlača",
+              "Meeyoung Cha"
+            ],
+            "year": 2023,
+            "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+            "doi": "10.1145/3544548.3580953",
+            "evidence_scope": "The paper explicitly introduces this named problem in its interpretation of distributed blame. This is conceptual framing within an empirical HCI paper, not a new experimental demonstration that accountability disappears. Its cited original responsibility literature has not been independently read here.",
+            "verification_url": "https://doi.org/10.1145/3544548.3580953",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Blaming Humans and Machines: What Shapes People’s Reactions to Algorithmic Harm",
+          "authors": [
+            "Gabriel Lima",
+            "Nina Grgić-Hlača",
+            "Meeyoung Cha"
+          ],
+          "year": 2023,
+          "url": "https://doi.org/10.1145/3544548.3580953",
+          "venue": "CHI ’23: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+          "publication_type": "proceedings-article",
+          "domain": "human-related",
+          "id": "doi:10.1145/3544548.3580953",
+          "relevance": "The paper explicitly introduces this named problem in its interpretation of distributed blame. This is conceptual framing within an empirical HCI paper, not a new experimental demonstration that accountability disappears. Its cited original responsibility literature has not been independently read here.",
+          "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 13, 13 (source locators: §6, General discussion, §6, General discussion). Three human vignette studies, a within-paper meta-analysis and qualitative response coding were read. No intrinsic AI behaviour was tested; cited prior studies were not independently read in this step.",
+          "verification_url": "https://doi.org/10.1145/3544548.3580953",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0003.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Problem of many hands\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Problem+of+many+hands%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0003.json"
       }
     }
   ]
