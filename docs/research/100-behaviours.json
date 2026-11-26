@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0034.json",
+      "latest_review": "references/pdf-reviews/0035.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -3786,6 +3786,36 @@
                 "doi": "10.59275/j.melba.2026-87b1",
                 "evidence_scope": "Overall regression coefficients own estimate .55, AI .44. Appendix coefficients AI .74 when advice is closer to the reference and .30 when worse, showing some quality sensitivity. No optimal reliability-weighting benchmark or irrelevant randomized anchor is supplied.",
                 "verification_url": "https://doi.org/10.59275/j.melba.2026-87b1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0035",
+          "review_record": "references/pdf-reviews/0035.json",
+          "name": "Three early failures did not establish a persistent first-impression effect",
+          "definition": "Seeing three wrong rather than three correct initial suggestions did not meaningfully change performance on the later seven tables.",
+          "evidence_scope": "First three tables have treatment-specific correctness; later seven are common with randomized presentation. Only later responses enter the metrics. The tool did not record per-person randomized table order, so detailed order/carryover effects could not be analyzed.",
+          "catalogue_boundary": "A ten-table null finding does not disprove anchoring in other tasks or show that every participant reassessed carefully. The source lists strong prior attitudes and independent reassessment as alternatives rather than directly measured explanations.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0035-b031-anchoring-and-adjustment",
+              "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+              "url": "https://arxiv.org/abs/2509.08514v1",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 12, 15 (source locators: 12, 15). Human crowdworkers judged manually constructed suggestions labelled AI-generated in a Wizard-of-Oz emissions-table task. No actual model generated the manipulated recommendations, no model was trained on the corrected annotations, and original dependent-verification/survey studies were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Jacob Beck",
+                  "Stephanie Eckman",
+                  "Christoph Kern",
+                  "Frauke Kreuter"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2509.08514v1",
+                "evidence_scope": "First three tables have treatment-specific correctness; later seven are common with randomized presentation. Only later responses enter the metrics. The tool did not record per-person randomized table order, so detailed order/carryover effects could not be analyzed.",
+                "verification_url": "https://arxiv.org/abs/2509.08514v1",
                 "verified_date": "2026-11-26"
               }
             }
@@ -10849,6 +10879,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0035",
+          "review_record": "references/pdf-reviews/0035.json",
+          "name": "Correction workload changes reporting decisions with mixed accuracy consequences",
+          "definition": "Participants flagged fewer suggestions as wrong when doing so required supplying a replacement value; fewer flags included both missed errors and fewer unnecessary corrections.",
+          "evidence_scope": "Randomized correction requirement in an eight-condition task. Reduced flagging and overcorrection survive adjusted modeling. The source's descriptive accuracy comparison p=.028 differs from its adjusted null result; descriptive undercorrection rises, but a main adjusted undercorrection effect is not stated as significant.",
+          "catalogue_boundary": "A lower flag rate does not prove the reviewer knew an error and concealed it, and false rejection of correct suggestions also decreased. Flagging is a signal-detection decision with costs; do not infer universal lower quality or an intrinsic trait from fewer interventions.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0035-b089-effort-discounting",
+              "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+              "url": "https://arxiv.org/abs/2509.08514v1",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 12, 12, 15 (source locators: 12, 12, 15). Human crowdworkers judged manually constructed suggestions labelled AI-generated in a Wizard-of-Oz emissions-table task. No actual model generated the manipulated recommendations, no model was trained on the corrected annotations, and original dependent-verification/survey studies were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Jacob Beck",
+                  "Stephanie Eckman",
+                  "Christoph Kern",
+                  "Frauke Kreuter"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2509.08514v1",
+                "evidence_scope": "Randomized correction requirement in an eight-condition task. Reduced flagging and overcorrection survive adjusted modeling. The source's descriptive accuracy comparison p=.028 differs from its adjusted null result; descriptive undercorrection rises, but a main adjusted undercorrection effect is not stated as significant.",
+                "verification_url": "https://arxiv.org/abs/2509.08514v1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12938,6 +12998,36 @@
                 "doi": "10.59275/j.melba.2026-87b1",
                 "evidence_scope": "38 negative and 29 positive threshold-crossing consultations among 560 AI-assisted assessments. The negative rate is about 6.8% of all assessments, not of all initially correct cases exposed to wrong advice. No inferential test of frequency/severity was performed after filtering.",
                 "verification_url": "https://doi.org/10.59275/j.melba.2026-87b1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0035",
+          "review_record": "references/pdf-reviews/0035.json",
+          "name": "Positive AI attitudes correlated with acceptance of faulty suggestions",
+          "definition": "Reviewers with more favourable prior AI/automation attitudes tended to accept more erroneous suggestions in this task, while more sceptical reviewers also made more unnecessary corrections.",
+          "evidence_scope": "Only 1230 annotators completed the prior six-item attitude survey; the additional 1554 did not. Regression adjusts demographics and time but cannot randomize attitude. Suggestions are manually manipulated; the task has no no-suggestion or matched human-advice control.",
+          "catalogue_boundary": "The association does not establish that liking AI causes errors, that a demographic group has an inherent deficit, or that scepticism always improves calibrated decisions. The experiment does not measure a real model's mistake frequency, clinical harm or feedback-loop amplification.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0035-automation-bias",
+              "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+              "url": "https://arxiv.org/abs/2509.08514v1",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 12, 12, 9 (source locators: 12, 12, 9). Human crowdworkers judged manually constructed suggestions labelled AI-generated in a Wizard-of-Oz emissions-table task. No actual model generated the manipulated recommendations, no model was trained on the corrected annotations, and original dependent-verification/survey studies were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Jacob Beck",
+                  "Stephanie Eckman",
+                  "Christoph Kern",
+                  "Frauke Kreuter"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2509.08514v1",
+                "evidence_scope": "Only 1230 annotators completed the prior six-item attitude survey; the additional 1554 did not. Regression adjusts demographics and time but cannot randomize attitude. Suggestions are manually manipulated; the task has no no-suggestion or matched human-advice control.",
+                "verification_url": "https://arxiv.org/abs/2509.08514v1",
                 "verified_date": "2026-11-26"
               }
             }
@@ -19981,6 +20071,36 @@
                 "doi": "10.1609/aies.v9i4.43309",
                 "evidence_scope": "Decision-page time excludes later writing time. The within-accountability latency association b=.63 [.12,1.16] is reported from a supplementary model not displayed in full. Latency is a proxy, not measured inferential depth.",
                 "verification_url": "https://api.crossref.org/works/10.1609/aies.v9i4.43309",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0035",
+          "review_record": "references/pdf-reviews/0035.json",
+          "name": "More elapsed review time is not a simple measure of better reasoning",
+          "definition": "Raw total/tutorial time had little linear relationship to accuracy, while adjusted time quartiles were associated with both better error detection and more false corrections.",
+          "evidence_scope": "Total time is observed rather than assigned. Models categorize it into quartiles and adjust other variables; those associations need not equal the raw correlation. The first three instances also took longer on average than subsequent instances.",
+          "catalogue_boundary": "No manipulation establishes that more time caused improvement or errors, and this is not direct evidence of a model using excess reasoning tokens. Conceptual difficulty and uncertainty can influence both time and performance.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0035-overthinking",
+              "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+              "url": "https://arxiv.org/abs/2509.08514v1",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 14, 15, 16 (source locators: 14, 15, 16). Human crowdworkers judged manually constructed suggestions labelled AI-generated in a Wizard-of-Oz emissions-table task. No actual model generated the manipulated recommendations, no model was trained on the corrected annotations, and original dependent-verification/survey studies were not independently read here.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Jacob Beck",
+                  "Stephanie Eckman",
+                  "Christoph Kern",
+                  "Frauke Kreuter"
+                ],
+                "year": 2025,
+                "venue": "arXiv:2509.08514v1",
+                "evidence_scope": "Total time is observed rather than assigned. Models categorize it into quartiles and adjust other variables; those associations need not equal the raw correlation. The first three instances also took longer on average than subsequent instances.",
+                "verification_url": "https://arxiv.org/abs/2509.08514v1",
                 "verified_date": "2026-11-26"
               }
             }
