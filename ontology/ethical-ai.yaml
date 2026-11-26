@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 449
+  mode_count: 450
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 449
+    numbered_entries: 450
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0023.json
+    latest_review: references/pdf-reviews/0024.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -11287,6 +11287,38 @@ modes:
           on a single screen after stipulated knowledge. The source discusses, but does not settle, literal
           versus metaphorical interpretation.
         verification_url: https://arxiv.org/abs/2102.04209v1
+        verified_date: '2026-11-26'
+  - id: pdf-review-0024
+    review_record: references/pdf-reviews/0024.json
+    name: Capability descriptions shift robot blame without proving machine mentality
+    definition: People attributed more risk knowledge and blame to a robot described with relevant concepts,
+      language interaction and theory-of-mind abilities than to a simpler robot.
+    evidence_scope: 'Manipulated text bundles: the middle version adds harm-related concepts, language and
+      mental-state modeling; the highest version adds quasi-emotions. Attribution differences between the middle/highest
+      versions were not significant.'
+    catalogue_boundary: The study does not independently identify theory of mind as a necessary or sufficient
+      threshold for actual moral agency. Nonsignificance between middle and highest descriptions is not proof
+      that emotions can never affect blame.
+    definition_sources:
+    - id: pdf-review-0024-anthropomorphism
+      title: Playing the Blame Game with Robots
+      url: https://doi.org/10.1145/3434074.3447202
+      consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 3, 4 (source locators: 3,
+        4). Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+        of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+        primary studies were not independently read here.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Markus Kneer
+        - Michael T. Stuart
+        year: 2021
+        venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+        doi: 10.1145/3434074.3447202
+        evidence_scope: 'Manipulated text bundles: the middle version adds harm-related concepts, language
+          and mental-state modeling; the highest version adds quasi-emotions. Attribution differences between
+          the middle/highest versions were not significant.'
+        verification_url: https://doi.org/10.1145/3434074.3447202
         verified_date: '2026-11-26'
 - id: survivorship-bias
   num: 109
@@ -47024,6 +47056,38 @@ modes:
           tests.
         verification_url: https://doi.org/10.3389/fpsyg.2022.779028
         verified_date: '2026-11-26'
+  - id: pdf-review-0024
+    review_record: references/pdf-reviews/0024.json
+    name: Corporate responsibility-shield claims are weaker for blame than for wrongness
+    definition: The study’s stronger-machine descriptions reduced some corporate-user ratings, but the owner-blame
+      effect itself was only marginal and should not be stated as a robust demonstrated transfer of blame.
+    evidence_scope: Table 2 reports owner-capacity effects for recklessness and wrongness, but owner blame
+      p=.055 and outcome blame p=.057. No constrained blame budget, actual evasion or accountability consequence
+      was measured.
+    catalogue_boundary: Reduced wrongness judgments about using a system do not equal proven blame displacement,
+      and the owner may legitimately be judged differently for deploying a more capable system. Do not imply
+      that legal liability disappears or that deliberate laundering intent was observed.
+    definition_sources:
+    - id: pdf-review-0024-agency-laundering
+      title: Playing the Blame Game with Robots
+      url: https://doi.org/10.1145/3434074.3447202
+      consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 3, 3 (source locators: 3,
+        3). Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+        of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+        primary studies were not independently read here.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Markus Kneer
+        - Michael T. Stuart
+        year: 2021
+        venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+        doi: 10.1145/3434074.3447202
+        evidence_scope: Table 2 reports owner-capacity effects for recklessness and wrongness, but owner blame
+          p=.055 and outcome blame p=.057. No constrained blame budget, actual evasion or accountability consequence
+          was measured.
+        verification_url: https://doi.org/10.1145/3434074.3447202
+        verified_date: '2026-11-26'
 - id: anticipatory-guilt
   num: 442
   name: Anticipatory guilt
@@ -47961,6 +48025,27 @@ modes:
       and 20-page identity verified through the arXiv record; later publication metadata was consulted only
       to distinguish versions.
     review_record: references/pdf-reviews/0023.json
+  - title: Playing the Blame Game with Robots
+    authors:
+    - Markus Kneer
+    - Michael T. Stuart
+    year: 2021
+    url: https://doi.org/10.1145/3434074.3447202
+    venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3434074.3447202
+    relevance: N=347 rather than the earlier N=513; the new experiment varies described sophistication with
+      a fixed 20% risk, rather than agent type and stipulated knowledge of pollution.
+    consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 3, 3 (source locators: 3, 3).
+      Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+      of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+      primary studies were not independently read here.'
+    verification_url: https://doi.org/10.1145/3434074.3447202
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0024.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -47974,3 +48059,128 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0023.json
+  research_notes:
+  - id: pdf-review-0024
+    review_record: references/pdf-reviews/0024.json
+    name: The inverse-outcome blame pattern was not demonstrated in this follow-up design
+    definition: This separate capability-by-outcome experiment did not show a significant outcome main effect
+      or capacity×outcome interaction for robot blame.
+    evidence_scope: N=347 rather than the earlier N=513; the new experiment varies described sophistication
+      with a fixed 20% risk, rather than agent type and stipulated knowledge of pollution.
+    catalogue_boundary: A nonsignificant changed-design result does not establish equivalence or prove that
+      the earlier inverse outcome effect is impossible. It does prevent treating the broader literature as
+      uniformly positive evidence.
+    definition_sources:
+    - id: pdf-review-0024-inverse-outcome-effect
+      title: Playing the Blame Game with Robots
+      url: https://doi.org/10.1145/3434074.3447202
+      consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 3, 3 (source locators: 3,
+        3). Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+        of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+        primary studies were not independently read here.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Markus Kneer
+        - Michael T. Stuart
+        year: 2021
+        venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+        doi: 10.1145/3434074.3447202
+        evidence_scope: N=347 rather than the earlier N=513; the new experiment varies described sophistication
+          with a fixed 20% risk, rather than agent type and stipulated knowledge of pollution.
+        verification_url: https://doi.org/10.1145/3434074.3447202
+        verified_date: '2026-11-26'
+- id: recklessness
+  num: 450
+  name: Recklessness
+  definition: Proceeding despite a recognized substantial risk of harm without giving that risk the consideration
+    it warrants.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / risk and responsibility attribution
+  human_parallel: Recklessness
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human attribution of awareness-based risk-taking to hypothetical AI systems; functional
+    AI action analogue untested
+  proposed_ai_manifestation: 'Untested AI analogue: give an assistant an explicit, verified risk assessment
+    and authorized safety threshold alongside an equally effective safer option. Test whether its recommended
+    or executed action disregards those constraints despite accurately restating them. Control benefit, necessity
+    and alternatives; measure access to information and action choice rather than presume conscious mens rea.'
+  research_boundary: Taking a known risk is not automatically reckless; necessity, justification, alternatives,
+    safeguards and proportionality matter. This is a behavioural/moral construct, not a complete legal definition
+    or an inference of conscious awareness in AI. Do not infer recklessness solely because harm eventually
+    occurred.
+  concept_boundary: Taking a known risk is not automatically reckless; necessity, justification, alternatives,
+    safeguards and proportionality matter. This is a behavioural/moral construct, not a complete legal definition
+    or an inference of conscious awareness in AI. Do not infer recklessness solely because harm eventually
+    occurred.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - candidate-056
+  - b043-overconfidence
+  - moral-crumple-zone
+  definition_sources:
+  - id: pdf-review-0024-recklessness
+    title: Playing the Blame Game with Robots
+    url: https://doi.org/10.1145/3434074.3447202
+    consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 2, 2, 2 (source locators: 2,
+      2, 2). Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+      of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+      primary studies were not independently read here.'
+    publication:
+      type: proceedings-article
+      authors:
+      - Markus Kneer
+      - Michael T. Stuart
+      year: 2021
+      venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+      doi: 10.1145/3434074.3447202
+      evidence_scope: 'Human attribution experiment: all robot scenarios stipulate risk awareness, while described
+        semantic/interaction capacities vary. Risk-knowledge agreement is used as an operational measure of
+        attributed recklessness. No real autonomous agent’s risk-taking was observed.'
+      verification_url: https://doi.org/10.1145/3434074.3447202
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: Playing the Blame Game with Robots
+    authors:
+    - Markus Kneer
+    - Michael T. Stuart
+    year: 2021
+    url: https://doi.org/10.1145/3434074.3447202
+    venue: Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction, 407–411
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3434074.3447202
+    relevance: 'Human attribution experiment: all robot scenarios stipulate risk awareness, while described
+      semantic/interaction capacities vary. Risk-knowledge agreement is used as an operational measure of attributed
+      recklessness. No real autonomous agent’s risk-taking was observed.'
+    consulted: 'Full supplied PDF text read, all 5 pages; evidence at PDF pages 2, 2, 2 (source locators: 2,
+      2, 2). Human judgments of hypothetical robots and their corporate owner. The study manipulates descriptions
+      of capabilities, not an actual robot’s capacities or reckless conduct. The cited legal code and earlier
+      primary studies were not independently read here.'
+    verification_url: https://doi.org/10.1145/3434074.3447202
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0024.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Recklessness"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Recklessness%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0024.json
