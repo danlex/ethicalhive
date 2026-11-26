@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0030.json
+    latest_review: references/pdf-reviews/0031.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3177,6 +3177,40 @@ modes:
           humans three features absent from the model.
         verification_url: https://arxiv.org/abs/2010.07938v2
         verified_date: '2026-11-26'
+  - id: pdf-review-0031
+    review_record: references/pdf-reviews/0031.json
+    name: Initial independent judgment did not fully resist later conflicting advice
+    definition: Participants in the sequential condition sometimes revised an initial assessment toward AI
+      even when the recommendation diverged from the expert majority.
+    evidence_scope: '164 disagreement instances from 58 participants: raw switching 42.9% on AI–expert disagreement
+      versus 28.7% on agreement; aggregate contrast interval spans zero. The reported unanimous-expert subgroup
+      contrast .31 [.03,.61] excludes zero, whereas the split-expert subgroup does not.'
+    catalogue_boundary: AI advice follows the initial answer here, so its influence is not proof of a uniquely
+      initial-anchor mechanism. Only disagreement instances get feedback, and there is no independent never-AI
+      group. Subgroup evidence and overlapping final/initial intervals do not establish universally harmful
+      sequential disclosure or general accuracy deterioration.
+    definition_sources:
+    - id: pdf-review-0031-b031-anchoring-and-adjustment
+      title: Limits of Interventions in AI-Assisted Decision Making
+      url: https://doi.org/10.1609/aies.v9i4.43309
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 9, 9, 10 (source locators:
+        2323, 2323, 2324). Lay adults'' decisions in fictional child-welfare cases using logistic-regression
+        recommendations. Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation
+        of real caseworker practice or a model''s own rationalization mechanism.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Shikha Shrestha
+        - Eunhye Ahn
+        - Yevgeniy Vorobeychik
+        year: 2026
+        venue: Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326
+        doi: 10.1609/aies.v9i4.43309
+        evidence_scope: '164 disagreement instances from 58 participants: raw switching 42.9% on AI–expert
+          disagreement versus 28.7% on agreement; aggregate contrast interval spans zero. The reported unanimous-expert
+          subgroup contrast .31 [.03,.61] excludes zero, whereas the split-expert subgroup does not.'
+        verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
+        verified_date: '2026-11-26'
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -3595,6 +3629,39 @@ modes:
           dating, cooking and weather. Perceived gravity was measured; it was not independently randomized
           or isolated from moral, familiarity or complexity associations.
         verification_url: https://doi.org/10.1371/journal.pone.0278751
+        verified_date: '2026-11-26'
+  - id: pdf-review-0031
+    review_record: references/pdf-reviews/0031.json
+    name: Consequence salience can change reliance without increasing time
+    definition: Reminding participants of both missed-risk and unwarranted-intervention consequences produced
+      a favourable descriptive expert-alignment pattern without a credible increase in decision latency.
+    evidence_scope: The reminder explicitly mentions harms in both directions. Models did not credibly show
+      a condition×AI–expert-alignment interaction; attention reframing and affective salience were not separately
+      measured or manipulated.
+    catalogue_boundary: Framing effects can be helpful, justified responses to relevant consequences. This
+      study does not show a general gain/loss equivalence violation, prove a unique affective mechanism, or
+      justify claiming consequence framing is established as superior across tasks.
+    definition_sources:
+    - id: pdf-review-0031-b035-framing-effect
+      title: Limits of Interventions in AI-Assisted Decision Making
+      url: https://doi.org/10.1609/aies.v9i4.43309
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 4, 9 (source locators:
+        2318, 2318, 2323). Lay adults'' decisions in fictional child-welfare cases using logistic-regression
+        recommendations. Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation
+        of real caseworker practice or a model''s own rationalization mechanism.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Shikha Shrestha
+        - Eunhye Ahn
+        - Yevgeniy Vorobeychik
+        year: 2026
+        venue: Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326
+        doi: 10.1609/aies.v9i4.43309
+        evidence_scope: The reminder explicitly mentions harms in both directions. Models did not credibly
+          show a condition×AI–expert-alignment interaction; attention reframing and affective salience were
+          not separately measured or manipulated.
+        verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
         verified_date: '2026-11-26'
 - id: b036-confirmation-myside-bias
   num: 36
@@ -5519,13 +5586,14 @@ modes:
   detected_by:
   - cove
   examples:
-  - 'Masking the answer tokens while leaving the full chain-of-thought intact drops accuracy from 84.75% to 57.85%,
-    showing the written reasoning carries little of the work: the answer, not the steps, was doing it. [arXiv:2506.17630]'
+  - 'Masking the answer tokens while leaving the full chain-of-thought intact drops accuracy from 84.75% to
+    57.85%, showing the written reasoning carries little of the work: the answer, not the steps, was doing
+    it. [arXiv:2506.17630]'
   - When correct answers are paired with wrong reasoning Claude still scores 64.56%, but with correct reasoning
     paired with wrong answers it falls to 25.32%, so the answer dominates even when the stated logic contradicts
     it. [arXiv:2506.17630]
-  - Although the models lean heavily on the supplied answer, they explicitly cite it only 19.75% of the time, a
-    disconnect between what the model uses and what it says it uses that is the signature of post-hoc rationalization.
+  - Although the models lean heavily on the supplied answer, they explicitly cite it only 19.75% of the time,
+    a disconnect between what the model uses and what it says it uses that is the signature of post-hoc rationalization.
     [arXiv:2506.17630]
   selected_papers:
   - id: arxiv:2506.17630
@@ -5535,7 +5603,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2506.17630
     source_reference:
@@ -5549,7 +5618,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2603.16643
     source_reference:
@@ -5563,7 +5633,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2608.02139
     source_reference:
@@ -5581,6 +5652,41 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0031
+    review_record: references/pdf-reviews/0031.json
+    name: Detailed post-decision explanations do not identify the causes of the decision
+    definition: Most required justifications omitted explicit AI references even though decisions often matched
+      AI, but omission alone did not demonstrate invented reasons or hidden causal knowledge.
+    evidence_scope: 312 texts automatically coded using Claude with 30 independently human-coded examples.
+      98.1% had no explicit AI reference. Reasoning-quality associations were not credible; case specificity
+      negatively associated with expert alignment, moral framing's expert-alignment interval included zero.
+    catalogue_boundary: Post-hoc rationalization and authority deference are proposed accounts, not uniquely
+      identified mechanisms. A case-grounded rationale may accurately describe evidence while omitting one
+      input. Coding a written explanation cannot establish a participant's hidden thought process or that an
+      AI model itself generated unfaithful reasoning.
+    definition_sources:
+    - id: pdf-review-0031-b055-confabulated-reasons
+      title: Limits of Interventions in AI-Assisted Decision Making
+      url: https://doi.org/10.1609/aies.v9i4.43309
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 9, 9 (source locators: 2323,
+        2323). Lay adults'' decisions in fictional child-welfare cases using logistic-regression recommendations.
+        Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation of real
+        caseworker practice or a model''s own rationalization mechanism.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Shikha Shrestha
+        - Eunhye Ahn
+        - Yevgeniy Vorobeychik
+        year: 2026
+        venue: Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326
+        doi: 10.1609/aies.v9i4.43309
+        evidence_scope: 312 texts automatically coded using Claude with 30 independently human-coded examples.
+          98.1% had no explicit AI reference. Reasoning-quality associations were not credible; case specificity
+          negatively associated with expert alignment, moral framing's expert-alignment interval included zero.
+        verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
+        verified_date: '2026-11-26'
 - id: b056-split-brain-interpreter
   num: 56
   name: Split-brain interpreter
@@ -10964,6 +11070,41 @@ modes:
           not aggregate performance versus the simple-explanation category; individual designs were not significantly
           differentiated.
         verification_url: https://doi.org/10.1145/3449287
+        verified_date: '2026-11-26'
+  - id: pdf-review-0031
+    review_record: references/pdf-reviews/0031.json
+    name: Written accountability and extra time did not guarantee calibrated AI reliance
+    definition: Requiring written justifications did not reliably reduce following recommendations that disagreed
+      with the expert majority in this fictional child-welfare task.
+    evidence_scope: 224 reported participants, 1344 repeated case observations, Bayesian participant/case multilevel
+      models. AI matching is not automatically bias; overreliance is operationalized relative to expert-majority
+      disagreement. Consequence alignment 67.1%, baseline 61.7%, accountability 59.8%, initial sequential 61.0%.
+    catalogue_boundary: Expert-majority judgments are not definitive correctness labels; following AI can sometimes
+      be reasonable. Descriptive ranking and absence of a credible increase versus one reference do not demonstrate
+      every pairwise intervention superiority or equivalent performance. Do not extrapolate to real child-protection
+      staff or actual screening harms.
+    definition_sources:
+    - id: pdf-review-0031-automation-bias
+      title: Limits of Interventions in AI-Assisted Decision Making
+      url: https://doi.org/10.1609/aies.v9i4.43309
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 7, 7, 10 (source locators:
+        2321, 2321, 2324). Lay adults'' decisions in fictional child-welfare cases using logistic-regression
+        recommendations. Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation
+        of real caseworker practice or a model''s own rationalization mechanism.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Shikha Shrestha
+        - Eunhye Ahn
+        - Yevgeniy Vorobeychik
+        year: 2026
+        venue: Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326
+        doi: 10.1609/aies.v9i4.43309
+        evidence_scope: 224 reported participants, 1344 repeated case observations, Bayesian participant/case
+          multilevel models. AI matching is not automatically bias; overreliance is operationalized relative
+          to expert-majority disagreement. Consequence alignment 67.1%, baseline 61.7%, accountability 59.8%,
+          initial sequential 61.0%.
+        verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
         verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
@@ -17079,15 +17220,15 @@ modes:
       are independent of this AI-domain total.
 - id: overthinking
   name: Overthinking
-  definition: Spending excessive reasoning steps and tokens on a simple problem, sometimes reasoning itself out
-    of the right answer.
+  definition: Spending excessive reasoning steps and tokens on a simple problem, sometimes reasoning itself
+    out of the right answer.
   example: Given a trivial question a reasoning model emits pages of second-guessing and lands on a worse answer
     than its first.
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  human_parallel: 'Analysis paralysis / overthinking: excessive deliberation that wastes effort or talks one out
-    of a correct answer.'
+  human_parallel: 'Analysis paralysis / overthinking: excessive deliberation that wastes effort or talks one
+    out of a correct answer.'
   highlighted: false
   tag: research
   origin: mixed
@@ -17116,12 +17257,12 @@ modes:
   - Overreasoning
   - Analysis paralysis
   examples:
-  - Asked 'what is 2 plus 3?', o1-like models burn 1,953% more tokens than a conventional model to reach the same
-    answer, one generating 13 separate solution attempts for the trivial sum. [arXiv:2412.21187]
-  - 'The extra reasoning is wasted: the first round is already correct in over 92% of cases yet is only 38.7% of
-    the response, the rest adding almost nothing to accuracy. [arXiv:2412.21187]'
-  - Later attempts largely repeat earlier ones, the distinctness of a fourth solution usually below 30%, so the
-    extended chain mostly rephrases itself. [arXiv:2412.21187]
+  - Asked 'what is 2 plus 3?', o1-like models burn 1,953% more tokens than a conventional model to reach the
+    same answer, one generating 13 separate solution attempts for the trivial sum. [arXiv:2412.21187]
+  - 'The extra reasoning is wasted: the first round is already correct in over 92% of cases yet is only 38.7%
+    of the response, the rest adding almost nothing to accuracy. [arXiv:2412.21187]'
+  - Later attempts largely repeat earlier ones, the distinctness of a fourth solution usually below 30%, so
+    the extended chain mostly rephrases itself. [arXiv:2412.21187]
   selected_papers:
   - id: arxiv:2504.13367
     title: 'THOUGHTTERMINATOR: Benchmarking, Calibrating, and Mitigating Overthinking in Reasoning Models'
@@ -17130,7 +17271,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2504.13367
     source_reference:
@@ -17144,7 +17286,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2504.06514
     source_reference:
@@ -17179,6 +17322,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0031
+    review_record: references/pdf-reviews/0031.json
+    name: More time was associated with AI following, not shown to cause it
+    definition: Within the accountability group, longer decision latency was associated with greater AI following;
+      this does not establish that excess reasoning worsened judgment.
+    evidence_scope: Decision-page time excludes later writing time. The within-accountability latency association
+      b=.63 [.12,1.16] is reported from a supplementary model not displayed in full. Latency is a proxy, not
+      measured inferential depth.
+    catalogue_boundary: These are human correlations in a nontrivial task, not excessive tokens in a model
+      or reasoning itself out of an objectively correct answer. Case difficulty, uncertainty and other unmeasured
+      factors can influence both duration and reliance.
+    definition_sources:
+    - id: pdf-review-0031-overthinking
+      title: Limits of Interventions in AI-Assisted Decision Making
+      url: https://doi.org/10.1609/aies.v9i4.43309
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 9, 9 (source locators: 2323,
+        2323). Lay adults'' decisions in fictional child-welfare cases using logistic-regression recommendations.
+        Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation of real
+        caseworker practice or a model''s own rationalization mechanism.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Shikha Shrestha
+        - Eunhye Ahn
+        - Yevgeniy Vorobeychik
+        year: 2026
+        venue: Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326
+        doi: 10.1609/aies.v9i4.43309
+        evidence_scope: Decision-page time excludes later writing time. The within-accountability latency association
+          b=.63 [.12,1.16] is reported from a supplementary model not displayed in full. Latency is a proxy,
+          not measured inferential depth.
+        verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
+        verified_date: '2026-11-26'
 - id: underthinking
   name: Underthinking
   definition: Abandoning promising reasoning paths too soon or giving a shallow answer to a problem that needed
