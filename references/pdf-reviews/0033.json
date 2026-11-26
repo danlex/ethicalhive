@@ -1,0 +1,270 @@
+{
+  "sequence": 33,
+  "source": {
+    "file_name": "S167_AlonBarkat_2022.pdf",
+    "source_id": "S167",
+    "sha256": "e40eab72e08c0ad3cefb787681ae0eb7b5f9585c1069b55df4dc723a48184add",
+    "pdf_pages": 17,
+    "printed_pages": "Advance-access pages 1–17",
+    "version_note": "Supplied 2022 advance-access version, publication line 8 February 2022, with provisional XX volume/issue and pages 1–17. Later issue-year/page references elsewhere are not treated as a separate paper or as a separately read version."
+  },
+  "citation": {
+    "title": "Human–AI Interactions in Public Sector Decision Making: “Automation Bias” and “Selective Adherence” to Algorithmic Advice",
+    "authors": [
+      "Saar Alon-Barkat",
+      "Madalina Busuioc"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1093/jopart/muac007",
+    "venue": "Journal of Public Administration Research and Theory, advance access, 1–17",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "Human choices in teacher-employment vignettes with experimentally labelled algorithmic or consultant scores, not actual trained-model evaluation or real employment decisions. Three Dutch survey studies; explanations involving a political scandal are observational interpretations, not randomized interventions.",
+    "access_limits": [
+      "All seventeen pages read, including hypotheses, score/HR incongruence, three studies, all ten tables, two included appendices, discussion and references. Page 3 re-read after initial output truncation. Page 10 Tables 5–6 and page 15 randomization diagram rendered and visually inspected.",
+      "Separate supplementary sections, full Dutch questionnaires, preregistrations, data and code were not independently opened or reanalyzed. The page-15 image supplies recruitment numbers absent from extracted diagram text."
+    ]
+  },
+  "study": {
+    "study_1": {
+      "initial": 910,
+      "excluded": 305,
+      "analyzed": 605,
+      "algorithmic": 295,
+      "human": 310
+    },
+    "study_2": {
+      "initial": 1222,
+      "excluded": 318,
+      "analyzed": 904,
+      "selective_adherence_subset": 792
+    },
+    "study_3": {
+      "invited": 3294,
+      "completed_and_analyzed": 1345,
+      "selective_adherence_subset": 1203
+    },
+    "total_analyzed_across_studies": 2854,
+    "task": "Choose which of three hypothetical teachers not to retain; lowest numeric score conflicts with the poorest HR evaluation",
+    "manipulations": "Label numeric prediction algorithm versus consultants; Study 2/3 vary the lowest-score teacher's Dutch versus Moroccan-Dutch surname; Study 1/2 vary degree of score/HR incongruence",
+    "sampling_note": "Studies 1–2 citizen panels in 2020; Study 3 civil-servant panel in February 2021 after childcare-benefits scandal. Selective-adherence analyses restricted to respondents of Dutch descent."
+  },
+  "summary": "No greater average following of algorithmic versus matched consultant scores in the citizen studies; civil servants followed algorithmic scores less. Study 2's pooled name-cue effect was OR=1.50, two-sided p=.083, preregistered directional p=.042. The algorithm×name interaction was not significant and did not support exacerbation by algorithms. The civil-servant sample showed the opposite name-cue direction. Scandal-related learning is plausible but not causally isolated.",
+  "findings": [
+    {
+      "term": "Selective adherence",
+      "id": "selective-adherence",
+      "decision": "new-entry",
+      "category": "Heuristics",
+      "origin": "Public-administration behavioural research / stereotype-congruent advice use",
+      "definition": "Preferentially following advice when it matches prior stereotypes or beliefs about the person or group affected by a decision.",
+      "novelty_rationale": "A named, narrower application of confirmation bias to adopting advice about a decision subject. It is indexed as a subtype, not claimed as an independent general mechanism or a synonym for all confirmation bias, cherry-picking or automatic machine deference.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "advice selectively, when it matches pre-existing stereotypes"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "expect decision-makers to adhere to algorithmic advice"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "(selective adherence)"
+        }
+      ],
+      "evidence_scope": "Primary human vignette evidence with mixed results. Study 2 Dutch-descent subset N=792: following the lowest score was 12.3% for the Moroccan-Dutch name versus 8.6% for a Dutch name, OR=1.50 [0.95,2.40], p=.083 two-sided or .042 under the preregistered directional test. The algorithm×name interaction p=.147 did not demonstrate algorithm-specific amplification; Study 3's effect reversed.",
+      "boundary": "Advice congruence can be legitimate when prior knowledge is relevant; the bias requires differential weighting without sufficient task-relevant grounds. The source does not measure each participant's stereotypes directly, prove conscious prejudice or establish a universally positive effect. This is an explicit subtype of confirmation bias, not an additional independent mechanism.",
+      "ai_evidence_status": "Human use of labelled algorithmic/human advice with mixed primary evidence; proposed AI advice-consumption analogue untested",
+      "ai_proposal": "Untested AI analogue: provide a model with identical job-relevant evidence and a conflicting recommendation, changing only a group cue and whether the recommendation comes from a model or human expert. Test whether recommendation acceptance changes with stereotype congruence. Use matched counterfactuals, protect relevant contextual information, and do not presume a model's private beliefs or intentional prejudice.",
+      "is_a": [
+        "b036-confirmation-myside-bias"
+      ],
+      "relates_to": [
+        "automation-bias",
+        "implicit-bias",
+        "motivated-reasoning",
+        "b054-motivated-reasoning"
+      ]
+    },
+    {
+      "term": "No algorithm-specific deference advantage was demonstrated in these teacher vignettes",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Participants generally followed the conflicting HR evaluation instead of the lowest numeric score, and did not more often adopt that score when labelled algorithmic rather than human-produced.",
+      "novelty_rationale": "Adds relevant null and contrary evidence with an explicit human-expert comparison; narrows universal claims that merely showing an algorithm inevitably creates excess reliance.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "11.5"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "11.9"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "evidence for an overall tendency for automation bias."
+        }
+      ],
+      "evidence_scope": "Study 1 source OR=.96 [.58,1.58]; Study 2 OR=1.16 [.75,1.80]; pooled 1.07 [.77,1.48]. Civil servants source OR=.54 [.34,.83], p=.006. Scores, stated 95% predictive reliability and HR evidence were matched across source labels.",
+      "boundary": "These comparisons test an algorithm-specific increment relative to consultant advice, not the impossibility of automation bias in every setting. No objective performance truth establishes that following HR is always correct. Nonsignificance is not equivalence, and the study does not measure repeated operational use of a known reliable system."
+    },
+    {
+      "term": "Stereotype-congruent advice use is an application of confirmation bias",
+      "target_id": "b036-confirmation-myside-bias",
+      "decision": "enrich-existing",
+      "definition": "The paper theorizes selective adherence from motivated processing of information congruent with prior beliefs and stereotypes.",
+      "novelty_rationale": "Documents the parent–subtype relation so adding the named advice pattern does not imply discovery of a separate independent cognitive mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "greater weight to information congruent with prior"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "these “confirmation biases”"
+        }
+      ],
+      "evidence_scope": "Conceptual mapping plus the study's experimentally varied source/name cues. Direct private belief, discriminatory intent and unconscious stereotype activation were not measured.",
+      "boundary": "The human pattern is conditional and mixed across samples. Differences in advice acceptance are not proof that all underlying confirmation, prejudice and authority mechanisms have been distinguished experimentally."
+    },
+    {
+      "term": "Civil-servant aversion after a scandal does not isolate the scandal's causal effect",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "The civil-servant sample was less likely to act on algorithm-labelled than consultant-labelled scores, in a period of heightened attention to discriminatory public-sector algorithms.",
+      "novelty_rationale": "Adds contextual evidence and alternative explanations to the existing aversion concept rather than creating a new scandal-induced behavioural mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "4.8"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "8.6"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "social desirability bias,"
+        }
+      ],
+      "evidence_scope": "Within Study 3, randomized source labels support a source-related choice difference. The comparison across earlier citizen samples and later civil servants changes population, recruitment panel, software, attention-check policy, timing and incongruence levels.",
+      "boundary": "The scandal, familiarity with algorithm use and professional status were not randomly assigned. Greater awareness, selection, different trust or social-desirability responses remain alternatives; no longitudinal learning or durable mitigation was demonstrated."
+    },
+    {
+      "term": "Algorithm appreciation is not automatically overtrust",
+      "target_id": "algorithm-appreciation",
+      "decision": "enrich-existing",
+      "definition": "The background describes algorithm appreciation as a tendency to overtrust, but a preference for algorithmic advice alone does not establish inappropriate reliance.",
+      "novelty_rationale": "Prevents importing the paper's broad conceptual conflation into the existing appreciation definition.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "algorithm appreciation” (Logg, Minson, and Moore"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "describing a similar tendency to over-trust algorithmic"
+        }
+      ],
+      "evidence_scope": "Terminology boundary drawn from the read discussion. This article's experiment does not positively demonstrate appreciation or establish actual advice accuracy; Logg's original study was not independently read here.",
+      "boundary": "Keep comparative source preference separate from excess reliance relative to verified evidence or performance. Do not count this background passage as direct positive evidence of algorithm appreciation or as proof that such a preference is irrational."
+    }
+  ],
+  "methodological_limits": [
+    "Study 2's headline selective-adherence result is significant only for the preregistered directional test (p=.042), not the two-sided result (.083); its two-sided 95% odds-ratio interval includes 1. The directional basis must remain visible.",
+    "OR=1.50 is 50% higher odds, not 50% higher probability. Observed rates are 12.3% versus 8.6%, a 3.7-point difference, not an automatic 50% increase in selection probability.",
+    "The algorithm×name interaction is nonsignificant and directionally below 1; a pooled name-cue effect does not establish a significant effect within each advice source separately. The algorithmic-only descriptive name difference is 11.6% versus 10.6%, versus 12.9% versus 6.2% under consultant advice.",
+    "A nonsignificant interaction and a point estimate in the opposite direction do not rule out every meaningful amplification effect. The authors acknowledge interaction power limitations; Table 5 interval [.19,1.27] is not an equivalence bound.",
+    "Study 3's name-cue effect reverses: 5.0% versus 8.3%, OR=.57 [.35,.91], p=.020. This is not replication of the positive Study 2 effect or proof that civil servants lack prejudice.",
+    "The randomized source/name effects are distinct from the hypothesized effect of the childcare-benefits scandal. Populations, dates, recruitment, survey software, incongruence and attention checks differ across studies.",
+    "Restricting to people unfamiliar with public algorithm use is an observational subgroup analysis. Its null source contrast does not identify a scandal-awareness mechanism.",
+    "Only respondents of Dutch descent enter selective-adherence tests. The main-study total N=2854 is not the sample size for either individual stereotype contrast.",
+    "Large initial exclusions in the citizen samples are visible in Appendix A: 305/910 and 318/1222. Study 3 has no attention-check exclusion by panel request; its 41% response and demographic imbalance limit representativeness.",
+    "The numeric score and HR evaluation conflict, but no true teacher quality is supplied. Stated 95% predictive accuracy can itself be a reason to consider the score; acting on any score is not automatically an error.",
+    "Name cues vary perceived ethnicity while qualitative evidence is held constant, but the task does not directly measure each respondent's stereotypical expectations, awareness or discriminatory intent.",
+    "The claimed 'moral buffer' and psychological disengagement are theoretical mechanisms, not directly measured mediators in these experiments.",
+    "Participants make fictional employment choices; no teacher was fired and no actual classifier's fairness or training process was evaluated. Real scandal details are cited context, not independently audited documentary findings.",
+    "Supplementary robustness tests and preregistrations are reported by the article but were not independently opened. The supplied advance-access version was read, not every later issue version or cited original."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0031.json",
+      "finding": "Shrestha cites this paper in a discussion of automation bias, but this source does not find a general source-label automation advantage. Its matched consultant comparison answers a different question from AI versus unaided expert alignment."
+    },
+    {
+      "related_review": "references/pdf-reviews/0019.json",
+      "finding": "Bashkirova tests congruence with the participant's prior triage judgment without objective accuracy. Here stereotype-relevant subject cues vary while source and contradictory HR evidence are controlled. Both are bounded applications of congruence-sensitive advice processing."
+    },
+    {
+      "related_review": "references/pdf-reviews/0030.json",
+      "finding": "Hüholt shows context-dependent preference for AI delegation. This paper's opposing civil-servant source preference reinforces that neither aversion nor appreciation is a universal property of human–AI interaction."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral buffer",
+      "reason": "A named psychological-distancing explanation cited from Cummings, not directly measured or experimentally distinguished. Existing moral disengagement/responsibility concepts hold the lead."
+    },
+    {
+      "term": "Scandal-induced debiasing",
+      "reason": "A proposed interpretation with several population and timing confounds; no randomized or longitudinal causal test."
+    },
+    {
+      "term": "Algorithm-specific selective adherence amplification",
+      "reason": "The hypothesized interaction was not supported; do not add a new established bias from an unconfirmed prediction."
+    }
+  ],
+  "limitations": [
+    "One explicitly typed advice-processing subtype added; not presented as an independent mechanism beyond confirmation bias.",
+    "One-sided significance, the opposite civil-servant result, unsupported algorithm amplification and unisolated scandal explanation are retained."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "selective-adherence"
+    ],
+    "enriched": [
+      "automation-bias",
+      "b036-confirmation-myside-bias",
+      "algorithm-aversion",
+      "algorithm-appreciation"
+    ]
+  }
+}
