@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0025.json
+    latest_review: references/pdf-reviews/0026.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -11072,8 +11072,8 @@ modes:
 - id: anthropomorphism
   num: 108
   name: Anthropomorphism
-  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or lived
-    experience, which inflates how much the user trusts it.
+  definition: Attributing human characteristics, intentions, emotions or other mental states to a nonhuman
+    entity.
   example: Asked a factual question it answers "I genuinely feel this is right" and "in my experience", borrowing
     human credibility it has no basis for.
   family: agentic-and-engineering-failure-modes
@@ -11320,6 +11320,47 @@ modes:
           the middle/highest versions were not significant.'
         verification_url: https://doi.org/10.1145/3434074.3447202
         verified_date: '2026-11-26'
+  - id: pdf-review-0026
+    review_record: references/pdf-reviews/0026.json
+    name: Human mental-state attribution is distinct from a system claiming to have feelings
+    definition: Users can ascribe a mind, free will, intentions or independent decision-making to an AI without
+      the AI making first-person claims about such states.
+    evidence_scope: In Study 2, perceived AI responsibility correlated with AI blame (r=.30) and mind-related
+      ratings (.33–.43). Direct correlations of AI blame with own mind (.01), free will (.02), intentions (.09),
+      and own decisions (.04) were not significant after correction. This is not tested causal mediation.
+    catalogue_boundary: Human attribution, machine self-description and actual mental capacities are different
+      questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
+      mental states, and trust inflation requires separate measurement. Retain unsupported AI self-claims as
+      a possible manifestation, not the universal definition.
+    definition_sources:
+    - id: pdf-review-0026-anthropomorphism
+      title: 'Moral reasoning in a digital age: blaming artificial intelligence for incorrect high-risk decisions'
+      url: https://doi.org/10.1007/s12144-024-06658-2
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 2, 8 (source locators:
+        32413, 32413, 32419). Human blame judgments after interaction with a mushroom-classification interface
+        and a hypothetical poisoning vignette. Model accuracy and trust analyses from the same data waves are
+        published elsewhere and were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Benedikt Leichtmann
+        - Andreas Hinterreiter
+        - Christina Humer
+        - Alfio Ventura
+        - Marc Streit
+        - Martina Mara
+        year: 2024
+        venue: Current Psychology, 43, 32412–32421
+        doi: 10.1007/s12144-024-06658-2
+        evidence_scope: In Study 2, perceived AI responsibility correlated with AI blame (r=.30) and mind-related
+          ratings (.33–.43). Direct correlations of AI blame with own mind (.01), free will (.02), intentions
+          (.09), and own decisions (.04) were not significant after correction. This is not tested causal mediation.
+        verification_url: https://doi.org/10.1007/s12144-024-06658-2
+        verified_date: '2026-11-26'
+  concept_boundary: Human attribution, machine self-description and actual mental capacities are different
+    questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
+    mental states, and trust inflation requires separate measurement. Retain unsupported AI self-claims as
+    a possible manifestation, not the universal definition.
 - id: survivorship-bias
   num: 109
   name: Survivorship bias
@@ -25368,6 +25409,41 @@ modes:
           with their ratings; this component is observational and may share measurement content with the blame
           outcome.
         verification_url: https://doi.org/10.1145/3544548.3580953
+        verified_date: '2026-11-26'
+  - id: pdf-review-0026
+    review_record: references/pdf-reviews/0026.json
+    name: Victim blame rankings do not alone demonstrate moral typecasting
+    definition: The poisoned friend received the lowest average blame among the four roles, a pattern the authors
+      relate to moral typecasting.
+    evidence_scope: Study 2 mean friend blame 3.70/7 versus developer 4.27, AI 4.63 and self 4.74. The friend
+      was not unblamed; the scenario also assigned that person a causal role and possible checking duty.
+    catalogue_boundary: Roles differ in knowledge, proximity, action and obligation; victim status was not
+      independently manipulated. This design does not isolate a general reciprocal agent/patient typecasting
+      mechanism or show that victims cannot be blamed.
+    definition_sources:
+    - id: pdf-review-0026-candidate-046
+      title: 'Moral reasoning in a digital age: blaming artificial intelligence for incorrect high-risk decisions'
+      url: https://doi.org/10.1007/s12144-024-06658-2
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 7 (source locators: 32417,
+        32418). Human blame judgments after interaction with a mushroom-classification interface and a hypothetical
+        poisoning vignette. Model accuracy and trust analyses from the same data waves are published elsewhere
+        and were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Benedikt Leichtmann
+        - Andreas Hinterreiter
+        - Christina Humer
+        - Alfio Ventura
+        - Marc Streit
+        - Martina Mara
+        year: 2024
+        venue: Current Psychology, 43, 32412–32421
+        doi: 10.1007/s12144-024-06658-2
+        evidence_scope: Study 2 mean friend blame 3.70/7 versus developer 4.27, AI 4.63 and self 4.74. The
+          friend was not unblamed; the scenario also assigned that person a causal role and possible checking
+          duty.
+        verification_url: https://doi.org/10.1007/s12144-024-06658-2
         verified_date: '2026-11-26'
 - id: candidate-047
   num: 253
@@ -47170,6 +47246,42 @@ modes:
           liability, actual laundering intent or successful evasion.
         verification_url: https://doi.org/10.1111/nyas.15258
         verified_date: '2026-11-26'
+  - id: pdf-review-0026
+    review_record: references/pdf-reviews/0026.json
+    name: Explanation effects on responsibility allocation did not generalize across the two designs
+    definition: Combining two visual explanations reduced AI blame in one experiment, but testing three explanation
+      methods separately in a second experiment yielded no significant primary blame differences.
+    evidence_scope: Study 1 N=410, AI-blame p=.012, self-blame p=.15; Study 2 N=501, all Dunnett-adjusted group
+      comparisons nonsignificant. The example-based self-blame comparison was p=.15 after adjustment, despite
+      a displayed unadjusted Welch p=.02.
+    catalogue_boundary: Explanation format, combination, game embedding and wording differ, so this is not
+      an exact replication test. Neither result establishes that explanations causally prevent blame laundering,
+      ensure accountability or reveal all relevant system reasons.
+    definition_sources:
+    - id: pdf-review-0026-agency-laundering
+      title: 'Moral reasoning in a digital age: blaming artificial intelligence for incorrect high-risk decisions'
+      url: https://doi.org/10.1007/s12144-024-06658-2
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 3, 6 (source locators: 32414,
+        32417). Human blame judgments after interaction with a mushroom-classification interface and a hypothetical
+        poisoning vignette. Model accuracy and trust analyses from the same data waves are published elsewhere
+        and were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Benedikt Leichtmann
+        - Andreas Hinterreiter
+        - Christina Humer
+        - Alfio Ventura
+        - Marc Streit
+        - Martina Mara
+        year: 2024
+        venue: Current Psychology, 43, 32412–32421
+        doi: 10.1007/s12144-024-06658-2
+        evidence_scope: Study 1 N=410, AI-blame p=.012, self-blame p=.15; Study 2 N=501, all Dunnett-adjusted
+          group comparisons nonsignificant. The example-based self-blame comparison was p=.15 after adjustment,
+          despite a displayed unadjusted Welch p=.02.
+        verification_url: https://doi.org/10.1007/s12144-024-06658-2
+        verified_date: '2026-11-26'
 - id: anticipatory-guilt
   num: 442
   name: Anticipatory guilt
@@ -47345,6 +47457,32 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0010.json
+  - title: 'Moral reasoning in a digital age: blaming artificial intelligence for incorrect high-risk decisions'
+    authors:
+    - Benedikt Leichtmann
+    - Andreas Hinterreiter
+    - Christina Humer
+    - Alfio Ventura
+    - Marc Streit
+    - Martina Mara
+    year: 2024
+    url: https://doi.org/10.1007/s12144-024-06658-2
+    venue: Current Psychology, 43, 32412–32421
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12144-024-06658-2
+    relevance: Study 1 explanation conditions differed in AI blame but not significantly in self-blame. Study
+      2 AI/self-blame correlation was r=.01; AI/developer blame was r=.63. Independent ratings imposed no fixed
+      blame budget; a few free responses indicated externalization.
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 7 (source locators: 32417,
+      32418). Human blame judgments after interaction with a mushroom-classification interface and a hypothetical
+      poisoning vignette. Model accuracy and trust analyses from the same data waves are published elsewhere
+      and were not independently read here.'
+    verification_url: https://doi.org/10.1007/s12144-024-06658-2
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0026.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -47358,6 +47496,43 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0010.json
+  research_notes:
+  - id: pdf-review-0026
+    review_record: references/pdf-reviews/0026.json
+    name: Little support for a general AI scapegoating mechanism
+    definition: People did not generally reduce self-blame when assigning blame to the mushroom-classification
+      AI; only a few qualitative responses explicitly resembled scapegoating.
+    evidence_scope: Study 1 explanation conditions differed in AI blame but not significantly in self-blame.
+      Study 2 AI/self-blame correlation was r=.01; AI/developer blame was r=.63. Independent ratings imposed
+      no fixed blame budget; a few free responses indicated externalization.
+    catalogue_boundary: A near-zero overall correlation cannot exclude scapegoating by individuals or establish
+      exact independence. Accurate attribution to a faulty system is not scapegoating. The source's hypothetical
+      mechanism is not proof of an intentional self-protective motive.
+    definition_sources:
+    - id: pdf-review-0026-moral-scapegoating
+      title: 'Moral reasoning in a digital age: blaming artificial intelligence for incorrect high-risk decisions'
+      url: https://doi.org/10.1007/s12144-024-06658-2
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 7 (source locators: 32417,
+        32418). Human blame judgments after interaction with a mushroom-classification interface and a hypothetical
+        poisoning vignette. Model accuracy and trust analyses from the same data waves are published elsewhere
+        and were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Benedikt Leichtmann
+        - Andreas Hinterreiter
+        - Christina Humer
+        - Alfio Ventura
+        - Marc Streit
+        - Martina Mara
+        year: 2024
+        venue: Current Psychology, 43, 32412–32421
+        doi: 10.1007/s12144-024-06658-2
+        evidence_scope: Study 1 explanation conditions differed in AI blame but not significantly in self-blame.
+          Study 2 AI/self-blame correlation was r=.01; AI/developer blame was r=.63. Independent ratings imposed
+          no fixed blame budget; a few free responses indicated externalization.
+        verification_url: https://doi.org/10.1007/s12144-024-06658-2
+        verified_date: '2026-11-26'
 - id: algorithm-aversion
   num: 444
   name: Algorithm aversion
