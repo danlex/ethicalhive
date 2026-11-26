@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0017.json
+    latest_review: references/pdf-reviews/0019.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3599,7 +3599,8 @@ modes:
 - id: b036-confirmation-myside-bias
   num: 36
   name: Confirmation bias
-  definition: Reaching a positive conclusion without stating and testing the alternative explanation.
+  definition: Seeking, interpreting or weighting information to favor an existing belief while neglecting relevant
+    alternatives or disconfirming evidence.
   example: Believing the cache is at fault, it only greps for cache code and declares the cache guilty.
   family: heuristics-biases
   group_label: Heuristics and biases
@@ -3637,13 +3638,13 @@ modes:
   - Myside bias
   examples:
   - When the model holds a strong initial answer (low entropy) it generates reasoning that supports that answer
-    regardless of the question's difficulty, a measured correlation between its prior confidence and whether the
-    rationale backs its first choice. [arXiv:2506.12301]
-  - Confident models write shorter rationales that emphasize why the chosen answer is right while saying less about
-    why the alternatives are wrong, overlooking the contrary evidence. [arXiv:2506.12301]
-  - Asked to follow another model's reasoning chain that contradicts its own belief, the executor struggles and
-    its accuracy falls to around 0.5 when the disagreement is strong, prioritizing its initial hypothesis over the
-    provided evidence. [arXiv:2506.12301]
+    regardless of the question's difficulty, a measured correlation between its prior confidence and whether
+    the rationale backs its first choice. [arXiv:2506.12301]
+  - Confident models write shorter rationales that emphasize why the chosen answer is right while saying less
+    about why the alternatives are wrong, overlooking the contrary evidence. [arXiv:2506.12301]
+  - Asked to follow another model's reasoning chain that contradicts its own belief, the executor struggles
+    and its accuracy falls to around 0.5 when the disagreement is strong, prioritizing its initial hypothesis
+    over the provided evidence. [arXiv:2506.12301]
   selected_papers:
   - id: arxiv:2506.12301
     title: Unveiling Confirmation Bias in Chain-of-Thought Reasoning
@@ -3652,7 +3653,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2506.12301
     source_reference:
@@ -3666,7 +3668,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2604.02485
     source_reference:
@@ -3701,6 +3704,45 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: 'Agreement is not automatically biased: initial knowledge can legitimately justify rejecting
+    contradictory advice. Demonstrating a congruence preference does not establish objectively worse diagnosis
+    or uniquely identify a motivated cognitive mechanism. Cherry-picking is the narrower practice of selecting
+    supportive evidence from material already gathered.'
+  research_notes:
+  - id: pdf-review-0019
+    review_record: references/pdf-reviews/0019.json
+    name: Confirmation bias includes selective interpretation and weighting
+    definition: Information matching an initial belief can receive greater trust and weight than conflicting
+      information; in this clinical-vignette study, congruent AI advice was rated more favorably.
+    evidence_scope: Random assignment to mock recommendation congruence changed self-reported acceptance and
+      trust in 114 eligible participants, mostly students. The authors could not test diagnostic accuracy because
+      all recommendations were designed to be plausible.
+    catalogue_boundary: 'Agreement is not automatically biased: initial knowledge can legitimately justify
+      rejecting contradictory advice. Demonstrating a congruence preference does not establish objectively
+      worse diagnosis or uniquely identify a motivated cognitive mechanism. Cherry-picking is the narrower
+      practice of selecting supportive evidence from material already gathered.'
+    definition_sources:
+    - id: pdf-review-0019-b036-confirmation-myside-bias
+      title: 'Confirmation bias in AI-assisted decision-making: AI triage recommendations congruent with expert
+        judgments increase psychologist trust and recommendation acceptance'
+      url: https://doi.org/10.1016/j.chbah.2024.100066
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 3, 9, 13 (source locators:
+        2, 8, 12). Human responses to mock clinical chatbot interfaces, not diagnostic outputs generated by
+        a tested AI or measured patient outcomes. Prior clinical bias studies cited by the article were not
+        independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Anna Bashkirova
+        - Dario Krpan
+        year: 2024
+        venue: 'Computers in Human Behavior: Artificial Humans 2(1), 100066'
+        doi: 10.1016/j.chbah.2024.100066
+        evidence_scope: Random assignment to mock recommendation congruence changed self-reported acceptance
+          and trust in 114 eligible participants, mostly students. The authors could not test diagnostic accuracy
+          because all recommendations were designed to be plausible.
+        verification_url: https://doi.org/10.1016/j.chbah.2024.100066
+        verified_date: '2026-11-26'
 - id: b037-belief-perseverance
   num: 37
   name: Belief perseverance
@@ -10736,6 +10778,37 @@ modes:
         evidence_scope: The review summarizes mixed feature-attribution findings and warns that convincingness
           and informative value are different objectives; it does not add a new randomized experiment itself.
         verification_url: https://doi.org/10.1177/17456916231181102
+        verified_date: '2026-11-26'
+  - id: pdf-review-0019
+    review_record: references/pdf-reviews/0019.json
+    name: Congruence effects and automation reliance are not mutually exclusive
+    definition: The study found selective trust in advice matching initial diagnoses, which qualifies a blanket-acceptance
+      account but does not show that automation bias is absent.
+    evidence_scope: No human-adviser comparison, no clearly correct/incorrect advice manipulation and no actual
+      diagnostic-action outcome. A congruence effect can coexist with other forms of overreliance.
+    catalogue_boundary: Do not infer immunity to automation bias from a lower incongruent acceptance rating.
+      This design cannot establish calibrated checking, correction of known AI errors, an actual reduction
+      in bias, or patient safety.
+    definition_sources:
+    - id: pdf-review-0019-automation-bias
+      title: 'Confirmation bias in AI-assisted decision-making: AI triage recommendations congruent with expert
+        judgments increase psychologist trust and recommendation acceptance'
+      url: https://doi.org/10.1016/j.chbah.2024.100066
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 8, 12 (source locators:
+        7, 11). Human responses to mock clinical chatbot interfaces, not diagnostic outputs generated by a
+        tested AI or measured patient outcomes. Prior clinical bias studies cited by the article were not independently
+        read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Anna Bashkirova
+        - Dario Krpan
+        year: 2024
+        venue: 'Computers in Human Behavior: Artificial Humans 2(1), 100066'
+        doi: 10.1016/j.chbah.2024.100066
+        evidence_scope: No human-adviser comparison, no clearly correct/incorrect advice manipulation and no
+          actual diagnostic-action outcome. A congruence effect can coexist with other forms of overreliance.
+        verification_url: https://doi.org/10.1016/j.chbah.2024.100066
         verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
