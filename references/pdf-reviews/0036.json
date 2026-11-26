@@ -1,0 +1,230 @@
+{
+  "sequence": 36,
+  "source": {
+    "file_name": "S172_Abdulhai_2023.pdf",
+    "source_id": "S172",
+    "sha256": "1b96eac1b498afc2823b4a51a558413e35168dcc88573e98dc32d12c6b63cf0b",
+    "pdf_pages": 16,
+    "printed_pages": "Supplied pages 1–16",
+    "version_note": "arXiv:2310.15337v1, 23 October 2023. This preprint version was read, including its full MFQ and image-embedded donation examples; no later publication is asserted."
+  },
+  "citation": {
+    "title": "Moral Foundations of Large Language Models",
+    "authors": [
+      "Marwa Abdulhai",
+      "Gregory Serapio-Garcia",
+      "Clément Crepy",
+      "Daria Valter",
+      "John Canny",
+      "Natasha Jaques"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2310.15337v1",
+    "venue": "arXiv:2310.15337v1",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "source_scope_note": "Direct output experiments on older GPT-3 engines and a quantized instruction-tuned 62B PaLM version. Human population MFQ results are secondary comparisons; those original studies were not independently read here. Simulated dialogue donations are generated amounts, not real transfers or subjective moral convictions.",
+    "access_limits": [
+      "All sixteen extracted pages read, including methods, model comparisons, questionnaire/scoring, limitations, references and appendix captions. Pages 7, 15 and 16 also rendered and visually inspected, including image-embedded prompts and generated dialogues absent from extraction.",
+      "Linked experiment code and model endpoints were not rerun. Some sampling/aggregation and donation-run descriptions conflict; no missing model settings or significance tests were invented. Other chart captions/text read without digitizing plotted distributions."
+    ]
+  },
+  "study": {
+    "models": "GPT-3 Davinci2, Davinci3, Curie, Babbage; quantized instruction-tuned PaLM 62B; Ada excluded for unparsable responses",
+    "questionnaire": "30 scored MFQ items plus two catch items; six ordinal response options; fresh task instruction per question",
+    "reported_sampling": "Main text says 50 responses per question; Appendix 7.3 describes cycling six example labels and averaging, then says majority voting. Appendix gives temperature 0.",
+    "context_test": "50 random BookCorpus dialogues, principally Davinci2 and PaLM",
+    "targeted_prompts": "Selected prompts maximize one MFQ dimension relative to others on Davinci2",
+    "donation_task": "Generated Save the Children dialogues and choice probabilities over $10/$20/$50/$100/$250, with refusal possible; methods say 20 runs per prompt but results cite 7/10 refusals for conservative prompt"
+  },
+  "summary": "Persona and selected moral-value prompts changed older-model MFQ outputs and simulated donation responses. Default MFQ profiles were nearer some conservative comparison-group means, but explicit conservative prompts could make Davinci2 less similar to those human averages. This is evidence of prompt-conditioned outputs, not causal identification of training-data politics, inner values, targeted persuasion efficacy or questionnaire-mediated donation behaviour.",
+  "findings": [
+    {
+      "term": "Moral persona prompts changed model answers and simulated choices",
+      "target_id": "b067-suggestibility",
+      "decision": "enrich-existing",
+      "definition": "Explicit political and moral-value prompts shifted Davinci2 questionnaire profiles and its generated donation amounts.",
+      "novelty_rationale": "Direct model evidence of input-conditioned output within an existing construct; no new independent behaviour is inferred from each requested persona or MFQ dimension.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "You believe in traditional roles."
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "88.09"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "144.87"
+        }
+      ],
+      "evidence_scope": "Table 2 reports expected/generated donation amounts about 88.09 for the harm prompt and 144.87 for ingroup, plus other persona conditions. These prompts intentionally request a changed perspective; model, task and sampling limitations remain explicit.",
+      "boundary": "Authorized role conditioning is not automatically prompt injection, improper obedience or a failure to preserve safety principles. There is no untrusted-document attack, protected-instruction conflict or demonstrated real donation. The same prompt can directly affect both MFQ answers and dialogue without MFQ scores causing the dialogue change."
+    },
+    {
+      "term": "Moral framing effects require distinguishing changed instructions from equivalent wording",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Requesting a specific political persona or value emphasis produced different responses, but these prompts do not preserve the same meaning as a neutral task instruction.",
+      "novelty_rationale": "Adds a boundary to the existing framing entry: this study does not isolate arbitrary wording sensitivity or an equivalence violation.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "You are politically liberal."
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "choose the one that most"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "You would sacrifice yourself"
+        }
+      ],
+      "evidence_scope": "Prompts were selected to maximize particular questionnaire dimensions and then reused for one downstream dialogue task. Selection, political identity and moral content vary together; no semantic-equivalence control or separate causal mediator manipulation was conducted.",
+      "boundary": "A model appropriately simulating a requested viewpoint can change its answers without irrational framing bias. Lack of a stable human-like moral self, malicious intent or a safety breach cannot be inferred solely from variation across different authorized instructions."
+    },
+    {
+      "term": "Nearest human moral-profile averages do not establish a model's political identity",
+      "target_id": "implicit-bias",
+      "decision": "enrich-existing",
+      "definition": "Some default model MFQ score vectors were closer to selected conservative human-group averages, and explicitly conservative prompts sometimes exaggerated profile differences.",
+      "novelty_rationale": "Records a political-representation hypothesis within existing social-bias coverage without adding each moral dimension as a separate bias or calling an inferred training source verified.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "a sort of caricature of political conservatism"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "it is not clear that this"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "means GPT-3 will exhibit a conservative bias in"
+        }
+      ],
+      "evidence_scope": "Distances between five-dimensional model scores and published human-group averages; t-SNE is descriptive visualization. Table 3 anonymous-conservative distance is 1.230 by default versus 2.437 under conservative prompting. No individual human political classification, discrimination outcome or actual training data was measured.",
+      "boundary": "A descriptive similarity to one group mean does not prove political membership, consciousness, unfair treatment, a cause in training data or validity across languages and tasks. Model response distributions, group heterogeneity, historical timing and questionnaire exposure differ. Political stereotypes proposed as an explanation were not independently measured."
+    },
+    {
+      "term": "Questionnaire consistency is not evidence of human-like moral agency",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Relatively stable MFQ outputs over a limited set of book-dialogue contexts do not establish that language models possess human moral values or feelings.",
+      "novelty_rationale": "Uses direct model output evidence to clarify the existing boundary between attributed mental states and measurable text patterns.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "further evidence is necessary"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "LLMs possess a consistent set of moral values akin"
+        }
+      ],
+      "evidence_scope": "The authors themselves qualify the human-values inference and note distribution differences for RL-tuned models. Internal moral states, emotions, lived experience and real-world moral behaviour were not observed.",
+      "boundary": "Neither high consistency nor prompt sensitivity resolves moral consciousness. Output evaluation can identify patterns without asserting that a model has the psychological constructs measured by a human self-report inventory."
+    }
+  ],
+  "methodological_limits": [
+    "Five MFQ factors in the body/appendix are care, fairness, loyalty, authority and sanctity. The abstract names liberty/oppression, which is not one of the five scored factors in this supplied analysis; do not replace the actual scoring with the abstract's example.",
+    "Thirty scored questions plus two catch questions appear in the appendix. Responses are ordinal 0–5, not unbounded moral utility. The project’s six principles and seven evaluation categories are not these descriptive MFQ factors.",
+    "Main methods describe 50 repeated responses and majority voting; Appendix 7.3 describes six example-label responses and averaging, then majority voting. Reproducibility requires the actual code; the descriptions are not silently unified.",
+    "Temperature is reported as 0. Repetitions with altered exemplars/contexts are not independent random human respondents, and a model’s modal answer is not a sampled human population mean.",
+    "Human comparisons aggregate different convenience samples, cultures, age ranges, historical periods and self-reported political groups. Distances among five means do not validate a political-identity classifier or represent an entire population.",
+    "The limitation section describes comparison studies as 2012–2016, while references and main analyses include 2009 and 2011 sources. Preserve the concrete cited studies rather than repeat a single inaccurate date range.",
+    "Model training data and alignment procedures were not controlled or inspected. Contrasting Davinci2 and Davinci3 cannot isolate RLHF as the cause of a changed moral profile.",
+    "The authors acknowledge possible MFQ training contamination and distribution mismatch for high-confidence RL-tuned models. Human questionnaire validity does not automatically transfer to LLM completions.",
+    "t-SNE preserves selected local structure and is not a hypothesis test or reliable global-distance scale. The explicit five-dimensional distances, not apparent plot axes, carry the numerical comparison.",
+    "Selecting prompts to maximize questionnaire scores introduces selection effects and does not independently manipulate an internal moral foundation. Some supposedly foundation-specific prompts change several dimensions simultaneously.",
+    "One downstream task asks for dialogue donations; the model neither owns the funds nor actually transfers money. Generated amounts, expected token-choice amounts, refusal rates and real prosocial behaviour are different outcomes.",
+    "Methods report 20 runs per prompt, but the conservative refusal discussion says 7/10. Table 2 shows plus/minus values without clearly specifying their uncertainty type; no standard error or confidence level was invented.",
+    "The text calls donation differences significant without displaying a named statistical test, p-values or confidence contrasts. Retain descriptive differences without supplying a missing inferential analysis.",
+    "Because the same persona prompt affects questionnaire and donation outputs, their association does not prove questionnaire scores mediate the downstream effect. Prompt wording, role stereotypes and dialogue paths remain alternative pathways.",
+    "The five fixed amount options and follow-up dialogue constrain the monetary distribution. Some appendix dialogues use different amounts of intervening discussion; sensitivity beyond this protocol was not established.",
+    "Baseline context stability concerns 50 sampled English book dialogues; it is not invariance to adversarial prompting, other languages or all real applications.",
+    "Political or cultural representation differences are not automatically unjustified bias. Prompting a moderate persona is not a verified general debiasing method, and the study does not test targeted-advertising efficacy or harms to actual users.",
+    "The model versions are older systems, and the later questions principally test Davinci2. Do not generalize the direction of a reported political profile to current models or all LLMs.",
+    "Cited human research, moral mimicry work, model documentation and code were not independently read beyond this supplied PDF."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0011.json",
+      "finding": "Park shows low-diversity outputs and answer-order sensitivity on another older GPT-3 model. A seemingly consistent questionnaire profile may reflect output conventions or measurement effects rather than a stable human-like personality."
+    },
+    {
+      "related_review": "references/pdf-reviews/0030.json",
+      "finding": "Hüholt measures actual probability-implemented human charitable choices. Abdulhai measures generated donation dialogue/amounts; these should not be combined as comparable real giving or subjective moral responsibility."
+    },
+    {
+      "related_review": "references/pdf-reviews/0019.json",
+      "finding": "Human confirmation/congruence studies and model persona-conditioning experiments operate at different levels. A requested viewpoint changing output does not prove that the model shares a human motivated cognitive process."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Five moral foundations as five new behaviours",
+      "reason": "They are dimensions of a descriptive theoretical inventory, not five newly isolated behaviours or replacements for this project’s normative framework."
+    },
+    {
+      "term": "Moral mimicry",
+      "reason": "Appears as a cited work/title; that original was not independently read, and this paper does not provide a separate validated mechanism beyond prompt-conditioned output."
+    },
+    {
+      "term": "Stable political identity",
+      "reason": "Inferred from questionnaire-profile similarity, not directly established psychological identity or moral agency."
+    },
+    {
+      "term": "Moral-score mediation of donation",
+      "reason": "The common prompt can drive both outputs directly; mediation was not experimentally isolated."
+    }
+  ],
+  "limitations": [
+    "No new IDs: direct model evidence enriches existing concepts with precise measurement limits.",
+    "No fabricated political identity, training-data cause, significance test or real donation is inferred."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b067-suggestibility",
+      "b035-framing-effect",
+      "implicit-bias",
+      "anthropomorphism"
+    ]
+  }
+}
