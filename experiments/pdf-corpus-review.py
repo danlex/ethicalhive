@@ -64,6 +64,7 @@ def check_review(review,pdf,ontology):
             assert finding['id'] not in ids
             assert normalized(finding['term']) not in aliases, 'Existing name or alias cannot become a new mode'
             assert finding.get('ai_proposal') and finding.get('boundary') and finding.get('category')
+            ids.add(finding['id']);aliases[normalized(finding['term'])]=finding['id']
         elif finding['decision'] in ('enrich-existing','covered'):
             assert finding['target_id'] in ids
         for evidence in finding.get('evidence',[]):
@@ -75,11 +76,11 @@ def check_review(review,pdf,ontology):
 
 def citation(review,finding):
     c=copy.deepcopy(review['citation'])
-    c.update(id=paper_identifier(c['url']),domain='human-related',
+    c.update(id=paper_identifier(c['url']),domain=c.get('domain','human-related'),
              relevance=finding['evidence_scope'],
              consulted=f"Full supplied PDF text read, all {review['source']['pdf_pages']} pages; relevant printed pages "+
                  ', '.join(str(e['printed_page']) for e in finding['evidence'])+
-                 '. This is a review source; its cited primary studies were not independently read in this step.',
+                 '. '+review['reading']['source_scope_note'],
              verification_url=c['url'],verified_date=TODAY(),
              verification_method='Identity and DOI read in the supplied PDF; evidence passages checked against that PDF',
              review_record=str(record_path(review['sequence']).relative_to(ROOT)))
@@ -91,7 +92,9 @@ def source_record(review,finding):
     doi=c['url'].split('doi.org/',1)[-1] if 'doi.org/' in c['url'] else None
     return {'id':f"pdf-review-{review['sequence']:04d}-{finding.get('id',finding.get('target_id'))}",
             'title':c['title'],'url':c['url'],'consulted':c['consulted'],
-            'publication':{'type':'journal-article','authors':c['authors'],'year':c['year'],'venue':c['venue'],
+            'publication':{'type':('posted-content' if c['publication_type'] in ('preprint','posted-content') else
+                'proceedings-article' if c['publication_type']=='proceedings-article' else 'journal-article'),
+              'authors':c['authors'],'year':c['year'],'venue':c['venue'],
               **({'doi':doi} if doi else {}),'evidence_scope':c['relevance'],
               'verification_url':c['verification_url'],'verified_date':c['verified_date']}}
 
@@ -103,10 +106,12 @@ def new_mode(review,finding,ontology):
     return {'id':finding['id'],'num':len(ontology['modes'])+1,'name':finding['term'],
         'definition':finding['definition'],'category':finding['category'],
         'family':template['family'],'group_label':template['group_label'],
-        'tag':'analogy','origin':'Human–AI interaction / moral psychology',
-        'human_parallel':finding['term'],'ai_native':False,'highlighted':False,
-        'research_candidate':True,'source_check':'definition-source-consulted',
-        'ai_evidence_status':'Human behaviour discussed in a read review; proposed AI analogue not tested here',
+        'tag':'research' if finding.get('ai_native') else 'analogy',
+        'origin':finding.get('origin','Human–AI interaction / moral psychology'),
+        'human_parallel':'' if finding.get('ai_native') else finding['term'],
+        'ai_native':bool(finding.get('ai_native')),'highlighted':False,
+        'research_candidate':not finding.get('ai_native',False),'source_check':'definition-source-consulted',
+        'ai_evidence_status':finding.get('ai_evidence_status','Human behaviour discussed in a read review; proposed AI analogue not tested here'),
         'proposed_ai_manifestation':finding['ai_proposal'],
         'research_boundary':finding['boundary'],'concept_boundary':finding['boundary'],
         'measurability':finding.get('measurability','multi-turn'),
