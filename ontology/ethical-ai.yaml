@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0006.json
+    latest_review: references/pdf-reviews/0007.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10450,10 +10450,10 @@ modes:
   detected_by:
   - clause-judge
   examples:
-  - Lawyers submitted a court brief containing six nonexistent, LLM-generated case citations, accepting fluent but
-    fabricated output without verifying it. [arXiv:2509.08010]
-  - The paper warns the same pattern could appear in medicine, where a practitioner follows an incorrect AI diagnosis
-    without adequate verification. [arXiv:2509.08010]
+  - Lawyers submitted a court brief containing six nonexistent, LLM-generated case citations, accepting fluent
+    but fabricated output without verifying it. [arXiv:2509.08010]
+  - The paper warns the same pattern could appear in medicine, where a practitioner follows an incorrect AI
+    diagnosis without adequate verification. [arXiv:2509.08010]
   - 'Sycophancy feeds the over-reliance: because the model tends to agree with the user, it reinforces existing
     beliefs and discourages the critical checking that would catch its errors. [arXiv:2509.08010]'
   selected_papers:
@@ -10464,7 +10464,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2204.08859
     source_reference:
@@ -10478,7 +10479,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2508.07617
     source_reference:
@@ -10512,6 +10514,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0007
+    review_record: references/pdf-reviews/0007.json
+    name: Automation-bias safeguards require outcome-specific evidence
+    definition: Uncritical acceptance of an automated recommendation must be assessed separately from interface
+      engagement, self-rated performance and objectively correct decisions.
+    evidence_scope: N=93 human participants used a simulated recruitment dashboard. Error warnings increased
+      selected verification indicators and self-rated quality but not objective selection quality; the aggregation
+      manipulation did not significantly improve either quality outcome.
+    catalogue_boundary: Time, clicks and page visits are proxies, not sufficient proof of checking quality
+      or causal information-processing routes. Their correlation with accuracy does not show that forcing more
+      clicks improves decisions. Faster initial-display viewing does not by itself establish greater automation
+      bias.
+    definition_sources:
+    - id: pdf-review-0007-automation-bias
+      title: Check the box! How to deal with automation bias in AI-based personnel selection
+      url: https://doi.org/10.3389/fpsyg.2023.1118723
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 11, 12 (source locators:
+        2, 11, 12). This is an experiment on human users of a designed recruitment dashboard with deliberately
+        inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited
+        earlier intervention studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Cordula Kupfer
+        - Rita Prassl
+        - Jürgen Fleiß
+        - Christine Malin
+        - Stefan Thalmann
+        - Bettina Kubicek
+        year: 2023
+        venue: Frontiers in Psychology 14, 1118723
+        doi: 10.3389/fpsyg.2023.1118723
+        evidence_scope: N=93 human participants used a simulated recruitment dashboard. Error warnings increased
+          selected verification indicators and self-rated quality but not objective selection quality; the
+          aggregation manipulation did not significantly improve either quality outcome.
+        verification_url: https://doi.org/10.3389/fpsyg.2023.1118723
+        verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -14426,8 +14466,8 @@ modes:
   family: social-cognition-and-theory-of-mind
   group_label: Social cognition and theory of mind
   category: Social
-  human_parallel: 'Bystander effect (Darley and Latane, 1968): the presence of others can reduce individual intervention.
-    Diffusion of responsibility is one proposed explanation.'
+  human_parallel: 'Bystander effect (Darley and Latane, 1968): the presence of others can reduce individual
+    intervention. Diffusion of responsibility is one proposed explanation.'
   highlighted: false
   tag: research
   origin: mixed
@@ -14452,24 +14492,24 @@ modes:
   - collusion
   - upload-037
   examples:
-  - Under simulated peer consensus GPT-5.4's SWE-bench accuracy collapses from 1.00 with no auditors to 0.23 after
-    just two, a 77-point drop as responsibility diffuses. [arXiv:2605.10698]
-  - 'It is not ignorance but conformity: the model''s internal evidence evaluation stays at 0.71 while its external
-    accuracy falls to 0.37, computing the right answer and then conforming to appease the group. [arXiv:2605.10698]'
+  - Under simulated peer consensus GPT-5.4's SWE-bench accuracy collapses from 1.00 with no auditors to 0.23
+    after just two, a 77-point drop as responsibility diffuses. [arXiv:2605.10698]
+  - 'It is not ignorance but conformity: the model''s internal evidence evaluation stays at 0.71 while its
+    external accuracy falls to 0.37, computing the right answer and then conforming to appease the group. [arXiv:2605.10698]'
   - 'Order matters too: reversing which of two auditors appears first shifts accuracy by 10 points, a lead-anchor
     effect on top of group size. [arXiv:2605.10698]'
   related_terms:
   - name: Diffusion of responsibility
     relation: proposed mechanism
-    note: Shared responsibility can reduce individual action and has been proposed to contribute to several group
-      phenomena, not only the bystander effect.
+    note: Shared responsibility can reduce individual action and has been proposed to contribute to several
+      group phenomena, not only the bystander effect.
   - name: Cognitive loafing
     relation: distinct related concept
-    note: Reduced cognitive effort in a group can overlap with inaction, but effort reduction and failure to intervene
-      are different observations.
-  concept_boundary: The operational outcome here is a needed action going unperformed when others could act. Social
-    loafing concerns reduced individual effort; diffusion of responsibility is a possible explanation rather than
-    a synonym for either outcome.
+    note: Reduced cognitive effort in a group can overlap with inaction, but effort reduction and failure to
+      intervene are different observations.
+  concept_boundary: The operational outcome here is a needed action going unperformed when others could act.
+    Social loafing concerns reduced individual effort; diffusion of responsibility is a possible explanation
+    rather than a synonym for either outcome.
   terminology_sources:
   - title: 'APA Dictionary of Psychology: diffusion of responsibility'
     url: https://dictionary.apa.org/diffusion-of-responsibility
@@ -14482,7 +14522,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.10698
     source_reference:
@@ -14496,7 +14537,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2506.07935
     source_reference:
@@ -14532,6 +14574,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0007
+    review_record: references/pdf-reviews/0007.json
+    name: Responsibility reminders did not establish a diffusion-of-responsibility remedy
+    definition: Diffusion of responsibility is proposed as a possible explanation for reduced checking in shared
+      human–automation tasks, while the tested responsibility reminder produced no significant verification
+      or decision-quality benefit.
+    evidence_scope: The theoretical section draws on prior responsibility research; the current experiment
+      manipulated a legal/responsibility reminder and an announced justification requirement, not group size
+      or the diffusion mechanism itself.
+    catalogue_boundary: A null result for this instruction does not prove that responsibility, accountability
+      or oversight never helps. This is not an emergency-intervention bystander experiment. Promised justification
+      was not actually required, and evaluation concerns and ceiling performance may limit inference.
+    definition_sources:
+    - id: pdf-review-0007-bystander-effect
+      title: Check the box! How to deal with automation bias in AI-based personnel selection
+      url: https://doi.org/10.3389/fpsyg.2023.1118723
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 10, 13 (source locators:
+        5, 10, 13). This is an experiment on human users of a designed recruitment dashboard with deliberately
+        inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited
+        earlier intervention studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Cordula Kupfer
+        - Rita Prassl
+        - Jürgen Fleiß
+        - Christine Malin
+        - Stefan Thalmann
+        - Bettina Kubicek
+        year: 2023
+        venue: Frontiers in Psychology 14, 1118723
+        doi: 10.3389/fpsyg.2023.1118723
+        evidence_scope: The theoretical section draws on prior responsibility research; the current experiment
+          manipulated a legal/responsibility reminder and an announced justification requirement, not group
+          size or the diffusion mechanism itself.
+        verification_url: https://doi.org/10.3389/fpsyg.2023.1118723
+        verified_date: '2026-11-26'
 - id: mere-exposure-effect
   name: Mere-exposure effect
   definition: Treating a claim or option as more true or preferable because it recurred in the prompt or context,
@@ -14632,14 +14712,14 @@ modes:
       are independent of this AI-domain total.
 - id: automation-complacency
   name: Automation complacency
-  definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation is reliable,
-    letting errors through.
+  definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation is
+    reliable, letting errors through.
   example: After a few good tool calls it stops verifying results and passes a later wrong one straight through.
   family: attention-and-salience
   group_label: Attention and salience
   category: Attention
-  human_parallel: 'Automation complacency (Parasuraman and Manzey, 2010): reduced monitoring of an automated process
-    once it is trusted, so its errors go uncaught.'
+  human_parallel: 'Automation complacency (Parasuraman and Manzey, 2010): reduced monitoring of an automated
+    process once it is trusted, so its errors go uncaught.'
   highlighted: false
   tag: research
   origin: mixed
@@ -14666,8 +14746,8 @@ modes:
   - Complacency
   - Vigilance decrement
   examples:
-  - Programmers using Copilot skim AI-generated code rather than reading it rigorously, a reduced-vigilance pattern
-    especially pronounced among less experienced developers. [arXiv:2402.11364]
+  - Programmers using Copilot skim AI-generated code rather than reading it rigorously, a reduced-vigilance
+    pattern especially pronounced among less experienced developers. [arXiv:2402.11364]
   - 'The complacency spans professions: AI-assisted legal exams miss more hidden issues, and advertising professionals
     over-trust AI drafts and fail to revise them thoroughly. [arXiv:2402.11364]'
   - 'It mirrors decades-old automation findings: as people shift from doing to supervising, situational awareness
@@ -14695,12 +14775,47 @@ modes:
     novelty_status: Not established; inspect semantic boundary before admission
     definition_sources:
     - id: vigilance
-      title: Generalized Deep Learning EEG Models for Cross-Participant and Cross-Task Detection of Vigilance Decrement
-        in Sustained Attention Tasks
+      title: Generalized Deep Learning EEG Models for Cross-Participant and Cross-Task Detection of Vigilance
+        Decrement in Sustained Attention Tasks
       url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8402570/
       consulted: indexed introduction and methods context
     catalogue_boundary: This term was already indexed as an alias here. The time-on-task effect and automation-induced
       complacency are not asserted to be identical mechanisms.
+  - id: pdf-review-0007
+    review_record: references/pdf-reviews/0007.json
+    name: Reliability-related vigilance is a proposed training concern
+    definition: The discussion links prolonged error-free operation with reduced verification, while this short
+      experiment tests warnings rather than longitudinal vigilance loss.
+    evidence_scope: Discussion based on cited earlier automation studies; the present experiment found partial
+      warning benefits but did not manipulate long-run failure frequency or compare repeated training schedules.
+    catalogue_boundary: Do not count this as independent longitudinal evidence for vigilance decrement. The
+      authors’ suggestion to demonstrate failures is a training proposal, not evidence supporting deliberate
+      errors in consequential production hiring decisions.
+    definition_sources:
+    - id: pdf-review-0007-automation-complacency
+      title: Check the box! How to deal with automation bias in AI-based personnel selection
+      url: https://doi.org/10.3389/fpsyg.2023.1118723
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 13, 13 (source locators:
+        13, 13). This is an experiment on human users of a designed recruitment dashboard with deliberately
+        inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited
+        earlier intervention studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Cordula Kupfer
+        - Rita Prassl
+        - Jürgen Fleiß
+        - Christine Malin
+        - Stefan Thalmann
+        - Bettina Kubicek
+        year: 2023
+        venue: Frontiers in Psychology 14, 1118723
+        doi: 10.3389/fpsyg.2023.1118723
+        evidence_scope: Discussion based on cited earlier automation studies; the present experiment found
+          partial warning benefits but did not manipulate long-run failure frequency or compare repeated training
+          schedules.
+        verification_url: https://doi.org/10.3389/fpsyg.2023.1118723
+        verified_date: '2026-11-26'
   selected_papers:
   - id: arxiv:2605.14544
     title: 'Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy'
@@ -14709,7 +14824,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.14544
     source_reference:
@@ -14723,7 +14839,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2603.14225
     source_reference:
@@ -14739,8 +14856,8 @@ modes:
     venue: 2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS)
     domain: human-related
     publication_type: proceedings-article
-    relevance: The indexed title or abstract matches the recorded query for Automation complacency. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Automation complacency. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=automation+complacency&rows=8

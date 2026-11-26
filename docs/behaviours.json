@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0006.json",
+      "latest_review": "references/pdf-reviews/0007.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -12272,7 +12272,42 @@
         "queried_at": "2026-11-09T00:36:36+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Automation+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0007",
+          "review_record": "references/pdf-reviews/0007.json",
+          "name": "Automation-bias safeguards require outcome-specific evidence",
+          "definition": "Uncritical acceptance of an automated recommendation must be assessed separately from interface engagement, self-rated performance and objectively correct decisions.",
+          "evidence_scope": "N=93 human participants used a simulated recruitment dashboard. Error warnings increased selected verification indicators and self-rated quality but not objective selection quality; the aggregation manipulation did not significantly improve either quality outcome.",
+          "catalogue_boundary": "Time, clicks and page visits are proxies, not sufficient proof of checking quality or causal information-processing routes. Their correlation with accuracy does not show that forcing more clicks improves decisions. Faster initial-display viewing does not by itself establish greater automation bias.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0007-automation-bias",
+              "title": "Check the box! How to deal with automation bias in AI-based personnel selection",
+              "url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+              "consulted": "Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 11, 12 (source locators: 2, 11, 12). This is an experiment on human users of a designed recruitment dashboard with deliberately inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited earlier intervention studies were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Cordula Kupfer",
+                  "Rita Prassl",
+                  "Jürgen Fleiß",
+                  "Christine Malin",
+                  "Stefan Thalmann",
+                  "Bettina Kubicek"
+                ],
+                "year": 2023,
+                "venue": "Frontiers in Psychology 14, 1118723",
+                "doi": "10.3389/fpsyg.2023.1118723",
+                "evidence_scope": "N=93 human participants used a simulated recruitment dashboard. Error warnings increased selected verification indicators and self-rated quality but not objective selection quality; the aggregation manipulation did not significantly improve either quality outcome.",
+                "verification_url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "silent-error-swallowing",
@@ -16850,7 +16885,42 @@
         "queried_at": "2026-11-09T00:39:00+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22bystander+effect%22+AND+%28+all%3Ahelping+OR+all%3Aintervention+OR+all%3Aemergency+OR+all%3A%22social+psychology%22+%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0007",
+          "review_record": "references/pdf-reviews/0007.json",
+          "name": "Responsibility reminders did not establish a diffusion-of-responsibility remedy",
+          "definition": "Diffusion of responsibility is proposed as a possible explanation for reduced checking in shared human–automation tasks, while the tested responsibility reminder produced no significant verification or decision-quality benefit.",
+          "evidence_scope": "The theoretical section draws on prior responsibility research; the current experiment manipulated a legal/responsibility reminder and an announced justification requirement, not group size or the diffusion mechanism itself.",
+          "catalogue_boundary": "A null result for this instruction does not prove that responsibility, accountability or oversight never helps. This is not an emergency-intervention bystander experiment. Promised justification was not actually required, and evaluation concerns and ceiling performance may limit inference.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0007-bystander-effect",
+              "title": "Check the box! How to deal with automation bias in AI-based personnel selection",
+              "url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+              "consulted": "Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 10, 13 (source locators: 5, 10, 13). This is an experiment on human users of a designed recruitment dashboard with deliberately inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited earlier intervention studies were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Cordula Kupfer",
+                  "Rita Prassl",
+                  "Jürgen Fleiß",
+                  "Christine Malin",
+                  "Stefan Thalmann",
+                  "Bettina Kubicek"
+                ],
+                "year": 2023,
+                "venue": "Frontiers in Psychology 14, 1118723",
+                "doi": "10.3389/fpsyg.2023.1118723",
+                "evidence_scope": "The theoretical section draws on prior responsibility research; the current experiment manipulated a legal/responsibility reminder and an announced justification requirement, not group size or the diffusion mechanism itself.",
+                "verification_url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "mere-exposure-effect",
@@ -17049,6 +17119,39 @@
             }
           ],
           "catalogue_boundary": "This term was already indexed as an alias here. The time-on-task effect and automation-induced complacency are not asserted to be identical mechanisms."
+        },
+        {
+          "id": "pdf-review-0007",
+          "review_record": "references/pdf-reviews/0007.json",
+          "name": "Reliability-related vigilance is a proposed training concern",
+          "definition": "The discussion links prolonged error-free operation with reduced verification, while this short experiment tests warnings rather than longitudinal vigilance loss.",
+          "evidence_scope": "Discussion based on cited earlier automation studies; the present experiment found partial warning benefits but did not manipulate long-run failure frequency or compare repeated training schedules.",
+          "catalogue_boundary": "Do not count this as independent longitudinal evidence for vigilance decrement. The authors’ suggestion to demonstrate failures is a training proposal, not evidence supporting deliberate errors in consequential production hiring decisions.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0007-automation-complacency",
+              "title": "Check the box! How to deal with automation bias in AI-based personnel selection",
+              "url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+              "consulted": "Full supplied PDF text read, all 16 pages; evidence at PDF pages 13, 13 (source locators: 13, 13). This is an experiment on human users of a designed recruitment dashboard with deliberately inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited earlier intervention studies were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Cordula Kupfer",
+                  "Rita Prassl",
+                  "Jürgen Fleiß",
+                  "Christine Malin",
+                  "Stefan Thalmann",
+                  "Bettina Kubicek"
+                ],
+                "year": 2023,
+                "venue": "Frontiers in Psychology 14, 1118723",
+                "doi": "10.3389/fpsyg.2023.1118723",
+                "evidence_scope": "Discussion based on cited earlier automation studies; the present experiment found partial warning benefits but did not manipulate long-run failure frequency or compare repeated training schedules.",
+                "verification_url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ],
       "selected_papers": [
