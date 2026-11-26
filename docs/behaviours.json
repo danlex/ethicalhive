@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0004.json",
+      "latest_review": "references/pdf-reviews/0005.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -8129,7 +8129,7 @@
       "id": "b071-dual-process-moral-judgment",
       "num": 71,
       "name": "Dual-process moral judgment",
-      "definition": "Emotion vs utilitarian calculus (Greene); LLMs lean on one or the other by framing.",
+      "definition": "A human account in which automatic affective responses and controlled reasoning can support competing moral judgments; applying it to AI requires process evidence beyond changed answers.",
       "example": "On a data-deletion request it flips between \"just do it\" and \"that's harmful\" by framing.",
       "family": "moral-cognition",
       "group_label": "Moral cognition",
@@ -8137,7 +8137,7 @@
       "highlighted": false,
       "tag": "research",
       "origin": "cognitive-neuroscience",
-      "measurability": "draft",
+      "measurability": "multi-turn",
       "arxiv": {
         "count": 70,
         "papers": [
@@ -8232,7 +8232,41 @@
         "queried_at": "2026-11-09T00:34:36+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22dual+process%22+AND+all%3A%22moral+judgment%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "concept_boundary": "Human response patterns and AI output patterns are distinct evidence. Changed verdicts alone do not establish automatic affect, controlled deliberation, subjective feelings or a causal dual-process mechanism in a model.",
+      "research_notes": [
+        {
+          "id": "pdf-review-0005",
+          "review_record": "references/pdf-reviews/0005.json",
+          "name": "Dual-process interpretation is not demonstrated by verdict changes",
+          "definition": "A human dual-process theory may interpret some moral judgments, but the paper did not test the proposed processing mechanism.",
+          "evidence_scope": "Direct evidence about the scope of this human study, with the dual-process account discussed as an interpretation. It does not negate other studies, demonstrate an AI processing architecture or show AI emotions.",
+          "catalogue_boundary": "Human response patterns and AI output patterns are distinct evidence. Changed verdicts alone do not establish automatic affect, controlled deliberation, subjective feelings or a causal dual-process mechanism in a model.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0005-b071-dual-process-moral-judgment",
+              "title": "Moral Judgments of Human vs. AI Agents in Moral Dilemmas",
+              "url": "https://doi.org/10.3390/bs13020181",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 11, 11 (source locators: 11, 11). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were not tested, and no AI model produced the judgments measured in this paper.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Yuyan Zhang",
+                  "Jiahua Wu",
+                  "Feng Yu",
+                  "Liying Xu"
+                ],
+                "year": 2023,
+                "venue": "Behavioral Sciences 13(2), 181",
+                "doi": "10.3390/bs13020181",
+                "evidence_scope": "Direct evidence about the scope of this human study, with the dual-process account discussed as an interpretation. It does not negate other studies, demonstrate an AI processing architecture or show AI emotions.",
+                "verification_url": "https://doi.org/10.3390/bs13020181",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b072-amplified-moral-bias",
@@ -8446,7 +8480,40 @@
         "queried_at": "2026-11-09T00:34:43+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Omission+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0005",
+          "review_record": "references/pdf-reviews/0005.json",
+          "name": "Action preference is not a clean omission-bias measure",
+          "definition": "A preference for inaction in traditional moral dilemmas can mix consequence sensitivity, norm sensitivity and a general action preference.",
+          "evidence_scope": "The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches. Those cited measurement papers have not been independently read here.",
+          "catalogue_boundary": "This paper’s action effects do not isolate a general omission bias. The discussion also notes disputes about CNI modelling, so do not portray one decomposition as an uncontested solution.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0005-b073-omission-bias",
+              "title": "Moral Judgments of Human vs. AI Agents in Moral Dilemmas",
+              "url": "https://doi.org/10.3390/bs13020181",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 11, 12 (source locators: 11, 12). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were not tested, and no AI model produced the judgments measured in this paper.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Yuyan Zhang",
+                  "Jiahua Wu",
+                  "Feng Yu",
+                  "Liying Xu"
+                ],
+                "year": 2023,
+                "venue": "Behavioral Sciences 13(2), 181",
+                "doi": "10.3390/bs13020181",
+                "evidence_scope": "The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches. Those cited measurement papers have not been independently read here.",
+                "verification_url": "https://doi.org/10.3390/bs13020181",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b074-moral-licensing",
@@ -9211,7 +9278,40 @@
         "queried_at": "2026-11-09T00:35:04+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22trolley+problem%22+AND+all%3Aframing+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0005",
+          "review_record": "references/pdf-reviews/0005.json",
+          "name": "Dilemma differences are not automatically surface-framing bias",
+          "definition": "Trolley and footbridge scenarios can differ in directness, personal force and causal structure, so a judgment difference between them is not by itself a surface-framing inconsistency.",
+          "evidence_scope": "Human vignette comparisons and theoretical background. The trolley and footbridge contrast changes morally relevant features, and the paper does not isolate those features as a new mechanism.",
+          "catalogue_boundary": "To call an AI result surface-framing sensitivity, hold the morally relevant situation fixed or specify the substantive contrast being tested. Do not relabel every difference between pushing and switching as irrational inconsistency.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0005-b079-trolley-frame-sensitivity",
+              "title": "Moral Judgments of Human vs. AI Agents in Moral Dilemmas",
+              "url": "https://doi.org/10.3390/bs13020181",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 3, 11 (source locators: 3, 11). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were not tested, and no AI model produced the judgments measured in this paper.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Yuyan Zhang",
+                  "Jiahua Wu",
+                  "Feng Yu",
+                  "Liying Xu"
+                ],
+                "year": 2023,
+                "venue": "Behavioral Sciences 13(2), 181",
+                "doi": "10.3390/bs13020181",
+                "evidence_scope": "Human vignette comparisons and theoretical background. The trolley and footbridge contrast changes morally relevant features, and the paper does not isolate those features as a new mechanism.",
+                "verification_url": "https://doi.org/10.3390/bs13020181",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b080-value-misgeneralisation",

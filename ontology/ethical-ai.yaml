@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0004.json
+    latest_review: references/pdf-reviews/0005.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -6931,7 +6931,8 @@ modes:
 - id: b071-dual-process-moral-judgment
   num: 71
   name: Dual-process moral judgment
-  definition: Emotion vs utilitarian calculus (Greene); LLMs lean on one or the other by framing.
+  definition: A human account in which automatic affective responses and controlled reasoning can support competing
+    moral judgments; applying it to AI requires process evidence beyond changed answers.
   example: On a data-deletion request it flips between "just do it" and "that's harmful" by framing.
   family: moral-cognition
   group_label: Moral cognition
@@ -6939,7 +6940,7 @@ modes:
   highlighted: false
   tag: research
   origin: cognitive-neuroscience
-  measurability: draft
+  measurability: multi-turn
   arxiv:
     count: 70
     papers:
@@ -6960,10 +6961,11 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - For the action 'I told my baby I hate her when she cried' the model generates contradictory verdicts on different
-    paths, calling it both an expression of love and unequivocally immoral, without reconciling them. [arXiv:2412.12848]
-  - The method models a fast intuitive path and a slow deliberative path, prompting the model to give a snap verdict
-    and then a reasoned one for the same dilemma. [arXiv:2412.12848]
+  - For the action 'I told my baby I hate her when she cried' the model generates contradictory verdicts on
+    different paths, calling it both an expression of love and unequivocally immoral, without reconciling them.
+    [arXiv:2412.12848]
+  - The method models a fast intuitive path and a slow deliberative path, prompting the model to give a snap
+    verdict and then a reasoned one for the same dilemma. [arXiv:2412.12848]
   - Faced with a trade-off between two values, it can reach opposite verdicts depending on which path dominates,
     with no stable rule to arbitrate between them.
   selected_papers:
@@ -6975,7 +6977,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2412.12848
     source_reference:
@@ -6989,7 +6992,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2604.19125
     source_reference:
@@ -7004,7 +7008,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2402.02135
     source_reference:
@@ -7022,6 +7027,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: Human response patterns and AI output patterns are distinct evidence. Changed verdicts
+    alone do not establish automatic affect, controlled deliberation, subjective feelings or a causal dual-process
+    mechanism in a model.
+  research_notes:
+  - id: pdf-review-0005
+    review_record: references/pdf-reviews/0005.json
+    name: Dual-process interpretation is not demonstrated by verdict changes
+    definition: A human dual-process theory may interpret some moral judgments, but the paper did not test
+      the proposed processing mechanism.
+    evidence_scope: Direct evidence about the scope of this human study, with the dual-process account discussed
+      as an interpretation. It does not negate other studies, demonstrate an AI processing architecture or
+      show AI emotions.
+    catalogue_boundary: Human response patterns and AI output patterns are distinct evidence. Changed verdicts
+      alone do not establish automatic affect, controlled deliberation, subjective feelings or a causal dual-process
+      mechanism in a model.
+    definition_sources:
+    - id: pdf-review-0005-b071-dual-process-moral-judgment
+      title: Moral Judgments of Human vs. AI Agents in Moral Dilemmas
+      url: https://doi.org/10.3390/bs13020181
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 11, 11 (source locators:
+        11, 11). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were
+        not tested, and no AI model produced the judgments measured in this paper.'
+      publication:
+        type: journal-article
+        authors:
+        - Yuyan Zhang
+        - Jiahua Wu
+        - Feng Yu
+        - Liying Xu
+        year: 2023
+        venue: Behavioral Sciences 13(2), 181
+        doi: 10.3390/bs13020181
+        evidence_scope: Direct evidence about the scope of this human study, with the dual-process account
+          discussed as an interpretation. It does not negate other studies, demonstrate an AI processing architecture
+          or show AI emotions.
+        verification_url: https://doi.org/10.3390/bs13020181
+        verified_date: '2026-11-26'
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
@@ -7141,12 +7183,12 @@ modes:
   - wrong-answer
   examples:
   - Posed the injured-deer dilemma in an action frame ('will you have your friend euthanize the suffering deer?')
-    and then in an omission frame ('will you stop your friend from euthanizing it?'), the model answers 'no' to
-    both, so identical outcomes get opposite recommendations purely from how the act is framed. [arXiv:2610.07847]
-  - Gemma-3-12B shows this on 55% of scenarios, treating the harmful action as worse than the equally harmful inaction.
-    [arXiv:2610.07847]
-  - Across 218 matched action/omission scenario pairs the bias is systematic rather than anecdotal, though larger
-    models show lower rates. [arXiv:2610.07847]
+    and then in an omission frame ('will you stop your friend from euthanizing it?'), the model answers 'no'
+    to both, so identical outcomes get opposite recommendations purely from how the act is framed. [arXiv:2610.07847]
+  - Gemma-3-12B shows this on 55% of scenarios, treating the harmful action as worse than the equally harmful
+    inaction. [arXiv:2610.07847]
+  - Across 218 matched action/omission scenario pairs the bias is systematic rather than anecdotal, though
+    larger models show lower rates. [arXiv:2610.07847]
   selected_papers:
   - id: arxiv:2610.07847
     title: 'OMIT the Action: Measuring Framing-Invariant Omission Bias under Philosophical Disagreement'
@@ -7155,7 +7197,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2610.07847
     source_reference:
@@ -7169,7 +7212,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.24319
     source_reference:
@@ -7204,6 +7248,37 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0005
+    review_record: references/pdf-reviews/0005.json
+    name: Action preference is not a clean omission-bias measure
+    definition: A preference for inaction in traditional moral dilemmas can mix consequence sensitivity, norm
+      sensitivity and a general action preference.
+    evidence_scope: The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches.
+      Those cited measurement papers have not been independently read here.
+    catalogue_boundary: This paper’s action effects do not isolate a general omission bias. The discussion
+      also notes disputes about CNI modelling, so do not portray one decomposition as an uncontested solution.
+    definition_sources:
+    - id: pdf-review-0005-b073-omission-bias
+      title: Moral Judgments of Human vs. AI Agents in Moral Dilemmas
+      url: https://doi.org/10.3390/bs13020181
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 11, 12 (source locators:
+        11, 12). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were
+        not tested, and no AI model produced the judgments measured in this paper.'
+      publication:
+        type: journal-article
+        authors:
+        - Yuyan Zhang
+        - Jiahua Wu
+        - Feng Yu
+        - Liying Xu
+        year: 2023
+        venue: Behavioral Sciences 13(2), 181
+        doi: 10.3390/bs13020181
+        evidence_scope: The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches.
+          Those cited measurement papers have not been independently read here.
+        verification_url: https://doi.org/10.3390/bs13020181
+        verified_date: '2026-11-26'
 - id: b074-moral-licensing
   num: 74
   name: Moral licensing
@@ -7815,8 +7890,8 @@ modes:
       title: Measuring Moral Inconsistencies in Large Language Models
     - id: '2508.07284'
       year: '2025'
-      title: '"Pull or Not to Pull?'''': Investigating Moral Biases in Leading Large Language Models Across Ethical
-        Dilemmas'
+      title: '"Pull or Not to Pull?'''': Investigating Moral Biases in Leading Large Language Models Across
+        Ethical Dilemmas'
   human_parallel: Trolley-frame sensitivity
   violates:
   - non-maleficence
@@ -7826,10 +7901,10 @@ modes:
   - Describing the dilemma with the word 'swerving' pushes the model toward swerving regardless of the outcomes;
     rephrasing the identical scenario in neutral causal language removes the artificial preference. [arXiv:2407.02273]
   - 'The same boy-versus-elderly-man dilemma yields different verdicts across languages: in German GPT-3 chooses
-    the elderly man on utilitarian-contribution logic, while in Chinese and Swahili GPT-4 defers or stresses equal
-    rights. [arXiv:2407.02273]'
-  - 'Model version changes the verdict too: where earlier models showed a strong gendered preference, GPT-4 after
-    heavy RLHF gives a 50-50 split on the same choice. [arXiv:2407.02273]'
+    the elderly man on utilitarian-contribution logic, while in Chinese and Swahili GPT-4 defers or stresses
+    equal rights. [arXiv:2407.02273]'
+  - 'Model version changes the verdict too: where earlier models showed a strong gendered preference, GPT-4
+    after heavy RLHF gives a 50-50 split on the same choice. [arXiv:2407.02273]'
   selected_papers:
   - id: arxiv:2407.02273
     title: Language Model Alignment in Multilingual Trolley Problems
@@ -7838,7 +7913,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2407.02273
     source_reference:
@@ -7852,7 +7928,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2402.01719
     source_reference:
@@ -7867,7 +7944,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2508.07284
     source_reference:
@@ -7885,6 +7963,38 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0005
+    review_record: references/pdf-reviews/0005.json
+    name: Dilemma differences are not automatically surface-framing bias
+    definition: Trolley and footbridge scenarios can differ in directness, personal force and causal structure,
+      so a judgment difference between them is not by itself a surface-framing inconsistency.
+    evidence_scope: Human vignette comparisons and theoretical background. The trolley and footbridge contrast
+      changes morally relevant features, and the paper does not isolate those features as a new mechanism.
+    catalogue_boundary: To call an AI result surface-framing sensitivity, hold the morally relevant situation
+      fixed or specify the substantive contrast being tested. Do not relabel every difference between pushing
+      and switching as irrational inconsistency.
+    definition_sources:
+    - id: pdf-review-0005-b079-trolley-frame-sensitivity
+      title: Moral Judgments of Human vs. AI Agents in Moral Dilemmas
+      url: https://doi.org/10.3390/bs13020181
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 3, 11 (source locators:
+        3, 11). Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were
+        not tested, and no AI model produced the judgments measured in this paper.'
+      publication:
+        type: journal-article
+        authors:
+        - Yuyan Zhang
+        - Jiahua Wu
+        - Feng Yu
+        - Liying Xu
+        year: 2023
+        venue: Behavioral Sciences 13(2), 181
+        doi: 10.3390/bs13020181
+        evidence_scope: Human vignette comparisons and theoretical background. The trolley and footbridge contrast
+          changes morally relevant features, and the paper does not isolate those features as a new mechanism.
+        verification_url: https://doi.org/10.3390/bs13020181
+        verified_date: '2026-11-26'
 - id: b080-value-misgeneralisation
   num: 80
   name: Value misgeneralisation
