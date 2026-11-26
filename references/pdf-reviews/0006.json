@@ -1,0 +1,192 @@
+{
+  "sequence": 6,
+  "source": {
+    "file_name": "S118_Giroux_2022.pdf",
+    "source_id": "S118",
+    "sha256": "27c2e53653b5f47a672bdc8293d4994f87c025a25775ef2a823e96b8383c879c",
+    "pdf_pages": 15,
+    "printed_pages": "1027–1041"
+  },
+  "citation": {
+    "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+    "authors": [
+      "Marilyn Giroux",
+      "Jungkeun Kim",
+      "Jacob C. Lee",
+      "Jongwon Park"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1007/s10551-022-05056-7",
+    "venue": "Journal of Business Ethics 178, 1027–1041",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_scope_note": "The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+    "access_limits": [
+      "All extracted article text, appendices, references and figure captions read; the figure was not independently digitized.",
+      "Raw data were not supplied or analyses rerun.",
+      "The earlier MTurk version reported only in a footnote was not treated as a separately and fully reported independent study."
+    ]
+  },
+  "study": {
+    "main_samples": [
+      128,
+      303,
+      147
+    ],
+    "main_total": 578,
+    "design": "Two checkout-agent scenario experiments plus an AI-humanlikeness individual-difference study",
+    "outcomes": "Self-reported intentions to report a billing error and anticipated guilt",
+    "scope": "Human online-panel responses to hypothetical human, AI and self-checkout interactions"
+  },
+  "summary": "Participants generally reported lower error-reporting intentions in automated than human checkout scenarios. Anticipated guilt was associated with reporting intentions. The authors report indirect effects, but Study 3 measured rather than manipulated AI humanlikeness, and their limitations explicitly separate hypothetical intentions from actual behavior and feelings.",
+  "findings": [
+    {
+      "term": "Anticipatory guilt",
+      "id": "anticipatory-guilt",
+      "synonyms": [
+        "Anticipated guilt"
+      ],
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral psychology / consumer ethics",
+      "definition": "Expecting to feel guilty about a contemplated action or omission that would violate one’s moral standards.",
+      "novelty_rationale": "The ontology includes moral disengagement, moral licensing and inflated responsibility, but none defines the prospective self-conscious emotion itself. This adaptive-or-maladaptive human process is not counted as a machine’s subjective emotion.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 1031,
+          "quote": "Anticipatory guilt normally stimulates ethical behaviors"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 1037,
+          "quote": "I would feel guilty if I don’t report the billing error."
+        }
+      ],
+      "evidence_scope": "The source defines anticipated guilt through prior theory and measures it with prospective self-report items in human checkout scenarios. The cited original guilt-theory studies were not independently read in this step.",
+      "boundary": "Expected guilt before an action differs from retrospective guilt, shame, general negative mood and an inflated sense of responsibility. It is not inherently a failure, does not establish that guilt is always justified, and does not establish subjective experience in AI.",
+      "ai_evidence_status": "Anticipated human guilt measured in hypothetical human–AI interactions; model-internal or functional analogues remain untested",
+      "ai_proposal": "Untested functional AI analogue: compare whether a model’s forecast that a proposed action would violate a stated norm changes its subsequent recommendation, against an explicit rule-check baseline. Measure predictions and choices, not claimed feelings, and do not treat guilt-related wording as evidence of experienced guilt.",
+      "relates_to": [
+        "machine-penalty",
+        "b075-moral-disengagement"
+      ]
+    },
+    {
+      "term": "Error-reporting intentions toward automated checkout",
+      "target_id": "machine-penalty",
+      "decision": "enrich-existing",
+      "definition": "Participants in hypothetical retail scenarios reported lower intentions to correct a billing error for automated checkout than for human checkout.",
+      "novelty_rationale": "A related interaction-level application, not a separately counted synonym or an independent replication of incentivized cooperative games. The dependent variable is an intention to correct an error.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 1032,
+          "quote": "intention to report the billing error"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 1036,
+          "quote": "our research only involves"
+        }
+      ],
+      "evidence_scope": "Three main online-panel studies, including human/AI/self-checkout comparisons. Anticipated guilt was associated with the reporting-intention differences, while actual dishonesty was not observed.",
+      "boundary": "Do not call the result observed theft, a universal machine-cooperation penalty or an experimentally identified causal guilt mechanism. Intention, anticipated guilt, actual action and retrospective feeling are different outcomes."
+    },
+    {
+      "term": "Humanlikeness and moral intention are context-dependent",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Greater perceived humanlikeness of AI was associated with stronger anticipated guilt and error-reporting intentions in the paper’s retail scenario.",
+      "novelty_rationale": "Adds a bounded human interaction result to an existing anthropomorphism entry; it does not warrant another general humanization-effect label.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 1036,
+          "quote": "the conclusion was based on correlation rather"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 1036,
+          "quote": "we measured AI perception."
+        }
+      ],
+      "evidence_scope": "Study 3 measured individual differences in perceived humanlikeness rather than experimentally manipulating that perception; the authors explicitly identify the causal limitation.",
+      "boundary": "The finding does not show that making an interface more humanlike necessarily improves real conduct. It does not justify concealing machine identity, claiming feelings, or manipulating users through guilt."
+    },
+    {
+      "term": "Uncanny-valley warning in retail design",
+      "target_id": "uncanny-valley-effect",
+      "decision": "enrich-existing",
+      "definition": "The paper warns that highly humanlike machine presentation may elicit unease, but does not itself test an uncanny-valley response curve.",
+      "novelty_rationale": "The named construct is already indexed. Preserve the discussion as a conceptual design caution rather than count another empirical replication.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 1036,
+          "quote": "a feeling of unease or strangeness"
+        }
+      ],
+      "evidence_scope": "Managerial discussion drawing on earlier uncanny-valley sources, not a manipulation of a graded appearance continuum in this paper.",
+      "boundary": "Do not use this citation as a new experimentally demonstrated valley or infer that maximal anthropomorphism is a universally safe intervention."
+    }
+  ],
+  "methodological_limits": [
+    "All main outcomes concern hypothetical scenarios and self-report intentions rather than actual correction, theft or experienced post-event guilt.",
+    "The authors explicitly describe Study 3’s humanlikeness result as correlational. A significant indirect effect alone does not identify a causal mediator.",
+    "Some measures include responsibility- and accountability-related wording alongside guilt; interpretations depend on the operationalization.",
+    "Non-significant alternative-mediator measures do not prove that empathy, detectability or other mechanisms are absent in all real retail settings.",
+    "Study 2 reports a significant AI-versus-machine intention contrast but a non-significant guilt contrast; keep the outcome distinctions rather than summarize every contrast as significant or null."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0001.json",
+      "finding": "The broader review describes mixed success of humanization in cooperation. These retail-intention associations are context-specific and do not overturn those limits or establish a universal intervention."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Reduced guilt toward machines",
+      "reason": "Retain as a context-dependent proposed mechanism/application within the existing machine-penalty evidence, not a duplicate broad interaction effect."
+    },
+    {
+      "term": "Norm Activation model; Negative State Relief model; Computers as Social Actors",
+      "reason": "Background frameworks, not newly demonstrated behaviours in this paper. Their cited primary sources have not been independently read here."
+    }
+  ],
+  "limitations": [
+    "One new human construct is indexed with an explicitly untested AI analogue.",
+    "The study does not demonstrate that AI itself experiences guilt or commits the retail misconduct being rated."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "anticipatory-guilt"
+    ],
+    "enriched": [
+      "machine-penalty",
+      "anthropomorphism",
+      "uncanny-valley-effect"
+    ]
+  }
+}

@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 441,
+    "mode_count": 442,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 441,
+      "numbered_entries": 442,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0005.json",
+      "latest_review": "references/pdf-reviews/0006.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 441
+    "source_record_count": 442
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -12620,6 +12620,37 @@
                 "doi": "10.1146/annurev-psych-030123-113559",
                 "evidence_scope": "Review-level synthesis of humanization interventions and ethical discussion; not a proof that every human-like interface is misleading.",
                 "verification_url": "https://doi.org/10.1146/annurev-psych-030123-113559",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0006",
+          "review_record": "references/pdf-reviews/0006.json",
+          "name": "Humanlikeness and moral intention are context-dependent",
+          "definition": "Greater perceived humanlikeness of AI was associated with stronger anticipated guilt and error-reporting intentions in the paper’s retail scenario.",
+          "evidence_scope": "Study 3 measured individual differences in perceived humanlikeness rather than experimentally manipulating that perception; the authors explicitly identify the causal limitation.",
+          "catalogue_boundary": "The finding does not show that making an interface more humanlike necessarily improves real conduct. It does not justify concealing machine identity, claiming feelings, or manipulating users through guilt.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0006-anthropomorphism",
+              "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+              "url": "https://doi.org/10.1007/s10551-022-05056-7",
+              "consulted": "Full supplied PDF text read, all 15 pages; evidence at PDF pages 10, 10 (source locators: 1036, 1036). The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Marilyn Giroux",
+                  "Jungkeun Kim",
+                  "Jacob C. Lee",
+                  "Jongwon Park"
+                ],
+                "year": 2022,
+                "venue": "Journal of Business Ethics 178, 1027–1041",
+                "doi": "10.1007/s10551-022-05056-7",
+                "evidence_scope": "Study 3 measured individual differences in perceived humanlikeness rather than experimentally manipulating that perception; the authors explicitly identify the causal limitation.",
+                "verification_url": "https://doi.org/10.1007/s10551-022-05056-7",
                 "verified_date": "2026-11-26"
               }
             }
@@ -52369,7 +52400,40 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0001.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0006",
+          "review_record": "references/pdf-reviews/0006.json",
+          "name": "Error-reporting intentions toward automated checkout",
+          "definition": "Participants in hypothetical retail scenarios reported lower intentions to correct a billing error for automated checkout than for human checkout.",
+          "evidence_scope": "Three main online-panel studies, including human/AI/self-checkout comparisons. Anticipated guilt was associated with the reporting-intention differences, while actual dishonesty was not observed.",
+          "catalogue_boundary": "Do not call the result observed theft, a universal machine-cooperation penalty or an experimentally identified causal guilt mechanism. Intention, anticipated guilt, actual action and retrospective feeling are different outcomes.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0006-machine-penalty",
+              "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+              "url": "https://doi.org/10.1007/s10551-022-05056-7",
+              "consulted": "Full supplied PDF text read, all 15 pages; evidence at PDF pages 6, 10 (source locators: 1032, 1036). The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Marilyn Giroux",
+                  "Jungkeun Kim",
+                  "Jacob C. Lee",
+                  "Jongwon Park"
+                ],
+                "year": 2022,
+                "venue": "Journal of Business Ethics 178, 1027–1041",
+                "doi": "10.1007/s10551-022-05056-7",
+                "evidence_scope": "Three main online-panel studies, including human/AI/self-checkout comparisons. Anticipated guilt was associated with the reporting-intention differences, while actual dishonesty was not observed.",
+                "verification_url": "https://doi.org/10.1007/s10551-022-05056-7",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "uncanny-valley-effect",
@@ -52456,7 +52520,40 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0001.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0006",
+          "review_record": "references/pdf-reviews/0006.json",
+          "name": "Uncanny-valley warning in retail design",
+          "definition": "The paper warns that highly humanlike machine presentation may elicit unease, but does not itself test an uncanny-valley response curve.",
+          "evidence_scope": "Managerial discussion drawing on earlier uncanny-valley sources, not a manipulation of a graded appearance continuum in this paper.",
+          "catalogue_boundary": "Do not use this citation as a new experimentally demonstrated valley or infer that maximal anthropomorphism is a universally safe intervention.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0006-uncanny-valley-effect",
+              "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+              "url": "https://doi.org/10.1007/s10551-022-05056-7",
+              "consulted": "Full supplied PDF text read, all 15 pages; evidence at PDF pages 10 (source locators: 1036). The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Marilyn Giroux",
+                  "Jungkeun Kim",
+                  "Jacob C. Lee",
+                  "Jongwon Park"
+                ],
+                "year": 2022,
+                "venue": "Journal of Business Ethics 178, 1027–1041",
+                "doi": "10.1007/s10551-022-05056-7",
+                "evidence_scope": "Managerial discussion drawing on earlier uncanny-valley sources, not a manipulation of a graded appearance continuum in this paper.",
+                "verification_url": "https://doi.org/10.1007/s10551-022-05056-7",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "algorithmic-transference",
@@ -52986,6 +53083,96 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0004.json"
+      }
+    },
+    {
+      "id": "anticipatory-guilt",
+      "num": 442,
+      "name": "Anticipatory guilt",
+      "definition": "Expecting to feel guilty about a contemplated action or omission that would violate one’s moral standards.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Moral psychology / consumer ethics",
+      "human_parallel": "Anticipatory guilt",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Anticipated human guilt measured in hypothetical human–AI interactions; model-internal or functional analogues remain untested",
+      "proposed_ai_manifestation": "Untested functional AI analogue: compare whether a model’s forecast that a proposed action would violate a stated norm changes its subsequent recommendation, against an explicit rule-check baseline. Measure predictions and choices, not claimed feelings, and do not treat guilt-related wording as evidence of experienced guilt.",
+      "research_boundary": "Expected guilt before an action differs from retrospective guilt, shame, general negative mood and an inflated sense of responsibility. It is not inherently a failure, does not establish that guilt is always justified, and does not establish subjective experience in AI.",
+      "concept_boundary": "Expected guilt before an action differs from retrospective guilt, shame, general negative mood and an inflated sense of responsibility. It is not inherently a failure, does not establish that guilt is always justified, and does not establish subjective experience in AI.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Anticipated guilt"
+      ],
+      "relates_to": [
+        "machine-penalty",
+        "b075-moral-disengagement"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0006-anticipatory-guilt",
+          "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+          "url": "https://doi.org/10.1007/s10551-022-05056-7",
+          "consulted": "Full supplied PDF text read, all 15 pages; evidence at PDF pages 5, 11 (source locators: 1031, 1037). The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Marilyn Giroux",
+              "Jungkeun Kim",
+              "Jacob C. Lee",
+              "Jongwon Park"
+            ],
+            "year": 2022,
+            "venue": "Journal of Business Ethics 178, 1027–1041",
+            "doi": "10.1007/s10551-022-05056-7",
+            "evidence_scope": "The source defines anticipated guilt through prior theory and measures it with prospective self-report items in human checkout scenarios. The cited original guilt-theory studies were not independently read in this step.",
+            "verification_url": "https://doi.org/10.1007/s10551-022-05056-7",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+          "authors": [
+            "Marilyn Giroux",
+            "Jungkeun Kim",
+            "Jacob C. Lee",
+            "Jongwon Park"
+          ],
+          "year": 2022,
+          "url": "https://doi.org/10.1007/s10551-022-05056-7",
+          "venue": "Journal of Business Ethics 178, 1027–1041",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s10551-022-05056-7",
+          "relevance": "The source defines anticipated guilt through prior theory and measures it with prospective self-report items in human checkout scenarios. The cited original guilt-theory studies were not independently read in this step.",
+          "consulted": "Full supplied PDF text read, all 15 pages; evidence at PDF pages 5, 11 (source locators: 1031, 1037). The paper studies human intentions and anticipated guilt in hypothetical retail interactions, not intrinsic AI emotions or observed theft. Earlier works cited for guilt theory were not independently read here.",
+          "verification_url": "https://doi.org/10.1007/s10551-022-05056-7",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0006.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Anticipatory guilt\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Anticipatory+guilt%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0006.json"
       }
     }
   ]
