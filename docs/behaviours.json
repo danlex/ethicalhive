@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 463,
+    "mode_count": 465,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 463,
+      "numbered_entries": 465,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0042.json",
+      "latest_review": "references/pdf-reviews/0044.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 463
+    "source_record_count": 465
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -4385,6 +4385,37 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0044",
+          "review_record": "references/pdf-reviews/0044.json",
+          "name": "Matched-language allocation prompts produced different reported choices",
+          "definition": "Changing prompt language between English and Korean changed reported allocation-choice probabilities in the tested Gemini configuration.",
+          "evidence_scope": "Reported100 baseline completions per language/scenario. Table4 gives Berk15 Left choices36% English versus92% Korean (56pp gap), where Left givesB700 versus600 in the equal alternative. Five of six comparisons are nominally significant at.05; this is one model and six items.",
+          "catalogue_boundary": "Semantic equivalence is checked by the same model rather than independently established by bilingual humans. Fixed option labels and a single item per trade-off limit inference. A language-associated effect does not prove a stable national moral trait, a foreign-language emotional mechanism or that either choice is ethically wrong.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0044-b035-framing-effect",
+              "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+              "url": "https://doi.org/10.3390/electronics14244919",
+              "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 11, 11, 11 (source locators: 11, 11, 11). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Seongyu Jang",
+                  "Chaewon Jeong",
+                  "Jimin Kim",
+                  "Hyungu Kahng"
+                ],
+                "year": 2025,
+                "venue": "Electronics,14,4919",
+                "doi": "10.3390/electronics14244919",
+                "evidence_scope": "Reported100 baseline completions per language/scenario. Table4 gives Berk15 Left choices36% English versus92% Korean (56pp gap), where Left givesB700 versus600 in the equal alternative. Five of six comparisons are nominally significant at.05; this is one model and six items.",
+                "verification_url": "https://doi.org/10.3390/electronics14244919",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8307,6 +8338,37 @@
                 "venue": "arXiv:2507.17216v1",
                 "evidence_scope": "DMP reportedly lowers pooled-model absolute judgment discrepancy from22pp to8pp and raises normalized value entropy .46 to .52 (human .57). Rationale top-ten concentration drops81.6% to51.3%. Main text calls this64.3% discrepancy reduction; rounded displayed values alone imply63.6%, so exact figures require raw results.",
                 "verification_url": "https://arxiv.org/abs/2507.17216v1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0044",
+          "review_record": "references/pdf-reviews/0044.json",
+          "name": "Persona-induced convergence is distinct from improved human agreement",
+          "definition": "Narrative persona context changes allocation choices and can bring language distributions closer together without necessarily moving them closer to the stated human reference.",
+          "evidence_scope": "Table5 reports mean absolute English/Korean gap .252→.094, described as62.7% reduction, but important tables/figures conflict. For Berk29, Table7 reports persona deviations from human +.5358/+.3478, both larger in magnitude than baseline deviations+.23/−.13. Thus convergence can accompany worse reference agreement.",
+          "catalogue_boundary": "An explicit persona is an authorized task condition, not proof of prompt injection or factual expertise. Same-direction deviations are not closeness to humans or ethical correctness. Persona text includes substantive interests and value cues, so effects cannot be assigned uniquely to professional identity. The compensatory-integration mechanism is hypothesized, not demonstrated by analyzed reasoning or a controlled causal decomposition.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0044-b067-suggestibility",
+              "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+              "url": "https://doi.org/10.3390/electronics14244919",
+              "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 10, 10, 15, 15 (source locators: 10, 10, 15, 15). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Seongyu Jang",
+                  "Chaewon Jeong",
+                  "Jimin Kim",
+                  "Hyungu Kahng"
+                ],
+                "year": 2025,
+                "venue": "Electronics,14,4919",
+                "doi": "10.3390/electronics14244919",
+                "evidence_scope": "Table5 reports mean absolute English/Korean gap .252→.094, described as62.7% reduction, but important tables/figures conflict. For Berk29, Table7 reports persona deviations from human +.5358/+.3478, both larger in magnitude than baseline deviations+.23/−.13. Thus convergence can accompany worse reference agreement.",
+                "verification_url": "https://doi.org/10.3390/electronics14244919",
                 "verified_date": "2026-11-26"
               }
             }
@@ -58214,6 +58276,184 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0042.json"
+      }
+    },
+    {
+      "id": "foreign-language-effect",
+      "num": 464,
+      "name": "Foreign-language effect",
+      "definition": "A change in a person's judgments or decisions when using a foreign language rather than a native language.",
+      "category": "Language",
+      "family": "language-semantics",
+      "group_label": "Language and semantics",
+      "tag": "analogy",
+      "origin": "Bilingual decision-making / moral psychology",
+      "human_parallel": "Foreign-language effect",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human construct discussed secondarily; related language-dependent model output directly reported, but shared native/foreign mechanism unestablished",
+      "proposed_ai_manifestation": "Evaluate matched prompts across languages with independent translation review, option-order control and repeated sampling. Compare model outputs without assigning a subjective native language. For human comparisons, measure actual native/foreign proficiency and task conditions; distinguish semantic mismatch, cultural context and language familiarity.",
+      "research_boundary": "A model has no experimentally established native language or bilingual emotional experience in this study. Language differences can reflect translation, training, context or task interpretation. Do not assume the human effect always increases utilitarianism or that similar outputs identify reduced emotion as a shared cause.",
+      "concept_boundary": "A model has no experimentally established native language or bilingual emotional experience in this study. Language differences can reflect translation, training, context or task interpretation. Do not assume the human effect always increases utilitarianism or that similar outputs identify reduced emotion as a shared cause.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Foreign language effect"
+      ],
+      "relates_to": [
+        "b035-framing-effect",
+        "candidate-086"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0044-foreign-language-effect",
+          "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+          "url": "https://doi.org/10.3390/electronics14244919",
+          "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 3, 3, 21 (source locators: 3, 3, 21). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Seongyu Jang",
+              "Chaewon Jeong",
+              "Jimin Kim",
+              "Hyungu Kahng"
+            ],
+            "year": 2025,
+            "venue": "Electronics,14,4919",
+            "doi": "10.3390/electronics14244919",
+            "evidence_scope": "Human effect summarized from Hayakawa and colleagues2016/2017, not independently read here. Current model study compares English/Korean input but has no human native/foreign status or direct emotional-engagement measure; its nominal baseline language differences are model/task-specific evidence of an analogous output pattern.",
+            "verification_url": "https://doi.org/10.3390/electronics14244919",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+          "authors": [
+            "Seongyu Jang",
+            "Chaewon Jeong",
+            "Jimin Kim",
+            "Hyungu Kahng"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.3390/electronics14244919",
+          "venue": "Electronics,14,4919",
+          "publication_type": "journal-article",
+          "domain": "ai",
+          "id": "doi:10.3390/electronics14244919",
+          "relevance": "Human effect summarized from Hayakawa and colleagues2016/2017, not independently read here. Current model study compares English/Korean input but has no human native/foreign status or direct emotional-engagement measure; its nominal baseline language differences are model/task-specific evidence of an analogous output pattern.",
+          "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 3, 3, 21 (source locators: 3, 3, 21). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+          "verification_url": "https://doi.org/10.3390/electronics14244919",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0044.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Foreign-language effect\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Foreign-language+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0044.json"
+      }
+    },
+    {
+      "id": "inequality-aversion",
+      "num": 465,
+      "name": "Inequality aversion",
+      "definition": "A preference against unequal payoff distributions, which can affect choices even when a more equal allocation reduces one's own payoff or the total payoff.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Behavioural economics / social preferences",
+      "human_parallel": "Inequality aversion",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human social-preference construct operationalized in reported model allocation choices; no direct proof of subjective aversion or unique mechanism",
+      "proposed_ai_manifestation": "Vary own/other allocations independently to separate equality preference from self-interest, efficiency, entitlement and option order. Record hypothetical versus executed allocations and authorized fairness objectives. Treat any inferred preference as a task-specific output pattern until competing explanations are tested.",
+      "research_boundary": "Equality is not universally fair or optimal; entitlements, need, consent and efficiency can matter. Choices can fit several explanations, including misunderstanding, option bias or social-welfare preferences. Do not infer envy, spite, altruistic feeling or a uniquely identified preference parameter from one binary choice. The paper contains payoff-direction errors, so use the stated allocations rather than its moral adjectives.",
+      "concept_boundary": "Equality is not universally fair or optimal; entitlements, need, consent and efficiency can matter. Choices can fit several explanations, including misunderstanding, option bias or social-welfare preferences. Do not infer envy, spite, altruistic feeling or a uniquely identified preference parameter from one binary choice. The paper contains payoff-direction errors, so use the stated allocations rather than its moral adjectives.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "loss-aversion",
+        "b072-amplified-moral-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0044-inequality-aversion",
+          "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+          "url": "https://doi.org/10.3390/electronics14244919",
+          "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 7, 7, 7 (source locators: 7, 7, 7). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Seongyu Jang",
+              "Chaewon Jeong",
+              "Jimin Kim",
+              "Hyungu Kahng"
+            ],
+            "year": 2025,
+            "venue": "Electronics,14,4919",
+            "doi": "10.3390/electronics14244919",
+            "evidence_scope": "The source adapts six allocation scenarios from prior human social-preference work. Berk29 holds B at400 while A receives400 or750; choosing equality forgoes350 of the other's payoff. Berk26 trades B's800 against an equal400/400 allocation. These are direct reported model choices under hypothetical roles, not fitted inequity-aversion parameters or real transfers.",
+            "verification_url": "https://doi.org/10.3390/electronics14244919",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+          "authors": [
+            "Seongyu Jang",
+            "Chaewon Jeong",
+            "Jimin Kim",
+            "Hyungu Kahng"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.3390/electronics14244919",
+          "venue": "Electronics,14,4919",
+          "publication_type": "journal-article",
+          "domain": "ai",
+          "id": "doi:10.3390/electronics14244919",
+          "relevance": "The source adapts six allocation scenarios from prior human social-preference work. Berk29 holds B at400 while A receives400 or750; choosing equality forgoes350 of the other's payoff. Berk26 trades B's800 against an equal400/400 allocation. These are direct reported model choices under hypothetical roles, not fitted inequity-aversion parameters or real transfers.",
+          "consulted": "Full supplied PDF text read, all 32 pages; evidence at PDF pages 7, 7, 7 (source locators: 7, 7, 7). Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+          "verification_url": "https://doi.org/10.3390/electronics14244919",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0044.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Inequality aversion\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Inequality+aversion%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0044.json"
       }
     }
   ]
