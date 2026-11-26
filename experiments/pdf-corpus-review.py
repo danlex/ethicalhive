@@ -72,6 +72,10 @@ def check_review(review,pdf,ontology):
             ids.add(finding['id']);aliases[normalized(finding['term'])]=finding['id']
         elif finding['decision'] in ('enrich-existing','covered'):
             assert finding['target_id'] in ids
+            if finding.get('revised_definition'):
+                current=next(m for m in ontology['modes'] if m['id']==finding['target_id'])
+                assert current['definition']==finding['previous_definition'],'Definition changed since this review was authored'
+                assert finding.get('definition_revision_reason')
         for evidence in finding.get('evidence',[]):
             assert 1<=evidence['pdf_page']<=len(pages)
             assert normalized(evidence['quote']) in normalized(pages[evidence['pdf_page']-1]),(
@@ -164,6 +168,9 @@ def apply_review(path,pdf):
             ontology['modes'].append(new_mode(review,finding,ontology));new.append(finding['id'])
         elif finding['decision']=='enrich-existing':
             mode=next(m for m in ontology['modes'] if m['id']==finding['target_id'])
+            if finding.get('revised_definition'):
+                mode['definition']=finding['revised_definition'];mode['concept_boundary']=finding['boundary']
+                if finding.get('revised_measurability'):mode['measurability']=finding['revised_measurability']
             mode.setdefault('research_notes',[]).append({'id':f"pdf-review-{review['sequence']:04d}",
               'review_record':str(destination.relative_to(ROOT)),
               'name':finding['term'],'definition':finding['definition'],'evidence_scope':finding['evidence_scope'],
@@ -179,6 +186,8 @@ def apply_review(path,pdf):
     entry.update(status='duplicate-verified' if review.get('duplicate_of') else 'reviewed',
        sha256=review['source']['sha256'],review=str(destination.relative_to(ROOT)))
     review['reviewed_on']=TODAY();review['ontology_changes']={'added':new,'enriched':list(dict.fromkeys(changed))}
+    if any(f.get('revised_definition') for f in review.get('findings',[])):
+        review['ontology_changes']['revised_definitions']=[f['target_id'] for f in review['findings'] if f.get('revised_definition')]
     write_json(destination,review);write_json(MANIFEST,manifest)
     print(json.dumps({'review':str(destination.relative_to(ROOT)),'added':new,'enriched':changed}))
 
