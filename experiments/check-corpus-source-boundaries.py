@@ -22,4 +22,10 @@ for term in ('epistemic-injustice', 'participatory-extraction'):
     assert any(p['url'] == unrelated_url for p in research_papers(modes[term]))
     assert any(p['url'] == unrelated_url for p in modes[term]['selected_papers'])
 assert modes['participatory-extraction']['is_a'] == ['epistemic-injustice']
+class_review = json.loads((ROOT / 'references/pdf-reviews/0042.json').read_text())
+class_url = class_review['citation']['url']
+moral = modes['b075-moral-disengagement']
+assert all(p['url'] != class_url for p in available_papers(moral))
+assert all(p['url'] != class_url for p in moral['selected_papers'])
+assert class_url in source_coverage(moral)['reference_source_urls']
 print('PASS: homonym reference retained without filling a paper gap; relevant evidence and subtype preserved')

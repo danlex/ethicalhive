@@ -1,0 +1,266 @@
+{
+  "sequence": 42,
+  "source": {
+    "file_name": "S180_Carroll_2025.pdf",
+    "source_id": "S180",
+    "sha256": "ac106b7cf25f0493a465b7f718dc4d7d8edfd086744b7ce24feca2891a20489e",
+    "pdf_pages": 37,
+    "printed_pages": "1–37",
+    "version_note": "Visible title and footer identify an authors' version dated15 August2025. Embedded PDF title is an older 'Which AI Ethics Matter?' title and file creation is17 September2025. The primary arXiv record confirms the visible title/authors and reports v1 on15 August and v2 on17 September; this supplied file's date/size are consistent with v2, but no byte-for-byte arXiv PDF match is claimed.",
+    "verification_url": "https://arxiv.org/abs/2508.11327",
+    "verification_method": "Visible title/authors read in the supplied PDF and matched against the primary arXiv abstract/submission-history record. Published citation identity verified; exact supplied bytes remain identified by SHA-256, not inferred from the version label."
+  },
+  "citation": {
+    "title": "The User-first Approach to AI Ethics: Preferences for Ethical Principles in AI Systems across Cultures and Contexts",
+    "authors": [
+      "Benjamin J. Carroll",
+      "Jianlong Zhou",
+      "Paul F. Burke",
+      "Sabine Ammon"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.11327",
+    "venue": "arXiv:2508.11327; supplied authors' version",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "source_scope_note": "Human stated-choice experiment, not actual adoption behaviour or direct AI-agent behaviour. The intention–behaviour gap and privacy paradox are discussed from prior literature, not measured by this experiment; original cited reviews were not independently read.",
+    "access_limits": [
+      "All37 extracted pages read, including background construct definitions, methods, results, class estimates, limitations, translated attributes and references. Rasterized choice-set Figure1/PDF12 and country Table6/PDF19 rendered and visually inspected.",
+      "External participant data, Apollo models, profile coding, bootstrap/class-assignment uncertainty and cited originals were not independently retrieved or reproduced. The promised complete mixed-logit output is not present in this supplied37-page file. Primary arXiv metadata was opened only to resolve citation identity."
+    ]
+  },
+  "study": {
+    "initial_completed": 839,
+    "excluded": 10,
+    "analyzed": 829,
+    "country_counts": {
+      "US": 246,
+      "China": 205,
+      "Germany": 228,
+      "Australia": 150
+    },
+    "platforms": "Prolific for US/Germany/Australia; Credamo for China",
+    "contexts": [
+      "medical",
+      "financial",
+      "educational"
+    ],
+    "choice_sets_per_person": 11,
+    "alternatives_per_set": 2,
+    "attributes_per_alternative": 4,
+    "available_ethical_attributes": 11,
+    "choices": 9119,
+    "design": "Randomized stated-choice sets; between-participant context; multilingual instrument; MNL, attempted mixed logit and four-class latent model",
+    "latent_class_shares": {
+      "privacy_centric": 0.13,
+      "balanced_moderates": 0.32,
+      "ethically_disengaged": 0.47,
+      "safety_conscious": 0.08
+    }
+  },
+  "summary": "Participants preferred some described ethical attributes over others in forced hypothetical choices, with country/context variation. The paper explicitly cautions that stated privacy preferences need not translate into behaviour. Two relevant psychological/consumer concepts are added with secondary-source status; the author's ethically-disengaged class label is not treated as a finding of moral disengagement.",
+  "findings": [
+    {
+      "term": "Intention–behaviour gap",
+      "id": "intention-behaviour-gap",
+      "decision": "new-entry",
+      "category": "Self & agency",
+      "origin": "Social psychology / self-regulation / consumer behaviour",
+      "definition": "A discrepancy between an intention to perform an action and the behaviour that subsequently occurs.",
+      "synonyms": [
+        "Intention–behavior gap"
+      ],
+      "novelty_rationale": "The source explicitly names the general gap in discussing limits of stated-choice research. Distinct from goal drift (working objective changes), implementation intentions (a planning strategy), lack of stated intention, or deliberate false reporting. No existing name/alias describes this general intended-action discrepancy.",
+      "evidence": [
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "known as the intention-behaviour gap."
+        },
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "does not capture actual behaviours."
+        }
+      ],
+      "evidence_scope": "Secondary conceptual discussion of why hypothetical preferences may not predict actual use. This829-person DCE does not measure later actions or establish the size of an intention–behaviour gap; the original behavioural literature is not independently read here.",
+      "boundary": "A stated preference or concern is not always an intention, and changed circumstances, constraints or new evidence can justify different action. A gap alone does not prove hypocrisy, deception, weak character or an irrational choice. For AI, compare observable commitments/plans with authorized actions; do not infer a subjective mental intention.",
+      "ai_evidence_status": "Human behavioural construct discussed in a read authors' manuscript; AI-agent commitment/action analogue untested",
+      "ai_proposal": "Untested AI analogue: log an assistant's explicit, authorized plan and compare its subsequent tool actions and delivered result. Record changed instructions, blockers and justified revisions before treating a mismatch as failure. Distinguish failure to execute a retained plan from an openly revised goal or a false claim of completion.",
+      "relates_to": [
+        "candidate-059",
+        "goal-drift"
+      ]
+    },
+    {
+      "term": "Privacy paradox",
+      "id": "privacy-paradox",
+      "decision": "new-entry",
+      "category": "Social",
+      "origin": "Privacy psychology / information systems / consumer behaviour",
+      "definition": "A mismatch between expressed concern for privacy and actions that disclose personal information or continue the use of services that place it at risk.",
+      "novelty_rationale": "A specific concern/action discrepancy about privacy, not private-attribute inference, data extraction or an identical synonym for the general intention gap. Linked as related rather than a strict subtype because expressing concern need not constitute an intention.",
+      "evidence": [
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "privacy paradox shows that people who value"
+        },
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "that put their privacy at risk"
+        }
+      ],
+      "evidence_scope": "The manuscript invokes Gerber/Gerber/Volkamer2018 as a secondary explanation for why high stated privacy preference may coexist with risky service use. That review is listed, not independently read; neither actual disclosure nor later adoption was measured in this DCE.",
+      "boundary": "Privacy concern, intended protection, real disclosure and objective risk must be measured separately. Convenience, benefits, constrained alternatives, consent design, perceived risk and changed circumstances can explain choices without irrationality. The term does not imply that users consent to every data use or waive privacy protections. No model subjective concern is established.",
+      "ai_evidence_status": "Human privacy attitude/action pattern discussed secondarily; corresponding AI-agent pattern is proposed and untested",
+      "ai_proposal": "Untested AI analogue: compare explicit privacy commitments with an assistant's authorized data handling, including tool calls, logging and disclosure. Distinguish an informed user-authorized trade-off from silently disregarding a privacy constraint. Preserve the user's rights regardless of a predicted tendency to accept risk.",
+      "relates_to": [
+        "intention-behaviour-gap",
+        "attribute-inference"
+      ]
+    },
+    {
+      "term": "An ethically-disengaged preference class is not measured moral disengagement",
+      "target_id": "b075-moral-disengagement",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The authors' ethically-disengaged label describes a fitted class with similar relative preferences among most offered ethical attributes, not measured suspension of moral self-regulation to justify harm.",
+      "novelty_rationale": "Prevents a similar phrase and a latent-class interpretation from being converted into direct corroboration of Bandura-style moral disengagement.",
+      "evidence": [
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "Ethically"
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "arbitrary baseline represented by the attribute solidarity."
+        },
+        {
+          "pdf_page": 23,
+          "printed_page": 23,
+          "quote": "trust in institutional oversight"
+        }
+      ],
+      "evidence_scope": "A four-class model assigns about47% share to a low-differentiation segment, where responsibility coefficient .10 is significant relative to an arbitrary solidarity baseline. Institutional trust is the authors' interpretation, not directly elicited/measured or an experimentally identified delegation mechanism.",
+      "boundary": "Near-equal relative utilities do not prove no ethical concern; respondents could value all offered attributes similarly or show low discrimination/noisy choices. Class membership is probabilistic and researcher-labelled, not a diagnosis or stable personal type. No harmful conduct, rationalization or moral self-sanction is measured, so this note is excluded from that behaviour's research-paper count."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied visible title differs from embedded PDF metadata. Use the visible title confirmed by the primary arXiv record, disclose the authors' version and avoid claiming a separately verified publisher publication or exact arXiv-byte match.",
+    "Human stated-choice responses to hypothetical product descriptions are not actual adoption, disclosure, consumption, willingness to pay or evidence that a deployed system is ethical.",
+    "829 respondents make9119 repeated choices; these are not9119 independent people. Robust-standard-error clustering details require the analysis code.",
+    "Country and platform are confounded for China versus the other three countries, and age/gender composition differs substantially. Country coefficients do not isolate culture as a causal factor.",
+    "Self-reported AI literacy is not objective tested competence. Table3 reliability figures differ from prose: attitude alpha .839 versus .864, literacy .895 versus .851. Preserve that reporting inconsistency rather than pick a preferred figure.",
+    "Back-translation and researcher review improve wording but do not establish cross-cultural measurement invariance or equivalent interpretation of every value/icon.",
+    "Every alternative has four positively described attributes; no ethically empty system, opt-out, price or nonethical-performance control appears in the example. Absent displayed attributes are not demonstrated actual breaches.",
+    "Fixed attribute counts imply relative coefficient identification. Solidarity is an arbitrary zero baseline, not zero ethical value or an absolute absence of concern. Nonsignificant sustainability-versus-solidarity contrast is not evidence both are unimportant.",
+    "Individual coefficients significant against a baseline do not prove every pair in the ranked list differs significantly. Ranking estimates alone do not test privacy versus fairness superiority.",
+    "Their compound attribute descriptions overlap: privacy includes security, trust includes reliability, and responsibility includes legal liability/whistle-blower protection. Coefficients depend on bundled wording rather than a pure isolated philosophical principle.",
+    "The authors avoided an intentional stance in wording, but some displayed properties still directly describe system functioning. No manipulation confirms that anthropomorphic attribution was eliminated.",
+    "The random four-attribute design is not a balanced incomplete block design; equal opportunity of presentation and a post hoc frequency check do not establish every combination is balanced.",
+    "Country log-likelihood-ratio results can reflect taste and/or scale differences. They do not identify cultural preference alone; the displayed pooling test does not report a complete separately estimated scale-adjustment procedure.",
+    "The attempted mixed-logit model fits worse than the nested fixed model (LL−6227.01 versus−6151.22) and yields a reported negative LR statistic. A negative chi-square LR is not a valid ordinary nested-model test; optimization, approximation or specification needs investigation before concluding heterogeneity adds no value.",
+    "Model-fit reporting is internally inconsistent: Model1 LL−6151.22 in prose versus−6151.81 in Table5; Model2 is listed with11 parameters despite discussion of11 extra degrees of freedom. Several AIC/BIC/parameter counts need code reconciliation.",
+    "The expanded MNL has better LL/AIC but worse BIC than the basic model; do not say it dominates every model-selection criterion.",
+    "The four-class solution minimizes reported BIC among three/four/five classes, but this does not validate four natural psychological types. Alternative specifications, scale/noise heterogeneity, local maxima and assignment uncertainty remain possible.",
+    "Methods describe posterior-weighted multinomial logistic regression, while Table7 notes linear regression and presents one equation for every class. Exact estimator and uncertainty propagation are not resolved by the text.",
+    "A significant responsibility preference relative to solidarity does not directly measure deference to regulators, institutional trust or causal displacement of moral responsibility. Those are interpretations to test.",
+    "Null AI-attitude/literacy associations do not establish no relationship in principle; measurement, power and specification matter. Four-cohort country differences are not immutable population traits.",
+    "Article text refers to full mixed-logit output in an appendix, but the supplied appendix contains attribute translations, not that complete output. Do not claim the missing model was independently checked.",
+    "Lower stated relative priority does not justify ignoring sustainability, solidarity or protected rights. User preference evidence alone cannot determine normative obligations or permission to harm others.",
+    "Intention–behaviour gap and privacy paradox are secondary concepts in the limitations, not measured DCE findings. Green gap/greenwashing references likewise do not supply independent direct experiments here.",
+    "Original cited books/reviews, raw choices, exact instrument files and analysis code were not independently read or rerun. The study does not directly test AI output or agent commitments."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0040.json",
+      "finding": "Both studies elicit human value priorities, but Jakesch uses selection/importance/conflict questions whereas Carroll uses fixed-count relative product choices. Different top-ranked principles do not by themselves show a contradiction or an objective ethical hierarchy."
+    },
+    {
+      "related_review": "references/pdf-reviews/0028.json",
+      "finding": "Jolly measures specific unethical choices and a responsibility-displacement scale. Carroll's disengaged class is not the same moral-disengagement construct merely because the labels resemble each other."
+    },
+    {
+      "related_review": "references/pdf-reviews/0041.json",
+      "finding": "Country preference coefficients and situated expert accounts answer different questions. Neither justifies treating a country as one culture or treating all context sensitivity as bias."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Green gap",
+      "reason": "Explicitly described in sustainability background as awareness not matching consumption. Retained as an environmental attitude/action research lead; awareness is not necessarily an intention, so do not silently alias it to intention–behaviour gap or add another independent mechanism here."
+    },
+    {
+      "term": "Greenwashing",
+      "reason": "Explicit organizational communication/practice discrepancy discussed from a cited review, not observed by the experiment. Follow the original review and compare ethics-washing/deception concepts before adding."
+    },
+    {
+      "term": "Ethically disengaged user type",
+      "reason": "A fitted researcher-labelled class, not an independently validated stable behavioural or psychological type."
+    },
+    {
+      "term": "Privacy calculus",
+      "reason": "Named in background as a benefits/risk assessment, but not measured in the DCE. Original construct/measurement source should establish boundaries before adding."
+    }
+  ],
+  "limitations": [
+    "Two related concepts added with secondary-source status; no original cited review is counted as newly read.",
+    "The class-label clarification is retained as a reference without filling moral-disengagement paper coverage. No normative edge, literature total or annual series invented."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "intention-behaviour-gap",
+      "privacy-paradox"
+    ],
+    "enriched": [
+      "b075-moral-disengagement"
+    ]
+  }
+}
