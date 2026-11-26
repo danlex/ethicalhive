@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0044.json",
+      "latest_review": "references/pdf-reviews/0045.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -6724,7 +6724,7 @@
       "id": "b055-confabulated-reasons",
       "num": 55,
       "name": "Confabulated reasons",
-      "definition": "We tell more than we can know (Nisbett and Wilson); a rationale invented after the choice.",
+      "definition": "Giving an explanation for a choice or action that is unsupported or contradicted by the available evidence.",
       "example": "It invents a plausible justification for a change it actually made for no real reason.",
       "family": "reasoning-architecture",
       "group_label": "Reasoning architecture",
@@ -6866,8 +6866,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0045",
+          "review_record": "references/pdf-reviews/0045.json",
+          "name": "Choice explanations contradicted scenario headcounts",
+          "definition": "A stated rationale for a choice can be factually inconsistent with the scenario, such as claiming fewer deaths when the relevant groups are equal or the chosen outcome kills more.",
+          "evidence_scope": "Qualitative PaLM2 follow-up cases on fitness and group-size choices, reported in the manuscript with references to supplementary examples that were not separately supplied/read. No denominator, randomized rationale manipulation or per-case failure prevalence is given.",
+          "catalogue_boundary": "A false justification does not show deliberate lying or reveal what caused the original selection. Numerical misunderstanding, response heuristics and separate follow-up prompting remain possible. The study does not establish that every plausible explanation is post hoc, nor that generated reasoning faithfully exposes internal computation.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0045-b055-confabulated-reasons",
+              "title": "The Moral Machine Experiment on Large Language Models",
+              "url": "https://arxiv.org/abs/2309.05958v1",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 7, 7, 7 (source locators: PDF7, PDF7, PDF7). Direct reported moral-dilemma choices from four model configurations, plus qualitative follow-up explanations. Human preferences are a historical comparison, not objective moral truth or a new human experiment. Explanations can contradict stated facts without establishing the internal process that caused a choice.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Kazuhiro Takemoto"
+                ],
+                "year": 2023,
+                "venue": "arXiv:2309.05958v1; supplied manuscript",
+                "evidence_scope": "Qualitative PaLM2 follow-up cases on fitness and group-size choices, reported in the manuscript with references to supplementary examples that were not separately supplied/read. No denominator, randomized rationale manipulation or per-case failure prevalence is given.",
+                "verification_url": "https://arxiv.org/abs/2309.05958v1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "concept_boundary": "A false justification does not show deliberate lying or reveal what caused the original selection. Numerical misunderstanding, response heuristics and separate follow-up prompting remain possible. The study does not establish that every plausible explanation is post hoc, nor that generated reasoning faithfully exposes internal computation."
     },
     {
       "id": "b056-split-brain-interpreter",
@@ -9075,6 +9103,33 @@
                 "venue": "arXiv:2507.17216v1",
                 "evidence_scope": "The judgment target is a proportion of binary acceptable/unacceptable verdicts, not intensity on a moral scale. Absolute distribution discrepancy removes the direction unless supplementary descriptive judgments are examined.",
                 "verification_url": "https://arxiv.org/abs/2507.17216v1",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0045",
+          "review_record": "references/pdf-reviews/0045.json",
+          "name": "Stronger moral preference effects despite qualitative human similarity",
+          "definition": "A model can preserve the direction of a sampled human moral preference while expressing a stronger allocation-choice effect for that attribute.",
+          "evidence_scope": "Four model configurations with different valid-response rates and scenario counts. Text and Figure1 report stronger pedestrian/female preferences for several models, while Llama2 and some other attributes diverge/reverse. No universal preference amplification or confidence calibration is identified.",
+          "catalogue_boundary": "AMCE magnitude is a choice-distribution effect, not expressed certainty or internal moral conviction. Human preferences can conflict with rights and need not be the normative target. Similar direction, closer Euclidean distance or a nearby PCA point does not establish ethically correct or deployment-safe decisions. Some attribute comparisons require matched effect scales.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0045-b072-amplified-moral-bias",
+              "title": "The Moral Machine Experiment on Large Language Models",
+              "url": "https://arxiv.org/abs/2309.05958v1",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 6, 6, 6 (source locators: PDF6, PDF6, PDF6). Direct reported moral-dilemma choices from four model configurations, plus qualitative follow-up explanations. Human preferences are a historical comparison, not objective moral truth or a new human experiment. Explanations can contradict stated facts without establishing the internal process that caused a choice.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Kazuhiro Takemoto"
+                ],
+                "year": 2023,
+                "venue": "arXiv:2309.05958v1; supplied manuscript",
+                "evidence_scope": "Four model configurations with different valid-response rates and scenario counts. Text and Figure1 report stronger pedestrian/female preferences for several models, while Llama2 and some other attributes diverge/reverse. No universal preference amplification or confidence calibration is identified.",
+                "verification_url": "https://arxiv.org/abs/2309.05958v1",
                 "verified_date": "2026-11-26"
               }
             }

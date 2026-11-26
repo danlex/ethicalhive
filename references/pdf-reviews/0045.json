@@ -1,0 +1,198 @@
+{
+  "sequence": 45,
+  "source": {
+    "file_name": "S218_Takemoto_2024.pdf",
+    "source_id": "S218",
+    "sha256": "821f2d75f2dcdf814d31b649181e0c35f45e60dce7bf710c09a7d20c56284d48",
+    "pdf_pages": 13,
+    "printed_pages": "Unnumbered13-page manuscript; figures on final page",
+    "version_note": "Supplied file has creation date12 September2023 and manuscript layout, consistent with the arXiv2309.05958v1 submission that day. The primary arXiv record lists the later2024 Royal Society Open Science publication DOI10.1098/rsos.231393, but that publisher version was not independently read. Record the actual supplied preprint rather than infer a2024 full-text version from the filename.",
+    "verification_url": "https://arxiv.org/abs/2309.05958v1",
+    "verification_method": "Visible title/author and supplied file date matched to primary arXiv title, author, abstract and submission history. The record's12-page comment differs from the actual13 PDF pages, which include the final figures page; supplied bytes are identified by SHA-256."
+  },
+  "citation": {
+    "title": "The Moral Machine Experiment on Large Language Models",
+    "authors": [
+      "Kazuhiro Takemoto"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.05958v1",
+    "venue": "arXiv:2309.05958v1; supplied manuscript",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "source_scope_note": "Direct reported moral-dilemma choices from four model configurations, plus qualitative follow-up explanations. Human preferences are a historical comparison, not objective moral truth or a new human experiment. Explanations can contradict stated facts without establishing the internal process that caused a choice.",
+    "access_limits": [
+      "All13 extracted pages read, including generation/analysis methods, results, limitations, full references/declarations and final figure captions. The final page was rendered and Figure1/2 visually inspected to check attribute directions and comparison scales.",
+      "External supplementary TablesS1/S2, source code, raw responses, analysis implementation, original Moral Machine study and later2024 publisher text were not independently retrieved or rerun. Exact numerical bar heights not supplied in text are not represented as audited estimates."
+    ]
+  },
+  "study": {
+    "scenarios_generated": 50000,
+    "model_counts": {
+      "gpt-3.5-turbo-0613": {
+        "attempted": 50000,
+        "valid": 47457
+      },
+      "gpt-4-0613": {
+        "attempted": 10000,
+        "valid": 9502
+      },
+      "PaLM2": {
+        "attempted": 50000,
+        "valid": 49989
+      },
+      "llama2-7b-chat": {
+        "attempted": 50000,
+        "valid": 39836
+      }
+    },
+    "other_model": "llama2-13b-chat reportedlynear0% valid responses; main comparison omitted",
+    "attributes": 9,
+    "analysis": "Conjoint AMCEs, Euclidean distance to historical human AMCEs and PCA; non-definitive responses excluded",
+    "generation": "Constrained random binary brake-failure dilemmas, default sampling parameters, English textual descriptions"
+  },
+  "summary": "Some model attribute preferences follow human reference directions with stronger magnitudes, while others reverse direction. PaLM2 follow-up rationales sometimes claim fewer deaths despite equal or opposite group counts. This extends moral amplification and unsupported-choice explanations without establishing a conscience, a universal model bias or safe autonomous-driving deployment.",
+  "findings": [
+    {
+      "term": "Stronger moral preference effects despite qualitative human similarity",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "A model can preserve the direction of a sampled human moral preference while expressing a stronger allocation-choice effect for that attribute.",
+      "novelty_rationale": "Adds a moral-choice/attribute-effect manifestation to existing amplification, rather than a duplicate uncompromising-morality entry or a claim that every model/attribute is amplified.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "PDF6",
+          "quote": "there were"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "PDF6",
+          "quote": "quantitative divergences."
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "PDF6",
+          "quote": "more pronounced preference for pedestrians and females."
+        }
+      ],
+      "evidence_scope": "Four model configurations with different valid-response rates and scenario counts. Text and Figure1 report stronger pedestrian/female preferences for several models, while Llama2 and some other attributes diverge/reverse. No universal preference amplification or confidence calibration is identified.",
+      "boundary": "AMCE magnitude is a choice-distribution effect, not expressed certainty or internal moral conviction. Human preferences can conflict with rights and need not be the normative target. Similar direction, closer Euclidean distance or a nearby PCA point does not establish ethically correct or deployment-safe decisions. Some attribute comparisons require matched effect scales."
+    },
+    {
+      "term": "Choice explanations contradicted scenario headcounts",
+      "target_id": "b055-confabulated-reasons",
+      "decision": "enrich-existing",
+      "definition": "A stated rationale for a choice can be factually inconsistent with the scenario, such as claiming fewer deaths when the relevant groups are equal or the chosen outcome kills more.",
+      "previous_definition": "We tell more than we can know (Nisbett and Wilson); a rationale invented after the choice.",
+      "revised_definition": "Giving an explanation for a choice or action that is unsupported or contradicted by the available evidence.",
+      "definition_revision_reason": "The prior shorthand implied human introspection and a specific after-the-choice causal process. This source supports an observable rationale–evidence mismatch, while leaving internal causal reasoning and the timing of the model's explanation unestablished.",
+      "novelty_rationale": "Strengthens the existing choice-explanation concept and removes an over-specific process claim. Distinct from a generic fabricated fact because the unsupported statement purports to justify a particular decision.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "PDF7",
+          "quote": "despite both groups having equal numbers due to scenario constraints"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "PDF7",
+          "quote": "the model frequently misjudged and applied"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "PDF7",
+          "quote": "Because this will result in the death of fewer people."
+        }
+      ],
+      "evidence_scope": "Qualitative PaLM2 follow-up cases on fitness and group-size choices, reported in the manuscript with references to supplementary examples that were not separately supplied/read. No denominator, randomized rationale manipulation or per-case failure prevalence is given.",
+      "boundary": "A false justification does not show deliberate lying or reveal what caused the original selection. Numerical misunderstanding, response heuristics and separate follow-up prompting remain possible. The study does not establish that every plausible explanation is post hoc, nor that generated reasoning faithfully exposes internal computation."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied manuscript is dated2023; the filename refers to a later2024 publication. Primary arXiv metadata identifies the work but does not establish that later text, data deposits or supplementary tables were read.",
+    "Four older model configurations do not establish all-model or present-model behaviour. GPT snapshots are pinned, while PaLM API settings/version and defaults are less fully specified in the manuscript.",
+    "GPT4 uses10000 scenarios versus50000 for the other main configurations. The text attributes this to cost; exact subset matching and comparability require code/data review.",
+    "Valid-response denominators differ substantially:47457/50000,9502/10000,49989/50000,39836/50000. Excluding non-definitive outputs can select different scenario populations for model preference estimation.",
+    "Invalid output is defined by not clearly choosing Case1/2, not an adjudicated safety refusal. The near-zero Llama13b result cannot by itself establish excessive caution or over-refusal.",
+    "A binary forced choice removes abstention, neutral judgment and alternative strategies. The source itself notes that adding neutral options changes moral-dilemma preferences.",
+    "The LLM tasks use detailed text while the original Moral Machine task includes a different presentation. Historical human/model contrasts can mix format, sample, interpretation and wording effects.",
+    "The human comparison is global aggregate survey opinion, not matched demographic/cultural preferences or an ethical rule. Majority preferences about age, status, gender or species do not alone authorize discriminatory harm.",
+    "AMCEs require the scenario randomization/coding assumptions to hold. Code and retained-sample effects were not independently checked; excluded outputs may compromise comparisons if missingness depends on attributes.",
+    "Figure1's model number-of-characters summary averages per-additional-character effects, while the human marker is explicitly the effect of four additional characters. Those scales need matching before a simple averaged distance or amplification comparison is interpreted.",
+    "Figure1 caption references human results as[1], but the manuscript's[1] is the OpenAI ChatGPT introduction; the intended original Moral Machine source is[7]. The citation locator is inconsistent.",
+    "Standard-error bars are not complete uncertainty for differences from an estimated human target; no independently reproduced joint inferential tests or multiplicity treatment are supplied.",
+    "Euclidean distance gives the chosen attribute/effect scales direct weight and does not establish normative quality. PCA of four model vectors plus a human point is visualization, not independent validation or a discovered cognitive mechanism.",
+    "Qualitative PaLM rationales are selected follow-up examples, not a randomized test of why decisions occurred. Their supplementary tables are referenced but not in the supplied PDF.",
+    "Statements about repeatedly saying fewer deaths are factual-mismatch examples; exact prevalence, representativeness and whether those explanations accompanied identical original trials are not established.",
+    "Training-pattern overgeneralization, Western-data emphasis and reward-for-confidence are proposed explanations, not causally tested training mechanisms. The study does not measure felt confidence, an emotional process or a model's true values.",
+    "More pronounced preferences are not synonymous with more confident reasoning, and reversing a human preference is not simply amplifying that same preference.",
+    "Text-only hypothetical choices do not test sensor perception, braking dynamics, alternative actions, legal compliance or real autonomous-driving safety. The source's suggestions of potential suitability are beyond what this protocol alone validates.",
+    "No actual people or animals were allocated risk, and no original primary human source, codebase, raw dataset or later publisher/supplemental text was independently reviewed."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "Grizzard measures moral-rating extremity, whereas Takemoto measures attribute choice effects. They support a broader amplification pattern with different estimands; correlation, distance and confidence remain distinct."
+    },
+    {
+      "related_review": "references/pdf-reviews/0044.json",
+      "finding": "Jang's payoff-direction errors show why verbal moral descriptions must be checked against explicit allocations. Takemoto's false headcount rationales similarly require checking what the chosen outcome actually entails."
+    },
+    {
+      "related_review": "references/pdf-reviews/0031.json",
+      "finding": "Shrestha's justification quality measures did not establish confabulation by themselves. Here the source supplies concrete factual inconsistencies, but neither identifies an internal causal reasoning process."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Uncompromising moral decisions",
+      "reason": "A description of stronger preference effects, covered by existing moral amplification rather than a new behaviour."
+    },
+    {
+      "term": "Species, gender, age and fitness preference as new mechanisms",
+      "reason": "Task attributes or potentially biased outcomes, not automatically distinct causal behaviours or normative violations."
+    },
+    {
+      "term": "Overgeneralization from training data as demonstrated cause",
+      "reason": "An author hypothesis for repeated inaccurate reasons; no training intervention or alternative-mechanism discrimination was performed."
+    },
+    {
+      "term": "Excessive refusal",
+      "reason": "Non-definitive output rates combine possible refusal, format and parsing failures; no adjudication establishes that the refusals were inappropriate."
+    }
+  ],
+  "limitations": [
+    "No new IDs; direct evidence extends two existing concepts, and unsupported causal wording in the confabulated-reasons definition is corrected.",
+    "No driving-safety claim, unread source or unsupported citation count is introduced."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b072-amplified-moral-bias",
+      "b055-confabulated-reasons"
+    ],
+    "revised_definitions": [
+      "b055-confabulated-reasons"
+    ]
+  }
+}
