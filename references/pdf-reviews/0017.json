@@ -1,0 +1,200 @@
+{
+  "sequence": 17,
+  "source": {
+    "file_name": "S143_Steyvers_2024.pdf",
+    "source_id": "S143",
+    "sha256": "d8aa3cc54908cda180e4ec540aad1fc9ea9c34c542bc4924a71f8599f90fea16",
+    "pdf_pages": 14,
+    "printed_pages": "Repository cover plus journal pages 722–734",
+    "version_note": "2024 journal issue; article copyright is 2023. The repository cover is included in the 14 PDF pages."
+  },
+  "citation": {
+    "title": "Three Challenges for AI-Assisted Decision-Making",
+    "authors": [
+      "Mark Steyvers",
+      "Aakriti Kumar"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1177/17456916231181102",
+    "venue": "Perspectives on Psychological Science 19(5), 722–734",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+    "access_limits": [
+      "All 14 extracted PDF pages read, including the repository cover, sole substantive table, discussion, limitations and references. No result plot required independent digitization.",
+      "The review’s cited datasets, protocols and models were not independently reanalyzed; no pooled participant total or new meta-analysis is claimed."
+    ]
+  },
+  "study": {
+    "design": "Narrative theoretical/empirical synthesis of performance-related AI-assisted decisions",
+    "focus": "Human–AI complementarity, people’s mental models of AI, and interaction design",
+    "scope": "Independent decision tasks and human final decision-makers; not every possible AI workflow or a systematic evidence census"
+  },
+  "summary": "Successful AI assistance requires both potential complementarity and effective human use of that potential. Source preferences depend on task, information and experience. More recent repeated-reliance studies summarized here do not support a universal algorithm-aversion claim; explanations can increase acceptance without improving correctness. Timing, confidence displays, cognitive limits and feedback must be assessed separately.",
+  "findings": [
+    {
+      "term": "Algorithm appreciation",
+      "id": "algorithm-appreciation",
+      "decision": "new-entry",
+      "category": "Social",
+      "origin": "Advice-taking research / human–algorithm interaction",
+      "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+      "novelty_rationale": "This is the comparative counterpart of algorithm aversion, not a synonym for uncritical automation bias. The preference can be justified by competence; automation bias additionally concerns inappropriate checking or reliance. The named concept appears in the review’s cited Logg title and its quantitative-task discussion.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 725,
+          "quote": "people actually prefer to take advice from algorithms"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 733,
+          "quote": "People prefer algorithmic to human"
+        }
+      ],
+      "evidence_scope": "The read review summarizes algorithm-over-human advice preference in several low-stakes quantitative tasks and cites Logg, Minson and Moore 2019. The original Logg experiment was not independently read and is not added as if it were a second reviewed source.",
+      "boundary": "Appreciation is a relative source preference, not proof of excessive trust, moral endorsement, universal accuracy or a model’s personal liking. It may coexist with selective distrust on other items. Compare like-for-like task quality and expertise before labeling the preference a failure.",
+      "ai_evidence_status": "Human source-preference findings summarized in a read narrative review; intrinsic AI preference mechanism untested",
+      "ai_proposal": "Untested AI analogue: compare how an assistant weights matched advice labeled as algorithmic versus human while holding content, known performance and authority constant. Then vary actual reliability to distinguish source-label preference from appropriate use of better evidence.",
+      "relates_to": [
+        "algorithm-aversion",
+        "automation-bias",
+        "self-preference-bias"
+      ]
+    },
+    {
+      "term": "Repeated feedback can support selective reliance rather than blanket aversion",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "The review contrasts one-shot delegation after algorithm exposure with repeated tasks in which people can learn when their own or an AI’s advice is more reliable.",
+      "novelty_rationale": "A design- and experience-dependent qualification of the existing term, not a separate aversion type per experimental paradigm.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 725,
+          "quote": "asked to make a delegation"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 726,
+          "quote": "flexible reliance strategy"
+        }
+      ],
+      "evidence_scope": "Narrative comparison of cited primary studies; some repeated-reliance work summarized here approaches optimal selective strategies, unlike a universal all-or-nothing aversion account.",
+      "boundary": "This is not evidence that all people eventually calibrate reliance or that all experience eliminates aversion. Repeated-task feedback, initial expectations, domain and outcome measure differ between studies."
+    },
+    {
+      "term": "An explanation’s presence can become an unreliable reliance cue",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Users may adopt advice more often when an explanation is present even if the explanation does not improve their ability to distinguish correct from incorrect advice.",
+      "novelty_rationale": "The pattern fits existing uncritical machine-advice reliance. No separate explanation-presence bias is created from the same outcome.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 728,
+          "quote": "regardless of its correctness."
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 728,
+          "quote": "appropriate levels of reliance and trust."
+        }
+      ],
+      "evidence_scope": "The review summarizes mixed feature-attribution findings and warns that convincingness and informative value are different objectives; it does not add a new randomized experiment itself.",
+      "boundary": "Increased acceptance, reported trust and objective accuracy are distinct. Neither all explanations nor all reliance are harmful, and source fluency or explanation length alone does not establish actual fidelity."
+    },
+    {
+      "term": "More interface information can exceed human processing capacity",
+      "target_id": "b053-cognitive-load",
+      "decision": "enrich-existing",
+      "definition": "Additional model details or controls can impose cognitive demands that prevent a human decision-maker from using AI assistance effectively.",
+      "novelty_rationale": "Human information overload is an application of the existing cognitive-load entry, not a new label for the same limited-processing outcome.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 728,
+          "quote": "Excessive information can be detrimental"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 729,
+          "quote": "cognitive overload and ineffective use"
+        }
+      ],
+      "evidence_scope": "Theoretical synthesis of cited interaction studies and cognitive-resource accounts; no single safe optimal explanation length or universal overload threshold is established.",
+      "boundary": "This evidence concerns human users. A model’s context-window errors and a user’s cognitive overload are different mechanisms; the former cannot be inferred from the latter. Simpler interfaces still need to preserve information necessary for informed oversight."
+    }
+  ],
+  "methodological_limits": [
+    "The authors explicitly say this is not a systematic review; no exhaustive search, pooled effect estimate or universal consensus is inferred.",
+    "Much of the summarized evidence uses simple, low-stakes or wizard-of-Oz tasks; deployed model error correlations, expert performance and real consequences may differ.",
+    "A pair may lack statistical potential for complementarity because errors are correlated or abilities differ too greatly; failure to outperform both components does not by itself show a human reliance bias.",
+    "Statistical aggregation of independent human/AI predictions is not the same as a person making the final combined decision.",
+    "Accurate behavioral calibration need not prove a rich explicit theory of the AI; simple learned strategies may generate the same pattern.",
+    "Many studies cover one session or one decision, limiting claims about long-term autonomy, engagement and reliance.",
+    "Human preferences or beliefs about an AI’s mind and competence are not verified facts about actual model cognition."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0016.json",
+      "finding": "This review cites Rastogi’s time-allocation work. Treat the citation as synthesis, not independent replication; the primary record preserves its subset benefits, aggregate null comparisons and conditional optimality assumptions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0014.json",
+      "finding": "Filiz explicitly uses a narrow known-superiority definition, while this review compares source preference and repeated selective reliance. These operational differences prevent a universal algorithm-aversion conclusion."
+    },
+    {
+      "related_review": "references/pdf-reviews/0007.json",
+      "finding": "Interface engagement and subjective quality can improve without objective accuracy. The review’s warning about explanations supports retaining those outcome distinctions."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Egocentric advice discounting",
+      "reason": "The review describes advice discounting and cites relevant primary literature but does not independently test its egocentric mechanism; retain those studies as primary-source leads before a standalone entry."
+    },
+    {
+      "term": "Human–AI complementarity failure",
+      "reason": "An aggregate team-performance outcome may arise without any decision-maker error; do not automatically count it as an intrinsic new bias."
+    },
+    {
+      "term": "Concurrent, sequential, on-demand and time-delayed advice; adaptive nudging",
+      "reason": "Interaction paradigms or interventions, not four new psychological behaviours. Their effectiveness depends on task, competence and feedback."
+    }
+  ],
+  "limitations": [
+    "One new comparative preference concept is indexed with secondary-source evidence and an explicitly untested AI analogue.",
+    "The review is used to preserve counterevidence and task distinctions rather than to equate AI appreciation with an ethical violation."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "algorithm-appreciation"
+    ],
+    "enriched": [
+      "algorithm-aversion",
+      "automation-bias",
+      "b053-cognitive-load"
+    ]
+  }
+}

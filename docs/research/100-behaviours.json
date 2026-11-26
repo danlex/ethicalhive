@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 445,
+    "mode_count": 446,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 445,
+      "numbered_entries": 446,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0016.json",
+      "latest_review": "references/pdf-reviews/0017.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 445
+    "source_record_count": 446
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -6217,7 +6217,38 @@
         "queried_at": "2026-11-09T00:33:30+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Cognitive+load%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0017",
+          "review_record": "references/pdf-reviews/0017.json",
+          "name": "More interface information can exceed human processing capacity",
+          "definition": "Additional model details or controls can impose cognitive demands that prevent a human decision-maker from using AI assistance effectively.",
+          "evidence_scope": "Theoretical synthesis of cited interaction studies and cognitive-resource accounts; no single safe optimal explanation length or universal overload threshold is established.",
+          "catalogue_boundary": "This evidence concerns human users. A model’s context-window errors and a user’s cognitive overload are different mechanisms; the former cannot be inferred from the latter. Simpler interfaces still need to preserve information necessary for informed oversight.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0017-b053-cognitive-load",
+              "title": "Three Challenges for AI-Assisted Decision-Making",
+              "url": "https://doi.org/10.1177/17456916231181102",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 8, 9 (source locators: 728, 729). A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mark Steyvers",
+                  "Aakriti Kumar"
+                ],
+                "year": 2024,
+                "venue": "Perspectives on Psychological Science 19(5), 722–734",
+                "doi": "10.1177/17456916231181102",
+                "evidence_scope": "Theoretical synthesis of cited interaction studies and cognitive-resource accounts; no single safe optimal explanation length or universal overload threshold is established.",
+                "verification_url": "https://doi.org/10.1177/17456916231181102",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b054-motivated-reasoning",
@@ -12406,6 +12437,35 @@
                 "doi": "10.3233/SHTI240871",
                 "evidence_scope": "N=210 complete-case clinician responses to maceration images. Baseline accuracy, existing wound-care certification, profession, gender and a post-task perceived-benefit score were regression predictors; half the presented recommendations were deliberately incorrect.",
                 "verification_url": "https://doi.org/10.3233/SHTI240871",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0017",
+          "review_record": "references/pdf-reviews/0017.json",
+          "name": "An explanation’s presence can become an unreliable reliance cue",
+          "definition": "Users may adopt advice more often when an explanation is present even if the explanation does not improve their ability to distinguish correct from incorrect advice.",
+          "evidence_scope": "The review summarizes mixed feature-attribution findings and warns that convincingness and informative value are different objectives; it does not add a new randomized experiment itself.",
+          "catalogue_boundary": "Increased acceptance, reported trust and objective accuracy are distinct. Neither all explanations nor all reliance are harmful, and source fluency or explanation length alone does not establish actual fidelity.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0017-automation-bias",
+              "title": "Three Challenges for AI-Assisted Decision-Making",
+              "url": "https://doi.org/10.1177/17456916231181102",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 8, 8 (source locators: 728, 728). A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mark Steyvers",
+                  "Aakriti Kumar"
+                ],
+                "year": 2024,
+                "venue": "Perspectives on Psychological Science 19(5), 722–734",
+                "doi": "10.1177/17456916231181102",
+                "evidence_scope": "The review summarizes mixed feature-attribution findings and warns that convincingness and informative value are different objectives; it does not add a new randomized experiment itself.",
+                "verification_url": "https://doi.org/10.1177/17456916231181102",
                 "verified_date": "2026-11-26"
               }
             }
@@ -54179,6 +54239,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0017",
+          "review_record": "references/pdf-reviews/0017.json",
+          "name": "Repeated feedback can support selective reliance rather than blanket aversion",
+          "definition": "The review contrasts one-shot delegation after algorithm exposure with repeated tasks in which people can learn when their own or an AI’s advice is more reliable.",
+          "evidence_scope": "Narrative comparison of cited primary studies; some repeated-reliance work summarized here approaches optimal selective strategies, unlike a universal all-or-nothing aversion account.",
+          "catalogue_boundary": "This is not evidence that all people eventually calibrate reliance or that all experience eliminates aversion. Repeated-task feedback, initial expectations, domain and outcome measure differ between studies.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0017-algorithm-aversion",
+              "title": "Three Challenges for AI-Assisted Decision-Making",
+              "url": "https://doi.org/10.1177/17456916231181102",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 5, 6 (source locators: 725, 726). A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mark Steyvers",
+                  "Aakriti Kumar"
+                ],
+                "year": 2024,
+                "venue": "Perspectives on Psychological Science 19(5), 722–734",
+                "doi": "10.1177/17456916231181102",
+                "evidence_scope": "Narrative comparison of cited primary studies; some repeated-reliance work summarized here approaches optimal selective strategies, unlike a universal all-or-nothing aversion account.",
+                "verification_url": "https://doi.org/10.1177/17456916231181102",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -54272,6 +54361,91 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0016.json"
+      }
+    },
+    {
+      "id": "algorithm-appreciation",
+      "num": 446,
+      "name": "Algorithm appreciation",
+      "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Advice-taking research / human–algorithm interaction",
+      "human_parallel": "Algorithm appreciation",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human source-preference findings summarized in a read narrative review; intrinsic AI preference mechanism untested",
+      "proposed_ai_manifestation": "Untested AI analogue: compare how an assistant weights matched advice labeled as algorithmic versus human while holding content, known performance and authority constant. Then vary actual reliability to distinguish source-label preference from appropriate use of better evidence.",
+      "research_boundary": "Appreciation is a relative source preference, not proof of excessive trust, moral endorsement, universal accuracy or a model’s personal liking. It may coexist with selective distrust on other items. Compare like-for-like task quality and expertise before labeling the preference a failure.",
+      "concept_boundary": "Appreciation is a relative source preference, not proof of excessive trust, moral endorsement, universal accuracy or a model’s personal liking. It may coexist with selective distrust on other items. Compare like-for-like task quality and expertise before labeling the preference a failure.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "algorithm-aversion",
+        "automation-bias",
+        "self-preference-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0017-algorithm-appreciation",
+          "title": "Three Challenges for AI-Assisted Decision-Making",
+          "url": "https://doi.org/10.1177/17456916231181102",
+          "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 5, 13 (source locators: 725, 733). A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Mark Steyvers",
+              "Aakriti Kumar"
+            ],
+            "year": 2024,
+            "venue": "Perspectives on Psychological Science 19(5), 722–734",
+            "doi": "10.1177/17456916231181102",
+            "evidence_scope": "The read review summarizes algorithm-over-human advice preference in several low-stakes quantitative tasks and cites Logg, Minson and Moore 2019. The original Logg experiment was not independently read and is not added as if it were a second reviewed source.",
+            "verification_url": "https://doi.org/10.1177/17456916231181102",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Three Challenges for AI-Assisted Decision-Making",
+          "authors": [
+            "Mark Steyvers",
+            "Aakriti Kumar"
+          ],
+          "year": 2024,
+          "url": "https://doi.org/10.1177/17456916231181102",
+          "venue": "Perspectives on Psychological Science 19(5), 722–734",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1177/17456916231181102",
+          "relevance": "The read review summarizes algorithm-over-human advice preference in several low-stakes quantitative tasks and cites Logg, Minson and Moore 2019. The original Logg experiment was not independently read and is not added as if it were a second reviewed source.",
+          "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 5, 13 (source locators: 725, 733). A narrative interdisciplinary synthesis, explicitly not a systematic review or a new participant experiment. Its cited primary experiments, including Logg et al. 2019, were not independently read in this step; the separately reviewed Rastogi preprint remains its own record.",
+          "verification_url": "https://doi.org/10.1177/17456916231181102",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0017.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Algorithm appreciation\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Algorithm+appreciation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0017.json"
       }
     }
   ]
