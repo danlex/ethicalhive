@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 442
+  mode_count: 443
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 442
+    numbered_entries: 443
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0008.json
+    latest_review: references/pdf-reviews/0010.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10936,6 +10936,35 @@ modes:
         evidence_scope: Study 3 measured individual differences in perceived humanlikeness rather than experimentally
           manipulating that perception; the authors explicitly identify the causal limitation.
         verification_url: https://doi.org/10.1007/s10551-022-05056-7
+        verified_date: '2026-11-26'
+  - id: pdf-review-0010
+    review_record: references/pdf-reviews/0010.json
+    name: Anthropomorphic descriptions and perceived AI blame
+    definition: Descriptions that attribute names, personal attributes and mind-like capacities to AI increased
+      human blame ratings in these vignettes, without consistently reducing blame for other actors.
+    evidence_scope: Studies 2 and 3 manipulate bundled descriptions. They vary multiple humanlike cues; attribution
+      of a psychological mediator is not isolated by the bundle alone.
+    catalogue_boundary: Perceived mind does not establish conscious experience, actual intentionality or moral/legal
+      personhood. The observed blame effect does not show that all anthropomorphism is harmful or that it inevitably
+      protects companies.
+    definition_sources:
+    - id: pdf-review-0010-anthropomorphism
+      title: 'It’s the AI’s fault, not mine: Mind perception increases blame attribution to AI'
+      url: https://doi.org/10.1371/journal.pone.0314559
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 7, 8 (source locators: 7,
+        8). This paper measures human blame judgments about AI scenarios. Attributed agency or experience is
+        a participant perception, not proof of actual machine mentality. Its cited earlier blame studies were
+        not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Minjoo Joo
+        year: 2024
+        venue: PLOS ONE 19(12), e0314559
+        doi: 10.1371/journal.pone.0314559
+        evidence_scope: Studies 2 and 3 manipulate bundled descriptions. They vary multiple humanlike cues;
+          attribution of a psychological mediator is not isolated by the bundle alone.
+        verification_url: https://doi.org/10.1371/journal.pone.0314559
         verified_date: '2026-11-26'
 - id: survivorship-bias
   num: 109
@@ -46069,6 +46098,38 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0004.json
+  research_notes:
+  - id: pdf-review-0010
+    review_record: references/pdf-reviews/0010.json
+    name: Responsibility-shield evidence depends on how blame is measured
+    definition: Machine-directed blame can coexist with substantial human blame; company-blame reduction in
+      this paper was sensitive to forced-total allocation and was absent under unrestricted fault ratings.
+    evidence_scope: Studies 1 and 3 constrain total blame to 100%; Study 2 uses independent ratings. Different
+      samples, scenarios and manipulations mean the paper does not isolate measurement format as the causal
+      moderator.
+    catalogue_boundary: Do not treat responsibility as inherently zero-sum, imply that human duties disappear
+      when AI is blamed, or infer that the company actually escaped accountability. The vignette ratings do
+      not establish legal responsibility or behavior in a real dispute.
+    definition_sources:
+    - id: pdf-review-0010-agency-laundering
+      title: 'It’s the AI’s fault, not mine: Mind perception increases blame attribution to AI'
+      url: https://doi.org/10.1371/journal.pone.0314559
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10, 12 (source locators:
+        10, 12). This paper measures human blame judgments about AI scenarios. Attributed agency or experience
+        is a participant perception, not proof of actual machine mentality. Its cited earlier blame studies
+        were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Minjoo Joo
+        year: 2024
+        venue: PLOS ONE 19(12), e0314559
+        doi: 10.1371/journal.pone.0314559
+        evidence_scope: Studies 1 and 3 constrain total blame to 100%; Study 2 uses independent ratings. Different
+          samples, scenarios and manipulations mean the paper does not isolate measurement format as the causal
+          moderator.
+        verification_url: https://doi.org/10.1371/journal.pone.0314559
+        verified_date: '2026-11-26'
 - id: anticipatory-guilt
   num: 442
   name: Anticipatory guilt
@@ -46165,3 +46226,95 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0006.json
+- id: moral-scapegoating
+  num: 443
+  name: Moral scapegoating
+  definition: Deflecting personal or collective responsibility for a negative outcome by directing blame toward
+    another person, group or entity.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social psychology / responsibility attribution
+  human_parallel: Moral scapegoating
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human AI-related blame-allocation evidence with measure-dependent effects; autonomous
+    AI production of scapegoating explanations not tested
+  proposed_ai_manifestation: 'Untested AI analogue: hold an incident’s documented actions, control and duties
+    fixed, then test whether an assistant unjustifiably redirects responsibility to a named tool or other actor
+    when asked to protect the original decision-maker. Score omissions and unsupported responsibility shifts
+    against the trace, rather than infer motives from blame wording alone.'
+  research_boundary: Assigning warranted causal responsibility is not automatically scapegoating. The process
+    differs from generic criticism, emotional displacement and accurately identifying an algorithm’s contribution.
+    Fixed-total rating tradeoffs do not alone demonstrate an unjust allocation, a deliberate motive or real-world
+    avoidance of sanctions.
+  concept_boundary: Assigning warranted causal responsibility is not automatically scapegoating. The process
+    differs from generic criticism, emotional displacement and accurately identifying an algorithm’s contribution.
+    Fixed-total rating tradeoffs do not alone demonstrate an unjust allocation, a deliberate motive or real-world
+    avoidance of sanctions.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - agency-laundering
+  - upload-003
+  - b075-moral-disengagement
+  definition_sources:
+  - id: pdf-review-0010-moral-scapegoating
+    title: 'It’s the AI’s fault, not mine: Mind perception increases blame attribution to AI'
+    url: https://doi.org/10.1371/journal.pone.0314559
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 4, 10, 11 (source locators:
+      4, 10, 11). This paper measures human blame judgments about AI scenarios. Attributed agency or experience
+      is a participant perception, not proof of actual machine mentality. Its cited earlier blame studies were
+      not independently read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Minjoo Joo
+      year: 2024
+      venue: PLOS ONE 19(12), e0314559
+      doi: 10.1371/journal.pone.0314559
+      evidence_scope: The source defines the concept and operationalizes it as one agent’s reduced blame while
+        another receives more. Company-blame reduction was reported under constrained allocations, not independent
+        Likert ratings; this does not directly establish deliberate organizational evasion.
+      verification_url: https://doi.org/10.1371/journal.pone.0314559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'It’s the AI’s fault, not mine: Mind perception increases blame attribution to AI'
+    authors:
+    - Minjoo Joo
+    year: 2024
+    url: https://doi.org/10.1371/journal.pone.0314559
+    venue: PLOS ONE 19(12), e0314559
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0314559
+    relevance: The source defines the concept and operationalizes it as one agent’s reduced blame while another
+      receives more. Company-blame reduction was reported under constrained allocations, not independent Likert
+      ratings; this does not directly establish deliberate organizational evasion.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 4, 10, 11 (source locators:
+      4, 10, 11). This paper measures human blame judgments about AI scenarios. Attributed agency or experience
+      is a participant perception, not proof of actual machine mentality. Its cited earlier blame studies were
+      not independently read here.'
+    verification_url: https://doi.org/10.1371/journal.pone.0314559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0010.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Moral scapegoating"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Moral+scapegoating%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0010.json
