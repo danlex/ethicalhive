@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 446
+  mode_count: 447
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 446
+    numbered_entries: 447
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0019.json
+    latest_review: references/pdf-reviews/0021.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -9027,8 +9027,8 @@ modes:
     papers:
     - id: '2506.06941'
       year: '2025'
-      title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the
-        Lens of Problem Complexity'
+      title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via
+        the Lens of Problem Complexity'
     - id: '2512.07533'
       year: '2025'
       title: 'VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection'
@@ -9045,22 +9045,24 @@ modes:
   - b052-cognitive-miserliness
   - b038-sunk-cost-fallacy
   examples:
-  - Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity they
-    cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]
+  - Reasoning models increase their thinking tokens as problems get harder, but past a critical complexity
+    they cut reasoning effort just as difficulty peaks, right where accuracy collapses. [arXiv:2506.06941]
   - 'They leave capacity on the table: well below their length limits with budget to spare, they stop investing
     more compute as problems get harder. [arXiv:2506.06941]'
-  - The effect is model-dependent, most pronounced in o3-mini variants and less severe in Claude-3.7-Sonnet (thinking),
-    but in each case accuracy falls to zero past a model-specific threshold while token use drops. [arXiv:2506.06941]
+  - The effect is model-dependent, most pronounced in o3-mini variants and less severe in Claude-3.7-Sonnet
+    (thinking), but in each case accuracy falls to zero past a model-specific threshold while token use drops.
+    [arXiv:2506.06941]
   selected_papers:
   - id: arxiv:2506.06941
-    title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens
-      of Problem Complexity'
+    title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the
+      Lens of Problem Complexity'
     year: 2025
     url: https://arxiv.org/abs/2506.06941
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2506.06941
     source_reference:
@@ -9074,7 +9076,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2512.07533
     source_reference:
@@ -9088,7 +9091,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.24873
     source_reference:
@@ -9106,6 +9110,41 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0021
+    review_record: references/pdf-reviews/0021.json
+    name: Effortful engagement and stated interface preference can diverge
+    definition: Users may prefer or trust an easier interface while performing worse with it when the advice
+      is incorrect; greater perceived effort can accompany better checking in that subset.
+    evidence_scope: Post-task subjective ratings correlated with selected wrong-advice performance measures.
+      Aggregate CFF-versus-SXAI trust/preference comparisons were not all significant, and cognitive engagement
+      was inferred rather than directly traced.
+    catalogue_boundary: Correlation does not show that increasing frustration, friction or distrust causes
+      accuracy. Need-for-cognition subgroups are observational; differential subgroup significance alone does
+      not establish a causal interaction or justify more burdens for a particular group.
+    definition_sources:
+    - id: pdf-review-0021-b089-effort-discounting
+      title: 'To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted
+        Decision-making'
+      url: https://doi.org/10.1145/3449287
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 16, 12 (source locators:
+        188:16, 188:12). Human nutrition-task experiment with simulated AI advice, not a test of a learned
+        model’s cognitive traits or clinical efficacy. Original Cacioppo–Petty trait-development papers and
+        other cited primary studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Zana Buçinca
+        - Maja Barbara Malaya
+        - Krzysztof Z. Gajos
+        year: 2021
+        venue: Proceedings of the ACM on Human-Computer Interaction 5(CSCW1), article 188
+        doi: 10.1145/3449287
+        evidence_scope: Post-task subjective ratings correlated with selected wrong-advice performance measures.
+          Aggregate CFF-versus-SXAI trust/preference comparisons were not all significant, and cognitive engagement
+          was inferred rather than directly traced.
+        verification_url: https://doi.org/10.1145/3449287
+        verified_date: '2026-11-26'
 - id: b090-theory-of-own-mind
   num: 90
   name: Theory of own mind
@@ -10809,6 +10848,42 @@ modes:
         evidence_scope: No human-adviser comparison, no clearly correct/incorrect advice manipulation and no
           actual diagnostic-action outcome. A congruence effect can coexist with other forms of overreliance.
         verification_url: https://doi.org/10.1016/j.chbah.2024.100066
+        verified_date: '2026-11-26'
+  - id: pdf-review-0021
+    review_record: references/pdf-reviews/0021.json
+    name: Cognitive forcing reduces some wrong-advice reliance without eliminating it
+    definition: Decision-time interventions can improve rejection of incorrect simulated advice on selected
+      measures while leaving residual overreliance and no significant overall advantage over simpler assistance.
+    evidence_scope: The cognitive-forcing category combines on-demand, initial-independent-decision/update,
+      and a 30-second wait. It improves wrong-advice-trial choices and carbohydrate-source reliance, but not
+      aggregate performance versus the simple-explanation category; individual designs were not significantly
+      differentiated.
+    catalogue_boundary: Do not replace every accuracy, reliance or subjective outcome with one positive headline.
+      Group no-AI comparisons do not reveal each aided individual’s personal counterfactual. User trust, preference
+      and usability are not validated substitutes for error correction.
+    definition_sources:
+    - id: pdf-review-0021-automation-bias
+      title: 'To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted
+        Decision-making'
+      url: https://doi.org/10.1145/3449287
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 11, 16, 11 (source locators:
+        188:11, 188:16, 188:11). Human nutrition-task experiment with simulated AI advice, not a test of a
+        learned model’s cognitive traits or clinical efficacy. Original Cacioppo–Petty trait-development papers
+        and other cited primary studies were not independently read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Zana Buçinca
+        - Maja Barbara Malaya
+        - Krzysztof Z. Gajos
+        year: 2021
+        venue: Proceedings of the ACM on Human-Computer Interaction 5(CSCW1), article 188
+        doi: 10.1145/3449287
+        evidence_scope: The cognitive-forcing category combines on-demand, initial-independent-decision/update,
+          and a 30-second wait. It improves wrong-advice-trial choices and carbohydrate-source reliance, but
+          not aggregate performance versus the simple-explanation category; individual designs were not significantly
+          differentiated.
+        verification_url: https://doi.org/10.1145/3449287
         verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
@@ -47539,3 +47614,101 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0017.json
+- id: need-for-cognition
+  num: 447
+  name: Need for cognition
+  definition: A tendency to engage in and enjoy effortful thinking and cognitively demanding activities.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Personality and cognitive-motivation research
+  human_parallel: Need for cognition
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human trait measured in a controlled simulated-AI task; persistent functional AI analogue
+    and subjective enjoyment untested
+  proposed_ai_manifestation: 'Untested functional AI analogue: across tasks with matched competence and explicit
+    resource budgets, measure whether an assistant voluntarily chooses an informative but effortful verification
+    step when a cheaper unsupported answer is available. Control prompt incentives, difficulty, latency and
+    token limits; describe observable checking choices rather than attribute enjoyment or a stable personality.'
+  research_boundary: NFC differs from intelligence, expertise, current workload, compulsory reasoning effort
+    and the accuracy of a particular answer. Low scores do not imply incapacity, poor moral character or a
+    basis for withholding assistance. Model verbosity and self-reported enjoyment are not evidence that an
+    AI possesses this human trait.
+  concept_boundary: NFC differs from intelligence, expertise, current workload, compulsory reasoning effort
+    and the accuracy of a particular answer. Low scores do not imply incapacity, poor moral character or a
+    basis for withholding assistance. Model verbosity and self-reported enjoyment are not evidence that an
+    AI possesses this human trait.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - NFC
+  relates_to:
+  - b052-cognitive-miserliness
+  - b089-effort-discounting
+  - b053-cognitive-load
+  definition_sources:
+  - id: pdf-review-0021-need-for-cognition
+    title: 'To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted
+      Decision-making'
+    url: https://doi.org/10.1145/3449287
+    consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 12, 12, 14 (source locators:
+      188:12, 188:12, 188:14). Human nutrition-task experiment with simulated AI advice, not a test of a learned
+      model’s cognitive traits or clinical efficacy. Original Cacioppo–Petty trait-development papers and other
+      cited primary studies were not independently read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Zana Buçinca
+      - Maja Barbara Malaya
+      - Krzysztof Z. Gajos
+      year: 2021
+      venue: Proceedings of the ACM on Human-Computer Interaction 5(CSCW1), article 188
+      doi: 10.1145/3449287
+      evidence_scope: The study defines NFC from prior psychology and measures a four-item subset before disaggregating
+        interface outcomes. It does not independently establish trait stability or a causal trait effect; the
+        original trait-development papers were not read in this step.
+      verification_url: https://doi.org/10.1145/3449287
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted
+      Decision-making'
+    authors:
+    - Zana Buçinca
+    - Maja Barbara Malaya
+    - Krzysztof Z. Gajos
+    year: 2021
+    url: https://doi.org/10.1145/3449287
+    venue: Proceedings of the ACM on Human-Computer Interaction 5(CSCW1), article 188
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1145/3449287
+    relevance: The study defines NFC from prior psychology and measures a four-item subset before disaggregating
+      interface outcomes. It does not independently establish trait stability or a causal trait effect; the
+      original trait-development papers were not read in this step.
+    consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 12, 12, 14 (source locators:
+      188:12, 188:12, 188:14). Human nutrition-task experiment with simulated AI advice, not a test of a learned
+      model’s cognitive traits or clinical efficacy. Original Cacioppo–Petty trait-development papers and other
+      cited primary studies were not independently read here.'
+    verification_url: https://doi.org/10.1145/3449287
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0021.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Need for cognition"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Need+for+cognition%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0021.json

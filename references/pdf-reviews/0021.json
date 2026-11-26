@@ -1,0 +1,206 @@
+{
+  "sequence": 21,
+  "source": {
+    "file_name": "S145_Bucinca_2021.pdf",
+    "source_id": "S145",
+    "sha256": "c0c6983901488b46ea3951fb29f96a9420f87952a46816824826d0320d175989",
+    "pdf_pages": 21,
+    "printed_pages": "188:1–188:21",
+    "version_note": "Supplied arXiv:2102.09692v1 is a publisher-formatted accepted article with the PACM HCI citation and DOI printed on page 1. No later revision or separate second publication is counted."
+  },
+  "citation": {
+    "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+    "authors": [
+      "Zana Buçinca",
+      "Maja Barbara Malaya",
+      "Krzysztof Z. Gajos"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.1145/3449287",
+    "venue": "Proceedings of the ACM on Human-Computer Interaction 5(CSCW1), article 188",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "source_scope_note": "Human nutrition-task experiment with simulated AI advice, not a test of a learned model’s cognitive traits or clinical efficacy. Original Cacioppo–Petty trait-development papers and other cited primary studies were not independently read here.",
+    "access_limits": [
+      "All 21 extracted pages read, including procedure, all six result tables, plots’ captions, individual-difference analysis, limitations and references. Table 2 on PDF page 11 was rendered and visually inspected; plots were not independently digitized.",
+      "Raw data, questionnaires beyond their reported items and analysis code were not obtained or rerun. The three additional exploratory interfaces were explicitly outside this paper’s reported results."
+    ]
+  },
+  "study": {
+    "recruited": 260,
+    "analysis_n": 199,
+    "exclusions": "49 repeatedly chose ingredients absent from the image and had zero task accuracy; 12 assigned only to unreported exploratory conditions",
+    "design": "Mixed incomplete between/within-subject assignment to two of nine interfaces; six analyzed conditions include no AI, two simple-explanation designs and three forcing designs",
+    "task": "Replace the highest-carbohydrate ingredient and select a replacement optimizing a defined carbohydrate/flavor score",
+    "advice": "Simulated 75%-accurate recognition, with controlled omissions generating incorrect advice",
+    "trait": "Four-item need-for-cognition subset measured after the first block, then median-split"
+  },
+  "summary": "Cognitive-forcing designs improved choices on incorrect-advice trials relative to simple explanations, but remained worse than no AI on those trials and did not significantly improve aggregate performance over simple explanations. Wrong-advice reliance declined significantly for identifying the carbohydrate source, not for every overall-decision reliance metric. Preference/trust and performance relationships were outcome-dependent. Need-for-cognition disaggregation suggested unequal benefits, without randomization of the trait.",
+  "findings": [
+    {
+      "term": "Need for cognition",
+      "id": "need-for-cognition",
+      "synonyms": [
+        "NFC"
+      ],
+      "decision": "new-entry",
+      "category": "Self & agency",
+      "origin": "Personality and cognitive-motivation research",
+      "definition": "A tendency to engage in and enjoy effortful thinking and cognitively demanding activities.",
+      "novelty_rationale": "Cognitive miserliness describes a shortcut-taking pattern; effort discounting concerns the cost of mental work. Need for cognition is a measured individual-difference construct concerning engagement and enjoyment, not the same failure mode or simply intelligence.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "188:12",
+          "quote": "a stable personality"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": "188:12",
+          "quote": "how much a person enjoys engaging in cognitively demanding activities"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": "188:14",
+          "quote": "at the median of the NFC"
+        }
+      ],
+      "evidence_scope": "The study defines NFC from prior psychology and measures a four-item subset before disaggregating interface outcomes. It does not independently establish trait stability or a causal trait effect; the original trait-development papers were not read in this step.",
+      "boundary": "NFC differs from intelligence, expertise, current workload, compulsory reasoning effort and the accuracy of a particular answer. Low scores do not imply incapacity, poor moral character or a basis for withholding assistance. Model verbosity and self-reported enjoyment are not evidence that an AI possesses this human trait.",
+      "ai_evidence_status": "Human trait measured in a controlled simulated-AI task; persistent functional AI analogue and subjective enjoyment untested",
+      "ai_proposal": "Untested functional AI analogue: across tasks with matched competence and explicit resource budgets, measure whether an assistant voluntarily chooses an informative but effortful verification step when a cheaper unsupported answer is available. Control prompt incentives, difficulty, latency and token limits; describe observable checking choices rather than attribute enjoyment or a stable personality.",
+      "relates_to": [
+        "b052-cognitive-miserliness",
+        "b089-effort-discounting",
+        "b053-cognitive-load"
+      ]
+    },
+    {
+      "term": "Cognitive forcing reduces some wrong-advice reliance without eliminating it",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Decision-time interventions can improve rejection of incorrect simulated advice on selected measures while leaving residual overreliance and no significant overall advantage over simpler assistance.",
+      "novelty_rationale": "A tested intervention boundary within automation bias, not a new behaviour named after each interface.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": "188:11",
+          "quote": "They also overrelied less, but not significantly so."
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": "188:16",
+          "quote": "Our results did not provide support for the hypothesis (H1b)"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": "188:11",
+          "quote": "overrelied significantly less"
+        }
+      ],
+      "evidence_scope": "The cognitive-forcing category combines on-demand, initial-independent-decision/update, and a 30-second wait. It improves wrong-advice-trial choices and carbohydrate-source reliance, but not aggregate performance versus the simple-explanation category; individual designs were not significantly differentiated.",
+      "boundary": "Do not replace every accuracy, reliance or subjective outcome with one positive headline. Group no-AI comparisons do not reveal each aided individual’s personal counterfactual. User trust, preference and usability are not validated substitutes for error correction."
+    },
+    {
+      "term": "Effortful engagement and stated interface preference can diverge",
+      "target_id": "b089-effort-discounting",
+      "decision": "enrich-existing",
+      "definition": "Users may prefer or trust an easier interface while performing worse with it when the advice is incorrect; greater perceived effort can accompany better checking in that subset.",
+      "novelty_rationale": "Adds a bounded human interaction finding to effort-related decision behaviour, not a universal law that harder interfaces or longer deliberation are better.",
+      "evidence": [
+        {
+          "pdf_page": 16,
+          "printed_page": "188:16",
+          "quote": "a trade-off"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": "188:12",
+          "quote": "Trust and preference were significantly negatively correlated"
+        }
+      ],
+      "evidence_scope": "Post-task subjective ratings correlated with selected wrong-advice performance measures. Aggregate CFF-versus-SXAI trust/preference comparisons were not all significant, and cognitive engagement was inferred rather than directly traced.",
+      "boundary": "Correlation does not show that increasing frustration, friction or distrust causes accuracy. Need-for-cognition subgroups are observational; differential subgroup significance alone does not establish a causal interaction or justify more burdens for a particular group."
+    }
+  ],
+  "methodological_limits": [
+    "A single low-stakes nutrition substitution task using crowdworkers, not professional clinical decisions or patient outcomes.",
+    "No learned AI was trained; recommendation accuracy and error type were controlled by image-recognition omissions and a lookup table.",
+    "Flavor similarity is a molecule-overlap score and the optimization target uses a harmonic mean; correct in this task does not establish real taste preference or clinical nutritional appropriateness.",
+    "The task requires two discrete choices. Overall-decision accuracy, source detection and wrong-advice agreement are different metrics with different significance patterns.",
+    "199 retained participants encountered only two of nine interfaces, with three interfaces unreported. No individual forcing design can be declared superior from the reported nonsignificant within-category comparisons.",
+    "Four-item NFC measurement and a median split simplify a continuous construct and were obtained after the first experimental block. A causal moderator or lifelong category cannot be inferred.",
+    "The paper reports separately significant effects in high-NFC and nonsignificant effects in low-NFC groups, but these alone are not a formal between-group interaction test.",
+    "Pooled decision-frequency chi-square tests include repeated trials; participant-adjusted mixed-model results should be distinguished from treating every trial as an independent person.",
+    "Benefits on wrong-advice trials do not amount to significant overall gains against simple explanations; no complete elimination of overreliance was found.",
+    "Long-term adoption and intervention-generated inequalities are concerns informed by short-session ratings and subgroup patterns, not observed longitudinal exclusion or uptake."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0017.json",
+      "finding": "The Steyvers–Kumar review cites this study. This primary-source reading now supplies exact outcome distinctions; the review citation must not be counted as an independent replication."
+    },
+    {
+      "related_review": "references/pdf-reviews/0016.json",
+      "finding": "Both studies find benefits concentrated on incorrect-advice subsets without significant overall superiority over other collaborative conditions. Their timings, simulations, tasks and correctness definitions differ."
+    },
+    {
+      "related_review": "references/pdf-reviews/0007.json",
+      "finding": "Kupfer invoked cognitive motivation but did not measure NFC. This source supplies a measured individual-difference construct, without retrospectively claiming that it explained Kupfer’s results."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Cognitive forcing functions",
+      "reason": "A family of interventions, not a new psychological behaviour. Store its tested effects within relevant reliance and effort entries."
+    },
+    {
+      "term": "Intervention-generated inequalities",
+      "reason": "An outcome-level fairness risk defined by unequal benefit, not a standalone observed intrinsic behaviour of the AI. The short-session median-split analysis is insufficient to establish long-term unequal access."
+    },
+    {
+      "term": "Reactance to unsolicited advice",
+      "reason": "Already covered by Psychological reactance and only invoked as a rationale here; the primary reactance paper was not independently read."
+    }
+  ],
+  "limitations": [
+    "One new human motivational construct is indexed with explicit trait/AI boundaries.",
+    "The paper’s positive headline is preserved alongside aggregate null comparisons, metric-specific reliance results and secondary-source limits."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "need-for-cognition"
+    ],
+    "enriched": [
+      "automation-bias",
+      "b089-effort-discounting"
+    ]
+  }
+}
