@@ -1,0 +1,138 @@
+{
+  "sequence": 15,
+  "source": {
+    "file_name": "S140_Kieslich_2022.pdf",
+    "source_id": "S140",
+    "sha256": "51e293f02d0a5966e53543e00902dc2d0c7f99b3482fb8854ba92681f1c0ac2c",
+    "pdf_pages": 19,
+    "printed_pages": "1–19",
+    "version_note": "The filename says 2022, but the supplied PDF is arXiv:2106.00326v1, 1 June 2021. This review cites that actual version."
+  },
+  "citation": {
+    "title": "AI-Ethics by Design. Evaluating Public Perception on the Importance of Ethical Design Principles of AI.",
+    "authors": [
+      "Kimon Kieslich",
+      "Birte Keller",
+      "Christopher Starke"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2106.00326v1",
+    "venue": "arXiv:2106.00326v1",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "source_scope_note": "The supplied 2021 preprint studies human ratings of hypothetical tax-fraud systems. It neither tests intrinsic AI value mechanisms nor establishes that public preferences determine ethical validity. Its cited primary studies were not independently read here.",
+    "access_limits": [
+      "All 19 extracted pages read, including methods, regression/clustering descriptions, result tables, figure captions, references, orthoplan and item-wording appendices. Plots were not independently digitized.",
+      "Raw data, R code and any later published version were not obtained or reanalyzed."
+    ]
+  },
+  "study": {
+    "initial_sample": 1204,
+    "main_sample": 1099,
+    "cluster_descriptor_sample": 913,
+    "exclusions": "One meeting all three low-quality criteria, then 104 equal raters excluded because their individual conjoint coefficients could not explain rating variance",
+    "design": "German online-panel survey; eight binary-attribute profiles of tax-fraud systems rated on seven-point approval scales",
+    "analysis": "Individual part-worth regressions followed by a convenience-selected five-cluster k-means solution"
+  },
+  "summary": "Average importance weights were relatively balanced, with authority liability/accountability highest and machine autonomy lowest. Exploratory clusters showed different stated ethical-design priorities, including one strongly opposed to machine autonomy. These are task- and attribute-dependent ratings, not five universal behavioural types or a validated population taxonomy.",
+  "findings": [
+    {
+      "term": "Human-oversight preferences are heterogeneous and context-specific",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "Preferences about human supervision can vary across respondents and ethical system attributes; general approval of an AI design is not the same outcome as choosing human over algorithmic advice.",
+      "novelty_rationale": "This source provides a boundary for interpreting existing algorithm-aversion and discretion evidence. Its five preference clusters are not five new failure behaviours, and it does not directly randomize human-versus-algorithm advice.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "people oppose machine autonomy and accordingly strive for human control"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "our results are only valid for the specific context."
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "No human supervision"
+        }
+      ],
+      "evidence_scope": "Conjoint approval ratings of hypothetical tax-fraud systems, followed by exploratory preference clustering. The human-oversight attribute is one feature among seven, not a standalone test of error-driven algorithm aversion.",
+      "boundary": "Do not extrapolate a single universal appetite for human oversight, mistake an average importance weight for unanimous preference, or call opposition to autonomous decisions irrational by default. Stated approval neither establishes actual use nor determines whether oversight duties or rights can be waived."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied file is a preprint version from 2021; a later publication date or peer-review status is not inferred from its filename.",
+    "Removal of 104 equal raters conditions the analysis on within-person preference variation; the remaining clusters cannot simply be treated as the unfiltered public.",
+    "Eight rated profiles and seven attribute effects plus intercept leave no within-respondent residual degrees of freedom in the saturated individual model. Individual coefficients and exploratory clusters need stability checks beyond in-sample fits.",
+    "Five versus eleven clusters were plausible in the elbow assessment; five was selected for convenience and interpretation. No independent replication or held-out stability is reported here.",
+    "Binary compliance descriptions simplify normative concepts: accountability is operationalized as tax-authority liability, accuracy as virtually error-free decisions, and nonmaleficence as cybersecurity.",
+    "Table 1 positively describes machine autonomy as no human supervision, while Appendix Table 4 labels the last column Control and parts of the prose discuss limited autonomy. The coding/sign direction requires clarification before reusing exact coefficients as oversight preferences.",
+    "The appendix repeats risk wording under opportunity awareness, while the methods describe benefits. This may be a documentation error; actual administered wording was not independently checked.",
+    "The prose says the Indifferent have the highest mean approval, but Table 2 reports 3.50 for them versus 3.59 for Human in the Loop. Do not propagate the superlative.",
+    "Population representativeness of the original online panel does not automatically survive exclusions, nonresponse, single-context measurement or unweighted exploratory clusters.",
+    "The reported demographic/attitude differences are associations, not evidence for tailoring legal protections or inferring an individual’s moral values from age/education.",
+    "Public preference is evidence about acceptability, not a normative derivation of the project’s six principles or seven evaluation categories."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0012.json",
+      "finding": "Jauernig tests valued human discretion through paid procedure choice. Kieslich tests bundled system-feature approval and uses ambiguous autonomy/control coding. Keep their operational outcomes separate."
+    },
+    {
+      "related_review": "references/pdf-reviews/0010.json",
+      "finding": "Accountability and blame ratings are not interchangeable. This source specifically operationalizes accountability as an authority bearing liability for damage; it does not measure every responsibility dimension."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Human in the Loop; Ethically Concerned; Safety Concerned; Fairness Concerned; Indifferent",
+      "reason": "Author-assigned labels for exploratory clusters, not five validated psychological behaviours or stable kinds of people."
+    },
+    {
+      "term": "Ethical indifference; privacy paradox",
+      "reason": "Low sensitivity of hypothetical ratings is not an observed failure to enact stated privacy values, nor does it establish ethical fading or a distinct indifference mechanism."
+    },
+    {
+      "term": "Accuracy–explainability and other ethical tradeoffs",
+      "reason": "Discussed as design background, not experimentally verified universal technical impossibilities or new behaviours. No project ethical principle is rewritten from those assumptions."
+    }
+  ],
+  "limitations": [
+    "No new standalone behaviour added; one existing entry gains a carefully scoped contextual source.",
+    "The version, coding ambiguity, exclusions and profile-model limits remain explicit rather than treating the abstract’s population claim as settled."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "algorithm-aversion"
+    ]
+  }
+}

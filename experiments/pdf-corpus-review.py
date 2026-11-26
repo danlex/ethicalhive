@@ -92,7 +92,8 @@ def citation(review,finding):
                  ' (source locators: '+', '.join(str(e['printed_page']) for e in finding['evidence'])+')'+
                  '. '+review['reading']['source_scope_note'],
              verification_url=c['url'],verified_date=TODAY(),
-             verification_method='Identity and DOI read in the supplied PDF; evidence passages checked against that PDF',
+             verification_method='Identity and '+('DOI' if 'doi.org/' in c['url'] else 'version identifier')+
+                 ' read in the supplied PDF; evidence passages checked against that PDF',
              review_record=str(record_path(review['sequence']).relative_to(ROOT)))
     return c
 
