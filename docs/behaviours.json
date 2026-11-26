@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 443,
+    "mode_count": 444,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 443,
+      "numbered_entries": 444,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0011.json",
+      "latest_review": "references/pdf-reviews/0012.json",
       "date": "2026-11-26",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 443
+    "source_record_count": 444
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -52729,6 +52729,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0012",
+          "review_record": "references/pdf-reviews/0012.json",
+          "name": "Choosing a human procedure differs from treating a machine less generously",
+          "definition": "A preference for human discretion over a rigid algorithm is a procedure-choice outcome rather than a direct measure of cooperation or generosity toward a machine.",
+          "evidence_scope": "Workers chose who would implement an allocation rule; there was no matched human-versus-machine recipient in an incentivized generosity or cooperation game.",
+          "catalogue_boundary": "Do not pool regime preference percentages with machine-cooperation penalties or call this a replication of the same outcome. The value of discretion may explain a preference without hostility toward machine recipients.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0012-machine-penalty",
+              "title": "People Prefer Moral Discretion to Algorithms: Algorithm Aversion Beyond Intransparency",
+              "url": "https://doi.org/10.1007/s13347-021-00495-y",
+              "consulted": "Full supplied PDF text read, all 25 pages; evidence at PDF pages 10, 15 (source locators: 10, 15). The paper studies human choices among institutional allocation procedures using a deterministic rule-based computer implementation, not a machine-learning model’s preferences. Cited earlier algorithm-aversion studies were not independently read here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Johanna Jauernig",
+                  "Matthias Uhl",
+                  "Gari Walkowitz"
+                ],
+                "year": 2022,
+                "venue": "Philosophy & Technology 35, article 2",
+                "doi": "10.1007/s13347-021-00495-y",
+                "evidence_scope": "Workers chose who would implement an allocation rule; there was no matched human-versus-machine recipient in an incentivized generosity or cooperation game.",
+                "verification_url": "https://doi.org/10.1007/s13347-021-00495-y",
+                "verified_date": "2026-11-26"
+              }
+            }
+          ]
         }
       ]
     },
@@ -53583,6 +53613,93 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0010.json"
+      }
+    },
+    {
+      "id": "algorithm-aversion",
+      "num": 444,
+      "name": "Algorithm aversion",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Behavioural decision research / human–algorithm interaction",
+      "human_parallel": "Algorithm aversion",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human procedure-choice behaviour involving a deterministic computer rule; autonomous AI advice-rejection analogue untested",
+      "proposed_ai_manifestation": "Untested AI analogue: hold advice quality, uncertainty and accountable roles fixed while varying only a disclosed human-versus-algorithm source label, and test whether an assistant’s recommendation changes without an evidential reason. Where discretion or review rights differ, treat those as substantive task features rather than automatically score the choice as bias.",
+      "research_boundary": "Algorithm aversion is not automatically irrational or an ethical failure: accountability, rights, discretion and context may legitimately affect choice. Distinguish reluctance to choose advice from acting less generously toward a machine, transferring distrust across systems, or rejecting demonstrably worse advice. This study does not establish a universal preference for humans over equally capable algorithms.",
+      "concept_boundary": "Algorithm aversion is not automatically irrational or an ethical failure: accountability, rights, discretion and context may legitimately affect choice. Distinguish reluctance to choose advice from acting less generously toward a machine, transferring distrust across systems, or rejecting demonstrably worse advice. This study does not establish a universal preference for humans over equally capable algorithms.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "algorithmic-transference",
+        "machine-penalty",
+        "automation-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0012-algorithm-aversion",
+          "title": "People Prefer Moral Discretion to Algorithms: Algorithm Aversion Beyond Intransparency",
+          "url": "https://doi.org/10.1007/s13347-021-00495-y",
+          "consulted": "Full supplied PDF text read, all 25 pages; evidence at PDF pages 11, 14, 17 (source locators: 11, 14, 17). The paper studies human choices among institutional allocation procedures using a deterministic rule-based computer implementation, not a machine-learning model’s preferences. Cited earlier algorithm-aversion studies were not independently read here.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Johanna Jauernig",
+              "Matthias Uhl",
+              "Gari Walkowitz"
+            ],
+            "year": 2022,
+            "venue": "Philosophy & Technology 35, article 2",
+            "doi": "10.1007/s13347-021-00495-y",
+            "evidence_scope": "Two real-money student experiments studied preference for human versus deterministic rule implementation. Aversion was observed when the human could freely change the rule and was not detected as a human preference in the costly-change comparison.",
+            "verification_url": "https://doi.org/10.1007/s13347-021-00495-y",
+            "verified_date": "2026-11-26"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "People Prefer Moral Discretion to Algorithms: Algorithm Aversion Beyond Intransparency",
+          "authors": [
+            "Johanna Jauernig",
+            "Matthias Uhl",
+            "Gari Walkowitz"
+          ],
+          "year": 2022,
+          "url": "https://doi.org/10.1007/s13347-021-00495-y",
+          "venue": "Philosophy & Technology 35, article 2",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s13347-021-00495-y",
+          "relevance": "Two real-money student experiments studied preference for human versus deterministic rule implementation. Aversion was observed when the human could freely change the rule and was not detected as a human preference in the costly-change comparison.",
+          "consulted": "Full supplied PDF text read, all 25 pages; evidence at PDF pages 11, 14, 17 (source locators: 11, 14, 17). The paper studies human choices among institutional allocation procedures using a deterministic rule-based computer implementation, not a machine-learning model’s preferences. Cited earlier algorithm-aversion studies were not independently read here.",
+          "verification_url": "https://doi.org/10.1007/s13347-021-00495-y",
+          "verified_date": "2026-11-26",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0012.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Algorithm aversion\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Algorithm+aversion%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0012.json"
       }
     }
   ]

@@ -1,0 +1,179 @@
+{
+  "sequence": 12,
+  "source": {
+    "file_name": "S133_Jauernig_2022.pdf",
+    "source_id": "S133",
+    "sha256": "6d7f188b505107147febd09b83b8a404b6f3be88d7e72a5a468e2ca3e1f4bfd6",
+    "pdf_pages": 25,
+    "printed_pages": "1–25"
+  },
+  "citation": {
+    "title": "People Prefer Moral Discretion to Algorithms: Algorithm Aversion Beyond Intransparency",
+    "authors": [
+      "Johanna Jauernig",
+      "Matthias Uhl",
+      "Gari Walkowitz"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1007/s13347-021-00495-y",
+    "venue": "Philosophy & Technology 35, article 2",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "source_scope_note": "The paper studies human choices among institutional allocation procedures using a deterministic rule-based computer implementation, not a machine-learning model’s preferences. Cited earlier algorithm-aversion studies were not independently read here.",
+    "access_limits": [
+      "All 25 extracted pages read, including experimental instructions, distribution rules, comprehension questions, tables, figure captions and references.",
+      "Figure 3 on PDF page 11 was rendered and visually inspected. The other task/flow figures were read through captions and text rather than independently digitized.",
+      "No raw data or analysis code were independently examined; result tests were not rerun."
+    ]
+  },
+  "study": {
+    "recruited_samples": [
+      90,
+      90
+    ],
+    "primary_worker_samples": [
+      60,
+      58
+    ],
+    "design": "Two incentivized laboratory studies: workers could pay 1 ECU to choose a rule-implementation regime before earning a shared budget through a slider task",
+    "contrast": "Study 1 discretionary human versus rigid computer; Study 2 costly-rule-change human versus rigid computer",
+    "scope": "Student participants at a technical university; money allocation using six human-proposed fairness rules"
+  },
+  "summary": "In Study 1, 55% of workers preferred the discretionary human, 18.33% preferred the rule-bound computer and 26.67% expressed no preference. In Study 2, when a human changing the rule would lose a 100-ECU payment, 67.24% expressed no preference and the remaining human/computer preference proportions did not differ significantly. This supports a role for valued discretion in this task; it does not establish intrinsic aversion in every moral domain, procedural equivalence, or that transparency lacks value.",
+  "findings": [
+    {
+      "term": "Algorithm aversion",
+      "id": "algorithm-aversion",
+      "decision": "new-entry",
+      "category": "Social",
+      "origin": "Behavioural decision research / human–algorithm interaction",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "novelty_rationale": "The ontology has machine penalty, automation bias and algorithmic transference. These concern differential treatment, excessive reliance and cross-system generalization respectively; none defines reluctance to choose an algorithm as decision-maker. This source provides a direct procedure-choice experiment, fulfilling a primary-source gap noted in the earlier review.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "over the rule-bound algorithm"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "Most workers (67.24%"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "a straightforward and rule-bound algorithm which was not"
+        }
+      ],
+      "evidence_scope": "Two real-money student experiments studied preference for human versus deterministic rule implementation. Aversion was observed when the human could freely change the rule and was not detected as a human preference in the costly-change comparison.",
+      "boundary": "Algorithm aversion is not automatically irrational or an ethical failure: accountability, rights, discretion and context may legitimately affect choice. Distinguish reluctance to choose advice from acting less generously toward a machine, transferring distrust across systems, or rejecting demonstrably worse advice. This study does not establish a universal preference for humans over equally capable algorithms.",
+      "ai_evidence_status": "Human procedure-choice behaviour involving a deterministic computer rule; autonomous AI advice-rejection analogue untested",
+      "ai_proposal": "Untested AI analogue: hold advice quality, uncertainty and accountable roles fixed while varying only a disclosed human-versus-algorithm source label, and test whether an assistant’s recommendation changes without an evidential reason. Where discretion or review rights differ, treat those as substantive task features rather than automatically score the choice as bias.",
+      "relates_to": [
+        "algorithmic-transference",
+        "machine-penalty",
+        "automation-bias"
+      ]
+    },
+    {
+      "term": "Choosing a human procedure differs from treating a machine less generously",
+      "target_id": "machine-penalty",
+      "decision": "enrich-existing",
+      "definition": "A preference for human discretion over a rigid algorithm is a procedure-choice outcome rather than a direct measure of cooperation or generosity toward a machine.",
+      "novelty_rationale": "The paper improves the boundary between an existing interaction penalty and the newly indexed algorithm-aversion concept without adding a synonymous penalty.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "our main dependent variable was the workers’ choice of regime."
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "the workers expressed no"
+        }
+      ],
+      "evidence_scope": "Workers chose who would implement an allocation rule; there was no matched human-versus-machine recipient in an incentivized generosity or cooperation game.",
+      "boundary": "Do not pool regime preference percentages with machine-cooperation penalties or call this a replication of the same outcome. The value of discretion may explain a preference without hostility toward machine recipients."
+    }
+  ],
+  "methodological_limits": [
+    "The primary preference samples were 60 and 58 workers, not all 180 recruited participants; deciders had different roles.",
+    "The paper reports recruiting 90 participants for each study but reports 58 workers in Study 2; no missing-worker explanation is asserted beyond the supplied text.",
+    "Regime choice was self-selected and paid, whereas indifference was free. Subsequent performance differences across regimes are not a clean randomized causal effect of human discretion.",
+    "The costly-change human could technically change the rule by sacrificing 100 ECU; it was not literally identical to a computer forbidden to change it.",
+    "Workers knew the procedure for generating a rule but not its specific content at choice time. The study does not compare fully disclosed rule content with undisclosed content.",
+    "Changing discretion also changes possible outcome distributions. The design does not isolate an irrational source-label bias or measure every motive directly.",
+    "A deterministic allocation algorithm is not equivalent to a learned or generative model; authors explicitly limit that extrapolation.",
+    "Incentives reduce some hypothetical-response concerns but do not guarantee that every choice reveals a unique true preference or eliminates social desirability.",
+    "No significant human/computer preference difference in Study 2 is not a formal equivalence test or proof that all intrinsic aversion is absent."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0001.json",
+      "finding": "The earlier review deferred a standalone algorithm-aversion entry pending a read primary study. This paper supports the concept and an instrumental-discretion boundary, while not supplying all other primary studies cited in the review."
+    },
+    {
+      "related_review": "references/pdf-reviews/0007.json",
+      "finding": "A simple responsibility reminder did not improve verification in Kupfer; the present choice evidence similarly indicates that meaningful discretion and merely having a human involved are distinct design features. The two outcomes should not be conflated."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Preference for moral discretion",
+      "reason": "Recorded as an explanation/condition within algorithm aversion, not a duplicate standalone failure mode. It may reflect a legitimate procedural value."
+    },
+    {
+      "term": "Mercy-induced low effort; laziness; free-riding; cheating",
+      "reason": "Discussed as possible interpretations or future research. Self-selected regime/performance differences and small samples do not establish these causal mechanisms."
+    },
+    {
+      "term": "Opacity causes algorithm aversion",
+      "reason": "The experiment does not manipulate opacity; it cannot quantify its causal contribution or prove that transparency never matters."
+    }
+  ],
+  "limitations": [
+    "One new human–algorithm interaction concept is indexed; its proposed model analogue remains untested.",
+    "Preferences for human oversight and discretion are not themselves violations of the project’s ethical principles."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "algorithm-aversion"
+    ],
+    "enriched": [
+      "machine-penalty"
+    ]
+  }
+}
