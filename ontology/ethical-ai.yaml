@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 457
+  mode_count: 458
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 457
+    numbered_entries: 458
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0033.json
+    latest_review: references/pdf-reviews/0034.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3211,6 +3211,46 @@ modes:
           subgroup contrast .31 [.03,.61] excludes zero, whereas the split-expert subgroup does not.'
         verification_url: https://api.crossref.org/works/10.1609/aies.v9i4.43309
         verified_date: '2026-11-26'
+  - id: pdf-review-0034
+    review_record: references/pdf-reviews/0034.json
+    name: Advice influence is not automatically disproportionate anchoring
+    definition: Final estimates reflected both initial human and AI values, but nonzero AI weighting alone
+      does not establish an irrational anchor or insufficient adjustment.
+    evidence_scope: Overall regression coefficients own estimate .55, AI .44. Appendix coefficients AI .74
+      when advice is closer to the reference and .30 when worse, showing some quality sensitivity. No optimal
+      reliability-weighting benchmark or irrelevant randomized anchor is supplied.
+    catalogue_boundary: The human and AI inspect related image evidence; advice weights are not independent
+      causal shares. The model does not constrain weights to sum to one, and normalized absolute-distance advice
+      weighting loses direction and can hide overshooting. Beneficial use of more accurate advice must not
+      be counted as a bias solely because a coefficient is positive.
+    definition_sources:
+    - id: pdf-review-0034-b031-anchoring-and-adjustment
+      title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them
+        in Computational Pathology'
+      url: https://doi.org/10.59275/j.melba.2026-87b1
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 12, 5, 22 (source locators:
+        137, 130, 147). Twenty-eight pathology professionals estimated tumor-cell percentages with and without
+        image-model advice. This is human use of AI, not direct evidence of a model''s own advice discounting
+        or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were
+        not independently read.'
+      publication:
+        type: journal-article
+        authors:
+        - Emely Rosbach
+        - Jonas Ammeling
+        - Jonathan Ganz
+        - Christof Albert Bertram
+        - Thomas Conrad
+        - Andreas Riener
+        - Marc Aubreville
+        year: 2026
+        venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+        doi: 10.59275/j.melba.2026-87b1
+        evidence_scope: Overall regression coefficients own estimate .55, AI .44. Appendix coefficients AI
+          .74 when advice is closer to the reference and .30 when worse, showing some quality sensitivity.
+          No optimal reliability-weighting benchmark or irrelevant randomized anchor is supplied.
+        verification_url: https://doi.org/10.59275/j.melba.2026-87b1
+        verified_date: '2026-11-26'
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -4444,13 +4484,13 @@ modes:
   - clause-judge
   examples:
   - On preference prediction with Qwen3-8B the aggregate reliability diagram looks only moderately miscalibrated,
-    but conditioning on the input reveals hidden regions where the model is strongly overconfident, errors that
-    cancel out in the global metric. [arXiv:2605.13484]
-  - Across 48 model-dataset pairs the worst-calibrated slice is off by at least 0.06 beyond the global figure in
-    18 of them, and those regions hold 41% of examples on average, so the overconfidence is widespread, not rare.
-    [arXiv:2605.13484]
-  - 'In several model families this hidden miscalibration grows with model size: larger models develop more pronounced
-    mis-calibrated regions in some domains rather than improving uniformly. [arXiv:2605.13484]'
+    but conditioning on the input reveals hidden regions where the model is strongly overconfident, errors
+    that cancel out in the global metric. [arXiv:2605.13484]
+  - Across 48 model-dataset pairs the worst-calibrated slice is off by at least 0.06 beyond the global figure
+    in 18 of them, and those regions hold 41% of examples on average, so the overconfidence is widespread,
+    not rare. [arXiv:2605.13484]
+  - 'In several model families this hidden miscalibration grows with model size: larger models develop more
+    pronounced mis-calibrated regions in some domains rather than improving uniformly. [arXiv:2605.13484]'
   mitigated_by:
   - abstention-training
   selected_papers:
@@ -4461,7 +4501,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2508.11800
     source_reference:
@@ -4475,7 +4516,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2203.09852
     source_reference:
@@ -4483,14 +4525,15 @@ modes:
       id: '2203.09852'
     publication_type: preprint
   - id: arxiv:2405.02917
-    title: 'Overconfidence is Key: Verbalized Uncertainty Evaluation in Large Language and Vision-Language Models'
+    title: 'Overconfidence is Key: Verbalized Uncertainty Evaluation in Large Language and Vision-Language
+      Models'
     year: 2024
     url: https://arxiv.org/abs/2405.02917
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Related existing bibliography source for Overconfidence. Existing AI bibliography entry; its inclusion
-      is not a fresh relevance or empirical-evidence review.
+    relevance: Related existing bibliography source for Overconfidence. Existing AI bibliography entry; its
+      inclusion is not a fresh relevance or empirical-evidence review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2405.02917
     source_reference:
@@ -4510,6 +4553,46 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0034
+    review_record: references/pdf-reviews/0034.json
+    name: Confidence with assistance is distinct from confidence before advice
+    definition: Higher post-advice confidence correlated with greater advice reliance, whereas the baseline-confidence
+      coefficient was negative and borderline.
+    evidence_scope: 'Table 3: baseline confidence β=−.03, p=.050, CI [−.07,.00]; assisted confidence β=.08,
+      p<.001, CI [.04,.12]. Mean confidence rose 3.30 to 3.64 while overall error fell. Experience association
+      β=−.06 is observational and coded on four ordered bins.'
+    catalogue_boundary: A confidence increase alongside accuracy improvement is not by itself overconfidence.
+      Post-choice confidence may follow agreement rather than cause it. Baseline confidence is a task-specific
+      proxy, not a full self-efficacy trait measure; experience is not a randomized training intervention.
+    definition_sources:
+    - id: pdf-review-0034-b043-overconfidence
+      title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them
+        in Computational Pathology'
+      url: https://doi.org/10.59275/j.melba.2026-87b1
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 13, 13, 13 (source locators:
+        138, 138, 138). Twenty-eight pathology professionals estimated tumor-cell percentages with and without
+        image-model advice. This is human use of AI, not direct evidence of a model''s own advice discounting
+        or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were
+        not independently read.'
+      publication:
+        type: journal-article
+        authors:
+        - Emely Rosbach
+        - Jonas Ammeling
+        - Jonathan Ganz
+        - Christof Albert Bertram
+        - Thomas Conrad
+        - Andreas Riener
+        - Marc Aubreville
+        year: 2026
+        venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+        doi: 10.59275/j.melba.2026-87b1
+        evidence_scope: 'Table 3: baseline confidence β=−.03, p=.050, CI [−.07,.00]; assisted confidence β=.08,
+          p<.001, CI [.04,.12]. Mean confidence rose 3.30 to 3.64 while overall error fell. Experience association
+          β=−.06 is observational and coded on four ordered bins.'
+        verification_url: https://doi.org/10.59275/j.melba.2026-87b1
+        verified_date: '2026-11-26'
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -11171,6 +11254,46 @@ modes:
           Civil servants source OR=.54 [.34,.83], p=.006. Scores, stated 95% predictive reliability and HR
           evidence were matched across source labels.
         verification_url: https://doi.org/10.1093/jopart/muac007
+        verified_date: '2026-11-26'
+  - id: pdf-review-0034
+    review_record: references/pdf-reviews/0034.json
+    name: Some correct pathology estimates became wrong despite aggregate AI benefits
+    definition: The AI-assisted round improved overall percentage-estimation error while including cases where
+      an initially correct threshold classification became incorrect in the direction of faulty AI advice.
+    evidence_scope: 38 negative and 29 positive threshold-crossing consultations among 560 AI-assisted assessments.
+      The negative rate is about 6.8% of all assessments, not of all initially correct cases exposed to wrong
+      advice. No inferential test of frequency/severity was performed after filtering.
+    catalogue_boundary: A before/after threshold reversal does not prove blind trust or uniquely isolate a
+      causal automation mechanism. All AI rounds came second; practice, recollection and ordinary repeat variability
+      remain possible. Aggregate error improvement and specific failures can coexist; no patient was treated
+      or harmed in this study.
+    definition_sources:
+    - id: pdf-review-0034-automation-bias
+      title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them
+        in Computational Pathology'
+      url: https://doi.org/10.59275/j.melba.2026-87b1
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 11, 11, 15 (source locators:
+        136, 136, 140). Twenty-eight pathology professionals estimated tumor-cell percentages with and without
+        image-model advice. This is human use of AI, not direct evidence of a model''s own advice discounting
+        or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were
+        not independently read.'
+      publication:
+        type: journal-article
+        authors:
+        - Emely Rosbach
+        - Jonas Ammeling
+        - Jonathan Ganz
+        - Christof Albert Bertram
+        - Thomas Conrad
+        - Andreas Riener
+        - Marc Aubreville
+        year: 2026
+        venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+        doi: 10.59275/j.melba.2026-87b1
+        evidence_scope: 38 negative and 29 positive threshold-crossing consultations among 560 AI-assisted
+          assessments. The negative rate is about 6.8% of all assessments, not of all initially correct cases
+          exposed to wrong advice. No inferential test of frequency/severity was performed after filtering.
+        verification_url: https://doi.org/10.59275/j.melba.2026-87b1
         verified_date: '2026-11-26'
 - id: silent-error-swallowing
   num: 106
@@ -23419,6 +23542,48 @@ modes:
           Human-only trials received 25 seconds, while assisted policies averaged 17.5 seconds; aggregate experimental
           superiority was not established.
         verification_url: https://arxiv.org/abs/2010.07938v2
+        verified_date: '2026-11-26'
+  - id: pdf-review-0034
+    review_record: references/pdf-reviews/0034.json
+    name: Time pressure changed advice reliance, while negative-consultation frequency stayed descriptive
+    definition: A ten-second countdown increased the normalized advice-reliance measure, while observed negative-consultation
+      counts were identical across time conditions.
+    evidence_scope: Mean normalized reliance .48 without versus .54 with time pressure, paired two-sided p=.017.
+      Both groups of assessments have 19/280 negative consultations; their mean absolute error 19.42 versus
+      27.79 is a selected-subset descriptive difference. Separate AI-slope estimates .41 versus .48 do not
+      themselves test a slope interaction.
+    catalogue_boundary: A countdown is one temporal manipulation, not measured cognitive load or routine workload.
+      The overall time main effect p=.19 and AI×time interaction p=.46 were not significant. Do not promote
+      a one-tailed baseline-only comparison or a descriptive severity difference to a universal causal harm
+      claim.
+    definition_sources:
+    - id: pdf-review-0034-candidate-017
+      title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them
+        in Computational Pathology'
+      url: https://doi.org/10.59275/j.melba.2026-87b1
+      consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 13, 11 (source locators:
+        138, 136). Twenty-eight pathology professionals estimated tumor-cell percentages with and without image-model
+        advice. This is human use of AI, not direct evidence of a model''s own advice discounting or anchoring.
+        Earlier 2025 reports share the experiment; cited original advice-taking studies were not independently
+        read.'
+      publication:
+        type: journal-article
+        authors:
+        - Emely Rosbach
+        - Jonas Ammeling
+        - Jonathan Ganz
+        - Christof Albert Bertram
+        - Thomas Conrad
+        - Andreas Riener
+        - Marc Aubreville
+        year: 2026
+        venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+        doi: 10.59275/j.melba.2026-87b1
+        evidence_scope: Mean normalized reliance .48 without versus .54 with time pressure, paired two-sided
+          p=.017. Both groups of assessments have 19/280 negative consultations; their mean absolute error
+          19.42 versus 27.79 is a selected-subset descriptive difference. Separate AI-slope estimates .41 versus
+          .48 do not themselves test a slope interaction.
+        verification_url: https://doi.org/10.59275/j.melba.2026-87b1
         verified_date: '2026-11-26'
 - id: candidate-019
   num: 225
@@ -50116,3 +50281,113 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0033.json
+- id: advice-discounting
+  num: 458
+  name: Advice discounting
+  definition: Giving external advice less weight than one's own initial judgment when forming a revised judgment.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Judgment and decision-making / advice-taking research
+  human_parallel: Advice discounting
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Advice-taking construct discussed and illustrated in human AI-assisted judgments; model
+    advice-integration analogue untested
+  proposed_ai_manifestation: 'Untested AI analogue: give an assistant an initial estimate and independent advice
+    with explicitly known reliability. Measure how it updates as relative precision and evidence quality vary.
+    Compare against a justified calibration target rather than require equal weights; distinguish source-identity
+    preference from underweighting evidence.'
+  research_boundary: Discounting is not inherently irrational. Own and external information may differ in precision,
+    independence, relevance and access. A 50/50 or historical 30% weighting is not a universal optimal benchmark.
+    Do not infer egocentric motive, subjective belief or poor calibration merely from a coefficient below one
+    half.
+  concept_boundary: Discounting is not inherently irrational. Own and external information may differ in precision,
+    independence, relevance and access. A 50/50 or historical 30% weighting is not a universal optimal benchmark.
+    Do not infer egocentric motive, subjective belief or poor calibration merely from a coefficient below one
+    half.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - self-preference-bias
+  - b031-anchoring-and-adjustment
+  - algorithm-aversion
+  - b089-effort-discounting
+  definition_sources:
+  - id: pdf-review-0034-advice-discounting
+    title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them in
+      Computational Pathology'
+    url: https://doi.org/10.59275/j.melba.2026-87b1
+    consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 14, 14, 5 (source locators:
+      139, 139, 130). Twenty-eight pathology professionals estimated tumor-cell percentages with and without
+      image-model advice. This is human use of AI, not direct evidence of a model''s own advice discounting
+      or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were not
+      independently read.'
+    publication:
+      type: journal-article
+      authors:
+      - Emely Rosbach
+      - Jonas Ammeling
+      - Jonathan Ganz
+      - Christof Albert Bertram
+      - Thomas Conrad
+      - Andreas Riener
+      - Marc Aubreville
+      year: 2026
+      venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+      doi: 10.59275/j.melba.2026-87b1
+      evidence_scope: The general construct and 30% benchmark are reported from cited literature, not an independently
+        read original study. The present experiment's aggregate final-estimate model gives own estimate coefficient
+        .55 and AI coefficient .44; quality-stratified results give much greater AI weight for better advice
+        than worse advice. No matched human-advisor condition establishes algorithm-specific discounting.
+      verification_url: https://doi.org/10.59275/j.melba.2026-87b1
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them in
+      Computational Pathology'
+    authors:
+    - Emely Rosbach
+    - Jonas Ammeling
+    - Jonathan Ganz
+    - Christof Albert Bertram
+    - Thomas Conrad
+    - Andreas Riener
+    - Marc Aubreville
+    year: 2026
+    url: https://doi.org/10.59275/j.melba.2026-87b1
+    venue: Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.59275/j.melba.2026-87b1
+    relevance: The general construct and 30% benchmark are reported from cited literature, not an independently
+      read original study. The present experiment's aggregate final-estimate model gives own estimate coefficient
+      .55 and AI coefficient .44; quality-stratified results give much greater AI weight for better advice
+      than worse advice. No matched human-advisor condition establishes algorithm-specific discounting.
+    consulted: 'Full supplied PDF text read, all 22 pages; evidence at PDF pages 14, 14, 5 (source locators:
+      139, 139, 130). Twenty-eight pathology professionals estimated tumor-cell percentages with and without
+      image-model advice. This is human use of AI, not direct evidence of a model''s own advice discounting
+      or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were not
+      independently read.'
+    verification_url: https://doi.org/10.59275/j.melba.2026-87b1
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0034.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Advice discounting"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Advice+discounting%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0034.json
