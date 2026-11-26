@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 440
+  mode_count: 441
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 440
+    numbered_entries: 441
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0003.json
+    latest_review: references/pdf-reviews/0004.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -45362,6 +45362,39 @@ modes:
           comparisons and studies of human–AI collaboration.
         verification_url: https://doi.org/10.1145/3544548.3580953
         verified_date: '2026-11-26'
+  - id: pdf-review-0004
+    review_record: references/pdf-reviews/0004.json
+    name: Bail-judgment boundary for human–AI blame
+    definition: In these bail-decision vignettes, the models did not detect an AI–human difference in blame
+      comparable to the larger differences found for task and obligation judgments.
+    evidence_scope: Two within-subjects studies with 200 and 194 analyzed respondents according to Table 1;
+      task/authority/power/obligation differed by actor. Lack of a detected blame difference is not proof of
+      equivalence.
+    catalogue_boundary: The advisor study assumed that the human judge always followed the advice. The paper
+      did not test the matched solo-versus-joint contrast defining blame reversal, and many absolute blame/liability
+      ratings were low. Do not generalize to all high-stakes domains.
+    definition_sources:
+    - id: pdf-review-0004-blame-reversal-effect
+      title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+      url: https://doi.org/10.1145/3411764.3445260
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 7, 7 (source locators: §4.2,
+        Responsibility assignment, §4.2, Responsibility assignment). Human vignette experiments and their appendix
+        were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were
+        not independently read in this step.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Gabriel Lima
+        - Nina Grgić-Hlača
+        - Meeyoung Cha
+        year: 2021
+        venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+        doi: 10.1145/3411764.3445260
+        evidence_scope: Two within-subjects studies with 200 and 194 analyzed respondents according to Table
+          1; task/authority/power/obligation differed by actor. Lack of a detected blame difference is not
+          proof of equivalence.
+        verification_url: https://doi.org/10.1145/3411764.3445260
+        verified_date: '2026-11-26'
 - id: machine-masquerade
   num: 439
   name: Machine masquerade
@@ -45546,3 +45579,127 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0003.json
+  research_notes:
+  - id: pdf-review-0004
+    review_record: references/pdf-reviews/0004.json
+    name: Problem of many things
+    definition: Interacting technical entities and technologies can complicate the search for a responsible
+      actor, alongside the familiar difficulty posed by multiple human contributors.
+    evidence_scope: Conceptual framing in the background section, citing prior responsibility scholarship.
+      Not an experimental finding that complex systems eliminate human responsibility.
+    catalogue_boundary: Distinguish many human contributors from many interacting technical components; neither
+      alone proves an actual accountability gap or excuses the relevant human duties.
+    definition_sources:
+    - id: pdf-review-0004-problem-of-many-hands
+      title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+      url: https://doi.org/10.1145/3411764.3445260
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 2, 2 (source locators: §2.2,
+        Techno-responsibility gaps, §2.2, Techno-responsibility gaps). Human vignette experiments and their
+        appendix were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper
+        were not independently read in this step.'
+      publication:
+        type: proceedings-article
+        authors:
+        - Gabriel Lima
+        - Nina Grgić-Hlača
+        - Meeyoung Cha
+        year: 2021
+        venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+        doi: 10.1145/3411764.3445260
+        evidence_scope: Conceptual framing in the background section, citing prior responsibility scholarship.
+          Not an experimental finding that complex systems eliminate human responsibility.
+        verification_url: https://doi.org/10.1145/3411764.3445260
+        verified_date: '2026-11-26'
+- id: agency-laundering
+  num: 441
+  name: Agency laundering
+  definition: Obscuring a human actor’s role in morally suspect actions by attributing those actions to an
+    algorithm, machine or technical system.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Responsibility attribution / information ethics
+  human_parallel: Agency laundering
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named human accountability practice discussed in a read HCI paper; proposed AI-reporting
+    analogue not tested here
+  proposed_ai_manifestation: 'Untested AI-workflow application: compare a system’s incident report with the
+    actual authorization, configuration and intervention record. Test whether it attributes a consequential
+    action to ''the system'' while omitting material human decisions. Separate inaccurate attribution from
+    legitimate technical causation.'
+  research_boundary: Accurately identifying an algorithm’s causal contribution is not agency laundering. The
+    relevant pattern is obscuring human roles, control or responsibility. The source explicitly allows the
+    distancing to occur regardless of intentionality; do not infer a covert motive from one attribution.
+  concept_boundary: Accurately identifying an algorithm’s causal contribution is not agency laundering. The
+    relevant pattern is obscuring human roles, control or responsibility. The source explicitly allows the
+    distancing to occur regardless of intentionality; do not infer a covert motive from one attribution.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b075-moral-disengagement
+  - problem-of-many-hands
+  definition_sources:
+  - id: pdf-review-0004-agency-laundering
+    title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+    url: https://doi.org/10.1145/3411764.3445260
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 10, 10, 10 (source locators:
+      §6, Implications, §6, Implications, §6, Implications). Human vignette experiments and their appendix
+      were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were not
+      independently read in this step.'
+    publication:
+      type: proceedings-article
+      authors:
+      - Gabriel Lima
+      - Nina Grgić-Hlača
+      - Meeyoung Cha
+      year: 2021
+      venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+      doi: 10.1145/3411764.3445260
+      evidence_scope: The paper’s conceptual discussion and cited definition, not a direct experimental manipulation
+        of agency laundering. The bail-judgment experiments do not establish its frequency or causal effects.
+        The cited Rubel, Castro and Pham 2019 source has not been independently read here.
+      verification_url: https://doi.org/10.1145/3411764.3445260
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: 'Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making'
+    authors:
+    - Gabriel Lima
+    - Nina Grgić-Hlača
+    - Meeyoung Cha
+    year: 2021
+    url: https://doi.org/10.1145/3411764.3445260
+    venue: 'CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems'
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3411764.3445260
+    relevance: The paper’s conceptual discussion and cited definition, not a direct experimental manipulation
+      of agency laundering. The bail-judgment experiments do not establish its frequency or causal effects.
+      The cited Rubel, Castro and Pham 2019 source has not been independently read here.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 10, 10, 10 (source locators:
+      §6, Implications, §6, Implications, §6, Implications). Human vignette experiments and their appendix
+      were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were not
+      independently read in this step.'
+    verification_url: https://doi.org/10.1145/3411764.3445260
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0004.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Agency laundering"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Agency+laundering%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0004.json

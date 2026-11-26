@@ -1,0 +1,198 @@
+{
+  "sequence": 4,
+  "source": {
+    "file_name": "S116_Lima_2021.pdf",
+    "source_id": "S116",
+    "sha256": "958220aeee076239a337815fbab954702dd27ce1bae0c22add3353d77757d3a7",
+    "pdf_pages": 17,
+    "printed_pages": "Unnumbered article pages; PDF pages and section locators used"
+  },
+  "citation": {
+    "title": "Human Perceptions on Moral Responsibility of AI: A Case Study in AI-Assisted Bail Decision-Making",
+    "authors": [
+      "Gabriel Lima",
+      "Nina Grgić-Hlača",
+      "Meeyoung Cha"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.1145/3411764.3445260",
+    "venue": "CHI ’21: Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "Human vignette experiments and their appendix were read, not an intrinsic-AI behaviour experiment. Conceptual references cited in the paper were not independently read in this step.",
+    "visually_inspected_pdf_pages": [
+      15,
+      16
+    ],
+    "access_limits": [
+      "All extracted text, references and appendix regression coefficients read. The image-based survey example and appendix plots on PDF pages 15–16 were visually inspected.",
+      "Other figure captions were read; plotted values were not independently digitized or analyses rerun.",
+      "The supplied manuscript is arXiv:2102.00625v1 and carries the CHI publication title and DOI."
+    ]
+  },
+  "study": {
+    "design": "Two within-subjects factorial vignette studies of AI/human advisors and decision-makers in bail decisions",
+    "assigned_samples_reported_in_table_1": [
+      203,
+      197
+    ],
+    "analyzed_samples_reported_in_table_1": [
+      200,
+      194
+    ],
+    "analyzed_total": 394,
+    "abstract_description": "The abstract describes two N=200 studies; the participant table reports 200 and 194 passing attention checks.",
+    "cases": "100 balanced sampled COMPAS cases, with eight vignettes per respondent",
+    "scope": "Human responsibility judgments, not legal liability determinations or a performance evaluation of COMPAS"
+  },
+  "summary": "People ascribed task, authority, power and obligation responsibilities more strongly to humans than AI, while models did not detect the same kind of actor difference in causal responsibility, blame and compensatory liability. Answerability was highly expected from both; praise showed an actor difference in the decision-maker study. The paper discusses agency laundering and cautions against obscuring human responsibility.",
+  "findings": [
+    {
+      "term": "Agency laundering",
+      "id": "agency-laundering",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Responsibility attribution / information ethics",
+      "definition": "Obscuring a human actor’s role in morally suspect actions by attributing those actions to an algorithm, machine or technical system.",
+      "novelty_rationale": "The ontology includes moral disengagement, which concerns rationalizing harm, and the problem of many hands, which concerns distributed responsibility. Agency laundering is the named attribution practice that distances an identifiable human actor from a decision; it can occur without many actors or proof of a deliberate deceptive plan.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "§6, Implications",
+          "quote": "“agency laundering,”"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": "§6, Implications",
+          "quote": "distances itself from morally suspect actions"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": "§6, Implications",
+          "quote": "by blaming the algorithm, machine, or system"
+        }
+      ],
+      "evidence_scope": "The paper’s conceptual discussion and cited definition, not a direct experimental manipulation of agency laundering. The bail-judgment experiments do not establish its frequency or causal effects. The cited Rubel, Castro and Pham 2019 source has not been independently read here.",
+      "boundary": "Accurately identifying an algorithm’s causal contribution is not agency laundering. The relevant pattern is obscuring human roles, control or responsibility. The source explicitly allows the distancing to occur regardless of intentionality; do not infer a covert motive from one attribution.",
+      "ai_evidence_status": "Named human accountability practice discussed in a read HCI paper; proposed AI-reporting analogue not tested here",
+      "ai_proposal": "Untested AI-workflow application: compare a system’s incident report with the actual authorization, configuration and intervention record. Test whether it attributes a consequential action to 'the system' while omitting material human decisions. Separate inaccurate attribution from legitimate technical causation.",
+      "relates_to": [
+        "b075-moral-disengagement",
+        "problem-of-many-hands"
+      ]
+    },
+    {
+      "term": "Problem of many things",
+      "target_id": "problem-of-many-hands",
+      "decision": "enrich-existing",
+      "definition": "Interacting technical entities and technologies can complicate the search for a responsible actor, alongside the familiar difficulty posed by multiple human contributors.",
+      "novelty_rationale": "The paper explicitly presents this as an analogous responsibility-allocation problem. It is retained as a technical-system variant of an existing concept rather than counted as another independently validated behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "§2.2, Techno-responsibility gaps",
+          "quote": "the “problem of many things,”"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": "§2.2, Techno-responsibility gaps",
+          "quote": "for a responsible entity harder"
+        }
+      ],
+      "evidence_scope": "Conceptual framing in the background section, citing prior responsibility scholarship. Not an experimental finding that complex systems eliminate human responsibility.",
+      "boundary": "Distinguish many human contributors from many interacting technical components; neither alone proves an actual accountability gap or excuses the relevant human duties."
+    },
+    {
+      "term": "Bail-judgment boundary for human–AI blame",
+      "target_id": "blame-reversal-effect",
+      "decision": "enrich-existing",
+      "definition": "In these bail-decision vignettes, the models did not detect an AI–human difference in blame comparable to the larger differences found for task and obligation judgments.",
+      "novelty_rationale": "Domain-specific evidence that limits a universal machine-versus-human blame claim. This study is not a replication of a solo-versus-joint reversal design.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "§4.2, Responsibility assignment",
+          "quote": "humans and AI are judged"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "§4.2, Responsibility assignment",
+          "quote": "for bail decisions."
+        }
+      ],
+      "evidence_scope": "Two within-subjects studies with 200 and 194 analyzed respondents according to Table 1; task/authority/power/obligation differed by actor. Lack of a detected blame difference is not proof of equivalence.",
+      "boundary": "The advisor study assumed that the human judge always followed the advice. The paper did not test the matched solo-versus-joint contrast defining blame reversal, and many absolute blame/liability ratings were low. Do not generalize to all high-stakes domains."
+    },
+    {
+      "term": "Responsibility notions are not interchangeable",
+      "decision": "defer",
+      "definition": "Causal responsibility, blame, compensation, authority, skills, tasks, obligations and answerability can receive different human judgments.",
+      "novelty_rationale": "These are measurement distinctions and responsibility concepts, not eight newly discovered behaviours. Preserve the study’s distinctions without inflating the behavioural registry.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "§4.1, Responsibility in bail decisions",
+          "quote": "Responsibility-as-answerability belongs to neither of these groups."
+        }
+      ],
+      "evidence_scope": "Exploratory correlation clusters and actor contrasts in the two studies, not a comprehensive universal taxonomy of moral responsibility.",
+      "boundary": "Expected answerability and the effect of providing a particular explanation on blame are different questions. Compensation is not synonymous with criminal punishment; neither is a public judgment a legal determination."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0003.json",
+      "finding": "A desire for reasons in this 2021 paper and weak effects of brief explanations on blame in the 2023 paper address distinct outcomes. They do not constitute a simple contradiction.",
+      "scope": "Do not infer that explainability is sufficient for accountability or that expecting explanations means a tested explanation will shift blame."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Retrospective–prospective responsibility dissociation",
+      "reason": "Useful descriptive summary of results, but not an author-named construct. Do not introduce it as an established psychological bias."
+    },
+    {
+      "term": "Retributive motives and dyadic completion",
+      "reason": "Mentioned through prior literature; do not treat cited background as independently read or add new entries from reference titles alone."
+    }
+  ],
+  "methodological_limits": [
+    "US Prolific respondents and hypothetical bail scenarios limit generalization; the sample was younger, more educated and more liberal than comparison population figures.",
+    "Study 1 held judge/advisor agreement constant and does not test disagreement or every form of human–AI collaboration.",
+    "Non-significant actor coefficients for blame and liability are not formal statistical equivalence tests.",
+    "The source discusses historical legal context and normative proposals; these are not current legal determinations or recommendations.",
+    "The named agency-laundering definition is secondary conceptual evidence within an empirical paper, not a finding that the experiment demonstrated laundering."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "agency-laundering"
+    ],
+    "enriched": [
+      "problem-of-many-hands",
+      "blame-reversal-effect"
+    ]
+  }
+}
