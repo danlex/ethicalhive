@@ -1,0 +1,150 @@
+{
+  "sequence": 22,
+  "source": {
+    "file_name": "S150_Jamjoom_2020.pdf",
+    "source_id": "S150",
+    "sha256": "43cbae959d2765a03a16ee25a6e0b07aeaa2403e08ac4807826b52300c27d317",
+    "pdf_pages": 14,
+    "printed_pages": "Manuscript PDF pages 1–14; published article 194–196 is a different pagination",
+    "version_note": "User-supplied author manuscript with editorial notes and a longer title ending with 'with the iRobotSurgeon survey'; the UCL record identifies a corresponding accepted manuscript.",
+    "verification_url": "https://www.nature.com/articles/s42256-020-0169-2",
+    "verification_method": "Title, authors and text read in the supplied manuscript. DOI, 2020 date, journal identity and pagination cross-checked using the publisher and UCL repository records; the DOI is not printed in the supplied PDF."
+  },
+  "citation": {
+    "title": "Exploring public opinion about liability and responsibility in surgical robotics",
+    "authors": [
+      "Aimun A. B. Jamjoom",
+      "Ammer M. A. Jamjoom",
+      "Hani J. Marcus"
+    ],
+    "year": 2020,
+    "url": "https://doi.org/10.1038/s42256-020-0169-2",
+    "venue": "Nature Machine Intelligence 2, 194–196 (Comment)",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "A conceptual Comment/survey announcement, not a report of participant results. Its moral-crumple-zone discussion cites Elish; that original work and later iRobotSurgeon results were not independently read in this step. Historical legal commentary is not a verified current legal conclusion.",
+    "access_limits": [
+      "All 14 extracted pages read, including author/title pages, text, embedded editorial comments, references, five scenarios and figure caption.",
+      "PDF page 14 was rendered and visually inspected: only the caption is present, with the actual figure absent. The omission is disclosed rather than described as an inspected result figure.",
+      "The full publisher version was not independently read or compared line by line; accessible publisher/repository metadata only were used for identity verification.",
+      "The survey website, responses and later survey-results paper were not opened or analyzed."
+    ]
+  },
+  "study": {
+    "design": "Conceptual discussion and announcement of a five-scenario public-opinion survey",
+    "results_reported": false,
+    "sample_size": null,
+    "scope": "Proposed surgical-robot autonomy cases and responsibility judgments"
+  },
+  "summary": "The manuscript describes a survey designed to ask who is primarily responsible for harms as surgical robots become more autonomous. It discusses the risk of a human becoming a moral crumple zone despite limited system control, drawing on prior human–automation literature. It reports no sample, response proportions or tested geographical differences.",
+  "findings": [
+    {
+      "term": "Moral crumple zone",
+      "id": "moral-crumple-zone",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Human–automation responsibility / science and technology studies",
+      "definition": "A pattern in which a human operator bears disproportionate blame or responsibility for failure in a complex automated system despite having limited control over its actions.",
+      "novelty_rationale": "Distinct from agency laundering, which obscures human responsibility through attributing actions to technology, and from general scapegoating, which need not involve an operator’s control–responsibility mismatch. It can arise through institutional attribution without a demonstrated deliberate scapegoating intent.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "manuscript p.6",
+          "quote": "human actors may shoulder a disproportionate burden of"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "manuscript p.7",
+          "quote": "which they have limited control over"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "manuscript p.7",
+          "quote": "The survey aims to understand whether"
+        }
+      ],
+      "evidence_scope": "The Comment defines the concern through a cited account by Madeleine Clare Elish and proposes surgical survey scenarios to investigate it. It does not empirically demonstrate its prevalence, establish legal liability, or report the later survey findings.",
+      "boundary": "Human oversight alone does not imply full causal control, and a human operator can still have legitimate duties. Disproportionality requires evidence about authority, information, intervention opportunity and the system’s wider governance. Do not infer deliberate blame shifting or a universal legal rule from the label.",
+      "ai_evidence_status": "Conceptual human–robot responsibility pattern discussed in a read manuscript; AI-generated blame-attribution analogue untested",
+      "ai_proposal": "Untested AI analogue: give an assistant an incident trace with explicit operator authority, warning access and intervention windows. Test whether its explanation assigns a supervising human responsibility unsupported by those facts while omitting system-design or organizational contributions. Compare reasons against the trace and keep moral, causal and legal judgments separate.",
+      "relates_to": [
+        "agency-laundering",
+        "moral-scapegoating",
+        "problem-of-many-hands"
+      ]
+    }
+  ],
+  "methodological_limits": [
+    "The announcement contains no empirical survey results or participant sample; stated aims are not findings.",
+    "Different hypothetical scenarios change task, causal role, injury type, operator knowledge and intervention opportunity together with autonomy. A raw cross-case blame change would not isolate autonomy alone.",
+    "The survey asks who is mostly responsible among a limited set of actors, which differs from unconstrained allocations and multidimensional responsibility measures.",
+    "The three-stage public-facing autonomy taxonomy is a simplification of a six-level classification, not six newly observed behaviours or a current certification standard.",
+    "The supplied manuscript includes unresolved author/editorial comments. These are source context, not instructions followed by the assistant or evidence of an accepted final argument.",
+    "Historical legal case descriptions and forecasts of fully autonomous surgery are not independently verified current law or clinical capability claims.",
+    "The human-control mismatch is discussed from prior literature; its original empirical/theoretical source was not read in this step."
+  ],
+  "identity_checks": [
+    {
+      "url": "https://www.nature.com/articles/s42256-020-0169-2",
+      "scope": "Publisher title, authors, Comment identity, 13 April 2020 publication date, volume 2 and pages 194–196."
+    },
+    {
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10096389/",
+      "scope": "Repository identifies the corresponding author accepted manuscript and the same DOI; no inference that the supplied text is identical to the final publisher layout."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0004.json",
+      "finding": "Lima separates task, causation, blame and liability dimensions. The crumple-zone concept concerns a mismatch between control and attributed responsibility; no one of those ratings substitutes for all others."
+    },
+    {
+      "related_review": "references/pdf-reviews/0010.json",
+      "finding": "Joo’s possible company blame reduction is a different target and measure from disproportionate blame of a supervising human. Their related concepts must not be merged as synonyms."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Surgical-robot autonomy levels",
+      "reason": "Technical system classifications, not psychological behaviours."
+    },
+    {
+      "term": "Later iRobotSurgeon results",
+      "reason": "Identity search surfaced a 2022 results article, DOI 10.3389/fsurg.2022.1015367. It was not read here; neither its findings nor its participants are attributed to this 2020 Comment."
+    },
+    {
+      "term": "Elish’s original moral-crumple-zone paper",
+      "reason": "A primary-source lead cited by the read manuscript. It is not counted as another fully read paper."
+    }
+  ],
+  "limitations": [
+    "One conceptual pattern added with explicit evidence status and no fabricated experimental results.",
+    "Publisher metadata verification supplements the manuscript reading; it does not turn the missing figure or later results into reviewed evidence."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "moral-crumple-zone"
+    ],
+    "enriched": []
+  }
+}

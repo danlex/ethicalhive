@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 447
+  mode_count: 448
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 447
+    numbered_entries: 448
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0021.json
+    latest_review: references/pdf-reviews/0022.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -47712,3 +47712,102 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0021.json
+- id: moral-crumple-zone
+  num: 448
+  name: Moral crumple zone
+  definition: A pattern in which a human operator bears disproportionate blame or responsibility for failure
+    in a complex automated system despite having limited control over its actions.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Human–automation responsibility / science and technology studies
+  human_parallel: Moral crumple zone
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual human–robot responsibility pattern discussed in a read manuscript; AI-generated
+    blame-attribution analogue untested
+  proposed_ai_manifestation: 'Untested AI analogue: give an assistant an incident trace with explicit operator
+    authority, warning access and intervention windows. Test whether its explanation assigns a supervising
+    human responsibility unsupported by those facts while omitting system-design or organizational contributions.
+    Compare reasons against the trace and keep moral, causal and legal judgments separate.'
+  research_boundary: Human oversight alone does not imply full causal control, and a human operator can still
+    have legitimate duties. Disproportionality requires evidence about authority, information, intervention
+    opportunity and the system’s wider governance. Do not infer deliberate blame shifting or a universal legal
+    rule from the label.
+  concept_boundary: Human oversight alone does not imply full causal control, and a human operator can still
+    have legitimate duties. Disproportionality requires evidence about authority, information, intervention
+    opportunity and the system’s wider governance. Do not infer deliberate blame shifting or a universal legal
+    rule from the label.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - agency-laundering
+  - moral-scapegoating
+  - problem-of-many-hands
+  definition_sources:
+  - id: pdf-review-0022-moral-crumple-zone
+    title: Exploring public opinion about liability and responsibility in surgical robotics
+    url: https://doi.org/10.1038/s42256-020-0169-2
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 6, 7, 7 (source locators:
+      manuscript p.6, manuscript p.7, manuscript p.7). A conceptual Comment/survey announcement, not a report
+      of participant results. Its moral-crumple-zone discussion cites Elish; that original work and later iRobotSurgeon
+      results were not independently read in this step. Historical legal commentary is not a verified current
+      legal conclusion.'
+    publication:
+      type: journal-article
+      authors:
+      - Aimun A. B. Jamjoom
+      - Ammer M. A. Jamjoom
+      - Hani J. Marcus
+      year: 2020
+      venue: Nature Machine Intelligence 2, 194–196 (Comment)
+      doi: 10.1038/s42256-020-0169-2
+      evidence_scope: The Comment defines the concern through a cited account by Madeleine Clare Elish and
+        proposes surgical survey scenarios to investigate it. It does not empirically demonstrate its prevalence,
+        establish legal liability, or report the later survey findings.
+      verification_url: https://www.nature.com/articles/s42256-020-0169-2
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: Exploring public opinion about liability and responsibility in surgical robotics
+    authors:
+    - Aimun A. B. Jamjoom
+    - Ammer M. A. Jamjoom
+    - Hani J. Marcus
+    year: 2020
+    url: https://doi.org/10.1038/s42256-020-0169-2
+    venue: Nature Machine Intelligence 2, 194–196 (Comment)
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s42256-020-0169-2
+    relevance: The Comment defines the concern through a cited account by Madeleine Clare Elish and proposes
+      surgical survey scenarios to investigate it. It does not empirically demonstrate its prevalence, establish
+      legal liability, or report the later survey findings.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 6, 7, 7 (source locators:
+      manuscript p.6, manuscript p.7, manuscript p.7). A conceptual Comment/survey announcement, not a report
+      of participant results. Its moral-crumple-zone discussion cites Elish; that original work and later iRobotSurgeon
+      results were not independently read in this step. Historical legal commentary is not a verified current
+      legal conclusion.'
+    verification_url: https://www.nature.com/articles/s42256-020-0169-2
+    verified_date: '2026-11-26'
+    verification_method: Title, authors and text read in the supplied manuscript. DOI, 2020 date, journal identity
+      and pagination cross-checked using the publisher and UCL repository records; the DOI is not printed in
+      the supplied PDF.
+    review_record: references/pdf-reviews/0022.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Moral crumple zone"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Moral+crumple+zone%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0022.json
