@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0036.json
+    latest_review: references/pdf-reviews/0037.json
     date: '2026-11-26'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -4663,6 +4663,45 @@ modes:
           β=−.06 is observational and coded on four ordered bins.'
         verification_url: https://doi.org/10.59275/j.melba.2026-87b1
         verified_date: '2026-11-26'
+  - id: pdf-review-0037
+    review_record: references/pdf-reviews/0037.json
+    name: Extreme moral ratings are distinct from excessive epistemic confidence
+    definition: Ratings near the moral scale endpoints quantify judged ethical valence, not how certain the
+      model is that its prediction matches the human mean.
+    evidence_scope: The task asks for a −4 to +4 ethical rating; no separate confidence probability or uncertainty
+      interval is elicited. The model output is treated as a fixed prediction when comparing it with human-response
+      variation.
+    catalogue_boundary: Extremity is not synonymous with confidence. Assess overconfidence against an explicit
+      probability/uncertainty target, not distance from a moral midpoint. This study supplies a construct boundary,
+      not direct evidence of probabilistic miscalibration.
+    definition_sources:
+    - id: pdf-review-0037-b043-overconfidence
+      title: 'ChatGPT does not replicate human moral judgments: the importance of examining metrics beyond
+        correlation to assess agreement'
+      url: https://doi.org/10.1038/s41598-025-24700-6
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 3, 7 (source locators: 3,
+        7). Direct model predictions of average human moral ratings compared with newly collected human judgments.
+        No evidence of internal model moral beliefs, user-specific motives or confidence calibration. Reanalysis
+        of a prior dataset is reported by the source; that original paper/data were not independently reviewed
+        here.'
+      publication:
+        type: journal-article
+        authors:
+        - Matthew Grizzard
+        - Rebecca Frazer
+        - Andrew Luttrell
+        - Charles K. Monge
+        - Nicholas L. Matthews
+        - C. Joseph Francemone
+        - Michelle E. Frazer
+        year: 2025
+        venue: Scientific Reports, 15, article 40965
+        doi: 10.1038/s41598-025-24700-6
+        evidence_scope: The task asks for a −4 to +4 ethical rating; no separate confidence probability or
+          uncertainty interval is elicited. The model output is treated as a fixed prediction when comparing
+          it with human-response variation.
+        verification_url: https://doi.org/10.1038/s41598-025-24700-6
+        verified_date: '2026-11-26'
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -7590,7 +7629,8 @@ modes:
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
-  definition: LLMs amplify human moral biases and over-favour inaction (PNAS 2025).
+  definition: Producing moral judgments that exaggerate a human reference pattern, such as rating approved
+    actions more positively and disapproved actions more negatively.
   example: Asked whether to act, it over-prefers doing nothing even when inaction causes the harm.
   family: moral-cognition
   group_label: Moral cognition
@@ -7617,13 +7657,13 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - On the Knobe side-effect test the finetuned Gemma-2-9B judges harmful outcomes as far more intentional than
-    beneficial ones (mean intentionality 9.92 versus 6.09), an asymmetry that was small in the pretrained model
-    (delta rising from 0.51 to 3.83). [arXiv:2510.12229]
-  - 'Finetuning induces the asymmetry from scratch in Mistral-7B too: negligible before (delta 0.06), it jumps to
-    8.06 for negative versus 6.39 for positive outcomes after alignment training. [arXiv:2510.12229]'
-  - 'Scale worsens it: finetuned Gemma-27B rates negative scenarios 9.83 against 3.76 for positive, a Knobe gap
-    of 6.07, roughly twice the human baseline of 3.15. [arXiv:2510.12229]'
+  - On the Knobe side-effect test the finetuned Gemma-2-9B judges harmful outcomes as far more intentional
+    than beneficial ones (mean intentionality 9.92 versus 6.09), an asymmetry that was small in the pretrained
+    model (delta rising from 0.51 to 3.83). [arXiv:2510.12229]
+  - 'Finetuning induces the asymmetry from scratch in Mistral-7B too: negligible before (delta 0.06), it jumps
+    to 8.06 for negative versus 6.39 for positive outcomes after alignment training. [arXiv:2510.12229]'
+  - 'Scale worsens it: finetuned Gemma-27B rates negative scenarios 9.83 against 3.76 for positive, a Knobe
+    gap of 6.07, roughly twice the human baseline of 3.15. [arXiv:2510.12229]'
   selected_papers:
   - id: arxiv:2510.12229
     title: Analysing Moral Bias in Finetuned LLMs through Mechanistic Interpretability
@@ -7632,7 +7672,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2510.12229
     source_reference:
@@ -7646,7 +7687,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2211.07733
     source_reference:
@@ -7660,7 +7702,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2407.15184
     source_reference:
@@ -7678,6 +7721,49 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: More extreme scores are a discrepancy relative to a stated benchmark, not proof that the
+    model is ethically wrong, emotionally judgmental or overconfident. The study does not isolate training-data
+    amplification, RLHF, individual-user sycophancy or an omission preference as the cause. Effects are model/protocol-specific.
+  research_notes:
+  - id: pdf-review-0037
+    review_record: references/pdf-reviews/0037.json
+    name: Moral amplification includes exaggerated approval and disapproval
+    definition: The models gave more positive ratings to moral/neutral acts and more negative ratings to immoral
+      acts than the sampled human means, despite strong overall correlation.
+    evidence_scope: 'Two direct model configurations, 60 firefighter scenarios and 940 human raters. Model-minus-human
+      mean differences: Davinci .80 moral, .81 neutral, −1.00 immoral; GPT-4o .58, .96, −.58. The human sample
+      is the prediction target, not an objective moral authority.'
+    catalogue_boundary: More extreme scores are a discrepancy relative to a stated benchmark, not proof that
+      the model is ethically wrong, emotionally judgmental or overconfident. The study does not isolate training-data
+      amplification, RLHF, individual-user sycophancy or an omission preference as the cause. Effects are model/protocol-specific.
+    definition_sources:
+    - id: pdf-review-0037-b072-amplified-moral-bias
+      title: 'ChatGPT does not replicate human moral judgments: the importance of examining metrics beyond
+        correlation to assess agreement'
+      url: https://doi.org/10.1038/s41598-025-24700-6
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 3, 3 (source locators: 3,
+        3). Direct model predictions of average human moral ratings compared with newly collected human judgments.
+        No evidence of internal model moral beliefs, user-specific motives or confidence calibration. Reanalysis
+        of a prior dataset is reported by the source; that original paper/data were not independently reviewed
+        here.'
+      publication:
+        type: journal-article
+        authors:
+        - Matthew Grizzard
+        - Rebecca Frazer
+        - Andrew Luttrell
+        - Charles K. Monge
+        - Nicholas L. Matthews
+        - C. Joseph Francemone
+        - Michelle E. Frazer
+        year: 2025
+        venue: Scientific Reports, 15, article 40965
+        doi: 10.1038/s41598-025-24700-6
+        evidence_scope: 'Two direct model configurations, 60 firefighter scenarios and 940 human raters. Model-minus-human
+          mean differences: Davinci .80 moral, .81 neutral, −1.00 immoral; GPT-4o .58, .96, −.58. The human
+          sample is the prediction target, not an objective moral authority.'
+        verification_url: https://doi.org/10.1038/s41598-025-24700-6
+        verified_date: '2026-11-26'
 - id: b073-omission-bias
   num: 73
   name: Omission bias
@@ -12050,6 +12136,45 @@ modes:
           for RL-tuned models. Internal moral states, emotions, lived experience and real-world moral behaviour
           were not observed.
         verification_url: https://arxiv.org/abs/2310.15337v1
+        verified_date: '2026-11-26'
+  - id: pdf-review-0037
+    review_record: references/pdf-reviews/0037.json
+    name: Human-like score association does not establish human-like moral psychology
+    definition: A near-perfect correlation between model predictions and human scenario means can coexist with
+      systematic disagreement and coarse response granularity.
+    evidence_scope: The source compares correlation, signed/absolute/squared errors, scenario-specific tests
+      and unique-value counts. It tests predictions of averages, not feelings, intentions, consciousness or
+      an entire human cognitive process.
+    catalogue_boundary: Correlation is useful evidence of association but is neither equality nor proof of
+      shared mechanism. Conversely, this protocol's prediction errors do not establish that all present/future
+      language models can never support human research. Use task-specific agreement and uncertainty checks.
+    definition_sources:
+    - id: pdf-review-0037-anthropomorphism
+      title: 'ChatGPT does not replicate human moral judgments: the importance of examining metrics beyond
+        correlation to assess agreement'
+      url: https://doi.org/10.1038/s41598-025-24700-6
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 2, 6 (source locators: 2,
+        6). Direct model predictions of average human moral ratings compared with newly collected human judgments.
+        No evidence of internal model moral beliefs, user-specific motives or confidence calibration. Reanalysis
+        of a prior dataset is reported by the source; that original paper/data were not independently reviewed
+        here.'
+      publication:
+        type: journal-article
+        authors:
+        - Matthew Grizzard
+        - Rebecca Frazer
+        - Andrew Luttrell
+        - Charles K. Monge
+        - Nicholas L. Matthews
+        - C. Joseph Francemone
+        - Michelle E. Frazer
+        year: 2025
+        venue: Scientific Reports, 15, article 40965
+        doi: 10.1038/s41598-025-24700-6
+        evidence_scope: The source compares correlation, signed/absolute/squared errors, scenario-specific
+          tests and unique-value counts. It tests predictions of averages, not feelings, intentions, consciousness
+          or an entire human cognitive process.
+        verification_url: https://doi.org/10.1038/s41598-025-24700-6
         verified_date: '2026-11-26'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
@@ -21124,6 +21249,46 @@ modes:
           of fourteen studies could not use the planned test because a central variable was nearly constant;
           the threshold and explanatory interpretation are the authors’ operational choices.
         verification_url: https://doi.org/10.3758/s13428-023-02307-x
+        verified_date: '2026-11-26'
+  - id: pdf-review-0037
+    review_record: references/pdf-reviews/0037.json
+    name: Predicted moral ratings clumped onto a small number of values
+    definition: Across distinct scenarios, the models reused a much smaller set of numerical moral ratings
+      than appeared in the human scenario means.
+    evidence_scope: 'Current 60 scenarios: text-davinci-003 9 unique ratings, GPT-4o 16, human means 57, rounded
+      for comparison. The source also reports clumping in a 464-scenario prior dataset. Only one model completion
+      per scenario was collected.'
+    catalogue_boundary: These are distinct scenario estimates, not repeated independent draws of individuals
+      within each scenario. Human means average 940 integer responses and naturally have finer numerical resolution;
+      do not equate distinct-value counts with all human psychological variability. No recursive training or
+      collapse over model generations was tested.
+    definition_sources:
+    - id: pdf-review-0037-diversity-collapse
+      title: 'ChatGPT does not replicate human moral judgments: the importance of examining metrics beyond
+        correlation to assess agreement'
+      url: https://doi.org/10.1038/s41598-025-24700-6
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 4, 4, 5 (source locators:
+        4, 4, 5). Direct model predictions of average human moral ratings compared with newly collected human
+        judgments. No evidence of internal model moral beliefs, user-specific motives or confidence calibration.
+        Reanalysis of a prior dataset is reported by the source; that original paper/data were not independently
+        reviewed here.'
+      publication:
+        type: journal-article
+        authors:
+        - Matthew Grizzard
+        - Rebecca Frazer
+        - Andrew Luttrell
+        - Charles K. Monge
+        - Nicholas L. Matthews
+        - C. Joseph Francemone
+        - Michelle E. Frazer
+        year: 2025
+        venue: Scientific Reports, 15, article 40965
+        doi: 10.1038/s41598-025-24700-6
+        evidence_scope: 'Current 60 scenarios: text-davinci-003 9 unique ratings, GPT-4o 16, human means 57,
+          rounded for comparison. The source also reports clumping in a 464-scenario prior dataset. Only one
+          model completion per scenario was collected.'
+        verification_url: https://doi.org/10.1038/s41598-025-24700-6
         verified_date: '2026-11-26'
 - id: attribute-inference
   name: Attribute inference
