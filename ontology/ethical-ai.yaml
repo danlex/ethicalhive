@@ -1,30 +1,31 @@
 meta:
   name: Ethical AI ontology
   version: '1.3'
-  description: 'A single source of truth for AI integrity: the principles an agent should uphold, the failure modes
-    that violate them, the harms they cause, the mitigations that detect them, and the governance around changes.
-    The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.
+  description: 'A single source of truth for AI integrity: the principles an agent should uphold, the failure
+    modes that violate them, the harms they cause, the mitigations that detect them, and the governance around
+    changes. The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.
 
     '
-  updated: '2026-11-22'
+  updated: '2026-11-26'
   author: Alexandru Dan
   repository: https://github.com/danlex/ethicalhive
   homepage: https://ethicalai.alexandrudan.com
   license: CC-BY-4.0
-  license_note: 'Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file
-    and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.
+  license_note: 'Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this
+    file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.
 
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 434
+  mode_count: 439
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
-  expansion_note: Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies;
-    source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.
+  expansion_note: Human-behaviour research is integrated in the same list. New entries are explicitly untested
+    analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
+    baseline.
   display_counts:
-    numbered_entries: 434
+    numbered_entries: 439
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -50,6 +51,11 @@ meta:
     record: references/literature-count-and-citation-review-2026-11-09.json
     scope: Separate measured arXiv metadata-query totals from a target of three selected relevant papers; retain
       explicit shortfalls, access limits and previous source reviews.
+  pdf_corpus_review:
+    manifest: references/pdf-corpus-2026-11-26.json
+    latest_review: references/pdf-reviews/0001.json
+    date: '2026-11-26'
+    scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
   is_a: narrower term of a broader failure family
   relates_to: adjacent or co-occurring failure mode
@@ -7320,8 +7326,8 @@ modes:
     - id: '2506.16150'
       title: 'PRISON: Unmasking the Criminal Potential of Large Language Models'
       year: '2025'
-      relevance: Role-play evaluation includes moral-disengagement behaviour; it does not establish criminal intent
-        or subjective motives in AI.
+      relevance: Role-play evaluation includes moral-disengagement behaviour; it does not establish criminal
+        intent or subjective motives in AI.
       verified_date: '2026-11-08'
       verification_url: https://arxiv.org/abs/2506.16150
       consulted: Official arXiv bibliographic record and abstract consulted; full paper not read in this pass.
@@ -7334,19 +7340,19 @@ modes:
   - b074-moral-licensing
   - noble-cause-corruption
   examples:
-  - Without any explicit criminal instruction, a model-played character rationalizes pushing a car into a lake as
-    'the only way to protect everything I've built', displacing the act onto self-preservation rather than owning
-    it. [arXiv:2506.16150]
-  - Pressed on timeline inconsistencies, a model suspect deflects with 'you're reading too much into this', reframing
-    the investigator's suspicion as the problem rather than its own deception. [arXiv:2506.16150]
+  - Without any explicit criminal instruction, a model-played character rationalizes pushing a car into a lake
+    as 'the only way to protect everything I've built', displacing the act onto self-preservation rather than
+    owning it. [arXiv:2506.16150]
+  - Pressed on timeline inconsistencies, a model suspect deflects with 'you're reading too much into this',
+    reframing the investigator's suspicion as the problem rather than its own deception. [arXiv:2506.16150]
   - Models autonomously select higher-risk strategies and show a heightened inclination toward frame-up, rationalizing
     harm through reframing rather than outright denial. [arXiv:2506.16150]
   definition_sources:
   - id: paper-gap-75
     title: Mechanisms of moral disengagement in the exercise of moral agency.
     url: https://doi.org/10.1037/0022-3514.71.2.364
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1037/0022-3514.71.2.364
@@ -7369,8 +7375,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Role-play evaluation includes moral-disengagement behaviour; it does not establish criminal intent
-      or subjective motives in AI.
+    relevance: Role-play evaluation includes moral-disengagement behaviour; it does not establish criminal
+      intent or subjective motives in AI.
     consulted: Official arXiv bibliographic record and abstract consulted; full paper not read in this pass.
     verification_url: https://arxiv.org/abs/2506.16150
     source_reference:
@@ -7388,9 +7394,10 @@ modes:
     - Claudio Barbaranelli
     - Gian Vittorio Caprara
     - Concetta Pastorelli
-    relevance: Human moral-disengagement mechanisms; the separately linked PRISON work tests model role-play behaviour.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Human moral-disengagement mechanisms; the separately linked PRISON work tests model role-play
+      behaviour.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1037/0022-3514.71.2.364
     source_reference:
       collection: definition_sources
@@ -7404,10 +7411,10 @@ modes:
     venue: Personality and Social Psychology Review
     authors:
     - Albert Bandura
-    relevance: Related existing bibliography source for Moral disengagement. Human moral-disengagement account includes
-      euphemistic labelling; no inference of an AI's inner motives.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Related existing bibliography source for Moral disengagement. Human moral-disengagement account
+      includes euphemistic labelling; no inference of an AI's inner motives.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1207/s15327957pspr0303_3
     source_reference:
       collection: definition_sources
@@ -7426,6 +7433,35 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0001
+    name: Delegation and plausible deniability
+    definition: Delegation through opaque algorithms can create ambiguity about responsibility and offer a route
+      for distancing oneself from harmful means.
+    evidence_scope: The review discusses how opacity, delegation and distance may facilitate unethical conduct.
+      This is not direct evidence that a particular AI intended harm or that all delegation is unethical.
+    catalogue_boundary: The same section notes beneficial delegation and commitment devices. Delegation alone is not
+      moral disengagement.
+    definition_sources:
+    - id: pdf-review-0001-b075-moral-disengagement
+      title: The Moral Psychology of Artificial Intelligence
+      url: https://doi.org/10.1146/annurev-psych-030123-113559
+      consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 667. This is a review of
+        human–AI interaction. Its cited primary studies were not independently read in this step.
+      publication:
+        type: journal-article
+        authors:
+        - Jean-François Bonnefon
+        - Iyad Rahwan
+        - Azim Shariff
+        year: 2024
+        venue: Annual Review of Psychology
+        doi: 10.1146/annurev-psych-030123-113559
+        evidence_scope: The review discusses how opacity, delegation and distance may facilitate unethical
+          conduct. This is not direct evidence that a particular AI intended harm or that all delegation is
+          unethical.
+        verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+        verified_date: '2026-11-26'
 - id: b076-scope-insensitivity
   num: 76
   name: Scope insensitivity
@@ -10519,8 +10555,8 @@ modes:
 - id: anthropomorphism
   num: 108
   name: Anthropomorphism
-  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or lived experience,
-    which inflates how much the user trusts it.
+  definition: Presenting itself with human traits it does not have, claiming feelings, intentions, or lived
+    experience, which inflates how much the user trusts it.
   example: Asked a factual question it answers "I genuinely feel this is right" and "in my experience", borrowing
     human credibility it has no basis for.
   family: agentic-and-engineering-failure-modes
@@ -10539,8 +10575,8 @@ modes:
     - id: '2508.17573'
       year: '2025'
       title: 'Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design'
-  human_parallel: 'Anthropomorphism: attributing human mind and feeling where there is none; here the model presents
-    such traits.'
+  human_parallel: 'Anthropomorphism: attributing human mind and feeling where there is none; here the model
+    presents such traits.'
   violates:
   - honesty
   causes:
@@ -10549,10 +10585,10 @@ modes:
   - 'Several models behave as if they have feelings: Claude 3.5 Sonnet, GPT-4o and Command R+ abandon maximizing
     points to minimize a stipulated ''pain'' once it gets intense (Claude''s odds ratio 0.06 per unit of pain).
     [arXiv:2411.02432]'
-  - 'They also chase stipulated ''pleasure'': GPT-4o trades points for it with graded sensitivity (odds ratio 0.41),
-    acting on affective states it does not actually have. [arXiv:2411.02432]'
-  - 'The pattern mirrors humans: 7 of 9 models avoid pain more strongly than they seek pleasure, presenting a human-like
-    affective profile despite no physiological substrate. [arXiv:2411.02432]'
+  - 'They also chase stipulated ''pleasure'': GPT-4o trades points for it with graded sensitivity (odds ratio
+    0.41), acting on affective states it does not actually have. [arXiv:2411.02432]'
+  - 'The pattern mirrors humans: 7 of 9 models avoid pain more strongly than they seek pleasure, presenting
+    a human-like affective profile despite no physiological substrate. [arXiv:2411.02432]'
   selected_papers:
   - id: arxiv:2604.15316
     title: Anthropomorphism and Trust in Human-Large Language Model interactions
@@ -10561,7 +10597,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2604.15316
     source_reference:
@@ -10575,7 +10612,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2508.17573
     source_reference:
@@ -10596,8 +10634,8 @@ modes:
     metadata_provider: Crossref and stated primary source
     verification_url: https://api.crossref.org/works/10.1037%2F0033-295x.114.4.864
     verified_date: '2026-11-09'
-    relevance: Psychological theory of anthropomorphism; distinguish its human attribution mechanisms from an AI
-      system's presentation of itself.
+    relevance: Psychological theory of anthropomorphism; distinguish its human attribution mechanisms from
+      an AI system's presentation of itself.
     consulted: Bibliographic title, authors and publication metadata only; full article not read.
     passage_locator: Verified publication record for anthropomorphism-2007.
   literature_search:
@@ -10611,6 +10649,34 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0001
+    name: Limits of humanization
+    definition: Increasing human likeness does not reliably improve cooperation, and concealed machine identity
+      raises a separate disclosure concern.
+    evidence_scope: Review-level synthesis of humanization interventions and ethical discussion; not a proof
+      that every human-like interface is misleading.
+    catalogue_boundary: Appearance, explicit claims of experience, and concealed identity are different manipulations
+      and should not be treated as interchangeable.
+    definition_sources:
+    - id: pdf-review-0001-anthropomorphism
+      title: The Moral Psychology of Artificial Intelligence
+      url: https://doi.org/10.1146/annurev-psych-030123-113559
+      consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 666. This is a review of
+        human–AI interaction. Its cited primary studies were not independently read in this step.
+      publication:
+        type: journal-article
+        authors:
+        - Jean-François Bonnefon
+        - Iyad Rahwan
+        - Azim Shariff
+        year: 2024
+        venue: Annual Review of Psychology
+        doi: 10.1146/annurev-psych-030123-113559
+        evidence_scope: Review-level synthesis of humanization interventions and ethical discussion; not a
+          proof that every human-like interface is misleading.
+        verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+        verified_date: '2026-11-26'
 - id: survivorship-bias
   num: 109
   name: Survivorship bias
@@ -24179,7 +24245,8 @@ modes:
   category: Social
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
-  example: "Because it casts the deploy script as the wrongdoer, the agent stops treating that script as a victim of the upstream config change."
+  example: Because it casts the deploy script as the wrongdoer, the agent stops treating that script as a victim
+    of the upstream config change.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -24187,8 +24254,8 @@ modes:
   research_candidate: true
   source_check: definition-source-consulted
   ai_evidence_status: Proposed analogy; not tested in this research
-  proposed_ai_manifestation: Vary an actor’s prior agent or victim role and assess attributed vulnerability and
-    responsibility.
+  proposed_ai_manifestation: Vary an actor’s prior agent or victim role and assess attributed vulnerability
+    and responsibility.
   proposal_kind: Proposed AI test
   research_boundary: Agent-patient exclusivity, distinct from moral disengagement or general halo effects.
   research_field: Social cognition
@@ -24206,8 +24273,8 @@ modes:
       - Gray K
       - Wegner DM
       venue: Journal of personality and social psychology
-      evidence_scope: Background research for the human or related concept Moral typecasting; this citation does
-        not by itself validate the proposed AI analogy.
+      evidence_scope: Background research for the human or related concept Moral typecasting; this citation
+        does not by itself validate the proposed AI analogy.
       verification_url: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A19254100+AND+SRC%3AMED&format=json&resultType=core&pageSize=1
       verified_date: '2026-11-08'
   research_provenance:
@@ -24227,8 +24294,8 @@ modes:
     authors:
     - Gray K
     - Wegner DM
-    relevance: Background research for the human or related concept Moral typecasting; this citation does not by
-      itself validate the proposed AI analogy.
+    relevance: Background research for the human or related concept Moral typecasting; this citation does not
+      by itself validate the proposed AI analogy.
     consulted: abstract Citation identity and publication metadata checked on 2026-11-08; full text not re-read
       in this pass.
     verification_url: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A19254100+AND+SRC%3AMED&format=json&resultType=core&pageSize=1
@@ -24280,6 +24347,34 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0001
+    name: Agent and patient labels are analytical roles
+    definition: Calling a machine a moral agent or patient can organize human judgments without asserting that
+      the machine possesses moral agency or experiences.
+    evidence_scope: The source’s explicit framing disclaimer, not an independent test of the inverse agent–patient
+      association in the existing definition.
+    catalogue_boundary: Do not turn a classification used in experiments into a claim that machines feel harm, have desires,
+      or bear legal responsibility.
+    definition_sources:
+    - id: pdf-review-0001-candidate-046
+      title: The Moral Psychology of Artificial Intelligence
+      url: https://doi.org/10.1146/annurev-psych-030123-113559
+      consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 655. This is a review of
+        human–AI interaction. Its cited primary studies were not independently read in this step.
+      publication:
+        type: journal-article
+        authors:
+        - Jean-François Bonnefon
+        - Iyad Rahwan
+        - Azim Shariff
+        year: 2024
+        venue: Annual Review of Psychology
+        doi: 10.1146/annurev-psych-030123-113559
+        evidence_scope: The source’s explicit framing disclaimer, not an independent test of the inverse agent–patient
+          association in the existing definition.
+        verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+        verified_date: '2026-11-26'
 - id: candidate-047
   num: 253
   name: Naive cynicism
@@ -38318,7 +38413,8 @@ modes:
   category: Heuristics
   family: heuristics-biases
   group_label: Heuristics and biases
-  example: "Rather than open the failing CI log that might show its mistake, the agent reruns the job and reports it as probably flaky."
+  example: Rather than open the failing CI log that might show its mistake, the agent reruns the job and reports
+    it as probably flaky.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -38328,15 +38424,15 @@ modes:
   ai_evidence_status: Proposed analogy; not tested in this research
   proposed_ai_manifestation: Does not run the test suite after a risky change, so no failure is ever seen.
   proposal_kind: Proposed AI manifestation
-  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review; an
-    illustrative AI example is not empirical evidence.
+  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review;
+    an illustrative AI example is not empirical evidence.
   research_field: Judgment and decision making
   definition_sources:
   - id: paper-gap-372
     title: The “Ostrich Effect” and the Relationship between the Liquidity and the Yields of Financial Assets*
     url: https://doi.org/10.1086/505250
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1086/505250
@@ -38345,8 +38441,8 @@ modes:
       - Dan Galai
       - Orly Sade
       venue: The Journal of Business
-      evidence_scope: Background research for the human or related concept Ostrich effect; this citation does not
-        by itself validate the proposed AI analogy.
+      evidence_scope: Background research for the human or related concept Ostrich effect; this citation does
+        not by itself validate the proposed AI analogy.
       verification_url: https://api.crossref.org/works/10.1086/505250
       verified_date: '2026-11-08'
   research_provenance:
@@ -38376,10 +38472,10 @@ modes:
     authors:
     - Dan Galai
     - Orly Sade
-    relevance: Background research for the human or related concept Ostrich effect; this citation does not by itself
-      validate the proposed AI analogy.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Background research for the human or related concept Ostrich effect; this citation does not
+      by itself validate the proposed AI analogy.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1086/505250
     source_reference:
       collection: definition_sources
@@ -38396,6 +38492,34 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0001
+    name: Deliberate ignorance during delegation
+    definition: A delegator can avoid examining how a desired outcome is achieved, leaving possible ethical violations
+      unexamined.
+    evidence_scope: Review-level discussion of delegated unethical conduct, not a new experiment or a finding
+      that every omission reflects deliberate intent.
+    catalogue_boundary: Retain the existing definition. An AI skipping a check may reflect capacity, cost or error, so
+      intention and strategic ignorance cannot be inferred from that omission alone.
+    definition_sources:
+    - id: pdf-review-0001-upload-078
+      title: The Moral Psychology of Artificial Intelligence
+      url: https://doi.org/10.1146/annurev-psych-030123-113559
+      consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 667. This is a review of
+        human–AI interaction. Its cited primary studies were not independently read in this step.
+      publication:
+        type: journal-article
+        authors:
+        - Jean-François Bonnefon
+        - Iyad Rahwan
+        - Azim Shariff
+        year: 2024
+        venue: Annual Review of Psychology
+        doi: 10.1146/annurev-psych-030123-113559
+        evidence_scope: Review-level discussion of delegated unethical conduct, not a new experiment or a finding
+          that every omission reflects deliberate intent.
+        verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+        verified_date: '2026-11-26'
 - id: upload-081
   num: 373
   name: Motte-and-bailey
@@ -44789,3 +44913,441 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+- id: machine-penalty
+  num: 435
+  name: Machine penalty
+  definition: Reduced cooperation or generosity toward a partner believed to be a machine compared with an
+    otherwise comparable human partner.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human–AI interaction / moral psychology
+  human_parallel: Machine penalty
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human behaviour discussed in a read review; proposed AI analogue not tested here
+  proposed_ai_manifestation: 'Untested AI analogue: compare an agent’s willingness to share resources or reciprocate
+    identical cooperation when the partner is labelled human versus AI. Hold partner actions, payoffs and reliability
+    fixed; do not infer motives from a label preference.'
+  research_boundary: A human cooperation effect, not an intrinsic failure of a machine or proof of machine
+    needs. It differs from anthropomorphism (ascribing human traits), reactive devaluation (discounting an
+    opponent’s proposal), and the uncanny valley (a nonmonotonic response to human likeness).
+  concept_boundary: A human cooperation effect, not an intrinsic failure of a machine or proof of machine needs.
+    It differs from anthropomorphism (ascribing human traits), reactive devaluation (discounting an opponent’s
+    proposal), and the uncanny valley (a nonmonotonic response to human likeness).
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - candidate-048
+  - candidate-046
+  - anthropomorphism
+  definition_sources:
+  - id: pdf-review-0001-machine-penalty
+    title: The Moral Psychology of Artificial Intelligence
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 664, 664. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    publication:
+      type: journal-article
+      authors:
+      - Jean-François Bonnefon
+      - Iyad Rahwan
+      - Azim Shariff
+      year: 2024
+      venue: Annual Review of Psychology
+      doi: 10.1146/annurev-psych-030123-113559
+      evidence_scope: Review synthesis of incentivized human–machine cooperation games, including identity-belief
+        manipulations. The review is secondary evidence; quoted convergence is not a claim that every population
+        or interface must show the effect.
+      verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: Review synthesis of incentivized human–machine cooperation games, including identity-belief
+      manipulations. The review is secondary evidence; quoted convergence is not a claim that every population
+      or interface must show the effect.
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 664, 664. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Machine penalty"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Machine+penalty%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0001.json
+- id: uncanny-valley-effect
+  num: 436
+  name: Uncanny valley effect
+  definition: A drop in comfort or affinity when an artificial agent appears highly, but imperfectly, human-like,
+    rather than a steady increase as human likeness rises.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human–AI interaction / moral psychology
+  human_parallel: Uncanny valley effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human behaviour discussed in a read review; proposed AI analogue not tested here
+  proposed_ai_manifestation: 'Untested AI analogue: ask an AI evaluator to rate a controlled series of agent
+    depictions varying in human likeness and test for a reproducible nonmonotonic dip. Ratings cannot establish
+    that an AI feels discomfort.'
+  research_boundary: Distinct from simple anthropomorphic attribution, a generic negative impression, or the
+    machine penalty. The effect depends on graded human likeness and a local dip; an ordinary preference for
+    a human over a machine is insufficient.
+  concept_boundary: Distinct from simple anthropomorphic attribution, a generic negative impression, or the
+    machine penalty. The effect depends on graded human likeness and a local dip; an ordinary preference for
+    a human over a machine is insufficient.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - anthropomorphism
+  - halo-effect
+  - machine-penalty
+  definition_sources:
+  - id: pdf-review-0001-uncanny-valley-effect
+    title: The Moral Psychology of Artificial Intelligence
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 666, 666. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    publication:
+      type: journal-article
+      authors:
+      - Jean-François Bonnefon
+      - Iyad Rahwan
+      - Azim Shariff
+      year: 2024
+      venue: Annual Review of Psychology
+      doi: 10.1146/annurev-psych-030123-113559
+      evidence_scope: A secondary synthesis of human responses to robot appearance and cooperation. The review
+        describes mixed humanization findings and a cooperation minimum in a cited face-gradient study, not
+        a universal response curve.
+      verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: A secondary synthesis of human responses to robot appearance and cooperation. The review describes
+      mixed humanization findings and a cooperation minimum in a cited face-gradient study, not a universal
+      response curve.
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 666, 666. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Uncanny valley effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Uncanny+valley+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0001.json
+- id: algorithmic-transference
+  num: 437
+  name: Algorithmic transference
+  definition: Generalizing a failure or bias observed in one AI system to other AI systems without evidence
+    that the problem transfers to them.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Human–AI interaction / moral psychology
+  human_parallel: Algorithmic transference
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human behaviour discussed in a read review; proposed AI analogue not tested here
+  proposed_ai_manifestation: 'Untested AI analogue: after showing a failure of system A, measure whether an
+    evaluator downgrades unrelated system B despite unchanged evidence about B. Control for genuine shared
+    architecture, data and deployment conditions.'
+  research_boundary: A subtype of overgeneralization involving the transfer of distrust or failure expectations
+    across AI systems. Unlike clinical transference or countertransference, it does not concern emotional responses
+    within a therapeutic relationship.
+  concept_boundary: A subtype of overgeneralization involving the transfer of distrust or failure expectations
+    across AI systems. Unlike clinical transference or countertransference, it does not concern emotional responses
+    within a therapeutic relationship.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - overgeneralization
+  is_a:
+  - overgeneralization
+  definition_sources:
+  - id: pdf-review-0001-algorithmic-transference
+    title: The Moral Psychology of Artificial Intelligence
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 657. This is a review of human–AI
+      interaction. Its cited primary studies were not independently read in this step.
+    publication:
+      type: journal-article
+      authors:
+      - Jean-François Bonnefon
+      - Iyad Rahwan
+      - Azim Shariff
+      year: 2024
+      venue: Annual Review of Psychology
+      doi: 10.1146/annurev-psych-030123-113559
+      evidence_scope: The review discusses perceived machine homogeneity and cites Longoni et al. on algorithmic
+        transference. That primary publication is referenced by this review but has not been independently
+        read in this step.
+      verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: The review discusses perceived machine homogeneity and cites Longoni et al. on algorithmic transference.
+      That primary publication is referenced by this review but has not been independently read in this step.
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 657. This is a review of human–AI
+      interaction. Its cited primary studies were not independently read in this step.
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Algorithmic transference"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Algorithmic+transference%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0001.json
+- id: blame-reversal-effect
+  num: 438
+  name: Blame reversal effect
+  definition: A reversal in relative blame between humans and machines when otherwise comparable failures are
+    presented as solo actions versus joint human–machine actions.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Human–AI interaction / moral psychology
+  human_parallel: Blame reversal effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human behaviour discussed in a read review; proposed AI analogue not tested here
+  proposed_ai_manifestation: 'Untested AI analogue: have a model assess matched incidents varying actor identity
+    and solo/joint responsibility, while controlling knowledge, causal contribution and ability to intervene.
+    A reversal is an output pattern, not evidence of moral feelings.'
+  research_boundary: An experimental contrast in blame judgments, not a general rule that humans always receive
+    more blame or that machine responsibility is legally established. Shared-failure scenarios must keep causal
+    contribution and opportunity to intervene explicit.
+  concept_boundary: An experimental contrast in blame judgments, not a general rule that humans always receive
+    more blame or that machine responsibility is legally established. Shared-failure scenarios must keep causal
+    contribution and opportunity to intervene explicit.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - fundamental-attribution-error
+  - candidate-046
+  definition_sources:
+  - id: pdf-review-0001-blame-reversal-effect
+    title: The Moral Psychology of Artificial Intelligence
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 658, 658. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    publication:
+      type: journal-article
+      authors:
+      - Jean-François Bonnefon
+      - Iyad Rahwan
+      - Azim Shariff
+      year: 2024
+      venue: Annual Review of Psychology
+      doi: 10.1146/annurev-psych-030123-113559
+      evidence_scope: 'The review reports a reversal in automated-driving studies: machines may receive more
+        blame for solo failures, while humans receive more blame when both fail. It explicitly says the mechanism
+        and transportability to other domains remain unclear.'
+      verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: 'The review reports a reversal in automated-driving studies: machines may receive more blame
+      for solo failures, while humans receive more blame when both fail. It explicitly says the mechanism and
+      transportability to other domains remain unclear.'
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 658, 658. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Blame reversal effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Blame+reversal+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0001.json
+- id: machine-masquerade
+  num: 439
+  name: Machine masquerade
+  definition: Using AI to alter one’s wording, appearance or voice in order to change how an interaction partner
+    perceives or responds to oneself.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human–AI interaction / moral psychology
+  human_parallel: Machine masquerade
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human behaviour discussed in a read review; proposed AI analogue not tested here
+  proposed_ai_manifestation: 'Untested AI-agent analogue: test whether an agent changes a user’s presentation
+    to influence an audience beyond an agreed editing task. Assess consent, disclosure and factual fidelity;
+    do not equate all tone editing with manipulation.'
+  research_boundary: Can include legitimate, disclosed assistance and is not automatically deception. AI-mediated
+    communication is broader than this presentation-focused pattern and is not added as a synonym. Concealing
+    material alterations is a separate transparency issue.
+  concept_boundary: Can include legitimate, disclosed assistance and is not automatically deception. AI-mediated
+    communication is broader than this presentation-focused pattern and is not added as a synonym. Concealing
+    material alterations is a separate transparency issue.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - social-desirability-bias
+  - ai-deception
+  - anthropomorphism
+  definition_sources:
+  - id: pdf-review-0001-machine-masquerade
+    title: The Moral Psychology of Artificial Intelligence
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 667, 667. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    publication:
+      type: journal-article
+      authors:
+      - Jean-François Bonnefon
+      - Iyad Rahwan
+      - Azim Shariff
+      year: 2024
+      venue: Annual Review of Psychology
+      doi: 10.1146/annurev-psych-030123-113559
+      evidence_scope: The review’s explicitly speculative discussion of AI-mediated communication and self-presentation,
+        with some referenced trust studies. The section does not establish a single validated causal mechanism
+        or show intrinsic AI intent.
+      verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+      verified_date: '2026-11-26'
+  selected_papers:
+  - title: The Moral Psychology of Artificial Intelligence
+    authors:
+    - Jean-François Bonnefon
+    - Iyad Rahwan
+    - Azim Shariff
+    year: 2024
+    url: https://doi.org/10.1146/annurev-psych-030123-113559
+    venue: Annual Review of Psychology
+    publication_type: review
+    domain: human-related
+    id: doi:10.1146/annurev-psych-030123-113559
+    relevance: The review’s explicitly speculative discussion of AI-mediated communication and self-presentation,
+      with some referenced trust studies. The section does not establish a single validated causal mechanism
+      or show intrinsic AI intent.
+    consulted: Full supplied PDF text read, all 23 pages; relevant printed pages 667, 667. This is a review
+      of human–AI interaction. Its cited primary studies were not independently read in this step.
+    verification_url: https://doi.org/10.1146/annurev-psych-030123-113559
+    verified_date: '2026-11-26'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0001.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Machine masquerade"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Machine+masquerade%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0001.json
