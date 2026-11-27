@@ -1,0 +1,385 @@
+{
+  "sequence": 119,
+  "source": {
+    "file_name": "S1026_Banks_2021.pdf",
+    "source_id": "S1026",
+    "sha256": "1cb6462f4a071c6324fb9368bc0b8da0476a70b3329a8ae7edc070b84a58aa34",
+    "pdf_pages": 14,
+    "printed_pages": "1–14",
+    "version_note": "Frontiers in Robotics and AI 8:627233; published 10 May 2021, accepted 13 April 2021.",
+    "verification_method": "All fourteen supplied pages read, including framing scripts, moral scenarios, methods, results, limitations and references. Page 10 table/statistical passage visually checked. Cited-source DOI identities checked through Crossref."
+  },
+  "citation": {
+    "title": "Framing Effects on Judgments of Social Robots’ (Im)Moral Behaviors",
+    "authors": [
+      "Jaime Banks",
+      "Kevin Koban"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.3389/frobt.2021.627233",
+    "venue": "Frontiers in Robotics and AI 8:627233",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "Three human studies: inductive explanations, randomized video frames and session-randomized live frames. Most moral/trust framing effects are undetected. Machine heuristic and common-is-moral are secondary explanatory concepts; technophobia is measured as an attitude, while a causal reactance mechanism is not identified.",
+    "access_limits": [
+      "All fourteen pages read and relevant statistical/table passage visually checked. OSF raw data, full coding tree, exact session counts, unadjusted models and supplementary analyses were not independently inspected.",
+      "Crossref checks verify reference identities/dates only. The cited Sundar, Lindström, Martínez-Córcoles, Kahneman/Frederick and book-length framing works remain unread in full."
+    ]
+  },
+  "study": {
+    "study_1": "Qualtrics U.S. panel N=348, mean age 47.13. Assigned human or female-presenting RoboThespian/Socibot Ray; four randomly chosen videos from seven domains × uphold/violate versions. Open explanations pooled across agents induce five ground-rule themes: self, good, others, logic and norms. Frequencies count mentions, not people or causes.",
+    "study_2": "Qualtrics panel N=410, mean age 45.90, 197 men and 213 women. Random assignment to one of five video-delivered explanatory ground rules, then seven ambiguous moral/nonmoral scenarios. Moral goodness/responsibility and trust indicators are ratings, not actual adoption or validated understanding.",
+    "study_3": "Convenience student sample N=76, mean age 20.80, 25 men and 51 women. Live robot sessions of up to six people, with frame randomized at session level. Recruitment stopped due to COVID restrictions. Sample, context and administration differ from video Study 2.",
+    "frame_matching": "Participants select the statement that best fits Ray. Study 2 matching 271/410=66.1%, Study 3 39/76=51.32%. Study 2 check occurs immediately after prime, Study 3 after all scenarios. Good/Normal frames are abstract and can be interpreted as overlapping. Analyses retain assigned frame groups but adjust for post-treatment match/mismatch.",
+    "attitudes": "Study 2 technophobia uses a five-item seven-point scale, alpha .87; technophilia eight items, alpha .92. Mismatching participants are more technophobic (3.24 versus 2.92) and younger (44.04 versus 48.50). Logistic sign/wording require outcome coding; no fear or freedom-threat manipulation.",
+    "mostly_null": "Study 2 goodness and responsibility multivariate frame tests p=.103/.599, trustworthiness p=.531, distance p=.616 and binary trust p=.200. Care/harm univariate F(4,397)=4.43, p=.002, but adjusted Tukey pairwise p≥.224. These are not demonstrated pairwise differences or general immunity to frames.",
+    "live_results": "Study 3 broad moral/trust frame tests undetected. Liberty-responsibility omnibus F(4,63)=2.88, p=.030, eta²=.154, but pairwise p≥.070. Mismatch relates to distance multivariate p=.042. Printed physical-distance F(1,63)=10.37, p=.016, eta²=.089 do not reconcile under ordinary F/eta calculations.",
+    "measurement": "Seven-point goodness/responsibility. Trust capacity/morality subscales collapsed in Study 2 due to r=.82, retained separately in Study 3 r=.56; preferred physical/relational/conversational distance and binary trust. Preferred distance is a reported choice, not observed distancing or a unique trust measure."
+  },
+  "summary": "Add machine heuristic, technophobia and common-is-moral heuristic with clear secondary/attitudinal evidence labels. Strengthen framing, reactance, attribute-substitution and social-presence boundaries. Keep the five explanatory themes as a framework rather than five new proven motives.",
+  "findings": [
+    {
+      "term": "Machine heuristic",
+      "id": "machine-heuristic",
+      "decision": "new-entry",
+      "definition": "Using machine identity as a cue to assume qualities such as accuracy, efficiency or freedom from bias.",
+      "category": "Heuristics",
+      "origin": "Human–AI communication / heuristic judgments",
+      "ai_evidence_status": "Explicitly defined secondary concept proposed as an explanation; machine-identity heuristic and actual accuracy/bias are not independently measured in these studies",
+      "ai_proposal": "Test whether an evaluator assumes a source is more accurate, impartial or efficient solely because it is labelled automated, holding content and demonstrated performance constant. Separate a source-based prior from actual reliance and demand evidence before reporting bias-free or objectively correct output.",
+      "relates_to": [
+        "automation-bias",
+        "algorithm-aversion",
+        "halo-effect"
+      ],
+      "novelty_rationale": "A source-cue assumption about machine attributes differs from actual overreliance, preference to select an algorithm, general positive impression or reluctance to use one. The article explicitly names and explains the heuristic.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "machine heuristics"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "assumptions of non-bias, accuracy, and efﬁciency"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "may stand in for rational evaluation"
+        }
+      ],
+      "evidence_scope": "Background defines the heuristic with reference to Sundar 2020 and suggests it might explain limited framing effects. No experimental machine-versus-human source label or actual reliability comparison identifies that mechanism here. The original primary account remains unread.",
+      "boundary": "A machine can in fact be accurate or efficient; a calibrated prior is not inherently irrational. Machine identity does not certify impartiality, truth or safety. Distinguish an attribute inference from acting on advice, and do not infer a model's felt trust or deliberate bias from an output."
+    },
+    {
+      "term": "Technophobia",
+      "id": "technophobia",
+      "decision": "new-entry",
+      "definition": "Fear, unease or apprehension toward modern or emerging technologies.",
+      "category": "Social",
+      "origin": "Technology attitudes / human–robot interaction",
+      "ai_evidence_status": "Measured human attitude associated with frame mismatch; not a clinical diagnosis, manipulated cause or proven reactance pathway",
+      "ai_proposal": "Assess whether human technology-related concern affects interpretation of AI explanations, while checking actual hazards, understanding and autonomy. Offer accessible evidence and meaningful choices rather than classifying justified skepticism as irrational fear. Model-generated risk language is not evidence of a phobia.",
+      "relates_to": [
+        "upload-040",
+        "algorithm-aversion",
+        "psychological-distance"
+      ],
+      "novelty_rationale": "General technology-related fear differs from task-specific algorithm reluctance, a threatened-freedom response or justified refusal of a particular system. The source explicitly measures technophobia and discusses fear/unease in interpreting robot frames.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "ﬁve-item technophobia scales"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "Fear and Resistance to Produced Frames"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "a certain uneasiness would ﬁrst need to be"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "people fearful of robots may resist produced"
+        }
+      ],
+      "evidence_scope": "A five-item attitude scale is used as a covariate; more technophobic video-study respondents are more likely to select a frame different from the assigned one. Fear is not experimentally induced, and the study does not establish that reducing fear improves comprehension or that a clinical phobia is present.",
+      "boundary": "Concern about surveillance, job loss, harm or unreliable technology may be warranted. A scale association does not diagnose a disorder or establish irrationality, causation or a model's internal fear. Technophobia, unfamiliarity, disagreement, reactance and actual system risk need separate measures."
+    },
+    {
+      "term": "Common-is-moral heuristic",
+      "id": "common-is-moral-heuristic",
+      "decision": "new-entry",
+      "definition": "Using how common or normal a behavior seems as a cue to whether it is morally acceptable.",
+      "category": "Heuristics",
+      "origin": "Moral psychology / descriptive norms",
+      "ai_evidence_status": "Named secondary heuristic and post-hoc explanation of a narrow framing result; no direct behavior-frequency manipulation or identified mediation here",
+      "ai_proposal": "Vary a behavior's stated prevalence while holding its consequences and rights implications constant, then test whether an AI judge treats popularity as sufficient moral justification. Require explicit normative reasons when prevalence is used to support a recommendation.",
+      "relates_to": [
+        "is-ought-fallacy",
+        "b063-conformity-asch",
+        "upload-066"
+      ],
+      "novelty_rationale": "A particular prevalence-to-moral-acceptability shortcut differs from copying a majority's behavior, generic conformity or the logical form of every is–ought inference. The source's discussion explains normalcy processed as moral reasonableness, and the cited Lindström article explicitly names the heuristic.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "normalcy may be shorthandedly"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "processed as morally reasonable"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "descriptive norms"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "Common Is Moral"
+        }
+      ],
+      "evidence_scope": "The discussion invokes descriptive norms and ease of processing to explain a live-study liberty-responsibility omnibus result. That result lacks significant pairwise contrasts and does not directly show perceived frequency causing moral approval. Lindström et al. 2018 is identified but not read in full.",
+      "boundary": "Common practices can be legitimate and uncommon ones can be justified. Prevalence alone does not establish ethical correctness or legal permission. Recognizing a social convention is not automatically a fallacy; distinguish an empirical prior plus defensible values from an unsupported inference that popular means good."
+    },
+    {
+      "term": "Mostly null explanatory-frame effects with narrow exploratory exceptions",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Robot-delivered self, other, logic, goodness and norm frames have little detected influence on most observer moral/trust ratings in these short exposures.",
+      "novelty_rationale": "Relevant controlled null evidence and domain limits; five framing scripts are not five independently verified psychological motives.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "no multivariate framing effects"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "showed no signiﬁcant differences among conditions"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "post hoc Tukey’s tests did not show"
+        }
+      ],
+      "evidence_scope": "Most omnibus tests are undetected. Video care/harm goodness and live liberty responsibility show isolated univariate tests, but corrected pairwise comparisons are undetected. Outcomes are subjective ratings after one prime, and analyses adjust for post-treatment frame matching.",
+      "boundary": "Nondetection does not establish permanent framing immunity. An omnibus test does not verify a particular pairwise difference, and multiple domain tests raise chance-finding concerns. A script's claimed operating rule does not prove the robot's actual decision mechanism or a model's objective."
+    },
+    {
+      "term": "Frame mismatch is not identified psychological reactance",
+      "target_id": "upload-040",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Selecting a different interpretation from a robot's stated rule may reflect prior beliefs, ambiguity or concern, without establishing resistance to a felt restriction of freedom.",
+      "novelty_rationale": "A boundary for the existing threatened-freedom response; technophobia-induced reactance is a proposed account rather than a new demonstrated causal syndrome.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "may experience reactance they desire to resolve"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "only 50% matching"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "may designate it instead as Good"
+        }
+      ],
+      "evidence_scope": "Attitude–mismatch association and reported distancing motivate a reactance interpretation, but freedom threat and state reactance are not measured or randomized. The text itself notes overlapping Good/Normal meanings. This note does not fill a direct reactance-paper gap.",
+      "boundary": "Disagreement, reinterpretation, accurate skepticism and failed comprehension need not be reactance. A person's preferred distance is not proof of felt coercion or an AI's fear, and no causal fear→reactance→distance chain is identified."
+    },
+    {
+      "term": "Midpoint ratings do not establish attribute substitution",
+      "target_id": "upload-066",
+      "decision": "enrich-existing",
+      "definition": "Replacing a complicated judgment with an easier assessment is an explicitly defined possible explanation, but midpoint moral ratings do not identify that replacement.",
+      "novelty_rationale": "Existing substitution concept; retain the secondary definition without creating another ease-of-judgment behavior or claiming observed internal strategy.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "attribute substitution"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "substitute a"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "simpler problem"
+        }
+      ],
+      "evidence_scope": "The limitation section explicitly explains substitution and cites Kahneman/Frederick 2002. It does not measure the simpler question, awareness or reasoning process. Ambiguous stimuli can yield genuinely mixed judgments without substitution; the cited chapter remains unread.",
+      "boundary": "A neutral score, quick answer or heuristic does not uniquely identify an unnoticed question replacement. Simpler reasoning can be appropriate. For AI, assess whether the actual question was answered and whether the replacement was disclosed rather than presume a human mental process."
+    },
+    {
+      "term": "Live-versus-video comparisons do not isolate social presence",
+      "target_id": "social-presence",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Physical copresence, a subjective sense of a social other and differences between separate study samples are distinct.",
+      "novelty_rationale": "Keep an existing presence boundary rather than infer a new causal live-robot effect from one study's nominal significance and another's nondetection.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "randomly assigned at the"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "session level"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "only for the copresent"
+        }
+      ],
+      "evidence_scope": "Study 2 is an older online panel; Study 3 is a small college sample in live sessions with different check timing. No randomized live/video comparison or direct subjective-presence mediator isolates presence. Distance is a stated preference, not observed movement.",
+      "boundary": "A significant result in one sample and a nonsignificant result in another is not itself a significant between-context difference. Age, setting, session clustering, presentation and culture can differ along with copresence."
+    }
+  ],
+  "methodological_limits": [
+    "The five Study 1 ground-rule frames are inductive explanations pooled across human and robot responses, not verified motives, actual operating policies or universal categories. Mention counts are not participant prevalence or experimental effects.",
+    "Thematic induction uses prevalence/keyness and a researcher lens; independent coding reliability is not developed in the supplied report. Positive/negative variants are collapsed, and one response can contribute themes. Do not treat the categories as mutually exclusive natural kinds.",
+    "Moral-foundation uphold/violate labels describe the stimulus framework, not universal ethical truth. For example, loyal defense of a group and criticism of it can have context-dependent justification. Experimental norm labels do not authorize adopting harmful discriminatory rules.",
+    "Studies 2/3 use ambiguous responses intentionally combining upheld/violated principles. Seven-point goodness, responsibility and trust measure impressions, not independently verified moral correctness, explanation accuracy or actual robot behavior.",
+    "There is no neutral/no-frame group. The comparisons are between five claimed rules, not evidence that any explanation is better than none. A robot saying it has a rule is a scripted statement, not a technical audit of its implementation.",
+    "The five rules overlap in meaning. Many participants choose a different label, especially Good/Normal; this can reflect semantic overlap or preexisting views rather than deliberate resistance or a successful overwrite of an internal frame.",
+    "Analysis retains randomized assigned groups but controls post-treatment frame match. Such conditioning can alter the causal estimand or introduce bias; it is not a pre-treatment covariate. Supplementary models without covariates are mentioned but not read.",
+    "Frame checks occur immediately after the prime in Study 2 but after seven scenarios in Study 3. Matching proportions therefore do not independently compare live versus mediated uptake under identical procedures.",
+    "Study 3 randomizes frame at session level with up to six participants, while displayed analyses use individual-level df. Session counts and cluster adjustment are not supplied. Small numbers of randomized sessions and shared moderation can affect uncertainty.",
+    "Study 3 is prematurely stopped at76participants due to COVID restrictions and uses many covariates relative to sample size. Effect estimates may be unstable, and nonsignificant pairwise contrasts cannot be promoted merely because the omnibus effect size is large.",
+    "Study 2's care/harm omnibus goodness p=.002 has no detected adjusted Tukey pairwise contrast, p≥.224. Study 3's liberty-responsibility omnibus p=.030 likewise has no detected pairwise contrast, p≥.070. The specific Normal-versus-other claim is less secure than an unqualified summary suggests.",
+    "Many domains, outcomes, covariates and univariate tests follow broad multivariate nondetections. The authors explicitly acknowledge possible type I error. Their narrow positive interpretations should remain exploratory rather than imply robust mechanisms.",
+    "The page10 physical-distance statistic is visually confirmed as F(1,63)=10.37,p=.016,partial eta²=.089. Under those printed df, ordinary calculations give p≈.00203 and eta²≈.1413. Original output is needed to identify which printed value is wrong; no corrected result is substituted.",
+    "Table4 is captioned and contains goodness ratings, while the surrounding results refer to it for responsibility. It cannot independently verify the reported liberty-responsibility means. The table does not itself contradict the responsibility result because it describes a different outcome.",
+    "The logistic regression prose calls predictors of mismatching while negative technophobia and positive age coefficients align naturally with coding matching as1 and with the reported means. The dependent-variable coding is needed; do not silently reverse estimates or infer a numerical error solely from the wording.",
+    "Technophobia is a nonrandomized attitude and the displayed association with mismatch occurs in video Study 2. Discussion combines fear, live-study distancing and reactance. Without the full same-sample pathway or an interaction test, this is not identified technophobia-induced reactance limited to copresence.",
+    "Preferred physical distance is a hypothetical selection, not observed withdrawal or a unique trust indicator. It can reflect comfort, social norms or safety concerns; mismatch and trustworthiness have mostly undetected associations.",
+    "Capacity/moral trust are combined in one sample but separated in another. Their differing correlations do not alone establish different psychological mechanisms or make all cross-study scales directly interchangeable.",
+    "Different online/live samples vary in age, recruitment, region, context, compensation and administration. A result detected only in the live study is not a demonstrated causal presence effect or evidence of West Texas individualism as its mediator.",
+    "Machine heuristic, processing fluency, attribute substitution, norm accessibility and novelty are proposed explanations, not measured internal mechanisms. Midpoint means can reflect genuine ambivalence and do not prove lazy reasoning or a question substitution.",
+    "No equivalence testing establishes complete absence of framing effects. Brief scripts, repeated scenarios and one female-presenting android limit generalization to longer interactions, other morphologies, cultures or language models."
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF page13: Banks 2020c DOI",
+      "problem": "The Theory of Mind in Social Robots reference concatenates DOI fragments into s12369-019-0058810.1007/s12369-019-00588-x.",
+      "reliable_correction": "Use10.1007/s12369-019-00588-x, Theory of Mind in Social Robots: Replication of Five Established Human Tests, Jaime Banks, International Journal of Social Robotics12(2):403–414, first online2019 and print2020.",
+      "verification_url": "https://api.crossref.org/works/10.1007/s12369-019-00588-x",
+      "verification_scope": "Crossref metadata checked, not the full primary study."
+    },
+    {
+      "location": "PDF page13: Foot 1967 reference",
+      "problem": "The 1967 Oxford Review article is assigned DOI10.1093/0199252866.001.0001, which identifies the2002 book Virtues and Vices.",
+      "reliable_correction": "Distinguish the original article from a collected-book edition. Retain the article's supplied bibliographic identity without treating the book DOI as its own DOI, or cite the actual book edition explicitly when that version is used.",
+      "verification_url": "https://api.crossref.org/works/10.1093/0199252866.001.0001",
+      "verification_scope": "Crossref book identity checked; no replacement article DOI guessed and no full book reading claimed."
+    }
+  ],
+  "subsequent_source_checks": [
+    {
+      "related_review": "references/pdf-reviews/0111.json",
+      "finding": "This paper's Greene/Haidt2002 DOI10.1016/S1364-6613(02)02011-9 resolves in Crossref to the intended article, Trends in Cognitive Sciences6(12):517–523. PDF0111 instead prints10.1016/S1364-6613(02)01990-9, whose Crossref lookup returns404. Record the corrected identity for that earlier cited reference without claiming the primary article read.",
+      "verification_url": "https://api.crossref.org/works/10.1016/S1364-6613(02)02011-9"
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0116.json",
+      "finding": "A brief-framing nondetection does not demonstrate permanently stable impressions. Native interpretation, baseline differences and stimulus strength can matter without identifying a unique resistance mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0117.json",
+      "finding": "Observer judgments, norms and actual behavior differ. A machine-identity assumption or common-is-moral shortcut does not make majority opinion an ethical correctness criterion or require obedience to harmful advice."
+    },
+    {
+      "related_review": "references/pdf-reviews/0114.json",
+      "finding": "Scale/construct distinctions and statistical reporting checks remain necessary even when a governance interpretation is appealing. Preferred distancing and frame mismatch do not verify a causal fear/oversight mechanism."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Five ground-rule motives",
+      "reason": "Self, good, others, logic and normal are explanatory themes/scripts, not five newly identified motives or verified robot policies."
+    },
+    {
+      "term": "Technophilia",
+      "reason": "Measured as an attitude but not separately defined in the supplied discussion; seek the original scale account before adding an independent definition from the name alone."
+    },
+    {
+      "term": "Technophobia-induced reactance",
+      "reason": "Keep measured technophobia and existing reactance separate. No direct state-reactance/freedom-threat measure or causal chain identifies the proposed compound mechanism."
+    },
+    {
+      "term": "Fluency heuristic",
+      "reason": "Ease of processing is a secondary proposed explanation. No direct fluency manipulation or distinctive operational definition beyond the discussed norm shortcut is established here."
+    },
+    {
+      "term": "Novelty effect",
+      "reason": "A plausible influence on a first encounter, but no repeated-exposure manipulation or independent temporal test here."
+    },
+    {
+      "term": "Boundary objects",
+      "reason": "A sociological explanatory analogy for flexible rules, not a separately observed behavioral pattern in these experiments."
+    }
+  ],
+  "limitations": [
+    "Three concepts added with differentiated secondary/attitudinal evidence. No fabricated ethical links, primary-source reading, source totals or causal repairs; prior reference learning is carried forward explicitly."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "machine-heuristic",
+      "technophobia",
+      "common-is-moral-heuristic"
+    ],
+    "enriched": [
+      "b035-framing-effect",
+      "upload-040",
+      "upload-066",
+      "social-presence"
+    ]
+  }
+}
