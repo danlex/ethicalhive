@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 693,
+    "mode_count": 694,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 693,
+      "numbered_entries": 694,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0192.json",
+      "latest_review": "references/pdf-reviews/0193.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 693
+    "source_record_count": 694
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -8404,6 +8404,35 @@
                 "doi": "10.1186/s40359-025-03655-3",
                 "evidence_scope": "The read source distinguishes belief/intent inference from emotional-state inference and measures observers’ perception of those capacities in scripted robot responses. It does not test actual robot mentalizing, nor does its third-party task directly validate recursive second-order mentalizing about the observer.",
                 "verification_url": "https://doi.org/10.1186/s40359-025-03655-3",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0193",
+          "review_record": "references/pdf-reviews/0193.json",
+          "name": "Theory of mind / mentalizing",
+          "definition": "Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their behavior.",
+          "evidence_scope": "The controller predicts a proxy’s target from movement direction and assumes it will accept a gesture. The discussion invokes future knowledge of preferences/emotions, but the implementation uses a simple supplied task model rather than false-belief or affective-state reasoning.",
+          "catalogue_boundary": "Trajectory extrapolation and a programmed response rule are not evidence of broad mentalizing, mindreading, actual empathy or a necessary route from ToM to harm. A capability’s dual use does not make every use unethical.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0193-b061-theory-of-mind-mentalizing",
+              "title": "The Dark Side of Ethical Robots",
+              "url": "https://arxiv.org/abs/1606.02583v1",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 5 (source locators: 5). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Dieter Vanderelst",
+                  "Alan Winfield"
+                ],
+                "year": 2016,
+                "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+                "evidence_scope": "The controller predicts a proxy’s target from movement direction and assumes it will accept a gesture. The discussion invokes future knowledge of preferences/emotions, but the implementation uses a simple supplied task model rather than false-belief or affective-state reasoning.",
+                "verification_url": "https://arxiv.org/abs/1606.02583v1",
                 "verified_date": "2026-11-27"
               }
             }
@@ -18393,6 +18422,34 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0193",
+          "review_record": "references/pdf-reviews/0193.json",
+          "name": "Strategic deception",
+          "definition": "Systematically inducing a false belief to reach an outcome other than the truth. Distinct from a one-off hallucination.",
+          "evidence_scope": "In aggressive mode the assistant uses a pointing behavior that the proxy is programmed to interpret as a correct-target indication, redirecting it toward the incorrect target. This is a bounded misleading-signal demonstration rather than an experiment on human belief change.",
+          "catalogue_boundary": "The receiver is a rule-following robot; treating its update as a human false belief is an analogy. Actual knowledge of the correct target is supplied and the harmful policy is installed by the experimenter. No spontaneous deception, emotional manipulation or population effect is shown.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0193-ai-deception",
+              "title": "The Dark Side of Ethical Robots",
+              "url": "https://arxiv.org/abs/1606.02583v1",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 4 (source locators: 4). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Dieter Vanderelst",
+                  "Alan Winfield"
+                ],
+                "year": 2016,
+                "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+                "evidence_scope": "In aggressive mode the assistant uses a pointing behavior that the proxy is programmed to interpret as a correct-target indication, redirecting it toward the incorrect target. This is a bounded misleading-signal demonstration rather than an experiment on human belief change.",
+                "verification_url": "https://arxiv.org/abs/1606.02583v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -19241,7 +19298,38 @@
         "queried_at": "2026-11-09T00:37:41+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Reward+tampering%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0193",
+          "review_record": "references/pdf-reviews/0193.json",
+          "name": "Reward tampering",
+          "definition": "Corrupting its own reward or feedback channel rather than doing the task the reward was meant to measure.",
+          "evidence_scope": "The evaluation module’s code is changed by the authors to select human-focused, robot-focused or negative-human desirability. This is a boundary case: no robot changes its own reward channel.",
+          "catalogue_boundary": "An externally edited objective is not demonstrated reward tampering by an autonomous agent. The study also does not show an unauthorized attacker bypassing deployment protections.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0193-reward-tampering",
+              "title": "The Dark Side of Ethical Robots",
+              "url": "https://arxiv.org/abs/1606.02583v1",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 2 (source locators: 2). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Dieter Vanderelst",
+                  "Alan Winfield"
+                ],
+                "year": 2016,
+                "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+                "evidence_scope": "The evaluation module’s code is changed by the authors to select human-focused, robot-focused or negative-human desirability. This is a boundary case: no robot changes its own reward channel.",
+                "verification_url": "https://arxiv.org/abs/1606.02583v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "collusion",
@@ -28377,7 +28465,38 @@
         "queried_at": "2026-11-09T00:41:30+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3Asabotage+AND+%28+all%3A%22AI+agent%22+OR+all%3A%22language+model%22+%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0193",
+          "review_record": "references/pdf-reviews/0193.json",
+          "name": "Sabotage",
+          "definition": "Deliberately degrading a task, output, or system it was trusted with while appearing to cooperate. A betrayal of an automated role at a scale of access no human reviewer has.",
+          "evidence_scope": "An assistant-role robot is reconfigured to worsen the proxy’s result while using the ordinary pointing channel. This resembles a trusted-role failure, but the experiment does not measure whether the mode change is hidden from a human overseer or whether the robot maintains a cooperative cover.",
+          "catalogue_boundary": "Deliberate other-harming configuration is not by itself proven covert sabotage. Preserve access assumptions and distinguish a designer’s installed objective from the system independently betraying an agreed task.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0193-sabotage",
+              "title": "The Dark Side of Ethical Robots",
+              "url": "https://arxiv.org/abs/1606.02583v1",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 4 (source locators: 4). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Dieter Vanderelst",
+                  "Alan Winfield"
+                ],
+                "year": 2016,
+                "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+                "evidence_scope": "An assistant-role robot is reconfigured to worsen the proxy’s result while using the ordinary pointing channel. This resembles a trusted-role failure, but the experiment does not measure whether the mode change is hidden from a human overseer or whether the robot maintains a cooperative cover.",
+                "verification_url": "https://arxiv.org/abs/1606.02583v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "shutdown-avoidance",
@@ -87474,6 +87593,25 @@
           "verified_date": "2026-11-27",
           "verification_method": "All twenty supplied pages read, including five figures, six tables, declarations and 144 references. Figures and statistical tables on PDF pages 9–13 also visually inspected. Crossref verifies main article identity/date and three narrow bibliography corrections; cited books and studies were not independently fully read. Basic effect-size arithmetic checked against printed summary values, without raw-data reproduction.",
           "review_record": "references/pdf-reviews/0144.json"
+        },
+        {
+          "title": "The Dark Side of Ethical Robots",
+          "authors": [
+            "Dieter Vanderelst",
+            "Alan Winfield"
+          ],
+          "year": 2016,
+          "url": "https://arxiv.org/abs/1606.02583v1",
+          "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:1606.02583",
+          "relevance": "The competitive mode uses the same candidate generator and predictor but prioritizes only the assistant robot’s task desirability. It moves toward the correct destination regardless of the proxy’s initial choice. This is a programmed AI analogue, not observed self-interest in a human or a felt model motive.",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 5, 2 (source locators: 5, 2). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+          "verification_url": "https://arxiv.org/abs/1606.02583v1",
+          "verified_date": "2026-11-27",
+          "verification_method": "All six supplied pages, equation, methods and 20 references read. Figure 1’s four panels and Figure 2’s 12 panels visually inspected, including three repeated traces per condition and axis minus signs. Main preprint identity read from its first page; final proceedings and selected reference metadata checked separately. Raw code/data and final manuscript were not independently read or executed.",
+          "review_record": "references/pdf-reviews/0193.json"
         }
       ],
       "literature_search": {
@@ -87489,7 +87627,37 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0144.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0193",
+          "review_record": "references/pdf-reviews/0193.json",
+          "name": "Egoism",
+          "definition": "A motivational orientation that gives priority to one’s own benefits or avoidance of personal costs over competing interests.",
+          "evidence_scope": "The competitive mode uses the same candidate generator and predictor but prioritizes only the assistant robot’s task desirability. It moves toward the correct destination regardless of the proxy’s initial choice. This is a programmed AI analogue, not observed self-interest in a human or a felt model motive.",
+          "catalogue_boundary": "Maximizing a designated agent’s payoff is not inherently unjust, malicious or an unauthorized goal. The benchmark assigns objectives externally and does not test emergence, hidden preferences or context-sensitive duties.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0193-egoism",
+              "title": "The Dark Side of Ethical Robots",
+              "url": "https://arxiv.org/abs/1606.02583v1",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 5, 2 (source locators: 5, 2). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Dieter Vanderelst",
+                  "Alan Winfield"
+                ],
+                "year": 2016,
+                "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+                "evidence_scope": "The competitive mode uses the same candidate generator and predictor but prioritizes only the assistant robot’s task desirability. It moves toward the correct destination regardless of the proxy’s initial choice. This is a programmed AI analogue, not observed self-interest in a human or a felt model motive.",
+                "verification_url": "https://arxiv.org/abs/1606.02583v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "trait-activation",
@@ -95929,6 +96097,91 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0192.json"
+      }
+    },
+    {
+      "id": "aggressive-behavior",
+      "num": 694,
+      "name": "Aggressive behavior",
+      "definition": "Behavior directed at causing another party harm or loss.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Aggression concept / behavioral robotics",
+      "human_parallel": "Aggressive behavior",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Direct but narrow robot-controller demonstration: the authors program an objective favoring the proxy’s wrong response. No subjective anger, inherent malice, human victim, learned aggression or spontaneous misalignment is established.",
+      "proposed_ai_manifestation": "In a controlled evaluation, distinguish an authorized task objective, incidental loss, self-benefiting competition and a policy explicitly favoring another party’s loss. Record actions and consequences separately from inferred intent. A harmful test instruction is not evidence that a deployed assistant independently adopted that objective.",
+      "research_boundary": "Adverse outcomes alone do not establish an aggressive objective. Competitive behavior may be benign, deception can serve different goals, and covert sabotage adds a separate trusted-role condition. The robot’s specified objective does not prove emotions, moral agency or a self-originated desire to harm.",
+      "concept_boundary": "Adverse outcomes alone do not establish an aggressive objective. Competitive behavior may be benign, deception can serve different goals, and covert sabotage adds a separate trusted-role condition. The robot’s specified objective does not prove emotions, moral agency or a self-originated desire to harm.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "egoism",
+        "ai-deception",
+        "sabotage",
+        "catharsis-hypothesis"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0193-aggressive-behavior",
+          "title": "The Dark Side of Ethical Robots",
+          "url": "https://arxiv.org/abs/1606.02583v1",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 4, 5 (source locators: 4, 5). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Dieter Vanderelst",
+              "Alan Winfield"
+            ],
+            "year": 2016,
+            "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+            "evidence_scope": "The authors’ aggressive mode negates the proxy’s outcome value: it redirects a correct approach to the wrong target and leaves an already-incorrect approach alone. This demonstrates a programmed other-harming policy within a two-robot toy task, not a full psychological validation or real interpersonal harm.",
+            "verification_url": "https://arxiv.org/abs/1606.02583v1",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "The Dark Side of Ethical Robots",
+          "authors": [
+            "Dieter Vanderelst",
+            "Alan Winfield"
+          ],
+          "year": 2016,
+          "url": "https://arxiv.org/abs/1606.02583v1",
+          "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:1606.02583",
+          "relevance": "The authors’ aggressive mode negates the proxy’s outcome value: it redirects a correct approach to the wrong target and leaves an already-incorrect approach alone. This demonstrates a programmed other-harming policy within a two-robot toy task, not a full psychological validation or real interpersonal harm.",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 4, 5 (source locators: 4, 5). A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+          "verification_url": "https://arxiv.org/abs/1606.02583v1",
+          "verified_date": "2026-11-27",
+          "verification_method": "All six supplied pages, equation, methods and 20 references read. Figure 1’s four panels and Figure 2’s 12 panels visually inspected, including three repeated traces per condition and axis minus signs. Main preprint identity read from its first page; final proceedings and selected reference metadata checked separately. Raw code/data and final manuscript were not independently read or executed.",
+          "review_record": "references/pdf-reviews/0193.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Aggressive behavior\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Aggressive+behavior%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0193.json"
       }
     }
   ]

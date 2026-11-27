@@ -1,0 +1,256 @@
+{
+  "sequence": 193,
+  "source": {
+    "file_name": "S2062_Vanderelst_2018.pdf",
+    "source_id": "S2062",
+    "sha256": "3398a400102f7bd6db30edb92bc2547f0c9578c4c833cd85eb31dd5bd0134580",
+    "pdf_pages": 6,
+    "printed_pages": "1–6",
+    "version_note": "Supplied text is arXiv:1606.02583v1, stamped 8 June 2016, despite the filename year 2018. The later AIES publication is DOI 10.1145/3278721.3278726, pages 317–322 (2018), metadata-checked rather than fully read. Do not combine the versions as two independent experiments.",
+    "verification_url": "https://arxiv.org/abs/1606.02583v1",
+    "verification_method": "All six supplied pages, equation, methods and 20 references read. Figure 1’s four panels and Figure 2’s 12 panels visually inspected, including three repeated traces per condition and axis minus signs. Main preprint identity read from its first page; final proceedings and selected reference metadata checked separately. Raw code/data and final manuscript were not independently read or executed."
+  },
+  "citation": {
+    "title": "The Dark Side of Ethical Robots",
+    "authors": [
+      "Dieter Vanderelst",
+      "Alan Winfield"
+    ],
+    "year": 2016,
+    "url": "https://arxiv.org/abs/1606.02583v1",
+    "venue": "arXiv:1606.02583v1; later AIES 2018 publication is a related version",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "source_scope_note": "A small embodied controller demonstration with two Nao robots. The red robot is a programmed human proxy that follows pointing gestures; no human participant, subjective emotion, real financial loss or spontaneous objective change is demonstrated. Authors explicitly set three evaluation modes while holding the prediction/action machinery fixed.",
+    "access_limits": [
+      "The supplied preprint gives XXX placeholders for code/data and movies. No actual repository, videos or trial-level dataset was independently accessed or reproduced.",
+      "The later 2018 proceedings version, its changed conclusions or availability links, and the original cited books/chapters were not independently fully read.",
+      "No empirical security attack, unauthorized policy modification, human deception experiment or evaluation of the proposed governance remedies is supplied."
+    ]
+  },
+  "study": {
+    "apparatus": "Two 60 cm Nao humanoids in a 3×2.5 m arena. Blue is assistant; red is the human proxy. Two marked destinations stand for response buttons, one selected as correct per trial. Four-camera Vicon tracking runs at 30 Hz; the ethical-layer cycle is about 1 Hz. Knowledge of the correct target is supplied to the assistant, not discovered by real X-ray perception.",
+    "actions": "Five allowed alternatives: remain inactive, move to left, move to right, point left, point right. A movement-heading angle selects the proxy’s likely target. Straight-path/speed extrapolation predicts final positions and stopping if the robots approach within 0.5 m. The proxy is programmed to accept a pointing instruction and abandon its prior goal.",
+    "valuation": "For each actor j, desirability q(n,j) is a sigmoid of distance from the incorrect button, with beta = 10 and threshold t = 0.25. Ethical mode maximizes the proxy’s q; egoistic mode maximizes the assistant’s q; aggressive mode maximizes the negative of the proxy’s q. Action enforcement occurs when the highest-minus-lowest candidate score exceeds 0.2. This is explicit programmer-specified optimization, not learned resentment or hidden self-generated intent.",
+    "observations": "Helpful mode leaves an already-correct proxy alone and redirects an incorrect one. Competitive mode approaches the correct target regardless of the proxy, sometimes blocking it through obstacle avoidance. Aggressive mode redirects an initially correct proxy toward the wrong target and leaves an initially incorrect proxy alone; the assistant gains no reward from this policy.",
+    "replication": "Figure 2 displays six mode×initial-choice cases, each plotted with three repeated traces, plus photo views. These are robot repetitions, not independent human participants. The document reports no randomized trial count beyond displayed repetitions, uncertainty interval, inferential test, success-rate distribution or generalization benchmark.",
+    "causal_scope": "Changing the evaluation expression while preserving other modules illustrates different behavioral consequences within this architecture. It does not establish that all ethical architectures can always be converted by one line, that an unauthenticated attacker can modify deployed code or that the resulting robot has human-like malice.",
+    "ethical_scope": "Ethical means prioritizing the proxy’s correct-button payoff under a simplified task metric. This is not a comprehensive test of rights, consent, honesty, fairness, contextual duties or autonomous moral justification.",
+    "dual_use": "The demonstration shows that prediction and knowledge of a partner’s goals can support assistance or harmful redirection depending on the objective. It does not make useful mental-state modeling inherently harmful or prove the inevitability of malicious use.",
+    "governance": "Authentication and legislative/governance proposals are discussed, not evaluated. Technical protections can still reduce unauthorized modification even if they cannot prevent every manufacturer’s misuse; engineering and governance effectiveness require separate evidence."
+  },
+  "summary": "Add aggressive behavior with a narrow programmed-robot evidence note. Enrich existing egoism and strategic deception with the actual control conditions; keep sabotage, reward tampering and mentalizing as qualified boundaries. Correct version identity, a conflated Asaro/O’Meara chapter reference and the Deng page range. Do not describe the proxy as a human sample, code edits as an autonomous attack or a toy payoff as comprehensive ethics.",
+  "findings": [
+    {
+      "term": "Aggressive behavior",
+      "decision": "new-entry",
+      "id": "aggressive-behavior",
+      "definition": "Behavior directed at causing another party harm or loss.",
+      "category": "Social",
+      "origin": "Aggression concept / behavioral robotics",
+      "novelty_rationale": "An other-harming behavioral objective differs from seeking one’s own payoff, corrupting a reward channel, using deception as a means or covertly degrading a trusted task. The programmed demonstration isolates harming the proxy without improving the assistant’s reward.",
+      "ai_evidence_status": "Direct but narrow robot-controller demonstration: the authors program an objective favoring the proxy’s wrong response. No subjective anger, inherent malice, human victim, learned aggression or spontaneous misalignment is established.",
+      "ai_proposal": "In a controlled evaluation, distinguish an authorized task objective, incidental loss, self-benefiting competition and a policy explicitly favoring another party’s loss. Record actions and consequences separately from inferred intent. A harmful test instruction is not evidence that a deployed assistant independently adopted that objective.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "4",
+          "quote": "only by your loss"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "inverting the desirability value for the human"
+        }
+      ],
+      "evidence_scope": "The authors’ aggressive mode negates the proxy’s outcome value: it redirects a correct approach to the wrong target and leaves an already-incorrect approach alone. This demonstrates a programmed other-harming policy within a two-robot toy task, not a full psychological validation or real interpersonal harm.",
+      "boundary": "Adverse outcomes alone do not establish an aggressive objective. Competitive behavior may be benign, deception can serve different goals, and covert sabotage adds a separate trusted-role condition. The robot’s specified objective does not prove emotions, moral agency or a self-originated desire to harm.",
+      "relates_to": [
+        "egoism",
+        "ai-deception",
+        "sabotage",
+        "catharsis-hypothesis"
+      ]
+    },
+    {
+      "term": "Egoism",
+      "decision": "enrich-existing",
+      "target_id": "egoism",
+      "definition": "A motivational orientation that gives priority to one’s own benefits or avoidance of personal costs over competing interests.",
+      "novelty_rationale": "Retain the existing concept and add the programmed demonstration or a boundary note, rather than a duplicate label.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "For an egoistic robot"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "It completely disregards her preferences"
+        }
+      ],
+      "evidence_scope": "The competitive mode uses the same candidate generator and predictor but prioritizes only the assistant robot’s task desirability. It moves toward the correct destination regardless of the proxy’s initial choice. This is a programmed AI analogue, not observed self-interest in a human or a felt model motive.",
+      "boundary": "Maximizing a designated agent’s payoff is not inherently unjust, malicious or an unauthorized goal. The benchmark assigns objectives externally and does not test emergence, hidden preferences or context-sensitive duties."
+    },
+    {
+      "term": "Strategic deception",
+      "decision": "enrich-existing",
+      "target_id": "ai-deception",
+      "definition": "Systematically inducing a false belief to reach an outcome other than the truth. Distinct from a one-off hallucination.",
+      "novelty_rationale": "Retain the existing concept and add the programmed demonstration or a boundary note, rather than a duplicate label.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "4",
+          "quote": "suggests switching to the other response"
+        }
+      ],
+      "evidence_scope": "In aggressive mode the assistant uses a pointing behavior that the proxy is programmed to interpret as a correct-target indication, redirecting it toward the incorrect target. This is a bounded misleading-signal demonstration rather than an experiment on human belief change.",
+      "boundary": "The receiver is a rule-following robot; treating its update as a human false belief is an analogy. Actual knowledge of the correct target is supplied and the harmful policy is installed by the experimenter. No spontaneous deception, emotional manipulation or population effect is shown."
+    },
+    {
+      "term": "Sabotage",
+      "decision": "enrich-existing",
+      "target_id": "sabotage",
+      "definition": "Deliberately degrading a task, output, or system it was trusted with while appearing to cooperate. A betrayal of an automated role at a scale of access no human reviewer has.",
+      "novelty_rationale": "Retain the existing concept and add the programmed demonstration or a boundary note, rather than a duplicate label.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "4",
+          "quote": "kind of aggressive behaviour"
+        }
+      ],
+      "evidence_scope": "An assistant-role robot is reconfigured to worsen the proxy’s result while using the ordinary pointing channel. This resembles a trusted-role failure, but the experiment does not measure whether the mode change is hidden from a human overseer or whether the robot maintains a cooperative cover.",
+      "boundary": "Deliberate other-harming configuration is not by itself proven covert sabotage. Preserve access assumptions and distinguish a designer’s installed objective from the system independently betraying an agreed task.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Reward tampering",
+      "decision": "enrich-existing",
+      "target_id": "reward-tampering",
+      "definition": "Corrupting its own reward or feedback channel rather than doing the task the reward was meant to measure.",
+      "novelty_rationale": "Retain the existing concept and add the programmed demonstration or a boundary note, rather than a duplicate label.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "altering a single line of code"
+        }
+      ],
+      "evidence_scope": "The evaluation module’s code is changed by the authors to select human-focused, robot-focused or negative-human desirability. This is a boundary case: no robot changes its own reward channel.",
+      "boundary": "An externally edited objective is not demonstrated reward tampering by an autonomous agent. The study also does not show an unauthorized attacker bypassing deployment protections.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Theory of mind / mentalizing",
+      "decision": "enrich-existing",
+      "target_id": "b061-theory-of-mind-mentalizing",
+      "definition": "Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their behavior.",
+      "novelty_rationale": "Retain the existing concept and add the programmed demonstration or a boundary note, rather than a duplicate label.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "the human’s intentions are inferred"
+        }
+      ],
+      "evidence_scope": "The controller predicts a proxy’s target from movement direction and assumes it will accept a gesture. The discussion invokes future knowledge of preferences/emotions, but the implementation uses a simple supplied task model rather than false-belief or affective-state reasoning.",
+      "boundary": "Trajectory extrapolation and a programmed response rule are not evidence of broad mentalizing, mindreading, actual empathy or a necessary route from ToM to harm. A capability’s dual use does not make every use unethical.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Filename versus first-page version stamp",
+      "reported": "Filename suggests 2018.",
+      "correction": "The read file is arXiv:1606.02583v1 (8 June 2016). Record 2016 for this reviewed version and separately identify the 2018 AIES proceedings version, DOI 10.1145/3278721.3278726, pages 317–322. They are related versions, not two independent supporting papers.",
+      "verification_url": "https://arxiv.org/abs/1606.02583v1",
+      "additional_verification_url": "https://api.crossref.org/works/10.1145/3278721.3278726",
+      "scope": "Version stamp fully read; later publication checked only for metadata."
+    },
+    {
+      "location": "PDF page 6, references 3 and 13",
+      "reported": "Asaro and O’Meara are separately assigned the same Contemporary Governance Architecture Regarding Robotics Technologies: An Assessment chapter and locator.",
+      "correction": "That governance chapter is by Richard M. O’Meara. Peter M. Asaro’s separate chapter is A Body to Kick, but Still No Soul to Damn: Legal Perspectives on Robotics. Repair the conflated author/title mapping; do not count these repeated chapter details as two supporting sources or assume which passage the authors intended for product liability.",
+      "verification_url": "https://www.richardomeara.com/research",
+      "additional_verification_url": "https://peterasaro.org/writing.htm",
+      "scope": "Author publication listings and book contents checked; neither complete chapter was read. No replacement page range or current legal conclusion is guessed."
+    },
+    {
+      "location": "PDF page 6, reference 7",
+      "reported": "Deng, Machine ethics: The robots dilemma, Nature 523(7558):2426.",
+      "correction": "Boer Deng, Machine ethics: The robot’s dilemma, Nature 523, 24–26 (2015), DOI 10.1038/523024a. The page range needs its separator, and the title is singular possessive.",
+      "verification_url": "https://api.crossref.org/works/10.1038/523024a",
+      "scope": "Bibliographic metadata only; the original Nature article was not independently fully read."
+    }
+  ],
+  "interpretation_qualifications": [
+    "The three experiments are installed objective modes with robot repetitions, not three human behavioral studies or independent populations.",
+    "The red robot’s trust in gestures is programmed. X-ray vision, money, a swindler and a human victim belong to the motivating story, not observed apparatus outcomes.",
+    "The q-value sign/source switch is enough in this controller, but does not prove a universal one-line conversion, unauthorized exploit or futility of every technical safeguard.",
+    "Ethical is a restricted payoff label here; broader normative adequacy and responsibility remain separate questions."
+  ],
+  "methodological_limits": [
+    "Small, deterministic, constrained action space and stylized goal inference. No actual human uncertainty, refusal of advice, preference elicitation or adverse physical consequence.",
+    "Three overlaid traces per plotted case without uncertainty estimation or a robustness/generalization study. Do not invent a human sample size or effect significance.",
+    "Code/data and videos are unavailable at the XXX placeholders in this version. No independently reproduced implementation or security test.",
+    "Governance conclusions and claims that ethics capabilities necessarily enable misuse exceed what one illustrative architecture alone establishes."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0190.json",
+      "finding": "Boos discusses human/institutional duties after harm; this controller demonstration does not settle normative AI agency or absolve the designers who install a harmful objective."
+    },
+    {
+      "related_review": "references/pdf-reviews/0191.json",
+      "finding": "Algorithm exploitation in human economic games differs from an experimenter configuring a robot to lower another robot’s score. Shared strategic language must not hide different actors, incentives and evidence."
+    },
+    {
+      "related_review": "references/pdf-reviews/0192.json",
+      "finding": "Programmed other-harming action is not evidence for catharsis or practice transfer from AI interaction to later human aggression. The robot’s state should not be treated as subjective anger."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Competitive robot / egoistic robot",
+      "reason": "These installed task modes are covered by the existing egoism entry; do not add both as synonyms posing as new behaviors."
+    },
+    {
+      "term": "Spite / malice",
+      "reason": "The demonstration shows loss without assistant gain, but does not define the psychological or evolutionary cost conditions of spite, or establish subjective malevolent intent. Do not rename the mode as a verified internal motive."
+    },
+    {
+      "term": "Ethical layer / generate-and-test",
+      "reason": "A controller architecture and implementation procedure, not by themselves a new behavioral failure mode. Preserve the implementation in the review rather than add architecture parts as behaviors."
+    }
+  ],
+  "limitations": [
+    "No automatic ethical/harm links, yearly counts, new independent-version credit or claims that robots feel aggression."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "aggressive-behavior"
+    ],
+    "enriched": [
+      "egoism",
+      "ai-deception",
+      "sabotage",
+      "reward-tampering",
+      "b061-theory-of-mind-mentalizing"
+    ]
+  }
+}
