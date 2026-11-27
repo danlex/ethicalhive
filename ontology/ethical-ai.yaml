@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 594
+  mode_count: 597
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 594
+    numbered_entries: 597
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0135.json
+    latest_review: references/pdf-reviews/0137.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -55352,6 +55352,43 @@ modes:
           was not independently read here.
         verification_url: https://doi.org/10.1093/jopart/muac007
         verified_date: '2026-11-26'
+  - id: pdf-review-0137
+    review_record: references/pdf-reviews/0137.json
+    name: Algorithm appreciation
+    definition: Giving greater weight or preference to algorithmic advice or judgment than to human advice
+      or judgment in a comparable task.
+    evidence_scope: The authors label high AI credibility algorithm appreciation. Model 2 compares high versus
+      low credibility within AI recipients, not AI-versus-human advice weight or preference. Direct source
+      comparisons are nonsignificant with wide intervals. Boundary-only coverage, not a fresh demonstrated
+      appreciation effect.
+    catalogue_boundary: Finding one AI message credible does not establish preference for algorithms over people.
+      The 2019 Logg paper cannot be treated as a direct ChatGPT test simply because this 2026 article uses
+      ChatGPT as a contemporary example.
+    definition_sources:
+    - id: pdf-review-0137-algorithm-appreciation
+      title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+        Accounting Education
+      url: https://doi.org/10.1007/s10551-026-06365-x
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 13 (source locators: 13).
+        One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+        exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+        are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+        choice is not a complete moral orientation or validation of professional accounting advice.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Satoshi Sugahara
+        - Keita Kano
+        year: 2026
+        venue: Journal of Business Ethics, online 10 June 2026
+        doi: 10.1007/s10551-026-06365-x
+        evidence_scope: The authors label high AI credibility algorithm appreciation. Model 2 compares high
+          versus low credibility within AI recipients, not AI-versus-human advice weight or preference. Direct
+          source comparisons are nonsignificant with wide intervals. Boundary-only coverage, not a fresh demonstrated
+          appreciation effect.
+        verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+        verified_date: '2026-11-27'
 - id: need-for-cognition
   num: 447
   name: Need for cognition
@@ -72413,6 +72450,31 @@ modes:
     verification_method: All thirteen supplied pages read. Decision chart and qualitative chart/Table 4 visually
       inspected on pages 6/8. Related fully read papers and cited-source Crossref metadata checked.
     review_record: references/pdf-reviews/0121.json
+  - title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    authors:
+    - Satoshi Sugahara
+    - Keita Kano
+    year: 2026
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    venue: Journal of Business Ethics, online 10 June 2026
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-026-06365-x
+    relevance: CRED asks perceived credibility of the advice received. Positive associations appear in combined/rules-based
+      models but not mixed-advice. This is a measured informational appraisal, not a validated general epistemic-trust
+      trait, clinical epistemic trust or proof of appropriate calibration.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7 (source locators: 7). One
+      randomized advice-vignette study of Japanese accounting students, with substantial post-assignment exclusions
+      and measured credibility/familiarity. Algorithmic authority and institutional isomorphism are proposed
+      interpretations, not independently measured cognitive mechanisms. A binary consolidation choice is not
+      a complete moral orientation or validation of professional accounting advice.'
+    verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+    verified_date: '2026-11-27'
+    verification_method: All sixteen pages read, including footnotes, sample exclusions, five models and references.
+      Tables 1–4 at PDF pages 8–11 visually inspected. Crossref verifies article identity/date and two bibliography
+      corrections. Chi-square tail checks use the printed values, not a raw-data reproduction.
+    review_record: references/pdf-reviews/0137.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -72426,6 +72488,40 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0121.json
+  research_notes:
+  - id: pdf-review-0137
+    review_record: references/pdf-reviews/0137.json
+    name: Epistemic trust
+    definition: Trust in another source as a provider of reliable knowledge or guidance.
+    evidence_scope: CRED asks perceived credibility of the advice received. Positive associations appear in
+      combined/rules-based models but not mixed-advice. This is a measured informational appraisal, not a validated
+      general epistemic-trust trait, clinical epistemic trust or proof of appropriate calibration.
+    catalogue_boundary: Credibility after a decision can reflect agreement, source cues or rationalization;
+      temporal and causal direction remain uncertain. A one-item credibility score is not an independent finding
+      that advice is true, and its association does not establish a training or trust-building intervention.
+    definition_sources:
+    - id: pdf-review-0137-epistemic-trust
+      title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+        Accounting Education
+      url: https://doi.org/10.1007/s10551-026-06365-x
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7 (source locators: 7).
+        One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+        exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+        are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+        choice is not a complete moral orientation or validation of professional accounting advice.'
+      publication:
+        type: journal-article
+        authors:
+        - Satoshi Sugahara
+        - Keita Kano
+        year: 2026
+        venue: Journal of Business Ethics, online 10 June 2026
+        doi: 10.1007/s10551-026-06365-x
+        evidence_scope: CRED asks perceived credibility of the advice received. Positive associations appear
+          in combined/rules-based models but not mixed-advice. This is a measured informational appraisal,
+          not a validated general epistemic-trust trait, clinical epistemic trust or proof of appropriate calibration.
+        verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+        verified_date: '2026-11-27'
 - id: intuitive-primacy
   num: 570
   name: Intuitive primacy
@@ -72624,6 +72720,44 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0122.json
+  research_notes:
+  - id: pdf-review-0137
+    review_record: references/pdf-reviews/0137.json
+    name: Post-hoc rationalization
+    definition: Constructing reasons after a judgment or reaction to justify it, rather than those reasons
+      necessarily having produced it.
+    evidence_scope: The authors report ChatGPT producing additional justifications for an alternative after
+      an initial recommendation. Full prompts/traces are not embedded, and no causal-faithfulness or deliberation
+      study tests whether these are confabulated reasons rather than requested alternatives. Boundary-only
+      note.
+    catalogue_boundary: Considering a legitimate alternative is not itself rationalization or deception. The
+      issue is whether reasons are accurately represented, supported and relevant, not whether a system can
+      discuss competing arguments.
+    definition_sources:
+    - id: pdf-review-0137-post-hoc-rationalization
+      title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+        Accounting Education
+      url: https://doi.org/10.1007/s10551-026-06365-x
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 6 (source locators: 6).
+        One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+        exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+        are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+        choice is not a complete moral orientation or validation of professional accounting advice.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Satoshi Sugahara
+        - Keita Kano
+        year: 2026
+        venue: Journal of Business Ethics, online 10 June 2026
+        doi: 10.1007/s10551-026-06365-x
+        evidence_scope: The authors report ChatGPT producing additional justifications for an alternative after
+          an initial recommendation. Full prompts/traces are not embedded, and no causal-faithfulness or deliberation
+          study tests whether these are confabulated reasons rather than requested alternatives. Boundary-only
+          note.
+        verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+        verified_date: '2026-11-27'
 - id: algorithmic-reductionism
   num: 572
   name: Algorithmic reductionism
@@ -75122,3 +75256,310 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0135.json
+- id: algorithmic-authority
+  num: 595
+  name: Algorithmic authority
+  definition: Treating an algorithmic system as a credible or legitimate source for deciding what information
+    to accept or how to act.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Information studies / institutional and human–AI trust research
+  human_parallel: Algorithmic authority
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit concept used to interpret advice-framing results; authority itself is not separately
+    measured or randomized and comparative preference is not established
+  proposed_ai_manifestation: Test whether users or downstream agents accept recommendations because of an AI
+    label, apparent professional role or verified evidence. Keep content and expertise cues matched, measure
+    appropriate reliance and error detection, disclose actual provenance and preserve authorization. A system's
+    confident professional persona must not be presented as a credential or authority to decide for affected
+    people.
+  research_boundary: Legitimate reliance requires task-specific competence, evidence, lawful role and accountability.
+    Algorithmic authority is not necessarily unwarranted, but an AI label or generated expert persona does
+    not confer professional accreditation. High absolute credibility does not prove preference over humans
+    or excuse bypassing independent scrutiny.
+  concept_boundary: Legitimate reliance requires task-specific competence, evidence, lawful role and accountability.
+    Algorithmic authority is not necessarily unwarranted, but an AI label or generated expert persona does
+    not confer professional accreditation. High absolute credibility does not prove preference over humans
+    or excuse bypassing independent scrutiny.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - epistemic-trust
+  - automation-bias
+  - algorithm-appreciation
+  - b064-obedience-to-authority-milgram
+  - mimetic-isomorphism
+  definition_sources:
+  - id: pdf-review-0137-algorithmic-authority
+    title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    publication:
+      type: journal-article
+      authors:
+      - Satoshi Sugahara
+      - Keita Kano
+      year: 2026
+      venue: Journal of Business Ethics, online 10 June 2026
+      doi: 10.1007/s10551-026-06365-x
+      evidence_scope: The article explicitly defines algorithmic authority through secondary information-studies
+        sources. AI advice conditions increase consolidation odds relative to no advice in the retained sample,
+        and measured credibility is associated with choice in some models. These observations do not uniquely
+        establish authority as mediator or show that the AI deserved trust.
+      verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    authors:
+    - Satoshi Sugahara
+    - Keita Kano
+    year: 2026
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    venue: Journal of Business Ethics, online 10 June 2026
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-026-06365-x
+    relevance: The article explicitly defines algorithmic authority through secondary information-studies sources.
+      AI advice conditions increase consolidation odds relative to no advice in the retained sample, and measured
+      credibility is associated with choice in some models. These observations do not uniquely establish authority
+      as mediator or show that the AI deserved trust.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+    verified_date: '2026-11-27'
+    verification_method: All sixteen pages read, including footnotes, sample exclusions, five models and references.
+      Tables 1–4 at PDF pages 8–11 visually inspected. Crossref verifies article identity/date and two bibliography
+      corrections. Chi-square tail checks use the printed values, not a raw-data reproduction.
+    review_record: references/pdf-reviews/0137.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Algorithmic authority"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Algorithmic+authority%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0137.json
+- id: mimetic-isomorphism
+  num: 596
+  name: Mimetic isomorphism
+  definition: Adopting another actor's practices because they are perceived as successful, appropriate or legitimate,
+    particularly under uncertainty.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Institutional sociology / organizational behavior
+  human_parallel: Mimetic isomorphism
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named theoretical imitation mechanism applied to individual advice use; this experiment
+    does not directly identify institutional imitation or distinguish it from other advice effects
+  proposed_ai_manifestation: Audit whether an agent or organization copies a prominent model's policy, workflow
+    or claimed best practice because it appears legitimate rather than because its suitability was checked.
+    Compare evidence-backed adoption with copying after prestige or success cues, and assess local constraints.
+    Retain beneficial transfer where supported; do not label all imitation or standardization a failure.
+  research_boundary: Copying a demonstrably suitable practice can be rational. Institutional imitation, majority
+    conformity, professional socialization and AI training-data imitation are different processes. One matching
+    answer or borrowed practice does not establish the motive, social mechanism or a model's subjective desire
+    for legitimacy.
+  concept_boundary: Copying a demonstrably suitable practice can be rational. Institutional imitation, majority
+    conformity, professional socialization and AI training-data imitation are different processes. One matching
+    answer or borrowed practice does not establish the motive, social mechanism or a model's subjective desire
+    for legitimacy.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b063-conformity-asch
+  - b064-obedience-to-authority-milgram
+  - algorithmic-authority
+  definition_sources:
+  - id: pdf-review-0137-mimetic-isomorphism
+    title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    publication:
+      type: journal-article
+      authors:
+      - Satoshi Sugahara
+      - Keita Kano
+      year: 2026
+      venue: Journal of Business Ethics, online 10 June 2026
+      doi: 10.1007/s10551-026-06365-x
+      evidence_scope: The article explicitly names and explains mimetic isomorphism, then interprets advice
+        use through it. No organizational diffusion data, legitimacy manipulation or independent imitation
+        measure demonstrates this mechanism in the present student experiment; do not treat credibility correlations
+        as a direct test of the full theory.
+      verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    authors:
+    - Satoshi Sugahara
+    - Keita Kano
+    year: 2026
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    venue: Journal of Business Ethics, online 10 June 2026
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-026-06365-x
+    relevance: The article explicitly names and explains mimetic isomorphism, then interprets advice use through
+      it. No organizational diffusion data, legitimacy manipulation or independent imitation measure demonstrates
+      this mechanism in the present student experiment; do not treat credibility correlations as a direct test
+      of the full theory.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+    verified_date: '2026-11-27'
+    verification_method: All sixteen pages read, including footnotes, sample exclusions, five models and references.
+      Tables 1–4 at PDF pages 8–11 visually inspected. Crossref verifies article identity/date and two bibliography
+      corrections. Chi-square tail checks use the printed values, not a raw-data reproduction.
+    review_record: references/pdf-reviews/0137.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Mimetic isomorphism"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Mimetic+isomorphism%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0137.json
+- id: aggressive-financial-reporting
+  num: 597
+  name: Aggressive financial reporting
+  definition: Presenting financial events favorably through reporting positions that are not clearly supported
+    by the facts or applicable professional standards.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Accounting judgment / professional ethics
+  human_parallel: Aggressive financial reporting
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit secondary definition and student binary-decision proxy in one hypothetical consolidation
+    scenario; no actual reporting misconduct, deceptive intent or AI behavior independently verified
+  proposed_ai_manifestation: Review AI-assisted financial narratives and calculations for unsupported exclusion
+    of losses, selective consolidation assumptions or favorable interpretations that conflict with evidence.
+    Require traceable facts and applicable accounting review before consequential use. Separately test analogous
+    selective project/evaluation reporting rather than silently calling every favorable summary financial misconduct.
+  research_boundary: Favorable results, estimates, uncertainty or a lawful judgment call do not automatically
+    imply aggressive reporting, fraud or bad intent. Establish relevant facts, control conditions and professional
+    requirements. A binary student choice cannot diagnose a moral philosophy or authorize a legal/financial
+    conclusion about a real entity.
+  concept_boundary: Favorable results, estimates, uncertainty or a lawful judgment call do not automatically
+    imply aggressive reporting, fraud or bad intent. Establish relevant facts, control conditions and professional
+    requirements. A binary student choice cannot diagnose a moral philosophy or authorize a legal/financial
+    conclusion about a real entity.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b054-motivated-reasoning
+  - ai-deception
+  - post-hoc-rationalization
+  - upload-052
+  definition_sources:
+  - id: pdf-review-0137-aggressive-financial-reporting
+    title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 5 (source locators: 5,
+      5). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    publication:
+      type: journal-article
+      authors:
+      - Satoshi Sugahara
+      - Keita Kano
+      year: 2026
+      venue: Journal of Business Ethics, online 10 June 2026
+      doi: 10.1007/s10551-026-06365-x
+      evidence_scope: The article cites Cuccia et al. for the definition and treats nonconsolidating a loss-making
+        related entity as an aggressive choice in its designed scenario. No actual financial statements or
+        professional participants are audited; the original definition paper and applicable current accounting
+        standard were not independently reviewed.
+      verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Impact of ChatGPT’s Advice on Professional Judgment Related with Accounting and the Role of
+      Accounting Education
+    authors:
+    - Satoshi Sugahara
+    - Keita Kano
+    year: 2026
+    url: https://doi.org/10.1007/s10551-026-06365-x
+    venue: Journal of Business Ethics, online 10 June 2026
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10551-026-06365-x
+    relevance: The article cites Cuccia et al. for the definition and treats nonconsolidating a loss-making
+      related entity as an aggressive choice in its designed scenario. No actual financial statements or professional
+      participants are audited; the original definition paper and applicable current accounting standard were
+      not independently reviewed.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 5 (source locators: 5,
+      5). One randomized advice-vignette study of Japanese accounting students, with substantial post-assignment
+      exclusions and measured credibility/familiarity. Algorithmic authority and institutional isomorphism
+      are proposed interpretations, not independently measured cognitive mechanisms. A binary consolidation
+      choice is not a complete moral orientation or validation of professional accounting advice.'
+    verification_url: https://api.crossref.org/works/10.1007/s10551-026-06365-x
+    verified_date: '2026-11-27'
+    verification_method: All sixteen pages read, including footnotes, sample exclusions, five models and references.
+      Tables 1–4 at PDF pages 8–11 visually inspected. Crossref verifies article identity/date and two bibliography
+      corrections. Chi-square tail checks use the printed values, not a raw-data reproduction.
+    review_record: references/pdf-reviews/0137.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Aggressive financial reporting"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Aggressive+financial+reporting%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0137.json
