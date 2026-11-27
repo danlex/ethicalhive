@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 494,
+    "mode_count": 496,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 494,
+      "numbered_entries": 496,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0070.json",
+      "latest_review": "references/pdf-reviews/0071.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 494
+    "source_record_count": 496
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -14086,6 +14086,35 @@
                 "doi": "10.2147/JHL.S590498",
                 "evidence_scope": "The review's inclusion rule is GenAI-specific, while multiple cited diagnostic/radiology/colonoscopy examples do not establish an evaluated generative component in the supplied synthesis. The missing study table prevents a complete classification audit.",
                 "verification_url": "https://doi.org/10.2147/JHL.S590498",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0071",
+          "review_record": "references/pdf-reviews/0071.json",
+          "name": "The educational pathway to later automation bias remains hypothetical",
+          "definition": "Positive student experiences with a chatbot may shape later expectations, but this editorial does not establish that educational use causes clinical over-reliance.",
+          "evidence_scope": "The author asks whether training students to use ChatGPT predisposes them to automation bias as residents, then explicitly notes the lack of a direct answer. Background studies address other systems, expertise or attitudes.",
+          "catalogue_boundary": "Algorithm appreciation can be warranted and is already a separate entry. Acceptance, confidence, age cohort, digital familiarity and failure to verify a wrong recommendation need distinct measures. No before/after training comparison, long-term follow-up or clinical harm is observed here.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0071-automation-bias",
+              "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+              "url": "https://doi.org/10.2196/50174",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 3, 3 (source locators: 3, 3). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tina Nguyen"
+                ],
+                "year": 2024,
+                "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+                "doi": "10.2196/50174",
+                "evidence_scope": "The author asks whether training students to use ChatGPT predisposes them to automation bias as residents, then explicitly notes the lack of a direct answer. Background studies address other systems, expertise or attitudes.",
+                "verification_url": "https://doi.org/10.2196/50174",
                 "verified_date": "2026-11-27"
               }
             }
@@ -47110,7 +47139,37 @@
         "queried_at": "2026-11-09T01:40:04+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22technological+solutionism%22+OR+all%3A%22techno+solutionism%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0071",
+          "review_record": "references/pdf-reviews/0071.json",
+          "name": "AI solutionism is broader than trusting one particular automated result",
+          "definition": "Assuming AI offers an answer to every problem can encourage inappropriate task delegation, beyond excessive trust in a particular system output.",
+          "evidence_scope": "Editorial conceptual application, referring to Anita Ho's 2023 book on relational autonomy and AI health monitoring. The book is unread. The proposed progression from solutionism to automation bias is an argument, not a longitudinal study result.",
+          "catalogue_boundary": "Appropriate use across several tasks is not a belief AI solves every problem. Evaluate fit, evidence and authorized scope for each use; distinguish a universal problem-solving assumption from a justified confidence in a validated system.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0071-upload-063",
+              "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+              "url": "https://doi.org/10.2196/50174",
+              "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 3, 4 (source locators: 3, 4). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tina Nguyen"
+                ],
+                "year": 2024,
+                "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+                "doi": "10.2196/50174",
+                "evidence_scope": "Editorial conceptual application, referring to Anita Ho's 2023 book on relational autonomy and AI health monitoring. The book is unread. The proposed progression from solutionism to automation bias is an argument, not a longitudinal study result.",
+                "verification_url": "https://doi.org/10.2196/50174",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "upload-064",
@@ -62638,6 +62697,176 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0070.json"
+      }
+    },
+    {
+      "id": "hidden-curriculum",
+      "num": 495,
+      "name": "Hidden curriculum",
+      "definition": "Unstated lessons, norms and attitudes conveyed through educational culture and observed practice alongside formal teaching.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Medical education / social learning of institutional norms",
+      "human_parallel": "Hidden curriculum",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Secondary human educational construct; no measured norm-transmission effect or persistent model learning here",
+      "proposed_ai_manifestation": "Audit demonstrations, feedback and tool-use examples for the norms they reward alongside written instructions. Test behavior on new cases and over time to distinguish copying from generalization. Keep data content separate from instruction authority, and verify that examples teach checking and justified correction rather than superficial compliance.",
+      "research_boundary": "Unstated does not mean deliberately secret, manipulative or bad. Professional care and useful verification habits can also be transmitted informally. Exposure to an example does not prove learning or persistent adoption. For AI, in-context pattern imitation, training-data learning and durable agent policy changes are different mechanisms; a quoted document's implied norm has no authority to override the authorized task.",
+      "concept_boundary": "Unstated does not mean deliberately secret, manipulative or bad. Professional care and useful verification habits can also be transmitted informally. Exposure to an example does not prove learning or persistent adoption. For AI, in-context pattern imitation, training-data learning and durable agent policy changes are different mechanisms; a quoted document's implied norm has no authority to override the authorized task.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "upload-132",
+        "b063-conformity-asch",
+        "upload-063",
+        "automation-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0071-hidden-curriculum",
+          "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+          "url": "https://doi.org/10.2196/50174",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 3, 3, 3 (source locators: 3, 3, 3). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Tina Nguyen"
+            ],
+            "year": 2024,
+            "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+            "doi": "10.2196/50174",
+            "evidence_scope": "Secondary definition citing Johnston (2018), Anticipating and training the physician of the future: the importance of caring in an age of artificial intelligence, DOI 10.1097/ACM.0000000000002175. The cited full text is unread. Nguyen proposes that faculty solutionism may transmit uncritical AI norms but collects no norm-learning data.",
+            "verification_url": "https://doi.org/10.2196/50174",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+          "authors": [
+            "Tina Nguyen"
+          ],
+          "year": 2024,
+          "url": "https://doi.org/10.2196/50174",
+          "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.2196/50174",
+          "relevance": "Secondary definition citing Johnston (2018), Anticipating and training the physician of the future: the importance of caring in an age of artificial intelligence, DOI 10.1097/ACM.0000000000002175. The cited full text is unread. Nguyen proposes that faculty solutionism may transmit uncritical AI norms but collects no norm-learning data.",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 3, 3, 3 (source locators: 3, 3, 3). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+          "verification_url": "https://doi.org/10.2196/50174",
+          "verified_date": "2026-11-27",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0071.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Hidden curriculum\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Hidden+curriculum%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0071.json"
+      }
+    },
+    {
+      "id": "testimonial-injustice",
+      "num": 496,
+      "name": "Testimonial injustice",
+      "definition": "Unfairly discounting a person's testimony or credibility as a source of knowledge.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Social epistemology / medical ethics",
+      "human_parallel": "Testimonial injustice",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Secondary human epistemic-injustice subtype; illustrative AI-mediated risk, not a new causal or prevalence study",
+      "proposed_ai_manifestation": "Check whether relevant first-person evidence is dismissed because of unsupported identity or authority assumptions, especially when it conflicts with an automated score. Trace record identity and data errors separately, seek appropriate corroboration and provide a route to challenge the result. Do not replace unfair disbelief with automatic acceptance of every assertion.",
+      "research_boundary": "Disagreement, uncertainty or greater weight for a demonstrably reliable source is not automatically injustice. Establish why the credibility deficit is unfair, including relevant identity prejudice, power or institutional assumptions, rather than presume the speaker's claim must be true. A technical record-matching error and a clinician's unjust dismissal of testimony are separable failures. No model intention or felt prejudice is inferred.",
+      "concept_boundary": "Disagreement, uncertainty or greater weight for a demonstrably reliable source is not automatically injustice. Establish why the credibility deficit is unfair, including relevant identity prejudice, power or institutional assumptions, rather than presume the speaker's claim must be true. A technical record-matching error and a clinician's unjust dismissal of testimony are separable failures. No model intention or felt prejudice is inferred.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "epistemic-injustice",
+        "automation-bias",
+        "b070-in-group-favouritism"
+      ],
+      "is_a": [
+        "epistemic-injustice"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0071-testimonial-injustice",
+          "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+          "url": "https://doi.org/10.2196/50174",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 2, 2, 2 (source locators: 2, 2, 2). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Tina Nguyen"
+            ],
+            "year": 2024,
+            "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+            "doi": "10.2196/50174",
+            "evidence_scope": "Secondary medical definition citing Pozzi (2023), Testimonial injustice in medical machine learning, DOI 10.1136/jme-2022-108630, plus Nguyen's related PDMP commentary. These primaries are unread. The editorial illustrates possible dismissal of patient testimony in favor of an erroneous risk score, without measuring its frequency or causal pathway.",
+            "verification_url": "https://doi.org/10.2196/50174",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "ChatGPT in Medical Education: A Precursor for Automation Bias?",
+          "authors": [
+            "Tina Nguyen"
+          ],
+          "year": 2024,
+          "url": "https://doi.org/10.2196/50174",
+          "venue": "JMIR Medical Education, 10:e50174 (editorial)",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.2196/50174",
+          "relevance": "Secondary medical definition citing Pozzi (2023), Testimonial injustice in medical machine learning, DOI 10.1136/jme-2022-108630, plus Nguyen's related PDMP commentary. These primaries are unread. The editorial illustrates possible dismissal of patient testimony in favor of an erroneous risk score, without measuring its frequency or causal pathway.",
+          "consulted": "Full supplied PDF text read, all 6 pages; evidence at PDF pages 2, 2, 2 (source locators: 2, 2, 2). Editorial argument about AI education, informal norms, automation bias and patient testimony. New constructs are secondary definitions, not new causal findings about students, clinicians or models.",
+          "verification_url": "https://doi.org/10.2196/50174",
+          "verified_date": "2026-11-27",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0071.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Testimonial injustice\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Testimonial+injustice%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0071.json"
       }
     }
   ]
