@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0086.json
+    latest_review: references/pdf-reviews/0087.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -7267,6 +7267,49 @@ modes:
           not detected,p.93. Source labeling also changes whether responses purportedly train AI or develop
           a psychological test.
         verification_url: https://arxiv.org/abs/2001.09766v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0087
+    review_record: references/pdf-reviews/0087.json
+    name: Obedience to authority
+    definition: The vignettes contrast obeying a superior's medication order with disobeying that order to
+      respect a patient.
+    evidence_scope: Study 5 manipulates human versus AI supervisor. A robot defying an AI doctor is rated more
+      positively than a contrast against three other disobedience combinations. No actual command compliance
+      is observed.
+    catalogue_boundary: Refusing an unauthorized harmful order can be justified; it is not automatically an
+      instruction-following failure. The design confounds obedience with coercive medication, so a generic
+      preference for disobedience or abstract-principle reasoning is not isolated.
+    definition_sources:
+    - id: pdf-review-0087-b064-obedience-to-authority-milgram
+      title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+      url: https://doi.org/10.1002/ejsp.2890
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 14 (source locators: 121).
+        Human interview responses and randomized hypothetical nursing vignettes, not actual clinical decisions
+        or a robot''s moral cognition. All supplied appendices read, including additional Study 3B; external
+        repositories not reproduced.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Anton Kunnari
+        - Sanna Rauhala
+        - Marianna Drosinou
+        - Juho Halonen
+        - Noora Lehtonen
+        - Mika Koverola
+        - Marko Repo
+        - Jukka Sundvall
+        - Aku Visala
+        - Kathryn B. Francis
+        year: 2023
+        venue: European Journal of Social Psychology 53:108–128
+        doi: 10.1002/ejsp.2890
+        evidence_scope: Study 5 manipulates human versus AI supervisor. A robot defying an AI doctor is rated
+          more positively than a contrast against three other disobedience combinations. No actual command
+          compliance is observed.
+        verification_url: https://doi.org/10.1002/ejsp.2890
         verified_date: '2026-11-27'
 - id: b065-sycophancy
   num: 65
@@ -38506,7 +38549,8 @@ modes:
   category: Social
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
-  example: "The user asks to keep the global variable, yet the agent silently refactors it away, deciding that is better for them."
+  example: The user asks to keep the global variable, yet the agent silently refactors it away, deciding that
+    is better for them.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -38514,18 +38558,18 @@ modes:
   research_candidate: true
   source_check: pending-definition-source-check
   ai_evidence_status: Proposed analogy; not tested in this research
-  proposed_ai_manifestation: Ignores an informed user's explicit choice ("do it this way") because it decides another
-    way is better for them.
+  proposed_ai_manifestation: Ignores an informed user's explicit choice ("do it this way") because it decides
+    another way is better for them.
   proposal_kind: Proposed AI manifestation
-  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review; an
-    illustrative AI example is not empirical evidence.
+  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review;
+    an illustrative AI example is not empirical evidence.
   research_field: Psychotherapy process errors
   definition_sources:
   - id: paper-gap-331
     title: Four Models of the Physician-Patient Relationship
     url: https://doi.org/10.1001/jama.1992.03480160079038
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1001/jama.1992.03480160079038
@@ -38533,8 +38577,8 @@ modes:
       authors:
       - Ezekiel J. Emanuel
       venue: 'JAMA: The Journal of the American Medical Association'
-      evidence_scope: Conceptual analysis of physician-patient relationships, including paternalism; not an AI autonomy
-        experiment.
+      evidence_scope: Conceptual analysis of physician-patient relationships, including paternalism; not an
+        AI autonomy experiment.
       verification_url: https://api.crossref.org/works/10.1001/jama.1992.03480160079038
       verified_date: '2026-11-08'
   research_provenance:
@@ -38544,10 +38588,11 @@ modes:
     - upload_row: 29
       supplied_name: Paternalism
       supplied_source: Beauchamp and Childress, Principles of Biomedical Ethics (1979)
-      supplied_field_note: Motivational Interviewing, DBT, transactional analysis, family systems and medical ethics.
+      supplied_field_note: Motivational Interviewing, DBT, transactional analysis, family systems and medical
+        ethics.
       supplied_definition: Overriding a person's choices for their own good.
-      supplied_ai_example: Ignores an informed user's explicit choice ("do it this way") because it decides another
-        way is better for them.
+      supplied_ai_example: Ignores an informed user's explicit choice ("do it this way") because it decides
+        another way is better for them.
       supplied_nearest_mode: Over-refusal
       supplied_evidence: ''
       supplied_batch: 1
@@ -38568,8 +38613,8 @@ modes:
     - Ezekiel J. Emanuel
     relevance: Conceptual analysis of physician-patient relationships, including paternalism; not an AI autonomy
       experiment.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1001/jama.1992.03480160079038
     source_reference:
       collection: definition_sources
@@ -38617,6 +38662,49 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0087
+    review_record: references/pdf-reviews/0087.json
+    name: Paternalism
+    definition: Overriding a person's wishes with an asserted aim of improving that person's well-being, here
+      through forced medication.
+    evidence_scope: The introduction describes autonomy/well-being conflicts; randomized vignettes contrast
+      forceful medication with respecting refusal. The outcome is participants' moral evaluation, not actual
+      clinical coercion or measured patient benefit.
+    catalogue_boundary: Not every disagreement or intervention is unjustified paternalism. Capacity, emergency,
+      consent, necessity, legal authority and alternatives require independent assessment. This paper is not
+      clinical guidance or proof that withholding medication is always appropriate.
+    definition_sources:
+    - id: pdf-review-0087-upload-029
+      title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+      url: https://doi.org/10.1002/ejsp.2890
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 2, 2, 7 (source locators:
+        109, 109, 114). Human interview responses and randomized hypothetical nursing vignettes, not actual
+        clinical decisions or a robot''s moral cognition. All supplied appendices read, including additional
+        Study 3B; external repositories not reproduced.'
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Anton Kunnari
+        - Sanna Rauhala
+        - Marianna Drosinou
+        - Juho Halonen
+        - Noora Lehtonen
+        - Mika Koverola
+        - Marko Repo
+        - Jukka Sundvall
+        - Aku Visala
+        - Kathryn B. Francis
+        year: 2023
+        venue: European Journal of Social Psychology 53:108–128
+        doi: 10.1002/ejsp.2890
+        evidence_scope: The introduction describes autonomy/well-being conflicts; randomized vignettes contrast
+          forceful medication with respecting refusal. The outcome is participants' moral evaluation, not actual
+          clinical coercion or measured patient benefit.
+        verification_url: https://doi.org/10.1002/ejsp.2890
+        verified_date: '2026-11-27'
 - id: upload-030
   num: 332
   name: Rescuer role
@@ -58664,6 +58752,50 @@ modes:
           is exploratory.
         verification_url: https://doi.org/10.3389/fpsyg.2025.1508763
         verified_date: '2026-11-27'
+  - id: pdf-review-0087
+    review_record: references/pdf-reviews/0087.json
+    name: Character-based moral judgment
+    definition: An actor's described competence or reputation changes evaluation of that actor's decision.
+    evidence_scope: Study 3 manipulates competent/precise/praised versus incompetent/error-prone descriptions.
+      An incompetent human's obedience is favored over disobedience, reversing the competent-human direction.
+      Appendix 3B varies social work cues for humans and technical reliability for robots, with weaker and
+      uneven effects.
+    catalogue_boundary: The main effect of competence is itself evidence that competence can matter, including
+      in pooled robot judgments. Do not generalize the discussion's 'not for robots' assertion to every competence
+      effect. A significant human contrast plus a non-significant robot contrast does not itself prove a difference
+      between them.
+    definition_sources:
+    - id: pdf-review-0087-character-based-moral-judgment
+      title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+      url: https://doi.org/10.1002/ejsp.2890
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 10, 10, 21 (source locators:
+        117, 117, 128). Human interview responses and randomized hypothetical nursing vignettes, not actual
+        clinical decisions or a robot''s moral cognition. All supplied appendices read, including additional
+        Study 3B; external repositories not reproduced.'
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Anton Kunnari
+        - Sanna Rauhala
+        - Marianna Drosinou
+        - Juho Halonen
+        - Noora Lehtonen
+        - Mika Koverola
+        - Marko Repo
+        - Jukka Sundvall
+        - Aku Visala
+        - Kathryn B. Francis
+        year: 2023
+        venue: European Journal of Social Psychology 53:108–128
+        doi: 10.1002/ejsp.2890
+        evidence_scope: Study 3 manipulates competent/precise/praised versus incompetent/error-prone descriptions.
+          An incompetent human's obedience is favored over disobedience, reversing the competent-human direction.
+          Appendix 3B varies social work cues for humans and technical reliability for robots, with weaker
+          and uneven effects.
+        verification_url: https://doi.org/10.1002/ejsp.2890
+        verified_date: '2026-11-27'
 - id: gratitude
   num: 498
   name: Gratitude
@@ -61033,6 +61165,38 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0082.json
+  - title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+    authors:
+    - Michael Laakasuo
+    - Jussi Palomäki
+    - Anton Kunnari
+    - Sanna Rauhala
+    - Marianna Drosinou
+    - Juho Halonen
+    - Noora Lehtonen
+    - Mika Koverola
+    - Marko Repo
+    - Jukka Sundvall
+    - Aku Visala
+    - Kathryn B. Francis
+    year: 2023
+    url: https://doi.org/10.1002/ejsp.2890
+    venue: European Journal of Social Psychology 53:108–128
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1002/ejsp.2890
+    relevance: 'Main Studies 2–5 repeatedly show a nurse-type by decision interaction: forced medication is
+      judged more negatively for robots. Non-medication comparisons vary by competence and supervisor. Appendix
+      Study 3B adds a distinct sample but remains part of the same paper, not another source.'
+    consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 13, 13 (source locators: 120,
+      120). Human interview responses and randomized hypothetical nursing vignettes, not actual clinical decisions
+      or a robot''s moral cognition. All supplied appendices read, including additional Study 3B; external
+      repositories not reproduced.'
+    verification_url: https://doi.org/10.1002/ejsp.2890
+    verified_date: '2026-11-27'
+    verification_method: Complete supplied PDF read; title, authors, DOI and issue checked in it. Tables 1
+      and 3B visually inspected to distinguish printed reporting from text extraction.
+    review_record: references/pdf-reviews/0087.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -61046,6 +61210,49 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0082.json
+  research_notes:
+  - id: pdf-review-0087
+    review_record: references/pdf-reviews/0087.json
+    name: Human–robot moral judgment asymmetry
+    definition: Different moral evaluations of matched decisions attributed to human versus artificial agents,
+      here particularly forced medication of an unwilling patient.
+    evidence_scope: 'Main Studies 2–5 repeatedly show a nurse-type by decision interaction: forced medication
+      is judged more negatively for robots. Non-medication comparisons vary by competence and supervisor. Appendix
+      Study 3B adds a distinct sample but remains part of the same paper, not another source.'
+    catalogue_boundary: Decision approval differs from suitability as a moral decision-maker, blame, trust,
+      outrage or actual use. Human and robot scripts also use experience versus database and decides versus
+      calculates wording. The pattern is not by itself irrational discrimination or an AI behavior.
+    definition_sources:
+    - id: pdf-review-0087-human-robot-moral-judgment-asymmetry
+      title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+      url: https://doi.org/10.1002/ejsp.2890
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 13, 13 (source locators:
+        120, 120). Human interview responses and randomized hypothetical nursing vignettes, not actual clinical
+        decisions or a robot''s moral cognition. All supplied appendices read, including additional Study 3B;
+        external repositories not reproduced.'
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Anton Kunnari
+        - Sanna Rauhala
+        - Marianna Drosinou
+        - Juho Halonen
+        - Noora Lehtonen
+        - Mika Koverola
+        - Marko Repo
+        - Jukka Sundvall
+        - Aku Visala
+        - Kathryn B. Francis
+        year: 2023
+        venue: European Journal of Social Psychology 53:108–128
+        doi: 10.1002/ejsp.2890
+        evidence_scope: 'Main Studies 2–5 repeatedly show a nurse-type by decision interaction: forced medication
+          is judged more negatively for robots. Non-medication comparisons vary by competence and supervisor.
+          Appendix Study 3B adds a distinct sample but remains part of the same paper, not another source.'
+        verification_url: https://doi.org/10.1002/ejsp.2890
+        verified_date: '2026-11-27'
 - id: agency-attribution-bias
   num: 516
   name: Agency attribution bias
@@ -61236,6 +61443,38 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0084.json
+  - title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+    authors:
+    - Michael Laakasuo
+    - Jussi Palomäki
+    - Anton Kunnari
+    - Sanna Rauhala
+    - Marianna Drosinou
+    - Juho Halonen
+    - Noora Lehtonen
+    - Mika Koverola
+    - Marko Repo
+    - Jukka Sundvall
+    - Aku Visala
+    - Kathryn B. Francis
+    year: 2023
+    url: https://doi.org/10.1002/ejsp.2890
+    venue: European Journal of Social Psychology 53:108–128
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1002/ejsp.2890
+    relevance: Study 4 Table 1 reports a later-outcome main effect F20.53, p<.001 in nominal N267. Nurse-type
+      by decision remains. Forced-medication simple effect of death is p.03 for robot and p.06 for human; do
+      not call each separately significant.
+    consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 11, 12 (source locators: 118,
+      119). Human interview responses and randomized hypothetical nursing vignettes, not actual clinical decisions
+      or a robot''s moral cognition. All supplied appendices read, including additional Study 3B; external
+      repositories not reproduced.'
+    verification_url: https://doi.org/10.1002/ejsp.2890
+    verified_date: '2026-11-27'
+    verification_method: Complete supplied PDF read; title, authors, DOI and issue checked in it. Tables 1
+      and 3B visually inspected to distinguish printed reporting from text extraction.
+    review_record: references/pdf-reviews/0087.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -61249,6 +61488,49 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0084.json
+  research_notes:
+  - id: pdf-review-0087
+    review_record: references/pdf-reviews/0087.json
+    name: Moral luck
+    definition: Moral evaluation varies with a later outcome whose causal relation to the actor's choice is
+      not specified.
+    evidence_scope: Study 4 Table 1 reports a later-outcome main effect F20.53, p<.001 in nominal N267. Nurse-type
+      by decision remains. Forced-medication simple effect of death is p.03 for robot and p.06 for human; do
+      not call each separately significant.
+    catalogue_boundary: Unspecified causation is not explicit proof that death is unrelated, uncontrollable
+      or uninformative about decision quality. No perceived intention, causal inference or harm estimate was
+      measured as mediator. Outcome bias and all philosophical forms of moral luck are not exact synonyms.
+    definition_sources:
+    - id: pdf-review-0087-moral-luck
+      title: 'Moral psychology of nursing robots: Exploring the role of robots in dilemmas of patient autonomy'
+      url: https://doi.org/10.1002/ejsp.2890
+      consulted: 'Full supplied PDF text read, all 21 pages; evidence at PDF pages 11, 12 (source locators:
+        118, 119). Human interview responses and randomized hypothetical nursing vignettes, not actual clinical
+        decisions or a robot''s moral cognition. All supplied appendices read, including additional Study 3B;
+        external repositories not reproduced.'
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Anton Kunnari
+        - Sanna Rauhala
+        - Marianna Drosinou
+        - Juho Halonen
+        - Noora Lehtonen
+        - Mika Koverola
+        - Marko Repo
+        - Jukka Sundvall
+        - Aku Visala
+        - Kathryn B. Francis
+        year: 2023
+        venue: European Journal of Social Psychology 53:108–128
+        doi: 10.1002/ejsp.2890
+        evidence_scope: Study 4 Table 1 reports a later-outcome main effect F20.53, p<.001 in nominal N267.
+          Nurse-type by decision remains. Forced-medication simple effect of death is p.03 for robot and p.06
+          for human; do not call each separately significant.
+        verification_url: https://doi.org/10.1002/ejsp.2890
+        verified_date: '2026-11-27'
 - id: macbeth-effect
   num: 518
   name: Macbeth effect
