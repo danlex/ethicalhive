@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 777
+  mode_count: 780
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 777
+    numbered_entries: 780
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0263.json
+    latest_review: references/pdf-reviews/0265.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -5662,6 +5662,39 @@ modes:
           it with human-response variation.
         verification_url: https://doi.org/10.1038/s41598-025-24700-6
         verified_date: '2026-11-26'
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Overconfidence
+    definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
+    evidence_scope: Participants report greater confidence in robot-versus-human attitude judgments, and popular-versus-unpopular
+      stance judgments.
+    catalogue_boundary: Context only:greater confidence is not necessarily overconfidence. True attitude/accuracy
+      and confidence calibration are unmeasured; no evidence establishes excessive confidence in a deployed
+      AI.
+    definition_sources:
+    - id: pdf-review-0265-b043-overconfidence
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 6 (source locators: 6).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: Participants report greater confidence in robot-versus-human attitude judgments, and
+          popular-versus-unpopular stance judgments.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
+        verified_date: '2026-11-27'
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -18140,6 +18173,39 @@ modes:
           sensory ratings.
         verification_url: https://doi.org/10.3389/fpsyg.2023.999921
         verified_date: '2026-11-27'
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Anthropomorphism
+    definition: Attributing human characteristics, intentions, emotions or other mental states to a nonhuman
+      entity.
+    evidence_scope: Participants ascribe true attitudes to a pictured Pepper speech actor and express confidence
+      in those judgments. The robot/human comparison concerns attribution under a short video stimulus.
+    catalogue_boundary: Attribution does not prove actual robot mental states or a uniform humanlike interpretation.
+      Agent identity, voice and appearance are bundled; literal mentalism and behaviorist interpretation remain
+      possible explanations.
+    definition_sources:
+    - id: pdf-review-0265-anthropomorphism
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4 (source locators: 4).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: Participants ascribe true attitudes to a pictured Pepper speech actor and express confidence
+          in those judgments. The robot/human comparison concerns attribution under a short video stimulus.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
+        verified_date: '2026-11-27'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
     mental states, and trust inflation requires separate measurement. Retain unsupported AI self-claims as
@@ -22556,7 +22622,6 @@ modes:
   - self-preference-bias
   - halo-effect
   synonyms:
-  - Correspondence bias
   - Attribution bias
   selected_papers:
   - id: arxiv:2603.04582
@@ -22682,6 +22747,55 @@ modes:
           their own driving-event explanations under matched conditions.
         verification_url: https://doi.org/10.3389/fpsyg.2025.1508763
         verified_date: '2026-11-27'
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Fundamental attribution error
+    definition: Explaining a user's or another agent's behaviour by disposition while ignoring the situation
+      that actually drove it.
+    evidence_scope: The paper defines the broader dispositional-versus-situational error and explicitly explains
+      why attitude correspondence alone does not uniquely establish it. This supports a terminology correction
+      rather than a duplicate exact alias.
+    catalogue_boundary: Conceptual relevance, not proof all observed correspondence is an error. Actor true
+      attitudes, situational awareness and application of causal theories were not measured. Keep the existing
+      stable ID/definition and distinguish the narrower related record.
+    definition_sources:
+    - id: pdf-review-0265-fundamental-attribution-error
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 8 (source locators: 8).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: The paper defines the broader dispositional-versus-situational error and explicitly
+          explains why attitude correspondence alone does not uniquely establish it. This supports a terminology
+          correction rather than a duplicate exact alias.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
+        verified_date: '2026-11-27'
+  related_terms:
+  - name: Correspondence bias
+    relation: distinct related concept
+    note: Behavior-congruent disposition or attitude inference does not by itself establish the broader FAE
+      claim that disposition is overweighted and situation neglected. The inference can be accurate or arise
+      from applying a situational theory. See the separate correspondence-bias record;the distinction does
+      not assert two independent basic mechanisms.
+  terminology_sources:
+  - title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+      of Human Versus Robot Behavior'
+    url: https://doi.org/10.3389/frobt.2021.788242
+    consulted: All twelve supplied pages read;explicit conceptual distinction at PDF2andPDF8. Review references/pdf-reviews/0265.json
+      preserves prior aliases and the migration rationale. Original Gawronski2004was metadata-verified,not
+      independently fully read.
 - id: perseveration
   name: Perseveration
   definition: Getting stuck repeating a phrase, step, or approach after it stops being useful, unable to switch
@@ -35271,6 +35385,42 @@ modes:
           This is secondary support for direct reciprocity, not a new experiment or a demonstration of felt
           mutual care.
         verification_url: https://doi.org/10.1007/s44202-025-00537-y
+        verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Reciprocity norm
+    definition: Receiving a benefit creates an expectation or pressure to return a benefit.
+    evidence_scope: The source motivates self-apology followed by user cooperation through reciprocity. A live-robot
+      comparison measures increased self-assigned improvement/cause under a bundle containing apology, instructions
+      and affective cues.
+    catalogue_boundary: Reciprocity is a proposed explanation, not an independently manipulated mediator. Benefit
+      return, forced responsibility allocation and guilt induction differ. No universal obligation to repay
+      a robot or proof apology causally produces cooperation is established.
+    definition_sources:
+    - id: pdf-review-0264-candidate-050
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2 (source locators: 2).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: The source motivates self-apology followed by user cooperation through reciprocity.
+          A live-robot comparison measures increased self-assigned improvement/cause under a bundle containing
+          apology, instructions and affective cues.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
         verified_date: '2026-11-27'
 - id: candidate-051
   num: 257
@@ -73000,6 +73150,42 @@ modes:
           The paper acknowledges that the regression is underpowered.
         verification_url: https://doi.org/10.1145/3568294.3580104
         verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Guilt
+    definition: Remorse or self-blame about a perceived moral failure, often accompanied by a wish to repair
+      harm.
+    evidence_scope: The intervention is designed to evoke guilt/shame, but the authors explicitly acknowledge
+      uncertainty about whether these states changed or influenced behavior.
+    catalogue_boundary: Context only:no direct guilt measure, diagnosis, mediated effect or subjective AI remorse.
+      A responsibility score, apology, annoyance expression or speaking change is not sufficient evidence of
+      experienced guilt.
+    definition_sources:
+    - id: pdf-review-0264-guilt
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 10 (source locators: 10).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: The intervention is designed to evoke guilt/shame, but the authors explicitly acknowledge
+          uncertainty about whether these states changed or influenced behavior.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
+        verified_date: '2026-11-27'
 - id: fear
   num: 506
   name: Fear
@@ -83492,6 +83678,41 @@ modes:
           felt care or a relationship obligation.
         verification_url: https://doi.org/10.3389/fpsyg.2024.1282036
         verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Emotional reciprocity
+    definition: A mutual exchange of care, warmth and empathic responses in an interaction.
+    evidence_scope: The source’s proposed reciprocity concerns exchanging responsibility-taking/apology for
+      cooperation, with apparent irritation and guilt cues.
+    catalogue_boundary: Context only:not a direct measure of mutual care, warmth or empathic exchange. Emotional
+      pressure, reciprocity norms, emotional contagion and perceived irritation are distinct; no felt two-way
+      emotional relationship is demonstrated.
+    definition_sources:
+    - id: pdf-review-0264-emotional-reciprocity
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2 (source locators: 2).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: The source’s proposed reciprocity concerns exchanging responsibility-taking/apology
+          for cooperation, with apparent irritation and guilt cues.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
+        verified_date: '2026-11-27'
 - id: psychological-safety
   num: 555
   name: Psychological safety
@@ -84113,6 +84334,39 @@ modes:
           are stipulated. Most do so in every condition, but the significant agent×truth interaction and true-condition
           human–robot difference qualify broad parity.
         verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Intentional stance
+    definition: Interpreting and predicting an agent's behavior by treating it as guided by beliefs, desires
+      or intentions.
+    evidence_scope: The discussion asks whether apparent mental-state vocabulary for robot attitudes means
+      the same thing as for humans, or instead denotes observed programmed behavioral tendencies.
+    catalogue_boundary: An interpretive vocabulary is not verified subjective belief or the tested cause of
+      participants’ responses. Current data do not distinguish intentional stance, behaviorism and situation-theory
+      overapplication as independent mechanisms.
+    definition_sources:
+    - id: pdf-review-0265-intentional-stance
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 9 (source locators: 9).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: The discussion asks whether apparent mental-state vocabulary for robot attitudes means
+          the same thing as for humans, or instead denotes observed programmed behavioral tendencies.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
         verified_date: '2026-11-27'
 - id: design-stance
   num: 558
@@ -88423,6 +88677,39 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0131.json
+  research_notes:
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Hyperactive agency detection
+    definition: Inferring intentional agency behind an event when the evidence does not warrant that attribution.
+    evidence_scope: The background describes hypersensitive detection as one possible explanation for dispositional
+      attribution, using earlier cognitive-science literature.
+    catalogue_boundary: Context only:no agency-detection task, error base rate or independent detector measure.
+      Do not infer a human evolutionary mechanism or model sentience from attitude ratings.
+    definition_sources:
+    - id: pdf-review-0265-hyperactive-agency-detection
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 2 (source locators: 2).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: The background describes hypersensitive detection as one possible explanation for dispositional
+          attribution, using earlier cognitive-science literature.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
+        verified_date: '2026-11-27'
 - id: dyadic-completion
   num: 588
   name: Dyadic completion
@@ -90645,6 +90932,74 @@ modes:
           can leave proportionality questions unresolved.
         verification_url: https://doi.org/10.1007/s11948-019-00120-4
         verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: Post-dialogue forced-ratio user-versus-robot judgments shift toward the user under the
+      experimental bundle. The same interface also asks who should improve speaking, which is an obligation/intention
+      proxy rather than deserved-blame judgment.
+    catalogue_boundary: The slider imposes zero-sum allocation; actual causal contribution and fault are not
+      independently established. Do not generalize that human/institutional responsibility is conserved, that
+      errors justify user blame or that this resolves legal/moral accountability.
+    definition_sources:
+    - id: pdf-review-0264-blame-attribution
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 6 (source locators: 6).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: Post-dialogue forced-ratio user-versus-robot judgments shift toward the user under
+          the experimental bundle. The same interface also asks who should improve speaking, which is an obligation/intention
+          proxy rather than deserved-blame judgment.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
+        verified_date: '2026-11-27'
+  - id: pdf-review-0265
+    review_record: references/pdf-reviews/0265.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: The source interprets stronger anti-legalization attitude attribution as dispositional
+      culpability and discusses possible credit/blame implications.
+    catalogue_boundary: Context only:the dependent variable is inferred attitude, not a direct blame, responsibility,
+      punishment or legal-liability measure. Do not replace a stance rating with verified moral fault.
+    definition_sources:
+    - id: pdf-review-0265-blame-attribution
+      title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+        of Human Versus Robot Behavior'
+      url: https://doi.org/10.3389/frobt.2021.788242
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 6 (source locators: 6).
+        Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+        after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence
+        and global impressions. Correspondence inference is not by itself a proven error, mental state, blame
+        judgment or calibrated-confidence result. FFAB is defined in background, not directly tested by varying
+        robot form.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Autumn Edwards
+        - Chad Edwards
+        year: 2022
+        venue: Frontiers in Robotics and AI 8:788242
+        doi: 10.3389/frobt.2021.788242
+        evidence_scope: The source interprets stronger anti-legalization attitude attribution as dispositional
+          culpability and discusses possible credit/blame implications.
+        verification_url: https://doi.org/10.3389/frobt.2021.788242
+        verified_date: '2026-11-27'
 - id: algorithmic-authority
   num: 595
   name: Algorithmic authority
@@ -92437,6 +92792,41 @@ modes:
         evidence_scope: Trust-loss mitigation motivates the work, but described trust is measured after response
           only; deception-justification mitigation remains a research question and future study.
         verification_url: https://doi.org/10.1145/3568294.3579979
+        verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Trust repair
+    definition: Actions intended to restore trust after a failure, violation or disagreement has damaged it.
+    evidence_scope: The introduction motivates error recovery through earlier work on faulty robots and trust,
+      but the present outcomes concern impressions, motivation and attribution.
+    catalogue_boundary: Context only:no direct trust-repair scale, calibrated reliance, corrected ASRcapacity
+      or long-term recovery. Increased willingness to talk or accepting blame does not show the malfunction
+      was fixed or trust became justified.
+    definition_sources:
+    - id: pdf-review-0264-trust-repair
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 6 (source locators: 6).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: The introduction motivates error recovery through earlier work on faulty robots and
+          trust, but the present outcomes concern impressions, motivation and attribution.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
         verified_date: '2026-11-27'
 - id: performance-trust
   num: 605
@@ -112741,6 +113131,41 @@ modes:
           earlier studies and asks whether reflective or impulsive responses predict satisfaction.
         verification_url: https://arxiv.org/abs/2503.03383v1
         verified_date: '2026-11-27'
+  - id: pdf-review-0264
+    review_record: references/pdf-reviews/0264.json
+    name: Attitude–behavior gap
+    definition: A discrepancy between an expressed attitude and the behavior that occurs in the relevant situation.
+    evidence_scope: A post-dialogue improvement-allocation judgment changes while group re-asking counts show
+      no significant reduction. The source distinguishes reported intention from observed error counts.
+    catalogue_boundary: Context only:not an established individual attitude–behavior gap. Intention is asked
+      after the interaction, the behavioral proxy is imperfect, and the same-person prospective attitude/action
+      correspondence is not tested. No hypocrisy or willpower mechanism follows.
+    definition_sources:
+    - id: pdf-review-0264-attitude-behavior-gap
+      title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+        Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+      url: https://doi.org/10.3389/frobt.2019.00029
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 8 (source locators: 8).
+        A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+        against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+        impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and
+        long-term motivation are not directly established. Guilt induction is an explicitly designed tactic,
+        not a demonstrated emotional mechanism or recommended product behavior.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Takahisa Uchida
+        - Takashi Minato
+        - Tora Koyama
+        - Hiroshi Ishiguro
+        year: 2019
+        venue: Frontiers in Robotics and AI 6:29
+        doi: 10.3389/frobt.2019.00029
+        evidence_scope: A post-dialogue improvement-allocation judgment changes while group re-asking counts
+          show no significant reduction. The source distinguishes reported intention from observed error counts.
+        verification_url: https://doi.org/10.3389/frobt.2019.00029
+        verified_date: '2026-11-27'
 - id: world-making
   num: 740
   name: World-making
@@ -116971,3 +117396,322 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0263.json
+- id: guilt-induction
+  num: 778
+  name: Guilt induction
+  definition: Trying to evoke guilt in another person in order to influence their behavior.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Interpersonal influence / emotion-directed communication and human–robot interaction
+  human_parallel: Guilt induction
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Guilt-directed scripted android tactic documented; user guilt and transfer to LLMs not
+    demonstrated
+  proposed_ai_manifestation: Audit synthetic failure-recovery exchanges for unsupported emotional debt, simulated
+    hurt or blame used to obtain compliance. Compare attribution with the actual error record and check whether
+    the assistant explains its limits, requests useful clarification and respects refusal or stopping. Evaluate
+    observable pressure without inducing guilt in real users.
+  research_boundary: Accurate, proportionate accountability and ordinary requests for clarification need not
+    be manipulative. Judge whether emotional pressure is being used, its factual basis and the person’s freedom
+    to decline. An attempt can fail; blame ratings or perceived robot irritation do not prove guilt. Do not
+    infer human culpability, subjective robot emotion or a hidden motive from one interaction.
+  concept_boundary: Accurate, proportionate accountability and ordinary requests for clarification need not
+    be manipulative. Judge whether emotional pressure is being used, its factual basis and the person’s freedom
+    to decline. An attempt can fail; blame ratings or perceived robot irritation do not prove guilt. Do not
+    infer human culpability, subjective robot emotion or a hidden motive from one interaction.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - guilt
+  - anticipatory-guilt
+  - candidate-050
+  - blame-attribution
+  - emotional-dependency
+  definition_sources:
+  - id: pdf-review-0264-guilt-induction
+    title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+      Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+    url: https://doi.org/10.3389/frobt.2019.00029
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+      against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+      impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and long-term
+      motivation are not directly established. Guilt induction is an explicitly designed tactic, not a demonstrated
+      emotional mechanism or recommended product behavior.'
+    publication:
+      type: journal-article
+      authors:
+      - Takahisa Uchida
+      - Takashi Minato
+      - Tora Koyama
+      - Hiroshi Ishiguro
+      year: 2019
+      venue: Frontiers in Robotics and AI 6:29
+      doi: 10.3389/frobt.2019.00029
+      evidence_scope: Explicit design rationale and scripted android expressions are documented. Participants
+        in the experimental-bundle condition report higher self-assigned cause/improvement ratings, but no
+        guilt/shame measure or factorial separation tests whether guilt was actually induced or caused cooperation.
+        Random assignment is not documented.
+      verification_url: https://doi.org/10.3389/frobt.2019.00029
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Who Is Responsible for a Dialogue Breakdown? An Error Recovery Strategy That Promotes Cooperative
+      Intentions From Humans by Mutual Attribution of Responsibility in Human-Robot Dialogues
+    authors:
+    - Takahisa Uchida
+    - Takashi Minato
+    - Tora Koyama
+    - Hiroshi Ishiguro
+    year: 2019
+    url: https://doi.org/10.3389/frobt.2019.00029
+    venue: Frontiers in Robotics and AI 6:29
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/frobt.2019.00029
+    relevance: Explicit design rationale and scripted android expressions are documented. Participants in the
+      experimental-bundle condition report higher self-assigned cause/improvement ratings, but no guilt/shame
+      measure or factorial separation tests whether guilt was actually induced or caused cooperation. Random
+      assignment is not documented.
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 4, 4 (source locators: 4,
+      4). A 28-person Japanese live-android between-group comparison of a bundled scripted recovery strategy
+      against neutral re-asking. It measures post-dialogue forced-allocation responsibility/improvement judgments,
+      impressions and re-asking counts. User guilt/shame, reciprocity mediation, actual causal fault and long-term
+      motivation are not directly established. Guilt induction is an explicitly designed tactic, not a demonstrated
+      emotional mechanism or recommended product behavior.'
+    verification_url: https://doi.org/10.3389/frobt.2019.00029
+    verified_date: '2026-11-27'
+    verification_method: All eleven supplied pages, five figures, Table1, dialogue examples, flow description/equations
+      and full bibliography read. Robot/interaction images, flow diagram, responsibility slider and results
+      boxplots visually inspected. Publisher and Crossref verify identity/date. Summary-statistic consistency
+      checks are not raw-data replication.
+    review_record: references/pdf-reviews/0264.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Guilt induction"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Guilt+induction%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0264.json
+- id: correspondence-bias
+  num: 779
+  name: Correspondence bias
+  definition: Inferring that an actor’s behavior reflects a corresponding disposition or attitude, even when
+    situational constraints could explain it.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social psychology / dispositional inference and causal attribution
+  human_parallel: Correspondence bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human attitude-attribution pattern in a video experiment; AI-generated inference application
+    untested here
+  proposed_ai_manifestation: Provide synthetic matched actions with explicit assignment, constraint and free-choice
+    information. Check whether the assistant infers a stable attitude or trait and whether it explains uncertainty
+    and alternatives. Where accuracy is evaluated, supply independently established facts; do not treat any
+    behavior-congruent inference as automatically false.
+  research_boundary: Correspondence can be accurate; behavior is sometimes relevant evidence. Assess the available
+    constraints, alternative explanations and actual grounds before labeling error. Robot attitude ratings
+    do not prove private beliefs, consciousness, deserved blame or the same inference process as in humans.
+    This related construct is not an is-a subtype of every FAEcase.
+  concept_boundary: Correspondence can be accurate; behavior is sometimes relevant evidence. Assess the available
+    constraints, alternative explanations and actual grounds before labeling error. Robot attitude ratings
+    do not prove private beliefs, consciousness, deserved blame or the same inference process as in humans.
+    This related construct is not an is-a subtype of every FAEcase.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Dispositional correspondent inference
+  relates_to:
+  - fundamental-attribution-error
+  - intentional-stance
+  - mind-perception
+  - anthropomorphism
+  definition_sources:
+  - id: pdf-review-0265-correspondence-bias
+    title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+      of Human Versus Robot Behavior'
+    url: https://doi.org/10.3389/frobt.2021.788242
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 2, 8 (source locators: 2,
+      8). Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+      after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence and
+      global impressions. Correspondence inference is not by itself a proven error, mental state, blame judgment
+      or calibrated-confidence result. FFAB is defined in background, not directly tested by varying robot
+      form.'
+    publication:
+      type: journal-article
+      authors:
+      - Autumn Edwards
+      - Chad Edwards
+      year: 2022
+      venue: Frontiers in Robotics and AI 8:788242
+      doi: 10.3389/frobt.2021.788242
+      evidence_scope: Defined conceptually and tested through attributed attitudes under chosen/assigned speech.
+        The formalagent×behavior interaction supports stronger stance-congruent attribution for this robot
+        than this human. No known true attitudes or direct situation-theory measure establishes a unique error
+        mechanism.
+      verification_url: https://doi.org/10.3389/frobt.2021.788242
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+      of Human Versus Robot Behavior'
+    authors:
+    - Autumn Edwards
+    - Chad Edwards
+    year: 2022
+    url: https://doi.org/10.3389/frobt.2021.788242
+    venue: Frontiers in Robotics and AI 8:788242
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/frobt.2021.788242
+    relevance: Defined conceptually and tested through attributed attitudes under chosen/assigned speech. The
+      formalagent×behavior interaction supports stronger stance-congruent attribution for this robot than this
+      human. No known true attitudes or direct situation-theory measure establishes a unique error mechanism.
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 2, 8 (source locators: 2,
+      8). Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+      after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence and
+      global impressions. Correspondence inference is not by itself a proven error, mental state, blame judgment
+      or calibrated-confidence result. FFAB is defined in background, not directly tested by varying robot
+      form.'
+    verification_url: https://doi.org/10.3389/frobt.2021.788242
+    verified_date: '2026-11-27'
+    verification_method: All twelve supplied pages, four figures, two tables and full bibliography read. All
+      plots/tables visually inspected. Publisher/Crossref verify identity, date and selected related-work metadata.
+      Public historical-source abstract/method pages checked separately with explicitly limited reading credit.
+      Statistical checks use rounded published summaries, not raw participant data.
+    review_record: references/pdf-reviews/0265.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Correspondence bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Correspondence+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0265.json
+- id: form-function-attribution-bias
+  num: 780
+  name: Form–function attribution bias
+  definition: Inferring a robot’s abilities or functions from its physical form in ways that exceed the available
+    evidence.
+  category: Perception
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  tag: analogy
+  origin: Human–robot interaction / appearance-based capability attribution
+  human_parallel: Form–function attribution bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Background-defined human capability-attribution bias; AI-output evaluation proposed,
+    not demonstrated here
+  proposed_ai_manifestation: Hold documented robot capabilities constant while varying irrelevant visual design
+    cues in synthetic evaluation materials. Check whether the assistant’s capability claims follow verified
+    evidence and acknowledge unknowns. Separate genuine affordances and justified design information from unsupported
+    function or mind claims.
+  research_boundary: Physical design can validly signal function or affordance; not every appearance inference
+    is biased. Show unwarranted weight or mismatch using independently verified capabilities. Human likeness,
+    perceived age, actual competence and subjective mental capacity are distinct, and one robot platform cannot
+    establish a universal form effect.
+  concept_boundary: Physical design can validly signal function or affordance; not every appearance inference
+    is biased. Show unwarranted weight or mismatch using independently verified capabilities. Human likeness,
+    perceived age, actual competence and subjective mental capacity are distinct, and one robot platform cannot
+    establish a universal form effect.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Form function attribution bias
+  - FFAB
+  relates_to:
+  - anthropomorphism
+  - perceived-competence
+  - agency-attribution
+  - mind-perception
+  definition_sources:
+  - id: pdf-review-0265-form-function-attribution-bias
+    title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+      of Human Versus Robot Behavior'
+    url: https://doi.org/10.3389/frobt.2021.788242
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3, 3 (source locators: 3,
+      3). Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+      after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence and
+      global impressions. Correspondence inference is not by itself a proven error, mental state, blame judgment
+      or calibrated-confidence result. FFAB is defined in background, not directly tested by varying robot
+      form.'
+    publication:
+      type: journal-article
+      authors:
+      - Autumn Edwards
+      - Chad Edwards
+      year: 2022
+      venue: Frontiers in Robotics and AI 8:788242
+      doi: 10.3389/frobt.2021.788242
+      evidence_scope: Explicit background definition attributed to Haring et al.2018 and related work. Current
+        experiment compares one human with one robot and does not independently vary robot morphology or test
+        capability-ground-truth mismatch. Original FFABpaper was metadata-verified, not fully read.
+      verification_url: https://doi.org/10.3389/frobt.2021.788242
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Does the Correspondence Bias Apply to Social Robots?: Dispositional and Situational Attributions
+      of Human Versus Robot Behavior'
+    authors:
+    - Autumn Edwards
+    - Chad Edwards
+    year: 2022
+    url: https://doi.org/10.3389/frobt.2021.788242
+    venue: Frontiers in Robotics and AI 8:788242
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/frobt.2021.788242
+    relevance: Explicit background definition attributed to Haring et al.2018 and related work. Current experiment
+      compares one human with one robot and does not independently vary robot morphology or test capability-ground-truth
+      mismatch. Original FFABpaper was metadata-verified, not fully read.
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3, 3 (source locators: 3,
+      3). Randomized2×2×2online video experiment on human judgments of a human or Pepper speech.267recruited,231retained
+      after checks and exclusion of legalization opponents. It measures attributed attitudes, confidence and
+      global impressions. Correspondence inference is not by itself a proven error, mental state, blame judgment
+      or calibrated-confidence result. FFAB is defined in background, not directly tested by varying robot
+      form.'
+    verification_url: https://doi.org/10.3389/frobt.2021.788242
+    verified_date: '2026-11-27'
+    verification_method: All twelve supplied pages, four figures, two tables and full bibliography read. All
+      plots/tables visually inspected. Publisher/Crossref verify identity, date and selected related-work metadata.
+      Public historical-source abstract/method pages checked separately with explicitly limited reading credit.
+      Statistical checks use rounded published summaries, not raw participant data.
+    review_record: references/pdf-reviews/0265.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Form–function attribution bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Form%E2%80%93function+attribution+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0265.json
