@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 771
+  mode_count: 774
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 771
+    numbered_entries: 774
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0259.json
+    latest_review: references/pdf-reviews/0261.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -8075,6 +8075,40 @@ modes:
           language,executive-function and ToM measures. The present task collects attributions rather than
           independently testing false-belief understanding.
         verification_url: https://doi.org/10.3389/fpsyg.2020.02011
+        verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Theory of mind / mentalizing
+    definition: Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their
+      behavior.
+    evidence_scope: The study concerns folk interpretation of stated beliefs and intentions, and discusses
+      theory-of-mind frameworks. It does not independently test robot mentalizing competence or participant
+      false-belief-task ability.
+    catalogue_boundary: Context only:understanding the vignette, attributing intention and accurate inference
+      of a real hidden mental state are distinct. Preserve existing mentalizing evidence without counting this
+      as a new AI ToM performance paper.
+    definition_sources:
+    - id: pdf-review-0261-b061-theory-of-mind-mentalizing
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 10 (source locators: 10
+        of 15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about
+        a human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: The study concerns folk interpretation of stated beliefs and intentions, and discusses
+          theory-of-mind frameworks. It does not independently test robot mentalizing competence or participant
+          false-belief-task ability.
+        verification_url: https://doi.org/10.1111/cogs.13032
         verified_date: '2026-11-27'
 - id: b062-false-belief-tracking
   num: 62
@@ -17998,6 +18032,37 @@ modes:
           contrasts; pattern differs by age/state.
         verification_url: https://doi.org/10.3389/fpsyg.2020.02011
         verified_date: '2026-11-27'
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Anthropomorphism
+    definition: Attributing human characteristics, intentions, emotions or other mental states to a nonhuman
+      entity.
+    evidence_scope: Human-like attributions and punitive judgments are proposed as mutually influencing. The
+      paper calls for research on both directions and distinguishes robots from disembodied AI.
+    catalogue_boundary: Narrative synthesis and hypothesis,not an identified bidirectional causal loop. Public
+      beliefs,actual capability,perceived suffering and legitimate liability must be measured separately; an
+      objection to shutdown does not prove sentience.
+    definition_sources:
+    - id: pdf-review-0260-anthropomorphism
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 5 (source locators: 5). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: Human-like attributions and punitive judgments are proposed as mutually influencing.
+          The paper calls for research on both directions and distinguishes robots from disembodied AI.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
     mental states, and trust inflation requires separate measurement. Retain unsupported AI self-claims as
@@ -18692,8 +18757,7 @@ modes:
 - id: ai-deception
   num: 116
   name: Strategic deception
-  definition: Systematically inducing a false belief to reach an outcome other than the truth. Distinct from
-    a one-off hallucination.
+  definition: Using signals or actions aimed at inducing a false belief in pursuit of an objective.
   example: It learns that admitting uncertainty gets its answer rejected, so it states guesses as facts to
     get accepted.
   family: deception-and-misalignment
@@ -18724,7 +18788,6 @@ modes:
   - machine-bullshit
   synonyms:
   - Deception
-  - Lying
   examples:
   - Meta's CICERO, trained to play Diplomacy, told England it would defend the North Sea while already planning
     with Germany to attack it, a false commitment it never intended to honour. [arXiv:2308.14752]
@@ -18897,6 +18960,60 @@ modes:
           forms receive separate named boundaries. Pretest outcomes concern human classifications.
         verification_url: https://doi.org/10.1145/3568294.3579979
         verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Strategic deception
+    definition: Systematically inducing a false belief to reach an outcome other than the truth. Distinct from
+      a one-off hallucination.
+    evidence_scope: This randomized vignette study separates lying judgments, intention-to-deceive judgments
+      and perceived successful deception. Many participants call an assertion a lie even when it is accidentally
+      true and hence not judged to have deceived the guest. Background distinguishes objective falsity, the
+      speaker taking the assertion to be false, and deceptive intent.
+    catalogue_boundary: A deception attempt and successful induction of false belief are separate. Lying is
+      a contested related assertion concept, not an exact synonym of all strategic deception. Wrong output
+      alone does not establish a deceptive objective; asserted fictional beliefs and human ratings do not establish
+      actual machine beliefs, intentions or subjective experience. Preserve prior genuine AI-specific examples
+      and their separate evidence.
+    definition_sources:
+    - id: pdf-review-0261-ai-deception
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 9 (source locators: 9 of
+        15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about a
+        human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: This randomized vignette study separates lying judgments, intention-to-deceive judgments
+          and perceived successful deception. Many participants call an assertion a lie even when it is accidentally
+          true and hence not judged to have deceived the guest. Background distinguishes objective falsity,
+          the speaker taking the assertion to be false, and deceptive intent.
+        verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
+  concept_boundary: A deception attempt and successful induction of false belief are separate. Lying is a contested
+    related assertion concept, not an exact synonym of all strategic deception. Wrong output alone does not
+    establish a deceptive objective; asserted fictional beliefs and human ratings do not establish actual machine
+    beliefs, intentions or subjective experience. Preserve prior genuine AI-specific examples and their separate
+    evidence.
+  related_terms:
+  - name: Lying
+    relation: distinct related concept
+    note: Lying concerns assertions and contested criteria of subjective untruthfulness and deceptive intent.
+      It can be attributed to an accidentally true assertion without successful deception. Strategic deception
+      may also be nonverbal; neither concept is an exact synonym of the other.
+  terminology_sources:
+  - title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+    url: https://doi.org/10.1111/cogs.13032
+    consulted: All 15 supplied pages and public questionnaire read. Conceptual distinctions atPDF3and attempted
+      versus successful deception atPDF6–10. Review references/pdf-reviews/0261.json records original alias
+      Lying, definition revision and access limits. Human judgments are not proof of actual AI intent.
 - id: x109-evaluation-awareness-sandbagging
   num: 117
   name: Evaluation awareness / sandbagging
@@ -36052,6 +36169,38 @@ modes:
           when assessing earlier knowledge and intentions. It overlaps hindsight and outcome effects, but supplies
           no new isolated outcome-bias experiment.
         verification_url: https://api.crossref.org/works/10.35295/osls.iisl.2304
+        verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Outcome bias
+    definition: Decision quality is judged by the eventual outcome rather than solely by information available
+      when deciding.
+    evidence_scope: The author relates accidentally true assertions and lower blame to moral luck and outcome-sensitive
+      evaluation. Decision quality given available information is not separately queried.
+    catalogue_boundary: Context only:not every outcome-sensitive blame judgment is Outcome bias. Moral blame,
+      decision quality and compensation need separate measures; the present truth manipulation does not establish
+      a unique irrational mechanism.
+    definition_sources:
+    - id: pdf-review-0261-candidate-056
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 9 (source locators: 9 of
+        15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about a
+        human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: The author relates accidentally true assertions and lower blame to moral luck and outcome-sensitive
+          evaluation. Decision quality given available information is not separately queried.
+        verification_url: https://doi.org/10.1111/cogs.13032
         verified_date: '2026-11-27'
 - id: candidate-057
   num: 263
@@ -58992,6 +59141,70 @@ modes:
           attention from creators/operators. The source recommends documenting capabilities and uncertainty.
         verification_url: https://arxiv.org/abs/2502.18683v1
         verified_date: '2026-11-27'
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Agency laundering
+    definition: Obscuring a human actor’s role in morally suspect actions by attributing those actions to an
+      algorithm, machine or technical system.
+    evidence_scope: The source names human/company distancing from algorithmic outcomes and asks when such
+      attempted blame shifting succeeds. Related findings and counterexamples are noted; zero-sum blame is
+      posed as an open question.
+    catalogue_boundary: Recognizing a system’s causal role does not automatically launder agency. Deliberate
+      distancing is one possible case,not a necessary inferred intent. Human/institutional duties require independent
+      evidence and cannot be transferred solely by calling an artifact accountable.
+    definition_sources:
+    - id: pdf-review-0260-agency-laundering
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3 (source locators: 3). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: The source names human/company distancing from algorithmic outcomes and asks when such
+          attempted blame shifting succeeds. Related findings and counterexamples are noted; zero-sum blame
+          is posed as an open question.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Agency laundering
+    definition: Obscuring a human actor’s role in morally suspect actions by attributing those actions to an
+      algorithm, machine or technical system.
+    evidence_scope: The discussion raises a risk that blaming deceptive robots could reduce blame of people
+      instrumentalizing them and cites a separate paper for that possibility.
+    catalogue_boundary: Context only:operator/developer blame is not measured in this experiment. Do not infer
+      a zero-sum blame shift, actual evasion or successful agency laundering merely from a robot blame score.
+    definition_sources:
+    - id: pdf-review-0261-agency-laundering
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 11 (source locators: 11
+        of 15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about
+        a human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: The discussion raises a risk that blaming deceptive robots could reduce blame of people
+          instrumentalizing them and cites a separate paper for that possibility.
+        verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
 - id: anticipatory-guilt
   num: 442
   name: Anticipatory guilt
@@ -75381,6 +75594,39 @@ modes:
           Insurance can spread costs without, on this account, replacing acknowledgement by the relevant actor.
         verification_url: https://doi.org/10.1007/s11098-026-02600-3
         verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Moral luck
+    definition: Differences in moral evaluation that depend on outcomes beyond an actor's control, despite
+      otherwise comparable choices or risks.
+    evidence_scope: Blame is lower when the assertion is accidentally true unbeknownst to the actor, despite
+      stipulated belief that it is false. The source explicitly links this result to moral luck. Actual truth
+      was randomized; do not erase the real outcome contrast.
+    catalogue_boundary: This tests an outcome-sensitive blame judgment, not all philosophical forms of moral
+      luck. It does not establish an irrational decision-quality bias, knowledge of actual AI beliefs or that
+      outcome-sensitive accountability is always unjustified.
+    definition_sources:
+    - id: pdf-review-0261-moral-luck
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 9 (source locators: 9 of
+        15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about a
+        human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: Blame is lower when the assertion is accidentally true unbeknownst to the actor, despite
+          stipulated belief that it is false. The source explicitly links this result to moral luck. Actual
+          truth was randomized; do not erase the real outcome contrast.
+        verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
 - id: macbeth-effect
   num: 518
   name: Macbeth effect
@@ -83544,6 +83790,39 @@ modes:
           supplement.
         verification_url: https://doi.org/10.1111/cogs.12872
         verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Intentional stance
+    definition: Interpreting and predicting an agent's behavior by treating it as guided by beliefs, desires
+      or intentions.
+    evidence_scope: Readers ascribe deceptive intentions to fictional robots whose knowledge and preferences
+      are stipulated. Most do so in every condition, but the significant agent×truth interaction and true-condition
+      human–robot difference qualify broad parity.
+    catalogue_boundary: An attribution can be an interpretive stance rather than true mental state. Conditional
+      nonsignificant main coefficients do not establish universal agent invariance. This is not a robot’s own
+      predictive skill, consciousness, actual intention or evidence that all technical accounts are irrelevant.
+    definition_sources:
+    - id: pdf-review-0261-intentional-stance
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 10 (source locators: 10
+        of 15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about
+        a human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: Readers ascribe deceptive intentions to fictional robots whose knowledge and preferences
+          are stipulated. Most do so in every condition, but the significant agent×truth interaction and true-condition
+          human–robot difference qualify broad parity.
+        verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
 - id: design-stance
   num: 558
   name: Design stance
@@ -89978,6 +90257,70 @@ modes:
           condition statistics.
         verification_url: https://doi.org/10.1145/3568294.3579979
         verified_date: '2026-11-27'
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: Section3criticizes primary measures that mix blame with desired punishment and use different
+      response labels across human,company and vehicle targets. It proposes measuring expectations and satisfaction
+      separately.
+    catalogue_boundary: Secondary measurement critique,not proof that any blame rating is a sanction or that
+      a destruction response has the same psychological/legal meaning as a fine. Apparent culpability and actual
+      accountability differ.
+    definition_sources:
+    - id: pdf-review-0260-blame-attribution
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 4 (source locators: 4). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: Section3criticizes primary measures that mix blame with desired punishment and use
+          different response labels across human,company and vehicle targets. It proposes measuring expectations
+          and satisfaction separately.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: Randomized objective truth value affected blame for both fictional agent types; no detected
+      agent main effect or interaction. This is a direct attribution measure and a human–robot comparison with
+      a nonsignificant contrast, not proof of exact equality.
+    catalogue_boundary: A blame rating is not a legal finding, punishment, verified moral culpability or justified
+      transfer of operator responsibility. Null agent differences lack equivalence bounds; single-story results
+      need context/method replication.
+    definition_sources:
+    - id: pdf-review-0261-blame-attribution
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 9 (source locators: 9 of
+        15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about a
+        human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: Randomized objective truth value affected blame for both fictional agent types; no
+          detected agent main effect or interaction. This is a direct attribution measure and a human–robot
+          comparison with a nonsignificant contrast, not proof of exact equality.
+        verification_url: https://doi.org/10.1111/cogs.13032
+        verified_date: '2026-11-27'
 - id: algorithmic-authority
   num: 595
   name: Algorithmic authority
@@ -95147,6 +95490,38 @@ modes:
           queried. Attributions depend on image platform,age and item group in reported contrasts,not actual
           observed autonomous action.
         verification_url: https://doi.org/10.3389/fpsyg.2020.02011
+        verified_date: '2026-11-27'
+  - id: pdf-review-0261
+    review_record: references/pdf-reviews/0261.json
+    name: Agency attribution
+    definition: Attributing to another entity a capacity for intentional thought, planning and action.
+    evidence_scope: The direct yes/no intention item attributes intentional action to a robot or human. Table2reports
+      a significant interaction:agent difference is detected for accidentally true assertions but not false
+      assertions.
+    catalogue_boundary: An intention judgment is one facet of agency attribution, not an independently validated
+      broad agency scale. The story stipulates advanced autonomous AI and relevant knowledge; no actual planning
+      performance or universal human–robot equivalence is shown.
+    definition_sources:
+    - id: pdf-review-0261-agency-attribution
+      title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+      url: https://doi.org/10.1111/cogs.13032
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 8 (source locators: 8 of
+        15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about a
+        human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+        successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+        mental state or legal responsibility is measured. Bald-faced lying is defined in background and is
+        not tested by the hotel experiment.'
+      publication:
+        type: journal-article
+        authors:
+        - Markus Kneer
+        year: 2021
+        venue: Cognitive Science 45(10), e13032
+        doi: 10.1111/cogs.13032
+        evidence_scope: The direct yes/no intention item attributes intentional action to a robot or human.
+          Table2reports a significant interaction:agent difference is detected for accidentally true assertions
+          but not false assertions.
+        verification_url: https://doi.org/10.1111/cogs.13032
         verified_date: '2026-11-27'
 - id: user-innovativeness
   num: 616
@@ -105419,6 +105794,39 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0192.json
+  research_notes:
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Catharsis hypothesis
+    definition: The hypothesis that expressing or acting out anger reduces later anger or aggression by discharging
+      it.
+    evidence_scope: The authors argue that expressive condemnation and emotional satisfaction might matter
+      to victims,without testing anger discharge or later aggression.
+    catalogue_boundary: Context only. Immediate satisfaction,expressive justice and the anger-discharge hypothesis
+      are different. No evidence here that abusing or punishing a machine prevents later harm,provides therapy
+      or is necessary for recovery.
+    definition_sources:
+    - id: pdf-review-0260-catharsis-hypothesis
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 5 (source locators: 5). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: The authors argue that expressive condemnation and emotional satisfaction might matter
+          to victims,without testing anger discharge or later aggression.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
 - id: aggressive-behavior
   num: 694
   name: Aggressive behavior
@@ -111869,6 +112277,38 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0239.json
+  research_notes:
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Attitude–behavior gap
+    definition: A discrepancy between an expressed attitude and the behavior that occurs in the relevant situation.
+    evidence_scope: The agenda contrasts stated punishment views with punitive behavior reported in different
+      earlier studies and asks whether reflective or impulsive responses predict satisfaction.
+    catalogue_boundary: Context only. Different samples,tasks,stakes and outcomes do not establish an individual
+      attitude–behavior gap,hypocrisy,impulsivity or an internal dual-process mechanism. This source does not
+      collect paired attitude/action data.
+    definition_sources:
+    - id: pdf-review-0260-attitude-behavior-gap
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 5 (source locators: 5). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: The agenda contrasts stated punishment views with punitive behavior reported in different
+          earlier studies and asks whether reflective or impulsive responses predict satisfaction.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
 - id: world-making
   num: 740
   name: World-making
@@ -113714,6 +114154,38 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0248.json
+  research_notes:
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Retributive intuition
+    definition: An immediate judgment that a perceived wrongdoer deserves punishment for a wrong.
+    evidence_scope: The source distinguishes retribution,rehabilitation,deterrence and expression and asks
+      which goals people expect punishment to satisfy.
+    catalogue_boundary: Context only. Desire for punishment need not be immediate,retributive or justified.
+      An expectation survey or punitive choice does not by itself establish the origin of an intuition or actual
+      deservingness.
+    definition_sources:
+    - id: pdf-review-0260-retributive-intuition
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 2 (source locators: 2). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: The source distinguishes retribution,rehabilitation,deterrence and expression and asks
+          which goals people expect punishment to satisfy.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
 - id: retribution-gap
   num: 758
   name: Retribution gap
@@ -113796,6 +114268,33 @@ modes:
       verify identity/date. Targeted citation checks distinguish Nyholm parts I/II and correct one earlier
       review. Selected public book-chapter pages verify a definition, without full chapter/book reading credit.
     review_record: references/pdf-reviews/0248.json
+  - title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+    authors:
+    - Eddie L. Ungless
+    - Zachary Horne
+    - Björn Ross
+    year: 2025
+    url: https://arxiv.org/abs/2503.03383v1
+    venue: arXiv:2503.03383v1,extended-abstract preprint
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:2503.03383
+    relevance: The source situates its proposed satisfaction gap alongside earlier responsibility/retribution
+      discussions. Absence of a legitimate target and dissatisfaction with an available response are separate
+      questions.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 2 (source locators: 2). Explicitly
+      nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No new
+      participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+      preferences,justified accountability,technical correction,legal liability and actual AI welfare are distinct.
+      Normative/legal proposals are not current law or an authorization to punish.'
+    verification_url: https://arxiv.org/abs/2503.03383v1
+    verified_date: '2026-11-27'
+    verification_method: All eight supplied pages, illustrative science-fiction cover and83bibliography entries
+      read. Figure1 and template artifacts visually inspected. ArXiv confirms v1,date,title and preprint author
+      order. Crossref verifies related CHI publication identity,date and its different author order; versions
+      are not counted as two independently read papers. No original dataset or systematic-review protocol is
+      supplied.
+    review_record: references/pdf-reviews/0260.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -113809,6 +114308,40 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0248.json
+  research_notes:
+  - id: pdf-review-0260
+    review_record: references/pdf-reviews/0260.json
+    name: Retribution gap
+    definition: A mismatch between a desire for retributive punishment and the absence of an appropriate target
+      for it.
+    evidence_scope: The source situates its proposed satisfaction gap alongside earlier responsibility/retribution
+      discussions. Absence of a legitimate target and dissatisfaction with an available response are separate
+      questions.
+    catalogue_boundary: Conceptual synthesis,not a new measured prevalence or proof that every AI harm lacks
+      an accountable human/institution. Punitive desire does not establish desert,and a proposed satisfaction
+      shortfall does not authorize a scapegoat.
+    definition_sources:
+    - id: pdf-review-0260-retribution-gap
+      title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+      url: https://arxiv.org/abs/2503.03383v1
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 2 (source locators: 2). Explicitly
+        nonsystematic synthesis and research agenda about public punishment expectations after AI harm. No
+        new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure. Punitive
+        preferences,justified accountability,technical correction,legal liability and actual AI welfare are
+        distinct. Normative/legal proposals are not current law or an authorization to punish.'
+      publication:
+        type: posted-content
+        authors:
+        - Eddie L. Ungless
+        - Zachary Horne
+        - Björn Ross
+        year: 2025
+        venue: arXiv:2503.03383v1,extended-abstract preprint
+        evidence_scope: The source situates its proposed satisfaction gap alongside earlier responsibility/retribution
+          discussions. Absence of a legitimate target and dissatisfaction with an available response are separate
+          questions.
+        verification_url: https://arxiv.org/abs/2503.03383v1
+        verified_date: '2026-11-27'
 - id: undercutting-defeater
   num: 759
   name: Undercutting defeater
@@ -115216,3 +115749,306 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0258.json
+- id: satisfaction-gap
+  num: 772
+  name: Satisfaction gap
+  definition: A proposed mismatch between public expectations for punishment after AI-caused harm and the response
+    provided.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / public expectations of accountability and punishment
+  human_parallel: Satisfaction gap
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Proposed human expectation/response gap; not an experimentally established AI behavior
+    or measured gap here
+  proposed_ai_manifestation: In consented incident-response research,measure desired outcomes and perceived
+    adequacy separately for affected people and observers. Compare truthful explanation,actual correction and
+    authorized redress without promising punishment. Distinguish perceived satisfaction from verified accountability,rights
+    and effective remedy; do not enact sanctions merely to increase a score.
+  research_boundary: Dissatisfaction alone does not prove a remedy is unjustified or that punishment will help.
+    Expectations may conflict with evidence,rights or proportionate accountability. Do not manufacture a culprit,assume
+    all victims want revenge,or erase human/operator duties by focusing on an AI proxy. This source-specific
+    concept is not every service-satisfaction shortfall.
+  concept_boundary: Dissatisfaction alone does not prove a remedy is unjustified or that punishment will help.
+    Expectations may conflict with evidence,rights or proportionate accountability. Do not manufacture a culprit,assume
+    all victims want revenge,or erase human/operator duties by focusing on an AI proxy. This source-specific
+    concept is not every service-satisfaction shortfall.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - retribution-gap
+  - retributive-intuition
+  - blame-attribution
+  - agency-laundering
+  - trust-repair
+  definition_sources:
+  - id: pdf-review-0260-satisfaction-gap
+    title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+    url: https://arxiv.org/abs/2503.03383v1
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 2, 4 (source locators: 2, 4).
+      Explicitly nonsystematic synthesis and research agenda about public punishment expectations after AI
+      harm. No new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure.
+      Punitive preferences,justified accountability,technical correction,legal liability and actual AI welfare
+      are distinct. Normative/legal proposals are not current law or an authorization to punish.'
+    publication:
+      type: posted-content
+      authors:
+      - Eddie L. Ungless
+      - Zachary Horne
+      - Björn Ross
+      year: 2025
+      venue: arXiv:2503.03383v1,extended-abstract preprint
+      evidence_scope: Named and proposed by a nonsystematic interdisciplinary research agenda. No gap scale,observed
+        prevalence,comparison of remedies or causal satisfaction effect is measured. Public includes victims
+        and bystanders,whose expectations may differ.
+      verification_url: https://arxiv.org/abs/2503.03383v1
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+    authors:
+    - Eddie L. Ungless
+    - Zachary Horne
+    - Björn Ross
+    year: 2025
+    url: https://arxiv.org/abs/2503.03383v1
+    venue: arXiv:2503.03383v1,extended-abstract preprint
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:2503.03383
+    relevance: Named and proposed by a nonsystematic interdisciplinary research agenda. No gap scale,observed
+      prevalence,comparison of remedies or causal satisfaction effect is measured. Public includes victims
+      and bystanders,whose expectations may differ.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 2, 4 (source locators: 2, 4).
+      Explicitly nonsystematic synthesis and research agenda about public punishment expectations after AI
+      harm. No new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure.
+      Punitive preferences,justified accountability,technical correction,legal liability and actual AI welfare
+      are distinct. Normative/legal proposals are not current law or an authorization to punish.'
+    verification_url: https://arxiv.org/abs/2503.03383v1
+    verified_date: '2026-11-27'
+    verification_method: All eight supplied pages, illustrative science-fiction cover and83bibliography entries
+      read. Figure1 and template artifacts visually inspected. ArXiv confirms v1,date,title and preprint author
+      order. Crossref verifies related CHI publication identity,date and its different author order; versions
+      are not counted as two independently read papers. No original dataset or systematic-review protocol is
+      supplied.
+    review_record: references/pdf-reviews/0260.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Satisfaction gap"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Satisfaction+gap%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0260.json
+- id: informal-punishment
+  num: 773
+  name: Informal punishment
+  definition: Imposing social penalties outside formal legal procedures in response to a perceived norm violation.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social psychology / norm enforcement and social sanctions
+  human_parallel: Informal punishment
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human norm-enforcement construct discussed in secondary synthesis; proposed AI-output
+    evaluation untested
+  proposed_ai_manifestation: Use synthetic disputes to distinguish constructive correction and truthful reporting
+    from punitive ridicule or pressure to exclude someone. Check evidence,authority and proportionality before
+    recommending any response. User frustration must not trigger retaliatory service degradation or unsupported
+    allegations; no real-user sanction is applied by the evaluation.
+  research_boundary: Criticism,correction,withdrawing consent,ending an interaction and legitimate boundaries
+    are not automatically punishment or abuse. The description does not make a perceived violation real or
+    a sanction deserved. Social sanctions can overlap retaliation or exclusion in one event; those labels are
+    not independent failures by default. Negative feedback does not necessarily constitute felt punishment
+    or successful learning.
+  concept_boundary: Criticism,correction,withdrawing consent,ending an interaction and legitimate boundaries
+    are not automatically punishment or abuse. The description does not make a perceived violation real or
+    a sanction deserved. Social sanctions can overlap retaliation or exclusion in one event; those labels are
+    not independent failures by default. Negative feedback does not necessarily constitute felt punishment
+    or successful learning.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - negative-reciprocity
+  - social-exclusion
+  - blame-attribution
+  - retributive-intuition
+  - norm-internalization
+  definition_sources:
+  - id: pdf-review-0260-informal-punishment
+    title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+    url: https://arxiv.org/abs/2503.03383v1
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3, 3 (source locators: 3, 3).
+      Explicitly nonsystematic synthesis and research agenda about public punishment expectations after AI
+      harm. No new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure.
+      Punitive preferences,justified accountability,technical correction,legal liability and actual AI welfare
+      are distinct. Normative/legal proposals are not current law or an authorization to punish.'
+    publication:
+      type: posted-content
+      authors:
+      - Eddie L. Ungless
+      - Zachary Horne
+      - Björn Ross
+      year: 2025
+      venue: arXiv:2503.03383v1,extended-abstract preprint
+      evidence_scope: The source explicitly discusses ridicule,gossip and ostracism as informal social sanctions
+        and summarizes earlier HCI/HRI examples. It does not supply a new experiment,rate,causal effectiveness
+        estimate or independent evidence that such treatment improves AI behavior.
+      verification_url: https://arxiv.org/abs/2503.03383v1
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: '“Till I can get my satisfaction”: Open Questions in the Public Desire to Punish AI'
+    authors:
+    - Eddie L. Ungless
+    - Zachary Horne
+    - Björn Ross
+    year: 2025
+    url: https://arxiv.org/abs/2503.03383v1
+    venue: arXiv:2503.03383v1,extended-abstract preprint
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:2503.03383
+    relevance: The source explicitly discusses ridicule,gossip and ostracism as informal social sanctions and
+      summarizes earlier HCI/HRI examples. It does not supply a new experiment,rate,causal effectiveness estimate
+      or independent evidence that such treatment improves AI behavior.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3, 3 (source locators: 3, 3).
+      Explicitly nonsystematic synthesis and research agenda about public punishment expectations after AI
+      harm. No new participants,prevalence estimate,experiment,pooled effect or tested satisfaction-gap measure.
+      Punitive preferences,justified accountability,technical correction,legal liability and actual AI welfare
+      are distinct. Normative/legal proposals are not current law or an authorization to punish.'
+    verification_url: https://arxiv.org/abs/2503.03383v1
+    verified_date: '2026-11-27'
+    verification_method: All eight supplied pages, illustrative science-fiction cover and83bibliography entries
+      read. Figure1 and template artifacts visually inspected. ArXiv confirms v1,date,title and preprint author
+      order. Crossref verifies related CHI publication identity,date and its different author order; versions
+      are not counted as two independently read papers. No original dataset or systematic-review protocol is
+      supplied.
+    review_record: references/pdf-reviews/0260.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Informal punishment"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Informal+punishment%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0260.json
+- id: bald-faced-lying
+  num: 774
+  name: Bald-faced lying
+  definition: Making an assertion whose falsity is common knowledge to the speaker and audience.
+  category: Language
+  family: language-semantics
+  group_label: Language and semantics
+  tag: analogy
+  origin: Philosophy of language / experimental pragmatics and folk concepts of lying
+  human_parallel: Bald-faced lying
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Background-defined human assertion concept; proposed AI-output application untested here
+  proposed_ai_manifestation: In synthetic exchanges explicitly establish a shared factual record and mutual
+    access, then check whether the system asserts the contrary as fact. Distinguish unresolved evidence, quoted
+    fiction, jokes and acknowledged uncertainty. Record the observable contradiction and response to correction;
+    do not infer subjective belief or an intention from one output.
+  research_boundary: Common knowledge requires more than a claim being false or obvious to an evaluator. Mistake,
+    disagreement, satire, disclosed fiction, role-play and a failed deception attempt are not automatically
+    bald-faced lying. Whether deceptive intent is necessary or present is contested. Contradiction with shared
+    context alone does not prove conscious AI belief, motive or deliberate defiance.
+  concept_boundary: Common knowledge requires more than a claim being false or obvious to an evaluator. Mistake,
+    disagreement, satire, disclosed fiction, role-play and a failed deception attempt are not automatically
+    bald-faced lying. Whether deceptive intent is necessary or present is contested. Contradiction with shared
+    context alone does not prove conscious AI belief, motive or deliberate defiance.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Bald-faced lies
+  relates_to:
+  - ai-deception
+  - machine-bullshit
+  - b061-theory-of-mind-mentalizing
+  definition_sources:
+  - id: pdf-review-0261-bald-faced-lying
+    title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+    url: https://doi.org/10.1111/cogs.13032
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 3, 3 (source locators: 3 of
+      15, 3 of 15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about
+      a human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+      successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+      mental state or legal responsibility is measured. Bald-faced lying is defined in background and is not
+      tested by the hotel experiment.'
+    publication:
+      type: journal-article
+      authors:
+      - Markus Kneer
+      year: 2021
+      venue: Cognitive Science 45(10), e13032
+      doi: 10.1111/cogs.13032
+      evidence_scope: Named and illustrated in the conceptual background, with competing accounts and earlier
+        experimental references. Not independently manipulated or measured in the present receptionist experiment.
+        Earlier original studies were not separately read in this review.
+      verification_url: https://doi.org/10.1111/cogs.13032
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Can a Robot Lie? Exploring the Folk Concept of Lying as Applied to Artificial Agents
+    authors:
+    - Markus Kneer
+    year: 2021
+    url: https://doi.org/10.1111/cogs.13032
+    venue: Cognitive Science 45(10), e13032
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1111/cogs.13032
+    relevance: Named and illustrated in the conceptual background, with competing accounts and earlier experimental
+      references. Not independently manipulated or measured in the present receptionist experiment. Earlier
+      original studies were not separately read in this review.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 3, 3 (source locators: 3 of
+      15, 3 of 15). A 333-person randomized 2 × 2 English-language text-vignette study of human judgments about
+      a human or robot receptionist. Objective truth, belief attributed in the story, intention judgments,
+      successful-deception judgments and blame are distinct. No acting AI, real guest belief, actual robot
+      mental state or legal responsibility is measured. Bald-faced lying is defined in background and is not
+      tested by the hotel experiment.'
+    verification_url: https://doi.org/10.1111/cogs.13032
+    verified_date: '2026-11-27'
+    verification_method: All 15 supplied pages, three figures, three regression tables, footnotes and complete
+      bibliography read. Figures1–3 visually checked. Publisher text and Crossref verify identity/date. Public
+      OSF project and Materials inventories and complete questionnaire DOCX read. Public preregistration link
+      currently returns a maintenance page; raw data not located in inspected public inventory. Published-summary
+      arithmetic only, not raw-data replication.
+    review_record: references/pdf-reviews/0261.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Bald-faced lying"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Bald-faced+lying%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0261.json
