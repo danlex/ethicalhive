@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 507
+  mode_count: 508
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 507
+    numbered_entries: 508
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0075.json
+    latest_review: references/pdf-reviews/0076.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -51511,6 +51511,38 @@ modes:
           uptake.
         verification_url: https://doi.org/10.3390/bs15081038
         verified_date: '2026-11-27'
+  - id: pdf-review-0076
+    review_record: references/pdf-reviews/0076.json
+    name: The broad machine-rejection interpretation is narrower than the actual manipulation
+    definition: Similar approval of one human image and one clearly robotic image does not establish general
+      willingness to delegate moral decisions to algorithms.
+    evidence_scope: Observers rate already specified acts. They do not choose an advisor, delegate authority,
+      inspect performance histories or decide whether to use an algorithm.
+    catalogue_boundary: A rating contrast is not deployment acceptance, and failure to detect a difference
+      is not statistical equivalence. Robot appearance can shape judgments without implying rejection of all
+      machine advice.
+    definition_sources:
+    - id: pdf-review-0076-algorithm-aversion
+      title: 'Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged'
+      url: https://doi.org/10.1007/s12369-020-00738-6
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 7, 7 (source locators: 1685,
+        1685). Two human observer experiments rating assigned fictional decisions paired with four fixed pictures.
+        Perceptual-category competition is explicitly defined in secondary background, but the causal explanation
+        is not tested here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Nils Köbis
+        year: 2021
+        venue: International Journal of Social Robotics, 13:1679–1688
+        doi: 10.1007/s12369-020-00738-6
+        evidence_scope: Observers rate already specified acts. They do not choose an advisor, delegate authority,
+          inspect performance histories or decide whether to use an algorithm.
+        verification_url: https://doi.org/10.1007/s12369-020-00738-6
+        verified_date: '2026-11-27'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -58690,6 +58722,30 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0075.json
+  - title: 'Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged'
+    authors:
+    - Michael Laakasuo
+    - Jussi Palomäki
+    - Nils Köbis
+    year: 2021
+    url: https://doi.org/10.1007/s12369-020-00738-6
+    venue: International Journal of Social Robotics, 13:1679–1688
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12369-020-00738-6
+    relevance: 'Study1 reported final N150 and three dilemmas: contrast B1.37,CI[.22,2.51],p.02. Study2 reports398
+      completers and two exclusions but df390 leaves analyzed N unclear: four-dilemma contrast B.81,CI[.26,1.36],p.003.
+      Both average over utilitarian/deontological choices; this is not the decision-specific reversal seen
+      in 2023. Outcome is human judgment, not actual AI conduct.'
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 5, 6, 7 (source locators:
+      1683, 1684, 1685). Two human observer experiments rating assigned fictional decisions paired with four
+      fixed pictures. Perceptual-category competition is explicitly defined in secondary background, but the
+      causal explanation is not tested here.'
+    verification_url: https://doi.org/10.1007/s12369-020-00738-6
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0076.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -58703,3 +58759,140 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0075.json
+  research_notes:
+  - id: pdf-review-0076
+    review_record: references/pdf-reviews/0076.json
+    name: Original moral uncanny valley experiments
+    definition: Human observers rate the same fictional moral decisions less favorably when paired with selected
+      uncanny robot images than with the selected human and clearly robotic images.
+    evidence_scope: 'Study1 reported final N150 and three dilemmas: contrast B1.37,CI[.22,2.51],p.02. Study2
+      reports398 completers and two exclusions but df390 leaves analyzed N unclear: four-dilemma contrast B.81,CI[.26,1.36],p.003.
+      Both average over utilitarian/deontological choices; this is not the decision-specific reversal seen
+      in 2023. Outcome is human judgment, not actual AI conduct.'
+    catalogue_boundary: A four-image planned grouping contrast does not identify a universal continuous curve,
+      prove a category-competition mechanism, or show appearance differences are always irrational. No detectable
+      difference or interaction is not equivalence. Counts are article-level citations; two studies within
+      one article are not two independent papers.
+    definition_sources:
+    - id: pdf-review-0076-moral-uncanny-valley
+      title: 'Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged'
+      url: https://doi.org/10.1007/s12369-020-00738-6
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 5, 6, 7 (source locators:
+        1683, 1684, 1685). Two human observer experiments rating assigned fictional decisions paired with four
+        fixed pictures. Perceptual-category competition is explicitly defined in secondary background, but
+        the causal explanation is not tested here.'
+      publication:
+        type: journal-article
+        authors:
+        - Michael Laakasuo
+        - Jussi Palomäki
+        - Nils Köbis
+        year: 2021
+        venue: International Journal of Social Robotics, 13:1679–1688
+        doi: 10.1007/s12369-020-00738-6
+        evidence_scope: 'Study1 reported final N150 and three dilemmas: contrast B1.37,CI[.22,2.51],p.02. Study2
+          reports398 completers and two exclusions but df390 leaves analyzed N unclear: four-dilemma contrast
+          B.81,CI[.26,1.36],p.003. Both average over utilitarian/deontological choices; this is not the decision-specific
+          reversal seen in 2023. Outcome is human judgment, not actual AI conduct.'
+        verification_url: https://doi.org/10.1007/s12369-020-00738-6
+        verified_date: '2026-11-27'
+- id: stimulus-category-competition
+  num: 508
+  name: Stimulus-category competition
+  definition: Competing interpretations of an ambiguous stimulus that make it difficult to classify into a
+    familiar category.
+  category: Perception
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  tag: analogy
+  origin: Human categorization / affective cognition
+  human_parallel: Stimulus-category competition
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit secondary definition of a human perceptual hypothesis; neither category competition
+    nor its proposed affective mechanism is directly tested in these robot-judgment experiments
+  proposed_ai_manifestation: For an AI analogue, present stimuli that systematically straddle known categories,
+    measure classification instability or calibrated uncertainty, and test any resulting evaluation changes
+    separately. Distinguish difficult classification from unsupported negative moral judgment; output disagreement
+    alone does not establish inhibition or felt conflict.
+  research_boundary: A legitimate ambiguous classification is not inherently an error, moral violation or pathology.
+    Competing category interpretations do not imply conflict between personal beliefs, unknown outcome probabilities
+    or conscious AI distress. Negative affect and devaluation are proposed downstream consequences, not automatic
+    parts of every instance. The competing explanation of eeriness versus uncertainty remains unresolved.
+  concept_boundary: A legitimate ambiguous classification is not inherently an error, moral violation or pathology.
+    Competing category interpretations do not imply conflict between personal beliefs, unknown outcome probabilities
+    or conscious AI distress. Negative affect and devaluation are proposed downstream consequences, not automatic
+    parts of every instance. The competing explanation of eeriness versus uncertainty remains unresolved.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - uncanny-valley-effect
+  - moral-uncanny-valley
+  - b053-cognitive-load
+  - upload-071
+  - candidate-031
+  definition_sources:
+  - id: pdf-review-0076-stimulus-category-competition
+    title: 'Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged'
+    url: https://doi.org/10.1007/s12369-020-00738-6
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 3, 4 (source locators: 1681,
+      1682). Two human observer experiments rating assigned fictional decisions paired with four fixed pictures.
+      Perceptual-category competition is explicitly defined in secondary background, but the causal explanation
+      is not tested here.'
+    publication:
+      type: journal-article
+      authors:
+      - Michael Laakasuo
+      - Jussi Palomäki
+      - Nils Köbis
+      year: 2021
+      venue: International Journal of Social Robotics, 13:1679–1688
+      doi: 10.1007/s12369-020-00738-6
+      evidence_scope: 'The introduction summarizes Ferrey, Burleigh and Fenske (2015): category competition
+        is proposed as cognitively costly and capable of eliciting negative affect. That primary work is cited,
+        not independently read. The present study changes pictures and records moral approval; it does not
+        measure classification difficulty, inhibition, response time or felt processing cost.'
+      verification_url: https://doi.org/10.1007/s12369-020-00738-6
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged'
+    authors:
+    - Michael Laakasuo
+    - Jussi Palomäki
+    - Nils Köbis
+    year: 2021
+    url: https://doi.org/10.1007/s12369-020-00738-6
+    venue: International Journal of Social Robotics, 13:1679–1688
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12369-020-00738-6
+    relevance: 'The introduction summarizes Ferrey, Burleigh and Fenske (2015): category competition is proposed
+      as cognitively costly and capable of eliciting negative affect. That primary work is cited, not independently
+      read. The present study changes pictures and records moral approval; it does not measure classification
+      difficulty, inhibition, response time or felt processing cost.'
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 3, 4 (source locators: 1681,
+      1682). Two human observer experiments rating assigned fictional decisions paired with four fixed pictures.
+      Perceptual-category competition is explicitly defined in secondary background, but the causal explanation
+      is not tested here.'
+    verification_url: https://doi.org/10.1007/s12369-020-00738-6
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0076.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Stimulus-category competition"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Stimulus-category+competition%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0076.json
