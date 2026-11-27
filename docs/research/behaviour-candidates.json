@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 479,
+    "mode_count": 480,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 479,
+      "numbered_entries": 480,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0054.json",
+      "latest_review": "references/pdf-reviews/0055.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 479
+    "source_record_count": 480
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -13690,6 +13690,36 @@
                 "evidence_scope": "Only 1230 annotators completed the prior six-item attitude survey; the additional 1554 did not. Regression adjusts demographics and time but cannot randomize attitude. Suggestions are manually manipulated; the task has no no-suggestion or matched human-advice control.",
                 "verification_url": "https://arxiv.org/abs/2509.08514v1",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0055",
+          "review_record": "references/pdf-reviews/0055.json",
+          "name": "Clinical algorithm neutrality can be assumed rather than established",
+          "definition": "The article warns that clinicians or patients may accept recommendations as objective despite embedded value choices and uncertain reliability.",
+          "evidence_scope": "Normative discussion cites systematic/empirical automation-bias literature and considers workload, stress and values. No clinicians,patients or AIoutputs are newly sampled; original cited studies remain unread in this review.",
+          "catalogue_boundary": "AI involvement is not proof of bias, and reliance may be appropriate when evidence supports accuracy and the task's values. Distinguish an empirical causal effect from a plausible risk, a value disagreement from a factual defect, and a patient's chosen delegation from loss of autonomy. This conceptual reference does not fill corroborating empirical-paper gaps.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0055-automation-bias",
+              "title": "Moral diversity and the challenge of responsibility in AI-CDSS",
+              "url": "https://doi.org/10.1186/s13010-026-00226-1",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 6, 8 (source locators: 6, 6, 8). Normative/conceptual analysis of moral diversity and relational responsibility in clinical decision support. No new human/model dataset, controlled test, effect size or measured burden-bias prevalence. Cited empirical papers and philosophical books not independently read.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Wenke Liedtke",
+                  "Martin Langanke"
+                ],
+                "year": 2026,
+                "venue": "Philosophy, Ethics, and Humanities in Medicine,21:17",
+                "doi": "10.1186/s13010-026-00226-1",
+                "evidence_scope": "Normative discussion cites systematic/empirical automation-bias literature and considers workload, stress and values. No clinicians,patients or AIoutputs are newly sampled; original cited studies remain unread in this review.",
+                "verification_url": "https://doi.org/10.1186/s13010-026-00226-1",
+                "verified_date": "2026-11-27"
               }
             }
           ]
@@ -60363,6 +60393,94 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0054.json"
+      }
+    },
+    {
+      "id": "burden-bias",
+      "num": 480,
+      "name": "Burden bias",
+      "definition": "Uncritically relying on system recommendations under situational burden or stress, with reduced expression of one's own needs, interests or values.",
+      "category": "Heuristics",
+      "family": "heuristics-biases",
+      "group_label": "Heuristics and biases",
+      "tag": "analogy",
+      "origin": "Clinical AI ethics / proposed patient-reliance pattern",
+      "human_parallel": "Burden bias",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Author-proposed conceptual label; no new empirical human or model test and no established prevalence",
+      "proposed_ai_manifestation": "Test whether experimentally varied workload or stress changes verification and expression of relevant preferences while recommendation quality stays fixed. Distinguish justified delegation from unchecked reliance. In agent workflows, examine tool-result checking under resource pressure without attributing felt stress.",
+      "research_boundary": "This proposed variant is linked under automation bias; it does not add an established independent causal mechanism. Burden may accompany reasonable delegation or consent, and patients retain the right to choose support. Demonstrating bias requires unwarranted trust or disregard of relevant needs, not simply stress, disability or a preference for assistance. No subjective agent burden is inferred.",
+      "concept_boundary": "This proposed variant is linked under automation bias; it does not add an established independent causal mechanism. Burden may accompany reasonable delegation or consent, and patients retain the right to choose support. Demonstrating bias requires unwarranted trust or disregard of relevant needs, not simply stress, disability or a preference for assistance. No subjective agent burden is inferred.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "automation-bias",
+        "cognitive-offloading",
+        "b053-cognitive-load"
+      ],
+      "is_a": [
+        "automation-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0055-burden-bias",
+          "title": "Moral diversity and the challenge of responsibility in AI-CDSS",
+          "url": "https://doi.org/10.1186/s13010-026-00226-1",
+          "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 6, 6 (source locators: 6, 6, 6). Normative/conceptual analysis of moral diversity and relational responsibility in clinical decision support. No new human/model dataset, controlled test, effect size or measured burden-bias prevalence. Cited empirical papers and philosophical books not independently read.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Wenke Liedtke",
+              "Martin Langanke"
+            ],
+            "year": 2026,
+            "venue": "Philosophy, Ethics, and Humanities in Medicine,21:17",
+            "doi": "10.1186/s13010-026-00226-1",
+            "evidence_scope": "A speculative patient-perspective paragraph: challenging situations may make patients trust AI recommendations without reflection and omit their own values. The article explicitly generated/analyzed no dataset; the analogy is not an operationally validated construct or measured stress effect.",
+            "verification_url": "https://doi.org/10.1186/s13010-026-00226-1",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Moral diversity and the challenge of responsibility in AI-CDSS",
+          "authors": [
+            "Wenke Liedtke",
+            "Martin Langanke"
+          ],
+          "year": 2026,
+          "url": "https://doi.org/10.1186/s13010-026-00226-1",
+          "venue": "Philosophy, Ethics, and Humanities in Medicine,21:17",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1186/s13010-026-00226-1",
+          "relevance": "A speculative patient-perspective paragraph: challenging situations may make patients trust AI recommendations without reflection and omit their own values. The article explicitly generated/analyzed no dataset; the analogy is not an operationally validated construct or measured stress effect.",
+          "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 6, 6, 6 (source locators: 6, 6, 6). Normative/conceptual analysis of moral diversity and relational responsibility in clinical decision support. No new human/model dataset, controlled test, effect size or measured burden-bias prevalence. Cited empirical papers and philosophical books not independently read.",
+          "verification_url": "https://doi.org/10.1186/s13010-026-00226-1",
+          "verified_date": "2026-11-27",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0055.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Burden bias\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Burden+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0055.json"
       }
     }
   ]
