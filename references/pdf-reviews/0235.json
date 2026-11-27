@@ -1,0 +1,394 @@
+{
+  "sequence": 235,
+  "source": {
+    "file_name": "S2615_MacDorman_2024.pdf",
+    "source_id": "S2615",
+    "sha256": "c0153ed1fbd75fff5a3dbc9fd19afce36cea53f27b0e0383fcd268df0a3bff27",
+    "pdf_pages": 14,
+    "printed_pages": "1–14",
+    "version_note": "Computers in Human Behavior: Artificial Humans 2(1), 100065, 2024. Publisher labels issue January–July 2024; the January issue field is not proof of online publication before the March 19 acceptance date. Received February 9, revised/accepted March 19, 2024.",
+    "verification_url": "https://doi.org/10.1016/j.chbah.2024.100065",
+    "verification_method": "All fourteen supplied pages, eight figures, five main tables and six appendix tables read, including complete appendices A–B. Full public README, Codebook and five selected analysis scripts read as text, not executed. Both sheets of the public aggregate meta-analysis workbook read. Publisher/Crossref verify source identity; two cited psychology abstracts checked for background definitions, not full-reading credit. No participant CSV containing birthdates or individual course identifiers downloaded."
+  },
+  "citation": {
+    "title": "Does mind perception explain the uncanny valley? A meta-regression analysis and (de)humanization experiment",
+    "authors": [
+      "Karl F. MacDorman"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1016/j.chbah.2024.100065",
+    "venue": "Computers in Human Behavior: Artificial Humans 2(1), 100065",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "A ten-experiment secondary meta-regression and a 127-person course-cohort study examine attributed experience/agency and ratings of robot eeriness/coldness. Perceptual mechanisms are discussed as explanations, not directly isolated in the new experiment. No machine feelings or universal causal explanation of the uncanny valley is established.",
+    "access_limits": [
+      "All main text, eight figures, eleven tables and bibliography read. Appendix A summarizes eleven assigned philosophy readings; those summaries are not complete readings of the articles or books themselves.",
+      "Complete public moderation.R, hypotheses.R, correlation_regression.R, mediation.R and sem.R read, along with the complete 1824-byte README and 3330-byte Codebook. These are five selected scripts, not every file in the archive. No original script executed or saved model authenticated.",
+      "The complete aggregate workbook was read across Sheet1, 21 formatted rows, and Appel, 35 rows. It contains published/group summaries, not the participant CSV. No primary-study effect was independently re-extracted from the six included full sources.",
+      "The Codebook describes individual birthdates, countries, course sections and submission timestamps in data.csv. That participant dataset was not downloaded; none of those personal records are copied into the review or exports.",
+      "No original videos viewed, study preregistration obtained, participant-level model refit, clustered reanalysis or original code reproduction. Two targeted psychology abstracts and bibliography metadata checks do not receive separate full-paper credit."
+    ]
+  },
+  "study": {
+    "meta_search": "Google Scholar forward-citation search of Gray/Wegner 2012 for 2012–2023, 579 results. Ten experiments from five papers and one thesis are included; twenty outcome effects consist of experience and eeriness from those same experiments. They are not twenty independent samples.",
+    "meta_design": "Seven experiments lack observable agents and three present VR characters, robot videos or physical robots. Presence is a between-study moderator, not randomly assigned within this meta-regression. Lab, population, agent type, manipulation and publication differences can confound that association.",
+    "meta_code": "The full public script uses metafor::escalc with measure SMD for every row and rma.uni(g,Vg,mods=~stimulus+construct). It uses diagonal working variances, no cross-outcome covariance or study cluster, and an additive presence effect rather than a presence × construct interaction. Within-experiment outcome dependence and related lab effects are not modeled.",
+    "repeated_study": "The paper says Lu 2021 is repeated-measures and describes a dav calculation because within-person correlation is unavailable. The script nevertheless uses the same independent-group SMD call for that row. That is a code/report mismatch, not a demonstrated invalidity of every effect. Repeated-measure uncertainty requires appropriate information or sensitivity analysis.",
+    "meta_results": "All-effects model k20 has tau-squared .81, I-squared about .97 and AIC 68.36. Removing two influential Gray/Wegner outcome effects gives k18, tau-squared .10, I-squared about .80 and AIC 20.66. Influence sensitivity is real, but those AICs use different observations and cannot demonstrate superior model fit by their difference.",
+    "meta_estimates": "The retained additive model reports experience absent g1.79 versus present .77; eeriness absent 1.14 versus present .12, with the present eeriness interval crossing zero. The presence coefficient is about −1.02. These estimates inherit the extraction, independence and model assumptions; a nonsignificant estimate is not equivalence or proof of no effect.",
+    "extraction_flags": "The workbook uses fractional n1/n2 37.333 for Appel 1B, approximating total 112 divided by three, whereas the main table rounds to 37. Yam E3 eeriness repeats E2 means/SDs and even its df778 source quotation despite different study sizes. This warrants direct-source checking; no replacement means or exact sample sizes are invented.",
+    "experiment_sample": "133 graduate HCI classmates, 127 completers: cohort 1 n40 in fall 2021 and cohort 2 n87 across spring/fall 2023. Treatment order is counterbalanced by historical cohort, not demonstrated individual randomization. Cohort, year, course section and order can be confounded.",
+    "experiment_design": "All participants rate three selected android videos at baseline and after two five-week reading/quiz/essay treatments, with a one-week washout. One order argues human uniqueness then human–robot equivalence, the other reverses it. No untreated control, independent manipulation of one attribution or validated complete washout isolates treatment from demand, period, familiarity or carryover.",
+    "stimuli": "Three previously selected eerie android videos differ in appearance, motion, speech/content and duration: 21, 31 and 46 seconds. One depicts pain, another anticipated separation. Larger stimulus differences cannot uniquely identify physical appearance or a full nonlinear uncanny-valley curve.",
+    "observations": "Human–robot similarity has 381 records and robot ratings 1143 records: 127 people × three waves, with three robots per wave for the latter. These are repeated observations, not 1143 independent participants. The paper’s mixed-model section must be distinguished from its pooled regressions and SEM.",
+    "main_models": "The hypotheses script uses participant random intercepts for similarity, Stimulus/Participant nesting for one-way robot-rating models and participant intercepts for two-way Condition × Stimulus models. It implements actual Westfall-adjusted planned contrasts. This is not a paper with no repeated-measure modeling at all; the nested covariance choice and absence of a crossed participant effect in that one-way specification require separate assessment.",
+    "hypothesis_1": "Attitudes and some attribution scores shift, but most predicted eeriness/coldness contrasts do not. Cohort 2 has a small dehumanization-related eeriness reduction, adjusted p .0497, g −.14. Dehumanization increases coldness in both cohorts, contrary to the stated prediction; humanization contrasts are mostly nonsignificant. Failure of the broad hypothesis is not proof that every contrast is zero.",
+    "hypothesis_2": "Stimulus partial eta-squared for eeriness is .26/.24 versus condition .01/.01, and for coldness .47/.51 versus .03/.02. These are larger effects among three selected compound stimuli than among those course conditions; they do not isolate automatic perceptual processing from all cognitive explanations.",
+    "pooled_models": "correlation_regression.R applies ordinary lm and correlations to all repeated rows. mediation.R applies lm with numeric Stimulus, and sem.R applies default lavaan sem without participant clustering. The Codebook codes nominal videos 1 Aiko, 2 Head, 3 Jules; treating them as a single numeric trend imposes arbitrary spacing/order. SEM instead uses proper stimulus dummy indicators, but still lacks clustering in the inspected calls.",
+    "mediation": "Printed simple-mediation ACME −.05 plus direct .23 equals total .18 for experience/eeriness, with a negative mediated proportion. Opposing paths are mathematically coherent. They remain unclustered post-rating associations, not an identified causal mechanism. Dummy-contrast SEM pathways vary by stimulus and whether agency is included; removing a predictor changes the estimand.",
+    "measurement": "High omega does not establish a unidimensional or causally valid measure. Appendix experience RMSEA .29 and TLI .84 and similarity RMSEA .13/TLI .68 raise fit concerns. Full SEM fit, RMSEA .09, CFI .90, TLI .88 and SRMR .10, is mixed rather than unqualified validation. Pooled reliability mixes people, waves and stimuli.",
+    "perceptual_account": "The discussion proposes configural relations, perceptual narrowing and prediction violations. No gaze, EEG, fMRI, response-time or dedicated configuration/training manipulation is collected in this experiment. A thought experiment and summaries of neural studies are explanatory arguments, not its own neural evidence."
+  },
+  "summary": "Add Configural processing and Perceptual narrowing as distinct background perception mechanisms, clearly separated from directly tested outcomes. Strengthen existing uncanny-valley and mind-attribution records with mixed results. Retain valid suppression arithmetic while recording dependency, extraction, model-comparison and causal limits.",
+  "findings": [
+    {
+      "term": "Configural processing",
+      "decision": "new-entry",
+      "id": "configural-processing",
+      "category": "Perception",
+      "definition": "Interpreting a stimulus through the arrangement and relations of its parts.",
+      "origin": "Perceptual psychology / face perception",
+      "novelty_rationale": "Relations among features differ from familiarity-dependent tuning, simply detecting a feature or attributing a mind. No current name, synonym or definition captures this perceptual process. The paper explicitly discusses integrating facial features into a whole.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "the brain integrates facial features"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "process them configurally"
+        }
+      ],
+      "evidence_scope": "Proposed perceptual explanation in the discussion, supported there by cited prior work. The current course experiment does not independently manipulate feature arrangement or measure configural processing. A targeted Diel/MacDorman 2021 abstract confirms this named theory family, without full primary-reading credit.",
+      "boundary": "Arrangement-based processing is not automatically unconscious, uniquely face-specific or sufficient to explain eeriness. Individual features, relations, holistic integration and category familiarity can have different contributions; do not treat their labels as automatic synonyms.",
+      "ai_evidence_status": "Background human perception mechanism; current study does not test a model’s visual representation or isolate this mechanism",
+      "ai_proposal": "Evaluate whether a vision system uses spatial relations among features by comparing controlled rearrangements with matched individual parts. A fluent description of a whole scene is not evidence that these relations were represented accurately.",
+      "relates_to": [
+        "perceptual-narrowing",
+        "uncanny-valley-effect"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Perceptual narrowing",
+      "decision": "new-entry",
+      "id": "perceptual-narrowing",
+      "category": "Perception",
+      "definition": "Experience-dependent tuning of perception toward familiar stimulus categories, sometimes accompanied by reduced discrimination of less familiar categories.",
+      "origin": "Developmental psychology / perceptual learning",
+      "novelty_rationale": "Exposure-dependent tuning differs from configural relations, a single semantic prime or mere liking of familiar items. The source names it as a candidate explanation, and the cited developmental-review abstract distinguishes maintenance/loss from enhancement/attunement accounts.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "improves our ability to distinguish among familiar stimuli"
+        }
+      ],
+      "evidence_scope": "A background explanation proposed in this discussion, not a measured change in perceptual discrimination in the 127-person experiment. The Maurer/Werker abstract was read only to clarify definition and the nonmandatory loss component; no additional full-review credit.",
+      "boundary": "Specialization can involve enhanced attunement rather than loss, and its timing and malleability depend on domain and experience. Familiarity, expertise, exposure frequency and actual discrimination need separate measures. Human infancy is not proof of a fixed model undergoing developmental change.",
+      "ai_evidence_status": "Human developmental/perceptual construct cited as explanatory background; no AI training or discrimination experiment here",
+      "ai_proposal": "When evaluating a trained perception system, compare discrimination across familiar and less represented categories under matched difficulty. Measure changes rather than infer lost capacity from training frequency, confidence or one unfamiliar example.",
+      "relates_to": [
+        "configural-processing",
+        "uncanny-valley-effect"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Uncanny valley effect",
+      "decision": "enrich-existing",
+      "target_id": "uncanny-valley-effect",
+      "definition": "A drop in comfort or affinity when an artificial agent appears highly, but imperfectly, human-like, rather than a steady increase as human likeness rises.",
+      "novelty_rationale": "Add the source’s evidence and limits to the existing attribution or response construct rather than create a rival synonym.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": "11",
+          "quote": "the stimuli in our experiment are limited because there are"
+        }
+      ],
+      "evidence_scope": "The source distinguishes generic eeriness from the appearance-related valley and acknowledges only three nonsystematically varied androids. The study compares an attitude intervention with compound stimulus differences and reports mixed attribution/response effects.",
+      "boundary": "Three videos and low ratings do not establish an isolated nonlinear appearance curve or a unique automatic mechanism. Cross-study stimulus-presence associations are not randomized causal effects; nulls do not establish no mind-perception contribution."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Add the source’s evidence and limits to the existing attribution or response construct rather than create a rival synonym.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "experience became nonsignificant"
+        }
+      ],
+      "evidence_scope": "Experience ratings shift in some course contrasts and correlate with eeriness/coldness, but the experience coefficient for eeriness becomes nonsignificant when agency is included. Aggregate and dummy-contrast mediation have different paths and assumptions.",
+      "boundary": "Attributing experience is not actual feeling. Simultaneous measured mediators and repeated observations do not identify a causal mechanism; preserve coefficient signs and fit limits rather than infer sentience or universally reduced eeriness."
+    },
+    {
+      "term": "Agency attribution",
+      "decision": "enrich-existing",
+      "target_id": "agency-attribution",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Add the source’s evidence and limits to the existing attribution or response construct rather than create a rival synonym.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "Agency was also a significant negative predictor of"
+        }
+      ],
+      "evidence_scope": "Agency correlates with responses and changes under some interventions, but its contribution differs across regressions and stimulus-specific SEM contrasts. Data use 127 people’s repeated ratings.",
+      "boundary": "Pooled lm and SEM calls lack participant clustering, unlike the main mixed models. Statistical association, attributed planning and actual AI intention differ; changing control variables can change an effect’s interpretation."
+    },
+    {
+      "term": "Dehumanization",
+      "decision": "enrich-existing",
+      "target_id": "dehumanization",
+      "definition": "Denying or diminishing the human qualities or full humanity attributed to another person or group.",
+      "novelty_rationale": "Add the source’s evidence and limits to the existing attribution or response construct rather than create a rival synonym.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "dehumanization treatment included articles"
+        }
+      ],
+      "evidence_scope": "Here the label denotes readings/essays advocating human uniqueness relative to robots. The intervention changes attitudes about machines and some capacity attributions, rather than directly testing denial of real people’s humanity.",
+      "boundary": "Boundary-only use of a shared label. Human–robot distinction, justified uncertainty about machine consciousness and dehumanization of people are not equivalent, nor do these course results validate changing human moral status.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "public_material_checks": {
+    "project_url": "https://osf.io/adn2q/",
+    "readme": {
+      "url": "https://osf.io/download/acd3g/",
+      "bytes": 1824,
+      "sha256": "b2697fe906d08fd24ed2b8ec6e3a7f8ee3e51c0221508cd8d4f1919df758dedf",
+      "scope": "Complete text read. Instructions to install/run software were not executed."
+    },
+    "files": [
+      {
+        "name": "moderation.R",
+        "url": "https://osf.io/download/adc8p/",
+        "bytes": 3220,
+        "sha256": "5b6a28e8d62d064cdc5b4b1796ab19bfed35887e86e9c335e7e2d06debd422ab"
+      },
+      {
+        "name": "correlation_regression.R",
+        "url": "https://osf.io/download/w52eu/",
+        "bytes": 2322,
+        "sha256": "5b3b8eaa257dbb9a02828a51b7b92c65509cc5bc08348c40dc4ca9a276fac409"
+      },
+      {
+        "name": "mediation.R",
+        "url": "https://osf.io/download/fby3q/",
+        "bytes": 1914,
+        "sha256": "66c8d3608697bdeb7fa7448333d745445bada515a9eb18d556fd5d6b05ac732a"
+      },
+      {
+        "name": "sem.R",
+        "url": "https://osf.io/download/cpmha/",
+        "bytes": 5563,
+        "sha256": "0f53660e3dafcb4ca042f903ff35c8ef0750221cf4f83ff8b2e0acc7e2bc76fa"
+      },
+      {
+        "name": "hypotheses.R",
+        "url": "https://osf.io/download/nh3zx/",
+        "bytes": 3082,
+        "sha256": "2a5d9e162c4349969dc9afc65db5c1a4b49f97d6cf5c63ac90c3c65053c89974"
+      },
+      {
+        "name": "Codebook.txt",
+        "url": "https://osf.io/download/ya35r/",
+        "bytes": 3330,
+        "sha256": "b8ef1b6afb4ee1738e5ca2c6f9fa2eca2eb8fac8d1e02f7e16e6f6158fe34940"
+      },
+      {
+        "name": "meta_data.xlsx",
+        "url": "https://osf.io/download/4njpc/",
+        "bytes": 18267,
+        "sha256": "b7752210fabdcc4eaf04c48c9a9d93595c8e19a42800d804ba2d31ba0fde28a1"
+      }
+    ],
+    "scope": "All five listed R scripts and Codebook fully read. Both aggregate workbook sheets read. Other scripts, raw participant CSV and saved outputs not read or executed."
+  },
+  "source_identity_checks": [
+    {
+      "url": "https://doi.org/10.1002/dev.21177",
+      "scope": "Maurer/Werker abstract only, not full paper. Published online 8 November 2013, 2014 issue, so the source’s 2013 date can represent valid advance publication. Abstract distinguishes enhancement/attunement from mandatory loss."
+    },
+    {
+      "url": "https://doi.org/10.1167/jov.21.4.1",
+      "scope": "Diel/MacDorman 2021 abstract only. It names configural processing and cautions that theory-comparison success depends on selected predictions; no full paper or independent experimental credit."
+    },
+    {
+      "url": "https://doi.org/10.1037/10247-002",
+      "scope": "Metadata confirms Dennett chapter identity, container and 17–29 pages. APA DOI prefix does not itself make an Oxford-published chapter citation false."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF 2, Figure 2 caption",
+      "reported": "Entity type is said to mediate the experience-to-eeriness relation.",
+      "correction": "The figure draws entity type moderating the path, not as a mediator downstream of experience. Use moderation for that conceptual role.",
+      "verification_url": "https://doi.org/10.1016/j.chbah.2024.100065",
+      "scope": "Diagram/caption terminology correction."
+    },
+    {
+      "location": "PDF 3–4, AIC comparison after effect removal",
+      "reported": "Lower AIC after dropping two outcome effects is called better model fit, with delta AIC −47.70.",
+      "correction": "Do not compare those AICs as a fit contest because the models use different response observations. Present all-effect and exclusion analyses as an influence sensitivity analysis, with their separate estimates and assumptions.",
+      "verification_url": "https://osf.io/download/adc8p/",
+      "scope": "Verified from the two rma.uni calls on es and es2; no alternative model fit."
+    },
+    {
+      "location": "PDF 4, eeriness effect when stimulus absent",
+      "reported": "Findings paragraph gives absent-stimulus eeriness g .77.",
+      "correction": "The Results and Figure 4 give absent-stimulus eeriness about 1.14; .77 is the present-stimulus experience estimate. Keep the present eeriness estimate .12 and its uncertainty.",
+      "verification_url": "https://doi.org/10.1016/j.chbah.2024.100065",
+      "scope": "Internal construct/condition pointer correction."
+    },
+    {
+      "location": "PDF 3, experience percentage and eeriness interval",
+      "reported": "Experience g1.79 versus .77 is called 232% larger, and absent eeriness interval ends at 1.44.",
+      "correction": "The rounded experience ratio is about 232% of the comparator, or 132% larger. Figure 4 gives absent eeriness interval [.88,1.41], versus [.88,1.44] in prose; flag that exact endpoint mismatch rather than average endpoints or invent a refitted interval. Percentage comparisons near zero are unstable.",
+      "verification_url": "https://doi.org/10.1016/j.chbah.2024.100065",
+      "scope": "Arithmetic and figure/text consistency; other percentages may use unrounded values and are not automatically recategorized."
+    },
+    {
+      "location": "Meta-regression methods and public script, Lu repeated measures",
+      "reported": "Methods describes dav handling of the repeated-measures source.",
+      "correction": "The public script uses independent-group SMD for every row, including Lu. Disclose the mismatch and obtain the paired-design information or a sensitivity analysis before claiming the described calculation was implemented.",
+      "verification_url": "https://osf.io/download/adc8p/",
+      "scope": "Verified code/report difference, not an assumed replacement model."
+    },
+    {
+      "location": "Public hypotheses script, RMSE field",
+      "reported": "Tables/script field are labeled RMSE.",
+      "correction": "The script squares performance_rmse before storing the field. Distinguish MSE from RMSE or remove that square when implementing the intended label; published output values were not independently reproduced.",
+      "verification_url": "https://osf.io/download/nh3zx/",
+      "scope": "Confirmed script expression, not authenticated publication runtime."
+    },
+    {
+      "location": "Discussion, dehumanization/eeriness summary",
+      "reported": "The narrative generalizes dehumanization’s eeriness effect as nonsignificant.",
+      "correction": "Retain the reported small Cohort 2 reduction, adjusted p .0497 and g −.14, alongside the other null and counter-prediction results. This does not make the broad hypothesis supported or establish a large effect.",
+      "verification_url": "https://doi.org/10.1016/j.chbah.2024.100065",
+      "scope": "Avoid treating mixed results as uniformly null."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Workbook Yam E3 extraction",
+      "finding": "E3 eeriness duplicates the E2 means, SDs and the quotation with F(1,778), despite E3’s different sample size. Direct primary extraction is needed; coincidence of rounded means is possible, but copied source notes cannot validate the row. No replacement values invented."
+    },
+    {
+      "location": "Workbook sample allocation",
+      "finding": "Appel 1B uses fractional group sizes 37.333 versus the main table’s 37. They appear derived from equal allocation of 112 rather than verified exact cell counts. Yam total n also differs by two from summed compared groups; exclusions or contrasts could explain this. Original-source data not re-extracted."
+    },
+    {
+      "location": "Repeated observations and meta outcome dependence",
+      "finding": "Paired outcomes within experiments and repeated robot ratings are not independent observations. The inspected rma.uni, pooled lm, mediation and sem calls do not supply the relevant covariance/clustering. The main mixed models do model some repeated structure. No cluster-robust or multivariate reanalysis was run to determine revised uncertainty."
+    },
+    {
+      "location": "Numeric nominal stimulus in simple mediation",
+      "finding": "Code uses Stimulus 1 Aiko, 2 Head, 3 Jules as a single numeric predictor. The resulting one-step trend depends on arbitrary ordering/spacing and is not interchangeable with the later dummy-contrast SEM. No input labels or treatment contrast changed."
+    },
+    {
+      "location": "Searle bibliography pages",
+      "finding": "The supplied citation gives 20–25; DOI metadata gives Scientific American 262(1), 26–31. Primary print pages were not inspected, so retain the provenance discrepancy rather than claim complete source-page verification."
+    }
+  ],
+  "methodological_limits": [
+    "Ten experiments, twenty correlated outcome effects and 127 people’s 1143 repeated ratings are different evidence units. No number is relabeled as independent full-paper readings or new behavior prevalence.",
+    "The meta-regression’s presence moderator is observational across studies. It does not establish that displaying the same entity causally suppresses an attribution effect. Additive moderators and influential-point exclusions are disclosed assumptions.",
+    "Cohort/order/year and treatment-period carryover are not separated by individual random assignment or an untreated control. Essay prompts encourage the advocated view; attitude change need not reflect a unique stable belief mechanism.",
+    "Three selected videos vary in content, movement and duration as well as appearance. Larger compound stimulus effects cannot isolate automatic processing, nor identify a universal valley with only three nonsystematic points.",
+    "Some mixed models address repeated participants, while pooled association and mediation models do not. Treating all sections as equally independent or all as entirely unmodeled would both be inaccurate.",
+    "Negative indirect and positive direct effects can be valid suppression; negative mediated proportions are not inherently errors. Causal interpretation still needs temporal/confounding assumptions and appropriate repeated-data uncertainty.",
+    "High reliability does not establish construct validity, factor fit or sentience. The reported fit statistics are mixed; reduced agency-adjusted experience effects and model selection must remain visible.",
+    "Configural processing and perceptual narrowing are background mechanisms, not measured outcomes in this course experiment. The cited abstracts add definition checks, not independent full-source or AI-specific evidence.",
+    "Historical graphics, philosophical claims about human–robot equivalence and appearance preferences do not justify ranking real people’s dignity or inferring actual machine experience. No participant birthdate or identifying course record is exported."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0226.json",
+      "finding": "Repeated records are not unique people, and task-dependent dimensional summaries do not prove a universal architecture of mind. Scales need measurement and construct boundaries."
+    },
+    {
+      "related_review": "references/pdf-reviews/0230.json",
+      "finding": "Preserve opposing indirect/direct signs and genuine small effects. A model can be mathematically coherent while its causal explanation remains unsupported."
+    },
+    {
+      "related_review": "references/pdf-reviews/0232.json",
+      "finding": "The phrase mind perception or dehumanization can refer to different roles and measurements. Retain source-specific definitions, and do not turn a proposed explanation into directly tested mechanism evidence."
+    },
+    {
+      "related_review": "references/pdf-reviews/0234.json",
+      "finding": "Generic unease is not necessarily a full uncanny-valley curve. Different scenarios, instruments and stimulus sets can change findings without proving a single universal psychological process."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Statistical suppression as a separate behavior from this paper",
+      "reason": "An analytic relationship among paths rather than a newly demonstrated psychological behavior. Record its interpretation without turning every model feature into a catalogue row."
+    },
+    {
+      "term": "Human–robot equivalence as proved by attitude change",
+      "reason": "Assigned readings change reported views; no proof of genuine machine mentality or a uniquely identified belief mechanism follows."
+    },
+    {
+      "term": "Automatic perception as the definitively isolated cause of eeriness",
+      "reason": "The current experiment does not directly manipulate or measure processing speed/automaticity. Neurophysiological references and a thought experiment are not its own neural observations."
+    }
+  ],
+  "limitations": [
+    "Two new background perception entries. Stable IDs and eleven categories preserved; no forced three-paper quota, invented annual counts, automatic ethical/harm edges or full-paper Markdown transcription."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "configural-processing",
+      "perceptual-narrowing"
+    ],
+    "enriched": [
+      "uncanny-valley-effect",
+      "experience-attribution",
+      "agency-attribution",
+      "dehumanization"
+    ]
+  }
+}
