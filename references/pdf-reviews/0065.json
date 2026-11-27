@@ -1,0 +1,172 @@
+{
+  "sequence": 65,
+  "source": {
+    "file_name": "S599_Kempt_2022.pdf",
+    "source_id": "S599",
+    "sha256": "81c47074edd59dd461237f3d3672a4d7763885f7dd4ba668f4d64d6119925402",
+    "pdf_pages": 8,
+    "printed_pages": "222–229",
+    "version_note": "Journal issue citation 2022;48:222–229; explicitly first published online 14 December 2021. Download stamp 23 November 2026 is not the publication date."
+  },
+  "citation": {
+    "title": "Responsibility, second opinions and peer-disagreement: ethical and epistemological challenges of using AI in clinical diagnostic contexts",
+    "authors": [
+      "Hendrik Kempt",
+      "Saskia K Nagel"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1136/medethics-2021-107440",
+    "venue": "Journal of Medical Ethics, 48:222–229; online first 2021",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_scope_note": "Conceptual medical-ethics and social-epistemology argument about second opinions, disagreement and responsibility. No participant experiment, diagnostic performance benchmark or tested clinical intervention.",
+    "access_limits": [
+      "All eight extracted pages read, including three second-opinion types, arguments/counterarguments, proposed rule, resource-scarcity qualification and references. Pages 2–3 re-read separately after an initially truncated display.",
+      "Cited diagnostic studies, explanation methods, safety reporting and professional statements were not independently read or reanalyzed."
+    ]
+  },
+  "study": {
+    "type": "Normative and conceptual analysis",
+    "second_opinions": [
+      "patient-initiated",
+      "physician-initiated",
+      "case/institution-initiated"
+    ],
+    "proposal": "If AI diagnosis contradicts the clinician's initial diagnosis, seek a second human physician's opinion; concurrence can be used as confirming evidence",
+    "qualification": "Presupposes expert availability; the article allows a different balance when no clinician is available"
+  },
+  "summary": "No new independent behaviour. Enrich confirmation bias with the explicit risk of tuning an AI check to one's preferred diagnosis. Record the proposed disagreement safeguard and its untested skill-retention claim as boundary evidence, rather than treating a normative rule as an experimentally validated behaviour or remedy.",
+  "findings": [
+    {
+      "term": "Tuning an independent check until it confirms the initial diagnosis",
+      "target_id": "b036-confirmation-myside-bias",
+      "decision": "enrich-existing",
+      "definition": "Changing diagnostic-system parameters until the output falls within the clinician's initial assumptions can convert an independent check into confirmation of the preferred answer.",
+      "novelty_rationale": "An explicitly described self-confirming manifestation of the existing construct, not a new synonym requiring a separate primary ID.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 226,
+          "quote": "changing parameters for data interpretation until the machine"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 226,
+          "quote": "gives ‘sensible’ results to the physician"
+        }
+      ],
+      "evidence_scope": "Conceptual illustration in a philosophical argument, not an observed tuning experiment or estimated frequency. The intended second opinion is to check the initial diagnosis rather than merely agree with it.",
+      "boundary": "Correcting erroneous inputs, using justified local calibration or inspecting sensitivity is not automatically confirmation bias. The relevant distinction is outcome-driven tuning without independent evidential justification. Neither agreement nor disagreement alone establishes correctness, and no internal clinician or model motive is measured here."
+    },
+    {
+      "term": "Proposed disagreement review is not demonstrated protection against deskilling",
+      "target_id": "deskilling",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Requiring an initial human diagnosis and additional human review on AI disagreement is proposed to preserve clinical practice, but this article does not measure retained skill.",
+      "novelty_rationale": "Adds a concrete safeguard hypothesis and an important evidence boundary to the existing acquired-skill-loss entry.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 228,
+          "quote": "this does not seem to be"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 228,
+          "quote": "the case in diagnostic contexts if the principle of disagreement"
+        }
+      ],
+      "evidence_scope": "The further-considerations section argues that clinicians' initial and conflict-resolution roles will retain their skills. No longitudinal competence, practice-frequency or retention outcome is collected.",
+      "boundary": "A workflow retaining human roles does not by itself demonstrate adequate practice, feedback or skill maintenance. The prevention claim remains a testable proposal; no false extra corroborating-paper count is added."
+    },
+    {
+      "term": "Agreement-based acceptance needs an independent-error check",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A human–AI agreement can be useful confirming evidence, but accepting it without checking shared inputs and error dependence can preserve a shared mistake.",
+      "novelty_rationale": "A review boundary on the proposed rule, not a claim that the article empirically demonstrated automation bias.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 227,
+          "quote": "In cases of a confirming diagnosis"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 227,
+          "quote": "as confirming evidence, replacing the need for a confirming"
+        }
+      ],
+      "evidence_scope": "The authors propose human escalation when the AI conflicts and fewer further steps when it concurs; over-reliance is a conceptual concern, not a measured outcome.",
+      "boundary": "Agreement may raise confidence when sources add sufficiently independent reliable information, but the rule does not establish this condition. This is not a general clinical instruction or proof agreement always signals bias."
+    }
+  ],
+  "methodological_limits": [
+    "No human participants or new diagnostic performance data. Claims about accuracy, explanation, over-reliance and skill retention are arguments or cited background, not empirical results produced by this paper.",
+    "Epistemic equality and equal-weight responses to peer disagreement are assumed philosophical positions. Equal licensing or professional status does not establish equal case-specific expertise, evidence access or reliability; alternatives are discussed but not adjudicated empirically.",
+    "The proposed rule presupposes a sufficiently independent initial diagnosis. Shared training data, anchoring, prompted agreement and correlated omissions could make concurrence less informative than the rule's informal account suggests.",
+    "The threshold is described as deviation too far in the abstract but as contradiction in the stated rule. No validated operational threshold for probabilistic, partial, ranked or multi-diagnosis disagreement is supplied.",
+    "The rule does not empirically resolve what happens if the additional human agrees with AI against the first physician, or all three differ. Escalation enables further review but cannot itself guarantee correct diagnosis or exhaustive responsibility allocation.",
+    "A statistically reliable recommendation, an interpretable feature attribution, a causal explanation and an accountable reason-giving relationship are different. The paper argues for a particular distinction; it does not prove a universal impossibility of machine reasoning or validate every human explanation.",
+    "The article predates current generative systems. Neither its skepticism about AI reason-responsiveness nor its optimistic accuracy scenarios should be generalized to every model, clinical setting or contemporary deployment without new evidence.",
+    "The claim that education/experience remain unaffected under the rule is untested. A clinician retaining formal responsibility can still lose practice or receive inadequate feedback; compare longitudinal unaided skill rather than infer protection from role labels.",
+    "Keeping a clinician in the loop does not alone establish meaningful control, practical time/resources or sufficient training. Patient autonomy, access, downstream treatment and organizational responsibility require separate analysis.",
+    "The deceased-expert analogy is a normative illustration; loss of ability to participate in further dialogue does not make all of that expert's prior evidence worthless or empirically establish the proposed responsibility theory.",
+    "The article's broad statements about concentrated legal responsibility are not a jurisdiction-specific legal review. Professional duty, moral responsibility, compensation and legal liability should not be collapsed.",
+    "The resource-scarcity exception is explicit. Do not turn a rule presupposing available experts into an unconditional requirement that bars potentially useful assistance where clinicians are unavailable.",
+    "The discussion's driver-misuse example cannot, from a cited news account alone, exclude technical, organizational or design contributions to an accident. No independent crash investigation was reviewed here.",
+    "Issue year 2022 and online-first date 14 December 2021 are distinct. The 2026 download stamp is not evidence of a new study or publication."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0057.json",
+      "finding": "The medical-student study shows why actual unaided initial reasoning and information supplied to AI need to be recorded. A formal second-check workflow cannot be assumed to capture every negative finding or preserve diagnostic competence."
+    },
+    {
+      "related_review": "references/pdf-reviews/0061.json",
+      "finding": "Berghea explicitly defines acquired skill erosion and measures responsibility statements, while Kempt proposes a safeguard. Neither supplies longitudinal evidence that the rule prevents deskilling or proves complete clinical control."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Rule of disagreement",
+      "reason": "A proposed governance/escalation rule, not a new behavioural mechanism. Its definition, scope and limitations are retained in this review and linked notes rather than added as another behaviour ID."
+    },
+    {
+      "term": "Equal-weight view / epistemic peer disagreement",
+      "reason": "Social-epistemology positions and conditions for revising confidence, not newly measured biases. Rejecting a peer can be justified by task-specific evidence and unequal reliability."
+    },
+    {
+      "term": "Self-confirming bias",
+      "reason": "Explicit parameter-tuning example enriches confirmation bias; no duplicate entry created."
+    }
+  ],
+  "limitations": [
+    "No independent new behaviour ID, tested remedy effect or direct model-cognition result added.",
+    "Normative safeguard arguments remain distinct from clinical efficacy, actual liability and longitudinal learning evidence."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b036-confirmation-myside-bias",
+      "deskilling",
+      "automation-bias"
+    ]
+  }
+}

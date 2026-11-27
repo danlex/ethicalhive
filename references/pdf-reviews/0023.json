@@ -1,0 +1,209 @@
+{
+  "sequence": 23,
+  "source": {
+    "file_name": "S154_Stuart_2021.pdf",
+    "source_id": "S154",
+    "sha256": "d6e542ac3364da77f3d88768e167dc3f56c08c9aac1b9f0b6ac1b19992acea3d",
+    "pdf_pages": 20,
+    "printed_pages": "Manuscript 1–20",
+    "version_note": "Supplied 20-page early manuscript corresponds to arXiv:2102.04209v1 submitted 24 January 2021. Its incomplete ACM reference says 2020. A later 27-page journal article has a revised subtitle and is not the version read.",
+    "verification_url": "https://arxiv.org/abs/2102.04209v1",
+    "verification_method": "Manuscript title, authors, methods and all pages read locally. January 2021 submission/version and 20-page identity verified through the arXiv record; later publication metadata was consulted only to distinguish versions."
+  },
+  "citation": {
+    "title": "Guilty Artificial Minds: An Experimental Study of Blame Attributions for Artificially Intelligent Agents",
+    "authors": [
+      "Michael T. Stuart",
+      "Markus Kneer"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2102.04209v1",
+    "venue": "arXiv:2102.04209v1 (early manuscript)",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "source_scope_note": "An experiment on human judgments of described humans, corporations and AI-driven robots, not intrinsic AI beliefs or actions. The supplied early preprint is the evidence source; the later journal version and cited primary studies were not independently read here.",
+    "access_limits": [
+      "All 20 extracted pages read, including mental-state wording questions, detailed discussion, references and five appendix ANOVA tables.",
+      "Figure 2 on PDF page 9 was rendered and visually inspected. Other plots were interpreted through captions and text, not independently digitized.",
+      "Raw data, preregistration and later publisher analyses were not obtained or rerun. Source reporting inconsistencies are preserved as limitations rather than silently repaired."
+    ]
+  },
+  "study": {
+    "recruited": 614,
+    "retained": 513,
+    "exclusions": "Attention-check failure or less than 15 seconds on the main task",
+    "design": "3 agent types × 2 stipulated knowledge states × 2 harm outcomes, randomized between subjects",
+    "task": "Fertilizer choice with groundwater pollution and rain-dependent personal harm",
+    "outcomes": "Wrongness, blame, attributed knowledge/desire/intentionality, and four epistemic-state formulations"
+  },
+  "summary": "Stipulated knowledge strongly affected wrongness and blame. Agent type had little overall effect on wrongness and a small blame effect, with an agent×outcome interaction. The authors name a pattern of lower robot blame after actual harm the inverse outcome effect. Their proposed responsibility-gap and communication explanations were not tested, and several subsidiary mental-state contrasts were weak or nonsignificant.",
+  "findings": [
+    {
+      "term": "Inverse outcome effect",
+      "id": "inverse-outcome-effect",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Experimental moral psychology / human–robot attribution",
+      "definition": "Attributing less blame to an artificial agent when its action results in harm than when a comparable action produces a neutral outcome.",
+      "novelty_rationale": "The existing blame reversal effect changes solo versus joint human–machine action. This pattern instead reverses the outcome–blame relation for an artificial agent while agent type and stipulated knowledge are separate factors. It is a scoped outcome-attribution pattern, not a synonym for all outcome bias.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "inverse outcome effect."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "for robots, worse outcomes seem to engender less blame"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "we must leave the explanation of the inverse outcome effect as an open question"
+        }
+      ],
+      "evidence_scope": "One 12-condition MTurk vignette experiment in the read early manuscript. The robot harm-versus-no-harm blame contrast was significant in the knowledge condition (p=.047), while the no-knowledge contrast was only a trend (p=.078); the blame agent×outcome interaction was significant.",
+      "boundary": "This is an outcome contrast in observer judgments, not proof that a robot seeks harm or experiences less guilt. It differs from a solo/joint blame reversal and from justified changes in blame due to changed intent or knowledge. Do not treat every subgroup contrast, mental-state rating or causal explanation as independently replicated.",
+      "ai_evidence_status": "Human blame-attribution pattern toward a described AI-driven robot; AI-generated judgment analogue untested",
+      "ai_proposal": "Untested AI analogue: hold the action, known risk, authority and evidence fixed while varying a chance-dependent harmful versus neutral outcome and the actor label. Test whether an assistant lowers its blame judgment only for the artificial actor, then inspect its reasons. Avoid treating legal liability or mere outcome sensitivity as an automatic error.",
+      "relates_to": [
+        "candidate-056",
+        "blame-reversal-effect",
+        "anthropomorphism"
+      ]
+    },
+    {
+      "term": "Outcome-related moral judgments can depend on the actor and measured dimension",
+      "target_id": "candidate-056",
+      "decision": "enrich-existing",
+      "definition": "Wrongness and blame need not respond identically to outcomes; this study’s robot-blame contrast ran opposite to the conventional worse-outcome/more-blame direction.",
+      "novelty_rationale": "The general outcome-bias concept is already indexed; the new inverse-outcome record retains its specific actor/contrast rather than merging it with every outcome-dependent evaluation.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "a significant main effect of outcome"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "a nonsignificant main effect of outcome"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "worse outcomes seem to engender less blame"
+        }
+      ],
+      "evidence_scope": "The wrongness outcome main effect is statistically significant but small, while the blame outcome main effect is nonsignificant and the agent×outcome interaction significant. These are different tests and do not cancel each other.",
+      "boundary": "Do not summarize a small significant effect as zero, or use a nonsignificant pooled main effect to deny a reported interaction. The study measures moral attribution, not a generic decision-quality score or all forms of outcome bias."
+    },
+    {
+      "term": "Mental-state wording judgments do not establish actual machine mentality",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Participants accepted knowledge-like descriptions of robots as well as humans and corporations; the absence of a detected wording-by-agent interaction does not prove literal mental experience.",
+      "novelty_rationale": "Adds a methodological boundary to an existing human–AI attribution concept, not a new form of consciousness or three additional behaviours.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "expression type*agent interaction was nonsignificant"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "could be seriously misleading."
+        }
+      ],
+      "evidence_scope": "Four wording judgments—knew, scare-quoted knew, had information, aware—were elicited on a single screen after stipulated knowledge. The source discusses, but does not settle, literal versus metaphorical interpretation.",
+      "boundary": "Nonsignificance is not equivalence, and choosing a rich psychological word does not establish a participant’s full philosophical commitment or an AI’s consciousness, desire, culpability or moral/legal status."
+    }
+  ],
+  "methodological_limits": [
+    "One US MTurk sample and one environmental-harm vignette; generalization across domains, cultures and AI forms requires new evidence.",
+    "Neutral outcomes still include a little groundwater pollution, although no personal health harm; do not paraphrase the condition as no environmental effect whatsoever.",
+    "The inverse-outcome blame contrast is not significant in both knowledge strata, and the proposed mental-state explanation is not established by the weak subsidiary contrasts.",
+    "The manuscript calls a p=.070 three-way wrongness interaction significant and marks it as such in a summary table, whereas the detailed appendix reports .07. This review does not promote it to p<.05.",
+    "Some prose in the mental-state section mixes knowledge and blame outcome names; exact mechanistic conclusions require clarification against raw analysis.",
+    "The summary says wrongness outcomes do not matter despite a small significant outcome main effect, and broad similarity language exceeds a formal equivalence test.",
+    "Multiple follow-up t-tests and one-sample midpoint tests were reported; independent multiplicity handling was not verified.",
+    "The four-formulation mixed-ANOVA table has unusual degrees-of-freedom entries; no corrected table or recomputed analysis is invented.",
+    "Attributing a robot’s actions and informational state in a vignette does not validate real robot or language-model epistemic/conative states.",
+    "The suggestion that biased blame feedback might train robots toward harm is a hypothesis. No reinforcement-learning experiment or harmful learned policy was demonstrated."
+  ],
+  "identity_checks": [
+    {
+      "url": "https://arxiv.org/abs/2102.04209v1",
+      "scope": "Title/authors, 24 January 2021 date and 20-page first version."
+    },
+    {
+      "url": "https://pure.york.ac.uk/portal/en/publications/guilty-artificial-minds-folk-attributions-of-mens-rea-and-culpabi/",
+      "scope": "Later 2021 PACM HCI 5(CSCW2), article 363, DOI 10.1145/3479507, 27 pages. Metadata only; not counted as a second reading or a version whose full results were checked."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0001.json",
+      "finding": "The previously indexed blame reversal effect concerns solo versus joint agency; the inverse outcome effect concerns harmful versus neutral consequences. Related terminology must retain that experimental distinction."
+    },
+    {
+      "related_review": "references/pdf-reviews/0010.json",
+      "finding": "Joo manipulates humanlike descriptions and measures blame allocation, while this source stipulates knowledge and changes outcomes. Neither establishes that perceived machine mind equals actual machine mentality."
+    },
+    {
+      "related_review": "references/pdf-reviews/0022.json",
+      "finding": "The authors hypothesize humans may redirect blame after harm to avoid responsibility gaps. The moral-crumple-zone interpretation is not directly tested here; no operator’s control was manipulated."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral luck; responsibility/punishment/retribution gaps",
+      "reason": "Relevant conceptual background, but not additional distinct behaviours experimentally isolated by this study. Their original sources were not independently read here."
+    },
+    {
+      "term": "Harm-seeking learned from blame feedback",
+      "reason": "A speculative downstream risk, not an observed AI behaviour or an experimentally established mechanism of the inverse outcome effect."
+    }
+  ],
+  "limitations": [
+    "One new, tightly scoped observer-attribution pattern added.",
+    "The earlier manuscript’s date, statistics and tentative explanations are distinguished from the later journal publication."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "inverse-outcome-effect"
+    ],
+    "enriched": [
+      "candidate-056",
+      "anthropomorphism"
+    ]
+  }
+}

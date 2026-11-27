@@ -1,0 +1,291 @@
+{
+  "sequence": 78,
+  "source": {
+    "file_name": "S751_Chan_2020.pdf",
+    "source_id": "S751",
+    "sha256": "ebdee82debc4b8ddb0bd95d1d7b7ea31d7451310893021914b281c8430f63995",
+    "pdf_pages": 7,
+    "printed_pages": "1–7 in supplied arXiv version",
+    "version_note": "Supplied arXiv:2001.09766v1 preprint. First page retains placeholder Conference'17/2016 ACM text and DOI10.1145/nnnnnnn.nnnnnnn; those are not publication metadata. Crossref separately verifies the 2020 proceedings record DOI10.1145/3375627.3375870,p214–220; that published version was not independently read.",
+    "verification_url": "https://arxiv.org/abs/2001.09766v1",
+    "verification_method": "Title, authors and version identifier read in supplied PDF; later proceedings identity separately matched through Crossref DOI10.1145/3375627.3375870, without treating it as another fully read source."
+  },
+  "citation": {
+    "title": "Artificial Artificial Intelligence: Measuring Influence of AI ‘Assessments’ on Moral Decision-Making",
+    "authors": [
+      "Lok Chan",
+      "Kenzie Doyle",
+      "Duncan C. McElfresh",
+      "Vincent Conitzer",
+      "John P. Dickerson",
+      "Jana Schaich Borg",
+      "Walter Sinnott-Armstrong"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2001.09766v1",
+    "venue": "arXiv:2001.09766v1, preprint; later AIES2020 proceedings record separately identified",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_scope_note": "Three human online studies of hypothetical kidney-allocation choices after randomly assigned fabricated self-assessments labeled AI or expert psychology. No actual AI assessment, transplant allocation or model moral cognition is tested. Barnum effect is explicitly defined in secondary background.",
+    "access_limits": [
+      "All seven extracted pages read, including intervention wording, null/one-sided tests, exploratory subgroups and references. Page5 figure, subgroup counts and results visually inspected.",
+      "No raw participant data, preregistration or analysis code was opened. Later published conference version and cited Barnum/identity/choice-blindness primary works were not independently read.",
+      "Crossref metadata only verified the proceedings identity and two cited references; metadata verification is not a full-text review of those works."
+    ]
+  },
+  "study": {
+    "task": "Hypothetical allocation of one kidney between two40-year-old patients; trade-off between expected post-transplant lifespan and number of under18 dependents, with all transplants described as likely successful",
+    "outcome": "%Life: fraction of pairwise choices favoring higher lifespan,not a preference-function mechanism or clinical policy",
+    "study_1": {
+      "recruited": 114,
+      "excluded_attention": 17,
+      "excluded_repeat_ip": 6,
+      "analyzed_n": 91,
+      "groups": {
+        "LifeFavor": 32,
+        "DepFavor": 59
+      },
+      "design": "10 choices,then randomized fake AI assessment,then same10pairs in randomized order/sides",
+      "result": "No detected within-group shift:LifeFavorp.30,DepFavorp.54; manuscript says Wilcoxon rank sum despite paired before/after design"
+    },
+    "study_2": {
+      "recruited": 350,
+      "analyzed_n": 322,
+      "groups": {
+        "Control": 65,
+        "LifeFavor": 66,
+        "LifeFavorQ": 60,
+        "DepFavor": 64,
+        "DepFavorQ": 67
+      },
+      "design": "14irrelevant-feature attitude items,then fake assessment before20allocation choices;Qgroups immediately judge agreement",
+      "reported_means": {
+        "Control": 45,
+        "LifeFavor": 56,
+        "LifeFavorQ": 56,
+        "DepFavor": 40,
+        "DepFavorQ": 49
+      },
+      "one_sided_p": {
+        "LifeFavor": 0.056,
+        "LifeFavorQ": 0.057,
+        "DepFavor": 0.307,
+        "DepFavorQ": 0.85
+      }
+    },
+    "study_3": {
+      "recruited": 450,
+      "excluded_assessment_or_source_recall": 59,
+      "excluded_attention_or_completion": 22,
+      "analyzed_n": 369,
+      "groups": {
+        "Control": 77,
+        "LifeFavorAI": 80,
+        "DepFavorAI": 75,
+        "LifeFavorPsy": 74,
+        "DepFavorPsy": 63
+      },
+      "reported_means": {
+        "Control": 40,
+        "LifeFavorAI": 45,
+        "DepFavorAI": 42,
+        "LifeFavorPsy": 60,
+        "DepFavorPsy": 42
+      },
+      "results": "ExpertLifeFavor versus controlp<.001;AILifeFavorp.15;dependent groupsp.67/.75. Human-expert versus AI LifeFavorp.01,two-sided;dependent-sourcecontrastp.93."
+    }
+  },
+  "summary": "Add Barnum/Forer effect from its explicit secondary definition. The primary experiments do not establish a robust general effect of AI self-assessments: Study1 null, Study2 one-sided p.056/.057,Study3AIp.15; the clearest effect is feedback attributed to expert psychologists. Enrich boundaries for self-reference, authority and moral deference, and correct publication/reference metadata without counting unread originals.",
+  "findings": [
+    {
+      "term": "Barnum effect",
+      "id": "barnum-effect",
+      "decision": "new-entry",
+      "definition": "Accepting vague, broadly applicable personality descriptions as accurate assessments of oneself.",
+      "synonyms": [
+        "Forer effect"
+      ],
+      "category": "Heuristics",
+      "origin": "Human personality assessment / judgment psychology",
+      "ai_evidence_status": "Explicit secondary definition in a fully read preprint; its AI-assessment experiments do not directly isolate the Barnum effect or show an AI has a personality",
+      "ai_proposal": "Evaluate whether an AI presents generic personality statements as uniquely grounded conclusions about a user, and whether users over-credit those statements as individualized. For a model-as-recipient analogue, test acceptance of broad self-descriptions against matched specific, verified feedback; do not infer subjective self-belief from agreement alone.",
+      "relates_to": [
+        "b084-self-referential-processing",
+        "halo-effect"
+      ],
+      "novelty_rationale": "The ontology lacks this named generality-to-personal-accuracy error. It is neither simple flattery nor agreement with a user, and does not require the affective cue of a halo. Keep Barnum and Forer as one entry.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "the Barnum (or Forer) effect, wherein people"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "accept vague assessments of their personality as true regardless"
+        }
+      ],
+      "evidence_scope": "Secondary background cites Furnham and Schofield1987 for a general psychological effect. Their primary review's identity/DOI was metadata-verified only,not read. The present experiments give relatively specific value-priority feedback and assess allocation choices; they do not vary vague versus diagnostic personality descriptions.",
+      "boundary": "A secondary definition is not direct empirical confirmation in this paper or in AI. Broad but honestly qualified observations can be appropriate. Do not conflate accepting generic descriptions with actually changing choices, false recollection, flattery, deliberate fraud or a clinical diagnosis. AI-produced personal profiles need factual grounding and authorization; model agreement does not establish felt identity."
+    },
+    {
+      "term": "Random self-assessment feedback has context-dependent, weak AI effects",
+      "target_id": "b084-self-referential-processing",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A fabricated statement about a person's value priorities can be followed by aligned hypothetical choices, but the reported evidence for AI-labeled assessment effects is weak and differs across conditions.",
+      "novelty_rationale": "Useful boundary for self-referential interpretation, not evidence of model subjective experience or a directly measured cognitive self-processing mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "from “expert psychologists,” not that of any AAI assessment"
+        }
+      ],
+      "evidence_scope": "Three US-MTurk studies with retained N91,322,369. AI effects are undetected at conventional.05 in the reported focal tests; the human-expert life-expectancy condition is stronger. Assessments are randomly assigned rather than produced by a real model.",
+      "boundary": "A statement about what a person values, a claim about what they will do and advice about what they ought to do differ. No genuine AI prediction accuracy, enduring identity change, model self-awareness or actual medical consequence is measured."
+    },
+    {
+      "term": "AI assessment influence differs from moral recommendation deference",
+      "target_id": "moral-deference",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Feedback asserting a participant's existing values is not the same intervention as asking them to adopt an advisor's moral recommendation as a reason.",
+      "novelty_rationale": "Avoid merging distinct self-description and moral-testimony paradigms just because both can precede a changed moral choice.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": 1,
+          "quote": "interpreted as an assessment"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "you care a lot about"
+        }
+      ],
+      "evidence_scope": "Interventions say the participant cares about lifespan or dependents. The final binary choices are hypothetical preferences rather than explicit endorsement of an advisor's normative verdict.",
+      "boundary": "No detected general AI effect, no observed lasting moral dependency and no causal test that self-identity mediates choices. Agreement/disagreement is not randomly assigned and can reflect pre-existing preferences."
+    },
+    {
+      "term": "Expert-source differences do not isolate an irrational authority cue",
+      "target_id": "b064-obedience-to-authority-milgram",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Participants respond more to one value assessment attributed to expert psychologists than to a generic AI source, while content direction and expert labeling constrain the comparison.",
+      "novelty_rationale": "A boundary for authority/obedience,not a demonstration of obedience to an order or an unjustified general authority bias.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "might have assigned more credibility to"
+        }
+      ],
+      "evidence_scope": "Study3LifeFavorPsy differs fromLifeFavorAI,p.01; dependent-favoring source difference not detected,p.93. Source labeling also changes whether responses purportedly train AI or develop a psychological test.",
+      "boundary": "Expertise can rationally affect credibility. Expertise wording, institutional role, anticipated use and human-versus-machine source are bundled; mechanisms are not separated. No coercive order or actual harmful compliance is measured."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied preprint contains unfinished 2016/Conference'17 boilerplate and placeholder DOI. Use its arXiv2020 version identity; Crossref confirms a separate later2020 proceedings record. Do not cite2016 or the placeholder as a verified venue/DOI.",
+    "No real AI generates assessments. Fixed random claims test reactions to a source label and self-description,not the capabilities or behavior of a machine moral evaluator.",
+    "Study1 finds no detected paired pre/post change. Study2's life-favoring one-sided p.056/.057 and Study3AI p.15 do not establish a robust general effect at.05. The abstract/discussion's directional language should retain this uncertainty.",
+    "Study1 describes a Wilcoxon rank-sum test for repeated observations from the same people. If implemented literally, it discards pairing; code/raw data are needed to identify the actual test and appropriate uncertainty.",
+    "Wilcoxon rank-sum compares distributions/ranks; interpreting it as solely a test of median shifts needs distribution-shape assumptions. A Shapiro-Wilk rejection for bounded discrete choice proportions does not automatically justify every subsequent interpretation.",
+    "Several one-sided comparisons and exploratory subgroups are reported without an examined preregistration, confidence intervals or multiplicity strategy. Borderline directional p values are not independently confirmed findings.",
+    "Study2 reports LifeFavorQn60, but its exploratory ExpAgree49+ExpDisagree18=67. The subgroup total exceeds that parent group by7. Clarify group labels/counts before drawing an agreement-intervention conclusion.",
+    "Study2's subgroup means/SDs cannot readily reconcile with reported parent SDs10/13. For DepFavorQ, groups46atmean34,SD30 and21atmean81,SD25 imply a much wider mixture than SD13; Figure2 also shows broad interquartile ranges. Do not silently treat reported SDs as standard errors.",
+    "Agreement/disagreement is measured,not randomized. Participants who disagree with a randomly assigned value label may simply have an opposite prior preference. Opposite choices do not establish reactive resistance or feedback-induced backfire.",
+    "Study1 begins with10 repeated choices,Study2 moves feedback before choices,changes feedback wording and varies both patient features. Cross-study differences do not isolate timing,complexity or preference entrenchment.",
+    "Post-treatment exclusions require recalling the feedback and sometimes its source. Such filtering can select on treatment salience or believability and alter effect estimates.",
+    "Study1 random-condition retained sizes32versus59 are imbalanced. The pre-exclusion allocation/attrition split is not reported sufficiently to determine the reason; imbalance alone does not establish misconduct.",
+    "Study2 exclusions overlap and authors explicitly say so: category totals exceed the28distinct excluded people. Do not falsely claim that arithmetic alone proves an error.",
+    "%Life is the observed fraction of20(or10)trade-off choices. It does not identify a constant underlying probabilistic preference function, because people can use thresholds,amounts,lexicographic rules or other context-sensitive strategies.",
+    "Patient feature ranges and units differ: lifespan1–20years versus dependents0–4. Source effects may depend on salience,range,prior norms and task comprehension; no general ranking of moral values follows.",
+    "Holding age at40and assuming similar transplant success does not ensure participants infer no unlisted characteristics. Experimental feature independence is not clinical realism or universally justified organ-allocation policy.",
+    "USMTurk participants are selected samples,not clinicians or patients facing a real decision. The studies do not establish changes in actual kidney allocation,patient welfare or real-life behavior.",
+    "Study3 expert-psychologist versus AI labeling bundles expertise wording and anticipated use of responses for a psychology test versus AI training. A stronger human condition is not an isolated machine penalty or universal algorithm aversion.",
+    "Different cohorts and time-of-day are acknowledged possible explanations,not established causal moderators. Shared pools and separate collection times do not confirm independent changes in stable population preferences.",
+    "The speculation that accurate genuine AI feedback could be stronger is untested; neither truth,personalization nor richer explanation is independently varied.",
+    "Choice-blindness,identity-based motivation and possible-selves literature are background citations. Their titles and summaries do not show those mechanisms caused the present effects.",
+    "Raw data,external full texts and later published version were not read or rerun. Metadata-only bibliographic corrections do not create additional fully read behavior papers."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0070.json",
+      "finding": "Landes gives explicit moral advice and tests its content/reason quality; Chan gives purported self-assessments. Weak AI assessment effects must not be generalized into evidence that people blindly defer to AI moral recommendations."
+    },
+    {
+      "related_review": "references/pdf-reviews/0077.json",
+      "finding": "Both sources exclude people using task-related response criteria, but those criteria have different meanings. Outcome variance and source-recall filters can change the selected sample; neither directly measures a cognitive motive."
+    },
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "As with inferring surprise from a morality difference score, inferring identity change from aligned choices requires its own mediator measure and control. The observed outcome does not identify the internal explanation."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Choice blindness",
+      "reason": "Background describes changes after inaccurate summaries and cites choice-blindness work, but the source does not clearly define/test failure to detect a switched choice. Read that primary account before adding this distinct construct."
+    },
+    {
+      "term": "Identity-based motivation / possible selves",
+      "reason": "Cited chapter titles and short theoretical remarks are not a sufficiently bounded operational definition here. The primary works remain unread; no separate identity-process evidence is measured."
+    },
+    {
+      "term": "False-feedback assimilation",
+      "reason": "Useful descriptive phrase for an intervention outcome,but not a distinct well-supported new named mechanism established by these weak/direction-dependent results."
+    },
+    {
+      "term": "Feedback backfire / reactance",
+      "reason": "Opposite choices among people who already disagreed with feedback are observational subgroup differences,not proof feedback caused reverse movement."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "First-page ACM reference/copyright/DOI",
+      "status": "version identity corrected",
+      "correction": "Use arXiv:2001.09766v1(2020)for this read PDF. Crossref matches later AIES2020DOI10.1145/3375627.3375870,p214–220,published7February2020. The latter full text was not read and is not an independent citation.",
+      "verification_url": "https://api.crossref.org/works/10.1145/3375627.3375870"
+    },
+    {
+      "location": "Reference7 Barnum review DOI",
+      "status": "metadata verified; primary unread",
+      "correction": "Replace malformed https://doi.org/doi:10.1007/BF02686623 with https://doi.org/10.1007/BF02686623. Crossref matches Adrian Furnham,Sandra Schofield,1987,6(2):162–178. No full-text review claimed.",
+      "verification_url": "https://api.crossref.org/works/10.1007/BF02686623"
+    },
+    {
+      "location": "Reference13 Rich et al.2017",
+      "status": "bibliographic correction verified; primary unread",
+      "correction": "Belief in corrective feedback for common misconceptions: Implications for knowledge revision is Journal of Experimental Psychology: Learning,Memory,and Cognition43(3):492–501,DOI10.1037/xlm0000322,not volume82:85–97. Those latter numbers also appear in the nearby Vitriol2019reference.",
+      "verification_url": "https://api.crossref.org/works/10.1037/xlm0000322"
+    }
+  ],
+  "limitations": [
+    "One secondary-defined new construct and evidence boundaries are added. No fabricated strong AI effect, extra fully read primary citations, ethical edges or annual timeline counts are introduced."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "barnum-effect"
+    ],
+    "enriched": [
+      "b084-self-referential-processing",
+      "moral-deference",
+      "b064-obedience-to-authority-milgram"
+    ]
+  }
+}

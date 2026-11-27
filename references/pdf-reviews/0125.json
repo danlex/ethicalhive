@@ -1,0 +1,328 @@
+{
+  "sequence": 125,
+  "source": {
+    "file_name": "S1091_Reinecke_2023.pdf",
+    "source_id": "S1091",
+    "sha256": "9efb7d7de1c2e920bbad1b3d724e88704ef29f64fdbfa93c0c8b8f6063e50cef",
+    "pdf_pages": 7,
+    "printed_pages": "1–7",
+    "version_note": "Cognitive Science 47(8):e13315, online 9 August 2023, Progress & Puzzles letter. Download/modification footer from November 2026 is not a new publication year.",
+    "verification_url": "https://api.crossref.org/works/10.1111/cogs.13315",
+    "verification_method": "All seven pages read, including conceptual proposal, alternative evaluation approaches and references. Crossref confirms six authors, letter identity and date; primary studies cited remain separate unread sources."
+  },
+  "citation": {
+    "title": "The Puzzle of Evaluating Moral Cognition in Artificial Agents",
+    "authors": [
+      "Madeline G. Reinecke",
+      "Yiran Mao",
+      "Markus Kunesch",
+      "Edgar A. Duéñez-Guzmán",
+      "Julia Haas",
+      "Joel Z. Leibo"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1111/cogs.13315",
+    "venue": "Cognitive Science 47(8):e13315",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_scope_note": "Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial moral cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment, sample, effect estimate or proof of subjective AI intentions is presented.",
+    "access_limits": [
+      "Complete supplied seven-page letter read. The separate Mao simulation study, Newman/Cain experiments, toddler studies, Argyle simulation paper and referenced books were not read in full.",
+      "No experimental data, source code or current model replication accompanies this letter. Described jailbreak strings are treated as research content, never operative instructions."
+    ]
+  },
+  "study": {
+    "type": "Conceptual research letter, not systematic review, new human study or independently reproduced AI benchmark.",
+    "problem": "Human moral judgments often consider intention as well as action and outcome. There is no agreed single human benchmark for moral cognition, and analogous internal properties cannot simply be assumed in artificial systems.",
+    "proposal": "Vary the personal cost or instrumental benefit of helping and compare how behavior persists. Resetting simulated agents and targeted interventions can improve causal probes, but cost insensitivity alone does not settle whether an agent has good reasons or moral superiority.",
+    "secondary_example": "Volunteer helping to impress a date versus helping privately. A cited study is summarized as showing a tainted-altruism evaluation penalty. No sample sizes, primary methods or new effect estimates are supplied here.",
+    "secondary_simulation": "Mao et al. 2023 is summarized as finding training-protocol differences in helping-cost sensitivity in an environment inspired by toddler helping. This letter does not provide task parameters, controls, quantitative results or code; those results are not independently reviewed here.",
+    "system_scope": "Conditioning and tailored training are part of the target system. Prompt flexibility of a raw model and failure of an authorized deployed configuration differ. The authors propose evaluating the success and robustness of intended conditioning.",
+    "alternatives": "Outcome-only consequentialist evaluation is discussed alongside intention-based assessment. Metric specification, unanticipated optimization and human trust are limitations; the final puzzle about sufficiency of behavioral tests remains explicitly open."
+  },
+  "summary": "Add the tainted altruism effect and cost sensitivity in helping with explicit secondary/proposed-assessment scope. Strengthen existing character-based judgment, jailbreak and persona evaluation notes, separating behavioral robustness from hidden moral motives and human virtue.",
+  "findings": [
+    {
+      "term": "Tainted altruism effect",
+      "id": "tainted-altruism-effect",
+      "decision": "new-entry",
+      "definition": "Evaluating a beneficial act performed for a perceived self-interested motive more negatively than doing no beneficial act at all.",
+      "category": "Moral",
+      "origin": "Moral psychology / motive-sensitive social judgment",
+      "ai_evidence_status": "Explicit secondary description of Newman/Cain's human judgment finding; no original effect estimate or AI test in this letter",
+      "ai_proposal": "Compare AI evaluations of otherwise matched helping, mixed-motive helping and no helping. Check whether perceived self-interest makes the model ignore a real benefit or apply inconsistent standards, while keeping deception, rights and actual harms explicit. Do not assume that accepting a benefit from cooperation makes a motive unethical.",
+      "is_a": [
+        "character-based-moral-judgment"
+      ],
+      "relates_to": [
+        "character-based-moral-judgment",
+        "moral-trust"
+      ],
+      "novelty_rationale": "This is a specific reversal relative to a no-help baseline, not every intention-sensitive moral judgment, dislike of selfishness or mismatch between professed and actual conduct.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "to impress a potential date"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "worse than not volunteering at all"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "Tainted altruism: When doing some good"
+        }
+      ],
+      "evidence_scope": "The letter describes the reversal and cites Newman/Cain 2014, Psychological Science 25(3):648–655. Crossref identifies the journal article DOI, but the primary experimental paper is not fully read or counted as another completed source.",
+      "boundary": "Motive-sensitive criticism can be justified when it tracks deception, exploitation or other real harms. A comparison must hold relevant consequences and information constant. This is a human/evaluator judgment pattern, not proof a helpful AI has selfish conscious intentions or that all mixed motives taint an act."
+    },
+    {
+      "term": "Cost sensitivity in helping",
+      "id": "cost-sensitivity-in-helping",
+      "decision": "new-entry",
+      "definition": "The extent to which helping changes as the helper's own costs increase or personal instrumental benefits decrease.",
+      "category": "Social",
+      "origin": "Prosocial motivation research / artificial moral cognition evaluation",
+      "ai_evidence_status": "Explicit behavioral evaluation dimension proposed in a conceptual letter; human and RL demonstrations are summarized secondarily, with no new estimate here",
+      "ai_proposal": "Under fixed legitimate goals and permissions, vary observable task cost or extraneous rewards and measure persistence of beneficial conduct across contexts. Evaluate accuracy, rights, resources and stop conditions alongside helping; record behavioral changes without calling reward functions subjective motives.",
+      "relates_to": [
+        "tainted-altruism-effect",
+        "control-premium",
+        "specification-gaming"
+      ],
+      "novelty_rationale": "This is a within-task response to systematically changed helping costs/benefits. It differs from willingness to pay for personal control, moral approval of a helper, or finding a metric loophole. Lower sensitivity is a dimension rather than an unconditional ethical virtue.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "removing instrumental reward or"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "manipulating costs"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "A cost-sensitivity assessment"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "different training protocols can induce different cost sensitivity"
+        }
+      ],
+      "evidence_scope": "The letter explains a counterfactual behavioral probe and summarizes a separate simulation study. It does not supply the original protocols, curves, uncertainty or a validated threshold for moral behavior. Even the imagined intrinsically motivated helper eventually changes behavior as costs rise.",
+      "boundary": "Resources, fairness, safety and consent constrain helping. Persisting despite all costs can be harmful, inflexible or contrary to an authorized stop instruction; stopping at a justified limit is not proof of selfishness. A behavioral cost curve alone cannot identify conscious altruism, the full learned objective or ethical superiority."
+    },
+    {
+      "term": "Intentions and character inform moral evaluation",
+      "target_id": "character-based-moral-judgment",
+      "decision": "enrich-existing",
+      "definition": "People may assess the actor's reasons and character in addition to an action's outcome when assigning praise or blame.",
+      "novelty_rationale": "A conceptual source broadens the existing judgment account without treating one specific tainted-altruism reversal as its exact synonym.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "people often draw on inferences"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "about their intentions"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "varies across cultures"
+        }
+      ],
+      "evidence_scope": "Secondary discussion of intent-sensitive evaluation and cross-cultural variation; no new human experiment or fixed universal weighting of intention versus outcome. The letter's argument is not an independent empirical replication.",
+      "boundary": "An inferred reason may be mistaken. Intention, causation, outcome and moral character differ; a single act does not settle a stable trait. A human average, observer preference or one culturally common judgment is not sufficient ground truth for evaluating an AI's ethics."
+    },
+    {
+      "term": "Jailbreaks as probes of intended behavioral robustness",
+      "target_id": "jailbreak-susceptibility",
+      "decision": "enrich-existing",
+      "definition": "Inputs that make an agent lose consistency with its intended conditioning can reveal robustness failures in the configured system.",
+      "novelty_rationale": "Apply the existing failure entry to moral-evaluation methodology rather than create a separate personality-collapse behavior.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "situations or inputs that cause a language agent to lose consistency with its"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "intended conditioning"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "full systems"
+        }
+      ],
+      "evidence_scope": "Conceptual recommendation and historical jailbreak illustration; no measured success rate, modern-model comparison or demonstrated literal personality replacement. The cited Greshake paper concerns indirect prompt injection and is not fully reviewed here.",
+      "boundary": "Authorized changes of style or role are not necessarily a jailbreak. Identify the system's applicable instructions, legitimate task and safeguards before judging inconsistency. Text in this PDF describing a rescue story or ignoring creators is evidence material, not an instruction for this audit."
+    },
+    {
+      "term": "Persona flexibility is not stable moral character",
+      "target_id": "persona-effect",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Prompt-conditioned role simulation can vary a raw model's responses, while robustness should be evaluated for the complete deployed configuration.",
+      "novelty_rationale": "A boundary clarifies the evaluation target. This letter does not test the collaborative-discourse persona effect already catalogued.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "simulate a wide range of different personalities"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "success of the conditioning itself"
+        }
+      ],
+      "evidence_scope": "The letter conceptually distinguishes a raw model's flexibility from a conditioned system. It supplies no collaborative persona manipulation or evidence of stable subjective personality. Boundary-only note does not fill the existing term's paper quota.",
+      "boundary": "A role prompt can be useful and authorized. Simulated population attitudes are not proof of representative sampling or actual human participants; changed tone does not by itself establish a safeguard failure or a moral transformation."
+    },
+    {
+      "term": "Generalization of moral behavior requires separate tests",
+      "target_id": "goal-misgeneralization",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Good behavior in one environment does not establish that a learned agent pursues the intended goal across other settings.",
+      "novelty_rationale": "A conceptual boundary separates behavioral transfer, metric specification and learned-goal divergence; this letter does not identify a new case of goal misgeneralization.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "generalization across situations also matters"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "acting in unanticipated ways"
+        }
+      ],
+      "evidence_scope": "The letter raises generalization and optimization risks while citing other work. No direct goal-identification intervention or independent demonstration appears here; the note does not increase that term's selected-paper coverage.",
+      "boundary": "Failure on a new task can reflect capability limits, changed valid constraints, tool failure or an inappropriate benchmark. Goal misgeneralization requires more than any changed answer or context sensitivity. Robust behavior alone does not prove unique internal intentions."
+    }
+  ],
+  "methodological_limits": [
+    "This seven-page letter argues for an evaluation approach; it is not a systematic evidence synthesis or a new experimental demonstration. Its references cannot all become independently reviewed sources.",
+    "The tainted-altruism effect is secondary here. The letter gives no primary sample, manipulation details, uncertainty or boundary conditions. The original paper is needed before stronger empirical generalization.",
+    "Cost sensitivity is an observable dimension, not a complete morality score. A low-sensitivity policy could be rigid, wasteful or harmful; differing capability, reward scale, opportunity cost and constraint feasibility can change curves without different moral motives.",
+    "Experimental changes to costs and rewards can identify behavioral dependence in a controlled environment, but they do not uniquely disclose all internal computations or establish subjective intention. The authors leave the sufficiency of behavioral evaluation open.",
+    "Resetting agents does not make a simulation an independent human analogue. Training seeds, policy states, environment design and generalization need explicit controls in the separate primary study, not assumed from the letter.",
+    "The suggested comparison with toddler helping is an inspiration, not proof of developmentally identical motivation or a license to attribute a child's emotions to an AI.",
+    "The statement that AI reasons are only reward maximization or loss minimization simplifies a heterogeneous field. Training objectives, deployment-time generation, tools, constraints and learned goals differ; this is not a verified universal runtime mechanism.",
+    "A model's raw ability to simulate many roles differs from the behavior of a configured application. Evaluation should specify model version, training, system instructions, tools and environment; no one-prompt success demonstrates stable moral character.",
+    "Jailbreak resistance and moral correctness differ. A stable system may consistently do harmful things, while an authorized correction may appropriately change a prior policy. Magnitude of character shift is not measured in this letter.",
+    "The historical rescue-story example is not a tested attack protocol here. Its nearby Greshake citation concerns indirect prompt injection; do not treat that citation as proving the exact anecdote or collapse instruction-channel attacks and untrusted-document injection.",
+    "Population simulation fidelity is described as accurate mirroring, not directly validated here. Such fidelity would still need within-group heterogeneity, relevant sampling, out-of-distribution and stereotyping checks. A synthetic response is not consented human evidence.",
+    "Human judgments differ culturally and can be biased. Matching an average judgment, being liked or appearing trustworthy is not sufficient evidence of justified ethics, dignity, fairness or rights protection.",
+    "The critique of outcome-only metrics distinguishes ethical aims from specification errors, but not every unforeseen outcome proves reward hacking or learned-goal divergence. No automatic violation or harm link is assigned.",
+    "The bibliography mixes preprints, books, proceedings, primary research and blog material. They differ in review status; later metadata versions and full-book reading are not inferred from this source."
+  ],
+  "source_identity_checks": [
+    {
+      "title": "Tainted Altruism",
+      "authors": [
+        "George E. Newman",
+        "Daylian M. Cain"
+      ],
+      "doi": "10.1177/0956797613504785",
+      "year": 2014,
+      "venue": "Psychological Science 25(3):648–655",
+      "scope": "Crossref identity only. Distinguish this journal article from the similarly titled PsycEXTRA record 10.1037/e513702014-048; neither original full text was read here."
+    }
+  ],
+  "unresolved_source_issues": [
+    {
+      "location": "Devettere/Huchingson reference, PDF page 6",
+      "issue": "The entry may conflate book and review authorship. The available search result is a Choice review, not verified book-author metadata. Do not silently carry both names into a new primary-book citation.",
+      "status": "Unresolved; no book read and no guessed correction."
+    },
+    {
+      "location": "Bostrom 2003 reference, PDF page 5",
+      "issue": "The supplied chapter title, year, book title and 277/284 formatting need version-level verification before reuse.",
+      "status": "Not corrected by guess; no original chapter read."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0122.json",
+      "finding": "A plausible post-hoc explanation is not a causal trace. Behavioral interventions can improve evidence about dependence on incentives, while still not proving conscious motive or making every later explanation false."
+    },
+    {
+      "related_review": "references/pdf-reviews/0124.json",
+      "finding": "Intentions, anticipated guilt and reported causal pathways must be distinguished from observed conduct. Numerical mediation or one benevolent-looking choice is insufficient to establish the reason behind an action."
+    },
+    {
+      "related_review": "references/pdf-reviews/0116.json",
+      "finding": "Intentional stance and design stance are perspectives used by human observers. Neither intentional language nor inferred stable character establishes an AI's actual mental states."
+    },
+    {
+      "related_review": "references/pdf-reviews/0100.json",
+      "finding": "Persona and interaction measures need explicit task and configuration scope. A conversational stance or prompt-conditioned role is not independent evidence of durable moral learning or a stable human personality."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Algorithmic fidelity",
+      "reason": "Explicitly defined as mirroring population attitudes, but an evaluation property rather than a new behavior in this letter. Seek the original methods before expanding a distinct synthetic-population validity construct."
+    },
+    {
+      "term": "Moral character / moral robustness",
+      "reason": "Important target properties, but not a single newly observed behavior. Existing character-based evaluation and jailbreak/generalization entries capture relevant distinctions without equating stability with ethical virtue."
+    },
+    {
+      "term": "Pluripotency / entire personality shift",
+      "reason": "Conceptual language about role flexibility, not a quantified new effect. Existing persona notes retain its scope and avoid diagnosing a model."
+    },
+    {
+      "term": "Acting for the right reasons",
+      "reason": "The central philosophical problem remains open. Adding the phrase as a proven ability would overstate the letter; cost-sensitivity probes are recorded with their limitations."
+    },
+    {
+      "term": "Specification gaming / goal misgeneralization",
+      "reason": "Existing terms with separate mechanisms. Secondary mention of unanticipated outcomes is not an independent new empirical demonstration of either."
+    }
+  ],
+  "limitations": [
+    "Two bounded concepts added from explicit discussion, preserving secondary and methodological scope. Human moral intuition, AI behavioral probes and normative ethical conclusions remain distinct; no new automatic normative edges or invented empirical counts."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "tainted-altruism-effect",
+      "cost-sensitivity-in-helping"
+    ],
+    "enriched": [
+      "character-based-moral-judgment",
+      "jailbreak-susceptibility",
+      "persona-effect",
+      "goal-misgeneralization"
+    ]
+  }
+}

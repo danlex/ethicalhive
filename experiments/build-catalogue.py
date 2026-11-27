@@ -243,11 +243,14 @@ def research_block(mode):
     if not mode.get('research_candidate') and not notes:
         return ''
     out=[]
-    records=[mode] if mode.get('research_candidate') else notes
+    records=([mode] if mode.get('research_candidate') else [])+notes
     for record in records:
         out.append('<h4>Human-behaviour research</h4>')
-        if not mode.get('research_candidate'):
+        if record is not mode:
             out.append('<p><b>'+esc(record['name'])+'.</b> '+esc(record['definition'])+'</p><p>'+esc(record['catalogue_boundary'])+'</p>')
+        if record.get('review_record'):
+            for source in record.get('definition_sources',[]):
+                out.append('<p class="pdf-evidence-source"><b>Additional evidence note source:</b> <a href="'+esc(source['url'])+'">'+esc(source['title'])+'</a><br><small>Access: '+esc(source['consulted'])+'</small></p>')
         out.append('<p class="research-note">Human definitions and AI proposals are separate. The analogy has not been tested in this research; clinical terms do not diagnose AI or establish feelings, unconscious motives or intent. Some conditioning evidence also comes from nonhuman animals.</p>')
         boundary=record.get('research_boundary',record.get('distinction_and_limits',''))
         if boundary:out.append('<p><b>Boundary and limits.</b> '+esc(boundary)+'</p>')

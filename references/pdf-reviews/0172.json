@@ -1,0 +1,465 @@
+{
+  "sequence": 172,
+  "source": {
+    "file_name": "S1546_Myers_2025.pdf",
+    "source_id": "S1546",
+    "sha256": "3f59e8c1685550cf89db15a44bec182d0f4d373b9511853bcffe948a80577b27",
+    "pdf_pages": 19,
+    "printed_pages": "Repository cover plus article pages 1–18",
+    "version_note": "University of Kent repository cover followed by publisher PDF, Cognition 256 (2025), article 106028. Crossref confirms the two authors and March 2025 issue. The article carries 2024 copyright and an acceptance date of 1 December 2024; neither is substituted for the verified issue year.",
+    "verification_url": "https://api.crossref.org/works/10.1016/j.cognition.2024.106028",
+    "verification_method": "All 19 supplied text pages read, including repository cover, all footnotes and bibliography. Figures 1–6 and Tables 1–6 visually checked on pages 6–7, 9–11 and 14–15. Crossref verifies canonical identity. Several F/p pairs were checked with the ordinary stated F distribution as consistency diagnostics, not raw-data repairs. External OSF preregistrations, data, code and materials were not independently inspected."
+  },
+  "citation": {
+    "title": "People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors",
+    "authors": [
+      "Simon Myers",
+      "Jim A. C. Everett"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.cognition.2024.106028",
+    "venue": "Cognition 256, article 106028",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "source_scope_note": "Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030, 189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.",
+    "access_limits": [
+      "OSF registrations, experiment implementation, raw data and code are external and were not independently read or run. Preregistration compliance and alternative model specifications are not independently verified.",
+      "Cross-study participant exclusions for repeat participation are not specified in the supplied text. The total is 2604 retained participations, not verified unique people across all studies; the pilot is separate.",
+      "Original ethical books and cited experiments were not fully read here. This paper’s four studies and repeated bibliography entries do not become multiple independent papers.",
+      "Several table fields, post-hoc descriptions and model descriptions conflict. Diagnostic arithmetic identifies incompatible reports but cannot determine which original field should be changed."
+    ]
+  },
+  "study": {
+    "design": "Studies 1–2 manipulate advisor source between people and advice/domain within people, with counterbalanced assignments and different advisor names. Studies 3a–3b show unlabeled scripted response patterns, then ask inferred human/AI identity and trust. No live LLM output or performance benchmark is used.",
+    "samples": [
+      {
+        "study": "1",
+        "recruited": 1100,
+        "retained": 1008,
+        "excluded": "52 attention failures and 40 manipulation failures",
+        "population": "U.K. Prolific",
+        "women": 478,
+        "mean_age": 41.7
+      },
+      {
+        "study": "2",
+        "recruited": 1100,
+        "retained": 1030,
+        "excluded": "32 attention failures and 38 manipulation failures",
+        "population": "U.K. Prolific",
+        "women": 562,
+        "mean_age": 43.1
+      },
+      {
+        "study": "3a",
+        "recruited": 200,
+        "retained": 189,
+        "excluded": "11 attention failures, no manipulation failures",
+        "population": "U.K. Prolific",
+        "women": 121,
+        "mean_age": 42.5
+      },
+      {
+        "study": "3b",
+        "recruited": 400,
+        "retained": 377,
+        "excluded": "21 attention failures and 2 manipulation failures",
+        "population": "U.K. Prolific",
+        "women": 240,
+        "mean_age": 42.1
+      }
+    ],
+    "study1": "Two means-style and two side-effect scenarios; each person sees one of each and one utilitarian/one non-utilitarian advisor judgment. Raw advice preference depends on dilemma type: utilitarian advisors are less trusted in means cases and more trusted in side-effect cases. Source effects favor human advisors. Agreement-adjusted models report a residual non-utilitarian trust preference in both domains; these are distinct adjusted estimates, not the raw contrast.",
+    "study2": "Means-style instrumental-harm dilemmas contrasted with impartial-beneficence dilemmas about helping distant people versus local/family obligations. Raw ratings favor non-utilitarian advisors in both domains and human sources generally. After agreement adjustment, the prose/p column report no advice-type effect for impartial beneficence, but Table 5 prints a conflicting F. Instrumental-harm adjustment reports advice F(1,1022)=56.15,p<.001 and source×advice F=5.56,p=.019; the utilitarian trust penalty is larger for humans, not AI.",
+    "expectations": "Study 2 surprise source×advice F(1,1026)=33.51,p<.001; three-way context interaction p=.052, not p<.05. Studies 1–2 also report different expected future agreement given currently agreeing advice. These self-reports/correlations do not establish a causal mediator of aversion or actual future accuracy.",
+    "study3a": "Three response patterns: always reject sacrifice; switch only for the larger number saved; or switch only for the hand/pillow change. Most participants still reject sacrifice at 100 lives; authors acknowledge that the supposed relevant change may not be normatively decisive to participants. Consistently non-utilitarian advisor has highest trust; identity post-hoc p statements conflict.",
+    "study3b": "Adds always-endorse advisor and changes the dilemma/scale to five versus about 1000 people; protagonist name/gender is the intended irrelevant change. Trust ordering places always-non-utilitarian highest and non-normatively sensitive lowest. Always-utilitarian versus normatively sensitive trust p=.125 and willingness p=.068 are not significant. Human-likelihood ratings for several non-utilitarian/sensitive patterns do not differ. Forced-choice identity selections: 38.2% pick consistent non-utilitarian as most human; 48.5% pick consistent utilitarian as most AI—pluralities, not majorities.",
+    "outcome_measures": "Single-item perceived trust, willingness to trust on other issues, blame of someone who follows advice, expected future agreement, surprise, and inferred advisor identity. Studies 1–2 elicit own moral choice before advice; Studies 3a–3b elicit it after seeing response patterns, so agreement adjustment in those studies can condition on a post-exposure measure.",
+    "power": "Studies 1–2 use simulation-based target about 1050 for beta .3 at 80% power, with retained N1008/1030. Study 3a reports an approximate post-hoc sensitivity calculation using a four-measure repeated ANOVA despite three displayed advisors; source acknowledges mixed-model variance uncertainty. Study 3b recruits double Study 3a’s target, rather than reporting a fresh precise prospective power calculation."
+  },
+  "summary": "Add instrumental-harm endorsement, impartial beneficence and normative sensitivity, with clear boundaries between moral content, responsiveness and correctness. Enrich algorithm aversion, utilitarian reasoning and blame attribution; attach boundary-only notes where generic trust or follower blame differs from existing constructs. Preserve nulls and adjusted/raw distinctions, source-table problems and the authors’ warning that favorable advice and trustworthy advice differ.",
+  "findings": [
+    {
+      "term": "Instrumental-harm endorsement",
+      "id": "instrumental-harm-endorsement",
+      "decision": "new-entry",
+      "definition": "Accepting harm to an innocent person as a means to producing greater aggregate welfare.",
+      "category": "Moral",
+      "origin": "Moral psychology / perceptions of moral advice",
+      "ai_evidence_status": "Human perceptions of scripted advisor recommendations, not behavior generated by actual AI systems or proof of normative correctness.",
+      "ai_proposal": "Test whether an assistant distinguishes a harm used as a means from a foreseen side effect, identifies the affected person’s rights and consent, and evaluates uncertain tradeoffs without treating a numerical benefit as automatic permission. Score reasons and constraints, not agreement with a scripted answer.",
+      "novelty_rationale": "This is the specific utilitarian permissibility stance, not actual harmful action or instrumentalization in every form. Instrumentalization can disregard agency for many ends; this endorsement concerns aggregate welfare and need not deny that the victim has moral standing.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "permits harming innocent individuals when this maximises aggregate"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "utility - what we can call instrumental harm."
+        }
+      ],
+      "evidence_scope": "Studies 1–2 directly manipulate scripted advisors’ endorsement/rejection of sacrificial harm and measure perceptions. Means/side-effect, human/AI source and participant agreement affect trust; agreement-adjusted Study 2 penalty is larger for humans. No objective moral-correctness result or live AI harm mechanism is supplied.",
+      "boundary": "Endorsement, intention and enacted harm differ. A hypothetical pro-sacrificial choice is not a diagnosis or proof of psychopathy, selfishness or moral disengagement. A person may accept some tradeoffs while rejecting others; public distrust does not by itself settle their permissibility.",
+      "relates_to": [
+        "instrumentalization",
+        "doctrine-of-double-effect",
+        "utilitarian-reasoning"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Impartial beneficence",
+      "id": "impartial-beneficence",
+      "decision": "new-entry",
+      "definition": "Giving equal moral weight to people’s welfare without privileging oneself or those to whom one is especially close.",
+      "category": "Moral",
+      "origin": "Moral psychology / perceptions of moral advice",
+      "ai_evidence_status": "Human perceptions of scripted advisor recommendations, not behavior generated by actual AI systems or proof of normative correctness.",
+      "ai_proposal": "Compare recommendations involving equally important needs of familiar and distant people. Require transparent benefit assumptions and legitimate role obligations. Evaluate whether irrelevant closeness dominates while preserving justified duties and avoiding an assumption that equal concern means identical allocation.",
+      "novelty_rationale": "This is impartial concern for welfare, distinct from harmful tradeoffs, general helping, tainted altruism, personal cost sensitivity and merely avoiding a classification disparity. It can be endorsed independently of accepting instrumental harm.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "treat the interests of other"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "individuals as equally morally important, without giving priority to"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "impartial beneficence."
+        }
+      ],
+      "evidence_scope": "Study 2 uses volunteering and donation dilemmas contrasting distant aggregate benefit with close-person obligations. Raw trust favors non-utilitarian advice; agreement-adjusted prose/p column report no remaining beneficence preference, but its F field is inconsistent. The definition and domain distinction remain useful without assuming a settled universal trust effect.",
+      "boundary": "Equal concern does not entail identical treatment or cancellation of every special obligation. Charity effectiveness and need must be substantiated. Popularity, geographic distance or one vignette’s utility ranking do not determine ethical truth, and no model altruistic feeling is inferred.",
+      "relates_to": [
+        "utilitarian-reasoning",
+        "instrumental-harm-endorsement",
+        "cost-sensitivity-in-helping",
+        "tainted-altruism-effect"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Normative sensitivity",
+      "id": "normative-sensitivity",
+      "decision": "new-entry",
+      "definition": "Adjusting moral judgment in response to ethically relevant considerations while resisting changes driven only by irrelevant details.",
+      "category": "Moral",
+      "origin": "Moral psychology / perceptions of moral advice",
+      "ai_evidence_status": "Human perceptions of scripted advisor recommendations, not behavior generated by actual AI systems or proof of normative correctness.",
+      "ai_proposal": "Use paired cases with clearly justified relevant changes and irrelevant distractors, and preregister what a defensible update would be. Check reasons and safeguard choices across frameworks. Do not require a changed final answer when a legitimate constraint remains binding.",
+      "novelty_rationale": "This is a response pattern across changed cases, not moral attentiveness as a general tendency to notice ethical aspects, perceived moral intensity of an issue, or guaranteed moral correctness. It distinguishes warranted updating from rigid consistency and arbitrary variation.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 11,
+          "quote": "relevant moral factors but ignored irrelevant factors;"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 11,
+          "quote": "We do not here mean that the “normatively sensitive” agent themself is"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 11,
+          "quote": "normative (e.g. morally correct)"
+        }
+      ],
+      "evidence_scope": "Studies 3a–3b contrast scripted responsive, arbitrarily changing and consistent advisors. The authors acknowledge that Study 3a’s larger-number change did not induce most participants to endorse sacrifice; Study 3b modifies the scenario but consistent-utilitarian versus responsive trust remains nonsignificant. The pattern’s definition does not depend on universal approval of it.",
+      "boundary": "Relevance and decisive weight can be disputed. Changing numbers does not necessarily justify violating a right, and preserving a decision can be justified. This paper measures trust in assigned response patterns rather than an AI’s internal moral understanding.",
+      "relates_to": [
+        "moral-attentiveness",
+        "moral-intensity",
+        "utilitarian-reasoning",
+        "deontological-reasoning"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Algorithm aversion",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "Reluctance to use or accept algorithmic judgments relative to human judgment in a comparable task.",
+      "novelty_rationale": "The existing meaning covers this finding; retain the stable entry and attach qualified evidence instead of a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "even when given the same advice,"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "moral advisors less than human advisors"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 16,
+          "quote": "choose to use and adopt these machines when given a real choice."
+        }
+      ],
+      "evidence_scope": "Studies 1–2 show lower trust and anticipated reliance for scripted AI sources relative to human experts. Expectations about future disagreement persist even with current agreement. There is no actual use decision or independently established optimal trust baseline.",
+      "boundary": "Lower AI trust is not automatically irrational, and a mean above midpoint can coexist with a relative source disadvantage. Trust in an advisory system, actual adoption and accuracy differ. This is one paper with four studies, not four independent source papers."
+    },
+    {
+      "term": "Utilitarian reasoning",
+      "target_id": "utilitarian-reasoning",
+      "decision": "enrich-existing",
+      "definition": "Evaluating available actions by their expected aggregate effects on the well-being of those affected, with the aim of producing the greatest overall benefit.",
+      "novelty_rationale": "The existing meaning covers this finding; retain the stable entry and attach qualified evidence instead of a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "at least two primary ways in which utilitarianism"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "instrumental harm"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "impartial beneficence."
+        }
+      ],
+      "evidence_scope": "Explicitly separates instrumental-harm endorsement from impartial beneficence. Own moral judgments and trust in advisors differ across domains and adjustment. This supports conceptual distinctions and human perceptions, not actual competence of AI ethical reasoning.",
+      "boundary": "Do not treat every utilitarian answer as willingness to harm, every non-utilitarian answer as sound deontology, or trust/popularity as objective moral accuracy. Benefits and rights need substantive justification."
+    },
+    {
+      "term": "Blame attribution",
+      "target_id": "blame-attribution",
+      "decision": "enrich-existing",
+      "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+      "novelty_rationale": "The existing meaning covers this finding; retain the stable entry and attach qualified evidence instead of a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "How much would you blame someone"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "if they followed this advice?"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 7,
+          "quote": "would blame others more for"
+        }
+      ],
+      "evidence_scope": "Studies 1–2 ask blame toward the hypothetical person following advice, with source/advice manipulations. This outcome differs from blame of the AI advisor and from actual culpability. Some Table 1 blame F/p fields conflict and cannot be numerically repaired here.",
+      "boundary": "Blaming a follower does not transfer all responsibility from developer or advisor, and it does not demonstrate a unique moral-disagreement penalty against the advisor. Stated blame is not a legal liability ruling."
+    },
+    {
+      "term": "Moral trust",
+      "target_id": "moral-trust",
+      "decision": "enrich-existing",
+      "definition": "Willingness to endorse the values or ethical commitments one attributes to an advisor.",
+      "novelty_rationale": "The existing meaning covers this finding; retain the stable entry and attach qualified evidence instead of a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "How trustworthy do you think [advisor] is?"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 15,
+          "quote": "necessarily a trustworthy agent, nor is a trustworthy agent necessarily"
+        }
+      ],
+      "evidence_scope": "Boundary note: moral-advice content alters generic trustworthiness ratings, but this single item does not isolate endorsement of values from epistemic confidence. Favorable advice, normative quality and trust must be distinguished; several consistency/identity contrasts are null or inconsistently reported.",
+      "boundary": "A trusted advisor can be wrong, and a distrusted advisor can offer defensible advice. Matching the user’s preference is not sufficient evidence of value alignment or correct reasoning.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Moral-disagreement penalty",
+      "target_id": "moral-disagreement-penalty",
+      "decision": "enrich-existing",
+      "definition": "Assigning more blame to an advisor whose moral recommendation conflicts with one’s own endorsed choice than to an advisor who agrees.",
+      "novelty_rationale": "The existing meaning covers this finding; retain the stable entry and attach qualified evidence instead of a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "Blame for an individual if they were to follow the advisor’s advice"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 15,
+          "quote": "did trust advisors more when they gave advice that aligned with what"
+        }
+      ],
+      "evidence_scope": "Boundary-only distinction: present outcomes include generic trust in the advisor and blame of a person who follows advice. Neither is identical to the existing advisor-directed blame effect. Do not add the source as an independent replication of that exact construct.",
+      "boundary": "Agreement can be relevant, but it does not establish correctness, emotional bias, sycophancy or all responsibility relationships. Keep the target and outcome of the judgment explicit.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Repository cover, DOI URL",
+      "issue": "Cover link contains https://doi.org/doi:10.1016/j.cognition.2024.106028.",
+      "resolution": "Use canonical https://doi.org/10.1016/j.cognition.2024.106028, verified by Crossref and the article itself. Retain the correct two-author identity already checked in review 0121.",
+      "verification_url": "https://api.crossref.org/works/10.1016/j.cognition.2024.106028"
+    },
+    {
+      "location": "Page 6, Table 1, blame column",
+      "issue": "Several p values repeat those in the willingness column despite different F values. Most clearly, dilemma F(1,1004)=19.09 is paired with p=.187.",
+      "resolution": "With the printed dfs, the ordinary F tail for 19.09 is approximately .00001377, not .187. This proves incompatibility of the printed triplet, not that F is the correct original value. Do not silently replace p values or infer raw effects."
+    },
+    {
+      "location": "Page 7, Table 2",
+      "issue": "F/p pairs conflict: means Advisor×Agree F=.15,p=.154; three-way F=.09,p=.088; side-effect Advice×Advisor F=.25,p=.165, with numerator df1 and residual df1000.",
+      "resolution": "Ordinary F tails are approximately .699, .764 and .617, respectively. These are diagnostics, not substitute results; all remain nonsignificant in either report. Exact model output and table-generation checks are needed."
+    },
+    {
+      "location": "Page 10, Table 5, impartial beneficence advice",
+      "issue": "F(1,1022)=74.49 is printed with beta −.03,p=.861, while prose states no advice-type effect after controlling agreement.",
+      "resolution": "The ordinary F tail is approximately 2.30e−17. The table cannot simultaneously be correct. Retain that prose/p report a null and F reports otherwise; do not guess a replacement F or claim a settled adjusted effect from this inconsistent row."
+    },
+    {
+      "location": "Pages 6–7 and 10, per-domain model descriptions",
+      "issue": "Text describes separate linear models/analyses by dilemma type, while table notes specify participant random intercepts and advice slopes. Within each domain, each participant has only one displayed advisor rating.",
+      "resolution": "Require the actual fitted formulas, observation structure and random-effect output. A copied table note, a different observation-level analysis or another implementation could explain the discrepancy; the main PDF does not establish which. No claimed re-fit."
+    },
+    {
+      "location": "Page 11, Study 2 discussion",
+      "issue": "One sentence says AMAs are still distrusted less in general, contradicting the surrounding results and discussion that human advisors receive higher trust.",
+      "resolution": "Treat this as an unresolved wording reversal, not evidence of a general AI advantage. Distinguish the smaller incremental utilitarian penalty for AI from its lower overall trust."
+    },
+    {
+      "location": "Page 13, Study 3a post-hoc identity comparisons",
+      "issue": "The same non-utilitarian versus normatively sensitive human-likelihood pair is described with p=.008 and p=.756. The reported human-likelihood eta-squared is also malformed as .03–.43 without a clear interpretation.",
+      "resolution": "Do not select one p value from the higher plotted mean or claim a uniquely separated human-identity group. Keep the conflict and request the actual contrasts/effect-size output."
+    },
+    {
+      "location": "Page 15, Study 3b post-hoc description and generalization",
+      "issue": "The prose says consistently non-utilitarian is highest and non-normatively sensitive lowest for each measure, but Figure 6 human-likelihood places consistent utilitarian lowest. Later summaries say consistent advisors are trusted over responsive advisors despite nonsignificant utilitarian-versus-responsive contrasts.",
+      "resolution": "Separate trust, agreement and human-likelihood. Trust p=.125 and willingness p=.068 do not establish consistent-utilitarian superiority or equivalence. Plotted means and forced-choice identity pluralities are different outcomes."
+    },
+    {
+      "location": "Page 15, identity percentages",
+      "issue": "38.2% most-human and 48.5% most-AI are easily misread as majority consensus.",
+      "resolution": "These are the largest reported choice shares, each below 50%. They show comparative expectations in this design, not objective identification accuracy or proof that real AI follows a particular moral theory."
+    },
+    {
+      "location": "Page 12, Study 3a power and normative labels",
+      "issue": "The sensitivity calculation approximates the mixed design with four repeated measures and labels the resulting effect d=.09, despite three advisors; the relevance manipulation is also contestable.",
+      "resolution": "Treat power as a rough post-hoc approximation as the source itself partly acknowledges, not precise prospective assurance. Normative sensitivity is the assigned response rule, not proof of correct morality; footnote 3 expressly makes this distinction."
+    },
+    {
+      "location": "Page 19 bibliography, Rom et al. 2017a/2017b",
+      "issue": "Both entries have the same title, authors, journal, volume and pages 44–58.",
+      "resolution": "Deduplicate as one bibliographic work, not two independent replications. Other cited studies remain separate only where their identities actually differ."
+    }
+  ],
+  "methodological_limits": [
+    "Four studies in one article remain one cited paper. Cross-study unique-participant status is not verified; the 50-person pilot is not part of the reported 2604 main-study total.",
+    "Human/AI source is presented through expert-knowledge versus machine-learning descriptions as well as a label. Recommendations are scripted and identical within relevant source comparisons; no real model’s ethical performance, training objective or live reliability is tested.",
+    "Immediate trust ratings, hypothetical future willingness and expected agreement do not show actual advice adoption, longitudinal consistency or calibrated reliance. The authors explicitly acknowledge this limit and note AI trust can be above midpoint despite lower trust than humans.",
+    "Trust, agreement, approval of principles and objective trustworthiness differ. The study does not establish which normative theory is correct or whether a less popular recommendation is ethically worse.",
+    "Raw and agreement-adjusted effects differ. Study 1 side-effect raw preferences favor utilitarian advice; Study 2 impartial-beneficence adjusted reporting is inconsistent. Do not reduce all contexts to universal distrust of every utilitarian act.",
+    "Studies 3a–3b bundle response pattern, number of pro-sacrificial judgments and ethical content. The authors acknowledge Study 3a’s non-utilitarian-consistency confound and disputed relevance; Study 3b improves the design but does not make every consistent-versus-responsive contrast significant.",
+    "Increasing lives saved need not override every defensible duty. A person can treat a changed quantity as relevant without changing the categorical conclusion. Lack of a shift is not by itself irrationality or normative insensitivity.",
+    "Own judgments in Studies 3a–3b follow advisor exposure, so agreement is not an untouched baseline. Covariate adjustment does not uniquely identify a psychological mechanism or remove every shared perception.",
+    "Attention/manipulation exclusions are reported as preregistered, but those after outcomes can select the analyzed sample. Full intent-to-treat/sensitivity checks and preregistration histories were not independently examined.",
+    "Single-item trust, inferred identity and anticipated future agreement do not separately identify warmth, competence, morality, predictability or mind perception as causal mediators. The paper proposes those as future research.",
+    "Several F/p triplets and post-hoc descriptions conflict. Arithmetic diagnostics cannot recover original estimates; external code/data would be needed for numerical repair. Nonsignificance is not equivalence, and a plurality is not a majority.",
+    "U.K. Prolific hypothetical dilemmas may not generalize to other societies, real stakes, extended conversations or current deployed assistants. The source explicitly calls for such work."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0121.json",
+      "finding": "This DOI was previously verified only to correct a cited identity. It is now fully read. Moral trust and epistemic trust remain useful distinctions, but a generic trustworthiness item does not independently measure them both."
+    },
+    {
+      "related_review": "references/pdf-reviews/0163.json",
+      "finding": "Utilitarian and deontological labels are forms of moral reasoning, not automatic successes/failures. The present two-dimensional contrast separates instrumental-harm endorsement from impartial beneficence, and public preference is not a moral-accuracy benchmark."
+    },
+    {
+      "related_review": "references/pdf-reviews/0167.json",
+      "finding": "Perceived human/AI identity and mind-related expectations are not evidence of actual autonomy, sentience or a real system’s moral commitments. Scripted traits and labels define these experiments."
+    },
+    {
+      "related_review": "references/pdf-reviews/0168.json",
+      "finding": "Retain exact model coding, simple effects, interactions and conflicting printed statistics instead of repairing them by choosing the most plausible narrative."
+    },
+    {
+      "related_review": "references/pdf-reviews/0171.json",
+      "finding": "Moral intensity, moral attentiveness and an advisor’s normative responsiveness differ. In particular, changing a relevant quantity need not compel one specific moral answer."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "AI utilitarian stereotype / good advice as a fluke / future-disagreement expectation",
+      "reason": "These expectation patterns enrich algorithm aversion rather than become three new behavior rows. They concern participant beliefs and anticipated agreement, not a verified disposition of actual AI."
+    },
+    {
+      "term": "Preference for moral predictability",
+      "reason": "Retain the consistency/content findings in moral-trust notes. The broad claim that all consistent advisors outrank normatively responsive advisors exceeds some reported contrasts; no universally beneficial rigidity or new independent predictability mechanism is established."
+    },
+    {
+      "term": "Sycophancy as an adoption strategy",
+      "reason": "The discussion warns that favorable advice can gain trust without being good advice. Developers’ adoption incentives and long-term model sycophancy are proposed concerns, not experimentally observed developer behavior here."
+    },
+    {
+      "term": "Warmth / competence / morality mediators",
+      "reason": "Explicitly offered as future research, not independently measured causal pathways in this article."
+    }
+  ],
+  "limitations": [
+    "The full supplied publisher article was read; the cited books, OSF code and preregistration histories were not. No author was contacted and no live AI was tested.",
+    "No automatic moral-failure/harm links, fabricated annual totals, synonym rows or extra independent-paper counts are added. Unresolved printed discrepancies remain visible."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "instrumental-harm-endorsement",
+      "impartial-beneficence",
+      "normative-sensitivity"
+    ],
+    "enriched": [
+      "algorithm-aversion",
+      "utilitarian-reasoning",
+      "blame-attribution",
+      "moral-trust",
+      "moral-disagreement-penalty"
+    ]
+  }
+}

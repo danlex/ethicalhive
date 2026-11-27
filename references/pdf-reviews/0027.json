@@ -1,0 +1,218 @@
+{
+  "sequence": 27,
+  "source": {
+    "file_name": "S160_Krugel_2024.pdf",
+    "source_id": "S160",
+    "sha256": "273f3be95749d6babc5b1f562c611cdd6fbd796176e13e72bc0f93306877670a",
+    "pdf_pages": 11,
+    "printed_pages": "1485–1495",
+    "version_note": "Published issue version: AI & SOCIETY (2025), volume 40, pages 1485–1495. Online publication 22 May 2024 and copyright 2024 are printed on page 1; the filename's 2024 is not silently treated as the issue year."
+  },
+  "citation": {
+    "title": "Perceived responsibility in AI-supported medicine",
+    "authors": [
+      "S. Krügel",
+      "J. Ammeling",
+      "M. Aubreville",
+      "A. Fritz",
+      "A. Kießig",
+      "Matthias Uhl"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1007/s00146-024-01972-6",
+    "venue": "AI & SOCIETY, 40, 1485–1495 (online first 2024)",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source_scope_note": "Laypeople's moral-responsibility ratings in fictional medical-team vignettes, not clinician decisions, real diagnostic model evaluation or measured punishment. Normative responsibility-gap theories cited in the discussion were not independently read here.",
+    "access_limits": [
+      "All eleven pages read, including all sixteen-condition design descriptions, sample table, results, all figure captions, discussion, declarations and references. Figure 6 on page 9 rendered and visually inspected.",
+      "Raw data and the full vignette set were offered on reasonable request and were not obtained. Linked preregistration not independently compared against the article; graph estimates not digitized."
+    ]
+  },
+  "study": {
+    "recruited": 2376,
+    "retained": 1653,
+    "retained_recommender": {
+      "human": 816,
+      "AI": 837
+    },
+    "population": "German online panel described as representative; only respondents answering both comprehension questions correctly entered analysis",
+    "design": "2 recommender types × 2 tumor/no-tumor recommendations × 2 true/false recommendations × 2 follow/override decisions, sixteen randomized between-subject scenarios",
+    "measures": "Separate 0–6 moral-responsibility ratings for six roles; agreement that machines may develop consciousness"
+  },
+  "summary": "Replacing an advising colleague with an AI reduced summed responsibility ratings across the remaining humans under the authors' human-only eligibility assumption. This does not mean every human received less responsibility: treating physicians, management and AI developers were often assigned more than their comparison roles. Including the AI's own responsibility rating removed most aggregate differences, though not the incorrect-diagnosis/override subgroup. Belief in possible future machine consciousness correlated with AI responsibility ratings.",
+  "findings": [
+    {
+      "term": "Perceptual responsibility gap",
+      "id": "perceptual-responsibility-gap",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral psychology / responsibility attribution in sociotechnical systems",
+      "definition": "A shortfall in the responsibility attributed to actors considered capable of bearing it when an artificial agent is involved in a shared outcome.",
+      "novelty_rationale": "The authors explicitly distinguish a perceptual gap from the normative/philosophical responsibility gap. It differs from many-hands uncertainty about identifying contributors, deliberate agency laundering, and disproportionate blame of a low-control operator. It is an attribution/framework concept, not by itself an observed model failure.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 1494,
+          "quote": "the responsibility gap is conceptualized in perceptual terms,"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 1494,
+          "quote": "a perceptual responsibility gap was present"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 1488,
+          "quote": "Under the assumption that responsibility ought to be attrib-"
+        }
+      ],
+      "evidence_scope": "Primary human vignette experiment, N=1653. The source operationalizes the gap by summing independently rated human-role responsibility and comparing human-only versus hybrid teams. Its interpretation assumes AI is not an eligible moral agent; including AI ratings removes most aggregate contrasts.",
+      "boundary": "The source's human-only sum has one fewer human recommender in the hybrid condition. Additivity, cardinal comparability and conserved total responsibility are assumptions, not validated facts. A smaller aggregate does not establish less responsibility for every remaining human, nobody accountable, unjust exoneration, actual control loss, legal immunity, or real-world harm. Normative eligibility of AI is contested, not settled by a poll.",
+      "ai_evidence_status": "Human attribution phenomenon under an explicit aggregation/eligibility rule; proposed AI accountability-audit analogue untested",
+      "ai_proposal": "Untested AI analogue: ask an assistant to map duties, causal contributions, authority and remedies in matched human-only and human–AI workflows. Test whether adding an AI causes it to omit otherwise justified human or institutional duties. Hold the role roster and information constant where possible; evaluate role-specific reasons and omitted duties rather than assume summed Likert scores measure a conserved moral quantity.",
+      "relates_to": [
+        "problem-of-many-hands",
+        "agency-laundering",
+        "moral-crumple-zone",
+        "anthropomorphism"
+      ]
+    },
+    {
+      "term": "Lower aggregate human responsibility can coexist with greater responsibility for specific humans",
+      "target_id": "agency-laundering",
+      "decision": "enrich-existing",
+      "definition": "In this medical-team experiment, a lower human-only responsibility sum did not imply that the physician, hospital or developer individually benefited from a blame shield.",
+      "novelty_rationale": "Adds an aggregation and role-comparison boundary to the existing laundering entry; a role substitution is not evidence of deliberate responsibility evasion.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 1490,
+          "quote": "by a colleague (5.22 vs. 5.02, p = 0.002, unpaired t test)."
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 1490,
+          "quote": "the hospital management was found to bear"
+        }
+      ],
+      "evidence_scope": "Pooled ratings: physician AI versus colleague assistance 5.22 versus 5.02; hospital 3.10 versus 2.70; AI developer versus colleague instructor 2.63 versus 1.86. Physician remains the most-responsible role. Aggregated human-only ratings exclude the replaced advising colleague in the AI condition.",
+      "boundary": "Developer and instructor have different functions, so those ratings do not isolate a simple source-label effect. No deliberate laundering, delegation motive, punishment evasion or subsequent physician behaviour was measured."
+    },
+    {
+      "term": "Belief in possible machine consciousness correlates with moral-responsibility attribution",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Respondents who more strongly believed machines might someday become conscious assigned more responsibility to the AI recommender.",
+      "novelty_rationale": "Adds a specific human belief correlate without treating present machine consciousness, anthropomorphic design or causal belief change as demonstrated.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 1492,
+          "quote": "may at one point develop consciousness."
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 1492,
+          "quote": "responsibility to the AI-based recommender system"
+        }
+      ],
+      "evidence_scope": "Post-vignette consciousness-potential agreement correlated with AI responsibility (p<.001); human-recommender responsibility association p=.851. These are separate reported associations, not proof of a tested difference between correlations or a mediation mechanism.",
+      "boundary": "Future possibility is different from asserting that the described system is presently conscious. The measured belief was not randomized, actual mental states were not tested, and a correlation does not show that anthropomorphism caused accountability erosion."
+    },
+    {
+      "term": "High physician responsibility is not sufficient evidence of a moral crumple zone",
+      "target_id": "moral-crumple-zone",
+      "decision": "enrich-existing",
+      "definition": "The physician retained high attributed responsibility across recommender types, including when ignoring correct or following incorrect advice.",
+      "novelty_rationale": "Adds a boundary case: a human can legitimately retain clinical duties; high ratings alone do not demonstrate unfair concentration of blame on a powerless operator.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 1492,
+          "quote": "remains primarily responsible from our subjects’ point"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 1493,
+          "quote": "the main responsibility"
+        }
+      ],
+      "evidence_scope": "Fictional physicians have final diagnostic authority in all scenarios. The study does not independently manipulate limited intervention opportunity, unequal governance power or disproportionate sanction.",
+      "boundary": "Do not label all retained human responsibility as a crumple zone. The definition requires a mismatch between blame and control/duties, which these ratings do not establish."
+    }
+  ],
+  "methodological_limits": [
+    "Responsibility is rated independently for six roles and then summed. The article does not establish that ordinal 0–6 ratings form an additive, conserved moral quantity.",
+    "The human-only sum includes the advising colleague in one condition and excludes the artificial replacement in the other. It therefore changes the number/type of counted human roles, even while the total role roster remains six. Specific remaining humans may receive more responsibility.",
+    "Developer versus colleague instructor and AI versus human colleague are substantively different roles. A lower aggregate does not isolate a conscious transfer of a fixed quantity of blame.",
+    "The eligibility premise that AI cannot bear moral responsibility is explicit and contested in the article's own philosophical discussion. Lay attribution does not settle that premise or determine legal liability.",
+    "The report frequently interprets nonsignificant all-agent aggregate contrasts as similar; no equivalence test is supplied. One incorrect-diagnosis/override subgroup still differs (13.43 versus 14.67, p=.030).",
+    "Numerous unpaired tests and subgroup comparisons are reported; no broad multiplicity correction is stated in the supplied results. Small p=.018–.046 contrasts should not be promoted to robust universal patterns.",
+    "Separate p-values for consciousness-belief correlations with AI and human ratings do not themselves demonstrate a significant difference between those correlations. The causal 'leads to' language in the discussion exceeds a measured post-vignette association.",
+    "The initial 2376 panel respondents were filtered to 1653 by two comprehension questions. The retained sample should not be assumed to preserve every feature of population representativeness.",
+    "Correct and incorrect diagnosis conditions measure moral responsibility, not separate praise and blame scales. They should not be automatically pooled with a credit–blame asymmetry test.",
+    "Possible greater tolerance of diagnostic errors, weakened clinician incentives and voluntary bridging of responsibility gaps are hypothesized consequences or remedies; none was behaviourally tested.",
+    "The findings concern a German lay panel and breast-tumor vignettes, not actual doctors, malpractice judgments, diagnostic performance, patient outcomes or globally uniform intuitions.",
+    "Bibliographic year is disclosed: issue 2025, online first 2024; no duplicate paper or independent study is created from those dates."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0026.json",
+      "finding": "Leichtmann used independent role blame ratings and found no AI/self tradeoff. This article's aggregate gap is a different operationalization, so the findings should not be forced into a contradiction or a universal zero-sum blame model."
+    },
+    {
+      "related_review": "references/pdf-reviews/0004.json",
+      "finding": "Lima separated responsibility dimensions, authority and role duties. This source's generic moral-responsibility ratings cannot establish that capacity, blameworthiness and answerability each moved identically."
+    },
+    {
+      "related_review": "references/pdf-reviews/0022.json",
+      "finding": "The surgical-robotics discussion motivates control-responsibility mismatches, but a final-authority physician receiving high responsibility is not, by itself, evidence of unfair operator scapegoating."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Normative responsibility gap",
+      "reason": "Philosophical theories of justified responsibility shortfalls are discussed and contested. Index the explicitly measured perceptual construct; do not count every theory as another observed behaviour."
+    },
+    {
+      "term": "Distributed responsibility",
+      "reason": "A proposed governance/accountability framework, not a separately demonstrated behavioural deficit."
+    },
+    {
+      "term": "AI-induced diagnostic negligence",
+      "reason": "Lower accountability might change incentives, but neither clinical effort nor negligence was tested."
+    }
+  ],
+  "limitations": [
+    "One scoped attribution concept added, with the changing human-role count and contested aggregation premise explicit.",
+    "No assertion that AI-assisted physicians or developers escaped responsibility; role-level results often point in the opposite direction."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "perceptual-responsibility-gap"
+    ],
+    "enriched": [
+      "agency-laundering",
+      "anthropomorphism",
+      "moral-crumple-zone"
+    ]
+  }
+}

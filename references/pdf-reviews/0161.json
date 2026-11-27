@@ -1,0 +1,300 @@
+{
+  "sequence": 161,
+  "source": {
+    "file_name": "S1480_Bauer_2026.pdf",
+    "source_id": "S1480",
+    "sha256": "428947701d23e1038aa67084cb6467c80cd14a343666927cd7d58a09b3b66d63",
+    "pdf_pages": 26,
+    "printed_pages": "1121–1146",
+    "version_note": "Business & Information Systems Engineering 68(5):1121–1146, October 2026; published online 20 July 2026. Received 29 September 2022 and accepted 15 April 2026. The publication year is not the date of participant recruitment.",
+    "verification_url": "https://api.crossref.org/works/10.1007/s12599-026-01014-z",
+    "verification_method": "All 26 supplied text pages read, including the bibliography. Figures 1–6 and the rotated Table 4 visually inspected on PDF pages 10, 11, 14, 16 and 18. Crossref checks verify article and two bibliography identities. The official current scikit-learn RandomForestClassifier signature was inspected narrowly; the paper's actual code and library version were not available."
+  },
+  "citation": {
+    "title": "The Dependency Dilemma: How Machine Learning Decision Aids can Undermine Skill Growth",
+    "authors": [
+      "Kevin Bauer",
+      "Michael Nofer",
+      "Benjamin Henrich",
+      "Hendrik Drachsler",
+      "Oliver Hinz"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1007/s12599-026-01014-z",
+    "venue": "Business & Information Systems Engineering 68(5):1121–1146",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "source_scope_note": "Randomized online experiment with 291 British Prolific participants learning a new cue-based puzzle. Initial aid availability improves assisted performance but is followed by lower unaided performance after unexpected removal. This is evidence about acquisition, not loss of established expertise. Trust/reliance mediation, ACT-R production compilation, boosting and long-term cognitive decline are not directly established.",
+    "access_limits": [
+      "All supplied pages and principal plots/tables read. External online appendices, full task instructions, raw participant data, estimation code, trained model and software version were not independently inspected.",
+      "Bibliographic checks and the official software signature are narrow identity/technical checks. The original ACT-R books, boosting papers, deliberate-ignorance paper and other cited primary studies were not fully read here."
+    ]
+  },
+  "study": {
+    "sample_and_design": "291 unique participants recruited in Great Britain through Prolific: randomized aid group 149 and unaided baseline 142. Each completes 12 simulations of five rounds, giving 17,460 decisions, not participants. Six simulations per stage; the aid appears only in treatment stage 1 and is unexpectedly removed in stage 2. Two practice rounds and attention checks. Approximately 31 minutes, average remuneration €4.44 including €2 participation fee. The main supplied text does not provide a separate attention-check exclusion flow.",
+    "task": "Novel financial-framed logic task, not professional investment work. A hidden good/bad economy is fixed within each five-round simulation, with high-market probabilities .7/.3. Four conditional binary expert cues have different accuracies by economy; history and true market feedback remain visible. Stock pays four or zero and bond always two. The hidden economy is disclosed at simulation end. All 12 simulations use the same generating rules; actual concept drift is not manipulated.",
+    "model": "Static scikit-learn random forest, 200 trees of depth three. One million synthetic rows split 750,000 training/250,000 test; five-fold tuning and random grid search described. Test accuracy 85.4%, experimental model accuracy 84.6%, stage 1 84.8% and counterfactual stage 2 84.5% where predictions are no longer displayed. A nine-researcher pilot is not general external validation. Participants receive accuracy/model information and hear that the model outperformed pilot humans. The listed learning-rate hyperparameter needs clarification.",
+    "primary_outcome": "Share of payoff-maximizing choices, an indirect performance measure of acquired cue knowledge. Stage 1 baseline 60.2% versus aid 71.7%, an 11.5 percentage-point gain, reported p<.001. Stage 2 baseline 65.1% versus previously aided 61.9%, a 3.2-point gap, reported p=.021. Across both stages, aid 66.8% versus baseline 62.7%, p<.001. Thus the immediate/cumulative benefits and the unaided deficit coexist. No separate declarative/procedural knowledge test or long-term follow-up.",
+    "learning_models": "Baseline performance rises from 55.6% to 63.8% across stage 1; aid from 68.7% to 73.9%. Table 3 uses choice-level linear probability models with individual/round fixed effects and cue/market controls: baseline simulation coefficient .019, p<.001, with stage-2 slope change −.021, p=.001; aided simulation slope .007, p=.079, with smaller growth than baseline, reported between-trend F-test p=.035. Stage-2 slopes are not distinguishable from zero. Robust standard errors are specified, but participant clustering and the chi-square sampling unit are not sufficiently clear to independently verify inferential calibration.",
+    "recovery": "Table 4 aid-minus-baseline gaps for simulations 7–12 are −.05, −.04, −.02, −.02, −.04, −.02, with p=.06, .092, .391, .388, .127, .406. Smaller/nonsignificant later gaps are not formal equivalence or evidence of complete recovery. The aid group's own stage-2 growth is nonsignificant. The session does not establish permanent impairment or a guaranteed catch-up time.",
+    "initial_error_subgroups": "12.1% of 149 aided participants, approximately 18 people, encounter a naturally occurring first-prediction error. They later overrule 25.9% of recommendations versus 20.4% after a correct first prediction, p=.004. Later model error rates are 15.5%/15.0%, p=.679; this null does not prove all histories are equivalent. Stage-1 low/high accuracies 69.2%/72.1%, p=.166; stage-2 65.4%/61.4%, direct subgroup p=.075. This is a weak result under the authors' ten-percent convention, not p<.05. Low versus baseline p=.899 is not equivalence; high versus baseline p=.001 does not substitute for the direct subgroup comparison.",
+    "identification": "Randomization supports an effect of aid exposure on later unaided choices. Unexpected removal also changes expectations; there is no sham-removal or continued-aid control that separately isolates disruption from latent knowledge. Initial error is generated by random task realizations, not a separately manipulated trust scale/mediator. Error salience, effort and realized difficulty can also matter. The authors explicitly acknowledge incomplete measurement of perceptions and reliance on page 22. Do not present the proposed reliance pathway as conclusively identified.",
+    "conceptual_scope": "ACT-R procedural learning and boosting are theoretical/background or future-intervention material. XAI, private initial judgments, skill training and fallibility reminders are recommendations, not tested treatment arms. The experimental aid is not an LLM; cited GenAI surveys/EEG studies are secondary discussion here, not an independent replication or proof of cognitive debt."
+  },
+  "summary": "Add production compilation and boosting with theory/intervention boundaries. Enrich never-skilling with randomized evidence about learning a new task, while keeping established-skill loss, unmeasured effort and calibrated reliance separate. Record weak subgroup evidence, absence of equivalence testing, two corrected bibliography identities and an unresolved random-forest methods parameter.",
+  "findings": [
+    {
+      "term": "Production compilation",
+      "id": "production-compilation",
+      "decision": "new-entry",
+      "definition": "Compiling practiced problem-solving steps into condition–action rules that reduce the need to retrieve and interpret declarative knowledge during performance.",
+      "category": "Memory",
+      "origin": "ACT-R / cognitive theories of skill learning",
+      "ai_evidence_status": "A human learning mechanism described through secondary ACT-R sources. The experiment measures choices, not compiled production rules, procedural memory or an analogous AI learning mechanism.",
+      "ai_proposal": "Test an adaptive agent's ability to turn explicitly guided procedures into reliable reusable routines, then transfer them to changed cases and audit the retained rationale. Hold tools and task information constant. Separate weight updates, stored programs and in-context shortcuts; none alone establishes the human ACT-R mechanism.",
+      "relates_to": [
+        "habit-formation",
+        "never-skilling",
+        "cognitive-offloading",
+        "shortcut-learning"
+      ],
+      "novelty_rationale": "Habit formation concerns increasingly automatic context-linked responses. Compilation concerns how practiced problem solving becomes an executable procedure; it can be accurate and flexible. Declarative chunk representation and spurious shortcut learning do not exhaust this mechanism. No existing name or definition covers production compilation.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 1124,
+          "quote": "through a process referred to as production compilation."
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 1124,
+          "quote": "one can think of as condition-action pairs"
+        }
+      ],
+      "evidence_scope": "Section 2.1 explains an ACT-R account of declarative-to-procedural learning and practice. This is conceptual source evidence, not a measured mediator or independent test of ACT-R. The original Anderson sources were not independently read in this review.",
+      "boundary": "Efficient performance or repeated output alone does not show production compilation. Distinguish procedural learning from rote repetition, habit, declarative chunking and brittle cue shortcuts. A fixed model calling a tool need not acquire a durable routine; no subjective or neurological equivalence is asserted."
+    },
+    {
+      "term": "Boosting",
+      "id": "boosting",
+      "decision": "new-entry",
+      "definition": "Building people's cognitive or motivational competencies so they can make better decisions and pursue their goals with greater independent capability.",
+      "category": "Metacognition",
+      "origin": "Behavioral decision research / competence-building interventions",
+      "ai_evidence_status": "A human intervention approach described in the literature review and proposed for future AI-aid design. No boosting intervention or independent competence gain is experimentally tested in this paper.",
+      "ai_proposal": "Compare answer-only assistance with instruction that teaches a transferable skill. Assess unaided accuracy, calibration and transfer after support removal, while respecting the person's goals and consent. Assistance should count as a boost only when competence improves, rather than because it persuades or performs the task for the user.",
+      "relates_to": [
+        "never-skilling",
+        "deskilling",
+        "calibrated-reliance",
+        "production-compilation"
+      ],
+      "novelty_rationale": "Boosting is an intervention strategy aimed at users' capability, distinct from outsourcing cognition, observing reduced skill or matching reliance to current aid quality. It is not statistical ensemble boosting. No existing entry describes this competence-building approach.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 1128,
+          "quote": "concept that focuses on enhancing individuals’ cognitive"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 1128,
+          "quote": "altering the choice architecture"
+        },
+        {
+          "pdf_page": 22,
+          "printed_page": 1142,
+          "quote": "avenue for future research"
+        }
+      ],
+      "evidence_scope": "The paper distinguishes boosts from nudges and cites Hertwig/Grüne-Yanoff and related sources. Competency training is a proposed mitigation, not a tested arm. The original intervention literature remains independently unread here; do not claim this experiment proves that boosting prevents a deficit.",
+      "boundary": "A helpful answer, persuasive explanation or short-term performance improvement need not increase independent competence. Nudges change choice architecture; boosts aim to strengthen capability, although an intervention may combine both. Benefits, persistence and transfer require measurement. This is not gradient boosting or proof of human-like learning inside a model."
+    },
+    {
+      "term": "Never-skilling",
+      "target_id": "never-skilling",
+      "decision": "enrich-existing",
+      "definition": "Failure to acquire foundational skills when automation replaces the learning or practice through which those skills would develop.",
+      "novelty_rationale": "The existing acquisition concept directly fits the new puzzle-learning design; do not create a second label for the paper's broad deskilling terminology.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 1122,
+          "quote": "acquisition of new knowledge"
+        },
+        {
+          "pdf_page": 19,
+          "printed_page": 1139,
+          "quote": "exhibit relatively lower decision-making performance once"
+        }
+      ],
+      "evidence_scope": "Randomized aid exposure improves assisted choices, then the previously aided group scores 61.9% versus 65.1% unaided baseline after removal, p=.021. This supports reduced acquisition in one novel task, not complete prevention of all learning. The outcome is choice accuracy, not a separate knowledge test. Unexpected removal, a short session and unclear clustering details limit interpretation. Reliance/trust mediation is not definitively measured.",
+      "boundary": "Partial impairment of acquiring a new skill differs from loss of an existing skill. Do not infer permanent cognitive decline, universal harm from assistance or an established trust pathway. The overall aided group still earns better performance across both stages; interventions to preserve learning remain untested."
+    },
+    {
+      "term": "Deskilling",
+      "target_id": "deskilling",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Loss or weakening of previously acquired skills through reduced independent use or practice.",
+      "novelty_rationale": "Add a source boundary rather than treating the authors' broad deskilling term as direct evidence of established-skill loss.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 1122,
+          "quote": "learning something entirely new"
+        }
+      ],
+      "evidence_scope": "The authors explicitly frame their contribution as acquisition of new knowledge. There is no pre-existing expertise baseline or longitudinal decline of a previously mastered skill. This is a classification correction, not another independent paper directly measuring the narrower ontology definition of deskilling.",
+      "boundary": "A lower post-aid score can reflect prevented acquisition, transition effects or established-skill loss; the design must distinguish them. A novel puzzle study does not by itself establish deterioration of professional expertise."
+    },
+    {
+      "term": "Calibrated reliance",
+      "target_id": "calibrated-reliance",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Using assistance to a degree justified by its task-specific competence, relevance, uncertainty and the consequences of error.",
+      "novelty_rationale": "Record the limits of calling successful short-term use overreliance or treating recommendation agreement as a validated trust measure.",
+      "evidence": [
+        {
+          "pdf_page": 22,
+          "printed_page": 1142,
+          "quote": "we cannot definitively ascertain"
+        },
+        {
+          "pdf_page": 19,
+          "printed_page": 1139,
+          "quote": "p = 0.075"
+        }
+      ],
+      "evidence_scope": "An approximately 85%-accurate aid outperforms unaided participants; following it can be instrumentally sensible. Recommendation overruling is observed, but appropriate case-level reliance and the trust mediator are not validated. First-error subgroups contain about 18/131 people and differ in later unaided performance at p=.075, not p<.05. The authors explicitly acknowledge incomplete perception/reliance measurement.",
+      "boundary": "Less use is not automatically better calibration. Separate immediate accuracy, long-term learning and a person's authorized objective. Nonsignificant comparisons do not prove equivalence, and a naturally observed early error does not identify trust as the exclusive causal pathway."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Section 3.5, PDF page 13, random-forest tuning",
+      "issue": "The methods list learning rate among tuned random-forest hyperparameters.",
+      "reliable_correction": "The official current scikit-learn RandomForestClassifier signature contains n_estimators, max_depth, max_features and related tree/bootstrap parameters, but no learning_rate parameter. Clarify whether this is a copied description, another estimator or a custom implementation. The supplied PDF does not establish which; do not change the model identity or invent a corrected parameter value.",
+      "verification_url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html",
+      "verification_scope": "Current official constructor signature only. The authors' code and pinned library version were not inspected."
+    },
+    {
+      "location": "Hertwig, Kozyreva and Herzog reference, PDF page 24",
+      "issue": "The deliberate-ignorance article is dated 2022 and the author order is incorrect.",
+      "reliable_correction": "Blinding to Circumvent Human Biases: Deliberate Ignorance in Humans, Institutions, and Machines is by Ralph Hertwig, Stefan M. Herzog and Anastasia Kozyreva. DOI 10.1177/17456916231188052, online 5 September 2023, Perspectives on Psychological Science 19(5):849–859, September 2024. Use the appropriate online/issue date and correct author order; 2022 is not verified.",
+      "verification_url": "https://api.crossref.org/works/10.1177/17456916231188052",
+      "verification_scope": "Bibliographic metadata only, not an independent full-text reading or behavior-paper credit."
+    },
+    {
+      "location": "Colarelli and Thompson reference, PDF page 24",
+      "issue": "The page range is printed as descending 374–351.",
+      "reliable_correction": "Stubborn Reliance on Human Nature in Employee Selection: Statistical Decision Aids Are Evolutionarily Novel, Industrial and Organizational Psychology 1(3):347–351 (2008), DOI 10.1111/j.1754-9434.2008.00060.x. Correct the range to 347–351.",
+      "verification_url": "https://api.crossref.org/works/10.1111/j.1754-9434.2008.00060.x",
+      "verification_scope": "Crossref identity/pages only; the original full article was not read here."
+    },
+    {
+      "location": "Section 4.3, PDF page 19, subgroup significance",
+      "issue": "The source calls the high/low subgroup contrast statistically significant with p=.075.",
+      "reliable_correction": "The paper uses a ten-percent significance convention. Retain p=.075 and the small initial-error subgroup; do not paraphrase this as p<.05 or conclusive support for the trust mechanism. Low versus baseline p=.899 is a null test, not equivalence."
+    },
+    {
+      "location": "Section 4.2/Table 4, PDF page 18, catch-up wording",
+      "issue": "Later nonsignificant group gaps are described as participants catching up.",
+      "reliable_correction": "The displayed differences shrink but remain negative. No equivalence margin/test is reported and the aided group's stage-2 slope is nonsignificant. Describe attenuated gaps within this session rather than established recovery or a safe recovery time."
+    },
+    {
+      "location": "Background trust terminology, PDF page 5",
+      "issue": "A person's propensity to trust is described using inherent trustworthiness.",
+      "reliable_correction": "Distinguish the trustor's disposition to trust from the target's trustworthiness. Neither a trait description nor this terminology validates perceived or warranted trust in the experiment."
+    }
+  ],
+  "methodological_limits": [
+    "Choice-level observations are repeated within participants. Robust errors and fixed effects are described, but clustering and chi-square independence details require clarification; no raw-data reanalysis was performed and invalidity is not asserted as proven.",
+    "The cue-generating process remains stationary. Concept drift and outages motivate the study but are not empirically manipulated environmental mechanisms.",
+    "Randomized availability supports a treatment effect; it does not independently identify trust, cognitive effort, compiled production rules or neural engagement as mediators.",
+    "The first-error subgroup is small and not a separate trust intervention. A null later-error comparison does not demonstrate all other experiences are balanced.",
+    "This novel online puzzle does not establish loss of professional expertise, permanent impairment, general GenAI cognitive debt or effective skill-preservation interventions.",
+    "Neither a decrease after aid removal nor eventual nonsignificance establishes a specific durable learning mechanism or equivalence."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0153.json",
+      "finding": "The experiment supplies acquisition evidence relevant to automation dependence, but does not directly validate the broader conceptual deep-automation-bias framework or its feedback loop."
+    },
+    {
+      "related_review": "references/pdf-reviews/0157.json",
+      "finding": "Error intolerance, recommendation use, trust and subsequent learning are distinct outcomes. Unlike the unmeasured perfect-automation schema, this study observes initial-error histories, but still does not directly identify the proposed perception/reliance mechanism."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Concept drift",
+      "reason": "Secondary context describes data-generating change broadly. No drift occurs in this experiment. Avoid adding an environmental change label as a newly observed behavior or conflating all distribution shifts with a changed conditional target relation."
+    },
+    {
+      "term": "Probability matching",
+      "reason": "Already candidate-036. Discussed as a potential performance-proxy limitation, not directly measured here; no extra behavior-paper credit."
+    },
+    {
+      "term": "Cognitive offloading",
+      "reason": "Existing entry. Reduced independent consideration is a plausible account, but cognitive effort/attention is not directly measured; no new mechanism confirmation."
+    },
+    {
+      "term": "Theory of algorithmic mind",
+      "reason": "Speculative extension of theory-of-mind framing in discussion, not a separately defined/tested new behavior."
+    },
+    {
+      "term": "Cognitive debt",
+      "reason": "Cited GenAI work was not independently read here. Static random-forest puzzle performance is not an independent LLM/EEG replication."
+    }
+  ],
+  "limitations": [
+    "Secondary cited books, studies and practitioner reports are not newly completed reviews. Identity checks do not substitute for reading or verify every claim attributed to those sources.",
+    "No yearly mention series was measured. New entries retain unavailable timeline data, and no automatic ethical-violation or harm edges are added.",
+    "The draft research branch updates the existing catalogue/ontology; this review does not merge or publish the live website."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "production-compilation",
+      "boosting"
+    ],
+    "enriched": [
+      "never-skilling",
+      "deskilling",
+      "calibrated-reliance"
+    ]
+  }
+}

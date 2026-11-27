@@ -1,0 +1,199 @@
+{
+  "sequence": 40,
+  "source": {
+    "file_name": "S177_Jakesch_2022.pdf",
+    "source_id": "S177",
+    "sha256": "8e1358fae1333b22ec9b05d233eccbf5f68a8516b942b308314dd4f7cbcc54b7",
+    "pdf_pages": 20,
+    "printed_pages": "1–20",
+    "version_note": "Supplied arXiv:2205.07722v2 dated15 November2022, carrying FAccT2022 conference citation and DOI10.1145/3531146.3533097. This exact supplied version read; no separate publisher PDF obtained."
+  },
+  "citation": {
+    "title": "How Different Groups Prioritize Ethical Values for Responsible AI",
+    "authors": [
+      "Maurice Jakesch",
+      "Zana Buçinca",
+      "Saleema Amershi",
+      "Alexandra Olteanu"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1145/3531146.3533097",
+    "venue": "2022 ACM Conference on Fairness, Accountability, and Transparency (FAccT '22)",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "source_scope_note": "Human survey of responsible-AI value priorities, not a direct model-output or cognitive-bias experiment. False consensus is a motivating background account, not an empirically measured mechanism in the present survey.",
+    "access_limits": [
+      "All twenty extracted pages read, including recruitment, exclusions, regressions, caveats, references and full supplementary survey wording. Findings rely on explicit text/table values, not numerical estimates from unextracted bar heights.",
+      "External survey data, sampling/weighting documentation, analysis code and cited primary psychological studies were not independently retrieved or reproduced."
+    ]
+  },
+  "study": {
+    "recruited": {
+      "census_matched": 743,
+      "crowdworkers": 755,
+      "practitioners": 175,
+      "total": 1673
+    },
+    "retained_after_attention": {
+      "census_matched": 516,
+      "crowdworkers": 607,
+      "practitioners": 140,
+      "total": 1263
+    },
+    "regression_observations": 1246,
+    "scenarios": [
+      "medical",
+      "banking",
+      "marketing",
+      "streaming"
+    ],
+    "tasks": "Select five of twelve values; rate seven values in four deployment scenarios; five value trade-offs",
+    "design": "US samples with different recruitment/compensation, randomized scenario/value/response/conflict ordering; observational demographic and expertise comparisons"
+  },
+  "summary": "Retained practitioner, crowdworker and census-matched samples report different priorities for responsible AI, with context-sensitive trade-offs. This supplies a reason to test whose preferences an AI system represents, but does not demonstrate false consensus, discrimination or superior moral correctness in any demographic group. No new behaviour ID is warranted.",
+  "findings": [
+    {
+      "term": "Different group values do not themselves demonstrate false consensus",
+      "target_id": "upload-045",
+      "decision": "enrich-existing",
+      "definition": "False consensus involves incorrectly projecting one's own or one's group's views onto a broader population; observing different value priorities between groups alone does not measure that projection.",
+      "novelty_rationale": "The existing false-consensus concept already covers the background account. Adds the survey's concrete motivation and a missing measurement boundary, not a new practitioner-bias label.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "homogeneous communities are prone to false consensus effects"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "collective opinion of their own"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "Our results provide"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "limited insight into plausible drivers of differences in values."
+        }
+      ],
+      "evidence_scope": "Survey retained516 census-matched US respondents,607 crowdworkers and140 practitioners. Practitioners differ in selected values and some importance ratings. The paper cites Ross/Greene/House1977 for the false-consensus construct, but does not elicit participants' predictions of other groups' views; that original psychological paper was not independently read.",
+      "boundary": "Preference disagreement is not necessarily an inaccurate social belief or a moral failure. Different recruitment, expertise and demographic composition may contribute; the study does not identify projection as cause or test a model's own false-consensus behaviour. Untested AI application: compare predictions of an explicitly sampled audience with measured audience distributions, instead of assuming the developer's preference is universal."
+    },
+    {
+      "term": "Context-dependent value priorities are distinct from an isolated framing bias",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Value priorities vary across substantively different AI applications; the survey also randomizes wording/order to reduce response artifacts, without reporting an isolated equivalent-description framing effect.",
+      "novelty_rationale": "Adds a useful design and interpretation safeguard to existing framing rather than classify every context-sensitive ethical choice as biased.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "the arrangement of scenarios, values, and conflict questions was randomized."
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "the order of response options was randomly flipped per participant."
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "No normative"
+        }
+      ],
+      "evidence_scope": "Participants compare medical, banking, advertising and streaming settings with different consequences and entities; Appendix A.3 includes reversed trade-off wording. The results do not separately quantify a wording-only effect or assert that all substantive contexts should have identical priorities.",
+      "boundary": "Meaningful changes in stakes and rights can rationally change judgments. A framing-bias test should hold the relevant decision constant and compare equivalent presentations. Survey majorities do not by themselves justify sacrificing privacy, autonomy or other protections; the paper explicitly rejects deriving a normative ought from a descriptive is."
+    }
+  ],
+  "methodological_limits": [
+    "Opening abstract/introduction use recruited counts743/755/175. The analyzed attention-screened counts are516/607/140, totaling1263; do not claim1673 analyzed respondents.",
+    "Attention/comprehension exclusions remove227 census-panel respondents,148 crowdworkers and35 practitioners (about30.6%,19.6%,20%). Post-exclusion census representativeness is not independently established by the reported initial sampling match.",
+    "Regression tables contain1246 observations,17 fewer than retained1263. The supplied account does not explicitly resolve all exclusions/missingness for that difference.",
+    "Practitioners are a convenience sample (156 Twitter,19 company mailing list originally), with self-reported expertise; results do not represent every practitioner, organization or country.",
+    "Recruitment, compensation, self-selection and panel conditions differ across groups. Group coefficients are observational, not causal effects of professional expertise.",
+    "The seven rated principles and twelve selectable values are researcher-defined. Pilot wording improves comprehension but can frame interpretations, and the survey does not capture every ethical concern or explanation for a choice.",
+    "Substantive scenario differences mix domain, consequences, institutional context and likely stakes. They do not isolate stakes alone or an equivalent-description framing manipulation.",
+    "The survey forces selection of five values and presents conflict assumptions. Endorsement depends on those descriptions; it does not establish unavoidable real technical trade-offs or a full social-welfare optimum.",
+    "Likert responses are treated as interval-scaled and coefficients appear on a normalized scale. Do not interpret every coefficient as a raw five-point change or literal probability without the coding.",
+    "Table1 practitioner performance coefficient−.052 is not marked significant; autonomy+.005 is also not. Descriptive summaries of lower importance should not be turned into significant decreases for all seven adjusted outcomes.",
+    "Table2's practitioner fairness–performance coefficient−.091 is not significant; crowdworker+.152 is. A narrative sample difference or value-selection result is not an adjusted significant practitioner effect in that particular regression.",
+    "Many outcomes and demographic coefficients are tested. No global multiple-comparison correction is clearly reported; exploratory significance needs appropriate caution.",
+    "Demographic associations do not establish inherent ethical qualities, psychological causes or a rule to assign roles based on identity. Small subgroups and self-report limit precision and interpretation.",
+    "Claimed15%/27% explanations of practitioner differences are observational decompositions, not randomized causal mediation or evidence that changing composition alone guarantees a particular ethical result.",
+    "Experience with discrimination has different associations for fairness versus privacy and fairness versus performance. Do not simplify null findings in one comparison into no relationship anywhere or equivalence.",
+    "Familiarity with ML generally not significant is not proof of no relevant expertise effect; familiarity, actual knowledge, selection and professional role are distinct measures.",
+    "False consensus is discussed from cited background, but perceived public preferences are not elicited. The study measures group differences, not the error between assumed and observed public views.",
+    "Ethical opinion research can inform deliberation but is not normative authority. Majorities, expert status and representativeness cannot alone determine what ought to be done.",
+    "No model behavior, deployment decision, real discrimination, ethical compliance or downstream harm is directly tested in this survey. External cited books and primary studies remain unread here."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0015.json",
+      "finding": "Kieslich also elicits public AI-principle preferences. Both support separating public opinion, ethical rules and observed model behaviour; neither supplies a reason to replace the project's principles with survey counts."
+    },
+    {
+      "related_review": "references/pdf-reviews/0039.json",
+      "finding": "Russo's Reddit distribution is one target community, while Jakesch shows human value priorities can differ by sampled role and context. Choosing a benchmark is a substantive decision, not proof that one community represents all people."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Standpoint theory",
+      "reason": "A theoretical account of situated knowledge, not an additional observed behavioural tendency in this survey."
+    },
+    {
+      "term": "Bias towards deployment",
+      "reason": "Mentioned as a cited practitioner-risk example, not operationalized here. Requires original source reading and overlap review before adding."
+    },
+    {
+      "term": "Values levers",
+      "reason": "An organizational reflection process discussed from another source, not a newly measured psychological bias."
+    },
+    {
+      "term": "Twelve responsible-AI values as twelve new behaviours",
+      "reason": "Values and trade-off preferences are not behaviour IDs; no duplicate moral categories added."
+    }
+  ],
+  "limitations": [
+    "No new IDs; existing false-consensus and framing entries receive scoped methodological evidence.",
+    "No demographic preference is converted into a normative ranking or an empirical model bias."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "upload-045",
+      "b035-framing-effect"
+    ]
+  }
+}

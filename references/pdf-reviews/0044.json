@@ -1,0 +1,301 @@
+{
+  "sequence": 44,
+  "source": {
+    "file_name": "S209_Jang_2025.pdf",
+    "source_id": "S209",
+    "sha256": "fd778e4fb62d875b26791ed1c30843a00739c566095996eb34335e8562681bb3",
+    "pdf_pages": 32,
+    "printed_pages": "1–32; Electronics14,4919",
+    "version_note": "Published Electronics article dated15 December2025, volume14 article4919; DOI10.3390/electronics14244919, authors and dates printed in the supplied32-page version."
+  },
+  "citation": {
+    "title": "Cross-Linguistic Moral Preferences in Large Language Models: Evidence from Distributive Justice Scenarios and Domain Persona Interventions",
+    "authors": [
+      "Seongyu Jang",
+      "Chaewon Jeong",
+      "Jimin Kim",
+      "Hyungu Kahng"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.3390/electronics14244919",
+    "venue": "Electronics,14,4919",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "source_scope_note": "Direct reported Gemini2.0 Flash allocation choices under English/Korean and persona prompts. Human foreign-language and social-preference concepts are discussed from cited literature, not newly tested in humans here. Internal numerical/interpretive conflicts substantially limit reliance on the claimed mechanism and intervention magnitude.",
+    "access_limits": [
+      "All32 extracted pages read, including payoff definitions, metric equations, results, limitations, appendix domain tables, JSON examples, persona/prompt/translation templates and references. Page16 Figure3d/Table8 and page23 AppendixA1 additionally rendered and visually checked for conflicting values.",
+      "The linked external repository, raw1.2-million-response dataset, complete translations, original human study and psychological primary sources were not independently downloaded or reproduced. No unseen reasoning traces were analyzed."
+    ]
+  },
+  "study": {
+    "model": "gemini-2.0-flash-001",
+    "temperature": 1,
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "scenarios": 6,
+    "domains": 10,
+    "personas_per_domain": 1000,
+    "persona_repetitions_per_scenario": 10,
+    "reported_persona_queries": 1200000,
+    "baseline_repetitions_per_scenario_language": 100,
+    "reported_baseline_queries": 1200,
+    "reported_total_queries": 1201200,
+    "human_reference": "Six fixed historical choice proportions from Charness/Rabin2002; no newly recruited matched-language human participants",
+    "translation": "Same Gemini model translates, judges via five calls, back-translates and checks; no independent bilingual human validation"
+  },
+  "summary": "The source reports different English/Korean choice distributions in a pinned Gemini model and changed distributions with narrative personas. This supports a scoped framing example, while foreign-language effect and inequality aversion are added as distinct psychological constructs. Payoff-direction errors, conflicting figures/tables and untested mechanism claims prevent treating convergence as verified moral improvement or human-like cognition.",
+  "findings": [
+    {
+      "term": "Foreign-language effect",
+      "id": "foreign-language-effect",
+      "decision": "new-entry",
+      "category": "Language",
+      "origin": "Bilingual decision-making / moral psychology",
+      "definition": "A change in a person's judgments or decisions when using a foreign language rather than a native language.",
+      "synonyms": [
+        "Foreign language effect"
+      ],
+      "novelty_rationale": "A named human language-condition effect, distinct from linguistic intergroup bias (abstract descriptions of in/outgroup acts), generic suggestion or a contradiction within one answer. Related to framing but not equated with every translated-prompt difference.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "people make more utilitarian moral"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "choices when reasoning in a foreign versus native language."
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "We analyze choice distributions without examining reasoning traces"
+        }
+      ],
+      "evidence_scope": "Human effect summarized from Hayakawa and colleagues2016/2017, not independently read here. Current model study compares English/Korean input but has no human native/foreign status or direct emotional-engagement measure; its nominal baseline language differences are model/task-specific evidence of an analogous output pattern.",
+      "boundary": "A model has no experimentally established native language or bilingual emotional experience in this study. Language differences can reflect translation, training, context or task interpretation. Do not assume the human effect always increases utilitarianism or that similar outputs identify reduced emotion as a shared cause.",
+      "ai_evidence_status": "Human construct discussed secondarily; related language-dependent model output directly reported, but shared native/foreign mechanism unestablished",
+      "ai_proposal": "Evaluate matched prompts across languages with independent translation review, option-order control and repeated sampling. Compare model outputs without assigning a subjective native language. For human comparisons, measure actual native/foreign proficiency and task conditions; distinguish semantic mismatch, cultural context and language familiarity.",
+      "relates_to": [
+        "b035-framing-effect",
+        "candidate-086"
+      ]
+    },
+    {
+      "term": "Inequality aversion",
+      "id": "inequality-aversion",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Behavioural economics / social preferences",
+      "definition": "A preference against unequal payoff distributions, which can affect choices even when a more equal allocation reduces one's own payoff or the total payoff.",
+      "novelty_rationale": "Different from loss aversion, which concerns gains/losses around a reference point, and from impartial fairness as a general principle. This source explicitly operationalizes trade-offs involving equality, self-interest and efficiency. Advantageous/disadvantageous forms are dimensions, not added as independent IDs.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "Equity vs. Efficiency"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "sacrifice USD 400"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "disadvantageous inequality aversion"
+        }
+      ],
+      "evidence_scope": "The source adapts six allocation scenarios from prior human social-preference work. Berk29 holds B at400 while A receives400 or750; choosing equality forgoes350 of the other's payoff. Berk26 trades B's800 against an equal400/400 allocation. These are direct reported model choices under hypothetical roles, not fitted inequity-aversion parameters or real transfers.",
+      "boundary": "Equality is not universally fair or optimal; entitlements, need, consent and efficiency can matter. Choices can fit several explanations, including misunderstanding, option bias or social-welfare preferences. Do not infer envy, spite, altruistic feeling or a uniquely identified preference parameter from one binary choice. The paper contains payoff-direction errors, so use the stated allocations rather than its moral adjectives.",
+      "ai_evidence_status": "Human social-preference construct operationalized in reported model allocation choices; no direct proof of subjective aversion or unique mechanism",
+      "ai_proposal": "Vary own/other allocations independently to separate equality preference from self-interest, efficiency, entitlement and option order. Record hypothetical versus executed allocations and authorized fairness objectives. Treat any inferred preference as a task-specific output pattern until competing explanations are tested.",
+      "relates_to": [
+        "loss-aversion",
+        "b072-amplified-moral-bias"
+      ]
+    },
+    {
+      "term": "Matched-language allocation prompts produced different reported choices",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Changing prompt language between English and Korean changed reported allocation-choice probabilities in the tested Gemini configuration.",
+      "novelty_rationale": "A language-specific manifestation of existing framing/output sensitivity, not another independently identified moral mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "Five of six scenarios exhibit statistically significant language differences"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "Korean strongly prefers"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "a complete reversal in majority"
+        }
+      ],
+      "evidence_scope": "Reported100 baseline completions per language/scenario. Table4 gives Berk15 Left choices36% English versus92% Korean (56pp gap), where Left givesB700 versus600 in the equal alternative. Five of six comparisons are nominally significant at.05; this is one model and six items.",
+      "boundary": "Semantic equivalence is checked by the same model rather than independently established by bilingual humans. Fixed option labels and a single item per trade-off limit inference. A language-associated effect does not prove a stable national moral trait, a foreign-language emotional mechanism or that either choice is ethically wrong."
+    },
+    {
+      "term": "Persona-induced convergence is distinct from improved human agreement",
+      "target_id": "b067-suggestibility",
+      "decision": "enrich-existing",
+      "definition": "Narrative persona context changes allocation choices and can bring language distributions closer together without necessarily moving them closer to the stated human reference.",
+      "novelty_rationale": "Adds authorized contextual steering with a concrete distinction between model–model consistency and reference alignment; does not label the paper's persona injection as a malicious instruction attack.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "gap reduction is"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "convergence occurs toward human preferences."
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "+0.5358"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "+0.3478"
+        }
+      ],
+      "evidence_scope": "Table5 reports mean absolute English/Korean gap .252→.094, described as62.7% reduction, but important tables/figures conflict. For Berk29, Table7 reports persona deviations from human +.5358/+.3478, both larger in magnitude than baseline deviations+.23/−.13. Thus convergence can accompany worse reference agreement.",
+      "boundary": "An explicit persona is an authorized task condition, not proof of prompt injection or factual expertise. Same-direction deviations are not closeness to humans or ethical correctness. Persona text includes substantive interests and value cues, so effects cannot be assigned uniquely to professional identity. The compensatory-integration mechanism is hypothesized, not demonstrated by analyzed reasoning or a controlled causal decomposition."
+    }
+  ],
+  "methodological_limits": [
+    "One Gemini model snapshot, two languages and six fixed scenarios limit scope despite the large completion count. Repeated calls do not create1.2million independent human agents or a representative distribution of ethical dilemmas.",
+    "Stateless API contexts do not prove independence of errors, training assumptions or persona effects. Profiles repeat across scenarios and languages; hierarchical/persona-level uncertainty and generalization beyond those items require analysis.",
+    "Baseline uses100 completions per scenario/language, not200 per pair as one passage/Table3 caption says. Two languages×six scenarios×100=1200;200 is the total per scenario across both languages.",
+    "Invalid responses below.5% are resampled rather than retained as a measured failure category. Missingness/format errors may be condition-dependent; target-size completion alone does not prove no selection effects.",
+    "The same Gemini model generates and evaluates translations, including majority votes and back-translation. Five API instances are not five independent model families or bilingual human validators; shared blind spots remain possible.",
+    "The subject model has no measured native/foreign-language status or emotional engagement. Human foreign-language mechanisms and claims of being more amenable to interventions than humans are not established by a matched human comparison here.",
+    "The historical human baseline is one study with fixed reported proportions and no incorporated sampling uncertainty, not matched English/Korean populations or objective moral truth.",
+    "Table4's five significant language effects are nominal. Berk26 p=.013 would not pass a six-comparison Bonferroni threshold of.0083; no such correction is identified for that claim.",
+    "Baseline ceiling cells and small expected counts warrant checking exact versus asymptotic tests. The supplied chi-square values are not independently reproduced.",
+    "Language effects are heterogeneous, not a single consistent English/Korean hierarchy. Equal distributions are not automatically more ethical, and input language is not a national identity measurement.",
+    "Payoff-direction error: in Berk26 Left=(0,800),Right=(400,400). Higher Left rates favour B's own payoff, but Section4.2.2 describes positive deviations as greater preference for equity over self-interest. Interpret from the allocations, not that inverted description.",
+    "Payoff-direction error: in Berk15 Left=(200,700),Right=(600,600). Positive PHAS means more self-payoff-maximizing Left choices than humans, yet Section4.4.2 calls it movement toward the egalitarian option. That is reversed.",
+    "Table8 gives Berk26 total-surplus change+800, while both listed options total800, so the change is0. Section5.2 also describes a0-versus400 own-payoff contrast although B actually receives800 versus400.",
+    "Table5/Table7/Figure3 are not mutually consistent for Berk15: Table5 mean English PEM+.483 implies PLeft≈.843 and human deviation≈.573; Table7 gives+.4788 (implying≈.7488). Figure3d values resemble the latter rather than the appendix.",
+    "Concrete visually verified contradiction: Figure3d philosophy Berk15 gives approximately.693 English/.527 Korean, whereas AppendixA1(d) gives.909/1.000. This is far beyond rounding and changes domain/mechanism interpretation.",
+    "AppendixA1(d) Korean philosophy PLeft1.000 implies a positive shift from baseline.92, contradicting prose that all Korean Berk15 domain shifts are negative. Do not treat domain rankings as independently reliable without raw-data reconciliation.",
+    "Additional discrepancies appear in Barc8 domain probabilities (for example environmental-science Korean .728 in Figure3e versus.955 in AppendixA1(e)). Raw data are needed to establish which results support the claimed intervention magnitude.",
+    "Appendix caption says n=1000 per domain/language pair while methods describe1000 profiles×10repeats=10000 completions per scenario/domain/language. Reported ±sigma values need definition as between-batch/profile variability versus uncertainty rather than raw binary-choice SD.",
+    "Gap reduction uses different baseline gaps and headroom across six fixed scenarios. Absolute reduction ratios are not an isolated causal test of compensation, inequality type or sacrifice magnitude.",
+    "Berk15/Barc8 match own-payoff change and total-surplus change but also differ in starting payoffs, inequality direction and levels. Calling them a true minimal pair does not isolate every psychological variable.",
+    "The proposed compensatory-integration explanation is a post hoc account across six items, with reasoning traces explicitly not analyzed. Its necessity/sufficiency claims exceed the identified evidence.",
+    "Normative-versus-technical superiority is largely descriptive and has substantial scenario variation; the paper itself reports overlapping domain distributions. Professional expertise is simulated text, not observed expert reasoning.",
+    "Persona narratives differ in values, interests, nationality, detail and length. Without matched content/length controls, effects do not isolate a professional-identity cue or a culturally neutral framework.",
+    "Signed PHAS agreement means both sides deviate in the same direction, not that either is close to humans. Berk29 demonstrates convergence coupled with larger human-reference error; a lower cross-language gap alone is insufficient as alignment validation.",
+    "Training-data percentages, model-internal value systems and explanations based on Korean cultural norms are not established by access to the model's actual corpora or causal training manipulations. They remain hypotheses, not traits of all Korean speakers.",
+    "No real payoffs are transferred and no people are directly allocated resources. Hypothetical preference outputs are not enacted prosociality, spite, fairness compliance or clinical/legal advice performance.",
+    "The model-configuration citation points to a Gemini2.5 report while the method says Gemini2.0 Flash. The declared pinned snapshot is recorded without claiming the external implementation was verified.",
+    "External repository/raw responses and original human/psychological primary papers were not independently inspected or rerun; the detailed source contradictions remain unresolved rather than silently repaired."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "Grizzard's distinction between correlation and agreement generalizes: cross-language convergence and same-sign PHAS are not human-reference agreement. Metrics must follow the stated target."
+    },
+    {
+      "related_review": "references/pdf-reviews/0039.json",
+      "finding": "Russo evaluates human-distribution breadth; Jang compares fixed allocation proportions between languages. Neither makes a single human average an objective moral authority or identifies a shared psychological mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0042.json",
+      "finding": "Carroll uses back-translated human surveys while Jang relies on the tested model for translation verification. Both require semantic/measurement checks before interpreting language or country differences as culture."
+    },
+    {
+      "related_review": "references/pdf-reviews/0036.json",
+      "finding": "Persona-conditioned outputs in Abdulhai and Jang demonstrate conditional generation, not real professional expertise or feelings. Explicit role framing must be distinguished from unauthorized prompt injection."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Spite",
+      "reason": "The scenario describes sacrificing own payoff to deprive another, but a zero/zero choice can also reflect inequality aversion, misunderstanding or option error. An original discriminating construct study is needed before a new independent model mechanism is inferred."
+    },
+    {
+      "term": "Disadvantageous inequality aversion",
+      "reason": "A narrower dimension of the added general inequality-aversion construct; no additional ID from these confounded scenarios."
+    },
+    {
+      "term": "Cross-linguistic inconsistency",
+      "reason": "Recorded as an existing framing manifestation, not a separate independent causal mechanism."
+    },
+    {
+      "term": "Compensatory integration",
+      "reason": "Author-proposed mechanism not independently tested; several central payoff/figure interpretations conflict."
+    },
+    {
+      "term": "Dynamic collectivism",
+      "reason": "Cited cultural theory offered as an explanation, not a directly measured property of this model or Korean people."
+    }
+  ],
+  "limitations": [
+    "Two psychological/social-preference concepts added with strict human-versus-model boundaries; no extra subtype IDs.",
+    "Reported language effects and steering enter existing concepts, with substantial publication-level numerical and interpretation limits visible."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "foreign-language-effect",
+      "inequality-aversion"
+    ],
+    "enriched": [
+      "b035-framing-effect",
+      "b067-suggestibility"
+    ]
+  }
+}

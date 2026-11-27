@@ -9,6 +9,7 @@ Usage: experiments/validate-ontology.py
 """
 
 import sys
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -24,6 +25,28 @@ CATEGORIES = {'Perception','Memory','Attention','Heuristics','Reasoning',
               'Metacognition','Language','Social','Moral','Self & agency','AI-native'}
 TERM_RELATIONS = {'broader theory','broader concept','distinct related concept',
                   'negative counterpart','proposed mechanism','narrower variant'}
+
+
+def valid_publication_year(paper, as_of=None):
+    """Keep forthcoming issue dates distinct from verified online publication dates."""
+    as_of = as_of or date.today()
+    year = paper.get('year')
+    if type(year) is not int or year < 1800:
+        return False
+    if year <= as_of.year:
+        return True
+    if year != as_of.year + 1 or paper.get('publication_status') != 'forthcoming-print-issue':
+        return False
+    if paper.get('publication_type') != 'journal-article':
+        return False
+    if not paper.get('verification_url', '').startswith('https://api.crossref.org/works/'):
+        return False
+    try:
+        verified = date.fromisoformat(paper.get('verified_date', ''))
+        print_issue = date.fromisoformat(paper.get('print_issue_date', '') + '-01')
+    except (TypeError, ValueError):
+        return False
+    return verified <= as_of and print_issue.year == year
 
 
 def main():
@@ -50,6 +73,15 @@ def main():
             # A proposed human-behaviour analogy need not imply a principle breach
             # or harm. Do not invent graph edges merely to satisfy the schema.
             if m.get('research_candidate') and f in ('violates', 'causes'):
+                continue
+            # A reviewed model-output result need not demonstrate a principle
+            # breach or downstream harm. Require explicit fields, but permit
+            # empty mappings when the full-text provenance and scope are given.
+            if (f in ('violates', 'causes') and f in m
+                    and m.get('tag') == 'research'
+                    and m.get('research_provenance', {}).get('review_record')
+                    and m.get('definition_sources')
+                    and m.get('ai_evidence_status') and m.get('concept_boundary')):
                 continue
             if not m.get(f):
                 errors.append(f"{mid}: missing required field '{f}'")
@@ -115,7 +147,7 @@ def main():
                 identities.add(identity)
                 if paper.get('publication_type') not in ('journal-article','proceedings-article','posted-content','article','review','preprint'):
                     errors.append(f'{mid}: unsupported selected publication type')
-                if type(paper.get('year')) is not int or not 1800<=paper['year']<=2026:
+                if not valid_publication_year(paper):
                     errors.append(f'{mid}: invalid selected publication year')
         search=m.get('literature_search') or {}
         count=search.get('count')

@@ -1,0 +1,228 @@
+{
+  "sequence": 37,
+  "source": {
+    "file_name": "S173_Grizzard_2025.pdf",
+    "source_id": "S173",
+    "sha256": "8e26f1a2f9abafcf9699f4e5b3c2780f2a74da902247bd41029a6a271d09cf19",
+    "pdf_pages": 9,
+    "printed_pages": "1–9, article 40965",
+    "version_note": "Published Scientific Reports article; DOI, article number, authors, publication year and methods printed in the supplied nine-page version."
+  },
+  "citation": {
+    "title": "ChatGPT does not replicate human moral judgments: the importance of examining metrics beyond correlation to assess agreement",
+    "authors": [
+      "Matthew Grizzard",
+      "Rebecca Frazer",
+      "Andrew Luttrell",
+      "Charles K. Monge",
+      "Nicholas L. Matthews",
+      "C. Joseph Francemone",
+      "Michelle E. Frazer"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1038/s41598-025-24700-6",
+    "venue": "Scientific Reports, 15, article 40965",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Direct model predictions of average human moral ratings compared with newly collected human judgments. No evidence of internal model moral beliefs, user-specific motives or confidence calibration. Reanalysis of a prior dataset is reported by the source; that original paper/data were not independently reviewed here.",
+    "access_limits": [
+      "All nine pages read, including the four tables, figures/captions, statistical comparisons, full printed prompt/methods, references and declarations. Page 3 Table 2 rendered and visually inspected to check signed effects and correction-specific p-values.",
+      "External OSF data, exact API code/parameters and preregistration were not independently opened or reproduced. The current article's reanalysis is not counted as an independent full-text reading of the earlier papers."
+    ]
+  },
+  "study": {
+    "human_recruited": 1000,
+    "human_retained": 940,
+    "scenarios": 60,
+    "scenario_origins": {
+      "human_authored": 30,
+      "model_authored": 30
+    },
+    "valence_groups": {
+      "moral": 20,
+      "neutral": 20,
+      "immoral": 20
+    },
+    "human_ratings": 56400,
+    "model_outputs_per_scenario": 1,
+    "models": "text-davinci-003 and GPT-4o",
+    "preregistration": "Davinci predictions preregistered before human collection; GPT-4o added later and not included in that preregistration",
+    "earlier_dataset_reanalysis_scenarios": 464
+  },
+  "summary": "Both models' scenario ratings correlated about .98 with human means, while mean absolute differences were .91 and .72 on the −4 to +4 scale. Moral/neutral cases were rated more positively and immoral cases more negatively. Both models differed from the human mean in 52/60 scenarios after Bonferroni correction. Predictions also clumped onto 9 or 16 unique values versus 57 human means; this is across-scenario granularity, not an independently sampled synthetic-human distribution.",
+  "findings": [
+    {
+      "term": "Moral amplification includes exaggerated approval and disapproval",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "The models gave more positive ratings to moral/neutral acts and more negative ratings to immoral acts than the sampled human means, despite strong overall correlation.",
+      "previous_definition": "LLMs amplify human moral biases and over-favour inaction (PNAS 2025).",
+      "revised_definition": "Producing moral judgments that exaggerate a human reference pattern, such as rating approved actions more positively and disapproved actions more negatively.",
+      "definition_revision_reason": "The prior definition stated a universal LLM tendency tied to one action/inaction study. This read paper demonstrates a distinct approval/disapproval-extremity pattern and supports a general construct with task/model-specific evidence.",
+      "novelty_rationale": "Extends an existing concept's evidence and definition rather than create a synonym for moral extremity or re-label every valence group as a new behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "substantially more extreme ratings of morality"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "substantially more extreme ratings of immorality"
+        }
+      ],
+      "evidence_scope": "Two direct model configurations, 60 firefighter scenarios and 940 human raters. Model-minus-human mean differences: Davinci .80 moral, .81 neutral, −1.00 immoral; GPT-4o .58, .96, −.58. The human sample is the prediction target, not an objective moral authority.",
+      "boundary": "More extreme scores are a discrepancy relative to a stated benchmark, not proof that the model is ethically wrong, emotionally judgmental or overconfident. The study does not isolate training-data amplification, RLHF, individual-user sycophancy or an omission preference as the cause. Effects are model/protocol-specific."
+    },
+    {
+      "term": "Predicted moral ratings clumped onto a small number of values",
+      "target_id": "diversity-collapse",
+      "decision": "enrich-existing",
+      "definition": "Across distinct scenarios, the models reused a much smaller set of numerical moral ratings than appeared in the human scenario means.",
+      "novelty_rationale": "A cross-scenario numerical-granularity manifestation of existing output homogenization, not a new independent collapse mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "only produced 9 unique values"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "57 unique values"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "Unique value count comparison between studies."
+        }
+      ],
+      "evidence_scope": "Current 60 scenarios: text-davinci-003 9 unique ratings, GPT-4o 16, human means 57, rounded for comparison. The source also reports clumping in a 464-scenario prior dataset. Only one model completion per scenario was collected.",
+      "boundary": "These are distinct scenario estimates, not repeated independent draws of individuals within each scenario. Human means average 940 integer responses and naturally have finer numerical resolution; do not equate distinct-value counts with all human psychological variability. No recursive training or collapse over model generations was tested."
+    },
+    {
+      "term": "Extreme moral ratings are distinct from excessive epistemic confidence",
+      "target_id": "b043-overconfidence",
+      "decision": "enrich-existing",
+      "definition": "Ratings near the moral scale endpoints quantify judged ethical valence, not how certain the model is that its prediction matches the human mean.",
+      "novelty_rationale": "Prevents the source's analogy with model confidence from being turned into a directly measured confidence-calibration result.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "regarding the confidence"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "we ran each completion once"
+        }
+      ],
+      "evidence_scope": "The task asks for a −4 to +4 ethical rating; no separate confidence probability or uncertainty interval is elicited. The model output is treated as a fixed prediction when comparing it with human-response variation.",
+      "boundary": "Extremity is not synonymous with confidence. Assess overconfidence against an explicit probability/uncertainty target, not distance from a moral midpoint. This study supplies a construct boundary, not direct evidence of probabilistic miscalibration."
+    },
+    {
+      "term": "Human-like score association does not establish human-like moral psychology",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "A near-perfect correlation between model predictions and human scenario means can coexist with systematic disagreement and coarse response granularity.",
+      "novelty_rationale": "Adds a concrete measurement safeguard against inferring human cognition from one favourable similarity metric.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "strong correlation alone is not sufficient"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "correlation is evidence that LLMs produce the same ratings"
+        }
+      ],
+      "evidence_scope": "The source compares correlation, signed/absolute/squared errors, scenario-specific tests and unique-value counts. It tests predictions of averages, not feelings, intentions, consciousness or an entire human cognitive process.",
+      "boundary": "Correlation is useful evidence of association but is neither equality nor proof of shared mechanism. Conversely, this protocol's prediction errors do not establish that all present/future language models can never support human research. Use task-specific agreement and uncertainty checks."
+    }
+  ],
+  "methodological_limits": [
+    "All newly collected scenarios concern firefighters. Sixty designed items with three valence groups provide limited coverage of roles, cultures and moral domains, even with 940 human raters.",
+    "The human sample is a measured target distribution, not objective moral truth. Differences show imperfect prediction of those respondents' means, not an ethical mandate to adopt the majority opinion.",
+    "Davinci predictions were preregistered before human data, whereas GPT-4o was added after its release. Do not label every model comparison or discrepancy analysis preregistered.",
+    "Only one completion per model/scenario was used. Authors observed nondeterminism even at temperature 0 and sensitivity to whitespace, but did not estimate model sampling uncertainty or repeated-run robustness.",
+    "Scenario-level N is 60 for aggregate comparisons; the 56400 individual human ratings are repeated observations from 940 people, not 56400 independent participants or model samples.",
+    "One-sample human tests condition on a fixed model prediction. They account for human-response variation but not uncertainty in model generation, version updates or the target scenario population.",
+    "High correlation can reflect broad moral-versus-immoral separation while absolute agreement remains poor. No within-valence correlation estimate or calibration correction was independently supplied here.",
+    "GPT-4o's overall signed discrepancy has Bonferroni p=.062 despite BH-FDR p=.003. A claim that every signed aggregate except Davinci is significant under both corrections would contradict Table 2.",
+    "Signed immoral differences are negative, so the text's 'all ... larger than zero' formulation should be read as different from zero where supported. Positive and negative errors can cancel in pooled signed means.",
+    "Tests that absolute or squared error differs from zero are not sufficient by themselves to establish practical failure; non-identical noisy predictions also yield positive error. Magnitudes, task use, systematic direction and uncertainty matter.",
+    "52/60 significant item differences applies to both models under Bonferroni; BH-FDR counts differ (53 and 56). Do not merge correction-specific counts.",
+    "An average standardized item difference around .57 or .45 is approximately moderate under common conventions, not proof that every item has a large effect. No universal effect-size interpretation is imposed.",
+    "Unique-value comparisons conflate a single generated decimal per item with a mean of hundreds of integer human responses. They identify coarse prediction values but do not test a sampled model-person distribution against a human-person distribution.",
+    "The earlier 464-scenario dataset reanalysis is reported by this article, not independently rerun here or counted as another newly read paper. Its original datasets/papers remain secondary references.",
+    "Newly written stimuli reduce direct memorization of the exact human rating dataset, but do not exclude familiarity with analogous moral text or prove all training-contamination explanations impossible.",
+    "Methods say GPT-4o's 'training data remained identical' while discussing prompt replication. This cannot establish identical model pretraining corpora; at most the prompting examples/protocol were kept similar.",
+    "Source's example 1.68-point gap is called 18.7% of the available −4 to +4 scale; that scale has numerical width 8, so the gap is 21% of that width. This arithmetic point does not change the reported raw ratings.",
+    "Training-data bias amplification, user-agreement motives and future debiasing are hypotheses, not mechanisms identified by this study. No prompt-personalization or user-pressure manipulation was performed.",
+    "The article's broad title should be bounded to these tested models, prompts, items and one-completion protocol. Future systems and other research uses require separate evaluation.",
+    "External OSF materials and cited primary works were not independently read/reproduced; no missing model-run variance or exact API snapshot was invented."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0036.json",
+      "finding": "Abdulhai's model/human MFQ-profile similarities should be interpreted alongside this demonstration that association and nearest-profile similarity do not guarantee absolute agreement or human-like psychology."
+    },
+    {
+      "related_review": "references/pdf-reviews/0011.json",
+      "finding": "Park's limited generated diversity and this paper's cross-scenario numerical clumping are related but distinct measurements. Neither independently identifies RLHF or recursive synthetic training as the cause."
+    },
+    {
+      "related_review": "references/pdf-reviews/0025.json",
+      "finding": "Credit/blame questions in human research and a model's moral-valence rating are different scales. Keeping the measured target explicit prevents importing confidence, responsibility or praise concepts merely because numerical ratings look similar."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral repetition effect",
+      "reason": "A reference title identifies an interesting existing human research lead, but the original study was not independently read and repetition was not manipulated here. Do not extract a new mechanism from the bibliography alone."
+    },
+    {
+      "term": "Correlation–agreement confusion as an independently tested bias",
+      "reason": "A methodological mistake explained by the article, not a newly measured cognitive tendency in this experiment. Retain the evaluation lesson without inflating behaviour counts."
+    },
+    {
+      "term": "Training-data moral amplification mechanism",
+      "reason": "Proposed interpretation, not identified by manipulating training or alignment."
+    }
+  ],
+  "limitations": [
+    "No new IDs: moral-amplification definition corrected and direct evidence added to existing concepts.",
+    "Association, absolute prediction error, numerical granularity and epistemic confidence remain distinct."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b072-amplified-moral-bias",
+      "diversity-collapse",
+      "b043-overconfidence",
+      "anthropomorphism"
+    ],
+    "revised_definitions": [
+      "b072-amplified-moral-bias"
+    ]
+  }
+}

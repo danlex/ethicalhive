@@ -228,7 +228,7 @@ def build(cache, output):
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n')
     with output.with_suffix('.csv').open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=['id','name','year','matching_publications','status','snapshot_date','partial_year'])
+        writer = csv.DictWriter(stream, fieldnames=['id','name','year','matching_publications','status','snapshot_date','partial_year'],lineterminator='\n')
         writer.writeheader()
         for record in records:
             points = record['years'] if record['status']=='complete' else [{'year':'','count':''}]

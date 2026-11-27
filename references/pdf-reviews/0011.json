@@ -1,0 +1,199 @@
+{
+  "sequence": 11,
+  "source": {
+    "file_name": "S130_Park_2024.pdf",
+    "source_id": "S130",
+    "sha256": "56db5c3d184e2a8ea7326708998610ca3662dc6809145a5f8b8472f58725257e",
+    "pdf_pages": 17,
+    "printed_pages": "5754–5770"
+  },
+  "citation": {
+    "title": "Diminished diversity-of-thought in a standard large language model",
+    "authors": [
+      "Peter S. Park",
+      "Philipp Schoenegger",
+      "Chongyang Zhu"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.3758/s13428-023-02307-x",
+    "venue": "Behavior Research Methods 56, 5754–5770",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "Direct text-davinci-003 survey-response experiments, with reported human-study benchmarks. Human primary studies and linked supplementary data were not independently reread or rerun here. Behavioural resemblance does not establish shared internal cognitive mechanisms.",
+    "access_limits": [
+      "All 17 pages of extracted text, four tables, captions, limitations and references read. Table 3 on PDF page 10 was also rendered and visually inspected; remaining figures were interpreted through captions and discussion rather than independently digitized.",
+      "Supplementary methods, OSF preregistration, prompts, raw data and analysis files were linked but not included in the supplied PDF and were not examined."
+    ]
+  },
+  "study": {
+    "model": "OpenAI text-davinci-003, called GPT-3.5 in this paper; do not conflate with all ChatGPT/GPT-3.5 variants",
+    "sampling": "Temperature 1.0; roughly 1,000 calls per study",
+    "main_design": "14 text-adaptable studies selected from 28 Many Labs 2 studies; eight analyzed as planned, six blocked by nearly uniform central-variable responses",
+    "followups": "Exploratory answer-order reversals, one demographic-role robustness test, and moral-foundation profile comparisons"
+  },
+  "summary": "Six of fourteen study replications encountered zero or near-zero variation in a central survey response. The authors call this the correct-answer effect, using a declared but arbitrary 99% threshold. Some responses remained near-uniform after choice reversal while others changed sharply. Among the eight analyzable studies, 37.5% matched original findings and 37.5% matched Many Labs 2 findings; the matched subsets were not identical. These are response-distribution findings in one model, not proof of conscious beliefs or a cause in alignment training.",
+  "findings": [
+    {
+      "term": "Correct-answer effect as a measured form of low response diversity",
+      "target_id": "diversity-collapse",
+      "decision": "enrich-existing",
+      "definition": "Repeated model calls can converge on the same response to preference or attitude questions for which the reference human sample is heterogeneous.",
+      "previous_definition": "Producing homogeneous, interchangeable outputs across different prompts or samples as alignment training narrows the output distribution.",
+      "revised_definition": "Producing unusually homogeneous outputs across repeated samples or varied prompts, with less variation than the task or reference distribution requires.",
+      "definition_revision_reason": "The observable low-diversity outcome need not have a single established cause. Park et al. explicitly leave training-data, fine-tuning and input/output-modification explanations unresolved; the old definition made alignment training a required causal conclusion.",
+      "revised_measurability": "multi-turn",
+      "novelty_rationale": "The named correct-answer effect is a scoped operational form of already-indexed output homogenization. Keep it within diversity collapse rather than add a second standalone entry for near-identical sampling behavior.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 5761,
+          "quote": "this threshold is arbitrary."
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 5766,
+          "quote": "We are unsure about"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 5757,
+          "quote": "zero or near-zero variation"
+        }
+      ],
+      "evidence_scope": "The main experiment directly samples a model and records response distributions. Six of fourteen studies could not use the planned test because a central variable was nearly constant; the threshold and explanatory interpretation are the authors’ operational choices.",
+      "boundary": "Stable responses to objective questions are not inherently defective. Judge low diversity against a justified task or reference distribution. The term correct answer here does not mean factual correctness; it does not prove that the model believes there is a uniquely correct preference, nor identify RLHF, memorization or recursive synthetic-data training as the cause."
+    },
+    {
+      "term": "Answer-position effects can masquerade as political self-identification",
+      "target_id": "position-bias",
+      "decision": "enrich-existing",
+      "definition": "Reversing survey option order sharply changed some generated self-descriptions and praise ratings, including which political label occupied the last position.",
+      "novelty_rationale": "The existing position-bias entry already covers response changes driven by choice order. A political-label version is not a separate ideology-change mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 5764,
+          "quote": "the political orientation given by the last presented choice."
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 5766,
+          "quote": "two-thirds of the considered “correct answers”"
+        }
+      ],
+      "evidence_scope": "Exploratory reverse-order follow-ups, including 1,030 calls per political-orientation condition. The reported 99.6% conservative and 99.3% liberal self-labels occurred in different option orders; several other responses were robust to reversal.",
+      "boundary": "The generated label is not evidence of a stable personal political identity or conscious belief. Position sensitivity varies by item and scale; it is not a universal preference for the first or last option, and analogous human memory mechanisms were not identified."
+    },
+    {
+      "term": "Gift-category evaluation produced a large AI less-is-better pattern",
+      "target_id": "candidate-040",
+      "decision": "enrich-existing",
+      "definition": "The model rated a higher-priced item from a cheaper category as more generous than a lower-priced item from a more expensive category in the adapted gift task.",
+      "novelty_rationale": "The less-is-better effect is already indexed; this adds direct model-response evidence while preserving the original human evaluation-mode boundary.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 5762,
+          "quote": "GPT-3.5’s unprecedentedly large effect (d = 9.25)"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 5762,
+          "quote": "item (scarf) should be seen as more generous"
+        }
+      ],
+      "evidence_scope": "Park et al.’s adapted Hsee task is reported as directionally matching original and Many Labs 2 findings but with a much larger standardized effect. This is one model/task implementation, not the full separate-versus-joint human paradigm replicated in every condition.",
+      "boundary": "A large standardized effect can reflect low within-condition variance; it does not alone show a stronger humanlike causal process. Do not infer that all AI valuation favors smaller sets or that shorter outputs are inherently better."
+    },
+    {
+      "term": "False-consensus evidence differs between two scenarios",
+      "target_id": "upload-045",
+      "decision": "enrich-existing",
+      "definition": "The model showed the reported traffic-ticket false-consensus pattern, while nearly uniform supermarket choices prevented the planned analysis in that scenario.",
+      "novelty_rationale": "The concept already exists. Reporting the analyzable and unanalysable scenarios together prevents a broad success claim based only on the positive result.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 5757,
+          "quote": "false-consensus effect on the traffic ticket scenario"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 5762,
+          "quote": "only 0.3% of them"
+        }
+      ],
+      "evidence_scope": "One of the eight analyzable replications matched both original and Many Labs 2 traffic-ticket findings; the supermarket version was among the six with near-constant central responses.",
+      "boundary": "A failure to construct the planned statistic is not a null-effect estimate or evidence that false consensus was absent. Repeated calls from one model are not independent human opinions or a representative human population."
+    }
+  ],
+  "methodological_limits": [
+    "One named model/version and one sampling setting; do not generalize to all present or future language models.",
+    "Fourteen studies were preselected for text-only adaptation, a nonrandom subset of Many Labs 2.",
+    "The main 37.5% rates use eight analyzable studies, not all fourteen. Exclusion for near-zero variance is itself a finding rather than six ordinary null replications.",
+    "Exploratory follow-ups were not all preregistered. The demographic robustness test concerned one trolley item and does not show universal persona invariance.",
+    "The text and Table 3 caption have inconsistent counts for the number of robust-response comparisons; use task-specific rows and the reported two-thirds summary without inventing a denominator of ten studies.",
+    "Human benchmark effect-size and significance comparisons do not establish psychological mechanism equivalence.",
+    "Political-profile distance comparisons are exploratory, survey-dependent and compared with selected reference groups; do not label the model intrinsically conservative across contexts.",
+    "The authors explicitly say the cause of the response uniformity and the real-world generality of survey judgments remain uncertain."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0005.json",
+      "finding": "Zhang studies human judgments of agents in trolley dilemmas; Park studies generated survey outputs. Similar trolley vocabulary does not make these the same experimental target or establish shared dual-process cognition."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Correct-answer effect",
+      "reason": "Recorded as a named outcome within diversity collapse; no duplicate mode created."
+    },
+    {
+      "term": "Knobe effect; side-effect effect",
+      "reason": "The adapted blame/praise measures differ from the original intentionality judgment and the planned AI analysis was blocked by uniformity. Do not claim this paper establishes the original mechanism in AI."
+    },
+    {
+      "term": "Post-hoc rationalization of political identity",
+      "reason": "The article offers an exploratory interpretation of profile shifts. Internal reasoning faithfulness or intentional rationalization was not directly measured."
+    }
+  ],
+  "limitations": [
+    "No new standalone entry was needed; four existing concepts gained evidence.",
+    "A source-grounded definition correction removes an unsupported universal causal requirement without erasing more specific RLHF hypotheses in the bibliography."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "diversity-collapse",
+      "position-bias",
+      "candidate-040",
+      "upload-045"
+    ],
+    "revised_definitions": [
+      "diversity-collapse"
+    ]
+  }
+}

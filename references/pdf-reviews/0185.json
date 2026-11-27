@@ -1,0 +1,382 @@
+{
+  "sequence": 185,
+  "source": {
+    "file_name": "S1877_Horowitz_2024.pdf",
+    "source_id": "S1877",
+    "sha256": "8c5e4e30d196236109c992980b1209bf74ff18d54376d0e3b81c559faad62e0d",
+    "pdf_pages": 45,
+    "printed_pages": "1–45",
+    "version_note": "The supplied file is a 45-page preprint marked arXiv:2306.16507v1, submitted 28 June 2023, with a 30 June 2023 title/header date, despite the 2024 filename. Cite the version actually read as 2023. Related journal publication: International Studies Quarterly 68(2), sqae020, DOI 10.1093/isq/sqae020 (2024); final text was not independently read and does not receive separate replication credit.",
+    "verification_url": "https://arxiv.org/abs/2306.16507v1",
+    "verification_method": "All 45 text pages read, including references and the supplied appendix. Figures 1–7 and A.1–A.5, both tables, both image-only example scenarios and the seven-item attitudes battery inspected. Exact preprint identity checked with arXiv; narrow Crossref, PubMed and publisher metadata checks distinguish the later version and bibliography identities. No raw data, code, registration, full external appendix or original cited book/study was independently read or reproduced."
+  },
+  "citation": {
+    "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+    "authors": [
+      "Michael C. Horowitz",
+      "Lauren Kahn"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2306.16507v1",
+    "venue": "arXiv 2306.16507v1, preprint",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "source_scope_note": "A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+    "access_limits": [
+      "The promised registration link is a placeholder pending acceptance; prespecification, deviations, weights and exclusions were not independently checked.",
+      "The supplied appendix contains five figures, two example aircraft images and the attitudes battery, but not the promised full AI knowledge/familiarity/experience questions, complete nine-condition wording, extra logit tables, translation materials or trial-level data/code.",
+      "The 2024 journal text and original cited psychology/technology-adoption articles were checked for identity only, not claimed fully read."
+    ]
+  },
+  "study": {
+    "design": "Within-person before/after aircraft identifications: five unpressured practice trials with feedback, followed by ten experimental trials. Easier trials come first (five), harder trials second (five), with random ordering within those blocks. Difficulty combines 10 versus 7 seconds and partial versus extensive visual obstruction; block order, fatigue and practice are not independently randomized difficulty factors.",
+    "treatments": "Eight advice conditions cross AI versus human source, extensive versus ongoing testing/training, and correct versus incorrect scripted recommendation, plus no-advice control. Each experimental trial has an initial identification and, for advice conditions, opportunity to retain or change it. Control responses are carried forward with no chance to switch. This is not an actual deployed AI or demonstrated human expert. Exact balancing and complete treatment text require the unavailable materials.",
+    "sample": "Nine selected countries: United States, Russia, China, France, Australia, Japan, South Korea, Sweden and United Kingdom; approximately 1,000 each, with urban-adult targets in China/Russia. YouGov supplies U.S./Russia, Delta Poll the rest. Table 1 has 90,160 trials = 9,016 people × 10, while prose rounds the target to 9,000. Claimed representativeness is not independently verified; public participants are not trained military identifiers or security elites.",
+    "main_outcome": "Binary answer switching, not automatically an error or objectively excessive reliance. Main models pool correct and incorrect advice and do not restrict to initial/advice disagreements or derive a reliability-relative optimal-use benchmark. Initial accuracy affects opportunities for corrective versus harmful switching.",
+    "background": "A normalized index weights two-question knowledge 1/5 and experience/familiarity 2/5 each. Only 25 of 9,016 reportedly answer both knowledge questions perfectly. Programming/use indicators and reported awareness are not interchangeable with demonstrated domain expertise; item content, scoring sensitivity, reliability and prespecification remain inaccessible.",
+    "trust_confidence": "Seven AI-attitude items mix excitement, benefits, interest, danger, sinister impressions, comparative accuracy and organizational ethics. Reported trust range 0–28, N=73,990 trial rows; missing/Don’t know handling and measurement invariance are not reproduced. The randomized high/low label describes testing/training maturity, not an experimentally verified accuracy percentage or elicited subjective confidence. Self-confidence is proxied by 0–5 practice accuracy; A.2 dichotomizes at ≥60%.",
+    "models": "OLS for binary switching in Table 2 columns 1–3; logit with positive linear and negative squared background components in columns 4–7. Authors report respondent-clustered standard errors and country fixed effects. Do not count 90,160 trials as independent people. AI-only N=39,903 versus 26,214 complete-case rows in nonlinear models, requiring a missing-data sensitivity check. Country effects, sampling weights, dependence on stimuli and cross-language equivalence are not reproduced.",
+    "coefficients": "Table 2 overall OLS: AI label .045 (SE .003), high-confidence label .056 (.003), difficulty .034 (.003), practice accuracy −.008 (.002). Within AI, high-confidence .017 (.004), practice −.011 (.002); within human, .016 (.004), −.008 (.002). Overall includes a mechanically zero-switch no-opportunity control, whereas restricted models compare actual advice trials; these coefficients have different comparators.",
+    "nonlinearity": "AI-background logit: linear 1.289 (SE .483), squared −1.547 (.653). Component pairs: familiarity 1.928/−1.788, knowledge .954/−1.366, experience .923/−1.134. Reported adjusted switching curves: overall 20%→25%→16%, familiarity 19%→29%→22%, knowledge 22%→25%→16%, experience 20%→25%→18%. This is a cross-sectional quadratic association under the fitted model, not a within-person learning trajectory or direct metacognitive calibration test.",
+    "direction_qualifications": "Normalized AI sentiment coefficients are −.349 (SE .158), −.203 (.159), −.223 (.160), −.274 (.161) in columns 4–7; the last is starred only at p<.10 and middle two unstarred. Their signs and differing significance do not support an unqualified positive adjusted trust effect. Coding and the nonlinear descriptive curve must be reconciled before asserting the mechanism.",
+    "secondary_accuracy": "Figure A.2 assigns 100 only when initially wrong, correct advice and switching to right, and 0 when initially right, wrong advice and switching to wrong. This does not specify scores for all non-switches or agreeing advice. Its curve is therefore a described conditional switching-quality measure, not established all-trial accuracy or optimal reliance; group differences need uncertainty-aware contrasts.",
+    "reporting_ambiguities": "Figure 2 means around .11–.12 differ in denominator/conditioning from Table 1 advice-trial mean .23 and subsequent curves near .20–.25; source-specific indicators pooled across source trials could explain approximate halving, so this is an unresolved estimand/coding question, not proof of wrong values. Figures 3/4/6 label horizontal axes squared while prose discusses unsquared indices; plots extend to 1 although Table 1 background maximum is .86 and prose .900. Clarify transformation and extrapolation. Table 2 reports a log likelihood for OLS columns; verify export rather than declaring OLS impossible.",
+    "scope": "This design does not directly compare military versus nonmilitary settings, trained versus public decision makers, high versus low decision stakes, live weapon release, casualties, training programs, long-term learning or generative-model behavior. Recommendations for education and safety remain proposals."
+  },
+  "summary": "Add beginner’s bubble as a specifically temporal subtype of overconfidence, explicitly from a read secondary definition, and task self-confidence as a neutral appraisal construct. Enrich existing automation bias, algorithm aversion/appreciation and performance-trust boundaries. Preserve the distinction between switching and harmful overreliance, measured practice accuracy and subjective confidence, and cross-sectional background curves and actual learning. Cite the 2023 preprint, retain uncertain estimands and correct reliable reference identities.",
+  "findings": [
+    {
+      "term": "Beginner’s bubble",
+      "decision": "new-entry",
+      "id": "beginners-bubble",
+      "definition": "An early increase in confidence that outpaces accuracy after a small amount of learning or experience.",
+      "category": "Metacognition",
+      "origin": "Metacognition / learning psychology",
+      "novelty_rationale": "The early-learning trajectory is more specific than generic overconfidence and differs from a cross-sectional association between low competence and high confidence. No existing entry names this temporal subtype.",
+      "ai_evidence_status": "Secondary psychological definition discussed in the fully read preprint; its original learning experiments and proposed AI analogue were not independently tested here.",
+      "ai_proposal": "Give a model small sequential sets of demonstrations, measure accuracy and elicited confidence on held-out items at every stage, and test whether confidence initially grows faster than accuracy. Compare against no-demo and larger-demo conditions; do not treat prompt exposure as durable parameter learning.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "7",
+          "quote": "People with limited\ninitial background with a wide variety of topical areas become subject to the “beginners bubble”"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "7",
+          "quote": "those with\nsurface-level knowledge become overconfident in that knowledge"
+        }
+      ],
+      "evidence_scope": "A secondary definition motivates an inverted-U hypothesis about AI-background and switching. The nine-country experiment does not observe novice learning over time or directly measure a confidence–accuracy gap. Sanchez and Dunning (2018) is cited and metadata-checked, not independently fully read or credited as an additional read paper.",
+      "boundary": "A few errors, fluent output, or high switching is insufficient. Establish an early learning trajectory and confidence growing disproportionately to accuracy. This preprint supplies conceptual relevance, not direct proof of a bubble in humans or AI. Do not equate greater experience with universal calibration.",
+      "is_a": [
+        "b043-overconfidence"
+      ],
+      "relates_to": [
+        "b044-dunning-kruger-effect",
+        "automation-bias"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Task self-confidence",
+      "decision": "new-entry",
+      "id": "task-self-confidence",
+      "definition": "A person’s belief in their own ability to perform a particular task successfully.",
+      "category": "Metacognition",
+      "origin": "Metacognition / advice-taking psychology",
+      "novelty_rationale": "Confidence in one’s own task performance is distinct from confidence in an external aid and from overconfidence, which requires excessive confidence relative to evidence. It can be justified or poorly calibrated. No existing named self-confidence or self-efficacy entry was found.",
+      "ai_evidence_status": "Human appraisal construct explicitly theorized; the read experiment uses practice accuracy as a proxy rather than directly eliciting subjective task confidence. A model’s reported confidence is not evidence of felt self-belief.",
+      "ai_proposal": "Measure a model’s stated probability of completing the task before advice, record independent task performance, and test whether that appraisal predicts appropriate retention or revision under advice of known quality. Separate confidence from skill, initial correctness and source label.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "12",
+          "quote": "Those\nthat view themselves as more competent on their own should be less likely to trust decision-making\naids."
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": "13",
+          "quote": "The higher the level of self-confidence in the ability to do a task, the lower the\nprobability that a decision aid will influence views of that task."
+        }
+      ],
+      "evidence_scope": "The theory distinguishes own-task confidence from confidence/trust in an aid. Empirically, practice-round accuracy predicts lower switching in most displayed conditions, with high-confidence human advice an exception. Actual subjective confidence and its causal mediation are not directly measured.",
+      "boundary": "Confidence is neutral and need not be excessive. Objective practice performance, inferred self-confidence, declared certainty and actual task success are different measurements. Less switching can be justified; no intrinsic AI feeling or universal inverse effect is established.",
+      "relates_to": [
+        "b043-overconfidence",
+        "performance-trust",
+        "b044-dunning-kruger-effect"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Automation bias",
+      "decision": "enrich-existing",
+      "target_id": "automation-bias",
+      "definition": "Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing part.",
+      "novelty_rationale": "The construct already exists; add this exact-version evidence and its measurement boundary rather than a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "rely on AI-enabled decision aids above\nand beyond the extent to which they should, given the reliability of the algorithms."
+        },
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "the dependent variable in the analyses below is a binary variable of whether\na respondent \"switched\" their answer after being shown a treatment"
+        }
+      ],
+      "evidence_scope": "Scripted AI advice affects decisions in a nine-country aircraft-identification task. However, main switching models pool correct and wrong advice, and the nonlinear background association is cross-sectional. The paper discusses excessive reliance but does not establish that every observed switch is erroneous or above an optimal benchmark.",
+      "boundary": "Separate correct acceptance, harmful switching, justified retention and failure to accept useful advice. No direct novice-learning mechanism, calibrated high-knowledge endpoint, real military deployment or tested training intervention follows from these aggregate curves."
+    },
+    {
+      "term": "Algorithm aversion",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-aversion",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "novelty_rationale": "The construct already exists; add this exact-version evidence and its measurement boundary rather than a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "discard algorithms in\nfavor of their own judgment despite evidence in favor of relying on an algorithm."
+        },
+        {
+          "pdf_page": 22,
+          "printed_page": "22",
+          "quote": "At the high-confidence\nlevels, individuals switched most frequently when it was a human analyst treatment"
+        }
+      ],
+      "evidence_scope": "Boundary only: authors interpret lower switching among the lowest-background respondents as aversion. That is not by itself a like-for-like preference for human advice or rejection of a demonstrably superior algorithm; correct/incorrect recommendations and source performance must be separated.",
+      "boundary": "Lower switching is not inherently irrational aversion. Source labels interact descriptively with testing/training descriptions; a direct controlled preference contrast and task-relevant quality benchmark are needed.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Algorithm appreciation",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-appreciation",
+      "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+      "novelty_rationale": "The construct already exists; add this exact-version evidence and its measurement boundary rather than a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 22,
+          "printed_page": "22",
+          "quote": "at\nlow-confidence levels, individuals were likelier to switch if it was an AI algorithm treatment."
+        }
+      ],
+      "evidence_scope": "Human/AI source labels are compared under extensive versus ongoing testing/training descriptions. Descriptive source preference changes with the description: human has the highest switching in the extensive condition, AI in the ongoing condition. Figure 2 uses an unclear denominator relative to later rates, and no direct interaction estimate is reproduced.",
+      "boundary": "A relative source preference is not universal algorithm appreciation or excessive trust. Compare source effects within the same training description, correctness and initial-decision opportunity; overlapping display intervals do not prove equality."
+    },
+    {
+      "term": "Performance trust",
+      "decision": "enrich-existing",
+      "target_id": "performance-trust",
+      "definition": "Expecting an agent or system to perform competently and reliably in a relevant task.",
+      "novelty_rationale": "The construct already exists; add this exact-version evidence and its measurement boundary rather than a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "printed_page": "20",
+          "quote": "has undergone extensive testing and training to identify\nairplanes under these conditions."
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": "20",
+          "quote": "still undergoing testing and being trained to identify airplanes under\nthese conditions."
+        }
+      ],
+      "evidence_scope": "Describing the aid as extensively tested/trained versus still being tested/trained increases switching within both AI and human trials (OLS coefficients .017 and .016). The manipulation signals competence history; actual accuracy confidence and reliability calibration are not independently elicited. General AI attitudes mix performance with benefits, fear and organizational ethics.",
+      "boundary": "Randomized competence descriptions, subjective trust, general attitudes, actual reliability and justified reliance differ. Practice accuracy is a proxy for own-task confidence, not a direct measure; lower switching is not automatically better calibration."
+    },
+    {
+      "term": "Dunning-Kruger effect",
+      "decision": "enrich-existing",
+      "target_id": "b044-dunning-kruger-effect",
+      "definition": "Low competence with high confidence; the model most wrong where it feels most sure.",
+      "novelty_rationale": "The construct already exists; add this exact-version evidence and its measurement boundary rather than a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "3",
+          "quote": "a version of the Dunning-Kruger effect is at play"
+        },
+        {
+          "pdf_page": 25,
+          "printed_page": "25",
+          "quote": "Reliance on AI (in this\ncase, the rate of switching when receiving an AI treatment) initially increases steadily"
+        }
+      ],
+      "evidence_scope": "Boundary only: the authors interpret an inverted-U between AI background and switching as a version of Dunning–Kruger. Knowledge, awareness and use are measured cross-sectionally; subjective overestimation relative to actual competence is not directly tested. The related beginner’s bubble is an early-learning claim, not a synonymous label for any nonlinear curve.",
+      "boundary": "An inverted-U in advice acceptance alone does not establish low competence with excessive confidence, a temporal learning stage or the cause of overreliance. Original Sanchez/Dunning and Kruger/Dunning studies are cited but not independently fully read here.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Filename/title page",
+      "source_claim": "S1877_Horowitz_2024.pdf suggests the final 2024 publication.",
+      "correction": "The supplied file labels arXiv 2306.16507v1 and June 2023. Cite 2023 for this read preprint; distinguish the related 2024 ISQ article, DOI 10.1093/isq/sqae020, rather than relabeling its evidence as fully read final text.",
+      "verification_url": "https://arxiv.org/abs/2306.16507v1",
+      "verification_method": "Supplied title/date and arXiv version record; later journal identity checked in publisher metadata."
+    },
+    {
+      "location": "References, page 38, Johnson (2022)",
+      "source_claim": "Delegating strategic decision-making to machines: Dr. Strangelove redux? Daedalus 45(3):439–477.",
+      "correction": "Correct journal is Journal of Strategic Studies 45(3):439–477, DOI 10.1080/01402390.2020.1759038; online 2020, print 2022. The supplied year can refer to the print issue; the venue is wrong.",
+      "verification_url": "https://api.crossref.org/works/10.1080/01402390.2020.1759038",
+      "verification_method": "Narrow bibliographic identity check only; original full text not independently read."
+    },
+    {
+      "location": "References, page 40, Schepman and Rodway (2020)",
+      "source_claim": "Computers in Human Behavior Reports 22(4).",
+      "correction": "Correct identity is Computers in Human Behavior Reports 1, article 100014, DOI 10.1016/j.chbr.2020.100014. Do not transfer Lam’s 22(4) journal details to this different paper.",
+      "verification_url": "https://api.crossref.org/works/10.1016/j.chbr.2020.100014",
+      "verification_method": "Narrow bibliographic identity check only; original full text not independently read."
+    },
+    {
+      "location": "References, page 40, Simmons and Massey (2015)",
+      "source_claim": "The algorithm-aversion article is attributed to Simmons and Massey only.",
+      "correction": "Restore first author Berkeley J. Dietvorst: Dietvorst, Simmons and Massey (2015), JEP General 144(1):114–126, DOI 10.1037/xge0000033. PubMed distinguishes 2014 online publication from the 2015 issue.",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/25401381/",
+      "verification_method": "Narrow bibliographic identity check only; original full text not independently read."
+    },
+    {
+      "location": "References, page 40, Southern and Arnstern (2009)",
+      "source_claim": "Arnstern; Society for Medical Decision Making 29(3):372–376.",
+      "correction": "Correct author surname Arnsten; journal Medical Decision Making (the society is not its title), DOI 10.1177/0272989X09333125.",
+      "verification_url": "https://api.crossref.org/works/10.1177/0272989x09333125",
+      "verification_method": "Narrow bibliographic identity check only; original full text not independently read."
+    },
+    {
+      "location": "References, page 40, Sechser et al. (2019)",
+      "source_claim": "Journal of Strategic Studies 24(6):727–735.",
+      "correction": "Correct volume is 42(6):727–735, DOI 10.1080/01402390.2019.1626725; retain authors and 2019.",
+      "verification_url": "https://www.tandfonline.com/doi/full/10.1080/01402390.2019.1626725",
+      "verification_method": "Narrow bibliographic identity check only; original full text not independently read."
+    }
+  ],
+  "methodological_limits": [
+    "Corrective and harmful switching must be separated, with initial accuracy and initial/advice disagreement accounted for. Lower use can be justified and higher use beneficial; a curve alone does not locate an objectively calibrated sweet spot.",
+    "No within-person acquisition of AI knowledge or direct confidence–accuracy comparison is observed. Calling the inverted-U a version of Dunning–Kruger is an explanatory interpretation, not a confirmed cognitive mediator or an independent test of beginner learning.",
+    "Self-confidence is not the same variable as practice accuracy. Objective performance can rationally determine advice value; mediation through subjective confidence is not identified.",
+    "Difficulty is bundled with time/visibility and fixed block order. Public/urban panels, selected countries and unverified translation/weights limit extrapolation to national publics, military experts and life-or-death operations.",
+    "The attitudes battery mixes multiple dimensions; background components are downweighted according to reported difficulty and may have floor/range limitations. Missing-data complete-case losses and measurement invariance require evaluation.",
+    "Quadratic terms are not interactions among all background/trust/confidence factors. Curvature and its uncertainty depend on specification, observed support and correct axis transformation; high-end smoothed estimates have wide intervals.",
+    "A.2’s conditional scoring is not complete decision accuracy, and Figure 2 may have a different denominator. Preserve these uncertainties without inventing a corrected dataset, optimal switching rate or independent replication.",
+    "Claims of preregistration are not verified from the placeholder. No chronology, raw results, original psychology book or complete extra supplement is claimed read."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0183.json",
+      "finding": "Vicente distinguishes wrong advised responses and immediate aftereffects after withdrawal. Here aggregate switching pools helpful and harmful changes; these designs should not be collapsed into a single generic bias rate."
+    },
+    {
+      "related_review": "references/pdf-reviews/0161.json",
+      "finding": "A randomized aid/no-aid skill-acquisition experiment can test learning differences. The current cross-sectional background index does not demonstrate that the same person follows an inverted-U as they learn."
+    },
+    {
+      "related_review": "references/pdf-reviews/0181.json",
+      "finding": "Trust scales in the error study distinguish competence and care/integrity. This general attitudes battery mixes benefits, fear, ethics and accuracy, so it cannot be treated as the same latent trust dimension without validation."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Gartner hype cycle / trust gap",
+      "reason": "The discussion offers a stylized technology-development narrative, not a tested time series or a validated universal trajectory. Expectation disconfirmation and perfect automation schema already capture related expectations; no separate cycle-stage rows are added from this brief analogy."
+    },
+    {
+      "term": "Appropriate reliance at the highest knowledge level",
+      "reason": "Desired performance is not a new behavioral mechanism. High background does not automatically establish calibrated advice use; the main outcome lacks an optimality benchmark."
+    },
+    {
+      "term": "Causal AI-literacy protection",
+      "reason": "Background was not randomized and actual training was not evaluated. Keep as a proposal, not a new proven intervention or a synonymous bias row."
+    }
+  ],
+  "limitations": [
+    "This review applies to the supplied 2023 preprint. The 2024 journal article may correct or alter these issues; its full text was not audited.",
+    "No original cited beginner experiment, full regulatory/accident report, current law or external book was fully read in this review."
+  ],
+  "source_identity_checks": [
+    {
+      "reference": "Sanchez and Dunning (2018)",
+      "finding": "The cited title, authors and 114(1):10–28 identify Overconfidence among beginners: Is a little learning a dangerous thing?, DOI 10.1037/pspa0000102. Metadata/abstract identity was checked, not the original experiments; it supplies no independent full-review credit.",
+      "verification_url": "https://pubmed.ncbi.nlm.nih.gov/29094960/"
+    },
+    {
+      "reference": "Bahmanziari et al. (2016)",
+      "finding": "The publisher identifies volume 43(4) as a 2003 issue and gives a 2016 online date. A version-aware citation should distinguish these; do not call the online year fabricated or a new 2016 study.",
+      "verification_url": "https://www.tandfonline.com/doi/abs/10.1080/08874417.2003.11647533"
+    },
+    {
+      "reference": "Lyell and Coiera (2016)",
+      "finding": "Crossref confirms online publication 11 August 2016 and print issue 1 March 2017, volume 24(2):423–431, DOI 10.1093/jamia/ocw105. The supplied 2016 year is defensible as the online date; distinguish it from the issue date rather than treating it as fabricated. Original full text not independently read.",
+      "verification_url": "https://api.crossref.org/works/10.1093/jamia/ocw105"
+    }
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "beginners-bubble",
+      "task-self-confidence"
+    ],
+    "enriched": [
+      "automation-bias",
+      "algorithm-aversion",
+      "algorithm-appreciation",
+      "performance-trust",
+      "b044-dunning-kruger-effect"
+    ]
+  }
+}

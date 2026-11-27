@@ -1,0 +1,175 @@
+{
+  "sequence": 7,
+  "source": {
+    "file_name": "S121_Kupfer_2023.pdf",
+    "source_id": "S121",
+    "sha256": "81ef779fad92250ba88ecaf096fa3348c99d2546f93d8dadb52d5d3bf32fdf72",
+    "pdf_pages": 16,
+    "printed_pages": "1–16"
+  },
+  "citation": {
+    "title": "Check the box! How to deal with automation bias in AI-based personnel selection",
+    "authors": [
+      "Cordula Kupfer",
+      "Rita Prassl",
+      "Jürgen Fleiß",
+      "Christine Malin",
+      "Stefan Thalmann",
+      "Bettina Kubicek"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.3389/fpsyg.2023.1118723",
+    "venue": "Frontiers in Psychology 14, 1118723",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "source_scope_note": "This is an experiment on human users of a designed recruitment dashboard with deliberately inserted recommendation errors, not a test of a deployed learning model or of intrinsic AI bias. Cited earlier intervention studies were not independently read here.",
+    "access_limits": [
+      "All extracted article text, result tables, captions and references read. Figure 2 on PDF page 8 was also rendered and visually inspected; other dashboard figures were read through captions and text rather than independently inspected in detail.",
+      "Linked supplementary job descriptions and raw data were not supplied with this PDF and were not examined or reanalyzed.",
+      "Some numerical test reports have unusual degrees of freedom or p-value combinations; these are not silently corrected or independently recomputed."
+    ]
+  },
+  "study": {
+    "design": "3 instruction conditions × 2 initial data-aggregation displays, randomized between subjects; two fixed-order personnel-preselection tasks with intentional dashboard errors",
+    "recruited": 100,
+    "analyzed": 93,
+    "exclusions": "3 technical problems, then 4 with response times 1.5 SD below the mean on both tasks",
+    "sample": "90% full-time students; 10 participants reported prior human-resource-management experience",
+    "outcomes": "Time, clicks and visited pages as verification proxies; number of suitable applicants selected and a four-item subjective decision-quality scale"
+  },
+  "summary": "Higher verification indicators were correlated with better applicant selection. Error-awareness instructions improved only some verification indicators and subjective quality, with no significant objective-quality improvement. The responsibility instruction did not significantly improve verification or either quality outcome. Aggregation changed time on the initial display, but did not significantly change verification at other levels or objective or subjective quality. Therefore the stronger practical recommendations are not equivalent to demonstrated accuracy benefits.",
+  "findings": [
+    {
+      "term": "Automation-bias safeguards require outcome-specific evidence",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Uncritical acceptance of an automated recommendation must be assessed separately from interface engagement, self-rated performance and objectively correct decisions.",
+      "novelty_rationale": "Automation bias is already an indexed concept. This experiment adds a bounded application and intervention results rather than another name for overreliance.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "thoughtless acceptance of decisions or"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "no significant difference between the system instruction"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "hypothesis 6 was not supported."
+        }
+      ],
+      "evidence_scope": "N=93 human participants used a simulated recruitment dashboard. Error warnings increased selected verification indicators and self-rated quality but not objective selection quality; the aggregation manipulation did not significantly improve either quality outcome.",
+      "boundary": "Time, clicks and page visits are proxies, not sufficient proof of checking quality or causal information-processing routes. Their correlation with accuracy does not show that forcing more clicks improves decisions. Faster initial-display viewing does not by itself establish greater automation bias."
+    },
+    {
+      "term": "Responsibility reminders did not establish a diffusion-of-responsibility remedy",
+      "target_id": "bystander-effect",
+      "decision": "enrich-existing",
+      "definition": "Diffusion of responsibility is proposed as a possible explanation for reduced checking in shared human–automation tasks, while the tested responsibility reminder produced no significant verification or decision-quality benefit.",
+      "novelty_rationale": "The ontology already records diffusion of responsibility as a mechanism related to bystander effects and distinguishes it from social loafing. Preserve that relation without counting the same mechanism as a new behaviour or treating it as demonstrated here.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "decreased feeling of"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "hypothesis 4 had to be rejected."
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "we did not find an effect of the"
+        }
+      ],
+      "evidence_scope": "The theoretical section draws on prior responsibility research; the current experiment manipulated a legal/responsibility reminder and an announced justification requirement, not group size or the diffusion mechanism itself.",
+      "boundary": "A null result for this instruction does not prove that responsibility, accountability or oversight never helps. This is not an emergency-intervention bystander experiment. Promised justification was not actually required, and evaluation concerns and ceiling performance may limit inference."
+    },
+    {
+      "term": "Reliability-related vigilance is a proposed training concern",
+      "target_id": "automation-complacency",
+      "decision": "enrich-existing",
+      "definition": "The discussion links prolonged error-free operation with reduced verification, while this short experiment tests warnings rather than longitudinal vigilance loss.",
+      "novelty_rationale": "Complacency and vigilance decrement are already indexed. The distinction between a background mechanism, the tested warning, and an untested training recommendation improves that existing entry.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "working error-free for a long time"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "only informing users of possible errors might not"
+        }
+      ],
+      "evidence_scope": "Discussion based on cited earlier automation studies; the present experiment found partial warning benefits but did not manipulate long-run failure frequency or compare repeated training schedules.",
+      "boundary": "Do not count this as independent longitudinal evidence for vigilance decrement. The authors’ suggestion to demonstrate failures is a training proposal, not evidence supporting deliberate errors in consequential production hiring decisions."
+    }
+  ],
+  "methodological_limits": [
+    "Mostly young students in a laboratory, not a representative sample of working recruiters.",
+    "Mean objective quality exceeded four of five suitable candidates across groups, leaving limited room for improvement.",
+    "Two tasks used a fixed order and limited candidate sets; substantial workload and real employment consequences were absent.",
+    "Instruction packages differed in content as well as warnings; the error-awareness text also described system processing and explicitly asked participants to verify.",
+    "Self-rated quality includes an item about checking, so associations with verification are not a purely independent accuracy measure.",
+    "Multiple level/task/indicator comparisons produced partial effects. Nonsignificance is not a formal equivalence result.",
+    "Article references to the proposed EU AI Act and GDPR reflect the authors’ legal framing in 2023; no current legal interpretation was verified here."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0003.json",
+      "finding": "Lima 2023 separated explanation content from blame outcomes; this source similarly requires separating provision of a warning, engagement indicators, subjective confidence and objective accuracy."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Need for cognition; elaboration likelihood model",
+      "reason": "Background trait and explanatory framework. Neither is directly tested as a new behaviour here, and cited primary theory was not read in this step."
+    },
+    {
+      "term": "Aggregation-induced automation bias",
+      "reason": "The predicted lower verification and decision-quality effects were not supported. Do not create a positive-effect entry from the hypothesis or recommendations."
+    }
+  ],
+  "limitations": [
+    "No new standalone behaviour was added: the supported concepts are already present or represented as related mechanisms.",
+    "The paper concerns human oversight of simulated AI advice, not a demonstrated mechanism inside a generative model."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "automation-bias",
+      "bystander-effect",
+      "automation-complacency"
+    ]
+  }
+}

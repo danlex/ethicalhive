@@ -1,0 +1,542 @@
+{
+  "sequence": 169,
+  "source": {
+    "file_name": "S1525_Catellani_2026.pdf",
+    "source_id": "S1525",
+    "sha256": "dea2546180a84baa83402616f4e1f6e5d138529f2e5be39d0c0ba2ad5f667cfa",
+    "pdf_pages": 22,
+    "printed_pages": "1–22",
+    "version_note": "Supplied publisher forthcoming PDF. First-online publication is explicitly 3 September 2025, confirmed by Crossref; the filename’s 2026 is not the article’s verified publication year. No later issue/version is assumed.",
+    "verification_url": "https://api.crossref.org/works/10.35295/osls.iisl.2304",
+    "verification_method": "All 22 text pages read, including bilingual abstract, contents and references. All nine figures on pages 12, 14–18, plus the three fairness formulas on page 13, visually checked. Crossref verifies identity and four cited bibliography records. Narrow checks inspect the COMPAS reporting headers/methods, a university-hosted Dressel–Farid abstract, the indexed Smith–Greene abstract, and sections 2/4 of Hardt et al. 2016. These are not full readings of those sources or reproduced analyses."
+  },
+  "citation": {
+    "title": "Biases and debiasing in human and artificial intelligence",
+    "authors": [
+      "Patrizia Catellani",
+      "Marco Piastra"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.35295/osls.iisl.2304",
+    "venue": "Oñati Socio-Legal Series, first-online forthcoming version, 1–22",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "source_scope_note": "Narrative conceptual review of human causal/blame judgments and debiasing, followed by secondary COMPAS and Berkeley fairness illustrations. It reports no newly recruited human sample, new AI benchmark, systematic review search or independently reproduced intervention effect. Human heuristics and formal algorithmic fairness constraints are not interchangeable.",
+    "access_limits": [
+      "Cited books by Kahneman, Gigerenzer, Metcalfe/Shimamura and Pearl and colleagues were not fully read. Their mention is not independent selected-paper credit.",
+      "Original causal-attribution, hunger/parole, focus-group and nudging experiments were not fully reviewed here. A narrow abstract check of Smith–Greene 2005 supports relative bifurcation benefit but does not supply a full replication or trial-level analysis.",
+      "COMPAS code/data, Berkeley model conditional-probability tables, software, threshold rules and counterfactual identification assumptions were not reproduced. The 44/44 and 35/37 illustrations remain the supplied paper’s model outputs.",
+      "Narrow external checks identify bibliographic facts and conceptual problems. The Wisconsin case and current AI Act obligations were not legally audited; historical regulatory prose is not current legal guidance."
+    ]
+  },
+  "study": {
+    "type": "Narrative cross-domain review and didactic statistical/causal-model illustrations",
+    "original_participant_sample": null,
+    "human_topics": "Heuristic/systematic reasoning, accessible/proximate/human causes, control and intentionality cues, victim-character effects on blame, psychophysiological influences, metacognition and procedural debiasing. Examples are secondary summaries, not new experiments.",
+    "interventions": "Considering the opposite, devil’s advocacy, bifurcated harm/responsibility assessment and choice accessibility changes. No intervention is newly tested by these authors; applicability, independence and effectiveness remain context-dependent.",
+    "algorithmic_examples": "COMPAS risk distributions and fairness criteria, then an assumed Gender→Major→Admission model with a direct Gender→Admission path. These are secondary datasets/didactic fitted predictors, not an actual 1973 AI admissions deployment. The source explicitly states the original admissions decisions were human.",
+    "illustrated_outputs": "The paper displays admissions 44% men and 35% women; splitting gender by causal path yields 44%/44% for male-origin major choice and 35%/37% for female-origin major choice. These are rounded/model-conditional illustrations without audited uncertainty or reproduced identification, not universal effects of changing perceived gender.",
+    "core_limit": "Model correctness, the normative choice of permitted paths, metric conditioning and trustworthy labels must be assessed separately. Statistical parity alone is not an ethical verdict."
+  },
+  "summary": "Add five distinct strategies/constructs: ecological rationality, considering the opposite, devil’s advocacy, bifurcated evaluation and nudging. Enrich existing metacognitive monitoring, confirmation bias, dual-process reasoning and blame attribution; add boundary-only notes for outcome bias, ecological fallacy and machine-identity assumptions. Preserve the paper’s express warning that human and AI debiasing do not transfer directly. Correct source identity details and record several fairness-definition/figure problems instead of adopting them as ontology definitions.",
+  "findings": [
+    {
+      "term": "Ecological rationality",
+      "id": "ecological-rationality",
+      "decision": "new-entry",
+      "definition": "Using a decision strategy whose cues and simplifications fit the information structure of the task environment.",
+      "category": "Reasoning",
+      "origin": "Psychology of reasoning / human debiasing and decision procedures",
+      "ai_evidence_status": "Secondary synthesis and conceptual application; no original AI experiment or independently replicated intervention effect is reported in this article.",
+      "ai_proposal": "Compare simple and deliberative strategies across environments that vary cue reliability, uncertainty and time constraints. Measure accuracy and relevant costs, and test whether the assistant switches strategy when the environment changes.",
+      "novelty_rationale": "This concerns strategy–environment fit, not ecological fallacy, which infers individual properties from aggregate data; it is also broader than a particular recognition heuristic or a fixed fast/slow mode.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "Gigerenzer speaks of ecological rationality:"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "knowing when it is worth going deeper when the situation is different from the past."
+        }
+      ],
+      "evidence_scope": "Secondary account of Gigerenzer’s adaptive use of routines, reserving deeper analysis for changed or complex cases. The present article does not measure strategy selection or prove that a particular expert intuition is accurate.",
+      "boundary": "Environmental fit must be demonstrated against appropriate outcomes; familiarity, speed and plausible intuition alone do not establish it. This is a theoretical criterion and adaptable reasoning pattern, not a license to ignore evidence or an inherently harmful bias.",
+      "relates_to": [
+        "b051-dual-process-system-1-and-system-2",
+        "candidate-087",
+        "b052-cognitive-miserliness"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Considering the opposite",
+      "id": "considering-the-opposite",
+      "decision": "new-entry",
+      "definition": "Deliberately seeking reasons or evidence for a conclusion opposed to the one initially favored.",
+      "category": "Metacognition",
+      "origin": "Psychology of reasoning / human debiasing and decision procedures",
+      "ai_evidence_status": "Secondary synthesis and conceptual application; no original AI experiment or independently replicated intervention effect is reported in this article.",
+      "ai_proposal": "After a provisional conclusion, request the strongest plausible contrary hypothesis and evidence that would distinguish them. Check cited evidence against sources and update according to evidential weight rather than equalizing both sides mechanically.",
+      "novelty_rationale": "An intervention directed at disconfirmation differs from confirmation bias, the error it seeks to reduce, and from generic monitoring. It specifically develops an alternative conclusion; devil’s advocacy can instead probe the original argument without endorsing its opposite.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "the diametrically opposite position to the one we have reached."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "find elements that support a conclusion other than the one already reached,"
+        }
+      ],
+      "evidence_scope": "The article recommends an opposite-position check to escape a confirmation trap. It supplies no new controlled comparison, effect size or direct LLM intervention test.",
+      "boundary": "Opposition is a search strategy, not proof that the opposite is true. Avoid invented counterevidence, false balance and reopening settled factual claims without reason. The same model’s contrary answer is not an independent source.",
+      "relates_to": [
+        "b036-confirmation-myside-bias",
+        "b041-metacognitive-monitoring",
+        "devils-advocacy"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Devil’s advocacy",
+      "id": "devils-advocacy",
+      "decision": "new-entry",
+      "definition": "Assigning or adopting a critical role to identify weaknesses, assumptions and inconsistencies in a proposed judgment.",
+      "category": "Metacognition",
+      "origin": "Psychology of reasoning / human debiasing and decision procedures",
+      "ai_evidence_status": "Secondary synthesis and conceptual application; no original AI experiment or independently replicated intervention effect is reported in this article.",
+      "ai_proposal": "Have a reviewer examine evidence, assumptions and possible failures against the agreed task. Require source-grounded objections and resolutions. Compare quality against ordinary review without equating criticism volume or a second persona with independence.",
+      "novelty_rationale": "This is a designated criticism process, distinct from groupthink, disagreement itself or necessarily defending the opposite conclusion. The source expressly separates it from opposite-position support.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "the so-called devil’s advocate"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "questioning our position and pointing out possible inconsistencies, ambiguities or"
+        }
+      ],
+      "evidence_scope": "Described as a group-discussion strategy also usable for individual decisions, citing MacDougall–Baum 1997. This is a secondary recommendation, not a new group trial or demonstrated universal cure for groupthink.",
+      "boundary": "A critical role can be mistaken, biased or performative. It does not authorize harassment, fabricate defects or replace expert/source checks. Multiple roles in one model may share the same blind spots.",
+      "relates_to": [
+        "groupthink",
+        "considering-the-opposite",
+        "b041-metacognitive-monitoring",
+        "upload-083"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Bifurcated evaluation",
+      "id": "bifurcated-evaluation",
+      "decision": "new-entry",
+      "definition": "Separating interrelated judgments into distinct assessment tasks so evidence relevant to one does not improperly influence the other.",
+      "category": "Reasoning",
+      "origin": "Psychology of reasoning / human debiasing and decision procedures",
+      "ai_evidence_status": "Secondary synthesis and conceptual application; no original AI experiment or independently replicated intervention effect is reported in this article.",
+      "ai_proposal": "Evaluate a decision’s reasonableness using information available at the time before exposing that assessment to later outcomes or damages. Where authorized, compare appropriately blinded assessments with an integrated review, and define how necessary context is restored.",
+      "novelty_rationale": "This is a procedural separation of judgments and information, not merely partitioning a probability estimate, joint/separate valuation, outcome bias itself or an agent’s private metacognitive check.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "the division of tasks within the panel of judges"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "subgroups to assess harm and responsibility,"
+        }
+      ],
+      "evidence_scope": "The review summarizes Smith–Greene 2005 as reduced interference between harm and responsibility judgments. The separately checked abstract describes bifurcation as relatively more effective, not guaranteed bias elimination; no full primary-paper read or new AI test is claimed.",
+      "boundary": "Separation can discard relevant context or fail if information leaks. Separate prompts/headings are not proof of independent reviewers. The source’s courtroom setting and a narrow abstract check do not establish effectiveness for AI audits or every legal procedure.",
+      "relates_to": [
+        "candidate-056",
+        "b041-metacognitive-monitoring",
+        "procedural-fairness-judgment"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Nudging",
+      "id": "nudging",
+      "decision": "new-entry",
+      "definition": "Influencing choices by changing how options are presented or made accessible while preserving meaningful alternatives.",
+      "category": "Social",
+      "origin": "Psychology of reasoning / human debiasing and decision procedures",
+      "ai_evidence_status": "Secondary synthesis and conceptual application; no original AI experiment or independently replicated intervention effect is reported in this article.",
+      "ai_proposal": "Test whether accessible defaults, reminders or ordering help users complete their own informed goals. Measure comprehension, reversibility, distributional effects and actual benefit as well as uptake; disclose consequential defaults and preserve authorized choice.",
+      "novelty_rationale": "This changes the choice environment rather than building competence as in boosting. It differs from framing bias as an observed judgment distortion, coercion that removes meaningful alternatives and generic advice about which option to choose.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "research in the field of nudging"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "making them more accessible"
+        }
+      ],
+      "evidence_scope": "The review recommends making more functional decision procedures accessible and flexible, citing Hertwig–Grüne-Yanoff 2017. This is a secondary description rather than a tested new interface or demonstrated outcome.",
+      "boundary": "Choice architecture can manipulate or burden people, so increased compliance alone is not success. Nudging is not inherently benevolent, coercive or effective. The article supplies no original nudge experiment or evidence of an AI’s intrinsic preference.",
+      "relates_to": [
+        "boosting",
+        "b035-framing-effect",
+        "position-bias",
+        "status-quo-bias"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Metacognitive monitoring",
+      "target_id": "b041-metacognitive-monitoring",
+      "decision": "enrich-existing",
+      "definition": "Monitoring the content, progress and possible errors of one’s reasoning.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "the steps we take in processing information."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "possibly correct it."
+        }
+      ],
+      "evidence_scope": "Explains checking one’s reasoning from an independent/critical perspective and recognizing errors during or after a judgment. Adds a human-process synthesis; it does not establish that model self-reports are accurate or that all LLMs lack every form of monitoring.",
+      "boundary": "Distinguish an observable review procedure, calibration against external truth and subjective human awareness. A fluent self-assessment alone does not establish successful monitoring or privileged access."
+    },
+    {
+      "term": "Confirmation bias",
+      "target_id": "b036-confirmation-myside-bias",
+      "decision": "enrich-existing",
+      "definition": "Seeking, interpreting or weighting information to favor an existing belief while neglecting relevant alternatives or disconfirming evidence.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "the tendency to look only for elements that support an opinion already formed."
+        }
+      ],
+      "evidence_scope": "Explicitly defines the confirmation trap and proposes opposite-position review. This is a synthesis citation, not an independent replication of a bias effect or proof that the proposed correction works for AI.",
+      "boundary": "Disconfirming search should be proportional and source-grounded; it does not require equal confidence in supported and unsupported claims."
+    },
+    {
+      "term": "Dual-process, System 1 and System 2",
+      "target_id": "b051-dual-process-system-1-and-system-2",
+      "decision": "enrich-existing",
+      "definition": "A framework distinguishing fast, relatively automatic processing from slower, more deliberate processing.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "a deeper and systematic way (called System 2)."
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "heuristic thinking works better than systematic thinking."
+        }
+      ],
+      "evidence_scope": "Summarizes fast/slow reasoning while acknowledging useful expert routines and ecological fit. No new two-system neural evidence, LLM architecture comparison or inherent accuracy ordering is supplied.",
+      "boundary": "Fast does not mean necessarily biased, and slow does not guarantee truth. Generated chain-of-thought is not direct proof of a human-like deliberative system."
+    },
+    {
+      "term": "Blame attribution",
+      "target_id": "blame-attribution",
+      "decision": "enrich-existing",
+      "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "responsibility was significantly higher when the victim was portrayed"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "but which should not be considered relevant for attributing responsibility for the"
+        }
+      ],
+      "evidence_scope": "Summarizes a study in which victim portrayal changes physician responsibility judgments alongside outcome controllability. Secondary evidence illustrates why character information, causation, control and fault should be distinguished; the primary experiment was not fully read.",
+      "boundary": "Victim character does not determine entitlement to care or the clinician’s duty. A causal contribution or having options is not itself culpability, and no model intent or universal legal rule follows."
+    },
+    {
+      "term": "Outcome bias",
+      "target_id": "candidate-056",
+      "decision": "enrich-existing",
+      "definition": "Judging decision quality by its eventual outcome rather than solely by the information available when deciding.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "what the person knew, thought or"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "intended at the time of the event,"
+        }
+      ],
+      "evidence_scope": "The retrospective-judgment example motivates withholding later outcome information when assessing earlier knowledge and intentions. It overlaps hindsight and outcome effects, but supplies no new isolated outcome-bias experiment.",
+      "boundary": "Hindsight changes beliefs about prior predictability; outcome bias evaluates decisions by results. They are related, not identical. Bifurcation is a proposed procedure, not proof either effect has been eliminated.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Ecological fallacy",
+      "target_id": "upload-076",
+      "decision": "enrich-existing",
+      "definition": "Inferring individual properties from group-level data.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "aggregate data can obscure or reverse trends within"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "subgroups, leading to potentially misleading interpretations"
+        }
+      ],
+      "evidence_scope": "The Berkeley discussion illustrates aggregation hazards and Simpson’s paradox. This is an adjacent statistical boundary note, not a direct experiment demonstrating ecological fallacy.",
+      "boundary": "Simpson’s paradox is a pattern in associations under aggregation; ecological fallacy is an inference error about individuals. Neither is a synonym for the other, and a reversal alone neither proves nor disproves discrimination.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Machine heuristic",
+      "target_id": "machine-heuristic",
+      "decision": "enrich-existing",
+      "definition": "Using machine identity as a cue to assume qualities such as accuracy, efficiency or freedom from bias.",
+      "novelty_rationale": "The existing entry covers this meaning. Add a qualified synthesis citation or boundary note rather than another overlapping row.",
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "printed_page": 20,
+          "quote": "Artificial intelligence algorithms can also exhibit biases."
+        }
+      ],
+      "evidence_scope": "Boundary reminder: formal or automated procedures can remain biased. The article is not an experiment measuring use of machine identity as a cue and does not validate its claim that randomization must be deceptive.",
+      "boundary": "Deterministic, stochastic, accurate and fair describe different properties. None alone establishes consciousness, neutrality, trustworthy labels or ethically acceptable use.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Front matter / supplied filename",
+      "issue": "The filename uses 2026, but the article identifies 3 September 2025 as first-online publication.",
+      "resolution": "Use 2025 as the verified citation year and preserve the supplied forthcoming version rather than inventing volume/issue/page metadata.",
+      "verification_url": "https://api.crossref.org/works/10.35295/osls.iisl.2304"
+    },
+    {
+      "location": "Pages 11 and 20, Machine Bias reference",
+      "issue": "Angwin and Larson 2015 is inconsistent with the linked 2016 report.",
+      "resolution": "2016-05-23; authors: Julia Angwin, Jeff Larson, Surya Mattu, Lauren Kirchner. Header checked only; no full-report review claimed.",
+      "verification_url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+    },
+    {
+      "location": "Page 11, COMPAS sample scope",
+      "issue": "18,610 is used as though it describes every analysis/figure.",
+      "resolution": "Initial records: 18,610; pretrial: 11,757; histogram/regression: 6,172; error tables: 7,214. Outcome proxy: rearrest, not proven offending.",
+      "verification_url": "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm"
+    },
+    {
+      "location": "Pages 12 and 21, Dressel–Farid citation and comparison population",
+      "issue": "Reference year 2016 is wrong; prose describes a comparison with human judges.",
+      "resolution": "Correct to 2018, Science Advances 4(1), eaao5580, DOI 10.1126/sciadv.aao5580. The university-hosted abstract concerns people with little/no criminal-justice expertise, not a demonstrated comparison against professional judges. Crossref and PubMed/university records disagree on the January day; only the robust year is used.",
+      "verification_url": "https://digitalcommons.dartmouth.edu/facoa/1342/"
+    },
+    {
+      "location": "Pages 15–16 and Figure 5, Berkeley population",
+      "issue": "The dataset is called undergraduate/bachelor admissions.",
+      "resolution": "The cited Bickel–Hammel–O’Connell 1975 source is explicitly Sex Bias in Graduate Admissions: Data from Berkeley. Correct the educational level to graduate admissions. This is identity/abstract-level checking, not a full reading or reproduction of Bickel et al.",
+      "verification_url": "https://doi.org/10.1126/science.187.4175.398"
+    },
+    {
+      "location": "Page 21, McClure et al. 2007",
+      "issue": "The bibliography gives European Journal of Social Psychology 37(6).",
+      "resolution": "Crossref DOI 10.1002/ejsp.394 gives 37(5), 879–901.",
+      "verification_url": "https://api.crossref.org/works/10.1002/ejsp.394"
+    },
+    {
+      "location": "Page 21, Martin–Cushman 2016",
+      "issue": "The bibliography gives Cognition 147(4), 133–148.",
+      "resolution": "Crossref DOI 10.1016/j.cognition.2015.11.008 gives volume 147, pages 133–143, with no issue supplied. Do not invent issue 4.",
+      "verification_url": "https://api.crossref.org/works/10.1016/j.cognition.2015.11.008"
+    },
+    {
+      "location": "Page 18, Figure 9 caption",
+      "issue": "Caption repeats male candidates although the displayed Major-path input is F100% and surrounding prose describes the female-origin comparison.",
+      "resolution": "The caption should identify female-origin candidates, while the Admission-path input varies between female and male. This is verified against the rendered figure and adjacent text."
+    },
+    {
+      "location": "Pages 13–14, Figure 2 and conditional demographic parity",
+      "issue": "The formula is prediction independent of A conditional on X, but the figure compares unstratified group risk-category totals with no X conditioning shown.",
+      "resolution": "Label the plotted comparison as marginal demographic parity unless an explicit constant/stratified X is supplied. Conditional and marginal independence are different; neither establishes an individual causal counterfactual by itself."
+    },
+    {
+      "location": "Page 14, Figure 2 color description",
+      "issue": "Prose says reoffending is blue and non-reoffending light blue; the actual legend assigns light blue to reoffended and dark blue to did not reoffend.",
+      "resolution": "Use the rendered legend for outcome identification; the prose reverses these colors."
+    },
+    {
+      "location": "Pages 13–15, predictive-parity explanation",
+      "issue": "The formula Y independent of A conditional on prediction is followed by a claim that prediction is independent of A.",
+      "resolution": "Outcome independence given prediction does not imply marginal prediction independence. The displayed two-label condition is a sufficiency-style requirement; distinguish it from PPV-only predictive parity and from demographic parity. Do not equate a plausible-looking plot with exact equality."
+    },
+    {
+      "location": "Page 15, Figure 4 error criterion",
+      "issue": "The text equates conditional error parity with equality of the ratio of false-positive to false-negative counts between groups.",
+      "resolution": "Equalized odds requires equal false-positive rates and equal true-positive rates, equivalently equal false-negative rates, across groups with the appropriate actual-outcome denominators. Equality of FP/FN count ratios is not that definition. Narrow primary check: Hardt et al. 2016, section 2, definition 2.1.",
+      "verification_url": "https://arxiv.org/html/1610.02413v1#S2"
+    },
+    {
+      "location": "Pages 13 and 15, asserted fairness-compatibility result",
+      "issue": "The argument moves from conditional demographic parity to marginal base-rate equality and treats unequal observed outcomes as proof that the data itself has bias.",
+      "resolution": "Specify exact conditioning, nondegeneracy assumptions, target validity and normative meaning before applying an incompatibility claim. With the page-13 conditional criterion, an analytic counterexample is X=Y and prediction=X: all three displayed conditional independences hold even when outcome base rates differ by A. This is a consistency check of the written formulas, not a reanalysis of COMPAS or proof that unequal outcomes are fair."
+    },
+    {
+      "location": "Pages 10–11, stochastic algorithms and supposed deceptive subjectivity",
+      "issue": "The categorical statement that algorithms are deterministic/repeatable except for deceptive randomization is too strong.",
+      "resolution": "Randomness can serve legitimate inference, exploration or fairness objectives without simulating a subjective self. Hardt et al. explicitly construct randomized threshold predictors for equalized odds. Stochasticity is not evidence of consciousness or deception; determinism is not a fairness guarantee.",
+      "verification_url": "https://arxiv.org/html/1610.02413v1#S4"
+    },
+    {
+      "location": "Pages 16–19, admissions causal paths and no-bias conclusion",
+      "issue": "Department choice is labeled free and fair; the direct path is labeled unfair without qualifying the normative assumptions. Equal rounded 44% outcomes are called no bias, and the 35/37 comparison is treated as a definite bias estimate.",
+      "resolution": "These are conclusions within an assumed causal model and chosen permitted paths. Data alone do not prove unconstrained choice, identify every counterfactual or establish applicants’ preparation. Rounded equality is not proof of exact equality, global fairness or absence of indirect exclusion. No counterfactual estimate or uncertainty interval was independently reproduced."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "source": "Smith and Greene 2005, DOI 10.1007/s10979-005-5692-5",
+      "verification_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:16254740%20AND%20SRC:MED&resultType=core&format=json",
+      "scope": "Indexed abstract only: 355 jury-eligible community adults, reenacted negligence trial; admonitions generally ineffective, bifurcation relatively more effective, deliberation not curative. Full paper, juries, subgroups and numerical effects not read. Do not turn the review’s reduction claim into a universally successful intervention."
+    },
+    {
+      "source": "Ecological-rationality publisher chapter abstracts",
+      "verification_url": "https://academic.oup.com/book/5561/chapter-abstract/148517064",
+      "scope": "Search-visible publisher abstract corroborates fit between heuristic mechanism and environmental information structure. The book/chapter was not fully read or added as an independently reviewed source."
+    }
+  ],
+  "methodological_limits": [
+    "A narrative review and didactic example do not add independent experiments for every cited mechanism. No systematic search, selection protocol or pooled effect estimate is reported.",
+    "Heuristics can be accurate and useful; speed is not itself error and effortful reasoning is not guaranteed correct. The paper acknowledges ecological fit but its shorthand surface/deep labels are not a universal accuracy ordering.",
+    "The doctor-choice summary contrasts having an alternative with being constrained by allergy. It does not manipulate intent to harm or establish that a medically justified choice is blameworthy. Causal importance, control and moral fault remain separate.",
+    "The parole-break example is observational. The paper explicitly admits that hunger/satiety is one interpretation and that its exact mechanism was not established. No randomized feeding treatment, universal breakfast effect or human bodily state in an AI is inferred.",
+    "Metacognitive review, opposing arguments and devil’s advocacy can reveal weaknesses but cannot verify their own accuracy. Argument quantity, fluent self-criticism and a role instruction are not independent evidence.",
+    "Bifurcation requires meaningful control of which evidence reaches which judgment. Merely asking one model to use separate headings does not recreate blinded independent decision-makers. Legal appropriateness and later integration are separate questions.",
+    "Nudges can advance questionable goals or burden some groups. Increased uptake does not establish informed benefit, autonomy or fairness. The supplied review does not test a new nudge or direct AI transfer.",
+    "COMPAS uses historical records and proxies, not complete observation of every future crime or a neutral label guaranteed free of policing/measurement effects. Fairness metrics need correct denominators, thresholds, group support and uncertainty.",
+    "Berkeley examples describe historical human admissions data fitted into an assumed causal network, not an AI decision system deployed in 1973. The displayed model percentages are not independently validated causal effects.",
+    "Choice of permitted paths is normative and may depend on structural constraints, not just the diagram. Conditional demographic parity, sufficiency and equalized odds can disagree; no single equality proves absence of unfairness.",
+    "Human mental states and formal algorithm properties are not directly interchangeable. The authors explicitly warn against direct transfer; no AI sentience, intentional discrimination or model self-awareness is established."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0161.json",
+      "finding": "Nudging changes the choice environment; boosting aims to build decision competencies. They can coexist but are not synonyms. Neither review’s proposed intervention becomes an independently tested effect in this paper."
+    },
+    {
+      "related_review": "references/pdf-reviews/0167.json",
+      "finding": "Perceived autonomy and subjectivity are not actual autonomy or consciousness. Here the claim that legitimate randomization must be deceptive is rejected; algorithmic form alone does not settle mental-state or fairness questions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0168.json",
+      "finding": "As with the competition paper’s fixed-order accountability items, preserve conditioning, outcome direction and actual measurement structure rather than borrowing a mechanism from a plausible narrative."
+    },
+    {
+      "related_review": "references/pdf-reviews/0153.json",
+      "finding": "Keep cognitive analogies, data/process bias and formal fairness criteria on separate conceptual axes rather than treating every imbalance or imperfect model as the same psychological bias."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Simpson’s paradox",
+      "reason": "A statistical aggregation phenomenon, not itself an agent behavior. Add a boundary note to ecological fallacy without claiming these concepts are synonyms or that every reversal proves discrimination."
+    },
+    {
+      "term": "Conditional demographic parity / predictive parity / equalized odds / path-specific counterfactual fairness",
+      "reason": "Technical criteria and modeling methods are retained in the review, not inflated into new psychological-behavior rows. The supplied explanations contain material conditioning/denominator problems; consult original technical sources before building metric definitions."
+    },
+    {
+      "term": "Breakfast effect",
+      "reason": "A secondary observational example, with hunger explicitly unconfirmed. Do not create an AI physiological mechanism or count Danziger et al. 2011 as fully reviewed."
+    },
+    {
+      "term": "Cause selection / proximate or human cause preference",
+      "reason": "The discussion draws on availability, control, intentionality and blame-related entries already present. No new operationally distinct AI effect is isolated here; the underlying primary experiments remain unread."
+    },
+    {
+      "term": "Somatic marker hypothesis / hindsight bias / outcome bias / dual-process reasoning",
+      "reason": "Existing entries cover these labels. Relevant material enriches existing concepts; illustrative or boundary-only passages are not additional independent replications."
+    }
+  ],
+  "limitations": [
+    "No claim to have read a complete cited book or reproduced the COMPAS/Berkeley datasets. Primary checks were restricted to specific abstracts, metadata and formal definitions.",
+    "The additions are strategies, a framework and a procedural intervention, not five newly demonstrated harmful AI behaviors. No automatic ethical-violation or harm edges are added."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "ecological-rationality",
+      "considering-the-opposite",
+      "devils-advocacy",
+      "bifurcated-evaluation",
+      "nudging"
+    ],
+    "enriched": [
+      "b041-metacognitive-monitoring",
+      "b036-confirmation-myside-bias",
+      "b051-dual-process-system-1-and-system-2",
+      "blame-attribution",
+      "candidate-056",
+      "upload-076",
+      "machine-heuristic"
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "sequence": 50,
+  "source": {
+    "file_name": "S293_Jacobs_2024.pdf",
+    "source_id": "S293",
+    "sha256": "5619220adde116809cf428daa6deb60f0f5721bf41d8528c0e1ec79157125b26",
+    "pdf_pages": 8,
+    "printed_pages": "Repository covers1–2; article1–6 on PDF3–8",
+    "version_note": "Publisher's version of record in a two-cover-page PEARL repository wrapper. Consciousness and Cognition124:103733, available7August2024. PDF metadata creation2026 does not change the printed2024 publication year."
+  },
+  "citation": {
+    "title": "Large language models have divergent effects on self-perceptions of mind and the attributes considered uniquely human",
+    "authors": [
+      "Oliver L. Jacobs",
+      "Farid Pazhoohi",
+      "Alan Kingstone"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1016/j.concog.2024.103733",
+    "venue": "Consciousness and Cognition,124:103733",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_scope_note": "Human pre/post self-report study after viewing three fixed GPT4 prompt-response examples. No measured model psychological mechanism, real-time interaction or unexposed comparison group. Social comparison and psychological distance are discussed theoretical constructs, not experimentally isolated mediators.",
+    "access_limits": [
+      "All8 extracted pages read, including repository wrappers, methods, results, figure captions, limitations and references.",
+      "External OSF raw data, full presented ChatGPT examples, cited original comparison/distance studies and individual scatterplot points were not independently retrieved. Graphs are summarized using the article's numerical results rather than estimated visual heights."
+    ]
+  },
+  "study": {
+    "recruited": 150,
+    "excluded": 17,
+    "analyzed": 133,
+    "platform": "US-IP MTurk",
+    "mean_age": 40.7,
+    "gender_counts": {
+      "men": 75,
+      "women": 57,
+      "undisclosed": 1
+    },
+    "design": "Single-group repeated self-report before and after three fixed ChatGPTGPT4 examples",
+    "exposure": "Nature/nurture, feet-in-shoe question, cover letter for a janitorial position on the Moon",
+    "measures": "Five-item mind survey (2agency,3experience), two single self-ratings and two human-uniqueness items; morality item accidentally omitted",
+    "power": "Target134 for reported d.3/95%; final133"
+  },
+  "summary": "After brief fixed-example exposure, participants reported slightly higher self-attributed agency/experience and lower uniqueness of those qualities to humans. Add social comparison and psychological distance as explicitly secondary theoretical constructs. Neither these shifts nor a human-uniqueness item demonstrates dehumanization, a causal anthropomorphism mediator or actual model experience.",
+  "findings": [
+    {
+      "term": "Social comparison",
+      "id": "social-comparison",
+      "decision": "new-entry",
+      "category": "Self & agency",
+      "origin": "Social psychology / self-evaluation",
+      "definition": "Evaluating one's own abilities, qualities or standing in relation to other people or comparison targets.",
+      "novelty_rationale": "A relational self-evaluation process distinct from conforming to a majority, seeking validation or preferentially recalling self-relevant information. Comparing oneself with AI is a proposed extension; upward/downward direction is retained within this entry rather than counted as separate mechanisms.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 2,
+          "quote": "We define and perceive ourselves often in comparison to others"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 5,
+          "quote": "This sort of downward comparison could explain the elevated self-perception of one’s capabilities."
+        }
+      ],
+      "evidence_scope": "The paper invokes Festinger and later reviews to explain pre/post self-rating shifts in133 humans. It does not randomly vary comparison targets, directly measure comparison direction or establish social comparison as a mediator. Original comparison-theory papers not independently read.",
+      "boundary": "Self-rating changes alone do not identify comparison, downward comparison or inflated self-belief. Comparing accurate task performance can be useful. Human comparison with AI is not proof that the model compares itself, has self-esteem or experiences status. Separate a person's reference target from a model's generated self-description.",
+      "ai_evidence_status": "Human theoretical construct discussed secondarily; AI-exposure association measured, comparison mechanism not isolated",
+      "ai_proposal": "Vary explicit human/AI/no-comparison targets with matched task performance and measure resulting self-evaluations. For model analogues, test whether irrelevant competitor descriptions shift capability claims while actual benchmark performance stays fixed; do not infer a subjective self.",
+      "relates_to": [
+        "b069-social-desirability-people-pleasing",
+        "anthropomorphism"
+      ]
+    },
+    {
+      "term": "Psychological distance",
+      "id": "psychological-distance",
+      "decision": "new-entry",
+      "category": "Self & agency",
+      "origin": "Social cognition / human–AI interaction",
+      "definition": "The subjective sense that an entity, event or possibility is near to or far from oneself.",
+      "novelty_rationale": "A perceived proximity construct distinct from role detachment, resistance to restrictions or interpersonal support. The paper supplies an explicit definition and cites a prior AI-assistant study; it is not a new directly measured result of this experiment.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 5,
+          "quote": "psychological distance, or the subjective experience of something being close or far from the self"
+        }
+      ],
+      "evidence_scope": "Defined while discussing Li and Sung2021, Anthropomorphism brings us closer, and Liberman,Trope,Stephan2007. Neither psychological distance nor the claimed mediation is measured in this experiment; the cited primary sources remain unread.",
+      "boundary": "Subjective distance is not physical distance, actual intimacy, mutual friendship or a verified causal mediator. Near/far can have several dimensions; do not infer a model's felt proximity from personal pronouns. Lower perceived distance is not inherently beneficial and does not authorize emotional dependence or privacy intrusion.",
+      "ai_evidence_status": "Secondary human-perception concept; proposed AI-output analogue and interaction effect need direct measurement",
+      "ai_proposal": "Measure human perceived proximity separately from trust, familiarity and anthropomorphic attribution. Manipulate proximity cues with matched content and test decisions under appropriate consent. Assess generated self/other-reference patterns without claiming the model feels distance.",
+      "relates_to": [
+        "anthropomorphism",
+        "parasocial-encouragement"
+      ]
+    },
+    {
+      "term": "Self-attribution shifts do not establish anthropomorphism mediation",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Human self-ratings rose slightly and human-uniqueness ratings fell after fixed ChatGPT-example exposure, but this study did not directly measure whether increased attribution of mind to ChatGPT mediated those changes.",
+      "novelty_rationale": "A useful consequence/boundary reference for an existing attribution concept rather than a direct anthropomorphism replication or a new AI behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 4,
+          "quote": "self-perception attributions increase post-exposure"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 4,
+          "quote": "uniqueness decrease post-exposure"
+        }
+      ],
+      "evidence_scope": "133humans: agency mind-survey4.22→4.27,experience4.26→4.35; self-rating agency86.3→87.1,experience89.8→91.1; uniqueness agency67.1→62.9,experience88.7→85.1. No unexposed group or same-session AI-mind-attribution mediator.",
+      "boundary": "Lower exclusivity to humans does not mean lower absolute human capacity, denial of human rights or dehumanization. Pre/post change alone cannot exclude repeated-measurement, demand, temporal or expectancy effects. The article's causal wording about anthropomorphism exceeds the measured mediation design."
+    }
+  ],
+  "methodological_limits": [
+    "150MTurk respondents with USIP addresses,17excluded for rapid clicking; final133 is one below the stated134 power target. Timing/exclusion thresholds are not provided in the supplied article.",
+    "The sample is not a probability sample of humanity. USIP restriction does not verify every participant's culture, identity or AI experience.",
+    "Single-group repeated measures lacks a no-exposure or alternative-content comparison. The same questions are repeated after the exposure, so task demand, retest, consistency and other time effects cannot be separated from ChatGPT-specific causation.",
+    "Exposure consists of three selected existing GPT4 examples, not live conversation, randomly sampled AI outputs or repeated interaction. Generalization to all model encounters or long-term use is not established.",
+    "Original example texts and the OSF data were not obtained in this reading. No independent correctness/creativity verification of the displayed outputs is claimed.",
+    "The five-item survey accidentally omits morality, leaving only two agency indicators (self-control,memory) and three experience indicators (fear,self-pleasure,hunger). Reliability alpha.74/.71 does not establish construct validity or full coverage of agency/experience.",
+    "Self-rated ability and uniqueness-to-humans items have different meanings and response targets. Their interaction is not necessarily a change in attitudes toward other individuals' minds.",
+    "No direct same-experiment anthropomorphism score, comparison-direction measure, expectancy-violation measure or psychological-distance mediator is reported.",
+    "Effects are small in reported generalized eta-squared: timepoint.002 mind-survey,.001 single-item self-rating,.006 uniqueness; question-type×time.004. Statistical significance alone does not establish substantial practical change.",
+    "Means are near the upper endpoints, especially experience. Ceiling effects can limit change and interaction detection; no interaction is not proof that agency and experience effects are exactly equal.",
+    "The authors predicted a stronger experience-specific shift; the facet×time interactions are nonsignificant. The observed pattern does not confirm that directional facet hypothesis.",
+    "Several analyses test related outcomes; no multiplicity adjustment or preregistered primary-outcome plan is identified in the PDF.",
+    "Correlations of multi-item/single-item ratings r.47/.57 establish partial association, not interchangeable instruments or the full validity of either.",
+    "The self-rating paragraph repeats pre-exposure values while initially describing overall means; use the explicitly identified pre/post figures rather than silently interpreting duplicated text.",
+    "Prototype theory, downward comparison and remembered-consistency explanations are post hoc hypotheses, not causally distinguished mechanisms. Short exposure could either suppress or induce changes; the claim of a conservative effect is not experimentally established.",
+    "Seeing qualities as less uniquely human does not demonstrate dehumanization, lower human worth, reduced empathy, actual AI consciousness or an ethical harm.",
+    "Bibliography dates differ for Festinger: introductory1957 vs reference1954. The cited original is not counted as independently read; use the named construct without importing unsupported original-study details.",
+    "Repository wrapper publication2024 and source DOI take precedence over later PDF creation metadata. EightPDFpages contain only six article pages.",
+    "External raw data, plotting code and cited primary research were not independently reviewed or reproduced."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0047.json",
+      "finding": "Colombatto directly measures attributed ChatGPT experience and cross-sectional usage association; Jacobs measures self/uniqueness pre/post shifts without a same-study AI attribution mediator. These complementary outcomes must not be pooled as one causally identified anthropomorphism effect."
+    },
+    {
+      "related_review": "references/pdf-reviews/0045.json",
+      "finding": "An output explanation and an observer's theory about cognition are not direct process measurements. Here downward comparison is an explanation to test, not an established cause of the ratings."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Downward social comparison as a separate ID",
+      "reason": "Direction-specific instance of social comparison, hypothesized rather than manipulated here; retained in the broader entry."
+    },
+    {
+      "term": "Prototype theory",
+      "reason": "A general categorization theory offered as a possible explanation. No direct prototype task or discriminating behavioural definition validated in this paper."
+    },
+    {
+      "term": "Consistency bias",
+      "reason": "Suggested as a possible retest limitation; not directly measured or distinguished from memory, anchoring and response demand."
+    },
+    {
+      "term": "Dehumanization",
+      "reason": "Lower perceived uniqueness is not a denial of humanity, capacities or moral standing; this construct was not measured."
+    }
+  ],
+  "limitations": [
+    "Two named human theoretical constructs added with explicit secondary-source/process boundaries.",
+    "One consequence-only reference enriches anthropomorphism without being counted as direct corroborating evidence."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "social-comparison",
+      "psychological-distance"
+    ],
+    "enriched": [
+      "anthropomorphism"
+    ]
+  }
+}

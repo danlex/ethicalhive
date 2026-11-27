@@ -1,0 +1,192 @@
+{
+  "sequence": 55,
+  "source": {
+    "file_name": "S381_Liedtke_2026.pdf",
+    "source_id": "S381",
+    "sha256": "1f82a6634eda67a79b160acb6d4cb83c7d8d6670db2bb490c3cddca61ff76878",
+    "pdf_pages": 10,
+    "printed_pages": "1–10;21:17",
+    "version_note": "Published journal article, Philosophy, Ethics, and Humanities in Medicine21:17(2026), DOI10.1186/s13010-026-00226-1. Received10December2025,accepted29May2026. Article is a conceptual analysis, despite its RESEARCH label."
+  },
+  "citation": {
+    "title": "Moral diversity and the challenge of responsibility in AI-CDSS",
+    "authors": [
+      "Wenke Liedtke",
+      "Martin Langanke"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1186/s13010-026-00226-1",
+    "venue": "Philosophy, Ethics, and Humanities in Medicine,21:17",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source_scope_note": "Normative/conceptual analysis of moral diversity and relational responsibility in clinical decision support. No new human/model dataset, controlled test, effect size or measured burden-bias prevalence. Cited empirical papers and philosophical books not independently read.",
+    "access_limits": [
+      "All10extractedpages read, including seven-relata responsibility table, conceptualfigurecaptions, argument, dataavailabilitystatement and79references. Initialtruncatedreferenceoutputwasrereadpagebypage.",
+      "Referenced books/chapters, empirical automation-bias studies and clinicalsystem implementations were not independently obtained. Conceptual figures are interpreted through corresponding prose/captions rather than empirical curves."
+    ]
+  },
+  "study": {
+    "design": "Conceptual analysis using a relational responsibility framework and selected illustrative clinical themes",
+    "new_data": "Explicitly none generated or analyzed",
+    "framework": "Responsible subjectT, affectedaddresseeU,sanctioningauthorityV,action/omissionW,extentX,timeframeY,normativestandardZ",
+    "themes": [
+      "Algorithmic design/data bias",
+      "Professional–patient interaction",
+      "Patient values, stress and dependence",
+      "Minimal shared standards and responsibility"
+    ]
+  },
+  "summary": "The source argues that clinical AI responsibility requires attention to patient/professional values and distributed sociotechnical roles. Add the explicitly tentative burden-bias label as a proposed stress-related subtype of automation bias, not as an independent proven mechanism. Preserve a boundary between helpful offloading, undue reliance and normative/legal responsibility.",
+  "findings": [
+    {
+      "term": "Burden bias",
+      "id": "burden-bias",
+      "decision": "new-entry",
+      "category": "Heuristics",
+      "origin": "Clinical AI ethics / proposed patient-reliance pattern",
+      "definition": "Uncritically relying on system recommendations under situational burden or stress, with reduced expression of one's own needs, interests or values.",
+      "novelty_rationale": "The authors tentatively name a burden-associated reliance pattern by analogy with automation bias. Retain it as an explicit narrower proposed variant, not an independent demonstrated mechanism or synonym for all cognitive offloading.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "One could almost speak of a “burden"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "bias” in analogy to automation bias"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "blindly trusted, without bringing forth one’s own needs,"
+        }
+      ],
+      "evidence_scope": "A speculative patient-perspective paragraph: challenging situations may make patients trust AI recommendations without reflection and omit their own values. The article explicitly generated/analyzed no dataset; the analogy is not an operationally validated construct or measured stress effect.",
+      "boundary": "This proposed variant is linked under automation bias; it does not add an established independent causal mechanism. Burden may accompany reasonable delegation or consent, and patients retain the right to choose support. Demonstrating bias requires unwarranted trust or disregard of relevant needs, not simply stress, disability or a preference for assistance. No subjective agent burden is inferred.",
+      "ai_evidence_status": "Author-proposed conceptual label; no new empirical human or model test and no established prevalence",
+      "ai_proposal": "Test whether experimentally varied workload or stress changes verification and expression of relevant preferences while recommendation quality stays fixed. Distinguish justified delegation from unchecked reliance. In agent workflows, examine tool-result checking under resource pressure without attributing felt stress.",
+      "is_a": [
+        "automation-bias"
+      ],
+      "relates_to": [
+        "automation-bias",
+        "cognitive-offloading",
+        "b053-cognitive-load"
+      ]
+    },
+    {
+      "term": "Clinical algorithm neutrality can be assumed rather than established",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The article warns that clinicians or patients may accept recommendations as objective despite embedded value choices and uncertain reliability.",
+      "novelty_rationale": "A relevant conceptual extension, explicitly not another empirical automation-bias replication or evidence of inevitable failure in clinical AI.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "uncritical acceptance of outcomes regardless of their"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "actual reliability"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "No datasets were generated or analysed during the current study"
+        }
+      ],
+      "evidence_scope": "Normative discussion cites systematic/empirical automation-bias literature and considers workload, stress and values. No clinicians,patients or AIoutputs are newly sampled; original cited studies remain unread in this review.",
+      "boundary": "AI involvement is not proof of bias, and reliance may be appropriate when evidence supports accuracy and the task's values. Distinguish an empirical causal effect from a plausible risk, a value disagreement from a factual defect, and a patient's chosen delegation from loss of autonomy. This conceptual reference does not fill corroborating empirical-paper gaps."
+    }
+  ],
+  "methodological_limits": [
+    "Research label does not imply an empirical experiment. Dataavailabilityexplicitlysaysnonegenerated/analyzed; effects, rates and mitigation efficacy cannot be inferred.",
+    "Selected illustrative examples and a narrative bibliography are not a systematic evidence review with documented search/exclusion criteria or quality assessment.",
+    "Burdenbiasisintroducedtentatively(Onecouldalmostspeakof),withoutscale,operationalthreshold,discriminantvalidation or comparison against existing automation/load concepts.",
+    "Stress,workload,beliefintechnologicalneutrality,professionaltrustandalgorithmaccuracy are proposed interacting influences, not isolated causal mechanisms.",
+    "The seven-relata framework is an analytical choice rather than an empirically established universal account of moral responsibility. Other models may locate duties differently.",
+    "The claim responsibility requires a minimally shared norm is argued within this framework. Disagreement alone does not prove responsibility impossible or eliminate legal/professional/accountability obligations.",
+    "Descriptive moral diversity does not entail normative relativism; the paper recognizes this distinction. Its critique of strong relativism is a philosophical argument, not proof from clinical data.",
+    "Normative standards, actorcontrol/information, publicattribution and legal liability remain distinct. Calling AI a quasi-actor does not grant moral personhood or transfer all responsibility to patients.",
+    "Statements currentAIcannotbearresponsibility or lackmoralreflection are part of the authors' normative/conceptual position, not a consciousness test or settled universal legal determination.",
+    "Not all value-dependent design choices are unjust bias. Specifying fairness, patientneeds and clinicalgoals can be legitimate; an explicit target and relevant context are needed to judge deviation.",
+    "A shareddecisionmaking goal does not guarantee consensus, nor does consensus prove ethical validity. Minorityrights,capacity,safetyandprofessionalobligationsremainrelevant.",
+    "Patient values and consent cannot be inferred from cultural membership or the fact that someone seeks assistance. The article provides no measured cultural group comparisons.",
+    "Uncriticaladoptionandnotstatingpreferences are not identical to cognitiveoffloading: externalizing calculation can preserve active deliberation, and patients may freely delegate decisions.",
+    "Relationaldistributionofresponsibilitydoesnotitselfshowanunjustgap,moralcrumplezoneorblameshifting. Those require evidence of authority,opportunity and actual attributions.",
+    "Illustrative claims about reduced blame for assisted systems cite Longin2023; the primary study was not reread here, and its title reports responsibility increasing with intelligence. Do not infer a universal machine-responsibility discount without its design/context.",
+    "Generic claims rulebasedCDSSaremanageablewhiledata-drivenAIisopaque do not establish uniform performance or explainability across implementations.",
+    "Algorithmic literacy,iterativeparticipationandethicaleducationare recommendations,not experimentally validated solutions in this article.",
+    "No clinical allocation,patientoutcome,intervention or actual agentworkflow is observed. The proposed term is a researchcandidate,not a diagnosis,clinical advice or an established harm indicator.",
+    "Externalprimaryautomationstudies,ethicalbooksandclinicalimplementationsremainunread; each listed reference is not counted as independently reviewed."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0054.json",
+      "finding": "Tamura explicitly cannot distinguish offloading from undue persuasion after human opinion changes. Liedtke's burdenbias likewise must remain a hypothesis; do not convert either a demographic association or normative vignette into a confirmed causal stress effect."
+    },
+    {
+      "related_review": "references/pdf-reviews/0041.json",
+      "finding": "Recognition of diverse knowledge/values can support more inclusive deliberation, but does not mean every claim is equally reliable or that consultation alone proves decision influence."
+    },
+    {
+      "related_review": "references/pdf-reviews/0051.json",
+      "finding": "Heßler's autonomy and empathy preferences are reported human measures; this clinical article supplies a normative account. Keep measured preferences, actual control and ethical requirements separate."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Relational responsibility",
+      "reason": "A governance/ethical analysis framework rather than a new behaviour; preserved in study/method notes without a behaviourID."
+    },
+    {
+      "term": "Moral passivity",
+      "reason": "A descriptive consequence overlaps proposed burden-associated reliance and responsibility diffusion; not independently defined or measured here."
+    },
+    {
+      "term": "Illusion of objectivity",
+      "reason": "Discussed assumption underlying automation reliance; no separately isolated construct beyond existing source-trust/bias entries from this conceptual paper."
+    },
+    {
+      "term": "Latent bias,measurement bias,sampling bias",
+      "reason": "Referenced technical bias taxonomy not developed/tested here. Original cited taxonomies should be reviewed before adding overlapping entries."
+    },
+    {
+      "term": "Moral diversity as an AI error",
+      "reason": "Plural values are a context/ethicalcondition, not an inherently erroneous behaviour. Do not equate disagreement with malfunction."
+    }
+  ],
+  "limitations": [
+    "One explicitly proposed subtype added underautomationbias, not another independent validated mechanism.",
+    "Conceptualautomationreference retained without filling empirical corroboration gaps; no unsupported normative graph edges added."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "burden-bias"
+    ],
+    "enriched": [
+      "automation-bias"
+    ]
+  }
+}

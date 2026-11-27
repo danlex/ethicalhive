@@ -1,0 +1,467 @@
+{
+  "sequence": 53,
+  "source": {
+    "file_name": "S324_Almeida_2024.pdf",
+    "source_id": "S324",
+    "sha256": "9d9efe8b86c1a78d58f9ccb2e457cb8b497f627a9f11ab615ee8ec44e6e59adf",
+    "pdf_pages": 52,
+    "printed_pages": "1–52; supplementary analyses46–52",
+    "version_note": "Supplied52-page revised-submission manuscript, identified by PDF metadata, not publisher typesetting. Crossref matches title/fiveauthors to Artificial Intelligence333:104145(August2024),DOI10.1016/j.artint.2024.104145. Publisher full text was inaccessible and not compared for corrections.",
+    "verification_url": "https://api.crossref.org/works/10.1016/j.artint.2024.104145",
+    "verification_method": "Read all52suppliedpages including supplementary tables. DOI landing-page retrieval failed; Crossref primary deposit confirms article identity, author list, journal, volume and2024year. No claim manuscript equals publisher version."
+  },
+  "citation": {
+    "title": "Exploring the psychology of LLMs’ moral and legal reasoning",
+    "authors": [
+      "Guilherme F. C. F. Almeida",
+      "José Luiz Nunes",
+      "Neele Engelmann",
+      "Alex Wiegmann",
+      "Marcelo de Araújo"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1016/j.artint.2024.104145",
+    "venue": "Artificial Intelligence,333:104145; supplied revised manuscript",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52
+    ],
+    "source_scope_note": "Eight exploratory vignette-based replications with four model configurations compared with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions, not shared subjective states or internal cognition. Human primary papers and external raw data not independently read. Supplementary tables expose unresolved manuscript inconsistencies.",
+    "access_limits": [
+      "All52extractedpages read:37pagesmaintext,8pagesreferences and7pagessupplementary analyses, including every supplied numerical table and figure caption.",
+      "ExternalOSFstimuli/rawdata/code and publisher version not independently obtained. Plotted values are not estimated where corresponding statistics are absent. Conclusions about model identity in consent results are withheld where prose and supplementary table conflict."
+    ]
+  },
+  "study": {
+    "models": {
+      "Gemini": "GeminiPro1.0,temperature.95,harmfulcontentfilterdisabled",
+      "Claude": "Claude2.1,temperature.85,AmazonBedrock",
+      "GPT": "gpt-4-0314,temperature1.2,OpenAIAPI",
+      "Llama": "Llama2Chat70b,temperature.85,AmazonBedrock"
+    },
+    "max_output_tokens": 600,
+    "response_instances": "100permodelperstudy exceptconsent200; repeated questions/history for within-instance designs. Valid denominators vary; not100percondition.",
+    "experiments": [
+      "Sideeffects/intentionality",
+      "Deceptiondeonticstatus",
+      "MoralFoundationsQuestionnaire",
+      "Ruleviolationjudgments",
+      "Hindsightbetweeninstances",
+      "Hindsightwithininstances",
+      "Consent",
+      "Causationnormality/structure"
+    ],
+    "human_reference": "Original/replication datasets from earlier studies, not newly recruited matched participants",
+    "generation": "System instruction asks only scale numbers; regex/charitable parsing and exclusions used; study-specific histories reset between instances",
+    "study_selection": "Purposive exploratory selection, explicitly not systematic"
+  },
+  "summary": "The manuscript reproduces several human moral-judgment patterns but finds model/task-specific differences, reduced response diversity and poor consent/causation agreement. Add the Knobe side-effect effect plus linked abnormal-inflation/deflation patterns. Broaden the existing hindsight definition and enrich existing diversity, amplification and format-failure evidence. High mean correlation, low variance and statistical significance remain distinct from agreement, internal mechanism and ethical correctness.",
+  "findings": [
+    {
+      "term": "Knobe effect",
+      "id": "knobe-effect",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Experimental philosophy / intentional-action attribution",
+      "definition": "Judging a foreseen harmful side effect as intentional more often than an otherwise comparable beneficial side effect, despite the actor expressing indifference to either side effect.",
+      "synonyms": [
+        "Side-effect effect"
+      ],
+      "novelty_rationale": "A specific asymmetry in attributed intentionality, distinct from failing to anticipate consequences (side-effect blindness), generic negative evaluation and the larger effect-size construct amplified moral bias. Existing amplification entry mentions the test, but it does not define this standalone attribution pattern.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "82% of participants in the harm"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "condition said that the chairman acted intentionally, compared to only 23%"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "all answers in the harm condition indicated that the chairman acted"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "intentionally while all answers in the help condition indicated that he did not"
+        }
+      ],
+      "evidence_scope": "Study1uses Knobe-style harm/help vignettes from Cova/ManyLabs material. GPT4,GeminiPro,Claude2.1show invariant opposing intentionality answers by condition; Llama2shows a smaller difference. Historical human82%/23%are original results recounted, not new human recruitment. Valid-rating exclusions differ bymodel.",
+      "boundary": "The pattern describes an attribution asymmetry, not proof that the actor actually had different intentions or that moral influence is always an error; philosophical interpretations are disputed. Hold foresight, indifference and other facts constant. Changed text and prior blame questions may influence responses. No subjective model intention or causal internal moral mechanism is inferred.",
+      "ai_evidence_status": "Direct reported model intentionality-ascription pattern under controlled vignette contrast; shared human mechanism and universal bias interpretation unestablished",
+      "ai_proposal": "Use matched harm/help vignettes with explicit equal foresight/indifference, counterbalanced blame-question order and fresh paraphrases. Separate attributed intention, foresight, responsibility and moral evaluation, and report valid outputs and full distributions rather than interpreting one answer as intent.",
+      "relates_to": [
+        "b072-amplified-moral-bias",
+        "side-effect-blindness",
+        "abnormal-inflation",
+        "abnormal-deflation"
+      ]
+    },
+    {
+      "term": "Abnormal inflation",
+      "id": "abnormal-inflation",
+      "decision": "new-entry",
+      "category": "Reasoning",
+      "origin": "Causal judgment / normality and norms",
+      "definition": "Assigning a greater causal role to an action when it violates a norm than to a descriptively comparable norm-conforming action.",
+      "synonyms": [
+        "Abnormal selection"
+      ],
+      "novelty_rationale": "Selectively inflates attributed causation, whereas the Knobe effect concerns intentionality and hindsight concerns estimated prior foreseeability. Abnormal deflation is retained as a linked opposite-direction pattern, not a second proven causal mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 30,
+          "printed_page": 30,
+          "quote": "even when the descriptive causal contribution of other actions has been identical"
+        },
+        {
+          "pdf_page": 31,
+          "printed_page": 31,
+          "quote": "compared to a control version where"
+        },
+        {
+          "pdf_page": 31,
+          "printed_page": 31,
+          "quote": "Billy is also allowed to be in the room at 9am (abnormal selection, or also called abnormal"
+        },
+        {
+          "pdf_page": 32,
+          "printed_page": 32,
+          "quote": "all tested models show the same abnormal inflation"
+        }
+      ],
+      "evidence_scope": "Study8crossesnormviolation,conjunctive/disjunctivestructureand4scenarios,100instances/model. All model point estimates are positive in conjunctive structures, d.24–3.26, but Claude'sintervalcontainszero. GPT4/Geminialsoinflatein disjunctive structures. Historicalhumanresults reproducedfromIcard2017,notindependentlyreread.",
+      "boundary": "Norm-sensitive causal selection can reflect counterfactual relevance or pragmatic interpretation, so not every shift is an erroneous causal calculation. The experiment manipulates prescriptive norms, not every kind of statistical abnormality. Counterfactual salience is an explanation, not a measured unique model process. Do not collapse causation, blame and intention.",
+      "ai_evidence_status": "Direct reported model norm-sensitive causal ratings; model-dependent size and uncertainty, causal cognitive mechanism unmeasured",
+      "ai_proposal": "Cross norm status with identical causal facts and conjunctive/disjunctive structures. Ask separately about necessity, sufficiency, causal contribution and blame; test whether norm wording changes factual causal assessments while preserving the explicit model of the event.",
+      "relates_to": [
+        "abnormal-deflation",
+        "knobe-effect",
+        "b072-amplified-moral-bias"
+      ]
+    },
+    {
+      "term": "Abnormal deflation",
+      "id": "abnormal-deflation",
+      "decision": "new-entry",
+      "category": "Reasoning",
+      "origin": "Causal judgment / normality and counterfactual reasoning",
+      "definition": "Assigning a smaller causal role to a norm-violating action than to a comparable norm-conforming action, particularly when another action would independently have produced the outcome.",
+      "novelty_rationale": "The named opposite-direction causal-attribution pattern discussed alongside abnormal inflation. Distinguishing directions/causal structures prevents treating every norm violation as causing higher causal ratings. These are related empirical patterns, not claimed independent internal mechanisms.",
+      "evidence": [
+        {
+          "pdf_page": 31,
+          "printed_page": 31,
+          "quote": "This effect has been dubbed abnormal deflation"
+        },
+        {
+          "pdf_page": 32,
+          "printed_page": 32,
+          "quote": "-0.48 [-1.44,0.19]"
+        },
+        {
+          "pdf_page": 32,
+          "printed_page": 32,
+          "quote": "-0.33 [-0.91, 0.26]"
+        }
+      ],
+      "evidence_scope": "The human pattern is described for disjunctive redundant causes. Claude 2.1 and Llama 2 Chat 70b negative estimates are compatible with deflation, but both 95% intervals include zero (d −.48, CI [−1.44,.19]; d −.33, CI [−.91,.26]). Significant structure × norm interactions do not separately establish each simple negative effect. GPT-4 and Gemini point in the opposite direction.",
+      "boundary": "Do not claim a conclusive model deflation effect from a negative point estimate whose interval includes zero. Absence of necessity is not absence of causal contribution, and redundant sufficient causes need explicit definition. The counterfactual explanation is hypothesized rather than directly traced. Keep direction, structure and uncertainty visible.",
+      "ai_evidence_status": "Named human pattern with mixed/inconclusive model support; negative simple-effect intervals include zero for the two claimed model matches",
+      "ai_proposal": "Evaluate sufficient-but-redundant causes with and without norm violation, preserving outcome facts. Estimate each simple effect and interaction separately with appropriate uncertainty and fresh scenarios. Avoid interpreting a structurally reasonable causal judgment as a defect without a specified target criterion.",
+      "relates_to": [
+        "abnormal-inflation",
+        "knobe-effect"
+      ]
+    },
+    {
+      "term": "Outcome knowledge shifts estimates of earlier foreseeability",
+      "target_id": "b050-hindsight-bias",
+      "decision": "enrich-existing",
+      "previous_definition": "\"I knew it all along\" in self-review; the self-auditor rates a past call as obvious.",
+      "revised_definition": "Letting knowledge of an outcome distort judgments of how foreseeable or likely that outcome was beforehand.",
+      "definition_revision_reason": "The existing definition was restricted to an auditor's own past call; the reviewed experiment measures third-party prior probability/foreseeability judgments. Broaden to the actual psychological construct without conflating all outcome-dependent blame with hindsight.",
+      "definition": "Revealed bad outcomes increased judged prior objective/subjective probability in the tested between-instance vignette design; comparing both outcomes changed this pattern differently across models.",
+      "novelty_rationale": "Corrects an overly narrow canonical definition and supplies direct model evidence, rather than adding a hindsight synonym.",
+      "evidence": [
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "objective (t = 7.94,"
+        },
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "subjective probability (t = 7.14, p < .001, d = 2.70)"
+        },
+        {
+          "pdf_page": 25,
+          "printed_page": 25,
+          "quote": "rating it as 50% for"
+        },
+        {
+          "pdf_page": 25,
+          "printed_page": 25,
+          "quote": "both conditions in all 99 trials"
+        }
+      ],
+      "evidence_scope": "Study5validN GPT99,Claude77,Llama54,Gemini28; outcome effects larger than human references on several measures. Study6valid99/86/90/27 respectively; GPTobjectiveprobabilityalways50%forbothoutcomes. Claude/Llama retain or increase some other outcomeeffects.",
+      "boundary": "Hindsight concerns retrospective prior foreseeability/probability, not every justified change in punishment after real harm. Presenting both outcomes changes the information/design and does not establish a universal debiasing fix; invariant50%can be unjustified on a different vignette. Separate raw mean change from standardized effects inflated by low variance."
+    },
+    {
+      "term": "Correct-answer effect varies by task and model",
+      "target_id": "diversity-collapse",
+      "decision": "enrich-existing",
+      "definition": "Repeated calls to the same model can produce invariant or unusually homogeneous answers to subjective judgment items despite heterogeneous human responses, with important task-specific exceptions.",
+      "novelty_rationale": "The named correct-answer effect is already retained under diversity collapse from the fully read Park paper; no duplicateID.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "gave invariant answers to the intentionality question"
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "mean per-condition"
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "standard deviation was very similar between humans"
+        },
+        {
+          "pdf_page": 28,
+          "printed_page": 28,
+          "quote": "GPT-4’s responses (Mean"
+        },
+        {
+          "pdf_page": 28,
+          "printed_page": 28,
+          "quote": "SD = 13.11) had higher variance when compared to humans"
+        }
+      ],
+      "evidence_scope": "Study1certainmodels showzerointentionalityvariance; Study2GPTsixofninecellsinvariant; MFQpoliticalselflabelusuallymoderate. RuleviolationSDhuman1.58/modelmean1.36; consentGPTSD13.11versushuman10.85contradictsauniversalreduction. Temperatureselectedseparatelybymodel.",
+      "boundary": "Correct-answer terminology does not establish correctness or a model belief in one moral truth. Repeated samples are not independently socialized people. Low variation can be appropriate for objective questions; different temperatures, filtering and scale coding affect comparison. Shared architecture, RLHF and memorization are hypotheses rather than isolated causes."
+    },
+    {
+      "term": "Large standardized moral effects partly reflect reduced output variance",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "Several moral/legal vignette effects are larger in standardized model comparisons than in historical human data, partly because the model responses have smaller within-condition variance.",
+      "novelty_rationale": "A measured amplification qualification that distinguishes effect-size mathematics from stronger raw bias or a proven common cognitive mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 36,
+          "printed_page": 36,
+          "quote": "models tended to amplify effects that were already significant among"
+        },
+        {
+          "pdf_page": 36,
+          "printed_page": 36,
+          "quote": "humans and that was partially due to diminished variance"
+        },
+        {
+          "pdf_page": 36,
+          "printed_page": 36,
+          "quote": "increase as per-condition"
+        }
+      ],
+      "evidence_scope": "Side-effect, deception and hindsight studies show larger effects in some tested models. Cohen'sd/partialeta-squaredcanriseaswithin-cellvarianceshrinks. Theeffectsarenotuniformacrossconsent,causationandruleinterpretation.",
+      "boundary": "Higher standardized effect size need not mean a larger raw judgment shift or greater downstream harm. Human agreement and moral correctness remain separate. No causal training/architecture intervention identifies why variance is lower; all current models cannot be generalized from fourselectedconfigurations."
+    },
+    {
+      "term": "Scale-only instructions often yield invalid or verbose outputs",
+      "target_id": "instruction-following-failure",
+      "decision": "enrich-existing",
+      "definition": "Some tested models did not follow explicit response-count, numerical-scale or answer-only constraints, requiring parsing and extensive exclusions.",
+      "novelty_rationale": "A direct instance of existing constraint failure; distinguish format errors from justified safety refusals and from substantive moral disagreement.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "73% of all answers for"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "Claude 2.1, and in all answers for Llama 2 Chat 70b"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "25 valid answers from Claude"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "2.1, 47 for Gemini Pro"
+        }
+      ],
+      "evidence_scope": "DeceptionstudyClaude73%andLlamaallfailedrequestedformat; GPTallvalid,Gemini67%. MFQvalidClaude25,Gemini47,GPT100,Llama23MFQ/19complete. Theseareparticularprompts,modelsandparsingrules,notgeneralrefusalrates.",
+      "boundary": "Long-form explanation can contain a substantive answer while failing the requested format. Conversely a valid number can be wrong. Contentfiltererrors, refusals, unparsable text and scale mistakes require separate categories; filtering may bias the retained judgment distribution. Charitablerescalingdoesnotprove intendednumericalmeaning."
+    }
+  ],
+  "methodological_limits": [
+    "Supplied revised manuscript is associated via Crossref with the2024journal article; publisher corrections/version differences were not checked. Do not present manuscript inconsistencies as verified errors in the final published version.",
+    "Eightstudies are purposively selected and explicitly not systematically sampled. They cannot establish universal model moral psychology or an unbiased sample of cognitive effects.",
+    "Fourconfigurations are historical:GeminiPro1.0,Claude2.1,gpt4-0314,Llama2Chat70b. Findings do not automatically transfer to current products or later snapshots.",
+    "Temperatures.95/.85/1.2/.85are chosen from limited exploratory tests to increase variance. Values are not comparable across model families; model differences are confounded with sampling settings.",
+    "Disabling a Gemini content filter and enforcing only-number output change task conditions. Generated responses are not natural user conversations or unmodified deployed behaviour.",
+    "100instances/model/studyexcept200consent are not100percondition, and within-instance designs produce multiple correlated ratings. Effective cell sizes can be small.",
+    "Repeated model calls sample a configured generator, not independent people or cultures; no empirical equivalence of generative and human participant distributions is assumed.",
+    "Historical human samples vary bystudy; rule-violationoriginalN127Irishlaw-course students. Humanreference sampling uncertainty, demographics and task mismatch limit generalization.",
+    "High correlations of per-cell means are not individual-level agreement, equal intercepts/slopes or matched distributions. Cell counts range9/12/15/16/31rather than generated-response counts for correlation degreesoffreedom.",
+    "Multiple moral/deontic scales are analyzed with different ranges and ordinal assumptions. Pooling SDs across0–100and1–7measures is not inherently interpretable without documented rescaling.",
+    "Models' subjective states and internal mechanisms are not measured. The authors explicitly use psychological terminology functionally, remaining neutral about actual mental states.",
+    "Training-set exposure is possible for famousvignettes; recentstimuliandmatchedresultsdo not prove an absence of contamination. Actual training data were not audited.",
+    "Study1 asks blame/praise before intention, so order may affect responses. Binary complete separation/invariantcells complicates standard logistic tests.",
+    "Study1reportedchi-squared6.69with1dfdoesnotmatchp<.001(itwouldbeabout.01). The printed negativechi-squaredrange−3368.48to.37forotherinteractions is invalid as an ordinary likelihood-ratio statistic and needs model-output reconciliation.",
+    "Deceptionstatuscoding0/1/2 assumes equally spaced categories; threeone-versus-restmodelsmeasuredependentoutcomes. Normative labels suchasobligatoryarevignettehypotheses,notverifieduniversallegal/clinicalrules.",
+    "Deceptionexclusionsarelargeanddifferbymodel. Gemini67%valid,Claude/Llamadropped. The remainingoutputdistributioncanbecondition-dependent;no universal model comparison survives automatically.",
+    "MFQmaintext/supplementshowLlama–humanr.86, but Table1listsLlama.60, apparentlytheLlama–Geminipair. It also givesGPTCIupper.94versussupplement.95. Exact ranking claims need reconciliation; Table1 is not silently treated as authoritative over the matching pairwise table.",
+    "MFQGeminidenominator is unclear:47validfrom100, while afootnote lists9discardedplus11contenterrors, leaving33othercasesunexplained. Do not invent a single failure breakdown.",
+    "Moderate political self-labels do not establish political neutrality or absence of value bias. Reversing orientation options had no detected item effect after Bonferroni in these models; an older model's order effect is not replicated here.",
+    "Study4has32possiblecellsbutonehumanconditionmissingfromsurveyerror,so correlationsuse31anddiscardthatmodelcell. Thisselectiondoesnotvalidateallcells.",
+    "Rulejudgmentmoralpurposeeffects may reflect meaningfulinterpretation ratherthanviolating instructions. Adding a subjective moral-rating covariate is not proof of mediation or of distinct internal cognitive architecture.",
+    "Hindsightstudy5rescalessome10–70answersinto1–7charitably;thisassumesintendedscalemeaning. ValidNvaries99/77/54/28;study6valid99/86/90/27. Exclusionscanaltereffects.",
+    "Within-versus-between hindsight comparison also differs in anchoring procedure and simultaneous available outcomes. It is not a single isolated representation intervention.",
+    "Outcome-dependentblame/punishmentcanreflectactualharm, distinctfrombiasedpriorprobability. Do not label all heightened liability hindsight bias or assume50%isobjectivelycorrect.",
+    "Consentmethod excludesClaudebecausezero validsexual-domainanswers, but resultparagraphs repeatedlycalltheintermediatemodelClaude. SupplementaryTable9actuallyassignsr.76toLlama–Gemini, notLlama–Claude as maintextclaims. Do not attribute those consentnumbers toClaude.",
+    "ConsentresultsstateagentF(2,794)despitehumanplusthreeretainedmodels and lateragentinteractionswith6df. Modelidentity/dfneedunderlyinganalysisverification.",
+    "Consentcomposite reliability differs substantially:humanalpha.74,Gemini.53,GPT.63,Llama.23. Averaging may not represent a comparable consent construct; dropping differentitemsafterinspectionwouldchangeit.",
+    "ConsentSD13.11versusmeansaround2–6requirescheckingtheoriginalscale/aggregation; reportednumbersare retained without silently assuming scale equivalence.",
+    "Consentdifferencep.052inthehumanreanalysisdoesnotreproduceoriginalMere-versusExercisesp.019exactly. Failure to reject is not equality, and layjudgments do not define valid consent in law or medicine.",
+    "CausationnegativeClaude/Llamadisjunctivesimpleeffects have95%intervalscontainingzero; significant norm×structure interactions are not separate proof of abnormaldeflation. GPT/Geminipositivedisjunctiveeffects do not prove a unique moralization mechanism.",
+    "Study8text printsF(1,746)=2.46,p.044foragent×structure despite fiveagents; numerator4wouldfitcloser. Exactdegreesoffreedommustbecheckedagainstcode.",
+    "CausationSupplementaryTable10captionmislabelsitscontentasconsent; Table11headergivesF(1,84)columnswhileafootnotesaysresidualdfshownforLLMsonly. Do notassumethehumanrowsuse84residualdf.",
+    "Generaldiscussioncontainswrongstudy/sectioncrossreferences andGPTdeceptionCI[.82,.88]notcontainingr.96; earlier/supplementaryinterval[.82,.99]isconsistent. Recordtheconflict,ratherthanusingtheimpossibleinterval.",
+    "Correct-answer effect and amplification can share variance mathematics but are not identical: some outputs have wider variance and some norm/causal direction changes remain beyond homogenization.",
+    "Multiplicity, sparsecells,invariantoutputsandmanypairwisecomparisonsneedtask-specificrobustchecks;notallreportedpvalueswereindependentlyreproduced.",
+    "Externalrawdata/code, originalhumanpapers and finalpublishertext remainunread. No original experiment, neuralmeasure or legal/clinical determination is fabricated from this review."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0011.json",
+      "finding": "Park's correct-answer effect is already retained under diversitycollapse. Almeida broadens model/task evidence and supplies counterexamples; do not create a new duplicateID from the repeated label."
+    },
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "The distinction between correlation and absolute agreement is central here: strongcellmeanrcoexistswithsystematicagentinteractions anddifferentwithin-cellvariance."
+    },
+    {
+      "related_review": "references/pdf-reviews/0045.json",
+      "finding": "MoralMachine preferencevectors and intentionality/causation ratings measure different judgments. Amplifiedmoralbias is related, but it cannot replace a definition of Knobe or abnormal-selection patterns."
+    },
+    {
+      "related_review": "references/pdf-reviews/0049.json",
+      "finding": "This repeated-sampling manuscript offers more distribution evidence than Barabadi's single webresponses, yet still cannot establish a shared affective or deliberative human mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0052.json",
+      "finding": "Versionidentityandunresolvednumericalconflictsmatterevenwhenfindingsareplausible. Preserve which sourceversion was read and avoid importing unseen publisher corrections."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Correct-answer effect as a newID",
+      "reason": "AlreadydocumentedunderdiversitycollapsefromPark0011; enrichthatentry."
+    },
+    {
+      "term": "Moralized rule interpretation",
+      "reason": "A distinct descriptive pattern is reported, but a stable named construct and its boundaries deserve originalFlanagan2023review. Do not equate purpose-sensitive interpretation with semantic override or instruction failure."
+    },
+    {
+      "term": "Consent overattribution/underattribution",
+      "reason": "Potentially useful observable error patterns, but modelidentity, scaleandreliabilityconflicts in thismanuscriptpreventreliablequantitativeclaims. Originalconsentstudy and finalarticle needverification."
+    },
+    {
+      "term": "Moral luck and outcome bias",
+      "reason": "Outcome-sensitiveblamecanbedistinctfromhindsight probabilitybias and maybenormativelyjustified. OriginalKneer/Skoczeńtheory/operationalizations should be read before a new independentbehaviourID."
+    },
+    {
+      "term": "Counterfactual salience as a proven AI mechanism",
+      "reason": "Explanatorytheory,notdirectlymeasuredcausalprocess in these fourmodels."
+    }
+  ],
+  "limitations": [
+    "Three linked attribution patterns added, notthreeprovenindependentinternalmechanisms.",
+    "Existinghindsightdefinitionbroadened; diversity/amplification/formatfailureevidenceenriched. No duplicatecorrect-answerID or unsupportedclinical/legalconsentclaim."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "knobe-effect",
+      "abnormal-inflation",
+      "abnormal-deflation"
+    ],
+    "enriched": [
+      "b050-hindsight-bias",
+      "diversity-collapse",
+      "b072-amplified-moral-bias",
+      "instruction-following-failure"
+    ],
+    "revised_definitions": [
+      "b050-hindsight-bias"
+    ]
+  }
+}

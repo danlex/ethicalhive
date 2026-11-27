@@ -49,9 +49,9 @@ and is validated by `experiments/validate-ontology.py`.
 
 ## Proposed human-behaviour analogies in the same list
 
-The catalogue contains 434 records: 207 previous entries plus 227 integrated
-research analogies. These are not 434 independently validated AI mechanisms.
-The current view displays all 434 records in eleven ontology categories, without
+The November 2026 baseline retained 434 records: 207 previous entries plus 227
+integrated research analogies. These are not independently validated AI mechanisms.
+The current view displays every retained record in eleven ontology categories, without
 visible row numbers. Internal `num` order is preserved within each category.
 Reference numbers remain stable and exports retain global `num` order. Nine
 overlap links remain explicit. A linked record carries `grouped_under`, `grouping_reason`
@@ -130,6 +130,20 @@ locator and reason. A checked definition passage can come from a book or referen
 page without closing the separate paper-link gap. AI recognition benchmarks do
 not change an entry's untested-analogy status. Source-trace validation follows the
 review history so earlier accepted citations remain accountable.
+
+## Sequential full-PDF reviews
+
+Sequential full-PDF reviews are recorded in `references/pdf-reviews/`, with a
+per-file queue in `references/pdf-corpus-2026-11-26.json`. New entries retain
+stable IDs and the next reference number. Reviews distinguish human interaction
+findings, intrinsic AI evidence and proposed AI analogues, and cite actual PDF
+passages. Verified duplicate files link to their read original rather than
+supplying independent evidence. Existing entries can receive `research_notes`
+with a name, definition, catalogue boundary and typed definition sources.
+
+Adding a source or an entry does not supply a literature-search total. Newly
+indexed terms have unavailable annual-series slots until a complete, dated
+search is actually performed; the previous dated series remain unchanged.
 
 ## Annual research timelines
 

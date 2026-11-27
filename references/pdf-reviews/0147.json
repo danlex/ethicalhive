@@ -1,0 +1,292 @@
+{
+  "sequence": 147,
+  "source": {
+    "file_name": "S1355_Franklin_2022.pdf",
+    "source_id": "S1355",
+    "sha256": "e3deb996aff4d9078a344809c510b8b04b4e9f70beb88fd01647291cf4c9ce9a",
+    "pdf_pages": 9,
+    "printed_pages": "Supplied manuscript unpaginated; final proceedings metadata pp.276–284.",
+    "version_note": "AIES2022 conference paper. Supplied ACM-formatted 9-page manuscript carries 2022 conference/DOI information but PDF build metadata is 19 August 2024; that is not evidence of an independent 2024 study.",
+    "verification_url": "https://api.crossref.org/works/10.1145/3514094.3534140",
+    "verification_method": "All nine supplied pages read, including all 100 references and the figure. Page 8 was reread separately after output truncation. Figure 1’s image-only DAG on page 5 visually inspected. Crossref verifies article identity, proceedings pages and publication 26 July 2022; external books, unpublished manuscripts, data and code not independently fully read."
+  },
+  "citation": {
+    "title": "Causal Framework of Artificial Autonomous Agent Responsibility",
+    "authors": [
+      "Matija Franklin",
+      "Hal Ashton",
+      "Edmond Awad",
+      "David Lagnado"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1145/3514094.3534140",
+    "venue": "Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society,276–284",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Literature-derived nine-factor framework, an incompletely reported N273 stock-investment vignette pilot and a proposed future serious-game paradigm. The complete DAG and Blame Game have not been empirically validated here. The framework predicts descriptive human responsibility judgments rather than determining justified legal or moral liability.",
+    "access_limits": [
+      "Entire supplied paper, references and DAG read. Recruitment/exclusion records, materials, scale items, cell sizes, coefficients, raw data and analysis code are not supplied in the paper and were not independently obtained.",
+      "The proposed serious-game data collection is future work. Cited books, unpublished manuscripts and primary studies are secondary here; metadata checks do not make them completed full reads."
+    ]
+  },
+  "study": {
+    "framework": "Causality, role, knowledge, objective foreseeability, capability, intent, desire/aim, autonomy and character are proposed inputs to responsibility judgment. Figure 1 includes hypothesized arrows and mental-state nodes; it is a revisable starting framework, not an identified causal graph from this pilot.",
+    "foreseeability_distinctions": "Objective outcome likelihood is distinguished from subjective agent expectation and reasonable expectation given available information. Benchmark performance is suggested as evidence, not established as a sufficient measure of all three or of legal foreseeability.",
+    "pilot": "N273 described across predictable/unpredictable×human/machine groups in a senior-trader delegation scenario. Agents choose between stocks with more/less expected options and outcomes intended/not intended by the user. Training/validation, prospective foresight/capability ratings, post-outcome causality/responsibility/intent ratings and final role/autonomy ratings on 100-point scales. Full stimulus probabilities, allocation and repeated-observation structure are not supplied.",
+    "pilot_results": "A single ANOVA is cited for the summary that machine and predictable agents receive more responsibility relative to users, F(4,269)=4.86,p=.028. These quantities conflict under the usual F distribution, and one omnibus result does not establish each contrast. Regression summaries name different significant predictors for humans/machines and predictable/unpredictable agents, but omit coefficient estimates, signs, errors and sample sizes.",
+    "regression_reporting": "Four reported F(267,6) statistics 108.93/164.67/154.76/121.44 accompany R².841/.880/.881/.838. Reading the dfs in conventional order is implausible for a six-predictor model; reversing them alone does not reconcile the reported R² values. Subgroup size, repeated ratings and model specification are needed; no replacement model is invented.",
+    "future_game": "The Blame Game is a proposed visual novel with generatively combined factors/domains and optional information inspection. Participants can stop and judge at any point; click order/content could reveal information-selection patterns. No new game participants, effectiveness test, representative dataset or validated education effect is reported.",
+    "descriptive_normative_boundary": "Predicting public blame is distinct from establishing fault, rights, legal liability or appropriate trust. Representativeness, cultural heterogeneity and longitudinal adaptation are explicitly future extensions, not demonstrated properties of the pilot.",
+    "legal_boundary": "Section 2.3 provides a 2022 illustrative legal discussion combining several concepts and jurisdictions. It is not an up-to-date legal review, and statements that responsibility falls on the owner or harm alone suffices are not imported as universal current rules. No live legal decision or allegation follows."
+  },
+  "summary": "Add causal criticality and causal pivotality as distinct prospective/retrospective judgment concepts, not proven AI biases. Enrich existing blame, many-hands, competence and agency entries, distinguish moral-crumple-zone scope, and document the pilot’s inconsistent statistics and the untested graph/game.",
+  "findings": [
+    {
+      "term": "Causal criticality",
+      "id": "causal-criticality",
+      "decision": "new-entry",
+      "definition": "A prospective assessment of how strongly an outcome depends on an agent’s possible actions.",
+      "category": "Reasoning",
+      "origin": "Causal cognition / responsibility judgment",
+      "ai_evidence_status": "Explicit secondary theoretical concept; no dedicated criticality experiment, formal score or validated AI mechanism supplied here.",
+      "ai_proposal": "Before revealing an outcome, compare how changes in an actor’s available decisions would alter relevant outcomes under a specified causal model. Separate expected difference-making from assigned role, actual control and hindsight. For agents, require traceable assumptions and counterfactuals rather than self-asserted importance.",
+      "relates_to": [
+        "causal-pivotality",
+        "blame-attribution",
+        "problem-of-many-hands",
+        "perceived-control"
+      ],
+      "novelty_rationale": "Prospective potential to make a difference differs from the retrospective contribution in the realized event and from culpability or control alone.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "Unpaginated manuscript, §3.0.1 Causality",
+          "quote": "the extent to which an outcome is dependent"
+        }
+      ],
+      "evidence_scope": "Section 3.0.1 explicitly calls the prospective dependence judgment criticality and cites an external difference-making framework. The stock pilot does not isolate or validate this construct as a separate cause of blame.",
+      "boundary": "A prospective causal judgment can be correct and need not be a cognitive bias. Specify the outcome, feasible actions and causal assumptions; high potential influence does not establish intent, culpability, legal liability or a duty to take an unauthorized action. This is not severity-based risk criticality.",
+      "synonyms": [
+        "Criticality"
+      ]
+    },
+    {
+      "term": "Causal pivotality",
+      "id": "causal-pivotality",
+      "decision": "new-entry",
+      "definition": "A retrospective assessment of an agent’s causal contribution to an outcome that occurred.",
+      "category": "Reasoning",
+      "origin": "Causal cognition / responsibility judgment",
+      "ai_evidence_status": "Explicit secondary theoretical concept; no unique causal-contribution formula, validated scale or independently confirmed AI attribution error supplied.",
+      "ai_proposal": "Reconstruct the realized causal chain and compare defensible counterfactual changes to each contributor’s action, including designers, deployers, users and tools. Record assumptions and multiple sufficient causes. Assess blame and duties separately instead of assigning all responsibility to the last visible actor.",
+      "relates_to": [
+        "causal-criticality",
+        "blame-attribution",
+        "problem-of-many-hands",
+        "moral-crumple-zone"
+      ],
+      "novelty_rationale": "A realized contribution differs from prospective criticality and from a general negative evaluation. The term is a neutral judgment dimension, not an automatic attribution error.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "Unpaginated manuscript, §3.0.1 Causality",
+          "quote": "its causal contribution to an outcome"
+        }
+      ],
+      "evidence_scope": "Section 3.0.1 defines retrospective pivotality and cites prior multiple-agent causal work. No mathematical responsibility allocation, causal graph fit or unique experimental estimate of pivotality is supplied by this paper.",
+      "boundary": "Temporal proximity or a but-for story alone may be inadequate with overdetermination or missing causal alternatives. Contributions need not sum to a fixed moral quantity. Actual causation, perceived causation, blame and legal standards remain distinct; a generated narrative is not a verified causal trace.",
+      "synonyms": [
+        "Pivotality"
+      ]
+    },
+    {
+      "term": "Blame attribution",
+      "target_id": "blame-attribution",
+      "decision": "enrich-existing",
+      "definition": "Assigning fault or responsibility to an agent for a negative outcome.",
+      "novelty_rationale": "The nine-factor proposal refines contextual influences on the existing construct rather than adding an AI-responsibility synonym.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "Unpaginated manuscript, §1 Introduction",
+          "quote": "explain and predict people’s attributions"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "Unpaginated manuscript, §4.1 Pilot",
+          "quote": "responsibility, and intent"
+        }
+      ],
+      "evidence_scope": "A273-person pilot reports judgments about delegated stock decisions, with prospective and retrospective measures. Reported predictor summaries and ANOVA are numerically inconsistent/incomplete, so no verified effect sizes or unique causal mechanisms are extracted.",
+      "boundary": "Public responsibility ratings are descriptive. Objective, subjective and reasonable foreseeability, role, competence and realized causation need separate evidence. Do not use the pilot to justify universally harsher blame for humans or machines or settle legal liability."
+    },
+    {
+      "term": "Problem of many hands",
+      "target_id": "problem-of-many-hands",
+      "decision": "enrich-existing",
+      "definition": "Difficulty assigning individual responsibility when several actors contribute to an outcome.",
+      "novelty_rationale": "The framework explicitly broadens human-versus-AI comparison to designers, deployers, users and other contributors.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "Unpaginated manuscript, §2.1 Responsibility attribution",
+          "quote": "where multiple different parties combine"
+        }
+      ],
+      "evidence_scope": "Section 2.1 directly discusses interacting contributors with different roles, skills and mutual knowledge. The future game is intended to examine complex systems; this does not show that every participant escapes responsibility.",
+      "boundary": "Shared contributions do not imply no accountable party, a fixed total of blame or permission to omit institutional duties. Distinguish the allocation problem from psychological disengagement, agency laundering and a human operator serving as a moral crumple zone."
+    },
+    {
+      "term": "Perceived competence",
+      "target_id": "perceived-competence",
+      "decision": "enrich-existing",
+      "definition": "Judging that an agent has the skills or knowledge needed for a task.",
+      "novelty_rationale": "Capability is the source’s closely related judgment factor, not a new synonym for actual AI performance.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "Unpaginated manuscript, §3.0.5 Capability",
+          "quote": "Capability refers to an agents’ competencies"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "Unpaginated manuscript, §4.1 Pilot",
+          "quote": "foresight and capability"
+        }
+      ],
+      "evidence_scope": "The framework links capability expectations to blame; the pilot reports capability-related predictors without coefficients or verifiable model statistics. Prior skilled-agent findings are secondary.",
+      "boundary": "Perceived ability, actual competence, expectation violation and moral worth differ. No marketing recommendation to feign incompetence, absolute human/machine standard or causal capability effect is established here."
+    },
+    {
+      "term": "Agency attribution",
+      "target_id": "agency-attribution",
+      "decision": "enrich-existing",
+      "definition": "Attributing intentional thought, planning or action capacity to another entity.",
+      "novelty_rationale": "Intent and autonomy are judgment factors here, reinforcing the neutral attribution/bias distinction.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "Unpaginated manuscript, §3.0.8 Autonomy",
+          "quote": "more autonomous agents are seen as more intentional"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "Unpaginated manuscript, §4.1 Pilot",
+          "quote": "autonomy and role"
+        }
+      ],
+      "evidence_scope": "Autonomy and intent are conceptually distinguished from desires/aims, knowledge and capability. Participants make such ratings about machines, but the study does not establish actual machine intentions or identify graph pathways.",
+      "boundary": "Inferred autonomy is not verified freedom from human control; an optimization aim is not felt desire. Descriptive participant judgments do not establish personhood, criminal mens rea or a model’s right to operate without oversight."
+    },
+    {
+      "term": "Moral crumple zone",
+      "target_id": "moral-crumple-zone",
+      "decision": "enrich-existing",
+      "definition": "Disproportionate blame borne by an operator who lacks commensurate control over an automated system.",
+      "novelty_rationale": "The introduction places this term near responsibility gap, but the narrower operator-blame pattern must not become a synonym for every allocation difficulty.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "Unpaginated manuscript, §1 Introduction",
+          "quote": "moral crumple zone"
+        }
+      ],
+      "evidence_scope": "The label is cited in the introduction, not operationalized or empirically demonstrated by this pilot. Retain as a boundary-only source note rather than additional crumple-zone effect evidence.",
+      "boundary": "A many-hands problem, opacity or distributed responsibility can occur without disproportionate operator blame. Check actual control, insight and intervention opportunity before applying the label.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF page 6 pilot ANOVA",
+      "issue": "F(4,269)=4.86 is paired with p=.028.",
+      "reliable_correction": "For the printed degrees of freedom and F value, the standard upper-tail p≈.000845. F(1,269)=4.86 instead yields≈.02833. One or more of the printed F/df/p values needs correction; do not guess which original analysis was intended.",
+      "verification_scope": "SciPy F survival function applied to printed numbers, not raw-data reproduction."
+    },
+    {
+      "location": "PDF page 6 four regression summaries",
+      "issue": "Printed F(267,6) notation and R² values do not reconcile with a straightforward conventional six-predictor regression.",
+      "reliable_correction": "Even provisionally reversing to F(6,267), the printed F values imply R²≈.710/.787/.777/.732 rather than .841/.880/.881/.838 under standard intercept-including OLS. Subgroup and model output are needed; no corrected df, R² or causal coefficient is asserted.",
+      "verification_scope": "Algebraic consistency check R²=Fk/(Fk+df_resid), explicitly conditional on standard OLS assumptions."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "work": "Awad et al., Drivers are blamed more than their automated cars when both make mistakes",
+      "verified_doi": "10.1038/s41562-019-0762-8",
+      "verification_url": "https://api.crossref.org/works/10.1038/s41562-019-0762-8",
+      "scope": "Metadata verifies title/authors, online 28 October 2019 and pages 134–143; source cites issue 2020. Reference 8 is a related 2018 same-author preprint lead and reference 9 the later article. They are not credited as independent replications here; full version/data identity not compared."
+    }
+  ],
+  "methodological_limits": [
+    "Nine factors form a conceptual synthesis, not a systematic review or fully validated measurement model. No graph structure, arrow direction or causal pathway is identified solely by this pilot.",
+    "Group labels and expected stock choices may bundle predictability, normative expectations and perceived competence; exact objective probabilities and orthogonal manipulations are unavailable.",
+    "Predictors and blame ratings are participant judgments in the same vignette. Associations can reflect common beliefs, halo effects or reverse inference; missing coefficients and numerical inconsistencies prevent a verified causal interpretation.",
+    "The four-group design plus multiple agents/phases is not sufficiently described to verify the reported within-subject ANOVA or independence assumptions. Recruitment, exclusions, demographic coverage and subgroup sizes are unspecified.",
+    "The serious-game proposal does not validate a new intervention, automated oversight system, representative public model or improved trust. More adoption is not automatically a normative benefit.",
+    "Causal contribution, blame, role duty, moral character and legal liability differ. A model-generated statement of intent or a task objective does not demonstrate felt desire or criminal mens rea."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0142.json",
+      "finding": "Human accountability requires actual knowledge, authority and opportunity, while public blame can misallocate it. Do not equate the broad responsibility-gap label with the specific moral-crumple-zone pattern."
+    },
+    {
+      "related_review": "references/pdf-reviews/0145.json",
+      "finding": "Neutral agency attribution differs from a bias and from actual autonomous control. A null language proxy or a responsibility rating does not settle machine consciousness or moral responsibility."
+    },
+    {
+      "related_review": "references/pdf-reviews/0139.json",
+      "finding": "Blame and trust depend on dilemma, advice alignment, actor roles and action type. A general human-versus-machine asymmetry should not replace conditional findings or nulls."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Nine-factor causal framework / Blame Game / serious games",
+      "reason": "Framework, future measurement paradigm and research method respectively, not nine new behaviors or completed independent studies."
+    },
+    {
+      "term": "Objective/subjective/reasonable foreseeability",
+      "reason": "Useful distinctions retained in study and existing blame notes. This brief paper does not supply separate validated behavioral measures or justify turning every framework factor into another catalogue row."
+    },
+    {
+      "term": "Triadic agency",
+      "reason": "A named multi-actor framing from a cited external work, not defined enough here to add a distinct psychological process beyond existing many-hands and responsibility concepts."
+    },
+    {
+      "term": "Responsibility attribution",
+      "reason": "A broad umbrella substantially covered by blame attribution and the new criticality/pivotality judgment distinctions; no generic synonym row added."
+    }
+  ],
+  "limitations": [
+    "Cited books including How humans judge machines, Actual causality and Causality remain unread as full works in this review. No automatic ethics/harm edge or new annual literature total is inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "causal-criticality",
+      "causal-pivotality"
+    ],
+    "enriched": [
+      "blame-attribution",
+      "problem-of-many-hands",
+      "perceived-competence",
+      "agency-attribution",
+      "moral-crumple-zone"
+    ]
+  }
+}

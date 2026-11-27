@@ -1,0 +1,250 @@
+{
+  "sequence": 31,
+  "source": {
+    "file_name": "S166_Shrestha_2026.pdf",
+    "source_id": "S166",
+    "sha256": "be5f817da5f88942f809023827e871e310413e58ff1ed7741bfe124b424b78da",
+    "pdf_pages": 12,
+    "printed_pages": "2315–2326",
+    "version_note": "Published AIES 2026 proceedings pages. No DOI printed in the supplied PDF; identity/DOI verified by matching title, three authors, venue, pages and date against the Crossref registry. Registry classifies the serial item as journal-article; citation describes its conference-proceedings context.",
+    "verification_url": "https://api.crossref.org/works/10.1609/aies.v9i4.43309",
+    "verification_method": "Full supplied PDF identity and evidence read; DOI independently matched to title, authors, volume 9 issue 4, pages 2315–2326 and 2026-10-11 in the Crossref registry. DOI web opening was unavailable; the registry was retrieved directly. Third-party automated claim checks were not adopted as primary-study evidence."
+  },
+  "citation": {
+    "title": "Limits of Interventions in AI-Assisted Decision Making",
+    "authors": [
+      "Shikha Shrestha",
+      "Eunhye Ahn",
+      "Yevgeniy Vorobeychik"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1609/aies.v9i4.43309",
+    "venue": "Proceedings of the Ninth AAAI/ACM Conference on AI, Ethics, and Society, 9(4), 2315–2326",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "source_scope_note": "Lay adults' decisions in fictional child-welfare cases using logistic-regression recommendations. Expert-majority labels are a reference judgment, explicitly not ground truth. No evaluation of real caseworker practice or a model's own rationalization mechanism.",
+    "access_limits": [
+      "All twelve pages read, including methods, interface text, benchmark definition, two statistical tables, all captions, discussion and references. Page 8 Table 2 and Figures 3–4 also rendered and visually inspected.",
+      "The raw data, case materials, Bayesian model outputs and coding prompt were not independently obtained or rerun. Cited original theories were not independently read. Crossref used only to verify bibliographic identity, not substantive findings."
+    ]
+  },
+  "study": {
+    "recruited_reported": 280,
+    "unique_exclusions_reported": 55,
+    "retained_reported": 224,
+    "condition_counts": {
+      "baseline": 57,
+      "consequence": 57,
+      "accountability": 52,
+      "sequential": 58
+    },
+    "case_observations": 1344,
+    "case_pool": 16,
+    "expert_raters": 3,
+    "justifications": 312,
+    "human_validation_subset": 30,
+    "revision_instances": 164,
+    "revision_instance_participants": 58,
+    "sample_note": "280−55=225, not reported 224. Counts across described CPS-experience checks also differ; no missing exclusion or participant was invented."
+  },
+  "summary": "AI exposure increased agreement with its recommendation relative to initial unaided decisions in the sequential group. Accountability required writing and increased estimated decision time but did not improve expert-aligned decisions. Consequence framing had the highest descriptive expert-alignment rate, yet no intervention credibly moderated sensitivity to AI–expert alignment in the reported reliance models. Longer time and case-specific rationales were not causal proof of reasoning quality or anchoring.",
+  "findings": [
+    {
+      "term": "Written accountability and extra time did not guarantee calibrated AI reliance",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Requiring written justifications did not reliably reduce following recommendations that disagreed with the expert majority in this fictional child-welfare task.",
+      "novelty_rationale": "Adds a different intervention setting and uncertainty to the existing overreliance construct, not a new behaviour named from the intervention.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 2321,
+          "quote": "none of the interventions credibly"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 2321,
+          "quote": "moderated the association between AI-expert alignment"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 2324,
+          "quote": "Accountability increased effort without reducing AI"
+        }
+      ],
+      "evidence_scope": "224 reported participants, 1344 repeated case observations, Bayesian participant/case multilevel models. AI matching is not automatically bias; overreliance is operationalized relative to expert-majority disagreement. Consequence alignment 67.1%, baseline 61.7%, accountability 59.8%, initial sequential 61.0%.",
+      "boundary": "Expert-majority judgments are not definitive correctness labels; following AI can sometimes be reasonable. Descriptive ranking and absence of a credible increase versus one reference do not demonstrate every pairwise intervention superiority or equivalent performance. Do not extrapolate to real child-protection staff or actual screening harms."
+    },
+    {
+      "term": "Detailed post-decision explanations do not identify the causes of the decision",
+      "target_id": "b055-confabulated-reasons",
+      "decision": "enrich-existing",
+      "definition": "Most required justifications omitted explicit AI references even though decisions often matched AI, but omission alone did not demonstrate invented reasons or hidden causal knowledge.",
+      "novelty_rationale": "Supplies a boundary against overdiagnosing confabulation from fluent, moral or case-specific writing.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "participants treating the recommendation as one unmentioned"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "The experiment did not directly measure"
+        }
+      ],
+      "evidence_scope": "312 texts automatically coded using Claude with 30 independently human-coded examples. 98.1% had no explicit AI reference. Reasoning-quality associations were not credible; case specificity negatively associated with expert alignment, moral framing's expert-alignment interval included zero.",
+      "boundary": "Post-hoc rationalization and authority deference are proposed accounts, not uniquely identified mechanisms. A case-grounded rationale may accurately describe evidence while omitting one input. Coding a written explanation cannot establish a participant's hidden thought process or that an AI model itself generated unfaithful reasoning."
+    },
+    {
+      "term": "Initial independent judgment did not fully resist later conflicting advice",
+      "target_id": "b031-anchoring-and-adjustment",
+      "decision": "enrich-existing",
+      "definition": "Participants in the sequential condition sometimes revised an initial assessment toward AI even when the recommendation diverged from the expert majority.",
+      "novelty_rationale": "Adds a sequential decision context to anchoring while retaining authority, uncertainty and reconsideration as competing explanations.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "the posterior interval spanned zero."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "the probability"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 2324,
+          "quote": "design does not distinguish these possibilities."
+        }
+      ],
+      "evidence_scope": "164 disagreement instances from 58 participants: raw switching 42.9% on AI–expert disagreement versus 28.7% on agreement; aggregate contrast interval spans zero. The reported unanimous-expert subgroup contrast .31 [.03,.61] excludes zero, whereas the split-expert subgroup does not.",
+      "boundary": "AI advice follows the initial answer here, so its influence is not proof of a uniquely initial-anchor mechanism. Only disagreement instances get feedback, and there is no independent never-AI group. Subgroup evidence and overlapping final/initial intervals do not establish universally harmful sequential disclosure or general accuracy deterioration."
+    },
+    {
+      "term": "Consequence salience can change reliance without increasing time",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Reminding participants of both missed-risk and unwarranted-intervention consequences produced a favourable descriptive expert-alignment pattern without a credible increase in decision latency.",
+      "novelty_rationale": "Adds a bounded example of consequence framing to the existing framing entry rather than treat a beneficial reminder as a new defect.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 2318,
+          "quote": "Screening out a"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 2318,
+          "quote": "case could cause unnecessary stress for a family."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "the present study establishes only"
+        }
+      ],
+      "evidence_scope": "The reminder explicitly mentions harms in both directions. Models did not credibly show a condition×AI–expert-alignment interaction; attention reframing and affective salience were not separately measured or manipulated.",
+      "boundary": "Framing effects can be helpful, justified responses to relevant consequences. This study does not show a general gain/loss equivalence violation, prove a unique affective mechanism, or justify claiming consequence framing is established as superior across tasks."
+    },
+    {
+      "term": "More time was associated with AI following, not shown to cause it",
+      "target_id": "overthinking",
+      "decision": "enrich-existing",
+      "definition": "Within the accountability group, longer decision latency was associated with greater AI following; this does not establish that excess reasoning worsened judgment.",
+      "novelty_rationale": "Adds a human-side boundary case rather than mislabel time spent on a difficult moral task as a directly tested model overthinking failure.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "it does not show that"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 2323,
+          "quote": "caused deference."
+        }
+      ],
+      "evidence_scope": "Decision-page time excludes later writing time. The within-accountability latency association b=.63 [.12,1.16] is reported from a supplementary model not displayed in full. Latency is a proxy, not measured inferential depth.",
+      "boundary": "These are human correlations in a nontrivial task, not excessive tokens in a model or reasoning itself out of an objectively correct answer. Case difficulty, uncertainty and other unmeasured factors can influence both duration and reliance."
+    }
+  ],
+  "methodological_limits": [
+    "The paper explicitly states expert-majority judgment is not ground truth. Three expert raters had Fleiss κ=.59 and 13/16 unanimous cases. AI's reported 78% held-out training-task accuracy is not its accuracy against the vignette expert labels.",
+    "The reported counts do not fully reconcile: 280 recruited minus 55 unique exclusions equals 225, not 224. The descriptive CPS-experience subgroup counts total 227, while the no-prior count is 189, despite primary-sample exclusion language. No unreported case was inferred.",
+    "Thirty human-coded texts out of 312 is approximately 9.6%, not the stated approximately 12%. Coding was model-assisted and one-rater validated; the quoted kappas were not independently reproduced.",
+    "The sequential 'No AI' group is not a separate never-exposed control. Only initial judgments are used as unaided references; feedback from earlier cases could affect later initial judgments, and only disagreement trials receive the recommendation.",
+    "Reported AI-following coefficients in the interaction model are conditional on the reference category of AI–expert disagreement, not automatically unconditional average treatment effects.",
+    "The consequence condition had the best descriptive expert-alignment rate, but no intervention credibly moderated alignment-sensitive reliance. Missing pairwise contrasts should not be invented from interval overlap or a comparison against a common reference.",
+    "Accountability decision latency main coefficient .20 has interval [−.04,.43] at the reference alignment level; its marginal estimated time and alignment interaction are different quantities. The general time-increase narrative should not erase that uncertainty.",
+    "The moral-framing/expert-alignment coefficient interval [−1.26,.03] includes zero; it is not equivalent to the credible appropriate-reliance contrast [−1.26,−.02]. Reasoning quality itself did not credibly predict either outcome.",
+    "The two binary outcome labels appropriate reliance and expert alignment are defined differently. Detailed model forms for all auxiliary rationale analyses are not displayed, so equal-looking coefficients must not be assumed to mean identical constructs.",
+    "The Figure 4 caption describes overreliance as decisions diverging from AI, contrary to the definition of following AI when experts disagree. The plotted moral-framing percentages also do not precisely match all quoted text values; no digitized correction was fabricated.",
+    "Switching 42.9% versus 28.7% is about one and a half times, not nearly twice. Its aggregate posterior contrast includes zero; a credible unanimous-subgroup contrast is not a guarantee of a subgroup interaction.",
+    "Final 58.8% versus initial 61.0% expert alignment is a descriptive shift with overlapping intervals; the source does not report a credible paired overall deterioration contrast in the quoted results.",
+    "Mechanisms including anchoring, authority, risk-as-feelings and attentional reframing are expressly unresolved. Written reasons, word counts and elapsed seconds cannot identify the hidden cause of reliance.",
+    "Lay participants and fictional case decisions are not professional caseworker actions, actual family investigations, injury or legal accountability. Broad claims about clinicians' legal liability in the introduction were not independently verified.",
+    "Registry identity was verified separately because the PDF does not print its DOI. The supplied PDF was read; no primary reference was considered read merely because a third-party automated website offered a claim verdict."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0021.json",
+      "finding": "Buçinca's cognitive-forcing results vary by measure and are not universally aggregate-positive. This child-welfare design exposes AI only after disagreement, uses a different expert benchmark and cannot serve as an exact replication or refutation."
+    },
+    {
+      "related_review": "references/pdf-reviews/0016.json",
+      "finding": "Rastogi models/experiments address time, confidence and anchoring in tasks with task-specific feedback. Additional time is not a universal remedy across domains, and here duration was not independently assigned."
+    },
+    {
+      "related_review": "references/pdf-reviews/0007.json",
+      "finding": "Kupfer's warnings improved some verification proxies without significant quality improvement. Across studies, more visible review activity and better stated self-assessment must remain separate from demonstrated task improvement."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Accountability-induced rationalization",
+      "reason": "The paper offers rationalization as one explanation and explicitly does not distinguish it from an unmentioned input or authority. Existing confabulated-reasons/motivated-reasoning concepts can carry the boundary; no additional proven mechanism."
+    },
+    {
+      "term": "Selective accessibility",
+      "reason": "A proposed mechanism within anchoring cited from an original source not read here. Not separately tested by this study."
+    },
+    {
+      "term": "Risk-as-feelings mechanism",
+      "reason": "Named as an alternative explanation, not isolated. No new entry inferred from a list of plausible theories."
+    }
+  ],
+  "limitations": [
+    "No new IDs: useful intervention findings enrich and qualify existing concepts.",
+    "Expert reference, conditional exposure, uncertain contrasts, model-assisted coding and source reporting inconsistencies remain explicit."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "automation-bias",
+      "b055-confabulated-reasons",
+      "b031-anchoring-and-adjustment",
+      "b035-framing-effect",
+      "overthinking"
+    ]
+  }
+}

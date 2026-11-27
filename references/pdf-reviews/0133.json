@@ -1,0 +1,320 @@
+{
+  "sequence": 133,
+  "source": {
+    "file_name": "S1194_vanderWaa_2021.pdf",
+    "source_id": "S1194",
+    "sha256": "8403b0d3a2d58612d7e322a75b64762e666bdf772e85d4d038b6ebf4ac97333c",
+    "pdf_pages": 20,
+    "printed_pages": "1–20",
+    "version_note": "Frontiers in Robotics and AI 8:640647, published 27 May 2021. Includes eight tables and three figures.",
+    "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+    "verification_method": "All twenty pages read, including pattern specifications, interview instruments, equations, qualitative results and references. Image-only interface screenshots and scoring equations visually inspected at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments not independently executed or fully read."
+  },
+  "citation": {
+    "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+    "authors": [
+      "Jasper van der Waa",
+      "Sabine Verdult",
+      "Karel van den Bosch",
+      "Jurriaan van Diggelen",
+      "Tjalling Haije",
+      "Birgit van der Stigchel",
+      "Ioana Cocu"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.3389/frobt.2021.640647",
+    "venue": "Frontiers in Robotics and AI 8:640647",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "source_scope_note": "Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+    "access_limits": [
+      "All supplied text, tables and interface figures read. Linked MATRX implementation, raw interviews and external supplements were not accessed or reproduced.",
+      "No author contact was made. Cited books, prior explanation studies and the original System Causability Scale remain secondary. Screenshots are illustrative interface evidence, not access logs or a complete patient dataset."
+    ]
+  },
+  "study": {
+    "sample": "Seven recruited through personal/professional networks: four with healthcare triage volunteering history and three hospital medical professionals. Academic background and healthcare experience required. Netherlands, November 2020, approximately two-hour individual sessions. One participant did not perform dynamic allocation because of technical issues, so that condition has at most six actual exposures.",
+    "design": "Every participant received the same order: solo baseline, advice-only TDP-1, dynamic task allocation TDP-2, supervised autonomy TDP-3. Sixteen fictional patients per round, limited beds and accelerated health changes. Fixed order, new patient sets, different agents and different interfaces prevent clean separation of autonomy, practice, fatigue, scenario and presentation effects.",
+    "agents": "TDP-1 aggregates care choices from ten nonexperts without resource constraints and manually written explanations from feature ratings. TDP-2/3 use symptom base scores 1/2/3 plus questionnaire-derived demographic adjustments of ±.25 or zero per feature. Thresholds are 1.5 and 2.5; ties go to a human in TDP-2, first patient in TDP-3. These are controlled rule systems, not contemporary LLMs or autonomous moral understanding.",
+    "value_elicitation": "Four demographic preferences: age, profession, gender and having children. Their sum can range from −1 to +1, with intermediate and zero values, rather than only two possible totals. These elicited preferences are not validated ethical guidelines, universally acceptable triage criteria or the entirety of a person's values.",
+    "methods": "Think-aloud, interviews and questionnaires used to prompt follow-up. Authors expressly say the questionnaires are not validated standalone measures. No randomized explanation-present/absent, workload or advice-accuracy experiment, no statistical causal comparison and no objective moral-compliance benchmark are reported.",
+    "findings": "Participants appreciated direct intervention and division of work, but reported competing monitoring demands. They often did not read textual explanations under time pressure while valuing them retrospectively. In advice-only conditions some assumed the recommendations represented doctors and treated agreement as confirmation and disagreement as a reason to change their answer. Authors call automation bias a potential explanation requiring further study.",
+    "control": "Direct reallocation was more readily experienced as control than delayed pre-task value elicitation. TDP-3 explicitly prohibited instantaneous intervention; discomfort is therefore compatible with an actual interface restriction. Feeling less responsible for decisions one cannot make is not by itself evidence of negligent moral disengagement.",
+    "limits_of_outcomes": "Reported realism averages 75.71 and 76.43 out of 100 are participant appraisals, not external validation of medical realism or safety. Adherence to one user's stated values, written rules, actual intervention ability and felt control must be evaluated separately."
+  },
+  "summary": "Add dynamic task allocation and contrastive explanation as explicit collaborative/communicative procedures, not harmful traits. Strengthen perceived control, situation awareness and automation-bias records; preserve uncertainty about explanation neglect, complacency and responsibility diffusion.",
+  "findings": [
+    {
+      "term": "Dynamic task allocation",
+      "id": "dynamic-task-allocation",
+      "decision": "new-entry",
+      "definition": "Reassigning tasks among team members as their capabilities, workload or the situation change.",
+      "category": "Social",
+      "origin": "Human factors / human–agent teamwork",
+      "ai_evidence_status": "Implemented collaborative procedure evaluated in a small qualitative simulation; improved safety, workload and moral compliance are not causally established",
+      "ai_proposal": "Specify which tasks an agent may perform and which require human judgment, monitor workload and intervention time, and expose changes in ownership. Test whether operators can detect and correct an allocation before consequential action, including when the agent wrongly labels a decision routine. Record authorized scope and preserve a workable stop or reassignment path.",
+      "relates_to": [
+        "cognitive-offloading",
+        "perceived-control",
+        "situation-awareness",
+        "out-of-the-loop-performance-problem"
+      ],
+      "novelty_rationale": "Changing who performs a task is a team coordination behavior distinct from reducing one's memory burden, believing one has control or passively supervising automation. It can preserve or undermine oversight depending on implementation; it is not intrinsically a failure.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "known as dynamic task allocation and is an important"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "humans as they can still adjust it to their liking"
+        }
+      ],
+      "evidence_scope": "The article explicitly defines adaptive allocation and implements an agent assigning morally salient decisions to a human while taking other cases. Participants can override this allocation in TDP-2, but report monitoring/time costs; one participant missed this condition. This is feasibility and experience evidence, not a controlled demonstration of better moral decisions.",
+      "boundary": "Delegation does not transfer away all human or institutional accountability. Formal permission to reallocate does not guarantee time, information or ability to do so. A system's classification of a task as nonmoral is fallible; changing scope or authority requires the relevant authorization, and one operator's preferences do not override affected people's rights."
+    },
+    {
+      "term": "Contrastive explanation",
+      "id": "contrastive-explanation",
+      "decision": "new-entry",
+      "definition": "Explaining why an outcome, action or decision occurred rather than a specified alternative.",
+      "category": "Reasoning",
+      "origin": "Explanation research / human–computer interaction",
+      "ai_evidence_status": "Explicitly described communication method used in rule-based interfaces; independent accuracy, causal faithfulness and comparative benefit are not established by this study",
+      "ai_proposal": "For a consequential recommendation, identify the alternative the person means and explain the evidence or rule distinguishing it from the selected option. Check the account against actual system rules or traces, expose uncertainty and provide a level of detail usable within the decision deadline. Test comprehension and error detection instead of assuming more trust is success.",
+      "relates_to": [
+        "cot-unfaithfulness",
+        "post-hoc-rationalization",
+        "automation-bias"
+      ],
+      "novelty_rationale": "An explanation relative to a particular alternative is a distinct reasoning/communication act, not a synonym for any rationale, feature list, counterfactual planning or post-hoc excuse. A contrast can be useful or misleading depending on fidelity and choice of alternative.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "A contrastive explanation explains why the agent behaved in one"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "time to explicitly state the contrast"
+        }
+      ],
+      "evidence_scope": "Section 3.3 defines the method and its need for a suitable alternative; the patterns deploy contrastive explanations alongside confidence and feature attributions. The qualitative study bundles formats across designs and does not isolate a superior format or validate that a persuasive account exposes actual internal reasoning.",
+      "boundary": "The contrast must be relevant and accurately represented. Explaining why one option was selected is not proving that it was correct, safe or the only permissible option. A fluent rationale is not a faithful causal trace, and irrelevant contrasts can hide better options. Time-limited use and comprehension require separate assessment."
+    },
+    {
+      "term": "Perceived control",
+      "target_id": "perceived-control",
+      "decision": "enrich-existing",
+      "definition": "A person's belief that they can influence or manage what happens in a situation or interaction.",
+      "novelty_rationale": "Adds a direct human–agent teamwork study distinguishing felt immediate influence from delayed value-setting and from compliance measures.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "subjective experience of control by humans"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "favoring the more instantaneous control"
+        }
+      ],
+      "evidence_scope": "Participants more readily recognize control through immediate reallocation than pre-task value elicitation. The study explores experienced MHC; its three proposed dimensions also include ethical-guideline and moral-value compliance, neither interchangeable with subjective control. Fixed order and bundled roles preclude a clean causal effect of delay.",
+      "boundary": "Feeling in control need not establish actual intervention ability, and low perceived control may accurately reflect a prohibition on overriding the agent. User confidence, rule compliance, legitimate accountability and safe oversight must be checked separately."
+    },
+    {
+      "term": "Situation awareness",
+      "target_id": "situation-awareness",
+      "decision": "enrich-existing",
+      "definition": "Awareness of the current environment and system state needed to understand what is happening and respond appropriately.",
+      "novelty_rationale": "Adds primary qualitative reports of difficulty tracking both agent activity and one's own patients, not a separate monitoring-overload synonym.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "not being able to keep an overview"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "keeping track of the situation"
+        }
+      ],
+      "evidence_scope": "Interviews describe loss of overview under concurrent human and agent decisions and limited resources. This operationalizes awareness demands in a simulation but does not directly test detection accuracy, takeover performance or an objective awareness scale.",
+      "boundary": "Reported overload is not proof of ignorance in every case or a validated quantitative capacity limit. A visible dashboard or explanation does not ensure operators noticed, understood or could use the information in time."
+    },
+    {
+      "term": "Automation bias",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing part.",
+      "novelty_rationale": "Adds qualitative advice-deference and explanation-use observations while retaining the authors' explicitly tentative mechanism interpretation.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "all those other doctors probably know best"
+        },
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "This indicates a potential automation bias"
+        }
+      ],
+      "evidence_scope": "Participants sometimes treated congruent advice as confirmation and disagreement as a reason to change. The recommendations were generated from ten nonexperts, despite participants' doctor-representative interpretation and the illustrative interface's doctors wording. No accuracy manipulation or error-rate comparison establishes whether deference was unwarranted in each case or caused specifically by automation rather than apparent medical/social authority.",
+      "boundary": "Using sound advice is not a bias. Explanation nonuse can result from time costs, legitimate reliance or other design constraints. Apparent medical provenance needs verification; more trust is not always better calibration, and this small study does not isolate a unique psychological cause."
+    },
+    {
+      "term": "Automation complacency",
+      "target_id": "automation-complacency",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Dropping its own checking of a tool's output or a subprocess once it assumes the automation is reliable, letting errors through.",
+      "novelty_rationale": "Distinguishes reported explanation nonuse from a demonstrated decline in checking or errors caused by assumed reliability.",
+      "evidence": [
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "main reason for not requesting an explanation was the"
+        }
+      ],
+      "evidence_scope": "The study reports time pressure and possible overtrust but does not establish a longitudinal reliability-induced drop in vigilance or unchecked error passage. Boundary-only source, not counted as a direct complacency paper.",
+      "boundary": "An unread explanation is not sufficient evidence of complacency, particularly when reading would prevent timely supervision of other decisions. Assess actual monitoring, available time, error detection and warranted reliance."
+    },
+    {
+      "term": "Diffusion of responsibility",
+      "target_id": "diffusion-of-responsibility",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Diluting felt personal responsibility for harmful conduct by treating responsibility as shared among multiple actors.",
+      "novelty_rationale": "Records a relevant responsibility boundary without classifying every reduction in felt responsibility under restricted control as disengagement.",
+      "evidence": [
+        {
+          "pdf_page": 17,
+          "printed_page": 17,
+          "quote": "own decisions instead of all decisions made within the team"
+        }
+      ],
+      "evidence_scope": "Participants report lower felt responsibility for agent-controlled decisions. The task also changes actual intervention authority and timing, and the autonomous condition prevents immediate override. The study does not isolate shared-accountability dilution, deceptive blame shifting or an objectively unjust reduction in duty.",
+      "boundary": "Subjective responsibility, assigned legal duty, institutional accountability and feasible control differ. Improving motivation does not repair an unusable intervention interface; shared oversight must not make an operator solely accountable for actions they cannot reasonably prevent."
+    }
+  ],
+  "methodological_limits": [
+    "Seven heterogeneous healthcare participants, network recruitment and one missing TDP-2 exposure limit coverage. Abstract/introduction references to ambulance nurses do not capture the detailed recruitment description of four volunteers and three hospital professionals.",
+    "All participants received the same condition order. Agent implementation, explanatory formats, patient sets, autonomy and intervention rights vary together; practice, fatigue, order and novelty cannot be disentangled from team-design effects.",
+    "Think-aloud and experimenter prompts can themselves change attention and task behavior. Coding procedures, inter-rater reliability and saturation evidence are not supplied, so narrative themes are exploratory rather than prevalence estimates.",
+    "The instruments were explicitly intended to guide interviews, not as validated standalone MHC or clinical measures. An adapted SCS does not inherit full validation automatically. Descriptive averages are not independent effect estimates or causal comparisons.",
+    "No real patients, actual pandemic decisions, measured clinical benefit or validated patient-survival forecasts are involved. Screenshots' survival percentages are simulated interface content, not medical evidence or current triage guidance.",
+    "The proposed MHC framework has three dimensions; the study concentrates on experienced control. Self-reported compliance with a person's values and rules is not independent observation of ethical correctness. Actual authority, comprehension, timing and institutional accountability still require evaluation.",
+    "TDP-1 uses ten nonexpert labels despite participants' interpretation that doctors are represented. Figure 3A explicitly refers to doctors' choices. This provenance mismatch is a plausible authority/social-proof confound, not proof of a participant trait or intentional deception by the authors.",
+    "Only agreement with one's elicited preferences is not sufficient ethical grounding. The rule system allows demographic prioritization; listing gender, age, profession and parental status as options does not establish their moral or legal acceptability. No discriminatory clinical policy is endorsed here.",
+    "Four optional adjustments of ±.25 yield a range with intermediate values and zero, not only +1 or −1 as one sentence suggests. A no-priority response contributes no directional preference. The exact deployed code has not been inspected to settle all edge cases.",
+    "Explanations mix confidence, features and contrasts. Some are manually written from feature ratings, not uniquely derived causal reasoning traces. Explanation availability, reading, comprehension, appropriate reliance and decision quality are different outcomes.",
+    "The proposed human-state-aware agent, physiological sensing, consequential simulations and adaptive explanation timing are future-design suggestions, not implemented validated interventions. Any monitoring of people would also need a justified scope and privacy safeguards.",
+    "Authors hypothesize that overtrust prevents explanation use, but explicitly call for further research. Time pressure was not independently randomized and participants valued explanations in hindsight; neither observation identifies a causal cure or the superiority of visual explanations.",
+    "TDP-2 one participant's technical noncompletion conflicts with repeated seven-person wording and counts such as five plus two in that condition. Report condition coverage cautiously; do not invent the missing exposure or treat all seven statements as post-task observations.",
+    "Preference summaries vary: early TDP-1 subsection names three of seven preferring it; comparative text says all; ranking later says five place it first. Different questions may partly explain this but are not fully reconciled. Do not quote unanimity as a verified result.",
+    "Table 7 contains eight statements though adjacent prose says seven. Table 1 labels the explanation requirement R3 while prose calls it R2. These are internal editorial inconsistencies, not extra measures or evidence of unsafe deployed software."
+  ],
+  "source_corrections": [
+    {
+      "location": "Reference to Full Professor Donghee Shin, PDF page 19",
+      "problem": "An academic title is included as if part of the author's name, and 2020 is given without distinguishing version/date.",
+      "reliable_correction": "Author Donghee Shin; article The effects of explainability and causability on perception, trust, and acceptance: Implications for explainable AI, DOI 10.1016/j.ijhcs.2020.102551. Crossref records International Journal of Human-Computer Studies 146:102551, February 2021. A possible earlier online version/date was not established and is not ruled out.",
+      "verification_url": "https://api.crossref.org/works/10.1016/j.ijhcs.2020.102551",
+      "verification_scope": "Bibliographic metadata only, not a completed reading or reproduction of Shin's study."
+    },
+    {
+      "location": "Table 7 and section 6.2.3.6, PDF page 13; Table 1 and section 4.2",
+      "problem": "Table 7 has eight listed statements rather than seven. Table 1's second requirement is labeled R3 whereas the discussion calls it R2.",
+      "reliable_correction": "Describe the visible table as eight interview-prompt statements and identify the explanation-fidelity requirement by content, disclosing inconsistent numbering.",
+      "verification_scope": "Internal table/text comparison; administered questionnaire and software not independently verified."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0129.json",
+      "finding": "Formal human responsibility and a control button are insufficient if operators lack current context or intervention time. Conversely, low felt responsibility under prohibited intervention is not automatically moral disengagement. This paper observes reported task experience, while the crash study measures observers' judgments; neither alone establishes actual takeover performance."
+    },
+    {
+      "related_review": "references/pdf-reviews/0128.json",
+      "finding": "Perceived control is distinct from objective control and decision authority. Fan's measured control mediation was null; the present qualitative reports of preferred direct influence do not reverse that result or independently prove a mediation pathway."
+    },
+    {
+      "related_review": "references/pdf-reviews/0127.json",
+      "finding": "Human labels and elicited preferences are design inputs, not moral ground truth. Label provenance, conflicting values and rights constraints matter even when an agent faithfully imitates the chosen decision rule."
+    },
+    {
+      "related_review": "references/pdf-reviews/0132.json",
+      "finding": "A plausible psychological account needs separation from demonstrated mechanism. Here explanation nonuse is compatible with workload, trust or interface costs; in Tanibe, the attribution pattern is compatible with several interpretations of the repair vignette."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Explanation neglect / explanation avoidance",
+      "reason": "Reported nonuse is important but not a separately established named mechanism in this paper. Record it under oversight, awareness and automation-bias boundaries rather than inventing a new clinical or AI trait."
+    },
+    {
+      "term": "Meaningful human control / team design patterns",
+      "reason": "Governance requirement and design framework rather than additional behavior entries. Preserve their explicit dimensions and practical tests in the review and relevant concept notes."
+    },
+    {
+      "term": "Feature attribution / confidence explanation / consequential explanation",
+      "reason": "Technical formats and a future-design suggestion. This study does not isolate their effects or establish causal faithfulness; retain as method context rather than multiplying closely related entries from this single exploratory study."
+    },
+    {
+      "term": "Value elicitation / supervised autonomy",
+      "reason": "Design procedures and autonomy configuration, not new empirically identified psychological mechanisms. The questionnaire is not a complete extraction of stable human moral values."
+    },
+    {
+      "term": "Authority bias",
+      "reason": "Existing ontology alias under obedience to authority. Apparent doctor provenance is a confound worth recording, but no authority-instruction manipulation isolates this existing mechanism here."
+    }
+  ],
+  "limitations": [
+    "Two collaborative/communicative procedures added with method-level scope; three existing concepts strengthened and two boundary-only notes excluded from citation counts. No assertion of clinical efficacy, complete human moral modeling, a validated oversight cure or automatic ethical/harm edges."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "dynamic-task-allocation",
+      "contrastive-explanation"
+    ],
+    "enriched": [
+      "perceived-control",
+      "situation-awareness",
+      "automation-bias",
+      "automation-complacency",
+      "diffusion-of-responsibility"
+    ]
+  }
+}

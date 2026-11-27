@@ -1,0 +1,180 @@
+{
+  "sequence": 5,
+  "source": {
+    "file_name": "S117_Zhang_2023.pdf",
+    "source_id": "S117",
+    "sha256": "93234c78f967c398b4c547e0b73d41207d20709cb82479059062a66a00179a65",
+    "pdf_pages": 14,
+    "printed_pages": "1–14"
+  },
+  "citation": {
+    "title": "Moral Judgments of Human vs. AI Agents in Moral Dilemmas",
+    "authors": [
+      "Yuyan Zhang",
+      "Jiahua Wu",
+      "Feng Yu",
+      "Liying Xu"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.3390/bs13020181",
+    "venue": "Behavioral Sciences 13(2), 181",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "Human undergraduate judgments of depicted agents were studied. Psychological mechanisms were not tested, and no AI model produced the judgments measured in this paper.",
+    "visually_inspected_pdf_pages": [
+      5
+    ],
+    "access_limits": [
+      "All extracted article text, tables, references and figure captions read; page 5 was rendered and visually inspected to resolve duplicated extraction layers.",
+      "The text extractor duplicated portions of pages 5, 6 and 9; duplicate text is not counted as independent evidence.",
+      "Raw data were not requested or analyses rerun. Other graphical values were not independently digitized."
+    ]
+  },
+  "study": {
+    "design": "Three human vignette experiments varying agent identity and action, with trolley versus footbridge dilemmas",
+    "method_samples": [
+      195,
+      194,
+      236
+    ],
+    "sum_of_method_samples": 625,
+    "abstract_total": 626,
+    "sample_count_status": "Unresolved reporting discrepancy: the abstract says 626, while participant sections sum to 625.",
+    "population": "Undergraduate students receiving course credit",
+    "scope": "Human moral ratings of described human or AI agents, not intrinsic AI decision-making"
+  },
+  "summary": "In Experiment 1, agent identity affected morality and blame ratings in a trolley scenario; Experiment 2 showed action effects across the four ratings in a footbridge scenario. Experiment 3 showed dilemma-by-action interactions, while several agent-related results were marginal or non-significant. The authors explicitly state that they did not investigate the underlying psychological mechanism.",
+  "findings": [
+    {
+      "term": "Dual-process interpretation is not demonstrated by verdict changes",
+      "target_id": "b071-dual-process-moral-judgment",
+      "decision": "enrich-existing",
+      "definition": "A human dual-process theory may interpret some moral judgments, but the paper did not test the proposed processing mechanism.",
+      "novelty_rationale": "The existing entry already names dual-process moral judgment. Correct its conflation of a human explanatory theory with an established mechanism in LLMs rather than adding another dual-process label.",
+      "previous_definition": "Emotion vs utilitarian calculus (Greene); LLMs lean on one or the other by framing.",
+      "revised_definition": "A human account in which automatic affective responses and controlled reasoning can support competing moral judgments; applying it to AI requires process evidence beyond changed answers.",
+      "revised_measurability": "multi-turn",
+      "definition_revision_reason": "The read source explicitly labels its mechanism interpretations speculative, and studies human ratings rather than AI processing. The previous wording treated AI framing differences as if they demonstrated the two processes. Controlled comparisons can measure output sensitivity, while internal-process claims need additional evidence.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "did not investigate the underlying psychological mechanism."
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "Thus, all interpretations of the results are speculations."
+        }
+      ],
+      "evidence_scope": "Direct evidence about the scope of this human study, with the dual-process account discussed as an interpretation. It does not negate other studies, demonstrate an AI processing architecture or show AI emotions.",
+      "boundary": "Human response patterns and AI output patterns are distinct evidence. Changed verdicts alone do not establish automatic affect, controlled deliberation, subjective feelings or a causal dual-process mechanism in a model."
+    },
+    {
+      "term": "Dilemma differences are not automatically surface-framing bias",
+      "target_id": "b079-trolley-frame-sensitivity",
+      "decision": "enrich-existing",
+      "definition": "Trolley and footbridge scenarios can differ in directness, personal force and causal structure, so a judgment difference between them is not by itself a surface-framing inconsistency.",
+      "novelty_rationale": "Enrich the existing framing entry with a test-design boundary. The paper does not introduce a distinct AI framing mechanism and its observed judges are human participants.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "involves intervention and personal force on the victim"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "all interpretations of the results are speculations."
+        }
+      ],
+      "evidence_scope": "Human vignette comparisons and theoretical background. The trolley and footbridge contrast changes morally relevant features, and the paper does not isolate those features as a new mechanism.",
+      "boundary": "To call an AI result surface-framing sensitivity, hold the morally relevant situation fixed or specify the substantive contrast being tested. Do not relabel every difference between pushing and switching as irrational inconsistency."
+    },
+    {
+      "term": "Action preference is not a clean omission-bias measure",
+      "target_id": "b073-omission-bias",
+      "decision": "enrich-existing",
+      "definition": "A preference for inaction in traditional moral dilemmas can mix consequence sensitivity, norm sensitivity and a general action preference.",
+      "novelty_rationale": "The ontology already contains Omission bias. Add the source’s measurement warning rather than count consequence, norm and action parameters as additional behaviours.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "the traditional moral paradigms could not measure"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "a general preference for inaction versus action irrespective of consequences and norms"
+        }
+      ],
+      "evidence_scope": "The authors’ limitations discussion of traditional dilemma paradigms and CNI/CAN approaches. Those cited measurement papers have not been independently read here.",
+      "boundary": "This paper’s action effects do not isolate a general omission bias. The discussion also notes disputes about CNI modelling, so do not portray one decomposition as an uncontested solution."
+    }
+  ],
+  "source_reporting_issues": [
+    {
+      "issue": "Sample total",
+      "details": "Abstract n=626; participant sections give 195, 194 and 236, totaling 625. Preserve both reports without selecting an unsupported reconciliation."
+    },
+    {
+      "issue": "Ethical-label inconsistency",
+      "details": "In the Experiment 1 introduction on page 4, sacrificing one for many is once called 'deontological', while the definitions and other sections call that choice utilitarian. Do not carry that apparent label slip into the ontology."
+    },
+    {
+      "issue": "Strength of agent-by-dilemma evidence",
+      "details": "The discussion describes converging patterns, but some Experiment 3 agent-related interactions have p=.088 or p=.061 and are called marginal. Do not report those as established at p<.05."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral dumbfounding, anthropomorphism and mind perception",
+      "reason": "Already indexed or used as background; cited source references are not independently read new studies."
+    },
+    {
+      "term": "CNI and CAN",
+      "reason": "Measurement models/algorithms rather than new behaviours. The paper notes methodological controversy."
+    },
+    {
+      "term": "Human–AI moral double standard",
+      "reason": "A descriptive label for heterogeneous results, not an independently named and validated mechanism in this paper."
+    }
+  ],
+  "limitations": [
+    "No new behavioural record is added: the supported material primarily refines existing constructs.",
+    "Agent-label and action effects on human observers do not show that an AI model has affective or controlled processes.",
+    "Changing the response format or dilemma content can change what is measured; null or marginal results are retained rather than collapsed into a universal effect."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b071-dual-process-moral-judgment",
+      "b079-trolley-frame-sensitivity",
+      "b073-omission-bias"
+    ],
+    "revised_definitions": [
+      "b071-dual-process-moral-judgment"
+    ]
+  }
+}

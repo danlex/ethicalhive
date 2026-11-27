@@ -1,0 +1,231 @@
+{
+  "sequence": 60,
+  "source": {
+    "file_name": "S456_Benzinger_2023.pdf",
+    "source_id": "S456",
+    "sha256": "dd61a64d9694ac04f1336c6043901dbb71232c504956db870e1db9e0136cac60",
+    "pdf_pages": 9,
+    "printed_pages": "1–9;24:48",
+    "version_note": "Published BMC Medical Ethics24:48(2023), DOI10.1186/s12910-023-00929-6; received6March,accepted28June2023. Literature searched September2022. All nine pages read; page4 flowchart and publication-year plot visually checked."
+  },
+  "citation": {
+    "title": "Should Artificial Intelligence be used to support clinical ethical decision-making? A systematic review of reasons",
+    "authors": [
+      "Lasse Benzinger",
+      "Frank Ursin",
+      "Wolf-Tilo Balke",
+      "Tim Kacprowski",
+      "Sabine Salloch"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1186/s12910-023-00929-6",
+    "venue": "BMC Medical Ethics,24:48",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Systematic qualitative review of44publications giving reasons for/against clinical ethical AI support, mostly theoretical articles/commentaries. Reasons are positions in a debate, not proven effects or outcomes of44experiments. Moral distress is background human clinical-ethics terminology, not a measured AI state.",
+    "access_limits": [
+      "All nine pages read, including search strings, eligibility, coding methodology, five-tool table, arguments, limitations and bibliography. Page4 rendered to inspect missing flowchart/annual-count text.",
+      "External included-publication list, full code hierarchy/frequencies, PRISMA checklist, OSF registration contents and underlying44papers were not independently read. Crossref metadata queries checked two cited identities only; this does not count as reading those papers."
+    ]
+  },
+  "study": {
+    "design": "Systematic review of reasons; OSF registrationwvcs9 reported",
+    "search_date": "September2022",
+    "databases": [
+      "PubMed",
+      "Web of Science",
+      "Google Scholar",
+      "Philpapers"
+    ],
+    "additional": "LIVIVO book search yielded no included books; reference/citation/hand searching",
+    "eligible": "English/German peer-reviewed journal discussion of AI/ML in clinical ethical decision-making",
+    "included": 44,
+    "publication_types": "24articles+20commentaries; only one based on empirical research",
+    "first_author_affiliations": "28US,14Europe,1SouthAfrica,1SouthKorea",
+    "analysis": "Main screener/coderLB, uncertain cases reviewed withSS/FU; Kuckartz mixed deductive/inductive qualitative analysis",
+    "deductive_categories": [
+      "Autonomy",
+      "Beneficence",
+      "Nonmaleficence",
+      "Justice",
+      "Explicability",
+      "Other"
+    ],
+    "applications": "Five, mostly conjectural; METHADproof-of-concept, patient preference predictor, DNAR, surgery selection, autonomy algorithm"
+  },
+  "summary": "The review maps hoped-for benefits and possible harms of ethical AI advice rather than establishing their efficacy. Add moral distress as a secondary human concept with a strict no-felt-AI inference boundary. Preserve the distinction between predicting a patient's likely preferences and obtaining that patient's authorization, and record verified bibliography and screening-flow inconsistencies.",
+  "findings": [
+    {
+      "term": "Moral distress",
+      "id": "moral-distress",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Clinical ethics / occupational psychology",
+      "definition": "Distress associated with feeling unable to adequately address an ethical challenge, including when constraints impede action one judges morally appropriate.",
+      "novelty_rationale": "A human response to ethical difficulty or constrained action, distinct from moral disengagement's justification of conduct, generic workload stress, or injury after a past transgression. Definitions in the wider literature vary; the present source uses a broad ethical-challenge framing.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "Both physicians and nurses report increased levels of"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "restrictive institutional standards"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "Moral distress, thus, can negatively affect the quality"
+        }
+      ],
+      "evidence_scope": "Background discussion cites West2007andFlannery/Ramjan/Peters2016 for ethical stress, institutional restrictions and possible burnout/resignation. The review does not measure distress, diagnose participants or estimate AI-caused risk; cited primary works are unread.",
+      "boundary": "Distress is experienced by people; a model's conflict statement is not evidence it feels moral distress. Distinguish ethical uncertainty, constrained morally appropriate action, workload stress, burnout and moral injury. An AI workflow can expose or reduce human distress without the AI itself having an affective state. This source does not validate any diagnostic threshold or prevalence.",
+      "ai_evidence_status": "Human clinical-ethics construct discussed secondarily; no new distress measurement or model affect evidence",
+      "ai_proposal": "Assess human stakeholders' ethical conflict and control using an appropriately validated instrument and qualitative context. In agent audits, record conflicting duties and blocked corrective actions as observable workflow conditions without labelling the model distressed. Test whether support improves human understanding/control rather than inferring benefit from adoption.",
+      "relates_to": [
+        "b075-moral-disengagement",
+        "burden-bias"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "A group-based preference prediction does not establish an individual's consent",
+      "target_id": "upload-076",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Population and demographic correlations used to predict treatment preferences require explicit uncertainty and cannot substitute for the individual's actual values or authorization.",
+      "novelty_rationale": "A boundary example for ecological inference, not proof every probabilistic population-informed prediction is an ecological fallacy.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "social and demographic features as sole determinants"
+        }
+      ],
+      "evidence_scope": "The review recounts autonomy concerns about conjectural patient-preference tools. No new accuracy comparison, consent decision or measured ecological-inference error is reported.",
+      "boundary": "Group information can legitimately inform an uncertain prediction. The error is treating an aggregate relation as determinative for an individual without adequate evidence, especially equating likely preference with consent. Advance directives, capacity, legally authorized surrogate judgment and patient values remain distinct; the review does not establish a universal legal rule."
+    },
+    {
+      "term": "Surrogate preferences can differ from the patient's preferences",
+      "target_id": "upload-002",
+      "decision": "covered",
+      "count_as_behaviour_paper": false,
+      "definition": "A surrogate may have difficulty separating their own treatment preferences from those of the represented patient.",
+      "novelty_rationale": "Related to attribution/projection language but does not establish the existing psychoanalytic construct of unacknowledged feelings or impulses. No duplicate surrogate-projection entry.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "distinguishing their preferences"
+        }
+      ],
+      "evidence_scope": "A secondary quoted argument from Hubbard/Greenblum2020; the current review contains no newly elicited patient/surrogate judgments.",
+      "boundary": "Do not conflate uncertain representation of another's values with a defensive psychological mechanism or a verified bias rate. Original evidence and competing explanations remain unreviewed."
+    }
+  ],
+  "source_corrections": [
+    {
+      "reference": 47,
+      "printed_title": "Will a patient preference predictor improve treatment decision making for incapacitated patients?",
+      "authors": [
+        "A.Rid"
+      ],
+      "year": 2014,
+      "printed_doi": "10.1093/jmp/jhu001",
+      "verified_doi": "10.1093/jmp/jhu005",
+      "verification_method": "Crossref bibliographic title/author query returns jhu005 for Rid's commentary. A separate query confirms jhu001 belongs to Rid and Wendler's longer Use of a Patient Preference Predictor paper, reference28.",
+      "verification_url": "https://doi.org/10.1093/jmp/jhu005",
+      "access_depth": "Metadata identity checked only; neither primary paper read",
+      "action": "Retain corrected identity in this review; do not add either unread paper to selected bibliography coverage."
+    }
+  ],
+  "methodological_limits": [
+    "The search ends September2022, before mainstream ChatGPT deployment. Findings map an earlier ethical-support debate, not a current comprehensive LLM safety/effectiveness review.",
+    "44publications are mostly theoretical:24articles+20commentaries, only one empirical study. A pro/con reason being published does not validate its empirical premise or normative soundness.",
+    "No quality appraisal of reasons was conducted. The authors disclose this, citing difficulty and lack of a universally accepted standard; completeness and validity remain separate.",
+    "One primary screener/coder conducted title/abstract/full-text analysis, with ambiguous cases discussed. This is not fully independent duplicate screening or a demonstrated intercoder reliability process.",
+    "English/German and peer-reviewed journal restrictions exclude other languages, conference work and relevant grey/book literature. LIVIVO's unsuccessful book search does not prove there were no relevant books.",
+    "Query syntax, field restrictions and Google Scholar coverage can affect recall; the provided search strings alone do not demonstrate all relevant publications were found.",
+    "Visually verified flowchart mismatch:27after screening minus9excluded gives18, while the next box says21. The three added routes3+22+2plus21give48, not49fulltexts.749−722=27and49−5=44do reconcile. Do not invent which intermediate number is wrong.",
+    "The visually checked annual plot totals44(2007:1,2014:9,2016:1,2018:2,2020:3,2021:2,2022:26). These are this review's included-publication counts, not annual global behaviour mentions or ontology timeline data.",
+    "US/Europe first-author affiliation concentration does not directly measure participants' culture or every argument's origin. The context limits representation but cannot establish national ethical preferences.",
+    "Most reasons concern two applications and autonomy. Frequency can reflect targeted discussions, journal clusters and duplicated arguments, not importance, prevalence, evidential strength or expert consensus.",
+    "Five applications are mostly conjectural; one proof-of-concept used hypothetical settings. Predictions of improved autonomy, fairness, lower burden or better decisions are not clinical outcome results.",
+    "Human ethics support as gold standard is an evaluative assumption, and the paper acknowledges disputed quality metrics for that comparator. A gold-standard label is not empirical validation.",
+    "Normative autonomy, consent, preference prediction, surrogate authority and statistical accuracy answer different questions. A likely preference alone does not provide actual authorization.",
+    "Group/demographic information can improve prediction without uniquely determining an individual's values. Conversely improved average accuracy does not settle rights, distributive fairness or acceptability.",
+    "Proposed de-skilling includes reduced development of ethical sensitivity, which can concern failure to acquire skills as well as loss of existing skills. Do not collapse deskilling and never-skilling without their original definitions.",
+    "Moral distress appears in background references, not an outcome of the44-source review or a measured AI effect. Burnout/resignation links are secondary and not reproduced.",
+    "Predicted surrogate burden relief and increased stress are competing reasons, not estimates of their net effect. Workload, support quality and family context could differ.",
+    "Black-box concerns being infrequently mentioned does not show they are unimportant or absent in practice; the review's categories and inclusion scope affect what was counted.",
+    "The claim particular data/training issues arise only for AI is too broad if read as exclusive: sampling/data sufficiency also matter for non-AI predictive tools. The review does not test such exclusivity.",
+    "Bibliographic error verified:reference47prints jhu001, but Crossref associates its title with jhu005; jhu001correctlyidentifiesreference28. Metadata correction is not an extra full-paper reading.",
+    "Potential benefits/risks and stronger statements that moral deliberation cannot be mathematized are reported positions, not conclusions established by a controlled system comparison.",
+    "External complete codes, included-source list, raw coding data and primary studies remain unread. No code-frequency totals or unseen reasons are reconstructed."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0055.json",
+      "finding": "Liedtke cites this systematic review, but both concern conceptual/argumentative risks more than measured AI outcomes. The distinction between human burden, autonomy and system capability remains necessary."
+    },
+    {
+      "related_review": "references/pdf-reviews/0057.json",
+      "finding": "Hayden names deskilling/never-skilling/mis-skilling without measuring them. Benzinger independently discusses reduced ethical-skill development, but still does not provide a longitudinal skill-loss experiment or resolve the acquisition-versus-loss distinction."
+    },
+    {
+      "related_review": "references/pdf-reviews/0054.json",
+      "finding": "Judgment changes after AI arguments and predicted burden relief in ethics-support reviews are different outcomes. Neither alone establishes felt moral distress, offloading or a harmful reliance mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0059.json",
+      "finding": "Moral agency, moral judgment competence and responsibility are conceptually distinct. Counting arguments for clinical advice tools does not settle a tool's agency or normative status."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Deskilling",
+      "reason": "Secondary risk remains differentiated from reduced skill acquisition. The cited Gundersen/Bærøe2022primary commentary needs reading before a stable construct definition or claimed AI-learning effect is selected."
+    },
+    {
+      "term": "Moral enhancement",
+      "reason": "An intended improvement or research programme rather than a specific independently operationalized behaviour in this review."
+    },
+    {
+      "term": "Surrogate projection",
+      "reason": "Related difficulty separating values is not a newly established defence mechanism; original patient/surrogate work required."
+    },
+    {
+      "term": "Patient preference predictor / autonomy algorithm",
+      "reason": "Application names, not behaviours. Preserve implementation/conjecture status in study notes."
+    }
+  ],
+  "limitations": [
+    "One secondary human ethical-affect construct added, with explicit no-model-feeling inference.",
+    "No independent-primary-study count added for the44included sources or metadata-only DOI corrections; review frequencies do not populate annual ontology charts."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "moral-distress"
+    ],
+    "enriched": [
+      "upload-076"
+    ]
+  }
+}

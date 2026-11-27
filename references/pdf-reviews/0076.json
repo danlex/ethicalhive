@@ -1,0 +1,238 @@
+{
+  "sequence": 76,
+  "source": {
+    "file_name": "S745_Laakasuo_2021.pdf",
+    "source_id": "S745",
+    "sha256": "601266a9f48a19b2dcbfa1fce6c5e8ed7181ab666571a10bcf0061baac46c328",
+    "pdf_pages": 10,
+    "printed_pages": "1679–1688",
+    "version_note": "Published online 16 February 2021; accepted 12 December 2020. Original two-study moral uncanny valley article, not a duplicate of the 2023 revisiting paper."
+  },
+  "citation": {
+    "title": "Moral Uncanny Valley: A Robot’s Appearance Moderates How its Decisions are Judged",
+    "authors": [
+      "Michael Laakasuo",
+      "Jussi Palomäki",
+      "Nils Köbis"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.1007/s12369-020-00738-6",
+    "venue": "International Journal of Social Robotics, 13:1679–1688",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source_scope_note": "Two human observer experiments rating assigned fictional decisions paired with four fixed pictures. Perceptual-category competition is explicitly defined in secondary background, but the causal explanation is not tested here.",
+    "access_limits": [
+      "All 10 extracted pages read, including theory, methods, footnotes, discussion and references. Pages 5–6 and their plots visually inspected.",
+      "Referenced Appendix/examples are not present in the ten-page main PDF; external supplement, Figshare data/syntax and cited books/primary category-competition studies were not opened. No analyses reproduced."
+    ]
+  },
+  "study": {
+    "study_1": {
+      "recruited": 160,
+      "excluded_prior_exposure": 10,
+      "reported_final_n": 150,
+      "mean_age": 39.7,
+      "age_sd": 15.1,
+      "design": "Espoo public-library lab, randomized between-person 2 decision types x 4 agents; three dilemmas averaged",
+      "agents": [
+        "Asimo",
+        "Sonny/iRobot",
+        "Sonny–human morph iClooney",
+        "human male"
+      ],
+      "contrast": "[Human+Asimo] versus [iRobot+iClooney], collapsed over decision",
+      "reported_contrast": "F(1,145)=5.54,p=.02,B=1.37,95%CI[.22,2.51]",
+      "interaction": "F(3,142)=2.67,p=.05, described as marginal"
+    },
+    "study_2": {
+      "reported_completed_n": 398,
+      "reported_excluded": 2,
+      "mean_age": 33.55,
+      "age_sd": 10.66,
+      "reported_men": 255,
+      "design": "MTurk, randomized same 2x4 design; four dilemmas averaged",
+      "reported_contrast": "F(1,390)=8.47,p=.003,B=.81,95%CI[.26,1.36]",
+      "decision_difference": "Deontological more approved,B1.10,95%CI[.83,1.38]",
+      "interaction": "F(3,390)=.56,p=.64",
+      "outcome": "M4.3,SD1.5,alpha.77",
+      "sample_flow_note": "398 completers minus 2 exclusions would be396, while full 8-cell residual df390 corresponds to398; analyzed denominator unresolved."
+    }
+  },
+  "summary": "A second fully read article supports the existing moral uncanny valley as an appearance-dependent judgment pattern; it does not identify uncanniness, categorical competition or out-group effects as the unique cause. Add stimulus-category competition as a clearly marked secondary-defined perceptual hypothesis. Flag sample-flow and descriptive/plot inconsistencies rather than treating the 2021 and 2023 studies as identical replications.",
+  "findings": [
+    {
+      "term": "Original moral uncanny valley experiments",
+      "target_id": "moral-uncanny-valley",
+      "decision": "enrich-existing",
+      "definition": "Human observers rate the same fictional moral decisions less favorably when paired with selected uncanny robot images than with the selected human and clearly robotic images.",
+      "novelty_rationale": "The named pattern already exists after PDF0075. This is a second fully read article and the earlier primary experiment, not a new synonym or independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 1683,
+          "quote": "for the DV, collapsing over the Decision"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 1684,
+          "quote": "the contrast was again statistically"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 1685,
+          "quote": "the perceived uncanniness or categorical uncertainty"
+        }
+      ],
+      "evidence_scope": "Study1 reported final N150 and three dilemmas: contrast B1.37,CI[.22,2.51],p.02. Study2 reports398 completers and two exclusions but df390 leaves analyzed N unclear: four-dilemma contrast B.81,CI[.26,1.36],p.003. Both average over utilitarian/deontological choices; this is not the decision-specific reversal seen in 2023. Outcome is human judgment, not actual AI conduct.",
+      "boundary": "A four-image planned grouping contrast does not identify a universal continuous curve, prove a category-competition mechanism, or show appearance differences are always irrational. No detectable difference or interaction is not equivalence. Counts are article-level citations; two studies within one article are not two independent papers."
+    },
+    {
+      "term": "Stimulus-category competition",
+      "id": "stimulus-category-competition",
+      "decision": "new-entry",
+      "definition": "Competing interpretations of an ambiguous stimulus that make it difficult to classify into a familiar category.",
+      "category": "Perception",
+      "origin": "Human categorization / affective cognition",
+      "ai_evidence_status": "Explicit secondary definition of a human perceptual hypothesis; neither category competition nor its proposed affective mechanism is directly tested in these robot-judgment experiments",
+      "ai_proposal": "For an AI analogue, present stimuli that systematically straddle known categories, measure classification instability or calibrated uncertainty, and test any resulting evaluation changes separately. Distinguish difficult classification from unsupported negative moral judgment; output disagreement alone does not establish inhibition or felt conflict.",
+      "relates_to": [
+        "uncanny-valley-effect",
+        "moral-uncanny-valley",
+        "b053-cognitive-load",
+        "upload-071",
+        "candidate-031"
+      ],
+      "novelty_rationale": "Unlike ambiguity aversion over unknown probabilities, this is perceptual competition between possible category assignments. Unlike uncanny valley, it is a proposed account that could apply beyond human-looking agents. Add one categorization process, not separate duplicate entries for the hypothesis acronym and categorical uncertainty.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 1681,
+          "quote": "of categorizing an “almost familiar” object that has several"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 1682,
+          "quote": "The stimulus category hypothesis predicts that agents that"
+        }
+      ],
+      "evidence_scope": "The introduction summarizes Ferrey, Burleigh and Fenske (2015): category competition is proposed as cognitively costly and capable of eliciting negative affect. That primary work is cited, not independently read. The present study changes pictures and records moral approval; it does not measure classification difficulty, inhibition, response time or felt processing cost.",
+      "boundary": "A legitimate ambiguous classification is not inherently an error, moral violation or pathology. Competing category interpretations do not imply conflict between personal beliefs, unknown outcome probabilities or conscious AI distress. Negative affect and devaluation are proposed downstream consequences, not automatic parts of every instance. The competing explanation of eeriness versus uncertainty remains unresolved."
+    },
+    {
+      "term": "The broad machine-rejection interpretation is narrower than the actual manipulation",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Similar approval of one human image and one clearly robotic image does not establish general willingness to delegate moral decisions to algorithms.",
+      "novelty_rationale": "This is a measurement boundary for the existing algorithm-aversion construct, not another direct advice-use or delegation study.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 1685,
+          "quote": "they appraise moral choices"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 1685,
+          "quote": "as similarly acceptable"
+        }
+      ],
+      "evidence_scope": "Observers rate already specified acts. They do not choose an advisor, delegate authority, inspect performance histories or decide whether to use an algorithm.",
+      "boundary": "A rating contrast is not deployment acceptance, and failure to detect a difference is not statistical equivalence. Robot appearance can shape judgments without implying rejection of all machine advice."
+    }
+  ],
+  "methodological_limits": [
+    "The primary two studies use the same selected pictures and closely related dilemma sets. They vary recruitment and setting, but shared stimuli and analytic choices limit independence and generalization.",
+    "Categorical uncertainty and negative affect are motivating explanations, not experimentally isolated mediators. No measured classification difficulty, cognitive cost or inhibition establishes stimulus-category competition as the cause.",
+    "One clear robot plus two uncanny robots does not rule out every in-group/out-group explanation. Perceived human similarity, familiarity, attraction, identity and group categorization are not orthogonally manipulated.",
+    "The two uncanny agents are not significantly different in decision approval despite different prior eeriness. This neither identifies category uncertainty nor proves perceived uncanniness irrelevant.",
+    "Study1 has approximately19 people per cell. The 30-per-cell heuristic cited by the article is not a design-specific power calculation; small samples and borderline interaction p=.05 require cautious interpretation.",
+    "Study2 says398 completed and two were excluded, but reports residual df390 for an eight-cell design. That df corresponds to398 rather than396 analyzed observations. Clarify whether398 is before or after exclusions; do not choose a denominator silently.",
+    "Study1 reports perceived decision morality M4.16,SD1.46,alpha.75, yet Figure2 displays all four collapsed group means above5. Under the stated common1–7 scale and aggregation, a pooled mean4.16 cannot arise from those four displayed means. The descriptive statistic or plot requires source-data reconciliation.",
+    "The exact Study1 descriptive triple M4.16,SD1.46,alpha.75 also appears in the different 2023 paper's Study2(N221,four dilemmas). Exact reuse is a reporting question, not proof of duplicated participants, fabrication or data identity.",
+    "Study1's contrast residual df145 differs from df142 of its full factorial model; pooling with a retained decision term could explain the former, but the exact contrast model is not specified sufficiently in the main article to reproduce its coefficient convention.",
+    "Study2's nonsignificant agent-by-decision interaction p=.64 is not proof no robust interaction, notwithstanding the footnote. It does not establish effects are identical for both decision types.",
+    "Appearance varies in robot identity, familiarity, texture, facial features and perceived category. Asimo, film character Sonny, a morph and one healthy male human do not form a clean equal-step human-likeness manipulation.",
+    "The article suggests movie recognition is unlikely to matter because Sonny and its morph receive similar ratings. That comparison does not isolate familiarity or exclude a shared association with the same character.",
+    "Claiming two selected populations and two settings makes demand-characteristic bias unlikely is not a test of that bias. Library volunteers and experienced high-approval MTurk workers are not probability samples or comprehensive cultural comparisons.",
+    "Third-person morality ratings, personal preference, willingness to delegate, actual behavior and legal accountability are different outcomes. Utilitarian/deontological choices also bundle action/omission with casualty differences.",
+    "The background claim that liberals sacrifice high-status others probably because of US-campus political correctness is a speculative attribution, not a tested mechanism in these experiments.",
+    "The introduction cites Swann et al.(2010), an identity-fusion trolley study in the bibliography, for German-versus-Turkish robot-name anthropomorphism. That attribution does not align with the listed title and needs the actual primary source; no replacement is guessed.",
+    "The bibliography has visible author/title anomalies, including the moral machines book title, and several shortened references. External metadata and original texts were not verified here, so no bulk bibliographic correction is asserted.",
+    "The PDF refers to Appendix examples but contains no appendix scenarios after the main discussion; the full vignette wording and manipulation-check outputs need the external supplement.",
+    "Evolutionary inability to classify robots and the proposed new ontological category are explanatory positions, not demonstrated absence of adaptive human capacities or proof about AI consciousness.",
+    "No direct human emotion ratings validate a felt moral uncanny state here, and no machine decides or experiences anything in the experiment. Fully read does not mean raw-data reproduction."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "The 2021 experiments pool decisions and report an appearance dip; the 2023 photorealistic study detects opposite utilitarian/deontological patterns and its symbolic-face study is null. Treat this as evidence with decision/stimulus boundaries, not four identical successful replications."
+    },
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "The 2021 Study1 M4.16,SD1.46,alpha.75 conflicts with its own Figure2 group means and exactly matches the 2023 Study2 triple. Flag descriptive reporting for clarification without inferring data duplication."
+    },
+    {
+      "related_review": "references/pdf-reviews/0066.json",
+      "finding": "As with a hypothesized mind trap, a nonlinear outcome pattern does not directly measure processing difficulty, ambiguity, negative affect or the proposed mediator. Each requires its own operationalization."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Identity fusion",
+      "reason": "Appears in a cited paper title and group-sacrifice background, without a sufficient conceptual definition or direct test in this source. Read its primary treatment before a new entry."
+    },
+    {
+      "term": "Affective devaluation as an independent new mechanism",
+      "reason": "Devaluation is an outcome that can follow many causes; this source does not separately operationalize a general process distinct from the named moral uncanny pattern or proposed category competition."
+    },
+    {
+      "term": "New ontological category",
+      "reason": "A proposed classification framework for robots, not a newly observed human behavioral mechanism. Do not create a defect label merely from the framework name."
+    },
+    {
+      "term": "Demand characteristics",
+      "reason": "Mentioned as a general limitation without enough definition or measurement in this paper."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Study1 outcome description and Figure2",
+      "status": "unresolved reporting conflict",
+      "correction": "Reported M4.16 cannot be the pooled average of the displayed four means, all above5. Retain the values as reported and request raw-data reconciliation rather than inventing corrected means."
+    },
+    {
+      "location": "Study2 participant flow and reported dfs",
+      "status": "unresolved analyzed denominator",
+      "correction": "398 completers minus two excludes implies396, whereas full2x4 residual df390 implies398. Distinguish reported completion from analyzed N."
+    }
+  ],
+  "limitations": [
+    "The newly added categorization process is secondary-defined and not causally confirmed here. No invented ethical violation edges, annual search counts, additional independent papers or AI internal states are added."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "stimulus-category-competition"
+    ],
+    "enriched": [
+      "moral-uncanny-valley",
+      "algorithm-aversion"
+    ]
+  }
+}

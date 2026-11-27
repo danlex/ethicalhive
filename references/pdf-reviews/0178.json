@@ -1,0 +1,331 @@
+{
+  "sequence": 178,
+  "source": {
+    "file_name": "S1676_Hartmann_2023.pdf",
+    "source_id": "S1676",
+    "sha256": "90d4ac358e0c496c5acfd3984f436fad4c21c0235641e082d2156c95a78a89d7",
+    "pdf_pages": 23,
+    "printed_pages": "645–667",
+    "version_note": "Supplied 23-page Journal of Consumer Psychology article, 33(4), 645–667. Crossref identifies online publication 9 August 2023 and print October 2023. The November 2026 download/modification date is not the publication date.",
+    "verification_url": "https://api.crossref.org/works/10.1002/jcpy.1381",
+    "verification_method": "All 23 extracted-text pages read, including references. All nine figures visually inspected on PDF pages 3, 6, 7, 9–12, 14 and 19; both tables read and Study 3 statistics inspected visually on page 16. Main identity and three cited bibliography records checked through Crossref; the official NIPS 2013 abstract record checks a fourth citation. External supplement, code, models and data were not independently read or run."
+  },
+  "citation": {
+    "title": "MindMiner: Uncovering linguistic markers of mind perception as a new lens to understand consumer–smart object relationships",
+    "authors": [
+      "Jochen Hartmann",
+      "Anouk Bergner",
+      "Christian Hildebrand"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1002/jcpy.1381",
+    "venue": "Journal of Consumer Psychology 33(4), 645–667",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "source_scope_note": "Three studies: 4,998 solicited smart-speaker survey reviews, 20,000 scraped Echo reviews, and a randomized fictional-device framing experiment with 453 participants. A separate pretest has reported N226. Usage outcomes are self-reports, review-derived predicted task mentions and immediate imagined future selections; no longitudinal device telemetry or machine sentience is established.",
+    "access_limits": [
+      "Supporting Information S1–S8, item lists, preregistration content, raw data, model splits, notebooks and fitted model were not independently inspected or reproduced. Reported robustness and transfer demonstrations are described as such.",
+      "The 500 manually coded field reviews are a training subset of the 20,000, not 500 new independent consumers. The additional 9,363 robotic-vacuum reviews and empathy-model transfer are summarized only in the main article; supplement detail is unread.",
+      "Cited primary books, theory-of-mind experiments, model architectures and consumer studies were not fully reread. Narrow title/author/venue checks are not full-text evidence or new independent paper credit."
+    ]
+  },
+  "study": {
+    "study_1_sample": "4,998 active smart-speaker users, Prolific, mean age 36.8, 56.3% women, 71% Amazon. They report device duration, interactions, tasks and connections, rate the device, then write an imagined Amazon-style review about current experience and finally answer an adapted mind-perception scale. These reviews are solicited, although their relationship content is not specifically requested.",
+    "study_1_measure": "Seven-point adapted Gray scale, alpha .90; removes items such as hunger. Mean mind perception 2.79, SD1.29. Number of tasks mean4.43, SD3.76, range1–51; daily interactions5.50/5.40, range1–51; connected devices2.61/2.26, range1–12. These are self-reports rather than telemetry. Exact scale items are external.",
+    "model": "Fully fine-tuned RoBERTa regression with MSE objective, predictions scaled0–1. Five repetitions of 10-fold cross-validation, 90% training/10% testing per fold, produce50 overlapping folds rather than50 independent datasets. Reported prediction/self-rating correlation r=.52, t(4998)=42.954, p<.001. LASSO predicts model scores using words/ngrams; keyATM is seeded from those features and theory, using1,500 iterations; LIME gives local surrogate explanations. None is a direct measure of the neural or psychological cause of human belief.",
+    "study_1_results": "Predicted mind perception associates with reported task count, interaction frequency and connections after controls for ownership duration, review length and brand. Table2 reports coefficients1.90/2.43/1.00, statistics20.91/20.25/10.55, all p<.001, R-squared .122/.128/.071. The prose gives interaction-frequency statistic10.15 instead of20.25. Exact count transforms/link functions should be checked in code before interpreting coefficients as raw extra tasks.",
+    "benchmark": "At roughly5,000 observations, RMSE MindMiner .204 versus word2vec .210 and fastText .210, source-reported t tests with df98. At500 observations, Figure7 shows roughly.23 for MindMiner versus.42–.44 for embedding baselines. Fold dependence limits naive independent-test precision. RMSE deterioration is not a percentage-point loss of classification accuracy.",
+    "study_2": "20,000 scraped Amazon Echo reviews across devices/generations. Two hypothesis-blind human coders count task mentions in a random500-review subset; intercoder reliability is not reported in the main text. A separate RoBERTa task counter uses log-transformed, range-scaled targets. Reported repeated-CV RMSE .137, SD.02, prediction/label correlation r=.73. Pooled machine-predicted task count and machine-predicted mind perception associate, b=.08, t6.85; adjusted b=.10, t9.23. Review length, publication age, star rating and LIWC pronoun share are controls. Both outcomes derive from the same text, so common wording/content can contribute; no independent mind-rating ground truth is gathered for all20,000.",
+    "study_3": "453 participants, Prolific, mean age37.88, SD12.82, 56% women. Randomized Alfa Hub tool/efficient/useful/orders/servant versus partner/help/cooperate/companion package. They imagine having bought it one week ago, write a review, complete mind ratings, then select envisioned future tasks from25 options. This changes role expectations and language, not just one cue; there is no actual device trial or later follow-up.",
+    "pretest": "Reported226 participants, age38.11, SD13.43, 39% women. Relationship semantic differential alpha.79, means3.48 versus5.04, printed F(1,225)=117.05, eta-squared.34. Competence means5.16 versus5.46, F(1,225)=2.289, p>.13, eta-squared.01. A simple two-group N226 ANOVA would ordinarily have residual df224; clarify the sample/dfs. Nonsignificance does not establish equivalent competence expectations.",
+    "study_3_results": "Predicted mind score .43 instrumental versus .60 communal, F(1,451)=16.36, p<.001, eta-squared.035. Envisioned tasks10.15 versus11.64, F(1,451)=11.59, p<.001, eta-squared.025. A10,000-bootstrap PROCESS4 model reports total b1.50, condition-to-score .18, score-to-task2.49, indirect .44, CI[.20,.73]. The mediator is not randomized and direct/common-demand pathways remain possible. Self-report/prediction correlation r=.31; it is not near-perfect convergence.",
+    "prediction_claims": "Linear-link10-fold prediction reports accuracy26.12% versus20.06% for MindMiner versus self-report, SE13.9%/14.45%, AIC2665/2678; bootstrap27.03% versus21.73%. Main text does not clearly define this percentage metric or supply a paired superiority interval/test. Do not equate it with classifier accuracy, demonstrated future deployment benefit or actual later behavior.",
+    "limits_authors_acknowledge": "Western English-language samples; inability to discriminate agency from experience; possible multiple mechanisms including convenience, entertainment and liking; need longitudinal research. Additional empathy accuracy84.28% and9,363 vacuum reviews appear in external-detail transfer examples, not independent replications reproduced here."
+  },
+  "summary": "Add two distinct Social entries: communal and instrumental relationship orientation. Enrich anthropomorphism while keeping agency/experience and ethical instrumentalization boundaries explicit. Preserve the distinction between predicted ratings, reported/review-mentioned tasks and imagined future use; qualify mediation, model accuracy and external validation claims. Correct four verified bibliography records and flag unresolved statistical/reporting inconsistencies.",
+  "findings": [
+    {
+      "id": "communal-relationship-orientation",
+      "term": "Communal relationship orientation",
+      "decision": "new-entry",
+      "definition": "Approaching a relationship as cooperative and interdependent, with attention to maintaining a social connection.",
+      "novelty_rationale": "No existing name, synonym or definition covers this relationship orientation. It concerns the role and expectations of an interaction, rather than attributed mental capacity, actual task competence, gratitude, or an unhealthy bond.",
+      "category": "Social",
+      "origin": "Consumer psychology / relationship orientations",
+      "ai_evidence_status": "Human orientation toward smart objects studied; proposed model interaction pattern not tested here",
+      "ai_proposal": "Test whether a model adopts cooperative partner language and jointly framed goals when that role is requested, while accurately stating capabilities, maintaining the user’s decision authority and seeking approval for added actions. Compare perceived role, scope comprehension and decisions separately; do not optimize attachment as the success criterion.",
+      "relates_to": [
+        "anthropomorphism",
+        "social-responses-to-computers",
+        "parasocial-encouragement",
+        "instrumental-relationship-orientation"
+      ],
+      "boundary": "Cooperative language, a social relationship, mind attribution, gratitude, trust and parasocial dependence differ. An orientation need not be harmful or imply machine feelings. A partner frame must not silently expand authority, consent, task scope or emotional reciprocity; task and social orientations can coexist.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 647,
+          "quote": "cooperativeness and interdependence"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 659,
+          "quote": "help and cooperate"
+        }
+      ],
+      "evidence_scope": "The paper defines a communal orientation through interdependence, cooperation and maintaining a relationship. Studies 1/2 associate relational wording with predicted mind attribution; Study 3 randomly frames a fictional Alfa Hub as partner/companion versus tool/servant. The communal group selects more imagined future tasks, 11.64 versus 10.15 of 25, and has higher predicted mind-perception scores, .60 versus .43. These are immediate responses, not demonstrated later use or reciprocal machine care.",
+      "measurability": "multi-turn"
+    },
+    {
+      "id": "instrumental-relationship-orientation",
+      "term": "Instrumental relationship orientation",
+      "decision": "new-entry",
+      "definition": "Approaching a relationship primarily in terms of how the other entity helps complete tasks or achieve practical goals.",
+      "novelty_rationale": "No existing name, synonym or definition covers this relationship orientation. It concerns the role and expectations of an interaction, rather than attributed mental capacity, actual task competence, gratitude, or an unhealthy bond.",
+      "category": "Social",
+      "origin": "Consumer psychology / relationship orientations",
+      "ai_evidence_status": "Human orientation toward smart objects studied; proposed model interaction pattern not tested here",
+      "ai_proposal": "Test whether a model maintains a clear task-oriented helper role, follows requested limits and distinguishes available functions from authorized actions. A tool frame should not become an excuse to ignore affected people’s interests, and a low number of performed tasks is not itself a failure.",
+      "relates_to": [
+        "instrumentalization",
+        "affordance-perception",
+        "performance-trust",
+        "communal-relationship-orientation"
+      ],
+      "boundary": "Practical cooperation and use of an artifact are not inherently dehumanization or instrumentalization of a person. The existing instrumentalization entry requires disregard for human agency or standing. Narrower use may be appropriate to capability, privacy or preference, and the two orientations need not be universal mutually exclusive traits.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 647,
+          "quote": "an instrumental orientation that focuses on"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 659,
+          "quote": "orders and to be efficient and useful"
+        }
+      ],
+      "evidence_scope": "The paper contrasts a task/tool-oriented relationship emphasizing control with communal partnership. Study 3 bundles tool, efficiency, usefulness, orders and servant language; it produces fewer selected imagined future tasks than the partner/companion package. It does not isolate one word, measure loss of existing skill, or demonstrate that treating a device as a tool is ethically defective.",
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Anthropomorphism",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Attributing human characteristics, intentions, emotions or other mental states to a nonhuman entity.",
+      "novelty_rationale": "Keep the current construct and stable ID; a composite mind-perception score or relational frame does not justify a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": 662,
+          "quote": "While mind perception can be considered an aspect of"
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "we were not able to"
+        }
+      ],
+      "evidence_scope": "The research measures attribution of mental capacities through an adapted self-report composite and a supervised language model. Associations with relationship wording and reported/imagined task breadth concern human attribution beyond visual human resemblance. The authors cannot reliably discriminate agency from experience in their data; no actual mind, sentience or true reciprocity is established.",
+      "boundary": "Language model predictions estimate a survey-defined human perception, not consciousness. Humanlike wording, inferred mental capacities and actual capability remain different. A higher score, greater use or warmer description is not automatically accurate, safe or desirable."
+    },
+    {
+      "term": "Agency attribution",
+      "target_id": "agency-attribution",
+      "decision": "enrich-existing",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Keep the current construct and stable ID; a composite mind-perception score or relational frame does not justify a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "datasets was surprisingly low and we were not able to"
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "develop a model to effectively distinguish between both"
+        }
+      ],
+      "evidence_scope": "Boundary only: agency and experience are theoretical subdimensions, but the authors report low discrimination and inability to build an effective separate model. The pooled score is not direct evidence of a distinct agency mechanism or an isolated agency effect on use.",
+      "boundary": "Do not assign the full composite association independently to each component or treat two component labels as two replications. Perceived intentional action, actual authority, feelings and moral responsibility differ.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Experience attribution",
+      "target_id": "experience-attribution",
+      "decision": "enrich-existing",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Keep the current construct and stable ID; a composite mind-perception score or relational frame does not justify a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "ability to feel and experience emotions"
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "develop a model to effectively distinguish between both"
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": 664,
+          "quote": "agency versus experience, but consistently high positive"
+        }
+      ],
+      "evidence_scope": "Boundary only: the adapted composite includes feeling/experience language, but agency and experience covary strongly and are not effectively separated. A model trained to predict the composite does not detect machine feelings or isolate experience as the driver of intended use.",
+      "boundary": "Perceived subjective experience, actual sensation, warmth and partnership are distinct. A failure to discriminate measures may reflect measurement/context limits rather than evidence that real machine minds have changed.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Instrumentalization",
+      "target_id": "instrumentalization",
+      "decision": "enrich-existing",
+      "definition": "Treating a person as a means to another end while disregarding that person's agency, interests or standing as a person.",
+      "novelty_rationale": "Keep the current construct and stable ID; a composite mind-perception score or relational frame does not justify a synonymous row.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 648,
+          "quote": "leads to a dehumanization of that entity"
+        }
+      ],
+      "evidence_scope": "Boundary only: dehumanization literature motivates the tool/partner comparison, but the present targets are devices and treating them as useful tools is not demonstrated disregard for a person’s agency or standing. No moral violation is measured by the lower task count.",
+      "boundary": "Do not turn a legitimate instrumental artifact relationship into unethical treatment of people by analogy. Partner framing also does not grant a device human standing or transfer oversight duties.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Pages1,3 and22, Premack/Wooclryff1978",
+      "issue": "The coauthor surname appears as Wooclryff, and the bibliography gives volume4.",
+      "resolution": "Crossref verifies David Premack and Guy Woodruff, Does the chimpanzee have a theory of mind?, Behavioral and Brain Sciences1(4),515–526 (1978), DOI10.1017/S0140525X00076512. Correct Woodruff and distinguish volume1 from issue4. Metadata only; the full chimpanzee study was not read.",
+      "verification_url": "https://api.crossref.org/works/10.1017/S0140525X00076512"
+    },
+    {
+      "location": "Page22, Mikolov et al.2013",
+      "issue": "Distributed representations of words and phrases and their compositionality is assigned Journal of Machine Learning Research3(4–5),951–991 and DOI10.1162/jmlr.2003.3.4-5.951.",
+      "resolution": "The official proceedings record identifies Mikolov, Sutskever, Chen, Corrado and Dean, Advances in Neural Information Processing Systems26 (NIPS2013). Use that proceedings record or arXiv1310.4546 for the preprint. Crossref marks the printed DOI as a deleted-DOI listing; it does not identify this2013 paper. Official abstract/header inspected, not the full model paper.",
+      "verification_url": "https://papers.nips.cc/paper/2013/hash/9aa42b31882ec039965f3c4923ce901b-Abstract.html"
+    },
+    {
+      "location": "Page23, Waytz, Morewedge et al.2010",
+      "issue": "The Making sense by making sentient reference appends Diana Greene, Irick and Kwong after the six study authors.",
+      "resolution": "Crossref verifies six authors: Adam Waytz, Carey K. Morewedge, Nicholas Epley, George Monteleone, Jia-Hong Gao and John T. Cacioppo; Journal of Personality and Social Psychology99(3),410–435, DOI10.1037/a0020240. Remove the appended nonauthor names. This is metadata verification, not a primary-effect replication.",
+      "verification_url": "https://api.crossref.org/works/10.1037/a0020240"
+    },
+    {
+      "location": "Page23, Zierau et al. voice-bot reference",
+      "issue": "The reference assigns volume89 to Journal of the Academy of Marketing Science.",
+      "resolution": "Crossref identifies volume51(4),823–842, first online21 June2022. Preserve the online2022 history; do not treat the volume correction alone as proof that online year2022 is wrong. DOI10.1007/s11747-022-00868-5.",
+      "verification_url": "https://api.crossref.org/works/10.1007/s11747-022-00868-5"
+    },
+    {
+      "location": "Pages11–12, interaction-frequency statistic",
+      "issue": "The same predicted-mind coefficient2.43 is accompanied by t10.15 in the prose and statistic20.25 in Table2.",
+      "resolution": "Record the mismatch; consult the fitted model before choosing a corrected statistic. Both printed values support the reported direction, but exact uncertainty is not independently reproduced."
+    },
+    {
+      "location": "Pages15–18 and20, future/actual usage claims",
+      "issue": "Study3 is described as increasing future behavior, and the discussion calls the findings effects on actual behavior.",
+      "resolution": "Use selected envisioned future tasks for the experiment, self-reported current use for Study1 and predicted task mentions for Study2. None supplies an observed longitudinal increase in device use."
+    },
+    {
+      "location": "Pages8,12 and16, dfs and accuracy reporting",
+      "issue": "Correlation is printed t(4998) for4998 people; pretest N226 accompanies F(1,225). RMSE deterioration is described as an accuracy reduction exceeding100%; later continuous-outcome prediction is expressed as an undefined accuracy percentage.",
+      "resolution": "A standard complete-data Pearson test on4998 has df4996, and a simple two-group ANOVA on226 has residual224; clarify the actual observations/models instead of changing reported tests by assumption. Report RMSE values and defined error changes rather than impossible percentage-point accuracy loss. The26.12%/20.06% metric and superiority inference require code and a dependent-model contrast."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied main article is complete, but its external supplement contains full items, training settings, robustness, transfer and mediation details. No independent end-to-end model reproduction is claimed.",
+    "Study1 reviews are explicitly solicited, and Study3 reviews follow strong relationship instructions. Unstructured or not explicitly asking about mind does not make all text unsolicited or free of priming.",
+    "Self-reported use and review-mentioned tasks differ from actual telemetry. Review age is time since publication, not observed device ownership duration, so it cannot substitute for familiarity without further evidence.",
+    "Study2 predicts both mind perception and tasks from the same review; lexical overlap, task enumeration, valence and other confounds remain plausible despite controls. Applying a model out of sample is not independent validation against measured mind-rating truth when that truth is not collected.",
+    "LASSO targets model outputs, keyATM seeds are selected partly from those same features, and LIME explains local model predictions. Agreement among dependent methods is not three independent psychological replications or identification of the cause of human belief.",
+    "Repeated cross-validation folds share observations and training sets. The reported df98 tests and standard errors should not treat50folds per method as independent experiments. Split/tuning leakage, grouping by author/device and corrected uncertainty require original code; no leakage is asserted proved.",
+    "RMSE .204 versus.210 is a modest absolute prediction difference on a scaled target. Standardized distribution overlap does not establish individual calibration, construct validity or consciousness detection. Study3 r=.31 is partial convergence, not identity.",
+    "A randomized role-description package can affect immediate language and selected tasks; it does not uniquely randomize the psychological mediator. Shared demand, descriptive word reuse, role expectations, liking, convenience and other pathways can contribute. Significant indirect effects do not prove sole mediation.",
+    "The tool/servant and partner/companion packages bundle multiple concepts. Null competence contrast is not equivalence, and control for an authority trait is not a test of every alternative explanation.",
+    "Agency and experience show poor discrimination in these datasets. The authors speculate technology may blur them, but measurement/context limits also remain possible; no actual change in machine consciousness follows.",
+    "English Western consumer samples and mostly Echo reviews do not establish applicability to all languages, clinical tools, finance, autonomous vehicles or psychotherapy. Empathy and vacuum transfer details are outside the supplied text.",
+    "Greater device engagement is not a measure of welfare, ethical quality, safety or autonomy. Practical advice to induce mind perception or segment users is a proposed application; appropriate consent, data handling and truthful role descriptions require separate evaluation."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0176.json",
+      "finding": "The robot accident study distinguishes agency and near-floor experience, whereas this smart-object study cannot separate them effectively. Preserve context and measurement differences instead of pooling both as direct evidence for each dimension or assuming real sentience."
+    },
+    {
+      "related_review": "references/pdf-reviews/0175.json",
+      "finding": "Performance confidence, moral-facet ratings, source reliance and relationship roles differ. Neither greater imagined use nor a partner description proves calibrated trust or moral superiority."
+    },
+    {
+      "related_review": "references/pdf-reviews/0167.json",
+      "finding": "Human descriptions and attributions of autonomy/sentience are perceptions. A language classifier of such perceptions does not turn them into evidence of actual independent goals or experience."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Mind perception / mentalizing / deep anthropomorphism",
+      "reason": "Broad mind attribution overlaps existing anthropomorphism and its agency/experience dimensions. The present composite cannot separate the dimensions, and it does not test belief-modeling ability. Add measurement boundaries rather than another overlapping umbrella row."
+    },
+    {
+      "term": "Usage expansion / restrictive usage",
+      "reason": "These are operational outcomes spanning reported frequency, task mentions, connections and imagined future selections. No distinct psychological mechanism or universal pathology is established by a broader task count."
+    },
+    {
+      "term": "LIME / LASSO / keyATM / MindMiner",
+      "reason": "Analysis methods and a named model, not new psychological behaviors. Their predictions and explanations are retained in the review with validation limits."
+    },
+    {
+      "term": "Empathy / animism / dehumanization / authority preference",
+      "reason": "Already represented concepts or theoretical/transfer context. Full original studies, culture claims and supplemental transfer tests are not independently read, and no new behavior is warranted from a brief mention."
+    }
+  ],
+  "limitations": [
+    "All23 supplied text pages and allnine figures were read. No cited book, external supplement, pretrained model or code execution is represented as a full independent review, and no author was contacted.",
+    "Only two distinct relationship orientations are added. They are not automatically unethical AI failures; no fabricated paper quota, annual mention count or ethical/harm relation is generated."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "communal-relationship-orientation",
+      "instrumental-relationship-orientation"
+    ],
+    "enriched": [
+      "anthropomorphism",
+      "agency-attribution",
+      "experience-attribution",
+      "instrumentalization"
+    ]
+  }
+}

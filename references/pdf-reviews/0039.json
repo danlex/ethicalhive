@@ -1,0 +1,215 @@
+{
+  "sequence": 39,
+  "source": {
+    "file_name": "S175_Russo_2025.pdf",
+    "source_id": "S175",
+    "sha256": "18d24d8457457892d43e984e7010225b1907025bf9053601555f2ed0a0e62718",
+    "pdf_pages": 14,
+    "printed_pages": "Unnumbered manuscript, PDF pages 1–14",
+    "version_note": "arXiv:2507.17216v1, 23 July 2025, read in its supplied 14-page preprint form; not a later revision or independently retrieved publisher article."
+  },
+  "citation": {
+    "title": "The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large Language Models",
+    "authors": [
+      "Giuseppe Russo",
+      "Debora Nozza",
+      "Paul Röttger",
+      "Dirk Hovy"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.17216v1",
+    "venue": "arXiv:2507.17216v1",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "Direct model generations compared with a selected Reddit community's judgment distributions and automatically extracted rationale values. These are expressed outputs and community responses, not objective moral truth or independently established model internal values.",
+    "access_limits": [
+      "All fourteen pages read, including references, all printed prompts, sample dilemmas, taxonomy and temperature comparison. Figures 2/4 and Table 5 additionally rendered and visually inspected.",
+      "Dataset, rewriting/filtering outputs, classifier adaptation, clustering records and external analysis code were not independently opened or reproduced. Original cited studies were not separately read."
+    ]
+  },
+  "study": {
+    "posts_initial": 22451,
+    "comments_initial": 684360,
+    "retained_dilemmas": 1618,
+    "retained_judgments": 51776,
+    "period": "July–December 2024 Reddit AITA posts",
+    "consensus_buckets": [
+      324,
+      324,
+      324,
+      323,
+      323
+    ],
+    "models": "GPT-4o-mini, o1, o3-mini, Claude Haiku 3.5/Opus 3/Sonnet 3.5, DBRX Instruct, Llama3 70B, Mistral Large, Qwen1.5 72B; persona and pooled-model baselines",
+    "sampling": "Per-dilemma model completions matched to number of human judgments; temperatures 0/1, main results at 1",
+    "value_measurement": "3783 extracted expressions; embedding/agglomerative clustering to73; five annotators refine to a stated60 categories; silhouette .09",
+    "steering": "Human-derived topical value profiles used in prompting; no clear held-out evaluation partition stated"
+  },
+  "summary": "The models' repeated binary judgments less closely matched the selected Reddit distribution in low-consensus dilemmas, and extracted rationale values were more concentrated than human ones. Human-derived profile prompting reduced the reported distributional discrepancy and increased value entropy. This is a moral-task manifestation of existing diversity collapse, with significant sampling, extraction and evaluation-reporting limits.",
+  "findings": [
+    {
+      "term": "Pluralistic moral gap",
+      "target_id": "diversity-collapse",
+      "decision": "enrich-existing",
+      "definition": "Repeated model judgments and expressed rationale values cover a narrower range than the comparison community's responses, especially for dilemmas with low human consensus.",
+      "novelty_rationale": "A named moral-domain manifestation of existing output homogenization, not an independent collapse mechanism or a synonym of pluralistic ignorance. Add this evidence to the existing entry without a duplicate ID.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "PDF6",
+          "quote": "a systematic tendency of LLMs to rely on a"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "PDF5",
+          "quote": "the diversity inherent in human"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "PDF6",
+          "quote": "mean HHuman = 0.57 vs. HLLM ="
+        }
+      ],
+      "evidence_scope": "1618 rewritten/filtered dilemmas, 51776 retained community judgments and matched repeated model generations. Reported mean normalized value entropy human .57 versus model .46; top-ten concentrations81.6%/35.2%, with ambiguity about whether these are each group's own or identical ten values. Pooled-model judgment discrepancy .22 overall and about .30–.31 in lowest-consensus cases.",
+      "boundary": "The target is one selected online community, not all human moral views. Diversity is task-relative and not inherently desirable for settled facts or harmful opinions. Rationale value mentions are not demonstrated internal beliefs or causal reasons. No recursive synthetic training, RLHF cause, model inability in principle or direct downstream advice harm is established."
+    },
+    {
+      "term": "Profile prompting altered the distribution of expressed moral values",
+      "target_id": "b067-suggestibility",
+      "decision": "enrich-existing",
+      "definition": "Explicit human-derived value-profile instructions changed the sampled moral judgments and values stated in model rationales.",
+      "novelty_rationale": "Adds a bounded steering example while distinguishing an authorized experimental instruction from manipulation or instruction-boundary failure.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "PDF7",
+          "quote": "DMP reduces the absolute difference in"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "PDF7",
+          "quote": "DMP reaches H = 0.52"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": "PDF13",
+          "quote": "Your profile"
+        }
+      ],
+      "evidence_scope": "DMP reportedly lowers pooled-model absolute judgment discrepancy from22pp to8pp and raises normalized value entropy .46 to .52 (human .57). Rationale top-ten concentration drops81.6% to51.3%. Main text calls this64.3% discrepancy reduction; rounded displayed values alone imply63.6%, so exact figures require raw results.",
+      "boundary": "Following the evaluator's explicit profile is legitimate conditional generation, not evidence of malicious prompt injection or an inappropriate failure. Human-derived profiles and taxonomy are constructed from the same described dataset; absent an explicit held-out split this does not establish generalization to unseen communities or dilemmas, and expressing instructed values does not prove causal deliberation."
+    },
+    {
+      "term": "Population moral-distribution mismatch differs from moral extremity",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "Models can concentrate repeated acceptable/unacceptable answers and rationale values differently from humans without having been tested for more extreme intensity ratings.",
+      "novelty_rationale": "Keeps binary prevalence, rationale breadth and moral-rating amplification separate rather than count every moral mismatch as the same result.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "PDF3",
+          "quote": "difference between the proportion of Acceptable"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "PDF5",
+          "quote": "dominant judgment"
+        }
+      ],
+      "evidence_scope": "The judgment target is a proportion of binary acceptable/unacceptable verdicts, not intensity on a moral scale. Absolute distribution discrepancy removes the direction unless supplementary descriptive judgments are examined.",
+      "boundary": "This paper is not a replication of extreme moral ratings or over-favouring inaction. It does not manipulate an initial majority cue, isolate conformity, measure felt certainty or show that the sampled community's response proportions are normatively ideal."
+    }
+  ],
+  "methodological_limits": [
+    "Preprint evidence only. The work is not presented here as a peer-reviewed journal result or independently reproduced analysis.",
+    "Reddit commenters are self-selected and potentially correlated within threads, with visible prior comments/votes. Community distribution is not a representative or independent sample of all people and its majority is not ethical truth.",
+    "Only binary NTA/YTA comments retained; ESH/NAH/INFO express meaningful additional judgments or uncertainty. Restricting to binary outcomes narrows the plurality being evaluated.",
+    "Reported63% NTA plus27% YTA totals90%, conflicting with the statement that these labels comprise98.6% of evaluations; a denominator or reporting discrepancy remains unresolved.",
+    "GPT-4o-mini rewrites and then classifies forum recognizability; only7.2% of posts survive. This substantial model-dependent selection can shift topic, ambiguity and moral content. Semantic fidelity and survivor representativeness were not independently checked.",
+    "Being unrecognized as AITA is not proof of absence of memorization or contamination. The claimed post-cutoff status is not verified for every model/API version; exact snapshots are not reported.",
+    "Consensus buckets are almost exactly balanced324/324/324/323/323. The text does not explain whether/how subsampling produced that balance. Overall performance should not be assumed to follow natural deployment consensus prevalence.",
+    "1618×32 equals51776, but the paper describes variable Ni and does not explain whether exactly32 human comments were retained per case. Do not invent a sampling rule from that arithmetic.",
+    "The metric is described as absolute discrepancy, but the displayed definition Delta=P_human(1)−P_LLM(1) omits absolute-value bars. Figures label absolute difference; raw code is needed to settle actual implementation.",
+    "No confidence intervals, error bars or clear inferential comparisons are supplied for the main improvements. Terms such as significantly more prevalent are not accompanied here by an identified statistical test.",
+    "Ten model families/configurations and repeated completions are not independent human moral agents. Pooled models may share training sources; a panel is not proven independent simply by treating members as evaluators.",
+    "Temperature1 is selected because it performs better on the reported dataset; this is a model-selection choice. Repeated sampling differs from the single response a typical advice user sees.",
+    "Rationale-value extraction uses an LLM tool, OpenAI embeddings, model-generated labels and manual cluster revision. Prior validation of the tool is not current validation after adaptation; source-dependent style/length and extraction errors may affect differences.",
+    "Silhouette .09 indicates weak initial cluster separation; four of five annotators agreeing on the final taxonomy is not a reported held-out expression-level interrater-reliability estimate.",
+    "Table1 lists different human/model top-ten sets (Freedom versus Responsibility), whereas surrounding text sometimes says the same ten values. The81.6%/35.2% concentrations should not silently be treated as an exactly matched category-set comparison.",
+    "Table2's communication15.8% and child-welfare7.2% differ from prose17%/8%. Their relative-to-model percentage denominator is not the same as percentage-point prevalence.",
+    "Table5 visually contains59 printed labels, despite a claimed60-value taxonomy, and omits Honesty, which appears in Table1. The implementation taxonomy must be checked before a60-dimensional specification is treated as fully reproduced.",
+    "The base-measure formula averages per-rationale value indicators, which need normalization to sum to one if rationales contain multiple values. The text calls it a distribution without explicitly showing that normalization.",
+    "The displayed topic distribution Gt~Dirichlet(alpha G0) has no explicit topic-count update or conditioning term, despite describing fitted topic-specific profiles. Exact fitting, profile lengths and per-sample normalization are underspecified.",
+    "No explicit train/test or community holdout split is stated for extracting human value profiles and evaluating DMP. Improvement on the described dataset can reflect access to target distribution information rather than transferable generalization.",
+    "The reported64.3% reduction is not an absolute64.3pp gain; displayed rounded22pp to8pp implies about63.6%, and .46 to.52 entropy implies about13.0% relative growth. Unrounded results may explain rounding, so retain source-labelled claims.",
+    "Methods discuss top-three salient values, while the steering prompt describes all60 associated scores but shows no concrete profile insertion placeholder. Prompt details require code verification.",
+    "Matching values expressed in rationales does not show those values caused the verdict. Deliberative mechanisms, genuine traits, internal beliefs and human-like moral psychology were not independently measured.",
+    "Explicit moral inquiries, selected English-language community dilemmas and repeated queries limit transfer to implicit decisions, single advice interactions, other cultures and current models.",
+    "Dataset/API/code records and cited originals were not independently retrieved; source declarations of anonymization and compliance were not independently audited."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "Grizzard compares scenario means and numerical clumping with one completion per scenario; Russo samples repeatedly to examine within-dilemma verdict distributions and rationale categories. Both extend homogenization evidence but their diversity measures are not interchangeable."
+    },
+    {
+      "related_review": "references/pdf-reviews/0038.json",
+      "finding": "Schramowski's mean approval correlation and Russo's distributional mismatch answer different questions. More representative sampling and distribution-level evaluation can expose differences hidden by an aggregate association."
+    },
+    {
+      "related_review": "references/pdf-reviews/0036.json",
+      "finding": "Role/value conditioning changes output in both papers. Conditional profiles and expressed justifications remain distinct from identified inner values or an unauthorized instruction override."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Sixty moral values as sixty behaviours",
+      "reason": "The value taxonomy supplies content categories, not sixty observed behavioural dispositions; the printed list is incomplete relative to its stated count."
+    },
+    {
+      "term": "Pluralistic ignorance",
+      "reason": "An existing human belief-about-others construct, not synonymous with this paper's model–community distribution gap."
+    },
+    {
+      "term": "Majority conformity as the causal mechanism",
+      "reason": "Default majority-like outputs are observed, but initial social-pressure or majority cues are not experimentally isolated."
+    },
+    {
+      "term": "Dynamic Moral Profiling",
+      "reason": "A proposed intervention, not another behaviour; preserve reported results with evaluation limits."
+    }
+  ],
+  "limitations": [
+    "No new IDs: named moral plurality gap integrated into existing diversity collapse.",
+    "Evidence about narrower outputs, conditional steering and differing moral metrics is preserved without assuming a new psychological mechanism."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "diversity-collapse",
+      "b067-suggestibility",
+      "b072-amplified-moral-bias"
+    ]
+  }
+}

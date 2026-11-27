@@ -1,0 +1,230 @@
+{
+  "sequence": 75,
+  "source": {
+    "file_name": "S744_Laakasuo_2023.pdf",
+    "source_id": "S744",
+    "sha256": "9f2d6d522a6044715c0e733d9506629ceaac53409c8760d1d81819a9bca840ea",
+    "pdf_pages": 13,
+    "printed_pages": "1–13",
+    "version_note": "Frontiers in Psychology 14:1270371, published 21 November 2023. Article states the data predate GDPR implementation; this is not a test of contemporary LLM conduct."
+  },
+  "citation": {
+    "title": "Moral Uncanny Valley revisited – how human expectations of robot morality based on robot appearance moderate the perceived morality of robot decisions in high conflict moral dilemmas",
+    "authors": [
+      "Michael Laakasuo"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.3389/fpsyg.2023.1270371",
+    "venue": "Frontiers in Psychology, 14:1270371",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "source_scope_note": "Two human studies of static robot/human images paired with fixed fictional dilemma decisions. No robot or language model makes decisions; no machine emotion, actual injury or human moral conduct is measured.",
+    "access_limits": [
+      "All 13 extracted pages read, including methods, exploratory difference-score interpretation, study 2 null results, limitations and references. Pages 6 and 8 also visually checked for the decision-dependent reversal and conflicting Figure 5 caption.",
+      "External preregistration, supplementary files, Figshare raw data and analysis code were not opened or rerun. The original 2021 moral uncanny valley study and other cited primary sources remain unread."
+    ]
+  },
+  "study": {
+    "study_1": {
+      "reported_final_n": 624,
+      "reported_initial_filtered_n": 655,
+      "reported_exclusions": "28 attention failures and 2 sessions over 90 minutes; arithmetic leaves one participant unexplained",
+      "mean_age": 36.55,
+      "age_sd": 12.8,
+      "design": "Preregistered between-person 2 decision types x 5 photorealistic whole-body agents: four robots and one human",
+      "main_outcome": "Average moral approval across four preregistered high-conflict dilemmas; fifth euthanasia dilemma exploratory",
+      "baseline": "Perceived moral character of pictured agent, rated before dilemmas",
+      "main_interaction": "F(4,614)=2.61,p=.03",
+      "shape_contrast_weights": [
+        0.1,
+        1.5,
+        -1.6,
+        -1.8,
+        1.8
+      ],
+      "main_utilitarian_contrast": "B=1.09,95%CI[.04,2.08],F(1,614)=4.18,p=.04",
+      "main_deontological_contrast": "Opposite direction, |B|=1.16,95%CI[.12,2.20],F(1,614)=4.86,p=.02",
+      "difference_score": "Baseline agent morality minus decision morality; not a direct measure of surprise"
+    },
+    "study_2": {
+      "n": 221,
+      "location": "Public library pop-up laboratory, Espoo, Finland",
+      "mean_age": 38.7,
+      "age_sd": 16.8,
+      "design": "Between-person 2 decision types x 4 symbolic/CGI face images",
+      "shape_contrast": "B=.14,95%CI[-.53,.82],F(1,213)=.17,nonsignificant",
+      "outcome": "Four-dilemma moral approval average, alpha=.75; no detected two-way ANOVA effects"
+    }
+  },
+  "summary": "Add moral uncanny valley as a named, decision-dependent human judgment pattern, related to but not identical with discomfort-based uncanny valley. The photorealistic study detects lower approval of creepy robots' utilitarian decisions and the opposite pattern for deontological decisions. The symbolic-face study does not detect the effect. Keep expectation violation, moral surprise and mind perception as unconfirmed explanations rather than additional mechanisms.",
+  "findings": [
+    {
+      "term": "Moral uncanny valley",
+      "id": "moral-uncanny-valley",
+      "decision": "new-entry",
+      "definition": "An appearance-related dip in moral approval of a robot's decisions associated with its perceived uncanniness.",
+      "category": "Moral",
+      "origin": "Human–robot interaction / moral psychology",
+      "ai_evidence_status": "Human judgments of pictured robots' assigned decisions; decision-dependent pattern in one study, not detected with symbolic faces in a second study",
+      "ai_proposal": "When evaluating an embodied AI, compare moral approval of identical decisions across controlled appearances and decision types. In text models, any proposed appearance-cue analogue needs a separate matched-content experiment; this paper does not establish it.",
+      "relates_to": [
+        "uncanny-valley-effect",
+        "character-based-moral-judgment",
+        "halo-effect"
+      ],
+      "novelty_rationale": "The existing uncanny valley entry concerns comfort or affinity as a function of human likeness. This named domain extension concerns approval of decisions and can reverse with the type of decision. Retain one related outcome-pattern entry, not a separate proven causal mechanism or synonym.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "decisions created a mountain shaped effect and the utilitarian"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "the second most uncanny robot (Robot 3), which seems to be driving"
+        }
+      ],
+      "evidence_scope": "Study 1 reports N624 with 2 decision conditions and 5 fixed photorealistic agents. Preregistered four-dilemma contrast gives utilitarian B1.09,CI[.04,2.08],p.04 and opposite deontological |B|1.16,CI[.12,2.20],p.02. Study 2 N221 with symbolic faces finds no detected corresponding pattern. Effects concern human ratings of assigned fictional decisions.",
+      "boundary": "Not a universal penalty for creepy agents: deontological decisions show the opposite pattern, and the second-creepiest robot drives the contrast. Five selected categorical images and custom weights do not establish a universal continuous curve or isolate uncanniness from appearance. Human discomfort, character rating, decision approval and felt surprise are distinct. No AI subjective morality, emotion or harmful behavior is demonstrated."
+    },
+    {
+      "term": "A judgment valley is not interchangeable with an unmeasured mind-trap curve",
+      "target_id": "uncanny-valley-effect",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A decision-approval dip for selected robot pictures is a different dependent variable from discomfort or engagement, even when all are discussed using a valley metaphor.",
+      "novelty_rationale": "A boundary for the existing comfort/affinity construct; the separate moral-decision pattern should not be counted as an independent replication of its full continuous human-likeness curve.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "uncanniness plays a direct role in the context of this study"
+        }
+      ],
+      "evidence_scope": "Creepiness, trust, likability and mind are rated after image assignment. Utilitarian shape contrast becomes nonsignificant after controlling creepiness or likability; this is not a randomized mechanism test.",
+      "boundary": "Post-treatment covariate adjustment does not establish or refute mediation. A nonsignificant adjusted contrast is not proof that a factor is the sole cause, and an inverted-U engagement curve is not by itself an uncanny valley."
+    },
+    {
+      "term": "Baseline character minus decision approval is not a measured expectation emotion",
+      "target_id": "character-based-moral-judgment",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Subtracting decision approval from a prior overall moral-character rating compares different judgment targets; it does not directly measure a forecast, felt surprise or disappointment.",
+      "novelty_rationale": "Clarifies the existing actor-character boundary without converting the authors' exploratory interpretation into a new observed psychological mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "deducting decision scores from the perceived baseline"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "but no interaction effect"
+        }
+      ],
+      "evidence_scope": "Exploratory difference-score ANOVA finds decision and agent main effects, but no interaction F(4,614)=1.18,p>.31. The initial item asks how moral the agent appears, not how it will choose in each future dilemma.",
+      "boundary": "Difference-score arithmetic is not direct emotion measurement; lack of a significant difference from zero is not demonstrated confirmation of expectations. The Figure 5 caption's opening sentence reverses the stated sign convention, although its subsequent sign labels agree with baseline minus decision."
+    }
+  ],
+  "methodological_limits": [
+    "Study 1 describes filtered N655 and exclusions of 28 attention failures plus two long sessions, but final N624 does not equal 655-28-2=625. Clarify the recruitment/filtering flow instead of inventing a further exclusion.",
+    "Four selected robots and one human differ on many visual features. Creepiness is not monotonically ordered by human likeness, and the second-creepiest robot drives the result. The custom zero-sum weights [.1,1.5,-1.6,-1.8,1.8] do not constitute a general canonical polynomial over a continuously manipulated scale.",
+    "The deontological pattern reverses the utilitarian pattern. A generic statement that uncanny robots are judged less moral would suppress the decision interaction.",
+    "The overall image main effect is not detected. Planned contrasts can address a specific hypothesis, but neither that fact nor the authors' dismissal of omnibus tests establishes the underlying psychological mechanism.",
+    "The exploratory five-item outcome adds euthanasia to the four preregistered dilemmas. Similar descriptive results are not a second independent replication.",
+    "The article gives F(4,614)=2.61 with p=.03 for the four-item interaction and p=.02 for the five-item interaction. Rounding or reporting needs reconciliation. Its simpler contrasts both report F(1,614)=4.58 but different p=.03 and .02, also needing reconciliation.",
+    "The human-versus-two-creepy-robots contrast B=.36 has a rounded CI [.00,.72] and p=.05; describe as borderline, not a strong universal human premium.",
+    "Creepiness, trust, likability and perceived mind are measured after image assignment. Adding these correlated post-treatment judgments as covariates is not randomizing a mediator. Nonsignificance or a surviving effect cannot show mind perception has no causal role.",
+    "All 17 mind-perception items are averaged across four proposed subscales with alpha .97. Internal consistency alone does not establish a single psychological dimension or measurement invariance across agents.",
+    "Baseline morality evaluates the pictured agent as a whole; subsequent morality evaluates particular decisions. Their subtraction is not a direct measurement of expected choice, surprise or disappointment, and may reflect construct differences or shared response anchoring.",
+    "Figure 5's first caption sentence says higher scores mean the initial evaluation was more negative than decision approval, contrary to baseline minus decision. The following negative=positive surprise and positive=disappointment wording and plot labels follow the opposite, mathematically stated convention. Preserve and flag the contradiction.",
+    "For Robot 4's utilitarian deviation the text reports B=.025,CI[-.13,.68],t(70)=1.32,p=.18. The asymmetric interval and t are not reconciled with that point estimate; no guessed corrected coefficient is substituted.",
+    "No significant difference from zero for Robot 4 does not prove its decisions met expectations. The difference-score interaction is itself nonsignificant, limiting stronger claims about a decision-specific expectation mechanism.",
+    "Study 2's nonsignificant result does not prove no moral uncanny valley for symbolic faces. It has a different sample, setting, stimuli, face/body presentation and size, so the comparison does not isolate photorealism as a necessary condition; no formal between-study effect comparison is given.",
+    "Prolific fluent-English adults with prior platform participation and no ongoing health issues, and Espoo library volunteers, are selected populations. The library's location and diversity do not establish population representativeness.",
+    "Fixed high-conflict dilemmas conflate casualty-minimizing utilitarian choices with action and deontological choices with omission. They are not comprehensive definitions of ethical theories or objective tests of moral correctness.",
+    "Multiple exploratory contrasts, added outcomes and covariate models complicate strength-of-evidence claims. No examined multiplicity adjustment or independent holdout establishes the robustness of each borderline result.",
+    "Evolutionary mismatch, violated moral expectations and general human–robot moral judgment asymmetry remain explanatory accounts. No evolutionary process, internal agent morality, real decision or subjective robot emotion is tested.",
+    "The article states data were collected before GDPR implementation. Publication in 2023 must not be read as a test of current generative AI capabilities.",
+    "Raw data, preregistration, supplementary stimuli and cited original sources were not independently inspected or reproduced."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0066.json",
+      "finding": "Hu's engagement inverted-U and Laakasuo's decision-approval dip are different outcomes. A named curve is not enough to infer discomfort, cognitive overload or mind perception as the shared causal mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0072.json",
+      "finding": "An actor's baseline character rating and its decision's moral approval are distinct targets. Their difference cannot substitute for an explicit expectation or emotion measure."
+    },
+    {
+      "related_review": "references/pdf-reviews/0073.json",
+      "finding": "Dong directly prompts named human emotion ratings, whereas Laakasuo interprets a subtraction of two morality ratings as surprise/disappointment. Keep direct self-report separate from an inferred emotion."
+    },
+    {
+      "related_review": "references/pdf-reviews/0074.json",
+      "finding": "As with Bruno's abstract/body direction mismatch, the source's stated subtraction and Figure 5 opening caption disagree. Record the conflict rather than silently choosing an interpretation and treating the entire source as consistent."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral surprise / moral disappointment",
+      "reason": "The article infers them from baseline-character minus decision-approval scores; neither emotion is directly measured or independently defined as a new general behavior."
+    },
+    {
+      "term": "Expectancy violation / expectation disconfirmation",
+      "reason": "This is an explanatory interpretation of different judgment targets, not an isolated prospective expectation manipulation. Read a primary conceptual/empirical treatment before adding an independent mechanism."
+    },
+    {
+      "term": "Human–robot moral judgment asymmetry",
+      "reason": "An umbrella for task-specific differences already related to machine penalties, outrage asymmetry and moral uncanny valley. No distinct independent mechanism is isolated here."
+    }
+  ],
+  "limitations": [
+    "A fully read source is not an independently reproduced result. The new entry is one bounded human-observer pattern, not another demonstrated AI defect or a source-count claim about multiple independent studies."
+  ],
+  "subsequent_source_checks": [
+    {
+      "review_record": "references/pdf-reviews/0082.json",
+      "finding": "The broad human–robot moral judgment asymmetry, previously deferred as an insufficiently defined umbrella, now has an explicit primary definition and direct multi-condition decision-rating evidence. It is added as a contextual umbrella pattern linked to the narrower moral uncanny valley, not as a new independent causal explanation or synonym for all machine penalties."
+    },
+    {
+      "review_record": "references/pdf-reviews/0076.json",
+      "finding": "The original 2021 moral uncanny valley article has now been fully read. Its studies pool decision types, whereas the 2023 study finds a decision-dependent reversal; these are not identical replications."
+    },
+    {
+      "review_record": "references/pdf-reviews/0076.json",
+      "finding": "The 2023 Study2 descriptive triple M4.16,SD1.46,alpha.75 exactly matches the 2021 Study1 triple despite different samples, stimuli and number of dilemmas. The earlier reported mean also conflicts with its own Figure2. Treat the descriptive statistics as requiring clarification; this is not evidence proving duplicated data or participants."
+    }
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "moral-uncanny-valley"
+    ],
+    "enriched": [
+      "uncanny-valley-effect",
+      "character-based-moral-judgment"
+    ]
+  }
+}

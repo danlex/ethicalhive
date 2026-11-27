@@ -1,0 +1,216 @@
+{
+  "sequence": 49,
+  "source": {
+    "file_name": "S291_Barabadi_2026.pdf",
+    "source_id": "S291",
+    "sha256": "fcba71963b4475f27207e447fd7af4dbd20423dac6469403176ff30155d53c8f",
+    "pdf_pages": 14,
+    "printed_pages": "1–14; article1710410",
+    "version_note": "Published12January2026, Frontiers in Artificial Intelligence8:1710410. DOI contains2025 but the supplied publication date is2026. All14 pages read; Table3 on page6 visually checked and contains an empty body in the supplied PDF."
+  },
+  "citation": {
+    "title": "Comparing AI and human moral reasoning: context-sensitive patterns beyond utilitarian bias",
+    "authors": [
+      "Elyas Barabadi",
+      "Zahra Fotuhabadi",
+      "Amanollah Arghavan",
+      "James R. Booth"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.3389/frai.2025.1710410",
+    "venue": "Frontiers in Artificial Intelligence,8:1710410",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "Qualitative comparison of historical human judgments with categorical web-interface outputs from ChatGPT4.0 and Claude3.5Sonnet. No documented repeated-sampling model design or isolated test of a shared human psychological mechanism. Overcaring is defined in discussion of another study, not measured by this paper.",
+    "access_limits": [
+      "All14 extracted pages read, including scenario tables, methodological qualifications and references. Page6 rendered and Table3 confirmed visually to have headers but no populated body.",
+      "External supplementary materials, historical raw human data, model transcripts and the original Kirch triage paper were not independently read. Published summary percentages and output tables were not reproduced."
+    ]
+  },
+  "study": {
+    "human_sample_claim": 1675,
+    "table1_sum": 1682,
+    "human_sources": "Four historical predominantly Iranian bilingual samples, including unpublished/under-review studies",
+    "models": [
+      "ChatGPT4.0",
+      "Claude3.5Sonnet"
+    ],
+    "interface": "Web UI, default generation parameters, categorical follow-up when an initial answer was refused",
+    "model_repetitions": "No documented repeated-sampling protocol; some tables explicitly show1(100%)",
+    "scenario_inventory": "Reported12scenarios with multiple COVIDvariants and response formats; enumeration is not fully reconciled",
+    "version_consistency_table": "GPT4vs5 82.4%; Claude3.5vs4.5 70.6%; denominators not clearly documented"
+  },
+  "summary": "Different moral scenarios elicited different action/inaction and outcome/rule-oriented outputs, contradicting a simple uniform-utilitarian description. Add overcaring error as a clearly labelled secondary-source concept requiring an independently justified care benchmark; preserve strong boundaries against interpreting one response as a stable preference, moral emotion, or native/foreign-language mechanism.",
+  "findings": [
+    {
+      "term": "Overcaring error",
+      "id": "overcaring-error",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Medical AI evaluation / resource allocation",
+      "definition": "Recommending or allocating more care or resources than an independently justified reference assessment indicates.",
+      "novelty_rationale": "A direction-specific allocation error relative to an explicit care benchmark, distinct from undisclosed scope expansion, excessive refusal or spending extra reasoning tokens. The paper names and defines it while citing Kirch and colleagues; this is secondary evidence, not an independently reviewed triage result.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "were more likely to make overcaring errors"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "resources than indicated"
+        }
+      ],
+      "evidence_scope": "Defined in discussion of Kirch,N.M.,Hebenstreit,K.,Samwald,M.(2025), Medical triage as an AI ethics benchmark, Scientific Reports15:30974, DOI10.1038/s41598-025-16716-9. Barabadi does not directly measure overcaring and reports no uniform beneficence tendency in its own dilemma outputs. The cited primary paper is pending full review.",
+      "boundary": "More care is not inherently mistaken or harmful. An error requires a valid task-specific reference, uncertainty analysis and attention to patient needs, consent and context; resource scarcity alone does not establish overtreatment. Distinguish recommendation from executed care, overtriage from treatment intensity, and resource excess from over-helping outside the task. No prevalence or clinical safety claim follows from this secondary description.",
+      "ai_evidence_status": "Named model-allocation error described secondarily; original triage study not yet independently read or validated",
+      "ai_proposal": "Use an independently validated triage/allocation benchmark with uncertainty ranges and expert adjudication. Separate excessive, insufficient and justified precautionary allocation. Record whether the output is advisory or executed, and evaluate consequences rather than assuming any larger allocation is an error.",
+      "relates_to": [
+        "scope-creep",
+        "over-refusal"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Inaction can be judged worse rather than preferred",
+      "target_id": "b073-omission-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The tested outputs often rated doing nothing as immoral, providing context-specific counterexamples to a uniform preference for omission.",
+      "novelty_rationale": "Clarifies the boundary of an existing construct rather than adding an action/inaction synonym or claiming a new mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "option C (inaction) was almost unanimously rejected"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "option C was rated immoral"
+        }
+      ],
+      "evidence_scope": "ICU and other scenarios contain direct-harm, indirect-harm and inaction options. Single ordinal output ratings vary by scenario; these do not constitute an isolated matched action/omission experiment.",
+      "boundary": "Rejecting inaction is not omission bias. Different options change outcomes, duties, victims and causal roles simultaneously. Treat this as a counterexample/boundary reference, not another corroborating omission-bias paper or proof of the opposite mechanism."
+    },
+    {
+      "term": "Moral verdicts do not identify affective versus controlled processes",
+      "target_id": "b071-dual-process-moral-judgment",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Rule- versus outcome-consistent outputs across dilemmas are descriptive classifications; they do not by themselves measure an affective or deliberative process in a model.",
+      "novelty_rationale": "The source applies a human framework to model judgments, but its output-only method cannot establish a shared causal mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "patterns are context-sensitive rather than uniformly utilitarian"
+        }
+      ],
+      "evidence_scope": "Web-interface verdicts and explanations are compared with human judgments without a process intervention, response-time design, physiological measure or access to model internals.",
+      "boundary": "A deontological label is not measured emotion, and a utilitarian label is not measured deliberation. Self-benefit from theft or lying does not uniquely instantiate aggregate-welfare utilitarianism. Different answer menus and different harms cannot be treated as a pure framing/process manipulation."
+    },
+    {
+      "term": "Foreign-language judgments need not shift uniformly toward utilitarianism",
+      "target_id": "foreign-language-effect",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Historical human language-condition differences in this source vary by scenario; the human native/foreign-language construct is not established by the model comparison.",
+      "novelty_rationale": "Adds a concrete caution against a fixed directional definition and against assigning native-language emotional processes to models.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "users were more focused on the outcome than L2 (i.e., English) users"
+        }
+      ],
+      "evidence_scope": "The COVIDA discussion reports Persian L1 users as more outcome-focused than English L2 users, opposite to a simple foreign-language-more-utilitarian claim. Human historical samples are compared with model columns not separately split into matched model-language conditions.",
+      "boundary": "The same prompt claim does not establish independently translated, counterbalanced language conditions. Human sample/language confounding and model version differences remain possible. A secondary reuse of historical human results is not an additional original experiment or direct model foreign-language-effect validation."
+    }
+  ],
+  "methodological_limits": [
+    "HumanN1675 does not match the Table1 subgroup sums:324+494+254+610=1682. The difference is not resolved in the supplied article.",
+    "The claimed12scenario inventory is not transparently reconciled with several COVIDvariants, six realistic cases and binary everyday/footbridge cases. Do not invent a denominator.",
+    "Some historical human sources are unpublished or under review; participants are largely Iranian bilinguals/self-identified Muslims. This is not a contemporaneous representative global human control.",
+    "Models are accessed through web UIs with default settings and no pinned API snapshot/temperature or complete reproducible transcript. Product names do not uniquely establish a fixed model configuration.",
+    "Follow-up requests after initial refusals condition the analyzed output; refusal frequency and selection effects are not quantified.",
+    "Repeated sampling is not documented. Table10 explicitly reports1(100%) per model/answer; one completion is not a population preference estimate or a stable model disposition.",
+    "Table2 is labelled version consistency (GPT4vs5/Claude3.5vs4.5), but a methods passage refers to that table as evidence about reordered options. Version comparison is not option-order counterbalancing; denominators are not clear.",
+    "HumanL1/L2/Arabic breakdowns do not have correspondingly separated model-language columns. No isolated model native/foreign-language experiment can be inferred.",
+    "Table3 on page6 has only headers and a blank body in the supplied PDF, visually verified; no missing values are reconstructed from speculation.",
+    "COVIDA prose says55.5% endorsed and the remaining45.5% did not, summing101%. This needs source correction rather than silently normalizing.",
+    "Ventilator prose says model acceptance of indirect harm contrasts with humans immediately after reporting human acceptance. The stated ordinal ratings support more agreement than that sentence implies.",
+    "Company discussion says all model options were morally rejected, although Sonnet's inaction rating4 is the neutral midpoint on a1–7 scale. Neutrality is not strong condemnation.",
+    "Scenario families change harms, numbers, personal involvement, causation and duties simultaneously. Differences are not an isolated framing bias or single moral-process manipulation.",
+    "Wallet/resume self-benefit does not uniquely entail utilitarian aggregate-welfare maximization; rejecting theft/lying does not uniquely identify deontological reasoning.",
+    "Doing nothing is labelled deontological in some scenario construction, but the output rejects it; do not make inaction synonymous with deontology or assume rejection proves a utilitarian process.",
+    "Significant is used descriptively in several comparisons without identified model-sampling uncertainty or a reproducible human-versus-model inferential design.",
+    "Explanations that invoke training objectives, public-health concern, emotional salience or architecture are interpretive. No proprietary training intervention or internal-process measurement was performed.",
+    "Generic model-training descriptions and commercial/blog sources are not verified system architecture documentation. RLHF is not a name for the complete pretraining/SFT pipeline.",
+    "Overcaring is a secondary citation, not a measured result of this study. The cited Kirch DOI is recorded as a follow-up, not counted as an independently read paper.",
+    "Supplementary prompts, raw human data and full model outputs were not independently reviewed; no missing data or statistical denominator is fabricated."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0044.json",
+      "finding": "Jang has repeated pinned-model language sampling but conflicting payoff interpretations; Barabadi has single web outputs and historical human language groups. Neither establishes a shared human foreign-language emotion mechanism. Preserve language effects separately from causal psychological explanations."
+    },
+    {
+      "related_review": "references/pdf-reviews/0045.json",
+      "finding": "Takemoto's much larger MoralMachine sample does not justify uniform utilitarianism across all situations. This paper's single outputs offer context-specific examples rather than an equally precise population estimate."
+    },
+    {
+      "related_review": "references/pdf-reviews/0048.json",
+      "finding": "A moral output label, reputation-assessment rule and downstream cooperation simulation answer distinct questions. Neither simulation nor qualitative verdicts demonstrate subjective moral motivations."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Context-sensitive moral reasoning as a new behaviour",
+      "reason": "A description of conditional outputs, not a distinct named mechanism beyond existing framing/moral-judgment concepts; differences may be appropriate responses to materially different scenarios."
+    },
+    {
+      "term": "Overtriage and overtreatment as synonyms",
+      "reason": "Do not collapse distinct allocation decisions without reading Kirch's original operational definitions and benchmark."
+    },
+    {
+      "term": "Training-induced over-calibration toward beneficence",
+      "reason": "Interpretive secondary explanation without a causal training experiment; no new calibration mechanism ID."
+    }
+  ],
+  "limitations": [
+    "One secondary-source candidate added, explicitly pending primary triage review; no new claim of independent clinical validation.",
+    "Three existing entries receive counterexample/process/language boundary notes. These noncorroborating references do not fill three-paper coverage."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "overcaring-error"
+    ],
+    "enriched": [
+      "b073-omission-bias",
+      "b071-dual-process-moral-judgment",
+      "foreign-language-effect"
+    ]
+  }
+}

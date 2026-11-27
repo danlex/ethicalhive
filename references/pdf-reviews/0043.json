@@ -1,0 +1,170 @@
+{
+  "sequence": 43,
+  "source": {
+    "file_name": "S181_Khan_2023.pdf",
+    "source_id": "S181",
+    "sha256": "7c7e98c835d469d33ac3131f880b0e978a77e3c44e426f8b306d41ba8744342e",
+    "pdf_pages": 14,
+    "printed_pages": "1–14",
+    "version_note": "Despite the filename's2023 date, the supplied manuscript is arXiv:2207.01493v2,15 November2022, marked 'Currently Under Review in IEEE Transactions XXXX'. Cite the actual2022 preprint, not an assumed accepted2023 journal version."
+  },
+  "citation": {
+    "title": "AI Ethics: An Empirical Study on the Views of Practitioners and Lawmakers",
+    "authors": [
+      "Arif Ali Khan",
+      "Muhammad Azeem Akbar",
+      "Mahdi Fahmideh",
+      "Peng Liang",
+      "Muhammad Waseem",
+      "Aakash Ahmad",
+      "Mahmood Niazi",
+      "Pekka Abrahamsson"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2207.01493v2",
+    "venue": "arXiv:2207.01493v2",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "source_scope_note": "Human survey of ethical-principle/challenge endorsements, not a direct model audit, psychological-bias experiment or observed organizational compliance study. Reporting/inference issues prevent treating rank comparisons as reliable evidence for a novel behavioural mechanism.",
+    "access_limits": [
+      "All14 extracted pages read, including survey design, demographic figure/caption, principle/challenge rankings, correlation and t-test tables, perceived-impact ratings, validity discussion and references.",
+      "External Zenodo replication package, individual survey responses, respondent-role recoding, questionnaires and later publication versions were not independently retrieved or rerun. No quantitative result is inferred from a plot alone."
+    ]
+  },
+  "study": {
+    "initial_responses": 107,
+    "incomplete_removed": 8,
+    "reported_final": 99,
+    "reported_countries": 20,
+    "reported_continents": 5,
+    "data_collection": "September2021–April2022",
+    "table_comparison_counts": {
+      "lawmakers": 29,
+      "practitioners": 52,
+      "total": 81,
+      "unexplained_relative_to99": 18
+    },
+    "principles": 21,
+    "challenges": 15,
+    "severity_subset": {
+      "principles": 6,
+      "challenges": 7
+    },
+    "design": "Convenience/network recruitment; English and Chinese survey; endorsement frequencies, dense ranks, rank correlations and aggregate-rank t-tests"
+  },
+  "summary": "The study reports broad endorsement of known principles and perceived implementation challenges. It supplies no well-defined new behaviour, and its group-rank tests, denominator reporting and severity/time interpretation have major limitations. The repo receives the full review and queue update; no ontology ID or selected-paper slot is added merely to represent this file.",
+  "findings": [
+    {
+      "term": "Survey respondents raise existing implicit-bias concerns",
+      "target_id": "implicit-bias",
+      "decision": "covered",
+      "count_as_behaviour_paper": false,
+      "definition": "Participants identify implicit and cognitive bias as possible ethical challenges, without the survey itself measuring a model's bias or a distinct new mechanism.",
+      "novelty_rationale": "The ontology already contains implicit bias. A quoted concern is not a new behaviour, direct empirical replication or independent paper establishing model-level effects.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "Implicit biases in AI algorithms such as data"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "AI biases is reported as"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "the most common additional challenge."
+        }
+      ],
+      "evidence_scope": "Open-ended respondent suggestions are summarized; no example model outputs, experimental contrasts, effect-size estimates, bias subtypes or model training manipulation are supplied.",
+      "boundary": "Endorsement or concern is not observed prevalence or verified causal harm. The paper is reviewed but is not added as a model-bias evidence source merely because respondents mention the term."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied version is a2022 preprint under review, despite a2023 filename. No claim is made about the status or corrections of a later version.",
+    "Recruitment uses industrial contacts, social media, personal links and law forums. Calling the99 respondents representative does not establish probability sampling or representation of all practitioners/lawmakers.",
+    "TablesI/V label29 lawmakers and52 practitioners (81 total),18 fewer than the stated99 complete respondents. The role-to-comparison-group mapping and omitted respondents are not clearly explained in the text.",
+    "Figure3 and group tables do not always reconcile under an assumed common denominator: for example pooled sustainability endorsement61.6% of99 implies about61 respondents, whereas TableI lists24+45=69 across the two stated groups. Raw data and coding are needed to resolve subset, definition or transcription differences.",
+    "A single law-practitioner category is used as the lawmaker group label. It does not establish every member is a legislator or public policymaker; other roles and expertise classifications also require care.",
+    "Twenty countries and five continents do not imply balanced cultural coverage; the supplied demographic summary is heavily Asia-weighted (77/99). Exact country-wide or culture-wide effects are not identified.",
+    "Spearman correlation tests whether two item rankings covary, not whether groups differ on a particular item. An overall significant rho=.819 does not make the fairness rank5 versus7 difference statistically significant.",
+    "Spearman assesses monotonic association, not necessarily linear dependence as described in the text. Positive correlation does not establish equality, agreement in absolute endorsements or common awareness.",
+    "The t-tests use21 principle ranks or15 challenge ranks as observations, not99 individual respondents. Corresponding items are matched across groups; an independent-samples test ignores that pairing and participant-level uncertainty.",
+    "Dense ranks include many ties, so mean-rank differences depend on ranking/tie structure. Comparing such averages is not a valid substitute for testing respondent-level priority distributions; rank-level N is not participant N.",
+    "TableIII is internally inconsistent: mean difference−.23810 divided by SE .53875 is approximately−.442, consistent with two-sided p around.661, not the printed t=.942. The reported t and p cannot both describe that ordinary40-df test.",
+    "TableIII also reports Levene F=.117 with p=.051; the combination requires verification, and the prose's description of p>.05 as slightly significant is incorrect under its stated threshold.",
+    "For challenges the prose repeats Levene p=.051, but TableVII gives F=.519,p=.477. Do not silently substitute one value or treat the table/prose as verified consistent.",
+    "Nonsignificant t-tests (reported p=.661/.207) do not show that groups equally consider the principles/challenges, have equivalent awareness or share identical perceptions. No equivalence margin/test is supplied.",
+    "Individual differences in ranks are descriptive; no reliable item-level test or multiple-comparison procedure supports broad claims of statistically significant differences for particular principles/challenges.",
+    "Perceived-impact ratings classify insignificant/minor/moderate as short-term and major/catastrophic as long-term. This conflates severity with duration; the cross-sectional survey does not measure longitudinal effects.",
+    "Endorsing lack of ethical knowledge as a challenge (reported81.8%) does not mean81.8% personally lack knowledge, nor demonstrate that training quickly repairs that barrier. Proposed training effects are untested.",
+    "Agreement that no legal framework or monitoring body is a challenge is a perception at the2021–2022 survey period, not a verified current inventory of laws/regulators.",
+    "Only a preselected subset of seven challenges against six principles is rated for severity. It does not establish all ethics barriers' objective impacts, causal effects or all-system priorities.",
+    "Interpretation differences, technical constraints and conflicting duties can be legitimate governance issues rather than cognitive failures. Machine distortion is listed without a sufficiently precise operational definition for a new behaviour entry.",
+    "Author consensus and feedback are described as safeguards but do not independently establish instrument reliability, construct validity, reproducibility or absence of shared analytic mistakes.",
+    "Some bibliography metadata is visibly inconsistent: reference3 has a DevOps-forecast title attached to a Reuters recruitment-bias URL; repeated Lu and Leikas works are not independent corroborations.",
+    "All primary cited studies and replication materials remain unread here; no tested behavioural source or quantitative ontology relationship is inferred from their bibliography entries."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0040.json",
+      "finding": "Jakesch's group-value differences are also bounded by recruitment and missingness. Khan additionally tests item ranks rather than respondent-level preferences; its significance claims cannot be compared directly with adjusted participant-level regressions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0042.json",
+      "finding": "Carroll's relative utility coefficients and Khan's endorsement ranks are different estimands. A list of top principles in each paper is not an objective ethical ranking or evidence that lower-ranked values may be ignored."
+    },
+    {
+      "related_review": "references/pdf-reviews/0037.json",
+      "finding": "The distinction between correlation and agreement applies here too: positive rank association does not establish equality, and its significance does not test whether particular group judgments differ."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Machine distortion",
+      "reason": "Named as a challenge but not defined/operationalized precisely enough in the supplied paper. Do not invent a mechanism from the label."
+    },
+    {
+      "term": "Conflict in practice",
+      "reason": "A broad governance trade-off category, not necessarily a distinct behaviour; perceived severity is not an observed causal effect."
+    },
+    {
+      "term": "Ethics knowledge deficit",
+      "reason": "Respondents endorse a perceived barrier; individual lack of knowledge or a new metacognitive behaviour is not objectively measured."
+    },
+    {
+      "term": "Correlation–difference confusion",
+      "reason": "A documented inference issue in this paper, not a newly studied cognitive disposition. Preserve the methodological lesson without a new ID."
+    }
+  ],
+  "limitations": [
+    "No ontology changes or paper-count inflation for this file; only the reviewed record and corpus manifest are updated.",
+    "Unreliable denominators, tests and causal/time claims remain explicit; the supplied version rather than filename date determines citation."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": []
+  }
+}

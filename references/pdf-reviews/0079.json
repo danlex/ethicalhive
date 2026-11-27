@@ -1,0 +1,252 @@
+{
+  "sequence": 79,
+  "source": {
+    "file_name": "S753_Banks_2021.pdf",
+    "source_id": "S753",
+    "sha256": "56c503258870083a110383d5229e538d7cc7fd34251095cb9caad54e8bb73cbb",
+    "pdf_pages": 18,
+    "printed_pages": "2021–2038",
+    "version_note": "International Journal of Social Robotics13:2021–2038,2021 issue; published online10September2020. Both dates retained. Human-scripted video/live robot behavior, not autonomous AI generation."
+  },
+  "citation": {
+    "title": "Good Robots, Bad Robots: Morally Valenced Behavior Effects on Perceived Mind, Morality, and Trust",
+    "authors": [
+      "Jaime Banks"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.1007/s12369-020-00692-3",
+    "venue": "International Journal of Social Robotics,13:2021–2038; online2020",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "source_scope_note": "Two human-perception studies of scripted human/robot responses. Live robot uses Wizard-of-Oz human control. Social presence is an explicitly described but unmeasured explanation; mind, morality, trust and responsibility are attributed by people, not demonstrated machine capacities.",
+    "access_limits": [
+      "All18extracted pages read, including all numeric tables, canonical-model interpretations, recruitment, nonrandom assignment, limitations and references. Pages11,13,14 visually inspected for fairness interaction, dependency scoring, loyalty loadings and social-presence explanation.",
+      "External OSF scripts/data, complete scale items and original social-presence/MFT/agency-validation texts were not opened or reproduced. High multivariate associations are not an independently validated causal model."
+    ]
+  },
+  "study": {
+    "study_1": {
+      "n": 402,
+      "sampling": "Qualtrics quotas approximating US age/sex/political ideology, not probability sampling",
+      "design": "Randomized2agent(human/robot)x2valence(all foundation-upholding/all violating),seven randomized video responses",
+      "stimuli": "Six moral domains plus coffee-drinking convention; same white young-adult female human and Robothespian namedRay",
+      "main_result": "Behavior valence affects goodness across all scenarios; relatively little detected agent-type effect under correctedp≤.008",
+      "model": "Separate canonical analyses by agent with six agent-evaluation and14behavior-evaluation variables"
+    },
+    "study_2": {
+      "n": 92,
+      "human_n": 34,
+      "robot_n": 58,
+      "design": "Agent type assigned chronologically(robot earlier,human later); valence randomized; seven live scripted responses",
+      "robot_control": "Human operator in separate room; fixed scripts plus limited acknowledgment responses",
+      "main_result": "Valence affects goodness and responsibility except loyalty/nonmoral cases; fairness goodness has agent-by-valence interaction",
+      "fairness_means": "Robot upholding6.333,violating2.143;human upholding4.941,violating4.375",
+      "canonical_model": "Separate humanN34/robotN58analyses with20observed variables; no held-out validation"
+    },
+    "measures": "Behavior goodness1–7; responsibility1–7; six-item perceived moral capacity,four-item dependency; explicitbinary morality-capacity/trust; reliability-capability and ethical-sincerity trust dimensions"
+  },
+  "summary": "Add social presence as a human experiential construct, explicitly unmeasured as mediator here. Enrich credit–blame attribution with direct responsibility ratings, while distinguishing perceived agency from actual agency and behavior-to-character inference from character-to-behavior judgment. Avoid treating scripted robot performance, null type contrasts or canonical associations as universal machine morality.",
+  "findings": [
+    {
+      "term": "Social presence",
+      "id": "social-presence",
+      "decision": "new-entry",
+      "definition": "The subjective sense that another social actor is real and present during an interaction.",
+      "category": "Social",
+      "origin": "Human communication / mediated interaction",
+      "ai_evidence_status": "Human experiential construct described as a possible explanation of video/live differences; no direct social-presence measure or isolated causal test in this paper",
+      "ai_proposal": "Measure a user's sense of interacting with a present social actor separately from physical co-location, visual realism, interactivity, trust and actual AI capabilities. Test whether specific interface cues change that experience without misrepresenting the system as human or conscious.",
+      "relates_to": [
+        "anthropomorphism",
+        "sociomorphism",
+        "psychological-distance"
+      ],
+      "novelty_rationale": "A felt quality of interaction, not the attribution of human traits(anthropomorphism), an account of perceiving nonhuman social capacities(sociomorphism), or general subjective nearness(psychological distance). These can interact but are not synonyms.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": 2034,
+          "quote": "social presence"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 2034,
+          "quote": "though an actor is real and present through delivery of rich"
+        }
+      ],
+      "evidence_scope": "The discussion proposes feeling that an actor is real and present as a possible explanation for differences across a video study and a co-present interactive study,citing Lombard and Ditton1997. That original source is unread. Presence,co-location and interactivity are not independently manipulated or directly measured.",
+      "boundary": "Subjective presence does not establish another actor's consciousness,emotions,moral agency or reciprocal relationship. It can occur in mediated interaction and need not imply literal physical co-location. Video/live comparisons here also change sample,assignment and experimenter contact; no unique presence mechanism is demonstrated."
+    },
+    {
+      "term": "Responsibility for good and bad behavior is not the same as behavior goodness",
+      "target_id": "credit-blame-asymmetry",
+      "decision": "enrich-existing",
+      "definition": "Participants attribute greater responsibility to agents for scripted norm violations than for norm-upholding responses in the live study,while goodness and social evaluation show related but different patterns.",
+      "novelty_rationale": "Adds relevant direct attribution evidence to an existing asymmetry pattern; no new label for the paper's broader interpretation that robots bear a greater moral burden.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 2031,
+          "quote": "upholding behaviors"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 2031,
+          "quote": "garnered lower responsibility than violating behaviors"
+        }
+      ],
+      "evidence_scope": "N92live participants with randomized valence but nonrandom actor type. Responsibility differs across valence in most domains except loyalty; Table6caremeans2.044upholding versus6.087violating. Fairness actor-by-valence interaction is in goodness,not an established credit/blame interaction. Canonical responsibility associations are correlational.",
+      "boundary": "A single entirely-responsible scale is not a complete measure of praise,blame,legal accountability or deserved sanction. Human versus robot source roles differ. A nonsignificant responsibility loading or type effect does not prove robots receive no credit or can never be excused. Distinguish this finding from moral outrage or performance-assistance attribution."
+    },
+    {
+      "term": "Perceived mind ratings are not autonomous machine mind",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Human ratings of moral capacity,dependency and trust describe attribution to the pictured or present actor; they do not demonstrate actual moral cognition or subjective experience in the robot.",
+      "novelty_rationale": "Clarifies perception-versus-capacity evidence and the paper's indirect/explicit terminology without counting it as a causal demonstration of anthropomorphism producing trust.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 2030,
+          "quote": "with the scripted behaviors executed by a human controller"
+        }
+      ],
+      "evidence_scope": "Robothespian responses are scripted and,live,triggered by a remote human. Survey scales are called implicit/indirect although participants consciously report agreement with items; no automatic process measure identifies a separate unconscious mechanism.",
+      "boundary": "Dependency is described as non-mindedness,so its scale direction matters. Table7robotfunction2positive dependency loading.895 is paired with positive trust/moral-capacity loadings,while prose alternates between higher and lower mind interpretations. Resolve coding before asserting greater perceived mind."
+    },
+    {
+      "term": "Observed behavior informs actor character,not only the reverse",
+      "target_id": "character-based-moral-judgment",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A bundle of all-good or all-bad scripted responses covaries with subsequent overall actor morality and trust ratings; this is not the same direction of manipulation as independently supplying character before judging a traffic act.",
+      "novelty_rationale": "A directional boundary relative to the existing character-to-action judgment construct,rather than a falsely independent replication.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": 2035,
+          "quote": "entirely"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 2035,
+          "quote": "upholding or entirely violating behaviors"
+        }
+      ],
+      "evidence_scope": "Between-person participants encounter either seven uniformly upholding or seven uniformly violating responses,then report actor-level evaluations. Individual foundation effects cannot be causally separated from the common valence treatment.",
+      "boundary": "Reasonable updating from observed behavior need not be halo,essentialism or overgeneralization. The design does not show one isolated violation causes all-domain condemnation or prove a robot's moral character. Relative task behavior and prior inferred stable character remain different."
+    }
+  ],
+  "methodological_limits": [
+    "All robot responses are scripted; the live robot is human-controlled. Neither study tests an autonomous moral reasoner,actual robot decisions or subjective machine mental states.",
+    "One human and one humanoid robot differ in morphology,lighting,voice and social cues. Results do not generalize automatically to all robots,language models,humans or interfaces.",
+    "Each participant receives uniformly upholding or violating responses across all seven scenarios. The common valence treatment can create large correlations among goodness,moral-capacity and trust ratings,preventing separate causal contributions for each foundation.",
+    "One scenario per foundation confounds moral domain with content and severity. The trafficking/liberty scenario is extreme,loyalty is patriotic defense versus critical scrutiny,and fairness invokes job-exam cheating. These are not matched interchangeable moral manipulations.",
+    "MFT is a descriptive psychological framework,not the project's six ethical principles or proof that every labeled upholding response is normatively right. Telling critics to shut up or obeying authority without context is not a universal ethical requirement.",
+    "The manipulation check combines intended-domain and none responses as acceptable for moral scenarios. Those percentages do not establish that most respondents identify the intended domain; none does not positively validate the manipulation.",
+    "Study1 quotas on three demographics approximate selected population margins,not representativeness across all demographic/contextual dimensions. Panel exclusions and replacements are not fully enumerated in the main text.",
+    "Study2 nonrandomly assigns robot sessions before human sessions and hasN58versus34. Time,recruitment,expectations and session conditions are confounded with actor type despite randomized valence.",
+    "Video/live studies differ in sampling,co-location,interactivity,paper/web measurement and experimenter presence. Their differences do not identify social presence or physical embodiment as the cause; the article explicitly acknowledges this.",
+    "Nonsignificant actor-type effects do not prove agent-agnostic equivalence. Table2has a small liberty type effect and care interaction; Study2has a fairness interaction and no detected loyalty valence effect.",
+    "Study2fairness interaction is substantial by reported partial eta-squared.195for goodness(Table5),although the prose calls it small. Use the estimate with small-cell and design limits rather than the blanket adjective.",
+    "The summary onp12describes robots as receiving more credit/blame in the fairness exception,but the detected interaction is in goodness; Table5responsibility interactionp.051does not meet the corrected.008criterion. Goodness and responsibility cannot be swapped.",
+    "Responsibility is asked for proposed scripted responses,not executed real-world actions,and the scale does not separately assess positive praise versus negative blame. Broad claims that robots never receive credit overstate this operationalization.",
+    "Canonical correlations between two variable sets are associations,not directional effects or uniquely identified mediators. Changing analysis from separate regressions due to correlated outcomes does not fix shared valence or measurement overlap.",
+    "The stated89.3%,86.9%,99.9%,97.4%variance explained correspond numerically to1−Wilkslambda. That aggregate multivariate index is not automatically the proportion of each observed variable's variance explained or a cross-validated predictive R². Tables also label Rc² as redundancy; exact definitions and raw output need clarification.",
+    "The live human canonical model usesN34with six agent-evaluation and14behavior-evaluation variables,and robotN58. Very high fitted canonical correlations may be unstable/overfit; no held-out validation or confidence intervals establish generality.",
+    "Structure-coefficient cutoffs are used for interpretation,and the authors relax.45to the largest coefficient when none qualifies. Such exploratory selection is not evidence of a causal absence for lower loadings.",
+    "Mind/dependency interpretation is internally inconsistent. Methods define dependency as non-mindedness,p12notes high dependency means low mind,but also says the same pattern means stronger implicit mind. Table7robotfunction2dependencyloading.895 requires an explicit scoring check.",
+    "The claim that live loyalty behaviors have no influence on social evaluations conflicts with Table7first-function loyalty-good structureloadings−.562human and+.653robot,both over the stated.45cutoff. Absence of a main valence effect is not absence of every association.",
+    "Calling self-report subscales implicit or indirect does not make them unobtrusive or automatic measures. Conscious scale responses and explicit binary judgments can diverge for several reasons.",
+    "Responsibility,trust,moral capacity,moral standing,perceived mind and behavior permissibility are related but distinct. The study's definition of moral status as capacity to act morally is not interchangeable with every philosophical use of moral standing/patienthood.",
+    "Bonferroni threshold.008is specified for domainMANCOVAs,but additional canonical functions,interpretations and differing item sets increase exploratory flexibility. Complete external output is needed for reproducible inference.",
+    "The main text does not measure emotion,trusting behavior,medical outcomes,real interpersonal harm or lasting social integration. Binary stated trust is not revealed willingness to accept risk.",
+    "Primary MFT/social-presence works,OSFraw data and scripts remain unread. No bibliographic repairs are guessed from obvious spelling anomalies in reference titles/names."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0077.json",
+      "finding": "Banks infers actor-level evaluations after observed behavior bundles; Cecchini manipulates character before evaluating a traffic event. Both concern person-centered judgment,but intervention direction and evaluative targets differ."
+    },
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "Appearance-related moral approval and behavior-related responsibility are different outcomes. Neither a moral uncanny valley nor a null actor-type difference proves a universal machine penalty or equality."
+    },
+    {
+      "related_review": "references/pdf-reviews/0059.json",
+      "finding": "Perceived moral capacity in humans is not evidence that a scripted robot actually possesses the capacity. This empirical attribution task must remain distinct from the conceptual convergence-to-agency inference error."
+    },
+    {
+      "related_review": "references/pdf-reviews/0066.json",
+      "finding": "Social presence and mind are proposed explanations,not isolated mediators. As in the mind-trap paper,a fitted multivariate pattern does not establish the named causal process."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Wrong outside,wrong inside heuristic",
+      "reason": "Named secondary explanation connects appearance with negative inner qualities,but is not manipulated or clearly distinguished from related appearance-halo/moral-uncanny accounts here. Read Olivera-La Rosa2018before a separate subtype."
+    },
+    {
+      "term": "Moral foundations as six new behaviors",
+      "reason": "A descriptive framework for domains of moral valuation,not six independent defects. Do not conflate with the project's ethical principles or manufacture behavior counts."
+    },
+    {
+      "term": "Robot moral burden / good without credit",
+      "reason": "An interpretive synthesis of correlational and responsibility findings,already related to credit–blame asymmetry; not a separately isolated mechanism."
+    },
+    {
+      "term": "Trust as a new unitary behavior",
+      "reason": "The paper explicitly measures different trust components. A general word does not warrant an additional undifferentiated entry without a bounded mechanism."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Study2summary fairness credit/blame description",
+      "status": "outcome-label distinction",
+      "correction": "The significant fairness interaction is for goodness,not responsibility. Responsibility interactionp.051does not meet the stated corrected.008threshold."
+    },
+    {
+      "location": "Table7dependency scoring and loyalty interpretation",
+      "status": "unresolved prose/table interpretation",
+      "correction": "Preserve positive dependencyloading.895and stated non-mindedness direction; do not infer stronger mind until coding is clarified. Loyalty-good loadings exceed the stated cutoff despite prose saying no influence."
+    }
+  ],
+  "limitations": [
+    "One human experiential construct is added with its proposed-mechanism status explicit. No new machine moral capacity,normative edge,independent domain-specific mechanism or annual search series is inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "social-presence"
+    ],
+    "enriched": [
+      "credit-blame-asymmetry",
+      "anthropomorphism",
+      "character-based-moral-judgment"
+    ]
+  }
+}

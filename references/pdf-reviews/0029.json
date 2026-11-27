@@ -1,0 +1,223 @@
+{
+  "sequence": 29,
+  "source": {
+    "file_name": "S162_Feier_2022.pdf",
+    "source_id": "S162",
+    "sha256": "87186bc4849eb91b00e927df7b9580bbe7bd4403492d4601246366d2a6f0fea0",
+    "pdf_pages": 19,
+    "printed_pages": "1–19, article 19",
+    "version_note": "Published nineteen-page article; authors, DOI, article number and publication date printed on page 1."
+  },
+  "citation": {
+    "title": "Hiding Behind Machines: Artificial Agents May Help to Evade Punishment",
+    "authors": [
+      "Till Feier",
+      "Jan Gogoll",
+      "Matthias Uhl"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1007/s11948-022-00372-7",
+    "venue": "Science and Engineering Ethics, 28, article 19",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "source_scope_note": "Incentivized human laboratory choices about delegation and payment adjustments. Algorithmic outrage asymmetry is explicitly defined in the background with reference to Bigman et al.; that original source is not independently read here. No model's moral policy or machine subjective experience was tested.",
+    "access_limits": [
+      "All nineteen pages read, including experimental design, payment rules, conditional strategy method, power calculation, results, tables, limitations and references. Page 13 Figure 3 and Table 3 rendered and visually inspected.",
+      "Linked preprocessed data and Python analysis code were not retrieved or rerun. The missing between-treatment interaction was not reconstructed from insufficient summary information; cited studies and normative works were not read through their citations."
+    ]
+  },
+  "study": {
+    "participants": 149,
+    "human_treatment": 76,
+    "machine_treatment": 73,
+    "sessions": 6,
+    "setting": "German university laboratory, February–May 2019; mean age 23.08",
+    "design": "Randomized delegate nature; participants chose own puzzle performance versus a performance-matched human or algorithm to determine another person's potential bonus",
+    "outcomes": "Conditional adjustments of −40 to +40 ECU to a human decision-maker's payment for all delegation × success/failure possibilities; one applicable strategy implemented",
+    "agent_note": "Algorithm mirrored session human performance; no name, voice, humanoid appearance or direct interaction"
+  },
+  "summary": "Within the machine condition, failed delegation received a mean adjustment of +12.96 ECU versus +8.53 for own-work failure (paired p=.041). The human-condition comparison was +8.26 versus +7.29 (p=.559). Separate significance levels do not establish a between-treatment difference in delegation effects. Delegation frequency did not significantly differ (56.2% machine versus 46.1% human, p=.28); strategic exploitation was not demonstrated.",
+  "findings": [
+    {
+      "term": "Algorithmic outrage asymmetry",
+      "id": "algorithmic-outrage-asymmetry",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral psychology / reactions to algorithmic wrongdoing",
+      "definition": "Experiencing or expressing less moral outrage over wrongdoing attributed to an algorithm than over comparable wrongdoing attributed to a human.",
+      "novelty_rationale": "Explicitly named and defined in the read article's literature discussion. Distinct from the machine penalty in cooperation, unwillingness to choose algorithmic advice, blame assigned to a delegator, and credit–blame comparisons. Outrage is not interchangeable with measured punishment.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "algorithmic outrage"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "asymmetry."
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "people are less outraged by algorithmic"
+        }
+      ],
+      "evidence_scope": "Secondary conceptual evidence only: the introduction attributes the pattern to earlier discrimination studies, including Bigman et al. (2020). The present experiment measures payment adjustments and delegation, not moral outrage; it is not an additional direct outrage experiment.",
+      "boundary": "Lower outrage is a human response difference, not proof that the algorithm did less harm, that humans lack relevant reasons for different judgments, or that every punitive behaviour changes similarly. Match the violation, information and accountable roles. Do not claim the cited Bigman primary study was read, replicated here or supplies a second selected full-text source.",
+      "ai_evidence_status": "Human outrage pattern described in a read article's background; model analogue and original outrage experiments not tested/read in this review",
+      "ai_proposal": "Untested AI analogue: present a model with matched accounts of a documented ethical violation varying only the actor's human or algorithmic identity. Compare expressed condemnation, seriousness and recommended remedy, keeping factual harm and human governance duties fixed. Separate appropriate distinctions in agency from unsupported minimization of harm.",
+      "relates_to": [
+        "machine-penalty",
+        "algorithm-aversion",
+        "credit-blame-asymmetry",
+        "anthropomorphism"
+      ]
+    },
+    {
+      "term": "Monetary leniency after machine delegation requires a direct comparison of effects",
+      "target_id": "agency-laundering",
+      "decision": "enrich-existing",
+      "definition": "The experiment reports a within-machine delegation advantage after failure, but its separate within-condition tests do not establish that the advantage differs significantly from human delegation.",
+      "novelty_rationale": "Adds genuine incentivized evidence and a statistical boundary to existing agency laundering; no need to coin another synonym for hiding behind machines.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "12.96 ECU (SD = 24.44). This difference is significant (p = 0.041, paired t-test)."
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "8.26 ECU (SD = 21.56 ECU)."
+        }
+      ],
+      "evidence_scope": "Within-machine failed delegation versus own-work difference +4.43 ECU, human difference +.97 ECU. The article reports paired tests separately, not an interaction/difference-in-differences test establishing that +4.43 exceeds +.97 statistically. Average adjustments remained positive.",
+      "boundary": "Significant in one condition and nonsignificant in another is not itself a significant condition difference. Greater reward means relative leniency in this task, not necessarily an actual punishment below baseline, a legal liability shield, intentional laundering or universal commercial evasion."
+    },
+    {
+      "term": "Observed leniency did not demonstrate strategic scapegoating by delegators",
+      "target_id": "moral-scapegoating",
+      "decision": "enrich-existing",
+      "definition": "The availability of a machine delegate did not significantly increase delegation rates, and the experiment did not show that participants delegated to avoid punishment.",
+      "novelty_rationale": "Distinguishes a possible external opportunity for leniency from a demonstrated self-protective motive or targeted blame transfer.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "insignificant (p = 0.28, chi-square test for independence)."
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "delegators in this experiment did not exploit"
+        }
+      ],
+      "evidence_scope": "Machine 41/73 delegated versus human 35/76. Incentivized later self-assessment predicted delegation, but motivation was not randomized and self-assessment was recorded after the delegation choice.",
+      "boundary": "A null rate comparison cannot prove absence of strategic motives in every individual, or that people could never learn to exploit leniency. The artificial agent was not an independently punishable moral subject; payment adjustment targeted the human delegator."
+    },
+    {
+      "term": "Outrage, blame and monetary punishment are different outcome measures",
+      "target_id": "displacement-of-responsibility",
+      "decision": "enrich-existing",
+      "definition": "This study operationalizes blame through actual conditional reward/punishment allocations rather than the delegator's self-responsibility cognition.",
+      "novelty_rationale": "Prevents monetary leniency from being treated as direct proof of an internal authority-based displacement mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "we used punishment as a behavioral proxy"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "we do not know our participants’ considerations"
+        }
+      ],
+      "evidence_scope": "Recipients state contingent payment adjustments for a human actor using the strategy method. No before/after self-responsibility measure, guilt, moral emotions or authority-justification manipulation was administered.",
+      "boundary": "A punishment proxy may have ethical relevance without establishing why the recipient chose it or how the delegator understood responsibility. Do not equate a behavioural sanction measure with proven moral disengagement."
+    }
+  ],
+  "methodological_limits": [
+    "The main claim of stronger machine-delegation leniency relies on significance of separate within-treatment contrasts. No direct statistical test of the difference between the two paired delegation effects is reported in the supplied results.",
+    "The key machine failure comparison is p=.041 in an exploratory experiment with several outcome contrasts; broad multiplicity adjustment is not reported. Treat it as limited initial evidence.",
+    "Mean payment adjustments were positive in all four reported conditions. 'Avoiding punishment' describes relative reward/penalty opportunities and should not be silently turned into a negative mean sanction.",
+    "The strategy method elicits conditional choices before participants learn the realized delegation and outcome. Incentives are real, but this is not the same as spontaneously reacting after a personally experienced realized loss.",
+    "The missed bonus is a real monetary consequence, not measured physical harm, workplace injustice, criminal punishment or an actual corporation's immunity.",
+    "Reward for successful delegation was nonsignificantly different from own work in each treatment; this is not an equivalence test or direct proof that prestige is perfectly preserved.",
+    "Participants did not punish the algorithm itself. The experiment does not show retributive satisfaction, conscious AI accountability or a literal relocation of a sanction onto a machine.",
+    "Performance mirroring helps align task capability, but performance information and machine identity remain context-specific. Excluding anthropomorphic interface cues does not prove no participant anthropomorphized the system.",
+    "Self-estimated errors were elicited after delegation. Their regression association is not independent evidence that a pre-choice utility computation caused delegation.",
+    "The sample was young and university-based; task performance and consequence size may interact with the finding. No field or repeated-learning evidence is provided.",
+    "The power calculation targets a within-treatment paired difference, not necessarily the central cross-treatment interaction.",
+    "Retribution-gap arguments, algorithmic outrage asymmetry and news accounts of vehicle attacks are background literature, not independently demonstrated by this task.",
+    "The reported Python analysis and open data were not rerun. No missing interaction estimate or unreported standard error was invented."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0028.json",
+      "finding": "Jolly directly elicits pre/post self and authority cognitions in a simulation. Feier instead measures another participant's monetary adjustment. These can inform accountability, but they are different constructs and evidence types."
+    },
+    {
+      "related_review": "references/pdf-reviews/0025.json",
+      "finding": "Earp's writer credit/blame pattern should not be universalized to this task's monetary rewards. A rating question, praise, monetary reward and punishment need not respond identically to AI involvement."
+    },
+    {
+      "related_review": "references/pdf-reviews/0027.json",
+      "finding": "As with aggregate human responsibility in medicine, the operationalization matters. Monetary leniency for a delegator is not interchangeable with total responsibility ratings or the AI's own attributed moral agency."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Retribution gap",
+      "reason": "A clearly defined normative/psychological problem discussed from Danaher, but the experiment does not measure desire for retribution, absence of a deserving target or satisfaction. Keep as a conceptual research lead rather than count another observed behaviour here."
+    },
+    {
+      "term": "Punishment-avoidant delegation",
+      "reason": "Covered by existing agency laundering/scapegoating hypotheses; strategic exploitation was not demonstrated in this sample."
+    },
+    {
+      "term": "Algorithm-specific absence of outrage",
+      "reason": "Outrage was not measured, and asymmetry does not mean absence. The new entry has secondary-evidence status only."
+    }
+  ],
+  "limitations": [
+    "One explicitly named secondary-evidence concept added; no claim that its primary experiment was read.",
+    "The study's monetary evidence is retained with the missing interaction test, positive mean adjustments and unproven strategic motive explicit."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "algorithmic-outrage-asymmetry"
+    ],
+    "enriched": [
+      "agency-laundering",
+      "moral-scapegoating",
+      "displacement-of-responsibility"
+    ]
+  }
+}

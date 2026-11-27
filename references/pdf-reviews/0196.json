@@ -1,0 +1,291 @@
+{
+  "sequence": 196,
+  "source": {
+    "file_name": "S2104_Wallkotter_2020.pdf",
+    "source_id": "S2104",
+    "sha256": "5e9de18d8aafc91b5cb2a6da3b7b117f5fb051f8272a92742ac5ea1f00237ed2",
+    "pdf_pages": 10,
+    "printed_pages": "Unpaginated archived copy of HRI 2020, proceedings pages 609–618",
+    "version_note": "The supplied copy carries arXiv:2004.07594v1, 16 April 2020, and HRI 2020 ACM publication details. Crossref identifies the corresponding proceedings item, DOI 10.1145/3319502.3374800, pages 609–618, published 9 March 2020. The archive timestamp is not the conference publication date. No separate publisher-PDF comparison or independent-version credit.",
+    "verification_url": "https://arxiv.org/abs/2004.07594v1",
+    "verification_method": "All ten pages, four tables and 57 references read. All five figures visually inspected, including robot/game setup, pipeline, two online distributions, three live distributions and two cross-setting contrasts. Crossref verifies main publication and disputed reference identities. Conditional chi-square/t tails were recalculated without raw-data repair. Supplementary frames/videos, participant-level data, source code and a separate publisher copy were not independently reviewed."
+  },
+  "citation": {
+    "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+    "authors": [
+      "Sebastian Wallkötter",
+      "Rebecca Stower",
+      "Arvid Kappas",
+      "Ginevra Castellano"
+    ],
+    "year": 2020,
+    "url": "https://doi.org/10.1145/3319502.3374800",
+    "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+    "publication_type": "proceedings-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source_scope_note": "Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+    "access_limits": [
+      "Exact high/low descriptions and videos are referred to supplementary material and were not independently accessed. The authors’ claimed same-fact framing cannot be fully verified from this PDF alone.",
+      "No raw participant data, preregistration, G*Power configuration, missing-data handling scripts or code implementation independently reproduced.",
+      "Original Cohen, de Graaf/Malle, questionnaires, embodiment literature and source measures were checked only for selected bibliographic identities, not independently fully read."
+    ]
+  },
+  "study": {
+    "controller": "A NAOv5 observes a fixed Tower of Hanoi via head-camera color thresholding and an external computer, uses breadth-first search for optimal moves, and instructs people to physically move disks because it cannot grasp them. Fully autonomous is defined relative to giving instructions, not autonomous manipulation of the physical disks.",
+    "behavior_bundle": "Social/non-social versions jointly vary we versus third-person language, positive/negative versus optimality feedback, phrase variety, gestures, gaze, memory/enjoyment wording and feedback frequency. This does not isolate a single emotional, personalization or anthropomorphism cue; functional non-social interaction still includes speech and pointing.",
+    "experiment1_flow": "110 MTurk recruits, 33 attention-check exclusions implies 77, as stated in the prose. Table 2 instead has 39+39 = 78 and t df = 76, while its gender counts total 77. Reliability is reported for 64 complete cases on 16 items, with more-than-20%-missing exclusions mentioned. These counts require reconciliation; no guessed final unique-participant total.",
+    "experiment1_results": "High/low global mind means 2.79 (.91) and 2.14 (.80), t(76) = 3.369, d = .763. Source says p < .001; a two-sided t tail is about .001187, whereas one-sided is .000594. Tail is not stated, so record a conditional qualification rather than call either the statistic or p definitely wrong. Figure 3’s p < .01 description remains compatible.",
+    "experiment2_flow": "232 MTurk recruits, 170 attention failures, leaving 62. Prose assigns 33 social/28 non-social, totaling 61; Table 3 assigns 34/28 = 62 and t df = 60. One missing demographic could explain some count differences but is not verified. About 73% excluded does not establish fraudulent recruitment or an unbiased target population.",
+    "experiment2_results": "Social/non-social mind means 2.39 (.76) versus 1.79 (.68), t(60) = 3.2, p = .002, d = .82, 18-item alpha .92. This video experiment follows attention checks that already expose participants to their assigned behavior; exclusion can therefore select differently by condition. There is no separate neutral control or isolated cue effect.",
+    "experiment3_design": "100 campus recruits, one excluded for faulty computer vision, leaving 99. Low/non-social 25, high/non-social 24, low/social 25, high/social 25. Participants read the frame and actively play with the robot in a roughly 25-minute session, versus online observation around five minutes. Population, interaction role, duration, task load and setting change together.",
+    "measures": "Global mind perception is adapted to 1–5 ratings rather than the original relative format; 16 items in Experiment 1 versus 18 later. Moral concern is a 30-item I-would self-report with 12 reverse-coded items, not actual protective behavior. The Godspeed score combines multiple dimensions; low-reliability safety items (alpha .53) are excluded. It is not a pure independent anthropomorphism scale or a demonstrated safety outcome.",
+    "live_results": "MANOVA framing F(3,93) = .735, p = .534, Lambda .977; behavior F(3,93) = 1.123, p = .344, Lambda .965; framing×behavior F(3,93) = .704, p = .552, Lambda .978. These are uncertain omnibus effects, not equivalence. Global mind cell means 2.15, 2.48, 2.47, 2.54; moral concern around 5.07–5.18. No separate agency/experience causal effects are identified.",
+    "correlations": "Mind/moral concern .405, mind/Godspeed .527 and Godspeed/moral concern .601, reported p < .001; gender/moral concern −.299, p < .03. These shared-occasion ratings can overlap in item content and method. Correlation does not prove that increased mind attribution causes protection, nor does a null covariate correlation rule out moderation, nonlinear effects or population confounding.",
+    "power": "The paper reports an a-priori 95%-power, alpha .05, f² = .15 calculation yielding N = 73 and therefore considers 99 sufficient for medium/large effects. Without the full test configuration this cannot be independently reconstructed, and such a claim does not establish precision for small interactions or equivalence. Do not automatically equate f and f² or assert a calculation error from a different test.",
+    "cross_setting_tests": "The authors do directly test pooled setting×manipulation interactions. Framing pool omnibus F(3,173) = 4.691, p = .004, but interaction p = .069, framing main p = .001, setting p = .667. Behavior pool omnibus F(3,157) = 5.421, p = .001, but interaction p = .107, behavior main p = .002, setting p = .012. The omnibus model significance is not a significant interaction. They acknowledge post-hoc derivation and request targeted follow-up.",
+    "inference_limits": "No random assignment to virtual versus physical setting holds population, duration, activity and measures constant. Within-live-sample null covariate tests cannot exclude differences between populations. Completion time is an imperfect attention/engagement proxy. Null correlations and nonsignificant within-live interaction do not prove that pooling over the other factor is harmless.",
+    "table_audit": "Table 4’s moral-concern and Godspeed framing-marginal Ns print low = 49/high = 50, while their own four cells and gender subtotals imply low = 50/high = 49. Social moral-concern SD .60 does not reconcile with cell SD .84/.56 and N = 25/25 under ordinary pooling, which yields about .707; the low-frame SD .74 also needs checking against equal .84 cell SDs. Missing/subscale differences could matter; do not overwrite data."
+  },
+  "summary": "Add no new rows. Enrich framing, anthropomorphism, agency/experience attribution and moral concern with the positive online findings, live uncertainty and inconclusive direct setting interactions. Clarify the framing definition without a generic LLM-strength claim. Preserve the personalization homonym as a non-counting boundary, and document reliable citation repairs plus unresolved counts/statistics rather than treating the title’s setting contrast as proven.",
+  "findings": [
+    {
+      "term": "Framing effect",
+      "decision": "enrich-existing",
+      "target_id": "b035-framing-effect",
+      "definition": "Wording flips the answer; LLMs show this strongly, sometimes more than humans.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "archived paper page 4",
+          "quote": "convey the same factual information"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": "archived paper page 8",
+          "quote": "framing (p = .069)"
+        }
+      ],
+      "evidence_scope": "The authors intend high/low descriptions to convey the same facts and report an online global mind-rating difference. Their live omnibus frame effect is uncertain; importantly, the directly tested setting×frame interaction is also uncertain at p = .069. Supplementary descriptions are not fully read, so factual equivalence remains an unverified design claim.",
+      "boundary": "A frame that changes substantive facts can rationally change a judgment and is not automatically bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim about LLM strength or universal live absence follows from this human study.",
+      "previous_definition": "Wording flips the answer; LLMs show this strongly, sometimes more than humans.",
+      "revised_definition": "Differences in judgment or choice under alternative presentations of otherwise equivalent information.",
+      "definition_revision_reason": "The current definition mixes the construct with a broad LLM-strength claim. The read paper explicitly intends equivalent factual descriptions and illustrates why effect presence depends on design and uncertainty. State the neutral presentation-based construct; keep individual human/AI effect claims and factual-equivalence limits in source-specific notes."
+    },
+    {
+      "term": "Anthropomorphism",
+      "decision": "enrich-existing",
+      "target_id": "anthropomorphism",
+      "definition": "Attributing human characteristics, intentions, emotions or other mental states to a nonhuman entity.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "archived paper page 3",
+          "quote": "Differences in the Robot’s Social Behaviours"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": "archived paper page 8",
+          "quote": "behaviour (p = .107)"
+        }
+      ],
+      "evidence_scope": "A bundled social-behavior video increases global mind ratings online; live MANOVA effects are uncertain. The Godspeed score used as an anthropomorphism-related outcome combines several dimensions. The setting×behavior interaction is directly tested and uncertain at p = .107.",
+      "boundary": "Phrase variety, gaze, feedback, gestures and memory wording change together. A global Godspeed score, mind rating, social presence and actual capacity differ. No universally ineffective live manipulation or isolated embodiment effect is established."
+    },
+    {
+      "term": "Agency attribution",
+      "decision": "enrich-existing",
+      "target_id": "agency-attribution",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "archived paper page 2",
+          "quote": "seen as possessing a mind and agency"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "archived paper page 6",
+          "quote": "framing and behaviour was also non-significant"
+        }
+      ],
+      "evidence_scope": "The mind-perception composite incorporates attributed abilities and is higher after high-mind frames or social video behavior in selected online samples. The live and cross-setting interaction results remain uncertain; aggregate outcomes do not isolate a pure agency factor.",
+      "boundary": "Perceived agency, overall mind, experience, causal control and normative moral agency differ. Instruction-level robot autonomy does not mean it can manipulate disks, and stronger ratings do not themselves show unwarranted agency bias."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "archived paper page 2",
+          "quote": "the perceived ability to feel things"
+        }
+      ],
+      "evidence_scope": "The source distinguishes perceived ability to feel from perceived ability to act, but reports their combined mind score in these experiments. No separate effect on the experience dimension or genuine machine feeling is demonstrated.",
+      "boundary": "A total mind-rating difference is not a separately identified experience effect. Different item counts and cross-study contexts complicate measurement comparability; feelings mentioned in a script are not evidence of actual sentience."
+    },
+    {
+      "term": "Moral standing ascription",
+      "decision": "enrich-existing",
+      "target_id": "moral-standing-ascription",
+      "definition": "Attributing to an entity a claim to moral consideration in how actions affect it.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "archived paper page 6",
+          "quote": "Moral Concern for Robots scale"
+        }
+      ],
+      "evidence_scope": "Live participants complete a 30-item conditional moral-concern self-report. It correlates with mind and Godspeed ratings, but the treatment MANOVAs are uncertain; actual protection, legal rights and a causal mind-to-care pathway are not measured.",
+      "boundary": "Related self-reports do not establish deserved status or behavior. Null treatment/covariate tests are not equivalence or proof of no confounding. Keep table/count inconsistencies and aggregate-scale limits visible."
+    },
+    {
+      "term": "Personalization",
+      "decision": "enrich-existing",
+      "target_id": "upload-019",
+      "definition": "Taking responsibility for events one did not cause.",
+      "novelty_rationale": "Retain the existing construct and preserve the study’s mixed/null and measurement boundaries instead of adding a synonym or a post-hoc explanation as a new behavior.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "archived paper page 3",
+          "quote": "Uses ’we’"
+        }
+      ],
+      "evidence_scope": "Table 1 uses personalization for a social-language feature, we versus third-person wording. This is an HRI naming overlap, not the cognitive distortion of taking responsibility for events one did not cause.",
+      "boundary": "Retain the existing cognitive-personalization definition. A shared word cannot fill its psychology-paper gap or create a second overlapping entry without a separate definition and operational basis.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF page 9, reference 11",
+      "reported": "Jacob Cohen (1992), Quantitative methods in psychology, Nature 141(3570):613, DOI 10.1038/141613a0.",
+      "correction": "That DOI identifies a Nature item from 2 April 1938, not a Jacob Cohen 1992 paper. If A Power Primer is intended for conventional effect-size guidance, its correct identity is Jacob Cohen (1992), Psychological Bulletin 112(1), 155–159, DOI 10.1037/0033-2909.112.1.155. Do not imply that the intended source was fully read or uniquely established from the malformed entry.",
+      "verification_url": "https://api.crossref.org/works/10.1038/141613a0",
+      "additional_verification_url": "https://api.crossref.org/works/10.1037/0033-2909.112.1.155",
+      "scope": "Verified bibliographic mismatch and plausible intended-source identity, not a reproduced power calculation."
+    },
+    {
+      "location": "PDF page 9, reference 20",
+      "reported": "People’s Explanations of Robot Behavior Subtly Reveal Mental State Inferences attributed only to Maartje de Graaf.",
+      "correction": "The authors are Maartje M. A. de Graaf and Bertram F. Malle, HRI 2019, 239–248, DOI 10.1109/HRI.2019.8673308.",
+      "verification_url": "https://api.crossref.org/works/10.1109/HRI.2019.8673308",
+      "scope": "Metadata only; original paper not independently fully read."
+    },
+    {
+      "location": "PDF page 6, Godspeed questionnaire reference",
+      "reported": "The questionnaire is linked to reference 5.",
+      "correction": "The measurement-instrument source in this bibliography is reference 6, Bartneck, Kulić, Croft and Zoghbi (2009), DOI 10.1007/s12369-008-0001-3. Reference 5 is a different robot-design study. Repair the internal citation pointer without adding an independently read source.",
+      "verification_url": "https://doi.org/10.1145/3319502.3374800",
+      "scope": "Supplied bibliography identity comparison, not a full review of either 2009 original."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "PDF pages 3–4, Experiment 1 counts",
+      "finding": "110−33 = 77 in prose, but Table 2 has 78, t df = 76 and the pooled framing model’s df match 78+99 = 177. Table gender counts total 77, and scale reliability uses 64 valid cases. Participant/missingness flow is needed; no single field is auto-repaired."
+    },
+    {
+      "location": "PDF pages 4–5, Experiment 2 counts",
+      "finding": "62 retained, but assigned groups in prose sum to 61. Table 3 and t df = 60 support 62; table social N = 34 while known social gender counts total 33. Possible missing demographics do not fully explain all wording without individual data."
+    },
+    {
+      "location": "PDF page 3, Experiment 1 gender comparison",
+      "finding": "Printed chi²(1) = .21 has a tail near .6468, not .883. The image confirms .21. A different statistic/decimal could explain it, but do not guess which number to replace."
+    },
+    {
+      "location": "PDF page 4, Experiment 1 t-tail",
+      "finding": "t(76) = 3.369 gives two-sided p ≈ .001187 and one-sided p ≈ .000594. The printed p < .001 is compatible with a one-sided test, whose use is not specified; avoid an unqualified numerical-error claim."
+    },
+    {
+      "location": "PDF page 6, Table 4",
+      "finding": "Moral-concern/Godspeed framing marginal Ns are reversed relative to their own cell and gender counts. Some moral-concern pooled SDs also do not reconcile with the printed cells under ordinary pooling. Need raw output, scoring definitions and missingness before correcting values."
+    },
+    {
+      "location": "PDF page 8, Figure 5",
+      "finding": "The framing legend says low/high agency while the manipulation and analysis use low/high mind. Do not present this as a separate agency-only effect; no data-coding error is inferred from the legend alone."
+    }
+  ],
+  "interpretation_qualifications": [
+    "Authors do test setting×manipulation interactions; p = .069 and .107 remain inconclusive. Overall model F/p and main-effect p are not interaction evidence.",
+    "The authors explicitly label the richer-interaction explanation post-hoc and tentative. Preserve that qualification even where title/conclusion wording is stronger.",
+    "Marginal correlation is not necessary for every nonlinear or moderated relationship. Null within-sample covariate tests cannot rule out cross-population confounding.",
+    "Separate online validations and a live factorial study differ in selection, activity, time, setting and measures. No randomized isolated virtual-versus-physical causal effect is demonstrated."
+  ],
+  "methodological_limits": [
+    "High attention-check exclusion and unclear counts/missingness; Experiment 2 checks may already expose participants to assigned behavior.",
+    "Sixteen versus eighteen mind items, global mind aggregation and a multi-dimension Godspeed score complicate construct-specific inference and cross-study invariance.",
+    "Bundled social behavior and unread frame/video supplements prevent isolating individual cues or fully verifying equivalent factual information.",
+    "Small factorial cells, no equivalence test, uncertain setting interactions, unspecified full power configuration and exploratory pooled comparisons.",
+    "Moral concern is self-reported intention and shared-method correlations; no observed moral protection, harm reduction or intervention effectiveness."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0191.json",
+      "finding": "The social-mind review summarizes heterogeneous embodiment evidence. This direct paper shows why one positive online test cannot establish a universal social cue or embodiment mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0194.json",
+      "finding": "Keijsers finds explicit-description effects on condemnation but uncertain behavioral choice. Wallkötter’s global mind and moral-concern ratings measure different outcomes, not a direct contradiction or proof that live descriptions never matter."
+    },
+    {
+      "related_review": "references/pdf-reviews/0195.json",
+      "finding": "Pekçetin cites this work while proposing live implicit/explicit measures. That progress report supplies no analyzed result resolving the present mixed effects or establishing its own methodological superiority."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Physical-interaction attenuation of mind cues",
+      "reason": "A post-hoc explanation with inconclusive direct interactions and confounded settings, not a newly demonstrated stable behavior."
+    },
+    {
+      "term": "HRI personalization",
+      "reason": "Here primarily we versus third-person language within a seven-feature bundle. Do not conflate it with the existing cognitive distortion or add an underspecified duplicate label."
+    },
+    {
+      "term": "Global mind perception",
+      "reason": "Retain agency/experience distinctions and the total-score measurement note instead of adding an ambiguous umbrella as another behavior."
+    }
+  ],
+  "limitations": [
+    "No new entries, annual counts, automatic ethical/harm links or independent evidence credit for metadata-checked originals."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b035-framing-effect",
+      "anthropomorphism",
+      "agency-attribution",
+      "experience-attribution",
+      "moral-standing-ascription",
+      "upload-019"
+    ],
+    "revised_definitions": [
+      "b035-framing-effect"
+    ]
+  }
+}

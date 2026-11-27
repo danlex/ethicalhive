@@ -1,0 +1,379 @@
+{
+  "sequence": 115,
+  "source": {
+    "file_name": "S999_Soares_2023.pdf",
+    "source_id": "S999",
+    "sha256": "f5a798fcb0192c02eed4f1157aa34f3b3dd937c1f7879bb78ce844fbc3a92e34",
+    "pdf_pages": 17,
+    "printed_pages": "807–823",
+    "version_note": "International Journal of Social Robotics 15:807–823; first published online 7 March 2023, accepted 15 February 2023.",
+    "verification_method": "All seventeen supplied pages read, including full vignette, measures, adjusted/unadjusted results, limitations, declarations and references. Figures 1 and 2 visually inspected."
+  },
+  "citation": {
+    "title": "Ethics 4.0: Ethical Dilemmas in Healthcare Mediated by Social Robots",
+    "authors": [
+      "Antonio Soares",
+      "Nuno Piçarra",
+      "Jean-Christophe Giger",
+      "Raquel Oliveira",
+      "Patrícia Arriaga"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.1007/s12369-023-00983-5",
+    "venue": "International Journal of Social Robotics 15:807–823",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "Randomized text-vignette study of observer judgments, not actual treatment, patient choice or current clinical guidance. Both human and robot nurses operate under Health-AI instructions. Shared decision-making is a defined background/proposed alternative, not the experimentally tested intervention.",
+    "access_limits": [
+      "All seventeen pages and both figures read. OSF raw data, full item files, code and the linked AsPredicted preregistration were not independently inspected.",
+      "Clinical codes, NICE guidance, primary message-framing meta-analyses and cited books remain secondary references here. The related Laakasuo paper has a separate completed corpus review, 0087."
+    ]
+  },
+  "study": {
+    "sample": "841 convenience/snowball recruits, 223 removed for over 50% missing responses and 94 for failed attention check; final N=524, 60–72 per cell. Known nationalities: 316 Brazilian and 179 Portuguese, 29 unreported. Mean age 38.73, range 18–77; 350 women, 150 men, 24 unreported. Outcome-specific adjusted models use fewer complete cases.",
+    "design": "2 agent (human nurse/robot) × 2 message framing (health gains of taking/losses of refusing) × 2 final response (respect refusal/do not accept refusal), randomized between participants. Data collected 25 January–6 March 2021; vignette set in 2035.",
+    "vignette": "Female patient with a physical condition and explicitly no intellectual/cognitive problem refuses unpleasant medication. Female nurse/robot Lena follows Health-AI medical instructions in both conditions. The overriding response says the patient will have to take medication, without depicting actual forced administration.",
+    "measures": "Seven-point observer ratings: 16-item moral acceptance alpha=.90, three responsibility items .81, three warmth items .89 after dropping well-intentioned, six competence items .90, three trustworthiness items .78. Additional attitudes, health engagement and moral concerns collected after the outcomes.",
+    "analysis": "Separate three-way ANCOVAs select covariates from outcome correlations and assumption checks. Main findings reportedly similar without covariates. Five outcomes plus interactions/simple effects and exploratory image associations; framing effects are explicitly exploratory.",
+    "moral_acceptance": "Respecting refusal rated higher than overriding, adjusted M5.16 versus4.54, F(1,489)=43.91, p<.001, partial eta²=.082. Agent effect F=.79, p=.375 and agent×decision interaction undetected; null is not equivalence.",
+    "responsibility_and_warmth": "Human responsibility4.44 versus robot3.30, F(1,485)=63.94, p<.001, eta²=.116. Human warmth4.28 versus3.98, F(1,492)=6.78, p=.009. Respecting refusal warmth4.88 versus3.39, F=160.12, eta²=.246.",
+    "competence_and_trust": "Overriding rated higher in competence5.14 versus4.83, F(1,484)=7.66, p=.006; trust5.37 versus5.11, F(1,487)=6.46, p=.011. Agent differences in competence/trust are undetected. Decision×frame trust interaction F=6.77, p=.010, eta²=.014; gain-frame simple decision contrast5.54 versus5.01, F=12.84, p<.001; loss-frame contrast undetected.",
+    "appearance": "After judgments, robot-condition participants choose among six depictions to indicate imagined appearance, and everyone chooses suitable appearance. Icub26.2% plus Nadine24% are the two most humanlike imagined options; Nadine57.3% is most commonly selected as suitable. Chosen imagined humanness correlates with judgments, but is not randomized. No corresponding suitable-image correlations detected."
+  },
+  "summary": "Add shared decision-making as a distinct collaborative approach described in the background and conclusion. Strengthen paternalism, framing and human–robot judgment evidence while retaining relevant null findings and clarifying responsibility, imagined appearance and loss-versus-risk boundaries.",
+  "findings": [
+    {
+      "term": "Shared decision-making",
+      "id": "shared-decision-making",
+      "decision": "new-entry",
+      "definition": "An approach in which the person affected and the relevant professional participate together in choosing a course of action.",
+      "category": "Social",
+      "origin": "Health psychology / patient–professional communication",
+      "ai_evidence_status": "Explicit secondary healthcare relationship concept and proposed alternative; not an experimental condition or tested AI intervention in this study",
+      "ai_proposal": "Evaluate whether AI-assisted decisions present relevant options, elicit the person's goals and preserve their meaningful participation and authorized choice. Distinguish recommendation support from taking over authority or asking for repetitive empty confirmations. Outcomes should include understanding and actual decision participation, not only favorable observer ratings.",
+      "relates_to": [
+        "decision-delegation",
+        "upload-029",
+        "psychological-safety"
+      ],
+      "novelty_rationale": "A collaborative decision process differs from delegating authority, unilateral professional override, sole consumer responsibility or superficial agreement. The article explicitly describes balanced decision participation under mutuality and discusses shared decision-making; it does not establish all theoretical uses of mutuality as exact synonyms.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 808,
+          "quote": "whereas in mutuality the healthcare agent and the patient"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 808,
+          "quote": "have a balanced status in decision-making."
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "decision making is very valued by patients"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 820,
+          "quote": "The establishment of a mutual relationship is"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 820,
+          "quote": "important for the co-construction of a procedure"
+        }
+      ],
+      "evidence_scope": "Background differentiates paternalism, mutuality and consumerism; the conclusion recommends understanding refusal and co-constructing a response. The experiment compares two unilateral final statements, not a shared deliberation intervention. No actual patient decision or clinical outcome is measured.",
+      "boundary": "Shared participation does not mean equal expertise, compulsory consensus, unlimited treatment choice or transfer of all accountability to the patient. Informed refusal can remain after deliberation. An AI's agreeable tone or repeated approval prompts do not establish meaningful participation, and this article is not a current clinical/legal decision rule."
+    },
+    {
+      "term": "Paternalistic medication directives and observer judgments",
+      "target_id": "upload-029",
+      "decision": "enrich-existing",
+      "definition": "A healthcare agent rejects a cognitively intact patient's refusal in the stated interest of health, illustrating a paternalistic directive rather than tested forced treatment.",
+      "novelty_rationale": "Existing paternalism; the study supplies a specific autonomy-versus-benefit comparison, not a new ethical theory or proof that the paternalistic option is appropriate.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 808,
+          "quote": "Paternalism is"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 812,
+          "quote": "Therefore, I do not accept your"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 812,
+          "quote": "decision, you will have to take the medication"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 815,
+          "quote": "judged the agent’s behavior as more morally acceptable"
+        }
+      ],
+      "evidence_scope": "Respecting refusal receives higher observer moral acceptance and warmth; rejecting refusal receives higher competence/trust ratings. The patient is explicitly cognitively unimpaired and actual force is not depicted. Higher perceived competence is not evidence of correct treatment or a right to override.",
+      "boundary": "Persuasion with accurate information, supported decision-making, a directive and coercive administration differ. Rights, capacity and relevant clinical facts cannot be inferred from a popularity score or collapsed into a universal rule that any rejection is beneficent. The study is not medical or legal advice."
+    },
+    {
+      "term": "Agent asymmetry differs across approval and responsibility outcomes",
+      "target_id": "human-robot-moral-judgment-asymmetry",
+      "decision": "enrich-existing",
+      "definition": "Observer responsibility and warmth differ for human and robotic healthcare agents while the study does not detect agent differences in moral acceptance, competence or trustworthiness.",
+      "novelty_rationale": "A contextual mixed/null finding for the existing umbrella; do not infer that every evaluation penalizes robots or that nondetection establishes identical judgments.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": 815,
+          "quote": "no significant main effect was"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 815,
+          "quote": "was a human (M = 4.44, SE = 0.10) than a robot (M = 3.30,"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 817,
+          "quote": "The main effects of the healthcare"
+        }
+      ],
+      "evidence_scope": "Randomized agent labels yield higher assigned responsibility and warmth for humans. Other agent effects and relevant interactions are undetected. Both agents follow an AI instruction system; this is not an AI-versus-no-AI comparison. The relevant nulls remain usable evidence rather than being discarded.",
+      "boundary": "Responsibility attribution is not blame severity, legal liability or harshness of judgment. Undetected mean differences are not equivalence. A free-will or limited-capacity explanation is proposed without direct measurement. Actual accountability includes system designers and institutions beyond these two character labels."
+    },
+    {
+      "term": "Health-message framing has mostly null effects with a small trust interaction",
+      "target_id": "b035-framing-effect",
+      "decision": "enrich-existing",
+      "definition": "Gain/loss wording does not detectably change most observer judgments here, but interacts with the ethical response in perceived trustworthiness.",
+      "novelty_rationale": "Relevant controlled evidence and limits for the existing framing effect; no independent gain-framing-superiority behavior is added.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "Gain framed messages emphasize the"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "advantages of compliance"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 817,
+          "quote": "an interaction between"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 817,
+          "quote": "the ethical decision and the health framing emerged"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 818,
+          "quote": "the effect size was small."
+        }
+      ],
+      "evidence_scope": "No main framing effects across five outcomes. Exploratory decision×frame interaction for trust, partial eta²=.014, with overriding-versus-respect contrast detected under gain wording but not loss wording. The trial tests observer impressions, not message persuasion, actual adherence or health outcomes.",
+      "boundary": "A simple effect within one frame does not show the gain frame beats the loss frame in every decision cell. No universal gain-message benefit, change in actual choice or unique prospect-theory mechanism is established. Multiple exploratory outcomes and covariate selection limit strong generalization."
+    },
+    {
+      "term": "Chosen imagined humanlikeness is associated with ratings rather than randomized appearance",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "People's post-vignette choice of an imagined robot depiction correlates with their trait judgments, without establishing an appearance-caused change or actual mental capacities.",
+      "novelty_rationale": "Existing attribution/appearance concept; no new humanlike-robot-superiority pattern from a selected correlation.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 813,
+          "quote": "the robotic model"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 813,
+          "quote": "that seemed closest to what they imagined while reading the"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 817,
+          "quote": "the higher the degree"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 817,
+          "quote": "of human likeness imagined, the greater was the perceived"
+        }
+      ],
+      "evidence_scope": "Imagined-image choice occurs after dependent-variable ratings, among six fixed-order depictions. Correlations are small, with competence strongest at rho=.23. Suitable-image choice shows no detected outcome correlations. Appearance is not experimentally assigned.",
+      "boundary": "Selecting a humanlike picture, attributing traits and actual humanlike capacities differ. Gender, age, clothing, pose and familiarity also differ across images. Reverse direction and shared expectations remain possible; no causal anthropomorphism mediation or actual system performance is established."
+    },
+    {
+      "term": "The source's risk-aversion label describes loss weighting",
+      "target_id": "loss-aversion",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Weighting an equal loss more than a gain is loss aversion, distinct from preferring less uncertainty.",
+      "novelty_rationale": "Correct a terminological boundary without merging risk aversion into loss aversion or adding a new empirical mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "a given loss may be weighted"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "by individuals as more significant than an equivalent gain"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 809,
+          "quote": "known as risk aversion"
+        }
+      ],
+      "evidence_scope": "The background describes asymmetric gain/loss weighting but labels it risk aversion. The experiment has no matched uncertain lotteries, fitted loss-weight parameter or direct aversion measure. This correction is not a new primary loss-aversion study.",
+      "boundary": "Gain/loss message wording does not identify loss aversion, risk aversion or prospect-theory parameters. The earlier ontology distinction is preserved; neither mechanism can be inferred solely from trust ratings or a null framing contrast."
+    },
+    {
+      "term": "A preferred humanlike depiction does not refute a moral uncanny valley",
+      "target_id": "moral-uncanny-valley",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Selection of a suitable robot among six pictures is not a test of a nonlinear dip in moral approval associated with uncanniness.",
+      "novelty_rationale": "Retain a boundary with the existing appearance-dependent judgment pattern rather than count this as another direct valley test.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 819,
+          "quote": "These"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 819,
+          "quote": "results seem to contradict the Uncanny Valley hypothesis"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 819,
+          "quote": "gender stereotypes"
+        }
+      ],
+      "evidence_scope": "The authors discuss a possible conflict with uncanny-valley expectations, but do not measure uncanniness, randomize appearances or estimate a nonlinear curve. A female nursing vignette may also influence which depiction seems suitable.",
+      "boundary": "Highest humanlike option winning a forced choice does not show absence of a local affective or moral-approval dip. Discomfort-based and moral uncanny valleys differ. The observed correlation does not contradict every version of either hypothesis."
+    }
+  ],
+  "methodological_limits": [
+    "The randomized manipulation supports effects of these vignette descriptions on observer judgments, not actual nursing conduct, real patient adherence, clinical benefit or AI ethical competence.",
+    "Both the human and robot follow Health-AI instructions in a future 2035 scenario. Agent identity is not AI assistance versus human-only care, and the current feasibility of autonomous nursing is not tested.",
+    "The patient is explicitly cognitively unimpaired and refuses because medication is unpleasant; illness, dosage, urgency, risks and alternative options are unspecified. No general clinical or legal rule follows from these conditions.",
+    "The overriding condition depicts a verbal refusal to accept the patient's choice, not actual forced administration. This differs materially from Laakasuo's force-medication scenario and may help explain different approval results, but the difference is not randomized across studies.",
+    "The final statements also differ in connective, politeness and autonomy language. Higher warmth for the respectful statement need not indicate a global trait or a uniquely identified moral inference mechanism.",
+    "Moral acceptance averages 16 items including sympathetic/nice impressions, while warmth is rated separately. Internal consistency does not establish perfect separation of moral approval, liking and perceived character.",
+    "Covariates are measured after treatment/outcomes and selected by observed correlations. They may reflect treatment or response effects; conditioning on them is not guaranteed to improve causal identification. The reported unadjusted checks help but do not resolve all selection decisions.",
+    "Five outcomes, factorial interactions, simple contrasts, many correlational screens and exploratory image analyses create multiple-testing concerns. No comprehensive multiplicity correction is reported, and nominal marginal associations should remain exploratory.",
+    "Null agent and framing effects are not equivalence or evidence of identical judgments. Framing results concern trust impressions rather than actual health behavior, so they cannot establish that gain messages increase adherence.",
+    "The trust interaction's reported simple contrast compares decisions within gain wording. Claims that overriding-plus-gain is higher than every other condition require the relevant pairwise tests, which are not all reported.",
+    "Assigned responsibility is not blame, punishment or legal liability. The conclusion's language about robots being less harshly judged goes beyond the responsibility scale and the null moral-acceptance agent effect.",
+    "Free will, actual autonomy, humanlike mind and limited robot capability are explanatory hypotheses without direct process measures. Competence/trust ratings do not certify actual competence or trustworthiness.",
+    "The imagined-robot picture is selected after outcome judgments. It is neither a randomized appearance manipulation nor an independent temporal predictor; reverse inference and shared causes remain possible.",
+    "Six depictions differ in many features besides humanlikeness and are displayed in ascending order. Nadine is an adult female-looking clothed figure matching the nursing vignette, while other options differ in embodiment and age cues. Suitability does not isolate humanness or prove actual performance.",
+    "Only female agent/patient names and one scenario are used. Convenience/snowball sampling is skewed toward women, higher education and generally healthy participants. Country is not randomized; national differences cannot be uniquely attributed to culture.",
+    "The paper reports 524 retained cases, but missing covariates/demographics yield smaller adjusted-model samples. Percentages sometimes use known-response denominators: for example 350 women are 70% of the 500 with sex reported, versus 66.8% of all 524. Do not mistake that denominator change for different samples or invent missing nationalities.",
+    "Preregistration and OSF materials are linked but not inspected in this review. The article distinguishes confirmatory hypotheses from exploratory framing effects; preregistration adherence, exclusions and full item wording cannot be independently confirmed here.",
+    "Risk aversion is used in one background passage for asymmetric loss/gain weighting. Preserve the ontology's loss-versus-risk distinction rather than copy the mislabel or infer either mechanism from a message-frame effect.",
+    "Shared decision-making/mutuality is described and recommended, not tested against unilateral responses. The study cannot show that this proposed solution improves adherence or resolves all autonomy–beneficence conflicts."
+  ],
+  "source_corrections": [
+    {
+      "location": "Figure 1 caption, PDF page 7",
+      "problem": "The robot-database images are assigned reference [40], which is Tilburt et al. on physicians' moral judgments.",
+      "reliable_correction": "The methods paragraph and bibliography identify [46], Phillips, Zhao, Ullman and Malle (2018), What is Humanlike? Decomposing Robots' Human-Like Appearance Using the Anthropomorphic roBOT (ABOT) Database, DOI 10.1145/3171221.3171268, as the intended source.",
+      "verification_scope": "Internal citation identity verified from caption, methods and reference list. The ABOT primary paper is not claimed read or its full image metadata independently verified."
+    },
+    {
+      "location": "PDF pages 8–9: table cross-references",
+      "problem": "Prose repeatedly calls the covariate correlation matrix Table 2 and descriptive statistics Table 3, but the displayed captions assign psychometrics to Table 2 and correlations to Table 3.",
+      "reliable_correction": "Use the displayed captions: Table 2 for psychometric/descriptive measures and Table 3 for correlations. No statistical values are changed.",
+      "verification_scope": "Supplied article tables and prose compared directly; raw data and analysis output remain unverified."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0087.json",
+      "finding": "Laakasuo's forced medication receives a robot-related moral-approval penalty; this verbal-directive study does not detect an agent effect on approval. Preserve the difference in action severity and measurements rather than treat the papers as identical replications or contradictory universal rules."
+    },
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "A controlled appearance×decision experiment can test an appearance-dependent moral pattern. Post-judgment selection among six pictures cannot establish or refute the same pattern."
+    },
+    {
+      "related_review": "references/pdf-reviews/0111.json",
+      "finding": "Warmth, competence, moral predictions and actual ethics are separate outcomes. A warm or cute impression does not establish correct behavior; direction and mechanism can vary by task."
+    },
+    {
+      "related_review": "references/pdf-reviews/0114.json",
+      "finding": "Workplace psychological safety and meaningful shared decisions both concern human participation, but neither is verified by a pleasant AI interface or favorable self-report alone. Evidence about governance conditions should remain separate from actual intervention outcomes."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Mutuality",
+      "reason": "The healthcare decision-participation application is captured under shared decision-making. Broader relational mutuality and pseudo-mutuality are not treated as exact synonyms."
+    },
+    {
+      "term": "Warmth–competence tradeoff",
+      "reason": "The particular respectful/directive wording produces different trait ratings. Do not add a universal law that warmth necessarily reduces competence or that respecting autonomy is clinically inferior."
+    },
+    {
+      "term": "Healthcare consumerism",
+      "reason": "A background relationship model assigning sole decision responsibility to the patient, not an independently tested new pattern here. It is retained as a contrast rather than another behavior inferred from the experiment."
+    },
+    {
+      "term": "Gain-framing adherence benefit",
+      "reason": "No patient adherence or persuasion outcome is measured, and most frame effects are undetected. A small trust interaction does not establish actual treatment benefit."
+    }
+  ],
+  "limitations": [
+    "One collaborative-decision concept added, with existing behavior evidence enriched. No automatic ethical links, clinical recommendations, unverified causal mechanisms or duplicate primary-source counts."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "shared-decision-making"
+    ],
+    "enriched": [
+      "upload-029",
+      "human-robot-moral-judgment-asymmetry",
+      "b035-framing-effect",
+      "anthropomorphism",
+      "loss-aversion",
+      "moral-uncanny-valley"
+    ]
+  }
+}

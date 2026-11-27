@@ -15,7 +15,8 @@ def definition_sources(mode):
 
 def research_papers(mode):
     return [source for source in definition_sources(mode)
-            if source.get('publication', {}).get('type') in PAPER_TYPES]
+            if source.get('publication', {}).get('type') in PAPER_TYPES
+            and source.get('count_as_behaviour_paper') is not False]
 
 
 def paper_identifier(url):
@@ -74,7 +75,9 @@ def source_coverage(mode):
     selected=selected_papers(mode)
     papers = [p for p in selected if p['domain']=='human-related']
     ai = [p for p in selected if p['domain']=='ai']
-    references = [s for s in definition_sources(mode) if s.get('publication',{}).get('type') not in PAPER_TYPES]
+    references = [s for s in definition_sources(mode)
+                  if s.get('publication',{}).get('type') not in PAPER_TYPES
+                  or s.get('count_as_behaviour_paper') is False]
     search=literature_search(mode)
     contributions = mode.get('research_provenance', {}).get('contributions', [])
     status = ('paper-links-available' if papers or ai else

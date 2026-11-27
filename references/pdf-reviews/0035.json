@@ -1,0 +1,245 @@
+{
+  "sequence": 35,
+  "source": {
+    "file_name": "S170_Beck_2025.pdf",
+    "source_id": "S170",
+    "sha256": "47548af3f7ed6337991d2629a37368b87533aa5ee9e88e9b95021e146ea51fd7",
+    "pdf_pages": 26,
+    "printed_pages": "1–26",
+    "version_note": "Supplied arXiv:2509.08514v1, 10 September 2025. Preprint with figures and an interaction-model appendix; no peer-reviewed venue or DOI is asserted."
+  },
+  "citation": {
+    "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+    "authors": [
+      "Jacob Beck",
+      "Stephanie Eckman",
+      "Christoph Kern",
+      "Frauke Kreuter"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2509.08514v1",
+    "venue": "arXiv:2509.08514v1",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "source_scope_note": "Human crowdworkers judged manually constructed suggestions labelled AI-generated in a Wizard-of-Oz emissions-table task. No actual model generated the manipulated recommendations, no model was trained on the corrected annotations, and original dependent-verification/survey studies were not independently read here.",
+    "access_limits": [
+      "All twenty-six extracted pages read, including theory, recruitment, task design, confusion-matrix metrics, findings, limitations, contributions, references and appendix caption. Figures on pages 13 and 26 rendered and visually inspected; plotted values were not digitized.",
+      "External preregistration, raw data, gold-standard annotation source and analysis code were not independently read or rerun. Exact regression tables are not supplied; figures show coefficients and intervals."
+    ]
+  },
+  "study": {
+    "survey_admitted": 3200,
+    "survey_complete": 3187,
+    "responding_to_followup_annotation": 1230,
+    "annotation_total": 2784,
+    "additional_without_prior_survey": 1554,
+    "survey_to_annotation_delay": "one week",
+    "design": "2×2×2: required corrected values versus flag only; first three suggestions all wrong versus all correct; top-decile performance bonus versus no bonus",
+    "task": "Ten company-report emissions tables; first three are a treatment, only the remaining seven (four erroneous and three correct suggestions) enter performance metrics",
+    "incentives": "Survey £.75, annotation £1.95, performance treatment offers £.75 to the top 10%",
+    "metrics": "Binary judgment accuracy, suggestion-flag frequency, false rejection of a correct suggestion, and false acceptance of an incorrect one"
+  },
+  "summary": "Requiring a corrected value reduced flagging, increased descriptive undercorrection and reduced overcorrection; descriptive accuracy rose about two points, while adjusted accuracy did not significantly change. Initial all-correct versus all-incorrect suggestions and a top-decile bonus showed no meaningful later performance effect. Prior favourable AI attitudes correlated with less error detection, but attitudes were observed for only 1230 of 2784 reviewers and were not randomized.",
+  "findings": [
+    {
+      "term": "Correction workload changes reporting decisions with mixed accuracy consequences",
+      "target_id": "b089-effort-discounting",
+      "decision": "enrich-existing",
+      "definition": "Participants flagged fewer suggestions as wrong when doing so required supplying a replacement value; fewer flags included both missed errors and fewer unnecessary corrections.",
+      "novelty_rationale": "Adds a concrete task-cost mechanism to existing effort discounting; no need to rename it as an independently proven laziness trait or intentional dishonesty.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "requiring corrections for pre-annotations"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "Overall accuracy was significantly higher (68% vs 66%)"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "However, accuracy is unchanged"
+        }
+      ],
+      "evidence_scope": "Randomized correction requirement in an eight-condition task. Reduced flagging and overcorrection survive adjusted modeling. The source's descriptive accuracy comparison p=.028 differs from its adjusted null result; descriptive undercorrection rises, but a main adjusted undercorrection effect is not stated as significant.",
+      "boundary": "A lower flag rate does not prove the reviewer knew an error and concealed it, and false rejection of correct suggestions also decreased. Flagging is a signal-detection decision with costs; do not infer universal lower quality or an intrinsic trait from fewer interventions."
+    },
+    {
+      "term": "Positive AI attitudes correlated with acceptance of faulty suggestions",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Reviewers with more favourable prior AI/automation attitudes tended to accept more erroneous suggestions in this task, while more sceptical reviewers also made more unnecessary corrections.",
+      "novelty_rationale": "Adds a measured attitude correlate and false-positive trade-off rather than state that trust, scepticism and appropriate reliance are interchangeable.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "more favorable view"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "higher levels of undercorrection."
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 9,
+          "quote": "were in fact manually"
+        }
+      ],
+      "evidence_scope": "Only 1230 annotators completed the prior six-item attitude survey; the additional 1554 did not. Regression adjusts demographics and time but cannot randomize attitude. Suggestions are manually manipulated; the task has no no-suggestion or matched human-advice control.",
+      "boundary": "The association does not establish that liking AI causes errors, that a demographic group has an inherent deficit, or that scepticism always improves calibrated decisions. The experiment does not measure a real model's mistake frequency, clinical harm or feedback-loop amplification."
+    },
+    {
+      "term": "Three early failures did not establish a persistent first-impression effect",
+      "target_id": "b031-anchoring-and-adjustment",
+      "decision": "enrich-existing",
+      "definition": "Seeing three wrong rather than three correct initial suggestions did not meaningfully change performance on the later seven tables.",
+      "novelty_rationale": "Adds experimentally relevant counterevidence to a broad early-anchor claim without treating a null contrast as proof that first impressions can never matter.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "The accuracy of the AI pre-annotation in the first three screens"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "Neither the first three screen designs nor the PBP"
+        }
+      ],
+      "evidence_scope": "First three tables have treatment-specific correctness; later seven are common with randomized presentation. Only later responses enter the metrics. The tool did not record per-person randomized table order, so detailed order/carryover effects could not be analyzed.",
+      "boundary": "A ten-table null finding does not disprove anchoring in other tasks or show that every participant reassessed carefully. The source lists strong prior attitudes and independent reassessment as alternatives rather than directly measured explanations."
+    },
+    {
+      "term": "More elapsed review time is not a simple measure of better reasoning",
+      "target_id": "overthinking",
+      "decision": "enrich-existing",
+      "definition": "Raw total/tutorial time had little linear relationship to accuracy, while adjusted time quartiles were associated with both better error detection and more false corrections.",
+      "novelty_rationale": "Preserves the distinction between a duration proxy, adjusted association, and a causal effect of excessive reasoning.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "correlated with accuracy (r < 0.04)."
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 15,
+          "quote": "positively associated with accuracy"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "linked to more overcorrections."
+        }
+      ],
+      "evidence_scope": "Total time is observed rather than assigned. Models categorize it into quartiles and adjust other variables; those associations need not equal the raw correlation. The first three instances also took longer on average than subsequent instances.",
+      "boundary": "No manipulation establishes that more time caused improvement or errors, and this is not direct evidence of a model using excess reasoning tokens. Conceptual difficulty and uncertainty can influence both time and performance."
+    }
+  ],
+  "methodological_limits": [
+    "The manually crafted Wizard-of-Oz suggestions simulate AI errors; they are not unedited LLM outputs or a benchmark of an actual model's reliability.",
+    "The same ten reports underlie all reviewers; only seven common later items enter performance metrics. A large reviewer N does not supply broad independent task/item coverage.",
+    "Contrary to a one-direction summary of burden degrading quality, descriptive accuracy is higher with corrections (68% versus 66%, p=.028), while adjusted accuracy is unchanged. Fewer false positives and more missed errors must be reported together.",
+    "Accuracy judges whether a pre-annotation was correctly accepted or rejected. It does not by itself establish that a replacement value typed after a rejection was correct, or that a downstream corrected training dataset improved.",
+    "AI attitude data are available for 1230 participants, about 44% of 2784. The initial survey was described as demographically representative; the full annotation sample includes 1554 additional recruits without that survey and cannot automatically inherit that representativeness.",
+    "Only 39% of invited survey completers returned for annotation. Survey attrition and the additional recruitment channel may relate to unmeasured traits; a missing-attitude category does not eliminate such selection.",
+    "Attitude correlations are observational, not effects of induced scepticism or trust. Demographic regression differences are not evidence of innate group ability, causal identity effects or a basis for excluding whole groups.",
+    "The claim that AI attitude is the strongest predictor requires a commensurate predictive-importance comparison, not merely larger significance or comparing coefficients across differently coded variables; none is independently reproduced here.",
+    "The text says AI attitudes enter models as quartiles, but the appendix plot labels them above/at median versus below median plus missing. Coding must be checked against actual code before reusing an exact model specification.",
+    "Randomized report order was not recorded, preventing item-order/carryover analysis even though three initial instances were manipulated. A null H2 is not an equivalence test or evidence that order never matters.",
+    "Initial mistakes and bonus treatments were null across reported metrics; no general conclusion that first impressions or money never affect quality follows.",
+    "The bonus was specifically £.75 for the top 10%, not payment for every correct decision. Its attainability and magnitude differ from other incentive designs.",
+    "The task was described as requiring no domain-specific knowledge, yet conceptual emissions-rule cases had accuracy around 31% and a technically correct market/location-based Scope 2 case around 21%. Domain knowledge/ambiguity materially limit that premise.",
+    "Raw timing correlations and adjusted quartile associations are different estimands. Neither identifies a causal effect of deliberation, fatigue, cognitive laziness or moral motivation.",
+    "Dependently verifying a common suggestion can inflate inter-rater agreement; the paper raises this as background, but does not itself compare independent versus dependent annotation agreement.",
+    "No downstream training, recursive feedback amplification, researcher-versus-crowd comparison or higher-stakes professional task was performed. These are motivations or future-work concerns.",
+    "The original survey-methodology sources, preregistration and gold-standard adjudication process are cited, not independently verified through full readings here.",
+    "No exact regression coefficients or missing p-values were invented from plots."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0031.json",
+      "finding": "Both papers caution that visible review effort is not sufficient evidence of good reliance. Beck's replacement-value cost is a different intervention from Shrestha's written-justification requirement, so their effects should not be merged as one task."
+    },
+    {
+      "related_review": "references/pdf-reviews/0034.json",
+      "finding": "Rosbach's 7% statistic uses all aided pathology assessments, whereas Beck's undercorrection denominator is only incorrect pre-annotations. The rates cannot be compared as a shared bias prevalence without denominator alignment."
+    },
+    {
+      "related_review": "references/pdf-reviews/0021.json",
+      "finding": "Cognitive-forcing and response-cost interventions can improve some outcomes while changing errors or preferences elsewhere. Aggregate accuracy, false correction and missed-error rates remain separate evaluation targets."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Motivated underreporting",
+      "reason": "The paper connects reduced flagging to this survey-research account, but awareness of a specific error and deliberate concealment were not measured. Existing effort discounting carries the evidence until the original construct is read and distinguished."
+    },
+    {
+      "term": "Undercorrection and overcorrection as independent psychological mechanisms",
+      "reason": "Explicit task outcome/error categories, not newly isolated mechanisms. Preserve denominators and trade-offs in the existing entries instead of inflating the ontology with metric names."
+    },
+    {
+      "term": "Dependent-verification bias",
+      "reason": "Dependent verification is the contextual framework; four stated principles are not four independently demonstrated new biases."
+    },
+    {
+      "term": "Expectation of logic rather than randomness",
+      "reason": "The authors explicitly derive no testable hypothesis and do not measure this proposed mechanism."
+    },
+    {
+      "term": "Model multitasking penalty",
+      "reason": "Mentioned through a citation, not experimentally tested in this human task. The cited model paper was not independently read here."
+    }
+  ],
+  "limitations": [
+    "No new IDs: evidence supports and limits existing constructs.",
+    "Manually constructed advice, mixed error costs, partial attitude data and the absence of a no-suggestion baseline are explicit."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b089-effort-discounting",
+      "automation-bias",
+      "b031-anchoring-and-adjustment",
+      "overthinking"
+    ]
+  }
+}

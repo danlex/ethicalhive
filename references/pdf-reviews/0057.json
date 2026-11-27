@@ -1,0 +1,268 @@
+{
+  "sequence": 57,
+  "source": {
+    "file_name": "S444_Hayden_2026.pdf",
+    "source_id": "S444",
+    "sha256": "1e29b985225be31c1fa8752f137686a6ce9a2d478e68b6f4f77b509da434d656",
+    "pdf_pages": 9,
+    "printed_pages": "1–9; article1651",
+    "version_note": "Published BMC Medical Education26:1651(2026), DOI10.1186/s12909-026-09979-x; received27May and accepted17July2026. All nine pages read; page3's scoring figure additionally rendered and checked."
+  },
+  "citation": {
+    "title": "Diagnostic reasoning with and without AI: automation bias in pre-clerkship medical students",
+    "authors": [
+      "Robert Hayden",
+      "Maria Blanco",
+      "Saradha Ramesh",
+      "Scott Epstein",
+      "Robert Trowbridge"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1186/s12909-026-09979-x",
+    "venue": "BMC Medical Education,26:1651",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Single-group pre/post educational pilot with voluntary GPT-4o access during one three-part diagnostic case. Direct observations are student rankings, prompts, outputs and a perceived influence-magnitude item. No randomized no-AI comparison, direct helpfulness-recognition test or longitudinal skill assessment.",
+    "access_limits": [
+      "All nine extracted pages read, including the exact chatbot prompt, outcome definitions, three result tables, exploratory prompt review, limitations and bibliography. Page3 was visually checked to read the nine scoring criteria in Figure1.",
+      "External case text, figuresS1/S2, transition matrices and the full interaction dataset were not independently obtained. The original NEJM education paper and other cited primary studies were not read. Reported clinical claims are not independently validated here."
+    ]
+  },
+  "study": {
+    "eligible": 202,
+    "analyzed": 185,
+    "excluded": {
+      "opted_out": 6,
+      "no_case_data": 4,
+      "incomplete": 7
+    },
+    "setting": "One second-year pre-clerkship clinical reasoning course at Tufts,2025",
+    "design": "AI lecture followed up to12weeks later by an online three-part acute-kidney-injury case and faculty review",
+    "model": "gpt-4o-2024-08-06, default parameters, maximum three sentences requested",
+    "context": "Prior dialogue within the same case part supplied; no automatic case-data access",
+    "prompts": {
+      "total": 884,
+      "parts": [
+        515,
+        192,
+        177
+      ],
+      "mean_per_student": 4.77,
+      "maximum": 9,
+      "limit": 10
+    },
+    "engagement_per_part": [
+      170,
+      140,
+      127
+    ],
+    "ranking_revision_per_part": [
+      133,
+      92,
+      63
+    ],
+    "outcome": "Nine equally weighted binary ranking criteria, total0–9",
+    "overall_change": {
+      "improved": 65,
+      "worsened": 26,
+      "unchanged": 94
+    },
+    "influence_measure": "How much did the AI chat influence your differential diagnosis rankings?1least–5most"
+  },
+  "summary": "Mean diagnostic ranking performance improved after optional AI access, while some students worsened. The paper raises a credible automation-reliance concern, but its influence-magnitude question cannot directly establish whether students recognized helpful versus harmful advice. No new behaviour ID is needed; enrich existing reliance and clarification/monitoring boundaries, and defer skill-acquisition labels until their defining source is read.",
+  "findings": [
+    {
+      "term": "Helpful average performance can coexist with harmful AI-associated revisions",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "Students sometimes changed initially better diagnostic rankings after AI access, even while the cohort improved overall; selected prompt/output reviews suggest incomplete case information contributed to some revisions.",
+      "novelty_rationale": "Direct educational human–AI interaction evidence relevant to existing automation bias, without treating every revision or all AI use as uncritical reliance.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "65 students"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "26 students (14%) declined"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "In 22 of these"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "preliminary educational evidence compatible with this"
+        }
+      ],
+      "evidence_scope": "185 students;65improved,26worsened,94unchanged on the overall0–9score; WilcoxonZ−4.21,p<.001. An exploratory selected review examined correct-to-incorrect glomerulonephritis transitions and missing pertinent negatives. These are associations in one case, not a randomized estimate of automation-induced error.",
+      "boundary": "Worse post-AI rankings do not alone prove students blindly followed incorrect AI, especially when students chose whether and how to query it. Correct general advice can be misapplied to an incompletely described case. Overall improvement and individual harm require separate reporting; no current clinical deployment claim or longitudinal deskilling follows."
+    },
+    {
+      "term": "Influence magnitude does not measure recognition of beneficial versus detrimental advice",
+      "target_id": "b041-metacognitive-monitoring",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Similar self-rated influence among improved and worsened groups does not directly establish that students were unable to recognize the quality of that influence.",
+      "novelty_rationale": "A measurement-boundary correction rather than direct proof of failed metacognitive awareness.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "“How much"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "(1 = least, 5 = most)"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "perceived AI influence between improved"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "worsened groups"
+        }
+      ],
+      "evidence_scope": "The item asks amount, with anchors1least–5most, once after the whole case. Worsened versus improved influence comparisonZ−1.02,p.308. No item asks whether AI was accurate, helpful, harmful or consciously overruled; no quality-recognition discrimination score is reported.",
+      "boundary": "A student can accurately report strong influence while recognizing it was harmful. A null group difference in influence magnitude is not equivalence or a direct calibration error. Separate magnitude awareness, perceived helpfulness, confidence calibration and objective accuracy; this reference does not fill direct monitoring-failure evidence gaps."
+    },
+    {
+      "term": "Omitted case findings require a task-specific clarification assessment",
+      "target_id": "clarification-avoidance",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A model answering an underspecified case-specific question may fail to request crucial missing findings, but a correct general educational answer is not automatically a failure to clarify a specific case.",
+      "novelty_rationale": "Adds a concrete user-input/model-follow-up boundary rather than a new pertinent-negative or missing-information synonym.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "The chatbot did not have automatic access"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "identify what was missing from the student’s prompt"
+        }
+      ],
+      "evidence_scope": "In20of24selected glomerulonephritis-transition cases/instances, the prompt omitted absence of hematuria; only4ofthose20outputs mentioned expected hematuria. The representative prompt asks generally which AKI causes have elevated protein, so its broad differential may be appropriate for the literal question.",
+      "boundary": "Distinguish a general knowledge query from a request to diagnose this patient. The model cannot ignore a negative fact never supplied, and must not assume unmentioned findings are absent. An output should ask when missing information is necessary for its actual recommendation; it need not demand every clinical detail before answering a general question."
+    },
+    {
+      "term": "Missing negative evidence is not necessarily misread negation",
+      "target_id": "negation-blindness",
+      "decision": "covered",
+      "count_as_behaviour_paper": false,
+      "definition": "Failure to supply a pertinent negative in a student's prompt differs from a model inverting or ignoring a negation that was present.",
+      "novelty_rationale": "The distinction prevents relabelling an input-selection problem as an already defined parsing failure.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "prompt did not include the absence of hematuria"
+        }
+      ],
+      "evidence_scope": "A selected exploratory prompt review, not a matched test presenting versus omitting or reversing an explicit negative clinical fact.",
+      "boundary": "No new ID and no added negation-blindness corroboration. A causal test needs matched prompts with the same positive findings and varied negative evidence, alongside a criterion for appropriate response."
+    }
+  ],
+  "methodological_limits": [
+    "Single institution, one second-year cohort and one three-part AKI case limit generalization to medicine, trainees generally, other model versions and clinical practice.",
+    "202eligible minus6opt-outs,4no-data and7incomplete gives185. Complete-case exclusions can select more engaged students; no complete sensitivity analysis was independently inspected.",
+    "Pre/post with optional AI has no no-AI or alternative-advice control. Repeated case engagement, new thinking, learning and self-selection can contribute to ranking changes.",
+    "AI use and ranking revisions decline across parts, so exposure differs. A post-AI phase is not proof every student queried AI or every change was caused by a specific reply.",
+    "The model was pinned, but default sampling parameters are not fully listed, and no repeated generation robustness design is reported. The article's claim it was the most capable model available in August2025 is not independently established.",
+    "The chatbot received dialogue only within the current case part and no automatic case data. Prompt selection changes information available to the model and is central to the task, not merely a nuisance error.",
+    "The exact quoted prompt template is available, but unseen external case/supplement and complete histories prevent checking every factual claim or assumed context. The cephalexin reference in a sample reply may have come from prior dialogue; it cannot be called a hallucination from the isolated shown question.",
+    "Nine equally weighted scoring criteria were authored for this case, with peer review but no external psychometric/clinical validation. A ranking change can cross a binary threshold without a proportionate change in diagnostic quality.",
+    "Criteria within a ranking are dependent; summed score changes can conceal offsetting gains/losses. Unchanged total does not mean no revision or no AI influence.",
+    "Baseline versus change correlationρ−.306 partly shares the baseline term mathematically and is constrained by0–9bounds. Ceiling effects/regression to the mean are alternatives to a causal claim that weak students benefit more.",
+    "Reported significance across part scores, nine criteria and pairwise outcome comparisons is not adjusted for all multiplicity. Part3p.048 is especially sensitive; three significant criteria are not nine independent confirmations.",
+    "The influence item asks magnitude rather than helpfulness or recognition of correctness, and is collected only once at the end. The conclusion that students cannot distinguish beneficial and detrimental influence goes beyond a direct measurement of that capacity.",
+    "No difference between improved/worsened influence groups atp.308 does not establish equivalence, blind trust or lack of awareness. Students can recognize a harmful but influential answer.",
+    "The analysis groups learners by observed change and then compares perceived influence; this is an association with a post-exposure outcome, not a causal mediator analysis or an individual calibration test.",
+    "Mean ranks inTable3are not raw Likert means or percentages. They do not quantify how much accuracy students believed AI added.",
+    "Prompt review is post hoc, manually conducted by the case author and restricted to selected improvements/errors. It lacks a matched sample of unchanged/correct users, independent coding or controlled prompt manipulation.",
+    "The27improvers reviewed for AIN are a subset of31Part3composite improvers, whereas the criterion table reports32incorrect-to-correctAIN transitions overall. Those are different conditioned denominators and must not be conflated.",
+    "44unique students worsened in at least one part, with48part-level instances.24glomerulonephritis shifts are described as both students and instances across parts; possible repeated-person dependence needs the underlying transition records.",
+    "The20prompts missing absence of hematuria and16replies not mentioning it are selected after outcome deterioration, not a base rate of missing-information failure across884prompts.",
+    "Generic proteinuria questions can correctly elicit broad differentials without diagnosing a specific case. Absence of a clarifying question is not by itself an erroneous clinical recommendation.",
+    "Pertinent-negative omission by a human is not model negation blindness when the negative fact was not supplied. Unmentioned facts must not be treated as observed absent findings.",
+    "The source's high-sensitivity clinical assertions and fixed ranking rubric were not independently checked against medical evidence. This ontology review does not validate individual diagnosis criteria.",
+    "Lecture, exercise and debriefing contributions are not separately evaluated; up to12weeks separate lecture and case. Persistent errors after a lecture do not establish that teaching warnings or debriefing is ineffective.",
+    "Deskilling, never-skilling and mis-skilling are mentioned as risks via Abdulnour,Gin,Boscardin2025, but not defined in detail or measured longitudinally here. No learning-loss rates or new psychological mechanisms follow.",
+    "No retention, transfer to a novel case, independent later performance or actual patient harm was measured.",
+    "External raw interactions, case text and supplementary transitions were not independently obtained; other cited clinical trials and the NEJM source remain unread."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0054.json",
+      "finding": "Tamura distinguishes revision from undue influence; Hayden likewise needs a measure separating perceived influence amount from whether the advice was recognized as right or wrong. Change alone is not failed calibration."
+    },
+    {
+      "related_review": "references/pdf-reviews/0055.json",
+      "finding": "Liedtke's proposed burden bias is a conceptual risk. This educational cohort does not manipulate stress or validate that subtype; the study belongs under general automation-reliance evidence."
+    },
+    {
+      "related_review": "references/pdf-reviews/0053.json",
+      "finding": "Just as correlation is not agreement, influence magnitude is not helpfulness discrimination. Source conclusions must follow the actual response item and unit."
+    },
+    {
+      "related_review": "references/pdf-reviews/0049.json",
+      "finding": "Overcaring remains a secondary term pending Kirch's original triage study, which is present later in the fixed corpus queue atsequence323. This metadata discovery is not a new full-paper reading and does not resolve the primary-evidence gap."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Deskilling",
+      "reason": "Named as a training risk, but this study supplies no clear construct definition or longitudinal skill-loss outcome. Read the cited AbdulnourRE,GinB,BoscardinCK(2025),EducationalStrategiesforClinicalSupervisionofArtificialIntelligenceUse,NEJM393(8):786–797 before adding a sourced definition."
+    },
+    {
+      "term": "Never-skilling",
+      "reason": "Named secondary risk without an operational definition or test of failure to acquire skills; do not infer it from one diagnostic ranking change."
+    },
+    {
+      "term": "Mis-skilling",
+      "reason": "Named secondary risk without an operational definition or evidence of durable incorrect learning. The cited education source requires separate review."
+    },
+    {
+      "term": "Pertinent-negative omission as a new independent behaviour",
+      "reason": "Useful descriptive interaction failure candidate, but overlaps missing-information/clarification concepts and is confounded by user-selected inputs and the general-versus-specific question. Retained as a boundary example rather than a new ID."
+    }
+  ],
+  "limitations": [
+    "No new IDs; automation-bias evidence enriched with explicit design limits.",
+    "Measurement and missing-information references do not fill direct monitoring or clarification-failure corroboration gaps; no invented skill-development effects."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "automation-bias",
+      "b041-metacognitive-monitoring",
+      "clarification-avoidance"
+    ]
+  }
+}

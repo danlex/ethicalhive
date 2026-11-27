@@ -1,0 +1,281 @@
+{
+  "sequence": 34,
+  "source": {
+    "file_name": "S169_Rosbach_2026.pdf",
+    "source_id": "S169",
+    "sha256": "562405fcc1c51e1abc40dda0464bb45a6ff78d0cd6f06b97cc17e9319e905ca0",
+    "pdf_pages": 22,
+    "printed_pages": "126–147",
+    "version_note": "Supplied arXiv:2603.11821v3 dated 28 September 2026 carries MELBA article layout, DOI and a journal publication date of 13 March 2026. This exact supplied revision was read; it extends previously reported 2025 experimental data, not a new independent sample for every publication."
+  },
+  "citation": {
+    "title": "Stuck on Suggestions: Automation Bias, the Anchoring Effect, and the Factors That Shape Them in Computational Pathology",
+    "authors": [
+      "Emely Rosbach",
+      "Jonas Ammeling",
+      "Jonathan Ganz",
+      "Christof Albert Bertram",
+      "Thomas Conrad",
+      "Andreas Riener",
+      "Marc Aubreville"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.59275/j.melba.2026-87b1",
+    "venue": "Machine Learning for Biomedical Imaging, volume 2026, 126–147; supplied arXiv:2603.11821v3",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "source_scope_note": "Twenty-eight pathology professionals estimated tumor-cell percentages with and without image-model advice. This is human use of AI, not direct evidence of a model's own advice discounting or anchoring. Earlier 2025 reports share the experiment; cited original advice-taking studies were not independently read.",
+    "access_limits": [
+      "All twenty-two pages read, including model architecture, sampling, thresholds, equations, study design, results, figures/captions, limitations, declarations, references and Appendix A. Page 13 Table 3 and page 22 Table 4 also rendered and visually inspected.",
+      "External supplemental datasets, participant records, analysis code and platform repository were not retrieved or rerun. Harmless pdftotext font warning did not prevent extraction; tables were visually checked."
+    ]
+  },
+  "study": {
+    "first_round_completed": 31,
+    "final_participants": 28,
+    "roles": {
+      "pathologists": 25,
+      "pathology_residents": 2,
+      "nonphysician_pathology_staff": 1
+    },
+    "images_per_round": 20,
+    "AI_assisted_assessments": 560,
+    "design": "Within participants: all unaided assessments first, then AI-assisted after two-week interval; ten images per round under ten-second countdown, randomized time-pressure starting set/order",
+    "model": "FCOS detector with ResNet-18, trained on BreCaHad; tumor versus other cell counts form a percentage; tissue patches from three datasets",
+    "measures": "Mean absolute percentage error, threshold-crossing negative consultations at 25%, normalized weight of advice, regression coefficients, experience and pre/post-advice confidence"
+  },
+  "summary": "AI-assisted rounds had lower mean absolute estimation error overall, but 38/560 estimates crossed from correct to incorrect relative to the 25% threshold while AI was also wrong. Nineteen such events occurred in each time-pressure condition; larger mean errors under time pressure in that selected subset are descriptive. Advice influence is clear, but a positive AI regression weight does not alone establish disproportionate or harmful anchoring. Context and calibration remain essential.",
+  "findings": [
+    {
+      "term": "Advice discounting",
+      "id": "advice-discounting",
+      "decision": "new-entry",
+      "category": "Heuristics",
+      "origin": "Judgment and decision-making / advice-taking research",
+      "definition": "Giving external advice less weight than one's own initial judgment when forming a revised judgment.",
+      "novelty_rationale": "Explicitly named in the paper's advice-taking discussion. Distinct from effort discounting, dismissing positive evidence, algorithm aversion (AI versus human source preference) and judging one's own outputs more favourably. It describes advice integration; whether the weighting is biased requires evidence about relative reliability.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": 139,
+          "quote": "a phenomenon known as advice"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 139,
+          "quote": "individuals still weigh their own assessments more heavily"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 130,
+          "quote": "people typically adjust only about 30% toward external"
+        }
+      ],
+      "evidence_scope": "The general construct and 30% benchmark are reported from cited literature, not an independently read original study. The present experiment's aggregate final-estimate model gives own estimate coefficient .55 and AI coefficient .44; quality-stratified results give much greater AI weight for better advice than worse advice. No matched human-advisor condition establishes algorithm-specific discounting.",
+      "boundary": "Discounting is not inherently irrational. Own and external information may differ in precision, independence, relevance and access. A 50/50 or historical 30% weighting is not a universal optimal benchmark. Do not infer egocentric motive, subjective belief or poor calibration merely from a coefficient below one half.",
+      "ai_evidence_status": "Advice-taking construct discussed and illustrated in human AI-assisted judgments; model advice-integration analogue untested",
+      "ai_proposal": "Untested AI analogue: give an assistant an initial estimate and independent advice with explicitly known reliability. Measure how it updates as relative precision and evidence quality vary. Compare against a justified calibration target rather than require equal weights; distinguish source-identity preference from underweighting evidence.",
+      "relates_to": [
+        "self-preference-bias",
+        "b031-anchoring-and-adjustment",
+        "algorithm-aversion",
+        "b089-effort-discounting"
+      ]
+    },
+    {
+      "term": "Some correct pathology estimates became wrong despite aggregate AI benefits",
+      "target_id": "automation-bias",
+      "decision": "enrich-existing",
+      "definition": "The AI-assisted round improved overall percentage-estimation error while including cases where an initially correct threshold classification became incorrect in the direction of faulty AI advice.",
+      "novelty_rationale": "Adds expert task evidence and denominator/causal limits to an existing concept; a harmful consultation is not a separately named independent bias.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 136,
+          "quote": "38/560"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 136,
+          "quote": "remaining 38 were negative consultations"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 140,
+          "quote": "reliance on automation is not inherently undesirable."
+        }
+      ],
+      "evidence_scope": "38 negative and 29 positive threshold-crossing consultations among 560 AI-assisted assessments. The negative rate is about 6.8% of all assessments, not of all initially correct cases exposed to wrong advice. No inferential test of frequency/severity was performed after filtering.",
+      "boundary": "A before/after threshold reversal does not prove blind trust or uniquely isolate a causal automation mechanism. All AI rounds came second; practice, recollection and ordinary repeat variability remain possible. Aggregate error improvement and specific failures can coexist; no patient was treated or harmed in this study."
+    },
+    {
+      "term": "Advice influence is not automatically disproportionate anchoring",
+      "target_id": "b031-anchoring-and-adjustment",
+      "decision": "enrich-existing",
+      "definition": "Final estimates reflected both initial human and AI values, but nonzero AI weighting alone does not establish an irrational anchor or insufficient adjustment.",
+      "novelty_rationale": "Retains the paper's measured advice effects while qualifying its interpretation of any positive AI coefficient as anchoring bias.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": 137,
+          "quote": "positive value indicates that participants"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 130,
+          "quote": "the judge and advisor are not independent,"
+        },
+        {
+          "pdf_page": 22,
+          "printed_page": 147,
+          "quote": "High Quality Advice"
+        }
+      ],
+      "evidence_scope": "Overall regression coefficients own estimate .55, AI .44. Appendix coefficients AI .74 when advice is closer to the reference and .30 when worse, showing some quality sensitivity. No optimal reliability-weighting benchmark or irrelevant randomized anchor is supplied.",
+      "boundary": "The human and AI inspect related image evidence; advice weights are not independent causal shares. The model does not constrain weights to sum to one, and normalized absolute-distance advice weighting loses direction and can hide overshooting. Beneficial use of more accurate advice must not be counted as a bias solely because a coefficient is positive."
+    },
+    {
+      "term": "Time pressure changed advice reliance, while negative-consultation frequency stayed descriptive",
+      "target_id": "candidate-017",
+      "decision": "enrich-existing",
+      "definition": "A ten-second countdown increased the normalized advice-reliance measure, while observed negative-consultation counts were identical across time conditions.",
+      "novelty_rationale": "Adds task-specific time/accuracy evidence to the existing speed–accuracy trade-off rather than claim that time stress universally increases automation-bias occurrence.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 138,
+          "quote": "t(27) = 2.55, p = 0.017"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 136,
+          "quote": "19/280"
+        }
+      ],
+      "evidence_scope": "Mean normalized reliance .48 without versus .54 with time pressure, paired two-sided p=.017. Both groups of assessments have 19/280 negative consultations; their mean absolute error 19.42 versus 27.79 is a selected-subset descriptive difference. Separate AI-slope estimates .41 versus .48 do not themselves test a slope interaction.",
+      "boundary": "A countdown is one temporal manipulation, not measured cognitive load or routine workload. The overall time main effect p=.19 and AI×time interaction p=.46 were not significant. Do not promote a one-tailed baseline-only comparison or a descriptive severity difference to a universal causal harm claim."
+    },
+    {
+      "term": "Confidence with assistance is distinct from confidence before advice",
+      "target_id": "b043-overconfidence",
+      "decision": "enrich-existing",
+      "definition": "Higher post-advice confidence correlated with greater advice reliance, whereas the baseline-confidence coefficient was negative and borderline.",
+      "novelty_rationale": "Distinguishes timing, observed confidence and calibration rather than infer overconfidence from increased confidence alone.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 138,
+          "quote": "Conf Bij"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 138,
+          "quote": "0.050"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 138,
+          "quote": "0.08"
+        }
+      ],
+      "evidence_scope": "Table 3: baseline confidence β=−.03, p=.050, CI [−.07,.00]; assisted confidence β=.08, p<.001, CI [.04,.12]. Mean confidence rose 3.30 to 3.64 while overall error fell. Experience association β=−.06 is observational and coded on four ordered bins.",
+      "boundary": "A confidence increase alongside accuracy improvement is not by itself overconfidence. Post-choice confidence may follow agreement rather than cause it. Baseline confidence is a task-specific proxy, not a full self-efficacy trait measure; experience is not a randomized training intervention."
+    }
+  ],
+  "methodological_limits": [
+    "The supplied article extends the 2025b report of the same experiment. The prior report, journal article and arXiv revision must not be counted as three independent participant samples.",
+    "Only 28 people contribute 560 repeated assessments. Mixed models include participant intercepts but no reported case random intercept; 560 is not the number of independent experts.",
+    "All unaided estimates precede all aided estimates by two weeks. The washout mitigates memory but does not provide counterbalanced AI order or a second unaided control, so AI effects may mix practice, session and repeat effects.",
+    "Accuracy labels for automation-bias occurrence are binary relative to a 25% threshold; percentage-error severity is a separate continuous outcome. Choosing a threshold changes which reversals count.",
+    "The approximately 7% denominator is all 560 aided assessments, not eligible initially correct/wrong-AI cases. Comparisons with published 6–11% rates require matched denominators and designs, not just numerically similar percentages.",
+    "Negative-consultation frequency and severity are explicitly descriptive because of limited filtered observations. Nineteen events per time condition do not demonstrate equivalence of rates, and severity means do not supply a significance test.",
+    "The reported repeated-measures ANOVA uses F(1,108) with 28 participants in four within-subject conditions. That degrees-of-freedom specification requires checking the analysis code before treating participant dependence as independently verified.",
+    "Overall time and AI×time performance contrasts were nonsignificant; the baseline-only decline uses a one-tailed test p=.045. A significant within-baseline result plus nonsignificant aided result does not establish a significant difference in time effects.",
+    "Positive AI weights establish association with final estimates, not inappropriate anchoring without a calibration criterion. Equal weighting is not automatically rational just because advice is well-intentioned; relative precision and dependence matter.",
+    "The normalized reliance metric uses absolute distances, so direction and overadjustment are not retained. Eleven all-identical cases were excluded for division by zero in the 549-observation model; other appendix strata total 531, not the entire 560.",
+    "Separate time-stratified regression coefficients do not by themselves test a coefficient difference. The paired normalized-reliance comparison is a different statistic and retains that metric's limitations.",
+    "Experience bins are numerically coded 0–3 and entered with one coefficient, despite being called dummy coding. This assumes a linear ordered-step relation and does not estimate independent effects for each experience category.",
+    "Baseline confidence's p=.050 and interval reaching zero are borderline; the discussion's categorical support for a protective self-efficacy effect is stronger than this estimate alone warrants.",
+    "Experience, confidence and reliance are observationally associated. More experience can also reduce beneficial advice uptake; lower reliance is not universally better.",
+    "The detector version was selected for highest average precision on the test set, according to the methods. This compromises use of that test score as an untouched generalization estimate; it does not itself establish participant bias.",
+    "Dataset annotations were reportedly verified by at least one expert, not error-free ground truth. Histology context, full-slide navigation and real treatment consequences were absent.",
+    "Prototype explanations and detection overlays accompanied predictions and were not independently varied. Influence cannot be assigned uniquely to the numeric prediction or to explanations.",
+    "The article's historical assertion that automation bias was first introduced in a 2018 source should not be repeated as established priority: earlier automation-bias publications are cited in its own references.",
+    "Code, raw data and source datasets were not rerun or independently checked; no clinical recommendation follows from this ontology review."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0033.json",
+      "finding": "Alon-Barkat tests algorithm versus consultant source labels with no objective teacher-quality truth. This study instead compares repeated expert estimates with image annotations and actual detector advice. Their operationalizations answer different questions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0031.json",
+      "finding": "Shrestha uses an expert-majority benchmark and lay participants; this study uses pathology professionals and cell-count references. Neither supports generalizing a single time-pressure, accountability or advice effect to every professional context."
+    },
+    {
+      "related_review": "references/pdf-reviews/0008.json",
+      "finding": "Kücking associates training/diagnostic ability with fewer wrong-advice agreements, but here experience relates to a general reliance proxy. These are not identical evidence for a causal training remedy."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Self-efficacy",
+      "reason": "A potentially distinct construct, but here equated with one task-confidence measure. Await an original definition and discriminating measurement rather than add a broad trait from that proxy."
+    },
+    {
+      "term": "Negative consultation",
+      "reason": "An operational error event within automation bias, not a separate independent psychological mechanism."
+    },
+    {
+      "term": "Theory of technology dominance",
+      "reason": "A theoretical framework cited to explain experience effects; not separately validated by this study or itself an observed behaviour."
+    },
+    {
+      "term": "Egocentric advice discounting",
+      "reason": "The source names advice discounting, but does not independently establish egocentric motive. Do not automatically add the stronger label as a synonym."
+    }
+  ],
+  "limitations": [
+    "One advice-integration concept added with a clear boundary between relative weighting and inappropriate discounting.",
+    "Aggregate benefit, negative threshold reversals, repeated-data provenance, metric limits and uncertain mechanism claims remain visible."
+  ],
+  "reviewed_on": "2026-11-26",
+  "ontology_changes": {
+    "added": [
+      "advice-discounting"
+    ],
+    "enriched": [
+      "automation-bias",
+      "b031-anchoring-and-adjustment",
+      "candidate-017",
+      "b043-overconfidence"
+    ]
+  }
+}
