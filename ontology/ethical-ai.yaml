@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0067.json
+    latest_review: references/pdf-reviews/0068.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -12556,6 +12556,39 @@ modes:
           when it concurs; over-reliance is a conceptual concern, not a measured outcome.
         verification_url: https://doi.org/10.1136/medethics-2021-107440
         verified_date: '2026-11-27'
+  - id: pdf-review-0068
+    review_record: references/pdf-reviews/0068.json
+    name: Traditional diagnostic AI and GenAI evidence must not be pooled by label alone
+    definition: Automation-bias results from conventional diagnostic classifiers do not become direct evidence
+      about generative systems merely because a review presents them in a GenAI synthesis.
+    evidence_scope: The review's inclusion rule is GenAI-specific, while multiple cited diagnostic/radiology/colonoscopy
+      examples do not establish an evaluated generative component in the supplied synthesis. The missing study
+      table prevents a complete classification audit.
+    catalogue_boundary: Traditional automation evidence can inform hypotheses about GenAI but should retain
+      its actual system, task and outcome. No assertion is made that every listed diagnostic system lacks generation;
+      verify each original rather than transfer the review's heading to it.
+    definition_sources:
+    - id: pdf-review-0068-automation-bias
+      title: 'Generative Artificial Intelligence in Healthcare: Automation Bias, Deskilling, and Cognitive
+        Implications – A Systematic Review'
+      url: https://doi.org/10.2147/JHL.S590498
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 4, 4, 12 (source locators:
+        4, 4, 12). Narrative systematic-review synthesis with unresolved selection arithmetic, quality-threshold
+        conflicts, search-cutoff violations and citation-to-claim mismatches. Useful as a lead list, not treated
+        as independently validated primary evidence for new mechanisms or pooled GenAI effects.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Fahad M Al-Anezi
+        year: 2026
+        venue: Journal of Healthcare Leadership, 18:590498
+        doi: 10.2147/JHL.S590498
+        evidence_scope: The review's inclusion rule is GenAI-specific, while multiple cited diagnostic/radiology/colonoscopy
+          examples do not establish an evaluated generative component in the supplied synthesis. The missing
+          study table prevents a complete classification audit.
+        verification_url: https://doi.org/10.2147/JHL.S590498
+        verified_date: '2026-11-27'
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -22550,8 +22583,8 @@ modes:
   name: Model collapse
   definition: Degrading over generations as it is trained on model-generated (synthetic) data, losing the tails
     of the distribution. Specific to a learned model recycling its own output.
-  example: Trained on text largely produced by earlier models, it narrows toward bland, average output and forgets
-    rare cases.
+  example: Trained on text largely produced by earlier models, it narrows toward bland, average output and
+    forgets rare cases.
   family: ai-native
   group_label: AI-native behaviours
   category: AI-native
@@ -22581,10 +22614,10 @@ modes:
   synonyms:
   - Recursive training collapse
   examples:
-  - 'Trained recursively on its own generated data, a model first loses the tails of the distribution: any event
-    rarer than 1/M vanishes from the resampled data and is forgotten permanently. [arXiv:2305.17493]'
-  - 'The distribution narrows over generations: on Gaussian mixtures it is mis-perceived within 50 iterations and
-    collapses to a near-zero-variance point estimate by iteration 2000. [arXiv:2305.17493]'
+  - 'Trained recursively on its own generated data, a model first loses the tails of the distribution: any
+    event rarer than 1/M vanishes from the resampled data and is forgotten permanently. [arXiv:2305.17493]'
+  - 'The distribution narrows over generations: on Gaussian mixtures it is mis-perceived within 50 iterations
+    and collapses to a near-zero-variance point estimate by iteration 2000. [arXiv:2305.17493]'
   - Without ever-increasing amounts of fresh data each generation (growing perhaps quadratically), the Wasserstein
     distance from the true distribution keeps rising and the degradation is irreversible. [arXiv:2305.17493]
   selected_papers:
@@ -22595,7 +22628,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2404.05090
     source_reference:
@@ -22609,7 +22643,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.20279
     source_reference:
@@ -22645,6 +22680,42 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0068
+    review_record: references/pdf-reviews/0068.json
+    name: Self-referential learning loop is a recursive-data lead, not a new proven collapse mechanism
+    definition: Reusing AI-influenced outputs as future training material can create a feedback pathway that
+      needs separate validation for data diversity, error amplification and actual model degradation.
+    evidence_scope: Secondary theoretical account citing Choudhury and Chaudhry (2024), DOI 10.2196/56764.
+      Primary title/abstract metadata support that the proposed loop concerns AI-generated data feeding learning
+      algorithms, but the complete paper is unread. No recursive model training is conducted by this review.
+    catalogue_boundary: The feedback pathway, human deskilling and model collapse are different claims. A fixed
+      deployed model does not retrain automatically from a conversation. Synthetic data can be filtered or
+      usefully mixed with real data; demonstrate the actual data lineage and performance changes before claiming
+      collapse.
+    definition_sources:
+    - id: pdf-review-0068-model-collapse
+      title: 'Generative Artificial Intelligence in Healthcare: Automation Bias, Deskilling, and Cognitive
+        Implications – A Systematic Review'
+      url: https://doi.org/10.2147/JHL.S590498
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7, 7 (source locators: 7,
+        7). Narrative systematic-review synthesis with unresolved selection arithmetic, quality-threshold conflicts,
+        search-cutoff violations and citation-to-claim mismatches. Useful as a lead list, not treated as independently
+        validated primary evidence for new mechanisms or pooled GenAI effects.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Fahad M Al-Anezi
+        year: 2026
+        venue: Journal of Healthcare Leadership, 18:590498
+        doi: 10.2147/JHL.S590498
+        evidence_scope: Secondary theoretical account citing Choudhury and Chaudhry (2024), DOI 10.2196/56764.
+          Primary title/abstract metadata support that the proposed loop concerns AI-generated data feeding
+          learning algorithms, but the complete paper is unread. No recursive model training is conducted by
+          this review.
+        verification_url: https://doi.org/10.2147/JHL.S590498
+        verified_date: '2026-11-27'
 - id: diversity-collapse
   name: Diversity collapse
   definition: Producing unusually homogeneous outputs across repeated samples or varied prompts, with less
@@ -55776,6 +55847,40 @@ modes:
           roles will retain their skills. No longitudinal competence, practice-frequency or retention outcome
           is collected.
         verification_url: https://doi.org/10.1136/medethics-2021-107440
+        verified_date: '2026-11-27'
+  - id: pdf-review-0068
+    review_record: references/pdf-reviews/0068.json
+    name: Deskilling concerns, observed performance changes and sustained skill loss require different evidence
+    definition: Short-term assisted performance, clinicians' concerns and persistent loss of unaided competence
+      are distinct outcomes; a narrative review must identify which each source actually measured.
+    evidence_scope: The review explicitly acknowledges limited longitudinal evidence but elsewhere says numerous
+      studies demonstrated deskilling. It cites a colonoscopy observational primary and a mixed-method review;
+      their full texts remain unread, and their dates conflict with its stated search cutoff.
+    catalogue_boundary: Do not infer reduced skill acquisition, actual erosion of previously acquired skill
+      and altered assisted performance from the same metric. Colonoscopy detection rate is not automatically
+      general diagnostic accuracy or a generative-language-model effect. Original design, comparator, temporal
+      changes and unaided follow-up need verification.
+    definition_sources:
+    - id: pdf-review-0068-deskilling
+      title: 'Generative Artificial Intelligence in Healthcare: Automation Bias, Deskilling, and Cognitive
+        Implications – A Systematic Review'
+      url: https://doi.org/10.2147/JHL.S590498
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7, 10 (source locators:
+        7, 10). Narrative systematic-review synthesis with unresolved selection arithmetic, quality-threshold
+        conflicts, search-cutoff violations and citation-to-claim mismatches. Useful as a lead list, not treated
+        as independently validated primary evidence for new mechanisms or pooled GenAI effects.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Fahad M Al-Anezi
+        year: 2026
+        venue: Journal of Healthcare Leadership, 18:590498
+        doi: 10.2147/JHL.S590498
+        evidence_scope: The review explicitly acknowledges limited longitudinal evidence but elsewhere says
+          numerous studies demonstrated deskilling. It cites a colonoscopy observational primary and a mixed-method
+          review; their full texts remain unread, and their dates conflict with its stated search cutoff.
+        verification_url: https://doi.org/10.2147/JHL.S590498
         verified_date: '2026-11-27'
 - id: moral-deskilling
   num: 487
