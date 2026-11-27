@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 679
+  mode_count: 680
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 679
+    numbered_entries: 680
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0186.json
+    latest_review: references/pdf-reviews/0187.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -4690,6 +4690,42 @@ modes:
           gaze or selective-evidence measure uniquely tests confirmation. Interpretation remains proposed;
           selection and package limits apply.
         verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
+        verified_date: '2026-11-27'
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Confirmation bias
+    definition: Seeking, interpreting or weighting information to favor an existing belief while neglecting
+      relevant alternatives or disconfirming evidence.
+    evidence_scope: Designed congruence with professional expectations increases trust ratings in 124 officers
+      across 294 vignette rows. This is compatible with confirmation-based weighting, but location plausibility
+      changes with congruence and individual prior beliefs/correct decisions are not independently measured.
+    catalogue_boundary: Evidence-congruent judgment can be rational. The source does not show police stereotypes,
+      objectively worse route choices or a unique motivated mechanism; no-AI trials were excluded. A lower
+      response to implausible advice does not establish that automation bias is absent.
+    definition_sources:
+    - id: pdf-review-0187-b036-confirmation-myside-bias
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 8, 6 (source locators: 270,
+        268). A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations
+        and short local explanations. Reported 124 officers contribute 294 repeated vignette observations,
+        not 294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: Designed congruence with professional expectations increases trust ratings in 124 officers
+          across 294 vignette rows. This is compatible with confirmation-based weighting, but location plausibility
+          changes with congruence and individual prior beliefs/correct decisions are not independently measured.
+        verification_url: https://doi.org/10.1111/puar.13602
         verified_date: '2026-11-27'
 - id: b037-belief-perseverance
   num: 37
@@ -14665,6 +14701,43 @@ modes:
           is cross-sectional. The paper discusses excessive reliance but does not establish that every observed
           switch is erroneous or above an optimal benchmark.
         verification_url: https://arxiv.org/abs/2306.16507v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Automation bias
+    definition: Trusting a tool result or a prior step because a machine produced it, without verifying the
+      load-bearing part.
+    evidence_scope: 'Boundary only: incongruent advice receives less trust and some officers reject it. The
+      removed no-advice condition, lack of correctness ground truth and professional-plausibility manipulation
+      do not establish an absence of excessive machine reliance.'
+    catalogue_boundary: Unconditional following and harmful overreliance are distinct; selective acceptance
+      may coexist with automation bias. The paper tests immediate mock recommendations, not long-term highly
+      reliable automation or compared non-police domains.
+    definition_sources:
+    - id: pdf-review-0187-automation-bias
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7 (source locators: 269).
+        A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations and
+        short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+        294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: 'Boundary only: incongruent advice receives less trust and some officers reject it.
+          The removed no-advice condition, lack of correctness ground truth and professional-plausibility manipulation
+          do not establish an absence of excessive machine reliance.'
+        verification_url: https://doi.org/10.1111/puar.13602
         verified_date: '2026-11-27'
 - id: silent-error-swallowing
   num: 106
@@ -60280,6 +60353,43 @@ modes:
           broad language does not replace those qualifications.
         verification_url: https://api.crossref.org/works/10.1111/asap.70031
         verified_date: '2026-11-27'
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Selective adherence
+    definition: Preferentially following advice when it matches prior stereotypes or beliefs about the person
+      or group affected by a decision.
+    evidence_scope: 'Boundary only: designed professional congruence influences trust. The study does not manipulate
+      demographic stereotypes about an affected person or directly measure respondents’ prejudices, which the
+      narrower selective-adherence definition requires.'
+    catalogue_boundary: Do not turn expertise-based geographical judgments into evidence of discrimination
+      without independently establishing a stereotype or unjustified selective treatment. General confirmation-compatible
+      preference and stereotype-conditioned adherence are related but not identical.
+    definition_sources:
+    - id: pdf-review-0187-selective-adherence
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 3 (source locators: 265).
+        A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations and
+        short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+        294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: 'Boundary only: designed professional congruence influences trust. The study does not
+          manipulate demographic stereotypes about an affected person or directly measure respondents’ prejudices,
+          which the narrower selective-adherence definition requires.'
+        verification_url: https://doi.org/10.1111/puar.13602
+        verified_date: '2026-11-27'
 - id: advice-discounting
   num: 458
   name: Advice discounting
@@ -80128,6 +80238,35 @@ modes:
       at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments
       not independently executed or fully read.
     review_record: references/pdf-reviews/0133.json
+  - title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+      professional judgment'
+    authors:
+    - Friso Selten
+    - Marcel Robeer
+    - Stephan Grimmelikhuijsen
+    year: 2023
+    url: https://doi.org/10.1111/puar.13602
+    venue: Public Administration Review 83(2):263–278
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1111/puar.13602
+    relevance: The article explicitly defines contrastive explanations as comparing the selected recommendation
+      with an alternative, then supplies short local route rationales. Explained advice is judged more detailed;
+      the trust contrast and explanation×congruence interaction are not significant.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4 (source locators: 266).
+      A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations and short
+      local explanations. Reported 124 officers contribute 294 repeated vignette observations, not 294 independent
+      people. Professional congruence is designed from qualitative input, not each officer’s independently
+      elicited initial choice. Administrative discretion is a secondary governance definition. All supplied
+      appendices were read; linked raw materials and original cited books were not.'
+    verification_url: https://doi.org/10.1111/puar.13602
+    verified_date: '2026-11-27'
+    verification_method: All 16 pages read, including references, all Appendices A–E, four main figures, every
+      table, the two image-only appendix maps and the flow diagram. Visual inspection preserves minus signs
+      lost in text extraction and distinguishes clustered GEE from independent-row robustness results. Publisher
+      and Crossref checks verify identity and selected bibliography roles/volume. Raw data/code and OSF registration
+      contents were not independently read or reproduced.
+    review_record: references/pdf-reviews/0187.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -80141,6 +80280,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0133.json
+  research_notes:
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Contrastive explanation
+    definition: Explaining why an outcome, action or decision occurred rather than a specified alternative.
+    evidence_scope: The article explicitly defines contrastive explanations as comparing the selected recommendation
+      with an alternative, then supplies short local route rationales. Explained advice is judged more detailed;
+      the trust contrast and explanation×congruence interaction are not significant.
+    catalogue_boundary: A route rationale is not proof of a faithful underlying model or objectively correct
+      recommendation. Detail, comprehension, trust and warranted acceptance differ. A null result in this small
+      mock study does not prove explanation ineffectiveness or equivalence.
+    definition_sources:
+    - id: pdf-review-0187-contrastive-explanation
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4 (source locators: 266).
+        A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations and
+        short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+        294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: The article explicitly defines contrastive explanations as comparing the selected recommendation
+          with an alternative, then supplies short local route rationales. Explained advice is judged more
+          detailed; the trust contrast and explanation×congruence interaction are not significant.
+        verification_url: https://doi.org/10.1111/puar.13602
+        verified_date: '2026-11-27'
 - id: procedural-fairness-judgment
   num: 591
   name: Procedural fairness judgment
@@ -82966,6 +83141,42 @@ modes:
           signals competence history; actual accuracy confidence and reliability calibration are not independently
           elicited. General AI attitudes mix performance with benefits, fear and organizational ethics.
         verification_url: https://arxiv.org/abs/2306.16507v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Performance trust
+    definition: Expecting an agent or system to perform competently and reliably in a relevant task.
+    evidence_scope: A five-item composite covering information relevance, correctness, honesty and direct trust
+      is higher for congruent recommendations. GEE trust–adherence coefficient .243 [.006,.480], p=.045 relates
+      appraisals to binary mock-route choices. Even incongruent means remain above the 1–7 scale midpoint.
+    catalogue_boundary: Perceived capability is mixed with integrity/correctness endorsement and is not independently
+      validated system reliability. Trust is not randomized and its association with choice does not establish
+      causal mediation, calibrated reliance or live deployment behavior.
+    definition_sources:
+    - id: pdf-review-0187-performance-trust
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7, 7, 8 (source locators:
+        269, 269, 270). A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations
+        and short local explanations. Reported 124 officers contribute 294 repeated vignette observations,
+        not 294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: A five-item composite covering information relevance, correctness, honesty and direct
+          trust is higher for congruent recommendations. GEE trust–adherence coefficient .243 [.006,.480],
+          p=.045 relates appraisals to binary mock-route choices. Even incongruent means remain above the 1–7
+          scale midpoint.
+        verification_url: https://doi.org/10.1111/puar.13602
         verified_date: '2026-11-27'
 - id: animism
   num: 606
@@ -85960,6 +86171,42 @@ modes:
           technical dialogue, so this is a bundled explanation package rather than only one sentence. No faithful
           feature attribution, actual data access, harm reduction or error correction is verified.
         verification_url: https://api.crossref.org/works/10.1016/j.jbusres.2025.115673
+        verified_date: '2026-11-27'
+  - id: pdf-review-0187
+    review_record: references/pdf-reviews/0187.json
+    name: Perceived explainability
+    definition: A person’s judgment that a system’s operation or recommendations are understandable and can
+      be explained.
+    evidence_scope: 'Boundary only: the explanation manipulation is checked using perceived detail, not the
+      full perceived-explainability construct or independently measured comprehension. The trust outcome is
+      a separate composite.'
+    catalogue_boundary: More detailed text need not be understandable or faithful. The paper’s null explanation→trust
+      contrast does not imply no change in understandability or zero effect of every XAI method.
+    definition_sources:
+    - id: pdf-review-0187-perceived-explainability
+      title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+        professional judgment'
+      url: https://doi.org/10.1111/puar.13602
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7 (source locators: 269).
+        A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations and
+        short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+        294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+        independently elicited initial choice. Administrative discretion is a secondary governance definition.
+        All supplied appendices were read; linked raw materials and original cited books were not.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Friso Selten
+        - Marcel Robeer
+        - Stephan Grimmelikhuijsen
+        year: 2023
+        venue: Public Administration Review 83(2):263–278
+        doi: 10.1111/puar.13602
+        evidence_scope: 'Boundary only: the explanation manipulation is checked using perceived detail, not
+          the full perceived-explainability construct or independently measured comprehension. The trust outcome
+          is a separate composite.'
+        verification_url: https://doi.org/10.1111/puar.13602
         verified_date: '2026-11-27'
 - id: perceived-ethical-risk
   num: 626
@@ -91965,3 +92212,110 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0186.json
+- id: administrative-discretion
+  num: 680
+  name: Administrative discretion
+  definition: The latitude frontline public officials have to apply general policies to specific cases when
+    choosing actions, sanctions or benefits.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Public administration / institutional decision-making
+  human_parallel: Administrative discretion
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: A secondary institutional definition is explicitly discussed in the read article. The
+    mock experiment does not measure lawful discretion or establish that an AI system legitimately holds public
+    authority.
+  proposed_ai_manifestation: Specify policy rules, delegated authority and permitted case-level judgment, then
+    test whether an AI-supported official or agent can adapt decisions to relevant local facts while staying
+    within that authority and preserving reasons and review. Evaluate rights and actual decision quality separately
+    from mere advice adherence.
+  research_boundary: Discretion can enable relevant contextual judgment or arbitrary/unfair action. Its presence
+    is not inherently harmful or a license to disregard law, policy or scope. Perceived latitude, actual authorization,
+    independent judgment and justified outcomes require separate evaluation.
+  concept_boundary: Discretion can enable relevant contextual judgment or arbitrary/unfair action. Its presence
+    is not inherently harmful or a license to disregard law, policy or scope. Perceived latitude, actual authorization,
+    independent judgment and justified outcomes require separate evaluation.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - perceived-autonomy
+  - perceived-control
+  - human-handover
+  - perceived-abdication-of-responsibility
+  definition_sources:
+  - id: pdf-review-0187-administrative-discretion
+    title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+      professional judgment'
+    url: https://doi.org/10.1111/puar.13602
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2 (source locators: 264,
+      264). A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations
+      and short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+      294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+      independently elicited initial choice. Administrative discretion is a secondary governance definition.
+      All supplied appendices were read; linked raw materials and original cited books were not.'
+    publication:
+      type: journal-article
+      authors:
+      - Friso Selten
+      - Marcel Robeer
+      - Stephan Grimmelikhuijsen
+      year: 2023
+      venue: Public Administration Review 83(2):263–278
+      doi: 10.1111/puar.13602
+      evidence_scope: The theory describes freedom to translate general rules and competing values into case-level
+        choices, drawing on Lipsky and Tummers/Bekkers. This is institutional context, not a demonstrated cognitive
+        bias or tested grant of AI authority. The original books/articles were not fully read or counted as
+        independent evidence.
+      verification_url: https://doi.org/10.1111/puar.13602
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: '‘Just like I thought’: Street-level bureaucrats trust AI recommendations if they confirm their
+      professional judgment'
+    authors:
+    - Friso Selten
+    - Marcel Robeer
+    - Stephan Grimmelikhuijsen
+    year: 2023
+    url: https://doi.org/10.1111/puar.13602
+    venue: Public Administration Review 83(2):263–278
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1111/puar.13602
+    relevance: The theory describes freedom to translate general rules and competing values into case-level
+      choices, drawing on Lipsky and Tummers/Bekkers. This is institutional context, not a demonstrated cognitive
+      bias or tested grant of AI authority. The original books/articles were not fully read or counted as independent
+      evidence.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2 (source locators: 264,
+      264). A Dutch police-officer vignette experiment compares congruent/incongruent mock recommendations
+      and short local explanations. Reported 124 officers contribute 294 repeated vignette observations, not
+      294 independent people. Professional congruence is designed from qualitative input, not each officer’s
+      independently elicited initial choice. Administrative discretion is a secondary governance definition.
+      All supplied appendices were read; linked raw materials and original cited books were not.'
+    verification_url: https://doi.org/10.1111/puar.13602
+    verified_date: '2026-11-27'
+    verification_method: All 16 pages read, including references, all Appendices A–E, four main figures, every
+      table, the two image-only appendix maps and the flow diagram. Visual inspection preserves minus signs
+      lost in text extraction and distinguishes clustered GEE from independent-row robustness results. Publisher
+      and Crossref checks verify identity and selected bibliography roles/volume. Raw data/code and OSF registration
+      contents were not independently read or reproduced.
+    review_record: references/pdf-reviews/0187.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Administrative discretion"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Administrative+discretion%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0187.json
