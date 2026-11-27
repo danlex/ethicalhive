@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 481,
+    "mode_count": 482,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 481,
+      "numbered_entries": 482,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0057.json",
+      "latest_review": "references/pdf-reviews/0058.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 481
+    "source_record_count": 482
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -18360,7 +18360,43 @@
         "queried_at": "2026-11-09T00:38:42+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22halo+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0058",
+          "review_record": "references/pdf-reviews/0058.json",
+          "name": "Easier items rated more relevant does not by itself demonstrate a halo mechanism",
+          "definition": "The authors propose that easier AI-generated questions seemed less threatening and therefore received higher relevance ratings, but ease, self-esteem and a causal spillover were not independently manipulated.",
+          "evidence_scope": "ActualAIitems77%correctversushuman48%; relevance means5.96–6.00versushuman5.64–5.85 dependinglabel. No direct self-esteem/threat measure or matched-difficulty comparison isolates spillover.",
+          "catalogue_boundary": "Question difficulty can legitimately affect suitability for formative preparation. A relevance difference need not be an irrelevant-quality halo effect. Test independent wording quality or another outcome while matching objective learning requirements; do not infer threatened self-esteem solely from ratings.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0058-halo-effect",
+              "title": "Algorithm Aversion Towards AI-Generated Multiple-Choice Questions",
+              "url": "https://doi.org/10.1007/s40670-026-02866-6",
+              "consulted": "Full supplied PDF text read, all 9 pages; evidence at PDF pages 7, 7 (source locators: 2951, 2951). Medical students answered/rated actual human- and GPT4o-authored MCQs under two source labels. Item allocation/order was randomized within fixed human-labelled-first and AI-labelled-second blocks, leaving label/order confounding. The testing effect is defined from earlier memory literature, not measured longitudinally here.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Matthias Carl Laupichler",
+                  "Susanne Eigster",
+                  "Seifollah Ahmadi",
+                  "Ilona Grunwald Kadow",
+                  "Tobias Raupach",
+                  "Johanna Flora Rother"
+                ],
+                "year": 2026,
+                "venue": "Medical Science Educator,36:2945–2953",
+                "doi": "10.1007/s40670-026-02866-6",
+                "evidence_scope": "ActualAIitems77%correctversushuman48%; relevance means5.96–6.00versushuman5.64–5.85 dependinglabel. No direct self-esteem/threat measure or matched-difficulty comparison isolates spillover.",
+                "verification_url": "https://doi.org/10.1007/s40670-026-02866-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "fundamental-attribution-error",
@@ -57020,6 +57056,39 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0058",
+          "review_record": "references/pdf-reviews/0058.json",
+          "name": "Lower wording ratings associated with an AI-labelled MCQ block",
+          "definition": "Students rated wording less favourably in the block labelled AI-generated, regardless of actual question origin, while actual AI questions were easier and received higher relevance ratings.",
+          "evidence_scope": "145students,40items each; wordingCLMMlabelb−.55,SE.07,z−7.45,p<.001,OR.57. Plotted wordingmeans5.81/5.82firsthumanlabel versus5.46/5.44secondAIlabel. The label is confounded with block/time and fixed item subsets; model random effects include students only.",
+          "catalogue_boundary": "A source-label association is not proof of irrational aversion or lower actual quality, and fixed-order fatigue/context effects remain plausible. High ratings make practical importance modest; no measured refusal to use learning materials or worse learning follows. Source origin, stated label, item difficulty and position should be independently varied.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0058-algorithm-aversion",
+              "title": "Algorithm Aversion Towards AI-Generated Multiple-Choice Questions",
+              "url": "https://doi.org/10.1007/s40670-026-02866-6",
+              "consulted": "Full supplied PDF text read, all 9 pages; evidence at PDF pages 6, 6, 3, 3 (source locators: 2950, 2950, 2947, 2947). Medical students answered/rated actual human- and GPT4o-authored MCQs under two source labels. Item allocation/order was randomized within fixed human-labelled-first and AI-labelled-second blocks, leaving label/order confounding. The testing effect is defined from earlier memory literature, not measured longitudinally here.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Matthias Carl Laupichler",
+                  "Susanne Eigster",
+                  "Seifollah Ahmadi",
+                  "Ilona Grunwald Kadow",
+                  "Tobias Raupach",
+                  "Johanna Flora Rother"
+                ],
+                "year": 2026,
+                "venue": "Medical Science Educator,36:2945–2953",
+                "doi": "10.1007/s40670-026-02866-6",
+                "evidence_scope": "145students,40items each; wordingCLMMlabelb−.55,SE.07,z−7.45,p<.001,OR.57. Plotted wordingmeans5.81/5.82firsthumanlabel versus5.46/5.44secondAIlabel. The label is confounded with block/time and fixed item subsets; model random effects include students only.",
+                "verification_url": "https://doi.org/10.1007/s40670-026-02866-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -60754,6 +60823,100 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0056.json"
+      }
+    },
+    {
+      "id": "testing-effect",
+      "num": 482,
+      "name": "Testing effect",
+      "definition": "Improved later retention of learned material following active retrieval in a test.",
+      "category": "Memory",
+      "family": "memory",
+      "group_label": "Memory",
+      "tag": "analogy",
+      "origin": "Cognitive psychology / learning and retrieval practice",
+      "human_parallel": "Testing effect",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human learning effect defined secondarily; no delayed human retention test or model learning mechanism measured in this paper",
+      "proposed_ai_manifestation": "For people, compare retrieval practice with matched study time and test delayed retention/transfer. For systems with persistent memory or explicit updates, compare active retrieval against matched exposure on held-out later tasks; distinguish in-context rehearsal, storage and weight changes, and guard against evaluation leakage.",
+      "research_boundary": "Higher immediate accuracy, easier questions or repeated answer production do not establish improved later memory. The effect depends on material, retrieval success, feedback and comparison condition. An inference-only language model does not acquire human memory simply by generating answers; any AI analogue needs a persistent learning/memory mechanism and separate delayed evaluation.",
+      "concept_boundary": "Higher immediate accuracy, easier questions or repeated answer production do not establish improved later memory. The effect depends on material, retrieval success, feedback and comparison condition. An inference-only language model does not acquire human memory simply by generating answers; any AI analogue needs a persistent learning/memory mechanism and separate delayed evaluation.",
+      "measurability": "draft",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Test-enhanced learning"
+      ],
+      "relates_to": [
+        "mere-exposure-effect",
+        "cognitive-offloading"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0058-testing-effect",
+          "title": "Algorithm Aversion Towards AI-Generated Multiple-Choice Questions",
+          "url": "https://doi.org/10.1007/s40670-026-02866-6",
+          "consulted": "Full supplied PDF text read, all 9 pages; evidence at PDF pages 2, 2 (source locators: 2946, 2946). Medical students answered/rated actual human- and GPT4o-authored MCQs under two source labels. Item allocation/order was randomized within fixed human-labelled-first and AI-labelled-second blocks, leaving label/order confounding. The testing effect is defined from earlier memory literature, not measured longitudinally here.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Matthias Carl Laupichler",
+              "Susanne Eigster",
+              "Seifollah Ahmadi",
+              "Ilona Grunwald Kadow",
+              "Tobias Raupach",
+              "Johanna Flora Rother"
+            ],
+            "year": 2026,
+            "venue": "Medical Science Educator,36:2945–2953",
+            "doi": "10.1007/s40670-026-02866-6",
+            "evidence_scope": "The introduction defines the effect through Roediger/Karpicke2006 and discusses testing as a learning tool. The present experiment measures immediate MCQ accuracy and ratings, not delayed retention or a retrieval-versus-restudy control. Original memory studies remain unread.",
+            "verification_url": "https://doi.org/10.1007/s40670-026-02866-6",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Algorithm Aversion Towards AI-Generated Multiple-Choice Questions",
+          "authors": [
+            "Matthias Carl Laupichler",
+            "Susanne Eigster",
+            "Seifollah Ahmadi",
+            "Ilona Grunwald Kadow",
+            "Tobias Raupach",
+            "Johanna Flora Rother"
+          ],
+          "year": 2026,
+          "url": "https://doi.org/10.1007/s40670-026-02866-6",
+          "venue": "Medical Science Educator,36:2945–2953",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s40670-026-02866-6",
+          "relevance": "The introduction defines the effect through Roediger/Karpicke2006 and discusses testing as a learning tool. The present experiment measures immediate MCQ accuracy and ratings, not delayed retention or a retrieval-versus-restudy control. Original memory studies remain unread.",
+          "consulted": "Full supplied PDF text read, all 9 pages; evidence at PDF pages 2, 2 (source locators: 2946, 2946). Medical students answered/rated actual human- and GPT4o-authored MCQs under two source labels. Item allocation/order was randomized within fixed human-labelled-first and AI-labelled-second blocks, leaving label/order confounding. The testing effect is defined from earlier memory literature, not measured longitudinally here.",
+          "verification_url": "https://doi.org/10.1007/s40670-026-02866-6",
+          "verified_date": "2026-11-27",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0058.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Testing effect\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Testing+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0058.json"
       }
     }
   ]

@@ -1,0 +1,222 @@
+{
+  "sequence": 58,
+  "source": {
+    "file_name": "S445_Laupichler_2026.pdf",
+    "source_id": "S445",
+    "sha256": "650d18824512de9d8a3371a1796e9fbe2fbe3f3b50b3325d2558c2c2133d7191",
+    "pdf_pages": 9,
+    "printed_pages": "2945–2953",
+    "version_note": "Published Medical Science Educator36:2945–2953, online28August2026, DOI10.1007/s40670-026-02866-6. All nine pages read; Figure2 onPDF5 rendered to check its caption against the displayed values."
+  },
+  "citation": {
+    "title": "Algorithm Aversion Towards AI-Generated Multiple-Choice Questions",
+    "authors": [
+      "Matthias Carl Laupichler",
+      "Susanne Eigster",
+      "Seifollah Ahmadi",
+      "Ilona Grunwald Kadow",
+      "Tobias Raupach",
+      "Johanna Flora Rother"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1007/s40670-026-02866-6",
+    "venue": "Medical Science Educator,36:2945–2953",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Medical students answered/rated actual human- and GPT4o-authored MCQs under two source labels. Item allocation/order was randomized within fixed human-labelled-first and AI-labelled-second blocks, leaving label/order confounding. The testing effect is defined from earlier memory literature, not measured longitudinally here.",
+    "access_limits": [
+      "All nine extracted pages read, including participant flow, exact rating items, model specifications, tables, limitations and references. Figure2 visually checked for the difficulty-direction error and exact plotted means.",
+      "External prompts/items, supplementary instruments, raw rating dataset and R code were not independently obtained. The original testing-effect papers were not read, and no retained-learning outcome was reproduced."
+    ]
+  },
+  "study": {
+    "invited": 380,
+    "participated": 145,
+    "instrument_complete": 140,
+    "LLM_experience_answers": 134,
+    "setting": "Second-year Bonn medical students, neurophysiology,27June2025",
+    "items": 40,
+    "origins": "20human-authored,20GPT4o-generated, based on20topics; all in German, AI items checked for accuracy without difficulty revision",
+    "blocks": "First20items labelled human-authored; second20labelledAI-generated; each10actualhuman+10actualAI",
+    "assignment": "Random items to blocks and randomized order within each; no reported counterbalancing of block labels or same-item label crossover across participants",
+    "responses": "Five-option single-best-answer; relevance and wording ratings1–7 after each item",
+    "moderators": "Self-reportedAI literacy and attitudes; LLM experience omitted from models after fit/convergence problems",
+    "analysis": "CLMMs with subject random intercept only; actual-origin term dropped from moderator models due convergence issues"
+  },
+  "summary": "The study reports lower wording ratings in the AI-labelled block despite high ratings overall, but fixed block order and unmodeled item differences limit a clean causal anti-AI interpretation. Add the explicitly defined testing effect as a secondary human memory construct; retain its distinction from immediate quiz success and model self-testing.",
+  "findings": [
+    {
+      "term": "Testing effect",
+      "id": "testing-effect",
+      "decision": "new-entry",
+      "category": "Memory",
+      "origin": "Cognitive psychology / learning and retrieval practice",
+      "definition": "Improved later retention of learned material following active retrieval in a test.",
+      "synonyms": [
+        "Test-enhanced learning"
+      ],
+      "novelty_rationale": "A retrieval-based learning benefit, distinct from mere repetition, exposure-driven familiarity, retrieval cue specificity or a generator's ability to answer an exam question. Taking a test is the procedure; improved subsequent retention is the effect.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2946,
+          "quote": "testing one’s own memory"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2946,
+          "quote": "improves the long-term retention of the materials"
+        }
+      ],
+      "evidence_scope": "The introduction defines the effect through Roediger/Karpicke2006 and discusses testing as a learning tool. The present experiment measures immediate MCQ accuracy and ratings, not delayed retention or a retrieval-versus-restudy control. Original memory studies remain unread.",
+      "boundary": "Higher immediate accuracy, easier questions or repeated answer production do not establish improved later memory. The effect depends on material, retrieval success, feedback and comparison condition. An inference-only language model does not acquire human memory simply by generating answers; any AI analogue needs a persistent learning/memory mechanism and separate delayed evaluation.",
+      "ai_evidence_status": "Human learning effect defined secondarily; no delayed human retention test or model learning mechanism measured in this paper",
+      "ai_proposal": "For people, compare retrieval practice with matched study time and test delayed retention/transfer. For systems with persistent memory or explicit updates, compare active retrieval against matched exposure on held-out later tasks; distinguish in-context rehearsal, storage and weight changes, and guard against evaluation leakage.",
+      "relates_to": [
+        "mere-exposure-effect",
+        "cognitive-offloading"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Lower wording ratings associated with an AI-labelled MCQ block",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "Students rated wording less favourably in the block labelled AI-generated, regardless of actual question origin, while actual AI questions were easier and received higher relevance ratings.",
+      "novelty_rationale": "A reported human source-label evaluation pattern for an existing construct; no duplicateanti-AI-biasID and no claim the blocked design cleanly isolates the label effect.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 2950,
+          "quote": "received lower perceived wording-quality ratings"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 2950,
+          "quote": "OR = 0.57"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 2947,
+          "quote": "The first block was labeled"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 2947,
+          "quote": "the second block was labeled"
+        }
+      ],
+      "evidence_scope": "145students,40items each; wordingCLMMlabelb−.55,SE.07,z−7.45,p<.001,OR.57. Plotted wordingmeans5.81/5.82firsthumanlabel versus5.46/5.44secondAIlabel. The label is confounded with block/time and fixed item subsets; model random effects include students only.",
+      "boundary": "A source-label association is not proof of irrational aversion or lower actual quality, and fixed-order fatigue/context effects remain plausible. High ratings make practical importance modest; no measured refusal to use learning materials or worse learning follows. Source origin, stated label, item difficulty and position should be independently varied."
+    },
+    {
+      "term": "Easier items rated more relevant does not by itself demonstrate a halo mechanism",
+      "target_id": "halo-effect",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The authors propose that easier AI-generated questions seemed less threatening and therefore received higher relevance ratings, but ease, self-esteem and a causal spillover were not independently manipulated.",
+      "novelty_rationale": "Retains a hypothesized explanation separately from demonstrated output/evaluation effects rather than counting it as another established halo experiment.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 2951,
+          "quote": "this difference may have produced"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 2951,
+          "quote": "a halo effect"
+        }
+      ],
+      "evidence_scope": "ActualAIitems77%correctversushuman48%; relevance means5.96–6.00versushuman5.64–5.85 dependinglabel. No direct self-esteem/threat measure or matched-difficulty comparison isolates spillover.",
+      "boundary": "Question difficulty can legitimately affect suitability for formative preparation. A relevance difference need not be an irrelevant-quality halo effect. Test independent wording quality or another outcome while matching objective learning requirements; do not infer threatened self-esteem solely from ratings."
+    }
+  ],
+  "methodological_limits": [
+    "145of380invited students volunteered for an optional formative session at one university. Self-selection and narrow language/curriculum limit population and high-stakes generalization.",
+    "145participated whileTable1uses140complete instrument responses and134LLMexperience responses. These distinct denominators are explicit, not evidence of one common complete sample.",
+    "The human-labelled block is always first and AI-labelled block second. Randomizing items within blocks and their origin allocation does not randomize/counterbalance label order; fatigue, practice and contrast are confounded with source label.",
+    "No reported same-item crossover places identical content under both labels across participants. Thus labels also attach to different fixed item subsets.",
+    "CLMMs use a participant random intercept but no item/topic random effect or participant label slope. Repeated ratings over40fixeditems do not provide5800independent randomized source-label assignments.",
+    "Item generation is based on matched broad topics, not matched wording, difficulty, specificity or cognitive demand. AIitems are easier, and both difficulty and content can affect relevance.",
+    "An expert verified AI item correctness, but no independent blinded item-quality panel or systematic learner-target validation was reported.",
+    "GPT4ois named without a pinned snapshot or complete inference settings in the main article. Externalgenerationprompt/fullitems were not obtained; no universal claim about AI question quality follows.",
+    "Immediate proportion-correct is an item easiness index under the method, not a delayed retention or clinical reasoning score.",
+    "Figure2caption reverses difficulty direction: it says0meansallcorrectand1meansnonecorrect, while methods defineproportioncorrectand plotted .53/.43human versus .80/.74AI average to the reported48%/77%. The plotted data align with the methods/results, not the caption's definition.",
+    "No detected discrimination differenceU225,p.51 is not formal equivalence or proof equal psychometric quality. Only20itemsperactualorigin, shared students and limited item range constrain comparison.",
+    "Discrimination coefficients depend on item easiness and the particular test/sample; two similar mean coefficients do not establish equivalent content coverage or educational validity.",
+    "Relevance and wording ratings are near the ceiling: means5.44–6.00on1–7, many6/7. A statistically detectable latent odds difference need not cause meaningful adoption or learning consequences.",
+    "The reportedorigin×labelinteraction forrelevance cannot be reduced to a simple uniform label effect without estimated marginal contrasts. Some prose simplifies the interaction and no full coefficient table was independently inspected.",
+    "Moderator models omit actualorigin because of convergence problems. They answer a changed/partially adjusted question and can inherit item-origin confounding.",
+    "LLMexperience is removed from inferential models after convergence/fit problems; null results for other self-reports do not establish experience is irrelevant.",
+    "AI literacy and attitudes are self-reported after the examination, not objective competence tests or randomized traits. Accuracy of self-appraisal and possible task effects remain unknown.",
+    "Page2950reportsattitudesrelevanceb.01,SE.13,z.05,p.096. A conventionaltwo-sidedz.05test givespabout.96; the displayed statistics need reconciliation rather than treatingp.096asexact.",
+    "Methods cite reference14forSNAIL, but reference14is Raupach's2016test-enhancedlearning trial rather than a scale-validation source. Exact instrument provenance should be checked in the supplement.",
+    "Some wording-model paragraphs copy relevance labels into outcome/missingness descriptions. The stated5616wordingratings/184missing and other model-specific counts should be verified against raw output.",
+    "Main and interaction nulls do not prove no moderation, equality across sources or actual political/technological neutrality. Ceiling and model-fit limits reduce power.",
+    "Self-esteem threat, social desirability and cognitive-load explanations are proposed, not measured mediators. Easier items may legitimately be more useful for a particular learner.",
+    "No long-term learning, transfer, actual use/adoption or summative exam consequences were measured. The testing effect is discussed secondarily rather than demonstrated.",
+    "The dataavailabilitysentenceendswith canbeobtainedbythecorrespondingauthorupon in the suppliedPDF. Rawdata/Rcode and supplementary instruments were not retrieved.",
+    "Theoretical source names in the bibliography do not count as separately read primary studies; source corrections are retained without silently revising reported outcomes."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0057.json",
+      "finding": "Hayden's clinical ranking improvement and Laupichler's easier quiz performance are immediate outcomes, not durable skill acquisition or testing-effect evidence. Measure the outcome actually claimed."
+    },
+    {
+      "related_review": "references/pdf-reviews/0051.json",
+      "finding": "Heßler studies stated support preference under randomized context; Laupichler's apparent source aversion uses fixed-order blocks. Their control quality differs and pooled causal aversion claims require care."
+    },
+    {
+      "related_review": "references/pdf-reviews/0056.json",
+      "finding": "Banks' fixed progression likewise mixes specificity with order and prompting. Calling a sequence a within-subject design does not isolate the psychological factor of interest."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Anti-AI bias as a new behaviour",
+      "reason": "Already covered by algorithm-aversion for this source-label devaluation. No new ID for a near-synonym."
+    },
+    {
+      "term": "Self-esteem-protective item evaluation",
+      "reason": "A plausible post hoc explanation without a direct self-esteem measure or matched-difficulty manipulation."
+    },
+    {
+      "term": "AI literacy as a protective mechanism",
+      "reason": "No significant moderation and no causal intervention; a self-report score is not a demonstrated behaviour or mitigation."
+    },
+    {
+      "term": "LLM improvement in MCQ generation",
+      "reason": "Different studies use different item sets, topics and versions; no controlled longitudinal model capability comparison here."
+    }
+  ],
+  "limitations": [
+    "One explicitly secondary human memory effect added; no delayed-learning or AI-training claim.",
+    "Existing aversion evidence retained with major label/order/item confounds and practical-effect limits; halo explanation remains a noncorroborating reference."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "testing-effect"
+    ],
+    "enriched": [
+      "algorithm-aversion",
+      "halo-effect"
+    ]
+  }
+}
