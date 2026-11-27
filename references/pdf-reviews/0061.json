@@ -1,0 +1,307 @@
+{
+  "sequence": 61,
+  "source": {
+    "file_name": "S474_Berghea_2026.pdf",
+    "source_id": "S474",
+    "sha256": "f4faabf3338111705de322c7f9c5ba62ab609847365c5c2f785ef4c0ae77dd51",
+    "pdf_pages": 16,
+    "printed_pages": "1–16; article8338",
+    "version_note": "Published21August2026, Applied Sciences16:8338, DOI10.3390/app16168338. Full16-page final article read; scoring/analysis was explicitly revised during peer review, so the stated hypotheses are not preregistered confirmatory tests."
+  },
+  "citation": {
+    "title": "Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted Decisions: An Exploratory Vignette Study",
+    "authors": [
+      "Florian Berghea",
+      "Alexandra Ligia Dinca",
+      "Diana Mihaela Ciuc",
+      "Gabi Valeriu Dinca"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.3390/app16168338",
+    "venue": "Applied Sciences,16:8338",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "source_scope_note": "Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements. It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.",
+    "access_limits": [
+      "All16 extracted pages read, including study flow, scoring revision, six result tables, factor loadings, sensitivity results, consent disclosure, limitations and references.",
+      "External Romanian/English full vignettes/items, Zenodo dataset/script and cited primary mechanism/skill studies were not independently obtained or rerun. The authors' reproduction claim is recorded, not independently verified."
+    ]
+  },
+  "study": {
+    "responses_received": 77,
+    "deleted_at_request": 1,
+    "nonphysicians_excluded": 4,
+    "analyzed": 72,
+    "specialties": 17,
+    "largest_groups": {
+      "family_medicine": 26,
+      "rheumatology": 17
+    },
+    "female": 61,
+    "routine_AI_users": 67,
+    "setting": "Romanian professional networks and onward sharing,2–30June2026; unknown invitation denominator",
+    "incentive": "Free AI-ethics course access",
+    "design": "Within-person ratings of three different constrained AI-advice vignettes:urgent,elective,administrative; four5-point items each",
+    "facets": "Personal responsibility, mitigation by circumstances, comparative institutional blame; scenario-specific fourth items separate",
+    "analysis": "One-sample Wilcoxon against3; Friedman and Holm-corrected comparisons; exploratory factor analysis and reliability; scoring revised away from an assumed zero-sum composite"
+  },
+  "summary": "Physicians simultaneously endorsed their own responsibility and stronger institutional blame in some scenarios. This is compatible with multiple responsible actors but does not measure a causal responsibility gap or moral disengagement. Add explicit definitions of deskilling, its moral subtype and diffusion of responsibility, with their secondary and unmeasured status visible.",
+  "findings": [
+    {
+      "term": "Deskilling",
+      "id": "deskilling",
+      "decision": "new-entry",
+      "category": "Metacognition",
+      "origin": "Cognitive psychology / automation and professional education",
+      "definition": "Loss or weakening of previously acquired skills through reduced independent use or practice.",
+      "novelty_rationale": "Distinct from never acquiring a skill, learning an incorrect skill, momentary low effort, and model performance changing under a different prompt. This paper supplies the explicit erosion-through-reliance meaning that earlier reviews only named.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "deskilling, the gradual erosion of clinical competence through"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "habitual reliance on automated tools"
+        }
+      ],
+      "evidence_scope": "Secondary background definition citing Heudel and colleagues2026,a scoping review of physician deskilling/loss of expertise. The present study has no competence test, before/after skill outcome or actual automation exposure intervention; the cited primary review is unread.",
+      "boundary": "One wrong answer, lower effort or useful offloading does not establish loss of a previously acquired skill. Show retained unaided competence over time and rule out task/practice differences. A fixed model does not lose learned weights merely by calling a tool; persistent model/agent changes require separate evidence. Human learning effects and AI output degradation must remain distinct.",
+      "ai_evidence_status": "Human skill-maintenance construct defined secondarily; no longitudinal human or model deskilling measured here",
+      "ai_proposal": "Compare unaided performance before and after sustained assistance against a matched practice/control group, including retention and transfer. For adaptive agents, distinguish changes in persistent learned competence from temporary context, routing or tool availability. Record who is learning and what mechanism could change.",
+      "relates_to": [
+        "cognitive-offloading",
+        "testing-effect",
+        "laziness"
+      ]
+    },
+    {
+      "term": "Moral deskilling",
+      "id": "moral-deskilling",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Medical ethics / automation and ethical competence",
+      "definition": "Erosion of ethical judgment or sensitivity through repeatedly delegating morally consequential decisions rather than exercising that competence.",
+      "novelty_rationale": "An explicit narrower subtype of deskilling focused on ethical competence. It is not a separate proven general mechanism, moral disengagement's self-excusing cognition or a claim that every delegated decision weakens moral ability.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "moral deskilling"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "routine delegation of morally weighted decisions dulls a clinician’s ethical judgement"
+        }
+      ],
+      "evidence_scope": "Defined as a secondary long-term concern with Natali/Marconi/DiasDuran/Cabitza2025cited. The survey measures articulated responsibility once and explicitly cannot detect these slower changes; no ethical-skill decline is observed.",
+      "boundary": "Responsible delegation can improve decisions and preserve competence. Distinguish lower unaided ability from changed values, different moral opinions, stated responsibility and legitimate division of labour. Moral competence needs an independently defensible outcome criterion; conformity to one human average is not sufficient.",
+      "ai_evidence_status": "Secondary proposed domain-specific skill risk; no causal or longitudinal validation in this survey",
+      "ai_proposal": "Evaluate human ethical reasoning, identification of affected parties and justification quality over time with blinded criteria and retained unaided tasks. For agent analogues, assess observable persistent loss of constraint-sensitive decisions without assuming conscience or felt moral concern.",
+      "is_a": [
+        "deskilling"
+      ],
+      "relates_to": [
+        "deskilling",
+        "b075-moral-disengagement",
+        "moral-distress"
+      ]
+    },
+    {
+      "term": "Diffusion of responsibility",
+      "id": "diffusion-of-responsibility",
+      "decision": "new-entry",
+      "category": "Social",
+      "origin": "Social psychology / moral disengagement",
+      "definition": "Diluting felt personal responsibility for harmful conduct by treating responsibility as shared among multiple actors.",
+      "novelty_rationale": "A mechanism already mentioned as related to bystander behaviour but not retained as its own primary entry. Distinct from displacement to a directing authority, reduced group effort and the outcome that nobody performs a needed action. This is linked as a moral-disengagement subtype, not counted as an additional independent mechanism whenever a bystander effect occurs.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "In the diffusion of responsibility, agency is shared across a group"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "until no single member feels accountable"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "none of the mechanisms above were measured"
+        }
+      ],
+      "evidence_scope": "Secondary Bandura1996account in the introduction. Current respondents endorse physician responsibility and some institutional blame; this is not a direct demonstration of diminished felt responsibility or a group-size causal experiment.",
+      "boundary": "Legitimate shared duties and institutional accountability do not imply moral disengagement. A non-zero-sum endorsement can increase total accountability. Demonstrating diffusion requires diminished unwarranted personal accountability, not merely identifying other responsible actors; no felt responsibility in a model is inferred from its wording.",
+      "ai_evidence_status": "Human psychological mechanism defined secondarily; actual behavioural or causal diffusion not measured here",
+      "ai_proposal": "Hold individual duties/control constant while varying the number and visibility of other responsible actors, and measure verification, corrective action and warranted accountability. In agent workflows, record unowned checks and responsibility claims without equating every delegation with diffusion.",
+      "is_a": [
+        "b075-moral-disengagement"
+      ],
+      "relates_to": [
+        "b075-moral-disengagement",
+        "displacement-of-responsibility",
+        "bystander-effect",
+        "upload-037"
+      ]
+    },
+    {
+      "term": "Shared institutional blame is not automatically displaced or diffused personal responsibility",
+      "target_id": "b075-moral-disengagement",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Respondents can endorse physician responsibility and stronger institutional blame together; this pattern alone does not demonstrate a self-excusing moral-disengagement mechanism.",
+      "novelty_rationale": "A concrete counterexample to assuming all shared-responsibility judgments are disengagement, with an explicit no-mechanism-measure caveat.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "institutional items were reverse-scored and averaged against"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "physician responsibility items"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 13,
+          "quote": "No mediating mechanisms were measured"
+        }
+      ],
+      "evidence_scope": "72physicians; mean physician responsibility3.96urgent/3.96elective/3.68administrative. Comparative institutional-blame means3.61/3.29/4.00. Earlier reversed scoring imposed a zero-sum assumption; published scoring uses raw facets.",
+      "boundary": "Attitudinal co-endorsement is not an observed change in the same person's actual responsibility, a legal allocation or proof no responsibility gap can occur. Full-responsibility agreement at group level does not mean every respondent agrees or has full practical control."
+    },
+    {
+      "term": "Non-constant-sum endorsements differ from a measured responsibility shortfall",
+      "target_id": "perceptual-responsibility-gap",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Independent agreement ratings can retain personal responsibility while also assigning comparative blame to an institution, without conserving a fixed total.",
+      "novelty_rationale": "Clarifies a measurement/design distinction relative to existing gap evidence rather than claiming this survey directly disproves all responsibility gaps.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "no composite"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "across facets is computed"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "additional attribution rather than redistribution"
+        }
+      ],
+      "evidence_scope": "The12items are five-point endorsements; they do not allocate100points and include no dedicatedAI-responsibility score. The institutional statements say hospital/management is more blameworthy than the physician, which is comparative rather than an absolute share.",
+      "boundary": "Different scales, targets and controls cannot be pooled as one gap measure. Correlation near zero is not demonstrated independence, and a sample attitude pattern cannot decide normative responsibility. A future fixed-sum design would constrain the response space rather than directly prove a natural conservation law."
+    }
+  ],
+  "methodological_limits": [
+    "The explicit flow is77received−1deleted−4nonphysicians=72. Section2.1says the deleted respondent is not counted among reported respondents, whileSection3.1startsfrom77including that response; preserve the transparent arithmetic and clarify the wording rather than changing the analyzedN.",
+    "Sample61women,36over50,26familymedicine,17rheumatology and67routineAIusers is selected relative to the broader workforce. Course-access incentive and authors' networks can favor ethically engaged AI users.",
+    "93.1%routineuse describes this responding sample, not Romanian physicians generally. Routine is not defined by a frequency criterion or verified task history.",
+    "Consent text was added after recruitment began, with retrospective deletion option and committee acceptance reported. Prior ethics approval and the subsequent consent procedure are distinct; no independent protocol audit was performed.",
+    "The three scenarios differ in disease, urgency, constraints, temporal distance, control, risk and AIrole. Repeated ratings do not isolate decision type, and no manipulation check establishes matched constraint severity.",
+    "Different fictional physician identities do not guarantee absence of consistency/carry-over effects. No randomized scenario order is reported in the supplied main text.",
+    "No no-AI comparator exists, and no actual advice is followed. Statements about retaining responsibility despiteAI cannot estimate the causal effect of AI involvement.",
+    "No dedicated AI-blame/responsibility outcome is shown among the12items. Inferring respondents treatedAIonlyasatool is more indirect than a direct measure of zeroAIresponsibility.",
+    "Institutional items are phrased hospital/management more blameworthy than physician. This is comparative blame, not a cardinal absolute institutional share or a standardized amount of co-responsibility.",
+    "Group mean/median above midpoint does not imply every participant accepts full responsibility, nor that actual clinicians have unrestricted control over the stipulated situation.",
+    "The administrative mitigation distribution is bimodal, not a neutral consensus; mean3.11andnonsignificantmidpointtest conceal strong disagreement among respondents.",
+    "The instrument is locally developed and assessed in the same72people. KMO.698, fivecross-loadings and weak mitigation reliabilityα.576/ω.675 limit clean factor interpretation; no independent CFA/test–retest/discriminant validation.",
+    "Changing reverse scoring during peer review is disclosed and can correct an unjustified zero-sum composite, but it prevents treating the final analysis as strictly confirmatory under a fixed preregistered plan.",
+    "Factor structure cannot establish actual responsibility is naturally distributed, and removing an imposed zero-sum score does not identify the unique correct normative model.",
+    "Correlations described as close to uncorrelated include urgentρ−.247,p.037andfacetρ−.261,p.027. These small/moderate negative associations are not proof statistical independence; ceiling effects and measurement error matter.",
+    "Friedmanphysicianfacetp.053doesnotestablish invariant responsibility. Some sensitivity subsetsp.009/.042 differ, and absence of corrected significance does not prove equality across scenarios.",
+    "Multiple testing corrections are applied within defined families, not a guarantee every exploratory comparison is protected. Small/unbalanced subgroups cannot rule out demographic effects.",
+    "Only11men,2under30 and5AI nonusers limit subgroup inference. Approximate detectable correlation.32means smaller effects remain compatible withnullresults.",
+    "Moral disengagement, diffusion/displacement, control and moral distance are candidate interpretations, explicitly unmeasured. The survey cannot show their absence or confirm them causally.",
+    "Deskilling and moral deskilling are defined long-term risks, not measured outcomes. No retained competence, training trajectory or intervention was evaluated.",
+    "Third-person explicit responsibility statements may reflect professional ideals/social desirability and differ from actual self-attribution under pressure.",
+    "Respondents' views cannot adjudicate moral responsibility theory, legal liability or professional duties. High-risk categorization statements about theAIAct are background, not an independently checked complete regulatory analysis.",
+    "Reference29is titled as a protocol for a randomized vignette study, while the discussion describes context-sensitivity as already reported evidence. A protocol alone does not establish those results; original completed outcomes need verification.",
+    "Broad brain-rewiring/generational cognition claims are cited but expressly not tested here. They are not needed to interpret theseLikertresponses.",
+    "Raw data/script, full Romanian/English instrument and cited primary studies were not independently obtained. The author's exact-reproduction claim remains unverified by this review."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0057.json",
+      "finding": "Hayden named deskilling without a defining account; Berghea now explicitly supplies erosion of competence and the moral subtype. Definitions can be added while empirical longitudinal validation remains absent."
+    },
+    {
+      "related_review": "references/pdf-reviews/0060.json",
+      "finding": "Benzinger's reduced development of ethical sensitivity and Berghea's erosion of existing judgment must not collapse loss of a skill with failure to acquire it. Never-skilling remains distinct and deferred."
+    },
+    {
+      "related_review": "references/pdf-reviews/0059.json",
+      "finding": "Gültekin proposes fixed100point responsibility allocation. Berghea uses independent endorsements and explicitly corrects a zero-sum scoring assumption. The instruments impose different structures and do not settle which normative account is true."
+    },
+    {
+      "related_review": "references/pdf-reviews/0055.json",
+      "finding": "Distributed responsibility is not itself a gap, undue reliance or moral distress. Institutional duties can coexist with individual duties, consistent with Liedtke's relational framing without proving its philosophy."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Displacement of responsibility as a newID",
+      "reason": "Already retained as displacement-of-responsibility; do not confuse it with therapeutic displacement or duplicate its label."
+    },
+    {
+      "term": "Never-skilling and mis-skilling",
+      "reason": "Not clearly defined or tested here; do not add them as synonyms for deskilling. Original education/learning sources still needed."
+    },
+    {
+      "term": "Problem of many hands",
+      "reason": "A governance attribution problem named in passing, not sufficiently developed or tested here for a separate behaviour entry."
+    },
+    {
+      "term": "Distributed responsibility as an error",
+      "reason": "A legitimate responsibility structure can retain multiple duties. The measured co-endorsement is not automatically diffusion of responsibility."
+    }
+  ],
+  "limitations": [
+    "Three linked definitions added, including an explicit skill subtype and moral-disengagement mechanism; none is claimed newly measured by this survey.",
+    "Two existing entries receive noncorroborating measurement/counterexample references; no empirical skill-loss rates, modelfeelings or normative responsibility allocation invented."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "deskilling",
+      "moral-deskilling",
+      "diffusion-of-responsibility"
+    ],
+    "enriched": [
+      "b075-moral-disengagement",
+      "perceptual-responsibility-gap"
+    ]
+  }
+}

@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 485
+  mode_count: 488
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 485
+    numbered_entries: 488
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0060.json
+    latest_review: references/pdf-reviews/0061.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -8942,6 +8942,42 @@ modes:
           mechanism.
         verification_url: https://arxiv.org/abs/2508.11327
         verified_date: '2026-11-26'
+  - id: pdf-review-0061
+    review_record: references/pdf-reviews/0061.json
+    name: Shared institutional blame is not automatically displaced or diffused personal responsibility
+    definition: Respondents can endorse physician responsibility and stronger institutional blame together;
+      this pattern alone does not demonstrate a self-excusing moral-disengagement mechanism.
+    evidence_scope: 72physicians; mean physician responsibility3.96urgent/3.96elective/3.68administrative.
+      Comparative institutional-blame means3.61/3.29/4.00. Earlier reversed scoring imposed a zero-sum assumption;
+      published scoring uses raw facets.
+    catalogue_boundary: Attitudinal co-endorsement is not an observed change in the same person's actual responsibility,
+      a legal allocation or proof no responsibility gap can occur. Full-responsibility agreement at group level
+      does not mean every respondent agrees or has full practical control.
+    definition_sources:
+    - id: pdf-review-0061-b075-moral-disengagement
+      title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+        Decisions: An Exploratory Vignette Study'
+      url: https://doi.org/10.3390/app16168338
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 11, 11, 13 (source locators:
+        11, 11, 13). Romanian physician convenience-sample vignette survey of explicit moral-responsibility
+        statements. It defines candidate psychological mechanisms and skill risks secondarily but explicitly
+        does not measure those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Florian Berghea
+        - Alexandra Ligia Dinca
+        - Diana Mihaela Ciuc
+        - Gabi Valeriu Dinca
+        year: 2026
+        venue: Applied Sciences,16:8338
+        doi: 10.3390/app16168338
+        evidence_scope: 72physicians; mean physician responsibility3.96urgent/3.96elective/3.68administrative.
+          Comparative institutional-blame means3.61/3.29/4.00. Earlier reversed scoring imposed a zero-sum
+          assumption; published scoring uses raw facets.
+        verification_url: https://doi.org/10.3390/app16168338
+        verified_date: '2026-11-27'
   concept_boundary: A fitted mediation/path model does not prove every psychological link is causal. No guilt,
     shame, neural process or unconscious mechanism was measured. For AI, only observable justification and
     handling of duties can be assessed from this evidence.
@@ -51649,6 +51685,44 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0027.json
+  research_notes:
+  - id: pdf-review-0061
+    review_record: references/pdf-reviews/0061.json
+    name: Non-constant-sum endorsements differ from a measured responsibility shortfall
+    definition: Independent agreement ratings can retain personal responsibility while also assigning comparative
+      blame to an institution, without conserving a fixed total.
+    evidence_scope: The12items are five-point endorsements; they do not allocate100points and include no dedicatedAI-responsibility
+      score. The institutional statements say hospital/management is more blameworthy than the physician, which
+      is comparative rather than an absolute share.
+    catalogue_boundary: Different scales, targets and controls cannot be pooled as one gap measure. Correlation
+      near zero is not demonstrated independence, and a sample attitude pattern cannot decide normative responsibility.
+      A future fixed-sum design would constrain the response space rather than directly prove a natural conservation
+      law.
+    definition_sources:
+    - id: pdf-review-0061-perceptual-responsibility-gap
+      title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+        Decisions: An Exploratory Vignette Study'
+      url: https://doi.org/10.3390/app16168338
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 5, 10 (source locators:
+        5, 5, 10). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+        It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+        those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Florian Berghea
+        - Alexandra Ligia Dinca
+        - Diana Mihaela Ciuc
+        - Gabi Valeriu Dinca
+        year: 2026
+        venue: Applied Sciences,16:8338
+        doi: 10.3390/app16168338
+        evidence_scope: The12items are five-point endorsements; they do not allocate100points and include no
+          dedicatedAI-responsibility score. The institutional statements say hospital/management is more blameworthy
+          than the physician, which is comparative rather than an absolute share.
+        verification_url: https://doi.org/10.3390/app16168338
+        verified_date: '2026-11-27'
 - id: unethical-pro-organizational-behavior
   num: 453
   name: Unethical pro-organizational behavior
@@ -55205,3 +55279,306 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0060.json
+- id: deskilling
+  num: 486
+  name: Deskilling
+  definition: Loss or weakening of previously acquired skills through reduced independent use or practice.
+  category: Metacognition
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  tag: analogy
+  origin: Cognitive psychology / automation and professional education
+  human_parallel: Deskilling
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human skill-maintenance construct defined secondarily; no longitudinal human or model
+    deskilling measured here
+  proposed_ai_manifestation: Compare unaided performance before and after sustained assistance against a matched
+    practice/control group, including retention and transfer. For adaptive agents, distinguish changes in persistent
+    learned competence from temporary context, routing or tool availability. Record who is learning and what
+    mechanism could change.
+  research_boundary: One wrong answer, lower effort or useful offloading does not establish loss of a previously
+    acquired skill. Show retained unaided competence over time and rule out task/practice differences. A fixed
+    model does not lose learned weights merely by calling a tool; persistent model/agent changes require separate
+    evidence. Human learning effects and AI output degradation must remain distinct.
+  concept_boundary: One wrong answer, lower effort or useful offloading does not establish loss of a previously
+    acquired skill. Show retained unaided competence over time and rule out task/practice differences. A fixed
+    model does not lose learned weights merely by calling a tool; persistent model/agent changes require separate
+    evidence. Human learning effects and AI output degradation must remain distinct.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - cognitive-offloading
+  - testing-effect
+  - laziness
+  definition_sources:
+  - id: pdf-review-0061-deskilling
+    title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    url: https://doi.org/10.3390/app16168338
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2 (source locators: 2,
+      2). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    publication:
+      type: journal-article
+      authors:
+      - Florian Berghea
+      - Alexandra Ligia Dinca
+      - Diana Mihaela Ciuc
+      - Gabi Valeriu Dinca
+      year: 2026
+      venue: Applied Sciences,16:8338
+      doi: 10.3390/app16168338
+      evidence_scope: Secondary background definition citing Heudel and colleagues2026,a scoping review of
+        physician deskilling/loss of expertise. The present study has no competence test, before/after skill
+        outcome or actual automation exposure intervention; the cited primary review is unread.
+      verification_url: https://doi.org/10.3390/app16168338
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    authors:
+    - Florian Berghea
+    - Alexandra Ligia Dinca
+    - Diana Mihaela Ciuc
+    - Gabi Valeriu Dinca
+    year: 2026
+    url: https://doi.org/10.3390/app16168338
+    venue: Applied Sciences,16:8338
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/app16168338
+    relevance: Secondary background definition citing Heudel and colleagues2026,a scoping review of physician
+      deskilling/loss of expertise. The present study has no competence test, before/after skill outcome or
+      actual automation exposure intervention; the cited primary review is unread.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2 (source locators: 2,
+      2). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    verification_url: https://doi.org/10.3390/app16168338
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0061.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Deskilling"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Deskilling%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0061.json
+- id: moral-deskilling
+  num: 487
+  name: Moral deskilling
+  definition: Erosion of ethical judgment or sensitivity through repeatedly delegating morally consequential
+    decisions rather than exercising that competence.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Medical ethics / automation and ethical competence
+  human_parallel: Moral deskilling
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Secondary proposed domain-specific skill risk; no causal or longitudinal validation in
+    this survey
+  proposed_ai_manifestation: Evaluate human ethical reasoning, identification of affected parties and justification
+    quality over time with blinded criteria and retained unaided tasks. For agent analogues, assess observable
+    persistent loss of constraint-sensitive decisions without assuming conscience or felt moral concern.
+  research_boundary: Responsible delegation can improve decisions and preserve competence. Distinguish lower
+    unaided ability from changed values, different moral opinions, stated responsibility and legitimate division
+    of labour. Moral competence needs an independently defensible outcome criterion; conformity to one human
+    average is not sufficient.
+  concept_boundary: Responsible delegation can improve decisions and preserve competence. Distinguish lower
+    unaided ability from changed values, different moral opinions, stated responsibility and legitimate division
+    of labour. Moral competence needs an independently defensible outcome criterion; conformity to one human
+    average is not sufficient.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - deskilling
+  - b075-moral-disengagement
+  - moral-distress
+  is_a:
+  - deskilling
+  definition_sources:
+  - id: pdf-review-0061-moral-deskilling
+    title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    url: https://doi.org/10.3390/app16168338
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 3 (source locators: 2,
+      3). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    publication:
+      type: journal-article
+      authors:
+      - Florian Berghea
+      - Alexandra Ligia Dinca
+      - Diana Mihaela Ciuc
+      - Gabi Valeriu Dinca
+      year: 2026
+      venue: Applied Sciences,16:8338
+      doi: 10.3390/app16168338
+      evidence_scope: Defined as a secondary long-term concern with Natali/Marconi/DiasDuran/Cabitza2025cited.
+        The survey measures articulated responsibility once and explicitly cannot detect these slower changes;
+        no ethical-skill decline is observed.
+      verification_url: https://doi.org/10.3390/app16168338
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    authors:
+    - Florian Berghea
+    - Alexandra Ligia Dinca
+    - Diana Mihaela Ciuc
+    - Gabi Valeriu Dinca
+    year: 2026
+    url: https://doi.org/10.3390/app16168338
+    venue: Applied Sciences,16:8338
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/app16168338
+    relevance: Defined as a secondary long-term concern with Natali/Marconi/DiasDuran/Cabitza2025cited. The
+      survey measures articulated responsibility once and explicitly cannot detect these slower changes; no
+      ethical-skill decline is observed.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 3 (source locators: 2,
+      3). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    verification_url: https://doi.org/10.3390/app16168338
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0061.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Moral deskilling"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Moral+deskilling%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0061.json
+- id: diffusion-of-responsibility
+  num: 488
+  name: Diffusion of responsibility
+  definition: Diluting felt personal responsibility for harmful conduct by treating responsibility as shared
+    among multiple actors.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social psychology / moral disengagement
+  human_parallel: Diffusion of responsibility
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human psychological mechanism defined secondarily; actual behavioural or causal diffusion
+    not measured here
+  proposed_ai_manifestation: Hold individual duties/control constant while varying the number and visibility
+    of other responsible actors, and measure verification, corrective action and warranted accountability.
+    In agent workflows, record unowned checks and responsibility claims without equating every delegation with
+    diffusion.
+  research_boundary: Legitimate shared duties and institutional accountability do not imply moral disengagement.
+    A non-zero-sum endorsement can increase total accountability. Demonstrating diffusion requires diminished
+    unwarranted personal accountability, not merely identifying other responsible actors; no felt responsibility
+    in a model is inferred from its wording.
+  concept_boundary: Legitimate shared duties and institutional accountability do not imply moral disengagement.
+    A non-zero-sum endorsement can increase total accountability. Demonstrating diffusion requires diminished
+    unwarranted personal accountability, not merely identifying other responsible actors; no felt responsibility
+    in a model is inferred from its wording.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b075-moral-disengagement
+  - displacement-of-responsibility
+  - bystander-effect
+  - upload-037
+  is_a:
+  - b075-moral-disengagement
+  definition_sources:
+  - id: pdf-review-0061-diffusion-of-responsibility
+    title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    url: https://doi.org/10.3390/app16168338
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2, 3 (source locators:
+      2, 2, 3). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    publication:
+      type: journal-article
+      authors:
+      - Florian Berghea
+      - Alexandra Ligia Dinca
+      - Diana Mihaela Ciuc
+      - Gabi Valeriu Dinca
+      year: 2026
+      venue: Applied Sciences,16:8338
+      doi: 10.3390/app16168338
+      evidence_scope: Secondary Bandura1996account in the introduction. Current respondents endorse physician
+        responsibility and some institutional blame; this is not a direct demonstration of diminished felt
+        responsibility or a group-size causal experiment.
+      verification_url: https://doi.org/10.3390/app16168338
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Physicians Retain Moral Responsibility but Endorse Institutional Co-Responsibility in AI-Assisted
+      Decisions: An Exploratory Vignette Study'
+    authors:
+    - Florian Berghea
+    - Alexandra Ligia Dinca
+    - Diana Mihaela Ciuc
+    - Gabi Valeriu Dinca
+    year: 2026
+    url: https://doi.org/10.3390/app16168338
+    venue: Applied Sciences,16:8338
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/app16168338
+    relevance: Secondary Bandura1996account in the introduction. Current respondents endorse physician responsibility
+      and some institutional blame; this is not a direct demonstration of diminished felt responsibility or
+      a group-size causal experiment.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2, 2, 3 (source locators:
+      2, 2, 3). Romanian physician convenience-sample vignette survey of explicit moral-responsibility statements.
+      It defines candidate psychological mechanisms and skill risks secondarily but explicitly does not measure
+      those mechanisms, actual advice-following, AI mental states or longitudinal deskilling.'
+    verification_url: https://doi.org/10.3390/app16168338
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0061.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Diffusion of responsibility"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Diffusion+of+responsibility%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0061.json
