@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 536,
+    "mode_count": 538,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 536,
+      "numbered_entries": 538,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0098.json",
+      "latest_review": "references/pdf-reviews/0100.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 536
+    "source_record_count": 538
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -8476,7 +8476,44 @@
         "queried_at": "2026-11-09T00:34:13+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Sycophancy%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0100",
+          "review_record": "references/pdf-reviews/0100.json",
+          "name": "Supportive facilitation is not automatically sycophancy",
+          "definition": "Affiliative language and consensus facilitation differ from accepting a claim despite contrary evidence.",
+          "evidence_scope": "Both prompts include role instructions, with supportive agents explicitly allowed to disagree and contrarian agents encouraged to interrupt consensus. This is not an objective accuracy task and does not count unsupported agreement against load-bearing evidence.",
+          "catalogue_boundary": "Warmth, agreement, skepticism, bluntness and epistemic independence are distinct. Neither gentleness nor opposition alone establishes sycophancy or its absence. This design note is not counted as an empirical sycophancy replication.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0100-b065-sycophancy",
+              "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+              "url": "https://arxiv.org/abs/2511.01205v2",
+              "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 23, 22 (source locators: 23, 22). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Yueqiao Jin",
+                  "Roberto Martinez-Maldonado",
+                  "Wanruo Shi",
+                  "Songjie Huang",
+                  "Mingmin Zheng",
+                  "Xinbin Han",
+                  "Dragan Gašević",
+                  "Lixiang Yan"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2511.01205v2, preprint",
+                "evidence_scope": "Both prompts include role instructions, with supportive agents explicitly allowed to disagree and contrarian agents encouraged to interrupt consensus. This is not an objective accuracy task and does not count unsupported agreement against load-bearing evidence.",
+                "verification_url": "https://arxiv.org/abs/2511.01205v2",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b066-capitulation",
@@ -16479,7 +16516,43 @@
         "queried_at": "2026-11-09T00:37:16+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22strategic+deception%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0100",
+          "review_record": "references/pdf-reviews/0100.json",
+          "name": "Concealed AI identity in a study protocol",
+          "definition": "A configured AI agent is instructed to induce a false impression that it is a human participant, including a denial if directly asked.",
+          "evidence_scope": "The article reports concealed AI identity and supplies prompts directing human impersonation. Post-task AI-detection sensitivities are 23.7% contrarian and 28.8% supportive. The actual transcript frequency of denial, subjective model intent and any autonomous deception strategy are not independently inspected. Consent/debrief and ethics approval are reported by the authors.",
+          "catalogue_boundary": "Author-assigned experimental concealment is not evidence of spontaneous deceptive alignment, conscious malicious intent or permission to conceal AI identity in routine use. A low detection rate is not perfect unawareness or proof that every person believed the agent human. The article itself calls for transparency and informed consent in authentic education.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0100-ai-deception",
+              "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+              "url": "https://arxiv.org/abs/2511.01205v2",
+              "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 5, 22, 15 (source locators: 5, 22, 15). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Yueqiao Jin",
+                  "Roberto Martinez-Maldonado",
+                  "Wanruo Shi",
+                  "Songjie Huang",
+                  "Mingmin Zheng",
+                  "Xinbin Han",
+                  "Dragan Gašević",
+                  "Lixiang Yan"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2511.01205v2, preprint",
+                "evidence_scope": "The article reports concealed AI identity and supplies prompts directing human impersonation. Post-task AI-detection sensitivities are 23.7% contrarian and 28.8% supportive. The actual transcript frequency of denial, subjective model intent and any autonomous deception strategy are not independently inspected. Consent/debrief and ethics approval are reported by the authors.",
+                "verification_url": "https://arxiv.org/abs/2511.01205v2",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "x109-evaluation-awareness-sandbagging",
@@ -19173,7 +19246,44 @@
         "queried_at": "2026-11-09T00:38:35+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Groupthink%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0100",
+          "review_record": "references/pdf-reviews/0100.json",
+          "name": "Stable discussion is not sufficient evidence of groupthink",
+          "definition": "Lower thematic divergence may indicate useful focus or premature convergence; the metric alone does not distinguish the two.",
+          "evidence_scope": "Both AI conditions reduce DTW distance relative to control, but no objective group decision error, suppressed valid objection or direct groupthink measure is established. The paper presents prevention of groupthink as an application, not an independently identified mechanism.",
+          "catalogue_boundary": "Decision retention can follow reflection, while change can be unreasoned. Topic switching can be relevant exploration or distraction. Without evidence of unwarranted convergence or suppressed dissent, low distance is not groupthink.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0100-groupthink",
+              "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+              "url": "https://arxiv.org/abs/2511.01205v2",
+              "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 15, 15 (source locators: 15, 15). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Yueqiao Jin",
+                  "Roberto Martinez-Maldonado",
+                  "Wanruo Shi",
+                  "Songjie Huang",
+                  "Mingmin Zheng",
+                  "Xinbin Han",
+                  "Dragan Gašević",
+                  "Lixiang Yan"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2511.01205v2, preprint",
+                "evidence_scope": "Both AI conditions reduce DTW distance relative to control, but no objective group decision error, suppressed valid objection or direct groupthink measure is established. The paper presents prevention of groupthink as an application, not an independently identified mechanism.",
+                "verification_url": "https://arxiv.org/abs/2511.01205v2",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "negativity-bias",
@@ -69732,6 +69842,199 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0098.json"
+      }
+    },
+    {
+      "id": "persona-effect",
+      "num": 537,
+      "name": "Persona effect",
+      "definition": "Systematic differences in collaborative discourse associated with how an AI teammate's persona governs its tone, stance and participation.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Human–AI collaboration / educational psychology",
+      "human_parallel": "Persona effect",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Direct short human–LLM group experiment with supportive and contrarian prompted personas; endpoint-specific effects and substantial design/measurement limits",
+      "proposed_ai_manifestation": "Evaluate whether an assistant's assigned social role changes the evidence people offer, the qualifications they make and the views they consider. Compare disclosed personas with a common task, human-group composition and participation budget; separately measure reasoning validity, agreement and later learning.",
+      "research_boundary": "A supportive persona need not be sycophantic, and a contrarian persona need not be independent or correct. Prompted tone, disagreement and conversation stability do not establish empathy, felt moral beliefs, psychological safety, superior evidence or durable learning. Concealed identity and two-human versus three-human groups limit generalization to disclosed AI.",
+      "concept_boundary": "A supportive persona need not be sycophantic, and a contrarian persona need not be independent or correct. Prompted tone, disagreement and conversation stability do not establish empathy, felt moral beliefs, psychological safety, superior evidence or durable learning. Concealed identity and two-human versus three-human groups limit generalization to disclosed AI.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b065-sycophancy",
+        "groupthink",
+        "moral-deference",
+        "integrative-complexity"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0100-persona-effect",
+          "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+          "url": "https://arxiv.org/abs/2511.01205v2",
+          "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 4, 10, 12 (source locators: 4, 10, 12). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Yueqiao Jin",
+              "Roberto Martinez-Maldonado",
+              "Wanruo Shi",
+              "Songjie Huang",
+              "Mingmin Zheng",
+              "Xinbin Han",
+              "Dragan Gašević",
+              "Lixiang Yan"
+            ],
+            "year": 2026,
+            "venue": "arXiv:2511.01205v2, preprint",
+            "evidence_scope": "Grounded-or-qualified claim proportions differ nominally for supportive AI versus control; network contrasts differ between the two persona conditions. Both AI conditions show lower trajectory distance. Final choice and justification-complexity condition contrasts are not detected. Some reported network inference uses a projection optimized on the same groups.",
+            "verification_url": "https://arxiv.org/abs/2511.01205v2",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+          "authors": [
+            "Yueqiao Jin",
+            "Roberto Martinez-Maldonado",
+            "Wanruo Shi",
+            "Songjie Huang",
+            "Mingmin Zheng",
+            "Xinbin Han",
+            "Dragan Gašević",
+            "Lixiang Yan"
+          ],
+          "year": 2026,
+          "url": "https://arxiv.org/abs/2511.01205v2",
+          "venue": "arXiv:2511.01205v2, preprint",
+          "publication_type": "posted-content",
+          "domain": "human-related",
+          "id": "arxiv:2511.01205",
+          "relevance": "Grounded-or-qualified claim proportions differ nominally for supportive AI versus control; network contrasts differ between the two persona conditions. Both AI conditions show lower trajectory distance. Final choice and justification-complexity condition contrasts are not detected. Some reported network inference uses a projection optimized on the same groups.",
+          "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 4, 10, 12 (source locators: 4, 10, 12). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+          "verification_url": "https://arxiv.org/abs/2511.01205v2",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 23 supplied pages read, including task, complexity rubric, reliability tables and full persona prompts. Version identifier and date read from first-page arXiv stamp.",
+          "review_record": "references/pdf-reviews/0100.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Persona effect\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Persona+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0100.json"
+      }
+    },
+    {
+      "id": "integrative-complexity",
+      "num": 538,
+      "name": "Integrative complexity",
+      "definition": "The extent to which reasoning differentiates multiple perspectives or considerations and integrates them into a coherent account.",
+      "category": "Reasoning",
+      "family": "reasoning-architecture",
+      "group_label": "Reasoning architecture",
+      "tag": "analogy",
+      "origin": "Social cognition / political and educational psychology",
+      "human_parallel": "Integrative complexity",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human reasoning construct defined and operationalized in a human–AI discussion study; automated text proxy has partial concurrent validation, no detected AI-condition improvement",
+      "proposed_ai_manifestation": "Assess whether an AI-assisted argument recognizes relevant competing considerations and explains their relationships, priorities or conditions. Use independent human ratings alongside automated features, checking truth, relevance and coherence rather than rewarding a longer list of values or greater semantic distance alone.",
+      "research_boundary": "Multiple viewpoints can be irrelevant, false or incompatible; integration does not require treating all views as equally valid. Semantic distance measures separation, not by itself coherence or reconciliation. A proxy correlation is partial validation rather than identity with the construct, general validity across languages or evidence of machine subjective reflection.",
+      "concept_boundary": "Multiple viewpoints can be irrelevant, false or incompatible; integration does not require treating all views as equally valid. Semantic distance measures separation, not by itself coherence or reconciliation. A proxy correlation is partial validation rather than identity with the construct, general validity across languages or evidence of machine subjective reflection.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "reflective-equilibrium",
+        "overgeneralization",
+        "persona-effect"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0100-integrative-complexity",
+          "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+          "url": "https://arxiv.org/abs/2511.01205v2",
+          "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 9, 20, 10 (source locators: 9, 20, 10). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Yueqiao Jin",
+              "Roberto Martinez-Maldonado",
+              "Wanruo Shi",
+              "Songjie Huang",
+              "Mingmin Zheng",
+              "Xinbin Han",
+              "Dragan Gašević",
+              "Lixiang Yan"
+            ],
+            "year": 2026,
+            "venue": "arXiv:2511.01205v2, preprint",
+            "evidence_scope": "The paper defines integrative complexity, supplies separate differentiation/integration rubric levels and compares its entropy-times-distance proxy with 88 human-coded responses (Spearman rho=.68). The short-task complexity regression has adjusted R-squared=.04, and AI-condition coefficients are not detected. Original Conway et al. (2014) is cited rather than independently read.",
+            "verification_url": "https://arxiv.org/abs/2511.01205v2",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "When Machines Join the Moral Circle: The Persona Effect of Generative AI Agents in Collaborative Reasoning",
+          "authors": [
+            "Yueqiao Jin",
+            "Roberto Martinez-Maldonado",
+            "Wanruo Shi",
+            "Songjie Huang",
+            "Mingmin Zheng",
+            "Xinbin Han",
+            "Dragan Gašević",
+            "Lixiang Yan"
+          ],
+          "year": 2026,
+          "url": "https://arxiv.org/abs/2511.01205v2",
+          "venue": "arXiv:2511.01205v2, preprint",
+          "publication_type": "posted-content",
+          "domain": "human-related",
+          "id": "arxiv:2511.01205",
+          "relevance": "The paper defines integrative complexity, supplies separate differentiation/integration rubric levels and compares its entropy-times-distance proxy with 88 human-coded responses (Spearman rho=.68). The short-task complexity regression has adjusted R-squared=.04, and AI-condition coefficients are not detected. Original Conway et al. (2014) is cited rather than independently read.",
+          "consulted": "Full supplied PDF text read, all 23 pages; evidence at PDF pages 9, 20, 10 (source locators: 9, 20, 10). Ten-minute human group discussion with GPT-5-based supportive or contrarian teammates whose AI identity is concealed. Conversation metrics and immediate hypothetical moral choices are measured; no durable moral learning, objective ethical correctness or machine subjective moral agency is established.",
+          "verification_url": "https://arxiv.org/abs/2511.01205v2",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 23 supplied pages read, including task, complexity rubric, reliability tables and full persona prompts. Version identifier and date read from first-page arXiv stamp.",
+          "review_record": "references/pdf-reviews/0100.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Integrative complexity\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Integrative+complexity%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0100.json"
       }
     }
   ]
