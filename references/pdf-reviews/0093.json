@@ -1,0 +1,171 @@
+{
+  "sequence": 93,
+  "source": {
+    "file_name": "S835_Bertheau_2025.pdf",
+    "source_id": "S835",
+    "sha256": "7e051fab22b0c552f96ec8fa9d2c5ea369d0ea847dd8ec0e14534d52ed4af75e",
+    "pdf_pages": 11,
+    "printed_pages": "1–11",
+    "version_note": "Scientific Reports15:16048,2025; received18December2024,accepted21April2025. Human EEG experiment using predetermined feedback described as AI.",
+    "verification_method": "All supplied PDF pages read; identity, DOI, methods, statistical comparisons, captions and limits checked. External supplementary outputs and original cited studies not reproduced."
+  },
+  "citation": {
+    "title": "Event-related potentials reveal incongruent behavior of autonomous vehicles in the moral machine dilemma",
+    "authors": [
+      "Maren A. K. Bertheau",
+      "Cindy Boetzel",
+      "Christoph S. Herrmann"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1038/s41598-025-99531-6",
+    "venue": "Scientific Reports15:16048",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source_scope_note": "Human EEG and acceptance responses to deterministic feedback presented as a putative AI's decision. No actual AI moral reasoning, actual traffic outcome or validated single-trial unacceptable-behavior classifier.",
+    "access_limits": [
+      "All11 extracted pages read, including methods, EEG preprocessing, condition/electrode tests, references and proposed BCI applications.",
+      "Raw data available on request were not obtained. External supplementary tables, electrode-level outputs, preprocessing code and trial exclusion totals were not independently reproduced.",
+      "ERP-component explanations are partly secondary interpretation; cited original books/studies and deep-brain-source accounts remain unread."
+    ]
+  },
+  "study": {
+    "sample": "36 recruited,2 excluded after completing only one of two sessions;34 analyzed,16 female,mean age24.471,range19–34. Right-handed native German licensed drivers without specified neurological/psychiatric conditions.",
+    "procedure": "Two150–200minute sessions, also containing an unrelated left-turn task; task order counterbalanced.100 distinct dilemmas each presented twice, once with feedback agreeing with and once disagreeing with participant choice;200 trials per person,6,800 decisions overall.",
+    "feedback": "Participant chooses first using left/right keys, then a deterministic abstract machine shows a congruent/incongruent outcome described as AI. Participants debriefed at the end.",
+    "behavior": "Preference for more lives, humans over pets and pedestrians over passengers. Inaction testt(33).934,p.357,d.160 undetected. Congruent feedback acceptance exceeds incongruent,t19.095,p<.001,d3.275.",
+    "EEG": "30 active electrodes, sampled1,000Hz, photo-sensor timing correction, artifact/ICA preprocessing, baseline−200 to0ms. P3 window322–422ms centered on grand-average Pz peak; LPP500–900ms. Condition x electrode-region repeated-measures ANOVA, Greenhouse–Geisser and Bonferroni adjustments.",
+    "results": "Incongruent feedback increases P3 amplitudeF(1,33)9.887,p.004 andLPPF24.658,p<.001. P3 condition-by-region interaction significant;LPP interaction not detected,p.215. Effects are group averages, not single-trial decoding."
+  },
+  "summary": "No new independent behavior entry. Retain relevant null evidence for omission bias and a bounded confirmation-bias comparison. Larger late ERP components after disagreement are not an ethical truth signal, a measured specific emotion or proof of an effective brain–computer controller.",
+  "findings": [
+    {
+      "term": "Omission bias",
+      "target_id": "b073-omission-bias",
+      "decision": "enrich-existing",
+      "definition": "Preference for not intervening rather than intervening when harm is unavoidable; the present test found only an undetected descriptive tendency.",
+      "novelty_rationale": "Existing behavior; a directly reported null is relevant evidence and should not be converted into either a positive replication or proof the effect does not exist.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "this difference was not statistically significant"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "this effect was not statistically significant."
+        }
+      ],
+      "evidence_scope": "The intervention comparison in34 participants yieldst.934,p.357,d.160. Other MoralMachine preferences are detected. The experiment is not an exhaustive original-task replication, and a fixed vignette subset may affect the estimate.",
+      "boundary": "The t-test is a test of the study's inaction tendency, not an equivalence test or universal refutation. Lane/key mapping, outcome composition and norm justification still matter; not every decision to maintain course is a bias."
+    },
+    {
+      "term": "Confirmation bias",
+      "target_id": "b036-confirmation-myside-bias",
+      "decision": "enrich-existing",
+      "definition": "Participants rate a supposed AI's choice as more acceptable when it agrees with their own preceding choice.",
+      "novelty_rationale": "An agreement-related observation near an existing concept, not proof of biased evidence weighting. Preserve it as a boundary note rather than a new 'moral confirmation' term.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "its decision was congruent with their"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "not interact with an AI but a deterministic abstract machine."
+        }
+      ],
+      "evidence_scope": "Agreement/disagreement with the respondent's earlier choice strongly predicts acceptance ratings; incongruence also changes P3/LPP group-average amplitudes. There is no objective correct moral answer or manipulation of diagnostic evidence showing unjustified rejection.",
+      "boundary": "Disagreeing with a harmful or poorly justified choice may be warranted. The result does not establish confirmation bias, model self-preference, cognitive dissonance, a specific emotion or actual AI failure. A physiological response does not settle ethical correctness.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "methodological_limits": [
+    "The 'AI' is deterministic experimentally controlled feedback, not a deployed AV policy or an autonomous moral agent. Human responses to that label must not be reported as a measured AI behavior.",
+    "Congruence is defined relative to a prior participant choice, not an independent moral criterion. Greater acceptance of agreement and higher responses to disagreement are not automatic evidence that agreement is ethically better.",
+    "Static, symbolic forced-choice fatal dilemmas differ from real driving, with uncertainty, braking, partial harm and other available actions. Real-time generalization and external safety benefits remain untested.",
+    "P3 andLPP are broad neurophysiological measures associated with several processes. Their modulation does not uniquely diagnose surprise, emotion, conflict, error, rejection or higher-order moral reasoning in an individual.",
+    "All participants see each vignette twice. Feedback is balanced by design and early training uses only congruent trials. Expectations, repetition, learning and task context can influence the response; no independent expectancy measure establishes a surprise mechanism.",
+    "The sample has34 participants, not6,800 independent people. The paper appropriately uses participant-level repeated-measures comparisons; do not import an independent-trial criticism from other studies.",
+    "The P3 window is selected around a peak in a grand-average search range250–1,000ms; it is not independently prospectively timed in new data. This should be disclosed without automatically calling a condition-collapsed peak choice circular.",
+    "Preprocessing rejects missing inputs, large-amplitude epochs, selected ICA artifacts and z-score outliers. Final per-condition trial retention and alternative preprocessing robustness require the external data/code and are not reproduced here.",
+    "Page4 first says only the incongruent–congruent parietal comparison was significant, then says frontal/central are significant and parietal is not. Figure3's caption and later discussion support the latter. Record this internal prose conflict rather than silently rewriting the source or inventing output.",
+    "The relation-to-AV test reportst4.761 andd.861. Under the paired-standardized dz convention apparently used by the other reported tests,t/sqrt(34) is about.816. An alternative standardization or transcription needs clarification before correcting the number.",
+    "Several P3 post-hoc passages use different counts of 'relevant comparisons'. Their exact Bonferroni families and table mapping require the supplementary outputs. The group-level significant main effect is not a validated individual threshold.",
+    "Non-significant omission andLPP interaction tests are not equivalence. Greater signal or acceptance is also not evidence of normative permissibility.",
+    "Late positive scalp effects cannot identify unique deep-brain generators. The suggestion ofMEG/fMRI as additional tools is future methodology; no amygdala or limbic source was localized here.",
+    "No single-trial classifier is trained or tested in this paper. Accuracy, sensitivity, specificity, false-positive rates, individual calibration, online latency and real-time vehicle adaptation are unmeasured. Group averages do not guarantee usable BCI performance.",
+    "The small convenience sample of young licensed German drivers limits cultural, age and disability generalization. Proposed benefits for motor-disabled users are not directly evaluated.",
+    "The description of all deontology as endorsing no decision-making is too broad, as earlier read philosophical sources distinguish duties, rights, redirected threats and harmful means. Moral doctrine cannot be inferred solely from choosing a lane.",
+    "Public acceptance, comprehensibility, technology usefulness and objective safety are different outcomes. The secondary TechnologyAcceptanceModel does not prove adoption or make all personally congruent actions acceptable."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0092.json",
+      "finding": "Both sources need observed measures distinguished from latent mental explanations. Here actual EEG is recorded, unlike fittedDDM weights, but neither method uniquely establishes an ethical emotion, attention mechanism or a robot's subjective state."
+    },
+    {
+      "related_review": "references/pdf-reviews/0091.json",
+      "finding": "Neural timing adds a different evidence type to contextual-rule judgments. It does not remove the need to distinguish process hypotheses, associations and normative correctness."
+    },
+    {
+      "related_review": "references/pdf-reviews/0086.json",
+      "finding": "Some VR designs show little starting-lane sensitivity, whereas this omission comparison is undetected. Neither null establishes universal absence, and neither binary outcome uniquely classifies deontological reasoning."
+    },
+    {
+      "related_review": "references/pdf-reviews/0090.json",
+      "finding": "An undetected effect should remain in the source trail without being excluded merely because it is null. Rejecting all reporting/omission effects requires stronger evidence than failure to reject a point-null."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "P3 / P3a / LPP as three new behaviors",
+      "reason": "Electrophysiological components or proposed subdivisions, not three independently identified behavioral mechanisms. Their windows, topography and interpretation are retained in the review."
+    },
+    {
+      "term": "Expectancy violation / surprise",
+      "reason": "P3a interpretation suggests surprising incongruence, but expectations and surprise are not directly rated or independently manipulated here. A fresh construct entry needs a defining primary source and suitable evidence."
+    },
+    {
+      "term": "Cognitive conflict or cognitive dissonance",
+      "reason": "Not uniquely established by laterERP modulation or disagreement with feedback. No conflicting internal-belief measure or dissonance-reduction behavior is tested."
+    },
+    {
+      "term": "TechnologyAcceptanceModel",
+      "reason": "A secondary adoption framework, not newly demonstrated behavior in these data. Actual adoption and system use are not measured."
+    },
+    {
+      "term": "Neural detector of morally wrong AI action",
+      "reason": "An unvalidated extrapolation: the study identifies group differences after personally incongruent simulated feedback, not objective wrongness or reliable individual decoding."
+    }
+  ],
+  "limitations": [
+    "No new term is forced from EEG labels. The ontology gains a relevant null source and an explicit boundary note. No subjective AI state, neural readout of moral truth, new normative relation, source quota or annual series is fabricated."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b073-omission-bias",
+      "b036-confirmation-myside-bias"
+    ]
+  }
+}
