@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0199.json
+    latest_review: references/pdf-reviews/0201.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -53252,7 +53252,8 @@ modes:
   category: Metacognition
   family: metacognition-confidence
   group_label: Metacognition and confidence
-  example: "Rerun on the identical diff an hour later, the same reviewer agent flags a nit it had waved through on the first pass."
+  example: Rerun on the identical diff an hour later, the same reviewer agent flags a nit it had waved through
+    on the first pass.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -53262,8 +53263,8 @@ modes:
   ai_evidence_status: Proposed analogy; not tested in this research
   proposed_ai_manifestation: Gives different verdicts on identical input across runs.
   proposal_kind: Proposed AI manifestation
-  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review; an
-    illustrative AI example is not empirical evidence.
+  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review;
+    an illustrative AI example is not empirical evidence.
   research_field: Expert judgment and noise
   definition_sources:
   - id: gap-review-418
@@ -53271,8 +53272,8 @@ modes:
       review'
     url: https://doi.org/10.1186/s12911-025-02905-z
     consulted: Selected Table 2, noise-components discussion and limitations in the open full text, https://pmc.ncbi.nlm.nih.gov/articles/PMC11834221/;
-      not the complete paper. Bibliographic identity checked against the publication record; only the stated material
-      was consulted.
+      not the complete paper. Bibliographic identity checked against the publication record; only the stated
+      material was consulted.
     publication:
       type: journal-article
       authors:
@@ -53283,9 +53284,9 @@ modes:
       year: 2025
       venue: BMC Medical Informatics and Decision Making
       doi: 10.1186/s12911-025-02905-z
-      evidence_scope: Scoping review defines noise components in Table 2 and reclassifies variability in 14 medical
-        studies; the original studies did not themselves directly use the noise concept. Not all decision variation
-        is unwanted, and the review is not an AI experiment.
+      evidence_scope: Scoping review defines noise components in Table 2 and reclassifies variability in 14
+        medical studies; the original studies did not themselves directly use the noise concept. Not all decision
+        variation is unwanted, and the review is not an AI experiment.
       verification_url: https://api.crossref.org/works/10.1186%2Fs12911-025-02905-z
       verified_date: '2026-11-08'
   research_provenance:
@@ -53321,12 +53322,12 @@ modes:
     - Mjaye Mazwi
     - Robert Lao
     - Osami Honjo
-    relevance: Scoping review defines noise components in Table 2 and reclassifies variability in 14 medical studies;
-      the original studies did not themselves directly use the noise concept. Not all decision variation is unwanted,
-      and the review is not an AI experiment.
+    relevance: Scoping review defines noise components in Table 2 and reclassifies variability in 14 medical
+      studies; the original studies did not themselves directly use the noise concept. Not all decision variation
+      is unwanted, and the review is not an AI experiment.
     consulted: Selected Table 2, noise-components discussion and limitations in the open full text, https://pmc.ncbi.nlm.nih.gov/articles/PMC11834221/;
-      not the complete paper. Bibliographic identity checked against the publication record; only the stated material
-      was consulted.
+      not the complete paper. Bibliographic identity checked against the publication record; only the stated
+      material was consulted.
     verification_url: https://api.crossref.org/works/10.1186%2Fs12911-025-02905-z
     source_reference:
       collection: definition_sources
@@ -53385,6 +53386,41 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0201
+    review_record: references/pdf-reviews/0201.json
+    name: Occasion noise
+    definition: Variability in the same judge's responses over time, often from incidental factors.
+    evidence_scope: The introduction describes inconsistent judgments of the same case as noise and cites Kahneman,
+      Sibony and Sunstein’s book. There are no repeated same-judge/same-case measurements in these experiments.
+    catalogue_boundary: A single response per participant cannot estimate within-judge occasion noise or distinguish
+      it from stable differences across judges/cases. The cited book was not independently read; no duplicate
+      general noise label is added.
+    definition_sources:
+    - id: pdf-review-0201-upload-126
+      title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+        two pre-registered experiments'
+      url: https://doi.org/10.1371/journal.pone.0318486
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 2 (source locators: 2).
+        Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+        Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+        advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce
+        main F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Eiichiro Watamura
+        - Yichen Liu
+        - Tomohiro Ioku
+        year: 2025
+        venue: PLOS ONE 20(1), e0318486
+        doi: 10.1371/journal.pone.0318486
+        evidence_scope: The introduction describes inconsistent judgments of the same case as noise and cites
+          Kahneman, Sibony and Sunstein’s book. There are no repeated same-judge/same-case measurements in
+          these experiments.
+        verification_url: https://doi.org/10.1371/journal.pone.0318486
+        verified_date: '2026-11-27'
 - id: upload-127
   num: 419
   name: Level noise
@@ -58420,6 +58456,41 @@ modes:
           and 124/172 doctors in Table 2). This is context-specific stated acceptance, not a matched-performance
           behavioral test. Conflicting surgery totals prevent a reliable doctor adoption estimate.
         verification_url: https://doi.org/10.3389/fopht.2026.1766974
+        verified_date: '2026-11-27'
+  - id: pdf-review-0201
+    review_record: references/pdf-reviews/0201.json
+    name: Algorithm aversion
+    definition: Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in
+      a comparable task.
+    evidence_scope: Two Japanese fictional sentencing experiments do not detect the predicted relative preference
+      for a human judge when human/AI advice conflicts, including in mitigating narrative conditions. Main
+      analyzed Ns are 787 and 860; full-sample public data give the same qualitative null-source pattern.
+    catalogue_boundary: No detected difference is not equivalence, universal acceptance or equal actual reliance.
+      The design cannot distinguish equal advice use from ignoring both sources, and it does not measure actual
+      accuracy or justify AI sentencing.
+    definition_sources:
+    - id: pdf-review-0201-algorithm-aversion
+      title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+        two pre-registered experiments'
+      url: https://doi.org/10.1371/journal.pone.0318486
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 12 (source locators: 12).
+        Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+        Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+        advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce
+        main F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+      publication:
+        type: journal-article
+        authors:
+        - Eiichiro Watamura
+        - Yichen Liu
+        - Tomohiro Ioku
+        year: 2025
+        venue: PLOS ONE 20(1), e0318486
+        doi: 10.1371/journal.pone.0318486
+        evidence_scope: Two Japanese fictional sentencing experiments do not detect the predicted relative
+          preference for a human judge when human/AI advice conflicts, including in mitigating narrative conditions.
+          Main analyzed Ns are 787 and 860; full-sample public data give the same qualitative null-source pattern.
+        verification_url: https://doi.org/10.1371/journal.pone.0318486
         verified_date: '2026-11-27'
 - id: weak-evidence-effect
   num: 445
@@ -82519,6 +82590,43 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0134.json
+  research_notes:
+  - id: pdf-review-0201
+    review_record: references/pdf-reviews/0201.json
+    name: Procedural fairness judgment
+    definition: Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather
+      than assessing only its outcome.
+    evidence_scope: Procedural justice is defined as perceived process fairness in the literature review, overlapping
+      the existing procedural-fairness judgment entry. The experiments measure sentence ratings and mitigation
+      checks, not procedural justice itself.
+    catalogue_boundary: Process-fairness perception, substantive justice, measured trust and legal correctness
+      differ. This background definition is not an independent experimental test of procedural fairness or
+      a new behavior row.
+    definition_sources:
+    - id: pdf-review-0201-procedural-fairness-judgment
+      title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+        two pre-registered experiments'
+      url: https://doi.org/10.1371/journal.pone.0318486
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4 (source locators: 4).
+        Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+        Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+        advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce
+        main F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Eiichiro Watamura
+        - Yichen Liu
+        - Tomohiro Ioku
+        year: 2025
+        venue: PLOS ONE 20(1), e0318486
+        doi: 10.1371/journal.pone.0318486
+        evidence_scope: Procedural justice is defined as perceived process fairness in the literature review,
+          overlapping the existing procedural-fairness judgment entry. The experiments measure sentence ratings
+          and mitigation checks, not procedural justice itself.
+        verification_url: https://doi.org/10.1371/journal.pone.0318486
+        verified_date: '2026-11-27'
 - id: volitionality-attribution
   num: 592
   name: Volitionality attribution
@@ -83868,6 +83976,41 @@ modes:
           anticipates a possible future shift in epistemic authority. This is a role/governance argument, not
           a measured authority-transfer effect.
         verification_url: https://doi.org/10.1101/2020.08.17.20171769
+        verified_date: '2026-11-27'
+  - id: pdf-review-0201
+    review_record: references/pdf-reviews/0201.json
+    name: Algorithmic authority
+    definition: Treating an algorithmic system as a credible or legitimate source for deciding what information
+      to accept or how to act.
+    evidence_scope: Participants see both a veteran judge and a case-law-trained AI offer opposing sentences.
+      Reversing recommendations produces no statistically detected average source-pattern advantage in these
+      vignettes. Authority is a context, not an empirically established equal-trust mechanism.
+    catalogue_boundary: An AI label, veteran description, final sentence rating and lawful decision authority
+      differ. No current legal legitimacy, professional accreditation, equal trust or bias-free hybrid outcome
+      follows.
+    definition_sources:
+    - id: pdf-review-0201-algorithmic-authority
+      title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+        two pre-registered experiments'
+      url: https://doi.org/10.1371/journal.pone.0318486
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 3 (source locators: 3).
+        Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+        Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+        advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce
+        main F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+      publication:
+        type: journal-article
+        authors:
+        - Eiichiro Watamura
+        - Yichen Liu
+        - Tomohiro Ioku
+        year: 2025
+        venue: PLOS ONE 20(1), e0318486
+        doi: 10.1371/journal.pone.0318486
+        evidence_scope: Participants see both a veteran judge and a case-law-trained AI offer opposing sentences.
+          Reversing recommendations produces no statistically detected average source-pattern advantage in
+          these vignettes. Authority is a context, not an empirically established equal-trust mechanism.
+        verification_url: https://doi.org/10.1371/journal.pone.0318486
         verified_date: '2026-11-27'
 - id: mimetic-isomorphism
   num: 596
@@ -93731,6 +93874,34 @@ modes:
       not raw-data repairs. External OSF preregistrations, data, code and materials were not independently
       inspected.
     review_record: references/pdf-reviews/0172.json
+  - title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+      two pre-registered experiments'
+    authors:
+    - Eiichiro Watamura
+    - Yichen Liu
+    - Tomohiro Ioku
+    year: 2025
+    url: https://doi.org/10.1371/journal.pone.0318486
+    venue: PLOS ONE 20(1), e0318486
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0318486
+    relevance: Narrative packages describing mitigating circumstances substantially shift sentence ratings
+      and perceived culpability. Randomized packages, not AI internal moral reasoning, produce this human-response
+      result; inferential main effects reproduce from public workbook data.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 10 (source locators: 10).
+      Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+      Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+      advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce main
+      F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+    verification_url: https://doi.org/10.1371/journal.pone.0318486
+    verified_date: '2026-11-27'
+    verification_method: All 16 supplied pages and 69 references read; both main figures visually inspected.
+      All text in public S1–S4 Appendix DOCX files read; S3/S4 native chart XML, Japanese questionnaire layout
+      and embedded workbook analysis/data sheets inspected. Selected full-factorial ANOVAs independently reconstructed
+      from those public workbooks and match main F tests. Crossref verifies main identity. OSF registration
+      and any separate files were not accessed; no view-only token used.
+    review_record: references/pdf-reviews/0201.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -93744,6 +93915,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0172.json
+  research_notes:
+  - id: pdf-review-0201
+    review_record: references/pdf-reviews/0201.json
+    name: Normative sensitivity
+    definition: Adjusting moral judgment in response to ethically relevant considerations while resisting changes
+      driven only by irrelevant details.
+    evidence_scope: Narrative packages describing mitigating circumstances substantially shift sentence ratings
+      and perceived culpability. Randomized packages, not AI internal moral reasoning, produce this human-response
+      result; inferential main effects reproduce from public workbook data.
+    catalogue_boundary: The packages change several facts and emotional cues simultaneously, so no uniquely
+      identified empathy mechanism or universally justified legal sentence follows. Sensitivity to one package
+      does not prove overall impartiality or immunity to irrelevant details.
+    definition_sources:
+    - id: pdf-review-0201-normative-sensitivity
+      title: 'Judges versus artificial intelligence in juror decision-making in criminal trials: Evidence from
+        two pre-registered experiments'
+      url: https://doi.org/10.1371/journal.pone.0318486
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 10 (source locators: 10).
+        Two randomized Japanese online mock-juror vignette experiments with conflicting scripted human/AI recommendations.
+        Primary analyses retain 787/1735 and 860/1731 respondents after post-vignette checks. No detected source-pattern
+        advantage or interaction is not equivalence or proof of equal trust. Public embedded data reproduce
+        main F tests and full-sample null source patterns; figure labeling conflicts are retained.'
+      publication:
+        type: journal-article
+        authors:
+        - Eiichiro Watamura
+        - Yichen Liu
+        - Tomohiro Ioku
+        year: 2025
+        venue: PLOS ONE 20(1), e0318486
+        doi: 10.1371/journal.pone.0318486
+        evidence_scope: Narrative packages describing mitigating circumstances substantially shift sentence
+          ratings and perceived culpability. Randomized packages, not AI internal moral reasoning, produce
+          this human-response result; inferential main effects reproduce from public workbook data.
+        verification_url: https://doi.org/10.1371/journal.pone.0318486
+        verified_date: '2026-11-27'
 - id: sheer-difference-discrimination
   num: 667
   name: Sheer-difference discrimination
