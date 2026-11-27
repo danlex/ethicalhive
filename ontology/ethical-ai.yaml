@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 590
+  mode_count: 592
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 590
+    numbered_entries: 592
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0133.json
+    latest_review: references/pdf-reviews/0134.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10320,8 +10320,8 @@ modes:
   - id: paper-gap-78
     title: 'Observer''s reaction to the "innocent victim": Compassion or rejection?'
     url: https://doi.org/10.1037/h0023562
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1037/h0023562
@@ -10344,10 +10344,10 @@ modes:
     authors:
     - Melvin J. Lerner
     - Carolyn H. Simmons
-    relevance: Human observers' reactions to an innocent victim; a historical basis for just-world research, not
-      an AI test.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Human observers' reactions to an innocent victim; a historical basis for just-world research,
+      not an AI test.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1037/h0023562
     source_reference:
       collection: definition_sources
@@ -10397,6 +10397,41 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0134
+    review_record: references/pdf-reviews/0134.json
+    name: Just-world bias
+    definition: Assuming outcomes are deserved; blaming the affected party.
+    evidence_scope: Luck-egalitarian choice arguments motivate a survey dimension; no just-world belief scale
+      or victim-blame manipulation is administered. This is a conceptual boundary note, not primary evidence
+      of just-world bias.
+    catalogue_boundary: Some choices can be causally relevant without explaining every outcome or justifying
+      every sanction. Check constraints and evidence instead of inferring agency from disadvantage or treating
+      all responsibility attribution as biased.
+    definition_sources:
+    - id: pdf-review-0134-b078-just-world-bias
+      title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+      url: https://doi.org/10.1145/3178876.3186138
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2 (source locators: 2).
+        Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+        context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+        valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Nina Grgić-Hlača
+        - Elissa M. Redmiles
+        - Krishna P. Gummadi
+        - Adrian Weller
+        year: 2018
+        venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+        doi: 10.1145/3178876.3186138
+        evidence_scope: Luck-egalitarian choice arguments motivate a survey dimension; no just-world belief
+          scale or victim-blame manipulation is administered. This is a conceptual boundary note, not primary
+          evidence of just-world bias.
+        verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+        verified_date: '2026-11-27'
 - id: b079-trolley-frame-sensitivity
   num: 79
   name: Trolley-frame sensitivity
@@ -18158,6 +18193,43 @@ modes:
           and negative statements complicate attribution of every disagreement to the same stereotype mechanism.
           Primary controlled output evidence, not a human implicit-association test or mind-reading.
         verification_url: https://api.crossref.org/works/10.1038/s42256-024-00969-6
+        verified_date: '2026-11-27'
+  - id: pdf-review-0134
+    review_record: references/pdf-reviews/0134.json
+    name: Implicit bias
+    definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
+      from stereotyped associations absorbed in training, without intending to.
+    evidence_scope: Indirect discrimination and sensitive-group causation are framework background. This survey
+      does not inspect model weights or show actual disparate predictions, intent or learned stereotypes. Nonsignificant
+      adjusted coefficients for two discrimination-related ratings do not show that discrimination is absent
+      or unimportant.
+    catalogue_boundary: Omitting a protected attribute does not rule out proxy discrimination or disparate
+      effects. Conversely, respondents' beliefs about a proxy are not proof of its causal role. Discrimination
+      can be intentional, structural or proxy-mediated and need not be reducible to implicit associations.
+    definition_sources:
+    - id: pdf-review-0134-implicit-bias
+      title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+      url: https://doi.org/10.1145/3178876.3186138
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 3 (source locators: 3).
+        Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+        context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+        valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Nina Grgić-Hlača
+        - Elissa M. Redmiles
+        - Krishna P. Gummadi
+        - Adrian Weller
+        year: 2018
+        venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+        doi: 10.1145/3178876.3186138
+        evidence_scope: Indirect discrimination and sensitive-group causation are framework background. This
+          survey does not inspect model weights or show actual disparate predictions, intent or learned stereotypes.
+          Nonsignificant adjusted coefficients for two discrimination-related ratings do not show that discrimination
+          is absent or unimportant.
+        verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
         verified_date: '2026-11-27'
 - id: illusion-of-control
   name: Illusion of control
@@ -66214,6 +66286,41 @@ modes:
           an is–ought fallacy, nor that moral disagreement makes all normative reasoning impossible.
         verification_url: https://api.crossref.org/works/10.1038/s42256-024-00969-6
         verified_date: '2026-11-27'
+  - id: pdf-review-0134
+    review_record: references/pdf-reviews/0134.json
+    name: Is–ought fallacy
+    definition: Inferring a substantive normative conclusion from descriptive premises alone, without an additional
+      normative premise.
+    evidence_scope: Authors say the inferred common heuristic is not objectively true and may depend on cultural
+      norms. Their future suggestion to use objective feature data plus a common heuristic still requires normative
+      justification. Boundary-only evidence, not an additional direct is–ought experiment.
+    catalogue_boundary: Agreement and prediction can inform governance with explicit value premises but do
+      not establish correctness. A factual disagreement can coexist with a legitimate value disagreement; do
+      not present factual correction as guaranteed ethical consensus.
+    definition_sources:
+    - id: pdf-review-0134-is-ought-fallacy
+      title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+      url: https://doi.org/10.1145/3178876.3186138
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 9 (source locators: 9).
+        Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+        context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+        valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Nina Grgić-Hlača
+        - Elissa M. Redmiles
+        - Krishna P. Gummadi
+        - Adrian Weller
+        year: 2018
+        venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+        doi: 10.1145/3178876.3186138
+        evidence_scope: Authors say the inferred common heuristic is not objectively true and may depend on
+          cultural norms. Their future suggestion to use objective feature data plus a common heuristic still
+          requires normative justification. Boundary-only evidence, not an additional direct is–ought experiment.
+        verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+        verified_date: '2026-11-27'
 - id: reflective-equilibrium
   num: 521
   name: Reflective equilibrium
@@ -74447,3 +74554,210 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0133.json
+- id: procedural-fairness-judgment
+  num: 591
+  name: Procedural fairness judgment
+  definition: Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather
+    than assessing only its outcome.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Fairness psychology / algorithmic decision-making
+  human_parallel: Procedural fairness judgment
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human ratings of feature-use fairness in one criminal-risk scenario; neither a universal
+    fairness standard nor a demonstrated AI psychological mechanism
+  proposed_ai_manifestation: Audit a decision's input provenance, reliability, relevance, privacy, controllability
+    assumptions and possible discriminatory pathways separately from its outcome statistics. Ask affected stakeholders
+    about process concerns, preserve disagreement and test whether explanations distinguish factual evidence
+    from value judgments. Evaluate lawful authority and rights independently of majority approval.
+  research_boundary: A perceived fair process can still be inaccurate, discriminatory or harmful; an unpopular
+    process is not automatically unjust. Outcome fairness and process fairness can diverge. Assess the actual
+    deployed feature pipeline and affected people's rights instead of turning one survey majority or a high-accuracy
+    classifier into moral authority.
+  concept_boundary: A perceived fair process can still be inaccurate, discriminatory or harmful; an unpopular
+    process is not automatically unjust. Outcome fairness and process fairness can diverge. Assess the actual
+    deployed feature pipeline and affected people's rights instead of turning one survey majority or a high-accuracy
+    classifier into moral authority.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Process fairness judgment
+  relates_to:
+  - volitionality-attribution
+  - implicit-bias
+  - is-ought-fallacy
+  - moral-uncertainty
+  definition_sources:
+  - id: pdf-review-0134-procedural-fairness-judgment
+    title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+    url: https://doi.org/10.1145/3178876.3186138
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 1, 9 (source locators: 1,
+      9). Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+      context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+      valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+    publication:
+      type: proceedings-article
+      authors:
+      - Nina Grgić-Hlača
+      - Elissa M. Redmiles
+      - Krishna P. Gummadi
+      - Adrian Weller
+      year: 2018
+      venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+      doi: 10.1145/3178876.3186138
+      evidence_scope: The main survey models 576 participants' judgments about use of ten feature categories
+        from their own property ratings. Reliability, relevance, privacy and other concerns extend beyond output
+        disparities. Predicting judgments does not determine whether the process is ethically justified or
+        legally permitted, and the study does not directly test voice, appeal, consistency or every wider procedural-justice
+        dimension.
+      verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+    authors:
+    - Nina Grgić-Hlača
+    - Elissa M. Redmiles
+    - Krishna P. Gummadi
+    - Adrian Weller
+    year: 2018
+    url: https://doi.org/10.1145/3178876.3186138
+    venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3178876.3186138
+    relevance: The main survey models 576 participants' judgments about use of ten feature categories from
+      their own property ratings. Reliability, relevance, privacy and other concerns extend beyond output disparities.
+      Predicting judgments does not determine whether the process is ethically justified or legally permitted,
+      and the study does not directly test voice, appeal, consistency or every wider procedural-justice dimension.
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 1, 9 (source locators: 1,
+      9). Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+      context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+      valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+    verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+    verified_date: '2026-11-27'
+    verification_method: All ten supplied pages read, including all tables and references. Figures 1–4 rendered
+      and visually inspected at PDF pages 4, 7, 8 and 9. Crossref verifies author/work identity and proceedings
+      locator; no external raw-data or final-version reproduction.
+    review_record: references/pdf-reviews/0134.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Procedural fairness judgment"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Procedural+fairness+judgment%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0134.json
+- id: volitionality-attribution
+  num: 592
+  name: Volitionality attribution
+  definition: Judging whether a person's characteristic or circumstance results from voluntary choice or can
+    be changed through their decisions.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Responsibility attribution / fairness psychology
+  human_parallel: Volitionality attribution
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit perceived-feature property and correlated fairness rating; no independent verification
+    of actual choice, causal mechanism or AI analogue
+  proposed_ai_manifestation: When explaining a person's outcome or responsibility, distinguish evidence of
+    a voluntary decision from assumptions that a circumstance was chosen or easily changeable. Test matched
+    cases with different constraints, opportunities and causal histories. Do not infer that an existing disadvantage
+    proves bad choices or that any voluntary act licenses every adverse consequence.
+  research_boundary: Control, available options, resources, coercion and causal history matter. Capacity to
+    change a circumstance now does not prove it was originally chosen, and a chosen characteristic does not
+    make its use fair in every decision. This construct concerns attribution, not an AI's free will or justification
+    for blaming disadvantaged people.
+  concept_boundary: Control, available options, resources, coercion and causal history matter. Capacity to
+    change a circumstance now does not prove it was originally chosen, and a chosen characteristic does not
+    make its use fair in every decision. This construct concerns attribution, not an AI's free will or justification
+    for blaming disadvantaged people.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b081-sense-of-agency
+  - perceived-control
+  - b078-just-world-bias
+  - procedural-fairness-judgment
+  definition_sources:
+  - id: pdf-review-0134-volitionality-attribution
+    title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+    url: https://doi.org/10.1145/3178876.3186138
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 4 (source locators: 2,
+      4). Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+      context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+      valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+    publication:
+      type: proceedings-article
+      authors:
+      - Nina Grgić-Hlača
+      - Elissa M. Redmiles
+      - Krishna P. Gummadi
+      - Adrian Weller
+      year: 2018
+      venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+      doi: 10.1145/3178876.3186138
+      evidence_scope: The paper motivates volitionality using voluntary-choice versus unchosen-circumstance
+        arguments, while its survey item asks whether a person can change a feature by a decision. Greater
+        perceived volitionality associates with higher fairness odds (OR 1.18) in the adjusted model. Origin
+        in choice and present changeability are related but different constructs; neither is independently
+        checked here.
+      verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Human Perceptions of Fairness in Algorithmic Decision Making: A Case Study of Criminal Risk Prediction'
+    authors:
+    - Nina Grgić-Hlača
+    - Elissa M. Redmiles
+    - Krishna P. Gummadi
+    - Adrian Weller
+    year: 2018
+    url: https://doi.org/10.1145/3178876.3186138
+    venue: Proceedings of the 2018 World Wide Web Conference, 903–912; supplied arXiv v1
+    publication_type: proceedings-article
+    domain: human-related
+    id: doi:10.1145/3178876.3186138
+    relevance: The paper motivates volitionality using voluntary-choice versus unchosen-circumstance arguments,
+      while its survey item asks whether a person can change a feature by a decision. Greater perceived volitionality
+      associates with higher fairness odds (OR 1.18) in the adjusted model. Origin in choice and present changeability
+      are related but different constructs; neither is independently checked here.
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 4 (source locators: 2,
+      4). Descriptive surveys of human judgments about ten input-feature categories in a hypothetical bail-risk
+      context, not a recidivism-model audit, causal fairness experiment, legal opinion or proof of a universally
+      valid moral rule. Predictive models use participants'' own concurrently reported property assessments.'
+    verification_url: https://api.crossref.org/works/10.1145/3178876.3186138
+    verified_date: '2026-11-27'
+    verification_method: All ten supplied pages read, including all tables and references. Figures 1–4 rendered
+      and visually inspected at PDF pages 4, 7, 8 and 9. Crossref verifies author/work identity and proceedings
+      locator; no external raw-data or final-version reproduction.
+    review_record: references/pdf-reviews/0134.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Volitionality attribution"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Volitionality+attribution%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0134.json
