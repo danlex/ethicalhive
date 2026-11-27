@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0076.json
+    latest_review: references/pdf-reviews/0077.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -17059,6 +17059,41 @@ modes:
           or error benchmark in the proposed traffic study.
         verification_url: https://doi.org/10.1007/s00146-023-01813-y
         verified_date: '2026-11-27'
+  - id: pdf-review-0077
+    review_record: references/pdf-reviews/0077.json
+    name: A salient character manipulation is not automatically a halo effect
+    definition: Strongly valenced character information can change overall evaluation without demonstrating
+      that an irrelevant positive trait improperly spills into an unrelated judgment.
+    evidence_scope: Authors acknowledge abusive/caring-parent and violent-animal-hater portrayals may dominate
+      much subtler rule and collision manipulations. Relative effect sizes therefore depend on stimulus strength.
+    catalogue_boundary: Do not infer a general human preference for virtue ethics, an irrelevant-trait bias,
+      or moral permission to rank a person's right to road safety by prior reputation. Matched manipulation
+      strength and relevance checks are needed.
+    definition_sources:
+    - id: pdf-review-0077-halo-effect
+      title: 'Goodness behind a wheel: moral judgment in realistic traffic simulations featuring Agents, Deeds,
+        and Consequences'
+      url: https://doi.org/10.3389/fpsyg.2026.1885843
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 14 (source locators: 14).
+        Human third-person evaluations of human-driver traffic stories, presented as text, desktop video or
+        group 360-degree projection. No autonomous-vehicle or language-model choices, real-world driving behavior
+        or clinical diagnosis tested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Dario Cecchini
+        - Michael Pflanzer
+        - Sam Cacace
+        - Veljko Dubljević
+        year: 2026
+        venue: Frontiers in Psychology, 17:1885843
+        doi: 10.3389/fpsyg.2026.1885843
+        evidence_scope: Authors acknowledge abusive/caring-parent and violent-animal-hater portrayals may dominate
+          much subtler rule and collision manipulations. Relative effect sizes therefore depend on stimulus
+          strength.
+        verification_url: https://doi.org/10.3389/fpsyg.2026.1885843
+        verified_date: '2026-11-27'
 - id: fundamental-attribution-error
   name: Fundamental attribution error
   definition: Explaining a user's or another agent's behaviour by disposition while ignoring the situation
@@ -18654,14 +18689,15 @@ modes:
       are independent of this AI-domain total.
 - id: laziness
   name: Laziness
-  definition: Doing less than asked, stopping early, or handing work back ('you can finish the rest') instead of
-    completing the task.
-  example: 'Asked to refactor a whole file it changes two functions, leaves a ''TODO: the rest is similar'', and
-    stops.'
+  definition: Doing less than asked, stopping early, or handing work back ('you can finish the rest') instead
+    of completing the task.
+  example: 'Asked to refactor a whole file it changes two functions, leaves a ''TODO: the rest is similar'',
+    and stops.'
   family: self-model-and-agency
   group_label: Self-model and agency
   category: Self & agency
-  human_parallel: 'Satisficing and least-effort responding: doing the minimum that passes rather than the full task.'
+  human_parallel: 'Satisficing and least-effort responding: doing the minimum that passes rather than the full
+    task.'
   highlighted: false
   tag: research
   origin: mixed
@@ -18707,7 +18743,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2410.11437
     source_reference:
@@ -18721,7 +18758,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2511.02303
     source_reference:
@@ -18738,8 +18776,8 @@ modes:
     venue: arXiv
     domain: ai
     publication_type: preprint
-    relevance: The indexed title or abstract matches the recorded query for Laziness. This is a bibliographic relevance
-      check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Laziness. This is a bibliographic
+      relevance check, not validation of the proposed AI manifestation.
     consulted: Official arXiv bibliographic record and abstract context; full paper not read. Selection screened
       at title/excerpt level.
     verification_url: https://export.arxiv.org/api/query?id_list=2512.13762%2C2512.18755%2C2512.19466%2C2512.20662%2C2512.21120%2C2512.21878%2C2512.22568%2C2512.22725%2C2512.23482%2C2601.00138%2C2601.00923%2C2601.04616%2C2601.04631%2C2601.05293%2C2601.06172%2C2601.06636%2C2601.07832%2C2601.10187%2C2601.11049%2C2601.11529%2C2601.12560%2C2601.13904%2C2601.14691%2C2601.15652%2C2601.16007%2C2601.16130%2C2601.20282%2C2602.00007%2C2602.00046%2C2602.00767%2C2602.00947%2C2602.07878%2C2602.07940%2C2602.08877%2C2602.09870%2C2602.09904%2C2602.11358%2C2602.12124%2C2602.14457%2C2602.14518&max_results=40
@@ -18756,6 +18794,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0077
+    review_record: references/pdf-reviews/0077.json
+    name: Low rating variance is a survey exclusion proxy, not diagnosed laziness
+    definition: The researchers exclude respondents with low variability in ratings as possibly undifferentiated
+      responders; a flat response pattern alone does not establish low effort or intentional failure to complete
+      a task.
+    evidence_scope: Study1 excludes96 respondents using low variance across only two scenario judgments; Study2
+      excludes26 using PPIMT or vignette response variance. Effort, strategy and intention are not independently
+      measured.
+    catalogue_boundary: Selection using the outcome can remove real moral consistency or indifference to the
+      manipulated factors and change estimated effects. Completing a survey with equal ratings is not necessarily
+      satisficing, and survey satisficing is not synonymous with AI stopping a task prematurely.
+    definition_sources:
+    - id: pdf-review-0077-laziness
+      title: 'Goodness behind a wheel: moral judgment in realistic traffic simulations featuring Agents, Deeds,
+        and Consequences'
+      url: https://doi.org/10.3389/fpsyg.2026.1885843
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 5, 10 (source locators:
+        5, 10). Human third-person evaluations of human-driver traffic stories, presented as text, desktop
+        video or group 360-degree projection. No autonomous-vehicle or language-model choices, real-world driving
+        behavior or clinical diagnosis tested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Dario Cecchini
+        - Michael Pflanzer
+        - Sam Cacace
+        - Veljko Dubljević
+        year: 2026
+        venue: Frontiers in Psychology, 17:1885843
+        doi: 10.3389/fpsyg.2026.1885843
+        evidence_scope: Study1 excludes96 respondents using low variance across only two scenario judgments;
+          Study2 excludes26 using PPIMT or vignette response variance. Effort, strategy and intention are not
+          independently measured.
+        verification_url: https://doi.org/10.3389/fpsyg.2026.1885843
+        verified_date: '2026-11-27'
 - id: decoy-effect
   name: Decoy effect
   definition: Letting an irrelevant or dominated option change its ranking of the real candidates.
@@ -29520,6 +29596,42 @@ modes:
         evidence_scope: Participants initially know the dilemma and actor, then learn stay/turn behavior and
           casualties. Choice, intention and outcome information become available together.
         verification_url: https://doi.org/10.3390/bs15081038
+        verified_date: '2026-11-27'
+  - id: pdf-review-0077
+    review_record: references/pdf-reviews/0077.json
+    name: Outcome relevance is not by itself outcome bias
+    definition: Human observers assign different acceptability ratings to stories with and without a minor
+      collision; the outcome can be relevant to their overall moral question without proving irrational hindsight.
+    evidence_scope: Study1 text/video consequence differences vary, and Study2 finds positive differences.
+      No controlled analysis establishes that predecision information, expected risk and causal responsibility
+      are identical and should rationally be evaluated identically.
+    catalogue_boundary: Moral acceptability, decision quality based on available information, actual responsibility
+      and feelings about outcomes are separate. Favoring fewer harms can be justified; no objective error or
+      AI output failure is demonstrated.
+    definition_sources:
+    - id: pdf-review-0077-candidate-056
+      title: 'Goodness behind a wheel: moral judgment in realistic traffic simulations featuring Agents, Deeds,
+        and Consequences'
+      url: https://doi.org/10.3389/fpsyg.2026.1885843
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7, 14 (source locators:
+        7, 14). Human third-person evaluations of human-driver traffic stories, presented as text, desktop
+        video or group 360-degree projection. No autonomous-vehicle or language-model choices, real-world driving
+        behavior or clinical diagnosis tested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Dario Cecchini
+        - Michael Pflanzer
+        - Sam Cacace
+        - Veljko Dubljević
+        year: 2026
+        venue: Frontiers in Psychology, 17:1885843
+        doi: 10.3389/fpsyg.2026.1885843
+        evidence_scope: Study1 text/video consequence differences vary, and Study2 finds positive differences.
+          No controlled analysis establishes that predecision information, expected risk and causal responsibility
+          are identical and should rationally be evaluated identically.
+        verification_url: https://doi.org/10.3389/fpsyg.2026.1885843
         verified_date: '2026-11-27'
 - id: candidate-057
   num: 263
@@ -57458,6 +57570,32 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0072.json
+  - title: 'Goodness behind a wheel: moral judgment in realistic traffic simulations featuring Agents, Deeds,
+      and Consequences'
+    authors:
+    - Dario Cecchini
+    - Michael Pflanzer
+    - Sam Cacace
+    - Veljko Dubljević
+    year: 2026
+    url: https://doi.org/10.3389/fpsyg.2026.1885843
+    venue: Frontiers in Psychology, 17:1885843
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fpsyg.2026.1885843
+    relevance: Study1 analyzed457 journal-mailing-list respondents; character contrast2.39/10,d1.21 and larger
+      for desktop video than text. Study2 analyzed146students viewing projected traffic clips; character contrast2.83social
+      and3.27personal. Both concern moral judgment of human drivers; strong unrelated cruelty/care cues may
+      amplify the effect.
+    consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7, 10, 14 (source locators:
+      7, 10, 14). Human third-person evaluations of human-driver traffic stories, presented as text, desktop
+      video or group 360-degree projection. No autonomous-vehicle or language-model choices, real-world driving
+      behavior or clinical diagnosis tested.'
+    verification_url: https://doi.org/10.3389/fpsyg.2026.1885843
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0077.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -57505,6 +57643,45 @@ modes:
           F(4,614)=1.18,p>.31. The initial item asks how moral the agent appears, not how it will choose in
           each future dilemma.
         verification_url: https://doi.org/10.3389/fpsyg.2023.1270371
+        verified_date: '2026-11-27'
+  - id: pdf-review-0077
+    review_record: references/pdf-reviews/0077.json
+    name: Character cues dominate these human traffic judgments
+    definition: Human observers use positive or negative depictions of the driver when judging the moral acceptability
+      of a traffic event, with stronger character contrasts than the selected rule or collision contrasts in
+      these experiments.
+    evidence_scope: Study1 analyzed457 journal-mailing-list respondents; character contrast2.39/10,d1.21 and
+      larger for desktop video than text. Study2 analyzed146students viewing projected traffic clips; character
+      contrast2.83social and3.27personal. Both concern moral judgment of human drivers; strong unrelated cruelty/care
+      cues may amplify the effect.
+    catalogue_boundary: Observed character influence is not automatically a bias or a normatively correct policy.
+      Character cues include intent, care and cruelty, rather than a clean measure of stable virtue. No real
+      AV decisions, first-person driving, legal standard, rights allocation or model subjective character is
+      tested.
+    definition_sources:
+    - id: pdf-review-0077-character-based-moral-judgment
+      title: 'Goodness behind a wheel: moral judgment in realistic traffic simulations featuring Agents, Deeds,
+        and Consequences'
+      url: https://doi.org/10.3389/fpsyg.2026.1885843
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 7, 10, 14 (source locators:
+        7, 10, 14). Human third-person evaluations of human-driver traffic stories, presented as text, desktop
+        video or group 360-degree projection. No autonomous-vehicle or language-model choices, real-world driving
+        behavior or clinical diagnosis tested.'
+      publication:
+        type: journal-article
+        authors:
+        - Dario Cecchini
+        - Michael Pflanzer
+        - Sam Cacace
+        - Veljko Dubljević
+        year: 2026
+        venue: Frontiers in Psychology, 17:1885843
+        doi: 10.3389/fpsyg.2026.1885843
+        evidence_scope: Study1 analyzed457 journal-mailing-list respondents; character contrast2.39/10,d1.21
+          and larger for desktop video than text. Study2 analyzed146students viewing projected traffic clips;
+          character contrast2.83social and3.27personal. Both concern moral judgment of human drivers; strong
+          unrelated cruelty/care cues may amplify the effect.
+        verification_url: https://doi.org/10.3389/fpsyg.2026.1885843
         verified_date: '2026-11-27'
 - id: gratitude
   num: 498
