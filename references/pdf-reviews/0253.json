@@ -1,0 +1,403 @@
+{
+  "sequence": 253,
+  "source": {
+    "file_name": "S2846_Chugunova_2025.pdf",
+    "source_id": "S2846",
+    "sha256": "72f4d56148a43a1e989774d8825fcd87f472bbeaa5551684b15d30f3f9ceb71a",
+    "pdf_pages": 24,
+    "printed_pages": "1–24",
+    "version_note": "Corrected publisher-formatted Public Choice202:1–24,2025 issue; first online20June2024. Crossref links the7January2025 correction DOI10.1007/s11127-024-01209-6, which concerns appendix placement/table labels. The supplied PDF already locates TablesA4–A6 in its appendix. No statistical retraction or replacement is inferred from the correction flag.",
+    "verification_url": "https://doi.org/10.1007/s11127-024-01178-w",
+    "verification_method": "All 24 supplied pages, Figure 1, six tables including continuations, Appendix A.1–A.3, footnotes and references read. Meaningful visuals checked on PDF pages 9, 11–13, 15 and 19–21. Crossref and the official correction notice corroborate identity, dates and correction scope. All 14 public instruction pages and their meaningful stimulus images/tables inspected; the 452-line public Stata file read as text. Own bounded numeric aggregates check the public updated dataset without executing author code or publishing participant records."
+  },
+  "citation": {
+    "title": "Ruled by robots: preference for algorithmic decision makers and perceptions of their choices",
+    "authors": [
+      "Marina Chugunova",
+      "Wolfgang J. Luhan"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1007/s11127-024-01178-w",
+    "venue": "Public Choice 202(1–2):1–24; online 20 June 2024; corrected publication 2025",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "source_scope_note": "Incentivized online redistribution experiment comparing preferences for a human versus a programmed probabilistic decision maker, followed by perceived fairness and satisfaction. The algorithm samples survey-derived task-specific distributions, not a deployed LLM. Descriptive fairness, chosen source and actual normative fairness are separate.",
+    "access_limits": [
+      "All24 supplied pages, main figure, six tables, appendix, footnotes and bibliography read. All14 public English instruction pages and meaningful stimulus/table visuals inspected. Original German instructions are offered on request but not publicly supplied here; no request or author contact made.",
+      "Anonymous OSF nodejucev is public and titled for this exact study, created11May2024. Its three root files were downloaded through public links without credentials. Node metadata alone is not preregistration; no preregistration was found or claimed.",
+      "Instructions.pdf:710784bytes,SHA256fb4af2f6a7530e0f461f15ee1344fbcc77ce40f4a74ee46facd7166120f8d4e7;canonicalpublicdownloadhttps://osf.io/download/6pq5g/. HumanAI_Dataset_updated.dta:842975bytes,SHAd3877c14acfaf42ff8eb5716d5193e78bf2c728b93b192dd39a6692b8f26fe78;https://osf.io/download/vjm5k/. RbR_PubChoice_replication.do:21019bytes,SHA98413b6bd80282ebcd6f1eb5552a63f9516c70dbe7ae40d52f6ab7ff8ff13d63;https://osf.io/download/zt3du/.",
+      "All452 lines of author Stata code read as data, not executed. Public code explicitly labels its appendix discrimination test as an improved analysis, not an exact reproduction of the published one. Stata/factor-score/regression outputs were not fully reproduced.",
+      "Dataset schema inspected; aggregate analysis loaded only an operational grouping code, treatment, role, round, source choice/assignment and token counts. No identifier values, payment codes, session codes, free-text comments, contact, bank, political or other questionnaire responses printed or committed. Public anonymity claims were not independently audited.",
+      "Official correction HTML read for its appendix-placement/table-label explanation; the separate correction PDF was not read. Cited original endogeneity-premium experiments, fairness-theory works and books were not independently fully read. No full-paper Markdown copy or external messages."
+    ]
+  },
+  "study": {
+    "main_sample": "212 participants in two main treatments:126Info,86NoInfo,including20humanDMs. Main repeated-choice/rating analyses:192regularparticipants, six rounds each,1152observations. Own public-data check exactly reproduces those counts; observations are not independent people.",
+    "training_survey": "Separate Prolific survey of506UK/German people,253male/253female, supplies probabilities for task-specific redistribution. It is not506additional main-study decision subjects or an independent replication.",
+    "tasks": "Coin toss(luck), two timed zero-count matrices(effort), one timed Raven item(talent); labels frame task determinants rather than prove pure innate ability. Pair token portfolios shown, exchange rates revealed only after six rounds. One randomly selected round determines real payment. HumanDMs paid a flat fee, with a disclosed first-session payment adjustment in instructions.",
+    "algorithm": "Task-specific probability lookup from nine survey situations; draws independently across luck/effort/talent categories. This can mix fairness ideals across categories. No language-model inference, learned reasoning benchmark or objective absence of bias follows from this construction.",
+    "source_choice": "Each regular participant chooses human/algorithm for each pairing. If choices agree, selected type is used; disagreement resolved randomly between choices. Outcomes revealed only after all six choices. DM source is partly selected, not independently randomized for every rated outcome.",
+    "group_information": "Painting preferences induce minimal groups. Info reveals participant, partner and potentialDM painting; NoInfo does not. Possibility of favoritism and expected direction are distinguished from actual discrimination. Few humanDMs limit inference about favoritism.",
+    "primary_preferences": "Info437/684algorithmchoices=63.89%;NoInfo296/468=63.25%;combined733/1152=63.628%. These are choice-round shares, not the percentage of people who consistently prefer AI. Own check:110of192people choose algorithm in more than three rounds.",
+    "own_cluster_level_check": "Averaging each person’s six binary choices yields mean.636285; a supplementary one-sample t test against.5 gives t191=5.9244,p=1.44e−8. This is an own aggregate sensitivity check, not the authors’ exact binomial test, randomization inference or a complete session/pair-dependence analysis.",
+    "models": "Table2 pooled probit uses participant-clustered SEs. Table3 andA5 use panel fixed effects with robust panel covariance. Public TableA4/A6 code explicitly clusters by participant, despiteA4’s abbreviated robust-only caption. Nonparametric binomial/chi-square tests use repeated-round counts without that same adjustment.",
+    "outcome_ratings": "After outcomes, separate seven-point satisfaction/fairness ratings. Table3 humanDM coefficient about+.25for satisfaction; fairness+.241is onlyp<.1in the basic specification, while+.254hasp<.05in interaction specification. PreferredDM coefficients nonsignificant. Do not make every human-source fairness contrast conventionally significant.",
+    "consistency": "Non-Ideal classifies decisions not matching one of four selected ideals. Basic Table3 coefficients−.781satisfaction,−1.376fairness; source×Non-Ideal interactions nonsignificant. These are not equivalence tests or proof of equally sized error penalties.",
+    "fairness_facets": "Egalitarian:equalize all task earnings;choiceegalitarian:retain effort, equalize luck/talent;meritocratic:retain effort/talent,equalize luck;libertarian:retain all initial earnings. These are source-specific normative allocation ideals, not new project ethical principles or four independently discovered psychological mechanisms.",
+    "choice_extension": "Appendix adds exogenously assignedDM treatments; Choice coefficients about+.04satisfaction and−.02fairness nonsignificant. Public updated data have42humanInfo,42humanNoInfo and66AI-onlypeople, not the appendix’s34/34/66;2004regularrows inA4 match334regularpeople from the updated file. Exact version/history of that discrepancy remains unresolved.",
+    "interpretation": "The source acknowledges procedural fairness as a speculative explanation. Null discrimination/risk predictors do not uniquely identify why algorithm choice occurs, prove no bias concern or demonstrate improved democratic welfare."
+  },
+  "summary": "Add Endogeneity premium as a named background institutional-choice effect whose positive prediction is not confirmed here. Enrich existing algorithm preference, delegation and fairness entries with real paid choices and source-specific measurement boundaries. Preserve valid clustering and interaction tests, document official correction and unresolved data/code/text discrepancies.",
+  "findings": [
+    {
+      "term": "Endogeneity premium",
+      "decision": "new-entry",
+      "id": "endogeneity-premium",
+      "category": "Social",
+      "definition": "Greater acceptance or support for a policy or institution when people choose it themselves rather than have it imposed.",
+      "origin": "Behavioral economics / institutional choice",
+      "novelty_rationale": "This compares reactions to an endogenously selected institution or policy with an imposed one. Existing Control premium concerns willingness to pay to retain authority; Decision delegation concerns transfer of authority; neither defines this comparative acceptance effect. Names, aliases and adjacent definitions checked.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "endogeneity"
+        },
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "not exogenously imposed"
+        }
+      ],
+      "evidence_scope": "Explicitly named and defined in background to AppendixA2. The authors expect a choice benefit but find nonsignificant Choice coefficients in their extension. This source supplies a definition and a bounded non-confirmatory test, not a new positive replication; original cited experiments were not independently read.",
+      "boundary": "Choice can change expectations, ownership, selection and outcomes; separate procedural authorship from preferred policy and actual decision quality. A null contrast is not proof the effect never exists. Nominal options, sham voting or manipulative framing do not establish genuine participation or justify removing review rights.",
+      "ai_evidence_status": "Human institutional-choice construct; proposed agent/interface evaluation untested",
+      "ai_proposal": "Compare acceptance of the same AI-assisted policy when affected people meaningfully choose it versus receive it by assignment, holding content and outcomes fixed and recording actual authority. Separate source selection, receiving the preferred source and later ratings; never fabricate choice or infer AI feelings from approval language.",
+      "relates_to": [
+        "control-premium",
+        "decision-delegation",
+        "procedural-fairness-judgment",
+        "perceived-control"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Algorithm appreciation",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-appreciation",
+      "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": "11",
+          "quote": "63.89%"
+        }
+      ],
+      "evidence_scope": "Paid repeated source choices favor the programmed algorithm in both main information conditions. Main public data reproduce733algorithmchoices among1152rounds from192decision subjects. Choosing the source and later rating its decision are distinct outcomes.",
+      "boundary": "Choice shares are not percentages of consistently algorithm-preferring people. Survey-pool versus single-human descriptions, decision content and authority differ; this is not a matched-quality label-only effect, excessive trust, a universal AI preference or a demonstrated impartiality mechanism."
+    },
+    {
+      "term": "Algorithm aversion",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-aversion",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "3",
+          "quote": "only indirectly speak to the discussion"
+        }
+      ],
+      "evidence_scope": "The paper explicitly distinguishes affected decision subjects from people selecting advisory tools. Most choices favor the algorithm, while adjusted decision ratings can favor humans. The study is a counterexample to blanket moral-domain human preference, not proof of universal algorithm appreciation.",
+      "boundary": "Source choice, use, correctness, satisfaction and perceived fairness differ. Opposite aggregate directions across those measures do not establish contradiction, hypocrisy or a uniquely identified attitude–behavior gap. Report the actual task and selective significance rather than a global aversion label."
+    },
+    {
+      "term": "Distributive fairness judgment",
+      "decision": "enrich-existing",
+      "target_id": "distributive-fairness-judgment",
+      "definition": "Evaluating whether the outcomes or allocations produced by a decision are fair.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": "14",
+          "quote": "major fairness ideals"
+        }
+      ],
+      "evidence_scope": "Seven-point perceived fairness is distinct from satisfaction despite r=.76. Non-Ideal decisions are penalized under the study’s four-ideal classifier; personal token gains/losses and some relative-payoff terms also relate to ratings. Four source-specific allocation ideals are retained as contextual facets.",
+      "boundary": "Failure to match four selected ideals is not proof of objective injustice or inconsistency under every possible principle. Need, welfare, entitlement, rights and other coherent rules are not exhausted. Nonsignificant Hyp-Actual/source-interaction terms do not establish equivalence or universal tolerance. Human-source fairness evidence varies by model and threshold."
+    },
+    {
+      "term": "Decision delegation",
+      "decision": "enrich-existing",
+      "target_id": "decision-delegation",
+      "definition": "Transferring decision-making authority to another party who chooses on one's behalf.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "7",
+          "quote": "individually opt for a human or an algorithmic"
+        }
+      ],
+      "evidence_scope": "Affected participants choose who redistributes their earned tokens; unanimous pair choices apply and disagreement uses a random draw. One round is actually paid. This distinguishes selecting authority from merely receiving advice or subsequently endorsing an outcome.",
+      "boundary": "Delegation may be legitimate and need not mean avoiding blame, believing in sentience or preferring a harmful outcome. DM identity is partly self-selected. Fixed effects and outcome controls do not automatically identify a pure causal source-label effect or transfer normative accountability."
+    },
+    {
+      "term": "Procedural fairness judgment",
+      "decision": "enrich-existing",
+      "target_id": "procedural-fairness-judgment",
+      "definition": "Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather than assessing only its outcome.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 17,
+          "printed_page": "17",
+          "quote": "this is speculation"
+        }
+      ],
+      "evidence_scope": "Procedural justice is proposed as one possible explanation of algorithm preference, with the authors explicitly stating that more research is needed. Group-information and fairness ratings do not identify this as a unique mediator.",
+      "boundary": "Boundary-only conceptual discussion. No universal algorithm impartiality follows from absence of intentional rule changes; data, input selection, coding and allocation norms can matter. A transparent procedure or majority preference does not settle normative fairness or democratic legitimacy.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Control premium",
+      "decision": "enrich-existing",
+      "target_id": "control-premium",
+      "definition": "A willingness to incur a cost to retain personal decision-making authority or control.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "intrinsic value"
+        }
+      ],
+      "evidence_scope": "AppendixA2 cites intrinsic value of decision rights and contrasts endogenously chosen with imposed institutions. Its test of being able to choose is nonsignificant here, unlike a direct willingness-to-pay control-premium design.",
+      "boundary": "Keep cost-bearing retention of authority distinct from the acceptance benefit of choosing a policy. This experiment does not measure willingness to pay for retained authority or show that genuine user control lacks value.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "In-group favouritism",
+      "decision": "enrich-existing",
+      "target_id": "b070-in-group-favouritism",
+      "definition": "Stereotyping and unfair treatment by group; social bias.",
+      "novelty_rationale": "Enrich the existing preference, delegation and fairness constructs; distinguish source choice, outcome ratings and proposed explanations rather than create synonym rows.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "very small number of decision makers"
+        }
+      ],
+      "evidence_scope": "Painting-based groups create possible favoritism, but AppendixA1 reports no detected discrimination and explicitly limits further DM analysis because the number of humanDMs is small. Public code describes its appendix test as an improved later approach.",
+      "boundary": "A nonsignificant test is not equivalence, absence of all discrimination or proof of machine impartiality. Minimal painting groups are not real-world protected groups. Homophily as social tie formation is not established by these allocation choices, and a potential motive must not be reported as observed favoritism."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Official correction7January2025",
+      "status": "CONFIRMED",
+      "verification_url": "https://doi.org/10.1007/s11127-024-01209-6",
+      "finding": "The correction concerns appendix placement, Table4→A4 labeling and online subsection numbering. These historical layout errors are not evidence that the statistical findings were retracted. Supplied corrected PDF hasA4–A6 in the appendix."
+    },
+    {
+      "location": "Table1 NoInfo human percentage",
+      "status": "CONFIRMED",
+      "finding": "172of468humanchoices=36.7521%, not the printed36.37%. Algorithm296of468=63.2479%is consistent. Correct the derived percentage, not underlying frequencies."
+    },
+    {
+      "location": "PDF4 preference summary",
+      "status": "CONFIRMED",
+      "finding": "More than64% across treatments overstates Table1’s63.25%/63.89%. Use about64%ofchoices, with actual counts. Public data confirm733of1152choices;110of192people choose algorithm in more than three rounds, not64%ofpeople necessarily holding a stable preference."
+    },
+    {
+      "location": "PDF16 relative payoffs and fairness",
+      "status": "CONFIRMED",
+      "finding": "The blanket phrase that Own-Partner increases satisfaction but not fairness is too broad: Table3 fairness has a significant luck coefficient and a nominal10%effort coefficient, while talent is nonsignificant. Keep the dimension/model distinctions."
+    },
+    {
+      "location": "AppendixA4 covariance description",
+      "status": "CONFIRMED",
+      "finding": "The caption abbreviates robust SEs. Supplied replication code explicitly uses vce(cluster participant_code) forA4 andA6. Do not accuse these models of treating every repeated response as independent solely from the shortened caption."
+    },
+    {
+      "location": "PDF16 H3 language",
+      "status": "CONFIRMED",
+      "finding": "H3 predicts a source difference. The printed fail-to-reject-H3 wording should be described as evidence for the substantive source-difference prediction where supported, rather than confused with failure to reject a no-difference null. Significance differs by satisfaction/fairness specification."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "AppendixA2 secondary samples",
+      "finding": "Text reports66AI-only,34humanInfo,34humanNoInfo; updated public data contain66,42,42. Main212,regular192and1152rows reconcile. A4’s2004regularrows reconcile with334regularpeople and362totalpeople in the updated file. No historical exclusion/version explanation supplied, so do not invent a corrected original sampling history."
+    },
+    {
+      "location": "Table2 MoreEffort/MoreTalent labels versus supplied code",
+      "finding": "The supplied do-file initializes More*=1 and changes to0only for negative own-minus-partner differences. Ties therefore count as at least as many, whereas prose describes strictly more. Main data have512luck,320effort,632talent tie rows. Strict recoding could materially change predictors and loss flags; original table regressions were not rerun, so coefficients are not silently repaired."
+    },
+    {
+      "location": "Table2 distance description versus supplied code",
+      "finding": "The text calls differences absolute, while Dist_* is signed own-minus-partner in the do-file. Main data contain negative differences. Correct interpretation requires identifying exactly which coding generated the published table; no full inferential reproduction performed."
+    },
+    {
+      "location": "Loss-under-ideal coding",
+      "finding": "Supplied loseEgal/loseChoice/loseMerit derive from weak More*flags and can count ties as a potential loss. Own aggregate check finds371of1152main rows differ for loseEgal between that weak-flag construction and any-strict-advantage construction. This is a diagnostic coding discrepancy, not a verified replacement model or proof every fairness result reverses."
+    },
+    {
+      "location": "Trend test",
+      "finding": "The text gives p<.7784 while saying no significant trend; the exact p-value was not recomputed. Do not silently convert the bound to an exact p or assert an effect."
+    },
+    {
+      "location": "Non-Ideal definition and causal effect",
+      "finding": "Independent task draws can generate mixed allocation rules by construction; the classifier is not a manipulation of moral consistency holding all outcomes constant. Coding/classification sensitivity and unmeasured alternative ideals require further analysis."
+    }
+  ],
+  "public_material_checks": {
+    "repository": "https://osf.io/jucev/",
+    "authentication": "anonymous public API/files only",
+    "instructions": "All14pages of English ChoiceInfo instructions read, including actual payment/first-session exceptions; original German version not obtained.",
+    "code": "All452lines read without execution. Pooled choice models, panel fixed effects, clustered A4/A6 estimators and updated appendix-test comment inspected.",
+    "dataset": "Schema2172rows;362unique operational participant codes. Bounded aggregate only; no row-level data, identifiers, questionnaire responses or comments exported.",
+    "original_analyses_not_reproduced": [
+      "Survey probability table",
+      "Factor scoring",
+      "Full probit/fixed-effects/pooled regressions",
+      "Historical exclusion/version history",
+      "Updated appendix discrimination inference",
+      "Session/pair-level randomization inference"
+    ]
+  },
+  "reviewer_corrections": [
+    {
+      "stage": "Internal aggregate schema inspection",
+      "finding": "Initially using DM==0 as the non-DM filter omitted the AI-only arm, where role is missing. Changed aggregate classification to exclude humanDM==1 instead. Main two-arm counts and choices are unchanged; the all-arm334regular denominator now reconciles with2004rows. No participant-level output or initial incomplete arm count was published to the site."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "Repeated-measures inference",
+      "status": "REFUTED",
+      "finding": "Main probit models explicitly cluster by participant; panel models use fixed effects with robust panel covariance; suppliedA4/A6 code clusters by participant. Keep a localized concern about round-level binomial/chi-square summaries, not a blanket pseudoreplication accusation."
+    },
+    {
+      "location": "Interactions and source penalties",
+      "status": "REFUTED",
+      "finding": "Tables3andA5 include actual interaction terms. One significant and another nonsignificant main effect is not substituted for an interaction test. Nonsignificant source×Non-Ideal interactions do not establish equal penalties."
+    },
+    {
+      "location": "Date/correction flag",
+      "status": "REFUTED",
+      "finding": "2024first-online/2025issue and a2025layout correction are legitimate metadata. No invented publication or statistical retraction inferred."
+    },
+    {
+      "location": "Incentives and payment exceptions",
+      "status": "REFUTED",
+      "finding": "A random round is genuinely payoff-relevant. Supplement discloses first-session exchange rates and twohumanDMpayments of€7rather than the later€10; a documented protocol adjustment is not evidence of fabricated payment or deceptive intent."
+    }
+  ],
+  "methodological_limits": [
+    "Main192regular decision subjects are predominantly students from a Hamburg laboratory pool;506training-survey respondents and20humanDMs have different roles. Do not add all counts as one main independent sample.",
+    "Six decisions per person and paired/session interactions require appropriate uncertainty. Existing regressions address person clustering; own aggregate check is not a full session-level reanalysis.",
+    "Algorithm uses survey-derived probabilities, not an LLM. It and humanDMs differ in information about their construction and actual redistribution content. Statistical controls and fixed effects do not prove pure causal source-label effects.",
+    "Algorithm preference before results and human-favorable ratings after results concern different outcomes. They can coexist without irrationality, hypocrisy or a new general behavior.",
+    "Discrimination-opportunity and risk nulls do not prove absent concern or identify the true motive. The paper explicitly calls the procedural-justice account speculation.",
+    "Non-Ideal is a classifier based on four chosen allocation ideals. More consistent coding is not automatically morally better, and descriptive preference is not a normative fairness certificate or public-sector deployment recommendation.",
+    "Human fairness contrasts vary by specification and significance convention. Null source interactions, personal-ideal mismatches and Choice effects do not establish equivalence or the absence of effects.",
+    "The supplied script’s weak inequalities, signed distances and updated appendix procedure need sensitivity work. Public updated sample discrepancies remain version-specific and unresolved; no substitute coefficients or full replication claimed.",
+    "Endogeneity premium is a named background concept with a non-confirmatory test here. The four fairness ideals are contextual facets, not additions to the project’s six ethical principles. Original cited primary studies/books and German instructions remain unread."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0012.json",
+      "finding": "Different moral allocation settings can produce human discretion preferences or algorithm choices. Do not erase contextual disagreement or report either as a universal law."
+    },
+    {
+      "related_review": "references/pdf-reviews/0017.json",
+      "finding": "Use the existing Algorithm appreciation row; actualpaidchoices enrich a prior synthesis without adding a near-synonym or pretending this source studied advice weighting."
+    },
+    {
+      "related_review": "references/pdf-reviews/0098.json",
+      "finding": "Control premium and Decision delegation already exist. Endogenous institutional-choice acceptance differs from willingness to incur a cost to retain authority."
+    },
+    {
+      "related_review": "references/pdf-reviews/0229.json",
+      "finding": "Distributive fairness and procedure judgments remain distinct, and subjective approval cannot establish normative or legal correctness."
+    },
+    {
+      "related_review": "references/pdf-reviews/0249.json",
+      "finding": "Verify the test and dataset rather than inherit a broad abstract claim. Here actual observed paidchoices and proper clustering are preserved alongside localized reporting/code limits."
+    },
+    {
+      "related_review": "references/pdf-reviews/0251.json",
+      "finding": "Choice/control constructs need distinct definitions. Perceived control, wanting control, retaining costly authority and an acceptance premium from endogenous choice are not interchangeable."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Choice-versus-evaluation dissociation as a new coined behavior",
+      "reason": "Different source-choice and outcome-rating measures need not be inconsistent. Record the distinction in existing entries rather than invent a new named mechanism."
+    },
+    {
+      "term": "Four fairness ideals as four new behavior rows or project principles",
+      "reason": "These source-specific allocation-rule facets belong in the existing distributive-fairness entry. They are not four newly tested cognitive mechanisms or authorization to revise the six ethical principles."
+    },
+    {
+      "term": "Homophily as another in-group favoritism label",
+      "reason": "The paper invokes homophily as background but does not observe tie formation or directly define/test it as distinct from group-favoring allocation. Do not create a synonym row from a motive hypothesis."
+    },
+    {
+      "term": "Universal algorithm impartiality or improved welfare effect",
+      "reason": "Speculative extrapolation; no universal bias absence, deployedLLM, democratic outcome or welfare intervention is tested."
+    }
+  ],
+  "limitations": [
+    "One named background institutional-choice construct added and seven existing records enriched. Eleven categories, stable IDs and unnumbered rows preserved. No invented annual counts, forced citation quota, new ethical principle, automatic harm edge, full-paper Markdown copy, participant-record publication or code execution."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "endogeneity-premium"
+    ],
+    "enriched": [
+      "algorithm-appreciation",
+      "algorithm-aversion",
+      "distributive-fairness-judgment",
+      "decision-delegation",
+      "procedural-fairness-judgment",
+      "control-premium",
+      "b070-in-group-favouritism"
+    ]
+  }
+}

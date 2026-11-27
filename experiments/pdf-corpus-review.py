@@ -20,6 +20,9 @@ ROOT=Path(__file__).resolve().parents[1]
 ONTOLOGY=ROOT/'ontology/ethical-ai.yaml'
 MANIFEST=ROOT/'references/pdf-corpus-2026-11-26.json'
 REVIEWS=ROOT/'references/pdf-reviews'
+ACCESS_RECORDS=ROOT/'references/pdf-access'
+COMPLETED_STATUSES={'reviewed','duplicate-verified'}
+QUEUE_STATUSES=COMPLETED_STATUSES|{'pending','access-blocked'}
 TODAY=lambda:datetime.now(timezone.utc).date().isoformat()
 
 
@@ -40,6 +43,57 @@ def pdf_pages(path):
 def corpus_entry(sequence):
     return next(f for f in read_json(MANIFEST)['files'] if f['sequence']==sequence)
 def record_path(sequence):return REVIEWS/(f'{sequence:04d}.json')
+
+
+def check_access_record(record,entry):
+    assert record['sequence']==entry['sequence']
+    assert record['source']['file_name']==entry['file_name']
+    assert record['source']['source_id']==entry['source_id']
+    assert record['status']=='access-blocked'
+    assert record['download_received'] is False and record['content_read'] is False
+    assert record['counts_as_full_review'] is False
+    assert record['counts_as_independent_source'] is False
+    assert not record.get('findings') and not record['source'].get('sha256')
+    assert record['attempt']['tool'] and record['attempt']['provider_reason']
+    assert 400<=record['attempt']['http_status']<=599
+    assert record['attempt']['message'] and record['attempted_on']
+
+
+def ensure_queue_order(manifest,sequence):
+    for entry in manifest['files']:
+        if entry['sequence']>=sequence:continue
+        assert entry['status'] in QUEUE_STATUSES,'Unknown queue status'
+        assert entry['status']!='pending','Review or document the access block in queue order'
+        if entry['status']=='access-blocked':
+            check_access_record(read_json(ROOT/entry['access_record']),entry)
+
+
+def record_access_block(path):
+    record=read_json(path);manifest=read_json(MANIFEST)
+    entry=next(f for f in manifest['files'] if f['sequence']==record['sequence'])
+    assert entry['status']=='pending','Only an unprocessed file can receive an initial access-block record'
+    ensure_queue_order(manifest,record['sequence']);check_access_record(record,entry)
+    destination=ACCESS_RECORDS/(f"{record['sequence']:04d}.json")
+    assert not destination.exists(),'Keep the existing access record; revise it explicitly'
+    write_json(destination,record)
+    entry.update(status='access-blocked',access_record=str(destination.relative_to(ROOT)))
+    manifest['schema_version']=2
+    write_json(MANIFEST,manifest)
+    print(json.dumps({'access_record':entry['access_record'],'status':'access-blocked','counts_as_full_review':False}))
+
+
+def summarize_files(files):
+    assert all(f['status'] in QUEUE_STATUSES for f in files),'Unknown queue status'
+    completed=[f for f in files if f['status'] in COMPLETED_STATUSES]
+    blocked=[f for f in files if f['status']=='access-blocked']
+    pending=[f for f in files if f['status']=='pending']
+    return {'processed_files':len(completed),'attempted_files':len(completed)+len(blocked),
+      'full_text_reviews':sum(f['status']=='reviewed' for f in files),
+      'verified_duplicate_files':sum(f['status']=='duplicate-verified' for f in files),
+      'access_blocked_files':len(blocked),'pending_files':len(pending),
+      'remaining':len(pending)+len(blocked),
+      'blocked':[{'sequence':f['sequence'],'file_name':f['file_name'],'access_record':f['access_record']} for f in blocked],
+      'next':next(iter(pending),None)}
 
 
 def check_review(review,pdf,ontology):
@@ -185,7 +239,7 @@ def apply_review(path,pdf):
     original=ONTOLOGY.read_text();ontology=yaml.safe_load(original)
     manifest=read_json(MANIFEST)
     entry=next(f for f in manifest['files'] if f['sequence']==review['sequence'])
-    assert all(f['status']!='pending' for f in manifest['files'] if f['sequence']<review['sequence']), 'Review the queue in order'
+    ensure_queue_order(manifest,review['sequence'])
     check_review(review,pdf,ontology)
     changed=[];new=[]
     for finding in review.get('findings',[]):
@@ -239,12 +293,12 @@ def lookup(terms):
 
 
 def status():
-    files=read_json(MANIFEST)['files'];reviewed=[f for f in files if f['status']!='pending']
+    files=read_json(MANIFEST)['files'];reviewed=[f for f in files if f['status'] in COMPLETED_STATUSES]
     for f in reviewed:
         r=read_json(ROOT/f['review']);assert r['sequence']==f['sequence'] and r['source']['sha256']==f['sha256']
-    print(json.dumps({'processed_files':len(reviewed),'full_text_reviews':sum(f['status']=='reviewed' for f in files),
-      'verified_duplicate_files':sum(f['status']=='duplicate-verified' for f in files),'remaining':sum(f['status']=='pending' for f in files),
-      'next':next((f for f in files if f['status']=='pending'),None)},ensure_ascii=False,indent=2))
+    for f in files:
+        if f['status']=='access-blocked':check_access_record(read_json(ROOT/f['access_record']),f)
+    print(json.dumps(summarize_files(files),ensure_ascii=False,indent=2))
 
 
 def sync_timelines():
@@ -264,12 +318,14 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='action',required=True)
     p=sub.add_parser('apply');p.add_argument('review',type=Path);p.add_argument('--pdf',type=Path,required=True)
     p=sub.add_parser('lookup');p.add_argument('terms',nargs='+')
+    p=sub.add_parser('record-access-block');p.add_argument('record',type=Path)
     p=sub.add_parser('pages');p.add_argument('pdf',type=Path);p.add_argument('--start',type=int,default=1);p.add_argument('--end',type=int)
     sub.add_parser('status')
     sub.add_parser('sync-timelines')
     sub.add_parser('sync-citations')
     args=parser.parse_args()
     if args.action=='apply':apply_review(args.review,args.pdf)
+    elif args.action=='record-access-block':record_access_block(args.record)
     elif args.action=='lookup':lookup(args.terms)
     elif args.action=='pages':
         pages=pdf_pages(args.pdf)

@@ -141,6 +141,12 @@ passages. Verified duplicate files link to their read original rather than
 supplying independent evidence. Existing entries can receive `research_notes`
 with a name, definition, catalogue boundary and typed definition sources.
 
+Files that cannot be obtained have separate `references/pdf-access/` records
+and `access-blocked` manifest status. They supply no paper evidence, review,
+checksum or ontology addition. They remain in the unfinished total while the
+next unattempted file can be reviewed in sequence. Provider flags are reported
+as access results rather than independently verified content classifications.
+
 Adding a source or an entry does not supply a literature-search total. Newly
 indexed terms have unavailable annual-series slots until a complete, dated
 search is actually performed; the previous dated series remain unchanged.
