@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0093.json
+    latest_review: references/pdf-reviews/0094.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -61309,6 +61309,40 @@ modes:
           perspective taking always yields impartiality.
         verification_url: https://doi.org/10.1371/journal.pone.0261673
         verified_date: '2026-11-27'
+  - id: pdf-review-0094
+    review_record: references/pdf-reviews/0094.json
+    name: Perspective taking
+    definition: Imagining oneself in another role or considering another person's situation, here operationalized
+      through self/stranger and passenger/pedestrian instructions.
+    evidence_scope: The manuscript defines common perspective-taking variants secondarily and experimentally
+      manipulates scenario accessibility. It does not directly measure successful mental uptake, empathy or
+      all real-world stakeholder views.
+    catalogue_boundary: Providing a prompt is not proof that someone adopted an accurate perspective. The source's
+      'full' means the two selected task roles, not every affected person's interests, and no AI subjective
+      viewpoint is established.
+    definition_sources:
+    - id: pdf-review-0094-perspective-taking
+      title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer
+        purchasing behavior'
+      url: https://doi.org/10.1016/j.cognition.2021.104666
+      consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 8, 8 (source locators: 8,
+        8). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding intentions
+        under randomized scenario wording. The authors interpret two possible role categories as equal odds;
+        quoted instructions do not specify a numerical lottery.'
+      publication:
+        type: journal-article
+        authors:
+        - Rose Martin
+        - Petko Kusev
+        - Paul van Schaik
+        year: 2021
+        venue: Cognition212:104666; supplied author-manuscript version
+        doi: 10.1016/j.cognition.2021.104666
+        evidence_scope: The manuscript defines common perspective-taking variants secondarily and experimentally
+          manipulates scenario accessibility. It does not directly measure successful mental uptake, empathy
+          or all real-world stakeholder views.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+        verified_date: '2026-11-27'
 - id: veil-of-ignorance-reasoning
   num: 512
   name: Veil-of-ignorance reasoning
@@ -61448,6 +61482,41 @@ modes:
           use known assigned roles rather than a veil of ignorance.
         verification_url: https://doi.org/10.1371/journal.pone.0261673
         verified_date: '2026-11-27'
+  - id: pdf-review-0094
+    review_record: references/pdf-reviews/0094.json
+    name: Veil-of-ignorance reasoning
+    definition: Considering a choice while one's eventual role among those affected is unspecified; the authors
+      present full accessibility as a proposed variant.
+    evidence_scope: The discussion contrasts equal person-level sampling in Huang with the authors' assumed
+      equal role categories. The experiment does not specify a numerical lottery in the quoted instructions
+      or test Huang's original procedure independently.
+    catalogue_boundary: Equal roles are not equal chances for every person when group sizes differ. Higher
+      survival probability for the same binary outcomes is first-order dominance, not sufficient evidence of
+      risk aversion. The source's 'no self-interest or bias' conclusion is not established.
+    definition_sources:
+    - id: pdf-review-0094-veil-of-ignorance-reasoning
+      title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer
+        purchasing behavior'
+      url: https://doi.org/10.1016/j.cognition.2021.104666
+      consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 31, 31 (source locators:
+        31, 31). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding intentions
+        under randomized scenario wording. The authors interpret two possible role categories as equal odds;
+        quoted instructions do not specify a numerical lottery.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Rose Martin
+        - Petko Kusev
+        - Paul van Schaik
+        year: 2021
+        venue: Cognition212:104666; supplied author-manuscript version
+        doi: 10.1016/j.cognition.2021.104666
+        evidence_scope: The discussion contrasts equal person-level sampling in Huang with the authors' assumed
+          equal role categories. The experiment does not specify a numerical lottery in the quoted instructions
+          or test Huang's original procedure independently.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+        verified_date: '2026-11-27'
 - id: perspective-taking-accessibility
   num: 513
   name: Perspective-taking accessibility
@@ -61540,6 +61609,31 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0080.json
+  - title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer purchasing
+      behavior'
+    authors:
+    - Rose Martin
+    - Petko Kusev
+    - Paul van Schaik
+    year: 2021
+    url: https://doi.org/10.1016/j.cognition.2021.104666
+    venue: Cognition212:104666; supplied author-manuscript version
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2021.104666
+    relevance: ThreeN300 experiments randomly vary scenario wording and find higher swerve-minus-stay moral
+      ratings, hypothetical utilitarian budget allocations or buy/ride intention differences under full role
+      description. The version does not independently assign or measure a50/50 role lottery.
+    consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 3, 10, 11 (source locators:
+      3, 10, 11). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding
+      intentions under randomized scenario wording. The authors interpret two possible role categories as equal
+      odds; quoted instructions do not specify a numerical lottery.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+    verified_date: '2026-11-27'
+    verification_method: All36 supplied manuscript pages read; title/authors matched to Crossref. Figure1 visually
+      inspected. Bibliographic corrections below are metadata-only and do not constitute reading the cited
+      originals.
+    review_record: references/pdf-reviews/0094.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -61553,6 +61647,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0080.json
+  research_notes:
+  - id: pdf-review-0094
+    review_record: references/pdf-reviews/0094.json
+    name: Perspective-taking accessibility
+    definition: The availability of multiple relevant situational roles in a judgment task, here passenger
+      and pedestrian rather than passenger alone.
+    evidence_scope: ThreeN300 experiments randomly vary scenario wording and find higher swerve-minus-stay
+      moral ratings, hypothetical utilitarian budget allocations or buy/ride intention differences under full
+      role description. The version does not independently assign or measure a50/50 role lottery.
+    catalogue_boundary: This is a task condition, not a universal debiasing treatment. Viewpoint availability,
+      actual perspective taking, role probabilities, self-interest and impartiality differ. Multiple role categories
+      do not imply equal probabilities, and group-average consistency does not mean every participant is consistent.
+    definition_sources:
+    - id: pdf-review-0094-perspective-taking-accessibility
+      title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer
+        purchasing behavior'
+      url: https://doi.org/10.1016/j.cognition.2021.104666
+      consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 3, 10, 11 (source locators:
+        3, 10, 11). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding
+        intentions under randomized scenario wording. The authors interpret two possible role categories as
+        equal odds; quoted instructions do not specify a numerical lottery.'
+      publication:
+        type: journal-article
+        authors:
+        - Rose Martin
+        - Petko Kusev
+        - Paul van Schaik
+        year: 2021
+        venue: Cognition212:104666; supplied author-manuscript version
+        doi: 10.1016/j.cognition.2021.104666
+        evidence_scope: ThreeN300 experiments randomly vary scenario wording and find higher swerve-minus-stay
+          moral ratings, hypothetical utilitarian budget allocations or buy/ride intention differences under
+          full role description. The version does not independently assign or measure a50/50 role lottery.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+        verified_date: '2026-11-27'
 - id: inauthentication
   num: 514
   name: Inauthentication
@@ -63019,6 +63148,32 @@ modes:
       Figure 8 visually inspected. Aggregate uncertainty illustration uses the published estimates and standard
       errors, not raw-data reanalysis.
     review_record: references/pdf-reviews/0090.json
+  - title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer purchasing
+      behavior'
+    authors:
+    - Rose Martin
+    - Petko Kusev
+    - Paul van Schaik
+    year: 2021
+    url: https://doi.org/10.1016/j.cognition.2021.104666
+    venue: Cognition212:104666; supplied author-manuscript version
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2021.104666
+    relevance: Under partial passenger framing, personal involvement yields a negative utilitarian budget difference,
+      while stranger involvement yields a positive one in1a/1b. Full role description produces positive means
+      and an undetected self/stranger difference. These are hypothetical preferences, not actual willingness
+      to incur mortal risk.
+    consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 15, 16 (source locators: 15,
+      16). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding intentions
+      under randomized scenario wording. The authors interpret two possible role categories as equal odds;
+      quoted instructions do not specify a numerical lottery.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+    verified_date: '2026-11-27'
+    verification_method: All36 supplied manuscript pages read; title/authors matched to Crossref. Figure1 visually
+      inspected. Bibliographic corrections below are metadata-only and do not constitute reading the cited
+      originals.
+    review_record: references/pdf-reviews/0094.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -63032,6 +63187,43 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0090.json
+  research_notes:
+  - id: pdf-review-0094
+    review_record: references/pdf-reviews/0094.json
+    name: Self-protection bias
+    definition: Favoring a policy that protects one's imagined own physical safety when choosing among harmful-outcome
+      alternatives.
+    evidence_scope: Under partial passenger framing, personal involvement yields a negative utilitarian budget
+      difference, while stranger involvement yields a positive one in1a/1b. Full role description produces
+      positive means and an undetected self/stranger difference. These are hypothetical preferences, not actual
+      willingness to incur mortal risk.
+    catalogue_boundary: The manipulation also changes personal relevance and anticipated consequences. A lower
+      self-sacrifice preference can be defensible; the results do not isolate a unique egoistic process, prove
+      elimination of self-interest or demonstrate real vehicle purchase.
+    definition_sources:
+    - id: pdf-review-0094-self-protection-bias
+      title: 'Autonomous vehicles: How perspective-taking accessibility alters moral judgments and consumer
+        purchasing behavior'
+      url: https://doi.org/10.1016/j.cognition.2021.104666
+      consulted: 'Full supplied PDF text read, all 36 pages; evidence at PDF pages 15, 16 (source locators:
+        15, 16). Human hypothetical moral ratings, constrained budget allocation and stated buying/riding intentions
+        under randomized scenario wording. The authors interpret two possible role categories as equal odds;
+        quoted instructions do not specify a numerical lottery.'
+      publication:
+        type: journal-article
+        authors:
+        - Rose Martin
+        - Petko Kusev
+        - Paul van Schaik
+        year: 2021
+        venue: Cognition212:104666; supplied author-manuscript version
+        doi: 10.1016/j.cognition.2021.104666
+        evidence_scope: Under partial passenger framing, personal involvement yields a negative utilitarian
+          budget difference, while stranger involvement yields a positive one in1a/1b. Full role description
+          produces positive means and an undetected self/stranger difference. These are hypothetical preferences,
+          not actual willingness to incur mortal risk.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+        verified_date: '2026-11-27'
 - id: moral-flexibility
   num: 527
   name: Moral flexibility
