@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 675,
+    "mode_count": 677,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 675,
+      "numbered_entries": 677,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0184.json",
+      "latest_review": "references/pdf-reviews/0185.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 675
+    "source_record_count": 677
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -6229,7 +6229,38 @@
         "queried_at": "2026-11-09T00:32:58+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Dunning-Kruger+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0185",
+          "review_record": "references/pdf-reviews/0185.json",
+          "name": "Dunning-Kruger effect",
+          "definition": "Low competence with high confidence; the model most wrong where it feels most sure.",
+          "evidence_scope": "Boundary only: the authors interpret an inverted-U between AI background and switching as a version of Dunning–Kruger. Knowledge, awareness and use are measured cross-sectionally; subjective overestimation relative to actual competence is not directly tested. The related beginner’s bubble is an early-learning claim, not a synonymous label for any nonlinear curve.",
+          "catalogue_boundary": "An inverted-U in advice acceptance alone does not establish low competence with excessive confidence, a temporal learning stage or the cause of overreliance. Original Sanchez/Dunning and Kruger/Dunning studies are cited but not independently fully read here.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0185-b044-dunning-kruger-effect",
+              "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+              "url": "https://arxiv.org/abs/2306.16507v1",
+              "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 3, 25 (source locators: 3, 25). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Michael C. Horowitz",
+                  "Lauren Kahn"
+                ],
+                "year": 2023,
+                "venue": "arXiv 2306.16507v1, preprint",
+                "evidence_scope": "Boundary only: the authors interpret an inverted-U between AI background and switching as a version of Dunning–Kruger. Knowledge, awareness and use are measured cross-sectionally; subjective overestimation relative to actual competence is not directly tested. The related beginner’s bubble is an early-learning claim, not a synonymous label for any nonlinear curve.",
+                "verification_url": "https://arxiv.org/abs/2306.16507v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b045-anosognosia",
@@ -15811,6 +15842,34 @@
                 "doi": "10.1038/s41598-023-42384-8",
                 "evidence_scope": "In a trained objective pixel-majority task, randomized access to systematically wrong AI labels increases errors on the targeted 40/60 stimuli. Experiment 1 reports 2.21 versus .69 errors out of ten, d=.586, although Table 3 supplies inconsistent normalized rates. The average participant still avoids most of the AI’s ten wrong recommendations. No human-advisor comparison isolates a machine-identity effect.",
                 "verification_url": "https://api.crossref.org/works/10.1038/s41598-023-42384-8",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0185",
+          "review_record": "references/pdf-reviews/0185.json",
+          "name": "Automation bias",
+          "definition": "Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing part.",
+          "evidence_scope": "Scripted AI advice affects decisions in a nine-country aircraft-identification task. However, main switching models pool correct and wrong advice, and the nonlinear background association is cross-sectional. The paper discusses excessive reliance but does not establish that every observed switch is erroneous or above an optimal benchmark.",
+          "catalogue_boundary": "Separate correct acceptance, harmful switching, justified retention and failure to accept useful advice. No direct novice-learning mechanism, calibrated high-knowledge endpoint, real military deployment or tested training intervention follows from these aggregate curves.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0185-automation-bias",
+              "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+              "url": "https://arxiv.org/abs/2306.16507v1",
+              "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 6, 18 (source locators: 6, 18). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Michael C. Horowitz",
+                  "Lauren Kahn"
+                ],
+                "year": 2023,
+                "venue": "arXiv 2306.16507v1, preprint",
+                "evidence_scope": "Scripted AI advice affects decisions in a nine-country aircraft-identification task. However, main switching models pool correct and wrong advice, and the nonlinear background association is cross-sectional. The paper discusses excessive reliance but does not establish that every observed switch is erroneous or above an optimal benchmark.",
+                "verification_url": "https://arxiv.org/abs/2306.16507v1",
                 "verified_date": "2026-11-27"
               }
             }
@@ -63021,6 +63080,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0185",
+          "review_record": "references/pdf-reviews/0185.json",
+          "name": "Algorithm aversion",
+          "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+          "evidence_scope": "Boundary only: authors interpret lower switching among the lowest-background respondents as aversion. That is not by itself a like-for-like preference for human advice or rejection of a demonstrably superior algorithm; correct/incorrect recommendations and source performance must be separated.",
+          "catalogue_boundary": "Lower switching is not inherently irrational aversion. Source labels interact descriptively with testing/training descriptions; a direct controlled preference contrast and task-relevant quality benchmark are needed.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0185-algorithm-aversion",
+              "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+              "url": "https://arxiv.org/abs/2306.16507v1",
+              "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 6, 22 (source locators: 6, 22). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Michael C. Horowitz",
+                  "Lauren Kahn"
+                ],
+                "year": 2023,
+                "venue": "arXiv 2306.16507v1, preprint",
+                "evidence_scope": "Boundary only: authors interpret lower switching among the lowest-background respondents as aversion. That is not by itself a like-for-like preference for human advice or rejection of a demonstrably superior algorithm; correct/incorrect recommendations and source performance must be separated.",
+                "verification_url": "https://arxiv.org/abs/2306.16507v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -63453,6 +63541,34 @@
                 "doi": "10.1145/3491102.3517732",
                 "evidence_scope": "Observed simulated choices favor the AI source modestly at later decision positions, with earlier contrasts nonsignificant. Advice quality is held comparable and clear errors are absent. This is a specific source/task pattern, not universal appreciation, verified ethical accuracy or long-term adoption.",
                 "verification_url": "https://api.crossref.org/works/10.1145/3491102.3517732",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0185",
+          "review_record": "references/pdf-reviews/0185.json",
+          "name": "Algorithm appreciation",
+          "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+          "evidence_scope": "Human/AI source labels are compared under extensive versus ongoing testing/training descriptions. Descriptive source preference changes with the description: human has the highest switching in the extensive condition, AI in the ongoing condition. Figure 2 uses an unclear denominator relative to later rates, and no direct interaction estimate is reproduced.",
+          "catalogue_boundary": "A relative source preference is not universal algorithm appreciation or excessive trust. Compare source effects within the same training description, correctness and initial-decision opportunity; overlapping display intervals do not prove equality.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0185-algorithm-appreciation",
+              "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+              "url": "https://arxiv.org/abs/2306.16507v1",
+              "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 22 (source locators: 22). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Michael C. Horowitz",
+                  "Lauren Kahn"
+                ],
+                "year": 2023,
+                "venue": "arXiv 2306.16507v1, preprint",
+                "evidence_scope": "Human/AI source labels are compared under extensive versus ongoing testing/training descriptions. Descriptive source preference changes with the description: human has the highest switching in the extensive condition, AI in the ongoing condition. Figure 2 uses an unclear denominator relative to later rates, and no direct interaction estimate is reproduced.",
+                "verification_url": "https://arxiv.org/abs/2306.16507v1",
                 "verified_date": "2026-11-27"
               }
             }
@@ -85356,6 +85472,34 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0185",
+          "review_record": "references/pdf-reviews/0185.json",
+          "name": "Performance trust",
+          "definition": "Expecting an agent or system to perform competently and reliably in a relevant task.",
+          "evidence_scope": "Describing the aid as extensively tested/trained versus still being tested/trained increases switching within both AI and human trials (OLS coefficients .017 and .016). The manipulation signals competence history; actual accuracy confidence and reliability calibration are not independently elicited. General AI attitudes mix performance with benefits, fear and organizational ethics.",
+          "catalogue_boundary": "Randomized competence descriptions, subjective trust, general attitudes, actual reliability and justified reliance differ. Practice accuracy is a proxy for own-task confidence, not a direct measure; lower switching is not automatically better calibration.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0185-performance-trust",
+              "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+              "url": "https://arxiv.org/abs/2306.16507v1",
+              "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 20, 20 (source locators: 20, 20). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Michael C. Horowitz",
+                  "Lauren Kahn"
+                ],
+                "year": 2023,
+                "venue": "arXiv 2306.16507v1, preprint",
+                "evidence_scope": "Describing the aid as extensively tested/trained versus still being tested/trained increases switching within both AI and human trials (OLS coefficients .017 and .016). The manipulation signals competence history; actual accuracy confidence and reliability calibration are not independently elicited. General AI attitudes mix performance with benefits, fear and organizational ethics.",
+                "verification_url": "https://arxiv.org/abs/2306.16507v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -92764,6 +92908,176 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0183.json"
+      }
+    },
+    {
+      "id": "beginners-bubble",
+      "num": 676,
+      "name": "Beginner’s bubble",
+      "definition": "An early increase in confidence that outpaces accuracy after a small amount of learning or experience.",
+      "category": "Metacognition",
+      "family": "metacognition-confidence",
+      "group_label": "Metacognition and confidence",
+      "tag": "analogy",
+      "origin": "Metacognition / learning psychology",
+      "human_parallel": "Beginner’s bubble",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Secondary psychological definition discussed in the fully read preprint; its original learning experiments and proposed AI analogue were not independently tested here.",
+      "proposed_ai_manifestation": "Give a model small sequential sets of demonstrations, measure accuracy and elicited confidence on held-out items at every stage, and test whether confidence initially grows faster than accuracy. Compare against no-demo and larger-demo conditions; do not treat prompt exposure as durable parameter learning.",
+      "research_boundary": "A few errors, fluent output, or high switching is insufficient. Establish an early learning trajectory and confidence growing disproportionately to accuracy. This preprint supplies conceptual relevance, not direct proof of a bubble in humans or AI. Do not equate greater experience with universal calibration.",
+      "concept_boundary": "A few errors, fluent output, or high switching is insufficient. Establish an early learning trajectory and confidence growing disproportionately to accuracy. This preprint supplies conceptual relevance, not direct proof of a bubble in humans or AI. Do not equate greater experience with universal calibration.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b044-dunning-kruger-effect",
+        "automation-bias"
+      ],
+      "is_a": [
+        "b043-overconfidence"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0185-beginners-bubble",
+          "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+          "url": "https://arxiv.org/abs/2306.16507v1",
+          "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 7, 7 (source locators: 7, 7). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Michael C. Horowitz",
+              "Lauren Kahn"
+            ],
+            "year": 2023,
+            "venue": "arXiv 2306.16507v1, preprint",
+            "evidence_scope": "A secondary definition motivates an inverted-U hypothesis about AI-background and switching. The nine-country experiment does not observe novice learning over time or directly measure a confidence–accuracy gap. Sanchez and Dunning (2018) is cited and metadata-checked, not independently fully read or credited as an additional read paper.",
+            "verification_url": "https://arxiv.org/abs/2306.16507v1",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+          "authors": [
+            "Michael C. Horowitz",
+            "Lauren Kahn"
+          ],
+          "year": 2023,
+          "url": "https://arxiv.org/abs/2306.16507v1",
+          "venue": "arXiv 2306.16507v1, preprint",
+          "publication_type": "preprint",
+          "domain": "human-related",
+          "id": "arxiv:2306.16507",
+          "relevance": "A secondary definition motivates an inverted-U hypothesis about AI-background and switching. The nine-country experiment does not observe novice learning over time or directly measure a confidence–accuracy gap. Sanchez and Dunning (2018) is cited and metadata-checked, not independently fully read or credited as an additional read paper.",
+          "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 7, 7 (source locators: 7, 7). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+          "verification_url": "https://arxiv.org/abs/2306.16507v1",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 45 text pages read, including references and the supplied appendix. Figures 1–7 and A.1–A.5, both tables, both image-only example scenarios and the seven-item attitudes battery inspected. Exact preprint identity checked with arXiv; narrow Crossref, PubMed and publisher metadata checks distinguish the later version and bibliography identities. No raw data, code, registration, full external appendix or original cited book/study was independently read or reproduced.",
+          "review_record": "references/pdf-reviews/0185.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Beginner’s bubble\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Beginner%E2%80%99s+bubble%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0185.json"
+      }
+    },
+    {
+      "id": "task-self-confidence",
+      "num": 677,
+      "name": "Task self-confidence",
+      "definition": "A person’s belief in their own ability to perform a particular task successfully.",
+      "category": "Metacognition",
+      "family": "metacognition-confidence",
+      "group_label": "Metacognition and confidence",
+      "tag": "analogy",
+      "origin": "Metacognition / advice-taking psychology",
+      "human_parallel": "Task self-confidence",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human appraisal construct explicitly theorized; the read experiment uses practice accuracy as a proxy rather than directly eliciting subjective task confidence. A model’s reported confidence is not evidence of felt self-belief.",
+      "proposed_ai_manifestation": "Measure a model’s stated probability of completing the task before advice, record independent task performance, and test whether that appraisal predicts appropriate retention or revision under advice of known quality. Separate confidence from skill, initial correctness and source label.",
+      "research_boundary": "Confidence is neutral and need not be excessive. Objective practice performance, inferred self-confidence, declared certainty and actual task success are different measurements. Less switching can be justified; no intrinsic AI feeling or universal inverse effect is established.",
+      "concept_boundary": "Confidence is neutral and need not be excessive. Objective practice performance, inferred self-confidence, declared certainty and actual task success are different measurements. Less switching can be justified; no intrinsic AI feeling or universal inverse effect is established.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b043-overconfidence",
+        "performance-trust",
+        "b044-dunning-kruger-effect"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0185-task-self-confidence",
+          "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+          "url": "https://arxiv.org/abs/2306.16507v1",
+          "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 12, 13 (source locators: 12, 13). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Michael C. Horowitz",
+              "Lauren Kahn"
+            ],
+            "year": 2023,
+            "venue": "arXiv 2306.16507v1, preprint",
+            "evidence_scope": "The theory distinguishes own-task confidence from confidence/trust in an aid. Empirically, practice-round accuracy predicts lower switching in most displayed conditions, with high-confidence human advice an exception. Actual subjective confidence and its causal mediation are not directly measured.",
+            "verification_url": "https://arxiv.org/abs/2306.16507v1",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Bending the Automation Bias Curve: A Study of Human and AI-based Decision Making in National Security Contexts",
+          "authors": [
+            "Michael C. Horowitz",
+            "Lauren Kahn"
+          ],
+          "year": 2023,
+          "url": "https://arxiv.org/abs/2306.16507v1",
+          "venue": "arXiv 2306.16507v1, preprint",
+          "publication_type": "preprint",
+          "domain": "human-related",
+          "id": "arxiv:2306.16507",
+          "relevance": "The theory distinguishes own-task confidence from confidence/trust in an aid. Empirically, practice-round accuracy predicts lower switching in most displayed conditions, with high-confidence human advice an exception. Actual subjective confidence and its causal mediation are not directly measured.",
+          "consulted": "Full supplied PDF text read, all 45 pages; evidence at PDF pages 12, 13 (source locators: 12, 13). A nine-country public survey experiment uses scripted human/AI aircraft-identification advice. Methods describe 9,000 planned respondents; Table 1 represents 9,016 participants through 90,160 repeated trials. Main outcomes concern answer switching; secondary accuracy coding conditions on switching. Beginner’s bubble is a cited secondary definition; self-confidence is theorized but operationalized with practice performance rather than directly elicited confidence. Neither original beginner-learning experiments nor military deployment were independently examined.",
+          "verification_url": "https://arxiv.org/abs/2306.16507v1",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 45 text pages read, including references and the supplied appendix. Figures 1–7 and A.1–A.5, both tables, both image-only example scenarios and the seven-item attitudes battery inspected. Exact preprint identity checked with arXiv; narrow Crossref, PubMed and publisher metadata checks distinguish the later version and bibliography identities. No raw data, code, registration, full external appendix or original cited book/study was independently read or reproduced.",
+          "review_record": "references/pdf-reviews/0185.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Task self-confidence\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Task+self-confidence%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0185.json"
       }
     }
   ]
