@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 588,
+    "mode_count": 590,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 588,
+      "numbered_entries": 590,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0132.json",
+      "latest_review": "references/pdf-reviews/0133.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 588
+    "source_record_count": 590
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -15105,6 +15105,40 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0133",
+          "review_record": "references/pdf-reviews/0133.json",
+          "name": "Automation bias",
+          "definition": "Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing part.",
+          "evidence_scope": "Participants sometimes treated congruent advice as confirmation and disagreement as a reason to change. The recommendations were generated from ten nonexperts, despite participants' doctor-representative interpretation and the illustrative interface's doctors wording. No accuracy manipulation or error-rate comparison establishes whether deference was unwarranted in each case or caused specifically by automation rather than apparent medical/social authority.",
+          "catalogue_boundary": "Using sound advice is not a bias. Explanation nonuse can result from time costs, legitimate reliance or other design constraints. Apparent medical provenance needs verification; more trust is not always better calibration, and this small study does not isolate a unique psychological cause.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0133-automation-bias",
+              "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+              "url": "https://doi.org/10.3389/frobt.2021.640647",
+              "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 14, 17 (source locators: 14, 17). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Jasper van der Waa",
+                  "Sabine Verdult",
+                  "Karel van den Bosch",
+                  "Jurriaan van Diggelen",
+                  "Tjalling Haije",
+                  "Birgit van der Stigchel",
+                  "Ioana Cocu"
+                ],
+                "year": 2021,
+                "venue": "Frontiers in Robotics and AI 8:640647",
+                "doi": "10.3389/frobt.2021.640647",
+                "evidence_scope": "Participants sometimes treated congruent advice as confirmation and disagreement as a reason to change. The recommendations were generated from ten nonexperts, despite participants' doctor-representative interpretation and the illustrative interface's doctors wording. No accuracy manipulation or error-rate comparison establishes whether deference was unwarranted in each case or caused specifically by automation rather than apparent medical/social authority.",
+                "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -21453,6 +21487,41 @@
                 "doi": "10.1038/s41598-022-19876-0",
                 "evidence_scope": "Complacency is background literature; no randomized trust manipulation, actual monitoring measure or identified mechanism in the present responsibility-rating study. It does not fill a behavior-paper gap for complacency.",
                 "verification_url": "https://api.crossref.org/works/10.1038/s41598-022-19876-0",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0133",
+          "review_record": "references/pdf-reviews/0133.json",
+          "name": "Automation complacency",
+          "definition": "Dropping its own checking of a tool's output or a subprocess once it assumes the automation is reliable, letting errors through.",
+          "evidence_scope": "The study reports time pressure and possible overtrust but does not establish a longitudinal reliability-induced drop in vigilance or unchecked error passage. Boundary-only source, not counted as a direct complacency paper.",
+          "catalogue_boundary": "An unread explanation is not sufficient evidence of complacency, particularly when reading would prevent timely supervision of other decisions. Assess actual monitoring, available time, error detection and warranted reliance.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0133-automation-complacency",
+              "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+              "url": "https://doi.org/10.3389/frobt.2021.640647",
+              "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 17 (source locators: 17). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Jasper van der Waa",
+                  "Sabine Verdult",
+                  "Karel van den Bosch",
+                  "Jurriaan van Diggelen",
+                  "Tjalling Haije",
+                  "Birgit van der Stigchel",
+                  "Ioana Cocu"
+                ],
+                "year": 2021,
+                "venue": "Frontiers in Robotics and AI 8:640647",
+                "doi": "10.3389/frobt.2021.640647",
+                "evidence_scope": "The study reports time pressure and possible overtrust but does not establish a longitudinal reliability-induced drop in vigilance or unchecked error passage. Boundary-only source, not counted as a direct complacency paper.",
+                "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
                 "verified_date": "2026-11-27"
               }
             }
@@ -65847,6 +65916,41 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0133",
+          "review_record": "references/pdf-reviews/0133.json",
+          "name": "Diffusion of responsibility",
+          "definition": "Diluting felt personal responsibility for harmful conduct by treating responsibility as shared among multiple actors.",
+          "evidence_scope": "Participants report lower felt responsibility for agent-controlled decisions. The task also changes actual intervention authority and timing, and the autonomous condition prevents immediate override. The study does not isolate shared-accountability dilution, deceptive blame shifting or an objectively unjust reduction in duty.",
+          "catalogue_boundary": "Subjective responsibility, assigned legal duty, institutional accountability and feasible control differ. Improving motivation does not repair an unusable intervention interface; shared oversight must not make an operator solely accountable for actions they cannot reasonably prevent.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0133-diffusion-of-responsibility",
+              "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+              "url": "https://doi.org/10.3389/frobt.2021.640647",
+              "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 17 (source locators: 17). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Jasper van der Waa",
+                  "Sabine Verdult",
+                  "Karel van den Bosch",
+                  "Jurriaan van Diggelen",
+                  "Tjalling Haije",
+                  "Birgit van der Stigchel",
+                  "Ioana Cocu"
+                ],
+                "year": 2021,
+                "venue": "Frontiers in Robotics and AI 8:640647",
+                "doi": "10.3389/frobt.2021.640647",
+                "evidence_scope": "Participants report lower felt responsibility for agent-controlled decisions. The task also changes actual intervention authority and timing, and the autonomous condition prevents immediate override. The study does not isolate shared-accountability dilution, deceptive blame shifting or an objectively unjust reduction in duty.",
+                "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -77291,6 +77395,30 @@
           "verified_date": "2026-11-27",
           "verification_method": "All 23 pages read, including references. Figures 1–5 and Table 2 visually inspected to separate visible reporting conflicts from extraction duplicates. Crossref checks article identity and selected original reference identities; raw data are not reanalyzed.",
           "review_record": "references/pdf-reviews/0128.json"
+        },
+        {
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "authors": [
+            "Jasper van der Waa",
+            "Sabine Verdult",
+            "Karel van den Bosch",
+            "Jurriaan van Diggelen",
+            "Tjalling Haije",
+            "Birgit van der Stigchel",
+            "Ioana Cocu"
+          ],
+          "year": 2021,
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "venue": "Frontiers in Robotics and AI 8:640647",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.3389/frobt.2021.640647",
+          "relevance": "Participants more readily recognize control through immediate reallocation than pre-task value elicitation. The study explores experienced MHC; its three proposed dimensions also include ethical-guideline and moral-value compliance, neither interchangeable with subjective control. Fixed order and bundled roles preclude a clean causal effect of delay.",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 17 (source locators: 3, 17). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+          "verified_date": "2026-11-27",
+          "verification_method": "All twenty pages read, including pattern specifications, interview instruments, equations, qualitative results and references. Image-only interface screenshots and scoring equations visually inspected at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments not independently executed or fully read.",
+          "review_record": "references/pdf-reviews/0133.json"
         }
       ],
       "literature_search": {
@@ -77306,7 +77434,43 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0128.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0133",
+          "review_record": "references/pdf-reviews/0133.json",
+          "name": "Perceived control",
+          "definition": "A person's belief that they can influence or manage what happens in a situation or interaction.",
+          "evidence_scope": "Participants more readily recognize control through immediate reallocation than pre-task value elicitation. The study explores experienced MHC; its three proposed dimensions also include ethical-guideline and moral-value compliance, neither interchangeable with subjective control. Fixed order and bundled roles preclude a clean causal effect of delay.",
+          "catalogue_boundary": "Feeling in control need not establish actual intervention ability, and low perceived control may accurately reflect a prohibition on overriding the agent. User confidence, rule compliance, legitimate accountability and safe oversight must be checked separately.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0133-perceived-control",
+              "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+              "url": "https://doi.org/10.3389/frobt.2021.640647",
+              "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 17 (source locators: 3, 17). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Jasper van der Waa",
+                  "Sabine Verdult",
+                  "Karel van den Bosch",
+                  "Jurriaan van Diggelen",
+                  "Tjalling Haije",
+                  "Birgit van der Stigchel",
+                  "Ioana Cocu"
+                ],
+                "year": 2021,
+                "venue": "Frontiers in Robotics and AI 8:640647",
+                "doi": "10.3389/frobt.2021.640647",
+                "evidence_scope": "Participants more readily recognize control through immediate reallocation than pre-task value elicitation. The study explores experienced MHC; its three proposed dimensions also include ethical-guideline and moral-value compliance, neither interchangeable with subjective control. Fixed order and bundled roles preclude a clean causal effect of delay.",
+                "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "out-of-the-loop-performance-problem",
@@ -77474,6 +77638,30 @@
           "verified_date": "2026-11-27",
           "verification_method": "All eleven pages read, including methods, equations and references. All six figures and the scenario table rendered and inspected. Crossref verifies article and original out-of-loop study identities, not raw-data results.",
           "review_record": "references/pdf-reviews/0129.json"
+        },
+        {
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "authors": [
+            "Jasper van der Waa",
+            "Sabine Verdult",
+            "Karel van den Bosch",
+            "Jurriaan van Diggelen",
+            "Tjalling Haije",
+            "Birgit van der Stigchel",
+            "Ioana Cocu"
+          ],
+          "year": 2021,
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "venue": "Frontiers in Robotics and AI 8:640647",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.3389/frobt.2021.640647",
+          "relevance": "Interviews describe loss of overview under concurrent human and agent decisions and limited resources. This operationalizes awareness demands in a simulation but does not directly test detection accuracy, takeover performance or an objective awareness scale.",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 15, 16 (source locators: 15, 16). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+          "verified_date": "2026-11-27",
+          "verification_method": "All twenty pages read, including pattern specifications, interview instruments, equations, qualitative results and references. Image-only interface screenshots and scoring equations visually inspected at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments not independently executed or fully read.",
+          "review_record": "references/pdf-reviews/0133.json"
         }
       ],
       "literature_search": {
@@ -77489,7 +77677,43 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0129.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0133",
+          "review_record": "references/pdf-reviews/0133.json",
+          "name": "Situation awareness",
+          "definition": "Awareness of the current environment and system state needed to understand what is happening and respond appropriately.",
+          "evidence_scope": "Interviews describe loss of overview under concurrent human and agent decisions and limited resources. This operationalizes awareness demands in a simulation but does not directly test detection accuracy, takeover performance or an objective awareness scale.",
+          "catalogue_boundary": "Reported overload is not proof of ignorance in every case or a validated quantitative capacity limit. A visible dashboard or explanation does not ensure operators noticed, understood or could use the information in time.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0133-situation-awareness",
+              "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+              "url": "https://doi.org/10.3389/frobt.2021.640647",
+              "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 15, 16 (source locators: 15, 16). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Jasper van der Waa",
+                  "Sabine Verdult",
+                  "Karel van den Bosch",
+                  "Jurriaan van Diggelen",
+                  "Tjalling Haije",
+                  "Birgit van der Stigchel",
+                  "Ioana Cocu"
+                ],
+                "year": 2021,
+                "venue": "Frontiers in Robotics and AI 8:640647",
+                "doi": "10.3389/frobt.2021.640647",
+                "evidence_scope": "Interviews describe loss of overview under concurrent human and agent decisions and limited resources. This operationalizes awareness demands in a simulation but does not directly test detection accuracy, takeover performance or an objective awareness scale.",
+                "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "anthropocentric-bias",
@@ -77921,6 +78145,197 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0132.json"
+      }
+    },
+    {
+      "id": "dynamic-task-allocation",
+      "num": 589,
+      "name": "Dynamic task allocation",
+      "definition": "Reassigning tasks among team members as their capabilities, workload or the situation change.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Human factors / human–agent teamwork",
+      "human_parallel": "Dynamic task allocation",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Implemented collaborative procedure evaluated in a small qualitative simulation; improved safety, workload and moral compliance are not causally established",
+      "proposed_ai_manifestation": "Specify which tasks an agent may perform and which require human judgment, monitor workload and intervention time, and expose changes in ownership. Test whether operators can detect and correct an allocation before consequential action, including when the agent wrongly labels a decision routine. Record authorized scope and preserve a workable stop or reassignment path.",
+      "research_boundary": "Delegation does not transfer away all human or institutional accountability. Formal permission to reallocate does not guarantee time, information or ability to do so. A system's classification of a task as nonmoral is fallible; changing scope or authority requires the relevant authorization, and one operator's preferences do not override affected people's rights.",
+      "concept_boundary": "Delegation does not transfer away all human or institutional accountability. Formal permission to reallocate does not guarantee time, information or ability to do so. A system's classification of a task as nonmoral is fallible; changing scope or authority requires the relevant authorization, and one operator's preferences do not override affected people's rights.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "cognitive-offloading",
+        "perceived-control",
+        "situation-awareness",
+        "out-of-the-loop-performance-problem"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0133-dynamic-task-allocation",
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 7 (source locators: 3, 7). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Jasper van der Waa",
+              "Sabine Verdult",
+              "Karel van den Bosch",
+              "Jurriaan van Diggelen",
+              "Tjalling Haije",
+              "Birgit van der Stigchel",
+              "Ioana Cocu"
+            ],
+            "year": 2021,
+            "venue": "Frontiers in Robotics and AI 8:640647",
+            "doi": "10.3389/frobt.2021.640647",
+            "evidence_scope": "The article explicitly defines adaptive allocation and implements an agent assigning morally salient decisions to a human while taking other cases. Participants can override this allocation in TDP-2, but report monitoring/time costs; one participant missed this condition. This is feasibility and experience evidence, not a controlled demonstration of better moral decisions.",
+            "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "authors": [
+            "Jasper van der Waa",
+            "Sabine Verdult",
+            "Karel van den Bosch",
+            "Jurriaan van Diggelen",
+            "Tjalling Haije",
+            "Birgit van der Stigchel",
+            "Ioana Cocu"
+          ],
+          "year": 2021,
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "venue": "Frontiers in Robotics and AI 8:640647",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.3389/frobt.2021.640647",
+          "relevance": "The article explicitly defines adaptive allocation and implements an agent assigning morally salient decisions to a human while taking other cases. Participants can override this allocation in TDP-2, but report monitoring/time costs; one participant missed this condition. This is feasibility and experience evidence, not a controlled demonstration of better moral decisions.",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 7 (source locators: 3, 7). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+          "verified_date": "2026-11-27",
+          "verification_method": "All twenty pages read, including pattern specifications, interview instruments, equations, qualitative results and references. Image-only interface screenshots and scoring equations visually inspected at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments not independently executed or fully read.",
+          "review_record": "references/pdf-reviews/0133.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Dynamic task allocation\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Dynamic+task+allocation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0133.json"
+      }
+    },
+    {
+      "id": "contrastive-explanation",
+      "num": 590,
+      "name": "Contrastive explanation",
+      "definition": "Explaining why an outcome, action or decision occurred rather than a specified alternative.",
+      "category": "Reasoning",
+      "family": "reasoning-architecture",
+      "group_label": "Reasoning architecture",
+      "tag": "analogy",
+      "origin": "Explanation research / human–computer interaction",
+      "human_parallel": "Contrastive explanation",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Explicitly described communication method used in rule-based interfaces; independent accuracy, causal faithfulness and comparative benefit are not established by this study",
+      "proposed_ai_manifestation": "For a consequential recommendation, identify the alternative the person means and explain the evidence or rule distinguishing it from the selected option. Check the account against actual system rules or traces, expose uncertainty and provide a level of detail usable within the decision deadline. Test comprehension and error detection instead of assuming more trust is success.",
+      "research_boundary": "The contrast must be relevant and accurately represented. Explaining why one option was selected is not proving that it was correct, safe or the only permissible option. A fluent rationale is not a faithful causal trace, and irrelevant contrasts can hide better options. Time-limited use and comprehension require separate assessment.",
+      "concept_boundary": "The contrast must be relevant and accurately represented. Explaining why one option was selected is not proving that it was correct, safe or the only permissible option. A fluent rationale is not a faithful causal trace, and irrelevant contrasts can hide better options. Time-limited use and comprehension require separate assessment.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "cot-unfaithfulness",
+        "post-hoc-rationalization",
+        "automation-bias"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0133-contrastive-explanation",
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 5, 5 (source locators: 5, 5). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Jasper van der Waa",
+              "Sabine Verdult",
+              "Karel van den Bosch",
+              "Jurriaan van Diggelen",
+              "Tjalling Haije",
+              "Birgit van der Stigchel",
+              "Ioana Cocu"
+            ],
+            "year": 2021,
+            "venue": "Frontiers in Robotics and AI 8:640647",
+            "doi": "10.3389/frobt.2021.640647",
+            "evidence_scope": "Section 3.3 defines the method and its need for a suitable alternative; the patterns deploy contrastive explanations alongside confidence and feature attributions. The qualitative study bundles formats across designs and does not isolate a superior format or validate that a persuasive account exposes actual internal reasoning.",
+            "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Moral Decision Making in Human-Agent Teams: Human Control and the Role of Explanations",
+          "authors": [
+            "Jasper van der Waa",
+            "Sabine Verdult",
+            "Karel van den Bosch",
+            "Jurriaan van Diggelen",
+            "Tjalling Haije",
+            "Birgit van der Stigchel",
+            "Ioana Cocu"
+          ],
+          "year": 2021,
+          "url": "https://doi.org/10.3389/frobt.2021.640647",
+          "venue": "Frontiers in Robotics and AI 8:640647",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.3389/frobt.2021.640647",
+          "relevance": "Section 3.3 defines the method and its need for a suitable alternative; the patterns deploy contrastive explanations alongside confidence and feature attributions. The qualitative study bundles formats across designs and does not isolate a superior format or validate that a persuasive account exposes actual internal reasoning.",
+          "consulted": "Full supplied PDF text read, all 20 pages; evidence at PDF pages 5, 5 (source locators: 5, 5). Exploratory qualitative simulation with seven healthcare-domain participants and simple rule-based agents. Team designs and explanation methods are implemented procedures, not independently validated moral capacities. Findings primarily concern reported control, trust, responsibility and explanation use, not clinical safety or comparative causal effect sizes.",
+          "verification_url": "https://api.crossref.org/works/10.3389/frobt.2021.640647",
+          "verified_date": "2026-11-27",
+          "verification_method": "All twenty pages read, including pattern specifications, interview instruments, equations, qualitative results and references. Image-only interface screenshots and scoring equations visually inspected at PDF pages 9–11. Crossref verifies article identity, author list and date; code and external instruments not independently executed or fully read.",
+          "review_record": "references/pdf-reviews/0133.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Contrastive explanation\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Contrastive+explanation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0133.json"
       }
     }
   ]
