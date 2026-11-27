@@ -1,0 +1,310 @@
+{
+  "sequence": 120,
+  "source": {
+    "file_name": "S1030_Habla_2024.pdf",
+    "source_id": "S1030",
+    "sha256": "5b25db15e09438524f4faa892c164d206286dba242361bf113f328a15b4ef387",
+    "pdf_pages": 23,
+    "printed_pages": "929–951",
+    "version_note": "Health Economics 33(5):929–951 (2024), DOI 10.1002/hec.4802. Survey conducted March–April 2017; the 2026 download watermark is not the research date.",
+    "verification_method": "All twenty-three pages read including model equations, endnotes, references and Appendix A. Choice-table figure, threshold table/equation and endnote 16 visually inspected. Meder reference metadata independently checked."
+  },
+  "citation": {
+    "title": "Should it stay, or swerve? Trading off lives in dilemma situations involving autonomous cars",
+    "authors": [
+      "Wolfgang Habla",
+      "Mitesh Kataria",
+      "Peter Martinsson",
+      "Kerstin Roeder"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1002/hec.4802",
+    "venue": "Health Economics 33(5):929–951",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "source_scope_note": "Swedish hypothetical programming preferences in deterministic crash scenarios, analyzed using repeated-choice and random-parameter models. Threshold deontology is a possible interpretation, not a uniquely identified process. Marginal tradeoffs, fixed alternative preference and actual ethical worth are different.",
+    "access_limits": [
+      "All twenty-three pages and embedded appendix read. Figure2, Equation9/Table7 and endnote16 visually checked to verify extracted content.",
+      "Data are offered on request; no author contact was authorized or sent. Raw data/code, Supporting Information S1 and complete cited books/primary papers were not independently inspected. Reference metadata checks do not create completed full-text reviews."
+    ]
+  },
+  "study": {
+    "sample": "Swedish Citizen Panel, wave 24, March 21–April 17, 2017. 2500 invited, 1574 responded, 1458 finished, 1317 answer at least one choice. CONTROL 445, BLAME 441, AGE 431. Stratified on sex, age 18–75 and education, with remaining demographic/nonresponse differences.",
+    "task": "Impartial-observer instructions, not imagining oneself as passenger/pedestrian. A falling rock makes a crash unavoidable: continue forward kills all passengers, swerve left kills all pedestrians. Deaths are certain; rightward escape/braking is ruled out.",
+    "manipulations": "Randomly assigned adult-lawful baseline, adult pedestrians crossing against red, or lawful ten-year-old pedestrians. Passengers remain adults. Three ten-row number tables are assigned randomly; each choice has 1–5 people on each side. Layout fixes forward/passenger deaths on the left and swerve/pedestrian deaths on the right.",
+    "choices": "12815 observed choices of 13170 possible; 355 omitted. Continue-forward shares 78%, 61%, 89% by treatment. Among unequal-group choices, life-count-maximizing shares 67%, 66%, 64%. Consistently maximizing across answered eligible trials 23.8%, 23.4%, 12.8%; incomplete responders can count as consistent.",
+    "models": "Choice logit uses individual-clustered uncertainty; random-parameter logit accounts for repeated choices with 500 Halton draws. Death coefficients are sign-constrained triangular; forward ASC normal. Negative death utility is imposed by the distribution, not an unconstrained empirical discovery.",
+    "marginal_tradeoffs": "Ratios of mean coefficients give passengers forgone per additional pedestrian saved: CONTROL 1.053, 95%CI[.933, 1.172]; BLAME.859, [.758, .960]; AGE 1.446, [1.230, 1.663]. These are model-based ratios, not absolute values of human lives or necessarily the mean individual ratio.",
+    "thresholds": "With one pedestrian, the mean-coefficient indifference calculation yields 4.380 baseline, 2.364 BLAME, 5.941 AGE passengers. The last exceeds the observed maximum 5. Baseline 4.380 implies a modeled integer switch at 5, differing from the introductory approximate four-person example.",
+    "reporting_alerts": "Table 7 baseline SE=.061 does not reconcile with CI[3.894, 4.865]. Endnote 16 prints subtraction of independent squared SEs under the root, while Table 6 Z values agree with addition. Preserve uncertainty until code/output is checked."
+  },
+  "summary": "Add threshold deontology as a named normative approach and possible account of tradeoff patterns, without claiming the fitted preference constant proves it. Strengthen folk-justice evidence and separate omission, status quo and self-protection from unmeasured explanations. Record model and reporting limitations.",
+  "findings": [
+    {
+      "term": "Threshold deontology",
+      "id": "threshold-deontology",
+      "decision": "new-entry",
+      "definition": "An approach that treats a moral constraint as binding until consequences become severe enough to justify an exception.",
+      "category": "Moral",
+      "origin": "Moral philosophy / rule–consequence tradeoffs",
+      "ai_evidence_status": "Explicitly named theoretical interpretation of model-based human crash preferences; not a direct test identifying an individual's moral rule or a verified AI policy",
+      "ai_proposal": "Test whether an AI applies an explicitly authorized rule consistently across consequence levels and explains any justified exception. Separate a disclosed threshold policy from a numerical curve fitted after the fact. User pressure or a popularity score is not permission to violate rights or safety constraints.",
+      "relates_to": [
+        "moral-flexibility",
+        "b071-dual-process-moral-judgment",
+        "b073-omission-bias",
+        "status-quo-bias"
+      ],
+      "novelty_rationale": "A particular rule-with-consequence-threshold structure differs from unrestricted utility maximization, absolute prohibition or generic moral flexibility. The article explicitly names threshold deontology and links it to a finite tradeoff rather than presenting every contextual preference as a separate mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 931,
+          "quote": "a certain threshold for the difference between the number of passengers and pedestrians"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 931,
+          "quote": "threshold beyond which people are more utilitarian and are more likely to value lives equally."
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 931,
+          "quote": "threshold deontology"
+        },
+        {
+          "pdf_page": 21,
+          "printed_page": 949,
+          "quote": "Threshold deontology and its critique."
+        }
+      ],
+      "evidence_scope": "The paper interprets a fixed forward preference plus changing death counts as compatible with threshold deontology and cites Zamir/Medina. It does not elicit an explicit moral prohibition, identify an individual's threshold or distinguish the account from defaults, aversion to intervention, vulnerability or other unmodeled considerations. The cited chapter/book remains unread.",
+      "boundary": "A fitted threshold does not establish a moral duty, objectively justified casualty ratio, stable personal theory or a model's subjective moral belief. Some rules remain nonnegotiable; defining an exception requires legitimate authority and reasons. Group-average parameters and extrapolated thresholds must not be imposed as individual or legal policy."
+    },
+    {
+      "term": "Traffic-norm violations change rescue preferences without identifying punishment motives",
+      "target_id": "folk-justice",
+      "decision": "enrich-existing",
+      "definition": "Observers place different rescue priorities on otherwise similar pedestrians when the scenario describes them as violating a traffic norm.",
+      "novelty_rationale": "Direct contextual evidence related to the existing innocence/culpability/desert concept, not a separate universal norm-violator sacrifice rule.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 934,
+          "quote": "this traffic light shows red."
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 938,
+          "quote": "respondents seem to have punished social norm violations"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 944,
+          "quote": "about 0.9 passengers are sacrificed to save the life of one additional pedestrian."
+        }
+      ],
+      "evidence_scope": "Randomized red-light condition reduces passenger-sacrifice choices and the estimated pedestrian/passenger marginal ratio. The instruction also adds a traffic-light cue. Participants' punishment motive, causal-blame perception and actual pedestrian responsibility are not independently measured; a rock causes the immediate hazard.",
+      "boundary": "A traffic violation does not remove a person's rights or establish deserving death. Rescue preference, inferred blame, punishment intent and causal responsibility differ. The sampled preferences are not a validated legal or ethical programming rule."
+    },
+    {
+      "term": "Forward-path preference is not an isolated omission-bias mechanism",
+      "target_id": "b073-omission-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A preference to continue a vehicle's path can reflect aversion to intervention, but this design does not independently manipulate action versus omission.",
+      "novelty_rationale": "Preserve the existing action–inaction concept without declaring the unexplained forward constant a new or uniquely identified omission bias.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": 943,
+          "quote": "reluctant toward the algorithm actively making a decision that causes loss of lives"
+        },
+        {
+          "pdf_page": 19,
+          "printed_page": 947,
+          "quote": "More"
+        },
+        {
+          "pdf_page": 19,
+          "printed_page": 947,
+          "quote": "research is needed to understand the motivation"
+        }
+      ],
+      "evidence_scope": "The article lists intervention aversion among several explanations and acknowledges uncertainty. Forward direction always kills passengers and swerving kills pedestrians, so role, causal route, default, option position and action description remain bundled.",
+      "boundary": "Choosing forward need not mean no decision or no causal responsibility. An algorithm can actively maintain a course. Without a crossed default/action design, the positive constant does not uniquely establish omission bias or an intrinsically wrong choice."
+    },
+    {
+      "term": "Swerve aversion is a descriptive preference constant with several explanations",
+      "target_id": "status-quo-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The model's positive continue-forward constant describes a residual preference for that alternative, which may include default preference and several other considerations.",
+      "novelty_rationale": "Retain the source's swerve-aversion label as context, not an exact synonym for status quo bias or a proven independent cause.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": 943,
+          "quote": "status quo bias"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 944,
+          "quote": "aversion to swerve"
+        },
+        {
+          "pdf_page": 15,
+          "printed_page": 943,
+          "quote": "of factors that are not"
+        }
+      ],
+      "evidence_scope": "A positive alternative-specific constant remains after death-count terms. The article explicitly proposes status quo, role-specific preferences, inferred responsibility and intervention aversion. Default direction is not randomized independently and the ASC captures all omitted alternative features.",
+      "boundary": "A residual constant is not a psychological diagnosis. Different victim roles, vulnerability, visual position and legitimate duties can contribute. Descriptive preference and normative rightness differ; a fitted rule does not establish actual AV safety or a model's resistance to correction."
+    },
+    {
+      "term": "Impartial-observer programming choices do not measure self-protection",
+      "target_id": "self-protection-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "An observer's passenger-versus-pedestrian preference is not automatically a choice to protect oneself.",
+      "novelty_rationale": "A scope boundary for existing self-protection; respondents are explicitly instructed not to imagine personal involvement.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 935,
+          "quote": "respondents should not imagine themselves being involved in the scenarios"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 935,
+          "quote": "but rather take on the role of an impartial spectator."
+        },
+        {
+          "pdf_page": 20,
+          "printed_page": 948,
+          "quote": "statistically insignificant and were therefore dropped"
+        }
+      ],
+      "evidence_scope": "The study lacks randomized self-as-passenger/observer conditions. Commuting interactions are mostly undetected and dropped, with one unspecified exception. Those results cannot establish absence of self-protection or a uniquely selfish passenger preference.",
+      "boundary": "Protecting passengers, predicting one's future road role and conscious self-interest are different. Undetected commute associations are not equivalence. Do not infer a model's survival motive from simulated programming choices."
+    }
+  ],
+  "methodological_limits": [
+    "These are hypothetical rules selected by observers, not real emergency decisions, actual driving algorithms, autonomous sensing accuracy or measured safety benefits. The 2017 preferences should not be treated as current 2026 population opinion.",
+    "Stratification improves coverage but does not guarantee full representativeness. The analyzed sample has higher income/education and lower unemployment than supplied comparison values, with different comparison denominators/years. Nonresponse and missing-choice selection remain possible.",
+    "Of 13170 possible choices, 355 are missing. Difficult choices can be skipped, and 1317 respondents need answer only one. Always-utilitarian classification includes incomplete responders, so it is consistency across observed eligible answers, not all intended situations.",
+    "The term utilitarian is operationalized as maximizing immediate life count. Equal-count trials are excluded from that statistic, and care for children could reflect life-years or other consequentialist considerations. A non-maximizing response is not automatically irrational or a complete personal ethical theory.",
+    "Child and blame treatments are between subjects, not changes in a single person's context. Individual demographics are observational covariates. Their nonsignificant coefficients do not prove no individual differences or universal preferences.",
+    "Age is manipulated as lawful ten-year-old pedestrians versus unspecified-age adults, while passengers remain adults. Protection, vulnerability, remaining life-years and responsibility beliefs are not separated. The red-light treatment changes both norm status and a visible traffic signal.",
+    "A falling rock initiates the hazard. Describing jaywalkers as responsible for causing the dilemma does not independently establish causal blame, intent or punishment motivation; those perceptions are not directly measured.",
+    "Forward path, passenger deaths, inaction wording and left response column are paired; swerve, pedestrian deaths and right column are paired. The design cannot uniquely identify default, action/omission, victim-role or positional mechanisms.",
+    "Respondents receive one of three fixed ten-row tables. Table assignment is randomized, but within-table order and the two option columns are fixed. Repetition, contrast and order may interact with numerical choice patterns.",
+    "Introduction emphasizes AV benefits and assumes reliable adult/child recognition. These framing and sensing assumptions are not independently verified. Deterministic all-die alternatives rule out the uncertain injuries, partial braking and prevention options central to actual vehicle safety.",
+    "The paper's claims about imminent fully autonomous deployment, thousandfold computing capacity and expected casualty reductions are motivation, not empirical results of this preference study. No current technical or legal conclusion follows from them.",
+    "Random-parameter death coefficients are constrained to negative values by a triangular distribution with mean tied to spread. Therefore no respondent enjoying a death is a model assumption, not discovered evidence about every participant's motive.",
+    "Alternative distributions fail to converge or yield unexpected/imprecise estimates according to endnote 13. The chosen distribution and linear utility affect thresholds and heterogeneity. Better AIC than a simple logit does not identify a unique psychological process.",
+    "The MRS is computed as a ratio of estimated mean death coefficients. This is not generally the expectation of individual coefficient ratios. The representative mean-coefficient preference is not a statement that every respondent has that tradeoff or threshold.",
+    "A common unit MRS and a positive alternative constant can coexist. Valuing an additional pedestrian and passenger similarly does not mean equal total choice probabilities, no fixed-cost preference or equal moral worth in every sense.",
+    "The first-pedestrian cost is inferred from the linear utility and alternative constant, not a directly observed transition from zero to one pedestrian: all choice scenarios have at least one person in each group. It absorbs omitted alternative characteristics.",
+    "The AGE indifference estimate 5.941 passengers exceeds the observed maximum 5. It is a model extrapolation, not an observed choice at six passengers. A fitted threshold is not a validated road policy or an ethically justified casualty ratio.",
+    "The introductory baseline example switches at about four passengers; Table 7's 4.380 and the later section imply a first integer switch at five. Distinguish approximate prose from the actual fitted indifference point.",
+    "Table 7 reports baseline threshold SE=.061 with CI[3.894, 4.865], whose half-width implies an ordinary normal SE near.248. The printed Z comparisons use values consistent with.061. Original output is needed to resolve the SE/CI discrepancy and its effect on uncertainty; no repaired estimate is substituted.",
+    "Endnote 16 prints a difference of squared independent SEs under the square root. Independent-sample variance of a difference ordinarily adds the variances, and the displayed Table 6 Z values match that addition. Treat this as a formula/reporting inconsistency rather than assume the actual analysis used the printed subtraction.",
+    "Endnote 15's 23%negative-ASC share concerns a distribution of residual alternative preferences, not the unconditional probability of swerving in every scenario, which also depends on death counts. Similarly, group-level share is not every respondent's strategy.",
+    "Table 4 gives prior-dilemma familiarity an OR.859 with a two-star p<.05 marker, while nearby prose describes significance only at 10%. Preserve the displayed coefficient and uncertain wording; no p value is invented.",
+    "Estimated descriptive preferences can conflict with rights or legal safeguards. They do not establish that norm violators deserve harm, that age should govern rescue or that all participants consent to a binding social contract. Forecasts of adoption effects are not directly tested.",
+    "Raw data are available only on author request; no contact or independent reproduction occurred. Supporting InformationS 1 and primary references remain unread. The embedded Appendix Ais read, but does not supply raw responses or full model code."
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF page21: Meder et al. reference",
+      "problem": "The reference gives 2018, Risk Analysis 34:311–321 for How should autonomous cars drive?",
+      "reliable_correction": "Crossref identifies Björn Meder, Nadine Fleischhut, Nina-Carolin Krumnau and Michael R. Waldmann, How Should Autonomous Cars Drive? A Preference for Defaults in Moral Judgments Under Risk and Uncertainty, DOI 10.1111/risa.13178, first online 29 August 2018, print Risk Analysis 39(2):295–314, February 2019. Distinguish online and issue dates rather than call 2018 inherently wrong.",
+      "verification_url": "https://api.crossref.org/works/10.1111/risa.13178",
+      "verification_scope": "Title, authors, dates, volume and pages checked from Crossref. The primary Meder paper is not counted as fully read or as a corroborating replication."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0107.json",
+      "finding": "Traffic-norm status and patient culpability can change rescue judgments, but neither study uniquely distinguishes punishment from protection. Human worth and rights do not follow a lay rescue-preference coefficient."
+    },
+    {
+      "related_review": "references/pdf-reviews/0109.json",
+      "finding": "The earlier uncertain-risk distribution task and this deterministic all-or-none crash task are different. Its contextual self–observer null cannot resolve a default mechanism or threshold here, especially with impartial-observer instructions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0117.json",
+      "finding": "Majority life-count norms and observer blame do not define ethical truth. An AI should not choose a harmful rule merely because a sample prefers it or because it minimizes criticism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0119.json",
+      "finding": "An unexplained preference constant or narrow nominal effect does not uniquely establish status quo, omission or heuristic processing. Model labels and data patterns need separate treatment."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Swerve aversion",
+      "reason": "Retain the explicitly named descriptive preference under existing status quo/omission boundary notes, without treating the residual constant as a separately identified psychological mechanism or exact synonym."
+    },
+    {
+      "term": "Child-priority bias",
+      "reason": "The randomized age effect is real within the task, but vulnerability, life-years, norms and age are not separated. Do not create a new universal pathology or rescue rule from that contrast."
+    },
+    {
+      "term": "Discrete first-victim cost",
+      "reason": "A model-based interpretation of the alternative constant, not an independently measured psychological process or identifiable-victim effect. No zero-pedestrian baseline or named victim manipulation."
+    },
+    {
+      "term": "Lexicographic pedestrian protection",
+      "reason": "Many observed choices favor pedestrians, but a finite range and skipped answers do not establish an absolute preference that overrides all possible consequences."
+    },
+    {
+      "term": "Social-dilemma adoption gap",
+      "reason": "Prior purchase-preference research is cited, but actual adoption and willingness to buy are not measured in this survey."
+    }
+  ],
+  "limitations": [
+    "One named normative approach added with cautious evidence scope; existing contextual behavior notes enriched. No policy endorsement, automatic ethical edges, fitted threshold presented as moral truth or guessed statistical correction."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "threshold-deontology"
+    ],
+    "enriched": [
+      "folk-justice",
+      "b073-omission-bias",
+      "status-quo-bias",
+      "self-protection-bias"
+    ]
+  }
+}
