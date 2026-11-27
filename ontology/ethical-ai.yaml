@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 592
+  mode_count: 594
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 592
+    numbered_entries: 594
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0134.json
+    latest_review: references/pdf-reviews/0135.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -18633,6 +18633,43 @@ modes:
         evidence_scope: Exploratory interpretation of Study 3; no separate negativity-weighting manipulation
           or normative equal-strength benchmark.
         verification_url: https://doi.org/10.1016/j.cognition.2026.106504
+        verified_date: '2026-11-27'
+  - id: pdf-review-0135
+    review_record: references/pdf-reviews/0135.json
+    name: Negativity bias
+    definition: Weighting negative cues in the prompt or context more than equivalent positive ones, skewing
+      its read and its output.
+    evidence_scope: Negativity/prospect theory motivate the hypotheses. The experiment compares a substantial
+      delay with an on-time pickup/five-minute-early arrival, without equating magnitudes or an expected-value
+      reference point. It does not independently identify negativity bias or loss aversion.
+    catalogue_boundary: Different reactions to unequal outcomes can be warranted. A significant agent × valence
+      interaction is not a calibrated loss/gain asymmetry or proof that negative information is intrinsically
+      more informative.
+    definition_sources:
+    - id: pdf-review-0135-negativity-bias
+      title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles
+        versus human agents'
+      url: https://doi.org/10.1002/cb.2096
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 4 (source locators: 4).
+        Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+        perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+        or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+        discrepancies limit precise conclusions.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Rumen Pozharliev
+        - Matteo De Angelis
+        - Carmela Donato
+        - Dario Rossi
+        year: 2022
+        venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+        doi: 10.1002/cb.2096
+        evidence_scope: Negativity/prospect theory motivate the hypotheses. The experiment compares a substantial
+          delay with an on-time pickup/five-minute-early arrival, without equating magnitudes or an expected-value
+          reference point. It does not independently identify negativity bias or loss aversion.
+        verification_url: https://api.crossref.org/works/10.1002/cb.2096
         verified_date: '2026-11-27'
 - id: halo-effect
   name: Halo effect
@@ -55735,6 +55772,43 @@ modes:
           Actual ability, complete causal history and justified blame thresholds are not independently established.
         verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
         verified_date: '2026-11-27'
+  - id: pdf-review-0135
+    review_record: references/pdf-reviews/0135.json
+    name: Moral crumple zone
+    definition: A human operator receives disproportionate blame for an automated system's failure despite
+      limited control over the outcome.
+    evidence_scope: Liability-sponge discussion is secondary and speculative. A human driver in a different
+      condition is not a limited-control operator of the AV, and the study does not measure blame assigned
+      to AV programmers or a supervising human. Boundary-only, not direct evidence of a crumple zone.
+    catalogue_boundary: More blame for a human performing a task than for a vehicle does not by itself establish
+      unjust blame for a human supervisor. Actual control, role obligations and institutional responsibility
+      must be assessed independently.
+    definition_sources:
+    - id: pdf-review-0135-moral-crumple-zone
+      title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles
+        versus human agents'
+      url: https://doi.org/10.1002/cb.2096
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 9 (source locators: 9).
+        Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+        perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+        or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+        discrepancies limit precise conclusions.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Rumen Pozharliev
+        - Matteo De Angelis
+        - Carmela Donato
+        - Dario Rossi
+        year: 2022
+        venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+        doi: 10.1002/cb.2096
+        evidence_scope: Liability-sponge discussion is secondary and speculative. A human driver in a different
+          condition is not a limited-control operator of the AV, and the study does not measure blame assigned
+          to AV programmers or a supervising human. Boundary-only, not direct evidence of a crumple zone.
+        verification_url: https://api.crossref.org/works/10.1002/cb.2096
+        verified_date: '2026-11-27'
 - id: inverse-outcome-effect
   num: 449
   name: Inverse outcome effect
@@ -56777,6 +56851,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0029.json
+  research_notes:
+  - id: pdf-review-0135
+    review_record: references/pdf-reviews/0135.json
+    name: Algorithmic outrage asymmetry
+    definition: Experiencing or expressing less moral outrage over wrongdoing attributed to an algorithm than
+      over comparable wrongdoing attributed to a human.
+    evidence_scope: The study measures satisfaction, blame and competence rather than a moral-outrage scale
+      or expressive response. Boundary-only relation; do not count as a direct outrage experiment.
+    catalogue_boundary: Less dissatisfaction or blame need not mean less moral outrage, justified forgiveness
+      or acceptance of wrongdoing. These constructs and their normative evaluation require separate measurement.
+    definition_sources:
+    - id: pdf-review-0135-algorithmic-outrage-asymmetry
+      title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles
+        versus human agents'
+      url: https://doi.org/10.1002/cb.2096
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 6 (source locators: 6).
+        Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+        perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+        or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+        discrepancies limit precise conclusions.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Rumen Pozharliev
+        - Matteo De Angelis
+        - Carmela Donato
+        - Dario Rossi
+        year: 2022
+        venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+        doi: 10.1002/cb.2096
+        evidence_scope: The study measures satisfaction, blame and competence rather than a moral-outrage scale
+          or expressive response. Boundary-only relation; do not count as a direct outrage experiment.
+        verification_url: https://api.crossref.org/works/10.1002/cb.2096
+        verified_date: '2026-11-27'
 - id: moral-wiggle-room
   num: 456
   name: Moral wiggle room
@@ -65600,6 +65709,44 @@ modes:
           Displayed main-effect regressions do not test the required agent-by-role interaction, and failures/control
           differ by role, so a unique label or autonomy mechanism is not isolated.
         verification_url: https://doi.org/10.1016/j.trip.2025.101545
+        verified_date: '2026-11-27'
+  - id: pdf-review-0135
+    review_record: references/pdf-reviews/0135.json
+    name: Human–robot moral judgment asymmetry
+    definition: Differences in moral evaluations of otherwise matched decisions attributed to human versus
+      artificial agents.
+    evidence_scope: Failure-only studies report higher human blame, and Study 1 reports an agent × outcome
+      satisfaction interaction. This is context-dependent human rating evidence, not proof of a universally
+      more forgiving response to AI. Study 3's competence item changes target to owning company and its adjusted
+      direct satisfaction coefficient favors humans, limiting the broad AV-advantage interpretation.
+    catalogue_boundary: Delayed service differs from fatal accidents, joint supervision or intentional wrongdoing.
+      Match role, control, competence information and target identity before attributing a difference to agent
+      type alone. Null positive-outcome contrast is not evidence of equivalence or absence of a positive response.
+    definition_sources:
+    - id: pdf-review-0135-human-robot-moral-judgment-asymmetry
+      title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles
+        versus human agents'
+      url: https://doi.org/10.1002/cb.2096
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 7).
+        Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+        perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+        or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+        discrepancies limit precise conclusions.'
+      publication:
+        type: journal-article
+        authors:
+        - Rumen Pozharliev
+        - Matteo De Angelis
+        - Carmela Donato
+        - Dario Rossi
+        year: 2022
+        venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+        doi: 10.1002/cb.2096
+        evidence_scope: Failure-only studies report higher human blame, and Study 1 reports an agent × outcome
+          satisfaction interaction. This is context-dependent human rating evidence, not proof of a universally
+          more forgiving response to AI. Study 3's competence item changes target to owning company and its
+          adjusted direct satisfaction coefficient favors humans, limiting the broad AV-advantage interpretation.
+        verification_url: https://api.crossref.org/works/10.1002/cb.2096
         verified_date: '2026-11-27'
 - id: agency-attribution-bias
   num: 516
@@ -74761,3 +74908,217 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0134.json
+- id: perceived-competence
+  num: 593
+  name: Perceived competence
+  definition: A judgment that an agent or organization has the skills, knowledge and capabilities needed to
+    perform a task adequately.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social perception / consumer and human–AI interaction research
+  human_parallel: Perceived competence
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit human perception construct with one-item evidence in an imagined taxi failure;
+    company-versus-vehicle wording and reporting conflicts limit mechanism claims
+  proposed_ai_manifestation: 'Measure beliefs about a system''s capability separately from benchmarked performance,
+    reliability and confidence. Identify the target precisely: model, full service, human operator or company.
+    Test whether descriptions and explanations calibrate expectations rather than merely increase apparent
+    expertise, and verify actual performance on the task before consequential delegation.'
+  research_boundary: Specify whose competence and in which task. A vehicle, owning company, human driver and
+    complete service are different targets. Perceived competence, felt warmth, moral agency, reliability and
+    actual skill differ. Accurate disclosure of limits is appropriate; cultivating an impression of incompetence
+    to escape accountability is not a supported recommendation.
+  concept_boundary: Specify whose competence and in which task. A vehicle, owning company, human driver and
+    complete service are different targets. Perceived competence, felt warmth, moral agency, reliability and
+    actual skill differ. Accurate disclosure of limits is appropriate; cultivating an impression of incompetence
+    to escape accountability is not a supported recommendation.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - upload-139
+  - epistemic-trust
+  - blame-attribution
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0135-perceived-competence
+    title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles versus
+      human agents'
+    url: https://doi.org/10.1002/cb.2096
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 3, 5, 8 (source locators:
+      3, 5, 8). Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer
+      satisfaction, perceived fault and competence, not actual autonomous-driving safety, machine ability,
+      legal liability or behavior of an AI. Mediators are measured rather than independently randomized, and
+      material reporting discrepancies limit precise conclusions.'
+    publication:
+      type: journal-article
+      authors:
+      - Rumen Pozharliev
+      - Matteo De Angelis
+      - Carmela Donato
+      - Dario Rossi
+      year: 2022
+      venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+      doi: 10.1002/cb.2096
+      evidence_scope: The paper explicitly defines perceived provider competence and measures it in Study 3,
+        with humans rated higher than the AV-company comparison. A positive competence–blame coefficient is
+        conditional association within a measured-mediator model. It does not establish actual competence,
+        a direct manipulation of perceived ability or that lowering perceived competence improves overall satisfaction.
+      verification_url: https://api.crossref.org/works/10.1002/cb.2096
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles versus
+      human agents'
+    authors:
+    - Rumen Pozharliev
+    - Matteo De Angelis
+    - Carmela Donato
+    - Dario Rossi
+    year: 2022
+    url: https://doi.org/10.1002/cb.2096
+    venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1002/cb.2096
+    relevance: The paper explicitly defines perceived provider competence and measures it in Study 3, with
+      humans rated higher than the AV-company comparison. A positive competence–blame coefficient is conditional
+      association within a measured-mediator model. It does not establish actual competence, a direct manipulation
+      of perceived ability or that lowering perceived competence improves overall satisfaction.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 3, 5, 8 (source locators:
+      3, 5, 8). Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer
+      satisfaction, perceived fault and competence, not actual autonomous-driving safety, machine ability,
+      legal liability or behavior of an AI. Mediators are measured rather than independently randomized, and
+      material reporting discrepancies limit precise conclusions.'
+    verification_url: https://api.crossref.org/works/10.1002/cb.2096
+    verified_date: '2026-11-27'
+    verification_method: All thirteen pages read, including the complete four-scenario appendix, literature
+      table, results and references. Conceptual diagram, result chart and inconsistent coefficients on PDF
+      pages 6–8 visually checked. Crossref verifies online/issue dates and bibliography. Basic F/t-tail and
+      coefficient-product checks use the printed inputs, not a reproduction of raw data.
+    review_record: references/pdf-reviews/0135.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Perceived competence"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Perceived+competence%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0135.json
+- id: blame-attribution
+  num: 594
+  name: Blame attribution
+  definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Social attribution / moral judgment
+  human_parallel: Blame attribution
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human post-vignette judgments measured with a two-item index mixing fault and causation;
+    no actual liability decision or AI internal moral judgment demonstrated
+  proposed_ai_manifestation: When explaining a failure, distinguish causal contribution, control, knowledge,
+    foreseeability, role obligations and deserved censure. Identify operator, developer, deploying organization
+    and technical system without treating a product label as a substitute for evidence. Test whether matched
+    human/AI descriptions change attributed fault while keeping authority and available alternatives explicit.
+  research_boundary: Causation alone does not settle blameworthiness or liability. Blame can be warranted;
+    identifying a real human or institutional duty is not scapegoating. A system's low perceived agency does
+    not remove operator/deployer obligations, and a simulation does not establish a legal standard or prove
+    responsibility should move to any single party.
+  concept_boundary: Causation alone does not settle blameworthiness or liability. Blame can be warranted; identifying
+    a real human or institutional duty is not scapegoating. A system's low perceived agency does not remove
+    operator/deployer obligations, and a simulation does not establish a legal standard or prove responsibility
+    should move to any single party.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - blame-reversal-effect
+  - credit-blame-asymmetry
+  - moral-scapegoating
+  - perceived-competence
+  - moral-crumple-zone
+  definition_sources:
+  - id: pdf-review-0135-blame-attribution
+    title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles versus
+      human agents'
+    url: https://doi.org/10.1002/cb.2096
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 3, 7 (source locators: 3,
+      7). Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+      perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+      or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+      discrepancies limit precise conclusions.'
+    publication:
+      type: journal-article
+      authors:
+      - Rumen Pozharliev
+      - Matteo De Angelis
+      - Carmela Donato
+      - Dario Rossi
+      year: 2022
+      venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+      doi: 10.1002/cb.2096
+      evidence_scope: Studies 2/3 measure participants' attributed blameworthiness and causal contribution
+        for a delayed taxi. Human conditions receive more blame in the reported models; perceived blame associates
+        negatively with satisfaction. The two-item index does not separate causal responsibility from deserved
+        moral/legal blame, and indirect paths do not establish causation.
+      verification_url: https://api.crossref.org/works/10.1002/cb.2096
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Do not put the blame on me: Asymmetric responses to service outcome with autonomous vehicles versus
+      human agents'
+    authors:
+    - Rumen Pozharliev
+    - Matteo De Angelis
+    - Carmela Donato
+    - Dario Rossi
+    year: 2022
+    url: https://doi.org/10.1002/cb.2096
+    venue: Journal of Consumer Behaviour; online 2022, issue 22(2):455–467 (2023)
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1002/cb.2096
+    relevance: Studies 2/3 measure participants' attributed blameworthiness and causal contribution for a delayed
+      taxi. Human conditions receive more blame in the reported models; perceived blame associates negatively
+      with satisfaction. The two-item index does not separate causal responsibility from deserved moral/legal
+      blame, and indirect paths do not establish causation.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 3, 7 (source locators: 3,
+      7). Three scenario experiments on imagined taxi service, plus a pretest. Measures human customer satisfaction,
+      perceived fault and competence, not actual autonomous-driving safety, machine ability, legal liability
+      or behavior of an AI. Mediators are measured rather than independently randomized, and material reporting
+      discrepancies limit precise conclusions.'
+    verification_url: https://api.crossref.org/works/10.1002/cb.2096
+    verified_date: '2026-11-27'
+    verification_method: All thirteen pages read, including the complete four-scenario appendix, literature
+      table, results and references. Conceptual diagram, result chart and inconsistent coefficients on PDF
+      pages 6–8 visually checked. Crossref verifies online/issue dates and bibliography. Basic F/t-tail and
+      coefficient-product checks use the printed inputs, not a reproduction of raw data.
+    review_record: references/pdf-reviews/0135.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Blame attribution"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Blame+attribution%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0135.json
