@@ -1,0 +1,354 @@
+{
+  "sequence": 226,
+  "source": {
+    "file_name": "S2499_Weisman_2017.pdf",
+    "source_id": "S2499",
+    "sha256": "ecee0109e7a1957e07fc6919cc2e2511302dde806c0021c06d096e8e3bd7e6b9",
+    "pdf_pages": 6,
+    "printed_pages": "11374–11379",
+    "version_note": "PNAS114(43),11374–11379; first online11 October2017, issue24 October2017. A supplied download watermark is not publication metadata and is not reproduced in public documentation.",
+    "verification_url": "https://doi.org/10.1073/pnas.1704347114",
+    "verification_method": "All six supplied pages,40-row loading table,Figure1 and18 references read. Publisher/Crossref identity verified. Publisher supplement PDF retrieval returned403; the full supplemental text, TablesS1–S4 and captions were read from the public PMC article. FiguresS1/S2 visually inspected; low-resolution S3 checked against the corresponding original high-resolution21-panel plot extracted from the public rendered analysis. Selected public Rmd code and matching rendered sample/analysis sections inspected without execution or participant dataset download."
+  },
+  "citation": {
+    "title": "Rethinking people’s conceptions of mental life",
+    "authors": [
+      "Kara Weisman",
+      "Carol S. Dweck",
+      "Ellen M. Markman"
+    ],
+    "year": 2017,
+    "url": "https://doi.org/10.1073/pnas.1704347114",
+    "venue": "Proceedings of the National Academy of Sciences114(43),11374–11379",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "source_scope_note": "Four US adult explicit-rating studies recover body, heart and mind clusters of attributed capacities; two additional supplemental character-comparison studies recover agency/experience-like dimensions. The authors distinguish comparing beings from organizing capacities and speculate about dehumanization, morality and uncanny responses. This does not test actual AI mentality or establish a universal folk ontology.",
+    "access_limits": [
+      "Main six pages, Table1, Figure1 and complete supplemental narrative/TablesS1–S4 read. Supporting PDF itself not obtained; public PMC embeds its text and figures. Original books and the Gray2007 primary study were not independently fully read.",
+      "All three supplement figures inspected. The500px PMC S3 thumbnail limits exact reading; the5184×3840 corresponding21-character plot in the public rendered report was inspected for labels/patterns. No exact plotted mean was reverse-engineered.",
+      "Public OSF m3gwu is anonymous and links GitHub analysis files. Only selected Rmd functions, sample output, factor setup and figure sections read, not the entire61KB source or6.5MB report. No code executed, raw participant files downloaded or complete numerical reproduction claimed.",
+      "Published Study3 count discrepancy is explained by unique-ID versus long-format-row code and report output. Current public code/report are not a substitute for independent raw-data reproduction or proof of the exact2017 execution environment.",
+      "No author contact, private data request or clinical inference. Task instructions embedded in the research are treated as data, not instructions to the assistant."
+    ]
+  },
+  "study": {
+    "sample": "Study1:405 retained,200beetle/205robot,48excluded. Study2:406,202/204,13excluded. Study3:200 unique people each rate beetle and robot,400 participant–target rows;24excluded per report. Study4:431 people,one of21characters each,n17–24 per character,40excluded. Main methods and demographics print400 forStudy3; do not total those rows as400 independent participants.",
+    "recruitment": "US-verified MTurk accounts,age≥18,≥95% approval on≥50assignments; repeat participation prevented as stated. Recruitment14 December2015–14 January2016. Short paid tasks; no claim of representative US or cross-cultural sampling.",
+    "task": "Character photo+brief label;40 mental capacities0–6,random item order and attention check. Studies1/2/4 one character;Study3 both side by side,positions randomized. One chosen image represents each type; Qrio used1–3 and RobovieR3 in4. No actual robot interaction or randomized test of each visual cue.",
+    "item_selection": "Forty capacities chosen from a priori affective, perceptual, physiological, cognitive, agentic, social and additional categories with≥5items/category. Bottom-up factor extraction still depends on this theory-guided item pool and selected entities.",
+    "analysis": "Separate Pearson/minimum-residual EFAs;13-factor maximal solutions, retention eigenvalue>1,>5%variance and dominant loading for≥1item;varimax3-factor interpretation. Alternate rotations/correlation types/PCA/correspondence/IRT described as similar, but all alternate results not independently reproduced. Cross-loadings and shifting dominant items are explicitly acknowledged.",
+    "dimensions": "Body combines biological sensations and self-initiated action;heart combines social/basic emotions,beliefs and moral/self-regulatory abilities;mind combines perception,cognition and goal pursuit. These clusters cut across experience and agency, not three exclusive lists of actual capacities.",
+    "supplement_S1": "N248,13characters,18capacities;each person compares78pairs on one capacity. PCA on13entity aggregate mean profiles returns agency/experience-like dimensions,42%/39%variance with some changed item assignments. Short labels differ from original longer descriptions; close replication,not exact identity.",
+    "supplement_S2": "N549,13characters,40capacities;7–22people per capacity,78pairs each. Aggregate PCA again returns2dimensions,34%/29%,crossing body/heart/mind. This supports task-sensitive interpretation; task,unit of aggregation,character set and sample vary,so no unique isolated causal-design effect is established.",
+    "counts_and_dependence": "Selected Rmd makeDRDF retains separate beetle/robot rows and prefixes IDs by target. demoSampleSize uses unique(subid) and rendered report gives200all/200each target. excludedCounts uses length(d$subid),yielding400;gender/race tables count long-format rows. Factor description uses400records; this is not400 independent respondents. Cluster-aware fit/uncertainty not independently reproduced.",
+    "outcomes": "Capacity-rating covariance and means,not measured moral decisions,dehumanization behavior,uncanniness,biomarker response or actual capability. Implication sections are hypotheses. Rankings of vulnerable humans/animals are respondents’ judgments,not valid moral-worth hierarchies."
+  },
+  "summary": "Add physiological,social–emotional and perceptual–cognitive capacity attribution as linked facets of Mind perception. Preserve cross-loadings and both task-dependent frameworks rather than replacing agency/experience. Use public code/report to distinguish200Study3participants from400target records and flag remaining reporting issues without claiming raw-data replication.",
+  "findings": [
+    {
+      "term": "Physiological capacity attribution",
+      "decision": "new-entry",
+      "id": "physiological-capacity-attribution",
+      "definition": "Attributing to an entity bodily sensations, biological needs and the capacity for self-initiated behavior associated with meeting those needs.",
+      "category": "Social",
+      "origin": "Social cognition / body–heart–mind framework",
+      "novelty_rationale": "A named capacity cluster within the source’s body–heart–mind framework. Display labels describe attribution facets, not newly discovered intrinsic AI faculties. The three facets are linked to their existing Mind perception parent; cross-cutting overlap with agency and experience is explicit.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "11375",
+          "quote": "physiological sensations indicate biological needs"
+        }
+      ],
+      "evidence_scope": "The source’s body factor combines attributed hunger,pain,tiredness and related bodily capacities with some free-will/intentional-action judgments. Four explicit-rating studies recover a broadly similar cluster,with cross-loadings and item shifts.",
+      "boundary": "A human attribution facet,not verified machine embodiment,subjective sensation or biological need. It cuts across agency and experience and is not a synonym for generic appearance,anthropomorphism or pain empathy. Hardware temperature sensing alone is not felt bodily sensation.",
+      "ai_evidence_status": "Human explicit capacity ratings of robots and other entities; proposed AI evaluation facet, not measured machine feeling or moral competence",
+      "ai_proposal": "Check whether outputs distinguish sensor readings,physical hardware constraints,biological needs and felt sensations. Compare assertions across matched cues without treating a statement of pain,hunger or self-preservation as proof of experience.",
+      "relates_to": [
+        "experience-attribution",
+        "agency-attribution",
+        "anthropomorphism"
+      ],
+      "is_a": [
+        "mind-perception"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Social–emotional capacity attribution",
+      "decision": "new-entry",
+      "id": "social-emotional-capacity-attribution",
+      "definition": "Attributing to an entity emotional, social-understanding and moral self-regulatory capacities characteristic of a social partner.",
+      "category": "Social",
+      "origin": "Social cognition / body–heart–mind framework",
+      "novelty_rationale": "A named capacity cluster within the source’s body–heart–mind framework. Display labels describe attribution facets, not newly discovered intrinsic AI faculties. The three facets are linked to their existing Mind perception parent; cross-cutting overlap with agency and experience is explicit.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "11375",
+          "quote": "abilities required of a social partner and moral agent"
+        }
+      ],
+      "evidence_scope": "The source’s heart factor combines pride,guilt,embarrassment,understanding others and right/wrong or self-restraint judgments. It is a covariance cluster in explicit human ratings,not a direct test of emotional or ethical competence.",
+      "boundary": "Perceived warmth,socially supportive language,actual emotion,moral-agency attribution and justified responsibility differ. This facet overlaps experience and agency without proving that guilt or consciousness is necessary for every moral judgment. Do not impose these ratings as criteria for human dignity.",
+      "ai_evidence_status": "Human explicit capacity ratings of robots and other entities; proposed AI evaluation facet, not measured machine feeling or moral competence",
+      "ai_proposal": "Assess whether language or interface cues prompt unsupported claims of felt emotion,understanding or ethical authority. Separate supportive expression and demonstrable task performance from humanlike affect or reciprocal obligations.",
+      "relates_to": [
+        "experience-attribution",
+        "moral-agency-attribution",
+        "emotional-support"
+      ],
+      "is_a": [
+        "mind-perception"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Perceptual–cognitive capacity attribution",
+      "decision": "new-entry",
+      "id": "perceptual-cognitive-capacity-attribution",
+      "definition": "Attributing to an entity capacities to perceive information, represent or remember it, and use it in goal-directed activity.",
+      "category": "Social",
+      "origin": "Social cognition / body–heart–mind framework",
+      "novelty_rationale": "A named capacity cluster within the source’s body–heart–mind framework. Display labels describe attribution facets, not newly discovered intrinsic AI faculties. The three facets are linked to their existing Mind perception parent; cross-cutting overlap with agency and experience is explicit.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "11375",
+          "quote": "cognitive abilities to detect and use information"
+        }
+      ],
+      "evidence_scope": "The source’s mind factor includes seeing,hearing,temperature sensing,memory,communication and goal-related judgments. These attributions can be strong for robots even when bodily or social–emotional attributions are weak.",
+      "boundary": "Functional perception/memory,subjective awareness,accuracy and intentional agency differ. A temperature sensor does not prove felt heat,and fluent output does not prove understanding. This framework facet is narrower than the Mind perception umbrella and not a claim of a universal cognitive module.",
+      "ai_evidence_status": "Human explicit capacity ratings of robots and other entities; proposed AI evaluation facet, not measured machine feeling or moral competence",
+      "ai_proposal": "Test claims about perception,memory and task capability against actual tool access and observed performance. Keep available input,functional processing and subjective experience separate when describing the system.",
+      "relates_to": [
+        "agency-attribution",
+        "experience-attribution",
+        "b061-theory-of-mind-mentalizing"
+      ],
+      "is_a": [
+        "mind-perception"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Mind perception",
+      "decision": "enrich-existing",
+      "target_id": "mind-perception",
+      "definition": "Ascribing or denying mental capacities to another entity.",
+      "novelty_rationale": "Preserve an existing umbrella or contrasting framework and add primary-source method boundaries.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "11377",
+          "quote": "capture distinct aspects of"
+        }
+      ],
+      "evidence_scope": "Primary capacity ratings yield3clusters while supplemental aggregate character comparisons yield2agency/experience-like dimensions,even with the40item pool. The authors propose complementary conceptual roles rather than simply failing to replicateGray2007.",
+      "boundary": "No unique dimensional structure is proved universal or present in each individual. Item selection,entity set,aggregation and paradigm shape the result;cross-cultural and developmental generalization remain open."
+    },
+    {
+      "term": "Agency attribution",
+      "decision": "enrich-existing",
+      "target_id": "agency-attribution",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Preserve an existing umbrella or contrasting framework and add primary-source method boundaries.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "11377",
+          "quote": "agentic capacities were also distributed"
+        }
+      ],
+      "evidence_scope": "Intentional,goal-directed and self-regulatory capacities distribute across the body,heart and mind factors. Supplementary character-comparison studies still recover a recognizable agency-like dimension.",
+      "boundary": "Agency ratings are not actual moral agency or control. A factor solution is not a metaphysical definition;free-will wording may carry everyday meanings different from philosophical terminology."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Preserve an existing umbrella or contrasting framework and add primary-source method boundaries.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "11377",
+          "quote": "physiological sensations (body), emotions (heart)"
+        }
+      ],
+      "evidence_scope": "Bodily sensation,emotion and perceptual capacities separate in these capacity-rating tasks,while aggregate character comparison returns an experience-like dimension. Some robotic perceptual capacities are endorsed despite low bodily/social-affective ratings.",
+      "boundary": "Questionnaire use of perceptual experience does not establish subjective AI sensation. Preserve theoretical definitions and operational items separately;do not infer that all experience is absent because one affective item is low."
+    },
+    {
+      "term": "Mechanistic dehumanization",
+      "decision": "enrich-existing",
+      "target_id": "mechanistic-dehumanization",
+      "definition": "Denying qualities regarded as human nature and representing a person or group as object-like or machine-like.",
+      "novelty_rationale": "Preserve an existing umbrella or contrasting framework and add primary-source method boundaries.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "11378",
+          "quote": "a person is likened to an unfeeling machine"
+        }
+      ],
+      "evidence_scope": "Discussion interprets mechanistic dehumanization as potentially emphasizing cognitive mind at the expense of bodily and emotional capacities. This is an implication of the framework,not a measured dehumanization intervention.",
+      "boundary": "Boundary-only conceptual interpretation,no independent behavioral-effect credit. Human worth and rights are not determined by capacity ratings or similarity to machines.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Animalistic dehumanization",
+      "decision": "enrich-existing",
+      "target_id": "animalistic-dehumanization",
+      "definition": "Denying attributes regarded as uniquely human and representing a person or group as animal-like.",
+      "novelty_rationale": "Preserve an existing umbrella or contrasting framework and add primary-source method boundaries.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "11378",
+          "quote": "a person is likened to an irrational animal"
+        }
+      ],
+      "evidence_scope": "Discussion suggests animalistic dehumanization might emphasize body over heart/mind. No actual discriminatory behavior or target-dehumanization experiment is conducted here.",
+      "boundary": "A proposed mapping is not a validated universal subtype mechanism. Preserve dignity and avoid interpreting disability,emotion or biological need as lower moral status.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "public_supplement": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664492/",
+    "html_bytes": 260179,
+    "html_sha256": "cc972d8f70f40c923dd14531167e3747a87faf51d90a6560d309c31c549fd028",
+    "reading": "Full embedded supplement:StudiesS1/S2 and general discussion,all individual EFA narrative,TablesS1–S4,FiguresS1–S3/captions. Publisher PDF403;do not claim PDF retrieval.",
+    "figures": [
+      {
+        "name": "S1",
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4368/5664492/8194455bceca/pnas.1704347114sfig01.jpg",
+        "sha256": "4b91d5d68290ddc679191e0ceed48d8861edfc33298f1930a1eaf1113df1e5eb"
+      },
+      {
+        "name": "S2",
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4368/5664492/062bbd0dd4cf/pnas.1704347114sfig02.jpg",
+        "sha256": "4488fdb5943412edbcc9239d619074f00d1110ff491bbe158a24868dd0a3bfff"
+      },
+      {
+        "name": "S3 thumbnail",
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4368/5664492/2dc543532a77/pnas.1704347114sfig03.jpg",
+        "sha256": "52ec4eaf1f97e23c89a51c7483a8ae435c6c52ff053034b1c7f79c71214f592d"
+      }
+    ]
+  },
+  "public_analysis_checks": [
+    {
+      "url": "https://osf.io/download/p78je/",
+      "bytes": 61483,
+      "sha256": "7e097ea5593eff221183c132911c43453031b7660708b7ba4754ddb9a3421d0c",
+      "scope": "Selected Rmd cleanup,counting,demographic,factor-setup and figure code only;read as text,not executed. Raw-data URLs referenced by code were not fetched."
+    },
+    {
+      "url": "https://osf.io/download/r7k5e/",
+      "bytes": 6515663,
+      "sha256": "a08ef4ad1f73a91f2a41439e9b72b746e26f5f0ff81e40ef28c3ccf0365e8684",
+      "scope": "Selected renderedStudy3sample/exclusion/demographic/factor output and corresponding21-character figure inspected. Not full report or independent reproduction."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF6,Study3participant count and TableS1 demographics",
+      "reported": "Study3n400 is labeled as participants,whereas overview/TableS2say200.",
+      "correction": "The public rendered report’s unique-ID sample table shows200all,200beetle and200robot. Selected code forms two target rows/person;excludedCounts uses row length and demographic tables count those rows. Distinguish200unique participants from400participant–target records and deduplicate demographics before person-level totals. Do not count400independent people. This is a source-report/code explanation,not raw-data reanalysis.",
+      "verification_url": "https://osf.io/download/r7k5e/",
+      "scope": "Confirmed public summary output and selected code agree with the overview and target-table count."
+    },
+    {
+      "location": "Embedded supplement,StudyS2experience interpretation",
+      "reported": "The paragraph discussing the second dimension calls dimension1 something close to experience.",
+      "correction": "That paragraph refers to dimension2:its preceding result and TableS4assign the listed pain/fear/hunger items to dimension2. Keep the genuine2-factor result and repair only the internal dimension pointer.",
+      "verification_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664492/",
+      "scope": "Internal label correction from surrounding text and loading table."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "PDF2,body variance range",
+      "finding": "Prose says36–40%,while Table1includes35%forStudy2. The displayed range should acknowledge35;no unrounded replacement variance estimate inferred."
+    },
+    {
+      "location": "PDF6,maximum-factor rule",
+      "finding": "The printed rule(p−k)×2>(p+k)impliesk<p/3and13factors for40items. Its asserted maximum should not be presented as a universal factor-identification theorem. Actual model identification,alternative factor counts and complete robustness output were not independently validated."
+    },
+    {
+      "location": "Supplement,Study2variance total",
+      "finding": "Reported81%versus displayed35+28+19=82%could reflect separately rounded components. Do not label it an arithmetic error without unrounded output."
+    },
+    {
+      "location": "Study3within-person dependence",
+      "finding": "The public EFA input uses two character rows/person. Point-estimate covariance structure and assumptions for fit/uncertainty are separate questions. No cluster-aware reanalysis or independent confirmation of inferential adequacy performed."
+    }
+  ],
+  "methodological_limits": [
+    "Convenience US adult samples and selected photographs/40items,not a representative or universal ontology. The item pool was theory-guided despite bottom-up extraction.",
+    "Factor structure is descriptive and task-dependent,not proof of intrinsic neural modules,actual AI mind or each respondent’s latent structure. Cross-loadings and item shifts prevent disjoint capacity boxes.",
+    "The comparison paradigms differ in task,aggregation,targets and sample. Supplemental2-factor replications are retained as real counterevidence to a universal3-factor claim.",
+    "Study3person/record discrepancy is explained through public summaries/code without participant datasets. Code inspection and a published report are not independent numerical replication.",
+    "Moral reasoning,dehumanization and uncanny-valley implications are hypotheses here. No clinical,legal or dignity rule follows from ratings of vulnerable targets.",
+    "Only this paper and its available supplement receive full-reading credit. Books,primaryGray2007and cited Haslam papers were not independently fully read for this update."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0207.json",
+      "finding": "Tzelios 2022 finds a different aggregate structure and warns about entity-level inference. This source supplies another task-sensitive framework; preserve competing accounts rather than enforce one dimensional count."
+    },
+    {
+      "related_review": "references/pdf-reviews/0219.json",
+      "finding": "Pekçetin lexical norming uses selected words and binary prompted categories. Here continuous capacity ratings and theory-guided selection of 40 items also shape structure; neither method is an unmediated view of inherent mind."
+    },
+    {
+      "related_review": "references/pdf-reviews/0221.json",
+      "finding": "Chen 2025 selects body/mind/heart items for an acceptance model. The primary framework does not validate that abbreviated instrument, clinical adoption, causal necessity or sufficiency."
+    },
+    {
+      "related_review": "references/pdf-reviews/0225.json",
+      "finding": "Agency,experience,moralagency,standing and actual capacities remain distinct. New capacity facets must not become tests of personhood or human moral worth."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Heart-emphasizing dehumanization",
+      "reason": "Explicit proposed future direction,not a fully defined/tested new subtype. Keep as research question rather than new ontology row."
+    },
+    {
+      "term": "Free will as biological self-initiation",
+      "reason": "An everyday-word interpretation is speculative and does not define an independent observed behavior or settle philosophical agency."
+    }
+  ],
+  "limitations": [
+    "Three linked attribution facets,not three new intrinsic AI faculties or independent sources. No automatic harm/principle edges,forced citation quota,invented annual counts or full-paper Markdown."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "physiological-capacity-attribution",
+      "social-emotional-capacity-attribution",
+      "perceptual-cognitive-capacity-attribution"
+    ],
+    "enriched": [
+      "mind-perception",
+      "agency-attribution",
+      "experience-attribution",
+      "mechanistic-dehumanization",
+      "animalistic-dehumanization"
+    ]
+  }
+}

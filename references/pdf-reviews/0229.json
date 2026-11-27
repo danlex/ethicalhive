@@ -1,0 +1,335 @@
+{
+  "sequence": 229,
+  "source": {
+    "file_name": "S2524_Liu_2025.pdf",
+    "source_id": "S2524",
+    "sha256": "8e4341a04e9790e3769b596caf7c61840635186f025ca4f9582c69349f73f794",
+    "pdf_pages": 26,
+    "printed_pages": "1–26",
+    "version_note": "British Journal of Social Psychology64(3),e12908; first published31 May2025, July2025 issue. Supplied download watermark/date is not publication metadata and is not reproduced.",
+    "verification_url": "https://doi.org/10.1111/bjso.12908",
+    "verification_method": "All26 supplied pages, seven tables and three figures read. Full public OSF DOCX appendix read, including all2140 extracted paragraphs,307 embedded mathematical expressions and14 figures. All substantive response fields in three anonymous public OSF registrations read. Selected public R preprocessing, correlation and model/plot sections inspected as text, not executed. Publisher/Crossref verify identity; selected chapter metadata verifies a duplicated DOI repair. Raw participant CSVs were listed but not downloaded."
+  },
+  "citation": {
+    "title": "Intuitive judgements towards artificial intelligence verdicts of moral transgressions",
+    "authors": [
+      "Yuxin Liu",
+      "Adam Moore"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1111/bjso.12908",
+    "venue": "British Journal of Social Psychology64(3),e12908",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "source_scope_note": "Three vignette experiments with804 retained UK-resident native-English-speaking Prolific adults examine measured ideology or issue attitudes interacting with assigned AI verdict context. Outcomes are willingness-to-investigate/suspend ratings, trust and fairness appraisals. The AI is a described statistical anomaly detector, not a deployed generative system or validated detector of wrongdoing.",
+    "access_limits": [
+      "All main pages, figures and tables read. Wiley supplementary download returned403; the corresponding complete DOCX was obtained from the article’s anonymous public OSF project. Main and OSF supplement are not claimed byte-identical because the Wiley file was not retrieved.",
+      "Full appendix narrative, tables, mathematical expressions and all14 meaningful images read. Word equations required separate Office Math extraction because plain paragraph extraction omitted them. No hidden formula content is treated as read merely from empty text placeholders.",
+      "All response fields of registrations wufpg, q82ec and wm29n read through anonymous public API. Their prior-data declarations are authors’ registrations, not independent authentication of collection timing. The claimed E3 technical-error update before analysis was not independently located as a timestamped amendment.",
+      "Only selected portions of the public120KB R script were read; broad search output was truncated and is not claimed as complete code reading. No original code executed, participant CSV downloaded, posterior model refitted or full numerical reproduction claimed.",
+      "Books, original fairness chapters, prior AI/political experiments and cited scale validations not independently fully read. Metadata checks add no independent full-paper credit. No author contact or private access attempted."
+    ]
+  },
+  "study": {
+    "samples": "E1 retains201 after1 attention exclusion; E2 retains301 after1; E3 retains302 after3. Total804 distinct study participations, with cross-study repeat exclusion stated. Registrations require UK residence and native English. Samples lean liberal:60.7%,57.5%,58.6% below political midpoint. Convenience recruitment is not proof of a nationally representative sample.",
+    "scenario_counts": "E1 and E3 each present two paired scenarios in opposite factorial cells and different topical foci, not two per focus. Registration text and appendix instructions make this explicit. E2 presents one of eight scenarios. E3 correlation plot’s n604 refers to repeated scenario records, not604 people.",
+    "design": "Eight short scenarios cross assigned liberal/conservative context, approve/reject action and financial/judicial domain, with LGBTQ+ rights or environmental protection nested in the construction. Participants’ ideology, general AI attitudes and issue endorsements are measured, not randomly assigned. Context-by-attitude interactions do not isolate a causal effect of acquiring an ideology.",
+    "stimuli": "AI is described as efficient/reliable and flags anomalous loan/adoption/environmental decisions. No actual classifier accuracy, base rates, error rates, confounding case mix or justified evidentiary standard is supplied. A statistical disparity is potential evidence for investigation, not proof of prejudice or a sufficient reason for suspension.",
+    "outcomes": "E1/2 ask whether a person should be investigated, trust the AI judgment and perceive AI as fair. E3 explicitly says investigation has begun and asks whether the official should be suspended pending it. It separately asks fairness of using AI and fairness of the recommendation. These are single-item subjective appraisals, not actual behavior or objective justice.",
+    "attitudes": "Three political-position items are standardized then averaged. Positive and reverse-coded negative GAAIS subscales remain separate. E3 combines standardized warmth/concern items for each issue; two personal-experience items were not analyzed after a disclosed technical problem. Support for rights or environmental protection must not be treated as an error by definition.",
+    "model": "Bayesian multivariate multilevel regression with Gaussian-style continuous outcomes. E1 includes participant/topic/scenario intercepts; E2 omits participant intercept; E3 issue-specific models use one row/person/focus and scenario intercept, while pooled political model includes participant/topic/scenario. Thus absence of a participant intercept in a focus-specific model alone does not prove ignored repeated responses.",
+    "priors": "E1/2 interaction priorNormal(.3,.15) and GAAIS priorNormal(.2,.1) are informative and directionally favor predictions. E3 explicitly reuses E1 posterior moments, reversing signs for issue endorsement. Different predictors/outcomes make this a substantive transport assumption, not a data-only independent replication. No prior-sensitivity refit was obtained.",
+    "main_results": "E1 context×political position: willingnessβ.31,95%HDI[.15,.47]; trust.13[−.03,.28],fairness.14[−.01,.28]. E2 reports willingness.19[0,.37],trust.20[.02,.38],fairness.24[.06,.41]. E3 issue×context supports willingness and fairness contrasts for both topics; environmental trust interaction−.04[−.14,.07] remains uncertain. Rounded zero endpoints are not enough to recategorize posterior evidence.",
+    "contrary_prediction": "The predicted stronger alignment effect among conservatives is not supported; authors report the stronger pattern among liberals in these samples and scenarios. This does not establish a universal ideological hierarchy or a causal trait difference.",
+    "model_comparison": "Exploratory three-way models with GAAIS do not improve reported predictive fit. ELPD differences favor simpler models by about9–13points; Bayes factors also favor them under the stated priors. These comparisons do not establish equivalence, absence of every interaction or robustness to alternative priors/likelihoods.",
+    "code_checks": "Selected R code standardizes columns4–12 or4–17 and leaves age in column2 unstandardized. Thus age coefficients are per year, unlike standardized other predictors. brm iter15000,warmup1000 implies14000 post-warmup iterations per chain, not15000 retained. Correlation calls operate on long repeated-row tables without participant grouping, unlike the main hierarchical models.",
+    "diagnostics": "Rhat≈1 is convergence evidence, not model truth or good distributional fit. Appendix predictive curves smooth over observed peaks and extend beyond bounded scale support; no alternative likelihood or prior-sensitivity comparison was independently run. Descriptive correlations and model-adjusted effects need not have identical slopes or exact rounded values."
+  },
+  "summary": "Add Distributive fairness judgment as the outcome-focused counterpart to existing procedural fairness. Preserve belief alignment as a named refinement in existing reasoning records, with the authors’ explicit warning that agreement-sensitive evaluation can be rational. Keep real formal interactions, mixed outcomes, contrary prediction, informative/sequential priors and single-item action limits. Correct verified text/source pointers without inventing posterior estimates or political stereotypes.",
+  "findings": [
+    {
+      "term": "Distributive fairness judgment",
+      "decision": "new-entry",
+      "id": "distributive-fairness-judgment",
+      "category": "Moral",
+      "definition": "Evaluating whether the outcomes or allocations produced by a decision are fair.",
+      "origin": "Social psychology / organizational justice",
+      "novelty_rationale": "Outcome-focused fairness appraisal differs from the existing procedural judgment of how a decision is reached. The paper explicitly separates the two inE3; they are related appraisals, not duplicate names or proof of objective justice.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "12",
+          "quote": "distributive fairness of the AI verdict itself"
+        }
+      ],
+      "evidence_scope": "E3 asks whether the AI recommendation to investigate is fair, separately from whether using AI for bias assessment is fair. Attitude×context associations differ by outcome and topic. This is a narrow operationalization of perceived outcome fairness, not a comprehensive theory of equitable allocation.",
+      "boundary": "Perceived fairness, normatively justified fairness, favorable personal outcomes and actual discrimination differ. Investigation and suspension are different actions; statistical anomalies alone do not establish wrongdoing. Subjective approval cannot replace rights, due process or evidence.",
+      "ai_evidence_status": "Human ratings of hypothetical statistical-AI recommendations; no objective fairness validation or actual allocation outcome",
+      "ai_proposal": "Evaluate the fairness of an outcome separately from the procedure, evidence and opportunity to challenge it. Compare matched cases and state the applicable criteria rather than infer fairness from user approval or agreement with a preferred conclusion.",
+      "relates_to": [
+        "procedural-fairness-judgment",
+        "motivated-reasoning",
+        "b036-confirmation-myside-bias"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Belief alignment effect",
+      "decision": "enrich-existing",
+      "target_id": "b036-confirmation-myside-bias",
+      "definition": "Seeking, interpreting or weighting information to favor an existing belief while neglecting relevant alternatives or disconfirming evidence.",
+      "novelty_rationale": "Retain an existing reasoning or appraisal construct and add this study’s specific operational boundaries instead of a synonym or inferred mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 19,
+          "printed_page": "19",
+          "quote": "belief alignment effects are not necessarily indicative"
+        }
+      ],
+      "evidence_scope": "Compatibility with measured political or issue attitudes predicts some willingness,trust and fairness ratings across assigned contexts. The authors explicitly acknowledge that belief alignment can reflect rational information processing. Retain the neutral observed pattern as a contextual refinement,not a duplicate bias label.",
+      "boundary": "Evidence-sensitive agreement is not confirmation bias by itself. Demonstrating bias requires relevant alternatives or evidence being neglected,not merely differing values. Do not infer a person’s politics or selectively label rights-protecting judgments irrational."
+    },
+    {
+      "term": "Motivated reasoning",
+      "decision": "enrich-existing",
+      "target_id": "motivated-reasoning",
+      "definition": "Marshalling evidence toward a conclusion it prefers or was steered to, rather than following where the evidence leads.",
+      "novelty_rationale": "Retain an existing reasoning or appraisal construct and add this study’s specific operational boundaries instead of a synonym or inferred mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 19,
+          "printed_page": "19",
+          "quote": "consistent with research on motivated social cognition"
+        }
+      ],
+      "evidence_scope": "The paper interprets context-by-attitude appraisals as consistent with motivated cognition beyond measured general AI attitudes. The ideology/issue predictors are measured; a distinct motivational mechanism is not experimentally isolated.",
+      "boundary": "A compatible evaluation pattern does not prove intentional distortion,irrationality or a unique goal-driven process. Informative priors,sampling imbalance and unmeasured assumptions about evidence constrain inference. The study does not test model sycophancy."
+    },
+    {
+      "term": "Procedural fairness judgment",
+      "decision": "enrich-existing",
+      "target_id": "procedural-fairness-judgment",
+      "definition": "Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather than assessing only its outcome.",
+      "novelty_rationale": "Retain an existing reasoning or appraisal construct and add this study’s specific operational boundaries instead of a synonym or inferred mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "12",
+          "quote": "fairness of using an AI system"
+        }
+      ],
+      "evidence_scope": "E3 separately asks whether it is fair to use AI to assess possible bias. This differs from fairness of the particular recommendation and from trust or willingness to suspend. General E1/2fairness items do not make that distinction.",
+      "boundary": "Single-item approval of AI involvement is not a full audit of reasons,evidence,appeal or actual process. An outcome people like can arise through an unjust procedure,and a disliked outcome is not necessarily unfair."
+    },
+    {
+      "term": "Performance trust",
+      "decision": "enrich-existing",
+      "target_id": "performance-trust",
+      "definition": "Expecting an agent or system to perform competently and reliably in a relevant task.",
+      "novelty_rationale": "Retain an existing reasoning or appraisal construct and add this study’s specific operational boundaries instead of a synonym or inferred mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "printed_page": "18",
+          "quote": "not always willing to act on its verdicts"
+        }
+      ],
+      "evidence_scope": "Trust in the described AI judgment correlates with but differs from willingness to investigate or suspend. General AI positivity sometimes predicts trust more clearly than action; the source does not validate actual classifier reliability.",
+      "boundary": "A favorable trust rating is not calibrated reliance,verified accuracy or consent to consequences. This single trust item does not uniquely identify performance trust versus moral trust."
+    },
+    {
+      "term": "Algorithm aversion",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-aversion",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "novelty_rationale": "Retain an existing reasoning or appraisal construct and add this study’s specific operational boundaries instead of a synonym or inferred mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "printed_page": "20",
+          "quote": "may have somewhat mitigated algorithmic"
+        }
+      ],
+      "evidence_scope": "The discussion proposes that framing prejudice detection as quantifiable could explain favorable AI ratings. There is no matched human-source condition or direct experimental comparison of objective versus subjective framing.",
+      "boundary": "Boundary-only interpretation. Positive AI attitudes alone do not demonstrate reduced relative algorithm aversion or greater algorithm appreciation. A human comparator and comparable task/evidence are required.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "public_supplement": {
+    "url": "https://osf.io/download/9wn8s/",
+    "bytes": 2898496,
+    "sha256": "cb417330b771f3b526073c7279af59cd2913b9f1e6ef35ee8db290e9f3a0893b",
+    "reading": "Complete appendicesA–F,all2140paragraphs,307OfficeMath expressions and14figures read. Includes exact scenarios,instructions,priors,descriptive/correlation tables,regression comparisons and predictive checks. Original Wiley download403; public OSF copy identified by author-project folder/title,not byte-matched to Wiley."
+  },
+  "public_registration_checks": [
+    {
+      "url": "https://osf.io/wufpg/",
+      "registered": "2021-05-09T22:54:06.254457",
+      "scope": "All response fields read. Two paired scenarios,UKresidence,nativeEnglish,up-to500complete data subject to funds;pre-data declaration. Stronger conservative alignment and alignment exceeding general AI attitudes explicitly predicted."
+    },
+    {
+      "url": "https://osf.io/q82ec/",
+      "registered": "2021-05-09T22:55:44.029703",
+      "scope": "All response fields read. One scenario,UKresidence,nativeEnglish,up-to600subject to funds;pre-data declaration. Similar main predictions and planned response-time analysis."
+    },
+    {
+      "url": "https://osf.io/wm29n/",
+      "registered": "2023-02-04T16:29:34.206256",
+      "scope": "All response fields read. Two scenarios,at-least300subject to funds,four-item issue scales planned,four outcomes including suspension;pre-data declaration. Current inspected response still specifies four issue items;reported technical-error amendment timing not independently verified."
+    }
+  ],
+  "public_code_check": {
+    "url": "https://osf.io/download/6uxyp/",
+    "bytes": 120516,
+    "sha256": "98167ca6eb36cfba5299cd0898171241892821c7e854e7b5cd4be90e95b573e8",
+    "scope": "Selected standardization,correlation,main-model,prior,iteration and plotting sections read as text. No execution,raw CSV download,full-script review or posterior reproduction."
+  },
+  "source_corrections": [
+    {
+      "location": "PDF15,GAAIS negative exception",
+      "reported": "Lower dystopian concerns predict outcomes except trust in the environmental condition.",
+      "correction": "Table7bshows positive GAAIS-negative association with environmental trustβ.15,HDI[.09,.22]. The uncertain environmental trust result concerns issue-attitude×contextβ−.04[−.14,.07],a different predictor. Do not move that exception onto general AI concerns.",
+      "verification_url": "https://doi.org/10.1111/bjso.12908",
+      "scope": "Internal predictor/outcome clarification from the supplied table."
+    },
+    {
+      "location": "AppendixE5model-comparison note",
+      "reported": "Reference model described as the lowest ELPD score.",
+      "correction": "Higher ELPD predicts better;lower LOO-IC is better. The displayed simpler reference models have higher,less negative ELPD and zero difference. Repair the direction in the note while preserving the reported preference for simpler models.",
+      "verification_url": "https://osf.io/download/9wn8s/",
+      "scope": "Verified against the appendix’s own model-comparison values."
+    },
+    {
+      "location": "PDF24,Malle/Magar/Scheutz2019DOI",
+      "reported": "The chapter DOI is concatenated twice.",
+      "correction": "Use the single DOI10.1007/978-3-030-12524-0_11 for AI in the Sky:How People Morally Evaluate Human and Machine Decisions in a Lethal Strike Dilemma,111–133. No second chapter or independent reading credit.",
+      "verification_url": "https://api.crossref.org/works/10.1007/978-3-030-12524-0_11",
+      "scope": "Verified identifier normalization."
+    },
+    {
+      "location": "PDF6andselectedpublicRcode,standardization",
+      "reported": "All continuous variables described as standardized.",
+      "correction": "Selected code leaves age in column2 outside standardization of columns4–12(E1)or4–17(E3). Treat the reported age coefficients and priors as per-year in that script,not standardized effect sizes. Other predictors/outcomes are scaled as shown;no new model estimated.",
+      "verification_url": "https://osf.io/download/6uxyp/",
+      "scope": "Code/report mismatch,not proof of the exact runtime used for publication."
+    },
+    {
+      "location": "PDF6andselectedpublicRcode,MCMCiterations",
+      "reported": "1000burn-in samples and15000sampling iterations per chain.",
+      "correction": "The supplied brm calls set iter15000,warmup1000,which retains14000post-warmup draws per chain. Distinguish total from retained iterations;actual saved fits were not obtained.",
+      "verification_url": "https://osf.io/download/6uxyp/",
+      "scope": "Configuration interpretation;not an allegation that chains failed to converge."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Preregistration changes and technical-error note",
+      "finding": "Main text says the E3 registration was updated before analysis after personal-experience items failed. The inspected registration still states four-item scores;appendix materials show the questions but no dated amendment. No timestamped update independently verified. Disclose this access limit without alleging undisclosed misconduct."
+    },
+    {
+      "location": "E1/3long-format correlations",
+      "finding": "Public correlation calls use repeated scenario rows without participant grouping;E3plotlabels n604 for302people. Point correlations and independent-observation posterior uncertainty are different issues. Main hierarchical models address grouping where appropriate;no clustered correlation refit performed."
+    },
+    {
+      "location": "E3gender count",
+      "finding": "Main text lists183males/116females;public code comment lists116M/183F/3NB. Comments can be stale,and no raw data were downloaded,so do not silently reverse the published genders. Additional gender options explain why male/female counts alone need not sum to302."
+    },
+    {
+      "location": "E3thermometer anchor",
+      "finding": "Prompt says0–100,but appendix/table labels say1–100 while reported range is100. Exact administered lower anchor needs source instrument/data clarification;no observed endpoint invented."
+    },
+    {
+      "location": "Fairness chapter locator",
+      "finding": "Ambrose/Arnaud chapter is real,but selected DOI metadata gives80–105while citation gives59–84. Print versus digital locator conventions may differ. Full chapter not read;do not guess a pagination repair or claim the book was read."
+    },
+    {
+      "location": "Rounded posterior boundaries and sample generalization",
+      "finding": "Intervals ending at printed zero require unrounded posterior output before recategorization. Liberal-heavy samples and asymmetric moral content do not establish an ideology-wide bias ranking. No cause of unique motivated reasoning or political profiling rule is inferred."
+    }
+  ],
+  "methodological_limits": [
+    "Measured attitudes interact with assigned vignette context. This is neither randomized ideology nor an identified unique motivational mechanism. Belief agreement can be rational;the authors acknowledge that explicitly.",
+    "Investigation support inE1/2and suspension support inE3are different outcomes. Trust,procedural fairness,outcome fairness and actual action must remain distinct.",
+    "The hypothesized ideological asymmetry is not supported as predicted. Formal interactions are real reported analyses,but mixed trust/fairness evidence and rounded boundaries cannot be simplified into every outcome replicating.",
+    "Informative directional priors and E1-derived E3 priors are disclosed. Transport across outcomes or predictors and prior sensitivity need assessment before treating E3 as fully independent evidence.",
+    "Narrow described AI has no actual decisions,validated error rate or human comparator. Statistical anomalies do not establish prejudice,legal fault or justified suspension. Protected rights are not contingent on survey approval.",
+    "Single-item appraisals, UK Prolific sampling, liberal-leaning distributions, topic construction and uncertain user assumptions limit generalization to current LLMs or other populations.",
+    "Rhat convergence is not proof of fit;posterior predictive curves show bounded/multimodal response features not fully reproduced. No alternate-likelihood,prior-sensitivity or clustered-correlation reanalysis performed.",
+    "Full main paper,supplement and registration responses read;selected code is partial and unexecuted. No unread-book credit,raw participant data export or exhaustive source validation."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0223.json",
+      "finding": "A subjective helpfulness or fairness rating does not establish objective advice quality or actual benefit. Different dependent variables and direct interaction contrasts need separate treatment."
+    },
+    {
+      "related_review": "references/pdf-reviews/0225.json",
+      "finding": "Human appraisals do not demonstrate actual AI moral agency. Context-sensitive agreement and blame also need not be irrational merely because source labels differ."
+    },
+    {
+      "related_review": "references/pdf-reviews/0226.json",
+      "finding": "Repeated scenario rows must not be counted as independent people. Here the correlation plots use604 rows from302 E3 participants; main model grouping must be assessed separately."
+    },
+    {
+      "related_review": "references/pdf-reviews/0228.json",
+      "finding": "Keep genuine formal interaction evidence while correcting narrow reporting errors. Code inspection here is partial,unlike the independent aggregate ANOVA reproduction achieved for228."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Belief alignment effect as another row",
+      "reason": "Record the neutral contextual pattern in existing confirmation/motivated reasoning entries. Do not duplicate a broad evidence-weighting concept or classify every agreement response as bias."
+    },
+    {
+      "term": "LLM belief-amplification feedback as demonstrated here",
+      "reason": "Discussed as future risk using other studies;no generative model or repeated human–AI feedback loop tested in these experiments."
+    }
+  ],
+  "limitations": [
+    "One new fairness-appraisal construct. Existing categories and stable IDs preserved;no automatic ethical/harm edges,forced citation quota,invented annual totals or full-paper Markdown transcription."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "distributive-fairness-judgment"
+    ],
+    "enriched": [
+      "b036-confirmation-myside-bias",
+      "motivated-reasoning",
+      "procedural-fairness-judgment",
+      "performance-trust",
+      "algorithm-aversion"
+    ]
+  }
+}

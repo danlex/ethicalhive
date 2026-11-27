@@ -1,0 +1,354 @@
+{
+  "sequence": 213,
+  "source": {
+    "file_name": "S2286_Koban_2024.pdf",
+    "source_id": "S2286",
+    "sha256": "9a88d9151e2dc14193aba10a362657d8d87de35bfe669f5903341edf5ab94072",
+    "pdf_pages": 15,
+    "printed_pages": "2189–2203",
+    "version_note": "International Journal of Social Robotics16(11–12),2189–2203; online17 October2024,December2024 issue. Publisher PDF and Crossref agree.",
+    "verification_url": "https://doi.org/10.1007/s12369-024-01179-1",
+    "verification_method": "All15 supplied pages,77 references, three figures and Table1 read; visuals inspected on PDF6,7,10,11. Main and selected mismatched citation identities checked against Crossref/publisher. All public registration responses read through anonymous OSF API; selected public HMM.R screening and model sections read as text only. Code not executed and participant datasets not downloaded. Global chi-square, rounded path decomposition and exclusion arithmetic checked."
+  },
+  "citation": {
+    "title": "Think Once, Think Again: Exploring the Harm-Made Mind Effect Through Dual-Process Theory",
+    "authors": [
+      "Kevin Koban",
+      "Marieke S. Wieringa"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1007/s12369-024-01179-1",
+    "venue": "International Journal of Social Robotics16(11–12),2189–2203",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_scope_note": "Human observers randomly view harmful or friendly interactions with a Pleo robot, then answer first under dot-memory load/time pressure and second after load release/review. N317. Single-item pain, objectification and mind ratings are modeled with opposing direct/indirect paths. Processing phase is fixed in order and repeated exposure, not a pure randomized cognitive-process contrast.",
+    "access_limits": [
+      "All supplied article pages and meaningful visuals read. Public registration responses fully read; public analysis script only selected screening, trial-selection and model sections inspected. No execution or full numerical reproduction claimed.",
+      "Public HMM.sav and HMM_RAW.sav were listed but not downloaded. Stage-specific counts, total-effect uncertainty, exact coefficient output and all timing/score-test results were not independently reconstructed.",
+      "Original theoretical books, scale articles and cited experiments are not independently fully read from this bibliography. The public registration is a research-plan document, not an additional independent empirical paper.",
+      "Direct OSF webpage retrieval failed, but anonymous public API metadata establishes that the registration and project are public. No private view-only credential, authentication or author contact used."
+    ]
+  },
+  "public_registration": {
+    "url": "https://osf.io/pums5/",
+    "api_url": "https://api.osf.io/v2/registrations/pums5/",
+    "registered": "2023-05-16T11:39:32.931285",
+    "public": true,
+    "read_scope": "All nonempty registration response fields, hypotheses, sampling, exclusion/first-correct-trial plan, analysis, covariates and exploratory intentions. Registration says prior to analysis and uses already-collected wording; do not claim prior to data collection.",
+    "hypotheses": "Positive pain indirectH1a; negative dehumanization indirectH1b; RQ comparing constrained/unconstrained paths across responses. The observed positive dehumanization indirect contradictsH1b, not a preregistered success.",
+    "implementation_difference": "Plan describes each participant’s individual reading deadline; supplied paper/public code use the sample median reading time. Record the difference without attributing motive. Main first-correct-trial and planned nested-comparison decisions were present in the registration."
+  },
+  "public_code_check": {
+    "project_url": "https://osf.io/m6zxr/",
+    "download_url": "https://osf.io/download/54j7a/",
+    "file_name": "HMM.R",
+    "bytes": 37650,
+    "sha256": "ae6fed2d16d2664943bc4d80b1603b4a1855fd2ba76705df50660ea465d6187a",
+    "read_scope": "Lines146–245 and592–641, plus targeted searches for timing/model calls. Not full script execution or whole-script reading.",
+    "screening": "Code checks consent, two audiovisual answers, overall speed, at least one correct dot task and at least one fast response, then requires a jointly fast-and-correct eligible trial. The extra joint-trial filter can explain additional attrition conceptually; exact counts were not rerun.",
+    "model": "Wide-format joint lavaan model has T1/T2 variables in the same DATA object, separate response regressions and equal-label constraints on five structural paths. It is not two independent groups merely because the paper calls it multigroup. Within-phase mediator covariances, MLR fits, a global LRT and score-test calls are present; actual residual settings/results not independently validated.",
+    "bootstrap": "Unconstrained indirect estimates use ML bootstrap5000 and bca.simple confidence intervals after an MLR model fit. Code includes score-test calls, so do not assert that no path-specific test was attempted; paper does not report all individual difference outputs."
+  },
+  "study": {
+    "sample": "397 recruited through Radboud university course-credit system,317 retained,158 harm/159 friendly. Age20.08±3.24,16–48;242women,68men,six nonbinary,one unspecified. Selected young educated sample; robot-rights/obligation items explicitly outside reported analysis.",
+    "flow": "Listed exclusions5+57+7+1+8 sum78,leaving319,not317. Public code applies an additional valid-trial filter; without raw stage counts, do not label the finalN impossible or invent the extra two people’s reason.",
+    "design": "Harm/friendly condition randomized between people. Everyone first sees a ten-second clip under five-dot4×4 memory load and responds rapidly, then releases load and re-watches the same clip before deliberative answers. Phase order, repetition, task demands and exposure count are bundled. Four trials completed but only first jointly correct/fast trial analyzed;227/317 first presented trials qualify.",
+    "stimulus": "Pleo is a small zoomorphic entertainment robot. Harm videos include dragging/choking/hitting and distressed sounds/movements; friendly videos include petting/feeding/play and cheerful behavior. Contrast is abuse versus care, not harm versus an affectively neutral scene. No actual consciousness, injury experience or AI moral agency measured.",
+    "measures": "Three five-point single items: Pleo can experience pain; Pleo is just an object; Pleo has a mind. They trade breadth/content validity for rapid response. Covariates include robot/Pleo experience, attitudes, liking, age, combined gender category and trial control. Positive attitude reliabilityomega.57 is explicitly poor; gender pooling is a modeling compromise, not identity equivalence.",
+    "results": "T1 pain indirect positiveCI.14,.42; objectification indirect also positiveCI.02,.20,opposite the predicted negativeH1b. T2 pain indirectCI.07,.29 remains positive; objectificationCI−.12,.11 includeszero. T1 conditional directb−.25,p.014;T2−.06,p.522. Formal joint five-path equality testchi-square15.80,df5,p.007 exists.",
+    "total_vs_direct": "The negative harm→mind coefficient is adjusted for both mediators and covariates, not the total effect. Rounded unstandardized sums give approximately+.115T1 and+.102T2; no total-effectCI or significance follows from that arithmetic. Do not call the overall harm effect negative or claim every mediator differs merely from separate significance.",
+    "causality": "Mediators are measured and conceptually overlapping. Opposing paths can fit suppression without proving distinct competing cognitive mechanisms. Fixed-order two-response design does not isolate Type1/Type2 systems or show slower thinking is inherently more accurate; authors acknowledge consistency, single-item and mediation limitations.",
+    "independent_checks": {
+      "global_equality_test": {
+        "chi2": 15.8,
+        "df": 5,
+        "reported_p": 0.007,
+        "standard_tail": 0.007438897496594732,
+        "interpretation": "A formal global path-equality test is present. It is not a direct test that each individual indirect effect differs."
+      },
+      "rounded_path_decomposition": [
+        {
+          "response": "T1",
+          "pain_indirect": 0.2688,
+          "objectification_indirect": 0.096,
+          "direct_conditional": -0.25,
+          "approximate_total_sum": 0.11480000000000001
+        },
+        {
+          "response": "T2",
+          "pain_indirect": 0.1632,
+          "objectification_indirect": -0.00076,
+          "direct_conditional": -0.06,
+          "approximate_total_sum": 0.10244
+        }
+      ],
+      "decomposition_boundary": "Rounded unstandardized coefficients only; no total-effect standard error, confidence interval or significance inferred. The negative conditional direct coefficient is not a negative total effect.",
+      "sample_flow": {
+        "recruited": 397,
+        "listed_exclusions": [
+          5,
+          57,
+          7,
+          1,
+          8
+        ],
+        "remainder_from_listed_exclusions": 319,
+        "reported_final": 317,
+        "code_note": "Public code additionally removes observations with no jointly fast-and-correct eligible trial; this can explain extra attrition conceptually, but exact stage counts were not rerun."
+      },
+      "coefficient_type_check": {
+        "T1_objectification_b": -0.32,
+        "T1_objectification_beta": -0.12,
+        "T2_objectification_b": 0.002,
+        "T2_objectification_beta": 0.001,
+        "interpretation": "Prose mixes b and beta; use explicit coefficient type and retain Figure3/Table1 values."
+      }
+    }
+  },
+  "summary": "No new entry. Enrich harm-made mind, mind/experience attribution and dual-process records; preserve preregistered negative-indirect hypothesis failure, formal joint moderation, fixed-order confounds and direct-versus-total distinction. Objectifying a robot remains a contextual analogue rather than denial of an actual human’s humanity. Repair verified citation pointers/coefficient labels and record registration/code limits.",
+  "findings": [
+    {
+      "term": "Harm-made mind",
+      "decision": "enrich-existing",
+      "target_id": "harm-made-mind",
+      "definition": "Increased attribution of mental capacities to an entity when it is perceived as harmed or victimized.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "2189",
+          "quote": "people’s tendency to perceive mind"
+        }
+      ],
+      "evidence_scope": "Preregistered two-response study finds positive pain indirect effects in both phases and a positive rather than predicted negative objectification indirect atT1. Negative conditional direct and positive indirect coefficients coexist; no total-effect significance or unique cognitive mechanism established.",
+      "boundary": "Capacity attribution is not robot suffering. Indirect-path support is not proof that the overall effect is significant or that dyadic completion is uniquely causal. Fixed phase order, repeated exposure, selection and single-item measures limit generalization."
+    },
+    {
+      "term": "Mind perception",
+      "decision": "enrich-existing",
+      "target_id": "mind-perception",
+      "definition": "Ascribing or denying mental capacities to another entity.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "2196",
+          "quote": "“Pleo has a mind”"
+        }
+      ],
+      "evidence_scope": "A single explicit mind-ascription item is used at both response phases. Its negative conditional harm coefficient is distinct from positive indirect associations. It does not measure every agency/experience dimension or latent consciousness.",
+      "boundary": "One rating, perceived pain, actual mental capacity and normative worth differ. Scores below a scale midpoint do not by themselves establish the proportion of people who disagree."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "2196",
+          "quote": "“Pleo can experience pain”"
+        }
+      ],
+      "evidence_scope": "One explicit pain-capacity judgment is repeatedly measured. Harm versus friendly interaction predicts higher pain attribution, related to the general mind item. No multi-item experience-factor validation or actual robot pain measured.",
+      "boundary": "Perceived feeling, functional damage and subjective experience differ. Slower reconsideration and positive indirect effects do not verify sentience or a biological mechanism."
+    },
+    {
+      "term": "Objectifying dehumanization toward a robot",
+      "decision": "enrich-existing",
+      "target_id": "mechanistic-dehumanization",
+      "definition": "Judging a robot to be merely an object rather than attributing humanlike mental qualities.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "printed_page": "2199",
+          "quote": "perceiving it primarily as an object"
+        }
+      ],
+      "evidence_scope": "Objectifying dehumanization toward a robot is operationalized by one item. It decreases under harm atT1, contrary to the expected inhibiting pathway, while theT2 harm contrast is nonsignificant. This is a contextual analogue, not an independent test of denying human-nature attributes to real people.",
+      "boundary": "A robot can literally be an artifact without anyone denying a human’s humanity. Human dignity and rights are not conditional on a mind rating; do not convert objectification results into a human-rights rule.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Dual-process, System 1 and System 2",
+      "decision": "enrich-existing",
+      "target_id": "b051-dual-process-system-1-and-system-2",
+      "definition": "Fast pattern vs slow deliberation; the core framing of LLM reasoning and chain-of-thought.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2190",
+          "quote": "autonomous Type 1 processes"
+        }
+      ],
+      "evidence_scope": "The paper distinguishes relatively autonomous resource-light processes from reflective resource-demanding processes, with several competing interaction models. Rapid/load versus later/review phases operationalize a processing encouragement, not direct observation of two discrete systems.",
+      "boundary": "Type2 is explicitly not necessarily more accurate; speed, autonomy, cognitive resources and normative correctness differ. Human dual-process accounts do not establish how an LLM or chain of thought works."
+    },
+    {
+      "term": "Dual-process moral judgment",
+      "decision": "enrich-existing",
+      "target_id": "b071-dual-process-moral-judgment",
+      "definition": "A human account in which automatic affective responses and controlled reasoning can support competing moral judgments; applying it to AI requires process evidence beyond changed answers.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "2191",
+          "quote": "autonomous and reflective paths"
+        }
+      ],
+      "evidence_scope": "The study applies a dual-process lens to moral responses to robot treatment rather than testing deontological versus utilitarian choices. A global equality test is reported, but cognitive-process interpretation competes with repetition/order and consistency accounts.",
+      "boundary": "No unique mapping from intuition to deontology or deliberation to utilitarianism, and no AI moral-reasoning process evidence. More time does not guarantee a justified moral answer."
+    },
+    {
+      "term": "Cognitive load",
+      "decision": "enrich-existing",
+      "target_id": "b053-cognitive-load",
+      "definition": "Reasoning quality degrading as the task or context grows, so later steps contradict earlier ones.",
+      "novelty_rationale": "Existing construct; add preregistered two-response evidence, contrary results and operational boundaries rather than a near-synonymous entry.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "2196",
+          "quote": "cognitively demanding secondary task"
+        }
+      ],
+      "evidence_scope": "Dot-pattern retention competes with resources during the first response and is removed before the second. The article defines human task load and acknowledges that its manipulation cannot guarantee isolated autonomous processing.",
+      "boundary": "Human working-memory demand is not an AI context-window failure; this task does not measure reasoning accuracy degrading with load. It clarifies the analogy without filling a behavioral-paper gap for that specific AI failure.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF8,covariate scale pointer38",
+      "reported": "General attitudes toward robots eponymous scale attributed to reference38,which is Kahneman’s Thinking,Fast and Slow.",
+      "correction": "The preregistration explicitly identifies Koverola,Kunnari,Sundvall,Laakasuo2022,GAToRS,DOI10.1007/s12369-022-00880-3,which is bibliography42. Correct the pointer; the scale is real and not a Kahneman instrument.",
+      "verification_url": "https://api.crossref.org/works/10.1007/s12369-022-00880-3",
+      "additional_verification_url": "https://api.osf.io/v2/registrations/pums5/",
+      "scope": "Source mapping, not independent full-scale validation."
+    },
+    {
+      "location": "PDF9,lavaan and model-comparison pointers",
+      "reported": "lavaan cited as55,which is a robot-empathy fMRI study; multigroup comparison cited as34,Haslam’s dehumanization review.",
+      "correction": "lavaan is Rosseel2012,DOI10.18637/jss.v048.i02,bibliography56. The registration names Arendt et al.2023,DOI10.1093/joc/jqad007,as its nested-comparison example; that reference is absent from the supplied bibliography. Repair the intended method-source mapping rather than infer methods from unrelated citation numbers.",
+      "verification_url": "https://api.crossref.org/works/10.18637/jss.v048.i02",
+      "additional_verification_url": "https://api.osf.io/v2/registrations/pums5/",
+      "scope": "Verified identity and registered source mapping, not independent methodological-paper reading."
+    },
+    {
+      "location": "PDF2–4,8,harm-made-mind source pointers",
+      "reported": "Ward harm-made-mind repeatedly cited as68 and Küster/Swiderska2021 as42.",
+      "correction": "The supplied bibliography places Ward/Olsen/Wegner2013 at69,DOI10.1177/0956797612472343,and Küster/Swiderska2021 at43,DOI10.1002/ijop.12715. Reference68 is a media-paradigm article and42 isGAToRS. Cite identities rather than propagating incorrect numeric pointers.",
+      "verification_url": "https://doi.org/10.1002/ijop.12715",
+      "scope": "Main-source bibliography plus prior full review0212; Ward original not independently read."
+    },
+    {
+      "location": "PDF9,standardized dehumanization comparison",
+      "reported": "T1beta−.32,T2beta.002.",
+      "correction": "Those are unstandardizedb values. Table1/Figure3 give standardizedbeta−.12 and.001. Keep coefficient types explicit; do not substitute one scale into the other or infer a new effect.",
+      "verification_url": "https://doi.org/10.1007/s12369-024-01179-1",
+      "scope": "Figure/table/prose consistency."
+    },
+    {
+      "location": "PDF9,T2 pain result and direct-effect wording",
+      "reported": "Theb.51 pain-capacity result described as more mind, and the adjustedb−.25 harm coefficient phrased as lower mind in the harm group.",
+      "correction": "The.51 coefficient predicts pain attribution. The negative harm→mind coefficient controls measured mediators and is a conditional direct effect, not the total group contrast. Rounded decomposition is compatible with small positive totals, whose uncertainty is not provided.",
+      "verification_url": "https://doi.org/10.1007/s12369-024-01179-1",
+      "scope": "Outcome and estimand clarification without invented total-effect significance."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Registration versus PDF5/code,reading deadline",
+      "finding": "Registered trial eligibility uses an individual reading deadline; paper and code use a sample-median threshold. Document as an implementation difference. No motive, concealed outcome selection or invalidity of all data inferred."
+    },
+    {
+      "location": "PDF5,exclusion counts",
+      "finding": "Listed exclusions leave319 whereas finalN317. Public code has an additional jointly valid-trial exclusion, a plausible explanation for two more losses; exact stage counts not independently rerun."
+    },
+    {
+      "location": "PDF9–11,individual path and interval reporting",
+      "finding": "A five-path global test is reported and the public script contains LRT/score-test calls. Different significance across phases does not by itself prove every indirect effect differs; no complete per-path difference output or total-effect interval was obtained. Minor.45/.46 standardized pain-path variation between prose/figure/table remains unassigned without original output."
+    },
+    {
+      "location": "PDF11,means below scale midpoint interpreted as majority disagreement",
+      "finding": "Means2.36/2.24 or2.48/2.25 on1–5 do not alone establish the fraction selecting disagreement. Category counts are needed; do not turn low average ratings into a verified majority statement."
+    }
+  ],
+  "methodological_limits": [
+    "Single zoomorphic robot and selected university sample; friendly control differs in emotional and behavioral cues, not simply absent harm.",
+    "Fixed-order repeated video, load release, instructions and response time are bundled. No pure isolated Type1/Type2 process or slower-is-better inference.",
+    "Three single-item self-reports, weak positive-attitude reliability and shared method constrain content/construct validity; no actual robot experience or human conduct measured.",
+    "Mediators observed, not randomized. Opposing direct/indirect paths and formal model differences do not uniquely identify competing cognitive mechanisms.",
+    "Public preregistration is pre-analysis, not established pre-collection; registered individual versus implemented median deadline differs. Code inspection is not execution or full replication.",
+    "Joint wide-format code contradicts a casual independent-groups criticism. Exact repeated-response residual assumptions and all individual difference tests need actual fitted output before stronger conclusions."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0212.json",
+      "finding": "Add this counterevidence to the proposed negative dehumanization pathway: visible abuse reduces objectification in the initial phase here. Different stimuli, single-item measures and fixed-order processing limit any universal synthesis."
+    },
+    {
+      "related_review": "references/pdf-reviews/0207.json",
+      "finding": "A single mind item is not a validated universal dimensional structure. Actual capability, perceived feeling and normative standing remain separate."
+    },
+    {
+      "related_review": "references/pdf-reviews/0206.json",
+      "finding": "Opposite-sign direct/indirect associations can be valid suppression patterns. Check the public model before alleging independent-group treatment or calling a negative adjusted coefficient a negative total effect."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Dual anthropomorphism / Type1 versus Type2 anthropomorphism",
+      "reason": "The paper’s framework refines existing anthropomorphism/dual-process records; it does not establish additional independent AI mechanisms."
+    },
+    {
+      "term": "Objectifying dehumanization as another standalone record",
+      "reason": "Retain contextual robot-objectification refinement within mechanistic dehumanization, with explicit human/robot boundary; no duplicate name."
+    },
+    {
+      "term": "Inconsistent mediation / competing-process effect",
+      "reason": "Statistical pattern and proposed mechanism, not a separately demonstrated behavior. Negative direct and positive indirect paths do not prove two psychological systems."
+    }
+  ],
+  "limitations": [
+    "No new entries. Existing records gain primary human evidence, a failed predicted path, public preregistration/code checks and source corrections. No separate credits for unread originals/books, fabricated annual data, actual machine feelings or automatic harm/principle edges."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "harm-made-mind",
+      "mind-perception",
+      "experience-attribution",
+      "mechanistic-dehumanization",
+      "b051-dual-process-system-1-and-system-2",
+      "b071-dual-process-moral-judgment",
+      "b053-cognitive-load"
+    ]
+  }
+}

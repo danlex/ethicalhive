@@ -1,0 +1,340 @@
+{
+  "sequence": 217,
+  "source": {
+    "file_name": "S2359_Wieringa_2024.pdf",
+    "source_id": "S2359",
+    "sha256": "429c8819b911a308085ebab09c49737a14a0300f7db90e9a9fabe86b52c51b0e",
+    "pdf_pages": 11,
+    "printed_pages": "1–11",
+    "version_note": "Communications Psychology 2, article72, published5 August2024. Supplied version of record; title, four authors, date and article locator verified against Crossref and publisher metadata.",
+    "verification_url": "https://doi.org/10.1038/s44271-024-00116-2",
+    "verification_method": "All11 supplied pages and74 references read, all six tables inspected in extracted text, and three main figures visually inspected on PDF5–7. Public six-page supplement fully read including consciousness figure; three-page scanned reporting summary read through OCR. Public OSF addendum fully read, Experiment2 variable-computing syntax fully read, and selected Experiment1 computation and Experiment2 analysis lines inspected as text. No downloaded research code executed and no participant datasets downloaded. Selected arithmetic/path and Bayes-factor consistency checked."
+  },
+  "citation": {
+    "title": "Robots are both anthropomorphized and dehumanized when harmed intentionally",
+    "authors": [
+      "Marieke S. Wieringa",
+      "Barbara C. N. Müller",
+      "Gijsbert Bijlstra",
+      "Tibor Bosse"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1038/s44271-024-00116-2",
+    "venue": "Communications Psychology 2, article72",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source_scope_note": "Two randomized 2×2 text-vignette experiments with finalN429 and677, plus a separateN75 description pretest. Human observers rate a fictional robot and its caretaker/creator. Harm is contrasted with active maintenance, and emotional simulation/detection is described rather than demonstrated. Pain is a measured mediator; the data do not establish simultaneous mental processes, robot experience or actual changes in observers’ conduct toward people.",
+    "access_limits": [
+      "All supplied text, main figures/tables, public supplement and reporting-summary body read. Web connector Nature cookie redirect and PMC CAPTCHA were unavailable, but the canonical public Nature page and linked public supplements were retrieved successfully through standard system-TLS requests.",
+      "Anonymous public OSF project b4nqc metadata/file listing and selected public documents/code inspected. No authentication or view-only credentials used. Participant SAV files and JASP archives not downloaded, so no raw-data reanalysis, exact exclusion reconstruction or Bayesian-output reproduction claimed.",
+      "Preregistration dates and plans are reported in the paper; original registration questionnaires were not independently fully read. The public addendum explicitly documents post-registration decisions for Experiment1 and says they were preregistered for Experiment2. Do not call every Experiment1 exclusion/assumption decision preregistered.",
+      "Public SPSS syntax inspected as text only. Experiment2 computation file fully read; Experiment1 computation and Experiment2 analysis inspected in targeted excerpts/searches. PROCESS model comments say syntax not saved; their presence is not a complete executable reproduction.",
+      "Peer-review file and bibliography-only original books/articles not independently fully read. Crossref author repair adds no independent original-paper credit."
+    ]
+  },
+  "study": {
+    "sample": "Experiment1 recruited452, excluded22 faster than134.25s plus one failed timeout, final429. Experiment2 recruited700, excluded21 faster than246s plus two under18, final677; earlier participants excluded by recruitment setting. Main final total1106, plus separate pretest75. English-fluent versus first-language screening differed; reporting summary says no nationality/ethnicity information, limiting a claim of verified Western-cultural coverage.",
+    "design": "Randomized harm/no-harm × emotional-detection-and-simulation/no-emotional-abilities, each between subjects. George is a fictional complex social robot. Harm is repeated scalpel damage; no-harm is repeated re-oiling/maintenance. Experiment1 actor envies the creator; Experiment2 actor is creator and bored with upkeep, explicitly aware of harmful/beneficial actions. No accidental-harm or neutral-inaction condition.",
+    "pretest": "N75: emotional description raises experience ratings3.25 versus1.48 on1–7; agency contrast nonsignificant. This checks relative attribution, not actual emotions, equivalent agency or proof that most individuals endorsed sentience.",
+    "measures": "Single pain-capacity item;18-item overall mind mean excluding pain and consciousness; five-item agency and13-item experience means. Consciousness is one item in Experiment1, two in Experiment2, reported in supplement. Adapted16-item perceived-prosociality scale rates the human actor, not the actor’s actual behavior toward other people.",
+    "factor_structure": "Experiment1 initially yields three PCA components; authors explicitly force two and use five/13-item split. Experiment2 reports two components with same assignment. Direct-oblimin PCA of selected items and high alpha do not prove a universal two-dimensional architecture. Supplement2c saysN670 versus main677; missingness could explain but not reconstructed.",
+    "main_results": "Harm increases attributed pain in both experiments, small effects: F6.047,p.014,partialeta≈.01 and F14.41,p<.001,partialeta≈.02. Emotional-description main effects larger. Formal harm×emotion interactions on pain are nonsignificant,p.67/.24; supplementary Bayesian comparison does not support an interaction under tested priors. This is not proof of zero interaction in every setting.",
+    "mediation": "PROCESS4,5000bootstrap samples, emotion covariate, untransformed pain. Harm indirect effects on overall mind+.13CI[.01,.25] and+.20CI[.10,.30]; adjusted direct−.18CI[−.34,−.02] and−.21CI[−.33,−.09]; total−.05CI[−.25,.15] and−.01CI[−.17,.15]. Rounded products .30×.42≈.126 and .41×.49≈.201 reconcile totals. Opposing paths do not require a significant total effect and are not themselves an arithmetic error.",
+    "dimension_results": "Experience has positive indirect and negative adjusted direct paths; agency positive indirect but nonsignificant adjusted direct paths. Consciousness supplement has positive pain paths but no significant adjusted harm-direct paths. Do not generalize the overall-mind interpretation to every capacity or claim proof of automatic and reflective processes operating simultaneously.",
+    "prosociality": "Harming actor rated less prosocial than caring actor in both studies. Experiment2 has formal harm×emotion interactionF9.30,p.002, with emotion-description difference in no-harm care condition; Experiment1 interaction null. This is impression formation from morally relevant conduct, not proof of a halo bias or causal cruelty spillover toward humans/animals.",
+    "public_code": "Experiment2 COMPUTE lines139–153 confirm means of18 total, five agency and13 experience items. MEAN permits available-item averaging; without raw missingness it cannot definitively repair all table mean identities. Factor analysis uses listwise missingness. Analysis lines414–453 explicitly test full factorial terms atalpha.05; lines456–459 describe mediation but note syntax not saved. No research code executed.",
+    "addendum": "Public addendum states fast-completion exclusions and diagnostic/transformation choices for Experiment1 were made during collection/before analysis, and included in Experiment2 preregistration. It explicitly discloses this distinction; do not mischaracterize it as hidden."
+  },
+  "summary": "No new entry. Enrich harm-made mind, mind/agency/experience attribution, anthropomorphism and dyadic completion using two replications, preserving opposing indirect/direct paths and null total effects. Record robot-dehumanization as a qualified interpretive analogy. Correct table arithmetic and verified attribution/model labels, retain unresolved numerical discrepancies, and avoid inferring actual sentience, universal dimensionality or cruelty spillover.",
+  "findings": [
+    {
+      "term": "Harm-made mind",
+      "decision": "enrich-existing",
+      "target_id": "harm-made-mind",
+      "definition": "Increased attribution of mental capacities to an entity when it is perceived as harmed or victimized.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "attributed a higher capacity"
+        }
+      ],
+      "evidence_scope": "Two preregistered-design vignette studies replicate a small increase in pain attribution for an intentionally harmed fictional robot versus an actively cared-for robot. Positive pain-mediated associations with broader mind ratings coexist with negative adjusted direct paths and nonsignificant overall total effects.",
+      "boundary": "The replicated pain-attribution pattern is narrower than an unconditional increase in all mental capacities. Mediators were measured; opposing regression paths do not prove simultaneous unconscious humanizing and reflective dehumanizing mechanisms or actual robot suffering."
+    },
+    {
+      "term": "Mind perception",
+      "decision": "enrich-existing",
+      "target_id": "mind-perception",
+      "definition": "Ascribing or denying mental capacities to another entity.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "statistically signiﬁcant evidence for a total effect"
+        }
+      ],
+      "evidence_scope": "An18-item mean is used for broader mind perception. Harm has no significant total effect in either study, while pain-mediated and adjusted direct paths have opposite signs. Emotional-description framing raises overall ratings. Consciousness is measured separately in the supplement.",
+      "boundary": "Do not replace total effects with adjusted direct effects, combine consciousness into the18-item score, infer majority belief from a mean, or treat attribution ratings as verified mentality. Forced component selection is not universal dimensional validation."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "For the perceived experience of the robot"
+        }
+      ],
+      "evidence_scope": "The13-item experience subscale shows positive indirect harm paths through pain but negative adjusted direct paths. Emotion wording increases experience ratings. Items include emotion communication/understanding as well as feeling capacities after an explicitly forced two-component solution in Experiment1.",
+      "boundary": "Specific subscale composition, opposite paths and exploratory status matter. No causal psychological process is isolated by the measured mediator, and actual feelings, rights or legal standing are not measured."
+    },
+    {
+      "term": "Agency attribution",
+      "decision": "enrich-existing",
+      "target_id": "agency-attribution",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "5",
+          "quote": "effect of harm on agency"
+        }
+      ],
+      "evidence_scope": "Five-item agency attribution has a small positive pain-mediated harm path, but no significant adjusted harm-direct path in either experiment. Agency and experience do not show identical fitted patterns.",
+      "boundary": "Significance in experience and nonsignificance in agency is not a tested between-outcome difference. This does not show equivalent agency, agency absence or actual intention in the robot."
+    },
+    {
+      "term": "Anthropomorphism",
+      "decision": "enrich-existing",
+      "target_id": "anthropomorphism",
+      "definition": "Attributing human characteristics, intentions, emotions or other mental states to a nonhuman entity.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "conﬂicting direct and indirect effects"
+        }
+      ],
+      "evidence_scope": "Emotional-detection/simulation descriptions increase human mental-capacity attributions. Authors interpret opposing pain-mediated and adjusted harm paths as humanizing/dehumanizing responses, while acknowledging that their data do not identify why the paths oppose.",
+      "boundary": "Description effects and observer attributions do not validate actual robot emotions, simultaneous latent processes or manipulative intent. A nonsignificant interaction does not establish emotional design never moderates responses."
+    },
+    {
+      "term": "Dyadic completion",
+      "decision": "enrich-existing",
+      "target_id": "dyadic-completion",
+      "definition": "Inferring a missing moral agent or feeling recipient to complete an apparently helpful or harmful event as an agent–patient moral relationship.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "called “dyadic completion”"
+        }
+      ],
+      "evidence_scope": "The theory links perceived victimization to inferred capacity for pain. Two experiments test a predicted harm-linked attribution pattern, but do not separately manipulate a missing dyadic role or discriminate the process from empathy, wording, demand or related explanations.",
+      "boundary": "Support for a predicted pattern is not unique verification of dyadic completion. Both actor and recipient are described; automaticity and generalization to AI-as-evaluator behavior remain untested."
+    },
+    {
+      "term": "Dehumanization",
+      "decision": "enrich-existing",
+      "target_id": "dehumanization",
+      "definition": "Denying or diminishing the human qualities or full humanity attributed to another person or group.",
+      "novelty_rationale": "Existing construct; add two vignette replications, opposing-path evidence and measurement limits rather than a synonymous record.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "a coping mechanism to reduce feelings of uncanniness"
+        }
+      ],
+      "evidence_scope": "Dehumanization, harm justification, dual processing and uncanniness are offered as possible explanations of an adjusted negative mind path. Authors explicitly say current data cannot determine its cause; no separate dehumanization scale or process intervention is used.",
+      "boundary": "This adds an interpretation boundary only, not an independent measured-dehumanization paper. Lower robot mind attribution is not automatically denial of a human’s humanity, proof of motivated coping or a license to reduce human rights.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF4,Table1,Experiment2 emotion-row totals",
+      "reported": "Emotion yes174+166 total332; emotion no166+171 total345.",
+      "correction": "The displayed cells sum to340 and337 respectively. Harm-column totals340/337 and grand total677 are consistent. Correct those row sums without inventing different cell allocations; the authoritative raw allocation has not been reanalyzed.",
+      "verification_url": "https://doi.org/10.1038/s44271-024-00116-2",
+      "scope": "Internal addition, not a replacement dataset."
+    },
+    {
+      "location": "PDF2 and reporting summary,sample planning alpha",
+      "reported": "An alpha level of.95 with90%power.",
+      "correction": "Distinguish95%confidence from a conventionalalpha.05. The public analysis syntax explicitly usesALPHA(.05); .95 is inconsistent with that inferential threshold. The original GPower project was not obtained, so the exact power calculation is not reproduced.",
+      "verification_url": "https://osf.io/download/wr6se/",
+      "scope": "Threshold-label clarification; no invented power result."
+    },
+    {
+      "location": "PDF8,discussion comparison with Ward2013",
+      "reported": "Prior work had a positive direct effect,contrasted with current negative direct path.",
+      "correction": "PDF5 explicitly describes the contrasted original result as a positive total effect. Keep totalc, adjusted directc-prime and indirectab distinct; comparing an original total with a current adjusted direct is not a like-for-like comparison. Ward original was not independently fully read here.",
+      "verification_url": "https://doi.org/10.1038/s44271-024-00116-2",
+      "scope": "Internal model-label consistency, not an independent reanalysis of Ward."
+    },
+    {
+      "location": "PDF10,reference43",
+      "reported": "MacKinnon,D.P. as sole author of Equivalence of the mediation,confounding and suppression effect.",
+      "correction": "Credit DavidP.MacKinnon,JenniferL.Krull andChondraM.Lockwood,Prevention Science1(4),173–181,2000,DOI10.1023/A:1026595011371. Restore the two omitted coauthors.",
+      "verification_url": "https://api.crossref.org/works/10.1023/A:1026595011371",
+      "scope": "Verified source identity only; original not independently fully read."
+    },
+    {
+      "location": "PDF4/6 versus Table6,Bayesian model description",
+      "reported": "Main-effects-only model called best for moral wrongness and Experiment1 prosociality.",
+      "correction": "Among Table6 listed models,the harm-only model has the largest Bayes factor for moral wrongness in both experiments and prosociality in Experiment1. Main-effects-only is largest for pain in both experiments. Experiment2 prosociality favors the full interaction model. Preserve outcome-specific rankings and state comparison denominator.",
+      "verification_url": "https://doi.org/10.1038/s44271-024-00116-2",
+      "scope": "Rankings of published table values under authors’ priors, not independently reproduced Bayes factors."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "PDF5,Table4,Experiment2 emotion+harm experience mean",
+      "finding": "Experience2.39,agency4.00 and overallmind3.39 do not satisfy the complete-case five/13-item weighted identity: (5×4+13×2.39)/18≈2.837. The other three Experiment2 cells broadly agree with the weighting. Public code confirms these item counts but uses available-item MEAN and no raw data were downloaded; typo/missingness/other scoring need clarification. Do not silently replace2.39 with a guessed value."
+    },
+    {
+      "location": "PDF6,Experiment2 experience adjusted direct path",
+      "finding": "b−.22,CI[−.35,+.09] is described as significant,p<.001,while Figure3c marks significance. An interval crossingzero does not support that significance claim as printed; a missing minus sign is plausible but not independently verified. Preserve the discrepancy rather than invent the upper bound."
+    },
+    {
+      "location": "PDF5,Experiment2 agency indirect effect",
+      "finding": "The text repeats a phrase instead of providing the numerical estimate. Figure3b rounded paths imply approximately.41×.20=.082,not an independently verified point estimate or bootstrap interval."
+    },
+    {
+      "location": "PDF7,Figure3a,emotion total path",
+      "finding": "Printedc1.49 versusc-prime.92+.99×.49≈1.405; two-decimal rounding alone does not reconcile this difference. Main harm path identities do reconcile. No model output obtained to identify a replacement."
+    },
+    {
+      "location": "Supplement6,Figure1a,emotion consciousness path",
+      "finding": "Printed total.70 versusdirect.38+.81×.52≈.801. Exact output would be needed; do not infer that the harm-mediated association is invalid from a different path’s inconsistency."
+    },
+    {
+      "location": "PDF4,Bayesian pain-interaction comparison",
+      "finding": "Experiment1 proseBF.095 when compared with the best model does not equal Table6 full/main7.227e6denominator ratio1.145e6/7.227e6≈.1584. Experiment2 ratio≈.2377 agrees with printed.238. Model/inclusion-factor distinction or transcription needs clarification; no exact correction without output."
+    },
+    {
+      "location": "Supplement5,Table2c sample size",
+      "finding": "PCA noteN670 versus final mainN677. Public code uses listwise missingness for PCA,so seven incomplete item sets are a possible explanation,not a verified exclusion count."
+    }
+  ],
+  "public_supplement": {
+    "supplement": {
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs44271-024-00116-2/MediaObjects/44271_2024_116_MOESM2_ESM.pdf",
+      "sha256": "8245e5f957b3a72856f52f4a4c0a1c702c3849e0d9da607f9b7773947ef60731",
+      "bytes": 159312,
+      "reading_scope": "All six pages read: exact vignette tables1a/1b, PCA tables2a/2b/2c and visually inspected consciousness Figure1."
+    },
+    "reporting_summary": {
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs44271-024-00116-2/MediaObjects/44271_2024_116_MOESM3_ESM.pdf",
+      "sha256": "d3539c265a891536298771cdbd77e8fd293ebaed5156c72bcd774acf8c08308c",
+      "bytes": 1533328,
+      "reading_scope": "All three scanned pages processed through OCR and resulting body read; form checkbox interpretation limited by OCR."
+    },
+    "addendum": {
+      "url": "https://osf.io/download/gv5cj/",
+      "sha256": "3729474fb4466c5d6949fe624b5a122552c9d69b8a039e0fc42fc1c251069373",
+      "bytes": 14715,
+      "reading_scope": "All11 paragraphs read; Experiment1 post-registration exclusion/diagnostic decisions explicitly disclosed."
+    },
+    "experiment2_computation": {
+      "url": "https://osf.io/download/vqjws/",
+      "sha256": "fc6450f7d6baae22f40ab3ef77c87b5bc2a43cf3a7b5c2a4ed032c5ea1856e12",
+      "bytes": 6842,
+      "reading_scope": "All234 lines read as text; not executed."
+    },
+    "experiment1_computation": {
+      "url": "https://osf.io/download/4hsvr/",
+      "sha256": "1c11672f200085e96aea4daec2fdc1d2e1e13ac37e01f47dcd170cb56f056683",
+      "bytes": 6699,
+      "reading_scope": "Targeted computation, factor and reliability excerpts/searches only; not executed."
+    },
+    "experiment2_analysis": {
+      "url": "https://osf.io/download/wr6se/",
+      "sha256": "c78e50e8f05aa6cf0f0e3f23fd735d977ae489cb72d19ffbf7d921911432386e",
+      "bytes": 16275,
+      "reading_scope": "Targeted factorial, transformation and PROCESS-comment excerpts/searches only; not executed."
+    },
+    "project_url": "https://osf.io/b4nqc/",
+    "access": "Anonymous public API metadata/file listing and observed public download links; no credentials. SAV/JASP participant datasets not downloaded."
+  },
+  "methodological_limits": [
+    "Text descriptions, harm versus active care and changed actor motives do not isolate injury, neutral baseline or intentional versus accidental harm. Authors acknowledge these design constraints.",
+    "Measured pain and simultaneous self-report composites do not establish a causal latent mediator, automaticity, reflective coping or two opposing processes in every individual. Group-level paths may not hold within persons.",
+    "Two online English-screened samples,unknown nationality/ethnicity and fictional robot descriptions do not warrant universal Western-cultural or actual-interaction generalization.",
+    "Forced two-component PCA, item overlap and highalpha do not validate a universal dimensional architecture; consciousness instruments change between experiments.",
+    "Formal interaction tests exist: pain nulls differ from significant Experiment2 prosociality interaction. Null is not equivalence, and perceived actor prosociality does not establish behavioral cruelty spillover.",
+    "Several printed table/model inconsistencies remain unresolved. Safe arithmetic/source-attribution repairs do not authorize silently rewriting reported raw statistics or claiming fraud.",
+    "Preregistration deviations in Experiment1 are explicitly disclosed in the public addendum. Partial code inspection without raw data/output is not full replication."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0212.json",
+      "finding": "Adds two text-vignette replications with pain-mediated associations but no significant overall-mind total effect. Different outcome composites/control conditions prevent treating every harm-made-mind study as identical."
+    },
+    {
+      "related_review": "references/pdf-reviews/0213.json",
+      "finding": "This earlier paper proposes automatic/reflective opposition as one explanation,which the later Koban study explores more directly. Neither the earlier regression suppression nor the later fixed-order load/review manipulation settles every mechanism; preserve separate design scopes."
+    },
+    {
+      "related_review": "references/pdf-reviews/0207.json",
+      "finding": "An explicitly forced two-component solution in Experiment1 cannot be used as universal refutation of alternative dimensionality. Compare item sets,aggregation and extraction decisions."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Prosociality / prosocial-character inference",
+      "reason": "Outcome is an adapted human-actor impression scale. Preserve that result; consult original definitions and compare existing motive/character constructs before introducing a broad trait as another AI behavior. No real prosocial act or cruelty transfer measured."
+    },
+    {
+      "term": "Suppression / inconsistent mediation as a behavior",
+      "reason": "A regression relationship and statistical model feature,not by itself a new psychological behavior. Retain model interpretation with existing attribution records."
+    },
+    {
+      "term": "Robot dehumanization / uncanny valley of mind / dual-process coping",
+      "reason": "Proposed explanations here,not separately measured or experimentally isolated. Avoid duplicate labels or upgrading speculative mechanisms into observed AI behavior."
+    }
+  ],
+  "limitations": [
+    "No new records, unread-original credit, invented annual counts or automatic principle/harm links. Existing entries gain grounded evidence and explicit contrary/null/path distinctions. Public participant datasets not downloaded; no research code executed."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "harm-made-mind",
+      "mind-perception",
+      "experience-attribution",
+      "agency-attribution",
+      "anthropomorphism",
+      "dyadic-completion",
+      "dehumanization"
+    ]
+  }
+}
