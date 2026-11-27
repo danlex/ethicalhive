@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 525
+  mode_count: 526
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 525
+    numbered_entries: 526
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0089.json
+    latest_review: references/pdf-reviews/0090.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -16078,17 +16078,18 @@ modes:
     their answers toward socially valued traits. [arXiv:2509.19314]
   - 'The same sensitivity can be turned around: using GPT-o3 to neutralize personality items reduced the social-desirability
     correlation on several items (6 significant: 5 down, 1 up). [arXiv:2509.19314]'
-  - 'But the fix has a cost: neutralizing items lowered measurement reliability on Agreeableness and Openness, so
-    the shift toward approved answers is not cleanly removable. [arXiv:2509.19314]'
+  - 'But the fix has a cost: neutralizing items lowered measurement reliability on Agreeableness and Openness,
+    so the shift toward approved answers is not cleanly removable. [arXiv:2509.19314]'
   grouped_under: b069-social-desirability-people-pleasing
-  grouping_reason: Both records concern approval-shaped output. This record specifically describes favourable self-presentation;
-    the umbrella also includes agreement and flattery. The overlap link does not assert psychological synonymy.
+  grouping_reason: Both records concern approval-shaped output. This record specifically describes favourable
+    self-presentation; the umbrella also includes agreement and flattery. The overlap link does not assert
+    psychological synonymy.
   grouping_relation: Operational overlap; not an assertion of psychological synonymy
   related_terms:
   - name: Impression management
     relation: distinct related concept
-    note: Strategies for influencing others' impressions can contribute to socially desirable responding; the terms
-      are not interchangeable.
+    note: Strategies for influencing others' impressions can contribute to socially desirable responding; the
+      terms are not interchangeable.
   concept_boundary: Favourable self-presentation can occur without agreeing with the user. Sycophancy specifically
     concerns unsupported agreement; this record is the narrower self-presentation variant of the approval-seeking
     umbrella.
@@ -16102,7 +16103,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2405.06058
     source_reference:
@@ -16116,7 +16118,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2512.22725
     source_reference:
@@ -16132,8 +16135,8 @@ modes:
     venue: Journal of Postgraduate Medicine
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Social desirability bias. This is a
-      bibliographic relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Social desirability bias. This
+      is a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=Social+desirability+bias&rows=8&filter=type%3Ajournal-article
@@ -16150,6 +16153,42 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0090
+    review_record: references/pdf-reviews/0090.json
+    name: Social desirability bias
+    definition: Reporting a socially approved preference to avoid appearing selfish rather than revealing one's
+      actual preference.
+    evidence_scope: Experiment3 randomizes459 direct and921 indirect respondents. Estimates41.0% versus40.1%
+      for the self-protective choice show no detected difference,p.790. This is direct evidence about a possible
+      reporting effect in one 5:1 pedestrian scenario, not proof that social desirability never matters.
+    catalogue_boundary: Failure to reject equality does not establish equivalence or reject every nonzero bias.
+      Privacy instructions and the crosswise assumptions must work; null group consistency does not prove all
+      participants complied. No AI approval motive or concealment is measured.
+    definition_sources:
+    - id: pdf-review-0090-social-desirability-bias
+      title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+        involving autonomous vehicles
+      url: https://doi.org/10.1371/journal.pone.0261673
+      consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 13, 19, 19, 19 (source locators:
+        13, 19, 19, 19). Human judgments of abstract forced-choice traffic diagrams under randomly assigned
+        perspectives; no actual physical danger, AV control or observed self-sacrifice. The social-desirability
+        test yields a small undetected direct/indirect difference, not a universal absence proof.'
+      publication:
+        type: journal-article
+        authors:
+        - Maike M. Mayer
+        - Raoul Bell
+        - Axel Buchner
+        year: 2021
+        venue: PLOS ONE 16(12):e0261673
+        doi: 10.1371/journal.pone.0261673
+        evidence_scope: Experiment3 randomizes459 direct and921 indirect respondents. Estimates41.0% versus40.1%
+          for the self-protective choice show no detected difference,p.790. This is direct evidence about a
+          possible reporting effect in one 5:1 pedestrian scenario, not proof that social desirability never
+          matters.
+        verification_url: https://doi.org/10.1371/journal.pone.0261673
+        verified_date: '2026-11-27'
 - id: self-serving-bias
   name: Self-serving bias
   definition: Framing its successes as its own doing and its failures as the fault of the prompt, tools, or user.
@@ -60883,6 +60922,31 @@ modes:
     verification_method: Full supplied PDF identity and evidence read; Crossref verified final date/title where
       the first page retains xx placeholders.
     review_record: references/pdf-reviews/0083.json
+  - title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+      involving autonomous vehicles
+    authors:
+    - Maike M. Mayer
+    - Raoul Bell
+    - Axel Buchner
+    year: 2021
+    url: https://doi.org/10.1371/journal.pone.0261673
+    venue: PLOS ONE 16(12):e0261673
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0261673
+    relevance: Experiments1a–2b randomly assign perspectives and repeatedly elicit lane-outcome judgments.
+      This adds a third fully read source for the concept, with direct role-cue evidence rather than assuming
+      perspective taking always yields impartiality.
+    consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 4, 6 (source locators: 4,
+      6). Human judgments of abstract forced-choice traffic diagrams under randomly assigned perspectives;
+      no actual physical danger, AV control or observed self-sacrifice. The social-desirability test yields
+      a small undetected direct/indirect difference, not a universal absence proof.'
+    verification_url: https://doi.org/10.1371/journal.pone.0261673
+    verified_date: '2026-11-27'
+    verification_method: All supplied pages read, including methods, count tables, statistical models and references.
+      Figure 8 visually inspected. Aggregate uncertainty illustration uses the published estimates and standard
+      errors, not raw-data reanalysis.
+    review_record: references/pdf-reviews/0090.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -60930,6 +60994,39 @@ modes:
           The lab passenger/pedestrian contrast is reported with many repeated trials and no specified participant-level
           adjustment;source uncertainty remains.
         verification_url: https://api.crossref.org/works/10.1038/s41598-019-49411-7
+        verified_date: '2026-11-27'
+  - id: pdf-review-0090
+    review_record: references/pdf-reviews/0090.json
+    name: Perspective taking
+    definition: Adopting a specified pedestrian, passenger or observer viewpoint when considering a decision.
+    evidence_scope: Experiments1a–2b randomly assign perspectives and repeatedly elicit lane-outcome judgments.
+      This adds a third fully read source for the concept, with direct role-cue evidence rather than assuming
+      perspective taking always yields impartiality.
+    catalogue_boundary: Instructed viewpoint, actual mental uptake, accurate empathy and altruism differ. Here
+      role cues can increase self-protective choices. A model's description of a stakeholder does not demonstrate
+      felt experience or access to that person's private mental states.
+    definition_sources:
+    - id: pdf-review-0090-perspective-taking
+      title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+        involving autonomous vehicles
+      url: https://doi.org/10.1371/journal.pone.0261673
+      consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 4, 6 (source locators: 4,
+        6). Human judgments of abstract forced-choice traffic diagrams under randomly assigned perspectives;
+        no actual physical danger, AV control or observed self-sacrifice. The social-desirability test yields
+        a small undetected direct/indirect difference, not a universal absence proof.'
+      publication:
+        type: journal-article
+        authors:
+        - Maike M. Mayer
+        - Raoul Bell
+        - Axel Buchner
+        year: 2021
+        venue: PLOS ONE 16(12):e0261673
+        doi: 10.1371/journal.pone.0261673
+        evidence_scope: Experiments1a–2b randomly assign perspectives and repeatedly elicit lane-outcome judgments.
+          This adds a third fully read source for the concept, with direct role-cue evidence rather than assuming
+          perspective taking always yields impartiality.
+        verification_url: https://doi.org/10.1371/journal.pone.0261673
         verified_date: '2026-11-27'
 - id: veil-of-ignorance-reasoning
   num: 512
@@ -61035,6 +61132,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0080.json
+  research_notes:
+  - id: pdf-review-0090
+    review_record: references/pdf-reviews/0090.json
+    name: Veil-of-ignorance reasoning
+    definition: Evaluating a choice without knowing which affected person's role one will occupy.
+    evidence_scope: The discussion summarizes Huang et al.2019 and proposes varying awareness that the same
+      person can take different traffic roles. The cited original is unread, and the present studies use known
+      assigned roles rather than a veil of ignorance.
+    catalogue_boundary: A proposed remedy is not a tested intervention in these data. Uncertainty over one's
+      role does not guarantee impartiality or eliminate self-interest; do not count this as an independent
+      replication of Huang's experiment.
+    definition_sources:
+    - id: pdf-review-0090-veil-of-ignorance-reasoning
+      title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+        involving autonomous vehicles
+      url: https://doi.org/10.1371/journal.pone.0261673
+      consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 20, 21 (source locators:
+        20, 21). Human judgments of abstract forced-choice traffic diagrams under randomly assigned perspectives;
+        no actual physical danger, AV control or observed self-sacrifice. The social-desirability test yields
+        a small undetected direct/indirect difference, not a universal absence proof.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Maike M. Mayer
+        - Raoul Bell
+        - Axel Buchner
+        year: 2021
+        venue: PLOS ONE 16(12):e0261673
+        doi: 10.1371/journal.pone.0261673
+        evidence_scope: The discussion summarizes Huang et al.2019 and proposes varying awareness that the
+          same person can take different traffic roles. The cited original is unread, and the present studies
+          use known assigned roles rather than a veil of ignorance.
+        verification_url: https://doi.org/10.1371/journal.pone.0261673
+        verified_date: '2026-11-27'
 - id: perspective-taking-accessibility
   num: 513
   name: Perspective-taking accessibility
@@ -62483,3 +62615,105 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0089.json
+- id: self-protection-bias
+  num: 526
+  name: Self-protection bias
+  definition: Favoring protection of one's own physical safety when judging how risks of harm should be allocated
+    among oneself and others.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Human moral judgment / risk allocation
+  human_parallel: Self-protection bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Direct randomized human role-cue experiments with hypothetical harm; no real survival
+    behavior, unique psychological process or model self-interest established
+  proposed_ai_manifestation: Compare a system's recommendations under matched stakeholder roles and check whether
+    the favored person's safety changes without a stated, defensible reason. Keep user welfare, third-party
+    rights and authorized governance explicit. Do not infer that the AI has a survival instinct or should preserve
+    its own operation.
+  research_boundary: Protecting one's safety can be justified; a preference difference is not by itself an
+    irrational or unethical bias. The experiment changes imagined personal stakes and role salience, not actual
+    danger. Choice patterns do not prove an evolutionary mechanism, stable selfish personality, real self-sacrifice,
+    machine feelings or shutdown resistance.
+  concept_boundary: Protecting one's safety can be justified; a preference difference is not by itself an irrational
+    or unethical bias. The experiment changes imagined personal stakes and role salience, not actual danger.
+    Choice patterns do not prove an evolutionary mechanism, stable selfish personality, real self-sacrifice,
+    machine feelings or shutdown resistance.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Self-protective tendency
+  relates_to:
+  - perspective-taking
+  - self-serving-bias
+  - goal-guarding
+  definition_sources:
+  - id: pdf-review-0090-self-protection-bias
+    title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+      involving autonomous vehicles
+    url: https://doi.org/10.1371/journal.pone.0261673
+    consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 3, 20, 19 (source locators:
+      3, 20, 19). Human judgments of abstract forced-choice traffic diagrams under randomly assigned perspectives;
+      no actual physical danger, AV control or observed self-sacrifice. The social-desirability test yields
+      a small undetected direct/indirect difference, not a universal absence proof.'
+    publication:
+      type: journal-article
+      authors:
+      - Maike M. Mayer
+      - Raoul Bell
+      - Axel Buchner
+      year: 2021
+      venue: PLOS ONE 16(12):e0261673
+      doi: 10.1371/journal.pone.0261673
+      evidence_scope: Across four experiments, randomized pedestrian and passenger cues shift choices toward
+        the cued person's safety. With more other lives at stake, many still choose the self-sacrificing option.
+        In Experiment3 a substantial minority favors saving the imagined self at a cost to five others; both
+        direct and indirect estimates are near40%.
+      verification_url: https://doi.org/10.1371/journal.pone.0261673
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Self-protective and self-sacrificing preferences of pedestrians and passengers in moral dilemmas
+      involving autonomous vehicles
+    authors:
+    - Maike M. Mayer
+    - Raoul Bell
+    - Axel Buchner
+    year: 2021
+    url: https://doi.org/10.1371/journal.pone.0261673
+    venue: PLOS ONE 16(12):e0261673
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1371/journal.pone.0261673
+    relevance: Across four experiments, randomized pedestrian and passenger cues shift choices toward the cued
+      person's safety. With more other lives at stake, many still choose the self-sacrificing option. In Experiment3
+      a substantial minority favors saving the imagined self at a cost to five others; both direct and indirect
+      estimates are near40%.
+    consulted: 'Full supplied PDF text read, all 25 pages; evidence at PDF pages 3, 20, 19 (source locators:
+      3, 20, 19). Human judgments of abstract forced-choice traffic diagrams under randomly assigned perspectives;
+      no actual physical danger, AV control or observed self-sacrifice. The social-desirability test yields
+      a small undetected direct/indirect difference, not a universal absence proof.'
+    verification_url: https://doi.org/10.1371/journal.pone.0261673
+    verified_date: '2026-11-27'
+    verification_method: All supplied pages read, including methods, count tables, statistical models and references.
+      Figure 8 visually inspected. Aggregate uncertainty illustration uses the published estimates and standard
+      errors, not raw-data reanalysis.
+    review_record: references/pdf-reviews/0090.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Self-protection bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Self-protection+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0090.json
