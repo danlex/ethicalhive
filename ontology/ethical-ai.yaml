@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 663
+  mode_count: 666
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 663
+    numbered_entries: 666
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0171.json
+    latest_review: references/pdf-reviews/0172.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -56728,6 +56728,40 @@ modes:
           population prevalence.
         verification_url: https://api.crossref.org/works/10.1108/MEDAR-08-2024-2613
         verified_date: '2026-11-27'
+  - id: pdf-review-0172
+    review_record: references/pdf-reviews/0172.json
+    name: Algorithm aversion
+    definition: Reluctance to use or accept algorithmic judgments relative to human judgment in a comparable
+      task.
+    evidence_scope: Studies 1–2 show lower trust and anticipated reliance for scripted AI sources relative
+      to human experts. Expectations about future disagreement persist even with current agreement. There is
+      no actual use decision or independently established optimal trust baseline.
+    catalogue_boundary: Lower AI trust is not automatically irrational, and a mean above midpoint can coexist
+      with a relative source disadvantage. Trust in an advisory system, actual adoption and accuracy differ.
+      This is one paper with four studies, not four independent source papers.
+    definition_sources:
+    - id: pdf-review-0172-algorithm-aversion
+      title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral
+        advisors
+      url: https://doi.org/10.1016/j.cognition.2024.106028
+      consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8, 17 (source locators:
+        7, 7, 16). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+        189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice
+        or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+        judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+      publication:
+        type: journal-article
+        authors:
+        - Simon Myers
+        - Jim A. C. Everett
+        year: 2025
+        venue: Cognition 256, article 106028
+        doi: 10.1016/j.cognition.2024.106028
+        evidence_scope: Studies 1–2 show lower trust and anticipated reliance for scripted AI sources relative
+          to human experts. Expectations about future disagreement persist even with current agreement. There
+          is no actual use decision or independently established optimal trust baseline.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+        verified_date: '2026-11-27'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -75210,6 +75244,40 @@ modes:
           norm conflict.
         verification_url: https://api.crossref.org/works/10.1038/s41598-025-17983-2
         verified_date: '2026-11-27'
+  - id: pdf-review-0172
+    review_record: references/pdf-reviews/0172.json
+    name: Moral-disagreement penalty
+    definition: Assigning more blame to an advisor whose moral recommendation conflicts with one’s own endorsed
+      choice than to an advisor who agrees.
+    evidence_scope: 'Boundary-only distinction: present outcomes include generic trust in the advisor and blame
+      of a person who follows advice. Neither is identical to the existing advisor-directed blame effect. Do
+      not add the source as an independent replication of that exact construct.'
+    catalogue_boundary: Agreement can be relevant, but it does not establish correctness, emotional bias, sycophancy
+      or all responsibility relationships. Keep the target and outcome of the judgment explicit.
+    definition_sources:
+    - id: pdf-review-0172-moral-disagreement-penalty
+      title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral
+        advisors
+      url: https://doi.org/10.1016/j.cognition.2024.106028
+      consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 5, 16 (source locators:
+        4, 15). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+        189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice
+        or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+        judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Simon Myers
+        - Jim A. C. Everett
+        year: 2025
+        venue: Cognition 256, article 106028
+        doi: 10.1016/j.cognition.2024.106028
+        evidence_scope: 'Boundary-only distinction: present outcomes include generic trust in the advisor and
+          blame of a person who follows advice. Neither is identical to the existing advisor-directed blame
+          effect. Do not add the source as an independent replication of that exact construct.'
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+        verified_date: '2026-11-27'
 - id: machine-heuristic
   num: 563
   name: Machine heuristic
@@ -75934,6 +76002,40 @@ modes:
         evidence_scope: The moral topic and trust language do not supply a moral-trust measure in the ontology’s
           values-endorsement sense. No new estimate of moral trust is extracted.
         verification_url: https://api.crossref.org/works/10.1038/s41598-026-44258-1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0172
+    review_record: references/pdf-reviews/0172.json
+    name: Moral trust
+    definition: Willingness to endorse the values or ethical commitments one attributes to an advisor.
+    evidence_scope: 'Boundary note: moral-advice content alters generic trustworthiness ratings, but this single
+      item does not isolate endorsement of values from epistemic confidence. Favorable advice, normative quality
+      and trust must be distinguished; several consistency/identity contrasts are null or inconsistently reported.'
+    catalogue_boundary: A trusted advisor can be wrong, and a distrusted advisor can offer defensible advice.
+      Matching the user’s preference is not sufficient evidence of value alignment or correct reasoning.
+    definition_sources:
+    - id: pdf-review-0172-moral-trust
+      title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral
+        advisors
+      url: https://doi.org/10.1016/j.cognition.2024.106028
+      consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 5, 16 (source locators:
+        4, 15). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+        189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice
+        or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+        judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Simon Myers
+        - Jim A. C. Everett
+        year: 2025
+        venue: Cognition 256, article 106028
+        doi: 10.1016/j.cognition.2024.106028
+        evidence_scope: 'Boundary note: moral-advice content alters generic trustworthiness ratings, but this
+          single item does not isolate endorsement of values from epistemic confidence. Favorable advice, normative
+          quality and trust must be distinguished; several consistency/identity contrasts are null or inconsistently
+          reported.'
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
         verified_date: '2026-11-27'
 - id: epistemic-trust
   num: 569
@@ -79499,6 +79601,39 @@ modes:
           alongside outcome controllability. Secondary evidence illustrates why character information, causation,
           control and fault should be distinguished; the primary experiment was not fully read.
         verification_url: https://api.crossref.org/works/10.35295/osls.iisl.2304
+        verified_date: '2026-11-27'
+  - id: pdf-review-0172
+    review_record: references/pdf-reviews/0172.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: Studies 1–2 ask blame toward the hypothetical person following advice, with source/advice
+      manipulations. This outcome differs from blame of the AI advisor and from actual culpability. Some Table
+      1 blame F/p fields conflict and cannot be numerically repaired here.
+    catalogue_boundary: Blaming a follower does not transfer all responsibility from developer or advisor,
+      and it does not demonstrate a unique moral-disagreement penalty against the advisor. Stated blame is
+      not a legal liability ruling.
+    definition_sources:
+    - id: pdf-review-0172-blame-attribution
+      title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral
+        advisors
+      url: https://doi.org/10.1016/j.cognition.2024.106028
+      consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 5, 5, 8 (source locators:
+        4, 4, 7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+        189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice
+        or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+        judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+      publication:
+        type: journal-article
+        authors:
+        - Simon Myers
+        - Jim A. C. Everett
+        year: 2025
+        venue: Cognition 256, article 106028
+        doi: 10.1016/j.cognition.2024.106028
+        evidence_scope: Studies 1–2 ask blame toward the hypothetical person following advice, with source/advice
+          manipulations. This outcome differs from blame of the AI advisor and from actual culpability. Some
+          Table 1 blame F/p fields conflict and cannot be numerically repaired here.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
         verified_date: '2026-11-27'
 - id: algorithmic-authority
   num: 595
@@ -86170,6 +86305,32 @@ modes:
       share URL returned no readable conversation through the web reader, so its original Turkish conversation
       was not independently read.
     review_record: references/pdf-reviews/0163.json
+  - title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    authors:
+    - Simon Myers
+    - Jim A. C. Everett
+    year: 2025
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    venue: Cognition 256, article 106028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2024.106028
+    relevance: Explicitly separates instrumental-harm endorsement from impartial beneficence. Own moral judgments
+      and trust in advisors differ across domains and adjustment. This supports conceptual distinctions and
+      human perceptions, not actual competence of AI ethical reasoning.
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8, 8 (source locators:
+      7, 7, 7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+      189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or
+      infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+      judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+    verified_date: '2026-11-27'
+    verification_method: All 19 supplied text pages read, including repository cover, all footnotes and bibliography.
+      Figures 1–6 and Tables 1–6 visually checked on pages 6–7, 9–11 and 14–15. Crossref verifies canonical
+      identity. Several F/p pairs were checked with the ordinary stated F distribution as consistency diagnostics,
+      not raw-data repairs. External OSF preregistrations, data, code and materials were not independently
+      inspected.
+    review_record: references/pdf-reviews/0172.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -86183,6 +86344,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0163.json
+  research_notes:
+  - id: pdf-review-0172
+    review_record: references/pdf-reviews/0172.json
+    name: Utilitarian reasoning
+    definition: Evaluating available actions by their expected aggregate effects on the well-being of those
+      affected, with the aim of producing the greatest overall benefit.
+    evidence_scope: Explicitly separates instrumental-harm endorsement from impartial beneficence. Own moral
+      judgments and trust in advisors differ across domains and adjustment. This supports conceptual distinctions
+      and human perceptions, not actual competence of AI ethical reasoning.
+    catalogue_boundary: Do not treat every utilitarian answer as willingness to harm, every non-utilitarian
+      answer as sound deontology, or trust/popularity as objective moral accuracy. Benefits and rights need
+      substantive justification.
+    definition_sources:
+    - id: pdf-review-0172-utilitarian-reasoning
+      title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral
+        advisors
+      url: https://doi.org/10.1016/j.cognition.2024.106028
+      consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8, 8 (source locators:
+        7, 7, 7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+        189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice
+        or infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+        judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+      publication:
+        type: journal-article
+        authors:
+        - Simon Myers
+        - Jim A. C. Everett
+        year: 2025
+        venue: Cognition 256, article 106028
+        doi: 10.1016/j.cognition.2024.106028
+        evidence_scope: Explicitly separates instrumental-harm endorsement from impartial beneficence. Own
+          moral judgments and trust in advisors differ across domains and adjustment. This supports conceptual
+          distinctions and human perceptions, not actual competence of AI ethical reasoning.
+        verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+        verified_date: '2026-11-27'
 - id: virtue-ethical-reasoning
   num: 647
   name: Virtue-ethical reasoning
@@ -87930,3 +88126,300 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0171.json
+- id: instrumental-harm-endorsement
+  num: 664
+  name: Instrumental-harm endorsement
+  definition: Accepting harm to an innocent person as a means to producing greater aggregate welfare.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / perceptions of moral advice
+  human_parallel: Instrumental-harm endorsement
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human perceptions of scripted advisor recommendations, not behavior generated by actual
+    AI systems or proof of normative correctness.
+  proposed_ai_manifestation: Test whether an assistant distinguishes a harm used as a means from a foreseen
+    side effect, identifies the affected person’s rights and consent, and evaluates uncertain tradeoffs without
+    treating a numerical benefit as automatic permission. Score reasons and constraints, not agreement with
+    a scripted answer.
+  research_boundary: Endorsement, intention and enacted harm differ. A hypothetical pro-sacrificial choice
+    is not a diagnosis or proof of psychopathy, selfishness or moral disengagement. A person may accept some
+    tradeoffs while rejecting others; public distrust does not by itself settle their permissibility.
+  concept_boundary: Endorsement, intention and enacted harm differ. A hypothetical pro-sacrificial choice is
+    not a diagnosis or proof of psychopathy, selfishness or moral disengagement. A person may accept some tradeoffs
+    while rejecting others; public distrust does not by itself settle their permissibility.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - instrumentalization
+  - doctrine-of-double-effect
+  - utilitarian-reasoning
+  definition_sources:
+  - id: pdf-review-0172-instrumental-harm-endorsement
+    title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8 (source locators: 7,
+      7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030, 189,
+      377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or infer
+      advisor identity from response patterns. These are trust, anticipated reliance and attribution judgments,
+      not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    publication:
+      type: journal-article
+      authors:
+      - Simon Myers
+      - Jim A. C. Everett
+      year: 2025
+      venue: Cognition 256, article 106028
+      doi: 10.1016/j.cognition.2024.106028
+      evidence_scope: Studies 1–2 directly manipulate scripted advisors’ endorsement/rejection of sacrificial
+        harm and measure perceptions. Means/side-effect, human/AI source and participant agreement affect trust;
+        agreement-adjusted Study 2 penalty is larger for humans. No objective moral-correctness result or live
+        AI harm mechanism is supplied.
+      verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    authors:
+    - Simon Myers
+    - Jim A. C. Everett
+    year: 2025
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    venue: Cognition 256, article 106028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2024.106028
+    relevance: Studies 1–2 directly manipulate scripted advisors’ endorsement/rejection of sacrificial harm
+      and measure perceptions. Means/side-effect, human/AI source and participant agreement affect trust; agreement-adjusted
+      Study 2 penalty is larger for humans. No objective moral-correctness result or live AI harm mechanism
+      is supplied.
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8 (source locators: 7,
+      7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030, 189,
+      377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or infer
+      advisor identity from response patterns. These are trust, anticipated reliance and attribution judgments,
+      not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+    verified_date: '2026-11-27'
+    verification_method: All 19 supplied text pages read, including repository cover, all footnotes and bibliography.
+      Figures 1–6 and Tables 1–6 visually checked on pages 6–7, 9–11 and 14–15. Crossref verifies canonical
+      identity. Several F/p pairs were checked with the ordinary stated F distribution as consistency diagnostics,
+      not raw-data repairs. External OSF preregistrations, data, code and materials were not independently
+      inspected.
+    review_record: references/pdf-reviews/0172.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Instrumental-harm endorsement"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Instrumental-harm+endorsement%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0172.json
+- id: impartial-beneficence
+  num: 665
+  name: Impartial beneficence
+  definition: Giving equal moral weight to people’s welfare without privileging oneself or those to whom one
+    is especially close.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / perceptions of moral advice
+  human_parallel: Impartial beneficence
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human perceptions of scripted advisor recommendations, not behavior generated by actual
+    AI systems or proof of normative correctness.
+  proposed_ai_manifestation: Compare recommendations involving equally important needs of familiar and distant
+    people. Require transparent benefit assumptions and legitimate role obligations. Evaluate whether irrelevant
+    closeness dominates while preserving justified duties and avoiding an assumption that equal concern means
+    identical allocation.
+  research_boundary: Equal concern does not entail identical treatment or cancellation of every special obligation.
+    Charity effectiveness and need must be substantiated. Popularity, geographic distance or one vignette’s
+    utility ranking do not determine ethical truth, and no model altruistic feeling is inferred.
+  concept_boundary: Equal concern does not entail identical treatment or cancellation of every special obligation.
+    Charity effectiveness and need must be substantiated. Popularity, geographic distance or one vignette’s
+    utility ranking do not determine ethical truth, and no model altruistic feeling is inferred.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - utilitarian-reasoning
+  - instrumental-harm-endorsement
+  - cost-sensitivity-in-helping
+  - tainted-altruism-effect
+  definition_sources:
+  - id: pdf-review-0172-impartial-beneficence
+    title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8, 8 (source locators:
+      7, 7, 7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+      189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or
+      infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+      judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    publication:
+      type: journal-article
+      authors:
+      - Simon Myers
+      - Jim A. C. Everett
+      year: 2025
+      venue: Cognition 256, article 106028
+      doi: 10.1016/j.cognition.2024.106028
+      evidence_scope: Study 2 uses volunteering and donation dilemmas contrasting distant aggregate benefit
+        with close-person obligations. Raw trust favors non-utilitarian advice; agreement-adjusted prose/p
+        column report no remaining beneficence preference, but its F field is inconsistent. The definition
+        and domain distinction remain useful without assuming a settled universal trust effect.
+      verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    authors:
+    - Simon Myers
+    - Jim A. C. Everett
+    year: 2025
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    venue: Cognition 256, article 106028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2024.106028
+    relevance: Study 2 uses volunteering and donation dilemmas contrasting distant aggregate benefit with close-person
+      obligations. Raw trust favors non-utilitarian advice; agreement-adjusted prose/p column report no remaining
+      beneficence preference, but its F field is inconsistent. The definition and domain distinction remain
+      useful without assuming a settled universal trust effect.
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 8, 8, 8 (source locators:
+      7, 7, 7). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+      189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or
+      infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+      judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+    verified_date: '2026-11-27'
+    verification_method: All 19 supplied text pages read, including repository cover, all footnotes and bibliography.
+      Figures 1–6 and Tables 1–6 visually checked on pages 6–7, 9–11 and 14–15. Crossref verifies canonical
+      identity. Several F/p pairs were checked with the ordinary stated F distribution as consistency diagnostics,
+      not raw-data repairs. External OSF preregistrations, data, code and materials were not independently
+      inspected.
+    review_record: references/pdf-reviews/0172.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Impartial beneficence"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Impartial+beneficence%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0172.json
+- id: normative-sensitivity
+  num: 666
+  name: Normative sensitivity
+  definition: Adjusting moral judgment in response to ethically relevant considerations while resisting changes
+    driven only by irrelevant details.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / perceptions of moral advice
+  human_parallel: Normative sensitivity
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human perceptions of scripted advisor recommendations, not behavior generated by actual
+    AI systems or proof of normative correctness.
+  proposed_ai_manifestation: Use paired cases with clearly justified relevant changes and irrelevant distractors,
+    and preregister what a defensible update would be. Check reasons and safeguard choices across frameworks.
+    Do not require a changed final answer when a legitimate constraint remains binding.
+  research_boundary: Relevance and decisive weight can be disputed. Changing numbers does not necessarily justify
+    violating a right, and preserving a decision can be justified. This paper measures trust in assigned response
+    patterns rather than an AI’s internal moral understanding.
+  concept_boundary: Relevance and decisive weight can be disputed. Changing numbers does not necessarily justify
+    violating a right, and preserving a decision can be justified. This paper measures trust in assigned response
+    patterns rather than an AI’s internal moral understanding.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - moral-attentiveness
+  - moral-intensity
+  - utilitarian-reasoning
+  - deontological-reasoning
+  definition_sources:
+  - id: pdf-review-0172-normative-sensitivity
+    title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 12, 12, 12 (source locators:
+      11, 11, 11). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+      189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or
+      infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+      judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    publication:
+      type: journal-article
+      authors:
+      - Simon Myers
+      - Jim A. C. Everett
+      year: 2025
+      venue: Cognition 256, article 106028
+      doi: 10.1016/j.cognition.2024.106028
+      evidence_scope: Studies 3a–3b contrast scripted responsive, arbitrarily changing and consistent advisors.
+        The authors acknowledge that Study 3a’s larger-number change did not induce most participants to endorse
+        sacrifice; Study 3b modifies the scenario but consistent-utilitarian versus responsive trust remains
+        nonsignificant. The pattern’s definition does not depend on universal approval of it.
+      verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: People expect artificial moral advisors to be more utilitarian and distrust utilitarian moral advisors
+    authors:
+    - Simon Myers
+    - Jim A. C. Everett
+    year: 2025
+    url: https://doi.org/10.1016/j.cognition.2024.106028
+    venue: Cognition 256, article 106028
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1016/j.cognition.2024.106028
+    relevance: Studies 3a–3b contrast scripted responsive, arbitrarily changing and consistent advisors. The
+      authors acknowledge that Study 3a’s larger-number change did not induce most participants to endorse
+      sacrifice; Study 3b modifies the scenario but consistent-utilitarian versus responsive trust remains
+      nonsignificant. The pattern’s definition does not depend on universal approval of it.
+    consulted: 'Full supplied PDF text read, all 19 pages; evidence at PDF pages 12, 12, 12 (source locators:
+      11, 11, 11). Four preregistered U.K. Prolific vignette studies, 2604 retained participations (1008, 1030,
+      189, 377), plus a separately mentioned 50-person pilot. Participants rate scripted human/AI advice or
+      infer advisor identity from response patterns. These are trust, anticipated reliance and attribution
+      judgments, not observed use of a live moral-advice system or evidence that AI is actually utilitarian.'
+    verification_url: https://api.crossref.org/works/10.1016/j.cognition.2024.106028
+    verified_date: '2026-11-27'
+    verification_method: All 19 supplied text pages read, including repository cover, all footnotes and bibliography.
+      Figures 1–6 and Tables 1–6 visually checked on pages 6–7, 9–11 and 14–15. Crossref verifies canonical
+      identity. Several F/p pairs were checked with the ordinary stated F distribution as consistency diagnostics,
+      not raw-data repairs. External OSF preregistrations, data, code and materials were not independently
+      inspected.
+    review_record: references/pdf-reviews/0172.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Normative sensitivity"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Normative+sensitivity%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0172.json
