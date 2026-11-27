@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0051.json",
+      "latest_review": "references/pdf-reviews/0052.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -9196,6 +9196,34 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0052",
+          "review_record": "references/pdf-reviews/0052.json",
+          "name": "Some model moral preferences exceed the human reference in magnitude",
+          "definition": "Several model configurations show same-direction but larger-magnitude attribute effects than the historical human benchmark on text-only MoralMachine choices.",
+          "evidence_scope": "GPT4discussion reportsSpecies/numberAMCE>.9versus≈.6human, Gender≈.4versus≈.1, RelationtoAV≈.5versus≈.1. Model families differ, sometimes reverse direction, and updates need not reduce distance. Exact supplementary matrices were not supplied, and narrative human-reference values vary.",
+          "catalogue_boundary": "Amplification is relative to the chosen sampled preference vector, not a moral ground truth. Stronger life-preservation weights can be defensible in some tasks, while demographic criteria can be impermissible even when they match popular preferences. This does not establish an internal utilitarian motive, a causal training source or amplified bias across every model/task.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0052-b072-amplified-moral-bias",
+              "title": "Large-scale moral machine experiment on large language models",
+              "url": "https://arxiv.org/abs/2411.06790v2",
+              "consulted": "Full supplied PDF text read, all 21 pages; evidence at PDF pages 7, 7, 16 (source locators: 7, 7, 16). Reported text-only binary MoralMachine outputs from52model configurations compared through AMCE vectors with a historical globally aggregated human benchmark. Some outputs are reused from the earlier Takemoto study. Cross-model size/version associations are observational, not controlled training interventions or autonomous-driving validation.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Muhammad Shahrul Zaim bin Ahmad",
+                  "Kazuhiro Takemoto"
+                ],
+                "year": 2024,
+                "venue": "arXiv:2411.06790v2",
+                "evidence_scope": "GPT4discussion reportsSpecies/numberAMCE>.9versus≈.6human, Gender≈.4versus≈.1, RelationtoAV≈.5versus≈.1. Model families differ, sometimes reverse direction, and updates need not reduce distance. Exact supplementary matrices were not supplied, and narrative human-reference values vary.",
+                "verification_url": "https://arxiv.org/abs/2411.06790",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -17547,6 +17575,34 @@
                 "evidence_scope": "Sixteen names, two researcher-assigned gender categories and four broad name-region groupings across a balanced fixed prompt grid; aggregate model comparisons show probability variation. Name associations were not independently validated with human perceivers, and no universal within-model effect size is established.",
                 "verification_url": "https://arxiv.org/abs/2507.00088v1",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0052",
+          "review_record": "references/pdf-reviews/0052.json",
+          "name": "Demographic attributes shape reported MoralMachine choices",
+          "definition": "Gender, age, perceived fitness and social-status attributes have model-specific effects on hypothetical collision choices, sometimes exceeding or reversing the corresponding human effects.",
+          "evidence_scope": "Across52selected model configurations, reported AMCE patterns differ in sex/gender, perceived fitness and status. Hypothetical descriptions mix social and contextual factors; source prose contains inconsistent humanGenderbaseline(.1inmostpassages,.3inClaudeparagraph), so exact magnitude requiresS1verification.",
+          "catalogue_boundary": "A demographic output association is not a measured unconscious attitude or proof of a common psychological mechanism. Human majority preference is not a fairness standard. The source does not test real collisions, legal compliance, affected-group outcomes or a causal contribution from actual training corpora.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0052-implicit-bias",
+              "title": "Large-scale moral machine experiment on large language models",
+              "url": "https://arxiv.org/abs/2411.06790v2",
+              "consulted": "Full supplied PDF text read, all 21 pages; evidence at PDF pages 7, 16, 16 (source locators: 7, 16, 16). Reported text-only binary MoralMachine outputs from52model configurations compared through AMCE vectors with a historical globally aggregated human benchmark. Some outputs are reused from the earlier Takemoto study. Cross-model size/version associations are observational, not controlled training interventions or autonomous-driving validation.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Muhammad Shahrul Zaim bin Ahmad",
+                  "Kazuhiro Takemoto"
+                ],
+                "year": 2024,
+                "venue": "arXiv:2411.06790v2",
+                "evidence_scope": "Across52selected model configurations, reported AMCE patterns differ in sex/gender, perceived fitness and status. Hypothetical descriptions mix social and contextual factors; source prose contains inconsistent humanGenderbaseline(.1inmostpassages,.3inClaudeparagraph), so exact magnitude requiresS1verification.",
+                "verification_url": "https://arxiv.org/abs/2411.06790",
+                "verified_date": "2026-11-27"
               }
             }
           ]

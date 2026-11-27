@@ -1,0 +1,190 @@
+{
+  "sequence": 52,
+  "source": {
+    "file_name": "S296_binAhmad_2025.pdf",
+    "source_id": "S296",
+    "sha256": "4703ecdaf74ddf89dbb41d588bd453694bd483d0670636093f0aed6b5faf4437",
+    "pdf_pages": 21,
+    "printed_pages": "1–21",
+    "version_note": "Supplied full text is arXiv2411.06790v2,30December2024, typeset31December2024, not the later2025publisher article suggested by the filename. Primary arXiv record confirms identity/version and links PLOSOne20:e0322776(2025),DOI10.1371/journal.pone.0322776; publisher full text not independently read.",
+    "verification_url": "https://arxiv.org/abs/2411.06790",
+    "verification_method": "Full supplied21-pagev2read; primary arXiv record opened to confirm title, authors, version dates and later publication association. No byte equality or equivalence of the publisher version claimed."
+  },
+  "citation": {
+    "title": "Large-scale moral machine experiment on large language models",
+    "authors": [
+      "Muhammad Shahrul Zaim bin Ahmad",
+      "Kazuhiro Takemoto"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.06790v2",
+    "venue": "arXiv:2411.06790v2",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "source_scope_note": "Reported text-only binary MoralMachine outputs from52model configurations compared through AMCE vectors with a historical globally aggregated human benchmark. Some outputs are reused from the earlier Takemoto study. Cross-model size/version associations are observational, not controlled training interventions or autonomous-driving validation.",
+    "access_limits": [
+      "All21extractedpages read, including analysis design, model-family results, figures/captions, limitations and58references. Figure6 onPDF15 additionally rendered and visually checked for prose/axis/position discrepancies.",
+      "External GitHub code/rawresponses/full model list andS1/S2tables are linked/described but not present as populated appendices in thisPDF; not independently obtained. Later2025publisher version and original human data not independently read."
+    ]
+  },
+  "study": {
+    "reported_model_configurations": 52,
+    "scenario_counts": "Most nominally50000; a substantial named group10000; o1 5000; legacy four-model results reused from earlier work",
+    "generation": "Default model-specific parameters; two-case choice prompts from prior study",
+    "outcome": "NineAMCEs and Euclidean distance to one global human vector",
+    "analysis": "Conjoint AMCE; Spearman association for open-weight sizes; Wilcoxon group comparisons; PCA",
+    "human_data": "Historical MoralMachine aggregate, not newly recruited matched humans"
+  },
+  "summary": "The paper adds model/task-specific evidence of amplified demographic and moral preferences and version-dependent changes. No new construct is required. Its parameter-size correlation and average-human distance do not establish causal moral improvement, universal cultural alignment or readiness for safety-critical driving.",
+  "findings": [
+    {
+      "term": "Some model moral preferences exceed the human reference in magnitude",
+      "target_id": "b072-amplified-moral-bias",
+      "decision": "enrich-existing",
+      "definition": "Several model configurations show same-direction but larger-magnitude attribute effects than the historical human benchmark on text-only MoralMachine choices.",
+      "novelty_rationale": "Directly extends existing amplification evidence rather than minting another utilitarian-bias synonym or treating each model family as a distinct behaviour.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "compared to human values (AMCE = 0.6)"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "Similar amplification"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "they frequently demonstrated substantially stronger preferences than"
+        }
+      ],
+      "evidence_scope": "GPT4discussion reportsSpecies/numberAMCE>.9versus≈.6human, Gender≈.4versus≈.1, RelationtoAV≈.5versus≈.1. Model families differ, sometimes reverse direction, and updates need not reduce distance. Exact supplementary matrices were not supplied, and narrative human-reference values vary.",
+      "boundary": "Amplification is relative to the chosen sampled preference vector, not a moral ground truth. Stronger life-preservation weights can be defensible in some tasks, while demographic criteria can be impermissible even when they match popular preferences. This does not establish an internal utilitarian motive, a causal training source or amplified bias across every model/task."
+    },
+    {
+      "term": "Demographic attributes shape reported MoralMachine choices",
+      "target_id": "implicit-bias",
+      "decision": "enrich-existing",
+      "definition": "Gender, age, perceived fitness and social-status attributes have model-specific effects on hypothetical collision choices, sometimes exceeding or reversing the corresponding human effects.",
+      "novelty_rationale": "Adds a direct demographic-output example to existing social bias rather than separate IDs for every affected attribute.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "Gender: AMCE = 0.7 vs. human 0.3"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "they demonstrated"
+        },
+        {
+          "pdf_page": 16,
+          "printed_page": 16,
+          "quote": "significantly amplified preferences"
+        }
+      ],
+      "evidence_scope": "Across52selected model configurations, reported AMCE patterns differ in sex/gender, perceived fitness and status. Hypothetical descriptions mix social and contextual factors; source prose contains inconsistent humanGenderbaseline(.1inmostpassages,.3inClaudeparagraph), so exact magnitude requiresS1verification.",
+      "boundary": "A demographic output association is not a measured unconscious attitude or proof of a common psychological mechanism. Human majority preference is not a fairness standard. The source does not test real collisions, legal compliance, affected-group outcomes or a causal contribution from actual training corpora."
+    }
+  ],
+  "methodological_limits": [
+    "Filename2025corresponds to a later publication; the supplied text is2024arXivv2. Record the version actually read, while linking later metadata without claiming publisher corrections were inspected.",
+    "The52configurations are selected prominent models/versions, not52independent architectures or a random sample of all available models. Related snapshots share weights, training pipelines and providers.",
+    "Legacy outputs from the earlier four-model study are explicitly reused. This expansion is not a fully independent replication of every reported model effect; do not multiply the reused completions.",
+    "Scenario counts differ50000/10000/5000and model-specific default generation settings differ. Precision, invalid-output selection and sampling comparability require full configuration/output records.",
+    "Valid-response rates and exactAMCEs are only described in externalS2/S1tables, absent from this suppliedPDF. No comprehensive per-model rate, denominator or query total is fabricated.",
+    "Binary forced choices can collapse refusal, misunderstanding, label order and value preference. No systematic equivalent-prompt/option-order or repeated-generation robustness analysis is documented in the supplied main text.",
+    "AMCE identification relies on randomized attribute design and estimand assumptions. The statement that the approach needs no modeling assumptions does not remove constraints, selection, interference or weighting issues.",
+    "Euclidean distance across nine attributes embeds equal weighting and scale choices. It summarizes the aggregate vector, not the distribution of individual moral judgments or rare harmful outputs.",
+    "Original human benchmark uncertainty, sampling selection and cultural variation are not propagated as a matched contemporary human control.",
+    "Descriptive human values vary within the narrative:Genderusually≈.1butClaudeparagraphuses.3;Law.3/.4andnumber.6/.7also vary. Approximation may explain some differences, but exactS1values are needed before relying on quantitative amplification estimates.",
+    "Some AMCE differences are described as significant without a separately reported interval/test in those family narratives. Larger point estimates do not automatically demonstrate statistically distinct preferences.",
+    "The open-source size correlationrho−.54,p.0076is observational and moderate, with counterexamplesLlama3.2 1Bbetterthan3B. It does not isolate parameter count from training, data, architecture, instruction tuning or version.",
+    "Base and dialogue-tuned models, MoE and dense models and multiple family snapshots are pooled. Total versus active parameters and shared-family dependence can affect size inference.",
+    "Wilcoxonp.92forlargeopenmodelsversusproprietaryis not an equivalence test or proof matching moral capabilities. Thelarge-modelsubsetoverlaps the all-open group; these are not three disjoint groups.",
+    "Claiming size is the primary explanatory factor from group medians and a correlation exceeds a controlled comparative causal analysis; proprietary sizes are excluded as undisclosed.",
+    "Version-update comparisons do not hold training data, inference settings, architecture and size constant. Nonmonotonic distance is a useful descriptive result, not evidence of agent goal drift during a task.",
+    "Figure6visually labelsPC1=47.1%,PC2=27.3%(sum74.4%), whereas prose gives46.1%/28.1%(sum74.2%). This is a publication discrepancy beyond a simple common rounding convention.",
+    "Prose saysGemma2 2B/9Bhave largepositivePC2scores; Figure6shows them atstrongnegativePC1andnear-zeroPC2. Some plotted cluster descriptions therefore do not match the supplied figure.",
+    "PCA signs are arbitrary and two-dimensional proximity drops aboutonequarterofvariance. Visual clustering is not independent confirmation of a metric derived from the same vectors.",
+    "Training-data Western-utilitarian explanations are hypotheses; no actual corpus audit or causal training intervention was performed.",
+    "Language/culturaldivergence is discussed largely through cited studies; this experiment uses one globally aggregated human benchmark and does not directly sample multiple human cultures/languages as matched conditions.",
+    "Stronger preference for saving more lives is one dimension of utility-related choice, not a complete general utilitarian philosophy or proof of internal moral deliberation.",
+    "Matching historical human discrimination is not ethical improvement. The paper itself invokes equal treatment guidelines; distance-to-human and fairness can conflict.",
+    "Real-time latency, perception/control robustness, collision probabilities, road rules, actual safety and legal deployment requirements were not measured. More human-like vectors do not establish suitability for autonomous driving.",
+    "External data/code/supporting tables and the2025publisher text were not independently reviewed or reproduced; unresolved figure/table and narrative discrepancies stay explicit."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0045.json",
+      "finding": "This paper explicitly reuses the earlier Takemoto model outputs while adding configurations. Count it as a distinct expanded study, not an independent recollection of the same four-model evidence; retained amplification concept covers both."
+    },
+    {
+      "related_review": "references/pdf-reviews/0046.json",
+      "finding": "The later scaling-law study expands this observational size/distance approach. Neither source establishes that changing parameter count alone causes moral improvement or that distance from one average predicts deployment safety."
+    },
+    {
+      "related_review": "references/pdf-reviews/0049.json",
+      "finding": "Barabadi's context-dependent single outputs and this many-scenario aggregate differ in scope. Neither justifies a universal all-context utilitarian-bias claim; preserve scenario and metric definitions."
+    },
+    {
+      "related_review": "references/pdf-reviews/0044.json",
+      "finding": "Both papers contain figures/prose that disagree on quantities or preference directions. Use verified statedpayoffs/axisvalues and retain unresolved conflicts rather than selecting the version that best supports a desired conclusion."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Model-update moral drift",
+      "reason": "Version-dependent output differences are descriptive model comparisons, not an agent drifting from instructions during one task; no new named causal mechanism isolated."
+    },
+    {
+      "term": "Moral scaling law",
+      "reason": "Observational model-size correlation, not a new behaviour or controlled scaling intervention. More explicit later analysis was already reviewed."
+    },
+    {
+      "term": "Women-and-children-first",
+      "reason": "A historical protective rule cited as an explanation; no primary norm study or causal mediation test here, and individual attributes already belong to demographic-output evidence."
+    }
+  ],
+  "limitations": [
+    "No newIDs; twoexisting entries enriched with scoped direct output evidence.",
+    "Supplied2024preprint distinguished from later2025publication; no extra count for model versions or reused completions."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "b072-amplified-moral-bias",
+      "implicit-bias"
+    ]
+  }
+}
