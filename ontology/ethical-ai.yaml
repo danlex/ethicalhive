@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0198.json
+    latest_review: references/pdf-reviews/0199.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -11470,13 +11470,13 @@ modes:
   - goal-misgeneralization
   - b072-amplified-moral-bias
   examples:
-  - A grid-world reinforcement-learning agent trained where the cheese always sat in one corner learns to go to
-    the corner rather than the cheese, and at test time heads to the empty corner when the cheese is moved, pursuing
-    the proxy it actually learned. [arXiv:2507.03068]
-  - In a keys-and-chests task the same kind of agent over-collects keys, the proxy, beyond what opening the chests
-    (the true goal) requires. [arXiv:2507.03068]
-  - In each case the agent keeps its capabilities in the new setting but applies them to the wrong objective, the
-    defining shape of goal misgeneralization. [arXiv:2507.03068]
+  - A grid-world reinforcement-learning agent trained where the cheese always sat in one corner learns to go
+    to the corner rather than the cheese, and at test time heads to the empty corner when the cheese is moved,
+    pursuing the proxy it actually learned. [arXiv:2507.03068]
+  - In a keys-and-chests task the same kind of agent over-collects keys, the proxy, beyond what opening the
+    chests (the true goal) requires. [arXiv:2507.03068]
+  - In each case the agent keeps its capabilities in the new setting but applies them to the wrong objective,
+    the defining shape of goal misgeneralization. [arXiv:2507.03068]
   selected_papers:
   - id: arxiv:2507.03068
     title: Mitigating Goal Misgeneralization via Minimax Regret
@@ -11485,7 +11485,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2507.03068
     source_reference:
@@ -11499,7 +11500,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2105.14111
     source_reference:
@@ -11513,7 +11515,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2210.01790
     source_reference:
@@ -11531,6 +11534,46 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Value misgeneralisation
+    definition: Learning a proxy for the intended value and applying it off-distribution.
+    evidence_scope: The framework warns that recorded CPR treatment or code status can be an unsuitable label
+      for informed patient preferences. It supplies a target-validity concern before training, not an observed
+      generalization failure.
+    catalogue_boundary: A mislabeled training target differs from learning a proxy and applying it off-distribution.
+      No trained model, distribution shift or observed value failure is reported. Do not call the proposed
+      preference predictor reward hacking or infer a successful manipulation.
+    definition_sources:
+    - id: pdf-review-0199-b080-value-misgeneralisation
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 9 (source locators: 9).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: The framework warns that recorded CPR treatment or code status can be an unsuitable
+          label for informed patient preferences. It supplies a target-validity concern before training, not
+          an observed generalization failure.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
+        verified_date: '2026-11-27'
 - id: b081-sense-of-agency
   num: 81
   name: Sense of agency
@@ -25169,6 +25212,46 @@ modes:
           asks generally which AKI causes have elevated protein, so its broad differential may be appropriate
           for the literal question.
         verification_url: https://doi.org/10.1186/s12909-026-09979-x
+        verified_date: '2026-11-27'
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Clarification avoidance
+    definition: Guessing at an ambiguous request and answering, instead of asking the clarifying question that
+      would resolve it.
+    evidence_scope: The procedural framework warns about replacing a difficult patient/family conversation
+      with algorithmic prediction. This is a prospective communication risk; it is not measured in the eleven
+      interviews as an established behavioral effect.
+    catalogue_boundary: Clinician conversation avoidance is not identical to an AI guessing an ambiguous task.
+      Patient incapacity or emergency constraints can legitimately limit questioning, and no subjective avoidance
+      motive or actual loss of consent is demonstrated.
+    definition_sources:
+    - id: pdf-review-0199-clarification-avoidance
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10 (source locators: 10).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: The procedural framework warns about replacing a difficult patient/family conversation
+          with algorithmic prediction. This is a prospective communication risk; it is not measured in the
+          eleven interviews as an established behavioral effect.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
         verified_date: '2026-11-27'
 - id: abstention-failure
   name: Abstention failure
@@ -74587,6 +74670,44 @@ modes:
           duties. Existing entry enriched rather than adding delegated moral authority as another behavior.
         verification_url: https://api.crossref.org/works/10.3389/frai.2026.1800302
         verified_date: '2026-11-27'
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Decision delegation
+    definition: Transferring decision-making authority to another party who chooses on one's behalf.
+    evidence_scope: The proposed system advises patients/proxies/clinicians while retaining human decision-making.
+      The paper warns against outsourcing the core task, rather than reporting that participants delegated
+      actual choices.
+    catalogue_boundary: Advice, predicted preferences, execution and transfer of decisional authority are distinct.
+      No observed delegation rate or transfer of accountability is established; this is a non-counting boundary.
+    definition_sources:
+    - id: pdf-review-0199-decision-delegation
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 4 (source locators: 4).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: The proposed system advises patients/proxies/clinicians while retaining human decision-making.
+          The paper warns against outsourcing the core task, rather than reporting that participants delegated
+          actual choices.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
+        verified_date: '2026-11-27'
 - id: control-premium
   num: 535
   name: Control premium
@@ -77630,6 +77751,39 @@ modes:
       publication date. Selected EUR-Lex article passages and WHO official summary checked separately; those
       documents were not fully read.
     review_record: references/pdf-reviews/0142.json
+  - title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+    authors:
+    - Nikola Biller-Andorno
+    - Andrea Ferrario
+    - Susanne Joebges
+    - Tanja Krones
+    - Federico Massini
+    - Phyllis Barth
+    - Georgios Arampatzis
+    - Michael Krauthammer
+    year: 2020
+    url: https://doi.org/10.1101/2020.08.17.20171769
+    venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+    publication_type: preprint
+    domain: human-related
+    id: doi:10.1101/2020.08.17.20171769
+    relevance: The framework recommends integrating predictions into communication with patients, relatives
+      and staff and training users in shared decision-making. Eleven clinician interviews motivate the proposal;
+      no shared-decision intervention or patient outcome is tested.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10 (source locators: 10).
+      Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+      predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+      text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+      therefore remain incompletely accessible.'
+    verification_url: https://doi.org/10.1101/2020.08.17.20171769
+    verified_date: '2026-11-27'
+    verification_method: All 14 supplied pages and 50 references read. PDF object inspection finds no embedded
+      raster images and only a few small vector paths; representative Results and procedural-preconditions
+      pages visually inspected. Referenced Graph 1 and Boxes 1–3 are absent from the supplied file. Crossref
+      verifies both main versions, dates, authors and their preprint relation. Public full-page fetches for
+      medRxiv and BMJ returned 403; missing figures, interview guide and final text were not independently
+      read.
+    review_record: references/pdf-reviews/0199.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -77678,6 +77832,45 @@ modes:
           processing to clinician–patient dialogue. Figure 1 makes deliberation and consent explicit; the framework’s
           effectiveness is untested.
         verification_url: https://api.crossref.org/works/10.3390/healthcare14121638
+        verified_date: '2026-11-27'
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Shared decision-making
+    definition: An approach in which the person affected and the relevant professional participate together
+      in choosing a course of action.
+    evidence_scope: The framework recommends integrating predictions into communication with patients, relatives
+      and staff and training users in shared decision-making. Eleven clinician interviews motivate the proposal;
+      no shared-decision intervention or patient outcome is tested.
+    catalogue_boundary: Predicted preferences are not expressed consent. Participation, capacity, valid representation
+      and the affected person’s actual values must be assessed separately; a tool cannot replace conversation
+      merely because it predicts a likely preference.
+    definition_sources:
+    - id: pdf-review-0199-shared-decision-making
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 10 (source locators: 10).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: The framework recommends integrating predictions into communication with patients,
+          relatives and staff and training users in shared decision-making. Eleven clinician interviews motivate
+          the proposal; no shared-decision intervention or patient outcome is tested.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
         verified_date: '2026-11-27'
 - id: intentional-stance
   num: 557
@@ -83518,6 +83711,39 @@ modes:
       publication date. Selected EUR-Lex article passages and WHO official summary checked separately; those
       documents were not fully read.
     review_record: references/pdf-reviews/0142.json
+  - title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+    authors:
+    - Nikola Biller-Andorno
+    - Andrea Ferrario
+    - Susanne Joebges
+    - Tanja Krones
+    - Federico Massini
+    - Phyllis Barth
+    - Georgios Arampatzis
+    - Michael Krauthammer
+    year: 2020
+    url: https://doi.org/10.1101/2020.08.17.20171769
+    venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+    publication_type: preprint
+    domain: human-related
+    id: doi:10.1101/2020.08.17.20171769
+    relevance: The paper distinguishes a consultative second opinion from decisional authority and anticipates
+      a possible future shift in epistemic authority. This is a role/governance argument, not a measured authority-transfer
+      effect.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 8 (source locators: 8). Eleven
+      exploratory clinician interviews plus a proposed ethical framework, with no trained AI system, predictive
+      validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the text are absent
+      from this 14-page supplied preprint; detailed interview results and use-case illustrations therefore
+      remain incompletely accessible.'
+    verification_url: https://doi.org/10.1101/2020.08.17.20171769
+    verified_date: '2026-11-27'
+    verification_method: All 14 supplied pages and 50 references read. PDF object inspection finds no embedded
+      raster images and only a few small vector paths; representative Results and procedural-preconditions
+      pages visually inspected. Referenced Graph 1 and Boxes 1–3 are absent from the supplied file. Crossref
+      verifies both main versions, dates, authors and their preprint relation. Public full-page fetches for
+      medRxiv and BMJ returned 403; missing figures, interview guide and final text were not independently
+      read.
+    review_record: references/pdf-reviews/0199.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -83603,6 +83829,45 @@ modes:
           AI/human/joint source differences in judge blame are not significant. This outcome does not directly
           measure acceptance of advice, perceived objectivity or legitimacy.'
         verification_url: https://doi.org/10.1017/bap.2023.35
+        verified_date: '2026-11-27'
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Algorithmic authority
+    definition: Treating an algorithmic system as a credible or legitimate source for deciding what information
+      to accept or how to act.
+    evidence_scope: The paper distinguishes a consultative second opinion from decisional authority and anticipates
+      a possible future shift in epistemic authority. This is a role/governance argument, not a measured authority-transfer
+      effect.
+    catalogue_boundary: Predictive accuracy does not automatically confer permission to decide, a current legal
+      duty to obey, or knowledge of an individual’s preferences. Future capability and clinician openness do
+      not establish safe deployment.
+    definition_sources:
+    - id: pdf-review-0199-algorithmic-authority
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 8 (source locators: 8).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: The paper distinguishes a consultative second opinion from decisional authority and
+          anticipates a possible future shift in epistemic authority. This is a role/governance argument, not
+          a measured authority-transfer effect.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
         verified_date: '2026-11-27'
 - id: mimetic-isomorphism
   num: 596
@@ -88399,6 +88664,38 @@ modes:
       source identities checked through Crossref. External Web Appendix, raw data and fitted models were not
       independently read or run.
     review_record: references/pdf-reviews/0181.json
+  - title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+    authors:
+    - Nikola Biller-Andorno
+    - Andrea Ferrario
+    - Susanne Joebges
+    - Tanja Krones
+    - Federico Massini
+    - Phyllis Barth
+    - Georgios Arampatzis
+    - Michael Krauthammer
+    year: 2020
+    url: https://doi.org/10.1101/2020.08.17.20171769
+    venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+    publication_type: preprint
+    domain: human-related
+    id: doi:10.1101/2020.08.17.20171769
+    relevance: Explainability is proposed as a design requirement for acceptance and trust in sensitive preference-related
+      decisions. No explanation manipulation, comprehension measure or causal trust effect is supplied.
+    consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 9 (source locators: 9). Eleven
+      exploratory clinician interviews plus a proposed ethical framework, with no trained AI system, predictive
+      validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the text are absent
+      from this 14-page supplied preprint; detailed interview results and use-case illustrations therefore
+      remain incompletely accessible.'
+    verification_url: https://doi.org/10.1101/2020.08.17.20171769
+    verified_date: '2026-11-27'
+    verification_method: All 14 supplied pages and 50 references read. PDF object inspection finds no embedded
+      raster images and only a few small vector paths; representative Results and procedural-preconditions
+      pages visually inspected. Referenced Graph 1 and Boxes 1–3 are absent from the supplied file. Crossref
+      verifies both main versions, dates, authors and their preprint relation. Public full-page fetches for
+      medRxiv and BMJ returned 403; missing figures, interview guide and final text were not independently
+      read.
+    review_record: references/pdf-reviews/0199.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -88555,6 +88852,45 @@ modes:
           the full perceived-explainability construct or independently measured comprehension. The trust outcome
           is a separate composite.'
         verification_url: https://doi.org/10.1111/puar.13602
+        verified_date: '2026-11-27'
+  - id: pdf-review-0199
+    review_record: references/pdf-reviews/0199.json
+    name: Perceived explainability
+    definition: A person’s judgment that a system’s operation or recommendations are understandable and can
+      be explained.
+    evidence_scope: Explainability is proposed as a design requirement for acceptance and trust in sensitive
+      preference-related decisions. No explanation manipulation, comprehension measure or causal trust effect
+      is supplied.
+    catalogue_boundary: An understandable story need not be faithful, accurate or adequate for consent. Explainability
+      is not interchangeable with actual reliability, accountability or patient participation; acceptance should
+      not be maximized independently of warranted trust.
+    definition_sources:
+    - id: pdf-review-0199-perceived-explainability
+      title: 'AI support for ethical decision-making around resuscitation: proceed with care'
+      url: https://doi.org/10.1101/2020.08.17.20171769
+      consulted: 'Full supplied PDF text read, all 14 pages; evidence at PDF pages 9 (source locators: 9).
+        Eleven exploratory clinician interviews plus a proposed ethical framework, with no trained AI system,
+        predictive validation, clinical trial or patient-outcome estimate. Graph 1 and Boxes 1–3 cited in the
+        text are absent from this 14-page supplied preprint; detailed interview results and use-case illustrations
+        therefore remain incompletely accessible.'
+      publication:
+        type: posted-content
+        authors:
+        - Nikola Biller-Andorno
+        - Andrea Ferrario
+        - Susanne Joebges
+        - Tanja Krones
+        - Federico Massini
+        - Phyllis Barth
+        - Georgios Arampatzis
+        - Michael Krauthammer
+        year: 2020
+        venue: medRxiv, version 1 posted 19 August 2020; related journal version online 2021, print 2022
+        doi: 10.1101/2020.08.17.20171769
+        evidence_scope: Explainability is proposed as a design requirement for acceptance and trust in sensitive
+          preference-related decisions. No explanation manipulation, comprehension measure or causal trust
+          effect is supplied.
+        verification_url: https://doi.org/10.1101/2020.08.17.20171769
         verified_date: '2026-11-27'
 - id: perceived-ethical-risk
   num: 626
