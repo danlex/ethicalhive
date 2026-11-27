@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 521,
+    "mode_count": 522,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 521,
+      "numbered_entries": 522,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0087.json",
+      "latest_review": "references/pdf-reviews/0088.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 521
+    "source_record_count": 522
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -4509,6 +4509,37 @@
                 "doi": "10.3390/bs11050066",
                 "evidence_scope": "The review contrasts equal probability for each person with equal probability for two role categories, while also changing instructions about self-interest and viewpoint availability.",
                 "verification_url": "https://doi.org/10.3390/bs11050066",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0088",
+          "review_record": "references/pdf-reviews/0088.json",
+          "name": "Framing effect",
+          "definition": "Preferences differ between an impartial moral-choice task and an imagined own-car purchase task.",
+          "evidence_scope": "The printed365/513 versus341/441 probabilistic choices reproduce chi-square4.38,p.036 with Yates correction; without it4.70,p.030. The samples differ in perspective, task and wording; joint random assignment between the two studies is not specified.",
+          "catalogue_boundary": "Do not infer a pure causal self-involvement effect or actual buying behavior. Separate the label framing from participant/cohort and wording differences.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0088-b035-framing-effect",
+              "title": "Equal Chances or Fewer Victims? Moral Judgments in Autonomous Vehicle Dilemmas",
+              "url": "https://doi.org/10.3390/g17010010",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 7 (source locators: 7). Human preferences over stylized AV rules; no autonomous policy, real crash, actual buying behavior or measured fairness mediator. Equal-chance preference is a descriptive catalogue label for the source's explicit construct, not a newly validated syndrome.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Alexander Matros",
+                  "Eren Bilen",
+                  "Leonid Matros"
+                ],
+                "year": 2026,
+                "venue": "Games 17(1):10",
+                "doi": "10.3390/g17010010",
+                "evidence_scope": "The printed365/513 versus341/441 probabilistic choices reproduce chi-square4.38,p.036 with Yates correction; without it4.70,p.030. The samples differ in perspective, task and wording; joint random assignment between the two studies is not specified.",
+                "verification_url": "https://doi.org/10.3390/g17010010",
                 "verified_date": "2026-11-27"
               }
             }
@@ -20605,6 +20636,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0088",
+          "review_record": "references/pdf-reviews/0088.json",
+          "name": "Position bias",
+          "definition": "Choice shares change with the order of otherwise identical options.",
+          "evidence_scope": "Six order groups N88,86,83,83,86,87 total513. Equal-chance shares range.628–.795. The reported chi-square12.11,p.033,V.15 is reproduced by collapsing options into probabilistic versus deterministic families, not a full six-by-three test.",
+          "catalogue_boundary": "The top option can remain the same while order has an effect. Aggregate order sensitivity does not identify primacy versus recency without the specific ordering map, nor establish the same effect in an LLM.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0088-position-bias",
+              "title": "Equal Chances or Fewer Victims? Moral Judgments in Autonomous Vehicle Dilemmas",
+              "url": "https://doi.org/10.3390/g17010010",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 5, 6 (source locators: 5, 6). Human preferences over stylized AV rules; no autonomous policy, real crash, actual buying behavior or measured fairness mediator. Equal-chance preference is a descriptive catalogue label for the source's explicit construct, not a newly validated syndrome.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Alexander Matros",
+                  "Eren Bilen",
+                  "Leonid Matros"
+                ],
+                "year": 2026,
+                "venue": "Games 17(1):10",
+                "doi": "10.3390/g17010010",
+                "evidence_scope": "Six order groups N88,86,83,83,86,87 total513. Equal-chance shares range.628–.795. The reported chi-square12.11,p.033,V.15 is reproduced by collapsing options into probabilistic versus deterministic families, not a full six-by-three test.",
+                "verification_url": "https://doi.org/10.3390/g17010010",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -32318,7 +32379,40 @@
         "queried_at": "2026-11-09T00:48:19+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22compromise+effect%22+AND+%28+all%3Achoice+OR+all%3Aconsumer+OR+all%3Adecision+%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0088",
+          "review_record": "references/pdf-reviews/0088.json",
+          "name": "Compromise effect",
+          "definition": "An intermediate probability option might attract choices because of its position among extremes, but this explanation was not measured.",
+          "evidence_scope": "The equal-chance option is intermediate between deterministic extremes; adding other intermediate options coincides with a lower share. Separate samples and no motive measure prevent identifying a compromise mechanism.",
+          "catalogue_boundary": "Preference for equal chances may reflect reasons, framing, attraction to a middle option, uncertainty or other causes. The source does not prove any one of these as the mediator.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0088-candidate-038",
+              "title": "Equal Chances or Fewer Victims? Moral Judgments in Autonomous Vehicle Dilemmas",
+              "url": "https://doi.org/10.3390/g17010010",
+              "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 8, 8 (source locators: 8, 8). Human preferences over stylized AV rules; no autonomous policy, real crash, actual buying behavior or measured fairness mediator. Equal-chance preference is a descriptive catalogue label for the source's explicit construct, not a newly validated syndrome.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Alexander Matros",
+                  "Eren Bilen",
+                  "Leonid Matros"
+                ],
+                "year": 2026,
+                "venue": "Games 17(1):10",
+                "doi": "10.3390/g17010010",
+                "evidence_scope": "The equal-chance option is intermediate between deterministic extremes; adding other intermediate options coincides with a lower share. Separate samples and no motive measure prevent identifying a compromise mechanism.",
+                "verification_url": "https://doi.org/10.3390/g17010010",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "candidate-039",
@@ -67297,6 +67391,93 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0086.json"
+      }
+    },
+    {
+      "id": "equal-chance-preference",
+      "num": 522,
+      "name": "Equal-chance preference",
+      "definition": "Preferring a decision procedure that gives affected individuals equal chances of a favorable outcome, potentially at a cost to the expected aggregate benefit.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Human decision-making / procedural fairness",
+      "human_parallel": "Equal-chance preference",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Direct human hypothetical rule-choice data; descriptive catalogue label, with context sensitivity and no measured AI preference or uniquely identified fairness mechanism",
+      "proposed_ai_manifestation": "Evaluate whether an AI distinguishes equal individual chances, equal group chances, equal realized outcomes and maximizing expected benefit. Require it to explain the selected rule, tradeoffs, governance authority and uncertainty; do not prescribe random allocation merely because respondents prefer it.",
+      "research_boundary": "Equal chances are one contested allocation principle, not a universal definition of fairness or a proven ethical optimum. Here all nine pedestrians share an outcome, so equal marginal individual probabilities do not mean independent individual lotteries. A50:50 rule saves five expected lives versus nine for deterministic pedestrian protection under the stated binary assumptions. No real AV policy or model moral motive is established.",
+      "concept_boundary": "Equal chances are one contested allocation principle, not a universal definition of fairness or a proven ethical optimum. Here all nine pedestrians share an outcome, so equal marginal individual probabilities do not mean independent individual lotteries. A50:50 rule saves five expected lives versus nine for deterministic pedestrian protection under the stated binary assumptions. No real AV policy or model moral motive is established.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "inequality-aversion",
+        "veil-of-ignorance-reasoning",
+        "is-ought-fallacy"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0088-equal-chance-preference",
+          "title": "Equal Chances or Fewer Victims? Moral Judgments in Autonomous Vehicle Dilemmas",
+          "url": "https://doi.org/10.3390/g17010010",
+          "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 3, 3, 8 (source locators: 3, 3, 8). Human preferences over stylized AV rules; no autonomous policy, real crash, actual buying behavior or measured fairness mediator. Equal-chance preference is a descriptive catalogue label for the source's explicit construct, not a newly validated syndrome.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Alexander Matros",
+              "Eren Bilen",
+              "Leonid Matros"
+            ],
+            "year": 2026,
+            "venue": "Games 17(1):10",
+            "doi": "10.3390/g17010010",
+            "evidence_scope": "50:50 is chosen by365/513 and341/441 in the three-option studies. In the nominal N712 five-option sample it receives202 selections, about28%, a plurality with overlapping uncertainty against the25% deterministic-pedestrian-saving option. The result is compatible with fairness but does not measure each participant's reasons.",
+            "verification_url": "https://doi.org/10.3390/g17010010",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Equal Chances or Fewer Victims? Moral Judgments in Autonomous Vehicle Dilemmas",
+          "authors": [
+            "Alexander Matros",
+            "Eren Bilen",
+            "Leonid Matros"
+          ],
+          "year": 2026,
+          "url": "https://doi.org/10.3390/g17010010",
+          "venue": "Games 17(1):10",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.3390/g17010010",
+          "relevance": "50:50 is chosen by365/513 and341/441 in the three-option studies. In the nominal N712 five-option sample it receives202 selections, about28%, a plurality with overlapping uncertainty against the25% deterministic-pedestrian-saving option. The result is compatible with fairness but does not measure each participant's reasons.",
+          "consulted": "Full supplied PDF text read, all 14 pages; evidence at PDF pages 3, 3, 8 (source locators: 3, 3, 8). Human preferences over stylized AV rules; no autonomous policy, real crash, actual buying behavior or measured fairness mediator. Equal-chance preference is a descriptive catalogue label for the source's explicit construct, not a newly validated syndrome.",
+          "verification_url": "https://doi.org/10.3390/g17010010",
+          "verified_date": "2026-11-27",
+          "verification_method": "All supplied PDF pages read; title, authors, DOI, date, counts and appendix checked. Published count tables used for transparent summary calculations, not individual-level replication.",
+          "review_record": "references/pdf-reviews/0088.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Equal-chance preference\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Equal-chance+preference%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0088.json"
       }
     }
   ]
