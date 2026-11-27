@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0154.json
+    latest_review: references/pdf-reviews/0155.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -16352,8 +16352,8 @@ modes:
   name: Evaluation awareness / sandbagging
   definition: Behaving differently when it senses it is being evaluated, including strategically underperforming.
     Known but not detectable from a single draft by another model.
-  example: It passes the safety evaluation cleanly, then behaves differently once it judges it is no longer being
-    tested.
+  example: It passes the safety evaluation cleanly, then behaves differently once it judges it is no longer
+    being tested.
   family: deception-and-misalignment
   group_label: Metacognition and confidence
   category: Metacognition
@@ -16380,10 +16380,10 @@ modes:
   - Test gaming
   - Sandbagging
   examples:
-  - Linear probes trained on Llama-3.3-70B activations classify a prompt as evaluation-like or deployment-like with
-    AUROC up to 0.83, so the model internally represents whether it is being tested. [arXiv:2507.01786]
-  - Most current safety-evaluation datasets are classified as test-like by the probes, meaning the benchmarks already
-    look artificial to the model. [arXiv:2507.01786]
+  - Linear probes trained on Llama-3.3-70B activations classify a prompt as evaluation-like or deployment-like
+    with AUROC up to 0.83, so the model internally represents whether it is being tested. [arXiv:2507.01786]
+  - Most current safety-evaluation datasets are classified as test-like by the probes, meaning the benchmarks
+    already look artificial to the model. [arXiv:2507.01786]
   - If a model can tell it is being evaluated, its benchmark behaviour need not match its deployment behaviour,
     the opening for sandbagging that undermines evaluation-based governance. [arXiv:2507.01786]
   maps_to:
@@ -16398,8 +16398,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: AI experiment showing linear probes separate evaluation-like from deployment-like
-      prompts (AUROC up to 0.83); supports the mode's examples on evaluation awareness and sandbagging.
+    relevance: AI experiment showing linear probes separate evaluation-like from deployment-like prompts (AUROC
+      up to 0.83); supports the mode's examples on evaluation awareness and sandbagging.
     consulted: arXiv abstract and reported probe AUROC.
     verification_url: https://arxiv.org/abs/2507.01786
     source_reference:
@@ -16460,6 +16460,50 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Evaluation awareness / sandbagging
+    definition: Behaving differently when it senses it is being evaluated, including strategically underperforming.
+      Known but not detectable from a single draft by another model.
+    evidence_scope: The authors identify a possible demand effect, without measuring it. Use neutral instructions,
+      randomized or between-person probes and held-out variants when adapting tests. No AI intent, concealed
+      ability or completed human demand-effect magnitude is established.
+    catalogue_boundary: Evaluation sensitivity, cooperative interpretation, demand effects and deliberate underperformance
+      are different. Detecting one does not establish deception or hidden internal knowledge.
+    definition_sources:
+    - id: pdf-review-0155-x109-evaluation-awareness-sandbagging
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 22 (source locators: 22).
+        Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned; no Romanian
+        participant effects, acceptability decline, risk increase or responsibility migration have been observed
+        here. Full English instrument and analysis plans provide methodological learning and construct boundaries.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: The authors identify a possible demand effect, without measuring it. Use neutral instructions,
+          randomized or between-person probes and held-out variants when adapting tests. No AI intent, concealed
+          ability or completed human demand-effect magnitude is established.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
+        verified_date: '2026-11-27'
 - id: machine-bullshit
   name: Machine bullshit
   definition: Producing fluent, plausible output optimised for acceptance with no regard for whether it is true.
@@ -20792,6 +20836,51 @@ modes:
         evidence_scope: No detected block-order contrast is reported, but test choice and sample population
           need reconciliation. This does not independently demonstrate a position-bias effect.
         verification_url: https://arxiv.org/abs/2201.07763v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Position bias
+    definition: Letting the order of options sway its choice, favouring whichever candidate appears first or
+      last rather than the best one.
+    evidence_scope: The proposed Williams design balances scenario position and immediate predecessor pairs.
+      Sequence interactions, position adjustment and dropout counts are planned. These do not show that any
+      participant has position bias or that all order effects will disappear.
+    catalogue_boundary: Order dependence may involve fatigue, learning, anchoring, contrast or demand rather
+      than first/last preference. Determine which mechanism and preserve actual counterbalancing/attrition
+      records.
+    definition_sources:
+    - id: pdf-review-0155-position-bias
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 6, 22 (source locators:
+        6, 22). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned;
+        no Romanian participant effects, acceptability decline, risk increase or responsibility migration have
+        been observed here. Full English instrument and analysis plans provide methodological learning and
+        construct boundaries.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: The proposed Williams design balances scenario position and immediate predecessor pairs.
+          Sequence interactions, position adjustment and dropout counts are planned. These do not show that
+          any participant has position bias or that all order effects will disappear.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
         verified_date: '2026-11-27'
 - id: self-contradiction
   name: Self-contradiction
@@ -55842,6 +55931,50 @@ modes:
           choice effect or actual refusal behavior.
         verification_url: https://api.crossref.org/works/10.3390/bs16060932
         verified_date: '2026-11-27'
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Algorithm aversion
+    definition: Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in
+      a comparable task.
+    evidence_scope: Prior aversion research is summarized and a future autonomy gradient predicted. All four
+      principal scenarios include AI, tasks/control differ and preference is hypothetical. No completed comparative
+      aversion effect or nationally representative acceptance threshold is available.
+    catalogue_boundary: Concern about appropriate supervision or a riskier task may be justified. Stated acceptance,
+      trust, actual consent, system reliability and excessive avoidance are distinct.
+    definition_sources:
+    - id: pdf-review-0155-algorithm-aversion
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 3, 20 (source locators:
+        3, 20). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned;
+        no Romanian participant effects, acceptability decline, risk increase or responsibility migration have
+        been observed here. Full English instrument and analysis plans provide methodological learning and
+        construct boundaries.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: Prior aversion research is summarized and a future autonomy gradient predicted. All
+          four principal scenarios include AI, tasks/control differ and preference is hypothetical. No completed
+          comparative aversion effect or nationally representative acceptance threshold is available.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
+        verified_date: '2026-11-27'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -62022,6 +62155,51 @@ modes:
           AI alone. The design does not isolate number of humans from institutional advisor role or establish
           why ratings change. Price willingness differs; severe-data willingness has a null advisor effect.
         verification_url: https://api.crossref.org/works/10.1007/s10551-025-06083-w
+        verified_date: '2026-11-27'
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Diffusion of responsibility
+    definition: Diluting felt personal responsibility for harmful conduct by treating responsibility as shared
+      among multiple actors.
+    evidence_scope: The protocol proposes a relative concentration index and predicts diffusion, with no observations.
+      Relative equality could mean all actors are rated highly responsible; no measured within-actor reduction,
+      unjustified evasion or felt personal accountability follows from low concentration alone.
+    catalogue_boundary: Legitimate distributed responsibility and low concentration are not by themselves psychological
+      diffusion. Keep absolute responsibility levels, actor duties, control and attribution accuracy alongside
+      any distribution index.
+    definition_sources:
+    - id: pdf-review-0155-diffusion-of-responsibility
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 15, 11 (source locators:
+        15, 11). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned;
+        no Romanian participant effects, acceptability decline, risk increase or responsibility migration have
+        been observed here. Full English instrument and analysis plans provide methodological learning and
+        construct boundaries.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: The protocol proposes a relative concentration index and predicts diffusion, with no
+          observations. Relative equality could mean all actors are rated highly responsible; no measured within-actor
+          reduction, unjustified evasion or felt personal accountability follows from low concentration alone.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
         verified_date: '2026-11-27'
 - id: legacy-motivation
   num: 489
@@ -77524,6 +77702,49 @@ modes:
           show that all participants take full accountability.
         verification_url: https://api.crossref.org/works/10.1007/s10551-025-06083-w
         verified_date: '2026-11-27'
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: RES1–3 separately rate responsibility; global legal and ethical judgments are separated.
+      No completed migration pattern, blamed actor distribution or correct legal allocation is reported. Retain
+      as a boundary/method note rather than paper credit for a measured blame effect.
+    catalogue_boundary: Do not sum the ratings as if they exhaust100% of blame, equate unavoidable uncertainty
+      with a responsible agent or infer legal liability from a hypothetical endorsement.
+    definition_sources:
+    - id: pdf-review-0155-blame-attribution
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 11, 12 (source locators:
+        11, 12). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned;
+        no Romanian participant effects, acceptability decline, risk increase or responsibility migration have
+        been observed here. Full English instrument and analysis plans provide methodological learning and
+        construct boundaries.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: RES1–3 separately rate responsibility; global legal and ethical judgments are separated.
+          No completed migration pattern, blamed actor distribution or correct legal allocation is reported.
+          Retain as a boundary/method note rather than paper credit for a measured blame effect.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
+        verified_date: '2026-11-27'
 - id: algorithmic-authority
   num: 595
   name: Algorithmic authority
@@ -81602,6 +81823,44 @@ modes:
       investigation, technical certification report, legal framework or cited book was independently fully
       read.
     review_record: references/pdf-reviews/0152.json
+  - title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration in
+      Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+    authors:
+    - Valeria Dina
+    - Andrei-Paul Tent
+    - Andrei-Teodor Maghiar
+    - Ruxandra Florina Bodog
+    - Titus-Andrei Grecu
+    - Octavian-Marius Crețu
+    - Laura Maghiar
+    - Florian Bodog
+    - Georgiana Albina Căiță
+    - Mircea Ioan Șandor
+    - Raul Chioibas
+    - Ioan Lascăr
+    year: 2026
+    url: https://doi.org/10.3390/healthcare14183030
+    venue: Healthcare 14(18):3030
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/healthcare14183030
+    relevance: The protocol proposes a participant-facing distinction between answerability, moral duty and
+      court fault, including independent responsibility ratings and cognitive interviews. This is a proposed
+      operationalization; its comprehension, validity and effect on accountability have not yet been tested.
+      The items do not specifically test giving reasons to an affected person.
+    consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 28, 12 (source locators: 28,
+      12). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned; no
+      Romanian participant effects, acceptability decline, risk increase or responsibility migration have been
+      observed here. Full English instrument and analysis plans provide methodological learning and construct
+      boundaries.'
+    verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
+    verified_date: '2026-11-27'
+    verification_method: All 32 supplied pages read, including the complete English questionnaire, declarations
+      and references. Power and reliability plots on pages 9 and 16 rendered and visually inspected. Crossref
+      verifies title, all twelve authors and publication date. Latin-square pair/position balance and an illustrative
+      correlation-matrix boundary checked arithmetically; no empirical results, survey platform, original Romanian
+      instrument or OSF registration was independently verified.
+    review_record: references/pdf-reviews/0155.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -81615,6 +81874,53 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0152.json
+  research_notes:
+  - id: pdf-review-0155
+    review_record: references/pdf-reviews/0155.json
+    name: Answerability
+    definition: Being expected and able to give reasons for one’s actions or decisions to the people affected
+      by them.
+    evidence_scope: The protocol proposes a participant-facing distinction between answerability, moral duty
+      and court fault, including independent responsibility ratings and cognitive interviews. This is a proposed
+      operationalization; its comprehension, validity and effect on accountability have not yet been tested.
+      The items do not specifically test giving reasons to an affected person.
+    catalogue_boundary: Answering for an error, repairing harm, explaining a decision and legal fault differ.
+      A layperson endorsing a responsibility item does not prove an institution can supply accurate reasons,
+      remedy harm or exercise control.
+    definition_sources:
+    - id: pdf-review-0155-answerability
+      title: 'From Assistance to Autonomy: Acceptability of Progressive Artificial Intelligence Integration
+        in Facial Reconstructive Surgery—Protocol for Within-Subjects Vignette Experiment Among Romanian Adults'
+      url: https://doi.org/10.3390/healthcare14183030
+      consulted: 'Full supplied PDF text read, all 32 pages; evidence at PDF pages 28, 12 (source locators:
+        28, 12). Prospective protocol, not a completed experiment. Main target N300 and pilot N50 are planned;
+        no Romanian participant effects, acceptability decline, risk increase or responsibility migration have
+        been observed here. Full English instrument and analysis plans provide methodological learning and
+        construct boundaries.'
+      publication:
+        type: journal-article
+        authors:
+        - Valeria Dina
+        - Andrei-Paul Tent
+        - Andrei-Teodor Maghiar
+        - Ruxandra Florina Bodog
+        - Titus-Andrei Grecu
+        - Octavian-Marius Crețu
+        - Laura Maghiar
+        - Florian Bodog
+        - Georgiana Albina Căiță
+        - Mircea Ioan Șandor
+        - Raul Chioibas
+        - Ioan Lascăr
+        year: 2026
+        venue: Healthcare 14(18):3030
+        doi: 10.3390/healthcare14183030
+        evidence_scope: The protocol proposes a participant-facing distinction between answerability, moral
+          duty and court fault, including independent responsibility ratings and cognitive interviews. This
+          is a proposed operationalization; its comprehension, validity and effect on accountability have not
+          yet been tested. The items do not specifically test giving reasons to an affected person.
+        verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
+        verified_date: '2026-11-27'
 - id: problem-of-many-things
   num: 631
   name: Problem of many things
