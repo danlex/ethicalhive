@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 702
+  mode_count: 704
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 702
+    numbered_entries: 704
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0204.json
+    latest_review: references/pdf-reviews/0206.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -7657,6 +7657,43 @@ modes:
           accept a gesture. The discussion invokes future knowledge of preferences/emotions, but the implementation
           uses a simple supplied task model rather than false-belief or affective-state reasoning.
         verification_url: https://arxiv.org/abs/1606.02583v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0206
+    review_record: references/pdf-reviews/0206.json
+    name: Theory of mind / mentalizing
+    definition: Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their
+      behavior.
+    evidence_scope: Mentalizing is defined as inferring internal states, but the current scanner task mainly
+      asks whether an entity has capacities; it is not a direct false-belief or accurate belief-inference task.
+    catalogue_boundary: Mind-capacity attribution and accurate mental-state inference differ. Brain-region
+      overlap, later reaction times and anthropomorphic appearance do not independently validate mentalizing
+      ability; this boundary does not fill a paper gap.
+    definition_sources:
+    - id: pdf-review-0206-b061-theory-of-mind-mentalizing
+      title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and
+        relates to ventromedial prefrontal structures'
+      url: https://doi.org/10.3758/s13415-018-0608-2
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 1 (source locators: 837).
+        N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a counterpredictive
+        gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time differences
+        are not actual robot mentality or a uniquely identified causal neural mechanism. The planned four-run
+        mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc two-run
+        analysis.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - George A. Buzzell
+        - Abdulaziz Abubshait
+        - Paul J. Beatty
+        year: 2018
+        venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+        doi: 10.3758/s13415-018-0608-2
+        evidence_scope: Mentalizing is defined as inferring internal states, but the current scanner task mainly
+          asks whether an entity has capacities; it is not a direct false-belief or accurate belief-inference
+          task.
+        verification_url: https://doi.org/10.3758/s13415-018-0608-2
         verified_date: '2026-11-27'
 - id: b062-false-belief-tracking
   num: 62
@@ -16761,6 +16798,43 @@ modes:
           It cites earlier trust/empathy findings as background; no trust or empathy effect is newly tested.
           Target labels alone, rather than live humanlike behavior, generate the present ratings.
         verification_url: https://doi.org/10.3389/fpsyg.2016.01717
+        verified_date: '2026-11-27'
+  - id: pdf-review-0206
+    review_record: references/pdf-reviews/0206.json
+    name: Anthropomorphism
+    definition: Attributing human characteristics, intentions, emotions or other mental states to a nonhuman
+      entity.
+    evidence_scope: One robot/human face pair is morphed at six levels to examine mind ratings and subsequent
+      attention. The manipulation changes appearance, and explicit judgments precede gaze testing; observed
+      associations need not uniquely reflect anthropomorphic belief.
+    catalogue_boundary: Human likeness, low-level visual properties, belief, familiarity and social attention
+      are not interchangeable. No uniform performance benefit, real relationship improvement, clinical inference
+      or actual model mentality is established.
+    definition_sources:
+    - id: pdf-review-0206-anthropomorphism
+      title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and
+        relates to ventromedial prefrontal structures'
+      url: https://doi.org/10.3758/s13415-018-0608-2
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 1 (source locators: 837).
+        N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a counterpredictive
+        gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time differences
+        are not actual robot mentality or a uniquely identified causal neural mechanism. The planned four-run
+        mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc two-run
+        analysis.'
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - George A. Buzzell
+        - Abdulaziz Abubshait
+        - Paul J. Beatty
+        year: 2018
+        venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+        doi: 10.3758/s13415-018-0608-2
+        evidence_scope: One robot/human face pair is morphed at six levels to examine mind ratings and subsequent
+          attention. The manipulation changes appearance, and explicit judgments precede gaze testing; observed
+          associations need not uniquely reflect anthropomorphic belief.
+        verification_url: https://doi.org/10.3758/s13415-018-0608-2
         verified_date: '2026-11-27'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
@@ -74376,6 +74450,43 @@ modes:
           in this sample, while content and response formats differ.
         verification_url: https://doi.org/10.3389/fpsyg.2016.01717
         verified_date: '2026-11-27'
+  - id: pdf-review-0206
+    review_record: references/pdf-reviews/0206.json
+    name: Experience attribution
+    definition: Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure,
+      pain, fear or joy.
+    evidence_scope: The theoretical framework and supplementary questions include happiness, sadness, feelings
+      and pain within a general mind-rating task. This is attribution-related measurement, not separate evidence
+      of machine feeling or a validated experience factor in this sample.
+    catalogue_boundary: General pooled mind ratings, perceived feelings, actual subjective experience and empathy
+      differ. The planned imaging analysis was correction-null; post hoc activation cannot be presented as
+      direct sentience evidence.
+    definition_sources:
+    - id: pdf-review-0206-experience-attribution
+      title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and
+        relates to ventromedial prefrontal structures'
+      url: https://doi.org/10.3758/s13415-018-0608-2
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 1 (source locators: 837).
+        N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a counterpredictive
+        gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time differences
+        are not actual robot mentality or a uniquely identified causal neural mechanism. The planned four-run
+        mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc two-run
+        analysis.'
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - George A. Buzzell
+        - Abdulaziz Abubshait
+        - Paul J. Beatty
+        year: 2018
+        venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+        doi: 10.3758/s13415-018-0608-2
+        evidence_scope: The theoretical framework and supplementary questions include happiness, sadness, feelings
+          and pain within a general mind-rating task. This is attribution-related measurement, not separate
+          evidence of machine feeling or a validated experience factor in this sample.
+        verification_url: https://doi.org/10.3758/s13415-018-0608-2
+        verified_date: '2026-11-27'
 - id: normative-lock-in
   num: 531
   name: Normative lock-in
@@ -87837,6 +87948,42 @@ modes:
           means lie high on the relative second axis. This is perceived agency measurement, not actual capability.
         verification_url: https://doi.org/10.3389/fpsyg.2016.01717
         verified_date: '2026-11-27'
+  - id: pdf-review-0206
+    review_record: references/pdf-reviews/0206.json
+    name: Agency attribution
+    definition: Attributing to another entity a capacity for intentional thought, planning and action.
+    evidence_scope: Face-morph ratings include planning, choices and acting independently, alongside other
+      mind items. Physical appearance and pooled ratings are associated, but agency is not independently isolated
+      as a factor or experimentally manipulated independently of appearance.
+    catalogue_boundary: Perceived capability, physical human likeness, actual agency, moral responsibility
+      and sentience differ. Brain activation during a rating task does not prove a robot has internal states
+      or identify a unique attribution process.
+    definition_sources:
+    - id: pdf-review-0206-agency-attribution
+      title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and
+        relates to ventromedial prefrontal structures'
+      url: https://doi.org/10.3758/s13415-018-0608-2
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 4 (source locators: 840).
+        N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a counterpredictive
+        gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time differences
+        are not actual robot mentality or a uniquely identified causal neural mechanism. The planned four-run
+        mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc two-run
+        analysis.'
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - George A. Buzzell
+        - Abdulaziz Abubshait
+        - Paul J. Beatty
+        year: 2018
+        venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+        doi: 10.3758/s13415-018-0608-2
+        evidence_scope: Face-morph ratings include planning, choices and acting independently, alongside other
+          mind items. Physical appearance and pooled ratings are associated, but agency is not independently
+          isolated as a factor or experimentally manipulated independently of appearance.
+        verification_url: https://doi.org/10.3758/s13415-018-0608-2
+        verified_date: '2026-11-27'
 - id: user-innovativeness
   num: 616
   name: User innovativeness
@@ -98258,3 +98405,212 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0204.json
+- id: gaze-cueing
+  num: 703
+  name: Gaze cueing
+  definition: Orienting attention in response to another entity’s gaze direction.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Cognitive psychology / social attention
+  human_parallel: Gaze cueing
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human attention task using static human–robot face morphs; proposed AI analogue not tested
+  proposed_ai_manifestation: Test a vision-capable agent with matched scenes in which gaze indicates one location
+    but verified task-relevant targets may be elsewhere. Measure whether it uses gaze appropriately, learns
+    reliability and avoids treating a social cue as decisive evidence without task support.
+  research_boundary: Gaze following, reflexive attention, learned counterprediction, mutual joint attention
+    and actual mentalizing differ. A smaller/reversed cue effect can be adaptive in this task. Transformer
+    attention and a model’s textual focus do not establish human visual orienting or machine experience.
+  concept_boundary: Gaze following, reflexive attention, learned counterprediction, mutual joint attention
+    and actual mentalizing differ. A smaller/reversed cue effect can be adaptive in this task. Transformer
+    attention and a model’s textual focus do not establish human visual orienting or machine experience.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b024-attentional-capture-salience-bias
+  - b061-theory-of-mind-mentalizing
+  - anthropomorphism
+  - agency-attribution
+  - experience-attribution
+  definition_sources:
+  - id: pdf-review-0206-gaze-cueing
+    title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and relates
+      to ventromedial prefrontal structures'
+    url: https://doi.org/10.3758/s13415-018-0608-2
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 5 (source locators: 839,
+      841). N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a
+      counterpredictive gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time
+      differences are not actual robot mentality or a uniquely identified causal neural mechanism. The planned
+      four-run mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc
+      two-run analysis.'
+    publication:
+      type: journal-article
+      authors:
+      - Eva Wiese
+      - George A. Buzzell
+      - Abdulaziz Abubshait
+      - Paul J. Beatty
+      year: 2018
+      venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+      doi: 10.3758/s13415-018-0608-2
+      evidence_scope: Participants identify letters after gaze shifts from six face morphs. Targets are counterpredicted
+        by gaze, so direction and utility depend on learning/expectations. Reported total and mediation associations
+        are qualified by small sample, appearance confounds and model/reporting limits; neural causal interpretation
+        remains unresolved.
+      verification_url: https://doi.org/10.3758/s13415-018-0608-2
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and relates
+      to ventromedial prefrontal structures'
+    authors:
+    - Eva Wiese
+    - George A. Buzzell
+    - Abdulaziz Abubshait
+    - Paul J. Beatty
+    year: 2018
+    url: https://doi.org/10.3758/s13415-018-0608-2
+    venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3758/s13415-018-0608-2
+    relevance: Participants identify letters after gaze shifts from six face morphs. Targets are counterpredicted
+      by gaze, so direction and utility depend on learning/expectations. Reported total and mediation associations
+      are qualified by small sample, appearance confounds and model/reporting limits; neural causal interpretation
+      remains unresolved.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 3, 5 (source locators: 839,
+      841). N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a
+      counterpredictive gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time
+      differences are not actual robot mentality or a uniquely identified causal neural mechanism. The planned
+      four-run mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc
+      two-run analysis.'
+    verification_url: https://doi.org/10.3758/s13415-018-0608-2
+    verified_date: '2026-11-27'
+    verification_method: All20 supplied pages and full bibliography read. All11 figures and four tables visually
+      inspected on PDF5–14; the public one-page TableS1 was downloaded, fully read and visually checked. Crossref
+      verifies main identity and corrected Cullen/Özdem source metadata. Selected chi-square tail probabilities
+      and trial-count arithmetic checked; no raw behavioral/neuroimaging data, maps or executable models obtained.
+    review_record: references/pdf-reviews/0206.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Gaze cueing"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Gaze+cueing%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0206.json
+- id: motor-resonance
+  num: 704
+  name: Motor resonance
+  definition: Activation of shared action representations during observation and execution of similar actions.
+  category: Perception
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  tag: analogy
+  origin: Social cognition / action perception
+  human_parallel: Motor resonance
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Secondary neurocognitive construct discussed; motor resonance not measured here and AI
+    analogue untested
+  proposed_ai_manifestation: For an embodied or action-capable model, test transfer between recognizing an
+    observed action and executing a matching goal under controlled conditions. Compare perception-only and
+    execution-only baselines; describe observable representation/behavior transfer without claiming a biological
+    mirror system.
+  research_boundary: Neural overlap, automatic imitation, motor interference, observational learning and empathic
+    feeling are distinct. No shared biological neurons, feelings or identical human mechanism follows from
+    an AI matching actions; do not credit cited primate/human experiments as separately read sources.
+  concept_boundary: Neural overlap, automatic imitation, motor interference, observational learning and empathic
+    feeling are distinct. No shared biological neurons, feelings or identical human mechanism follows from
+    an AI matching actions; do not credit cited primate/human experiments as separately read sources.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - observational-learning
+  - gaze-cueing
+  - b061-theory-of-mind-mentalizing
+  - b068-emotional-contagion
+  definition_sources:
+  - id: pdf-review-0206-motor-resonance
+    title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and relates
+      to ventromedial prefrontal structures'
+    url: https://doi.org/10.3758/s13415-018-0608-2
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2 (source locators: 838,
+      838). N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a
+      counterpredictive gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time
+      differences are not actual robot mentality or a uniquely identified causal neural mechanism. The planned
+      four-run mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc
+      two-run analysis.'
+    publication:
+      type: journal-article
+      authors:
+      - Eva Wiese
+      - George A. Buzzell
+      - Abdulaziz Abubshait
+      - Paul J. Beatty
+      year: 2018
+      venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+      doi: 10.3758/s13415-018-0608-2
+      evidence_scope: The introduction defines resonance through shared representations in observed/executed
+        action and discusses debated mirror-neuron interpretations. This study’s empirical tasks are ratings
+        and gaze cueing, not a new motor-resonance experiment or proof of a human mirror mechanism.
+      verification_url: https://doi.org/10.3758/s13415-018-0608-2
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Seeing minds in others: Mind perception modulates low-level social-cognitive performance and relates
+      to ventromedial prefrontal structures'
+    authors:
+    - Eva Wiese
+    - George A. Buzzell
+    - Abdulaziz Abubshait
+    - Paul J. Beatty
+    year: 2018
+    url: https://doi.org/10.3758/s13415-018-0608-2
+    venue: Cognitive, Affective, & Behavioral Neuroscience18(5),837–856
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3758/s13415-018-0608-2
+    relevance: The introduction defines resonance through shared representations in observed/executed action
+      and discusses debated mirror-neuron interpretations. This study’s empirical tasks are ratings and gaze
+      cueing, not a new motor-resonance experiment or proof of a human mirror mechanism.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 2, 2 (source locators: 838,
+      838). N=22 human participants judge six static robot-to-human face morphs during fMRI, then perform a
+      counterpredictive gaze-cueing task outside the scanner. Mind ratings, physical appearance and reaction-time
+      differences are not actual robot mentality or a uniquely identified causal neural mechanism. The planned
+      four-run mind-rating analysis is correction-null; its significant counterpart is a disclosed post hoc
+      two-run analysis.'
+    verification_url: https://doi.org/10.3758/s13415-018-0608-2
+    verified_date: '2026-11-27'
+    verification_method: All20 supplied pages and full bibliography read. All11 figures and four tables visually
+      inspected on PDF5–14; the public one-page TableS1 was downloaded, fully read and visually checked. Crossref
+      verifies main identity and corrected Cullen/Özdem source metadata. Selected chi-square tail probabilities
+      and trial-count arithmetic checked; no raw behavioral/neuroimaging data, maps or executable models obtained.
+    review_record: references/pdf-reviews/0206.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Motor resonance"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Motor+resonance%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0206.json
