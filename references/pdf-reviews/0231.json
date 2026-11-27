@@ -1,0 +1,293 @@
+{
+  "sequence": 231,
+  "source": {
+    "file_name": "S2561_Wiese_2022.pdf",
+    "source_id": "S2561",
+    "sha256": "257a699f5297cc05f6f00619f4ada7de5af59c1ccf03b41f715cbe926cd640bb",
+    "pdf_pages": 8,
+    "printed_pages": "141–148",
+    "version_note": "First published online 26 March 2021; International Journal of Social Robotics 14(1), 141–148, January 2022. The 2022 issue citation and supplied filename are valid despite the 2021 DOI/online date.",
+    "verification_url": "https://doi.org/10.1007/s12369-021-00771-z",
+    "verification_method": "All eight supplied pages, two figures and twenty bibliography entries read. Full public 3544-byte R analysis script and 561-byte stimulus readme read as text; four emotional/emotionless robot image variants and one arithmetic stimulus visually inspected. Publisher/Crossref verify identity and online/issue dates. No binary analysis object, participant data or original code execution."
+  },
+  "citation": {
+    "title": "It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception",
+    "authors": [
+      "Eva Wiese",
+      "Patrick P. Weis",
+      "Yochanan Bigman",
+      "Kyra Kapsaskis",
+      "Kurt Gray"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1007/s12369-021-00771-z",
+    "venue": "International Journal of Social Robotics 14(1), 141–148",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_scope_note": "An online repeated-trial task studies people’s choices to answer themselves or delegate to pictured, explicitly described robot agents. Equal robot accuracy and different emotional-capacity descriptions concern human perceptions and selection, not actual robot feelings or deployed workplace collaboration.",
+    "access_limits": [
+      "All main text, both main figures and complete bibliography read. Public OSF analysis script was read in full but not executed; its six binary R data dependencies and unprovided preprocessing were not examined.",
+      "The complete stimulus readme and four high/low robot labels were read. One of the arithmetic images was inspected as an example, not the complete image set. Main Figure 1 shows the eye-region task interface; the full underlying face/eye stimulus set, instruction implementation and linked YouTube demonstration were not read or viewed.",
+      "No participant raw data or serialized R object downloaded, no original experiment run, no numeric model reproduction or pair-order authentication. No preregistration was obtained and absence of a linked registration does not establish that none exists.",
+      "Prior person-job-fit books, gender-bias experiments, offloading theories and original mind-perception studies cited in the bibliography were not independently read in full for this review. Source metadata or a quotation does not confer full-paper credit."
+    ]
+  },
+  "study": {
+    "sample": "157 MTurk recruits, 143 completions, one duration exclusion over 45 minutes, leaving 142 participants: 69 female, mean age 35.3, range 18–68. English fluency required; five not native English speakers. $2 compensation; participants used their own devices. Noncompletion, exclusion and final sample are distinct counts.",
+    "design": "Within-person arithmetic dot-difference and social eye-region emotion-label tasks, 36 trials each. Two pictured robots are described as autonomous and equally successful at both tasks; one can experience complex emotional states, the other cannot. Robot names/images and capacity descriptions are counterbalanced. The exact allocation/randomization implementation is not supplied.",
+    "interface": "Four self-answer alternatives plus two robot choices appear on each normal trial. The stimulus disappears after five seconds, while response can follow. Six trials per task force choosing one of the robots and are excluded from the primary 30-per-task voluntary-offloading analysis. These are task-allocation choices rather than advice weighting after seeing an agent answer.",
+    "instruction_checks": "Participants repeat capacity/autonomy comprehension questions until correct. Explicit emotional/emotionless labels remain on pictured agents. Remembering or using the supplied label is not independent evidence of a stable belief that a robot feels emotions, nor a validated unconscious association test.",
+    "robot_performance": "The paper states that both agents answer both task types at 67% accuracy. There is no real robot body interacting with participants or demonstrated independent robot emotion experience. Equal instructed performance does not ensure participants believe the instruction, and source labels can guide task choices without endorsing literal sentience.",
+    "offloading": "Voluntary offloading averages 67%, with arithmetic 77% (SD 30%) versus social 57% (SD 32%), paired t(141) 8.2, p < .0001. Greater arithmetic offloading accompanies lower self-rated ability and lower self-answer accuracy; the paper does not report an individual-level mediation or causal manipulation of subjective workload.",
+    "accuracy": "Self-answer social accuracy is 74% (SD 23%) versus arithmetic 46% (SD 30%), paired t(80) 8.3. The degrees of freedom correspond to 81 paired cases, not the full 142; the missingness/zero-self-answer handling is not explained in the paper. Self-selected answered trials and offloaded trials differ, so this aggregate contrast does not prove that every social delegation was irrational or reduced accuracy.",
+    "preference": "Emotional-minus-emotionless choice-count differences average +14.7 social and −12.8 arithmetic, with formal within-person task contrast t(141) 15.2, p < .0001. Forced-choice trials also show a task-dependent contrast, t(141) 18.3. These are real repeated-measure contrasts, not an inference from one significant subgroup and another nonsignificant one.",
+    "proficiency": "Pre-task self ratings favor social performance, 68.8 versus arithmetic 39.0. Robot ratings favor the emotional robot for social, 75.2 versus 59.6, difference test t(141) 5.4. Arithmetic ratings are 76.3 emotional versus 79.6 emotionless, with p .068. The task difference in rating contrasts is directly tested, t(141) 5.2. A nonsignificant arithmetic contrast does not establish equal perceived proficiency.",
+    "score_conventions": "Choice preference is an absolute count difference within 30 available normal trials, bounded −30 to +30; it is not a percentage conditional on choosing a robot. Offloading frequency differs by task and can affect available choice counts. Rating differences are separately bounded −100 to +100. Neither measure directly quantifies a latent unconscious stereotype.",
+    "code": "The public script reads six precomputed R objects and runs paired t tests for task contrasts plus one-sample tests of proficiency differences. There is no explicit regression of choice on perceived fit or causal mediation model. It assumes corresponding vector order for paired tests; preprocessing and binary inputs were not obtained, so this assumption was not verified or alleged wrong.",
+    "scope": "The results are consistent with perceived agent–task matching, including task-specific preferences despite equal stated performance. No human employee comparison, randomized gender manipulation, general workplace-effectiveness endpoint or demonstrated intervention identifies a universal gender-like bias or necessity for emotional robot design."
+  },
+  "summary": "Add perceived agent–task fit as a distinct matching judgment. Enrich cognitive offloading with observed delegation behavior and keep perceived affective capacity separate from actual emotional experience. Preserve the formal task contrasts while qualifying equivalence, unconscious-bias and optimality claims.",
+  "findings": [
+    {
+      "term": "Perceived agent–task fit",
+      "decision": "new-entry",
+      "id": "perceived-agent-task-fit",
+      "category": "Social",
+      "definition": "Judging how well an agent’s perceived capabilities match the demands of a particular task.",
+      "origin": "Industrial and organizational psychology / human–robot interaction",
+      "novelty_rationale": "Matching an agent’s capabilities to a particular task differs from global trust, agency or experience attribution and from the act of cognitive offloading. Existing entries do not capture this relational task-specific appraisal. The source calls the robot application robot-job fit or robot-task fit.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "141",
+          "quote": "tasks to robots are shaped by the perceived fit between the"
+        }
+      ],
+      "evidence_scope": "Participants choose between pictured robots with different emotional-capacity descriptions for arithmetic and eye-region labeling tasks. Formal paired task contrasts show differing agent preferences and perceived proficiency. Perceived fit is inferred from that pattern rather than independently measured as a mediator.",
+      "boundary": "A task-specific match can be warranted by real capability evidence and is not inherently a bias. Labels, friendliness or apparent emotion are not validated performance. Equal stated accuracy does not establish equal perceived ability; choosing an emotion-labeling agent does not establish belief that it feels. Do not generalize this pattern into gender stereotypes or a universal design requirement.",
+      "ai_evidence_status": "Human allocation choices among described robot agents in an online task; no model-internal matching mechanism or workplace benefit established",
+      "ai_proposal": "Select an AI agent or tool using demonstrated capabilities, task requirements and constraints. Test whether irrelevant social descriptions change allocation when capability evidence is held constant, and distinguish justified specialization from stereotype-driven exclusion.",
+      "relates_to": [
+        "cognitive-offloading",
+        "performance-trust",
+        "experience-attribution",
+        "agency-attribution"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Cognitive offloading",
+      "decision": "enrich-existing",
+      "target_id": "cognitive-offloading",
+      "definition": "Using external tools or representations to reduce the cognitive demands of a task.",
+      "novelty_rationale": "Retain the existing process or attribution and add this study’s operational limits rather than rename it.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "143",
+          "quote": "offload decision making onto one of two robot agents"
+        }
+      ],
+      "evidence_scope": "Participants can answer themselves or assign a response to one of two pictured robots. Voluntary offloading is more frequent for the harder arithmetic task. Twelve forced-choice trials are separate from the main 60 voluntary trials.",
+      "boundary": "Task delegation is observed, but reduced subjective workload, impaired reasoning, calibrated reliance or irrationality is not automatically established. Self-answer accuracy comes from selected trials and a smaller paired subset; cognitive effort and utility were not independently identified."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Retain the existing process or attribution and add this study’s operational limits rather than rename it.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "143",
+          "quote": "capable of experiencing com-"
+        }
+      ],
+      "evidence_scope": "One agent is explicitly described and labeled as able to experience complex emotional states. Task choices and proficiency judgments respond to the stated emotional-capacity distinction, with matched reported robot accuracy.",
+      "boundary": "The description is a manipulation, not proof of genuine robot experience. Emotion recognition, being labeled emotional, endorsing literal feelings and choosing a task delegate differ. A remembered instruction and overt selection are not a validated unconscious mind-perception test."
+    },
+    {
+      "term": "Performance trust",
+      "decision": "enrich-existing",
+      "target_id": "performance-trust",
+      "definition": "Expecting an agent or system to perform competently and reliably in a relevant task.",
+      "novelty_rationale": "Retain the existing process or attribution and add this study’s operational limits rather than rename it.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "146",
+          "quote": "trusted to make a correct decision"
+        }
+      ],
+      "evidence_scope": "Delegating an answer and rating an agent’s expected proficiency are related to trust in performance, but task-specific choice and rating contrasts do not coincide perfectly.",
+      "boundary": "No independent trust scale or causal fit-to-trust model is reported. Delegation can reflect convenience, instructions or difficulty, and a nonsignificant ability contrast is not evidence of equal trust.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Implicit bias",
+      "decision": "enrich-existing",
+      "target_id": "implicit-bias",
+      "definition": "Producing outputs systematically skewed along social lines (gender, race, age, disability) from stereotyped associations absorbed in training, without intending to.",
+      "novelty_rationale": "Retain the existing process or attribution and add this study’s operational limits rather than rename it.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "147",
+          "quote": "implicit biases, similar to gen-"
+        }
+      ],
+      "evidence_scope": "The discussion interprets arithmetic agent choices as analogous to human employment biases. No human gender category, training-data stereotype or validated implicit-association measure is manipulated or measured.",
+      "boundary": "Boundary-only comparison. This human selection experiment is not empirical evidence of a generative model’s socially skewed output or proof of an unconscious motive. The narrower observed task-fit judgment receives its own entry.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "public_code_check": {
+    "url": "https://osf.io/download/95rh4/",
+    "bytes": 3544,
+    "sha256": "202dec73b24c30b0b285368092aec611ff86ac7b084e823f1e8ca83bc5e45758",
+    "scope": "Complete R script read as text, not executed. Six serialized input objects and their preprocessing not obtained. Code specifies paired task contrasts and one-sample rating tests; no explicit fit-prediction regression or mediation model."
+  },
+  "public_material_checks": {
+    "project_url": "https://osf.io/9y47n/",
+    "readme": {
+      "url": "https://osf.io/download/e93d7/",
+      "bytes": 561,
+      "sha256": "ad5b169f118ac8c1ec9797bdc740fa13d7894d0969232edb711fc0deb044c73c",
+      "scope": "Complete text read; identifies robot image provenance. No permission request or creator contact made because images were inspected, not republished."
+    },
+    "images": [
+      {
+        "url": "https://osf.io/download/3pgsd/",
+        "sha256": "3c9344739a128dd7547eaa144e34c83026ee846a290b66a3a7ba3c1461c4f48a",
+        "scope": "R-Tec 1 autonomous/emotional label visually inspected."
+      },
+      {
+        "url": "https://osf.io/download/prg69/",
+        "sha256": "bfe6dfe60939d7d629df452c0f68d1222c9a08b4681ad25e928bc074288cca08",
+        "scope": "R-Tec 1 autonomous/emotionless variant visually inspected."
+      },
+      {
+        "url": "https://osf.io/download/jdzac/",
+        "sha256": "f5377fb5a8e12911307d48a12afa5623a51b0e3235432706fce73ac40fbc9eca",
+        "scope": "TRF/20 autonomous/emotional label visually inspected."
+      },
+      {
+        "url": "https://osf.io/download/yhpu6/",
+        "sha256": "f74ab61b5e06272930b2d2ab10dd3703502ecdbfc878e6b44cc532e28c1d06d5",
+        "scope": "TRF/20 autonomous/emotionless variant visually inspected."
+      },
+      {
+        "url": "https://osf.io/download/tmkjg/",
+        "sha256": "fe6969a6fe9c89b524f581e3ac51097ea50f291010c566f224d5bb0e08e2fa51",
+        "scope": "One black/gray dot stimulus visually inspected; not the entire task set."
+      }
+    ]
+  },
+  "source_corrections": [
+    {
+      "location": "PDF 3, robot description",
+      "reported": "The robot capable of complex emotional states is parenthetically called low experience.",
+      "correction": "Use high experience for that emotional-capacity condition; retain low experience for the incapable/emotionless condition. The surrounding design and four public image labels support this local correction.",
+      "verification_url": "https://doi.org/10.1007/s12369-021-00771-z",
+      "scope": "Verified condition-label typo, not evidence that either robot feels."
+    },
+    {
+      "location": "PDF 6, arithmetic rating contrast",
+      "reported": "Emotional-minus-emotionless proficiency difference is printed as positive 3.2.",
+      "correction": "Under the defined emotional-minus-emotionless convention, arithmetic ratings 76.3 versus 79.6 yield a negative contrast. Preserve uncertainty about the exact unrounded magnitude and do not invent a new t statistic. The plotted mean is also on the negative side.",
+      "verification_url": "https://doi.org/10.1007/s12369-021-00771-z",
+      "scope": "Verified direction from stated means, score convention and Figure 2c."
+    },
+    {
+      "location": "PDF 6–7, equality interpretation",
+      "reported": "Robots are said to be perceived as equally proficient on arithmetic because p .068.",
+      "correction": "State that the arithmetic rating contrast did not reach the selected significance threshold. No equivalence margin, equivalence test or sufficiently narrow interval is reported to establish equality.",
+      "verification_url": "https://doi.org/10.1007/s12369-021-00771-z",
+      "scope": "Statistical interpretation correction without altering reported estimates."
+    },
+    {
+      "location": "PDF 1, abstract prediction wording",
+      "reported": "Collaboration is said to be predicted by perceived robot-task fit.",
+      "correction": "Describe the reported task-specific choice and rating contrasts as consistent with a fit account. The paper and complete public script do not report an explicit participant-level fit-predictor model or causal mediation analysis.",
+      "verification_url": "https://osf.io/download/95rh4/",
+      "scope": "Clarify the reported analysis; not proof that an unshared analysis never existed."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "PDF 5, accuracy analysis denominator",
+      "finding": "The paired accuracy test has df 80 while the main sample is 142. Participants who never answer themselves may have undefined accuracy, but the paper and analysis script do not explain the 81-case subset or show preprocessing. Do not recast it as 142-person performance or infer a specific exclusion rule."
+    },
+    {
+      "location": "Pre/post ratings and binary inputs",
+      "finding": "The paper emphasizes pre-task proficiency. Some public script calls use precomputed rating objects without a visible time filter; other calls explicitly select pre. Missing preprocessing prevents determining what each serialized object includes. Do not allege post/pre mixing or silently assert it is ruled out."
+    },
+    {
+      "location": "Paired-vector alignment",
+      "finding": "The script passes separately subsetted vectors into paired tests. Correctness depends on matching participant order, but the binary objects and preparation code were not inspected. This is an unverified assumption, not a demonstrated pairing error."
+    }
+  ],
+  "methodological_limits": [
+    "The study observes online task allocation to pictured agents, not physical teamwork, real robot autonomy or the feelings attributed by the instruction. Explicit labels and repeated comprehension checks encourage use of the supplied description.",
+    "Task type changes stimulus domain, difficulty and expected skill together. The five-second display limit is common but does not equate cognitive demands. Greater arithmetic offloading is not a clean causal workload experiment.",
+    "Real formal within-person task contrasts are reported. Equality of perceived arithmetic capability is not established by p .068, and overt choice is not a process-pure measure of unconscious bias.",
+    "Self-selected answered trials and the 81-case accuracy subset cannot determine the benefit or irrationality of every delegation. No trial-level optimal policy, confidence model or cost-sensitive utility analysis is supplied.",
+    "Choice-count differences, conditional robot preference, expected proficiency, actual accuracy, trust and subjective emotional experience are distinct measures. They must not share an undifferentiated effect label.",
+    "Counterbalancing reduces robot-identity confounding, but the exact randomization, trial schedules and prepared data objects were not independently verified. Full script inspection is not computational replication.",
+    "The analogy to gender-biased hiring is conceptual here; no human employee or gender manipulation establishes that mechanism. A truthful emotional-capacity description is not proof that designing a more emotional appearance improves effective collaboration.",
+    "One new matching judgment, not an independent replication for every cited theory. No automatic ethical violation or harm relation follows from a potentially appropriate task-specific preference."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0226.json",
+      "finding": "Attributed experience, actual experience and task-specific inference differ. A method that asks for one kind of judgment cannot establish a universal architecture of mind attribution."
+    },
+    {
+      "related_review": "references/pdf-reviews/0228.json",
+      "finding": "Introspective capability ratings and task allocation can be measured separately. Preserve formal interaction/contrast evidence while avoiding unsupported causal mechanisms."
+    },
+    {
+      "related_review": "references/pdf-reviews/0230.json",
+      "finding": "Humanlike or emotional labels can shape expectations, but a conditional choice does not identify a unique mediator. Nonsignificant ratings do not prove equivalence."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Emotionality–competence tradeoff as another universal behavior",
+      "reason": "The narrow task-allocation pattern is covered by perceived agent–task fit. A universal inverse emotional/computational ability belief is not established, especially with a nonsignificant arithmetic rating contrast."
+    },
+    {
+      "term": "Unconscious gender bias in robot employment",
+      "reason": "No gender comparison or validated unconscious-process measure was collected. Overt choices under explicit emotion labels are not sufficient evidence."
+    }
+  ],
+  "limitations": [
+    "One new entry, with stable IDs and existing categories preserved. No invented yearly totals, forced citation quota, automatic ethical/harm edges or full-paper Markdown transcription."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "perceived-agent-task-fit"
+    ],
+    "enriched": [
+      "cognitive-offloading",
+      "experience-attribution",
+      "performance-trust",
+      "implicit-bias"
+    ]
+  }
+}

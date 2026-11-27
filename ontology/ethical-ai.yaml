@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 727
+  mode_count: 728
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 727
+    numbered_entries: 728
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0230.json
+    latest_review: references/pdf-reviews/0231.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -20938,6 +20938,42 @@ modes:
           multiple-choice word judgments and no reaction-time measurement. It prepares future stimuli rather
           than measuring unconscious associations or social-group output disparities.
         verification_url: https://doi.org/10.1145/3568162.3577001
+        verified_date: '2026-11-27'
+  - id: pdf-review-0231
+    review_record: references/pdf-reviews/0231.json
+    name: Implicit bias
+    definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
+      from stereotyped associations absorbed in training, without intending to.
+    evidence_scope: The discussion interprets arithmetic agent choices as analogous to human employment biases.
+      No human gender category, training-data stereotype or validated implicit-association measure is manipulated
+      or measured.
+    catalogue_boundary: Boundary-only comparison. This human selection experiment is not empirical evidence
+      of a generative model’s socially skewed output or proof of an unconscious motive. The narrower observed
+      task-fit judgment receives its own entry.
+    definition_sources:
+    - id: pdf-review-0231-implicit-bias
+      title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+      url: https://doi.org/10.1007/s12369-021-00771-z
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 7 (source locators: 147).
+        An online repeated-trial task studies people’s choices to answer themselves or delegate to pictured,
+        explicitly described robot agents. Equal robot accuracy and different emotional-capacity descriptions
+        concern human perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - Patrick P. Weis
+        - Yochanan Bigman
+        - Kyra Kapsaskis
+        - Kurt Gray
+        year: 2022
+        venue: International Journal of Social Robotics 14(1), 141–148
+        doi: 10.1007/s12369-021-00771-z
+        evidence_scope: The discussion interprets arithmetic agent choices as analogous to human employment
+          biases. No human gender category, training-data stereotype or validated implicit-association measure
+          is manipulated or measured.
+        verification_url: https://doi.org/10.1007/s12369-021-00771-z
         verified_date: '2026-11-27'
 - id: illusion-of-control
   name: Illusion of control
@@ -65720,6 +65756,33 @@ modes:
       Crossref primary deposit confirms title, fiveauthors, volume186 and2027-01printissue; online-publicationdate
       absent.
     review_record: references/pdf-reviews/0054.json
+  - title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+    authors:
+    - Eva Wiese
+    - Patrick P. Weis
+    - Yochanan Bigman
+    - Kyra Kapsaskis
+    - Kurt Gray
+    year: 2022
+    url: https://doi.org/10.1007/s12369-021-00771-z
+    venue: International Journal of Social Robotics 14(1), 141–148
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12369-021-00771-z
+    relevance: Participants can answer themselves or assign a response to one of two pictured robots. Voluntary
+      offloading is more frequent for the harder arithmetic task. Twelve forced-choice trials are separate
+      from the main 60 voluntary trials.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3 (source locators: 143). An
+      online repeated-trial task studies people’s choices to answer themselves or delegate to pictured, explicitly
+      described robot agents. Equal robot accuracy and different emotional-capacity descriptions concern human
+      perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+    verification_url: https://doi.org/10.1007/s12369-021-00771-z
+    verified_date: '2026-11-27'
+    verification_method: All eight supplied pages, two figures and twenty bibliography entries read. Full public
+      3544-byte R analysis script and 561-byte stimulus readme read as text; four emotional/emotionless robot
+      image variants and one arithmetic stimulus visually inspected. Publisher/Crossref verify identity and
+      online/issue dates. No binary analysis object, participant data or original code execution.
+    review_record: references/pdf-reviews/0231.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -65733,6 +65796,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0054.json
+  research_notes:
+  - id: pdf-review-0231
+    review_record: references/pdf-reviews/0231.json
+    name: Cognitive offloading
+    definition: Using external tools or representations to reduce the cognitive demands of a task.
+    evidence_scope: Participants can answer themselves or assign a response to one of two pictured robots.
+      Voluntary offloading is more frequent for the harder arithmetic task. Twelve forced-choice trials are
+      separate from the main 60 voluntary trials.
+    catalogue_boundary: Task delegation is observed, but reduced subjective workload, impaired reasoning, calibrated
+      reliance or irrationality is not automatically established. Self-answer accuracy comes from selected
+      trials and a smaller paired subset; cognitive effort and utility were not independently identified.
+    definition_sources:
+    - id: pdf-review-0231-cognitive-offloading
+      title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+      url: https://doi.org/10.1007/s12369-021-00771-z
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3 (source locators: 143).
+        An online repeated-trial task studies people’s choices to answer themselves or delegate to pictured,
+        explicitly described robot agents. Equal robot accuracy and different emotional-capacity descriptions
+        concern human perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - Patrick P. Weis
+        - Yochanan Bigman
+        - Kyra Kapsaskis
+        - Kurt Gray
+        year: 2022
+        venue: International Journal of Social Robotics 14(1), 141–148
+        doi: 10.1007/s12369-021-00771-z
+        evidence_scope: Participants can answer themselves or assign a response to one of two pictured robots.
+          Voluntary offloading is more frequent for the harder arithmetic task. Twelve forced-choice trials
+          are separate from the main 60 voluntary trials.
+        verification_url: https://doi.org/10.1007/s12369-021-00771-z
+        verified_date: '2026-11-27'
 - id: burden-bias
   num: 480
   name: Burden bias
@@ -76575,6 +76673,41 @@ modes:
           tasks,while aggregate character comparison returns an experience-like dimension. Some robotic perceptual
           capacities are endorsed despite low bodily/social-affective ratings.
         verification_url: https://doi.org/10.1073/pnas.1704347114
+        verified_date: '2026-11-27'
+  - id: pdf-review-0231
+    review_record: references/pdf-reviews/0231.json
+    name: Experience attribution
+    definition: Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure,
+      pain, fear or joy.
+    evidence_scope: One agent is explicitly described and labeled as able to experience complex emotional states.
+      Task choices and proficiency judgments respond to the stated emotional-capacity distinction, with matched
+      reported robot accuracy.
+    catalogue_boundary: The description is a manipulation, not proof of genuine robot experience. Emotion recognition,
+      being labeled emotional, endorsing literal feelings and choosing a task delegate differ. A remembered
+      instruction and overt selection are not a validated unconscious mind-perception test.
+    definition_sources:
+    - id: pdf-review-0231-experience-attribution
+      title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+      url: https://doi.org/10.1007/s12369-021-00771-z
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 3 (source locators: 143).
+        An online repeated-trial task studies people’s choices to answer themselves or delegate to pictured,
+        explicitly described robot agents. Equal robot accuracy and different emotional-capacity descriptions
+        concern human perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - Patrick P. Weis
+        - Yochanan Bigman
+        - Kyra Kapsaskis
+        - Kurt Gray
+        year: 2022
+        venue: International Journal of Social Robotics 14(1), 141–148
+        doi: 10.1007/s12369-021-00771-z
+        evidence_scope: One agent is explicitly described and labeled as able to experience complex emotional
+          states. Task choices and proficiency judgments respond to the stated emotional-capacity distinction,
+          with matched reported robot accuracy.
+        verification_url: https://doi.org/10.1007/s12369-021-00771-z
         verified_date: '2026-11-27'
 - id: normative-lock-in
   num: 531
@@ -88782,6 +88915,39 @@ modes:
           investigate or suspend. General AI positivity sometimes predicts trust more clearly than action;
           the source does not validate actual classifier reliability.
         verification_url: https://doi.org/10.1111/bjso.12908
+        verified_date: '2026-11-27'
+  - id: pdf-review-0231
+    review_record: references/pdf-reviews/0231.json
+    name: Performance trust
+    definition: Expecting an agent or system to perform competently and reliably in a relevant task.
+    evidence_scope: Delegating an answer and rating an agent’s expected proficiency are related to trust in
+      performance, but task-specific choice and rating contrasts do not coincide perfectly.
+    catalogue_boundary: No independent trust scale or causal fit-to-trust model is reported. Delegation can
+      reflect convenience, instructions or difficulty, and a nonsignificant ability contrast is not evidence
+      of equal trust.
+    definition_sources:
+    - id: pdf-review-0231-performance-trust
+      title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+      url: https://doi.org/10.1007/s12369-021-00771-z
+      consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 6 (source locators: 146).
+        An online repeated-trial task studies people’s choices to answer themselves or delegate to pictured,
+        explicitly described robot agents. Equal robot accuracy and different emotional-capacity descriptions
+        concern human perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Eva Wiese
+        - Patrick P. Weis
+        - Yochanan Bigman
+        - Kyra Kapsaskis
+        - Kurt Gray
+        year: 2022
+        venue: International Journal of Social Robotics 14(1), 141–148
+        doi: 10.1007/s12369-021-00771-z
+        evidence_scope: Delegating an answer and rating an agent’s expected proficiency are related to trust
+          in performance, but task-specific choice and rating contrasts do not coincide perfectly.
+        verification_url: https://doi.org/10.1007/s12369-021-00771-z
         verified_date: '2026-11-27'
 - id: animism
   num: 606
@@ -105266,3 +105432,106 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0229.json
+- id: perceived-agent-task-fit
+  num: 728
+  name: Perceived agent–task fit
+  definition: Judging how well an agent’s perceived capabilities match the demands of a particular task.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Industrial and organizational psychology / human–robot interaction
+  human_parallel: Perceived agent–task fit
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human allocation choices among described robot agents in an online task; no model-internal
+    matching mechanism or workplace benefit established
+  proposed_ai_manifestation: Select an AI agent or tool using demonstrated capabilities, task requirements
+    and constraints. Test whether irrelevant social descriptions change allocation when capability evidence
+    is held constant, and distinguish justified specialization from stereotype-driven exclusion.
+  research_boundary: A task-specific match can be warranted by real capability evidence and is not inherently
+    a bias. Labels, friendliness or apparent emotion are not validated performance. Equal stated accuracy does
+    not establish equal perceived ability; choosing an emotion-labeling agent does not establish belief that
+    it feels. Do not generalize this pattern into gender stereotypes or a universal design requirement.
+  concept_boundary: A task-specific match can be warranted by real capability evidence and is not inherently
+    a bias. Labels, friendliness or apparent emotion are not validated performance. Equal stated accuracy does
+    not establish equal perceived ability; choosing an emotion-labeling agent does not establish belief that
+    it feels. Do not generalize this pattern into gender stereotypes or a universal design requirement.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - cognitive-offloading
+  - performance-trust
+  - experience-attribution
+  - agency-attribution
+  definition_sources:
+  - id: pdf-review-0231-perceived-agent-task-fit
+    title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+    url: https://doi.org/10.1007/s12369-021-00771-z
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 1 (source locators: 141). An
+      online repeated-trial task studies people’s choices to answer themselves or delegate to pictured, explicitly
+      described robot agents. Equal robot accuracy and different emotional-capacity descriptions concern human
+      perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+    publication:
+      type: journal-article
+      authors:
+      - Eva Wiese
+      - Patrick P. Weis
+      - Yochanan Bigman
+      - Kyra Kapsaskis
+      - Kurt Gray
+      year: 2022
+      venue: International Journal of Social Robotics 14(1), 141–148
+      doi: 10.1007/s12369-021-00771-z
+      evidence_scope: Participants choose between pictured robots with different emotional-capacity descriptions
+        for arithmetic and eye-region labeling tasks. Formal paired task contrasts show differing agent preferences
+        and perceived proficiency. Perceived fit is inferred from that pattern rather than independently measured
+        as a mediator.
+      verification_url: https://doi.org/10.1007/s12369-021-00771-z
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'It’s a Match: Task Assignment in Human–Robot Collaboration Depends on Mind Perception'
+    authors:
+    - Eva Wiese
+    - Patrick P. Weis
+    - Yochanan Bigman
+    - Kyra Kapsaskis
+    - Kurt Gray
+    year: 2022
+    url: https://doi.org/10.1007/s12369-021-00771-z
+    venue: International Journal of Social Robotics 14(1), 141–148
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12369-021-00771-z
+    relevance: Participants choose between pictured robots with different emotional-capacity descriptions for
+      arithmetic and eye-region labeling tasks. Formal paired task contrasts show differing agent preferences
+      and perceived proficiency. Perceived fit is inferred from that pattern rather than independently measured
+      as a mediator.
+    consulted: 'Full supplied PDF text read, all 8 pages; evidence at PDF pages 1 (source locators: 141). An
+      online repeated-trial task studies people’s choices to answer themselves or delegate to pictured, explicitly
+      described robot agents. Equal robot accuracy and different emotional-capacity descriptions concern human
+      perceptions and selection, not actual robot feelings or deployed workplace collaboration.'
+    verification_url: https://doi.org/10.1007/s12369-021-00771-z
+    verified_date: '2026-11-27'
+    verification_method: All eight supplied pages, two figures and twenty bibliography entries read. Full public
+      3544-byte R analysis script and 561-byte stimulus readme read as text; four emotional/emotionless robot
+      image variants and one arithmetic stimulus visually inspected. Publisher/Crossref verify identity and
+      online/issue dates. No binary analysis object, participant data or original code execution.
+    review_record: references/pdf-reviews/0231.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Perceived agent–task fit"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Perceived+agent%E2%80%93task+fit%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0231.json
