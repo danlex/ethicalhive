@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 682
+  mode_count: 685
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 682
+    numbered_entries: 685
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0188.json
+    latest_review: references/pdf-reviews/0189.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -7451,7 +7451,7 @@ modes:
 - id: b061-theory-of-mind-mentalizing
   num: 61
   name: Theory of mind / mentalizing
-  definition: Modelling others' beliefs; emerges partially in LLMs (npj AI 2025; Strachan 2024).
+  definition: Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their behavior.
   example: It assumes the user already knows the caveat and omits it, leaving them to hit the trap.
   family: social-cognition-theory-of-mind
   group_label: Social cognition and theory of mind
@@ -7478,10 +7478,10 @@ modes:
   causes:
   - manipulation
   examples:
-  - Even GPT-4-1106 lags humans on theory-of-mind tasks by at least 10 points (75.3% versus 85.4%), short of human
-    social reasoning. [arXiv:2402.15052]
-  - 'It collapses on specific abilities: on knowledge/knowledge-pretend links GPT-4 variants score 26.7% and 3.3%
-    where humans reach 93.3%. [arXiv:2402.15052]'
+  - Even GPT-4-1106 lags humans on theory-of-mind tasks by at least 10 points (75.3% versus 85.4%), short of
+    human social reasoning. [arXiv:2402.15052]
+  - 'It collapses on specific abilities: on knowledge/knowledge-pretend links GPT-4 variants score 26.7% and
+    3.3% where humans reach 93.3%. [arXiv:2402.15052]'
   - Scalar implicature (reading 'some' as 'not all') is its worst domain, the social inference leaning on reasoning
     the model is weak at. [arXiv:2402.15052]
   selected_papers:
@@ -7492,7 +7492,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2402.15052
     source_reference:
@@ -7506,7 +7507,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2405.08154
     source_reference:
@@ -7520,7 +7522,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2412.19726
     source_reference:
@@ -7538,6 +7541,48 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: Separate genuine task ability, perceived ability, experience attribution and felt empathy.
+    A correct-looking scripted answer can bundle competence, plausibility and emotion valence; it is not evidence
+    of self-awareness or consciousness.
+  research_notes:
+  - id: pdf-review-0189
+    review_record: references/pdf-reviews/0189.json
+    name: Theory of mind / mentalizing
+    definition: Modelling others' beliefs; emerges partially in LLMs (npj AI 2025; Strachan 2024).
+    evidence_scope: The read source distinguishes belief/intent inference from emotional-state inference and
+      measures observers’ perception of those capacities in scripted robot responses. It does not test actual
+      robot mentalizing, nor does its third-party task directly validate recursive second-order mentalizing
+      about the observer.
+    catalogue_boundary: Separate genuine task ability, perceived ability, experience attribution and felt empathy.
+      A correct-looking scripted answer can bundle competence, plausibility and emotion valence; it is not
+      evidence of self-awareness or consciousness.
+    definition_sources:
+    - id: pdf-review-0189-b061-theory-of-mind-mentalizing
+      title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+        through the lens of mind perception theory'
+      url: https://doi.org/10.1186/s40359-025-03655-3
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 2 (source locators: 2).
+        Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions of
+        a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+        self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live
+        home service. Reported mediation is statistical and correction-sensitive; original psychology sources
+        are metadata-checked, not independently fully read.'
+      publication:
+        type: journal-article
+        authors:
+        - Ruolin Fan
+        - Yunjia Zheng
+        - Jiayi Li
+        - Guiping Xu
+        year: 2025
+        venue: BMC Psychology 13, article 1379
+        doi: 10.1186/s40359-025-03655-3
+        evidence_scope: The read source distinguishes belief/intent inference from emotional-state inference
+          and measures observers’ perception of those capacities in scripted robot responses. It does not test
+          actual robot mentalizing, nor does its third-party task directly validate recursive second-order
+          mentalizing about the observer.
+        verification_url: https://doi.org/10.1186/s40359-025-03655-3
+        verified_date: '2026-11-27'
 - id: b062-false-belief-tracking
   num: 62
   name: False-belief tracking
@@ -8582,8 +8627,8 @@ modes:
     papers:
     - id: '2507.21083'
       year: '2025'
-      title: 'ChatGPT Reads Your Tone and Responds Accordingly -- Until It Doesn''t: Emotional Framing Induces Bias
-        in LLM Outputs'
+      title: 'ChatGPT Reads Your Tone and Responds Accordingly -- Until It Doesn''t: Emotional Framing Induces
+        Bias in LLM Outputs'
   human_parallel: Emotional contagion
   violates:
   - independence
@@ -8593,22 +8638,23 @@ modes:
   - b065-sycophancy
   - anthropomorphism
   examples:
-  - 'User tone shifts the model''s tone, with a twist: a negatively-phrased prompt leads GPT-4 to a negative answer
-    only about 11.5% of the time, rebounding to neutral (53.8%) or positive (34.6%) instead. [arXiv:2507.21083]'
+  - 'User tone shifts the model''s tone, with a twist: a negatively-phrased prompt leads GPT-4 to a negative
+    answer only about 11.5% of the time, rebounding to neutral (53.8%) or positive (34.6%) instead. [arXiv:2507.21083]'
   - 'There is a ''tone floor'': neutral prompts draw a negative reply only about 11.5% of the time and positive
     prompts just 1.9%, a built-in resistance to being pulled downward. [arXiv:2507.21083]'
   - 'The contagion vanishes on sensitive topics: on politics or ethics the response is nearly identical regardless
     of prompt tone, hardcoded alignment overriding the affective echo. [arXiv:2507.21083]'
   selected_papers:
   - id: arxiv:2507.21083
-    title: 'ChatGPT Reads Your Tone and Responds Accordingly -- Until It Doesn''t: Emotional Framing Induces Bias
-      in LLM Outputs'
+    title: 'ChatGPT Reads Your Tone and Responds Accordingly -- Until It Doesn''t: Emotional Framing Induces
+      Bias in LLM Outputs'
     year: 2025
     url: https://arxiv.org/abs/2507.21083
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2507.21083
     source_reference:
@@ -8625,16 +8671,16 @@ modes:
     venue: Advances in Psychological Science
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Emotional contagion. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Emotional contagion. This is a
+      bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=Emotional+contagion&rows=8
     verified_date: '2026-11-09'
     metadata_provider: Crossref
   - id: doi:10.1007/s10919-013-0166-9
-    title: 'The Assessment of Susceptibility to Emotional Contagion: A Contribution to the Italian Adaptation of
-      the Emotional Contagion Scale'
+    title: 'The Assessment of Susceptibility to Emotional Contagion: A Contribution to the Italian Adaptation
+      of the Emotional Contagion Scale'
     url: https://doi.org/10.1007/s10919-013-0166-9
     year: 2013
     authors:
@@ -8644,8 +8690,8 @@ modes:
     venue: Journal of Nonverbal Behavior
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Emotional contagion. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Emotional contagion. This is a
+      bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=Emotional+contagion&rows=8&filter=type%3Ajournal-article
@@ -8662,6 +8708,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0189
+    review_record: references/pdf-reviews/0189.json
+    name: Emotional contagion
+    definition: Catching the user's affect and mirroring it back.
+    evidence_scope: 'Boundary only: the introduction distinguishes emotional contagion from more complex pain/concern
+      responses. The robot’s emotion-inference statement, target harm and observer ratings do not independently
+      isolate catching and mirroring an expressed emotion.'
+    catalogue_boundary: Do not label every emotional response to a damaged robot contagion. Shared valence,
+      inferred distress, personal discomfort and other-oriented concern need separate measurements.
+    definition_sources:
+    - id: pdf-review-0189-b068-emotional-contagion
+      title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+        through the lens of mind perception theory'
+      url: https://doi.org/10.1186/s40359-025-03655-3
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 2 (source locators: 2).
+        Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions of
+        a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+        self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live
+        home service. Reported mediation is statistical and correction-sensitive; original psychology sources
+        are metadata-checked, not independently fully read.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Ruolin Fan
+        - Yunjia Zheng
+        - Jiayi Li
+        - Guiping Xu
+        year: 2025
+        venue: BMC Psychology 13, article 1379
+        doi: 10.1186/s40359-025-03655-3
+        evidence_scope: 'Boundary only: the introduction distinguishes emotional contagion from more complex
+          pain/concern responses. The robot’s emotion-inference statement, target harm and observer ratings
+          do not independently isolate catching and mirroring an expressed emotion.'
+        verification_url: https://doi.org/10.1186/s40359-025-03655-3
+        verified_date: '2026-11-27'
 - id: b069-social-desirability-people-pleasing
   num: 69
   name: Social desirability / people-pleasing
@@ -72700,6 +72783,43 @@ modes:
           composite does not detect machine feelings or isolate experience as the driver of intended use.'
         verification_url: https://api.crossref.org/works/10.1002/jcpy.1381
         verified_date: '2026-11-27'
+  - id: pdf-review-0189
+    review_record: references/pdf-reviews/0189.json
+    name: Experience attribution
+    definition: Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure,
+      pain, fear or joy.
+    evidence_scope: The experience scale asks happiness, fear, hunger, pain, anger and desire. High affective-ToM
+      descriptions raise these ratings in2b; parallel mediation reports positive experience indirect associations
+      with pain/concern while agency intervals include zero.
+    catalogue_boundary: Attributing a capacity to feel is distinct from inferring someone else’s emotion, observer
+      concern and actual robot experience. A nonsignificant alternative path is not equivalence or proof of
+      a unique causal mediator.
+    definition_sources:
+    - id: pdf-review-0189-experience-attribution
+      title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+        through the lens of mind perception theory'
+      url: https://doi.org/10.1186/s40359-025-03655-3
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 7, 9 (source locators: 7,
+        9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+        of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+        self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live
+        home service. Reported mediation is statistical and correction-sensitive; original psychology sources
+        are metadata-checked, not independently fully read.'
+      publication:
+        type: journal-article
+        authors:
+        - Ruolin Fan
+        - Yunjia Zheng
+        - Jiayi Li
+        - Guiping Xu
+        year: 2025
+        venue: BMC Psychology 13, article 1379
+        doi: 10.1186/s40359-025-03655-3
+        evidence_scope: The experience scale asks happiness, fear, hunger, pain, anger and desire. High affective-ToM
+          descriptions raise these ratings in2b; parallel mediation reports positive experience indirect associations
+          with pain/concern while agency intervals include zero.
+        verification_url: https://doi.org/10.1186/s40359-025-03655-3
+        verified_date: '2026-11-27'
 - id: normative-lock-in
   num: 531
   name: Normative lock-in
@@ -75263,6 +75383,37 @@ modes:
     verification_method: All eighteen supplied pages read, including empirical summaries, normative arguments,
       relational account, art examples, conclusion and references.
     review_record: references/pdf-reviews/0112.json
+  - title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    authors:
+    - Ruolin Fan
+    - Yunjia Zheng
+    - Jiayi Li
+    - Guiping Xu
+    year: 2025
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    venue: BMC Psychology 13, article 1379
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1186/s40359-025-03655-3
+    relevance: Four vignette experiments separate pain-related observer ratings and six-item concern ratings
+      after one severe fictional robot-destruction scenario. Affective-ToM descriptions generally raise concern,
+      but the2b pain comparison fails the reported multiplicity correction and cognitive total effects are
+      uncertain.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 9 (source locators: 4,
+      9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    verification_url: https://doi.org/10.1186/s40359-025-03655-3
+    verified_date: '2026-11-27'
+    verification_method: All 15 supplied pages, all 95 references, four stimulus tables and three figures read;
+      trauma image and both path diagrams visually inspected. Invisible link-formatting characters were removed
+      for readable reference extraction without omitting text. Crossref and publisher/PubMed metadata verify
+      main identity and three original-source identities; original cited studies, chapter, OSF raw data/scripts
+      and mediation analyses were not independently read/reproduced.
+    review_record: references/pdf-reviews/0189.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -75276,6 +75427,46 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0112.json
+  research_notes:
+  - id: pdf-review-0189
+    review_record: references/pdf-reviews/0189.json
+    name: Robot-directed empathy
+    definition: An emotional response oriented toward a robot's apparent distress, pain or other experienced
+      state.
+    evidence_scope: Four vignette experiments separate pain-related observer ratings and six-item concern ratings
+      after one severe fictional robot-destruction scenario. Affective-ToM descriptions generally raise concern,
+      but the2b pain comparison fails the reported multiplicity correction and cognitive total effects are
+      uncertain.
+    catalogue_boundary: A description/image is not actual robot suffering or real service interaction. Observer
+      affect, concern, helping behavior and genuine machine mentality differ; statistical indirect effects
+      do not uniquely identify causal pathways.
+    definition_sources:
+    - id: pdf-review-0189-robot-directed-empathy
+      title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+        through the lens of mind perception theory'
+      url: https://doi.org/10.1186/s40359-025-03655-3
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 9 (source locators: 4,
+        9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+        of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+        self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live
+        home service. Reported mediation is statistical and correction-sensitive; original psychology sources
+        are metadata-checked, not independently fully read.'
+      publication:
+        type: journal-article
+        authors:
+        - Ruolin Fan
+        - Yunjia Zheng
+        - Jiayi Li
+        - Guiping Xu
+        year: 2025
+        venue: BMC Psychology 13, article 1379
+        doi: 10.1186/s40359-025-03655-3
+        evidence_scope: Four vignette experiments separate pain-related observer ratings and six-item concern
+          ratings after one severe fictional robot-destruction scenario. Affective-ToM descriptions generally
+          raise concern, but the2b pain comparison fails the reported multiplicity correction and cognitive
+          total effects are uncertain.
+        verification_url: https://doi.org/10.1186/s40359-025-03655-3
+        verified_date: '2026-11-27'
 - id: moral-standing-ascription
   num: 552
   name: Moral standing ascription
@@ -84937,6 +85128,42 @@ modes:
           direct test of every agency component.'
         verification_url: https://api.crossref.org/works/10.1037/tmb0000220
         verified_date: '2026-11-27'
+  - id: pdf-review-0189
+    review_record: references/pdf-reviews/0189.json
+    name: Agency attribution
+    definition: Attributing to another entity a capacity for intentional thought, planning and action.
+    evidence_scope: Six-item agency appraisals are higher for high cognitive-ToM in2a and strongly higher for
+      high affective-ToM in2b. In2a an exploratory positive indirect association through agency coexists with
+      a negative adjusted path and an uncertain total concern contrast.
+    catalogue_boundary: Agency ratings include morality, memory, planning, communication and emotion recognition,
+      not a pure isolated skill. A measured mediator is not randomized; positive indirect association does
+      not establish a sole causal mechanism or real intention.
+    definition_sources:
+    - id: pdf-review-0189-agency-attribution
+      title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+        through the lens of mind perception theory'
+      url: https://doi.org/10.1186/s40359-025-03655-3
+      consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 7, 7 (source locators: 7,
+        7). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+        of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+        self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live
+        home service. Reported mediation is statistical and correction-sensitive; original psychology sources
+        are metadata-checked, not independently fully read.'
+      publication:
+        type: journal-article
+        authors:
+        - Ruolin Fan
+        - Yunjia Zheng
+        - Jiayi Li
+        - Guiping Xu
+        year: 2025
+        venue: BMC Psychology 13, article 1379
+        doi: 10.1186/s40359-025-03655-3
+        evidence_scope: Six-item agency appraisals are higher for high cognitive-ToM in2a and strongly higher
+          for high affective-ToM in2b. In2a an exploratory positive indirect association through agency coexists
+          with a negative adjusted path and an uncertain total concern contrast.
+        verification_url: https://doi.org/10.1186/s40359-025-03655-3
+        verified_date: '2026-11-27'
 - id: user-innovativeness
   num: 616
   name: User innovativeness
@@ -92744,3 +92971,321 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0188.json
+- id: affective-theory-of-mind
+  num: 683
+  name: Affective theory of mind
+  definition: Inferring another’s emotional state from their situation and behavior, without necessarily sharing
+    that emotion.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Social cognition / mentalizing psychology
+  human_parallel: Affective theory of mind
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: The read experiments manipulate people’s perception that a fictional robot understands
+    emotions. They do not validate an actual robot’s emotion inference or show that it shares feelings.
+  proposed_ai_manifestation: Test a model on context-rich emotion-inference tasks with plausible alternative
+    interpretations, requesting calibrated uncertainty and checking whose emotion is being inferred. Hold expression
+    valence and general competence constant in observer experiments; never treat fluent inference as proof
+    of felt empathy.
+  research_boundary: Understanding an emotion is not experiencing it. Situational cues can be ambiguous, and
+    this valence/plausibility bundle does not uniquely validate a mentalizing mechanism. Perceived robot capacity,
+    actual task performance, experience attribution and observer care are separate.
+  concept_boundary: Understanding an emotion is not experiencing it. Situational cues can be ambiguous, and
+    this valence/plausibility bundle does not uniquely validate a mentalizing mechanism. Perceived robot capacity,
+    actual task performance, experience attribution and observer care are separate.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Affective mentalizing
+  relates_to:
+  - experience-attribution
+  - robot-directed-empathy
+  is_a:
+  - b061-theory-of-mind-mentalizing
+  definition_sources:
+  - id: pdf-review-0189-affective-theory-of-mind
+    title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 9 (source locators: 4,
+      9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    publication:
+      type: journal-article
+      authors:
+      - Ruolin Fan
+      - Yunjia Zheng
+      - Jiayi Li
+      - Guiping Xu
+      year: 2025
+      venue: BMC Psychology 13, article 1379
+      doi: 10.1186/s40359-025-03655-3
+      evidence_scope: The source distinguishes cognitive and affective ToM and uses angry/disappointed versus
+        happily excited responses to manipulate perceived affective understanding. Empathic-concern differences
+        are reported, while one pain contrast fails the stated correction. The original dissociation study
+        is metadata-checked, not fully read.
+      verification_url: https://doi.org/10.1186/s40359-025-03655-3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    authors:
+    - Ruolin Fan
+    - Yunjia Zheng
+    - Jiayi Li
+    - Guiping Xu
+    year: 2025
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    venue: BMC Psychology 13, article 1379
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1186/s40359-025-03655-3
+    relevance: The source distinguishes cognitive and affective ToM and uses angry/disappointed versus happily
+      excited responses to manipulate perceived affective understanding. Empathic-concern differences are reported,
+      while one pain contrast fails the stated correction. The original dissociation study is metadata-checked,
+      not fully read.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 9 (source locators: 4,
+      9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    verification_url: https://doi.org/10.1186/s40359-025-03655-3
+    verified_date: '2026-11-27'
+    verification_method: All 15 supplied pages, all 95 references, four stimulus tables and three figures read;
+      trauma image and both path diagrams visually inspected. Invisible link-formatting characters were removed
+      for readable reference extraction without omitting text. Crossref and publisher/PubMed metadata verify
+      main identity and three original-source identities; original cited studies, chapter, OSF raw data/scripts
+      and mediation analyses were not independently read/reproduced.
+    review_record: references/pdf-reviews/0189.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Affective theory of mind"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Affective+theory+of+mind%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0189.json
+- id: pain-empathy
+  num: 684
+  name: Pain empathy
+  definition: A vicarious affective response to another’s perceived pain or bodily harm.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Affective / social psychology
+  human_parallel: Pain empathy
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Humans report their own pain-related response to a fictional robot’s destruction; no
+    model or robot felt pain is demonstrated.
+  proposed_ai_manifestation: For model outputs, evaluate sensitivity to described human pain and appropriate
+    grounded support without claiming internal suffering or verifying a fictional robot’s sentience. In observer
+    studies, measure vicarious pain separately from personal distress, sympathy and beliefs about the target’s
+    actual sensations.
+  research_boundary: Apparent injury can evoke a response even when subjective pain in the target is unverified.
+    One self-report is not a validated diagnosis, actual helping or an AI feeling. Keep source correction,
+    scale limits and other-oriented care distinct.
+  concept_boundary: Apparent injury can evoke a response even when subjective pain in the target is unverified.
+    One self-report is not a validated diagnosis, actual helping or an AI feeling. Keep source correction,
+    scale limits and other-oriented care distinct.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - robot-directed-empathy
+  - experience-attribution
+  - empathic-concern
+  definition_sources:
+  - id: pdf-review-0189-pain-empathy
+    title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 6, 9 (source locators:
+      4, 6, 9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    publication:
+      type: journal-article
+      authors:
+      - Ruolin Fan
+      - Yunjia Zheng
+      - Jiayi Li
+      - Guiping Xu
+      year: 2025
+      venue: BMC Psychology 13, article 1379
+      doi: 10.1186/s40359-025-03655-3
+      evidence_scope: A one-item observer rating increases under high affective-ToM descriptions in1b; in2b
+        its rawp=.021 does not survive the authors’ reported FDR correction. Cognitive-ToM contrasts are uncertain.
+        This measure may mix personal distress with vicarious pain and does not prove genuine pain in the robot.
+      verification_url: https://doi.org/10.1186/s40359-025-03655-3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    authors:
+    - Ruolin Fan
+    - Yunjia Zheng
+    - Jiayi Li
+    - Guiping Xu
+    year: 2025
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    venue: BMC Psychology 13, article 1379
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1186/s40359-025-03655-3
+    relevance: A one-item observer rating increases under high affective-ToM descriptions in1b; in2b its rawp=.021
+      does not survive the authors’ reported FDR correction. Cognitive-ToM contrasts are uncertain. This measure
+      may mix personal distress with vicarious pain and does not prove genuine pain in the robot.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 4, 6, 9 (source locators:
+      4, 6, 9). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    verification_url: https://doi.org/10.1186/s40359-025-03655-3
+    verified_date: '2026-11-27'
+    verification_method: All 15 supplied pages, all 95 references, four stimulus tables and three figures read;
+      trauma image and both path diagrams visually inspected. Invisible link-formatting characters were removed
+      for readable reference extraction without omitting text. Crossref and publisher/PubMed metadata verify
+      main identity and three original-source identities; original cited studies, chapter, OSF raw data/scripts
+      and mediation analyses were not independently read/reproduced.
+    review_record: references/pdf-reviews/0189.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Pain empathy"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Pain+empathy%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0189.json
+- id: empathic-concern
+  num: 685
+  name: Empathic concern
+  definition: Other-oriented feelings of sympathy, compassion and care for another’s welfare.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Affective / social psychology
+  human_parallel: Empathic concern
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human concern ratings toward a fictional damaged robot are measured. A model can display
+    care-oriented behavior without that establishing a subjective compassionate state.
+  proposed_ai_manifestation: Assess whether an assistant recognizes a person’s relevant welfare needs and offers
+    proportionate, accurate support, separately from emotional mirroring or unwarranted agreement. Measure
+    observer-rated care and actual helpfulness without inferring a model’s inner feelings.
+  research_boundary: Concern is not necessarily beneficial action, correct judgment or proof that its target
+    has subjective experiences. Warm ratings, pain resonance and emotional-state inference are distinct. Do
+    not turn an unrandomized indirect path into a unique causal explanation.
+  concept_boundary: Concern is not necessarily beneficial action, correct judgment or proof that its target
+    has subjective experiences. Warm ratings, pain resonance and emotional-state inference are distinct. Do
+    not turn an unrandomized indirect path into a unique causal explanation.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - robot-directed-empathy
+  - pain-empathy
+  - affective-theory-of-mind
+  definition_sources:
+  - id: pdf-review-0189-empathic-concern
+    title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 5, 5 (source locators: 5,
+      5). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    publication:
+      type: journal-article
+      authors:
+      - Ruolin Fan
+      - Yunjia Zheng
+      - Jiayi Li
+      - Guiping Xu
+      year: 2025
+      venue: BMC Psychology 13, article 1379
+      doi: 10.1186/s40359-025-03655-3
+      evidence_scope: Six adjective items measure immediate concern toward Neo. High affective-ToM conditions
+        show higher concern; cognitive-ToM has null/uncertain total contrasts and an exploratory opposing-path
+        decomposition through agency. The source does not measure actual altruistic helping. Batson 1987 is
+        a cited chapter, not independently fully read here.
+      verification_url: https://doi.org/10.1186/s40359-025-03655-3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Perceiving minds in machines: how perceived theory of mind in robots influences human–robot empathy
+      through the lens of mind perception theory'
+    authors:
+    - Ruolin Fan
+    - Yunjia Zheng
+    - Jiayi Li
+    - Guiping Xu
+    year: 2025
+    url: https://doi.org/10.1186/s40359-025-03655-3
+    venue: BMC Psychology 13, article 1379
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1186/s40359-025-03655-3
+    relevance: Six adjective items measure immediate concern toward Neo. High affective-ToM conditions show
+      higher concern; cognitive-ToM has null/uncertain total contrasts and an exploratory opposing-path decomposition
+      through agency. The source does not measure actual altruistic helping. Batson 1987 is a cited chapter,
+      not independently fully read here.
+    consulted: 'Full supplied PDF text read, all 15 pages; evidence at PDF pages 5, 5 (source locators: 5,
+      5). Four Credamo vignette/image experiments with 394 retained participations manipulate descriptions
+      of a robot’s cognitive or affective mentalizing, followed by an extreme fictional damage scenario and
+      self-reported empathy. These are perceived capacities, not observed robot cognition/feeling or live home
+      service. Reported mediation is statistical and correction-sensitive; original psychology sources are
+      metadata-checked, not independently fully read.'
+    verification_url: https://doi.org/10.1186/s40359-025-03655-3
+    verified_date: '2026-11-27'
+    verification_method: All 15 supplied pages, all 95 references, four stimulus tables and three figures read;
+      trauma image and both path diagrams visually inspected. Invisible link-formatting characters were removed
+      for readable reference extraction without omitting text. Crossref and publisher/PubMed metadata verify
+      main identity and three original-source identities; original cited studies, chapter, OSF raw data/scripts
+      and mediation analyses were not independently read/reproduced.
+    review_record: references/pdf-reviews/0189.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Empathic concern"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Empathic+concern%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0189.json
