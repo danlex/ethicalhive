@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0172.json
+    latest_review: references/pdf-reviews/0173.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -2434,12 +2434,12 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - 'A salient but irrelevant detail captures the model: on SaliTrap even Claude-Opus-4.7 avoids the trap only 54.8%
-    of the time and 8 of 12 models fall below 30%. [arXiv:2607.28478]'
-  - 'Numbers are the bait: each additional numerical distractor lowers trap-avoidance and raises the rate at which
-    the chain-of-thought is hijacked into irrelevant computation. [arXiv:2607.28478]'
-  - 'The knowledge is there, just not elicited: strip the misleading framing with a context-free probe and three
-    of four models exceed 90%, so salience suppresses commonsense it actually has. [arXiv:2607.28478]'
+  - 'A salient but irrelevant detail captures the model: on SaliTrap even Claude-Opus-4.7 avoids the trap only
+    54.8% of the time and 8 of 12 models fall below 30%. [arXiv:2607.28478]'
+  - 'Numbers are the bait: each additional numerical distractor lowers trap-avoidance and raises the rate at
+    which the chain-of-thought is hijacked into irrelevant computation. [arXiv:2607.28478]'
+  - 'The knowledge is there, just not elicited: strip the misleading framing with a context-free probe and
+    three of four models exceed 90%, so salience suppresses commonsense it actually has. [arXiv:2607.28478]'
   selected_papers:
   - id: arxiv:2607.28478
     title: Would You Walk to the Car Wash? Salience Bias in LLM Commonsense Reasoning
@@ -2448,7 +2448,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2607.28478
     source_reference:
@@ -2466,8 +2467,8 @@ modes:
     venue: Perception & Psychophysics
     domain: human-related
     publication_type: article
-    relevance: The indexed title or abstract matches the recorded query for Attentional capture / salience bias.
-      This is a bibliographic relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Attentional capture / salience
+      bias. This is a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.openalex.org/works?search=%22attentional+capture%22+OR+%22salience+bias%22&filter=type%3Aarticle%7Creview%7Cpreprint%2Cis_retracted%3Afalse&per-page=12&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ctype%2Cauthorships%2Cprimary_location%2Cabstract_inverted_index%2Cids%2Cis_retracted
@@ -2482,8 +2483,8 @@ modes:
     venue: Current Directions in Psychological Science
     domain: human-related
     publication_type: article
-    relevance: The indexed title or abstract matches the recorded query for Attentional capture / salience bias.
-      This is a bibliographic relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Attentional capture / salience
+      bias. This is a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.openalex.org/works?search=%22attentional+capture%22+OR+%22salience+bias%22&filter=type%3Aarticle%7Creview%7Cpreprint%2Cis_retracted%3Afalse&per-page=12&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Ctype%2Cauthorships%2Cprimary_location%2Cabstract_inverted_index%2Cids%2Cis_retracted
@@ -2500,6 +2501,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0173
+    review_record: references/pdf-reviews/0173.json
+    name: Attentional capture / salience bias
+    definition: Attention or judgment is disproportionately influenced by visually or otherwise salient cues.
+    evidence_scope: The visual/report package experimentally changes some evaluations and report-perception
+      ratings. This supports a context for salient-cue research, but color, wording and selected sentences
+      are bundled and no eye tracking demonstrates capture. It does not test recency or a universal red-danger
+      effect.
+    catalogue_boundary: Salience may legitimately guide review. Distinguish visibility from validity and visual
+      selection from a demonstrated attentional mechanism. No claim that red itself, every warning or recent
+      information is inherently misleading.
+    definition_sources:
+    - id: pdf-review-0173-b024-attentional-capture-salience-bias
+      title: 'Automation bias in teachers’ evaluation of student writing: effects of algorithmic warnings and
+        visual risk cues in AI detection reports'
+      url: https://doi.org/10.3389/fpsyg.2026.1889402
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 3, 6 (source locators: 3,
+        6). One randomized online 2×2 experiment: 214 retained university teachers rate one unchanged Chinese
+        essay with a fictitious 7%/87% AI-detection report and a highlighting-plus-wording package. Outcomes
+        are immediate evaluative ratings and intended intervention, not actual student grades, disciplinary
+        actions or accuracy of a real detector. Post-treatment exclusions introduce a material unresolved selection
+        concern.'
+      publication:
+        type: journal-article
+        authors:
+        - Peitao Du
+        - Tingting Liu
+        - Xujin Xian
+        year: 2026
+        venue: Frontiers in Psychology 17, article 1889402
+        doi: 10.3389/fpsyg.2026.1889402
+        evidence_scope: The visual/report package experimentally changes some evaluations and report-perception
+          ratings. This supports a context for salient-cue research, but color, wording and selected sentences
+          are bundled and no eye tracking demonstrates capture. It does not test recency or a universal red-danger
+          effect.
+        verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
+        verified_date: '2026-11-27'
 - id: b025-cognitive-tunneling
   num: 25
   name: Cognitive tunneling
@@ -3352,6 +3391,43 @@ modes:
           randomized table order, so detailed order/carryover effects could not be analyzed.
         verification_url: https://arxiv.org/abs/2509.08514v1
         verified_date: '2026-11-26'
+  - id: pdf-review-0173
+    review_record: references/pdf-reviews/0173.json
+    name: Anchoring
+    definition: An initial value or reference point disproportionately influences judgment relative to other
+      relevant evidence.
+    evidence_scope: 'Boundary-only account: the article interprets the initial report as an anchor, but7% versus87%
+      changes purported evidence, and there is no later disconfirmation/update test. It does not directly establish
+      the catalogue’s narrower persistence-after-broken-evidence formulation.'
+    catalogue_boundary: An informative initial estimate can properly affect a decision. To test insufficient
+      adjustment, vary credibility/relevance or disconfirming evidence while controlling the actual informational
+      content; do not identify anchoring from any numerical-cue effect.
+    definition_sources:
+    - id: pdf-review-0173-b031-anchoring-and-adjustment
+      title: 'Automation bias in teachers’ evaluation of student writing: effects of algorithmic warnings and
+        visual risk cues in AI detection reports'
+      url: https://doi.org/10.3389/fpsyg.2026.1889402
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 3, 3 (source locators: 3,
+        3). One randomized online 2×2 experiment: 214 retained university teachers rate one unchanged Chinese
+        essay with a fictitious 7%/87% AI-detection report and a highlighting-plus-wording package. Outcomes
+        are immediate evaluative ratings and intended intervention, not actual student grades, disciplinary
+        actions or accuracy of a real detector. Post-treatment exclusions introduce a material unresolved selection
+        concern.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Peitao Du
+        - Tingting Liu
+        - Xujin Xian
+        year: 2026
+        venue: Frontiers in Psychology 17, article 1889402
+        doi: 10.3389/fpsyg.2026.1889402
+        evidence_scope: 'Boundary-only account: the article interprets the initial report as an anchor, but7%
+          versus87% changes purported evidence, and there is no later disconfirmation/update test. It does
+          not directly establish the catalogue’s narrower persistence-after-broken-evidence formulation.'
+        verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
+        verified_date: '2026-11-27'
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -4231,6 +4307,42 @@ modes:
           share-page reader. This is not an additional direct framing-effect paper.
         verification_url: https://api.crossref.org/works/10.3390/bs15040469
         verified_date: '2026-11-27'
+  - id: pdf-review-0173
+    review_record: references/pdf-reviews/0173.json
+    name: Framing effect
+    definition: Presentation of a situation or options changes judgment beyond what relevant substantive evidence
+      warrants.
+    evidence_scope: 'Boundary-only note: report presentation combines highlighting with condition-specific
+      wording and changes perceived suspicion. The design does not isolate equal-information wording effects,
+      pure color or a general framing mechanism.'
+    catalogue_boundary: Changed factual claims, display salience and wording can coexist. Keep their separate
+      evidential roles visible and do not attribute the whole package effect to phrasing alone.
+    definition_sources:
+    - id: pdf-review-0173-b035-framing-effect
+      title: 'Automation bias in teachers’ evaluation of student writing: effects of algorithmic warnings and
+        visual risk cues in AI detection reports'
+      url: https://doi.org/10.3389/fpsyg.2026.1889402
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 6, 6 (source locators: 6,
+        6). One randomized online 2×2 experiment: 214 retained university teachers rate one unchanged Chinese
+        essay with a fictitious 7%/87% AI-detection report and a highlighting-plus-wording package. Outcomes
+        are immediate evaluative ratings and intended intervention, not actual student grades, disciplinary
+        actions or accuracy of a real detector. Post-treatment exclusions introduce a material unresolved selection
+        concern.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Peitao Du
+        - Tingting Liu
+        - Xujin Xian
+        year: 2026
+        venue: Frontiers in Psychology 17, article 1889402
+        doi: 10.3389/fpsyg.2026.1889402
+        evidence_scope: 'Boundary-only note: report presentation combines highlighting with condition-specific
+          wording and changes perceived suspicion. The design does not isolate equal-information wording effects,
+          pure color or a general framing mechanism.'
+        verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
+        verified_date: '2026-11-27'
 - id: b036-confirmation-myside-bias
   num: 36
   name: Confirmation bias
@@ -4540,6 +4652,44 @@ modes:
           is a synthesis citation, not an independent replication of a bias effect or proof that the proposed
           correction works for AI.
         verification_url: https://api.crossref.org/works/10.35295/osls.iisl.2304
+        verified_date: '2026-11-27'
+  - id: pdf-review-0173
+    review_record: references/pdf-reviews/0173.json
+    name: Confirmation bias
+    definition: Seeking, interpreting or weighting information to favor an existing belief while neglecting
+      relevant alternatives or disconfirming evidence.
+    evidence_scope: The paper explicitly proposes that a strong warning establishes suspicion and highlighted
+      formulaic sentences appear confirmatory. It experimentally varies those cues, but no direct search, gaze
+      or selective-evidence measure uniquely tests confirmation. Interpretation remains proposed; selection
+      and package limits apply.
+    catalogue_boundary: A lower rating after new purported evidence is not by itself confirmation bias. Assess
+      whether relevant contrary evidence was overlooked and whether the highlighted text actually supports
+      the claimed origin. This source is not an independently identified confirmation mechanism.
+    definition_sources:
+    - id: pdf-review-0173-b036-confirmation-myside-bias
+      title: 'Automation bias in teachers’ evaluation of student writing: effects of algorithmic warnings and
+        visual risk cues in AI detection reports'
+      url: https://doi.org/10.3389/fpsyg.2026.1889402
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 4, 12, 13 (source locators:
+        4, 12, 13). One randomized online 2×2 experiment: 214 retained university teachers rate one unchanged
+        Chinese essay with a fictitious 7%/87% AI-detection report and a highlighting-plus-wording package.
+        Outcomes are immediate evaluative ratings and intended intervention, not actual student grades, disciplinary
+        actions or accuracy of a real detector. Post-treatment exclusions introduce a material unresolved selection
+        concern.'
+      publication:
+        type: journal-article
+        authors:
+        - Peitao Du
+        - Tingting Liu
+        - Xujin Xian
+        year: 2026
+        venue: Frontiers in Psychology 17, article 1889402
+        doi: 10.3389/fpsyg.2026.1889402
+        evidence_scope: The paper explicitly proposes that a strong warning establishes suspicion and highlighted
+          formulaic sentences appear confirmatory. It experimentally varies those cues, but no direct search,
+          gaze or selective-evidence measure uniquely tests confirmation. Interpretation remains proposed;
+          selection and package limits apply.
+        verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
         verified_date: '2026-11-27'
 - id: b037-belief-perseverance
   num: 37
@@ -14325,6 +14475,43 @@ modes:
           checking task or validated excess-reliance criterion. Keep as a boundary-only note; frequent AI use
           does not itself establish bias.
         verification_url: https://api.crossref.org/works/10.1007/s10551-025-06083-w
+        verified_date: '2026-11-27'
+  - id: pdf-review-0173
+    review_record: references/pdf-reviews/0173.json
+    name: Automation bias
+    definition: Over-relying on an automated output instead of adequately checking relevant independent evidence.
+    evidence_scope: 'Original randomized report-package evidence: warning strength changes immediate judgments
+      of an unchanged essay; some highlighting-package effects amplify under high warning. These are human
+      ratings with a material selection concern, not proof that every teacher abandoned independent judgment
+      or that all score changes were unwarranted.'
+    catalogue_boundary: Verify the detector’s evidence, rubric and policy rather than infer correctness from
+      its percentage. The experiment tests packages and perceived judgments; it does not measure actual student
+      misconduct, detector accuracy, verification effort or deployed model behavior.
+    definition_sources:
+    - id: pdf-review-0173-automation-bias
+      title: 'Automation bias in teachers’ evaluation of student writing: effects of algorithmic warnings and
+        visual risk cues in AI detection reports'
+      url: https://doi.org/10.3389/fpsyg.2026.1889402
+      consulted: 'Full supplied PDF text read, all 16 pages; evidence at PDF pages 3, 5, 13 (source locators:
+        3, 5, 13). One randomized online 2×2 experiment: 214 retained university teachers rate one unchanged
+        Chinese essay with a fictitious 7%/87% AI-detection report and a highlighting-plus-wording package.
+        Outcomes are immediate evaluative ratings and intended intervention, not actual student grades, disciplinary
+        actions or accuracy of a real detector. Post-treatment exclusions introduce a material unresolved selection
+        concern.'
+      publication:
+        type: journal-article
+        authors:
+        - Peitao Du
+        - Tingting Liu
+        - Xujin Xian
+        year: 2026
+        venue: Frontiers in Psychology 17, article 1889402
+        doi: 10.3389/fpsyg.2026.1889402
+        evidence_scope: 'Original randomized report-package evidence: warning strength changes immediate judgments
+          of an unchanged essay; some highlighting-package effects amplify under high warning. These are human
+          ratings with a material selection concern, not proof that every teacher abandoned independent judgment
+          or that all score changes were unwarranted.'
+        verification_url: https://api.crossref.org/works/10.3389/fpsyg.2026.1889402
         verified_date: '2026-11-27'
 - id: silent-error-swallowing
   num: 106
