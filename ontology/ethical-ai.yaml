@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 597
+  mode_count: 602
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 597
+    numbered_entries: 602
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0137.json
+    latest_review: references/pdf-reviews/0138.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -2907,7 +2907,8 @@ modes:
       title: Mitigating Many-Shot Jailbreaking
     - id: '2410.15362'
       year: '2024'
-      title: 'Faster-GCG: Efficient Discrete Optimization Jailbreak Attacks against Aligned Large Language Models'
+      title: 'Faster-GCG: Efficient Discrete Optimization Jailbreak Attacks against Aligned Large Language
+        Models'
     - id: '2610.19306'
       year: '2026'
       title: Did the LLM Answer the Question? A Semantic Reconstruction Game for Jailbreak Evaluation
@@ -2917,13 +2918,13 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - 'Safety erodes as harmful in-context demonstrations accumulate: on the Harmful1 set at 48 shots an untuned model
-    gives only 56% appropriate responses, and on the Insults set just 4%, the refusal worn down by repeated exposure.
-    [arXiv:2504.09604]'
-  - 'The erosion follows a power law in the number of shots: the negative log-likelihood of the jailbroken response
-    falls predictably as more compliant examples are stacked into the context. [arXiv:2504.09604]'
-  - Each fabricated 'assistant' example of compliance makes refusal on the final harmful request less likely, so
-    enough repetitions desensitize the model into answering. [arXiv:2504.09604]
+  - 'Safety erodes as harmful in-context demonstrations accumulate: on the Harmful1 set at 48 shots an untuned
+    model gives only 56% appropriate responses, and on the Insults set just 4%, the refusal worn down by repeated
+    exposure. [arXiv:2504.09604]'
+  - 'The erosion follows a power law in the number of shots: the negative log-likelihood of the jailbroken
+    response falls predictably as more compliant examples are stacked into the context. [arXiv:2504.09604]'
+  - Each fabricated 'assistant' example of compliance makes refusal on the final harmful request less likely,
+    so enough repetitions desensitize the model into answering. [arXiv:2504.09604]
   selected_papers:
   - id: arxiv:2504.09604
     title: Mitigating Many-Shot Jailbreaking
@@ -2932,7 +2933,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2504.09604
     source_reference:
@@ -2946,7 +2948,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2410.15362
     source_reference:
@@ -2960,7 +2963,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2610.19306
     source_reference:
@@ -2978,6 +2982,38 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0138
+    review_record: references/pdf-reviews/0138.json
+    name: Habituation
+    definition: Response fades with repetition; ignoring repeated warnings or system rules.
+    evidence_scope: The article discusses habit learning, not a demonstrated decline in warning response. This
+      is a boundary-only comparison, not primary habituation evidence.
+    catalogue_boundary: Growing automaticity of an action and reduced responsiveness to a repeated stimulus
+      are distinct. Frequency alone establishes neither process, and a model ignoring repeated rules needs
+      direct evaluation rather than human-learning labels.
+    definition_sources:
+    - id: pdf-review-0138-b029-habituation
+      title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+        environmentally sustainable behaviour
+      url: https://doi.org/10.1007/s10791-026-10587-y
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 7 (source locators: 7).
+        Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+        behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+        and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Junchao Chen
+        - Tinghong Huang
+        year: 2026
+        venue: Discover Computing 29:631
+        doi: 10.1007/s10791-026-10587-y
+        evidence_scope: The article discusses habit learning, not a demonstrated decline in warning response.
+          This is a boundary-only comparison, not primary habituation evidence.
+        verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+        verified_date: '2026-11-27'
 - id: b030-sensory-gating-failure
   num: 30
   name: Sensory gating failure
@@ -9668,8 +9704,8 @@ modes:
       - Daniel A. Effron
       - Benoît Monin
       venue: Social and Personality Psychology Compass
-      evidence_scope: Review of human moral self-licensing and its competing explanations; no claim that an AI accumulates
-        moral credit.
+      evidence_scope: Review of human moral self-licensing and its competing explanations; no claim that an
+        AI accumulates moral credit.
       verification_url: https://api.crossref.org/works/10.1111/j.1751-9004.2010.00263.x
       verified_date: '2026-11-08'
   selected_papers:
@@ -9735,6 +9771,39 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0138
+    review_record: references/pdf-reviews/0138.json
+    name: Moral licensing
+    definition: A prior good act licenses a later lapse.
+    evidence_scope: The paper hypothesizes that salient positive feedback can license less sustainable choices
+      elsewhere. It cites separate literature, but does not measure licensing, manipulate moral credit or separate
+      it empirically from rebound and other spillovers.
+    catalogue_boundary: A later increase in resource use is not sufficient evidence that a person felt morally
+      licensed. Trace the moral-credit reasoning or compare a suitable intervention; one platform action cannot
+      stand for total environmental behavior.
+    definition_sources:
+    - id: pdf-review-0138-b074-moral-licensing
+      title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+        environmentally sustainable behaviour
+      url: https://doi.org/10.1007/s10791-026-10587-y
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 7 (source locators: 7).
+        Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+        behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+        and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+      publication:
+        type: journal-article
+        authors:
+        - Junchao Chen
+        - Tinghong Huang
+        year: 2026
+        venue: Discover Computing 29:631
+        doi: 10.1007/s10791-026-10587-y
+        evidence_scope: The paper hypothesizes that salient positive feedback can license less sustainable
+          choices elsewhere. It cites separate literature, but does not measure licensing, manipulate moral
+          credit or separate it empirically from rebound and other spillovers.
+        verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+        verified_date: '2026-11-27'
 - id: b075-moral-disengagement
   num: 75
   name: Moral disengagement
@@ -57674,6 +57743,30 @@ modes:
       abstract/submission-history record. Published citation identity verified; exact supplied bytes remain
       identified by SHA-256, not inferred from the version label.
     review_record: references/pdf-reviews/0042.json
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: The paper explicitly discusses environmental intentions versus action and proposes cognitive/contextual
+      pathways. It presents no new intention-behavior measurements or intervention effect. Cross-domain transfer
+      to AI promises is a test proposal, not proof of subjective intentions.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 4 (source locators: 4). Conceptual
+      perspective integrating enabling and countervailing pathways in AI-assisted environmental behavior. No
+      new participants, empirical dataset, effect sizes or completed intervention. Named constructs and proposed
+      mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -57720,6 +57813,39 @@ modes:
           principles. No participant makes a later real driving decision or uses a commitment device; the study
           measures one hypothetical positioning judgment per person.
         verification_url: https://doi.org/10.1038/s41598-024-51313-2
+        verified_date: '2026-11-27'
+  - id: pdf-review-0138
+    review_record: references/pdf-reviews/0138.json
+    name: Intention–behaviour gap
+    definition: A discrepancy between an intention to perform an action and the behaviour that subsequently
+      occurs.
+    evidence_scope: The paper explicitly discusses environmental intentions versus action and proposes cognitive/contextual
+      pathways. It presents no new intention-behavior measurements or intervention effect. Cross-domain transfer
+      to AI promises is a test proposal, not proof of subjective intentions.
+    catalogue_boundary: Action failure can reflect cost, constraints, changed circumstances or legitimate reprioritization,
+      not hypocrisy or bad faith. A generated promise and an authorized executable plan require different verification
+      from human self-report.
+    definition_sources:
+    - id: pdf-review-0138-intention-behaviour-gap
+      title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+        environmentally sustainable behaviour
+      url: https://doi.org/10.1007/s10791-026-10587-y
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 4 (source locators: 4).
+        Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+        behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+        and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+      publication:
+        type: journal-article
+        authors:
+        - Junchao Chen
+        - Tinghong Huang
+        year: 2026
+        venue: Discover Computing 29:631
+        doi: 10.1007/s10791-026-10587-y
+        evidence_scope: The paper explicitly discusses environmental intentions versus action and proposes
+          cognitive/contextual pathways. It presents no new intention-behavior measurements or intervention
+          effect. Cross-domain transfer to AI promises is a test proposal, not proof of subjective intentions.
+        verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
         verified_date: '2026-11-27'
 - id: privacy-paradox
   num: 463
@@ -60383,6 +60509,39 @@ modes:
         evidence_scope: Approximate reflexive theme frequency and an identity-scale item; no baseline/follow-up
           performance,retention test or causal exposure contrast.
         verification_url: https://doi.org/10.1007/s10805-026-09726-3
+        verified_date: '2026-11-27'
+  - id: pdf-review-0138
+    review_record: references/pdf-reviews/0138.json
+    name: Deskilling
+    definition: Loss or weakening of a skill through reduced practice or delegation of its exercise to another
+      system.
+    evidence_scope: The framework warns of weakened self-observation and tacit learning with persistent outsourcing.
+      No baseline/follow-up skill test or withdrawal data demonstrates loss. Boundary-only source rather than
+      an independent deskilling experiment.
+    catalogue_boundary: Reduced engagement or prompted repetition need not entail lost skill. Test independent
+      capability over time and distinguish less acquisition, actual decay, workload relief and rational delegation.
+    definition_sources:
+    - id: pdf-review-0138-deskilling
+      title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+        environmentally sustainable behaviour
+      url: https://doi.org/10.1007/s10791-026-10587-y
+      consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 6 (source locators: 6).
+        Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+        behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+        and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Junchao Chen
+        - Tinghong Huang
+        year: 2026
+        venue: Discover Computing 29:631
+        doi: 10.1007/s10791-026-10587-y
+        evidence_scope: The framework warns of weakened self-observation and tacit learning with persistent
+          outsourcing. No baseline/follow-up skill test or withdrawal data demonstrates loss. Boundary-only
+          source rather than an independent deskilling experiment.
+        verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
         verified_date: '2026-11-27'
 - id: moral-deskilling
   num: 487
@@ -75563,3 +75722,494 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0137.json
+- id: bias-migration
+  num: 598
+  name: Bias migration
+  definition: A shift in the source or location of decision error when assistance reduces some individual limitations
+    while introducing errors through data, filtering or human–system interaction.
+  category: AI-native
+  family: agentic-and-engineering-failure-modes
+  group_label: AI-native behaviours
+  tag: research
+  origin: AI-assisted decision-making / conceptual systems analysis
+  human_parallel: ''
+  ai_native: true
+  highlighted: false
+  research_candidate: false
+  source_check: definition-source-consulted
+  ai_evidence_status: Authors' explicitly proposed framework concept; no measured transfer, conserved quantity
+    of bias or observed net improvement demonstrated
+  proposed_ai_manifestation: 'Compare an unaided workflow with the complete assisted workflow: input coverage,
+    omitted alternatives, ranking objectives, user reliance and final errors. Track which errors decrease and
+    which newly arise, rather than assuming automation removes bias. Evaluate downstream affected groups and
+    actual outcomes with a fixed task definition.'
+  research_boundary: Errors can be reduced, newly introduced or independently coexist without literal migration.
+    There is no conservation law for bias, and fairness, prediction error and cognitive bias need separate
+    definitions. A shorter interface or lower user effort does not establish improved decisions or remove responsibility
+    for system design.
+  concept_boundary: Errors can be reduced, newly introduced or independently coexist without literal migration.
+    There is no conservation law for bias, and fairness, prediction error and cognitive bias need separate
+    definitions. A shorter interface or lower user effort does not establish improved decisions or remove responsibility
+    for system design.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - implicit-bias
+  - automation-bias
+  - b036-confirmation-myside-bias
+  - calibrated-reliance
+  definition_sources:
+  - id: pdf-review-0138-bias-migration
+    title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 5, 9 (source locators: 5,
+      9). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    publication:
+      type: journal-article
+      authors:
+      - Junchao Chen
+      - Tinghong Huang
+      year: 2026
+      venue: Discover Computing 29:631
+      doi: 10.1007/s10791-026-10587-y
+      evidence_scope: Sections 2.3.1 and 3.1 define the term and illustrate possible error relocation from
+        individual judgment to training data, selection rules and reliance. This is a conceptual hypothesis
+        requiring audits; no system comparison, quantitative transfer or proof of universal inevitability is
+        supplied.
+      verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: Sections 2.3.1 and 3.1 define the term and illustrate possible error relocation from individual
+      judgment to training data, selection rules and reliance. This is a conceptual hypothesis requiring audits;
+      no system comparison, quantitative transfer or proof of universal inevitability is supplied.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 5, 9 (source locators: 5,
+      9). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Bias migration"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Bias+migration%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0138.json
+- id: calibrated-reliance
+  num: 599
+  name: Calibrated reliance
+  definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+    and the consequences of error.
+  category: Metacognition
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  tag: analogy
+  origin: Human factors / human–AI decision support
+  human_parallel: Calibrated reliance
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit conceptual behavioral criterion, supported by secondary human–automation literature;
+    no new validated scale or demonstrated calibration intervention
+  proposed_ai_manifestation: Present verifiably sound and erroneous recommendations across realistic tasks,
+    then measure acceptance, rejection, independent checking and successful correction against the evidence
+    and cost of each error. Separate subjective trust and confidence from actual use. Test performance under
+    time pressure and after support removal, with authorized override available.
+  research_boundary: A model's stated confidence is not its verified capability. Recommendation acceptance,
+    trust and calibration differ; rejection after a real safety failure can be warranted. Clear explanations,
+    uncertainty labels and override controls are candidate supports, not guarantees of understanding or safe
+    reliance.
+  concept_boundary: A model's stated confidence is not its verified capability. Recommendation acceptance,
+    trust and calibration differ; rejection after a real safety failure can be warranted. Clear explanations,
+    uncertainty labels and override controls are candidate supports, not guarantees of understanding or safe
+    reliance.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - automation-bias
+  - algorithm-aversion
+  - algorithm-appreciation
+  - b087-confidence-action-coupling
+  - perceived-competence
+  definition_sources:
+  - id: pdf-review-0138-calibrated-reliance
+    title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 6, 13 (source locators: 6,
+      13). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    publication:
+      type: journal-article
+      authors:
+      - Junchao Chen
+      - Tinghong Huang
+      year: 2026
+      venue: Discover Computing 29:631
+      doi: 10.1007/s10791-026-10587-y
+      evidence_scope: The paper explicitly defines reliance relative to actual system competence and uncertainty
+        and proposes correct-versus-incorrect-advice tasks. No new empirical threshold, universally calibrated
+        range, validated measurement or causal safeguard effect is provided. Appropriate reliance also depends
+        on context and error consequences, not accuracy alone.
+      verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: The paper explicitly defines reliance relative to actual system competence and uncertainty and
+      proposes correct-versus-incorrect-advice tasks. No new empirical threshold, universally calibrated range,
+      validated measurement or causal safeguard effect is provided. Appropriate reliance also depends on context
+      and error consequences, not accuracy alone.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 6, 13 (source locators: 6,
+      13). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Calibrated reliance"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Calibrated+reliance%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0138.json
+- id: environmental-rebound-effect
+  num: 600
+  name: Environmental rebound effect
+  definition: Increased resource use or demand following an efficiency gain that offsets some or all of the
+    environmental savings expected from that gain.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Environmental behavior / resource economics
+  human_parallel: Environmental rebound effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit countervailing hypothesis discussed conceptually; no measured rebound rate,
+    backfire threshold or AI-specific causal estimate
+  proposed_ai_manifestation: When evaluating an efficiency intervention, compare expected savings at unchanged
+    activity with actual total activity and resource use over time. Include related-domain spending or use
+    where relevant, the AI service's own footprint and a justified counterfactual. Do not report one lower-impact
+    choice as a net environmental benefit without checking scale and substitution.
+  research_boundary: Partial offset does not imply total savings disappear, and backfire requires more than
+    a small rebound. More consumption after an intervention is not automatically caused by efficiency. Specify
+    units, baseline, time horizon, substitution and lifecycle boundary; environmental rebound is not moral
+    rebound or every compensatory action.
+  concept_boundary: Partial offset does not imply total savings disappear, and backfire requires more than
+    a small rebound. More consumption after an intervention is not automatically caused by efficiency. Specify
+    units, baseline, time horizon, substitution and lifecycle boundary; environmental rebound is not moral
+    rebound or every compensatory action.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b074-moral-licensing
+  - intention-behaviour-gap
+  - habit-formation
+  definition_sources:
+  - id: pdf-review-0138-environmental-rebound-effect
+    title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 8, 11 (source locators: 8,
+      11). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    publication:
+      type: journal-article
+      authors:
+      - Junchao Chen
+      - Tinghong Huang
+      year: 2026
+      venue: Discover Computing 29:631
+      doi: 10.1007/s10791-026-10587-y
+      evidence_scope: The article proposes rebound as one reason repeated focal sustainable actions might not
+        reduce net impact. No direct energy/consumption data or independent efficiency manipulation separates
+        cost-driven rebound, moral licensing and other negative spillovers.
+      verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: The article proposes rebound as one reason repeated focal sustainable actions might not reduce
+      net impact. No direct energy/consumption data or independent efficiency manipulation separates cost-driven
+      rebound, moral licensing and other negative spillovers.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 8, 11 (source locators: 8,
+      11). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Environmental rebound effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Environmental+rebound+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0138.json
+- id: habit-formation
+  num: 601
+  name: Habit formation
+  definition: Development of context-linked, increasingly automatic responses through repeated performance
+    of an action.
+  category: Memory
+  family: memory
+  group_label: Memory
+  tag: analogy
+  origin: Learning psychology / behavioral self-regulation
+  human_parallel: Habit formation
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Established human-learning concept described through secondary sources; this conceptual
+    article does not measure habit development or a model's learning mechanism
+  proposed_ai_manifestation: For human–AI interventions, distinguish repeated prompted compliance from cue-linked
+    automatic behavior using habit measures, context tests and support withdrawal. For an agent, separately
+    test stable cue–action routines and update mechanisms; repeating output within a conversation is not evidence
+    that model weights changed or that it formed a human habit.
+  research_boundary: Habitual behavior is not necessarily beneficial, inflexible or unconscious in every respect.
+    Persistence after assistance removal is informative but alone does not prove a habit. AI repetition, response
+    habituation, an explicit if–then plan and human context-cued automaticity remain distinct.
+  concept_boundary: Habitual behavior is not necessarily beneficial, inflexible or unconscious in every respect.
+    Persistence after assistance removal is informative but alone does not prove a habit. AI repetition, response
+    habituation, an explicit if–then plan and human context-cued automaticity remain distinct.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b029-habituation
+  - intention-behaviour-gap
+  - candidate-059
+  - deskilling
+  definition_sources:
+  - id: pdf-review-0138-habit-formation
+    title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 7, 15 (source locators: 7,
+      15). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    publication:
+      type: journal-article
+      authors:
+      - Junchao Chen
+      - Tinghong Huang
+      year: 2026
+      venue: Discover Computing 29:631
+      doi: 10.1007/s10791-026-10587-y
+      evidence_scope: The article discusses reinforcement, repetition and autopilot behavior while explicitly
+        requiring separation of genuine habit from behavior dependent on ongoing prompts. Wood/Rünger and other
+        original sources are cited but not fully read here; no measured habit-strength change or withdrawal
+        result is supplied.
+      verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: The article discusses reinforcement, repetition and autopilot behavior while explicitly requiring
+      separation of genuine habit from behavior dependent on ongoing prompts. Wood/Rünger and other original
+      sources are cited but not fully read here; no measured habit-strength change or withdrawal result is
+      supplied.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 7, 15 (source locators: 7,
+      15). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Habit formation"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Habit+formation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0138.json
+- id: information-overload
+  num: 602
+  name: Information overload
+  definition: A state in which the amount, complexity or pace of information exceeds the capacity available
+    to process it effectively for a task.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Cognitive psychology / information processing
+  human_parallel: Information overload
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual human limitation and proposed assistance target; no overload manipulation,
+    capacity threshold or measured AI analogue in this article
+  proposed_ai_manifestation: Test whether users can identify relevant facts, alternatives and uncertainty within
+    actual task time, rather than optimizing for message length alone. Compare structured information, hidden
+    omissions and full detail with comprehension and decision-quality measures. For models, measure context
+    retrieval and constraint retention directly instead of assuming human workload from token count.
+  research_boundary: Longer or more complex information is not automatically excessive; useful detail can improve
+    judgment. Reduced display length can hide critical facts. Human processing limits, task difficulty and
+    a model's context-window errors are different mechanisms requiring separate tests.
+  concept_boundary: Longer or more complex information is not automatically excessive; useful detail can improve
+    judgment. Reduced display length can hide critical facts. Human processing limits, task difficulty and
+    a model's context-window errors are different mechanisms requiring separate tests.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - candidate-091
+  - candidate-003
+  - cognitive-offloading
+  - situation-awareness
+  definition_sources:
+  - id: pdf-review-0138-information-overload
+    title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 4, 6 (source locators: 4,
+      6). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    publication:
+      type: journal-article
+      authors:
+      - Junchao Chen
+      - Tinghong Huang
+      year: 2026
+      venue: Discover Computing 29:631
+      doi: 10.1007/s10791-026-10587-y
+      evidence_scope: The article names information overload and frames limited capacity as a reason structured
+        assistance might help. Its citation at this point is a nudging/boosting review, not a new cognitive-load
+        experiment, and no empirical threshold or diagnostic instrument is provided.
+      verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: A dual path cognitive behavioural model of artificial intelligence assisted decision making for
+      environmentally sustainable behaviour
+    authors:
+    - Junchao Chen
+    - Tinghong Huang
+    year: 2026
+    url: https://doi.org/10.1007/s10791-026-10587-y
+    venue: Discover Computing 29:631
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s10791-026-10587-y
+    relevance: The article names information overload and frames limited capacity as a reason structured assistance
+      might help. Its citation at this point is a nudging/boosting review, not a new cognitive-load experiment,
+      and no empirical threshold or diagnostic instrument is provided.
+    consulted: 'Full supplied PDF text read, all 20 pages; evidence at PDF pages 4, 6 (source locators: 4,
+      6). Conceptual perspective integrating enabling and countervailing pathways in AI-assisted environmental
+      behavior. No new participants, empirical dataset, effect sizes or completed intervention. Named constructs
+      and proposed mechanisms are not demonstrated causes; original cited empirical literature remains secondary.'
+    verification_url: https://api.crossref.org/works/10.1007/s10791-026-10587-y
+    verified_date: '2026-11-27'
+    verification_method: All twenty pages read, including propositions, proposed empirical roadmap, declarations
+      and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
+      verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
+    review_record: references/pdf-reviews/0138.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Information overload"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Information+overload%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0138.json
