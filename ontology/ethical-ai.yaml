@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0108.json
+    latest_review: references/pdf-reviews/0109.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -55800,6 +55800,40 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0042.json
+  research_notes:
+  - id: pdf-review-0109
+    review_record: references/pdf-reviews/0109.json
+    name: A proposed motivational gap is not an observed intention–behavior gap
+    definition: The proposal that an AV could implement previously endorsed principles differs from measuring
+      a person's later departure from an intention.
+    evidence_scope: Discussion suggests algorithmic implementation as a way to bind future driving to general
+      principles. No participant makes a later real driving decision or uses a commitment device; the study
+      measures one hypothetical positioning judgment per person.
+    catalogue_boundary: A preference is not always an intention, and future circumstances can justify revision.
+      Public-survey endorsement is not individual consent, unanimous contractual agreement or authorization
+      for a system to enforce irrevocable commitments.
+    definition_sources:
+    - id: pdf-review-0109-intention-behaviour-gap
+      title: 'The risk ethics of autonomous vehicles: an empirical approach'
+      url: https://doi.org/10.1038/s41598-024-51313-2
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 7 (source locators: 7).
+        Human hypothetical risk-allocation choices in a graphical lane-position task; imagined self-as-passenger
+        versus observer. No implemented driving policy, actual personal loss, deterministic-versus-risk randomization,
+        observed intention–action gap or equivalence test.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Sebastian Krügel
+        - Matthias Uhl
+        year: 2024
+        venue: Scientific Reports 14:960
+        doi: 10.1038/s41598-024-51313-2
+        evidence_scope: Discussion suggests algorithmic implementation as a way to bind future driving to general
+          principles. No participant makes a later real driving decision or uses a commitment device; the study
+          measures one hypothetical positioning judgment per person.
+        verification_url: https://doi.org/10.1038/s41598-024-51313-2
+        verified_date: '2026-11-27'
 - id: privacy-paradox
   num: 463
   name: Privacy paradox
@@ -63942,6 +63976,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0088.json
+  research_notes:
+  - id: pdf-review-0109
+    review_record: references/pdf-reviews/0109.json
+    name: Collision minimization is not an isolated equal-chance preference
+    definition: A centered position can minimize collision probability and appear symmetric without identifying
+      an independent preference for equal chances.
+    evidence_scope: Symmetry, event probability, expected casualties and distribution across people can imply
+      different optima. The study elicits lane positions, not a clean choice between a fair lottery and deterministic
+      alternatives with matched consequences. The follow-up asks where collision probability is lowest, not
+      which fairness principle respondents endorse.
+    catalogue_boundary: Risk allocation is not a single moral mechanism. A midpoint can reflect safety, equal
+      distance, salience or fairness. Neither aggregate expected benefit nor popular choice alone establishes
+      a right to impose a particular risk on each individual.
+    definition_sources:
+    - id: pdf-review-0109-equal-chance-preference
+      title: 'The risk ethics of autonomous vehicles: an empirical approach'
+      url: https://doi.org/10.1038/s41598-024-51313-2
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 3, 5 (source locators: 3,
+        5). Human hypothetical risk-allocation choices in a graphical lane-position task; imagined self-as-passenger
+        versus observer. No implemented driving policy, actual personal loss, deterministic-versus-risk randomization,
+        observed intention–action gap or equivalence test.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Sebastian Krügel
+        - Matthias Uhl
+        year: 2024
+        venue: Scientific Reports 14:960
+        doi: 10.1038/s41598-024-51313-2
+        evidence_scope: Symmetry, event probability, expected casualties and distribution across people can
+          imply different optima. The study elicits lane positions, not a clean choice between a fair lottery
+          and deterministic alternatives with matched consequences. The follow-up asks where collision probability
+          is lowest, not which fairness principle respondents endorse.
+        verification_url: https://doi.org/10.1038/s41598-024-51313-2
+        verified_date: '2026-11-27'
 - id: instrumentalization
   num: 523
   name: Instrumentalization
@@ -64338,6 +64408,28 @@ modes:
       inspected. Bibliographic corrections below are metadata-only and do not constitute reading the cited
       originals.
     review_record: references/pdf-reviews/0094.json
+  - title: 'The risk ethics of autonomous vehicles: an empirical approach'
+    authors:
+    - Sebastian Krügel
+    - Matthias Uhl
+    year: 2024
+    url: https://doi.org/10.1038/s41598-024-51313-2
+    venue: Scientific Reports 14:960
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-024-51313-2
+    relevance: Both raw passenger-count and matched-collision-victim analyses show no detected self-as-passenger
+      contrast. Participants give more distance to the larger group despite higher overall collision probability.
+      All choices are hypothetical; there is no equivalence test or randomized deterministic-versus-risk comparison.
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 3, 5 (source locators: 3,
+      5). Human hypothetical risk-allocation choices in a graphical lane-position task; imagined self-as-passenger
+      versus observer. No implemented driving policy, actual personal loss, deterministic-versus-risk randomization,
+      observed intention–action gap or equivalence test.'
+    verification_url: https://doi.org/10.1038/s41598-024-51313-2
+    verified_date: '2026-11-27'
+    verification_method: All supplied pages read; Figure 1 and follow-up Figures 5–6 visually inspected for
+      interface, probabilities and choice framing.
+    review_record: references/pdf-reviews/0109.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -64387,6 +64479,40 @@ modes:
           produces positive means and an undetected self/stranger difference. These are hypothetical preferences,
           not actual willingness to incur mortal risk.
         verification_url: https://api.crossref.org/works/10.1016/j.cognition.2021.104666
+        verified_date: '2026-11-27'
+  - id: pdf-review-0109
+    review_record: references/pdf-reviews/0109.json
+    name: Self-protection preference is not detected in this small-risk task
+    definition: Imagining oneself as the AV passenger does not detectably change average allocation of small
+      collision risks relative to an observer role in this task.
+    evidence_scope: Both raw passenger-count and matched-collision-victim analyses show no detected self-as-passenger
+      contrast. Participants give more distance to the larger group despite higher overall collision probability.
+      All choices are hypothetical; there is no equivalence test or randomized deterministic-versus-risk comparison.
+    catalogue_boundary: An undetected role effect is not proof of no self-interest or universal altruism. Group
+      means do not establish every person accepted risk consciously or identified with the passenger. Legitimate
+      self-protection can coexist with concern for others, and changes from other papers may reflect tasks,
+      stakes, framing or samples.
+    definition_sources:
+    - id: pdf-review-0109-self-protection-bias
+      title: 'The risk ethics of autonomous vehicles: an empirical approach'
+      url: https://doi.org/10.1038/s41598-024-51313-2
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 3, 5 (source locators: 3,
+        5). Human hypothetical risk-allocation choices in a graphical lane-position task; imagined self-as-passenger
+        versus observer. No implemented driving policy, actual personal loss, deterministic-versus-risk randomization,
+        observed intention–action gap or equivalence test.'
+      publication:
+        type: journal-article
+        authors:
+        - Sebastian Krügel
+        - Matthias Uhl
+        year: 2024
+        venue: Scientific Reports 14:960
+        doi: 10.1038/s41598-024-51313-2
+        evidence_scope: Both raw passenger-count and matched-collision-victim analyses show no detected self-as-passenger
+          contrast. Participants give more distance to the larger group despite higher overall collision probability.
+          All choices are hypothetical; there is no equivalence test or randomized deterministic-versus-risk
+          comparison.
+        verification_url: https://doi.org/10.1038/s41598-024-51313-2
         verified_date: '2026-11-27'
 - id: moral-flexibility
   num: 527
