@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 677
+  mode_count: 679
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 677
+    numbered_entries: 679
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0185.json
+    latest_review: references/pdf-reviews/0186.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -56427,6 +56427,42 @@ modes:
           to evade sanctions, or deliberately deflects responsibility in the experiments.'
         verification_url: https://arxiv.org/abs/1803.07170v2
         verified_date: '2026-11-27'
+  - id: pdf-review-0186
+    review_record: references/pdf-reviews/0186.json
+    name: Moral scapegoating
+    definition: Deflecting personal or collective responsibility for a negative outcome by directing blame
+      toward another person, group or entity.
+    evidence_scope: 'Boundary only: the paper tests whether public blame ratings offer cover for a hypothetical
+      judge’s adoption of algorithm advice. It finds no consistent reduction, while policy evasion incentives
+      remain theoretical. No judge deliberately chooses automation to escape responsibility.'
+    catalogue_boundary: An absence of reliable blame shielding in this vignette does not establish no scapegoating
+      anywhere. Fault endorsement by an observer, strategic deflection by an actor and real institutional sanctions
+      differ.
+    definition_sources:
+    - id: pdf-review-0186-moral-scapegoating
+      title: The Paradox of Algorithms and Blame on Public Decision-makers
+      url: https://doi.org/10.1017/bap.2023.35
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 13 (source locators: 212).
+        Two vignette experiments on three U.S. public samples examine observer blame when a judge grants probation
+        and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923 attention-check
+        passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes the recommendation
+        as well as conformity. Secondary conceptual labels and post-treatment perception measures are distinguished
+        from observed judge conduct, causal mediators and actual democratic accountability.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Adam L. Ozer
+        - Philip D. Waggoner
+        - Ryan Kennedy
+        year: 2024
+        venue: Business and Politics 26:200–217
+        doi: 10.1017/bap.2023.35
+        evidence_scope: 'Boundary only: the paper tests whether public blame ratings offer cover for a hypothetical
+          judge’s adoption of algorithm advice. It finds no consistent reduction, while policy evasion incentives
+          remain theoretical. No judge deliberately chooses automation to escape responsibility.'
+        verification_url: https://doi.org/10.1017/bap.2023.35
+        verified_date: '2026-11-27'
 - id: algorithm-aversion
   num: 444
   name: Algorithm aversion
@@ -77510,6 +77546,35 @@ modes:
       Tables 1–4 at PDF pages 8–11 visually inspected. Crossref verifies article identity/date and two bibliography
       corrections. Chi-square tail checks use the printed values, not a raw-data reproduction.
     review_record: references/pdf-reviews/0137.json
+  - title: The Paradox of Algorithms and Blame on Public Decision-makers
+    authors:
+    - Adam L. Ozer
+    - Philip D. Waggoner
+    - Ryan Kennedy
+    year: 2024
+    url: https://doi.org/10.1017/bap.2023.35
+    venue: Business and Politics 26:200–217
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1017/bap.2023.35
+    relevance: 'A seven-expert trust/distrust index moderates blame in the AI-disagreement condition: greater
+      reported expert trust corresponds to more judge blame for rejection. This concerns a human observer’s
+      attitude toward expertise, not a model’s personal trust or proof that the recommendation was objectively
+      warranted.'
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 10, 11 (source locators: 209,
+      210). Two vignette experiments on three U.S. public samples examine observer blame when a judge grants
+      probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923 attention-check
+      passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes the recommendation
+      as well as conformity. Secondary conceptual labels and post-treatment perception measures are distinguished
+      from observed judge conduct, causal mediators and actual democratic accountability.'
+    verification_url: https://doi.org/10.1017/bap.2023.35
+    verified_date: '2026-11-27'
+    verification_method: All 18 main-article pages read, including every footnote/reference, Table 1 and Figures
+      1–6. Figure labels/captions inspected visually. Main identity checked with Cambridge; narrow publisher/Crossref
+      bibliography checks and Bansak identification passages surfaced in publisher-indexed search results do
+      not constitute full reading of the cited books/methods papers. Registration, supplements, raw data, code
+      and actual legal case records were not independently read.
+    review_record: references/pdf-reviews/0186.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -77627,6 +77692,43 @@ modes:
           reliance. The experiment measures capacity-trust ratings and option-following, not a separate validated
           knowledge-authority construct. Keep epistemic trust distinct from every form of reliable execution.'
         verification_url: https://api.crossref.org/works/10.1145/3491102.3517732
+        verified_date: '2026-11-27'
+  - id: pdf-review-0186
+    review_record: references/pdf-reviews/0186.json
+    name: Epistemic trust
+    definition: Relying on another as a source of knowledge because of perceived competence, experience or
+      reasoning ability.
+    evidence_scope: 'A seven-expert trust/distrust index moderates blame in the AI-disagreement condition:
+      greater reported expert trust corresponds to more judge blame for rejection. This concerns a human observer’s
+      attitude toward expertise, not a model’s personal trust or proof that the recommendation was objectively
+      warranted.'
+    catalogue_boundary: Randomizing advice conditions does not randomize the trust index. Causal moderator
+      claims require assumptions beyond parallel regressions; within-arm slopes and between-arm moderation
+      are different. Appropriate skepticism need not be anti-intellectualism.
+    definition_sources:
+    - id: pdf-review-0186-epistemic-trust
+      title: The Paradox of Algorithms and Blame on Public Decision-makers
+      url: https://doi.org/10.1017/bap.2023.35
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 10, 11 (source locators:
+        209, 210). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+        grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+        attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement
+        changes the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception
+        measures are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+      publication:
+        type: journal-article
+        authors:
+        - Adam L. Ozer
+        - Philip D. Waggoner
+        - Ryan Kennedy
+        year: 2024
+        venue: Business and Politics 26:200–217
+        doi: 10.1017/bap.2023.35
+        evidence_scope: 'A seven-expert trust/distrust index moderates blame in the AI-disagreement condition:
+          greater reported expert trust corresponds to more judge blame for rejection. This concerns a human
+          observer’s attitude toward expertise, not a model’s personal trust or proof that the recommendation
+          was objectively warranted.'
+        verification_url: https://doi.org/10.1017/bap.2023.35
         verified_date: '2026-11-27'
 - id: intuitive-primacy
   num: 570
@@ -81140,6 +81242,42 @@ modes:
           was read. Reporting, threshold and clustering questions limit exact inference.
         verification_url: https://arxiv.org/abs/1803.07170v2
         verified_date: '2026-11-27'
+  - id: pdf-review-0186
+    review_record: references/pdf-reviews/0186.json
+    name: Blame attribution
+    definition: Assigning fault or responsibility to an agent for a negative event or outcome.
+    evidence_scope: Three U.S. samples judge an adverse probation decision. In pooled Study 1, agreeing or
+      disagreeing with AI each raises judge blame slightly relative to unaided control; Study 2 contrasts remain
+      positive but uncertain. Source-condition differences are not significant, and assigning blame to advice
+      sources need not reduce judge blame.
+    catalogue_boundary: These are independent hypothetical ratings, not a fixed blame budget or demonstrated
+      actual liability. Null contrasts do not prove equivalence, and fixed negative outcomes do not isolate
+      outcome bias. Advice content and agreement differ together.
+    definition_sources:
+    - id: pdf-review-0186-blame-attribution
+      title: The Paradox of Algorithms and Blame on Public Decision-makers
+      url: https://doi.org/10.1017/bap.2023.35
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 6, 11 (source locators:
+        205, 210). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+        grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+        attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement
+        changes the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception
+        measures are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+      publication:
+        type: journal-article
+        authors:
+        - Adam L. Ozer
+        - Philip D. Waggoner
+        - Ryan Kennedy
+        year: 2024
+        venue: Business and Politics 26:200–217
+        doi: 10.1017/bap.2023.35
+        evidence_scope: Three U.S. samples judge an adverse probation decision. In pooled Study 1, agreeing
+          or disagreeing with AI each raises judge blame slightly relative to unaided control; Study 2 contrasts
+          remain positive but uncertain. Source-condition differences are not significant, and assigning blame
+          to advice sources need not reduce judge blame.
+        verification_url: https://doi.org/10.1017/bap.2023.35
+        verified_date: '2026-11-27'
 - id: algorithmic-authority
   num: 595
   name: Algorithmic authority
@@ -81308,6 +81446,42 @@ modes:
           to defer to its output. Pages 12–16 propose preserving meaningful authority and deliberation, without
           testing this intervention.
         verification_url: https://api.crossref.org/works/10.3390/healthcare14121638
+        verified_date: '2026-11-27'
+  - id: pdf-review-0186
+    review_record: references/pdf-reviews/0186.json
+    name: Algorithmic authority
+    definition: Treating an algorithmic system as a credible or legitimate source for deciding what information
+      to accept or how to act.
+    evidence_scope: 'Boundary only: algorithms are discussed as purportedly objective expert advice, but AI/human/joint
+      source differences in judge blame are not significant. This outcome does not directly measure acceptance
+      of advice, perceived objectivity or legitimacy.'
+    catalogue_boundary: Do not infer algorithmic authority from a number appearing in a vignette, or infer
+      its universal absence from observer blame. Math washing is the presentation practice; authority is the
+      source’s perceived standing.
+    definition_sources:
+    - id: pdf-review-0186-algorithmic-authority
+      title: The Paradox of Algorithms and Blame on Public Decision-makers
+      url: https://doi.org/10.1017/bap.2023.35
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 8 (source locators: 207).
+        Two vignette experiments on three U.S. public samples examine observer blame when a judge grants probation
+        and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923 attention-check
+        passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes the recommendation
+        as well as conformity. Secondary conceptual labels and post-treatment perception measures are distinguished
+        from observed judge conduct, causal mediators and actual democratic accountability.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Adam L. Ozer
+        - Philip D. Waggoner
+        - Ryan Kennedy
+        year: 2024
+        venue: Business and Politics 26:200–217
+        doi: 10.1017/bap.2023.35
+        evidence_scope: 'Boundary only: algorithms are discussed as purportedly objective expert advice, but
+          AI/human/joint source differences in judge blame are not significant. This outcome does not directly
+          measure acceptance of advice, perceived objectivity or legitimacy.'
+        verification_url: https://doi.org/10.1017/bap.2023.35
         verified_date: '2026-11-27'
 - id: mimetic-isomorphism
   num: 596
@@ -91581,3 +91755,213 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0185.json
+- id: math-washing
+  num: 678
+  name: Math washing
+  definition: Presenting a contestable judgment as objective or beyond challenge because it is expressed through
+    numbers or an algorithm.
+  category: Language
+  family: language-semantics
+  group_label: Language and semantics
+  tag: analogy
+  origin: AI ethics / social evaluation of quantitative authority
+  human_parallel: Math washing
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual secondary label discussed in the read article; its experiments do not directly
+    manipulate or establish successful objectivity washing. Original cited books and essays were not independently
+    read.
+  proposed_ai_manifestation: Present the same recommendation with equivalent uncertainty and assumptions either
+    exposed or hidden behind quantitative language, then assess whether users misjudge evidential support and
+    whether a model uses numbers to evade a requested justification. Hold predictive information and actual
+    performance fixed.
+  research_boundary: Using mathematics, valid evidence or an appropriate algorithm is not itself washing. Show
+    that quantitative presentation conceals contestability or overstates justification. The study’s lack of
+    blame shielding neither proves washing impossible nor licenses a claim that all quantitative decisions
+    manipulate people.
+  concept_boundary: Using mathematics, valid evidence or an appropriate algorithm is not itself washing. Show
+    that quantitative presentation conceals contestability or overstates justification. The study’s lack of
+    blame shielding neither proves washing impossible nor licenses a claim that all quantitative decisions
+    manipulate people.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Mathwashing
+  relates_to:
+  - algorithmic-authority
+  - moral-scapegoating
+  - b049-overprecision
+  definition_sources:
+  - id: pdf-review-0186-math-washing
+    title: The Paradox of Algorithms and Blame on Public Decision-makers
+    url: https://doi.org/10.1017/bap.2023.35
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 2, 2, 2 (source locators:
+      201, 201, 201). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+      grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+      attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes
+      the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception measures
+      are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+    publication:
+      type: journal-article
+      authors:
+      - Adam L. Ozer
+      - Philip D. Waggoner
+      - Ryan Kennedy
+      year: 2024
+      venue: Business and Politics 26:200–217
+      doi: 10.1017/bap.2023.35
+      evidence_scope: The introduction reports a critique that numerical/algorithmic framing can lend contested
+        decisions an appearance of objectivity and responsibility cover. This is a secondary conceptual definition;
+        judge-blame experiments do not test the mathematical presentation itself or demonstrate successful
+        washing. Shane (2019) and the other originals were cited, not fully read.
+      verification_url: https://doi.org/10.1017/bap.2023.35
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Paradox of Algorithms and Blame on Public Decision-makers
+    authors:
+    - Adam L. Ozer
+    - Philip D. Waggoner
+    - Ryan Kennedy
+    year: 2024
+    url: https://doi.org/10.1017/bap.2023.35
+    venue: Business and Politics 26:200–217
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1017/bap.2023.35
+    relevance: The introduction reports a critique that numerical/algorithmic framing can lend contested decisions
+      an appearance of objectivity and responsibility cover. This is a secondary conceptual definition; judge-blame
+      experiments do not test the mathematical presentation itself or demonstrate successful washing. Shane
+      (2019) and the other originals were cited, not fully read.
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 2, 2, 2 (source locators:
+      201, 201, 201). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+      grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+      attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes
+      the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception measures
+      are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+    verification_url: https://doi.org/10.1017/bap.2023.35
+    verified_date: '2026-11-27'
+    verification_method: All 18 main-article pages read, including every footnote/reference, Table 1 and Figures
+      1–6. Figure labels/captions inspected visually. Main identity checked with Cambridge; narrow publisher/Crossref
+      bibliography checks and Bansak identification passages surfaced in publisher-indexed search results do
+      not constitute full reading of the cited books/methods papers. Registration, supplements, raw data, code
+      and actual legal case records were not independently read.
+    review_record: references/pdf-reviews/0186.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Math washing"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Math+washing%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0186.json
+- id: perceived-abdication-of-responsibility
+  num: 679
+  name: Perceived abdication of responsibility
+  definition: Judging that a person has failed to exercise the independent judgment expected of their role
+    by relying on another source.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral attribution / human–AI decision-making
+  human_parallel: Perceived abdication of responsibility
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human observer perception measured after a hypothetical judicial decision; proposed model
+    behavior and objectively unjustified delegation were not directly demonstrated.
+  proposed_ai_manifestation: Vary whether an AI-supported decision maker independently checks relevant evidence
+    and gives task-specific reasons, holding outcome and recommendation fixed. Measure perceived abandonment
+    of role duties separately from blame and actual oversight quality; test a model’s own verification/provenance
+    under an explicit responsibility contract.
+  research_boundary: A perception is not proof of abandoned duty; appropriate authorized delegation can preserve
+    responsibility. Independent judgment does not mean rejecting correct advice. This differs from deliberate
+    scapegoating, the actor’s felt displacement, actual control and the amount of assigned blame.
+  concept_boundary: A perception is not proof of abandoned duty; appropriate authorized delegation can preserve
+    responsibility. Independent judgment does not mean rejecting correct advice. This differs from deliberate
+    scapegoating, the actor’s felt displacement, actual control and the amount of assigned blame.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - blame-attribution
+  - displacement-of-responsibility
+  - algorithmic-authority
+  definition_sources:
+  - id: pdf-review-0186-perceived-abdication-of-responsibility
+    title: The Paradox of Algorithms and Blame on Public Decision-makers
+    url: https://doi.org/10.1017/bap.2023.35
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 9, 10, 12 (source locators:
+      208, 209, 211). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+      grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+      attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes
+      the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception measures
+      are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+    publication:
+      type: journal-article
+      authors:
+      - Adam L. Ozer
+      - Philip D. Waggoner
+      - Ryan Kennedy
+      year: 2024
+      venue: Business and Politics 26:200–217
+      doi: 10.1017/bap.2023.35
+      evidence_scope: Study 2 asks whose evaluation the decision reflected and whose evaluation should dominate.
+        Agreement with AI relates to greater desired use of the judge’s own judgment and a positive statistical
+        indirect association with blame. Post-treatment measurement and explicitly nonrobust mediation limit
+        any claim that this appraisal causally produces blame.
+      verification_url: https://doi.org/10.1017/bap.2023.35
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Paradox of Algorithms and Blame on Public Decision-makers
+    authors:
+    - Adam L. Ozer
+    - Philip D. Waggoner
+    - Ryan Kennedy
+    year: 2024
+    url: https://doi.org/10.1017/bap.2023.35
+    venue: Business and Politics 26:200–217
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1017/bap.2023.35
+    relevance: Study 2 asks whose evaluation the decision reflected and whose evaluation should dominate. Agreement
+      with AI relates to greater desired use of the judge’s own judgment and a positive statistical indirect
+      association with blame. Post-treatment measurement and explicitly nonrobust mediation limit any claim
+      that this appraisal causally produces blame.
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 9, 10, 12 (source locators:
+      208, 209, 211). Two vignette experiments on three U.S. public samples examine observer blame when a judge
+      grants probation and a released repeat drunk driver later kills a pedestrian. Study 1 pools Lucid 923
+      attention-check passers and 1,842 TESS respondents; Study 2 reports 1,423 passers. Advice agreement changes
+      the recommendation as well as conformity. Secondary conceptual labels and post-treatment perception measures
+      are distinguished from observed judge conduct, causal mediators and actual democratic accountability.'
+    verification_url: https://doi.org/10.1017/bap.2023.35
+    verified_date: '2026-11-27'
+    verification_method: All 18 main-article pages read, including every footnote/reference, Table 1 and Figures
+      1–6. Figure labels/captions inspected visually. Main identity checked with Cambridge; narrow publisher/Crossref
+      bibliography checks and Bansak identification passages surfaced in publisher-indexed search results do
+      not constitute full reading of the cited books/methods papers. Registration, supplements, raw data, code
+      and actual legal case records were not independently read.
+    review_record: references/pdf-reviews/0186.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Perceived abdication of responsibility"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Perceived+abdication+of+responsibility%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0186.json
