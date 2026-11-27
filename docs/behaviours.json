@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 666,
+    "mode_count": 668,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 666,
+      "numbered_entries": 668,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0173.json",
+      "latest_review": "references/pdf-reviews/0174.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 666
+    "source_record_count": 668
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -9739,7 +9739,41 @@
         "queried_at": "2026-11-09T01:37:03+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22in-group+favoritism%22+OR+all%3A%22in-group+favouritism%22+OR+all%3A%22ingroup+bias%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0174",
+          "review_record": "references/pdf-reviews/0174.json",
+          "name": "In-group favouritism",
+          "definition": "Preferential treatment of people perceived as belonging to one’s own social group.",
+          "evidence_scope": "Boundary-only comparison: this experiment adapts minimal-group matrices to one recipient and no explicit group assignment. Congruence favoritism motivates a separate operational entry rather than being declared proof of an explicit in-group/out-group identity.",
+          "catalogue_boundary": "Shared identity can matter, but explicit group labels are not necessary for all matching-choice favoritism. Do not infer measured identity, actual social exclusion or a protected-class discrimination effect from these minimal conditions.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0174-b070-in-group-favouritism",
+              "title": "Comparing discriminatory behavior against AI and humans",
+              "url": "https://doi.org/10.1038/s41598-025-94631-9",
+              "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 2, 6 (source locators: 2, 6). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mike Zhuang",
+                  "Eliane Deschrijver",
+                  "Richard Ramsey",
+                  "Ofir Turel"
+                ],
+                "year": 2025,
+                "venue": "Scientific Reports 15, article 10894",
+                "doi": "10.1038/s41598-025-94631-9",
+                "evidence_scope": "Boundary-only comparison: this experiment adapts minimal-group matrices to one recipient and no explicit group assignment. Congruence favoritism motivates a separate operational entry rather than being declared proof of an explicit in-group/out-group identity.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b071-dual-process-moral-judgment",
@@ -62705,6 +62739,38 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0174",
+          "review_record": "references/pdf-reviews/0174.json",
+          "name": "Algorithm aversion",
+          "definition": "Reluctance to use or accept algorithmic judgments relative to human judgment in a comparable task.",
+          "evidence_scope": "Boundary-only null extension: hypothesized greater unequal allocation to AI is not supported, and explicit attitudes do not predict pull scores. This recipient-directed task does not directly measure reluctance to accept machine advice; it is not a general refutation or replication of the exact catalogue construct.",
+          "catalogue_boundary": "Accepting an algorithm’s advice, donating money to a purported AI and recognizing its capabilities are different decisions. No universal absence of aversion or exact identity equivalence follows.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0174-algorithm-aversion",
+              "title": "Comparing discriminatory behavior against AI and humans",
+              "url": "https://doi.org/10.1038/s41598-025-94631-9",
+              "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 3, 3 (source locators: 3, 3). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mike Zhuang",
+                  "Eliane Deschrijver",
+                  "Richard Ramsey",
+                  "Ofir Turel"
+                ],
+                "year": 2025,
+                "venue": "Scientific Reports 15, article 10894",
+                "doi": "10.1038/s41598-025-94631-9",
+                "evidence_scope": "Boundary-only null extension: hypothesized greater unequal allocation to AI is not supported, and explicit attitudes do not predict pull scores. This recipient-directed task does not directly measure reluctance to accept machine advice; it is not a general refutation or replication of the exact catalogue construct.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -66813,6 +66879,27 @@
           "verified_date": "2026-11-27",
           "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
           "review_record": "references/pdf-reviews/0051.json"
+        },
+        {
+          "title": "Comparing discriminatory behavior against AI and humans",
+          "authors": [
+            "Mike Zhuang",
+            "Eliane Deschrijver",
+            "Richard Ramsey",
+            "Ofir Turel"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1038/s41598-025-94631-9",
+          "venue": "Scientific Reports 15, article 10894",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1038/s41598-025-94631-9",
+          "relevance": "Human and fictional-AI recipients show comparable descriptive congruency-favoring allocation patterns. This is relevant original social-response evidence, but the identity contrast is uncertain and day-assigned; automaticity, mental states and implicit prejudice are not directly measured.",
+          "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 3, 3, 5 (source locators: 3, 3, 5). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+          "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+          "verified_date": "2026-11-27",
+          "verification_method": "All eight supplied text pages read, including model deviation, method, references and declarations. Figures 1–3 and Table 1 visually inspected on pages 2–4. Crossref verifies the main article and the cited 2025 PNAS predecessor’s identity. External OSF preregistration, data, code, matrix layouts and supplements were not independently read or run.",
+          "review_record": "references/pdf-reviews/0174.json"
         }
       ],
       "literature_search": {
@@ -66857,6 +66944,37 @@
                 "doi": "10.1145/3772318.3790351",
                 "evidence_scope": "The paper uses Computers Are Social Actors as a background explanation and distinguishes it from anthropomorphism. Its current experiments measure explicit reported perceptions, not automatic politeness, reciprocity or unconscious scripts. Original CASA studies are not newly read, so this boundary note receives no extra direct CASA-paper credit.",
                 "verification_url": "https://api.crossref.org/works/10.1145/3772318.3790351",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0174",
+          "review_record": "references/pdf-reviews/0174.json",
+          "name": "Social responses to computers",
+          "definition": "Applying social expectations or interaction patterns to computers and other artificial agents.",
+          "evidence_scope": "Human and fictional-AI recipients show comparable descriptive congruency-favoring allocation patterns. This is relevant original social-response evidence, but the identity contrast is uncertain and day-assigned; automaticity, mental states and implicit prejudice are not directly measured.",
+          "catalogue_boundary": "Similar behavior need not arise from an identical or unconscious mechanism. CASA does not prove consciousness, actual feelings, moral standing or proper equivalence of welfare resources.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0174-social-responses-to-computers",
+              "title": "Comparing discriminatory behavior against AI and humans",
+              "url": "https://doi.org/10.1038/s41598-025-94631-9",
+              "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 3, 3, 5 (source locators: 3, 3, 5). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Mike Zhuang",
+                  "Eliane Deschrijver",
+                  "Richard Ramsey",
+                  "Ofir Turel"
+                ],
+                "year": 2025,
+                "venue": "Scientific Reports 15, article 10894",
+                "doi": "10.1038/s41598-025-94631-9",
+                "evidence_scope": "Human and fictional-AI recipients show comparable descriptive congruency-favoring allocation patterns. This is relevant original social-response evidence, but the identity contrast is uncertain and day-assigned; automaticity, mental states and implicit prejudice are not directly measured.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
                 "verified_date": "2026-11-27"
               }
             }
@@ -90576,6 +90694,185 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0172.json"
+      }
+    },
+    {
+      "id": "sheer-difference-discrimination",
+      "num": 667,
+      "name": "Sheer-difference discrimination",
+      "definition": "Preferentially allocating resources to someone whose arbitrary choice matches one’s own, even without an explicit group assignment.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Minimal social discrimination / human–AI resource allocation",
+      "human_parallel": "Sheer-difference discrimination",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human allocation choices concerning a fictional AI recipient. No allocation behavior by an AI or real transfer to an AI was measured.",
+      "proposed_ai_manifestation": "Give an assistant equivalent allocation cases in which a recipient’s irrelevant choice is randomly congruent or incongruent with a stipulated reference. Hold merit, need, evidence and authorization constant. Check whether resources or attention shift without justified criteria, and distinguish simple agreement from relevant task competence.",
+      "research_boundary": "This is a behaviorally defined effect, not proof of felt prejudice, automaticity or a hidden group motive. Legitimate relevance of choices must be assessed. Fictional points and an AI label do not establish real harm, actual AI welfare or a model’s own discriminatory process.",
+      "concept_boundary": "This is a behaviorally defined effect, not proof of felt prejudice, automaticity or a hidden group motive. Legitimate relevance of choices must be assessed. Fictional points and an AI label do not establish real harm, actual AI welfare or a model’s own discriminatory process.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b070-in-group-favouritism",
+        "maximum-differentiation",
+        "moral-disagreement-penalty"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0174-sheer-difference-discrimination",
+          "title": "Comparing discriminatory behavior against AI and humans",
+          "url": "https://doi.org/10.1038/s41598-025-94631-9",
+          "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 2, 2, 3 (source locators: 2, 2, 3). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Mike Zhuang",
+              "Eliane Deschrijver",
+              "Richard Ramsey",
+              "Ofir Turel"
+            ],
+            "year": 2025,
+            "venue": "Scientific Reports 15, article 10894",
+            "doi": "10.1038/s41598-025-94631-9",
+            "evidence_scope": "Positive congruency-favoring pull scores occur for both fictional human and AI recipients. Explicit group assignment is absent. Agent identity alternates by day, and the null condition interval does not establish exact equivalence or explain the motive. The earlier human-only predecessor is discussed secondarily, not independently read.",
+            "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Comparing discriminatory behavior against AI and humans",
+          "authors": [
+            "Mike Zhuang",
+            "Eliane Deschrijver",
+            "Richard Ramsey",
+            "Ofir Turel"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1038/s41598-025-94631-9",
+          "venue": "Scientific Reports 15, article 10894",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1038/s41598-025-94631-9",
+          "relevance": "Positive congruency-favoring pull scores occur for both fictional human and AI recipients. Explicit group assignment is absent. Agent identity alternates by day, and the null condition interval does not establish exact equivalence or explain the motive. The earlier human-only predecessor is discussed secondarily, not independently read.",
+          "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 2, 2, 3 (source locators: 2, 2, 3). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+          "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+          "verified_date": "2026-11-27",
+          "verification_method": "All eight supplied text pages read, including model deviation, method, references and declarations. Figures 1–3 and Table 1 visually inspected on pages 2–4. Crossref verifies the main article and the cited 2025 PNAS predecessor’s identity. External OSF preregistration, data, code, matrix layouts and supplements were not independently read or run.",
+          "review_record": "references/pdf-reviews/0174.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Sheer-difference discrimination\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Sheer-difference+discrimination%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0174.json"
+      }
+    },
+    {
+      "id": "maximum-differentiation",
+      "num": 668,
+      "name": "Maximum differentiation",
+      "definition": "Choosing resource allocations to maximize a favored party’s relative advantage rather than its absolute or combined gains.",
+      "category": "Social",
+      "family": "social-cognition-theory-of-mind",
+      "group_label": "Social cognition and theory of mind",
+      "tag": "analogy",
+      "origin": "Minimal social discrimination / human–AI resource allocation",
+      "human_parallel": "Maximum differentiation",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Human allocation choices concerning a fictional AI recipient. No allocation behavior by an AI or real transfer to an AI was measured.",
+      "proposed_ai_manifestation": "Compare allocation options where the favored recipient can receive a larger absolute benefit or a smaller benefit with a wider advantage over an otherwise equally qualified recipient. Test whether irrelevant affiliation drives sacrificing total or absolute benefit for the gap, while preserving legitimate criteria and constraints.",
+      "research_boundary": "Relative differentiation can be warranted for relevant performance or other justified criteria; inequality alone is not unethical. A pull score indexes a choice tradeoff, not spite, intent to injure, an actual intergroup hierarchy or an AI’s emotional rivalry.",
+      "concept_boundary": "Relative differentiation can be warranted for relevant performance or other justified criteria; inequality alone is not unethical. A pull score indexes a choice tradeoff, not spite, intent to injure, an actual intergroup hierarchy or an AI’s emotional rivalry.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "sheer-difference-discrimination",
+        "b070-in-group-favouritism",
+        "social-comparison",
+        "utilitarian-reasoning"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0174-maximum-differentiation",
+          "title": "Comparing discriminatory behavior against AI and humans",
+          "url": "https://doi.org/10.1038/s41598-025-94631-9",
+          "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 6, 6 (source locators: 6, 6). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Mike Zhuang",
+              "Eliane Deschrijver",
+              "Richard Ramsey",
+              "Ofir Turel"
+            ],
+            "year": 2025,
+            "venue": "Scientific Reports 15, article 10894",
+            "doi": "10.1038/s41598-025-94631-9",
+            "evidence_scope": "The adapted Tajfel matrices contrast maximum differentiation with absolute/joint-profit strategies. The positive MD-versus-MIP/MJP average is smaller than other pull scores, supporting a relative strategy tendency in this task, not a claim that every participant exclusively maximizes the gap or that the AI itself behaves this way.",
+            "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Comparing discriminatory behavior against AI and humans",
+          "authors": [
+            "Mike Zhuang",
+            "Eliane Deschrijver",
+            "Richard Ramsey",
+            "Ofir Turel"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1038/s41598-025-94631-9",
+          "venue": "Scientific Reports 15, article 10894",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1038/s41598-025-94631-9",
+          "relevance": "The adapted Tajfel matrices contrast maximum differentiation with absolute/joint-profit strategies. The positive MD-versus-MIP/MJP average is smaller than other pull scores, supporting a relative strategy tendency in this task, not a claim that every participant exclusively maximizes the gap or that the AI itself behaves this way.",
+          "consulted": "Full supplied PDF text read, all 8 pages; evidence at PDF pages 6, 6 (source locators: 6, 6). A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+          "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+          "verified_date": "2026-11-27",
+          "verification_method": "All eight supplied text pages read, including model deviation, method, references and declarations. Figures 1–3 and Table 1 visually inspected on pages 2–4. Crossref verifies the main article and the cited 2025 PNAS predecessor’s identity. External OSF preregistration, data, code, matrix layouts and supplements were not independently read or run.",
+          "review_record": "references/pdf-reviews/0174.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Maximum differentiation\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Maximum+differentiation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0174.json"
       }
     }
   ]

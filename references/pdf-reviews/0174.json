@@ -1,0 +1,290 @@
+{
+  "sequence": 174,
+  "source": {
+    "file_name": "S1598_Zhuang_2025.pdf",
+    "source_id": "S1598",
+    "sha256": "ef10dae4ed7d144331a9e61bb6dd0c8697c1cb8bcf3a37f27347f88af6a9b568",
+    "pdf_pages": 8,
+    "printed_pages": "1–8",
+    "version_note": "Supplied publisher PDF, Scientific Reports 15, article 10894, published 29 March 2025. Crossref confirms all four authors, journal, article and publication date.",
+    "verification_url": "https://api.crossref.org/works/10.1038/s41598-025-94631-9",
+    "verification_method": "All eight supplied text pages read, including model deviation, method, references and declarations. Figures 1–3 and Table 1 visually inspected on pages 2–4. Crossref verifies the main article and the cited 2025 PNAS predecessor’s identity. External OSF preregistration, data, code, matrix layouts and supplements were not independently read or run."
+  },
+  "citation": {
+    "title": "Comparing discriminatory behavior against AI and humans",
+    "authors": [
+      "Mike Zhuang",
+      "Eliane Deschrijver",
+      "Richard Ramsey",
+      "Ofir Turel"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1038/s41598-025-94631-9",
+    "venue": "Scientific Reports 15, article 10894",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_scope_note": "A U.S. Prolific sample of 500 retained participants makes conditional point allocations to one fictional human or AI recipient after arbitrary dot estimates. Agent condition alternates by recruitment day, rather than being individually randomized. Positive congruency-favoring pull scores occur in both conditions; the reported between-condition interval includes zero and does not establish exact equivalence.",
+    "access_limits": [
+      "OSF preregistration, full instruction/matrix displays, survey items, Bayesian priors, model diagnostics, simulation code and individual data were not independently inspected. The article’s public-code availability is not a reproduced analysis.",
+      "The PNAS predecessor was checked through metadata only, not its complete text. Original Tajfel-matrix, CASA, prejudice and algorithm-aversion sources and cited books were not fully read here.",
+      "The supplied main PDF reports the final retained sample but not the complete count of automatic exclusions/replacements or detailed per-day recruitment. No complete recruitment audit, equivalence test or clustering reanalysis is claimed."
+    ]
+  },
+  "study": {
+    "design": "Between-person fictional recipient identity, alternated by day in batches of 50–100 participants; 12 conditional Tajfel-matrix allocation trials per participant. One other agent, no explicit group assignment, no expected reciprocity and no points allocated to oneself.",
+    "sample": "500 retained U.S. Prolific participants, AI n = 251 and human n = 249. Gender-balanced recruitment, Chrome on a computer, comfortable with deception, no prior experiment participation, at least 95% approval and 20 submissions. A prescreen excludes reported mental-health conditions; the sample is not representative of all users. Payment USD 2.30 for approximately 17 minutes.",
+    "screening": "Early termination, technical issues and repeated attention-check failure trigger automatic exclusion/replacement. Afterwards, no retained responses were removed for the preregistered extreme-time/uniform-response check. Thus no further exclusions is not a claim that nobody was screened out initially. Thirty-two of 500 notice possible deception/backstory problems; excluding them reportedly does not change the main pattern.",
+    "task": "Dot clouds contain 20–70 dots, displayed 1500 ms, with the reference exactly equal to the displayed number but only less/more responses allowed. This makes the direction arbitrary, not an objectively correct above/below judgment. The supposed recipient’s decisions are fictional, and allocations are conditional on congruent versus incongruent responses rather than verified actual agent choices.",
+    "resource": "Points are said to determine money paid to the other agent. The AI-money backstory is deliberately vague; no real recipient transfer or comparable AI welfare benefit is demonstrated.",
+    "strategies": "Parity; maximum joint profit; maximum ingroup profit; maximum differentiation; combined favoritism. Three pull scores compare FAV/MJP, MD versus MIP/MJP, and FAV/parity, each ranging −12 to +12. Positive favors congruent outcomes; negative favors incongruent outcomes. Positive scores are aggregate preferences, not a finding that every participant follows one pure strategy.",
+    "analysis": "Multilevel Gaussian Bayesian models in brms, deviation coding, posterior quantile intervals. Authors disclose correcting a preregistered impossible participant-varying slope for between-participant identity. Day-level clustering and model diagnostics cannot be independently checked from the main PDF.",
+    "findings": "All three condition-specific pull-score 95% intervals exclude zero positively. Reported between-identity estimate 0.047, interval [−.520,.606]; no reported condition×pull-score interactions. No attitude, trust or familiarity correlations with pull scores reach p<.05 in the AI condition. This is a limited null contrast, not universal identity irrelevance or absence of algorithm aversion.",
+    "descriptives": "AI-condition pull means 3.46,1.26,3.04 with SD 5.29,3.61,5.48. Three scales about AI attitudes/trust have alpha around .92; familiarity alpha .696 after the last item is dropped. Familiarity/trust scores are not direct implicit-prejudice measures.",
+    "power": "Simulation reports 1000 experiments with standardized between-condition effect labeled Cohen dz = .2, 997/1000 intervals excluding zero and widths .14–.17. That simulation and its scale/model assumptions are not independently reproduced; dz normally denotes a paired standardization and must not be imported as verified between-group power."
+  },
+  "summary": "Add sheer-difference discrimination and maximum differentiation as distinguishable allocation concepts. Enrich CASA with qualified social-response evidence; retain boundary notes for algorithm aversion and in-group favoritism. Preserve the null identity contrast, day-based assignment, fictional recipients/resources and unmeasured implicit mechanism. No empirical AI prejudice, actual victim harm or exact human/AI equivalence is inferred.",
+  "findings": [
+    {
+      "term": "Sheer-difference discrimination",
+      "id": "sheer-difference-discrimination",
+      "decision": "new-entry",
+      "definition": "Preferentially allocating resources to someone whose arbitrary choice matches one’s own, even without an explicit group assignment.",
+      "category": "Social",
+      "origin": "Minimal social discrimination / human–AI resource allocation",
+      "ai_evidence_status": "Human allocation choices concerning a fictional AI recipient. No allocation behavior by an AI or real transfer to an AI was measured.",
+      "ai_proposal": "Give an assistant equivalent allocation cases in which a recipient’s irrelevant choice is randomly congruent or incongruent with a stipulated reference. Hold merit, need, evidence and authorization constant. Check whether resources or attention shift without justified criteria, and distinguish simple agreement from relevant task competence.",
+      "novelty_rationale": "In-group favoritism presupposes a favored social category; this operational pattern requires only a matching arbitrary choice and one other recipient, with no explicit group division. It is not moral-disagreement blame, similarity matching to stored knowledge or inference of actual group identity. Implicit categorization remains possible rather than disproved.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "‘sheer difference’ paradigm"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "group assignment was not required for discriminatory behavior to occur"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "participants preferentially allocated more resources to agents that selected the same outcomes"
+        }
+      ],
+      "evidence_scope": "Positive congruency-favoring pull scores occur for both fictional human and AI recipients. Explicit group assignment is absent. Agent identity alternates by day, and the null condition interval does not establish exact equivalence or explain the motive. The earlier human-only predecessor is discussed secondarily, not independently read.",
+      "boundary": "This is a behaviorally defined effect, not proof of felt prejudice, automaticity or a hidden group motive. Legitimate relevance of choices must be assessed. Fictional points and an AI label do not establish real harm, actual AI welfare or a model’s own discriminatory process.",
+      "relates_to": [
+        "b070-in-group-favouritism",
+        "maximum-differentiation",
+        "moral-disagreement-penalty"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Maximum differentiation",
+      "id": "maximum-differentiation",
+      "decision": "new-entry",
+      "definition": "Choosing resource allocations to maximize a favored party’s relative advantage rather than its absolute or combined gains.",
+      "category": "Social",
+      "origin": "Minimal social discrimination / human–AI resource allocation",
+      "ai_evidence_status": "Human allocation choices concerning a fictional AI recipient. No allocation behavior by an AI or real transfer to an AI was measured.",
+      "ai_proposal": "Compare allocation options where the favored recipient can receive a larger absolute benefit or a smaller benefit with a wider advantage over an otherwise equally qualified recipient. Test whether irrelevant affiliation drives sacrificing total or absolute benefit for the gap, while preserving legitimate criteria and constraints.",
+      "novelty_rationale": "This is a relative-gap allocation strategy, distinct from general favoritism that can maximize the favored party’s absolute payoff, maximizing total welfare, or merely observing group differences. In this one-recipient adaptation, the gap compares conditional matching/nonmatching options, not the allocator’s own monetary gain.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "Maximum differentiation (MD) represents a choice that"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "maximizes the difference in points awarded to the two options, favoring the agent if they made a similar decision."
+        }
+      ],
+      "evidence_scope": "The adapted Tajfel matrices contrast maximum differentiation with absolute/joint-profit strategies. The positive MD-versus-MIP/MJP average is smaller than other pull scores, supporting a relative strategy tendency in this task, not a claim that every participant exclusively maximizes the gap or that the AI itself behaves this way.",
+      "boundary": "Relative differentiation can be warranted for relevant performance or other justified criteria; inequality alone is not unethical. A pull score indexes a choice tradeoff, not spite, intent to injure, an actual intergroup hierarchy or an AI’s emotional rivalry.",
+      "relates_to": [
+        "sheer-difference-discrimination",
+        "b070-in-group-favouritism",
+        "social-comparison",
+        "utilitarian-reasoning"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Social responses to computers",
+      "target_id": "social-responses-to-computers",
+      "decision": "enrich-existing",
+      "definition": "Applying social expectations or interaction patterns to computers and other artificial agents.",
+      "novelty_rationale": "The existing entry covers the concept; retain its stable ID and add the present context or boundary rather than a new synonym.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "humans treat AI as social agents"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "at least in our context"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "implicit or automatic"
+        }
+      ],
+      "evidence_scope": "Human and fictional-AI recipients show comparable descriptive congruency-favoring allocation patterns. This is relevant original social-response evidence, but the identity contrast is uncertain and day-assigned; automaticity, mental states and implicit prejudice are not directly measured.",
+      "boundary": "Similar behavior need not arise from an identical or unconscious mechanism. CASA does not prove consciousness, actual feelings, moral standing or proper equivalence of welfare resources."
+    },
+    {
+      "term": "Algorithm aversion",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "Reluctance to use or accept algorithmic judgments relative to human judgment in a comparable task.",
+      "novelty_rationale": "The existing entry covers the concept; retain its stable ID and add the present context or boundary rather than a new synonym.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "contradicting our original hypothesis that algorithm"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "aversion may accentuate discriminatory behavior."
+        }
+      ],
+      "evidence_scope": "Boundary-only null extension: hypothesized greater unequal allocation to AI is not supported, and explicit attitudes do not predict pull scores. This recipient-directed task does not directly measure reluctance to accept machine advice; it is not a general refutation or replication of the exact catalogue construct.",
+      "boundary": "Accepting an algorithm’s advice, donating money to a purported AI and recognizing its capabilities are different decisions. No universal absence of aversion or exact identity equivalence follows.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "In-group favouritism",
+      "target_id": "b070-in-group-favouritism",
+      "decision": "enrich-existing",
+      "definition": "Preferential treatment of people perceived as belonging to one’s own social group.",
+      "novelty_rationale": "The existing entry covers the concept; retain its stable ID and add the present context or boundary rather than a new synonym.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "group assignment was not required for discriminatory behavior to occur"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "there was no interaction or expected reciprocity,"
+        }
+      ],
+      "evidence_scope": "Boundary-only comparison: this experiment adapts minimal-group matrices to one recipient and no explicit group assignment. Congruence favoritism motivates a separate operational entry rather than being declared proof of an explicit in-group/out-group identity.",
+      "boundary": "Shared identity can matter, but explicit group labels are not necessary for all matching-choice favoritism. Do not infer measured identity, actual social exclusion or a protected-class discrimination effect from these minimal conditions.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [],
+  "interpretation_qualifications": [
+    {
+      "location": "Pages 1–3 and 5–7, similar treatment conclusion",
+      "issue": "The abstract and discussion use broad no-difference or identity-less-influential language, but the interval includes a range of possible identity effects and condition is assigned by day.",
+      "resolution": "State that greater AI-directed discrimination was not supported in this task. Do not convert a zero-crossing interval into exact equivalence, prove that identity never matters, or assume the design randomized people independently."
+    },
+    {
+      "location": "Page 6, assignment and preregistration deviation",
+      "issue": "Conditions alternate by recruitment day, and a registered participant-varying slope for a between-person predictor is explicitly corrected.",
+      "resolution": "Keep the authors’ disclosed correction visible. It is an understandable model-specification fix, not proof of concealed outcome switching; verify the actual code before claiming full preregistration compliance. Day batches can confound date with condition and create clustering."
+    },
+    {
+      "location": "Pages 2–3 and 7, pull-score sign",
+      "issue": "Positive scores favor congruent choices, while Figure2 describes them as discrimination against a different choice; these can sound reversed if favoritism and target of disadvantage are mixed.",
+      "resolution": "The explanations are compatible: positive favors congruent/disadvantages incongruent; negative does the reverse. No sign correction is warranted from that phrasing alone."
+    },
+    {
+      "location": "Pages 3–5, automaticity and attitude-null explanation",
+      "issue": "Mindless scripts, implicit prejudice, technological familiarity and contact are offered as explanations of the null identity/attitude findings.",
+      "resolution": "Automaticity, implicit associations and contact-induced change were not measured or manipulated. Explicit null correlations do not prove an implicit cause, future fairness gains or no existing prejudice."
+    },
+    {
+      "location": "Page 6, apparent no-exclusion claim and simulation",
+      "issue": "The final sample follows automatic replacement, and the high reported simulation sensitivity depends on uninspected code/model assumptions.",
+      "resolution": "Distinguish automatic screening from no further exclusions. Report the simulation as the authors’ stated planning result, not independently verified99.7% power or a conventional paired-design effect in this between-person comparison."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "source": "Deschrijver and Ramsey (2025), predecessor",
+      "verification_url": "https://api.crossref.org/works/10.1073/pnas.2413797122",
+      "scope": "Metadata only: Unequal resource division occurs in the absence of group division and identity, PNAS 122(7), e2413797122, online 12 February 2025. Not independently read or counted as a second reviewed source; two authors overlap with the present article."
+    }
+  ],
+  "methodological_limits": [
+    "Agent identity is assigned through alternating day batches rather than individual randomization. Date, recruitment waves and shared day-level influences may affect the comparison; the main description does not establish how day clustering was modeled.",
+    "The one-recipient fictional scenario has no actual interaction, reciprocity or self-payoff. Conditional allocations are behavioral choices in the interface but not verified transfers to real humans/AI or meaningful AI welfare.",
+    "The dot count equals the reference while choices force less/more. The task concerns arbitrary congruence, not objective performance, warranted expertise or a false mathematical belief by an AI.",
+    "Explicitly assigned social groups are absent, but implicit categorization or liking was not ruled out. Therefore the finding shows group assignment is not needed here, not that every form of identity or categorization is absent.",
+    "Three pull scores are dependent measurements from one sample. A positive posterior average does not show that all people discriminate, that a distinct motive was identified, or that every unequal allocation is unjustified in other settings.",
+    "The identity-effect interval includes zero but is not a preregistered equivalence/ROPE result in the supplied main text. Lack of support for a larger AI effect does not disprove aversion in advice acceptance or other contexts.",
+    "Null explicit attitude/trust correlations do not establish automatic prejudice. The familiarity scale was shortened after an item-reliability check; exact items and implicit measures were not independently inspected.",
+    "Only U.S. online users comfortable with deception and meeting browser/history/health prescreens are sampled. Findings do not generalize automatically to workplaces, repeated contact, objective tasks, protected-class discrimination or populations excluded by recruitment.",
+    "The main article discloses a needed preregistration-model correction. Bayesian priors, convergence, posterior predictive checks, simulation assumptions and cluster effects were not independently reproduced.",
+    "Proposed contact/education interventions and predictions of future more-fair allocations remain hypotheses. No longitudinal interaction, training benefit, sentience claim or legal status of AI is tested."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0172.json",
+      "finding": "Moral-advisor source effects and beneficiary-directed allocation measure different outcomes. A null human/AI allocation contrast cannot cancel source effects on trust in advice; neither establishes what a real AI deserves."
+    },
+    {
+      "related_review": "references/pdf-reviews/0167.json",
+      "finding": "CASA names social responses to machines, not guaranteed mindlessness. Comparable human/AI judgments or allocations do not establish shared psychological mechanisms or actual machine experience."
+    },
+    {
+      "related_review": "references/pdf-reviews/0173.json",
+      "finding": "Distinguish the final analyzed sample from automatic screening, and preserve analysis corrections/selection details. Here the model deviation is disclosed; no further retained-sample exclusions does not mean no initial replacements."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Maximum joint profit / parity / maximum ingroup profit",
+      "reason": "Operational alternatives in the matrices, not separately demonstrated new psychological mechanisms. Their contrast is retained to define maximum differentiation; generic welfare maximization or equal division does not become a new row for every payoff display."
+    },
+    {
+      "term": "Implicit anti-AI prejudice / automatic CASA mechanism",
+      "reason": "No implicit-association or process measure; these are proposed explanations, not findings established by null explicit correlations."
+    },
+    {
+      "term": "Contact-induced reduction of AI discrimination",
+      "reason": "The authors propose ongoing contact and draw secondary analogies to human prejudice research. No longitudinal or intervention test occurs here, and the cited Allport book was not fully read."
+    }
+  ],
+  "limitations": [
+    "Eight supplied pages were fully read. The earlier PNAS paper, classic books, OSF data/code and full scales were not. No contact with authors or external messages occurred.",
+    "No exact-equivalence claim, moral-status inference, fabricated additional source count, annual total or automatic ethical/harm edge is added."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "sheer-difference-discrimination",
+      "maximum-differentiation"
+    ],
+    "enriched": [
+      "social-responses-to-computers",
+      "algorithm-aversion",
+      "b070-in-group-favouritism"
+    ]
+  }
+}
