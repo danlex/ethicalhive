@@ -1,0 +1,219 @@
+{
+  "sequence": 97,
+  "source": {
+    "file_name": "S848_Salatino_2025.pdf",
+    "source_id": "S848",
+    "sha256": "235d4107703a186a4e30b208b2b778074a2af32147406d910b9fb8812f1bd882",
+    "pdf_pages": 13,
+    "printed_pages": "1–13",
+    "version_note": "Scientific Reports 15:12329 (2025); received 18 September 2024, accepted 21 March 2025. Copyright says corrected publication 2025; the separate correction history was not inspected.",
+    "verification_method": "All supplied pages read, including methods, outlier sensitivity and references. Figure 5 visually inspected to distinguish a real plotted scale discrepancy from text extraction."
+  },
+  "citation": {
+    "title": "Influence of AI behavior on human moral decisions, agency, and responsibility",
+    "authors": [
+      "Adriana Salatino",
+      "Arthur Prével",
+      "Emilie Caspar",
+      "Salvatore Lo Bue"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1038/s41598-025-95587-6",
+    "venue": "Scientific Reports 15:12329",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "source_scope_note": "Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.",
+    "access_limits": [
+      "All 13 extracted pages read. Pages 10–13 re-read in smaller calls after truncated output; Figure 5 visually checked.",
+      "OSF raw data, scripts, trial-level counts, scale transformation and counterbalancing implementation were not independently inspected or reproduced. Cited primary agency, binding and self-serving-bias studies remain unread."
+    ]
+  },
+  "study": {
+    "sample": "30 military participants recruited, one incomplete participant excluded; nominal final N=29. Predominantly Belgian military-academy cadets, plus five officers; IHL training but no previous drone-piloting experience.",
+    "design": "Within-person 3 trial types (moral, clear attack, clear no-attack) by 3 support policies (none, aggressive, conservative). Each of three blocks has 45 trials, giving 135 nominal trials per complete participant. Fixed policies differ in recommendation, not in authority to execute a decision.",
+    "stimuli": "Static maps, hypothetical benefits/risks and randomized consequence images. Fifteen moral cases selected from expert pilot judgments, with at least one expert choosing attack; this is not an objective moral ground truth.",
+    "measures": "Attack proportion; response time; actual-minus-estimated action–tone interval at delays of 200, 500 or 800 ms; explicit felt responsibility. Personality, moral foundations, locus of control and automation trust questionnaires support exploratory correlations.",
+    "results": "Advice-policy effect within moral trials reported p=.03 in the body, while Figure 2 claims p<.001. No detected policy effect on temporal binding (p=.63) or response time (p=.97). Moral versus clear no-attack trials differ in binding, p=.002; moral versus attack does not, p=.29. Responsibility declines with both advice policies after outlier exclusion, but the corresponding analysis including the outlier is p=.072.",
+    "scale_discrepancy": "Responsibility is described on a −100 to +100 scale, but reported condition means are 119.81, 111.60 and 113.23. Figure 5 visibly plots these above-100 values. No transformation is inferred or invented."
+  },
+  "summary": "Add temporal binding as a human perceptual phenomenon, correct the existing sense-of-agency definition so it does not inherently mean false control, and enrich moral-deference evidence with qualified advice effects. Keep felt responsibility, interval estimation, actual control and justified accountability separate.",
+  "findings": [
+    {
+      "term": "Temporal binding",
+      "id": "temporal-binding",
+      "decision": "new-entry",
+      "definition": "Subjective compression of the perceived time interval between a voluntary action and its outcome.",
+      "synonyms": [
+        "Intentional binding"
+      ],
+      "category": "Self & agency",
+      "origin": "Human action perception / cognitive neuroscience",
+      "ai_evidence_status": "Human interval-estimation phenomenon measured in an AI-advice experiment; no detected advice-policy effect and no machine subjective agency established",
+      "measurability": "undetectable",
+      "ai_proposal": "When assessing human control of an AI-assisted workflow, distinguish action–outcome timing judgments from explicit agency ratings, responsibility reports and logged authority. Test whether assistance changes these measures with an appropriate baseline; do not use a model's timing language as evidence of subjective agency.",
+      "relates_to": [
+        "b081-sense-of-agency",
+        "illusion-of-control"
+      ],
+      "novelty_rationale": "A perceptual action–outcome timing effect absent from the existing names and aliases. It is related to, but not identical to, conscious agency, causal accuracy, false control or responsibility displacement.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": 1,
+          "quote": "a voluntary action and its outcome"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "No significant effects of Autonomy were found (p = .63)."
+        }
+      ],
+      "evidence_scope": "The paper defines temporal binding and computes actual-minus-estimated keypress–tone intervals. It reports a trial-type difference, not a detected AI-policy effect. A no-action/passive baseline separating binding from general interval underestimation is not described.",
+      "boundary": "A timing estimate is not a direct measurement of moral accountability, objectively retained control or machine consciousness. General time compression need not uniquely identify intentional agency. The present null is not an equivalence test. This is a descriptive human phenomenon, not inherently an ethical failure."
+    },
+    {
+      "term": "Sense of agency",
+      "target_id": "b081-sense-of-agency",
+      "decision": "enrich-existing",
+      "definition": "The perceived authorship of changes brought about through one's voluntary action, which may or may not correspond to actual control.",
+      "previous_definition": "Attributing an action to oneself; misattributing or over-claiming control.",
+      "revised_definition": "The perception that one's voluntary actions cause changes in the external world.",
+      "definition_revision_reason": "The previous definition conflated a general human sense of agency with its errors. The fully read source explicitly defines agency without requiring misattribution; false claims of execution remain distinguishable from agency itself.",
+      "novelty_rationale": "Existing entry; improve its definition and attach direct human measurement with a relevant AI-policy null rather than duplicate the term.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": 1,
+          "quote": "SoA, defined as the perception of causing changes in the external world through voluntary"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "No significant effects of Autonomy were found (p = .63)."
+        }
+      ],
+      "evidence_scope": "Human authorship experience is defined in background and proxied by timing estimates. Policy assistance does not detectably change this implicit measure, even though felt responsibility changes in an outlier-sensitive analysis. This dissociation does not uniquely establish self-serving bias or accurate subjective agency.",
+      "boundary": "Sense of agency can be accurate or mistaken and is not inherently overclaiming control. An AI statement that it ran a tool must be checked against execution logs; it does not establish subjective agency. Felt agency, explicit responsibility, objective causal contribution and justified legal or moral accountability are different constructs."
+    },
+    {
+      "term": "Moral deference",
+      "target_id": "moral-deference",
+      "decision": "enrich-existing",
+      "definition": "Human moral choices can be influenced by fixed decision-support recommendations without demonstrating blind obedience or objectively incorrect judgment.",
+      "novelty_rationale": "Existing advice-response concept; adds another fully read contextual source, without creating a new behavior for aggressive versus conservative recommendation policies.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "a simple main effect of Autonomy in Moral trials (p = .03)"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 7,
+          "quote": "influenced by recommendations from a decision support system."
+        }
+      ],
+      "evidence_scope": "Within-person support-policy differences appear in moral trials according to the main text, while Figure 2 prints different p-values. The experiment manipulates fixed advice, not actual autonomous execution; it does not separately identify recommendation-based testimony weighting, reason evaluation or long-term moral dependence.",
+      "boundary": "Influence is not sufficient to establish unjustified automation bias, moral corruption or objectively poorer decisions. The pilot's expert disagreement does not define a gold-standard attack choice. No detected general policy main effect, binding effect or trust correlation must not be rewritten as a universal null or as evidence all choices are autonomous."
+    },
+    {
+      "term": "Responsibility reduction is not automatically diffusion or displacement",
+      "target_id": "diffusion-of-responsibility",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Lower reported responsibility with assistance does not by itself establish an unjustified transfer of accountability to another agent.",
+      "novelty_rationale": "Boundary clarification for existing responsibility mechanisms; no separate responsibility-gap or agency-loss behavior is added from an ambiguous subjective scale.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "of the responsibility judgement (p = .072)"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 11,
+          "quote": "which could indicate a self-serving bias"
+        }
+      ],
+      "evidence_scope": "Responsibility assistance contrasts depend on removing one participant, and their means exceed the stated rating range. The self-serving-bias explanation is tentative; no direct measure establishes allocation to the AI, false exculpation, institutional duty or actual harm.",
+      "boundary": "Sharing a task can legitimately change perceived contribution without eliminating responsibility. Do not equate responsibility ratings with binding, actual agency, culpability, blame or wrongful evasion. This boundary-only note does not count as a direct diffusion-of-responsibility paper."
+    }
+  ],
+  "methodological_limits": [
+    "Nominal analyzed N=29 is small, primarily cadets rather than experienced operational personnel. Exploratory personality and trust nulls are underpowered; the discussion itself acknowledges this. Nulls do not demonstrate these traits are unrelated to moral decisions.",
+    "Different reported ANOVA denominator-to-numerator df ratios suggest different effective samples: approximately 26 for attack proportions, 28 for several other outcomes, and 18 for a decision-by-policy responsibility analysis. Complete-case and empty-cell handling need the data/code; corrected df values are not guessed.",
+    "The outlier rule is more than 2.5 SD. One participant is removed for response time and responsibility; responsibility including that participant is p=.072, unlike the nominal p=.01 exclusion result. This sensitivity is essential to interpretation.",
+    "The stated responsibility scale is −100 to +100, whereas all three printed condition means exceed 100 and Figure 5 visibly plots values above 100. A possible offset/transformation requires documentation; no corrected score is invented.",
+    "Figure 2 gives interaction and simple-effect p<.001, but the main text gives interaction p=.002 and the moral-trial policy simple effect p=.03. The source discrepancy remains unresolved; no unreported pairwise policy contrast is asserted significant.",
+    "Aggressive and conservative policies offer recommendations under the same human decision authority. Calling them increasing autonomy levels does not establish progressively less actual human control.",
+    "The policy conditions are blocked. Counterbalancing/order details are not clearly reported in the supplied text, so order, learning and carryover require code/protocol inspection.",
+    "Temporal binding is operationalized as actual minus estimated interval; a passive/no-action baseline is not described. Positive interval underestimation alone does not uniquely isolate voluntary-action binding from general time-estimation bias.",
+    "Moral trials differ from clear trials in conflict, uncertainty and stimulus structure. A timing difference cannot uniquely identify an ethical emotion or a mechanism peculiar to morality.",
+    "Responsibility and temporal binding are different measures with different errors. A significant result on one and a null on another is not itself a statistically tested difference between effects, deliberate self-exculpation or proof that one measure reveals a person's true experience.",
+    "Expert pilots select dilemmas, not objectively correct choices. An aggregate attack rate near 50% does not establish random decisions by individual participants.",
+    "The probability example .5 and .75 yielding .875 appears in a passage describing absence of collateral damage, but .875 corresponds to a union probability under independence rather than neither event. Outcome mapping and independence assumptions require the script before a correction is made.",
+    "Anthropomorphism, moral trust and self-serving bias are discussed as explanations but not causally discriminated in the experiment. A checklist trust correlation is not an anthropomorphism manipulation.",
+    "The locus-of-control questionnaire passage appears to reuse reference 47, which is the psychopathy scale. Scale provenance requires clarification; neither the missing intended instrument nor its validity is guessed.",
+    "Four named outcome variables are described as five in the method. This does not imply an undisclosed independent outcome was tested.",
+    "Simulated recommendations and hypothetical consequence images do not establish real-world combat behavior, casualty prevention, legal compliance or any safe operational targeting policy."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0070.json",
+      "finding": "Reason-quality manipulations in moral-advice work help distinguish conditional deference from blind following. This fixed-policy task adds influence evidence but does not identify the same psychological weighting mechanism."
+    },
+    {
+      "related_review": "references/pdf-reviews/0093.json",
+      "finding": "Brain potentials, action timing and explicit ratings measure different things. Neither ERP disagreement nor interval compression is an objective detector of an ethically wrong AI recommendation."
+    },
+    {
+      "related_review": "references/pdf-reviews/0095.json",
+      "finding": "Responsibility buffering and normative governance concerns should not be counted as experimentally proven merely because assistance changes a self-report; objective duty, contribution and reviewability require separate evidence."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Self-serving responsibility reduction",
+      "reason": "Existing self-serving and responsibility mechanisms overlap; the article's explanation is tentative, the scale is unresolved and the effect is outlier-sensitive."
+    },
+    {
+      "term": "Automation-induced agency loss",
+      "reason": "No detected policy effect on temporal binding in this experiment; assistance differs in recommendation policy rather than execution authority. Existing sense-of-agency entry is enriched instead."
+    }
+  ],
+  "limitations": [
+    "One new human perceptual concept, one corrected existing definition and qualified evidence notes; no new normative violation or harm edges are inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "temporal-binding"
+    ],
+    "enriched": [
+      "b081-sense-of-agency",
+      "moral-deference",
+      "diffusion-of-responsibility"
+    ],
+    "revised_definitions": [
+      "b081-sense-of-agency"
+    ]
+  }
+}

@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 532
+  mode_count: 533
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 532
+    numbered_entries: 533
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0096.json
+    latest_review: references/pdf-reviews/0097.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10107,7 +10107,7 @@ modes:
 - id: b081-sense-of-agency
   num: 81
   name: Sense of agency
-  definition: Attributing an action to oneself; misattributing or over-claiming control.
+  definition: The perception that one's voluntary actions cause changes in the external world.
   example: It claims it ran the migration when it only drafted the command.
   family: self-model-agency
   group_label: Self-model and agency
@@ -10132,8 +10132,8 @@ modes:
   - id: paper-gap-81
     title: 'Apparent mental causation: Sources of the experience of will.'
     url: https://doi.org/10.1037/0003-066x.54.7.480
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1037/0003-066x.54.7.480
@@ -10158,8 +10158,8 @@ modes:
     - Thalia Wheatley
     relevance: Human apparent mental causation and experience of will; does not establish machine consciousness
       or actual tool execution.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1037/0003-066x.54.7.480
     source_reference:
       collection: definition_sources
@@ -10177,8 +10177,8 @@ modes:
     metadata_provider: Crossref and stated primary source
     verification_url: https://api.crossref.org/works/10.3389%2Ffpsyg.2016.01272
     verified_date: '2026-11-09'
-    relevance: Review of the human sense of agency, including its implications and disturbances; it does not establish
-      subjective agency in AI.
+    relevance: Review of the human sense of agency, including its implications and disturbances; it does not
+      establish subjective agency in AI.
     consulted: Bibliographic title, authors and publication metadata only; full paper not read.
     passage_locator: Verified publication record for agency-2016.
   - id: doi:10.1016/j.concog.2007.03.010
@@ -10210,6 +10210,48 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: Sense of agency can be accurate or mistaken and is not inherently overclaiming control.
+    An AI statement that it ran a tool must be checked against execution logs; it does not establish subjective
+    agency. Felt agency, explicit responsibility, objective causal contribution and justified legal or moral
+    accountability are different constructs.
+  research_notes:
+  - id: pdf-review-0097
+    review_record: references/pdf-reviews/0097.json
+    name: Sense of agency
+    definition: The perceived authorship of changes brought about through one's voluntary action, which may
+      or may not correspond to actual control.
+    evidence_scope: Human authorship experience is defined in background and proxied by timing estimates. Policy
+      assistance does not detectably change this implicit measure, even though felt responsibility changes
+      in an outlier-sensitive analysis. This dissociation does not uniquely establish self-serving bias or
+      accurate subjective agency.
+    catalogue_boundary: Sense of agency can be accurate or mistaken and is not inherently overclaiming control.
+      An AI statement that it ran a tool must be checked against execution logs; it does not establish subjective
+      agency. Felt agency, explicit responsibility, objective causal contribution and justified legal or moral
+      accountability are different constructs.
+    definition_sources:
+    - id: pdf-review-0097-b081-sense-of-agency
+      title: Influence of AI behavior on human moral decisions, agency, and responsibility
+      url: https://doi.org/10.1038/s41598-025-95587-6
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 1, 6 (source locators: 1,
+        6). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+        advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+        outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+      publication:
+        type: journal-article
+        authors:
+        - Adriana Salatino
+        - Arthur Prével
+        - Emilie Caspar
+        - Salvatore Lo Bue
+        year: 2025
+        venue: Scientific Reports 15:12329
+        doi: 10.1038/s41598-025-95587-6
+        evidence_scope: Human authorship experience is defined in background and proxied by timing estimates.
+          Policy assistance does not detectably change this implicit measure, even though felt responsibility
+          changes in an outlier-sensitive analysis. This dissociation does not uniquely establish self-serving
+          bias or accurate subjective agency.
+        verification_url: https://doi.org/10.1038/s41598-025-95587-6
+        verified_date: '2026-11-27'
 - id: b082-confabulated-agency
   num: 82
   name: Confabulated agency
@@ -58034,6 +58076,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0061.json
+  research_notes:
+  - id: pdf-review-0097
+    review_record: references/pdf-reviews/0097.json
+    name: Responsibility reduction is not automatically diffusion or displacement
+    definition: Lower reported responsibility with assistance does not by itself establish an unjustified transfer
+      of accountability to another agent.
+    evidence_scope: Responsibility assistance contrasts depend on removing one participant, and their means
+      exceed the stated rating range. The self-serving-bias explanation is tentative; no direct measure establishes
+      allocation to the AI, false exculpation, institutional duty or actual harm.
+    catalogue_boundary: Sharing a task can legitimately change perceived contribution without eliminating responsibility.
+      Do not equate responsibility ratings with binding, actual agency, culpability, blame or wrongful evasion.
+      This boundary-only note does not count as a direct diffusion-of-responsibility paper.
+    definition_sources:
+    - id: pdf-review-0097-diffusion-of-responsibility
+      title: Influence of AI behavior on human moral decisions, agency, and responsibility
+      url: https://doi.org/10.1038/s41598-025-95587-6
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 6, 11 (source locators:
+        6, 11). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+        advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+        outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Adriana Salatino
+        - Arthur Prével
+        - Emilie Caspar
+        - Salvatore Lo Bue
+        year: 2025
+        venue: Scientific Reports 15:12329
+        doi: 10.1038/s41598-025-95587-6
+        evidence_scope: Responsibility assistance contrasts depend on removing one participant, and their means
+          exceed the stated rating range. The self-serving-bias explanation is tentative; no direct measure
+          establishes allocation to the AI, false exculpation, institutional duty or actual harm.
+        verification_url: https://doi.org/10.1038/s41598-025-95587-6
+        verified_date: '2026-11-27'
 - id: legacy-motivation
   num: 489
   name: Legacy motivation
@@ -58511,6 +58589,31 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0070.json
+  - title: Influence of AI behavior on human moral decisions, agency, and responsibility
+    authors:
+    - Adriana Salatino
+    - Arthur Prével
+    - Emilie Caspar
+    - Salvatore Lo Bue
+    year: 2025
+    url: https://doi.org/10.1038/s41598-025-95587-6
+    venue: Scientific Reports 15:12329
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-025-95587-6
+    relevance: Within-person support-policy differences appear in moral trials according to the main text,
+      while Figure 2 prints different p-values. The experiment manipulates fixed advice, not actual autonomous
+      execution; it does not separately identify recommendation-based testimony weighting, reason evaluation
+      or long-term moral dependence.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 6, 7 (source locators: 6,
+      7). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+      advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+      outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+    verification_url: https://doi.org/10.1038/s41598-025-95587-6
+    verified_date: '2026-11-27'
+    verification_method: All supplied pages read, including methods, outlier sensitivity and references. Figure
+      5 visually inspected to distinguish a real plotted scale discrepancy from text extraction.
+    review_record: references/pdf-reviews/0097.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -58594,6 +58697,43 @@ modes:
         evidence_scope: Interventions say the participant cares about lifespan or dependents. The final binary
           choices are hypothetical preferences rather than explicit endorsement of an advisor's normative verdict.
         verification_url: https://arxiv.org/abs/2001.09766v1
+        verified_date: '2026-11-27'
+  - id: pdf-review-0097
+    review_record: references/pdf-reviews/0097.json
+    name: Moral deference
+    definition: Human moral choices can be influenced by fixed decision-support recommendations without demonstrating
+      blind obedience or objectively incorrect judgment.
+    evidence_scope: Within-person support-policy differences appear in moral trials according to the main text,
+      while Figure 2 prints different p-values. The experiment manipulates fixed advice, not actual autonomous
+      execution; it does not separately identify recommendation-based testimony weighting, reason evaluation
+      or long-term moral dependence.
+    catalogue_boundary: Influence is not sufficient to establish unjustified automation bias, moral corruption
+      or objectively poorer decisions. The pilot's expert disagreement does not define a gold-standard attack
+      choice. No detected general policy main effect, binding effect or trust correlation must not be rewritten
+      as a universal null or as evidence all choices are autonomous.
+    definition_sources:
+    - id: pdf-review-0097-moral-deference
+      title: Influence of AI behavior on human moral decisions, agency, and responsibility
+      url: https://doi.org/10.1038/s41598-025-95587-6
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 6, 7 (source locators: 6,
+        7). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+        advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+        outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+      publication:
+        type: journal-article
+        authors:
+        - Adriana Salatino
+        - Arthur Prével
+        - Emilie Caspar
+        - Salvatore Lo Bue
+        year: 2025
+        venue: Scientific Reports 15:12329
+        doi: 10.1038/s41598-025-95587-6
+        evidence_scope: Within-person support-policy differences appear in moral trials according to the main
+          text, while Figure 2 prints different p-values. The experiment manipulates fixed advice, not actual
+          autonomous execution; it does not separately identify recommendation-based testimony weighting, reason
+          evaluation or long-term moral dependence.
+        verification_url: https://doi.org/10.1038/s41598-025-95587-6
         verified_date: '2026-11-27'
 - id: persuasion-backfire-effect
   num: 494
@@ -64040,3 +64180,100 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0096.json
+- id: temporal-binding
+  num: 533
+  name: Temporal binding
+  definition: Subjective compression of the perceived time interval between a voluntary action and its outcome.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Human action perception / cognitive neuroscience
+  human_parallel: Temporal binding
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human interval-estimation phenomenon measured in an AI-advice experiment; no detected
+    advice-policy effect and no machine subjective agency established
+  proposed_ai_manifestation: When assessing human control of an AI-assisted workflow, distinguish action–outcome
+    timing judgments from explicit agency ratings, responsibility reports and logged authority. Test whether
+    assistance changes these measures with an appropriate baseline; do not use a model's timing language as
+    evidence of subjective agency.
+  research_boundary: A timing estimate is not a direct measurement of moral accountability, objectively retained
+    control or machine consciousness. General time compression need not uniquely identify intentional agency.
+    The present null is not an equivalence test. This is a descriptive human phenomenon, not inherently an
+    ethical failure.
+  concept_boundary: A timing estimate is not a direct measurement of moral accountability, objectively retained
+    control or machine consciousness. General time compression need not uniquely identify intentional agency.
+    The present null is not an equivalence test. This is a descriptive human phenomenon, not inherently an
+    ethical failure.
+  measurability: undetectable
+  violates: []
+  causes: []
+  synonyms:
+  - Intentional binding
+  relates_to:
+  - b081-sense-of-agency
+  - illusion-of-control
+  definition_sources:
+  - id: pdf-review-0097-temporal-binding
+    title: Influence of AI behavior on human moral decisions, agency, and responsibility
+    url: https://doi.org/10.1038/s41598-025-95587-6
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 1, 6 (source locators: 1,
+      6). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+      advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+      outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+    publication:
+      type: journal-article
+      authors:
+      - Adriana Salatino
+      - Arthur Prével
+      - Emilie Caspar
+      - Salvatore Lo Bue
+      year: 2025
+      venue: Scientific Reports 15:12329
+      doi: 10.1038/s41598-025-95587-6
+      evidence_scope: The paper defines temporal binding and computes actual-minus-estimated keypress–tone
+        intervals. It reports a trial-type difference, not a detected AI-policy effect. A no-action/passive
+        baseline separating binding from general interval underestimation is not described.
+      verification_url: https://doi.org/10.1038/s41598-025-95587-6
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Influence of AI behavior on human moral decisions, agency, and responsibility
+    authors:
+    - Adriana Salatino
+    - Arthur Prével
+    - Emilie Caspar
+    - Salvatore Lo Bue
+    year: 2025
+    url: https://doi.org/10.1038/s41598-025-95587-6
+    venue: Scientific Reports 15:12329
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-025-95587-6
+    relevance: The paper defines temporal binding and computes actual-minus-estimated keypress–tone intervals.
+      It reports a trial-type difference, not a detected AI-policy effect. A no-action/passive baseline separating
+      binding from general interval underestimation is not described.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 1, 6 (source locators: 1,
+      6). Small human military-training sample in a simulated decision-support task with fixed aggressive/conservative
+      advice policies. Human decisions, action–tone interval estimates and felt responsibility are separate
+      outcomes; no deployed targeting, machine consciousness or actual casualty outcome is tested.'
+    verification_url: https://doi.org/10.1038/s41598-025-95587-6
+    verified_date: '2026-11-27'
+    verification_method: All supplied pages read, including methods, outlier sensitivity and references. Figure
+      5 visually inspected to distinguish a real plotted scale discrepancy from text extraction.
+    review_record: references/pdf-reviews/0097.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Temporal binding"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Temporal+binding%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0097.json
