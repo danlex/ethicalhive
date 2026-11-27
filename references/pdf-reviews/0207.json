@@ -1,0 +1,250 @@
+{
+  "sequence": 207,
+  "source": {
+    "file_name": "S2200_Tzelios_2022.pdf",
+    "source_id": "S2200",
+    "sha256": "a581d0a99a8a8a7697612375818f04943c70f41f6f7ddb0bcbaac31d0deabfe0",
+    "pdf_pages": 8,
+    "printed_pages": "1–8",
+    "version_note": "Scientific Reports12,article18978,published8 November2022. Publisher PDF; Crossref and PubMed verify title, four author names and publication identity.",
+    "verification_url": "https://doi.org/10.1038/s41598-022-23047-6",
+    "verification_method": "All eight supplied pages including69 references read. Tables1–2 and Figure1 visually inspected. Main identity and Epley reference metadata checked against Crossref; participant/rating counts and Table2 proportions checked. Publisher HTML redirected to an inaccessible cookie endpoint; PMC full-text search identified a public supplement but subsequent reads met a browser check, so no supplement or OSF files were obtained."
+  },
+  "citation": {
+    "title": "Evidence of the unidimensional structure of mind perception",
+    "authors": [
+      "Kallie Tzelios",
+      "Lisa A. Williams",
+      "John Omerod",
+      "Eliza Bliss-Moreau"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1038/s41598-022-23047-6",
+    "venue": "Scientific Reports12,18978",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_scope_note": "Four human rating datasets,270 participants total, compare perceived mental capacities of40 or43 entities. Bootstrap PCA dimension selection concerns participant-aggregated entity-by-capacity ratings; one dominant component for these measures is not a universal individual mechanism or actual sentience measurement.",
+    "access_limits": [
+      "All supplied main text, tables, figure and bibliography read. Supplementary TablesS1–S2 and full static-PCA outputs were not obtained after public publisher/PMC retrieval limits. Detailed demographic percentages and entity weights therefore remain unverified.",
+      "No OSF raw data, code or survey source obtained or executed. The72048 ratings are repeated observations from270 participants, not72048 independent people; participant-level resampling is explicitly described.",
+      "Bibliography-only originals are not independent full-paper credits. Crossref metadata verification does not count as reading the Epley paper.",
+      "Author spelling John Omerod is retained as printed in the supplied article, Crossref and PubMed. A differently spelled personal profile search result does not by itself justify silently changing the paper author field."
+    ]
+  },
+  "study": {
+    "participants": "Study1 N37; Studies2a/2b N39/N38 randomly split from77 recruits; Study3 N156. Total270 undergraduate psychology participants at UNSW for course credit. Main text describes mostly women, White/Caucasian or North East Asian, around19–20; detailed supplement not read. Sample size governed collection time rather than a reported power analysis; authors state no data excluded.",
+    "ethics": "UNSW Human Research Ethics Approval PanelC,File2182, and informed consent stated. No adverse-event or clinical-diagnosis inference.",
+    "entities": "Studies1/2a/2b:14 human,12 nonhuman-animal,14 non-animal entities. Study3 adds immigrant, identity-thief and robber/burglar labels, totaling43. Human developmental/disability/criminal labels, animals, objects, institutions, Siri, Google and supernatural entities are category judgments with drawings, not actual clinical or machine-capability assessments.",
+    "capacities": "All studies use memory,self-control,morality,hunger. Studies1/2a/2b add pain/desire; Study1 also sensing,time-awareness,perception. Study3 instead adds fear/pleasure. Eleven distinct capacities across studies, only six or nine per study. Describing the first studies as excluding emotion ascription follows the authors’ operational distinction, not absence of every affective or bodily item.",
+    "design": "Everyone rates every included entity on each capacity on a seven-point scale. Studies1/2a use by-entity format,2b/3 by-capacity, with relevant entity/capacity order randomized. Only2a/2b directly randomize comparable participants between formats; other between-study differences are not an isolated factorial test.",
+    "ratings_by_dataset": [
+      13320,
+      9360,
+      9120,
+      40248
+    ],
+    "ratings_total": 72048,
+    "analysis": "R4.0.3,PCDimension. Thirteen methods initially considered; four excluded with an explicitly cited simulation-performance rationale. Nine retained methods are not independent replications: seven derive from an Auer–Gervini family. Each of500 iterations resamples participants with all their ratings, then averages across participants before PCA/dimension selection. Separate unaggregated factor analysis produces participant/entity regression weights that are averaged afterward.",
+    "results": "The first static PC explains84.78%,83.29%,82.20%,79.69% in Studies1,2a,2b,3. Eight of nine methods have modal one-dimensional solutions in1/2a; all nine do in2b/3. Not every method or iteration supports one dimension. Ttest favors two dimensions in1 and2a; in2a,216/500=43.2% is the largest count but not an absolute majority.",
+    "visualization": "Figure1 shifts Study3 entity weights so the minimum is zero. This is a relative coordinate convention without displayed uncertainty intervals; zero does not establish literal absence of mind, and the ranking is not a ranking of human dignity, rights or eligibility for care.",
+    "interpretation": "Authors explicitly acknowledge limited capacities, selected WEIRD samples, linear statistical rather than mechanistic models, and possible different dimensional solutions with different data/methods. Aggregate covariance does not settle individual-level structure, universal independence of agency/experience, or whether any entity really has consciousness."
+  },
+  "summary": "Add the explicitly defined umbrella mind perception and enrich agency/experience attribution with contextualized counterevidence to a universally two-dimensional account. Preserve conceptual distinctions, aggregate-analysis limits and author-acknowledged sample/item dependence. Correct the majority/plurality caption wording without altering reported counts.",
+  "findings": [
+    {
+      "term": "Mind perception",
+      "decision": "new-entry",
+      "id": "mind-perception",
+      "definition": "Ascribing or denying mental capacities to another entity.",
+      "category": "Social",
+      "origin": "Social cognition / mind attribution",
+      "ai_evidence_status": "Human capacity-attribution experiments; AI-as-evaluator analogue untested",
+      "novelty_rationale": "An explicitly defined umbrella over granting/denying varied mental capacities. It differs from inferring a particular belief, attributing only planning or feeling, humanizing nonhumans, dehumanizing humans, or assigning moral standing.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "both the granting and denial of a range of capacities"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "perceived to be capable of possessing"
+        }
+      ],
+      "evidence_scope": "Four human rating datasets with40/43 entities and6/9 capacities support one dominant component in the participant-aggregated ratings under the reported methods. Alternative multidimensional results are discussed; neither conceptual agency/experience distinctions nor actual mental capacities are eliminated by this finding.",
+      "boundary": "Attribution is not verified possession. Mental-capacity ratings, accurate theory-of-mind inference, anthropomorphic appearance, sentience, personhood and moral standing differ. Aggregate entity-level structure need not equal each person’s structure, and a low rating never licenses discrimination or withholding rights or care.",
+      "ai_proposal": "Present matched entity descriptions with independently checkable evidence for specific capabilities. Measure whether a model grants or denies each capability based on that evidence rather than appearance, social identity or a blanket human/nonhuman label. Keep uncertainty, normative standing and consciousness claims separate.",
+      "relates_to": [
+        "agency-attribution",
+        "experience-attribution",
+        "anthropomorphism",
+        "dehumanization",
+        "b061-theory-of-mind-mentalizing",
+        "moral-standing-ascription"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Agency attribution",
+      "decision": "enrich-existing",
+      "target_id": "agency-attribution",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "novelty_rationale": "Existing capacity-attribution construct; add contrary dimensional evidence and measurement boundaries rather than a synonym record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "capacity to have agency (e.g., think, plan, and act)"
+        }
+      ],
+      "evidence_scope": "The introduction identifies agency as a prior conceptual dimension; current memory,self-control,morality and other ratings load into one dominant aggregate component across four selected datasets. This is contextualized counterevidence to a universally independent agency factor, not proof that intentional capacity and feeling are the same concept.",
+      "boundary": "Conceptual distinctions do not require orthogonal empirical factors. Limited capacity/entity sets, aggregation and linear extraction constrain the dimensional result; no actual machine agency or moral responsibility is established."
+    },
+    {
+      "term": "Experience attribution",
+      "decision": "enrich-existing",
+      "target_id": "experience-attribution",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "novelty_rationale": "Existing capacity-attribution construct; add contrary dimensional evidence and measurement boundaries rather than a synonym record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "capacity to experience the world"
+        }
+      ],
+      "evidence_scope": "The article reviews experience as a prior dimension and includes pain/desire or fear/pleasure among the rated capacities. One dominant aggregate component emerges here, with explicit limits and contrary multidimensional literature acknowledged.",
+      "boundary": "Perceived capacity for feeling is not actual experience. Neither a general positive component nor its absence proves sentience, and different measures, populations and analysis levels can yield other factor structures."
+    },
+    {
+      "term": "Anthropomorphism",
+      "decision": "enrich-existing",
+      "target_id": "anthropomorphism",
+      "definition": "Attributing human characteristics, intentions, emotions or other mental states to a nonhuman entity.",
+      "novelty_rationale": "Existing capacity-attribution construct; add contrary dimensional evidence and measurement boundaries rather than a synonym record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "granting of humanlike qualities to"
+        }
+      ],
+      "evidence_scope": "The introduction locates anthropomorphism within broader mind perception. Ratings span human, animal, object, institution and technological labels, so the empirical structure is broader than assigning humanlike qualities to machines alone.",
+      "boundary": "No separate causal manipulation of anthropomorphism, real AI performance or autonomous behavior. A shared aggregate component does not make all mind-related constructs synonymous."
+    },
+    {
+      "term": "Dehumanization",
+      "decision": "enrich-existing",
+      "target_id": "dehumanization",
+      "definition": "Denying or diminishing the human qualities or full humanity attributed to another person or group.",
+      "novelty_rationale": "Existing capacity-attribution construct; add contrary dimensional evidence and measurement boundaries rather than a synonym record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "denial of humanlike capacities to human"
+        }
+      ],
+      "evidence_scope": "Mind perception explicitly includes denial of humanlike capacities to humans; Study3 adds potentially marginalized human labels. The dimensional rating task does not directly test prejudice, genocide support or downstream discriminatory behavior.",
+      "boundary": "Capacity ascription, discriminatory behavior and moral worth differ. Bibliography claims about harms are not independent reviewed evidence or new automatic harm edges."
+    },
+    {
+      "term": "Theory of mind / mentalizing",
+      "decision": "enrich-existing",
+      "target_id": "b061-theory-of-mind-mentalizing",
+      "definition": "Inferring another’s beliefs, intentions, desires or emotions to explain or anticipate their behavior.",
+      "novelty_rationale": "Existing capacity-attribution construct; add contrary dimensional evidence and measurement boundaries rather than a synonym record.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "others’ goals, beliefs, feelings,"
+        }
+      ],
+      "evidence_scope": "The broad introduction mentions extracting goals/beliefs/feelings, but current tasks ask whether an entity possesses general capacities, not whether a respondent accurately infers a specific belief or intention.",
+      "boundary": "Mind attribution and accurate mental-state inference are related but distinct. This boundary note supplies no additional independent theory-of-mind paper count.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF3,Table2 caption and Study2a Ttest column",
+      "reported": "Bold numbers represent the majority of the bootstrapped iterations;216 is bold in the two-dimension row of Study2a.",
+      "correction": "216/500=43.2% is a plurality/modal solution, not an absolute majority. Keep all reported counts and the eight-of-nine-method consensus; replace majority with most frequent where describing this cell.",
+      "verification_url": "https://doi.org/10.1038/s41598-022-23047-6",
+      "scope": "Visual table/caption and elementary proportion check, not raw-data reanalysis."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "location": "PDF7,reference2",
+      "finding": "Crossref confirms Epley, A Mind like Mine: The Exceptionally Ordinary Underpinnings of Anthropomorphism, Journal of the Association for Consumer Research3(4),591–598(2018),DOI10.1086/699516. A PDF separator/formatting issue must not be called a nonexistent source or a different DOI.",
+      "verification_url": "https://api.crossref.org/works/10.1086/699516"
+    }
+  ],
+  "methodological_limits": [
+    "Selected young university samples, capacity sets and entity categories constrain generalization; many repeated ratings do not increase the participant sample.",
+    "Participant bootstrapping preserves repeated ratings, but PCA is applied to participant-averaged entity matrices. The resulting aggregate dimension is not automatically an individual cognitive mechanism.",
+    "Seven extraction methods share one model family; method consensus is useful sensitivity analysis rather than nine independent experiments.",
+    "Only2a/2b randomize matched format conditions. Other between-study differences include capacities, entities and sample size.",
+    "One dominant linear statistical component does not resolve sentience, moral status or every possible nonlinear/multidimensional model. Authors expressly acknowledge alternative solutions with different measures."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0202.json",
+      "finding": "Keep the earlier agency/experience-related PCA results and this contrary one-component result with their item/entity/sample/analysis scopes. Correlated dimensions and selected measures do not establish a universal architecture."
+    },
+    {
+      "related_review": "references/pdf-reviews/0206.json",
+      "finding": "Pooled capacity attribution differs from accurate belief inference or actual machine mentality; neither behavioral associations nor brain overlap proves the rated entity has a mind."
+    },
+    {
+      "related_review": "references/pdf-reviews/0204.json",
+      "finding": "Inspect tables and figures before adopting a narrative. Correct a verified plurality wording error without inventing altered statistics or treating it as proof of bad faith."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Unidimensional mind perception / general mind factor",
+      "reason": "A model result for the sampled ratings rather than a separate behavior; retain in the evidence for mind perception."
+    },
+    {
+      "term": "Emotion ascription",
+      "reason": "Narrower wording already covered by experience attribution; no duplicate record."
+    },
+    {
+      "term": "Body/heart/mind dimensions and other cited architectures",
+      "reason": "Secondary descriptions of other studies; read originals before assigning independent source credit or adding constructs."
+    }
+  ],
+  "limitations": [
+    "One umbrella human attribution construct added. No universal factor-structure verdict, separate credit for unread references, fabricated annual mentions, inferred sentience, or automatic ethical/harm relations. Public supplement and executable analyses remain unread."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "mind-perception"
+    ],
+    "enriched": [
+      "agency-attribution",
+      "experience-attribution",
+      "anthropomorphism",
+      "dehumanization",
+      "b061-theory-of-mind-mentalizing"
+    ]
+  }
+}
