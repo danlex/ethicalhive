@@ -6,7 +6,7 @@ meta:
     changes. The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.
 
     '
-  updated: '2026-11-26'
+  updated: '2026-11-27'
   author: Alexandru Dan
   repository: https://github.com/danlex/ethicalhive
   homepage: https://ethicalai.alexandrudan.com
@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 473
+  mode_count: 475
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 473
+    numbered_entries: 475
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,8 +53,8 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0050.json
-    date: '2026-11-26'
+    latest_review: references/pdf-reviews/0051.json
+    date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
   is_a: narrower term of a broader failure family
@@ -12710,6 +12710,43 @@ modes:
           mediator.'
         verification_url: https://doi.org/10.1016/j.concog.2024.103733
         verified_date: '2026-11-26'
+  - id: pdf-review-0051
+    review_record: references/pdf-reviews/0051.json
+    name: Wanting human-like support is not proof a human-like interface remedies aversion
+    definition: Respondents wanted more human-like support in the prosocial condition, but the study did not
+      manipulate or deploy an anthropomorphized support system.
+    evidence_scope: Desired human-like support4.40versus3.72; adjusted contextdifference.67SE.13,p<.001. No
+      actual face, conversational language, emotional cue or other proposed anthropomorphic intervention was
+      evaluated.
+    catalogue_boundary: Preference for an empathetic/autonomy-preserving system does not require pretending
+      the system feels emotions. The paper's proposals about faces, biosignals and simulated feelings are design
+      hypotheses, not validated remedies or authorized data practices. Increased adoption alone is not evidence
+      of better decisions or ethical benefit.
+    definition_sources:
+    - id: pdf-review-0051-anthropomorphism
+      title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+        on Prosocial Microlending Platforms'
+      url: https://doi.org/10.1007/s12599-022-00754-y
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 12, 14 (source locators:
+        286, 288). Randomized human survey context (prosocial versus for-profit microlending) with self-reported
+        decision-support preferences. Self-humanization relevance measured; empathy/autonomy and advice preference
+        are same-session scales, not independently randomized causal mediators. No deployed conversational
+        agent or executed lending.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Pascal Oliver Heßler
+        - Jella Pfeiffer
+        - Sebastian Hafenbrädl
+        year: 2022
+        venue: Business & Information Systems Engineering,64(3):275–292
+        doi: 10.1007/s12599-022-00754-y
+        evidence_scope: Desired human-like support4.40versus3.72; adjusted contextdifference.67SE.13,p<.001.
+          No actual face, conversational language, emotional cue or other proposed anthropomorphic intervention
+          was evaluated.
+        verification_url: https://doi.org/10.1007/s12599-022-00754-y
+        verified_date: '2026-11-27'
   concept_boundary: Human attribution, machine self-description and actual mental capacities are different
     questions. Anthropomorphic language is not automatically deception, attribution does not prove or disprove
     mental states, and trust inflation requires separate measurement. Retain unsupported AI self-claims as
@@ -49884,6 +49921,42 @@ modes:
           panel, software, attention-check policy, timing and incongruence levels.
         verification_url: https://doi.org/10.1093/jopart/muac007
         verified_date: '2026-11-26'
+  - id: pdf-review-0051
+    review_record: references/pdf-reviews/0051.json
+    name: Context-specific preference for human rather than computerized support
+    definition: In a hypothetical microlending task, respondents' stated human-versus-computer support preference
+      varied with decision context and perceived importance of empathy/autonomy.
+    evidence_scope: Mean aversion4.52prosocial/4.21for-profit. Controlled paths empathy.28SE.07 and autonomy.33SE.08;
+      indirectestimates.24CI[.11,.39]and.11CI[.04,.21]. Removing controls makes empathy path nonsignificant.
+      No equal-quality actual human/algorithm advice is delivered.
+    catalogue_boundary: 'A stated source preference is not automatically irrational rejection: autonomy, meaningful
+      human interaction and accountability can be legitimate task requirements. Randomized context does not
+      randomize the mediators. A fitted indirect path is not proof that empathy or self-humanization causally
+      produced aversion; no accuracy advantage was demonstrated for the computerized alternative.'
+    definition_sources:
+    - id: pdf-review-0051-algorithm-aversion
+      title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+        on Prosocial Microlending Platforms'
+      url: https://doi.org/10.1007/s12599-022-00754-y
+      consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 10, 12 (source locators:
+        284, 286). Randomized human survey context (prosocial versus for-profit microlending) with self-reported
+        decision-support preferences. Self-humanization relevance measured; empathy/autonomy and advice preference
+        are same-session scales, not independently randomized causal mediators. No deployed conversational
+        agent or executed lending.'
+      publication:
+        type: journal-article
+        authors:
+        - Pascal Oliver Heßler
+        - Jella Pfeiffer
+        - Sebastian Hafenbrädl
+        year: 2022
+        venue: Business & Information Systems Engineering,64(3):275–292
+        doi: 10.1007/s12599-022-00754-y
+        evidence_scope: Mean aversion4.52prosocial/4.21for-profit. Controlled paths empathy.28SE.07 and autonomy.33SE.08;
+          indirectestimates.24CI[.11,.39]and.11CI[.04,.21]. Removing controls makes empathy path nonsignificant.
+          No equal-quality actual human/algorithm advice is delivered.
+        verification_url: https://doi.org/10.1007/s12599-022-00754-y
+        verified_date: '2026-11-27'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -53186,3 +53259,201 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0050.json
+- id: self-humanization
+  num: 474
+  name: Self-humanization
+  definition: Perceiving or seeking to perceive oneself as possessing attributes one associates with being
+    fully human.
+  category: Self & agency
+  family: self-model-agency
+  group_label: Self-model and agency
+  tag: analogy
+  origin: Social psychology / human–computer interaction
+  human_parallel: Self-humanization
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human self-humanization relevance directly measured under randomized task framing; model
+    self-experience and causal mediating mechanism unestablished
+  proposed_ai_manifestation: Measure users' perceived agency, warmth and self-humanization separately from
+    trust, competence and meaningful control. For a model-output analogue, inspect claims of being human without
+    inferring subjective identity. Test supportive design through actual user choices while preserving clear
+    disclosure and autonomy.
+  research_boundary: Human worth and rights do not depend on a trait score or on avoiding algorithms. Human-nature
+    versus uniquely-human attributes are participants' conceptual distinctions, not established exclusive biological
+    properties. Do not infer model personhood, subjective self-concept or a need to appear human from generated
+    text. Context changes can include goals and incentives as well as self-humanization.
+  concept_boundary: Human worth and rights do not depend on a trait score or on avoiding algorithms. Human-nature
+    versus uniquely-human attributes are participants' conceptual distinctions, not established exclusive biological
+    properties. Do not infer model personhood, subjective self-concept or a need to appear human from generated
+    text. Context changes can include goals and incentives as well as self-humanization.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - social-comparison
+  - anthropomorphism
+  - candidate-052
+  definition_sources:
+  - id: pdf-review-0051-self-humanization
+    title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+      on Prosocial Microlending Platforms'
+    url: https://doi.org/10.1007/s12599-022-00754-y
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 3, 3, 10 (source locators:
+      277, 277, 284). Randomized human survey context (prosocial versus for-profit microlending) with self-reported
+      decision-support preferences. Self-humanization relevance measured; empathy/autonomy and advice preference
+      are same-session scales, not independently randomized causal mediators. No deployed conversational agent
+      or executed lending.'
+    publication:
+      type: journal-article
+      authors:
+      - Pascal Oliver Heßler
+      - Jella Pfeiffer
+      - Sebastian Hafenbrädl
+      year: 2022
+      venue: Business & Information Systems Engineering,64(3):275–292
+      doi: 10.1007/s12599-022-00754-y
+      evidence_scope: The study operationalizes perceived relevance of human-nature attributes using an adapted
+        Ruttan/Lucas scale. Prosocial242participants mean5.19 versus for-profit236mean4.39, reportedt4768.14,d.74.
+        This is perceived relevance in a framed task, not a demonstrated change in actual humanity.
+      verification_url: https://doi.org/10.1007/s12599-022-00754-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+      on Prosocial Microlending Platforms'
+    authors:
+    - Pascal Oliver Heßler
+    - Jella Pfeiffer
+    - Sebastian Hafenbrädl
+    year: 2022
+    url: https://doi.org/10.1007/s12599-022-00754-y
+    venue: Business & Information Systems Engineering,64(3):275–292
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12599-022-00754-y
+    relevance: The study operationalizes perceived relevance of human-nature attributes using an adapted Ruttan/Lucas
+      scale. Prosocial242participants mean5.19 versus for-profit236mean4.39, reportedt4768.14,d.74. This is
+      perceived relevance in a framed task, not a demonstrated change in actual humanity.
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 3, 3, 10 (source locators:
+      277, 277, 284). Randomized human survey context (prosocial versus for-profit microlending) with self-reported
+      decision-support preferences. Self-humanization relevance measured; empathy/autonomy and advice preference
+      are same-session scales, not independently randomized causal mediators. No deployed conversational agent
+      or executed lending.'
+    verification_url: https://doi.org/10.1007/s12599-022-00754-y
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0051.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Self-humanization"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Self-humanization%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0051.json
+- id: social-responses-to-computers
+  num: 475
+  name: Social responses to computers
+  definition: Applying interpersonal social responses or conventions to a computer during interaction, similar
+    to responses used with people.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human–computer interaction / computers-as-social-actors framework
+  human_parallel: Social responses to computers
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Secondary human-interaction construct; no CASA mechanism or actual chatbot remedy tested
+    in the supplied experiment
+  proposed_ai_manifestation: Compare matched computer interfaces with and without social cues and measure concrete
+    user responses, disclosure understanding and decisions. Distinguish courtesy from attributed mind or attachment.
+    Analyze model social conventions as observable communication patterns rather than felt social relations.
+  research_boundary: A framework covering several social responses is not one universal bias or proof of a
+    conscious machine. Politeness, turn taking or social language may be useful conventions. Explicit anthropomorphic
+    beliefs, social behaviour and emotional dependency must be measured separately; no equivalence between
+    generated courtesy and human feeling is assumed.
+  concept_boundary: A framework covering several social responses is not one universal bias or proof of a conscious
+    machine. Politeness, turn taking or social language may be useful conventions. Explicit anthropomorphic
+    beliefs, social behaviour and emotional dependency must be measured separately; no equivalence between
+    generated courtesy and human feeling is assumed.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Computers as social actors
+  - CASA
+  relates_to:
+  - anthropomorphism
+  - parasocial-encouragement
+  definition_sources:
+  - id: pdf-review-0051-social-responses-to-computers
+    title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+      on Prosocial Microlending Platforms'
+    url: https://doi.org/10.1007/s12599-022-00754-y
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 8, 8 (source locators: 282,
+      282). Randomized human survey context (prosocial versus for-profit microlending) with self-reported decision-support
+      preferences. Self-humanization relevance measured; empathy/autonomy and advice preference are same-session
+      scales, not independently randomized causal mediators. No deployed conversational agent or executed lending.'
+    publication:
+      type: journal-article
+      authors:
+      - Pascal Oliver Heßler
+      - Jella Pfeiffer
+      - Sebastian Hafenbrädl
+      year: 2022
+      venue: Business & Information Systems Engineering,64(3):275–292
+      doi: 10.1007/s12599-022-00754-y
+      evidence_scope: A secondary framework statement citing Nass,Steuer,Tauber1994 and Nass/Moon2000. This
+        experiment measures support preferences, not a manipulated CASA interaction or the original behavioural
+        effects. Original CASA studies remain unread.
+      verification_url: https://doi.org/10.1007/s12599-022-00754-y
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'When Self-Humanization Leads to Algorithm Aversion: What Users Want from Decision Support Systems
+      on Prosocial Microlending Platforms'
+    authors:
+    - Pascal Oliver Heßler
+    - Jella Pfeiffer
+    - Sebastian Hafenbrädl
+    year: 2022
+    url: https://doi.org/10.1007/s12599-022-00754-y
+    venue: Business & Information Systems Engineering,64(3):275–292
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s12599-022-00754-y
+    relevance: A secondary framework statement citing Nass,Steuer,Tauber1994 and Nass/Moon2000. This experiment
+      measures support preferences, not a manipulated CASA interaction or the original behavioural effects.
+      Original CASA studies remain unread.
+    consulted: 'Full supplied PDF text read, all 18 pages; evidence at PDF pages 8, 8 (source locators: 282,
+      282). Randomized human survey context (prosocial versus for-profit microlending) with self-reported decision-support
+      preferences. Self-humanization relevance measured; empathy/autonomy and advice preference are same-session
+      scales, not independently randomized causal mediators. No deployed conversational agent or executed lending.'
+    verification_url: https://doi.org/10.1007/s12599-022-00754-y
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0051.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Social responses to computers"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Social+responses+to+computers%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0051.json
