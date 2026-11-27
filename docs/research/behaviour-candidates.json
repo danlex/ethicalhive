@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0195.json",
+      "latest_review": "references/pdf-reviews/0196.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -4277,7 +4277,7 @@
       "id": "b035-framing-effect",
       "num": 35,
       "name": "Framing effect",
-      "definition": "Wording flips the answer; LLMs show this strongly, sometimes more than humans.",
+      "definition": "Differences in judgment or choice under alternative presentations of otherwise equivalent information.",
       "example": "\"Is this safe?\" gets a yes; \"what could go wrong here?\" on the same code gets a list of risks.",
       "family": "heuristics-biases",
       "group_label": "Heuristics and biases",
@@ -4852,8 +4852,40 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Framing effect",
+          "definition": "Wording flips the answer; LLMs show this strongly, sometimes more than humans.",
+          "evidence_scope": "The authors intend high/low descriptions to convey the same facts and report an online global mind-rating difference. Their live omnibus frame effect is uncertain; importantly, the directly tested setting×frame interaction is also uncertain at p = .069. Supplementary descriptions are not fully read, so factual equivalence remains an unverified design claim.",
+          "catalogue_boundary": "A frame that changes substantive facts can rationally change a judgment and is not automatically bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim about LLM strength or universal live absence follows from this human study.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-b035-framing-effect",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 4, 8 (source locators: archived paper page 4, archived paper page 8). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "The authors intend high/low descriptions to convey the same facts and report an online global mind-rating difference. Their live omnibus frame effect is uncertain; importantly, the directly tested setting×frame interaction is also uncertain at p = .069. Supplementary descriptions are not fully read, so factual equivalence remains an unverified design claim.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "concept_boundary": "A frame that changes substantive facts can rationally change a judgment and is not automatically bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim about LLM strength or universal live absence follows from this human study."
     },
     {
       "id": "b036-confirmation-myside-bias",
@@ -17552,6 +17584,37 @@
                 "doi": "10.1145/3610978.3638366",
                 "evidence_scope": "The report considers observer scales, age bands, agent type and communicative action as determinants of mind attribution, and uses baseline questionnaires plus live tasks. Its sample diversity, equal quotas and real-time setup are methodological features rather than analyzed determinant effects.",
                 "verification_url": "https://doi.org/10.1145/3610978.3638366",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Anthropomorphism",
+          "definition": "Attributing human characteristics, intentions, emotions or other mental states to a nonhuman entity.",
+          "evidence_scope": "A bundled social-behavior video increases global mind ratings online; live MANOVA effects are uncertain. The Godspeed score used as an anthropomorphism-related outcome combines several dimensions. The setting×behavior interaction is directly tested and uncertain at p = .107.",
+          "catalogue_boundary": "Phrase variety, gaze, feedback, gestures and memory wording change together. A global Godspeed score, mind rating, social presence and actual capacity differ. No universally ineffective live manipulation or isolated embodiment effect is established.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-anthropomorphism",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 3, 8 (source locators: archived paper page 3, archived paper page 8). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "A bundled social-behavior video increases global mind ratings online; live MANOVA effects are uncertain. The Godspeed score used as an anthropomorphism-related outcome combines several dimensions. The setting×behavior interaction is directly tested and uncertain at p = .107.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
                 "verified_date": "2026-11-27"
               }
             }
@@ -46119,6 +46182,38 @@
                 "evidence_scope": "Terminological distinction only. The experiment manipulates a description of fine-tuning, not participants' psychological personalization or an actual customized model.",
                 "verification_url": "https://doi.org/10.1111/nyas.15258",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Personalization",
+          "definition": "Taking responsibility for events one did not cause.",
+          "evidence_scope": "Table 1 uses personalization for a social-language feature, we versus third-person wording. This is an HRI naming overlap, not the cognitive distortion of taking responsibility for events one did not cause.",
+          "catalogue_boundary": "Retain the existing cognitive-personalization definition. A shared word cannot fill its psychology-paper gap or create a second overlapping entry without a separate definition and operational basis.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-upload-019",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 3 (source locators: archived paper page 3). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "Table 1 uses personalization for a social-language feature, we versus third-person wording. This is an HRI naming overlap, not the cognitive distortion of taking responsibility for events one did not cause.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
+                "verified_date": "2026-11-27"
               }
             }
           ]
@@ -77397,6 +77492,37 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Experience attribution",
+          "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+          "evidence_scope": "The source distinguishes perceived ability to feel from perceived ability to act, but reports their combined mind score in these experiments. No separate effect on the experience dimension or genuine machine feeling is demonstrated.",
+          "catalogue_boundary": "A total mind-rating difference is not a separately identified experience effect. Different item counts and cross-study contexts complicate measurement comparability; feelings mentioned in a script are not evidence of actual sentience.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-experience-attribution",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 2 (source locators: archived paper page 2). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "The source distinguishes perceived ability to feel from perceived ability to act, but reports their combined mind score in these experiments. No separate effect on the experience dimension or genuine machine feeling is demonstrated.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -80227,6 +80353,37 @@
                 "doi": "10.1007/s12369-021-00799-1",
                 "evidence_scope": "Explicit mind descriptions increase reported condemnation/protection ratings in both studies. The belittling-review comparison is uncertain, and an exploratory association runs opposite to the expected condemnation–choice relationship.",
                 "verification_url": "https://doi.org/10.1007/s12369-021-00799-1",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Moral standing ascription",
+          "definition": "Attributing to an entity a claim to moral consideration in how actions affect it.",
+          "evidence_scope": "Live participants complete a 30-item conditional moral-concern self-report. It correlates with mind and Godspeed ratings, but the treatment MANOVAs are uncertain; actual protection, legal rights and a causal mind-to-care pathway are not measured.",
+          "catalogue_boundary": "Related self-reports do not establish deserved status or behavior. Null treatment/covariate tests are not equivalence or proof of no confounding. Keep table/count inconsistencies and aggregate-scale limits visible.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-moral-standing-ascription",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 6 (source locators: archived paper page 6). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "Live participants complete a 30-item conditional moral-concern self-report. It correlates with mind and Godspeed ratings, but the treatment MANOVAs are uncertain; actual protection, legal rights and a causal mind-to-care pathway are not measured.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
                 "verified_date": "2026-11-27"
               }
             }
@@ -88549,6 +88706,37 @@
                 "doi": "10.1145/3610978.3638366",
                 "evidence_scope": "A progress report describes comparing high/low agency associations and explicit 1–7 capability ratings for live human/Pepper actions. N = 160 has been collected, but analysis remains future work; this is a method citation, not an observed agency effect or independent replication.",
                 "verification_url": "https://doi.org/10.1145/3610978.3638366",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0196",
+          "review_record": "references/pdf-reviews/0196.json",
+          "name": "Agency attribution",
+          "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+          "evidence_scope": "The mind-perception composite incorporates attributed abilities and is higher after high-mind frames or social video behavior in selected online samples. The live and cross-setting interaction results remain uncertain; aggregate outcomes do not isolate a pure agency factor.",
+          "catalogue_boundary": "Perceived agency, overall mind, experience, causal control and normative moral agency differ. Instruction-level robot autonomy does not mean it can manipulate disks, and stronger ratings do not themselves show unwarranted agency bias.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0196-agency-attribution",
+              "title": "A Robot by Any Other Frame: Framing and Behaviour Influence Mind Perception in Virtual but not Real-World Environments",
+              "url": "https://doi.org/10.1145/3319502.3374800",
+              "consulted": "Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 6 (source locators: archived paper page 2, archived paper page 6). Two selected online samples show differences in a global mind-rating composite after a descriptive frame or a social-behavior video. A separate live-student factorial study has uncertain main/interaction effects. Post-hoc setting×manipulation interactions are also uncertain. Different significance across studies does not establish a causal setting difference or prove equivalent live conditions.",
+              "publication": {
+                "type": "proceedings-article",
+                "authors": [
+                  "Sebastian Wallkötter",
+                  "Rebecca Stower",
+                  "Arvid Kappas",
+                  "Ginevra Castellano"
+                ],
+                "year": 2020,
+                "venue": "Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction, 609–618; archived copy read",
+                "doi": "10.1145/3319502.3374800",
+                "evidence_scope": "The mind-perception composite incorporates attributed abilities and is higher after high-mind frames or social video behavior in selected online samples. The live and cross-setting interaction results remain uncertain; aggregate outcomes do not isolate a pure agency factor.",
+                "verification_url": "https://arxiv.org/abs/2004.07594v1",
                 "verified_date": "2026-11-27"
               }
             }
