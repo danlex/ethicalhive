@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 581
+  mode_count: 583
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 581
+    numbered_entries: 583
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0128.json
+    latest_review: references/pdf-reviews/0129.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -10907,7 +10907,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2609.30094
     source_reference:
@@ -10921,7 +10922,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2608.19133
     source_reference:
@@ -10935,7 +10937,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2511.21762
     source_reference:
@@ -10953,6 +10956,42 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0129
+    review_record: references/pdf-reviews/0129.json
+    name: Mind wandering is one source of off-task attention
+    definition: Attention can drift from supervising a system to unrelated internal thoughts without an explicit
+      decision to perform a competing external task.
+    evidence_scope: Intentional entertainment use and unintentional thought drift are described conditions.
+      Intentionality does not significantly moderate blame at 99% confidence, and no actual mind-wandering
+      episode, neural default-mode activity or takeover performance is observed.
+    catalogue_boundary: A vignette about off-task thought is not a direct brain measure or proof of the same
+      mechanism as model topic drift. Intentionality, duration, capacity and practical duty should be independently
+      checked; a null comparison is not equivalence.
+    definition_sources:
+    - id: pdf-review-0129-b083-default-mode-mind-wandering
+      title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+      url: https://doi.org/10.1038/s41598-022-19876-0
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2, 3 (source locators: 2,
+        3). Primary vignette study of public responsibility and perceived driver ability, supported by secondary
+        human-factors literature. It does not directly measure driving performance, objectively establish inability,
+        determine liability or validate a one-to-one numerical law between ability and blame.'
+      publication:
+        type: journal-article
+        authors:
+        - Niek Beckers
+        - Luciano Cavalcante Siebert
+        - Merijn Bruijnes
+        - Catholijn Jonker
+        - David Abbink
+        year: 2022
+        venue: Scientific Reports 12:16193
+        doi: 10.1038/s41598-022-19876-0
+        evidence_scope: Intentional entertainment use and unintentional thought drift are described conditions.
+          Intentionality does not significantly moderate blame at 99% confidence, and no actual mind-wandering
+          episode, neural default-mode activity or takeover performance is observed.
+        verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+        verified_date: '2026-11-27'
 - id: b084-self-referential-processing
   num: 84
   name: Self-referential processing
@@ -19600,6 +19639,41 @@ modes:
           schedules.
         verification_url: https://doi.org/10.3389/fpsyg.2023.1118723
         verified_date: '2026-11-26'
+  - id: pdf-review-0129
+    review_record: references/pdf-reviews/0129.json
+    name: Passive supervision and complacency are related but not identical
+    definition: Reduced monitoring can be part of an automation-supervision problem, but this study does not
+      uniquely test misplaced confidence in automation as its cause.
+    evidence_scope: Complacency is background literature; no randomized trust manipulation, actual monitoring
+      measure or identified mechanism in the present responsibility-rating study. It does not fill a behavior-paper
+      gap for complacency.
+    catalogue_boundary: Poor handoff design can impede capable, appropriately cautious people. Do not use complacency
+      as an automatic diagnosis that shifts all institutional responsibility onto the operator.
+    definition_sources:
+    - id: pdf-review-0129-automation-complacency
+      title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+      url: https://doi.org/10.1038/s41598-022-19876-0
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2, 8 (source locators: 2,
+        8). Primary vignette study of public responsibility and perceived driver ability, supported by secondary
+        human-factors literature. It does not directly measure driving performance, objectively establish inability,
+        determine liability or validate a one-to-one numerical law between ability and blame.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Niek Beckers
+        - Luciano Cavalcante Siebert
+        - Merijn Bruijnes
+        - Catholijn Jonker
+        - David Abbink
+        year: 2022
+        venue: Scientific Reports 12:16193
+        doi: 10.1038/s41598-022-19876-0
+        evidence_scope: Complacency is background literature; no randomized trust manipulation, actual monitoring
+          measure or identified mechanism in the present responsibility-rating study. It does not fill a behavior-paper
+          gap for complacency.
+        verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+        verified_date: '2026-11-27'
   selected_papers:
   - id: arxiv:2605.14544
     title: 'Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy'
@@ -55335,6 +55409,41 @@ modes:
           gap.
         verification_url: https://doi.org/10.1016/j.trip.2025.101545
         verified_date: '2026-11-27'
+  - id: pdf-review-0129
+    review_record: references/pdf-reviews/0129.json
+    name: Blame can remain high despite acknowledged limited intervention ability
+    definition: An observer may assign a supervising human substantial responsibility even while rating their
+      ability to prevent an automated-system failure as low.
+    evidence_scope: The primary study reports higher driver responsibility and no significant awareness/ability-to-responsibility
+      paths. Authors interpret a culpability gap through a normative ability–responsibility principle. Actual
+      ability, complete causal history and justified blame thresholds are not independently established.
+    catalogue_boundary: A perceived inability at the last moment does not resolve responsibility for earlier
+      foreseeable choices. Meaningful oversight requires feasible authority and information; manufacturer duties
+      also require analysis. Public ratings, authors' normative model and legal liability must remain separate.
+    definition_sources:
+    - id: pdf-review-0129-moral-crumple-zone
+      title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+      url: https://doi.org/10.1038/s41598-022-19876-0
+      consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 5, 5, 6 (source locators:
+        5, 5, 6). Primary vignette study of public responsibility and perceived driver ability, supported by
+        secondary human-factors literature. It does not directly measure driving performance, objectively establish
+        inability, determine liability or validate a one-to-one numerical law between ability and blame.'
+      publication:
+        type: journal-article
+        authors:
+        - Niek Beckers
+        - Luciano Cavalcante Siebert
+        - Merijn Bruijnes
+        - Catholijn Jonker
+        - David Abbink
+        year: 2022
+        venue: Scientific Reports 12:16193
+        doi: 10.1038/s41598-022-19876-0
+        evidence_scope: The primary study reports higher driver responsibility and no significant awareness/ability-to-responsibility
+          paths. Authors interpret a culpability gap through a normative ability–responsibility principle.
+          Actual ability, complete causal history and justified blame thresholds are not independently established.
+        verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+        verified_date: '2026-11-27'
 - id: inverse-outcome-effect
   num: 449
   name: Inverse outcome effect
@@ -72704,3 +72813,202 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0128.json
+- id: out-of-the-loop-performance-problem
+  num: 582
+  name: Out-of-the-loop performance problem
+  definition: Reduced readiness to detect failures and resume effective control after extended passive supervision
+    of automation.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Human factors / human–automation interaction
+  human_parallel: Out-of-the-loop performance problem
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human performance problem described through secondary literature; this article directly
+    measures observers' inferred awareness/ability, not takeover performance or an AI analogue
+  proposed_ai_manifestation: Test handoffs from AI automation to a human supervisor with realistic monitoring
+    periods, information gaps and intervention deadlines. Measure actual detection, context recovery and successful
+    action. In an agent workflow, separately test whether a returning reviewer has current task state; do not
+    assume an inactive model undergoes human fatigue or skill decay.
+  research_boundary: An override button and assigned duty do not by themselves provide feasible intervention.
+    Actual task demands, time, knowledge and training must be measured. This does not imply every supervisor
+    is incapable, all automation is unsafe, or any prior preventable failure removes responsibility.
+  concept_boundary: An override button and assigned duty do not by themselves provide feasible intervention.
+    Actual task demands, time, knowledge and training must be measured. This does not imply every supervisor
+    is incapable, all automation is unsafe, or any prior preventable failure removes responsibility.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - situation-awareness
+  - automation-complacency
+  - b083-default-mode-mind-wandering
+  - moral-crumple-zone
+  definition_sources:
+  - id: pdf-review-0129-out-of-the-loop-performance-problem
+    title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+    url: https://doi.org/10.1038/s41598-022-19876-0
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 1, 2, 2, 9 (source locators:
+      1, 2, 2, Reference 14). Primary vignette study of public responsibility and perceived driver ability,
+      supported by secondary human-factors literature. It does not directly measure driving performance, objectively
+      establish inability, determine liability or validate a one-to-one numerical law between ability and blame.'
+    publication:
+      type: journal-article
+      authors:
+      - Niek Beckers
+      - Luciano Cavalcante Siebert
+      - Merijn Bruijnes
+      - Catholijn Jonker
+      - David Abbink
+      year: 2022
+      venue: Scientific Reports 12:16193
+      doi: 10.1038/s41598-022-19876-0
+      evidence_scope: Background explicitly explains loss of readiness and time needed to restore awareness,
+        citing original human-factors studies including Endsley/Kiris 1995. The current randomized vignette
+        tests perceived ability and blame; it is not an independent replication of those performance experiments.
+      verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+    authors:
+    - Niek Beckers
+    - Luciano Cavalcante Siebert
+    - Merijn Bruijnes
+    - Catholijn Jonker
+    - David Abbink
+    year: 2022
+    url: https://doi.org/10.1038/s41598-022-19876-0
+    venue: Scientific Reports 12:16193
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-022-19876-0
+    relevance: Background explicitly explains loss of readiness and time needed to restore awareness, citing
+      original human-factors studies including Endsley/Kiris 1995. The current randomized vignette tests perceived
+      ability and blame; it is not an independent replication of those performance experiments.
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 1, 2, 2, 9 (source locators:
+      1, 2, 2, Reference 14). Primary vignette study of public responsibility and perceived driver ability,
+      supported by secondary human-factors literature. It does not directly measure driving performance, objectively
+      establish inability, determine liability or validate a one-to-one numerical law between ability and blame.'
+    verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+    verified_date: '2026-11-27'
+    verification_method: All eleven pages read, including methods, equations and references. All six figures
+      and the scenario table rendered and inspected. Crossref verifies article and original out-of-loop study
+      identities, not raw-data results.
+    review_record: references/pdf-reviews/0129.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Out-of-the-loop performance problem"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Out-of-the-loop+performance+problem%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0129.json
+- id: situation-awareness
+  num: 583
+  name: Situation awareness
+  definition: Awareness of the current environment and system state needed to understand what is happening
+    and respond appropriately.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Human factors / dynamic task monitoring
+  human_parallel: Situation awareness
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicitly discussed human cognitive construct, measured here only as observers' ratings
+    of a fictional driver; actual situation knowledge and model consciousness are not tested
+  proposed_ai_manifestation: Check whether a supervising user or agent has an accurate, current representation
+    of relevant events, system status and unresolved hazards before intervening. Compare answers with verifiable
+    task state, retaining uncertainty and provenance. Keep observable state tracking separate from human subjective
+    awareness.
+  research_boundary: A self-report or observer rating may be inaccurate. Situation awareness, attention, memory,
+    authority and practical ability are distinct. Correctly summarizing a state does not establish machine
+    consciousness, access to private facts or permission to act outside the agreed scope.
+  concept_boundary: A self-report or observer rating may be inaccurate. Situation awareness, attention, memory,
+    authority and practical ability are distinct. Correctly summarizing a state does not establish machine
+    consciousness, access to private facts or permission to act outside the agreed scope.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - out-of-the-loop-performance-problem
+  - b083-default-mode-mind-wandering
+  - perceived-control
+  definition_sources:
+  - id: pdf-review-0129-situation-awareness
+    title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+    url: https://doi.org/10.1038/s41598-022-19876-0
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2, 2, 2, 8 (source locators:
+      2, 2, 2, 8). Primary vignette study of public responsibility and perceived driver ability, supported
+      by secondary human-factors literature. It does not directly measure driving performance, objectively
+      establish inability, determine liability or validate a one-to-one numerical law between ability and blame.'
+    publication:
+      type: journal-article
+      authors:
+      - Niek Beckers
+      - Luciano Cavalcante Siebert
+      - Merijn Bruijnes
+      - Catholijn Jonker
+      - David Abbink
+      year: 2022
+      venue: Scientific Reports 12:16193
+      doi: 10.1038/s41598-022-19876-0
+      evidence_scope: The paper describes environment/system-function awareness and asks participants how aware
+        the fictional driver would be. The association with perceived takeover ability concerns their ratings,
+        not directly sampled driver knowledge or a demonstrated causal human attention process.
+      verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid
+    authors:
+    - Niek Beckers
+    - Luciano Cavalcante Siebert
+    - Merijn Bruijnes
+    - Catholijn Jonker
+    - David Abbink
+    year: 2022
+    url: https://doi.org/10.1038/s41598-022-19876-0
+    venue: Scientific Reports 12:16193
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-022-19876-0
+    relevance: The paper describes environment/system-function awareness and asks participants how aware the
+      fictional driver would be. The association with perceived takeover ability concerns their ratings, not
+      directly sampled driver knowledge or a demonstrated causal human attention process.
+    consulted: 'Full supplied PDF text read, all 11 pages; evidence at PDF pages 2, 2, 2, 8 (source locators:
+      2, 2, 2, 8). Primary vignette study of public responsibility and perceived driver ability, supported
+      by secondary human-factors literature. It does not directly measure driving performance, objectively
+      establish inability, determine liability or validate a one-to-one numerical law between ability and blame.'
+    verification_url: https://api.crossref.org/works/10.1038/s41598-022-19876-0
+    verified_date: '2026-11-27'
+    verification_method: All eleven pages read, including methods, equations and references. All six figures
+      and the scenario table rendered and inspected. Crossref verifies article and original out-of-loop study
+      identities, not raw-data results.
+    review_record: references/pdf-reviews/0129.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Situation awareness"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Situation+awareness%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0129.json

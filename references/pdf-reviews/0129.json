@@ -1,0 +1,318 @@
+{
+  "sequence": 129,
+  "source": {
+    "file_name": "S1165_Beckers_2022.pdf",
+    "source_id": "S1165",
+    "sha256": "de1314fed9e7637b47c8cc5fed916bc765324c0d810081bac5eed447d5d62294",
+    "pdf_pages": 11,
+    "printed_pages": "1–11",
+    "version_note": "Scientific Reports 12:16193, published 28 September 2022. Main article only; supplementary full vignettes, interaction tables and codebook are not embedded.",
+    "verification_url": "https://api.crossref.org/works/10.1038/s41598-022-19876-0",
+    "verification_method": "All eleven pages read, including methods, equations and references. All six figures and the scenario table rendered and inspected. Crossref verifies article and original out-of-loop study identities, not raw-data results."
+  },
+  "citation": {
+    "title": "Drivers of partially automated vehicles are blamed for crashes that they cannot reasonably avoid",
+    "authors": [
+      "Niek Beckers",
+      "Luciano Cavalcante Siebert",
+      "Merijn Bruijnes",
+      "Catholijn Jonker",
+      "David Abbink"
+    ],
+    "year": 2022,
+    "url": "https://doi.org/10.1038/s41598-022-19876-0",
+    "venue": "Scientific Reports 12:16193",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source_scope_note": "Primary vignette study of public responsibility and perceived driver ability, supported by secondary human-factors literature. It does not directly measure driving performance, objectively establish inability, determine liability or validate a one-to-one numerical law between ability and blame.",
+    "access_limits": [
+      "All eleven supplied pages and figures read. Full supplementary vignettes, complete interaction estimates and qualitative code maps were not supplied/read.",
+      "Data and code links are documented at DOI 10.4121/16652056.v1 but were not accessed or executed. No external author contact was made.",
+      "Endsley/Kiris and other cited human-factors studies and books remain secondary references; metadata verification is not a completed full-paper read."
+    ]
+  },
+  "study": {
+    "sample": "250 licensed-driver Prolific recruits assigned equally to five scenarios, 50 per condition before exclusions. Twelve fail attention checks, leaving 238 analyzed and 238 qualitative comments; age 18–76, median 25, 39% female. The repeated headline N = 250 is recruitment rather than final analytic N.",
+    "design": "No distraction, short intentional, short unintentional, long intentional or long unintentional distraction. All scenarios follow prolonged successful partial automation, an immediate takeover request and a crash. No manually driving or full-autonomy comparison group is randomized here.",
+    "measures": "First rate driver awareness and ability to successfully take control, then separately rate responsibility of driver, automated vehicle and manufacturer on independent 0–100 scales. Broad responsibility question deliberately includes legal, causal, moral and role interpretations, even though conclusions focus on culpability.",
+    "analysis": "OLS for two measured mediators and an explicitly mixed-effects responsibility model for within-person actor ratings. 99% bootstrap intervals from 10,000 resamples, multicategorical contrasts and interactions. This study does account for repeated actor observations; exact complete results are in unread supplements.",
+    "findings": "Distracted drivers rated less aware, awareness positively associated with perceived ability. Driver receives substantially more responsibility than vehicle or manufacturer. Added duration and intentional-versus-unintentional cause do not significantly change driver blame at the chosen 99% level. Awareness/ability paths to blame and interactions are also not significant.",
+    "coefficients": "Reported model coefficients: distraction-to-awareness −30.9, 99% CI [−34.9,−25.8]; awareness-to-ability .45 [.35,.55]; awareness-to-responsibility −.01 [−.20,.17]; ability-to-responsibility .07 [−.07,.23]; cause-to-responsibility −4.36 [−10.26,1.94]. These are coded regression coefficients, not necessarily raw group-mean differences.",
+    "contrasts": "D1 coded −1, .5, .5 and D2 0, −1, 1 for no/short/long distraction. D1 fitted group difference spans 1.5 coefficient units, D2 spans two; do not quote c1 = 10.2 or c2 = 3.78 as an unqualified raw difference.",
+    "qualitative": "Two raters initially code comments blind to numeric responsibility ratings; thematic maps finalized in consensus with first three authors. Four themes, 17 codes, 52 subcodes. Reasons often emphasize duty to supervise, manual warnings or voluntary commitment. Codes can co-occur and are not independent respondents or causal mechanisms.",
+    "normative_scope": "Authors argue responsibility should reflect real ability and portray a culpability gap. Figure 5's diagonal is explicitly qualitative normative illustration; two independent rating scales are not empirically calibrated into a universal blame ≤ ability formula. Prior negligent choices, foreseeability and institutional design remain relevant."
+  },
+  "summary": "Add the out-of-the-loop performance problem and situation awareness with explicit background-versus-observer-measurement scope. Strengthen the moral-crumple-zone boundary and existing mind-wandering/complacency notes; do not treat vignette ratings as direct evidence of actual human incapacity or a legal immunity rule.",
+  "findings": [
+    {
+      "term": "Out-of-the-loop performance problem",
+      "id": "out-of-the-loop-performance-problem",
+      "decision": "new-entry",
+      "definition": "Reduced readiness to detect failures and resume effective control after extended passive supervision of automation.",
+      "category": "Attention",
+      "origin": "Human factors / human–automation interaction",
+      "ai_evidence_status": "Human performance problem described through secondary literature; this article directly measures observers' inferred awareness/ability, not takeover performance or an AI analogue",
+      "ai_proposal": "Test handoffs from AI automation to a human supervisor with realistic monitoring periods, information gaps and intervention deadlines. Measure actual detection, context recovery and successful action. In an agent workflow, separately test whether a returning reviewer has current task state; do not assume an inactive model undergoes human fatigue or skill decay.",
+      "relates_to": [
+        "situation-awareness",
+        "automation-complacency",
+        "b083-default-mode-mind-wandering",
+        "moral-crumple-zone"
+      ],
+      "novelty_rationale": "Difficulty re-entering active control is a handoff/performance problem, not necessarily misplaced trust or off-task thought. It can involve situation knowledge, skill readiness and time constraints even when formal override controls exist.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": 1,
+          "quote": "out-of-the-loop supervisor"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "supervise for prolonged periods"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "their ability to take back control"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": "Reference 14",
+          "quote": "The out-of-the-loop performance problem"
+        }
+      ],
+      "evidence_scope": "Background explicitly explains loss of readiness and time needed to restore awareness, citing original human-factors studies including Endsley/Kiris 1995. The current randomized vignette tests perceived ability and blame; it is not an independent replication of those performance experiments.",
+      "boundary": "An override button and assigned duty do not by themselves provide feasible intervention. Actual task demands, time, knowledge and training must be measured. This does not imply every supervisor is incapable, all automation is unsafe, or any prior preventable failure removes responsibility."
+    },
+    {
+      "term": "Situation awareness",
+      "id": "situation-awareness",
+      "decision": "new-entry",
+      "definition": "Awareness of the current environment and system state needed to understand what is happening and respond appropriately.",
+      "category": "Attention",
+      "origin": "Human factors / dynamic task monitoring",
+      "ai_evidence_status": "Explicitly discussed human cognitive construct, measured here only as observers' ratings of a fictional driver; actual situation knowledge and model consciousness are not tested",
+      "ai_proposal": "Check whether a supervising user or agent has an accurate, current representation of relevant events, system status and unresolved hazards before intervening. Compare answers with verifiable task state, retaining uncertainty and provenance. Keep observable state tracking separate from human subjective awareness.",
+      "relates_to": [
+        "out-of-the-loop-performance-problem",
+        "b083-default-mode-mind-wandering",
+        "perceived-control"
+      ],
+      "novelty_rationale": "Knowing what is happening differs from believing one can control it, being the author of an action or merely maintaining attention. A person can attend but misunderstand the system, or understand it without authority to intervene.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "awareness of the environment"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "of the automated vehicle’s"
+        },
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "Regaining this situation awareness requires time"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "totally not aware"
+        }
+      ],
+      "evidence_scope": "The paper describes environment/system-function awareness and asks participants how aware the fictional driver would be. The association with perceived takeover ability concerns their ratings, not directly sampled driver knowledge or a demonstrated causal human attention process.",
+      "boundary": "A self-report or observer rating may be inaccurate. Situation awareness, attention, memory, authority and practical ability are distinct. Correctly summarizing a state does not establish machine consciousness, access to private facts or permission to act outside the agreed scope."
+    },
+    {
+      "term": "Blame can remain high despite acknowledged limited intervention ability",
+      "target_id": "moral-crumple-zone",
+      "decision": "enrich-existing",
+      "definition": "An observer may assign a supervising human substantial responsibility even while rating their ability to prevent an automated-system failure as low.",
+      "novelty_rationale": "A relevant pattern for the existing disproportionate-blame concern, while separating a perceived mismatch from an objectively established unfair legal outcome.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "driver is held primarily responsible"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "no blame is shifted to other actors"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "responsibility is not reasonably distributed"
+        }
+      ],
+      "evidence_scope": "The primary study reports higher driver responsibility and no significant awareness/ability-to-responsibility paths. Authors interpret a culpability gap through a normative ability–responsibility principle. Actual ability, complete causal history and justified blame thresholds are not independently established.",
+      "boundary": "A perceived inability at the last moment does not resolve responsibility for earlier foreseeable choices. Meaningful oversight requires feasible authority and information; manufacturer duties also require analysis. Public ratings, authors' normative model and legal liability must remain separate."
+    },
+    {
+      "term": "Mind wandering is one source of off-task attention",
+      "target_id": "b083-default-mode-mind-wandering",
+      "decision": "enrich-existing",
+      "definition": "Attention can drift from supervising a system to unrelated internal thoughts without an explicit decision to perform a competing external task.",
+      "novelty_rationale": "The existing off-task drift concept fits the dinner/holiday vignettes; no need for a driving-specific synonym or assuming every lapse is deliberate neglect.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "minds tend to wander off"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "their minds wandering off unintentionally"
+        }
+      ],
+      "evidence_scope": "Intentional entertainment use and unintentional thought drift are described conditions. Intentionality does not significantly moderate blame at 99% confidence, and no actual mind-wandering episode, neural default-mode activity or takeover performance is observed.",
+      "boundary": "A vignette about off-task thought is not a direct brain measure or proof of the same mechanism as model topic drift. Intentionality, duration, capacity and practical duty should be independently checked; a null comparison is not equivalence."
+    },
+    {
+      "term": "Passive supervision and complacency are related but not identical",
+      "target_id": "automation-complacency",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Reduced monitoring can be part of an automation-supervision problem, but this study does not uniquely test misplaced confidence in automation as its cause.",
+      "novelty_rationale": "Boundary note separates overtrust-driven checking failures from general loss of awareness, boredom, capability constraints and delayed re-entry.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "complacency, skill degradation"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "over-relying on automation"
+        }
+      ],
+      "evidence_scope": "Complacency is background literature; no randomized trust manipulation, actual monitoring measure or identified mechanism in the present responsibility-rating study. It does not fill a behavior-paper gap for complacency.",
+      "boundary": "Poor handoff design can impede capable, appropriately cautious people. Do not use complacency as an automatic diagnosis that shifts all institutional responsibility onto the operator."
+    }
+  ],
+  "methodological_limits": [
+    "250 is the recruited sample; twelve attention exclusions leave 238. Fifty participants per scenario describes initial assignment, not verified final cell sizes. The 238 analyzed comments agree with the post-exclusion total.",
+    "The study directly measures public perceptions of a fictional driver, not real vigilance, takeover latency, actual unavoidability, crash risk or cognitive ability. The title's reasonably avoid language rests partly on external human-factors evidence and a normative argument.",
+    "Actual inability is not explicitly manipulated; distraction descriptions are used to elicit perceived awareness and ability. Those mediator ratings can share respondent assumptions and noise. Their association does not identify a complete causal cognitive pathway.",
+    "The authors explicitly use a mixed-effects model for the repeated actor ratings. Do not misclassify their 3-by-person observations as independent respondents or accuse the design of ignoring all within-person structure.",
+    "Awareness and ability questions precede responsibility judgments and may make those concepts salient. Nevertheless, lack of a significant mediator path at 99% confidence does not establish zero influence or exact equivalence; reported intervals include potentially relevant effects.",
+    "Intentional entertainment use and involuntary mind wandering change activity and imagery as well as intention. The authors acknowledge uncertainty about how the source of distraction was interpreted. No formal equivalence test or precise intention manipulation check is shown in the main PDF.",
+    "Table 1 labels unintentional holiday daydreaming long distraction but ends with a few seconds, while prose defines long as minutes. The unread full supplementary vignette is needed to know which duration was actually administered; do not silently replace the text.",
+    "The outcome asks broad responsibility, deliberately allowing causal, legal, moral and role interpretations. Concluding specifically about culpability or blameworthiness requires care because those are not separately measured constructs.",
+    "An immediate takeover failure and low momentary ability do not settle earlier obligations, foreseeable reliance, available alternatives or institutional duties. Normative tracing to earlier choices may support some responsibility; participants' manual/duty arguments are not refuted merely by low final-moment ability.",
+    "Figure 5 uses a qualitative normative diagonal on two independent rating scales. A general idea that ability matters does not validate numerical equality or the rule that responsibility scores must never exceed ability scores. The shaded culpability gap is not an empirically calibrated legal boundary.",
+    "D1 and D2 are contrast-coded −1/.5/.5 and 0/−1/1. Coefficients must be interpreted with that coding; c1 and c2 are not automatically raw pairwise mean differences. Likewise, actor coefficients from a model with interactions depend on the reference values.",
+    "The narrow 99% inference threshold and 10,000 bootstrap replications are reported transparently, but a nonsignificant ability-by-actor interaction does not prove no responsibility redistribution in any population or scenario.",
+    "Each actor has an independent 0–100 rating, not a fixed 100-point allocation. Lower manufacturer or vehicle ratings do not mechanically free a conserved total for driver blame, and sums should not be treated as measured total moral responsibility.",
+    "Most recruited participants have little partial-automation experience: 137 report never and 64 rarely. These counts are reported for 250 and should not be silently described as exact final-sample frequencies. National representativeness is not established.",
+    "Qualitative coding begins independently and blind to numeric ratings, then resolves differences by consensus. It supports interpretive patterns but does not report an independent reliability coefficient or establish that a stated reason caused the prior rating. Codes can co-occur and small code groups have wide intervals.",
+    "Terms-of-use duties and legal-liability statements describe a historical context and argument, not a current jurisdiction-specific legal analysis. A manufacturer cannot determine all liability merely by writing a manual, and this study does not establish immunity for all drivers or all automated vehicles.",
+    "The automation, crash and no-last-moment-intervention storyline is common across conditions. No randomized manual/full-autonomy baseline or noncrash outcome identifies all human–machine blame asymmetries, omission bias or outcome bias.",
+    "Current performance limitations of human supervision are discussed secondarily from several studies. The original out-of-loop, pilot, skill-retention and mind-wandering experiments were not read as part of this file and are not counted as additional completed papers.",
+    "Public-information campaigns and training are proposed, not tested interventions for blame or performance. A reliable handoff may require design changes as well as training; more blame or reassuring interface text does not establish meaningful control.",
+    "Full vignettes, interaction estimates, thematic maps, data and code are external to this PDF. Their availability supports follow-up but is not an independent reanalysis or completed supplement read."
+  ],
+  "source_corrections": [
+    {
+      "location": "Table 1, long unintentional-distraction row",
+      "problem": "Condition label and main methods define long as minutes, but the printed row ends with a few seconds.",
+      "reliable_correction": "Preserve the discrepancy and request/check the actual administered supplementary vignette before interpreting the duration contrast. No raw stimulus is silently corrected.",
+      "verification_scope": "Visible Table 1 and methods comparison; administered version unresolved."
+    },
+    {
+      "location": "Results prose, PDF page 4: actor coefficients",
+      "problem": "The first actor comparison is called b2 and the second b3, whereas Table 2 and Equation 3 assign driver–vehicle b3 and driver–manufacturer b4.",
+      "reliable_correction": "Use b3 = −65.4 for the displayed driver–vehicle contrast and b4 = −55.6 for driver–manufacturer when citing the table/model. b2 is the perceived-ability coefficient.",
+      "verification_scope": "Internal equation/table labels, not raw-data estimation."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "title": "The Out-of-the-Loop Performance Problem and Level of Control in Automation",
+      "authors": [
+        "Mica R. Endsley",
+        "Esin O. Kiris"
+      ],
+      "year": 1995,
+      "doi": "10.1518/001872095779064555",
+      "venue": "Human Factors 37(2):381–394",
+      "scope": "Crossref confirms cited original identity; full article remains unread, not an additional independent citation in this review."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0126.json",
+      "finding": "Supervisor blame needs actual intervention feasibility and assigned roles. This study focuses on perceived ability more directly, but still cannot transform public ratings into a definitive liability rule."
+    },
+    {
+      "related_review": "references/pdf-reviews/0128.json",
+      "finding": "Perceived control and true capability differ. Having an intervention option, feeling in control and being able to recover awareness before a deadline should be evaluated separately."
+    },
+    {
+      "related_review": "references/pdf-reviews/0125.json",
+      "finding": "Overcoming costs is not an unlimited moral duty. Behavioral robustness and authorized stop/handoff conditions must respect real human limits rather than treating persistence or constant vigilance as intrinsically superior."
+    },
+    {
+      "related_review": "references/pdf-reviews/0124.json",
+      "finding": "A mediation model's arrows do not by themselves identify psychological causes. Here repeated actor ratings are explicitly modeled, and relevant null paths must stay visible rather than be rewritten as complete absence of all influence."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Culpability gap / ability–responsibility mismatch",
+      "reason": "Retain as a normative interpretation under the existing moral-crumple-zone concern. A new numerical behavior or exact diagonal fairness rule is not established."
+    },
+    {
+      "term": "Unwitting omissions",
+      "reason": "A possible implication discussed with an unread philosophical source, not an independently defined and measured behavior in this vignette study. Do not equate unaware omission with a generic omission bias."
+    },
+    {
+      "term": "Skill degradation",
+      "reason": "Important background component, but no longitudinal skill measure or separate construct definition is provided. Seek original human-factors performance evidence before a dedicated entry."
+    },
+    {
+      "term": "Mind wandering / vigilance decrement",
+      "reason": "Mind wandering is already catalogued. Vigilance loss overlaps existing complacency but can have other causes; no new driving-specific synonym or uniquely identified neural process is added."
+    },
+    {
+      "term": "Meaningful human control",
+      "reason": "A governance framework cited from other sources, not an observed behavioral effect or current legal rule here. Concrete intervention feasibility is recorded in the relevant entries."
+    }
+  ],
+  "limitations": [
+    "Two human-factors concepts added with direct-versus-secondary scope. No actual driver incapacity, machine consciousness, legal immunity, exact quantitative blame law or automatic ethical/harm links inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "out-of-the-loop-performance-problem",
+      "situation-awareness"
+    ],
+    "enriched": [
+      "moral-crumple-zone",
+      "b083-default-mode-mind-wandering",
+      "automation-complacency"
+    ]
+  }
+}
