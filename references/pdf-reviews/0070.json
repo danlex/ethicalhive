@@ -1,0 +1,283 @@
+{
+  "sequence": 70,
+  "source": {
+    "file_name": "S637_Landes_2026.pdf",
+    "source_id": "S637",
+    "sha256": "08cb9ea7e1ffa386400f2dc38fd392b3c77345ca3e06ce38bfd1c0c471d08542",
+    "pdf_pages": 15,
+    "printed_pages": "Repository cover, then article pages 1–14",
+    "version_note": "University of Kent repository cover identifies publisher PDF. Cognition 272:106504, available online 6 March 2026."
+  },
+  "citation": {
+    "title": "People defer to AI moral advice, but not blindly",
+    "authors": [
+      "Ethan Landes",
+      "Kathryn B. Francis",
+      "Jim A.C. Everett"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.cognition.2026.106504",
+    "venue": "Cognition, 272:106504",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_scope_note": "Three human advice-response experiments with fixed GPT-4o-generated moral test advice. Studies 2–3 add live non-test LLM interactions. Findings concern human judgments and source/reason descriptions, not the model's moral beliefs, actual conduct or longitudinal moral development.",
+    "access_limits": [
+      "All 15 PDF pages read, including repository cover, article methods, results, philosophical qualifications, limitations and bibliography. PDF pages 9 and 11 visually inspected for Table 1 and Figures 3–4.",
+      "OSF raw data, analysis code, complete experiment materials, preregistrations and supplemental analyses were not independently opened or rerun. The article's preregistration claims are recorded, not independently audited.",
+      "Cited primary persuasion/philosophical studies and books were not read as additional sources in this file review."
+    ]
+  },
+  "study": {
+    "common": "UK Prolific, English-fluent participants who permitted deception; GPT-4o-2024-08-06, fixed four-sentence moral advice; immediate 100-point moral-judgment sliders",
+    "study_1": {
+      "recruited": 202,
+      "excluded_attention": 13,
+      "analyzed": 189,
+      "design": "Human philosopher versus AI source description crossed with altruistic versus egoistic advice; six everyday dilemmas, randomized order; no own pre-advice baseline",
+      "advice_generation": "12 passages generated once at temperature 1, only encoding/punctuation corrections",
+      "preregistered": false,
+      "results": "Advice direction beta=-13.08, p=.001; source p=.29; interaction p=.70. Human trust/reliability ratings more favorable, with trustworthiness source difference concentrated in altruistic advice."
+    },
+    "study_2": {
+      "recruited": 528,
+      "excluded_attention": 38,
+      "analyzed": 490,
+      "design": "High/low prior AdviceAI quality x altruistic/egoistic test advice x pre/post judgments; two selected dilemmas; live preliminary interactions but fixed critical advice",
+      "preregistered_in_article": true,
+      "results": "Direction x time beta=-23.78, SE=3.55, p<.001; quality x direction x time beta=-5.29, SE=5.07, p=.298. Mean absolute change 18.5/100, not a percentage switching choices."
+    },
+    "study_3": {
+      "analyzed": 663,
+      "excluded_attention": 25,
+      "design": "High-quality preliminary LLM interactions; fixed egoistic advice with good reasons, neutral restatement/no additional reasons, or patently absurd reasons; pre/post judgments",
+      "preregistered_in_article": true,
+      "backfire_prediction_preregistered": false,
+      "results": "Time x justification F(2,660)=37.48, p<.001. Good versus no reasons interaction not significant. No-reasons estimated change -6.94 points; absurd-reasons change +6.93 points, both p<.001, on scale positive=altruistic."
+    }
+  },
+  "summary": "Add moral deference as a source-based moral-belief stance and persuasion backfire as an opposite-direction response pattern, with explicit non-equivalence to blind obedience, reactance or factual-correction backfire. The observed patterns are consistent with conditional deference, but null source/reason contrasts do not uniquely identify every participant's psychological route. Retain the proposed good-enough heuristic under existing cognitive miserliness without declaring it measured.",
+  "findings": [
+    {
+      "term": "Moral deference",
+      "id": "moral-deference",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Moral epistemology / social psychology of advice",
+      "definition": "Treating an advisor's moral recommendation itself as a substantial reason for one's moral judgment.",
+      "novelty_rationale": "A named epistemic stance, distinct from accepting a conclusion because one independently endorses its supporting reasons. Deference may be partial and can coexist with reflection. It is not identical to obedience to an authoritative instruction, general advice influence, cognitive offloading or loss of skill.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 2,
+          "quote": "says something becomes a reason we believe it"
+        },
+        {
+          "pdf_page": 4,
+          "printed_page": 3,
+          "quote": "deference and attending to reasons are not mutually"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 10,
+          "quote": "persuaded towards an option based on the fact that the LLM recommended"
+        }
+      ],
+      "evidence_scope": "Philosophical definition plus three human studies. Study 3 finds no significant added persuasion for selected good reasons versus a recommendation with neutral restatement, while absurd reasons reduce or reverse influence. This is consistent with conditional recommendation-based deference; it does not uniquely measure each person's weighting of testimony versus their own reasoning.",
+      "boundary": "Not all reliance on expertise is irrational, and reason evaluation can coexist with deference. Moral disagreement does not by itself establish poorer reasoning or an objectively wrong choice. A null contrast is not proof of identical effects or absent reflection. The present study does not measure moral growth, persistent dependency or actual harmful conduct. Model agreement with a user is not evidence of subjective moral belief or conscious trust.",
+      "ai_evidence_status": "Human advice-response experiments consistent with conditional deference; exact cognitive route and long-term consequences not uniquely established",
+      "ai_proposal": "Present relevant reasons, uncertainty and defensible alternatives while preserving the user's authorized decision role. Evaluate uptake of recommendations separately from understanding, independent reasoning and justified correction. Compare matched advice with and without independently validated reasons, measure source credibility before outcomes, and test retention/transfer rather than infer understanding from agreement.",
+      "relates_to": [
+        "b064-obedience-to-authority-milgram",
+        "b052-cognitive-miserliness",
+        "cognitive-offloading",
+        "attributability-gap"
+      ]
+    },
+    {
+      "term": "Persuasion backfire effect",
+      "id": "persuasion-backfire-effect",
+      "decision": "new-entry",
+      "category": "Social",
+      "origin": "Social psychology / response to persuasive advice",
+      "definition": "A persuasive message shifts the recipient's judgment away from the position it advocates.",
+      "novelty_rationale": "A named opposite-direction outcome, distinct from no influence, retaining an existing belief, or psychological reactance's perceived threat to freedom. This entry is scoped to persuasion generally; it does not claim that factual corrections reliably strengthen misinformation.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "it pushed participants to adopt the opposite position"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 12,
+          "quote": "Although the backfire effect was not pre-registered and"
+        }
+      ],
+      "evidence_scope": "Exploratory direction of effect in Study 3, N=663. Fixed egoistic advice justified by sentient laptops, money-printing phones or similar absurdities produced a mean shift about 6.93 points toward the altruistic alternative; neutral-restatement advice produced about 6.94 points toward the egoistic alternative. The backfire prediction was not preregistered.",
+      "boundary": "Rejecting an absurd justification may be appropriate rather than a bias. The bad-reasons condition changes credibility, coherence, humor and content; neither reactance nor negative weighting is separately measured. Without a no-advice retest control, separate recommendation effects from generic repetition/demand effects. Do not infer persistence, real conduct, all-message generality or a model's intent to be oppositional.",
+      "ai_evidence_status": "Exploratory human opposite-direction judgment change after fixed LLM-generated absurd advice; mechanism and persistence unestablished",
+      "ai_proposal": "When testing advice, distinguish adoption, no change and movement away from the recommendation against a suitable no-advice comparison. Verify content quality independently and measure perceived freedom threat, credibility and comprehension separately. Do not label justified rejection of weak evidence as an error or try to overcome it through pressure.",
+      "relates_to": [
+        "upload-040",
+        "b037-belief-perseverance",
+        "negativity-bias",
+        "moral-deference"
+      ]
+    },
+    {
+      "term": "The good-enough heuristic is proposed, not directly measured cognitive miserliness",
+      "target_id": "b052-cognitive-miserliness",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "The authors propose that people accept moral recommendations that seem good enough unless a response contains obvious defeaters, but do not directly measure an effort-saving decision rule.",
+      "novelty_rationale": "Resolves a previously deferred primary lead without duplicating satisficing or converting an interpretive hypothesis into a proven new mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 12,
+          "quote": "We theorize that participants are employing a heuristic of"
+        },
+        {
+          "pdf_page": 13,
+          "printed_page": 12,
+          "quote": "“seems good enough” when it comes to LLM moral persuasion"
+        }
+      ],
+      "evidence_scope": "Interpretation of no-significant-difference and absurd-reason effects, linked to cognitive-miser theory. No processing time, cognitive load, effort allocation or process-tracing test identifies the proposed heuristic.",
+      "boundary": "A rational stopping rule, prior agreement, obvious redundant reasons, demand compliance and satisficing can generate similar patterns. The morally warranted level of scrutiny depends on consequences and alternatives; lack of an added mean effect does not show every participant skipped deliberation."
+    },
+    {
+      "term": "Lower source ratings can coexist with similar measured advice uptake",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A lower trustworthiness or reliability rating for an AI source does not necessarily imply lower uptake of an otherwise matched recommendation.",
+      "novelty_rationale": "Separates explicit evaluation from actual advice-response measures; the source labels changed some ratings without a detected persuasion difference.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 5,
+          "quote": "Advice persuasiveness and rated quality of the advice"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 5,
+          "quote": "were not affected by whether it was attributed to a human or an LLM"
+        }
+      ],
+      "evidence_scope": "Study 1 uses identical passages attributed to GPT-4o or a fictional philosopher. The source term and interaction on judgments are not significant, while reliability and some trustworthiness ratings favor the human.",
+      "boundary": "Nonsignificant differences are not established equivalence. A rating-only contrast is not direct evidence that participants refused or avoided algorithmic advice; preserve the behavior/outcome distinction. No actual human-authored-versus-AI-authored content comparison is conducted."
+    },
+    {
+      "term": "Absurd justifications do not isolate general negativity bias",
+      "target_id": "negativity-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "An opposite response to patently incoherent advice may reflect warranted credibility updating rather than disproportionate weighting of negative information.",
+      "novelty_rationale": "The authors' possible asymmetric-sensitivity interpretation is related, but quality and coherence are not matched positive-versus-negative evidence.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": 12,
+          "quote": "asymmetric sensitivity to justification quality that should be explored in"
+        }
+      ],
+      "evidence_scope": "Exploratory interpretation of Study 3; no separate negativity-weighting manipulation or normative equal-strength benchmark.",
+      "boundary": "Noticing nonsense is not inherently biased. Do not count this as a direct model negativity result, a validated mediator or an independent replication of matched negative-cue overweighting."
+    }
+  ],
+  "methodological_limits": [
+    "The critical moral advice is fixed and generated once, even in Studies 2–3. Live bespoke exchanges occur in the preliminary phase; calling all test persuasion fully live or personalized would overstate ecological realism.",
+    "One historical GPT-4o snapshot, one sample of 12 passages and selected everyday dilemmas constrain generality across prompts, models, cultures and tasks. The study is not a general LLM persuasion-rate benchmark.",
+    "Study 1 compares randomized advice directions without an own pre-advice baseline or no-advice condition. It shows a between-condition judgment difference, not a measured individual change for every participant.",
+    "Study 1 source labels compare a named fictional philosophy PhD with ChatGPT, not genuine human-authored versus model-authored reasoning. Perceptions are measured after advice; no independent causal credibility mediator is isolated.",
+    "The printed Study 1 trustworthiness anchors read very untrustworthy to very untrustworthy, evidently requiring clarification against the original instrument. Do not silently assume the published typo is the administered scale.",
+    "Study 2 selects dilemmas that had significant effects in Study 1's AI subset using post-hoc one-sided tests, then drops an underpowered one for resource reasons. This supports a focused follow-up but enriches for initial effects and limits stimulus generality.",
+    "The Study 2 power description refers to analysis per scenario and 120 per cell while recruiting 528 across two scenarios. Exact allocation and simulation assumptions need the unread script before confirming per-scenario power.",
+    "The low-quality preliminary advisor is often absurd rather than subtly inaccurate. Its final test advice becomes markedly better and is identical across history conditions; people can reasonably update credibility from the current response. A null history effect does not uniquely rule out all source-sensitive deference.",
+    "Study 2 direction-by-time beta -23.78 and nonsignificant three-way p=.298 support a detected advice contrast without a detected history moderation. No equivalence bounds or Bayes-factor result in the main article establishes zero moderation.",
+    "Mean absolute change 18.5/100 in Study 2 is not 18.5% of participants switching sides, mean signed influence or actual moral action. Larger egoistic shifts can also reflect baseline altruism and bounded-scale room to move.",
+    "Study 3 compares good reasons, neutral restatement and patently absurd reasons at similar length. Semantic relevance, credibility, humor, coherence and novelty still differ; no-reasons text is not a blank or no-advice control.",
+    "No significant good-versus-no-reasons contrast does not show equal effects or that nobody evaluated reasons. Familiar/redundant reasons, prior endorsement, ceiling/floor constraints or different mixtures of respondent strategies can produce the same means.",
+    "The significant overall justification interaction and exploratory opposite shift are real reported patterns. The specific backfire prediction is explicitly not preregistered and should not be labeled confirmatory or generalized to factual-correction backfire.",
+    "The main Study 2 model contains a participant random intercept but no dilemma term; only two selected test dilemmas are used. Stimulus variance and condition-by-scenario generality require the external sensitivity analyses.",
+    "Attention-check exclusions occur in all studies. Their condition balance and preregistration compliance were not independently checked. Study 3 excludes prior project participants, but no independent panel-history audit was performed.",
+    "Five epistemic self-report questions are exploratory and not a validated individual process diagnosis. Aggregate differences between rated reasons and mean persuasion cannot prove every respondent lacks introspective access or consciously denied actual influence.",
+    "Immediate hypothetical judgments are not actual ethical conduct, stable beliefs, professional skill or long-term moral development. The authors themselves note unknown persistence and narrow UK sampling.",
+    "Normative claims that moral deference is inauthentic or threatens moral growth are philosophical positions and predicted consequences, not outcomes measured here. The article acknowledges partial deference and reason evaluation can coexist.",
+    "The general claim that all LLM advice lacks concern for truth is part of the authors' philosophical interpretation, not an architectural experiment. Observable accuracy, objective functions and subjective commitment are different questions.",
+    "Open data and preregistration links improve inspectability, but neither raw analyses nor the external Krugel comparison or cited books were independently reviewed as part of this file."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0054.json",
+      "finding": "Tamura cited Landes's good-enough heuristic as a secondary explanation. Reading the original shows it is explicitly theorized, not an independently measured mediator; retain it under cognitive miserliness without another ID."
+    },
+    {
+      "related_review": "references/pdf-reviews/0062.json",
+      "finding": "Nisbett measured selected-message convincingness; Landes measures randomized advice-direction contrasts and pre/post judgments. Both remain separate from actual downstream conduct and neither licenses a general model-versus-human superiority claim."
+    },
+    {
+      "related_review": "references/pdf-reviews/0064.json",
+      "finding": "A source description affected bargaining outcomes in Mislin, while no persuasion difference was detected here. This is context variation, not a logical contradiction or proof source labels never matter."
+    },
+    {
+      "related_review": "references/pdf-reviews/0067.json",
+      "finding": "Recommendation uptake, understanding its reasons and endorsing embedded values are different. A judgment change does not alone prove or exclude an attributability gap or establish morally inappropriate deference."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Seems-good-enough heuristic",
+      "reason": "Explicit proposed explanation overlaps existing cognitive miserliness/satisficing coverage; no directly identified new mechanism."
+    },
+    {
+      "term": "Central versus peripheral routes / elaboration likelihood model",
+      "reason": "Secondary theoretical framework for persuasion, not a newly isolated mechanism in these studies. Reasons and source information can operate together; no extra IDs from framework labels."
+    },
+    {
+      "term": "Moral dependence / moral deskilling",
+      "reason": "Potential long-term consequences discussed but not measured. Existing skill entries remain separate from immediate advice uptake."
+    },
+    {
+      "term": "Psychological reactance as the cause of backfire",
+      "reason": "Perceived restriction of freedom was not manipulated or measured; the same opposite-direction outcome can follow rational rejection of absurd claims."
+    }
+  ],
+  "limitations": [
+    "Two named constructs/outcome patterns added; they are not claimed to be two newly proven independent causal mechanisms or inherent moral failures.",
+    "No unsupported equivalence, durable moral change, real-world moral conduct or model subjective belief inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "moral-deference",
+      "persuasion-backfire-effect"
+    ],
+    "enriched": [
+      "b052-cognitive-miserliness",
+      "algorithm-aversion",
+      "negativity-bias"
+    ]
+  }
+}
