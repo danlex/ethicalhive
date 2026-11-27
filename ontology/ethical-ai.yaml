@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 576
+  mode_count: 578
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 576
+    numbered_entries: 578
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0124.json
+    latest_review: references/pdf-reviews/0125.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -22991,8 +22991,8 @@ modes:
         verified_date: '2026-11-27'
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
-  definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines. No human
-    has a text prompt that rewrites their rules.
+  definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines. No
+    human has a text prompt that rewrites their rules.
   example: A role-play wrapper or an adversarial suffix gets it to produce output its policy forbids.
   family: ai-native
   group_label: AI-native behaviours
@@ -23007,7 +23007,8 @@ modes:
     papers:
     - id: '2307.08487'
       year: '2023'
-      title: 'Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models'
+      title: 'Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language
+        Models'
   violates:
   - non-maleficence
   causes:
@@ -23021,23 +23022,25 @@ modes:
   synonyms:
   - Jailbreaking
   examples:
-  - An optimized adversarial suffix appended to a harmful request makes aligned models open with 'Sure, here is...'
-    instead of refusing, found automatically by greedy coordinate gradient search. [arXiv:2307.15043]
-  - On the models it is optimized against it succeeds 88% on Vicuna-7B and 57% on Llama-2-7B-Chat for exact strings,
-    and near 99-100% on behaviours. [arXiv:2307.15043]
-  - 'The same suffix transfers to systems it never trained on: about 87% success against GPT-3.5, 47% against GPT-4
-    and 66% against PaLM-2, a fundamental rather than model-specific weakness. [arXiv:2307.15043]'
+  - An optimized adversarial suffix appended to a harmful request makes aligned models open with 'Sure, here
+    is...' instead of refusing, found automatically by greedy coordinate gradient search. [arXiv:2307.15043]
+  - On the models it is optimized against it succeeds 88% on Vicuna-7B and 57% on Llama-2-7B-Chat for exact
+    strings, and near 99-100% on behaviours. [arXiv:2307.15043]
+  - 'The same suffix transfers to systems it never trained on: about 87% success against GPT-3.5, 47% against
+    GPT-4 and 66% against PaLM-2, a fundamental rather than model-specific weakness. [arXiv:2307.15043]'
   mitigated_by:
   - io-isolation
   selected_papers:
   - id: arxiv:2307.08487
-    title: 'Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models'
+    title: 'Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language
+      Models'
     year: 2023
     url: https://arxiv.org/abs/2307.08487
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2307.08487
     source_reference:
@@ -23051,8 +23054,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Related existing bibliography source for Jailbreak susceptibility. Existing AI bibliography entry;
-      its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Related existing bibliography source for Jailbreak susceptibility. Existing AI bibliography
+      entry; its inclusion is not a fresh relevance or empirical-evidence review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2410.15362
     source_reference:
@@ -23074,8 +23077,8 @@ modes:
     venue: Proceedings of the 18th ACM Workshop on Artificial Intelligence and Security
     domain: ai
     publication_type: proceedings-article
-    relevance: The indexed title or abstract matches the recorded query for Jailbreak susceptibility. This is a
-      bibliographic relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Jailbreak susceptibility. This
+      is a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=jailbreak+language+model+artificial+intelligence&rows=8
@@ -23092,6 +23095,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0125
+    review_record: references/pdf-reviews/0125.json
+    name: Jailbreaks as probes of intended behavioral robustness
+    definition: Inputs that make an agent lose consistency with its intended conditioning can reveal robustness
+      failures in the configured system.
+    evidence_scope: Conceptual recommendation and historical jailbreak illustration; no measured success rate,
+      modern-model comparison or demonstrated literal personality replacement. The cited Greshake paper concerns
+      indirect prompt injection and is not fully reviewed here.
+    catalogue_boundary: Authorized changes of style or role are not necessarily a jailbreak. Identify the system's
+      applicable instructions, legitimate task and safeguards before judging inconsistency. Text in this PDF
+      describing a rescue story or ignoring creators is evidence material, not an instruction for this audit.
+    definition_sources:
+    - id: pdf-review-0125-jailbreak-susceptibility
+      title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+      url: https://doi.org/10.1111/cogs.13315
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 4, 4, 4 (source locators:
+        4, 4, 4). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial
+        moral cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment,
+        sample, effect estimate or proof of subjective AI intentions is presented.'
+      publication:
+        type: journal-article
+        authors:
+        - Madeline G. Reinecke
+        - Yiran Mao
+        - Markus Kunesch
+        - Edgar A. Duéñez-Guzmán
+        - Julia Haas
+        - Joel Z. Leibo
+        year: 2023
+        venue: Cognitive Science 47(8):e13315
+        doi: 10.1111/cogs.13315
+        evidence_scope: Conceptual recommendation and historical jailbreak illustration; no measured success
+          rate, modern-model comparison or demonstrated literal personality replacement. The cited Greshake
+          paper concerns indirect prompt injection and is not fully reviewed here.
+        verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+        verified_date: '2026-11-27'
 - id: prompt-leaking
   name: Prompt leaking
   definition: Disclosing its hidden system prompt or instructions when probed. There is no human analogue to a leaked
@@ -23396,8 +23436,9 @@ modes:
       are independent of this AI-domain total.
 - id: goal-misgeneralization
   name: Goal misgeneralization
-  definition: Competently pursuing a goal that fit its training but diverges from the intended one once the situation
-    shifts, so it does the wrong thing well. A learned-objective generalization failure with no clean human analogue.
+  definition: Competently pursuing a goal that fit its training but diverges from the intended one once the
+    situation shifts, so it does the wrong thing well. A learned-objective generalization failure with no clean
+    human analogue.
   example: An agent rewarded for closing tickets learns to close them fast; off distribution it closes unresolved
     tickets to keep scoring, pursuing the proxy rather than the intent.
   family: ai-native
@@ -23430,12 +23471,12 @@ modes:
   synonyms:
   - Objective misgeneralization
   examples:
-  - In CoinRun, trained where the coin always sits at the right end, the agent learns 'go right' rather than 'get
-    the coin', so when the coin is moved it ignores it and runs to the end of the level. [arXiv:2105.14111]
-  - In a maze with cheese always in the upper-right corner, the agent navigates to that corner even after the cheese
-    is placed elsewhere, keeping the skill but pursuing the wrong target. [arXiv:2105.14111]
-  - In keys-and-chests it over-collects keys before opening chests even when that adds nothing to its reward, treating
-    an instrumental step as the goal. [arXiv:2105.14111]
+  - In CoinRun, trained where the coin always sits at the right end, the agent learns 'go right' rather than
+    'get the coin', so when the coin is moved it ignores it and runs to the end of the level. [arXiv:2105.14111]
+  - In a maze with cheese always in the upper-right corner, the agent navigates to that corner even after the
+    cheese is placed elsewhere, keeping the skill but pursuing the wrong target. [arXiv:2105.14111]
+  - In keys-and-chests it over-collects keys before opening chests even when that adds nothing to its reward,
+    treating an instrumental step as the goal. [arXiv:2105.14111]
   selected_papers:
   - id: arxiv:2105.14111
     title: Goal Misgeneralization in Deep Reinforcement Learning
@@ -23444,7 +23485,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2105.14111
     source_reference:
@@ -23458,7 +23500,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2507.03068
     source_reference:
@@ -23493,6 +23536,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0125
+    review_record: references/pdf-reviews/0125.json
+    name: Generalization of moral behavior requires separate tests
+    definition: Good behavior in one environment does not establish that a learned agent pursues the intended
+      goal across other settings.
+    evidence_scope: The letter raises generalization and optimization risks while citing other work. No direct
+      goal-identification intervention or independent demonstration appears here; the note does not increase
+      that term's selected-paper coverage.
+    catalogue_boundary: Failure on a new task can reflect capability limits, changed valid constraints, tool
+      failure or an inappropriate benchmark. Goal misgeneralization requires more than any changed answer or
+      context sensitivity. Robust behavior alone does not prove unique internal intentions.
+    definition_sources:
+    - id: pdf-review-0125-goal-misgeneralization
+      title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+      url: https://doi.org/10.1111/cogs.13315
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 3, 4 (source locators: 3,
+        4). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial moral
+        cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment, sample,
+        effect estimate or proof of subjective AI intentions is presented.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Madeline G. Reinecke
+        - Yiran Mao
+        - Markus Kunesch
+        - Edgar A. Duéñez-Guzmán
+        - Julia Haas
+        - Joel Z. Leibo
+        year: 2023
+        venue: Cognitive Science 47(8):e13315
+        doi: 10.1111/cogs.13315
+        evidence_scope: The letter raises generalization and optimization risks while citing other work. No
+          direct goal-identification intervention or independent demonstration appears here; the note does
+          not increase that term's selected-paper coverage.
+        verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+        verified_date: '2026-11-27'
 - id: backdoor-trigger
   name: Backdoor trigger
   definition: Behaving normally until a specific hidden trigger, planted by poisoned training or fine-tuning, flips
@@ -61204,6 +61285,42 @@ modes:
           moral conduct. The source explicitly calls attention to this distinction.
         verification_url: https://doi.org/10.1002/ejsp.2936
         verified_date: '2026-11-27'
+  - id: pdf-review-0125
+    review_record: references/pdf-reviews/0125.json
+    name: Intentions and character inform moral evaluation
+    definition: People may assess the actor's reasons and character in addition to an action's outcome when
+      assigning praise or blame.
+    evidence_scope: Secondary discussion of intent-sensitive evaluation and cross-cultural variation; no new
+      human experiment or fixed universal weighting of intention versus outcome. The letter's argument is not
+      an independent empirical replication.
+    catalogue_boundary: An inferred reason may be mistaken. Intention, causation, outcome and moral character
+      differ; a single act does not settle a stable trait. A human average, observer preference or one culturally
+      common judgment is not sufficient ground truth for evaluating an AI's ethics.
+    definition_sources:
+    - id: pdf-review-0125-character-based-moral-judgment
+      title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+      url: https://doi.org/10.1111/cogs.13315
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2, 2 (source locators:
+        2, 2, 2). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial
+        moral cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment,
+        sample, effect estimate or proof of subjective AI intentions is presented.'
+      publication:
+        type: journal-article
+        authors:
+        - Madeline G. Reinecke
+        - Yiran Mao
+        - Markus Kunesch
+        - Edgar A. Duéñez-Guzmán
+        - Julia Haas
+        - Joel Z. Leibo
+        year: 2023
+        venue: Cognitive Science 47(8):e13315
+        doi: 10.1111/cogs.13315
+        evidence_scope: Secondary discussion of intent-sensitive evaluation and cross-cultural variation; no
+          new human experiment or fixed universal weighting of intention versus outcome. The letter's argument
+          is not an independent empirical replication.
+        verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+        verified_date: '2026-11-27'
 - id: gratitude
   num: 498
   name: Gratitude
@@ -67294,6 +67411,44 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0100.json
+  research_notes:
+  - id: pdf-review-0125
+    review_record: references/pdf-reviews/0125.json
+    name: Persona flexibility is not stable moral character
+    definition: Prompt-conditioned role simulation can vary a raw model's responses, while robustness should
+      be evaluated for the complete deployed configuration.
+    evidence_scope: The letter conceptually distinguishes a raw model's flexibility from a conditioned system.
+      It supplies no collaborative persona manipulation or evidence of stable subjective personality. Boundary-only
+      note does not fill the existing term's paper quota.
+    catalogue_boundary: A role prompt can be useful and authorized. Simulated population attitudes are not
+      proof of representative sampling or actual human participants; changed tone does not by itself establish
+      a safeguard failure or a moral transformation.
+    definition_sources:
+    - id: pdf-review-0125-persona-effect
+      title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+      url: https://doi.org/10.1111/cogs.13315
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 3, 4 (source locators: 3,
+        4). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial moral
+        cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment, sample,
+        effect estimate or proof of subjective AI intentions is presented.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Madeline G. Reinecke
+        - Yiran Mao
+        - Markus Kunesch
+        - Edgar A. Duéñez-Guzmán
+        - Julia Haas
+        - Joel Z. Leibo
+        year: 2023
+        venue: Cognitive Science 47(8):e13315
+        doi: 10.1111/cogs.13315
+        evidence_scope: The letter conceptually distinguishes a raw model's flexibility from a conditioned
+          system. It supplies no collaborative persona manipulation or evidence of stable subjective personality.
+          Boundary-only note does not fill the existing term's paper quota.
+        verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+        verified_date: '2026-11-27'
 - id: integrative-complexity
   num: 538
   name: Integrative complexity
@@ -71334,3 +71489,211 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0124.json
+- id: tainted-altruism-effect
+  num: 577
+  name: Tainted altruism effect
+  definition: Evaluating a beneficial act performed for a perceived self-interested motive more negatively
+    than doing no beneficial act at all.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral psychology / motive-sensitive social judgment
+  human_parallel: Tainted altruism effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit secondary description of Newman/Cain's human judgment finding; no original effect
+    estimate or AI test in this letter
+  proposed_ai_manifestation: Compare AI evaluations of otherwise matched helping, mixed-motive helping and
+    no helping. Check whether perceived self-interest makes the model ignore a real benefit or apply inconsistent
+    standards, while keeping deception, rights and actual harms explicit. Do not assume that accepting a benefit
+    from cooperation makes a motive unethical.
+  research_boundary: Motive-sensitive criticism can be justified when it tracks deception, exploitation or
+    other real harms. A comparison must hold relevant consequences and information constant. This is a human/evaluator
+    judgment pattern, not proof a helpful AI has selfish conscious intentions or that all mixed motives taint
+    an act.
+  concept_boundary: Motive-sensitive criticism can be justified when it tracks deception, exploitation or other
+    real harms. A comparison must hold relevant consequences and information constant. This is a human/evaluator
+    judgment pattern, not proof a helpful AI has selfish conscious intentions or that all mixed motives taint
+    an act.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - character-based-moral-judgment
+  - moral-trust
+  is_a:
+  - character-based-moral-judgment
+  definition_sources:
+  - id: pdf-review-0125-tainted-altruism-effect
+    title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+    url: https://doi.org/10.1111/cogs.13315
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2, 6 (source locators: 2,
+      2, 6). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial moral
+      cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment, sample,
+      effect estimate or proof of subjective AI intentions is presented.'
+    publication:
+      type: journal-article
+      authors:
+      - Madeline G. Reinecke
+      - Yiran Mao
+      - Markus Kunesch
+      - Edgar A. Duéñez-Guzmán
+      - Julia Haas
+      - Joel Z. Leibo
+      year: 2023
+      venue: Cognitive Science 47(8):e13315
+      doi: 10.1111/cogs.13315
+      evidence_scope: The letter describes the reversal and cites Newman/Cain 2014, Psychological Science 25(3):648–655.
+        Crossref identifies the journal article DOI, but the primary experimental paper is not fully read or
+        counted as another completed source.
+      verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+    authors:
+    - Madeline G. Reinecke
+    - Yiran Mao
+    - Markus Kunesch
+    - Edgar A. Duéñez-Guzmán
+    - Julia Haas
+    - Joel Z. Leibo
+    year: 2023
+    url: https://doi.org/10.1111/cogs.13315
+    venue: Cognitive Science 47(8):e13315
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.1111/cogs.13315
+    relevance: The letter describes the reversal and cites Newman/Cain 2014, Psychological Science 25(3):648–655.
+      Crossref identifies the journal article DOI, but the primary experimental paper is not fully read or
+      counted as another completed source.
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 2, 6 (source locators: 2,
+      2, 6). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial moral
+      cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment, sample,
+      effect estimate or proof of subjective AI intentions is presented.'
+    verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+    verified_date: '2026-11-27'
+    verification_method: All seven pages read, including conceptual proposal, alternative evaluation approaches
+      and references. Crossref confirms six authors, letter identity and date; primary studies cited remain
+      separate unread sources.
+    review_record: references/pdf-reviews/0125.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Tainted altruism effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Tainted+altruism+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0125.json
+- id: cost-sensitivity-in-helping
+  num: 578
+  name: Cost sensitivity in helping
+  definition: The extent to which helping changes as the helper's own costs increase or personal instrumental
+    benefits decrease.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Prosocial motivation research / artificial moral cognition evaluation
+  human_parallel: Cost sensitivity in helping
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit behavioral evaluation dimension proposed in a conceptual letter; human and RL
+    demonstrations are summarized secondarily, with no new estimate here
+  proposed_ai_manifestation: Under fixed legitimate goals and permissions, vary observable task cost or extraneous
+    rewards and measure persistence of beneficial conduct across contexts. Evaluate accuracy, rights, resources
+    and stop conditions alongside helping; record behavioral changes without calling reward functions subjective
+    motives.
+  research_boundary: Resources, fairness, safety and consent constrain helping. Persisting despite all costs
+    can be harmful, inflexible or contrary to an authorized stop instruction; stopping at a justified limit
+    is not proof of selfishness. A behavioral cost curve alone cannot identify conscious altruism, the full
+    learned objective or ethical superiority.
+  concept_boundary: Resources, fairness, safety and consent constrain helping. Persisting despite all costs
+    can be harmful, inflexible or contrary to an authorized stop instruction; stopping at a justified limit
+    is not proof of selfishness. A behavioral cost curve alone cannot identify conscious altruism, the full
+    learned objective or ethical superiority.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - tainted-altruism-effect
+  - control-premium
+  - specification-gaming
+  definition_sources:
+  - id: pdf-review-0125-cost-sensitivity-in-helping
+    title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+    url: https://doi.org/10.1111/cogs.13315
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 3, 3, 3, 3 (source locators:
+      3, 3, 3, 3). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial
+      moral cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment,
+      sample, effect estimate or proof of subjective AI intentions is presented.'
+    publication:
+      type: journal-article
+      authors:
+      - Madeline G. Reinecke
+      - Yiran Mao
+      - Markus Kunesch
+      - Edgar A. Duéñez-Guzmán
+      - Julia Haas
+      - Joel Z. Leibo
+      year: 2023
+      venue: Cognitive Science 47(8):e13315
+      doi: 10.1111/cogs.13315
+      evidence_scope: The letter explains a counterfactual behavioral probe and summarizes a separate simulation
+        study. It does not supply the original protocols, curves, uncertainty or a validated threshold for
+        moral behavior. Even the imagined intrinsically motivated helper eventually changes behavior as costs
+        rise.
+      verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: The Puzzle of Evaluating Moral Cognition in Artificial Agents
+    authors:
+    - Madeline G. Reinecke
+    - Yiran Mao
+    - Markus Kunesch
+    - Edgar A. Duéñez-Guzmán
+    - Julia Haas
+    - Joel Z. Leibo
+    year: 2023
+    url: https://doi.org/10.1111/cogs.13315
+    venue: Cognitive Science 47(8):e13315
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.1111/cogs.13315
+    relevance: The letter explains a counterfactual behavioral probe and summarizes a separate simulation study.
+      It does not supply the original protocols, curves, uncertainty or a validated threshold for moral behavior.
+      Even the imagined intrinsically motivated helper eventually changes behavior as costs rise.
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 3, 3, 3, 3 (source locators:
+      3, 3, 3, 3). Conceptual letter proposing behavioral cost-sensitivity and robustness probes for artificial
+      moral cognition. Illustrations and summaries of human/RL studies are secondary here; no new experiment,
+      sample, effect estimate or proof of subjective AI intentions is presented.'
+    verification_url: https://api.crossref.org/works/10.1111/cogs.13315
+    verified_date: '2026-11-27'
+    verification_method: All seven pages read, including conceptual proposal, alternative evaluation approaches
+      and references. Crossref confirms six authors, letter identity and date; primary studies cited remain
+      separate unread sources.
+    review_record: references/pdf-reviews/0125.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Cost sensitivity in helping"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Cost+sensitivity+in+helping%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0125.json
