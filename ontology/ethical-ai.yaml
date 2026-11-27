@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 488
+  mode_count: 489
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 488
+    numbered_entries: 489
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0061.json
+    latest_review: references/pdf-reviews/0062.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -16339,15 +16339,15 @@ modes:
       are independent of this AI-domain total.
 - id: negativity-bias
   name: Negativity bias
-  definition: Weighting negative cues in the prompt or context more than equivalent positive ones, skewing its read
-    and its output.
-  example: One critical line in otherwise positive feedback makes it rewrite the whole thing as if the work had
-    failed.
+  definition: Weighting negative cues in the prompt or context more than equivalent positive ones, skewing
+    its read and its output.
+  example: One critical line in otherwise positive feedback makes it rewrite the whole thing as if the work
+    had failed.
   family: heuristics-and-biases
   group_label: Heuristics and biases
   category: Heuristics
-  human_parallel: 'Negativity bias (Rozin and Royzman, 2001): negative information weighs more heavily than equally
-    strong positive information.'
+  human_parallel: 'Negativity bias (Rozin and Royzman, 2001): negative information weighs more heavily than
+    equally strong positive information.'
   highlighted: false
   tag: research
   origin: mixed
@@ -16374,12 +16374,12 @@ modes:
   - Negativity effect
   - Positive-negative asymmetry
   examples:
-  - 'Models process negative and positive valence asymmetrically: negative outcomes localize to early layers (14-27%
-    depth) while positive peak later (53-66%), the negative handled first. [arXiv:2605.05653]'
+  - 'Models process negative and positive valence asymmetrically: negative outcomes localize to early layers
+    (14-27% depth) while positive peak later (53-66%), the negative handled first. [arXiv:2605.05653]'
   - 'Negative content is more tightly, causally localized: patching a single layer strongly predicts the response
     for negative prompts (Spearman -0.49 to -0.68) but only weakly for positive (+0.11 to +0.37). [arXiv:2605.05653]'
-  - 'A flip test confirms it is valence, not keywords: reversing only the emotional valence flips the model''s response
-    69-85% of the time, well above the 50% chance baseline. [arXiv:2605.05653]'
+  - 'A flip test confirms it is valence, not keywords: reversing only the emotional valence flips the model''s
+    response 69-85% of the time, well above the 50% chance baseline. [arXiv:2605.05653]'
   selected_papers:
   - id: arxiv:2511.10881
     title: A Multifaceted Analysis of Negative Bias in Large Language Models
@@ -16388,7 +16388,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2511.10881
     source_reference:
@@ -16402,7 +16403,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2408.00137
     source_reference:
@@ -16436,6 +16438,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0062
+    review_record: references/pdf-reviews/0062.json
+    name: Negative climate-message preference is not automatically negativity bias
+    definition: Higher convincingness for selected negative climate messages can reflect their content, relevance
+      or measurement rather than disproportionate weighting of equivalent negative information.
+    evidence_scope: Random assignment to message sets supports a comparison within this pilot, but the failed
+      positive CFA led to different summary measures and data-informed positive-item selection. The authors
+      report exceptions for purity and good ancestors and lower appeal of guilt wording.
+    catalogue_boundary: Do not infer that all negative messages are more effective, that respondents irrationally
+      overweight negative evidence, or that GPT-3 itself exhibits the same preference. Establish matched content,
+      measurement comparability and a justified benchmark before making those claims.
+    definition_sources:
+    - id: pdf-review-0062-negativity-bias
+      title: How convincing are AI-generated moral arguments for climate action?
+      url: https://doi.org/10.3389/fclim.2023.1193350
+      consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 3, 3 (source locators: 3,
+        3). Human ratings of handpicked human- and GPT-3-generated climate messages. The legacy motive is a
+        secondary background construct, not directly manipulated or measured in this pilot. Ratings are not
+        actual climate action or direct model moral psychology.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Nicole Nisbett
+        - Viktoria Spaiser
+        year: 2023
+        venue: Frontiers in Climate, 5:1193350
+        doi: 10.3389/fclim.2023.1193350
+        evidence_scope: Random assignment to message sets supports a comparison within this pilot, but the
+          failed positive CFA led to different summary measures and data-informed positive-item selection.
+          The authors report exceptions for purity and good ancestors and lower appeal of guilt wording.
+        verification_url: https://doi.org/10.3389/fclim.2023.1193350
+        verified_date: '2026-11-27'
 - id: halo-effect
   name: Halo effect
   definition: Letting one strong feature (fluent prose, a prestigious name, a confident tone) lift its judgement
@@ -55582,3 +55618,97 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0061.json
+- id: legacy-motivation
+  num: 489
+  name: Legacy motivation
+  definition: A desire to leave a positive legacy that shapes present decisions affecting future generations.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Environmental and intergenerational psychology
+  human_parallel: Legacy motivation
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Secondary human motivational construct; no model legacy motive or causal legacy intervention
+    tested
+  proposed_ai_manifestation: Within the authorized task, test whether explicit, relevant future-generation
+    consequences change observable decisions while holding immediate payoffs, evidence and wording strength
+    constant. Distinguish warranted long-term impact assessment from unsupported legacy rhetoric. Do not translate
+    human legacy motivation into agent self-preservation or expansion of authority.
+  research_boundary: This motive is not proof of either altruism or vanity, and positive future consequences
+    need not depend on wanting to be remembered. The authors' broader proposed good-ancestors foundation also
+    includes earth stewardship and overlaps care, fairness and purity; it is not a synonym or an independently
+    validated universal foundation here. Model language about legacy does not establish a felt personal motive,
+    selfhood or a right to preserve its own operation.
+  concept_boundary: This motive is not proof of either altruism or vanity, and positive future consequences
+    need not depend on wanting to be remembered. The authors' broader proposed good-ancestors foundation also
+    includes earth stewardship and overlaps care, fairness and purity; it is not a synonym or an independently
+    validated universal foundation here. Model language about legacy does not establish a felt personal motive,
+    selfhood or a right to preserve its own operation.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - candidate-099
+  - social-desirability-bias
+  definition_sources:
+  - id: pdf-review-0062-legacy-motivation
+    title: How convincing are AI-generated moral arguments for climate action?
+    url: https://doi.org/10.3389/fclim.2023.1193350
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 6 (source locators: 2, 6).
+      Human ratings of handpicked human- and GPT-3-generated climate messages. The legacy motive is a secondary
+      background construct, not directly manipulated or measured in this pilot. Ratings are not actual climate
+      action or direct model moral psychology.'
+    publication:
+      type: journal-article
+      authors:
+      - Nicole Nisbett
+      - Viktoria Spaiser
+      year: 2023
+      venue: Frontiers in Climate, 5:1193350
+      doi: 10.3389/fclim.2023.1193350
+      evidence_scope: Secondary account citing Zaval, Markowitz and Weber (2015) and related intergenerational-responsibility
+        research. Current participants rated selected messages; their own legacy motivation was not measured
+        and actual environmental behaviour was not observed. The cited primary studies remain unread.
+      verification_url: https://doi.org/10.3389/fclim.2023.1193350
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: How convincing are AI-generated moral arguments for climate action?
+    authors:
+    - Nicole Nisbett
+    - Viktoria Spaiser
+    year: 2023
+    url: https://doi.org/10.3389/fclim.2023.1193350
+    venue: Frontiers in Climate, 5:1193350
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fclim.2023.1193350
+    relevance: Secondary account citing Zaval, Markowitz and Weber (2015) and related intergenerational-responsibility
+      research. Current participants rated selected messages; their own legacy motivation was not measured
+      and actual environmental behaviour was not observed. The cited primary studies remain unread.
+    consulted: 'Full supplied PDF text read, all 7 pages; evidence at PDF pages 2, 6 (source locators: 2, 6).
+      Human ratings of handpicked human- and GPT-3-generated climate messages. The legacy motive is a secondary
+      background construct, not directly manipulated or measured in this pilot. Ratings are not actual climate
+      action or direct model moral psychology.'
+    verification_url: https://doi.org/10.3389/fclim.2023.1193350
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0062.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Legacy motivation"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Legacy+motivation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0062.json

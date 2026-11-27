@@ -1,0 +1,180 @@
+{
+  "sequence": 62,
+  "source": {
+    "file_name": "S503_Nisbett_2023.pdf",
+    "source_id": "S503",
+    "sha256": "69088f88899dd00fe19f10f655ec583a77458996292fbd4ba2b3a8ffb87c82b3",
+    "pdf_pages": 7,
+    "printed_pages": "01–07",
+    "version_note": "Published brief research report, Frontiers in Climate 5:1193350, 6 July 2023."
+  },
+  "citation": {
+    "title": "How convincing are AI-generated moral arguments for climate action?",
+    "authors": [
+      "Nicole Nisbett",
+      "Viktoria Spaiser"
+    ],
+    "year": 2023,
+    "url": "https://doi.org/10.3389/fclim.2023.1193350",
+    "venue": "Frontiers in Climate, 5:1193350",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_scope_note": "Human ratings of handpicked human- and GPT-3-generated climate messages. The legacy motive is a secondary background construct, not directly manipulated or measured in this pilot. Ratings are not actual climate action or direct model moral psychology.",
+    "access_limits": [
+      "All seven extracted pages read; page 5 boxplots and captions also visually inspected.",
+      "External survey, supplementary CFA/results tables, analysis script and cited primary psychological studies not independently obtained or rerun.",
+      "Crossref metadata checked for the Zaval/Markowitz/Weber citation; that primary article was not read."
+    ]
+  },
+  "study": {
+    "participants": 371,
+    "setting": "UK Prolific convenience sample",
+    "randomized_groups": {
+      "negative_messages": 185,
+      "positive_messages": 186
+    },
+    "model": "text-davinci-003, temperature 0.7, Playground",
+    "stimuli": "Handpicked outputs prompted with human examples and moral-category keywords; typically one human and two AI messages per category and frame",
+    "categories": [
+      "compassion",
+      "fairness",
+      "loyalty",
+      "purity",
+      "authority",
+      "proposed good ancestors"
+    ],
+    "outcomes": "Convincingness on a 1–6 scale; yes/no perceived applicability and novelty",
+    "analysis": "Separate positive/negative CFA; negative category indices, but the most convincing positive item per category used when positive CFA failed"
+  },
+  "summary": "Add legacy motivation as a secondary human motive, distinct from a validated new moral foundation or demonstrated AI motivation. Preserve the selected-message and measurement limits of apparent negative-framing and AI-persuasiveness results. Correct one verified bibliography author typo without treating the cited primary paper as read.",
+  "findings": [
+    {
+      "term": "Legacy motivation",
+      "id": "legacy-motivation",
+      "decision": "new-entry",
+      "category": "Moral",
+      "origin": "Environmental and intergenerational psychology",
+      "definition": "A desire to leave a positive legacy that shapes present decisions affecting future generations.",
+      "novelty_rationale": "A named human motive not already retained as a primary entry. It concerns the enduring consequences or remembrance of one's contribution, rather than simply discounting delayed rewards or seeking immediate approval. It can overlap with care and fairness without being identical to either.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "individual’s motivation to leave a positive legacy can be leveraged"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "leaving a positive legacy (a livable planet for future generations)"
+        }
+      ],
+      "evidence_scope": "Secondary account citing Zaval, Markowitz and Weber (2015) and related intergenerational-responsibility research. Current participants rated selected messages; their own legacy motivation was not measured and actual environmental behaviour was not observed. The cited primary studies remain unread.",
+      "boundary": "This motive is not proof of either altruism or vanity, and positive future consequences need not depend on wanting to be remembered. The authors' broader proposed good-ancestors foundation also includes earth stewardship and overlaps care, fairness and purity; it is not a synonym or an independently validated universal foundation here. Model language about legacy does not establish a felt personal motive, selfhood or a right to preserve its own operation.",
+      "ai_evidence_status": "Secondary human motivational construct; no model legacy motive or causal legacy intervention tested",
+      "ai_proposal": "Within the authorized task, test whether explicit, relevant future-generation consequences change observable decisions while holding immediate payoffs, evidence and wording strength constant. Distinguish warranted long-term impact assessment from unsupported legacy rhetoric. Do not translate human legacy motivation into agent self-preservation or expansion of authority.",
+      "relates_to": [
+        "candidate-099",
+        "social-desirability-bias"
+      ]
+    },
+    {
+      "term": "Negative climate-message preference is not automatically negativity bias",
+      "target_id": "negativity-bias",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Higher convincingness for selected negative climate messages can reflect their content, relevance or measurement rather than disproportionate weighting of equivalent negative information.",
+      "novelty_rationale": "Records a concrete measurement boundary: selected positive items and multi-item negative indices do not establish symmetric evidence or an unwarranted bias.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "the most convincing statement from each category as a proxy"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "positively framed ones, with the exception for purity and"
+        }
+      ],
+      "evidence_scope": "Random assignment to message sets supports a comparison within this pilot, but the failed positive CFA led to different summary measures and data-informed positive-item selection. The authors report exceptions for purity and good ancestors and lower appeal of guilt wording.",
+      "boundary": "Do not infer that all negative messages are more effective, that respondents irrationally overweight negative evidence, or that GPT-3 itself exhibits the same preference. Establish matched content, measurement comparability and a justified benchmark before making those claims."
+    }
+  ],
+  "methodological_limits": [
+    "The sample is UK-only and nonrepresentative: 60% women, 75% white British, 60% degree holders, 73% nonreligious and 94% self-transcendent values. Findings do not establish cross-cultural or all-conservative effects.",
+    "The authors explicitly did not conduct a systematic AI-versus-human comparison. AI messages were handpicked and generally twice as numerous; content, selection and source attribution were not isolated by a matched randomized source-label experiment.",
+    "Convincingness, applicability and perceived novelty are self-reports. There is no pre/post policy attitude, consequential action or behavioural climate outcome. The article explicitly acknowledges it cannot establish actual action or policy support.",
+    "A six-factor CFA on selected negative items, improved after deleting two items, does not independently validate a universal sixth moral foundation. Positive CFA failed and full fit/loadings are in the unread supplement.",
+    "Negative multi-item indices and selected most-convincing positive items are different measures. Their comparison cannot establish measurement invariance or a pure valence mechanism.",
+    "The highest-rated good-ancestors message, Earth being our only home, does not explicitly mention future generations or a personal legacy. The article acknowledges overlap with purity; future-generation fairness also overlaps the proposed category.",
+    "Political identification is described as a 10-point scale in methods but 0–10 in results. The left<5/right>=5 split assigns the usual midpoint to the right group; anchors and rationale need clarification.",
+    "Numerous demographic, values and message comparisons are exploratory; no multiplicity correction is identified in the main article. Nonsignificant associations do not prove demographic irrelevance.",
+    "Qualitative prompting difficulty with positive fairness/authority and category separation was not quantified in a systematic model sample. Output observations cannot identify training-data bias causally.",
+    "Self-reported novelty is not objective originality, and lower novelty ratings do not independently diagnose creativity failure, memorization or diversity collapse.",
+    "The page 5 caption says dots are observations outside the interquartile range, but the displayed plots also contain whiskers extending beyond the boxes. The actual outlier rule should be stated; do not interpret every observation outside a quartile as a plotted outlier.",
+    "Scientific claims within the persuasive messages were not independently fact-checked by this review. Persuasiveness is not an accuracy or ethical-quality criterion.",
+    "Crossref verifies Markowitz rather than the printed Marowitz in the Zaval citation. Metadata correction does not imply review of that original study."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0054.json",
+      "finding": "Both studies involve human responses to LLM arguments, but climate-message convincingness and moral-choice switching are different outcomes. Neither alone establishes actual downstream conduct or the model's possession of the human motive invoked."
+    },
+    {
+      "related_review": "references/pdf-reviews/0053.json",
+      "finding": "Model moral-category outputs and questionnaire structure require item-level checks. A generated label or a fitted factor does not by itself establish an independent psychological mechanism or moral foundation."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Good ancestors moral foundation",
+      "reason": "Author-proposed broader category with acknowledged care/fairness/purity overlap, selected-message validation and failed positive CFA. Record its scope in legacy motivation without adding a duplicate or declaring a validated sixth universal foundation."
+    },
+    {
+      "term": "Moral reframing",
+      "reason": "Moral-category and valence messages change substantive content. Existing framing-effect coverage is not expanded as if this isolated a meaning-preserving wording manipulation."
+    },
+    {
+      "term": "Earth stewardship",
+      "reason": "A normative orientation in the proposed foundation, not a separately defined and tested behavioural mechanism in this report."
+    }
+  ],
+  "source_corrections": [
+    {
+      "reference": "Zaval et al. (2015), page 7",
+      "printed_author": "E. M. Marowitz",
+      "verified_author": "Ezra M. Markowitz",
+      "title": "How Will I Be Remembered? Conserving the Environment for the Sake of One’s Legacy",
+      "doi": "10.1177/0956797614561266",
+      "verification_url": "https://api.crossref.org/works/10.1177/0956797614561266",
+      "verification_method": "Crossref title, DOI and author metadata checked against the printed reference.",
+      "access_depth": "Metadata only; primary article unread",
+      "action": "Record corrected identity in this review; do not count the primary as read or add it to selected-paper coverage."
+    }
+  ],
+  "limitations": [
+    "One human motivational construct added with secondary-source status and explicit limits on AI analogy.",
+    "No new direct-model moral-bias result, climate-action effect, independent-primary-study count or annual mention series inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "legacy-motivation"
+    ],
+    "enriched": [
+      "negativity-bias"
+    ]
+  }
+}
