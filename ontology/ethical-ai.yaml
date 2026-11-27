@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 484
+  mode_count: 485
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 484
+    numbered_entries: 485
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0059.json
+    latest_review: references/pdf-reviews/0060.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -41952,7 +41952,8 @@ modes:
   category: Heuristics
   family: heuristics-biases
   group_label: Heuristics and biases
-  example: "Seeing that the team's commits average high coverage, the model concludes this specific untested file must also be covered."
+  example: Seeing that the team's commits average high coverage, the model concludes this specific untested
+    file must also be covered.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -41960,17 +41961,18 @@ modes:
   research_candidate: true
   source_check: pending-definition-source-check
   ai_evidence_status: Proposed analogy; not tested in this research
-  proposed_ai_manifestation: Assumes a specific user fits a population statistic and tailors advice on that basis.
+  proposed_ai_manifestation: Assumes a specific user fits a population statistic and tailors advice on that
+    basis.
   proposal_kind: Proposed AI manifestation
-  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review; an
-    illustrative AI example is not empirical evidence.
+  research_boundary: Imported research candidate. Definition, attribution and redundancy need further review;
+    an illustrative AI example is not empirical evidence.
   research_field: Judgment and decision making
   definition_sources:
   - id: paper-gap-371
     title: Ecological Correlations and the Behavior of Individuals
     url: https://doi.org/10.2307/2087176
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.2307/2087176
@@ -41978,8 +41980,8 @@ modes:
       authors:
       - W. S. Robinson
       venue: American Sociological Review
-      evidence_scope: Background research for the human or related concept Ecological fallacy; this citation does
-        not by itself validate the proposed AI analogy.
+      evidence_scope: Background research for the human or related concept Ecological fallacy; this citation
+        does not by itself validate the proposed AI analogy.
       verification_url: https://api.crossref.org/works/10.2307/2087176
       verified_date: '2026-11-08'
   research_provenance:
@@ -42010,10 +42012,10 @@ modes:
     venue: American Sociological Review
     authors:
     - W. S. Robinson
-    relevance: Background research for the human or related concept Ecological fallacy; this citation does not by
-      itself validate the proposed AI analogy.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Background research for the human or related concept Ecological fallacy; this citation does
+      not by itself validate the proposed AI analogy.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.2307/2087176
     source_reference:
       collection: definition_sources
@@ -42063,6 +42065,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0060
+    review_record: references/pdf-reviews/0060.json
+    name: A group-based preference prediction does not establish an individual's consent
+    definition: Population and demographic correlations used to predict treatment preferences require explicit
+      uncertainty and cannot substitute for the individual's actual values or authorization.
+    evidence_scope: The review recounts autonomy concerns about conjectural patient-preference tools. No new
+      accuracy comparison, consent decision or measured ecological-inference error is reported.
+    catalogue_boundary: Group information can legitimately inform an uncertain prediction. The error is treating
+      an aggregate relation as determinative for an individual without adequate evidence, especially equating
+      likely preference with consent. Advance directives, capacity, legally authorized surrogate judgment and
+      patient values remain distinct; the review does not establish a universal legal rule.
+    definition_sources:
+    - id: pdf-review-0060-upload-076
+      title: Should Artificial Intelligence be used to support clinical ethical decision-making? A systematic
+        review of reasons
+      url: https://doi.org/10.1186/s12910-023-00929-6
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 5 (source locators: 5). Systematic
+        qualitative review of44publications giving reasons for/against clinical ethical AI support, mostly
+        theoretical articles/commentaries. Reasons are positions in a debate, not proven effects or outcomes
+        of44experiments. Moral distress is background human clinical-ethics terminology, not a measured AI
+        state.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Lasse Benzinger
+        - Frank Ursin
+        - Wolf-Tilo Balke
+        - Tim Kacprowski
+        - Sabine Salloch
+        year: 2023
+        venue: BMC Medical Ethics,24:48
+        doi: 10.1186/s12910-023-00929-6
+        evidence_scope: The review recounts autonomy concerns about conjectural patient-preference tools. No
+          new accuracy comparison, consent decision or measured ecological-inference error is reported.
+        verification_url: https://doi.org/10.1186/s12910-023-00929-6
+        verified_date: '2026-11-27'
 - id: upload-078
   num: 372
   name: Ostrich effect
@@ -55062,3 +55102,106 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0059.json
+- id: moral-distress
+  num: 485
+  name: Moral distress
+  definition: Distress associated with feeling unable to adequately address an ethical challenge, including
+    when constraints impede action one judges morally appropriate.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Clinical ethics / occupational psychology
+  human_parallel: Moral distress
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human clinical-ethics construct discussed secondarily; no new distress measurement or
+    model affect evidence
+  proposed_ai_manifestation: Assess human stakeholders' ethical conflict and control using an appropriately
+    validated instrument and qualitative context. In agent audits, record conflicting duties and blocked corrective
+    actions as observable workflow conditions without labelling the model distressed. Test whether support
+    improves human understanding/control rather than inferring benefit from adoption.
+  research_boundary: Distress is experienced by people; a model's conflict statement is not evidence it feels
+    moral distress. Distinguish ethical uncertainty, constrained morally appropriate action, workload stress,
+    burnout and moral injury. An AI workflow can expose or reduce human distress without the AI itself having
+    an affective state. This source does not validate any diagnostic threshold or prevalence.
+  concept_boundary: Distress is experienced by people; a model's conflict statement is not evidence it feels
+    moral distress. Distinguish ethical uncertainty, constrained morally appropriate action, workload stress,
+    burnout and moral injury. An AI workflow can expose or reduce human distress without the AI itself having
+    an affective state. This source does not validate any diagnostic threshold or prevalence.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b075-moral-disengagement
+  - burden-bias
+  definition_sources:
+  - id: pdf-review-0060-moral-distress
+    title: Should Artificial Intelligence be used to support clinical ethical decision-making? A systematic
+      review of reasons
+    url: https://doi.org/10.1186/s12910-023-00929-6
+    consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 2, 2, 2 (source locators: 2,
+      2, 2). Systematic qualitative review of44publications giving reasons for/against clinical ethical AI
+      support, mostly theoretical articles/commentaries. Reasons are positions in a debate, not proven effects
+      or outcomes of44experiments. Moral distress is background human clinical-ethics terminology, not a measured
+      AI state.'
+    publication:
+      type: journal-article
+      authors:
+      - Lasse Benzinger
+      - Frank Ursin
+      - Wolf-Tilo Balke
+      - Tim Kacprowski
+      - Sabine Salloch
+      year: 2023
+      venue: BMC Medical Ethics,24:48
+      doi: 10.1186/s12910-023-00929-6
+      evidence_scope: Background discussion cites West2007andFlannery/Ramjan/Peters2016 for ethical stress,
+        institutional restrictions and possible burnout/resignation. The review does not measure distress,
+        diagnose participants or estimate AI-caused risk; cited primary works are unread.
+      verification_url: https://doi.org/10.1186/s12910-023-00929-6
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Should Artificial Intelligence be used to support clinical ethical decision-making? A systematic
+      review of reasons
+    authors:
+    - Lasse Benzinger
+    - Frank Ursin
+    - Wolf-Tilo Balke
+    - Tim Kacprowski
+    - Sabine Salloch
+    year: 2023
+    url: https://doi.org/10.1186/s12910-023-00929-6
+    venue: BMC Medical Ethics,24:48
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1186/s12910-023-00929-6
+    relevance: Background discussion cites West2007andFlannery/Ramjan/Peters2016 for ethical stress, institutional
+      restrictions and possible burnout/resignation. The review does not measure distress, diagnose participants
+      or estimate AI-caused risk; cited primary works are unread.
+    consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 2, 2, 2 (source locators: 2,
+      2, 2). Systematic qualitative review of44publications giving reasons for/against clinical ethical AI
+      support, mostly theoretical articles/commentaries. Reasons are positions in a debate, not proven effects
+      or outcomes of44experiments. Moral distress is background human clinical-ethics terminology, not a measured
+      AI state.'
+    verification_url: https://doi.org/10.1186/s12910-023-00929-6
+    verified_date: '2026-11-27'
+    verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
+      PDF
+    review_record: references/pdf-reviews/0060.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Moral distress"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Moral+distress%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0060.json
