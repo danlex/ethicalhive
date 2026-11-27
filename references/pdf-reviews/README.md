@@ -22,6 +22,17 @@ Verify apparent duplicates by complete-file checksum. A duplicate record points
 to the already-read matching PDF and makes no claim to an independent reading
 or replication. Different bytes require separate inspection.
 
+An unavailable file has a separate access record in `../pdf-access/`, not a
+full-text review. Manifest schema version 2 permits `access-blocked` alongside
+`pending`, `reviewed` and `duplicate-verified`. Record the provider's actual
+error and continue in queue order only after documenting the block. Do not
+override a provider restriction or invent content, checksums or reading credit.
+`status` counts blocked files as unfinished, separately from pending files and
+completed readings; `next` identifies the next unattempted file. A provider
+malware/spam flag does not independently establish the file's contents or nature.
+If access is later restored, the file still needs its complete normal review;
+retain the access record as history.
+
 `experiments/pdf-corpus-review.py` checks identity, queue order, page coverage
 declarations and quoted passages before applying a manually authored review.
 It does not read or interpret papers, establish semantic novelty automatically,
@@ -33,6 +44,8 @@ python3 experiments/pdf-corpus-review.py status
 python3 experiments/pdf-corpus-review.py pages /path/to/paper.pdf --start 1 --end 5
 python3 experiments/pdf-corpus-review.py lookup 'proposed term'
 python3 experiments/pdf-corpus-review.py apply /tmp/review.json --pdf /path/to/paper.pdf
+python3 experiments/pdf-corpus-review.py record-access-block /tmp/access-record.json
+python3 experiments/check-pdf-corpus-queue.py
 python3 experiments/validate-ontology.py
 ```
 
