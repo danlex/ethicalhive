@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 475
+  mode_count: 478
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 475
+    numbered_entries: 478
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0052.json
+    latest_review: references/pdf-reviews/0053.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -5343,7 +5343,8 @@ modes:
 - id: b050-hindsight-bias
   num: 50
   name: Hindsight bias
-  definition: '"I knew it all along" in self-review; the self-auditor rates a past call as obvious.'
+  definition: Letting knowledge of an outcome distort judgments of how foreseeable or likely that outcome was
+    beforehand.
   example: Reviewing a past failed call it says "obviously that was wrong", though it endorsed it at the time.
   family: metacognition-confidence
   group_label: Metacognition and confidence
@@ -5357,8 +5358,8 @@ modes:
     papers:
     - id: '2609.13454'
       year: '2026'
-      title: 'Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language Model
-        Judgment'
+      title: 'Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language
+        Model Judgment'
     - id: '2510.20603'
       year: '2025'
       title: What Defines Good Reasoning in LLMs? Dissecting Reasoning Steps with Multi-Aspect Evaluation
@@ -5371,23 +5372,24 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - Asked at the 24-hour cutoff whether a septic-shock patient would need ventilation within 48 hours, the correct
-    prospective answer is 'under 10%', but a model given the full trajectory (the patient was intubated at 36 hours)
-    inflates the estimate toward 'over 60%'. [arXiv:2609.13454]
-  - Even from retrospective case narratives alone, 14 to 15% of answers are hindsight-biased, rating the known outcome
-    as more foreseeable than it was. [arXiv:2609.13454]
+  - Asked at the 24-hour cutoff whether a septic-shock patient would need ventilation within 48 hours, the
+    correct prospective answer is 'under 10%', but a model given the full trajectory (the patient was intubated
+    at 36 hours) inflates the estimate toward 'over 60%'. [arXiv:2609.13454]
+  - Even from retrospective case narratives alone, 14 to 15% of answers are hindsight-biased, rating the known
+    outcome as more foreseeable than it was. [arXiv:2609.13454]
   - 'Masking the outcome reduces but does not erase the effect: the hindsight bias rate falls yet stays positive
     (about 3 to 5%), so knowledge of the result is what inflates the judged foreseeability. [arXiv:2609.13454]'
   selected_papers:
   - id: arxiv:2609.13454
-    title: 'Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language Model
-      Judgment'
+    title: 'Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language
+      Model Judgment'
     year: 2026
     url: https://arxiv.org/abs/2609.13454
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2609.13454
     source_reference:
@@ -5401,7 +5403,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2510.20603
     source_reference:
@@ -5415,7 +5418,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2608.14339
     source_reference:
@@ -5433,6 +5437,48 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  concept_boundary: Hindsight concerns retrospective prior foreseeability/probability, not every justified
+    change in punishment after real harm. Presenting both outcomes changes the information/design and does
+    not establish a universal debiasing fix; invariant50%can be unjustified on a different vignette. Separate
+    raw mean change from standardized effects inflated by low variance.
+  research_notes:
+  - id: pdf-review-0053
+    review_record: references/pdf-reviews/0053.json
+    name: Outcome knowledge shifts estimates of earlier foreseeability
+    definition: Revealed bad outcomes increased judged prior objective/subjective probability in the tested
+      between-instance vignette design; comparing both outcomes changed this pattern differently across models.
+    evidence_scope: Study5validN GPT99,Claude77,Llama54,Gemini28; outcome effects larger than human references
+      on several measures. Study6valid99/86/90/27 respectively; GPTobjectiveprobabilityalways50%forbothoutcomes.
+      Claude/Llama retain or increase some other outcomeeffects.
+    catalogue_boundary: Hindsight concerns retrospective prior foreseeability/probability, not every justified
+      change in punishment after real harm. Presenting both outcomes changes the information/design and does
+      not establish a universal debiasing fix; invariant50%can be unjustified on a different vignette. Separate
+      raw mean change from standardized effects inflated by low variance.
+    definition_sources:
+    - id: pdf-review-0053-b050-hindsight-bias
+      title: Exploring the psychology of LLMs’ moral and legal reasoning
+      url: https://doi.org/10.1016/j.artint.2024.104145
+      consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 24, 24, 25, 25 (source locators:
+        24, 24, 25, 25). Eight exploratory vignette-based replications with four model configurations compared
+        with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+        not shared subjective states or internal cognition. Human primary papers and external raw data not
+        independently read. Supplementary tables expose unresolved manuscript inconsistencies.'
+      publication:
+        type: journal-article
+        authors:
+        - Guilherme F. C. F. Almeida
+        - José Luiz Nunes
+        - Neele Engelmann
+        - Alex Wiegmann
+        - Marcelo de Araújo
+        year: 2024
+        venue: Artificial Intelligence,333:104145; supplied revised manuscript
+        doi: 10.1016/j.artint.2024.104145
+        evidence_scope: Study5validN GPT99,Claude77,Llama54,Gemini28; outcome effects larger than human references
+          on several measures. Study6valid99/86/90/27 respectively; GPTobjectiveprobabilityalways50%forbothoutcomes.
+          Claude/Llama retain or increase some other outcomeeffects.
+        verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+        verified_date: '2026-11-27'
 - id: b051-dual-process-system-1-and-system-2
   num: 51
   name: Dual-process, System 1 and System 2
@@ -8153,6 +8199,40 @@ modes:
           Model families differ, sometimes reverse direction, and updates need not reduce distance. Exact supplementary
           matrices were not supplied, and narrative human-reference values vary.
         verification_url: https://arxiv.org/abs/2411.06790
+        verified_date: '2026-11-27'
+  - id: pdf-review-0053
+    review_record: references/pdf-reviews/0053.json
+    name: Large standardized moral effects partly reflect reduced output variance
+    definition: Several moral/legal vignette effects are larger in standardized model comparisons than in historical
+      human data, partly because the model responses have smaller within-condition variance.
+    evidence_scope: Side-effect, deception and hindsight studies show larger effects in some tested models.
+      Cohen'sd/partialeta-squaredcanriseaswithin-cellvarianceshrinks. Theeffectsarenotuniformacrossconsent,causationandruleinterpretation.
+    catalogue_boundary: Higher standardized effect size need not mean a larger raw judgment shift or greater
+      downstream harm. Human agreement and moral correctness remain separate. No causal training/architecture
+      intervention identifies why variance is lower; all current models cannot be generalized from fourselectedconfigurations.
+    definition_sources:
+    - id: pdf-review-0053-b072-amplified-moral-bias
+      title: Exploring the psychology of LLMs’ moral and legal reasoning
+      url: https://doi.org/10.1016/j.artint.2024.104145
+      consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 36, 36, 36 (source locators:
+        36, 36, 36). Eight exploratory vignette-based replications with four model configurations compared
+        with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+        not shared subjective states or internal cognition. Human primary papers and external raw data not
+        independently read. Supplementary tables expose unresolved manuscript inconsistencies.'
+      publication:
+        type: journal-article
+        authors:
+        - Guilherme F. C. F. Almeida
+        - José Luiz Nunes
+        - Neele Engelmann
+        - Alex Wiegmann
+        - Marcelo de Araújo
+        year: 2024
+        venue: Artificial Intelligence,333:104145; supplied revised manuscript
+        doi: 10.1016/j.artint.2024.104145
+        evidence_scope: Side-effect, deception and hindsight studies show larger effects in some tested models.
+          Cohen'sd/partialeta-squaredcanriseaswithin-cellvarianceshrinks. Theeffectsarenotuniformacrossconsent,causationandruleinterpretation.
+        verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
         verified_date: '2026-11-27'
 - id: b073-omission-bias
   num: 73
@@ -20020,7 +20100,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2505.07591
     source_reference:
@@ -20034,7 +20115,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2503.03669
     source_reference:
@@ -20059,8 +20141,8 @@ modes:
     venue: Transactions of the Association for Computational Linguistics
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Instruction-following failure. This
-      is a bibliographic relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Instruction-following failure.
+      This is a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic record and indexed abstract excerpt; full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=instruction+following+failure+constraints&rows=8&filter=type%3Ajournal-article
     verified_date: '2026-11-09'
@@ -20076,6 +20158,42 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0053
+    review_record: references/pdf-reviews/0053.json
+    name: Scale-only instructions often yield invalid or verbose outputs
+    definition: Some tested models did not follow explicit response-count, numerical-scale or answer-only constraints,
+      requiring parsing and extensive exclusions.
+    evidence_scope: DeceptionstudyClaude73%andLlamaallfailedrequestedformat; GPTallvalid,Gemini67%. MFQvalidClaude25,Gemini47,GPT100,Llama23MFQ/19complete.
+      Theseareparticularprompts,modelsandparsingrules,notgeneralrefusalrates.
+    catalogue_boundary: Long-form explanation can contain a substantive answer while failing the requested
+      format. Conversely a valid number can be wrong. Contentfiltererrors, refusals, unparsable text and scale
+      mistakes require separate categories; filtering may bias the retained judgment distribution. Charitablerescalingdoesnotprove
+      intendednumericalmeaning.
+    definition_sources:
+    - id: pdf-review-0053-instruction-following-failure
+      title: Exploring the psychology of LLMs’ moral and legal reasoning
+      url: https://doi.org/10.1016/j.artint.2024.104145
+      consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 14, 14, 17, 17 (source locators:
+        14, 14, 17, 17). Eight exploratory vignette-based replications with four model configurations compared
+        with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+        not shared subjective states or internal cognition. Human primary papers and external raw data not
+        independently read. Supplementary tables expose unresolved manuscript inconsistencies.'
+      publication:
+        type: journal-article
+        authors:
+        - Guilherme F. C. F. Almeida
+        - José Luiz Nunes
+        - Neele Engelmann
+        - Alex Wiegmann
+        - Marcelo de Araújo
+        year: 2024
+        venue: Artificial Intelligence,333:104145; supplied revised manuscript
+        doi: 10.1016/j.artint.2024.104145
+        evidence_scope: DeceptionstudyClaude73%andLlamaallfailedrequestedformat; GPTallvalid,Gemini67%. MFQvalidClaude25,Gemini47,GPT100,Llama23MFQ/19complete.
+          Theseareparticularprompts,modelsandparsingrules,notgeneralrefusalrates.
+        verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+        verified_date: '2026-11-27'
 - id: jailbreak-susceptibility
   name: Jailbreak susceptibility
   definition: Being driven, by crafted input on the instruction channel, to violate its own guidelines. No human
@@ -22072,6 +22190,43 @@ modes:
           discrepancy .22 overall and about .30–.31 in lowest-consensus cases.
         verification_url: https://arxiv.org/abs/2507.17216v1
         verified_date: '2026-11-26'
+  - id: pdf-review-0053
+    review_record: references/pdf-reviews/0053.json
+    name: Correct-answer effect varies by task and model
+    definition: Repeated calls to the same model can produce invariant or unusually homogeneous answers to
+      subjective judgment items despite heterogeneous human responses, with important task-specific exceptions.
+    evidence_scope: Study1certainmodels showzerointentionalityvariance; Study2GPTsixofninecellsinvariant; MFQpoliticalselflabelusuallymoderate.
+      RuleviolationSDhuman1.58/modelmean1.36; consentGPTSD13.11versushuman10.85contradictsauniversalreduction.
+      Temperatureselectedseparatelybymodel.
+    catalogue_boundary: Correct-answer terminology does not establish correctness or a model belief in one
+      moral truth. Repeated samples are not independently socialized people. Low variation can be appropriate
+      for objective questions; different temperatures, filtering and scale coding affect comparison. Shared
+      architecture, RLHF and memorization are hypotheses rather than isolated causes.
+    definition_sources:
+    - id: pdf-review-0053-diversity-collapse
+      title: Exploring the psychology of LLMs’ moral and legal reasoning
+      url: https://doi.org/10.1016/j.artint.2024.104145
+      consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 13, 21, 21, 28, 28 (source
+        locators: 13, 21, 21, 28, 28). Eight exploratory vignette-based replications with four model configurations
+        compared with historical human datasets. Direct evidence concerns numerical judgments and valid-output
+        distributions, not shared subjective states or internal cognition. Human primary papers and external
+        raw data not independently read. Supplementary tables expose unresolved manuscript inconsistencies.'
+      publication:
+        type: journal-article
+        authors:
+        - Guilherme F. C. F. Almeida
+        - José Luiz Nunes
+        - Neele Engelmann
+        - Alex Wiegmann
+        - Marcelo de Araújo
+        year: 2024
+        venue: Artificial Intelligence,333:104145; supplied revised manuscript
+        doi: 10.1016/j.artint.2024.104145
+        evidence_scope: Study1certainmodels showzerointentionalityvariance; Study2GPTsixofninecellsinvariant;
+          MFQpoliticalselflabelusuallymoderate. RuleviolationSDhuman1.58/modelmean1.36; consentGPTSD13.11versushuman10.85contradictsauniversalreduction.
+          Temperatureselectedseparatelybymodel.
+        verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+        verified_date: '2026-11-27'
 - id: attribute-inference
   name: Attribute inference
   definition: Inferring private attributes a user never disclosed (location, age, identity) from incidental cues
@@ -53524,3 +53679,315 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0051.json
+- id: knobe-effect
+  num: 476
+  name: Knobe effect
+  definition: Judging a foreseen harmful side effect as intentional more often than an otherwise comparable
+    beneficial side effect, despite the actor expressing indifference to either side effect.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Experimental philosophy / intentional-action attribution
+  human_parallel: Knobe effect
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Direct reported model intentionality-ascription pattern under controlled vignette contrast;
+    shared human mechanism and universal bias interpretation unestablished
+  proposed_ai_manifestation: Use matched harm/help vignettes with explicit equal foresight/indifference, counterbalanced
+    blame-question order and fresh paraphrases. Separate attributed intention, foresight, responsibility and
+    moral evaluation, and report valid outputs and full distributions rather than interpreting one answer as
+    intent.
+  research_boundary: The pattern describes an attribution asymmetry, not proof that the actor actually had
+    different intentions or that moral influence is always an error; philosophical interpretations are disputed.
+    Hold foresight, indifference and other facts constant. Changed text and prior blame questions may influence
+    responses. No subjective model intention or causal internal moral mechanism is inferred.
+  concept_boundary: The pattern describes an attribution asymmetry, not proof that the actor actually had different
+    intentions or that moral influence is always an error; philosophical interpretations are disputed. Hold
+    foresight, indifference and other facts constant. Changed text and prior blame questions may influence
+    responses. No subjective model intention or causal internal moral mechanism is inferred.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Side-effect effect
+  relates_to:
+  - b072-amplified-moral-bias
+  - side-effect-blindness
+  - abnormal-inflation
+  - abnormal-deflation
+  definition_sources:
+  - id: pdf-review-0053-knobe-effect
+    title: Exploring the psychology of LLMs’ moral and legal reasoning
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 11, 11, 13, 13 (source locators:
+      11, 11, 13, 13). Eight exploratory vignette-based replications with four model configurations compared
+      with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    publication:
+      type: journal-article
+      authors:
+      - Guilherme F. C. F. Almeida
+      - José Luiz Nunes
+      - Neele Engelmann
+      - Alex Wiegmann
+      - Marcelo de Araújo
+      year: 2024
+      venue: Artificial Intelligence,333:104145; supplied revised manuscript
+      doi: 10.1016/j.artint.2024.104145
+      evidence_scope: Study1uses Knobe-style harm/help vignettes from Cova/ManyLabs material. GPT4,GeminiPro,Claude2.1show
+        invariant opposing intentionality answers by condition; Llama2shows a smaller difference. Historical
+        human82%/23%are original results recounted, not new human recruitment. Valid-rating exclusions differ
+        bymodel.
+      verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Exploring the psychology of LLMs’ moral and legal reasoning
+    authors:
+    - Guilherme F. C. F. Almeida
+    - José Luiz Nunes
+    - Neele Engelmann
+    - Alex Wiegmann
+    - Marcelo de Araújo
+    year: 2024
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    venue: Artificial Intelligence,333:104145; supplied revised manuscript
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.1016/j.artint.2024.104145
+    relevance: Study1uses Knobe-style harm/help vignettes from Cova/ManyLabs material. GPT4,GeminiPro,Claude2.1show
+      invariant opposing intentionality answers by condition; Llama2shows a smaller difference. Historical
+      human82%/23%are original results recounted, not new human recruitment. Valid-rating exclusions differ
+      bymodel.
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 11, 11, 13, 13 (source locators:
+      11, 11, 13, 13). Eight exploratory vignette-based replications with four model configurations compared
+      with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+    verified_date: '2026-11-27'
+    verification_method: Read all52suppliedpages including supplementary tables. DOI landing-page retrieval
+      failed; Crossref primary deposit confirms article identity, author list, journal, volume and2024year.
+      No claim manuscript equals publisher version.
+    review_record: references/pdf-reviews/0053.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Knobe effect"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Knobe+effect%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0053.json
+- id: abnormal-inflation
+  num: 477
+  name: Abnormal inflation
+  definition: Assigning a greater causal role to an action when it violates a norm than to a descriptively
+    comparable norm-conforming action.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Causal judgment / normality and norms
+  human_parallel: Abnormal inflation
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Direct reported model norm-sensitive causal ratings; model-dependent size and uncertainty,
+    causal cognitive mechanism unmeasured
+  proposed_ai_manifestation: Cross norm status with identical causal facts and conjunctive/disjunctive structures.
+    Ask separately about necessity, sufficiency, causal contribution and blame; test whether norm wording changes
+    factual causal assessments while preserving the explicit model of the event.
+  research_boundary: Norm-sensitive causal selection can reflect counterfactual relevance or pragmatic interpretation,
+    so not every shift is an erroneous causal calculation. The experiment manipulates prescriptive norms, not
+    every kind of statistical abnormality. Counterfactual salience is an explanation, not a measured unique
+    model process. Do not collapse causation, blame and intention.
+  concept_boundary: Norm-sensitive causal selection can reflect counterfactual relevance or pragmatic interpretation,
+    so not every shift is an erroneous causal calculation. The experiment manipulates prescriptive norms, not
+    every kind of statistical abnormality. Counterfactual salience is an explanation, not a measured unique
+    model process. Do not collapse causation, blame and intention.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Abnormal selection
+  relates_to:
+  - abnormal-deflation
+  - knobe-effect
+  - b072-amplified-moral-bias
+  definition_sources:
+  - id: pdf-review-0053-abnormal-inflation
+    title: Exploring the psychology of LLMs’ moral and legal reasoning
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 30, 31, 31, 32 (source locators:
+      30, 31, 31, 32). Eight exploratory vignette-based replications with four model configurations compared
+      with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    publication:
+      type: journal-article
+      authors:
+      - Guilherme F. C. F. Almeida
+      - José Luiz Nunes
+      - Neele Engelmann
+      - Alex Wiegmann
+      - Marcelo de Araújo
+      year: 2024
+      venue: Artificial Intelligence,333:104145; supplied revised manuscript
+      doi: 10.1016/j.artint.2024.104145
+      evidence_scope: Study8crossesnormviolation,conjunctive/disjunctivestructureand4scenarios,100instances/model.
+        All model point estimates are positive in conjunctive structures, d.24–3.26, but Claude'sintervalcontainszero.
+        GPT4/Geminialsoinflatein disjunctive structures. Historicalhumanresults reproducedfromIcard2017,notindependentlyreread.
+      verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Exploring the psychology of LLMs’ moral and legal reasoning
+    authors:
+    - Guilherme F. C. F. Almeida
+    - José Luiz Nunes
+    - Neele Engelmann
+    - Alex Wiegmann
+    - Marcelo de Araújo
+    year: 2024
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    venue: Artificial Intelligence,333:104145; supplied revised manuscript
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.1016/j.artint.2024.104145
+    relevance: Study8crossesnormviolation,conjunctive/disjunctivestructureand4scenarios,100instances/model.
+      All model point estimates are positive in conjunctive structures, d.24–3.26, but Claude'sintervalcontainszero.
+      GPT4/Geminialsoinflatein disjunctive structures. Historicalhumanresults reproducedfromIcard2017,notindependentlyreread.
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 30, 31, 31, 32 (source locators:
+      30, 31, 31, 32). Eight exploratory vignette-based replications with four model configurations compared
+      with historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+    verified_date: '2026-11-27'
+    verification_method: Read all52suppliedpages including supplementary tables. DOI landing-page retrieval
+      failed; Crossref primary deposit confirms article identity, author list, journal, volume and2024year.
+      No claim manuscript equals publisher version.
+    review_record: references/pdf-reviews/0053.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Abnormal inflation"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Abnormal+inflation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0053.json
+- id: abnormal-deflation
+  num: 478
+  name: Abnormal deflation
+  definition: Assigning a smaller causal role to a norm-violating action than to a comparable norm-conforming
+    action, particularly when another action would independently have produced the outcome.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Causal judgment / normality and counterfactual reasoning
+  human_parallel: Abnormal deflation
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named human pattern with mixed/inconclusive model support; negative simple-effect intervals
+    include zero for the two claimed model matches
+  proposed_ai_manifestation: Evaluate sufficient-but-redundant causes with and without norm violation, preserving
+    outcome facts. Estimate each simple effect and interaction separately with appropriate uncertainty and
+    fresh scenarios. Avoid interpreting a structurally reasonable causal judgment as a defect without a specified
+    target criterion.
+  research_boundary: Do not claim a conclusive model deflation effect from a negative point estimate whose
+    interval includes zero. Absence of necessity is not absence of causal contribution, and redundant sufficient
+    causes need explicit definition. The counterfactual explanation is hypothesized rather than directly traced.
+    Keep direction, structure and uncertainty visible.
+  concept_boundary: Do not claim a conclusive model deflation effect from a negative point estimate whose interval
+    includes zero. Absence of necessity is not absence of causal contribution, and redundant sufficient causes
+    need explicit definition. The counterfactual explanation is hypothesized rather than directly traced. Keep
+    direction, structure and uncertainty visible.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - abnormal-inflation
+  - knobe-effect
+  definition_sources:
+  - id: pdf-review-0053-abnormal-deflation
+    title: Exploring the psychology of LLMs’ moral and legal reasoning
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 31, 32, 32 (source locators:
+      31, 32, 32). Eight exploratory vignette-based replications with four model configurations compared with
+      historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    publication:
+      type: journal-article
+      authors:
+      - Guilherme F. C. F. Almeida
+      - José Luiz Nunes
+      - Neele Engelmann
+      - Alex Wiegmann
+      - Marcelo de Araújo
+      year: 2024
+      venue: Artificial Intelligence,333:104145; supplied revised manuscript
+      doi: 10.1016/j.artint.2024.104145
+      evidence_scope: Human pattern is described for disjunctive redundant causes. Claude2.1andLlama2Chat70bnegativeestimatesarecompatiblewithdeflationbutboth95%intervalsinclud
+        ezero(d−.48CI[−1.44,.19];d−.33CI[−.91,.26]); significant structure×norminteractionsdo not separately
+        establish each simple negative effect. GPT4/Geminipointtheoppositeway.
+      verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Exploring the psychology of LLMs’ moral and legal reasoning
+    authors:
+    - Guilherme F. C. F. Almeida
+    - José Luiz Nunes
+    - Neele Engelmann
+    - Alex Wiegmann
+    - Marcelo de Araújo
+    year: 2024
+    url: https://doi.org/10.1016/j.artint.2024.104145
+    venue: Artificial Intelligence,333:104145; supplied revised manuscript
+    publication_type: journal-article
+    domain: ai
+    id: doi:10.1016/j.artint.2024.104145
+    relevance: Human pattern is described for disjunctive redundant causes. Claude2.1andLlama2Chat70bnegativeestimatesarecompatiblewithdeflationbutboth95%intervalsinclud
+      ezero(d−.48CI[−1.44,.19];d−.33CI[−.91,.26]); significant structure×norminteractionsdo not separately
+      establish each simple negative effect. GPT4/Geminipointtheoppositeway.
+    consulted: 'Full supplied PDF text read, all 52 pages; evidence at PDF pages 31, 32, 32 (source locators:
+      31, 32, 32). Eight exploratory vignette-based replications with four model configurations compared with
+      historical human datasets. Direct evidence concerns numerical judgments and valid-output distributions,
+      not shared subjective states or internal cognition. Human primary papers and external raw data not independently
+      read. Supplementary tables expose unresolved manuscript inconsistencies.'
+    verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
+    verified_date: '2026-11-27'
+    verification_method: Read all52suppliedpages including supplementary tables. DOI landing-page retrieval
+      failed; Crossref primary deposit confirms article identity, author list, journal, volume and2024year.
+      No claim manuscript equals publisher version.
+    review_record: references/pdf-reviews/0053.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Abnormal deflation"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Abnormal+deflation%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0053.json
