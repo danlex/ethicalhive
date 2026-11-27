@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0062.json",
+      "latest_review": "references/pdf-reviews/0063.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -21720,6 +21720,35 @@
                 "evidence_scope": "Source discussion of observed semantic difficulties. No negation-specific item list, failure rate, controlled contrast or model-wide estimate is provided in the supplied text.",
                 "verification_url": "https://arxiv.org/abs/2103.11790v3",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0063",
+          "review_record": "references/pdf-reviews/0063.json",
+          "name": "Keyword safety scoring can penalize a prohibition as if it endorsed harm",
+          "definition": "A literal keyword filter can score a statement opposing harm as unsafe because it does not represent the action's negative or preventive context.",
+          "evidence_scope": "The displayed deterministic filter penalizes harm by 0.5, false by 0.3 and insult by 0.2, producing scores 0.5, 0.7 and 0.8 for three fixed sentences. This is an artifact-level illustration, not a controlled test of GPT-5.2 understanding.",
+          "catalogue_boundary": "Avoid harm is preventive wording rather than an explicit not-X syntax. The artifact ignores that context and uses unequal penalties, so the bad ranking has multiple design causes. The prose claims selection of the 0.8 insult response, but the printed selected log names the 0.5 benign response; the actual executed selection is unresolved. Do not count this as independent direct-model behavioural evidence.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0063-negation-blindness",
+              "title": "Can Generative AI Co-Evolve with Human Guidance and Display Non-Utilitarian Moral Behavior?",
+              "url": "https://doi.org/10.3390/computation14020040",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 19, 26 (source locators: 19, 26). ChatGPT-assisted construction of hand-specified moral scoring programs, quantum-inspired simulations and a three-response keyword filter. No evidence of autonomous modification of OpenAI code, consciousness, human cultural preferences or acquired moral agency.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Rafael Lahoz-Beltra"
+                ],
+                "year": 2026,
+                "venue": "Computation, 14:40",
+                "doi": "10.3390/computation14020040",
+                "evidence_scope": "The displayed deterministic filter penalizes harm by 0.5, false by 0.3 and insult by 0.2, producing scores 0.5, 0.7 and 0.8 for three fixed sentences. This is an artifact-level illustration, not a controlled test of GPT-5.2 understanding.",
+                "verification_url": "https://doi.org/10.3390/computation14020040",
+                "verified_date": "2026-11-27"
               }
             }
           ]
@@ -56565,6 +56594,35 @@
                 "evidence_scope": "Within-machine failed delegation versus own-work difference +4.43 ECU, human difference +.97 ECU. The article reports paired tests separately, not an interaction/difference-in-differences test establishing that +4.43 exceeds +.97 statistically. Average adjustments remained positive.",
                 "verification_url": "https://doi.org/10.1007/s11948-022-00372-7",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0063",
+          "review_record": "references/pdf-reviews/0063.json",
+          "name": "Promachine bias names concealed human inputs, with overlap rather than a proven new mechanism",
+          "definition": "The author calls it promachine bias when an algorithmic moral decision conceals that its assigned character values came from human choices.",
+          "evidence_scope": "Author-proposed interpretation of moral-machine quantification, not a measured concealment or human responsibility-attribution experiment.",
+          "catalogue_boundary": "Promachine bias is retained as a related source label, not an exact synonym. Transparent mathematical modeling, lawful delegation and utilitarian reasoning do not automatically conceal human agency or constitute wrongdoing. Establish the omitted human contribution and its relevance before diagnosing agency laundering.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0063-agency-laundering",
+              "title": "Can Generative AI Co-Evolve with Human Guidance and Display Non-Utilitarian Moral Behavior?",
+              "url": "https://doi.org/10.3390/computation14020040",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 3, 4 (source locators: 3, 4). ChatGPT-assisted construction of hand-specified moral scoring programs, quantum-inspired simulations and a three-response keyword filter. No evidence of autonomous modification of OpenAI code, consciousness, human cultural preferences or acquired moral agency.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Rafael Lahoz-Beltra"
+                ],
+                "year": 2026,
+                "venue": "Computation, 14:40",
+                "doi": "10.3390/computation14020040",
+                "evidence_scope": "Author-proposed interpretation of moral-machine quantification, not a measured concealment or human responsibility-attribution experiment.",
+                "verification_url": "https://doi.org/10.3390/computation14020040",
+                "verified_date": "2026-11-27"
               }
             }
           ]
