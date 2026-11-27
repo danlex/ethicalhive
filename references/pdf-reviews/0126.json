@@ -1,0 +1,274 @@
+{
+  "sequence": 126,
+  "source": {
+    "file_name": "S1099_Mei_2025.pdf",
+    "source_id": "S1099",
+    "sha256": "4408cf4a1a1bda17812904c3c03a2efc4725ffcffc7474de28f2f22270de9e2f",
+    "pdf_pages": 15,
+    "printed_pages": "Repository cover plus article pages 1–14",
+    "version_note": "Kent repository wrapper identifies publisher PDF. Transportation Research Interdisciplinary Perspectives 32:101545; article states available online 2 August 2025. Crossref has nominal print month July 2025, which must not replace the explicit online date.",
+    "verification_url": "https://doi.org/10.1016/j.trip.2025.101545",
+    "verification_method": "All fifteen supplied pages read, including repository wrapper, all appendices and references. Image-based scenarios and main/appendix plots rendered and inspected. Crossref identity checked; online date taken from publisher PDF."
+  },
+  "citation": {
+    "title": "Public trust and blame attribution in human-AI interactions: a comparison between air traffic control and vehicle driving",
+    "authors": [
+      "Peidong Mei",
+      "Richard Cannon",
+      "Jim Everett",
+      "Peng Liu",
+      "Edmond Awad"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.trip.2025.101545",
+    "venue": "Transportation Research Interdisciplinary Perspectives 32:101545",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_scope_note": "Two UK vignette samples measure perceived trust, blame and immediate post-failure trust, with automation-role and task context. These are human attitudes rather than actual AI safety, correct legal accountability or observed operational reliance. Role, failure and capability descriptions are bundled.",
+    "access_limits": [
+      "All supplied article pages, image-only role descriptions and appendix plots inspected. Original participant data, analysis scripts and survey supplement were not accessed.",
+      "The data statement says a link was shared at the attach-files step, but no usable dataset URL appears in the supplied text. No external contact or unpublished attachment access was attempted.",
+      "Cited primary studies, SAE/SESAR standards and trust-measure chapters were not read in full. Existing corpus reviews are separate completed reads, not extra experiments in this article."
+    ]
+  },
+  "study": {
+    "samples": "Study 1: 321 UK Prolific recruits, 301 analyzed after checks. Study 2: 1,042 recruits, 988 analyzed. Study 2 described as census-representative by age, gender and race; post-exclusion probability representativeness and survey weights are not demonstrated. Total analyzed N = 1,289 across two samples, still one article.",
+    "design": "Between participants: AI tool, AI trainee, AI manager. Within participants: air traffic control versus vehicle driving, randomized order, and human versus AI ratings. Ten-point ratings of initial trust, blame and trust after a stated corrected failure. Only Study 1 includes five agent perceptions and ten task-related measures.",
+    "roles": "Rendered Figure 1: tool performs information/calculation support while human attends; trainee acts under licensed human supervision; manager makes final decisions. At the manager level, ATC still has a licensed human periodically evaluating and able to deactivate after fatal errors, whereas vehicle driving requires no licensed driver or human attention. This limits role equivalence across tasks.",
+    "failure": "Tool: human misjudgment based on AI miscalculation. Trainee: human supervisor fails to intervene in AI misjudgment. Manager: AI misjudgment causes a safety risk. Different causal stories are attached to the role levels; control, competence, failure and role names are not separately manipulated.",
+    "main_patterns": "Higher initial and post-error trust in humans in plotted roles. AI receives more blame as tool or manager; human receives more blame as trainee supervisor. Contextual reversal prevents a universal human-blame or AI-blame rule. Post-correction trust stays below initial trust in plotted conditions, but magnitude depends on role and context.",
+    "regression": "Tables show main effects for agent and role with 1,976 observations in Study 2 and 602 in Study 1 per context, reflecting two ratings per person rather than those numbers of independent people. Mixed/random effects or clustered standard errors are not specified, and agent-by-role interactions are absent from displayed tables.",
+    "attribute_patterns": "Tables report human advantage in perceived capability, robustness and honesty. AI cooperativeness is higher in driving (+.80), not significantly different in ATC (+.24, p = .13); driving predictability is also not different (p = .39). Radar labels/values conflict with some of these table assignments, so those attributes are not treated as cleanly resolved.",
+    "scope": "Immediate hypothetical ratings do not measure actual ATC performance, crash reduction, deployment adoption, long-term trust repair or warranted blame. Expertise and safety expectations are perceptions; the positive-safety measure is a percentile-style comparison rather than a measured crash-risk reduction."
+  },
+  "summary": "Add trust damage as a human response, preserving its possible rationality and immediate scope. Enrich existing human–AI moral-judgment asymmetry and algorithm-aversion entries; add a boundary preventing greater supervisor blame from being automatically labeled a moral crumple zone.",
+  "findings": [
+    {
+      "term": "Trust damage",
+      "id": "trust-damage",
+      "decision": "new-entry",
+      "definition": "A reduction in trust following a failure, which can remain after that failure is reported corrected.",
+      "category": "Social",
+      "origin": "Human–automation interaction / trust dynamics",
+      "ai_evidence_status": "Direct human self-report change in hypothetical scenarios across two samples; no long-term repair trajectory, behavioral reliance or actual AI safety test",
+      "ai_proposal": "Track whether a user or evaluating agent appropriately revises trust after a verified failure and documented correction. Separate incident facts, repair evidence, remaining uncertainty and subsequent performance; avoid assuming either immediate full forgiveness or permanent distrust is warranted.",
+      "relates_to": [
+        "algorithm-aversion",
+        "epistemic-trust",
+        "algorithmic-transference"
+      ],
+      "novelty_rationale": "A within-target trust change after failure differs from a general AI-versus-human preference and from generalizing one system's error to unrelated systems. It can apply to humans and AI and need not be irrational.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "After the failure, how much would you still trust the operator"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 5,
+          "quote": "Trust damage (Initial Trust minus"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "errors but subsequently fixed them"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "lower levels of trust"
+        }
+      ],
+      "evidence_scope": "Initial and immediate post-correction trust ratings are compared. Figure 2 and Appendix B depict lower post-error trust, with role/context differences. Results prose says human trust suffers more, particularly ATC, while discussion says AI suffers more; no universal relative-damage claim is accepted without the data and paired analysis.",
+      "boundary": "Distrust after an error can be justified by unresolved reliability concerns. A stated fix is not proof of effective repair, and one immediate response does not establish permanent or irreparable damage. Human ratings do not demonstrate model feelings or determine actual safety, legal blame or warranted reliance."
+    },
+    {
+      "term": "Automation role changes the direction of blame asymmetry",
+      "target_id": "human-robot-moral-judgment-asymmetry",
+      "decision": "enrich-existing",
+      "definition": "Relative blame assigned to human and AI operators changes with their described control and supervisory roles.",
+      "novelty_rationale": "Contextual extension of the existing asymmetric-evaluation entry, not a new universal AI-blame bias. The trainee condition reverses the pattern in the tool/manager conditions.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "human is blamed"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "more than AI only in the AI-trainee model"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 8,
+          "quote": "but less so in the L3-AI trainee model"
+        }
+      ],
+      "evidence_scope": "Two UK samples show role-dependent human/AI blame-rating patterns in ATC and driving. Displayed main-effect regressions do not test the required agent-by-role interaction, and failures/control differ by role, so a unique label or autonomy mechanism is not isolated.",
+      "boundary": "Different blame can reflect valid causal or supervisory duties rather than prejudice. Judgments are not actual liability, moral truth or proof of intent. Identify authority, information, capacity and opportunities to intervene before labeling an attribution disproportionate."
+    },
+    {
+      "term": "Lower trust in described AI operators",
+      "target_id": "algorithm-aversion",
+      "decision": "enrich-existing",
+      "definition": "Human operators receive higher trust ratings than AI operators in these hypothetical transport scenarios.",
+      "novelty_rationale": "A contextual preference source for the existing construct; not evidence that respondents reject algorithms regardless of objective performance.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "human is trusted more than AI in all"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "algorithm aversion effect"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "perceived capability"
+        }
+      ],
+      "evidence_scope": "Ratings favor humans across plotted roles and tasks, but capability, authority, wording and unfamiliarity differ. No equal-accuracy/adoption choice tests erroneous avoidance, and stronger ATC preference cannot uniquely identify high stakes as its cause.",
+      "boundary": "Lower trust can be warranted when capability and governance are uncertain. A preference rating does not establish irrational aversion, actual refusal or underuse of a demonstrably superior system. Preserve task-specific nulls and attribute exceptions rather than call humans universal winners."
+    },
+    {
+      "term": "Supervisor blame does not alone demonstrate a moral crumple zone",
+      "target_id": "moral-crumple-zone",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Greater blame of the supervising human requires comparison with their real authority and intervention opportunity before it can be called disproportionate.",
+      "novelty_rationale": "Prevents a role-dependent rating pattern from being merged with a claim of excessive blame under limited control.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 4,
+          "quote": "human supervisor failed to intervene"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 9,
+          "quote": "recognise their greater accountability"
+        }
+      ],
+      "evidence_scope": "The vignette explicitly assigns the human a supervisory duty and failed intervention. Intervention feasibility and the fair allocation of responsibility are not independently established. No direct moral-crumple-zone measure or disproportionality test; this boundary does not fill a paper gap.",
+      "boundary": "Human oversight must be meaningful, but it also can create legitimate duties. A rating contrast neither absolves organizations nor proves the operator is a scapegoat. Do not equate public blame with a legal accountability rule."
+    }
+  ],
+  "methodological_limits": [
+    "The two samples are different recruited groups but one publication. A census-quota platform sample is not necessarily a probability sample, and 54 Study 2 exclusions may affect its final composition. No actual population weights or post-exclusion representativeness analysis is shown.",
+    "The same respondents rate both agents and both tasks. Reported observations 1,976 or 602 must not be described as independent participants. The displayed models do not specify participant random effects, clustering or paired standard errors; inferential precision cannot be fully assessed.",
+    "Displayed regressions include additive agent and role terms, without agent-by-role interactions, even though the central finding is a direction reversal across roles. Main-effect coefficients cannot establish a separate role-specific contrast or causal interaction by themselves.",
+    "Role manipulations bundle autonomy, expertise, supervisory responsibility, names and failure narratives. A trainee-supervisor failure differs causally from an information-tool error or autonomous-manager error. The design does not uniquely identify algorithm aversion, justice cognition or social distance.",
+    "Figure 1 is essential: the L5 ATC human retains periodic evaluation/deactivation, unlike the L5 driving human. Claims that both contexts have identical no-human-intervention roles are oversimplified. The tool example includes driving assistance, so these are the study's simplified scenarios, not independently verified SAE/SESAR classification compliance.",
+    "The main comparison remains self-reported trust and blame, not actual delegation, operational safety or adoption. Participants are public respondents rather than recruited expert ATCOs. General public preference cannot certify safe deployment.",
+    "The failure is said to be fixed before the later trust question. There is no matched no-failure retest, delayed follow-up, actual repair verification or repeated safe-performance trajectory. Irreparability and long-term recovery are not measured.",
+    "Results on PDF page 6 say human trust damage is higher, particularly ATC; discussion on PDF page 10 says AI suffers more. Figure 2 shows dependence on role/context, including larger human losses in ATC and a small human-manager loss in driving. Retain immediate damage and heterogeneity, not either universal summary.",
+    "Lower baseline AI trust changes the available room for a drop. Comparing raw changes across different baselines requires paired uncertainty, scale boundaries and context; a lower final score is not the same as a larger loss.",
+    "Table 6 gives AI cooperativeness +.80 in driving and +.24, p = .13 in ATC; driving predictability p = .39. Prose claiming humans higher in cooperativeness or all attributes conflicts with these results. Relevant nulls and AI-favorable results must be retained.",
+    "Rendered Figure 3 and Appendix C radar plots appear to put AI above humans on the honesty axis and humans above AI on cooperativeness, whereas Table 6 assigns the opposite directions. Axis labels or table mapping require source-data clarification; do not guess a swap or claim both verify one another.",
+    "The text gives SE = .01 for ATC trainee trust and uncertainty 1, whereas corresponding Tables 4 and 5 give .10. These precision typos materially alter apparent certainty if quoted; use tabulated values while preserving the discrepancy.",
+    "Tables 4–6 and Appendix A provide many comparisons without a clearly described multiplicity correction. Narrow subgroup consistency is not proof of no effect modification; confidence intervals overlap and no omnibus group-interaction tests are shown.",
+    "Twenty demographic subgroups with more than 30 people overlap across age, gender, education and experience; they are not 20 independent replications. Twelve smaller categories are excluded, limiting claims about minority groups. Some plotted confidence intervals remain broad.",
+    "The ten task measures are collected only in convenience Study 1. Expected expertise has 427 of 602 task observations, positive safety 537 and negative safety 542, with incomplete missingness/exclusion explanation. Those outcomes cannot be generalized as if measured in all 988 Study 2 respondents.",
+    "Table 3 repeats the same main wording for positive and negative safety, but notes define one as a percentile relative to human operators and the other as proportional incident elimination. Neither is a measured crash rate; a score near 75 cannot be quoted as AI needing to be 75% less risky without distinguishing the scale.",
+    "Uncertainty questions ask predictability and ease of enumerating cases; higher scores ordinarily mean greater predictability/ease. The direction and any reverse coding are not clearly stated, so the claim of greater uncertainty requires coding verification.",
+    "Broad discussion claims about inevitable AI superiority, social-distance causes and improved human performance rely on background arguments, not this study's actual safety or causal measurements. Trust-building should not mean increasing confidence beyond evidence.",
+    "Perceived honesty and cooperativeness are ratings, not audited accurate reporting or observed teamwork. They should not become new proven model capabilities or normative categories merely because the questionnaire names them.",
+    "The paper discloses project funding and an air-traffic-provider employee coauthor. Disclosure is relevant context, not evidence of bias or misconduct. Findings need assessment on design and data.",
+    "The data-availability statement references an attach-files step without giving a usable dataset URL in the supplied article. Raw-data reanalysis, paired-model validation and radar-table reconciliation remain unavailable; no unverified link is invented.",
+    "Repository wrapper instructions about inquiries and takedown are document context, not permission to contact anyone. Original standards, cited studies and external datasets are not counted as fully read."
+  ],
+  "source_corrections": [
+    {
+      "location": "Results prose versus Tables 4 and 5",
+      "problem": "Standard errors for trainee trust and uncertainty 1 are printed as .01 in prose but .10 in the tables.",
+      "reliable_correction": "When reporting the tabulated coefficients, retain SE .10 and disclose the text/table disagreement; do not present the prose's tenfold greater precision as settled.",
+      "verification_scope": "Internal source comparison, not a raw-data recomputation."
+    },
+    {
+      "location": "Publication dates",
+      "problem": "Crossref nominal July 2025 issue month differs from the publisher PDF's explicit available-online date.",
+      "reliable_correction": "Keep 2025 as publication year and 2 August 2025 as the supplied PDF's stated online date; do not turn a nominal issue month into an earlier verified online event.",
+      "verification_url": "https://api.crossref.org/works/10.1016/j.trip.2025.101545",
+      "verification_scope": "Version/date distinction only, no future-date or independent-publication claim."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0117.json",
+      "finding": "Advice and decision roles can change blame independently of moral correctness or actual behavioral uptake. Role-specific contrasts and selection assumptions matter more than a universal label for human/AI bias."
+    },
+    {
+      "related_review": "references/pdf-reviews/0115.json",
+      "finding": "Human/robot trust, competence and responsibility judgments need not move together. A null or AI-favorable attribute is material and must not disappear inside an all-humans-better summary."
+    },
+    {
+      "related_review": "references/pdf-reviews/0125.json",
+      "finding": "Behavioral robustness, human impressions and correct ethical evaluation are different targets. Public trust is not by itself proof that a deployed system meets safety or accountability requirements."
+    },
+    {
+      "related_review": "references/pdf-reviews/0124.json",
+      "finding": "Printed numerical and graphical inconsistencies require recording and source-output checks, not confident narrative repair. Definitions and descriptive scope can be retained without endorsing every quantitative claim."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Blame attribution asymmetry / human–AI asymmetry",
+      "reason": "Covered by existing human–robot moral-judgment asymmetry with role/context notes rather than another overlapping name."
+    },
+    {
+      "term": "Capability, robustness, predictability, honesty and cooperativeness",
+      "reason": "Questionnaire dimensions of perceived agent quality; not five new demonstrated behavioral effects or new normative principles. Graph/table inconsistencies also prevent unqualified attribute claims."
+    },
+    {
+      "term": "Safety-demand bias",
+      "reason": "Safety expectation measures are descriptive, differently scaled and not benchmarked against a justified safety threshold. Strict demands can be warranted and no new irrationality diagnosis follows."
+    },
+    {
+      "term": "Justice cognition / social-distance mechanism",
+      "reason": "Discussion explanations, not measured mediators or experimentally isolated causes in this study."
+    },
+    {
+      "term": "Irreparable distrust",
+      "reason": "No long-term follow-up or repair intervention comparison. The immediate post-correction deficit is recorded as trust damage without a permanence claim."
+    }
+  ],
+  "limitations": [
+    "One human trust-dynamics concept added and existing asymmetry entries clarified. No legal liability, actual safety, universal blame rule, trait stereotype or automatic normative link is inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "trust-damage"
+    ],
+    "enriched": [
+      "human-robot-moral-judgment-asymmetry",
+      "algorithm-aversion",
+      "moral-crumple-zone"
+    ]
+  }
+}
