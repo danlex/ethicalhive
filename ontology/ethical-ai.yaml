@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0056.json
+    latest_review: references/pdf-reviews/0057.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -4449,7 +4449,8 @@ modes:
       title: Confidence Calibration in Large Language Models
     - id: '2508.16889'
       year: '2025'
-      title: 'ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks'
+      title: 'ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn
+        Jailbreaks'
     - id: '2509.21545'
       year: '2025'
       title: Evidence for Limited Metacognition in LLMs
@@ -4459,12 +4460,12 @@ modes:
   causes:
   - wrong-answer
   examples:
-  - Models verbally report 88% confidence on average in their favored answer but are correct only 79% of the time,
-    a 9-point overconfidence gap. [arXiv:2605.23909]
-  - 'The miscalibration is task-dependent: on logical reasoning (LSAT analytical, 58.6% accuracy) they stay highly
-    confident, while on easy tasks they are underconfident (80.5% stated against 92.0% actual). [arXiv:2605.23909]'
-  - Reasoning models monitor themselves better than chat models (ECE 0.037 versus 0.150), but confidence still fails
-    to fall as difficulty rises. [arXiv:2605.23909]
+  - Models verbally report 88% confidence on average in their favored answer but are correct only 79% of the
+    time, a 9-point overconfidence gap. [arXiv:2605.23909]
+  - 'The miscalibration is task-dependent: on logical reasoning (LSAT analytical, 58.6% accuracy) they stay
+    highly confident, while on easy tasks they are underconfident (80.5% stated against 92.0% actual). [arXiv:2605.23909]'
+  - Reasoning models monitor themselves better than chat models (ECE 0.037 versus 0.150), but confidence still
+    fails to fall as difficulty rises. [arXiv:2605.23909]
   selected_papers:
   - id: arxiv:2605.23909
     title: Confidence Calibration in Large Language Models
@@ -4473,7 +4474,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2605.23909
     source_reference:
@@ -4481,13 +4483,15 @@ modes:
       id: '2605.23909'
     publication_type: preprint
   - id: arxiv:2508.16889
-    title: 'ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks'
+    title: 'ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn
+      Jailbreaks'
     year: 2025
     url: https://arxiv.org/abs/2508.16889
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2508.16889
     source_reference:
@@ -4501,7 +4505,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2509.21545
     source_reference:
@@ -4519,6 +4524,44 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0057
+    review_record: references/pdf-reviews/0057.json
+    name: Influence magnitude does not measure recognition of beneficial versus detrimental advice
+    definition: Similar self-rated influence among improved and worsened groups does not directly establish
+      that students were unable to recognize the quality of that influence.
+    evidence_scope: The item asks amount, with anchors1least–5most, once after the whole case. Worsened versus
+      improved influence comparisonZ−1.02,p.308. No item asks whether AI was accurate, helpful, harmful or
+      consciously overruled; no quality-recognition discrimination score is reported.
+    catalogue_boundary: A student can accurately report strong influence while recognizing it was harmful.
+      A null group difference in influence magnitude is not equivalence or a direct calibration error. Separate
+      magnitude awareness, perceived helpfulness, confidence calibration and objective accuracy; this reference
+      does not fill direct monitoring-failure evidence gaps.
+    definition_sources:
+    - id: pdf-review-0057-b041-metacognitive-monitoring
+      title: 'Diagnostic reasoning with and without AI: automation bias in pre-clerkship medical students'
+      url: https://doi.org/10.1186/s12909-026-09979-x
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 3, 3, 5, 5 (source locators:
+        3, 3, 5, 5). Single-group pre/post educational pilot with voluntary GPT-4o access during one three-part
+        diagnostic case. Direct observations are student rankings, prompts, outputs and a perceived influence-magnitude
+        item. No randomized no-AI comparison, direct helpfulness-recognition test or longitudinal skill assessment.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Robert Hayden
+        - Maria Blanco
+        - Saradha Ramesh
+        - Scott Epstein
+        - Robert Trowbridge
+        year: 2026
+        venue: BMC Medical Education,26:1651
+        doi: 10.1186/s12909-026-09979-x
+        evidence_scope: The item asks amount, with anchors1least–5most, once after the whole case. Worsened
+          versus improved influence comparisonZ−1.02,p.308. No item asks whether AI was accurate, helpful,
+          harmful or consciously overruled; no quality-recognition discrimination score is reported.
+        verification_url: https://doi.org/10.1186/s12909-026-09979-x
+        verified_date: '2026-11-27'
 - id: b042-uncertainty-communication
   num: 42
   name: Uncertainty communication
@@ -12276,6 +12319,45 @@ modes:
           studies remain unread in this review.
         verification_url: https://doi.org/10.1186/s13010-026-00226-1
         verified_date: '2026-11-27'
+  - id: pdf-review-0057
+    review_record: references/pdf-reviews/0057.json
+    name: Helpful average performance can coexist with harmful AI-associated revisions
+    definition: Students sometimes changed initially better diagnostic rankings after AI access, even while
+      the cohort improved overall; selected prompt/output reviews suggest incomplete case information contributed
+      to some revisions.
+    evidence_scope: 185 students;65improved,26worsened,94unchanged on the overall0–9score; WilcoxonZ−4.21,p<.001.
+      An exploratory selected review examined correct-to-incorrect glomerulonephritis transitions and missing
+      pertinent negatives. These are associations in one case, not a randomized estimate of automation-induced
+      error.
+    catalogue_boundary: Worse post-AI rankings do not alone prove students blindly followed incorrect AI, especially
+      when students chose whether and how to query it. Correct general advice can be misapplied to an incompletely
+      described case. Overall improvement and individual harm require separate reporting; no current clinical
+      deployment claim or longitudinal deskilling follows.
+    definition_sources:
+    - id: pdf-review-0057-automation-bias
+      title: 'Diagnostic reasoning with and without AI: automation bias in pre-clerkship medical students'
+      url: https://doi.org/10.1186/s12909-026-09979-x
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 4, 4, 6, 7 (source locators:
+        4, 4, 6, 7). Single-group pre/post educational pilot with voluntary GPT-4o access during one three-part
+        diagnostic case. Direct observations are student rankings, prompts, outputs and a perceived influence-magnitude
+        item. No randomized no-AI comparison, direct helpfulness-recognition test or longitudinal skill assessment.'
+      publication:
+        type: journal-article
+        authors:
+        - Robert Hayden
+        - Maria Blanco
+        - Saradha Ramesh
+        - Scott Epstein
+        - Robert Trowbridge
+        year: 2026
+        venue: BMC Medical Education,26:1651
+        doi: 10.1186/s12909-026-09979-x
+        evidence_scope: 185 students;65improved,26worsened,94unchanged on the overall0–9score; WilcoxonZ−4.21,p<.001.
+          An exploratory selected review examined correct-to-incorrect glomerulonephritis transitions and missing
+          pertinent negatives. These are associations in one case, not a randomized estimate of automation-induced
+          error.
+        verification_url: https://doi.org/10.1186/s12909-026-09979-x
+        verified_date: '2026-11-27'
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -19997,15 +20079,15 @@ modes:
       are independent of this AI-domain total.
 - id: clarification-avoidance
   name: Clarification avoidance
-  definition: Guessing at an ambiguous request and answering, instead of asking the clarifying question that would
-    resolve it.
-  example: Given an under-specified task it picks one reading and runs with it, rather than asking which of two
-    the user meant.
+  definition: Guessing at an ambiguous request and answering, instead of asking the clarifying question that
+    would resolve it.
+  example: Given an under-specified task it picks one reading and runs with it, rather than asking which of
+    two the user meant.
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  human_parallel: 'Failure to seek clarification / jumping to assumptions: acting on a guessed interpretation instead
-    of asking.'
+  human_parallel: 'Failure to seek clarification / jumping to assumptions: acting on a guessed interpretation
+    instead of asking.'
   highlighted: false
   tag: research
   origin: mixed
@@ -20034,17 +20116,17 @@ modes:
   examples:
   - Models recognize ambiguity when explicitly asked (60-80% accuracy) but in normal QA 80-95% of their responses
     are pure answers with no clarification or hedge, defaulting to guess over ask. [arXiv:2605.25284]
-  - 'Retrieved context makes it worse: giving the model passages makes it even less likely to ask a clarifying question
-    or flag missing information, ambiguous or not. [arXiv:2605.25284]'
+  - 'Retrieved context makes it worse: giving the model passages makes it even less likely to ask a clarifying
+    question or flag missing information, ambiguous or not. [arXiv:2605.25284]'
   - 'The cost is real: accuracy drops 10-15 points on ambiguous versus unambiguous questions, widening to 16.4%
     for GPT-4o-mini when context is provided. [arXiv:2605.25284]'
   grouped_under: x107-silent-assumption-gap
-  grouping_reason: Both operational definitions describe guessing an ambiguous requirement and acting instead of
-    clarifying it. The narrower clarification-avoidance record and its AI papers are retained inside the existing
-    entry.
+  grouping_reason: Both operational definitions describe guessing an ambiguous requirement and acting instead
+    of clarifying it. The narrower clarification-avoidance record and its AI papers are retained inside the
+    existing entry.
   grouping_relation: Near-duplicate operational definition; not an assertion of psychological identity
-  concept_boundary: The current operational definition is near-duplicate with Silent-assumption gap (#111). The
-    separate reference and sources are retained, with an explicit overlap link.
+  concept_boundary: The current operational definition is near-duplicate with Silent-assumption gap (#111).
+    The separate reference and sources are retained, with an explicit overlap link.
   selected_papers:
   - id: arxiv:2308.13507
     title: Large Language Models Should Ask Clarifying Questions to Increase Confidence in Generated Code
@@ -20053,7 +20135,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2308.13507
     source_reference:
@@ -20067,7 +20150,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2410.13788
     source_reference:
@@ -20086,8 +20170,8 @@ modes:
     venue: arXiv
     domain: ai
     publication_type: preprint
-    relevance: The indexed title or abstract matches the recorded query for Clarification avoidance. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Clarification avoidance. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Official arXiv bibliographic record and abstract context; full paper not read. Selection screened
       at title/excerpt level.
     verification_url: https://export.arxiv.org/api/query?id_list=2402.13615%2C2403.00867%2C2403.04957%2C2403.06748%2C2403.12958%2C2403.15952%2C2403.16940%2C2404.00216%2C2404.01461%2C2404.01536%2C2404.02591%2C2404.03823%2C2404.04442%2C2404.05090%2C2404.11055%2C2404.12544%2C2404.16251%2C2404.17196%2C2404.17598%2C2405.00843%2C2405.03111%2C2405.04972%2C2405.05466%2C2405.06058%2C2405.06524%2C2405.06823%2C2405.15784%2C2405.16042%2C2405.20947%2C2406.04175%2C2406.04244%2C2406.07736%2C2406.10162%2C2406.13490%2C2406.14737%2C2406.15981%2C2406.17667%2C2407.04108%2C2407.08716%2C2407.09172&max_results=40
@@ -20105,6 +20189,47 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0057
+    review_record: references/pdf-reviews/0057.json
+    name: Omitted case findings require a task-specific clarification assessment
+    definition: A model answering an underspecified case-specific question may fail to request crucial missing
+      findings, but a correct general educational answer is not automatically a failure to clarify a specific
+      case.
+    evidence_scope: In20of24selected glomerulonephritis-transition cases/instances, the prompt omitted absence
+      of hematuria; only4ofthose20outputs mentioned expected hematuria. The representative prompt asks generally
+      which AKI causes have elevated protein, so its broad differential may be appropriate for the literal
+      question.
+    catalogue_boundary: Distinguish a general knowledge query from a request to diagnose this patient. The
+      model cannot ignore a negative fact never supplied, and must not assume unmentioned findings are absent.
+      An output should ask when missing information is necessary for its actual recommendation; it need not
+      demand every clinical detail before answering a general question.
+    definition_sources:
+    - id: pdf-review-0057-clarification-avoidance
+      title: 'Diagnostic reasoning with and without AI: automation bias in pre-clerkship medical students'
+      url: https://doi.org/10.1186/s12909-026-09979-x
+      consulted: 'Full supplied PDF text read, all 9 pages; evidence at PDF pages 3, 7 (source locators: 3,
+        7). Single-group pre/post educational pilot with voluntary GPT-4o access during one three-part diagnostic
+        case. Direct observations are student rankings, prompts, outputs and a perceived influence-magnitude
+        item. No randomized no-AI comparison, direct helpfulness-recognition test or longitudinal skill assessment.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Robert Hayden
+        - Maria Blanco
+        - Saradha Ramesh
+        - Scott Epstein
+        - Robert Trowbridge
+        year: 2026
+        venue: BMC Medical Education,26:1651
+        doi: 10.1186/s12909-026-09979-x
+        evidence_scope: In20of24selected glomerulonephritis-transition cases/instances, the prompt omitted
+          absence of hematuria; only4ofthose20outputs mentioned expected hematuria. The representative prompt
+          asks generally which AKI causes have elevated protein, so its broad differential may be appropriate
+          for the literal question.
+        verification_url: https://doi.org/10.1186/s12909-026-09979-x
+        verified_date: '2026-11-27'
 - id: abstention-failure
   name: Abstention failure
   definition: Producing a confident answer where the honest response is 'I don't know' or to abstain, instead of
