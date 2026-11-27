@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 496,
+    "mode_count": 497,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 496,
+      "numbered_entries": 497,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0071.json",
+      "latest_review": "references/pdf-reviews/0072.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 496
+    "source_record_count": 497
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -18788,6 +18788,37 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0072",
+          "review_record": "references/pdf-reviews/0072.json",
+          "name": "Adding character cues does not demonstrate a halo mechanism",
+          "definition": "A moral judgment influenced by relevant character or intent information is not automatically positive-impression spillover into unrelated qualities.",
+          "evidence_scope": "Predictions and secondary examples in the ADC account; no isolated halo manipulation or error benchmark in the proposed traffic study.",
+          "catalogue_boundary": "Match causal facts and the evaluation target before calling a changed judgment biased. Character, intent and negligence are bundled in some examples, so the proposed design cannot automatically separate their effects.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0072-halo-effect",
+              "title": "Moral judgment in realistic traffic scenarios: moving beyond the trolley paradigm for ethics of autonomous vehicles",
+              "url": "https://doi.org/10.1007/s00146-023-01813-y",
+              "consulted": "Full supplied PDF text read, all 12 pages; evidence at PDF pages 6, 6 (source locators: 1042, 1042). Proposal for traffic moral-judgment experiments using Agent–Deed–Consequences cues in virtual scenarios. Reports iterative pilot feedback from 125 people but no final effect estimates, automated-vehicle trial or demonstrated gain in ecological validity.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Dario Cecchini",
+                  "Sean Brantley",
+                  "Veljko Dubljević"
+                ],
+                "year": 2025,
+                "venue": "AI & Society, 40:1037–1048; online first 2023",
+                "doi": "10.1007/s00146-023-01813-y",
+                "evidence_scope": "Predictions and secondary examples in the ADC account; no isolated halo manipulation or error benchmark in the proposed traffic study.",
+                "verification_url": "https://doi.org/10.1007/s00146-023-01813-y",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -18897,7 +18928,40 @@
         "queried_at": "2026-11-09T00:38:45+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Fundamental+attribution+error%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0072",
+          "review_record": "references/pdf-reviews/0072.json",
+          "name": "Driving-style character inferences can fail when situational causes differ",
+          "definition": "Inferring a driver's vicious character from aggressive-looking behavior can ignore a situational explanation such as a medical emergency.",
+          "evidence_scope": "The authors' counterexample in discussing defeasible driving-style cues; no controlled emergency-context experiment is reported.",
+          "catalogue_boundary": "Not all trait inference ignores context, and a benign intent does not guarantee safe behavior. Separate prudent collision avoidance, causal explanation, blame and claims about stable moral character.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0072-fundamental-attribution-error",
+              "title": "Moral judgment in realistic traffic scenarios: moving beyond the trolley paradigm for ethics of autonomous vehicles",
+              "url": "https://doi.org/10.1007/s00146-023-01813-y",
+              "consulted": "Full supplied PDF text read, all 12 pages; evidence at PDF pages 7, 7 (source locators: 1043, 1043). Proposal for traffic moral-judgment experiments using Agent–Deed–Consequences cues in virtual scenarios. Reports iterative pilot feedback from 125 people but no final effect estimates, automated-vehicle trial or demonstrated gain in ecological validity.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Dario Cecchini",
+                  "Sean Brantley",
+                  "Veljko Dubljević"
+                ],
+                "year": 2025,
+                "venue": "AI & Society, 40:1037–1048; online first 2023",
+                "doi": "10.1007/s00146-023-01813-y",
+                "evidence_scope": "The authors' counterexample in discussing defeasible driving-style cues; no controlled emergency-context experiment is reported.",
+                "verification_url": "https://doi.org/10.1007/s00146-023-01813-y",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "perseveration",
@@ -62867,6 +62931,93 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0071.json"
+      }
+    },
+    {
+      "id": "character-based-moral-judgment",
+      "num": 497,
+      "name": "Character-based moral judgment",
+      "definition": "Using evaluations of an actor's moral character or intentions when judging an action or situation.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Moral psychology / character and intention evaluation",
+      "human_parallel": "Character-based moral judgment",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Secondary human judgment construct and proposed traffic application; no direct model mechanism or completed traffic-effect test here",
+      "proposed_ai_manifestation": "When evaluating conduct, distinguish evidence of intent from effects, rule compliance and unsupported character labels. Test matched cases with the same behavior and different verified context, assess whether justified situational explanations are incorporated, and preserve uncertainty. Do not infer personal moral worth or authorize consequential actions from weak behavioral proxies.",
+      "research_boundary": "Intent, stable character, observed conduct, social identity and outcome are distinct. A vehicle weaving during a medical emergency need not indicate negligence; the authors explicitly acknowledge this. Character evaluation is not proof of machine virtue or a justification for ranking people's right to safety by occupation, status or inferred moral worth. The source's person-centered background and three-component ADC model are related frameworks, not exact synonyms or multiple independent mechanisms.",
+      "concept_boundary": "Intent, stable character, observed conduct, social identity and outcome are distinct. A vehicle weaving during a medical emergency need not indicate negligence; the authors explicitly acknowledge this. Character evaluation is not proof of machine virtue or a justification for ranking people's right to safety by occupation, status or inferred moral worth. The source's person-centered background and three-component ADC model are related frameworks, not exact synonyms or multiple independent mechanisms.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "fundamental-attribution-error",
+        "halo-effect",
+        "candidate-046"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0072-character-based-moral-judgment",
+          "title": "Moral judgment in realistic traffic scenarios: moving beyond the trolley paradigm for ethics of autonomous vehicles",
+          "url": "https://doi.org/10.1007/s00146-023-01813-y",
+          "consulted": "Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 6, 7, 7 (source locators: 1040, 1042, 1043, 1043). Proposal for traffic moral-judgment experiments using Agent–Deed–Consequences cues in virtual scenarios. Reports iterative pilot feedback from 125 people but no final effect estimates, automated-vehicle trial or demonstrated gain in ecological validity.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Dario Cecchini",
+              "Sean Brantley",
+              "Veljko Dubljević"
+            ],
+            "year": 2025,
+            "venue": "AI & Society, 40:1037–1048; online first 2023",
+            "doi": "10.1007/s00146-023-01813-y",
+            "evidence_scope": "Secondary moral-psychology account citing Uhlmann/Pizarro/Diermeier (2015) and prior ADC studies. The proposed traffic experiment has not reported final judgment effects; the 125-person pilot refines stimuli and does not validate this mechanism in autonomous vehicles. Original cited studies remain unread.",
+            "verification_url": "https://doi.org/10.1007/s00146-023-01813-y",
+            "verified_date": "2026-11-27"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Moral judgment in realistic traffic scenarios: moving beyond the trolley paradigm for ethics of autonomous vehicles",
+          "authors": [
+            "Dario Cecchini",
+            "Sean Brantley",
+            "Veljko Dubljević"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1007/s00146-023-01813-y",
+          "venue": "AI & Society, 40:1037–1048; online first 2023",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s00146-023-01813-y",
+          "relevance": "Secondary moral-psychology account citing Uhlmann/Pizarro/Diermeier (2015) and prior ADC studies. The proposed traffic experiment has not reported final judgment effects; the 125-person pilot refines stimuli and does not validate this mechanism in autonomous vehicles. Original cited studies remain unread.",
+          "consulted": "Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 6, 7, 7 (source locators: 1040, 1042, 1043, 1043). Proposal for traffic moral-judgment experiments using Agent–Deed–Consequences cues in virtual scenarios. Reports iterative pilot feedback from 125 people but no final effect estimates, automated-vehicle trial or demonstrated gain in ecological validity.",
+          "verification_url": "https://doi.org/10.1007/s00146-023-01813-y",
+          "verified_date": "2026-11-27",
+          "verification_method": "Identity and DOI read in the supplied PDF; evidence passages checked against that PDF",
+          "review_record": "references/pdf-reviews/0072.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Character-based moral judgment\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Character-based+moral+judgment%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0072.json"
       }
     }
   ]
