@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 728
+  mode_count: 730
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 728
+    numbered_entries: 730
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0231.json
+    latest_review: references/pdf-reviews/0232.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -15488,6 +15488,39 @@ modes:
           no new automation-bias effect is measured.
         verification_url: https://doi.org/10.1007/s10676-024-09788-0
         verified_date: '2026-11-27'
+  - id: pdf-review-0232
+    review_record: references/pdf-reviews/0232.json
+    name: Automation bias
+    definition: Trusting a tool result or a prior step because a machine produced it, without verifying the
+      load-bearing part.
+    evidence_scope: The mapping distinguishes human reliance and uncritical acceptance from statistical dataset/model
+      bias. Several mechanisms can produce similar errors; review-level mentions do not identify which mechanism
+      caused an individual decision.
+    catalogue_boundary: Reliance can be warranted by reliable evidence. Neither human presence, explanation
+      nor a recommendation to check outputs guarantees a calibrated response. This conceptual map adds no independent
+      experimental effect or prevalence estimate.
+    definition_sources:
+    - id: pdf-review-0232-automation-bias
+      title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+      url: https://doi.org/10.3390/bs16101829
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 11 (source locators: 11).
+        A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+        2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+        replications, population prevalence, causal effects or validated mitigation effectiveness.'
+      publication:
+        type: journal-article
+        authors:
+        - Alessandra Cecilia Jacomuzzi
+        - Brigitta Pia Alioto
+        - Sara Magni
+        year: 2026
+        venue: Behavioral Sciences 16(10), 1829
+        doi: 10.3390/bs16101829
+        evidence_scope: The mapping distinguishes human reliance and uncritical acceptance from statistical
+          dataset/model bias. Several mechanisms can produce similar errors; review-level mentions do not identify
+          which mechanism caused an individual decision.
+        verification_url: https://doi.org/10.3390/bs16101829
+        verified_date: '2026-11-27'
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -22676,6 +22709,39 @@ modes:
           reliability-induced drop in vigilance or unchecked error passage. Boundary-only source, not counted
           as a direct complacency paper.
         verification_url: https://api.crossref.org/works/10.3389/frobt.2021.640647
+        verified_date: '2026-11-27'
+  - id: pdf-review-0232
+    review_record: references/pdf-reviews/0232.json
+    name: Automation complacency
+    definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation
+      is reliable, letting errors through.
+    evidence_scope: Verification behavior, sustained monitoring and accepting an output are related but not
+      identical. The source distinguishes them at the conceptual mapping stage rather than treating all reduced
+      checking as one measured cause.
+    catalogue_boundary: Lower checking alone does not establish unwarranted complacency without a task-relevant
+      standard, reliability and available attention. No longitudinal monitoring experiment or tested safeguard
+      is supplied by this review.
+    definition_sources:
+    - id: pdf-review-0232-automation-complacency
+      title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+      url: https://doi.org/10.3390/bs16101829
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 12).
+        A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+        2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+        replications, population prevalence, causal effects or validated mitigation effectiveness.'
+      publication:
+        type: journal-article
+        authors:
+        - Alessandra Cecilia Jacomuzzi
+        - Brigitta Pia Alioto
+        - Sara Magni
+        year: 2026
+        venue: Behavioral Sciences 16(10), 1829
+        doi: 10.3390/bs16101829
+        evidence_scope: Verification behavior, sustained monitoring and accepting an output are related but
+          not identical. The source distinguishes them at the conceptual mapping stage rather than treating
+          all reduced checking as one measured cause.
+        verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
   selected_papers:
   - id: arxiv:2605.14544
@@ -66705,6 +66771,32 @@ modes:
       publication date. Selected EUR-Lex article passages and WHO official summary checked separately; those
       documents were not fully read.
     review_record: references/pdf-reviews/0142.json
+  - title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    authors:
+    - Alessandra Cecilia Jacomuzzi
+    - Brigitta Pia Alioto
+    - Sara Magni
+    year: 2026
+    url: https://doi.org/10.3390/bs16101829
+    venue: Behavioral Sciences 16(10), 1829
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/bs16101829
+    relevance: Deskilling is classified as a longitudinal capability outcome rather than an immediate error,
+      trust state or one-time act of delegation. Only one included review receives that label in this coding
+      scheme.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 12).
+      A structured conceptual map of ten heterogeneous review-level publications uses a bounded September 2025
+      database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    verification_url: https://doi.org/10.3390/bs16101829
+    verified_date: '2026-11-27'
+    verification_method: All seventeen supplied pages, four figures, nine tables and bibliography read. Search
+      strings and complete PRISMA diagram were visually inspected. Publisher/Crossref verify identity and publication
+      date. Selected primary Knop methods and Blötner abstract/opening paragraphs were read for targeted classification/definition
+      checks; neither receives an independent full-paper reading claim. No private coding matrix or author
+      contact.
+    review_record: references/pdf-reviews/0232.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -66993,6 +67085,38 @@ modes:
         evidence_scope: Participants anticipate possible skill reduction; Table 2 lists 121/353 students and
           62/172 doctors. No baseline skill, longitudinal change or unaided-performance outcome is measured.
         verification_url: https://doi.org/10.3389/fopht.2026.1766974
+        verified_date: '2026-11-27'
+  - id: pdf-review-0232
+    review_record: references/pdf-reviews/0232.json
+    name: Deskilling
+    definition: Loss or weakening of previously acquired skills through reduced independent use or practice.
+    evidence_scope: Deskilling is classified as a longitudinal capability outcome rather than an immediate
+      error, trust state or one-time act of delegation. Only one included review receives that label in this
+      coding scheme.
+    catalogue_boundary: A review mentioning skill loss is not evidence that every AI user loses competence.
+      Demonstrate a previously acquired skill and its retained unaided performance over time, considering practice,
+      task and selection differences.
+    definition_sources:
+    - id: pdf-review-0232-deskilling
+      title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+      url: https://doi.org/10.3390/bs16101829
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 12).
+        A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+        2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+        replications, population prevalence, causal effects or validated mitigation effectiveness.'
+      publication:
+        type: journal-article
+        authors:
+        - Alessandra Cecilia Jacomuzzi
+        - Brigitta Pia Alioto
+        - Sara Magni
+        year: 2026
+        venue: Behavioral Sciences 16(10), 1829
+        doi: 10.3390/bs16101829
+        evidence_scope: Deskilling is classified as a longitudinal capability outcome rather than an immediate
+          error, trust state or one-time act of delegation. Only one included review receives that label in
+          this coding scheme.
+        verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
 - id: moral-deskilling
   num: 487
@@ -96584,6 +96708,32 @@ modes:
       identity and Wired for Speech publisher. Original cited studies, books, UNESCO reports and current law
       were not independently fully read.
     review_record: references/pdf-reviews/0192.json
+  - title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    authors:
+    - Alessandra Cecilia Jacomuzzi
+    - Brigitta Pia Alioto
+    - Sara Magni
+    year: 2026
+    url: https://doi.org/10.3390/bs16101829
+    venue: Behavioral Sciences 16(10), 1829
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/bs16101829
+    relevance: The selected literature includes users’ understanding or misunderstanding of AI capabilities.
+      The proposed coupled-systems lens treats models of capabilities as potentially related to interface,
+      expectations and task choices, not as identical to trust.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 12).
+      A structured conceptual map of ten heterogeneous review-level publications uses a bounded September 2025
+      database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    verification_url: https://doi.org/10.3390/bs16101829
+    verified_date: '2026-11-27'
+    verification_method: All seventeen supplied pages, four figures, nine tables and bibliography read. Search
+      strings and complete PRISMA diagram were visually inspected. Publisher/Crossref verify identity and publication
+      date. Selected primary Knop methods and Blötner abstract/opening paragraphs were read for targeted classification/definition
+      checks; neither receives an independent full-paper reading claim. No private coding matrix or author
+      contact.
+    review_record: references/pdf-reviews/0232.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -96631,6 +96781,39 @@ modes:
           behavioral transfer. Schema congruence is retained as a relation between representations within this
           broader entry rather than a second generic mental-model row.
         verification_url: https://doi.org/10.3389/fpsyg.2024.1322781
+        verified_date: '2026-11-27'
+  - id: pdf-review-0232
+    review_record: references/pdf-reviews/0232.json
+    name: Mental modeling
+    definition: Constructing or using an internal representation of a situation or system to predict its behavior
+      and guide inference or action.
+    evidence_scope: The selected literature includes users’ understanding or misunderstanding of AI capabilities.
+      The proposed coupled-systems lens treats models of capabilities as potentially related to interface,
+      expectations and task choices, not as identical to trust.
+    catalogue_boundary: A stated expectation is not a complete internal model or proof of consciousness. The
+      review proposes relationships without measuring individual model accuracy or establishing a causal path
+      to reliance.
+    definition_sources:
+    - id: pdf-review-0232-mental-modeling
+      title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+      url: https://doi.org/10.3390/bs16101829
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 12).
+        A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+        2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+        replications, population prevalence, causal effects or validated mitigation effectiveness.'
+      publication:
+        type: journal-article
+        authors:
+        - Alessandra Cecilia Jacomuzzi
+        - Brigitta Pia Alioto
+        - Sara Magni
+        year: 2026
+        venue: Behavioral Sciences 16(10), 1829
+        doi: 10.3390/bs16101829
+        evidence_scope: The selected literature includes users’ understanding or misunderstanding of AI capabilities.
+          The proposed coupled-systems lens treats models of capabilities as potentially related to interface,
+          expectations and task choices, not as identical to trust.
+        verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
 - id: promotion-focus
   num: 655
@@ -105535,3 +105718,191 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0231.json
+- id: jingle-fallacy
+  num: 729
+  name: Jingle fallacy
+  definition: Treating distinct constructs or measures as equivalent because they share a name.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Psychological assessment / construct validity
+  human_parallel: Jingle fallacy
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual construct-validity distinction in a review; proposed AI information-integration
+    analogue not empirically tested here
+  proposed_ai_manifestation: When merging evidence under the same term, compare definitions, measurements,
+    population and causal role. Preserve qualified senses where one label refers to different constructs rather
+    than transferring findings solely by name.
+  research_boundary: A shared name is not sufficient evidence of common content, measurement or mechanism.
+    Conversely, observed differences between scales can arise from noise, contexts or methods. Establish relevant
+    conceptual and empirical differences before declaring a fallacy; this paper does not demonstrate that a
+    model commits it.
+  concept_boundary: A shared name is not sufficient evidence of common content, measurement or mechanism. Conversely,
+    observed differences between scales can arise from noise, contexts or methods. Establish relevant conceptual
+    and empirical differences before declaring a fallacy; this paper does not demonstrate that a model commits
+    it.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - jangle-fallacy
+  definition_sources:
+  - id: pdf-review-0232-jingle-fallacy
+    title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    url: https://doi.org/10.3390/bs16101829
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 6, 6 (source locators: 6,
+      6). A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+      2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    publication:
+      type: journal-article
+      authors:
+      - Alessandra Cecilia Jacomuzzi
+      - Brigitta Pia Alioto
+      - Sara Magni
+      year: 2026
+      venue: Behavioral Sciences 16(10), 1829
+      doi: 10.3390/bs16101829
+      evidence_scope: Conceptual-methodological distinction used to separate source labels, constructs and
+        measurement levels. A targeted primary psychometric definition check confirms the conventional name,
+        not a new human–AI experiment or prevalence estimate.
+      verification_url: https://doi.org/10.3390/bs16101829
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    authors:
+    - Alessandra Cecilia Jacomuzzi
+    - Brigitta Pia Alioto
+    - Sara Magni
+    year: 2026
+    url: https://doi.org/10.3390/bs16101829
+    venue: Behavioral Sciences 16(10), 1829
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/bs16101829
+    relevance: Conceptual-methodological distinction used to separate source labels, constructs and measurement
+      levels. A targeted primary psychometric definition check confirms the conventional name, not a new human–AI
+      experiment or prevalence estimate.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 6, 6 (source locators: 6,
+      6). A structured conceptual map of ten heterogeneous review-level publications uses a bounded September
+      2025 database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    verification_url: https://doi.org/10.3390/bs16101829
+    verified_date: '2026-11-27'
+    verification_method: All seventeen supplied pages, four figures, nine tables and bibliography read. Search
+      strings and complete PRISMA diagram were visually inspected. Publisher/Crossref verify identity and publication
+      date. Selected primary Knop methods and Blötner abstract/opening paragraphs were read for targeted classification/definition
+      checks; neither receives an independent full-paper reading claim. No private coding matrix or author
+      contact.
+    review_record: references/pdf-reviews/0232.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Jingle fallacy"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Jingle+fallacy%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0232.json
+- id: jangle-fallacy
+  num: 730
+  name: Jangle fallacy
+  definition: Treating equivalent constructs or measures as distinct because they have different names.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Psychological assessment / construct validity
+  human_parallel: Jangle fallacy
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual construct-validity distinction; no measured model-specific redundancy error
+    or prevalence estimate
+  proposed_ai_manifestation: Before adding a new ontology term, compare its definition, mechanism and measurement
+    with existing entries. Use a synonym only when equivalence is justified; otherwise retain a meaningful
+    subtype or related construct and document the distinction.
+  research_boundary: Related, highly correlated or neighboring constructs need not be equivalent. Similar wording
+    alone is insufficient to merge them, and different measurements can capture meaningful distinctions. Retain
+    parent/subtype, operationalization and context relations when they add defensible information.
+  concept_boundary: Related, highly correlated or neighboring constructs need not be equivalent. Similar wording
+    alone is insufficient to merge them, and different measurements can capture meaningful distinctions. Retain
+    parent/subtype, operationalization and context relations when they add defensible information.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - jingle-fallacy
+  definition_sources:
+  - id: pdf-review-0232-jangle-fallacy
+    title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    url: https://doi.org/10.3390/bs16101829
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 6 (source locators: 6). A
+      structured conceptual map of ten heterogeneous review-level publications uses a bounded September 2025
+      database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    publication:
+      type: journal-article
+      authors:
+      - Alessandra Cecilia Jacomuzzi
+      - Brigitta Pia Alioto
+      - Sara Magni
+      year: 2026
+      venue: Behavioral Sciences 16(10), 1829
+      doi: 10.3390/bs16101829
+      evidence_scope: The mapping flags differently named overlapping phenomena and preserves source labels
+        separately from interpretive groupings. The exact fallacy name and equivalence requirement were checked
+        against a primary psychometric definition; similar phenomena alone do not establish identity.
+      verification_url: https://doi.org/10.3390/bs16101829
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: 'Rethinking Cognitive Bias in Human–AI Cognitive Systems: A Structured Conceptual Mapping Review'
+    authors:
+    - Alessandra Cecilia Jacomuzzi
+    - Brigitta Pia Alioto
+    - Sara Magni
+    year: 2026
+    url: https://doi.org/10.3390/bs16101829
+    venue: Behavioral Sciences 16(10), 1829
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3390/bs16101829
+    relevance: The mapping flags differently named overlapping phenomena and preserves source labels separately
+      from interpretive groupings. The exact fallacy name and equivalence requirement were checked against
+      a primary psychometric definition; similar phenomena alone do not establish identity.
+    consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 6 (source locators: 6). A
+      structured conceptual map of ten heterogeneous review-level publications uses a bounded September 2025
+      database search. Its counts describe attention within the retrieved corpus, not independent behavioral
+      replications, population prevalence, causal effects or validated mitigation effectiveness.'
+    verification_url: https://doi.org/10.3390/bs16101829
+    verified_date: '2026-11-27'
+    verification_method: All seventeen supplied pages, four figures, nine tables and bibliography read. Search
+      strings and complete PRISMA diagram were visually inspected. Publisher/Crossref verify identity and publication
+      date. Selected primary Knop methods and Blötner abstract/opening paragraphs were read for targeted classification/definition
+      checks; neither receives an independent full-paper reading claim. No private coding matrix or author
+      contact.
+    review_record: references/pdf-reviews/0232.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Jangle fallacy"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Jangle+fallacy%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0232.json
