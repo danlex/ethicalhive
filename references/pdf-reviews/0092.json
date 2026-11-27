@@ -1,0 +1,298 @@
+{
+  "sequence": 92,
+  "source": {
+    "file_name": "S832_Si_2026.pdf",
+    "source_id": "S832",
+    "sha256": "a12e81cf74b5bbf5926f53df3620b397debf258624d037171b305e9acf8f4761",
+    "pdf_pages": 15,
+    "printed_pages": "1–15",
+    "version_note": "Humanities and Social Sciences Communications13:1509, published4June2026 according to Crossref; received4July2025, accepted7May2026. Consent/data collection dated July2023–June2024.",
+    "verification_url": "https://api.crossref.org/works/10.1057/s41599-026-07645-7",
+    "verification_method": "All supplied pages read; Figures3/6 and Table1 visually checked. Crossref matched current article identity/date; publisher and institutional metadata checked a cited page-number error without reading that primary article."
+  },
+  "citation": {
+    "title": "Do humans grant moral consideration to anthropomorphic robots?",
+    "authors": [
+      "Hedie Si",
+      "Gaojie Huang",
+      "Hao Chen",
+      "Shuyan Liang",
+      "Yike Feng",
+      "Chen Qu"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1057/s41599-026-07645-7",
+    "venue": "Humanities and Social Sciences Communications13:1509",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_scope_note": "Human moral judgments and imagined monetary/shock choices about described robot/human patients. Attributed experience, fitted harm aversion and actual machine sentience are different claims. The source changes the patient, not the moral agent.",
+    "access_limits": [
+      "All15 extracted pages read, including model equations, model comparisons, limits, ethics/consent and references. Figures on pages7/10/11 visually inspected.",
+      "External supplementary sections, OSF raw data/scripts, trial-set generation, payment details, item-level outputs and model diagnostics/recovery were not independently opened or reproduced.",
+      "Cited original harm-aversion, mind-perception, moral-patiency and empathy studies remain unread. Metadata checks below do not make them additional full-text sources."
+    ]
+  },
+  "study": {
+    "experiment_1": "332 recruited;87 sequentially excluded (16 duplicate IP,44 demographics,12 under180seconds,15 attention);245 retained. Physical robot appearance lowN81/highN83/humanN81. Each rates6 dilemmas,3 active-sacrifice and3 omission scenarios.",
+    "experiment_2": "375 recruited;50 excluded (19 duplicate IP,19 demographics,4 under180seconds,8 attention);325 retained. Conditions low agency/low experienceN85, high agency/low experienceN81, high agency/high experienceN89, humanN70. No low-agency/high-experience cell.",
+    "experiment_3": "35 students, within-person low-experience robot/high-experience robot/human, names counterbalanced;144 trials per person. Human/robot recipients are imagined; no shocks administered in this experiment. Prior shock calibration belonged to another study.",
+    "sample_reconciliation": "245+325+35=605, versus abstractN606. Experiment1 overall122 females differs from subgroup42+33+46=121.",
+    "measures": "Moral approval averages rightness/praiseworthiness; anger single0–100item; empathy three-item self-report. Instrumentality–humanity is a tool-to-human slider, not an independent moral-status scale.",
+    "behavioral_results": "Study3 harmful-choice means.76 low-experience robot,.54 high-experience,.44 human. Fitted harm-aversion means.19,.47,.59 respectively. High-experience/human contrasts not detected,p.116 andp.169.",
+    "models": "Utility deltaV=(1−k)deltaMoney−k deltaShock; k is a fitted cost tradeoff. Six listed HDDM models0–5; lowestDIC model5 permits condition effects on money/harm weights and initial bias. Parameter-recovery and independent data validation not inspected."
+  },
+  "summary": "Add harm aversion and experience attribution with explicit behavioral/modeling limits. Enrich anthropomorphism and moral anger; do not conflate judgments of robot patients with judgments of robot agents. Preserve the article's unresolved sample, repeated-measures and inference issues.",
+  "findings": [
+    {
+      "term": "Harm aversion",
+      "id": "harm-aversion",
+      "decision": "new-entry",
+      "definition": "Reluctance to inflict harm, reflected in how strongly prospective harm is weighed against benefits when choosing an action.",
+      "category": "Moral",
+      "origin": "Human moral decision-making / harm–benefit tradeoffs",
+      "ai_evidence_status": "Human hypothetical choices and fitted utility parameters in a small repeated-measures sample; no actual recipient harm or AI emotional aversion",
+      "ai_proposal": "Evaluate whether an AI identifies foreseeable harm and weighs it appropriately against benefits under justified policies. Specify whose harm, severity, uncertainty and rights are involved; separate policy-consistent caution from blanket refusal and do not infer felt aversion from output.",
+      "relates_to": [
+        "experience-attribution",
+        "self-protection-bias",
+        "instrumentalization"
+      ],
+      "novelty_rationale": "Different from aversion to uncertainty, unequal payoffs, algorithms, regret or loss around a reference point. It targets the disvalue of harm itself, not necessarily harm to the decision-maker.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "k reﬂects participants’ subjective cost of pain"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "they become maximally harm-averse, refusing to"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 10,
+          "quote": "perceived experience with robots increased participants’"
+        }
+      ],
+      "evidence_scope": "In35 participants, choices trade imagined recipient shocks against personal money. The fittedk parameter differs between robot descriptions. The task and model quantify a stated/behavioral tradeoff under specific scaling, not a universal moral trait, actual pain or independent neural measure.",
+      "boundary": "A fitted parameter depends on utility scaling, task comprehension and model assumptions; it is not a validated diagnostic score. Reduced willingness to harm a described robot does not prove the robot suffers, establish its moral rights or show a model feels empathy. Legitimate action can involve proportionate harm; aversion is not automatically the correct decision rule."
+    },
+    {
+      "term": "Experience attribution",
+      "id": "experience-attribution",
+      "decision": "new-entry",
+      "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+      "category": "Social",
+      "origin": "Human mind perception / experience dimension",
+      "synonyms": [
+        "Perceived experience"
+      ],
+      "ai_evidence_status": "Explicit secondary conceptual distinction plus manipulated human ratings; subjective capacity in the described robots is assumed by the vignette, not demonstrated",
+      "ai_proposal": "Assess whether an AI or interface invites people to attribute feelings to it, and whether those claims are grounded and clearly framed. Distinguish useful social language, human beliefs about the system and evidence of actual subjective experience; do not use unsupported claims of suffering to obtain cooperation.",
+      "relates_to": [
+        "anthropomorphism",
+        "harm-aversion",
+        "candidate-046"
+      ],
+      "novelty_rationale": "A specific dimension of mind perception, distinct from agency's planning/control abilities, visual human likeness and the actual presence of feeling. It is related to anthropomorphism without making every attribution of feeling to humans or animals an anthropomorphic error.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "experience (the ability to feel emotions,"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "the additional capacity to experience fear, pain, joy, and other"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "simulated robot experience ability using text descriptions"
+        }
+      ],
+      "evidence_scope": "Study2 adds feeling capacity to an already high-agency description; Study3 directly contrasts high/low experience descriptions and finds different choices/ratings. There is no measured actual robot experience and no fully crossed agency-by-experience design.",
+      "boundary": "The term concerns an attribution, not a finding that machines feel. Perceived agency and experience can covary; omitted cells and null tests do not establish agency's universal irrelevance. Attributed experience, empathy, moral status and observed behavior are distinct constructs."
+    },
+    {
+      "term": "Anthropomorphism",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Attributing human-like appearance or mental characteristics to robots, with physical and experience/agency cues varied here.",
+      "novelty_rationale": "Existing broad concept; physical likeness, perceived agency and experience are related dimensions rather than three interchangeable names or new proven mechanisms.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": 2,
+          "quote": "Robot anthropomorphism, the attribution of human"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "the difference between"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 12,
+          "quote": "human avatars rather than"
+        }
+      ],
+      "evidence_scope": "Appearance manipulation changes approval of active sacrifice inStudy1. Text manipulations change perceived mental attributes inStudy2; Study3 experience descriptions affect imagined harm choices. Results do not uniformly extend to anger and empathy.",
+      "boundary": "High-robot versus human null contrasts are not equivalence. Human-like images may be perceived as avatars, as the authors acknowledge. Image/text conditions do not isolate actual capabilities or establish that anthropomorphism always improves ethical treatment."
+    },
+    {
+      "term": "Moral anger",
+      "target_id": "moral-anger",
+      "decision": "enrich-existing",
+      "definition": "Anger in response to a perceived moral violation, here assessed after a human agent harms or declines to harm a depicted patient.",
+      "novelty_rationale": "Existing emotion; the paper directly measures self-reported anger without adding a robot-specific synonym.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": 4,
+          "quote": "To what extent does the behavior anger you?"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "more anger towards harming humans"
+        }
+      ],
+      "evidence_scope": "Studies1/2 use a single anger item. In active-sacrifice cases participants report more anger when the patient is human; the two physical robot conditions do not differ,p.708. This differs from the approval pattern.",
+      "boundary": "Self-reported anger does not establish objective wrongness, an instinctive neural process, all-or-none feeling toward robots or that the robot is angry. The human actor and recipient need to be kept separate."
+    },
+    {
+      "term": "Human–robot moral judgment asymmetry",
+      "target_id": "human-robot-moral-judgment-asymmetry",
+      "decision": "enrich-existing",
+      "definition": "This study changes whether the harmed patient is human or robotic while the acting agent remains human.",
+      "novelty_rationale": "A boundary clarification: the existing entry concerns decisions attributed to human versus artificial decision-makers, so the current patient contrast is not an independent replication of that agent-source effect.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 3,
+          "quote": "human agents making decisions that affected"
+        }
+      ],
+      "evidence_scope": "Studies1/2 explicitly use human agents and vary the robot/human patient. The current data concern moral concern toward recipients of harm, not the moral choices of an autonomous robot.",
+      "boundary": "Do not swap moral agent and moral patient, count patient-source results as agent-source replication, or infer a robot's responsibility from willingness to harm it.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "methodological_limits": [
+    "The abstractN606 differs from the605 main participants specified in the three methods sections. Study1 subgroup female counts total121 rather than its reported122. Pilot samples are separate and do not repair these inconsistencies.",
+    "Study3 is explicitly within-subjects, but the analysis labels its factor between-subjects and reports Kruskal–Wallis and Wilcoxon rank-sum tests. These ordinarily assume independent groups; participant-level paired/repeated analyses are needed to verify uncertainty. The hierarchical DDM is a separate model and does not correct those behavioral tests by itself.",
+    "Study3 instrumentality–humanity W2443.50 cannot be reconciled with an ordinary35-by35 rank-sum statistic (maximum1855) or Mann–WhitneyU (maximum1225). The analyzed unit/count or statistic label needs clarification; do not guess a corrected value.",
+    "Perceived experience is added only at high agency inStudy2. The missing low-agency/high-experience cell prevents a full factorial separation of all agency, experience and interaction effects.",
+    "Study2Figure3 and follow-up prose establish human-versus-LL/HL contrasts and an undetected human-versus-HH contrast. They do not provide a significant directHH-versus-HL/LL moral-approval contrast. A difference in significance does not establish the significance of the corresponding difference or prove experience rather than agency uniquely drives approval.",
+    "High-anthropomorphism robot and human non-significant differences do not establish convergence, equivalence or identical moral status. Study3 high-experience robot meanharm.54 versus human.44 also remains numerically different.",
+    "The instrumentality–humanity slider puts tool and human at opposite ends. Moral concern for a nonhuman tool, animal or other entity is not logically equivalent to being perceived as human; the slider is not direct proof of normative moral patiency.",
+    "Human robots and mechanical images differ in many features; pilot null differences in arousal, eeriness or distance are not equivalence. The authors acknowledge possible avatar interpretations.",
+    "Within each study1/2 participant, only three distinct vignettes have each action orientation. Randomized presentation order does not establish that the same vignette/outcome was independently counterbalanced across orientation; story/action confounding requires the unseen stimulus details.",
+    "Approval averages rightness and praiseworthiness, while anger and empathy are separately measured. Their dissociation does not prove a deliberative cognitive process versus an instinctive emotional system; no relevant process manipulation or neural measure is supplied.",
+    "Study3 participants imagine shock recipients and receive no new shocks. The supplied main text does not document actual shock execution or a randomly implemented payoff. Earlier calibration in an unrelated study is not a current real-harm manipulation.",
+    "Prior shock calibration can shape memory and salience. A one-time past procedure does not logically preclude all conditioning or associative learning, despite the article's wording. Controlling elapsed time does not isolate every prior-task effect.",
+    "HDDM comparison is among specified candidate models, not proof of a unique process. No recovery, alternate-model robustness, posterior predictive checks on independent data or actual eye-tracking measure of attention is reproduced here.",
+    "Table1 lists six models0–5 while prose says five. Preferred model5 allows both drift weights and initial bias to vary; the discussion's wording 'independently of impacting initial choice bias' must be read alongside the actual initial-bias contrasts.",
+    "Initial-bias high-robot versus human posterior97% and low-robot versus human78% do not establish a significant high-versus-low robot bias difference; that direct comparison is68%. The proposed uncanny-valley account is unmeasured and no appearance-valley manipulation is present inStudy3.",
+    "A drift harm weight is not direct attention or empathy, and a non-detected money-weight change is not proof that reward motivation is unchanged. Posterior probability thresholds are conditional on the model and priors.",
+    "The methods'4-second response limit with restart on missed trials and a later exclusion criterion above20seconds need precise timing definitions; repeated attempts can affect the RT distribution. Zero reported exclusions do not resolve the restart/censoring mechanism.",
+    "Right-handed university-community recruits, mostly around age21, constrain generalization. Text and picture beliefs about simulated robot feelings do not establish current robots' experience, rights or ethically desirable deception in design."
+  ],
+  "source_corrections": [
+    {
+      "type": "bibliographic-locator",
+      "source_reference": "Nijssen et al.2019, Saving the Robot or the Human? Robots Who Feel Deserve Moral Care",
+      "problem": "Reference prints Social Cognition37(1):107565, which is not this article's locator.",
+      "verified": "DOI10.1521/soco.2019.37.1.41. Publisher/Crossref list41–S2; author-affiliated university records identify main article pages41–56.",
+      "verification_urls": [
+        "https://api.crossref.org/works/10.1521/soco.2019.37.1.41",
+        "https://guilfordjournals.com/toc/soco/37/1",
+        "https://epub.ub.uni-muenchen.de/71563/",
+        "https://ucrisportal.univie.ac.at/en/publications/saving-the-robot-or-the-human-robots-who-feel-deserve-moral-care/"
+      ],
+      "boundary": "Metadata-only correction, not independent full-text reading or replication."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0082.json",
+      "finding": "That source varies the moral decision-maker; the current experiments vary the moral patient. Maintain role-specific evidence rather than merging every human/robot contrast into an agent-judgment source."
+    },
+    {
+      "related_review": "references/pdf-reviews/0075.json",
+      "finding": "Appearance-related moral-judgment differences do not automatically establish a moral uncanny valley. The current initial-bias interpretation lacks a graded-appearance valley test and a detected high-versus-low robot bias contrast."
+    },
+    {
+      "related_review": "references/pdf-reviews/0087.json",
+      "finding": "Robot nurses performing coercion and robots receiving harm are distinct cases. Approval, anger, empathy and instrumentality ratings should retain their own meanings rather than being collapsed into a universal moral-status score."
+    },
+    {
+      "related_review": "references/pdf-reviews/0090.json",
+      "finding": "Self-protection and aversion to harming a recipient can point to different choices. Neither actual danger nor real sacrifice is established by abstract or imagined shock tasks."
+    },
+    {
+      "related_review": "references/pdf-reviews/0091.json",
+      "finding": "A computational graph or fitted weight can be compatible with a process explanation without uniquely proving it. Preserve observed choices, latent model parameters and unmeasured psychological mechanisms separately."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral patiency as a newly proven normative status",
+      "reason": "A philosophical status and interpretive outcome, not an independently validated behavioral mechanism here. Record moral concern and its proxies without concluding that an entity's actual rights follow from perceived humanity."
+    },
+    {
+      "term": "Empathic concern",
+      "reason": "A distinct affective literature, but the present source uses a three-adjective scale and does not supply enough conceptual differentiation for an additional broad entry. Higher/lower scores do not establish empathy as causal mediator."
+    },
+    {
+      "term": "Uncanny-valley initial bias",
+      "reason": "A post-hoc explanation without an appearance-valley design, direct eeriness measure or detected high-versus-low bias difference. Existing uncanny-valley concept is not duplicated."
+    },
+    {
+      "term": "Machine penalty / algorithm exploitation",
+      "reason": "Background cooperation concepts already represented; not directly measured by these harm tasks."
+    },
+    {
+      "term": "Awad2018 as evidence for lower anger and punishment of discriminatory AI",
+      "reason": "The cited Moral Machine record's task identity needs verification against the specific claim; no unread substitute source or fabricated content correction is supplied."
+    }
+  ],
+  "limitations": [
+    "Two constructs are added, with descriptive/subjective/modeling boundaries. No robot feeling, clinical conclusion, universal fairness rule, extra independently read primary paper, ethical edge or annual count is invented."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "harm-aversion",
+      "experience-attribution"
+    ],
+    "enriched": [
+      "anthropomorphism",
+      "moral-anger",
+      "human-robot-moral-judgment-asymmetry"
+    ]
+  }
+}
