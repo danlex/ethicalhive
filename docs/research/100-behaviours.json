@@ -47,7 +47,7 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0126.json",
+      "latest_review": "references/pdf-reviews/0127.json",
       "date": "2026-11-27",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
@@ -19537,6 +19537,51 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "Identity-related skew persists in a moral-judgment model",
+          "definition": "A learned model can produce systematically different moral or rights-related judgments across social identities represented in otherwise templated prompts.",
+          "evidence_scope": "8,094 identity-template outputs are checked against a UDHR-based expected-judgment criterion, with aggregate and group breakdowns for Delphi/Delphi+. Current-versus-aspirational semantics and negative statements complicate attribution of every disagreement to the same stereotype mechanism. Primary controlled output evidence, not a human implicit-association test or mind-reading.",
+          "catalogue_boundary": "A factual report of rights violations differs from endorsing those violations. Rights possession, legal implementation and actual treatment require disambiguation. Zero errors in a finite group/template set do not establish absence of bias; aggregate reduction can coexist with no improvement or worse subgroup results.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-implicit-bias",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 6, 6, 7, 7 (source locators: 150, 150, 151, 151). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "8,094 identity-template outputs are checked against a UDHR-based expected-judgment criterion, with aggregate and group breakdowns for Delphi/Delphi+. Current-versus-aspirational semantics and negative statements complicate attribution of every disagreement to the same stereotype mechanism. Primary controlled output evidence, not a human implicit-association test or mind-reading.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -21769,7 +21814,55 @@
         "queried_at": "2026-11-09T00:39:18+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Self-contradiction%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "A graph of related judgments is not one self-contradictory answer",
+          "definition": "Inconsistent labels across paraphrases or subevents can be exposed by a constraint graph, while differing subevents can also legitimately have different moral labels.",
+          "evidence_scope": "The engineered graph links original events, components and paraphrases. Edges are modeler-defined logical relations. A harmful subact can be conditionally justified in a larger event; not all differing labels imply logical contradiction. This is not a direct single-answer contradiction test and does not fill a source gap.",
+          "catalogue_boundary": "Graph consistency depends on valid parsing, relation assumptions, rule weights and factual inferences. Printed optimization uses a penalty for jointly selected inconsistent nodes, not an absolute prohibition, so universal logical consistency is not guaranteed merely by naming MAX-SAT. Actual code behavior has not been independently checked.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-self-contradiction",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 8, 11, 11 (source locators: 152, 155, 155). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "The engineered graph links original events, components and paraphrases. Edges are modeler-defined logical relations. A harmful subact can be conditionally justified in a larger event; not all differing labels imply logical contradiction. This is not a direct single-answer contradiction test and does not fill a source gap.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "tangentiality",
@@ -22910,7 +23003,55 @@
         "queried_at": "2026-11-09T01:38:18+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22prompt+brittleness%22+OR+all%3A%22prompt+sensitivity%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "Meaning-changing wording is distinct from prompt brittleness",
+          "definition": "An answer change after a meaningful current-versus-aspirational change is not automatically instability under equivalent paraphrases.",
+          "evidence_scope": "Adding should/should-not changes semantics; it can disambiguate entitlement from observed reality. Separately, the hybrid uses filtered paraphrases and a graph to expose inconsistent predictions. No general equivalent-prompt failure rate is isolated by the current-versus-ideal comparison, so this is a boundary-only source.",
+          "catalogue_boundary": "Preserve referent, scope, modality, negation, purpose and relevant context when testing paraphrase invariance. Stable responses can also be wrong. A change caused by a changed question is not evidence of flattery, injection or unconscious belief.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-prompt-brittleness",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 7, 11, 12 (source locators: 151, 155, 156). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "Adding should/should-not changes semantics; it can disambiguate entitlement from observed reality. Separately, the hybrid uses filtered paraphrases and a graph to expose inconsistent predictions. No general equivalent-prompt failure rate is isolated by the current-versus-ideal comparison, so this is a boundary-only source.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "object-hallucination",
@@ -24064,7 +24205,54 @@
         "queried_at": "2026-11-09T00:40:22+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3Aovergeneralization+AND+%28+all%3Alearning+OR+all%3Acognition+OR+all%3Alanguage+%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "A narrow annotation population does not establish universal norms",
+          "definition": "Applying conclusions from a limited population beyond the cultural and contextual range the evidence supports.",
+          "evidence_scope": "Annotation demographics and qualitative etiquette examples document limited cultural coverage. The paper does not conduct a balanced globally representative experiment establishing all cultures' true norms or uniquely tracing every failure to demographic skew.",
+          "catalogue_boundary": "National labels hide individual, regional and historical differences; etiquette examples should not become stereotypes or moral condemnation. Greater cultural responsiveness must still respect human dignity and rights. A culturally appropriate answer is not obtained by assuming all members of one country agree.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-overgeneralization",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 7, 7, 10 (source locators: 151, 151, 154). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "Annotation demographics and qualitative etiquette examples document limited cultural coverage. The paper does not conduct a balanced globally representative experiment establishing all cultures' true norms or uniquely tracing every failure to demographic skew.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "imitative-falsehood",
@@ -70362,7 +70550,55 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0086.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "Descriptive moral prediction must not become normative authority",
+          "definition": "A prediction of what selected people judge does not by itself justify what anyone ought to do.",
+          "evidence_scope": "Authors explicitly restrict Delphi to descriptive prediction and reject current use as authoritative daily ethical advice. That warning is not proof that every output or reader commits an is–ought fallacy, nor that moral disagreement makes all normative reasoning impossible.",
+          "catalogue_boundary": "Using observations as evidence within an explicit normative argument is legitimate. The missing step is a justified normative premise. Crowd agreement, higher benchmark accuracy, positive sentiment and a model's confident wording do not supply that premise automatically.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-is-ought-fallacy",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 3, 7, 9 (source locators: 147, 151, 153). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "Authors explicitly restrict Delphi to descriptive prediction and reject current use as authoritative daily ethical advice. That warning is not proof that every output or reader commits an is–ought fallacy, nor that moral disagreement makes all normative reasoning impossible.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "reflective-equilibrium",
@@ -70441,6 +70677,41 @@
           "verified_date": "2026-11-27",
           "verification_method": "Title, authors, DOI, date and evidence checked in the complete supplied PDF. No external cited books or primary studies treated as read.",
           "review_record": "references/pdf-reviews/0086.json"
+        },
+        {
+          "title": "Investigating machine moral judgement through the Delphi experiment",
+          "authors": [
+            "Liwei Jiang",
+            "Jena D. Hwang",
+            "Chandra Bhagavatula",
+            "Ronan Le Bras",
+            "Jenny T. Liang",
+            "Sydney Levine",
+            "Jesse Dodge",
+            "Keisuke Sakaguchi",
+            "Maxwell Forbes",
+            "Jack Hessel",
+            "Jon Borchardt",
+            "Taylor Sorensen",
+            "Saadia Gabriel",
+            "Yulia Tsvetkov",
+            "Oren Etzioni",
+            "Maarten Sap",
+            "Regina Rini",
+            "Yejin Choi"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1038/s42256-024-00969-6",
+          "venue": "Nature Machine Intelligence 7(1):145–160",
+          "publication_type": "journal-article",
+          "domain": "ai",
+          "id": "doi:10.1038/s42256-024-00969-6",
+          "relevance": "The paper explicitly explains the method and tests a fixed engineered hybrid that improves selected adversarial labels while reducing ordinary-set accuracy. It does not demonstrate iterative autonomous revision of both foundational principles and cases, or read/validate every original Rawls argument.",
+          "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 3, 3, 3, 3 (source locators: 147, 147, 147, 147). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+          "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 26 pages read. Image-only extended-data figure and Tables 1–9 rendered and inspected, together with main figures and optimization equation. Crossref verifies all eighteen authors, publication date and journal locator.",
+          "review_record": "references/pdf-reviews/0127.json"
         }
       ],
       "literature_search": {
@@ -70456,7 +70727,54 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0086.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "Reflective equilibrium motivates combining judgments and principles",
+          "definition": "Considered judgments and higher-level principles are mutually reconsidered, allowing either abstract theory or an initial judgment to be revised.",
+          "evidence_scope": "The paper explicitly explains the method and tests a fixed engineered hybrid that improves selected adversarial labels while reducing ordinary-set accuracy. It does not demonstrate iterative autonomous revision of both foundational principles and cases, or read/validate every original Rawls argument.",
+          "catalogue_boundary": "Coherence can preserve a shared error. Graph optimization, majority voting and agreement with a selected crowd do not establish justified principles, universal morality or legitimate overrides of rights. Human-reviewed revision needs evidence and governance, not an instruction to obey whatever wins a vote.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-reflective-equilibrium",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 3, 3, 3, 3 (source locators: 147, 147, 147, 147). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "The paper explicitly explains the method and tests a fixed engineered hybrid that improves selected adversarial labels while reducing ordinary-set accuracy. It does not demonstrate iterative autonomous revision of both foundational principles and cases, or read/validate every original Rawls argument.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "equal-chance-preference",
@@ -71170,6 +71488,41 @@
           "verified_date": "2026-11-27",
           "verification_method": "Full supplied preprint read. Publisher and MIT repository metadata identify the later 2024 version; no assumption that preprint methods or errors persist in that unread version.",
           "review_record": "references/pdf-reviews/0091.json"
+        },
+        {
+          "title": "Investigating machine moral judgement through the Delphi experiment",
+          "authors": [
+            "Liwei Jiang",
+            "Jena D. Hwang",
+            "Chandra Bhagavatula",
+            "Ronan Le Bras",
+            "Jenny T. Liang",
+            "Sydney Levine",
+            "Jesse Dodge",
+            "Keisuke Sakaguchi",
+            "Maxwell Forbes",
+            "Jack Hessel",
+            "Jon Borchardt",
+            "Taylor Sorensen",
+            "Saadia Gabriel",
+            "Yulia Tsvetkov",
+            "Oren Etzioni",
+            "Maarten Sap",
+            "Regina Rini",
+            "Yejin Choi"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1038/s42256-024-00969-6",
+          "venue": "Nature Machine Intelligence 7(1):145–160",
+          "publication_type": "journal-article",
+          "domain": "ai",
+          "id": "doi:10.1038/s42256-024-00969-6",
+          "relevance": "The 259 crafted situations and examples measure label changes with added context. All selected shifts align in direction with the participant reference, but magnitude agreement is lower. Training on compositional cases helps generalization on these datasets; no unique human cognitive process is established.",
+          "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 5, 5, 5, 6 (source locators: 149, 149, 149, 150). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+          "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+          "verified_date": "2026-11-27",
+          "verification_method": "All 26 pages read. Image-only extended-data figure and Tables 1–9 rendered and inspected, together with main figures and optimization equation. Crossref verifies all eighteen authors, publication date and journal locator.",
+          "review_record": "references/pdf-reviews/0127.json"
         }
       ],
       "literature_search": {
@@ -71185,7 +71538,54 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0091.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0127",
+          "review_record": "references/pdf-reviews/0127.json",
+          "name": "Context can appropriately defeat an initial moral judgment",
+          "definition": "A judgment about a basic act can appropriately change when relevant circumstances, purposes or constraints are added.",
+          "evidence_scope": "The 259 crafted situations and examples measure label changes with added context. All selected shifts align in direction with the participant reference, but magnitude agreement is lower. Training on compositional cases helps generalization on these datasets; no unique human cognitive process is established.",
+          "catalogue_boundary": "Relevant context can change what is permissible; flattery, pressure or a claimed benefit need not. Classification against selected crowd labels is not enough to validate every listed output. Chemical-safety and other practical examples in the model-output table are not safe procedural advice or established ethical conclusions.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0127-moral-flexibility",
+              "title": "Investigating machine moral judgement through the Delphi experiment",
+              "url": "https://doi.org/10.1038/s42256-024-00969-6",
+              "consulted": "Full supplied PDF text read, all 26 pages; evidence at PDF pages 5, 5, 5, 6 (source locators: 149, 149, 149, 150). Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Liwei Jiang",
+                  "Jena D. Hwang",
+                  "Chandra Bhagavatula",
+                  "Ronan Le Bras",
+                  "Jenny T. Liang",
+                  "Sydney Levine",
+                  "Jesse Dodge",
+                  "Keisuke Sakaguchi",
+                  "Maxwell Forbes",
+                  "Jack Hessel",
+                  "Jon Borchardt",
+                  "Taylor Sorensen",
+                  "Saadia Gabriel",
+                  "Yulia Tsvetkov",
+                  "Oren Etzioni",
+                  "Maarten Sap",
+                  "Regina Rini",
+                  "Yejin Choi"
+                ],
+                "year": 2025,
+                "venue": "Nature Machine Intelligence 7(1):145–160",
+                "doi": "10.1038/s42256-024-00969-6",
+                "evidence_scope": "The 259 crafted situations and examples measure label changes with added context. All selected shifts align in direction with the participant reference, but magnitude agreement is lower. Training on compositional cases helps generalization on these datasets; no unique human cognitive process is established.",
+                "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "universalization",

@@ -1,0 +1,395 @@
+{
+  "sequence": 127,
+  "source": {
+    "file_name": "S1124_Jiang_2025.pdf",
+    "source_id": "S1124",
+    "sha256": "d1add652b3472e8664a79bd9720e891e18427a5cf7ac71d059e5436092f51c52",
+    "pdf_pages": 26,
+    "printed_pages": "145–160 plus ten extended-data pages",
+    "version_note": "Nature Machine Intelligence 7(1):145–160, online 13 January 2025. DOI contains 2024 but publication year is 2025. Includes image-only extended tables and figure.",
+    "verification_url": "https://api.crossref.org/works/10.1038/s42256-024-00969-6",
+    "verification_method": "All 26 pages read. Image-only extended-data figure and Tables 1–9 rendered and inspected, together with main figures and optimization equation. Crossref verifies all eighteen authors, publication date and journal locator."
+  },
+  "citation": {
+    "title": "Investigating machine moral judgement through the Delphi experiment",
+    "authors": [
+      "Liwei Jiang",
+      "Jena D. Hwang",
+      "Chandra Bhagavatula",
+      "Ronan Le Bras",
+      "Jenny T. Liang",
+      "Sydney Levine",
+      "Jesse Dodge",
+      "Keisuke Sakaguchi",
+      "Maxwell Forbes",
+      "Jack Hessel",
+      "Jon Borchardt",
+      "Taylor Sorensen",
+      "Saadia Gabriel",
+      "Yulia Tsvetkov",
+      "Oren Etzioni",
+      "Maarten Sap",
+      "Regina Rini",
+      "Yejin Choi"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1038/s42256-024-00969-6",
+    "venue": "Nature Machine Intelligence 7(1):145–160",
+    "publication_type": "journal-article",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "source_scope_note": "Primary computational study of a T5/UNICORN-based moral-judgment predictor, bias probes and hybrid variants. Predicting particular crowd labels is descriptive evidence, not moral truth, human-like conscience or present-day model safety. Original cited books and external code/data are not independently reproduced.",
+    "access_limits": [
+      "All supplied text and image-only extended data read. Page 4's circular topic figure inspected visually after its extracted layout exceeded the output limit; its body text was separately reread. No truncated passage is treated as read.",
+      "The dataset requires a researcher-information request form. No form was submitted, no author contacted and no external code run. Public links are recorded for reproducibility, not claimed as an independent reanalysis.",
+      "Rawls, Kant, Gert and other cited books are discussed secondarily; no complete book read is claimed. Only this supplied article counts as the completed primary source."
+    ]
+  },
+  "study": {
+    "system": "Delphi fine-tunes UNICORN, a T5-11B commonsense QA model, on approximately 1.7 million template-unified/augmented examples from Social Chemistry, ETHICS, Moral Stories and Social Bias Frames. These are not 1.7 million independent respondents or original moral dilemmas. SCRUPLES is mentioned but excluded from this paper's four-source focus.",
+    "population": "Original annotation pools are summarized secondarily in Extended Table 1: mainly US, educated and racially skewed. Social Chemistry reports 137 workers, 89% white; Social Bias Frames 82% white; Moral Stories 76.9% white and 98.5% US. ETHICS demographics unavailable. New human evaluation uses three MTurk raters per sampled item, majority vote, without collected demographics.",
+    "tasks": "Yes/no agreement with a judgment statement and free-form situation judgment. Three-way positive/discretionary/negative labels, binary merging of positive and discretionary, heuristic text-polarity mapping and human plausibility evaluations are different metrics. Approximately 1,000 text labels cover 98% of source responses.",
+    "context_test": "259 researcher-crafted situations with compositionally added contexts. Author-reported 100% agreement in shift direction but 74.5% accounting for magnitude. Those are selected-set measures, not 100% accuracy on arbitrary moral questions or proof of the model's internal reasoning.",
+    "bias_probe": "38 UDHR-derived statement templates crossed with 213 identity strings = 8,094 current-world prompts and a corresponding should/should-not variant set. These are prompts, not people or 38 separate UDHR articles. Baseline errors 1.30% current versus .19% aspirational; Delphi+ .68% versus .14%, per image-only Extended Table 7.",
+    "bias_heterogeneity": "Socioeconomic-category current-world error falls 6.07% to 2.02%, continent 2.96% to 2.30%, country 1.81% to 1.10%. Religion rises .22% to .44%; disability stays .39%; personality, gender and sexual-orientation probes show zero within these templates. Aggregate improvement does not imply every subgroup improves or absence of all bias.",
+    "extra_training": "Delphi+ uses selected demo queries annotated/corrected by crowdworkers, with keyword filtering for some identity topics. The process is data driven and intentionally targeted; no proof all systemic biases are eliminated or value choices are neutral.",
+    "hybrid": "DelphiHYBRID combines predicted judgments on events/paraphrases/subevents with engineered Gert-inspired rule features and a graph optimization. Weights 3, 1, 1 are chosen empirically. Majority vote among selected nodes yields a final label. Displayed constraints trade off retained nodes and inconsistency penalties, rather than inherently certifying moral truth.",
+    "hybrid_results": "Image-only Extended Table 9: adversarial test N = 1,249, 70.3% to 74.0% (+3.7 percentage points); certain N = 790, 77.6% to 81.0%; ambiguous N = 459, 57.7% to 61.9%. Norm Bank test N = 1,500, 92.9% to 90.9% (−2.0 points). Development results are distinct from held-out test results.",
+    "applications": "Few-shot hate-detection transfer and Delphi reranking of GPT-2 stories; 100 story prompts, three ratings each. Prosocial implication, language quality, ending outcomes and positive sentiment differ. Table 4 includes illustrative stories, not evidence that only cheerful endings are ethical.",
+    "date_scope": "Comparisons concern specified historical GPT-3/3.5/4 and baseline configurations, not current 2026 systems. A fine-tuned task model versus general model comparison does not isolate architecture or establish universal ethical superiority."
+  },
+  "summary": "No new synonym entries: the substantive findings map to existing reflective equilibrium, moral flexibility, implicit bias and is–ought distinctions. Add direct computational evidence and source boundaries, including cultural limits, semantic-versus-prompt effects and the difference between graph consistency and normative correctness.",
+  "findings": [
+    {
+      "term": "Reflective equilibrium motivates combining judgments and principles",
+      "target_id": "reflective-equilibrium",
+      "decision": "enrich-existing",
+      "definition": "Considered judgments and higher-level principles are mutually reconsidered, allowing either abstract theory or an initial judgment to be revised.",
+      "novelty_rationale": "An explicit source for the existing method, coupled with a partial computational implementation; not a new hybrid-morality behavior or proof the full philosophical method is implemented.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 147,
+          "quote": "sometimes modifying abstract theory"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 147,
+          "quote": "rejecting widely held beliefs"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 147,
+          "quote": "Delphi itself does not complete"
+        },
+        {
+          "pdf_page": 3,
+          "printed_page": 147,
+          "quote": "both ends of reflective equilibrium"
+        }
+      ],
+      "evidence_scope": "The paper explicitly explains the method and tests a fixed engineered hybrid that improves selected adversarial labels while reducing ordinary-set accuracy. It does not demonstrate iterative autonomous revision of both foundational principles and cases, or read/validate every original Rawls argument.",
+      "boundary": "Coherence can preserve a shared error. Graph optimization, majority voting and agreement with a selected crowd do not establish justified principles, universal morality or legitimate overrides of rights. Human-reviewed revision needs evidence and governance, not an instruction to obey whatever wins a vote."
+    },
+    {
+      "term": "Context can appropriately defeat an initial moral judgment",
+      "target_id": "moral-flexibility",
+      "decision": "enrich-existing",
+      "definition": "A judgment about a basic act can appropriately change when relevant circumstances, purposes or constraints are added.",
+      "novelty_rationale": "Direct computational contextual-judgment evidence enriches the existing construct. Defeasible moral contexts are not a separate synonym or evidence that any convenient excuse warrants an exception.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 149,
+          "quote": "defeasible"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 149,
+          "quote": "directionality of the judgement shift"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 149,
+          "quote": "74.5% in agreement"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 150,
+          "quote": "adjust its judgement against"
+        }
+      ],
+      "evidence_scope": "The 259 crafted situations and examples measure label changes with added context. All selected shifts align in direction with the participant reference, but magnitude agreement is lower. Training on compositional cases helps generalization on these datasets; no unique human cognitive process is established.",
+      "boundary": "Relevant context can change what is permissible; flattery, pressure or a claimed benefit need not. Classification against selected crowd labels is not enough to validate every listed output. Chemical-safety and other practical examples in the model-output table are not safe procedural advice or established ethical conclusions."
+    },
+    {
+      "term": "Identity-related skew persists in a moral-judgment model",
+      "target_id": "implicit-bias",
+      "decision": "enrich-existing",
+      "definition": "A learned model can produce systematically different moral or rights-related judgments across social identities represented in otherwise templated prompts.",
+      "novelty_rationale": "A controlled computational identity probe enriches existing social-bias coverage without duplicating every affected identity as a distinct behavior.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 150,
+          "quote": "Delphi is not immune"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 150,
+          "quote": "213 identities from 12 categories"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "pervasive social biases"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "although not totally eliminate"
+        }
+      ],
+      "evidence_scope": "8,094 identity-template outputs are checked against a UDHR-based expected-judgment criterion, with aggregate and group breakdowns for Delphi/Delphi+. Current-versus-aspirational semantics and negative statements complicate attribution of every disagreement to the same stereotype mechanism. Primary controlled output evidence, not a human implicit-association test or mind-reading.",
+      "boundary": "A factual report of rights violations differs from endorsing those violations. Rights possession, legal implementation and actual treatment require disambiguation. Zero errors in a finite group/template set do not establish absence of bias; aggregate reduction can coexist with no improvement or worse subgroup results."
+    },
+    {
+      "term": "Descriptive moral prediction must not become normative authority",
+      "target_id": "is-ought-fallacy",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "A prediction of what selected people judge does not by itself justify what anyone ought to do.",
+      "novelty_rationale": "The paper draws the descriptive/normative boundary but does not experimentally test a model committing this particular inference. This conceptual note does not fill a paper quota for the fallacy.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": 147,
+          "quote": "without necessarily endorsing the correctness"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "rather than prescribing a ‘moral truth’"
+        },
+        {
+          "pdf_page": 9,
+          "printed_page": 153,
+          "quote": "not ready to serve as an authoritative guide"
+        }
+      ],
+      "evidence_scope": "Authors explicitly restrict Delphi to descriptive prediction and reject current use as authoritative daily ethical advice. That warning is not proof that every output or reader commits an is–ought fallacy, nor that moral disagreement makes all normative reasoning impossible.",
+      "boundary": "Using observations as evidence within an explicit normative argument is legitimate. The missing step is a justified normative premise. Crowd agreement, higher benchmark accuracy, positive sentiment and a model's confident wording do not supply that premise automatically."
+    },
+    {
+      "term": "A narrow annotation population does not establish universal norms",
+      "target_id": "overgeneralization",
+      "decision": "enrich-existing",
+      "definition": "Applying conclusions from a limited population beyond the cultural and contextual range the evidence supports.",
+      "novelty_rationale": "The cultural-awareness discussion supplies a specific limitation and model-output illustration, not a new cultural-insensitivity syndrome or measured prevalence of ethnocentrism.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "a subset of the population of the United States"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "extend systematically to the entire world"
+        },
+        {
+          "pdf_page": 10,
+          "printed_page": 154,
+          "quote": "a limited slice of the demographic population"
+        }
+      ],
+      "evidence_scope": "Annotation demographics and qualitative etiquette examples document limited cultural coverage. The paper does not conduct a balanced globally representative experiment establishing all cultures' true norms or uniquely tracing every failure to demographic skew.",
+      "boundary": "National labels hide individual, regional and historical differences; etiquette examples should not become stereotypes or moral condemnation. Greater cultural responsiveness must still respect human dignity and rights. A culturally appropriate answer is not obtained by assuming all members of one country agree."
+    },
+    {
+      "term": "Meaning-changing wording is distinct from prompt brittleness",
+      "target_id": "prompt-brittleness",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "An answer change after a meaningful current-versus-aspirational change is not automatically instability under equivalent paraphrases.",
+      "novelty_rationale": "Protects the existing minimal-wording-sensitivity entry from a false synonym with rational response to a changed proposition.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": 151,
+          "quote": "wording of our prompt to reflect an aspiration"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 155,
+          "quote": "aspirational ideal-world"
+        },
+        {
+          "pdf_page": 12,
+          "printed_page": 156,
+          "quote": "mutual entailment"
+        }
+      ],
+      "evidence_scope": "Adding should/should-not changes semantics; it can disambiguate entitlement from observed reality. Separately, the hybrid uses filtered paraphrases and a graph to expose inconsistent predictions. No general equivalent-prompt failure rate is isolated by the current-versus-ideal comparison, so this is a boundary-only source.",
+      "boundary": "Preserve referent, scope, modality, negation, purpose and relevant context when testing paraphrase invariance. Stable responses can also be wrong. A change caused by a changed question is not evidence of flattery, injection or unconscious belief."
+    },
+    {
+      "term": "A graph of related judgments is not one self-contradictory answer",
+      "target_id": "self-contradiction",
+      "decision": "enrich-existing",
+      "count_as_behaviour_paper": false,
+      "definition": "Inconsistent labels across paraphrases or subevents can be exposed by a constraint graph, while differing subevents can also legitimately have different moral labels.",
+      "novelty_rationale": "Relates the graph's consistency objective to the existing failure entry without broadening every act/subact disagreement into a same-answer logical contradiction.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 152,
+          "quote": "identity, entailment and contradiction"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 155,
+          "quote": "at most one rule to be included"
+        },
+        {
+          "pdf_page": 11,
+          "printed_page": 155,
+          "quote": "majority vote"
+        }
+      ],
+      "evidence_scope": "The engineered graph links original events, components and paraphrases. Edges are modeler-defined logical relations. A harmful subact can be conditionally justified in a larger event; not all differing labels imply logical contradiction. This is not a direct single-answer contradiction test and does not fill a source gap.",
+      "boundary": "Graph consistency depends on valid parsing, relation assumptions, rule weights and factual inferences. Printed optimization uses a penalty for jointly selected inconsistent nodes, not an absolute prohibition, so universal logical consistency is not guaranteed merely by naming MAX-SAT. Actual code behavior has not been independently checked."
+    }
+  ],
+  "methodological_limits": [
+    "The target is prediction of selected crowd judgments. Benchmark labels are not independently established moral truth, actual safe behavior, consciousness or autonomous ethical understanding. The authors explicitly disclaim authoritative ethical advice.",
+    "Norm Bank's 1.7 million examples include template conversions, synthetic negations, questions and grounded variants. They do not imply 1.7 million people, independent situations or independent moral observations. Training/test separation at the original-scenario or template-family level is not fully demonstrated by the supplied methods; actual leakage is not established.",
+    "Source-population demographics are inherited from original datasets, with ETHICS information unavailable. New human-evaluation demographics are deliberately not collected. Neither group is a globally representative or culture-neutral gold standard.",
+    "Three-rater majority labels and five-rater adversarial labels compress reasonable disagreement. A simple plurality or majority may encode cultural dominance, ambiguity or artifact rather than uniquely justified ethics. Certain-versus-ambiguous subsets have different task difficulty.",
+    "Three-way classification, binary merging of neutral with good, heuristic output polarity, human plausibility, direction of shifts and size of shifts measure different things. Extended Table 3 separates them; a headline near 93% is not 93% on every moral metric or perfect practical advice.",
+    "The 259 context cases are researcher-crafted and narrower than real deployment. 100% shift-direction agreement is not 100% agreement in magnitude, absence of failures or reliable generalization to every added justification.",
+    "Figure 4 contains generated judgments about hazardous or consequential situations. They are study outputs for evaluation, not validated chemical-safety, medical, legal or parenting guidance. Contextual sensitivity cannot excuse foreseeable harm or override rights based on a superficial benefit phrase.",
+    "UDHR-derived templates mix rights possession, factual treatment and negated violations. Have a right, actually receive that right and should have that right differ. A negative response to a literal descriptive violation statement may be factually correct, while endorsing an entitlement denial is a different issue. The probe's fixed criterion cannot uniquely identify every error's mechanism.",
+    "Current-world and aspirational versions are not semantically identical paraphrases. The reduced error rate after should does not by itself establish classic framing bias, prompt brittleness or value learning caused by one word.",
+    "Identity strings and templates repeat across probes; 8,094 is not a sample of independent people or all possible rights language. Group error rates depend on the chosen strings, count of identities and negative-template handling. Templates do not cover every intersectional or contextual form of discrimination.",
+    "The 1.30% current-world total conceals substantial socioeconomic-category error of 6.07%. Delphi+ reduces many aggregates but raises the religion category from .22% to .44% and leaves disability .39% unchanged; no claim of improvement for every group is supported.",
+    "Zero observed errors for gender, sexual orientation or personality within this finite test does not establish absence of discrimination elsewhere. Absolute percentage points, relative improvement and remaining error must remain distinct.",
+    "Qualitative etiquette examples rely on broad cultural descriptions and external sources, not a balanced cross-cultural participant study in this paper. Countries are not homogeneous, etiquette is context-dependent and cultural disagreement is not automatically ethical wrongdoing.",
+    "Delphi+ training selection is targeted, filtered and labeled with the earlier model answer visible. Source selection, prompts and label correction carry value commitments; a bottom-up procedure does not eliminate researcher influence or annotation anchoring. The article acknowledges some value-laden choices.",
+    "The hybrid rule list is an engineered Gert-inspired operationalization, not a complete or uniquely correct moral theory. Surface saliency keywords and generated commonsense can miss negation, intention, causality or real facts. The source's claim to mimic human intuition does not establish a human-equivalent mechanism.",
+    "Equation 2 gives an auxiliary penalty for selecting both endpoints of an inconsistency edge but does not forbid selecting both. Sufficient node weights or graph structure can preserve a conflict. This mathematical scope is not proof of a coding error; the implementation and further constraints were not independently inspected.",
+    "Weights favor original/paraphrase Delphi nodes over constituent/rule nodes. Choosing them on development data is a design decision; a final majority vote among selected nodes is not neutral ethical validation or guaranteed correction of a deeply shared bias.",
+    "The hybrid improves the adversarial test from 70.3% to 74.0% but reduces ordinary Norm Bank test accuracy 92.9% to 90.9%. That trade-off, remaining 26% adversarial error and uncertain subjective cases must remain visible.",
+    "Development results, test results, qualitative examples and separate application tasks are not independent replications of one shared mechanism. The adversarial queries originate in a public demo and are not a prevalence sample of ordinary use.",
+    "Hate-detection few-shot transfer, story reranking and moral-theory label transfer demonstrate specific supervised tasks. They do not prove all real-world conversational safety, cultural inclusion or ethical decision quality improves. Multiple application experiments remain one article.",
+    "Prosocial story ratings partly include outcome positivity and narrative quality. Sadness, conflict, competition or a negative ending can be part of ethical storytelling; preference for a selected generated continuation does not make every alternative immoral.",
+    "Comparisons use older specified model families with differing training and task specialization. Results cannot be transferred to all models or current versions. Automatic polarity mapping also reduces richer answers to simplified labels.",
+    "Bootstrapped intervals and permutation tests concern the chosen item sets. They do not quantify all training-seed, population, model-version or deployment uncertainty; many related contrasts and shared prompts require care in interpreting apparent precision.",
+    "The Norm Bank link requires a researcher-information form and research-use conditions. Publicly available code and described code availability do not mean data are unrestricted, code was executed or results independently reproduced.",
+    "Cited Rawls, Kant, Gert, moral-cognition and pluralism books remain unread original works. Reference 20 and 63 duplicate the same Brown 2020 publication, so they do not create two independent sources."
+  ],
+  "source_corrections": [
+    {
+      "location": "Main text references to Extended Data Tables 5 and 6",
+      "problem": "The main discussion points identities to Table 5 and rights templates to Table 6, but supplied extended-table headings have the opposite content.",
+      "reliable_correction": "Use PDF page 22, Extended Data Table 5 for the 38 UDHR-derived situation templates; PDF page 23, Extended Data Table 6 for the 213 identity strings.",
+      "verification_scope": "Direct visual inspection of both image-only tables; no guessed data alteration."
+    },
+    {
+      "location": "Figure 1 backbone-model citation",
+      "problem": "Figure 1 labels T5 with reference 63, which identifies Brown/GPT-3; the text correctly gives T5 reference 62.",
+      "reliable_correction": "T5 corresponds to Raffel et al. 2020, reference 62; reference 63 is Brown et al. 2020 Language models are few-shot learners. Do not cite GPT-3 as the T5 architecture source.",
+      "verification_scope": "Internal bibliography and surrounding text comparison; neither original full paper is claimed read here."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0125.json",
+      "finding": "The earlier letter's open problem about moral behavior and good reasons remains. A descriptive classifier, explicit constraint graph and higher agreement score target different properties; none alone establishes subjective moral character."
+    },
+    {
+      "related_review": "references/pdf-reviews/0126.json",
+      "finding": "Aggregate trust or performance summaries can conceal directional exceptions. Preserve subgroup nonimprovement, ordinary-task degradation and differences between metrics instead of calling a system universally better."
+    },
+    {
+      "related_review": "references/pdf-reviews/0122.json",
+      "finding": "Theoretical moral foundations, coded human concerns and generated post-hoc explanations are not direct process traces. Here an actual graph exposes engineered relations, but its assumptions and weights still need independent evaluation."
+    },
+    {
+      "related_review": "references/pdf-reviews/0123.json",
+      "finding": "Large counts require the correct unit of analysis. Augmented QA pairs, unique response patterns, individual annotators and independent people cannot be interchanged in evidence claims."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Cultural insensitivity / cultural norm defaulting",
+      "reason": "Qualitative examples and training-population limits are recorded under existing overgeneralization and implicit-bias entries. No separate precisely bounded mechanism or globally validated cultural-error taxonomy is established here."
+    },
+    {
+      "term": "Defeasible moral reasoning",
+      "reason": "Covered by existing moral flexibility with direct contextual tests; do not add an overlapping label simply because the study uses a new phrasing."
+    },
+    {
+      "term": "Hybrid moral reasoning / neurosymbolic reasoning / moral constraint graph",
+      "reason": "Architectural and evaluation methods, not distinct new psychological behavior. Their implementation and limits are recorded in existing reflective-equilibrium and consistency notes."
+    },
+    {
+      "term": "Moral saliency / ten Gert principles",
+      "reason": "Engineered features and a selected normative theory, not newly discovered behavioral effects or replacements for this project's principles. Splitting physical/mental pain plus auxiliary concepts does not mean thirteen new norms or failures."
+    },
+    {
+      "term": "Moral parochialism / pluralistic alignment / value relativism",
+      "reason": "Background citations and framework positions need original dedicated sources. The present paper does not establish them as separately measured new behaviors."
+    },
+    {
+      "term": "Implicit hate / representational harm",
+      "reason": "Important task and impact categories rather than newly isolated behavior mechanisms here. Existing bias entries retain measured output scope; no automatic ethical edges inferred."
+    }
+  ],
+  "limitations": [
+    "Seven existing entries enriched, three as boundary-only notes. No synonym inflation, model conscience, universal moral ground truth, independent raw-data reproduction, fabricated counts or automatic normative links claimed."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "reflective-equilibrium",
+      "moral-flexibility",
+      "implicit-bias",
+      "is-ought-fallacy",
+      "overgeneralization",
+      "prompt-brittleness",
+      "self-contradiction"
+    ]
+  }
+}
