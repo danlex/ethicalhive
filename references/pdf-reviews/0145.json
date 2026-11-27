@@ -1,0 +1,335 @@
+{
+  "sequence": 145,
+  "source": {
+    "file_name": "S1352_Yoganathan_2024.pdf",
+    "source_id": "S1352",
+    "sha256": "5b1653363ffae2f0cf26883475e583404b5d70689318a35abd9752b85e6f71c0",
+    "pdf_pages": 42,
+    "printed_pages": "1–42",
+    "version_note": "Supplied anonymized Word-produced manuscript with end-position tables/figures and insertion placeholders, created 11 February 2024. Its exact title maps to Yoganathan/Osburg’s Journal of Business Research 175:114573, March 2024. Acceptance/proof status and identity with the publisher’s final full text were not established.",
+    "verification_url": "https://api.crossref.org/works/10.1016/j.jbusres.2024.114573",
+    "verification_method": "All 42 supplied pages read, including references, four tables and both diagrams. Image-only Figures 1–2 on pages 41–42 and Table 4 on page 40 also visually inspected. Crossref title/author/venue/issue date establish the final article identity; the publisher’s full version, Web Appendix, original dictionary validation paper, data and code were not independently fully read."
+  },
+  "citation": {
+    "title": "The mind in the machine: Estimating mind perception’s effect on user satisfaction with voice-based conversational agents",
+    "authors": [
+      "Vignesh Yoganathan",
+      "Victoria-Sophie Osburg"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1016/j.jbusres.2024.114573",
+    "venue": "Journal of Business Research 175:114573",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "source_scope_note": "Observational analysis of 4,995 UK Amazon Echo reviews, using dictionary word-presence proxies, LDA-derived innovativeness clusters and double/debiased machine learning. Full supplied manuscript read; final published version not compared. No random intervention, direct psychological scale validation in these reviewers or actual AI mental capacity is demonstrated.",
+    "access_limits": [
+      "All supplied pages read. No original raw reviews, author identifiers, code, external Web Appendix, full dictionaries, user surveys or longitudinal interactions were independently inspected.",
+      "Crossref links the anonymized manuscript title to the final publication and identifies the original mind-perception dictionary article; metadata-only checks do not count as full reads of that paper or the cited books."
+    ]
+  },
+  "study": {
+    "dataset": "5,001 verified-purchase reviews of Amazon Echo from Amazon.co.uk; six unusable/very short reviews removed, leaving 4,995. Review dates and 1–5 star ratings collected; usernames/identifiers deliberately omitted. Sampling interval, collection dates, cluster sizes, repeated authors and representativeness cannot be reconstructed from this supplied text. Verified purchase is not proof of truthful authorship or population coverage.",
+    "text_pipeline": "Stemming, lemmatization and stop-word removal, then LIWC general categories, Mind Perception Dictionary measures and Crovitz innovation-score word percentages. Dictionary versions, processing order per instrument, target attribution, negation and device-versus-reviewer referents are not validated in this corpus. Prevalidated dictionaries elsewhere do not by themselves establish validity here.",
+    "treatments": "Binary presence/absence of agency, agent-directed-experience and patient-directed-experience words in the same review as the star outcome. Text can describe the reviewer, household or another entity, or be caused by the same satisfaction/technical experience. Word presence is not independently measured perceived robot feeling.",
+    "clustering": "Assumes two groups then runs LDA Gibbs sampling: alpha.25, beta.1,500 burn-in iterations,10 samples×50 iterations. Groups labeled high/low innovativeness because innovation-word score differs, ΔM2.73,t 9.66,p<.001. No independent early-adoption/exploration behavior or externally assessed trait validation is supplied. Topic differences, writing style and reference/meaning differences remain alternatives. MCMC does not guarantee convergence to a global optimum.",
+    "model": "Stata 17 partialling-out DML with 10-fold cross fitting, LASSO nuisance models and plugin/cross-validation/adaptive/minimum-BIC tuning. LIWC categories, date and cluster interactions are candidate covariates. Plugin selected for parsimony, not a demonstrated out-of-sample causal optimum. Cross-fitting addresses certain overfit/regularization problems under assumptions; it does not supply exchangeability, temporal direction, positivity, valid constructs or absence of unmeasured confounding.",
+    "overall_results": "Plugin coefficients in star-rating units: agency−.02,SE.03,CI[−.07,.03],p=.362; patient-directed experience+.44,SE.11,CI[.22,.66]; agent-directed experience+.74,SE.11,CI[.52,.96]. Experience-word associations remain positive across four tuning schemes; agency null remains. Alternative specifications are not independent replications or proof of causality.",
+    "subgroups": "Table 4: high/low agency−.06/.01, patient-directed experience+.47/.28, agent-directed experience+.88/.22. Agency intervals include zero in both groups. Experience coefficients are positive within each group, but the prose’s high-minus-low differences .03/.56 do not equal the displayed .19/.66. The claimed patient-direction moderation cannot be certified from the supplied contrast reporting.",
+    "causal_limits": "No clear intervention on a well-defined mind-perception exposure, DAG, sufficient-confounder argument, temporal ordering or sensitivity analysis is provided. Same-review affective/cognitive text controls may be proxies, overlapping constructs, mediators or colliders rather than pretreatment confounders. Estimating a partial coefficient does not resolve these identification questions.",
+    "recommendations": "Emphasizing perceived feelings, extending findings to Google Nest or GPT-4, and mitigating a preference–uncanniness paradox are proposed applications, not tested product interventions. No uncanniness measure or manipulated feature demonstrates simultaneous preference and discomfort in this dataset."
+  },
+  "summary": "Add neutral agency attribution and user innovativeness, separating them from agency-attribution bias, own-action sense of agency and actual machine experience. Enrich experience attribution with the observational text-proxy result; preserve uncertainty about causal identification and the inconsistent subgroup contrasts. No new row is added for secondary uncanniness language or unvalidated experience subtypes.",
+  "findings": [
+    {
+      "term": "Agency attribution",
+      "id": "agency-attribution",
+      "decision": "new-entry",
+      "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+      "category": "Perception",
+      "origin": "Mind-perception psychology / human–AI interaction",
+      "ai_evidence_status": "Neutral attribution construct explicitly defined; observed via dictionary word presence here, with no direct validation in these reviewers or demonstration of AI consciousness.",
+      "ai_proposal": "Evaluate whether people or an agent ascribe planning, intention and autonomous action to a target, using explicit target-grounded judgments and controlled cues. Separate accurate capability descriptions from unsupported mental-state claims, actual control and feelings. For models, examine attribution behavior without inferring subjective intention.",
+      "relates_to": [
+        "experience-attribution",
+        "agency-attribution-bias",
+        "hyperactive-agency-detection",
+        "b081-sense-of-agency",
+        "b061-theory-of-mind-mentalizing"
+      ],
+      "novelty_rationale": "An attribution can be warranted and does not require a bias. It concerns another entity’s intentional capacity, unlike one’s own-action sense of agency or subjective experience attribution.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "the ability to think,"
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "plan, and act"
+        }
+      ],
+      "evidence_scope": "Pages 2 and 5–6 define perceived agency separately from experience. The overall lexical-proxy coefficient and both subgroup coefficients are nonsignificant, which does not prove absence of every meaningful agency effect.",
+      "boundary": "Actual task capability, perceived intentional capacity, moral agency, causal control and consciousness differ. Dictionary terms can refer to users or other actors. A perception of agency does not establish bias, excessive detection, moral responsibility or machine personhood.",
+      "synonyms": [
+        "Perceived agency"
+      ]
+    },
+    {
+      "term": "User innovativeness",
+      "id": "user-innovativeness",
+      "decision": "new-entry",
+      "definition": "A disposition to adopt or experiment with new products, technologies or features.",
+      "category": "Self & agency",
+      "origin": "Consumer psychology / diffusion of innovation",
+      "ai_evidence_status": "Trait defined through secondary literature and inferred from text clusters; actual adoption timing, experimental use and stable disposition were not independently measured.",
+      "ai_proposal": "Distinguish openness to try a new feature from verified early adoption, usage frequency, technical skill and generalized risk-taking. Use consented behavior/history or validated measures before attributing the trait to a person; for AI, evaluate exploration choices and constraints without claiming a human personality.",
+      "relates_to": [
+        "algorithm-appreciation",
+        "algorithm-aversion",
+        "agency-attribution",
+        "experience-attribution"
+      ],
+      "novelty_rationale": "Willingness to explore/adopt novelty differs from preferring algorithmic advice, liking a product, repeated use, expertise or technological opinion leadership.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "experimental use of voice-based conversational agents"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": 8,
+          "quote": "early adoption behaviour"
+        }
+      ],
+      "evidence_scope": "Page 8 defines the trait with experimental feature use and early adoption. Page 12 labels two review-topic groups by innovation-word-score separation; this is a text-derived proxy, not a validated individual classification or randomized moderator.",
+      "boundary": "Innovation is not inherently beneficial, safe or morally superior; caution may be justified. Avoid profiling individuals from one review or equating low novelty seeking with incompetence. The manuscript’s subgroup-difference statistics are inconsistent, so no universal moderation effect is claimed."
+    },
+    {
+      "term": "Experience attribution",
+      "target_id": "experience-attribution",
+      "decision": "enrich-existing",
+      "definition": "Attributing subjective feelings or sensations to another entity.",
+      "novelty_rationale": "Retain the existing construct and its agent/patient dictionary categories without multiplying proxy measures into new mechanisms.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "the ability to have feelings, experiences, and"
+        },
+        {
+          "pdf_page": 14,
+          "printed_page": 14,
+          "quote": "presence/absence of words"
+        }
+      ],
+      "evidence_scope": "The manuscript estimates positive associations between binary experience-word categories and star ratings, with agency-word nulls retained. DML and prior dictionary validation do not establish that mind perception caused the ratings or that every word occurrence describes the device’s feeling capacity.",
+      "boundary": "Perceived feelings, moral-agent/patient roles, empathy and actual sentience remain distinct. The unmeasured lexical referent and inconsistent subgroup contrasts limit interpretation; do not use higher review scores as proof of machine feeling or a safe anthropomorphic design intervention."
+    },
+    {
+      "term": "Agency attribution bias",
+      "target_id": "agency-attribution-bias",
+      "decision": "enrich-existing",
+      "definition": "Inferring control from agency-related cues that do not alter actual control.",
+      "novelty_rationale": "Neutral attribution of intentional capacity is broader than this existing cue-based bias and is not a synonym for it.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": 5,
+          "quote": "perceived agency"
+        }
+      ],
+      "evidence_scope": "This article defines agency perception but supplies no actual-control benchmark or irrelevant-cue experiment demonstrating attribution bias. Treat as a boundary note, not an additional bias-effect paper.",
+      "boundary": "Linguistic mention of planning may be accurate or refer to someone else. Do not label an attribution biased unless the actual evidence and causal control warrant that judgment.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Anthropomorphism",
+      "target_id": "anthropomorphism",
+      "decision": "enrich-existing",
+      "definition": "Attributing human characteristics or mental states to nonhuman entities.",
+      "novelty_rationale": "Humanlike voice is context, not a randomized cause or direct measure of broad anthropomorphism in these reviews.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "anthropomorphised in"
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": 6,
+          "quote": "terms of voice"
+        }
+      ],
+      "evidence_scope": "The manuscript motivates mind-perception analysis using humanlike voice. It does not isolate a voice manipulation, compare embodied/nonembodied conditions or establish that voice caused the lexical associations.",
+      "boundary": "Do not infer voice effects from the absence of a face/limbs, or recommend misleading feelings claims to improve uptake. Different mental-state attributions and actual capabilities require separate assessment.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Uncanny valley effect",
+      "target_id": "uncanny-valley-effect",
+      "decision": "enrich-existing",
+      "definition": "A decrease in comfort or affinity near highly but imperfectly humanlike artificial appearance or behavior.",
+      "novelty_rationale": "The proposed preference–uncanniness coexistence is secondary and no new uncanny response is measured here.",
+      "evidence": [
+        {
+          "pdf_page": 21,
+          "printed_page": 21,
+          "quote": "simultaneously prefer"
+        },
+        {
+          "pdf_page": 24,
+          "printed_page": 24,
+          "quote": "preference-uncanniness paradox"
+        }
+      ],
+      "evidence_scope": "Pages 21 and 24 discuss a secondary paradox/hypothesis. Neither discomfort nor its nonlinear relation to human likeness is measured; the review data do not establish simultaneous preference and uncanniness.",
+      "boundary": "Coexisting attraction and discomfort is not inherently a logical paradox or proof of a valley-shaped dose-response curve. Retain voice-specific transfer and actual affect as open questions.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF page 16 subgroup contrasts versus Table 4 on page 40",
+      "issue": "Prose reports high-minus-low effects ΔM=.03 for patient-directed experience and .56 for agent-directed experience; Table 4 gives .47−.28=.19 and .88−.22=.66.",
+      "reliable_correction": "If referring to the displayed coefficients, the arithmetic differences are .19 and .66. The text could refer to another unspecified comparison, so neither replacement p values nor a corrected original dataset is asserted.",
+      "verification_scope": "Rendered table, manuscript text and elementary subtraction. Raw models and final publisher version not checked."
+    },
+    {
+      "location": "PDF page 16 claim of Bonferroni-adjusted p=.000 for both subgroup differences",
+      "issue": "The contrast test, covariance and uncertainty are not supplied. Using printed rounded SEs and independent subgroup estimates gives an illustrative patient-difference SE≈sqrt(.14²+.07²)=.157 and z≈1.21, incompatible with a straightforward near-zero two-sided contrast p value.",
+      "reliable_correction": "Treat patient-directed moderation as unresolved. Under that illustrative independent-groups approximation p≈.225 before adjustment; it is not a certified substitute for the missing original test. Positive effects within both groups are not themselves evidence of a between-group difference.",
+      "verification_scope": "Conditional arithmetic check with stated assumptions, not a raw-data reanalysis or proof that an alternative undisclosed test is impossible."
+    },
+    {
+      "location": "PDF page 14 interaction notation versus page 15 footnote",
+      "issue": "Text describes continuous×categorical interactions but labels them COVcont×COVcont; the footnote instead uses COVcont×COVcat.",
+      "reliable_correction": "The notation should match the described continuous×categorical interactions. Actual software specification remains unverified.",
+      "verification_scope": "Internal manuscript comparison only."
+    },
+    {
+      "location": "PDF page 3 Gentzkov citation versus reference on page 29",
+      "issue": "In-text surname Gentzkov differs from the listed Gentzkow.",
+      "reliable_correction": "The listed Text as data author is Gentzkow.",
+      "verification_scope": "Internal bibliography consistency; the cited article was not independently fully read."
+    }
+  ],
+  "source_identity_checks": [
+    {
+      "work": "Schweitzer and Waytz(2021), Language as a window into mind perception",
+      "verified_doi": "10.1037/xge0001013",
+      "verified_authors": [
+        "Shane Schweitzer",
+        "Adam Waytz"
+      ],
+      "verified_pages": "1642–1672",
+      "verification_url": "https://api.crossref.org/works/10.1037/xge0001013",
+      "scope": "Metadata-only identity check. This is a lead for reading the original instrument validation, not another completed corpus review or direct validation of this manuscript’s application."
+    }
+  ],
+  "methodological_limits": [
+    "Observational text and outcome collected from the same review leave selection, reverse causality, target attribution and common-source measurement unresolved. DML is not an automatic cure for endogeneity or unmeasured confounding.",
+    "Validated dictionary labels do not prove that a specific word occurrence attributes feeling/agency to the device; context, negation and referent need corpus-specific validation. Stemming/stop-word operations can change psychological information, depending on implementation.",
+    "High/low LDA groups are inferred from review text under an assumed two-group structure. Score separation does not establish a stable user trait, early adoption or an individual diagnosis.",
+    "No significant agency coefficient is not equivalence or evidence that agency never affects satisfaction. Lack of human-like embodiment does not establish that voice alone caused any perception.",
+    "Stars are coarse expressed product evaluations, not a direct validated measure of felt satisfaction, mind perception, actual device cognition or long-term welfare. One brand, market and generation limit transportability.",
+    "Parsimony and stability across tuning choices do not establish correct confounder adjustment or account for all model/cluster-selection uncertainty.",
+    "No deception, actual machine feeling, ethical superiority or safe engagement strategy follows from more positive review language. User privacy and consent cannot be inferred from public availability of reviews."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0132.json",
+      "finding": "That robot-helping study distinguishes item-specific pleasure attribution from a broader experience composite; this review-language proxy also needs construct separation. Neither permits a claim of actual robot feeling."
+    },
+    {
+      "related_review": "references/pdf-reviews/0140.json",
+      "finding": "As with the animism/anthropomorphism scale merger, a method label and internal score structure do not make related psychological constructs interchangeable. Country/cluster labels must not be used to infer an individual’s stable beliefs."
+    },
+    {
+      "related_review": "references/pdf-reviews/0144.json",
+      "finding": "The appraisal study’s measured transparency and this paper’s DML controls both require explicit causal assumptions. A statistical framework does not turn observed same-source variables into demonstrated psychological mechanisms."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Preference–uncanniness paradox",
+      "reason": "A named coexistence hypothesis drawn from secondary robot literature. Uncanniness is not measured here, and the existing uncanny-valley entries can carry the boundary without another overlapping effect row."
+    },
+    {
+      "term": "Agent-directed / patient-directed experience",
+      "reason": "Dictionary subcategories are described, but original lexical rules and corpus-specific target validity are not supplied. Preserve them as measurement dimensions under experience attribution, not independently validated new psychological mechanisms."
+    },
+    {
+      "term": "Technological opinion leadership",
+      "reason": "Named as distinct from innovativeness but not sufficiently defined or measured here; consult the cited original source before extracting another trait entry."
+    },
+    {
+      "term": "Double/debiased machine learning / LDA / LIWC",
+      "reason": "Statistical and measurement methods, not themselves psychological behaviors or evidence that a model has a mind."
+    }
+  ],
+  "limitations": [
+    "One anonymized manuscript mapped to one final article, not two independent publications. Four tuning methods and ten folds do not create extra studies or paper counts. No bibliography quota or annual-series total is inferred."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "agency-attribution",
+      "user-innovativeness"
+    ],
+    "enriched": [
+      "experience-attribution",
+      "agency-attribution-bias",
+      "anthropomorphism",
+      "uncanny-valley-effect"
+    ]
+  }
+}
