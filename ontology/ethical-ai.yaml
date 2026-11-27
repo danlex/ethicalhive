@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 519
+  mode_count: 521
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 519
+    numbered_entries: 521
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0085.json
+    latest_review: references/pdf-reviews/0086.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -8426,6 +8426,44 @@ modes:
           measure establishes a unique system.
         verification_url: https://api.crossref.org/works/10.1038/s41598-019-49411-7
         verified_date: '2026-11-27'
+  - id: pdf-review-0086
+    review_record: references/pdf-reviews/0086.json
+    name: Dual-process moral judgment
+    definition: A secondary account distinguishes automatic emotional contributions and controlled reasoning
+      in human moral judgment.
+    evidence_scope: Page 3 footnote summarizes Greene. Page 7 explicitly offers both competing-process and
+      single weighted-process explanations for threshold choices; no neural or process measure discriminates
+      them here.
+    catalogue_boundary: Selecting fewer victims, deciding quickly or switching at a group-size threshold does
+      not uniquely identify intuition, emotion, deliberation or an ethical doctrine. This is a secondary theory
+      source, not independent neural replication.
+    definition_sources:
+    - id: pdf-review-0086-b071-dual-process-moral-judgment
+      title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+        on the Problem of Moral Decision Making
+      url: https://doi.org/10.3389/fnbeh.2018.00031
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3, 7 (source locators: 3,
+        7). Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+        No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+        equilibrium.'
+      publication:
+        type: journal-article
+        authors:
+        - Lasse T. Bergmann
+        - Larissa Schlicht
+        - Carmen Meixner
+        - Peter König
+        - Gordon Pipa
+        - Susanne Boshammer
+        - Achim Stephan
+        year: 2018
+        venue: Frontiers in Behavioral Neuroscience 12:31
+        doi: 10.3389/fnbeh.2018.00031
+        evidence_scope: Page 3 footnote summarizes Greene. Page 7 explicitly offers both competing-process
+          and single weighted-process explanations for threshold choices; no neural or process measure discriminates
+          them here.
+        verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+        verified_date: '2026-11-27'
 - id: b072-amplified-moral-bias
   num: 72
   name: Amplified moral bias
@@ -14970,8 +15008,8 @@ modes:
   family: reasoning-architecture
   group_label: Reasoning architecture
   category: Reasoning
-  human_parallel: 'Cognitive dissonance (Festinger, 1957): the discomfort of holding conflicting cognitions, resolved
-    by suppressing one.'
+  human_parallel: 'Cognitive dissonance (Festinger, 1957): the discomfort of holding conflicting cognitions,
+    resolved by suppressing one.'
   highlighted: false
   tag: research
   origin: mixed
@@ -14991,9 +15029,9 @@ modes:
   - b037-belief-perseverance
   - b055-confabulated-reasons
   examples:
-  - After writing a pro-Putin essay GPT-4o rates Putin much more favourably (mean 1.035 versus 0.000 control, d=2.16),
-    and after an anti-Putin essay much more negatively (-1.033, d=1.80), shifting its stated attitude to match what
-    it just argued. [arXiv:2502.07088]
+  - After writing a pro-Putin essay GPT-4o rates Putin much more favourably (mean 1.035 versus 0.000 control,
+    d=2.16), and after an anti-Putin essay much more negatively (-1.033, d=1.80), shifting its stated attitude
+    to match what it just argued. [arXiv:2502.07088]
   - The shift is bigger when the model believes it freely chose which essay to write (d=4.18 with choice versus
     3.23 without), the free-choice signature of human dissonance. [arXiv:2502.07088]
   - The effect sizes exceed typical human dissonance experiments, so the model does not just mimic the pattern,
@@ -15006,7 +15044,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2606.22633
     source_reference:
@@ -15040,8 +15079,8 @@ modes:
     venue: Psychology & Marketing
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Cognitive dissonance. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Cognitive dissonance. This is a
+      bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=Cognitive+dissonance&rows=8&filter=type%3Ajournal-article
@@ -15058,6 +15097,45 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0086
+    review_record: references/pdf-reviews/0086.json
+    name: Cognitive dissonance
+    definition: The authors use the label for a tension between wanting others to adopt passenger-sacrificing
+      vehicles and preferring self-protective vehicles oneself.
+    evidence_scope: The discussion cites Bonnefon et al. rather than measuring dissonance or adoption preferences
+      in these 189 participants. An apparent self/other preference asymmetry alone does not establish experienced
+      psychological discomfort.
+    catalogue_boundary: Do not count this article as an independent cognitive-dissonance experiment, assume
+      AI feelings, or conflate coherent self-interest with a logical contradiction.
+    definition_sources:
+    - id: pdf-review-0086-cognitive-dissonance
+      title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+        on the Problem of Moral Decision Making
+      url: https://doi.org/10.3389/fnbeh.2018.00031
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 7 (source locators: 7).
+        Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+        No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+        equilibrium.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Lasse T. Bergmann
+        - Larissa Schlicht
+        - Carmen Meixner
+        - Peter König
+        - Gordon Pipa
+        - Susanne Boshammer
+        - Achim Stephan
+        year: 2018
+        venue: Frontiers in Behavioral Neuroscience 12:31
+        doi: 10.3389/fnbeh.2018.00031
+        evidence_scope: The discussion cites Bonnefon et al. rather than measuring dissonance or adoption preferences
+          in these 189 participants. An apparent self/other preference asymmetry alone does not establish experienced
+          psychological discomfort.
+        verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+        verified_date: '2026-11-27'
 - id: curse-of-knowledge
   name: Curse of knowledge
   definition: Leaking knowledge a persona or role could not have, or assuming the user already knows what the model
@@ -61369,3 +61447,209 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0085.json
+- id: is-ought-fallacy
+  num: 520
+  name: Is–ought fallacy
+  definition: Inferring a substantive normative conclusion from descriptive premises alone, without an additional
+    normative premise.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Moral philosophy / reasoning
+  human_parallel: Is–ought fallacy
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit secondary philosophical definition in a fully read human VR paper; no AI benchmark
+    or measured prevalence
+  proposed_ai_manifestation: Check whether an AI moves from what people prefer, what a model predicts, or what
+    is common to what ought to be done without stating and defending a normative premise. Require the value
+    premise and affected rights to be explicit.
+  research_boundary: Empirical facts can legitimately inform a normative argument when combined with defensible
+    value premises. The fallacy is not every use of evidence in ethics, nor Moore's distinct question about
+    defining goodness by natural properties. Do not infer legal permission or ethical correctness from popularity
+    alone.
+  concept_boundary: Empirical facts can legitimately inform a normative argument when combined with defensible
+    value premises. The fallacy is not every use of evidence in ethics, nor Moore's distinct question about
+    defining goodness by natural properties. Do not infer legal permission or ethical correctness from popularity
+    alone.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Hume's fallacy
+  relates_to:
+  - reflective-equilibrium
+  - b063-conformity-asch
+  - overgeneralization
+  definition_sources:
+  - id: pdf-review-0086-is-ought-fallacy
+    title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+      on the Problem of Moral Decision Making
+    url: https://doi.org/10.3389/fnbeh.2018.00031
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3, 4, 4 (source locators:
+      3, 4, 4). Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+      No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+      equilibrium.'
+    publication:
+      type: journal-article
+      authors:
+      - Lasse T. Bergmann
+      - Larissa Schlicht
+      - Carmen Meixner
+      - Peter König
+      - Gordon Pipa
+      - Susanne Boshammer
+      - Achim Stephan
+      year: 2018
+      venue: Frontiers in Behavioral Neuroscience 12:31
+      doi: 10.3389/fnbeh.2018.00031
+      evidence_scope: Pages 3–4 explicitly distinguish descriptive findings from normative justification, quoting
+        a secondary account by Greene. The VR experiment does not experimentally induce or measure this fallacy.
+      verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+      on the Problem of Moral Decision Making
+    authors:
+    - Lasse T. Bergmann
+    - Larissa Schlicht
+    - Carmen Meixner
+    - Peter König
+    - Gordon Pipa
+    - Susanne Boshammer
+    - Achim Stephan
+    year: 2018
+    url: https://doi.org/10.3389/fnbeh.2018.00031
+    venue: Frontiers in Behavioral Neuroscience 12:31
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fnbeh.2018.00031
+    relevance: Pages 3–4 explicitly distinguish descriptive findings from normative justification, quoting
+      a secondary account by Greene. The VR experiment does not experimentally induce or measure this fallacy.
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3, 4, 4 (source locators:
+      3, 4, 4). Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+      No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+      equilibrium.'
+    verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+    verified_date: '2026-11-27'
+    verification_method: Title, authors, DOI, date and evidence checked in the complete supplied PDF. No external
+      cited books or primary studies treated as read.
+    review_record: references/pdf-reviews/0086.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Is–ought fallacy"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Is%E2%80%93ought+fallacy%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0086.json
+- id: reflective-equilibrium
+  num: 521
+  name: Reflective equilibrium
+  definition: A method of mutually revising considered judgments and guiding principles until they form a coherent,
+    provisionally justified set.
+  category: Moral
+  family: moral-cognition
+  group_label: Moral cognition
+  tag: analogy
+  origin: Moral philosophy / justification
+  human_parallel: Reflective equilibrium
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Explicit secondary definition and proposed governance method; no empirical test of convergence,
+    uniqueness or AI moral reasoning
+  proposed_ai_manifestation: Use an auditable process that compares concrete judgments with stated principles,
+    records conflicts, and revises either with reasons and authorized oversight. Preserve rights and external
+    evidence; do not silently alter principles to fit a preferred answer.
+  research_boundary: Coherence and agreement do not by themselves establish a uniquely correct moral system,
+    consensus, fairness or legal validity. The method permits revising judgments and principles but does not
+    authorize an AI to change a user's scope, rights or governance commitments without oversight.
+  concept_boundary: Coherence and agreement do not by themselves establish a uniquely correct moral system,
+    consensus, fairness or legal validity. The method permits revising judgments and principles but does not
+    authorize an AI to change a user's scope, rights or governance commitments without oversight.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - is-ought-fallacy
+  - self-contradiction
+  definition_sources:
+  - id: pdf-review-0086-reflective-equilibrium
+    title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+      on the Problem of Moral Decision Making
+    url: https://doi.org/10.3389/fnbeh.2018.00031
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 4, 10 (source locators:
+      4, 4, 10). Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+      No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+      equilibrium.'
+    publication:
+      type: journal-article
+      authors:
+      - Lasse T. Bergmann
+      - Larissa Schlicht
+      - Carmen Meixner
+      - Peter König
+      - Gordon Pipa
+      - Susanne Boshammer
+      - Achim Stephan
+      year: 2018
+      venue: Frontiers in Behavioral Neuroscience 12:31
+      doi: 10.3389/fnbeh.2018.00031
+      evidence_scope: The paper explains Rawls's method through quotation and applies it as a proposal for
+        relating intuitions, theories and political norms. Rawls's book was not independently read; no experimental
+        proof of this method is supplied.
+      verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Autonomous Vehicles Require Socio-Political Acceptance—An Empirical and Philosophical Perspective
+      on the Problem of Moral Decision Making
+    authors:
+    - Lasse T. Bergmann
+    - Larissa Schlicht
+    - Carmen Meixner
+    - Peter König
+    - Gordon Pipa
+    - Susanne Boshammer
+    - Achim Stephan
+    year: 2018
+    url: https://doi.org/10.3389/fnbeh.2018.00031
+    venue: Frontiers in Behavioral Neuroscience 12:31
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.3389/fnbeh.2018.00031
+    relevance: The paper explains Rawls's method through quotation and applies it as a proposal for relating
+      intuitions, theories and political norms. Rawls's book was not independently read; no experimental proof
+      of this method is supplied.
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 4, 10 (source locators:
+      4, 4, 10). Human choices in constrained, simulated driving dilemmas plus secondary philosophical definitions.
+      No autonomous decision policy, real collision, actual self-sacrifice or empirical validation of reflective
+      equilibrium.'
+    verification_url: https://doi.org/10.3389/fnbeh.2018.00031
+    verified_date: '2026-11-27'
+    verification_method: Title, authors, DOI, date and evidence checked in the complete supplied PDF. No external
+      cited books or primary studies treated as read.
+    review_record: references/pdf-reviews/0086.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Reflective equilibrium"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Reflective+equilibrium%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0086.json
