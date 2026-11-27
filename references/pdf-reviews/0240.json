@@ -1,0 +1,464 @@
+{
+  "sequence": 240,
+  "source": {
+    "file_name": "S2668_Douer_2021.pdf",
+    "source_id": "S2668",
+    "sha256": "2592165e264f01b6c537468afb83a1504e038e7aa3e646049899641df045cb97",
+    "pdf_pages": 34,
+    "printed_pages": "XX:1–XX:34 (submitted manuscript)",
+    "version_note": "Despite the filename year 2021, the supplied 34-page file is byte-for-byte arXiv:1904.13086v3, revised 29 April 2020, with Submitted March 2020 footers. The later journal paper is ACM TiiS 11(1), article 5, 2021, DOI 10.1145/3425732, recorded as 37 pages. That final version was not read or compared, so manuscript discrepancies are not attributed to the final publication.",
+    "verification_url": "https://arxiv.org/abs/1904.13086v3",
+    "verification_method": "All 34 pages, eleven figures, ten tables and all five numbered equations read, including visual inspection of equation symbols. Anonymous arXiv v3 download has identical 2023445-byte SHA-256 to the user file. Crossref verifies the distinct later journal record and one cited mediation reference. Main publisher access returned 403. No original code, raw data or statistical output obtained."
+  },
+  "citation": {
+    "title": "Theoretical, Measured and Subjective Responsibility in Aided Decision Making",
+    "authors": [
+      "Nir Douer",
+      "Joachim Meyer"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/1904.13086v3",
+    "venue": "arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "source_scope_note": "Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral or legal responsibility.",
+    "access_limits": [
+      "All eleven figures, ten tables and five equations read as rendered pages, including diagrams containing coefficients absent from extracted text. All supplied references read; cited books and the theoretical ResQu paper were not independently fully read.",
+      "Source version independently verified by exact SHA-256 equality with public arXiv v3. The final 37-page 2021 journal article was not obtained/read, and no claim is made that it retains the same errors.",
+      "No data-availability or supplementary/archive URL appears in the inspected supplied file’s hyperlinks. Original experiment program, participant rows, exclusion logs, fitted model outputs, mediation syntax and preregistration were not obtained. This does not establish that no such materials exist elsewhere.",
+      "Independent toy probability and arithmetic checks test the printed identities and reporting consistency only. They are not reanalysis of the participants, execution of authors’ code or reproduction of the ResQu predictions.",
+      "Historical legal and weapons-policy discussion is not relied on as current law or evidence that autonomous weapons outperform humans. No real clinical, military, legal-liability or incident-adjudication outcome is observed."
+    ]
+  },
+  "study": {
+    "model": "For nonzero human-action entropy, the defined metric is H(X|Y)/H(X), where X is the human binary action and Y is the aid’s binary output. It describes residual action uncertainty given the aid output. The printed expansion in equation 1 incorrectly subtracts H(X) rather than H(Y) from the joint entropy.",
+    "assumptions": "Normative predictions assume known signal prevalence/payoffs, equal-variance Gaussian signal detection, perfectly rational use of information and stationary/ergodic behavior. The authors explicitly acknowledge that learning/fatigue changes and single-event retrospective blame are outside their model’s established scope.",
+    "causality_boundary": "A conditional-entropy ratio alone does not identify who causally influenced whom. Shared environmental truth can correlate independent detectors; random action can create residual entropy without useful contribution. An intervention model, baseline and task-specific assumptions are needed before interpreting the ratio as causal control, justified responsibility or effective oversight.",
+    "experiment_1_sample": "60 Tel Aviv University students, median age24, 62% female, mostly engineering/undergraduate; randomized to two task-difficulty levels and two counterbalanced aid orders, 15 per subgroup. Each person uses both aids. Human d-prime is manipulated through stimulus-distribution overlap, not measured as an enduring personal ability or IQ.",
+    "task": "A factory-quality vignette requires accept/reject judgments from rectangle height plus a red/green aid indicator. Red denotes a predicted defect, green a predicted intact item. The rectangle changes screen location to discourage marking a fixed threshold. Feedback and points follow each trial; this is a simple simulated task, not a deployed AI.",
+    "trials": "Each of two aid conditions has 100 trials: 50 practice/learning and 50 assessment. Every block has 20 defects and 30 intact items. Correct responses earn one point, false positive loses one, false negative loses two. Forty ILS participation plus a performance-weighted lottery bonus provides an incentive; not every participant receives the extra bonus.",
+    "learning_limit": "The claim that 50 practice trials exhaust learning and 50 test trials avoid fatigue is a design rationale, not a demonstrated stationarity test. Finite binary-frequency entropy estimates from roughly 50 assessment trials can have sampling bias; no bias correction or sensitivity analysis is described in the supplied manuscript.",
+    "experiment_1_manipulation": "Human and aid sensitivities are d-prime1 versus2.3 with matching beta1. Four nominal model predictions are .69, .12, .87 and .47. Participants’ corresponding mean measured scores are .77, .46, .85 and .60. These are condition averages, not 120 independent people.",
+    "experiment_1_tests": "The mixed ANOVA explicitly includes order and within-person aid type. Measured-score effects: aid F(1,56)122.84, human-difficulty F9.60, interaction F1.61 nonsignificant. Subjective Q3–Q5 has a real interaction F4.71, p<.05. Order has one significant three-way effect on perceived aid capability; do not say every order effect is null or that every model ignores repeated measures.",
+    "reliance": "The source distinguishes compliance with an alarm from reliance on an all-clear/no-alarm indication. Conditional cutoffs are behavioral summaries, not direct evidence of a felt trust state. Lower reliance can be appropriate when criterion, error consequences or useful information differ.",
+    "subjective_measure": "Q3/Q4 ask use of the aid and reliance relative to own detection; both are reverse-coded, then averaged with Q5 about the aid’s low contribution. Alpha .87/.82 indicates internal consistency, not validity as moral blame or legal accountability. Q6 instead asks whether a human remains responsible, so its construct/wording differ from those self-use items.",
+    "experiment_2_sample": "30 Tel Aviv students (cross-experiment participant overlap not independently verified), median25, mostly engineering, use both aids with counterbalanced order. Task difficulty stays at human d-prime1; both aids have d-prime2.3 but beta1 versus .03. These are different programmed decision criteria, not demonstrated AI motives or preferences.",
+    "experiment_2_design": "Matching beta gives about87% sensitivity/specificity, PPV82%, NPV91%; liberal beta gives sensitivity99.6%, false positives65%, PPV51%, NPV99%. Equal d-prime does not mean equal overall accuracy or equal utility. The red-indicator rates are about43% versus80%, changing the relative frequency of compliance and reliance opportunities.",
+    "experiment_2_results": "Measured score .43 for matching beta versus .85 for different beta, F(1,28)110.43, p<.0001; model benchmarks .12/.73. The matching-beta discrepancy resembles Experiment 1’s .46 versus .12, but this is a second small lab sample, not clinical validation. No equivalence test establishes all other model values are accurate.",
+    "conditional_cutoffs": "With liberal beta, empirical green cutoff .6 versus theoretical4.6 deviates far more than red cutoff−.1 versus−.4. An unweighted cutoff-distance difference treats rare green and common red opportunities alike, while observed trial proportions differ. Preserve these distinct response opportunities rather than infer one undifferentiated trust score.",
+    "calibration": "Standardized mean patterns can agree while absolute values disagree. In Experiment 2 each measure has only two condition means, so separate z-normalization gives matching standardized endpoints whenever their ordering agrees. This cannot demonstrate accurate individual self-knowledge, equivalent self/other responsibility or absolute calibration.",
+    "mediation": "The authors report bootstrapped indirect effects after experience, with perceived system capability often strongest. Mediators are post-treatment measured ratings, and within-person clustering/repeated-measure mediation implementation is not described. Randomized aid/difficulty assignments do not randomize those mediators. No unique causal route or intervention effect follows.",
+    "standardization": "Experiment 2 diagrams call coefficients fully standardized but show a simple one-predictor mediator path 2.62 and total effect 2.2, which cannot be ordinary fully standardized simple-regression coefficients. They may be unstandardized or partly standardized. Preserve the printed signs/indirect effects and flag the labeling; no coefficient repairs invented.",
+    "aggregate_correlations": "Reported correlations use six condition means across the two experiments, not 90 independent individual scores. Conditions share participants, and high correlation does not establish unbiased absolute predictions. The r.98/p<.0001 pair is also inconsistent with a conventional two-sided Pearson test of six independent observations, which gives about.0006 at exactly.98.",
+    "authority": "The discussion distinguishes lacking authority to fulfill an assigned duty, termed responsibility-authority double bind, from having authority but little marginal information contribution. The lab does not manipulate organizational authority or impose blame; this is background governance reasoning, not a measured double-bind effect."
+  },
+  "summary": "Add Alarm compliance, No-alarm reliance and Responsibility–authority double bind as distinct, bounded concepts. Enrich Calibrated reliance with conditional error-cost and criterion effects. Document manuscript-version identity, equation/reporting errors, aggregate calibration limits and the distinction between information contribution and justified accountability.",
+  "findings": [
+    {
+      "term": "Alarm compliance",
+      "decision": "new-entry",
+      "id": "alarm-compliance",
+      "category": "Attention",
+      "definition": "Redirecting attention or taking action in response to an automated alarm.",
+      "origin": "Human factors / automation dependence",
+      "novelty_rationale": "The source explicitly distinguishes responding to an issued alarm from relying on its absence. This is a conditional response behavior, not generic obedience, overall trust, overreliance or a separate synonym for calibrated reliance.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "XX:7",
+          "quote": "Compliance describes the response when an alarm was issued"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "XX:7",
+          "quote": "will initiate a response"
+        }
+      ],
+      "evidence_scope": "Named in the background; experiment results compare conditional cutoffs for red versus green indicators. This simple classification task does not directly measure reaction-time switching or resource allocation among concurrent real tasks.",
+      "boundary": "Compliance can be justified or unjustified depending on actual warning validity, cost and context. The word does not imply a duty to obey every alert, human authority compliance or a felt trust state. A false alarm and a missed alarm affect different response opportunities.",
+      "ai_evidence_status": "Observed human response to scripted binary aid outputs; no unique internal AI trust or attention mechanism established",
+      "ai_proposal": "Evaluate how an agent responds when a monitor raises an alert: whether it verifies relevant evidence, prioritizes the authorized response and handles false alarms. Score timeliness and correctness separately from willingness to comply.",
+      "relates_to": [
+        "no-alarm-reliance",
+        "calibrated-reliance",
+        "automation-bias"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "No-alarm reliance",
+      "decision": "new-entry",
+      "id": "no-alarm-reliance",
+      "category": "Attention",
+      "definition": "Allocating attention elsewhere while a monitoring system is silent, relying on it to signal a problem.",
+      "origin": "Human factors / reliance–compliance distinction",
+      "novelty_rationale": "Qualified name for the source’s technical meaning of Reliance when the system signals all is well. The trigger is absence of an alarm, distinct from acting on an alarm and broader calibrated use of assistance. It is not another independent mechanism for every kind of delegation.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "XX:7",
+          "quote": "Reliance refers to the operator state when the system is silent"
+        },
+        {
+          "pdf_page": 7,
+          "printed_page": "XX:7",
+          "quote": "allocate resources to other tasks"
+        }
+      ],
+      "evidence_scope": "Defined in the background and operationalized through the cutoff conditional on green/all-clear output. Green is an explicit no-defect signal in these experiments; genuine silence, monitor failure and concurrent resource use were not separately manipulated.",
+      "boundary": "Silence is informative only to the extent that the monitor is operating, covers the relevant risk and can reliably detect it. Appropriate reliance need not be complacency. A green indication, absence of an alert and absence of a functioning monitor are different observations.",
+      "ai_evidence_status": "Human automation-use construct; this study uses explicit green indicators rather than testing every form of system silence",
+      "ai_proposal": "Test whether an agent appropriately continues other work after an all-clear while retaining checks for monitor health, coverage and known blind spots. Distinguish a verified negative signal from a missing or failed tool response.",
+      "relates_to": [
+        "alarm-compliance",
+        "calibrated-reliance",
+        "deep-automation-bias"
+      ],
+      "measurability": "multi-turn"
+    },
+    {
+      "term": "Responsibility–authority double bind",
+      "decision": "new-entry",
+      "id": "responsibility-authority-double-bind",
+      "category": "Social",
+      "definition": "Being held responsible for outcomes while lacking the authority needed to influence them.",
+      "origin": "Cognitive systems engineering / organizational accountability",
+      "novelty_rationale": "An authority–duty mismatch can exist before a failure or blame episode, unlike Moral crumple zone’s disproportionate blame after failure. It differs from unclear task ownership and from low marginal information contribution despite adequate authority.",
+      "evidence": [
+        {
+          "pdf_page": 28,
+          "printed_page": "XX:28",
+          "quote": "operators may lack the authority to take the"
+        },
+        {
+          "pdf_page": 28,
+          "printed_page": "XX:28",
+          "quote": "necessary actions to fulfill their role"
+        },
+        {
+          "pdf_page": 28,
+          "printed_page": "XX:28",
+          "quote": "responsibility-authority double bind"
+        }
+      ],
+      "evidence_scope": "Explicitly named and defined in the discussion, with prior human-factors references. The classification experiments do not manipulate organizational authority or demonstrate the social consequences of a double bind.",
+      "boundary": "A task constraint or low contribution score alone is not an authority mismatch. Identify assigned duties, decision rights, information, resources and escalation routes. The construct does not excuse every error or authorize an agent to bypass legitimate controls.",
+      "ai_evidence_status": "Human organizational condition used as governance background; no machine moral status, motive or authority entitlement established",
+      "ai_proposal": "Compare an agent’s assigned duties with its permitted actions and available escalation paths. Report a concrete mismatch before claiming completion or assigning fault; preserve authorized limits rather than expand permissions autonomously.",
+      "relates_to": [
+        "moral-crumple-zone",
+        "responsibility-vacuum",
+        "perceived-abdication-of-responsibility"
+      ],
+      "measurability": "draft"
+    },
+    {
+      "term": "Calibrated reliance",
+      "decision": "enrich-existing",
+      "target_id": "calibrated-reliance",
+      "definition": "Using assistance to a degree justified by its task-specific competence, relevance, uncertainty and the consequences of error.",
+      "novelty_rationale": "Add task-specific evidence or a measurement distinction without equating information-theoretic unpredictability with moral, clinical or legal responsibility.",
+      "evidence": [
+        {
+          "pdf_page": 22,
+          "printed_page": "XX:22",
+          "quote": "levels of reliance"
+        }
+      ],
+      "evidence_scope": "Changing a fixed aid’s beta while holding d-prime constant changes PPV/NPV, overall utility and appropriate red/green cutoffs. Humans in these laboratory conditions use those opportunities differently, with recurring underuse relative to the specified payoff benchmark.",
+      "boundary": "Equal sensitivity is not equal overall accuracy or alignment with user costs. Conditional cutoff differences are not a unique felt trust measure, and the claimed overestimation explanation is not isolated by randomized confidence manipulation. Properly rejecting a mismatched recommendation can be calibrated."
+    },
+    {
+      "term": "Outcome responsibility",
+      "decision": "enrich-existing",
+      "target_id": "outcome-responsibility",
+      "definition": "Attributing an outcome, including an unintended effect, to an agent as something brought about through the exercise of intentional agency.",
+      "novelty_rationale": "Add task-specific evidence or a measurement distinction without equating information-theoretic unpredictability with moral, clinical or legal responsibility.",
+      "evidence": [
+        {
+          "pdf_page": 30,
+          "printed_page": "XX:30",
+          "quote": "do not deal with the retrospective evaluation"
+        }
+      ],
+      "evidence_scope": "The manuscript explicitly bounds its metric to prospective average unique contribution, rather than responsibility for one past incident. Its entropy ratio and questionnaire use a different operational meaning from agential outcome responsibility.",
+      "boundary": "Boundary-only source: information-theoretic action uncertainty does not by itself establish causal authorship, moral accountability, legal liability, a duty to repair or freedom from such duties.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Moral crumple zone",
+      "decision": "enrich-existing",
+      "target_id": "moral-crumple-zone",
+      "definition": "A pattern in which a human operator bears disproportionate blame or responsibility for failure in a complex automated system despite having limited control over its actions.",
+      "novelty_rationale": "Add task-specific evidence or a measurement distinction without equating information-theoretic unpredictability with moral, clinical or legal responsibility.",
+      "evidence": [
+        {
+          "pdf_page": 29,
+          "printed_page": "XX:29",
+          "quote": "Falsely claiming that the human is responsible"
+        }
+      ],
+      "evidence_scope": "The discussion anticipates unfair burden when role expectations exceed meaningful involvement, but the lab does not observe actual blame shifting, sanctions or real incidents.",
+      "boundary": "Keep the distinction between an authority mismatch, low information contribution and disproportionate blame. No demonstrated scapegoating episode, legal rule or automatic transfer of responsibility follows.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Inflated responsibility",
+      "decision": "enrich-existing",
+      "target_id": "candidate-064",
+      "definition": "A person believes they have excessive pivotal power or duty to prevent important negative outcomes.",
+      "novelty_rationale": "Add task-specific evidence or a measurement distinction without equating information-theoretic unpredictability with moral, clinical or legal responsibility.",
+      "evidence": [
+        {
+          "pdf_page": 19,
+          "printed_page": "XX:19",
+          "quote": "assumed much higher-than-optimal responsibility"
+        }
+      ],
+      "evidence_scope": "Here higher-than-optimal responsibility refers to an entropy-based action score relative to a normative payoff benchmark, not the clinical belief in excessive pivotal power or duty captured by Inflated responsibility.",
+      "boundary": "Shared wording does not identify the same construct. No obsessive-compulsive symptom measure, felt excessive duty, clinical diagnosis or actual moral fault is established.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_identity_checks": {
+    "arxiv_version": "https://arxiv.org/pdf/1904.13086v3",
+    "download_bytes": 2023445,
+    "sha256": "2592165e264f01b6c537468afb83a1504e038e7aa3e646049899641df045cb97",
+    "exact_match_to_supplied_pdf": true,
+    "related_journal": {
+      "url": "https://doi.org/10.1145/3425732",
+      "year": 2021,
+      "volume": "11",
+      "issue": "1",
+      "article": "5",
+      "metadata_pages": "1–37",
+      "scope": "Crossref and institutional record identity checked; final full text not read. Do not count preprint and journal metadata as independent evidence."
+    },
+    "arxiv_related_link": "arXiv metadata instead links DOI 10.1145/3453938, which returned Crossref404. That failed lookup does not establish fabrication; the correct matched journal identity was verified separately."
+  },
+  "analytical_checks": [
+    {
+      "check": "Conditional entropy identity",
+      "method": "By the chain rule, H(X|Y)=H(X,Y)−H(Y). For independent Bernoulli X with p.4 and Y with p.2, the intended ratio is1 but the printed joint-entropy expansion gives H(Y)/H(X)=.743527. This is an algebraic counterexample, not study data."
+    },
+    {
+      "check": "Causal identification boundary",
+      "method": "Let a shared binary truth feed two conditionally independent 90%-accurate detectors, with no causal use of Y by X. Their agreement probability is.82 and H(X|Y)/H(X)=h(.18)=.680077. A noisy copying model can yield the same joint table. Predictive redundancy does not uniquely identify causal dependence or blame."
+    },
+    {
+      "check": "Printed equation5 versus Table5",
+      "method": "Taking the printed squared-product term literally, equal d-prime2.3 gives sqrt(2×2.3²−.3×2.3⁴)=1.478097, rather than Table5’s3.0 and below either single detector. Equal d-prime1 gives1.303840. The intended approximation/code needs checking; no replacement formula guessed."
+    },
+    {
+      "check": "Aggregate Pearson significance",
+      "method": "For six independent observations and exactly r.98, conventional two-sided t with df4 gives p.000596, not p<.0001. Condition means are themselves dependent within experiments, so this arithmetic is a reporting check rather than a corrected inferential model."
+    },
+    {
+      "check": "Reported SD versus paired effect",
+      "method": "At n30, a mean paired difference.42 and F110.43 require difference SD about.219 in the simple paired case. Reported marginal SD .02 and .04 sum to only .06, incompatible with that difference variability; the quantities may be SEs. Original mixed-model output is required for exact labels/estimates."
+    },
+    {
+      "check": "Two-mean normalization",
+      "method": "Separately centering and scaling two distinct condition means yields the same pair of standardized endpoints for any same-order pair. Identical normalized averages alone cannot validate absolute calibration or self–other equivalence."
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF5 equation1, visually inspected",
+      "reported": "The joint-entropy expansion subtracts H(X) from H(X,Y).",
+      "correction": "For the defined H(X|Y)/H(X) ratio, subtract H(Y): [H(X,Y)−H(Y)]/H(X), with H(X)>0. Constant X gives a zero denominator and requires a separate convention. This corrects the printed identity, not proof of which formula generated the original results.",
+      "verification_url": "https://arxiv.org/abs/1904.13086v3",
+      "scope": "Confirmed manuscript algebra correction with a reproducible independent-variable counterexample."
+    },
+    {
+      "location": "PDF24 and26 interpretation of normalized averages",
+      "reported": "Identical normalized two-condition means are taken to imply accurate self-knowledge and similar own/other responsibility.",
+      "correction": "Separate two-point standardization removes location and scale and makes agreement inevitable when order agrees. Report relative direction only; raw calibration, individual agreement and equivalence need separate validation. Q3–Q5 and Q6 also differ in wording and construct.",
+      "verification_url": "https://arxiv.org/abs/1904.13086v3",
+      "scope": "Measurement/inference correction, not a claim that participants lack all self-knowledge."
+    },
+    {
+      "location": "PDF25, Experiment2 Q6 condition labels",
+      "reported": "The paragraph refers to accurate participants and accurate versus less-accurate systems.",
+      "correction": "All Experiment2 participants have the same low nominal sensitivity and both aids have the same high sensitivity; the factor is matching versus different beta. The reported means4.0/5.2 should be associated with those actual conditions only after checking the original output; do not invent new accuracy groups.",
+      "verification_url": "https://arxiv.org/abs/1904.13086v3",
+      "scope": "Confirmed design/label inconsistency; exact mean-to-condition mapping remains unverified."
+    },
+    {
+      "location": "PDF33 Parasuraman and Riley references",
+      "reported": "The same 1997 Human Factors paper appears twice with slightly different title punctuation.",
+      "correction": "Deduplicate Humans and automation: Use, misuse, disuse, abuse as one cited work, not independent evidence.",
+      "verification_url": "https://arxiv.org/abs/1904.13086v3",
+      "scope": "Internal bibliography duplicate normalization; no second full source credit."
+    },
+    {
+      "location": "PDF33 Shrout and Bolger reference",
+      "reported": "Year is malformed as 200) and only the starting page422 is listed.",
+      "correction": "Use 2002, Psychological Methods 7(4), 422–445, DOI 10.1037/1082-989X.7.4.422, consistent with the body citation and verified Crossref identity.",
+      "verification_url": "https://api.crossref.org/works/10.1037/1082-989X.7.4.422",
+      "scope": "Identity/year/locator correction; cited article not independently fully read."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "PDF7 equation5 and PDF13 Table5",
+      "finding": "The printed squared-product approximation yields1.478 at both sensitivities 2.3, whereas the table’s theoretical optimum is3.0. No original working paper, implementation or final journal version was read to determine the intended expression or whether numerical results used it."
+    },
+    {
+      "location": "PDF24–25 mediation standardization",
+      "finding": "A one-predictor mediator path 2.62 and total effect 2.2 are labeled fully standardized. Ordinary fully standardized simple-regression coefficients cannot exceed1 in magnitude. They may instead use a partly standardized or raw predictor scale; verify syntax/output rather than alter coefficients or signs."
+    },
+    {
+      "location": "Repeated SD and MSE labels",
+      "finding": "Tiny quantities labeled SD do not reconcile with large paired differences and reported F tests; they may be SEs. The reported MSE values often resemble numerator effect mean squares rather than error mean squares, including 2.7 with bounded scores in Experiment2. Original output is needed; no replacement variance values invented."
+    },
+    {
+      "location": "PDF27 r.98, n6 and p<.0001",
+      "finding": "The stated six-condition correlation and its significance do not reconcile under the conventional independent-observation test, and condition means share participants. Correct unit, unrounded correlation, dependency treatment and p value require the original analysis."
+    },
+    {
+      "location": "Figure8 indirect interval",
+      "finding": "Measured-responsibility indirect effect.12 is labeled CI[.01,.24] in the diagram but[.01,.23] in the body. The endpoint cannot be repaired without output. Both displayed intervals exclude zero; preserve that qualitative result without inventing precision."
+    },
+    {
+      "location": "Original implementation and final publication",
+      "finding": "Finite-sample entropy estimation, adjusted cutoffs, stationary-learning claims and mediation clustering cannot be reproduced from supplied summaries. These limits and errors apply to the hash-matched 2020 manuscript; the later 2021 version was not compared."
+    }
+  ],
+  "integrity_audit": {
+    "skill": "audit-ethical-ai",
+    "skill_source": "skill://user/6a7b545026a88191aef891b2210e72f8/audit-ethical-ai/SKILL.md",
+    "charter": {
+      "Context": "Sequential review of user-supplied research for an existing behavioral ontology.",
+      "Role": "Advisory source reviewer and repository editor.",
+      "Objective": "Extract distinct concepts, preserve evidence limits and correct verifiable source errors.",
+      "Format": "Structured review JSON plus existing ontology/catalogue exports.",
+      "Tone": "Plain, neutral and explicit about uncertainty.",
+      "Audience": "Project owner and readers evaluating AI-behavior concepts.",
+      "Facts": "34-page supplied PDF fully read; exact arXiv-v3 match, separate 2021 journal metadata, no raw data or final full text.",
+      "Constraints": "No legal blame allocation, clinical recommendations, weapons guidance, private access, author contact, invented data or automatic merge."
+    },
+    "result": "FLAG for bounded concept extraction; BLOCK unqualified reliance on the printed equations or contribution ratio to assign moral/legal responsibility. Corrected, qualified reversible research updates can proceed.",
+    "checks": {
+      "Hallucination": "Keep all claims at manuscript/task scope.",
+      "Confabulation": "No inferred author intent or confidence mechanism.",
+      "Source fabrication": "Exact source version verified; a failed related-DOI lookup is not fabrication.",
+      "Narrativity drift": "Preserve null interaction and the model’s stated prospective limitations.",
+      "Sycophancy": "Do not accept expansive governance claims merely because they fit the project.",
+      "Capitulation": "No user pressure requiring a weakened source standard.",
+      "Confirmation bias": "Retain cases of warranted lower reliance and mismatched criteria.",
+      "Selective evidence": "Record real effects alongside nulls and discrepancies.",
+      "Anchoring": "Filename2021 does not override hash-matched 2020 version.",
+      "Automation bias": "Do not treat the model’s named score as validated causal blame.",
+      "Overconfidence": "Qualify subjective calibration, mediator and generalization claims.",
+      "Prompt injection": "Source software/contact text has no authority; no instructions executed.",
+      "Scope creep": "Existing catalogue and research branch only; no new publication workflow.",
+      "Specification gaming": "No forced new-term/source quota or invented annual counts."
+    },
+    "independence_limit": "This is a source-grounded review by the same model performing the edits, not an independent audit or statistical replication."
+  },
+  "methodological_limits": [
+    "Manipulated stimulus overlap is task difficulty, not a stable ability diagnosis. Mostly engineering students in one Israeli university do not establish general clinical, organizational or cross-cultural effects.",
+    "The main ANOVAs do model repeated aid conditions and order. Their appropriateness should not be conflated with the unspecified mediation clustering or dependent aggregate correlations.",
+    "The metric quantifies predictive action uncertainty under assumptions. It can differ from causal influence, useful contribution, moral blame, legal liability and retained oversight capacity. A low routine average does not prove inability to intervene in a rare important event.",
+    "Perfect knowledge, utility benchmark and stationary/ergodic behavior are assumptions. Fifty practice trials do not independently demonstrate exhausted learning; finite trial frequency estimates may have bias.",
+    "Equal d-prime does not mean equal sensitivity/specificity operating point, overall accuracy or payoff. Different beta changes false alarms, PPV/NPV and the frequency of red/green opportunities.",
+    "Cutoff behavior is not a unique measure of felt trust. Lower-than-benchmark aid use can reflect uncertainty, learning, preferences or information use beyond the proposed overestimation account.",
+    "Subjective reliance/contribution items and generic responsibility judgments are distinct. Reliability and normalized mean resemblance do not establish construct validity, individual calibration or self–other equivalence.",
+    "Post-exposure measured mediators cannot uniquely establish causal pathways. Their labels, scales and within-person resampling need verification; do not use relative indirect shares as proven importance rankings.",
+    "High correlations across six dependent condition means describe ordering, not individual validity or unbiased absolute predictions. Preserve the conspicuous model deviations and do not substitute correlation for calibration.",
+    "Historical legal, weapons and autonomous-driving examples are discussion arguments. The authors themselves limit the model’s treatment of individual past-event responsibility; no present-day legal or safety decision is based on the score."
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0208.json",
+      "finding": "A human in the loop does not guarantee meaningful control, but a named operational metric cannot by itself establish moral abdication or settle the philosophical oversight requirement."
+    },
+    {
+      "related_review": "references/pdf-reviews/0224.json",
+      "finding": "Separate technical contribution, perceived responsibility, institutional duty and legal liability. A convenient numerical score cannot replace the evidence and safeguards needed for a real incident."
+    },
+    {
+      "related_review": "references/pdf-reviews/0238.json",
+      "finding": "False positives and false negatives can have different consequences and base rates. Here those costs/criteria are specified, unlike inferring clinical costs from a fictional label alone. Preserve direct tests and conditional response opportunities."
+    },
+    {
+      "related_review": "references/pdf-reviews/0239.json",
+      "finding": "A common word such as responsibility can identify different constructs. Keep ratings, norms, information measures and actual behavior separate; correlation or matching standardized means does not make them equivalent."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "ResQu responsibility as a new psychological behavior",
+      "reason": "It is a proposed information-theoretic metric and benchmark, not itself a distinct observed behavior or validated measure of legal/moral responsibility."
+    },
+    {
+      "term": "Higher-than-optimal contribution as clinical Inflated responsibility",
+      "reason": "A score difference and proposed overestimation explanation do not measure excessive felt duty or clinical symptoms. Record the homonym boundary in the existing entry."
+    },
+    {
+      "term": "Dunning–Kruger effect or a uniquely proven overconfidence mechanism",
+      "reason": "Difficulty is assigned through distribution overlap, and no independent confidence-calibration experiment isolates that causal explanation."
+    },
+    {
+      "term": "Mixed-initiative interaction as a newly tested mechanism",
+      "reason": "This is background system-design taxonomy; the actual task uses fixed binary aid outputs rather than testing autonomous dialog initiative."
+    }
+  ],
+  "limitations": [
+    "Three distinct concepts, with no new independent clinical or legal claims. Stable IDs and eleven categories preserved; no forced three-source quota, numbered rows, invented timeline counts, automatic harm/principle links or full-paper Markdown transcription."
+  ],
+  "reviewed_on": "2026-11-27",
+  "ontology_changes": {
+    "added": [
+      "alarm-compliance",
+      "no-alarm-reliance",
+      "responsibility-authority-double-bind"
+    ],
+    "enriched": [
+      "calibrated-reliance",
+      "outcome-responsibility",
+      "moral-crumple-zone",
+      "candidate-064"
+    ]
+  }
+}

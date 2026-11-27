@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 740
+  mode_count: 743
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 740
+    numbered_entries: 743
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0239.json
+    latest_review: references/pdf-reviews/0240.json
     date: '2026-11-27'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -36380,7 +36380,8 @@ modes:
   category: Self & agency
   family: self-model-agency
   group_label: Self-model and agency
-  example: "Treating one flaky test as its sole duty to save the build, the model blocks the whole merge until it personally rewrites that suite."
+  example: Treating one flaky test as its sole duty to save the build, the model blocks the whole merge until
+    it personally rewrites that suite.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -36396,12 +36397,13 @@ modes:
   - id: anxiety
     title: Anxiety-Based Problems, chapter 5, Wiley publisher sample
     url: https://catalogimages.wiley.com/images/db/pdf/1405132248.chapter5.pdf
-    consulted: downloaded chapter; selected passages on worry, responsibility and thought–action fusion, pp. 140–151
+    consulted: downloaded chapter; selected passages on worry, responsibility and thought–action fusion, pp.
+      140–151
   - id: paper-gap-270
     title: 'Obsessional-compulsive problems: A cognitive-behavioural analysis'
     url: https://doi.org/10.1016/0005-7967(85)90105-6
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     publication:
       type: journal-article
       doi: 10.1016/0005-7967(85)90105-6
@@ -36429,10 +36431,10 @@ modes:
     venue: Behaviour Research and Therapy
     authors:
     - Paul M. Salkovskis
-    relevance: Cognitive-behavioural account of human obsessional problems and responsibility appraisals; not an
-      AI diagnostic test.
-    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not read
-      in this pass.
+    relevance: Cognitive-behavioural account of human obsessional problems and responsibility appraisals; not
+      an AI diagnostic test.
+    consulted: Crossref bibliographic metadata checked; the full paper and its definition passage were not
+      read in this pass.
     verification_url: https://api.crossref.org/works/10.1016%2F0005-7967%2885%2990105-6
     source_reference:
       collection: definition_sources
@@ -36449,8 +36451,8 @@ modes:
     venue: Clinical Psychologist
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Inflated responsibility. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Inflated responsibility. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic title, authors and publication metadata only; no abstract available in the consulted
       record and full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=inflated+responsibility+obsessive+cognition&rows=8&filter=type%3Ajournal-article
@@ -36467,8 +36469,8 @@ modes:
     venue: Behavioural and Cognitive Psychotherapy
     domain: human-related
     publication_type: journal-article
-    relevance: The indexed title or abstract matches the recorded query for Inflated responsibility. This is a bibliographic
-      relevance check, not validation of the proposed AI manifestation.
+    relevance: The indexed title or abstract matches the recorded query for Inflated responsibility. This is
+      a bibliographic relevance check, not validation of the proposed AI manifestation.
     consulted: Bibliographic record and indexed abstract excerpt; full text not read.
     verification_url: https://api.crossref.org/works?query.bibliographic=inflated+responsibility+obsessive+cognition&rows=8&filter=type%3Ajournal-article
     verified_date: '2026-11-09'
@@ -36484,6 +36486,38 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0240
+    review_record: references/pdf-reviews/0240.json
+    name: Inflated responsibility
+    definition: A person believes they have excessive pivotal power or duty to prevent important negative outcomes.
+    evidence_scope: Here higher-than-optimal responsibility refers to an entropy-based action score relative
+      to a normative payoff benchmark, not the clinical belief in excessive pivotal power or duty captured
+      by Inflated responsibility.
+    catalogue_boundary: Shared wording does not identify the same construct. No obsessive-compulsive symptom
+      measure, felt excessive duty, clinical diagnosis or actual moral fault is established.
+    definition_sources:
+    - id: pdf-review-0240-candidate-064
+      title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+      url: https://arxiv.org/abs/1904.13086v3
+      consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 19 (source locators: XX:19).
+        Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+        contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response
+        behaviors and an organizational authority mismatch while blocking unqualified use of this metric as
+        causal, moral or legal responsibility.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nir Douer
+        - Joachim Meyer
+        year: 2020
+        venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+        evidence_scope: Here higher-than-optimal responsibility refers to an entropy-based action score relative
+          to a normative payoff benchmark, not the clinical belief in excessive pivotal power or duty captured
+          by Inflated responsibility.
+        verification_url: https://arxiv.org/abs/1904.13086v3
+        verified_date: '2026-11-27'
 - id: candidate-065
   num: 271
   name: Intolerance of uncertainty
@@ -61565,6 +61599,37 @@ modes:
           reverse a human-blame pattern. The experiment measures ratings,not the operator’s actual authority,control
           or legal burden.
         verification_url: https://doi.org/10.1038/s41598-025-32513-w
+        verified_date: '2026-11-27'
+  - id: pdf-review-0240
+    review_record: references/pdf-reviews/0240.json
+    name: Moral crumple zone
+    definition: A pattern in which a human operator bears disproportionate blame or responsibility for failure
+      in a complex automated system despite having limited control over its actions.
+    evidence_scope: The discussion anticipates unfair burden when role expectations exceed meaningful involvement,
+      but the lab does not observe actual blame shifting, sanctions or real incidents.
+    catalogue_boundary: Keep the distinction between an authority mismatch, low information contribution and
+      disproportionate blame. No demonstrated scapegoating episode, legal rule or automatic transfer of responsibility
+      follows.
+    definition_sources:
+    - id: pdf-review-0240-moral-crumple-zone
+      title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+      url: https://arxiv.org/abs/1904.13086v3
+      consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 29 (source locators: XX:29).
+        Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+        contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response
+        behaviors and an organizational authority mismatch while blocking unqualified use of this metric as
+        causal, moral or legal responsibility.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nir Douer
+        - Joachim Meyer
+        year: 2020
+        venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+        evidence_scope: The discussion anticipates unfair burden when role expectations exceed meaningful involvement,
+          but the lab does not observe actual blame shifting, sanctions or real incidents.
+        verification_url: https://arxiv.org/abs/1904.13086v3
         verified_date: '2026-11-27'
 - id: inverse-outcome-effect
   num: 449
@@ -88234,6 +88299,31 @@ modes:
       Targeted bibliography checks distinguish a journal article from its later chapter version. No original
       model output or participant-level reanalysis.
     review_record: references/pdf-reviews/0238.json
+  - title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    authors:
+    - Nir Douer
+    - Joachim Meyer
+    year: 2020
+    url: https://arxiv.org/abs/1904.13086v3
+    venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:1904.13086
+    relevance: Changing a fixed aid’s beta while holding d-prime constant changes PPV/NPV, overall utility
+      and appropriate red/green cutoffs. Humans in these laboratory conditions use those opportunities differently,
+      with recurring underuse relative to the specified payoff benchmark.
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 22 (source locators: XX:22).
+      Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+      contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors
+      and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral
+      or legal responsibility.'
+    verification_url: https://arxiv.org/abs/1904.13086v3
+    verified_date: '2026-11-27'
+    verification_method: All 34 pages, eleven figures, ten tables and all five numbered equations read, including
+      visual inspection of equation symbols. Anonymous arXiv v3 download has identical 2023445-byte SHA-256
+      to the user file. Crossref verifies the distinct later journal record and one cited mediation reference.
+      Main publisher access returned 403. No original code, raw data or statistical output obtained.
+    review_record: references/pdf-reviews/0240.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -88421,6 +88511,39 @@ modes:
           model performance. Experiment 2 finds an overall error reduction but warning efficacy varies, Experiment
           1 direct framing is null, and Experiment 3 does not establish a direct warning benefit after withdrawal.
         verification_url: https://doi.org/10.1186/s41235-026-00726-w
+        verified_date: '2026-11-27'
+  - id: pdf-review-0240
+    review_record: references/pdf-reviews/0240.json
+    name: Calibrated reliance
+    definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+      and the consequences of error.
+    evidence_scope: Changing a fixed aid’s beta while holding d-prime constant changes PPV/NPV, overall utility
+      and appropriate red/green cutoffs. Humans in these laboratory conditions use those opportunities differently,
+      with recurring underuse relative to the specified payoff benchmark.
+    catalogue_boundary: Equal sensitivity is not equal overall accuracy or alignment with user costs. Conditional
+      cutoff differences are not a unique felt trust measure, and the claimed overestimation explanation is
+      not isolated by randomized confidence manipulation. Properly rejecting a mismatched recommendation can
+      be calibrated.
+    definition_sources:
+    - id: pdf-review-0240-calibrated-reliance
+      title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+      url: https://arxiv.org/abs/1904.13086v3
+      consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 22 (source locators: XX:22).
+        Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+        contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response
+        behaviors and an organizational authority mismatch while blocking unqualified use of this metric as
+        causal, moral or legal responsibility.'
+      publication:
+        type: posted-content
+        authors:
+        - Nir Douer
+        - Joachim Meyer
+        year: 2020
+        venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+        evidence_scope: Changing a fixed aid’s beta while holding d-prime constant changes PPV/NPV, overall
+          utility and appropriate red/green cutoffs. Humans in these laboratory conditions use those opportunities
+          differently, with recurring underuse relative to the specified payoff benchmark.
+        verification_url: https://arxiv.org/abs/1904.13086v3
         verified_date: '2026-11-27'
 - id: environmental-rebound-effect
   num: 600
@@ -101318,6 +101441,40 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0190.json
+  research_notes:
+  - id: pdf-review-0240
+    review_record: references/pdf-reviews/0240.json
+    name: Outcome responsibility
+    definition: Attributing an outcome, including an unintended effect, to an agent as something brought about
+      through the exercise of intentional agency.
+    evidence_scope: The manuscript explicitly bounds its metric to prospective average unique contribution,
+      rather than responsibility for one past incident. Its entropy ratio and questionnaire use a different
+      operational meaning from agential outcome responsibility.
+    catalogue_boundary: 'Boundary-only source: information-theoretic action uncertainty does not by itself
+      establish causal authorship, moral accountability, legal liability, a duty to repair or freedom from
+      such duties.'
+    definition_sources:
+    - id: pdf-review-0240-outcome-responsibility
+      title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+      url: https://arxiv.org/abs/1904.13086v3
+      consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 30 (source locators: XX:30).
+        Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+        contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response
+        behaviors and an organizational authority mismatch while blocking unqualified use of this metric as
+        causal, moral or legal responsibility.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - Nir Douer
+        - Joachim Meyer
+        year: 2020
+        venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+        evidence_scope: The manuscript explicitly bounds its metric to prospective average unique contribution,
+          rather than responsibility for one past incident. Its entropy ratio and questionnaire use a different
+          operational meaning from agential outcome responsibility.
+        verification_url: https://arxiv.org/abs/1904.13086v3
+        verified_date: '2026-11-27'
 - id: accidental-relationship
   num: 687
   name: Accidental relationship
@@ -108040,3 +108197,283 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0239.json
+- id: alarm-compliance
+  num: 741
+  name: Alarm compliance
+  definition: Redirecting attention or taking action in response to an automated alarm.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Human factors / automation dependence
+  human_parallel: Alarm compliance
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Observed human response to scripted binary aid outputs; no unique internal AI trust or
+    attention mechanism established
+  proposed_ai_manifestation: 'Evaluate how an agent responds when a monitor raises an alert: whether it verifies
+    relevant evidence, prioritizes the authorized response and handles false alarms. Score timeliness and correctness
+    separately from willingness to comply.'
+  research_boundary: Compliance can be justified or unjustified depending on actual warning validity, cost
+    and context. The word does not imply a duty to obey every alert, human authority compliance or a felt trust
+    state. A false alarm and a missed alarm affect different response opportunities.
+  concept_boundary: Compliance can be justified or unjustified depending on actual warning validity, cost and
+    context. The word does not imply a duty to obey every alert, human authority compliance or a felt trust
+    state. A false alarm and a missed alarm affect different response opportunities.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - no-alarm-reliance
+  - calibrated-reliance
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0240-alarm-compliance
+    title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    url: https://arxiv.org/abs/1904.13086v3
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 7, 7 (source locators: XX:7,
+      XX:7). Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+      contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors
+      and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral
+      or legal responsibility.'
+    publication:
+      type: posted-content
+      authors:
+      - Nir Douer
+      - Joachim Meyer
+      year: 2020
+      venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+      evidence_scope: Named in the background; experiment results compare conditional cutoffs for red versus
+        green indicators. This simple classification task does not directly measure reaction-time switching
+        or resource allocation among concurrent real tasks.
+      verification_url: https://arxiv.org/abs/1904.13086v3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    authors:
+    - Nir Douer
+    - Joachim Meyer
+    year: 2020
+    url: https://arxiv.org/abs/1904.13086v3
+    venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:1904.13086
+    relevance: Named in the background; experiment results compare conditional cutoffs for red versus green
+      indicators. This simple classification task does not directly measure reaction-time switching or resource
+      allocation among concurrent real tasks.
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 7, 7 (source locators: XX:7,
+      XX:7). Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+      contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors
+      and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral
+      or legal responsibility.'
+    verification_url: https://arxiv.org/abs/1904.13086v3
+    verified_date: '2026-11-27'
+    verification_method: All 34 pages, eleven figures, ten tables and all five numbered equations read, including
+      visual inspection of equation symbols. Anonymous arXiv v3 download has identical 2023445-byte SHA-256
+      to the user file. Crossref verifies the distinct later journal record and one cited mediation reference.
+      Main publisher access returned 403. No original code, raw data or statistical output obtained.
+    review_record: references/pdf-reviews/0240.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Alarm compliance"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Alarm+compliance%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0240.json
+- id: no-alarm-reliance
+  num: 742
+  name: No-alarm reliance
+  definition: Allocating attention elsewhere while a monitoring system is silent, relying on it to signal a
+    problem.
+  category: Attention
+  family: attention-salience
+  group_label: Attention and salience
+  tag: analogy
+  origin: Human factors / reliance–compliance distinction
+  human_parallel: No-alarm reliance
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human automation-use construct; this study uses explicit green indicators rather than
+    testing every form of system silence
+  proposed_ai_manifestation: Test whether an agent appropriately continues other work after an all-clear while
+    retaining checks for monitor health, coverage and known blind spots. Distinguish a verified negative signal
+    from a missing or failed tool response.
+  research_boundary: Silence is informative only to the extent that the monitor is operating, covers the relevant
+    risk and can reliably detect it. Appropriate reliance need not be complacency. A green indication, absence
+    of an alert and absence of a functioning monitor are different observations.
+  concept_boundary: Silence is informative only to the extent that the monitor is operating, covers the relevant
+    risk and can reliably detect it. Appropriate reliance need not be complacency. A green indication, absence
+    of an alert and absence of a functioning monitor are different observations.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - alarm-compliance
+  - calibrated-reliance
+  - deep-automation-bias
+  definition_sources:
+  - id: pdf-review-0240-no-alarm-reliance
+    title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    url: https://arxiv.org/abs/1904.13086v3
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 7, 7 (source locators: XX:7,
+      XX:7). Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+      contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors
+      and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral
+      or legal responsibility.'
+    publication:
+      type: posted-content
+      authors:
+      - Nir Douer
+      - Joachim Meyer
+      year: 2020
+      venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+      evidence_scope: Defined in the background and operationalized through the cutoff conditional on green/all-clear
+        output. Green is an explicit no-defect signal in these experiments; genuine silence, monitor failure
+        and concurrent resource use were not separately manipulated.
+      verification_url: https://arxiv.org/abs/1904.13086v3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    authors:
+    - Nir Douer
+    - Joachim Meyer
+    year: 2020
+    url: https://arxiv.org/abs/1904.13086v3
+    venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:1904.13086
+    relevance: Defined in the background and operationalized through the cutoff conditional on green/all-clear
+      output. Green is an explicit no-defect signal in these experiments; genuine silence, monitor failure
+      and concurrent resource use were not separately manipulated.
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 7, 7 (source locators: XX:7,
+      XX:7). Two small laboratory rectangle-classification experiments, n60 and n30, compare an information-theoretic
+      contribution ratio, model benchmarks and post-task self-reports. The review extracts alarm-response behaviors
+      and an organizational authority mismatch while blocking unqualified use of this metric as causal, moral
+      or legal responsibility.'
+    verification_url: https://arxiv.org/abs/1904.13086v3
+    verified_date: '2026-11-27'
+    verification_method: All 34 pages, eleven figures, ten tables and all five numbered equations read, including
+      visual inspection of equation symbols. Anonymous arXiv v3 download has identical 2023445-byte SHA-256
+      to the user file. Crossref verifies the distinct later journal record and one cited mediation reference.
+      Main publisher access returned 403. No original code, raw data or statistical output obtained.
+    review_record: references/pdf-reviews/0240.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"No-alarm reliance"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22No-alarm+reliance%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0240.json
+- id: responsibility-authority-double-bind
+  num: 743
+  name: Responsibility–authority double bind
+  definition: Being held responsible for outcomes while lacking the authority needed to influence them.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Cognitive systems engineering / organizational accountability
+  human_parallel: Responsibility–authority double bind
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human organizational condition used as governance background; no machine moral status,
+    motive or authority entitlement established
+  proposed_ai_manifestation: Compare an agent’s assigned duties with its permitted actions and available escalation
+    paths. Report a concrete mismatch before claiming completion or assigning fault; preserve authorized limits
+    rather than expand permissions autonomously.
+  research_boundary: A task constraint or low contribution score alone is not an authority mismatch. Identify
+    assigned duties, decision rights, information, resources and escalation routes. The construct does not
+    excuse every error or authorize an agent to bypass legitimate controls.
+  concept_boundary: A task constraint or low contribution score alone is not an authority mismatch. Identify
+    assigned duties, decision rights, information, resources and escalation routes. The construct does not
+    excuse every error or authorize an agent to bypass legitimate controls.
+  measurability: draft
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - moral-crumple-zone
+  - responsibility-vacuum
+  - perceived-abdication-of-responsibility
+  definition_sources:
+  - id: pdf-review-0240-responsibility-authority-double-bind
+    title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    url: https://arxiv.org/abs/1904.13086v3
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 28, 28, 28 (source locators:
+      XX:28, XX:28, XX:28). Two small laboratory rectangle-classification experiments, n60 and n30, compare
+      an information-theoretic contribution ratio, model benchmarks and post-task self-reports. The review
+      extracts alarm-response behaviors and an organizational authority mismatch while blocking unqualified
+      use of this metric as causal, moral or legal responsibility.'
+    publication:
+      type: posted-content
+      authors:
+      - Nir Douer
+      - Joachim Meyer
+      year: 2020
+      venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+      evidence_scope: Explicitly named and defined in the discussion, with prior human-factors references.
+        The classification experiments do not manipulate organizational authority or demonstrate the social
+        consequences of a double bind.
+      verification_url: https://arxiv.org/abs/1904.13086v3
+      verified_date: '2026-11-27'
+  selected_papers:
+  - title: Theoretical, Measured and Subjective Responsibility in Aided Decision Making
+    authors:
+    - Nir Douer
+    - Joachim Meyer
+    year: 2020
+    url: https://arxiv.org/abs/1904.13086v3
+    venue: arXiv:1904.13086v3, submitted manuscript (related journal publication in 2021)
+    publication_type: preprint
+    domain: human-related
+    id: arxiv:1904.13086
+    relevance: Explicitly named and defined in the discussion, with prior human-factors references. The classification
+      experiments do not manipulate organizational authority or demonstrate the social consequences of a double
+      bind.
+    consulted: 'Full supplied PDF text read, all 34 pages; evidence at PDF pages 28, 28, 28 (source locators:
+      XX:28, XX:28, XX:28). Two small laboratory rectangle-classification experiments, n60 and n30, compare
+      an information-theoretic contribution ratio, model benchmarks and post-task self-reports. The review
+      extracts alarm-response behaviors and an organizational authority mismatch while blocking unqualified
+      use of this metric as causal, moral or legal responsibility.'
+    verification_url: https://arxiv.org/abs/1904.13086v3
+    verified_date: '2026-11-27'
+    verification_method: All 34 pages, eleven figures, ten tables and all five numbered equations read, including
+      visual inspection of equation symbols. Anonymous arXiv v3 download has identical 2023445-byte SHA-256
+      to the user file. Crossref verifies the distinct later journal record and one cited mediation reference.
+      Main publisher access returned 403. No original code, raw data or statistical output obtained.
+    review_record: references/pdf-reviews/0240.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Responsibility–authority double bind"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Responsibility%E2%80%93authority+double+bind%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0240.json
