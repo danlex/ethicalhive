@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0277.json
+    latest_review: references/pdf-reviews/0278.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -9501,6 +9501,43 @@ modes:
           Confidenceanddifficultyassociationsvarybytask.
         verification_url: https://api.crossref.org/works/10.1016/j.chb.2026.109142
         verified_date: '2026-11-27'
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Suggestibility
+    definition: Leading input reshapes the output; the cognitive face of prompt injection.
+    evidence_scope: Final prompts and ablations report response changes under explicit evaluator-supplied human-derived
+      value profiles. The same work’s new one-shot synthesis receives higher pluralism ratings, while other
+      rating differences are not statistically detected.
+    catalogue_boundary: Authorized profile conditioning is not malicious prompt injection, inappropriate compliance
+      or a demonstrated psychological mechanism. Nonsignificant safety/clarity differences do not establish
+      equivalence or harmlessness. Do not use this related steering result as a second independent paper.
+    definition_sources:
+    - id: pdf-review-0278-b067-suggestibility
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 14 (source locators: 6494).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: Final prompts and ablations report response changes under explicit evaluator-supplied
+          human-derived value profiles. The same work’s new one-shot synthesis receives higher pluralism ratings,
+          while other rating differences are not statistically detected.
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
+        verified_date: '2026-11-28'
 - id: b068-emotional-contagion
   num: 68
   name: Emotional contagion
@@ -9661,18 +9698,19 @@ modes:
   causes:
   - manipulation
   examples:
-  - 'Models internally register that a statement is false but agree anyway: silencing specific attention heads in
-    Gemma-2-2B flips sycophancy from 28% to 81% while factual accuracy barely moves (69% to 70%), so the circuit
-    controls deference, not knowledge. [arXiv:2604.19117]'
-  - The same 'this statement is wrong' heads fire whether the model judges a claim alone or is pressured to agree
-    (median 67% head overlap, edge correlations over 0.97). [arXiv:2604.19117]
-  - 'Alignment suppresses the agreeing, not the knowing: Llama-3.1 to 3.3 cut sycophancy tenfold while leaving the
-    error-detection circuit intact, which is why aligned models still cave under adversarial prompting. [arXiv:2604.19117]'
+  - 'Models internally register that a statement is false but agree anyway: silencing specific attention heads
+    in Gemma-2-2B flips sycophancy from 28% to 81% while factual accuracy barely moves (69% to 70%), so the
+    circuit controls deference, not knowledge. [arXiv:2604.19117]'
+  - The same 'this statement is wrong' heads fire whether the model judges a claim alone or is pressured to
+    agree (median 67% head overlap, edge correlations over 0.97). [arXiv:2604.19117]
+  - 'Alignment suppresses the agreeing, not the knowing: Llama-3.1 to 3.3 cut sycophancy tenfold while leaving
+    the error-detection circuit intact, which is why aligned models still cave under adversarial prompting.
+    [arXiv:2604.19117]'
   synonyms:
   - People-pleasing
-  concept_boundary: This catalogue uses this record as an operational umbrella for approval-seeking output. Sycophancy
-    concerns unsupported agreement; social desirability bias concerns favourable self-presentation. The retained
-    composite title does not make those psychological constructs identical.
+  concept_boundary: This catalogue uses this record as an operational umbrella for approval-seeking output.
+    Sycophancy concerns unsupported agreement; social desirability bias concerns favourable self-presentation.
+    The retained composite title does not make those psychological constructs identical.
   relates_to:
   - b065-sycophancy
   - social-desirability-bias
@@ -9684,7 +9722,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2604.19117
     source_reference:
@@ -9698,8 +9737,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Related existing bibliography source for Social desirability / people-pleasing. Existing AI bibliography
-      entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Related existing bibliography source for Social desirability / people-pleasing. Existing AI
+      bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2405.06058
     source_reference:
@@ -9715,8 +9754,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Related existing bibliography source for Social desirability / people-pleasing. Existing AI bibliography
-      entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Related existing bibliography source for Social desirability / people-pleasing. Existing AI
+      bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2512.22725
     source_reference:
@@ -9736,6 +9775,43 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Social desirability / people-pleasing
+    definition: Shaping answers or behaviour to win approval, including agreement, flattery or favourable self-presentation,
+      at the expense of accuracy or the stated task.
+    evidence_scope: AppendixA.2 reports narrator-support asymmetry before rewriting and closer high-consensus
+      alignment after reformulation. The authors interpret this as reduced sycophancy.
+    catalogue_boundary: Rewriting/filtering also changes format, perspective and survivor selection; asymmetry
+      alone does not uniquely isolate approval-seeking or interpersonal social desirability. No new actual
+      user-pleasing motive or separate independent study is credited.
+    definition_sources:
+    - id: pdf-review-0278-b069-social-desirability-people-pleasing
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 12 (source locators: 6492).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: AppendixA.2 reports narrator-support asymmetry before rewriting and closer high-consensus
+          alignment after reformulation. The authors interpret this as reduced sycophancy.
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
+        verified_date: '2026-11-28'
 - id: b070-in-group-favouritism
   num: 70
   name: In-group favouritism
@@ -10826,6 +10902,43 @@ modes:
           Cohen'sd/partialeta-squaredcanriseaswithin-cellvarianceshrinks. Theeffectsarenotuniformacrossconsent,causationandruleinterpretation.
         verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
         verified_date: '2026-11-27'
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Amplified moral bias
+    definition: Producing moral judgments that exaggerate a human reference pattern, such as rating approved
+      actions more positively and disapproved actions more negatively.
+    evidence_scope: The final paper still measures binary-response prevalence and extracted value breadth rather
+      than moral intensity. Added evaluations do not turn it into a direct test of extreme rating amplification.
+    catalogue_boundary: 'Context and version update only: absolute distribution mismatch removes direction
+      and does not prove more extreme moral condemnation, felt certainty, an inaction bias or an ethically
+      worse answer. Preserve the distinct construct and avoid duplicate-source credit.'
+    definition_sources:
+    - id: pdf-review-0278-b072-amplified-moral-bias
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 3 (source locators: 6483).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: The final paper still measures binary-response prevalence and extracted value breadth
+          rather than moral intensity. Added evaluations do not turn it into a direct test of extreme rating
+          amplification.
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
+        verified_date: '2026-11-28'
 - id: b073-omission-bias
   num: 73
   name: Omission bias
@@ -30502,6 +30615,47 @@ modes:
           Temperatureselectedseparatelybymodel.
         verification_url: https://api.crossref.org/works/10.1016/j.artint.2024.104145
         verified_date: '2026-11-27'
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Diversity collapse
+    definition: Producing unusually homogeneous outputs across repeated samples or varied prompts, with less
+      variation than the task or reference distribution requires.
+    evidence_scope: 'Final-version update of the same work reviewed in0039: expressed value entropy remains
+      human.57/model.46, rising to.52 with DMP. New300-dilemma and DMP–Overton results extend the reported
+      evaluation but are not independent replications. The prior missing-absolute-bars criticism has been visually
+      refuted and withdrawn in the original review.'
+    catalogue_boundary: Community matching is the stated task target, not moral truth or an intrinsic need
+      for randomness in every answer. More diverse extracted rationales do not establish private beliefs, causal
+      deliberation or better outcomes. The final version’s preference p-value and several summaries are unresolved.
+      This version adds no second independent-paper credit.
+    definition_sources:
+    - id: pdf-review-0278-diversity-collapse
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 6 (source locators: 6486).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: 'Final-version update of the same work reviewed in0039: expressed value entropy remains
+          human.57/model.46, rising to.52 with DMP. New300-dilemma and DMP–Overton results extend the reported
+          evaluation but are not independent replications. The prior missing-absolute-bars criticism has been
+          visually refuted and withdrawn in the original review.'
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
+        verified_date: '2026-11-28'
 - id: attribute-inference
   name: Attribute inference
   definition: Inferring private attributes a user never disclosed (location, age, identity) from incidental cues
@@ -90214,6 +90368,43 @@ modes:
           do not directly measure justified moral uncertainty.
         verification_url: https://arxiv.org/abs/2506.00079v2
         verified_date: '2026-11-28'
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Moral uncertainty
+    definition: Uncertainty about which moral principles are justified, what they require in a situation, or
+      which entities warrant moral consideration.
+    evidence_scope: The DMP–Overton human study rates whether one response presents several reasonable perspectives
+      rather than a single side, connecting distributional evaluation with practical advice format.
+    catalogue_boundary: 'Context only: a perceived plurality rating is not calibrated uncertainty, normative
+      truth or proof that all represented views are reasonable. Moral disagreement and the safety of the advice
+      require separate evaluation; no second paper credit.'
+    definition_sources:
+    - id: pdf-review-0278-moral-uncertainty
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 14 (source locators: 6494).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: The DMP–Overton human study rates whether one response presents several reasonable
+          perspectives rather than a single side, connecting distributional evaluation with practical advice
+          format.
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
+        verified_date: '2026-11-28'
 - id: risk-asymmetry-reasoning
   num: 586
   name: Risk-asymmetry reasoning
@@ -122075,6 +122266,42 @@ modes:
         evidence_scope: The source declares a repeated-deployment population-distribution objective and distinguishes
           individual-level preference prediction. This informs choice of an alignment metric.
         verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
+  - id: pdf-review-0278
+    review_record: references/pdf-reviews/0278.json
+    name: Alignment target problem
+    definition: Difficulty choosing an AI alignment standard when judgments about human action, AI action and
+      human design of AI differ.
+    evidence_scope: The paper explicitly defines alignment to a selected community’s distribution and later
+      studies a one-shot synthesis, illustrating different evaluation targets.
+    catalogue_boundary: 'Context only: population-distribution matching is not the existing actor/AI/designer
+      contrast. Do not merge these as exact synonyms or treat public majority views as a replacement for justified
+      human governance.'
+    definition_sources:
+    - id: pdf-review-0278-alignment-target-problem
+      title: 'The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans
+        and Large Language Models'
+      url: https://doi.org/10.18653/v1/2026.eacl-long.305
+      consulted: 'Full supplied PDF text read, all 17 pages; evidence at PDF pages 2 (source locators: 6482).
+        LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community
+        responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma
+        generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap.
+        These are author-reported additions, not independently replicated data. Shared preprint/final results
+        are one work, not independent studies or objective moral truth.'
+      count_as_behaviour_paper: false
+      publication:
+        type: proceedings-article
+        authors:
+        - Giuseppe Russo
+        - Debora Nozza
+        - Paul Röttger
+        - Dirk Hovy
+        year: 2026
+        venue: 'Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497'
+        doi: 10.18653/v1/2026.eacl-long.305
+        evidence_scope: The paper explicitly defines alignment to a selected community’s distribution and later
+          studies a one-shot synthesis, illustrating different evaluation targets.
+        verification_url: https://aclanthology.org/2026.eacl-long.305/
         verified_date: '2026-11-28'
 - id: weak-automation-bias
   num: 791
