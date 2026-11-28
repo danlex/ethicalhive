@@ -63,7 +63,7 @@
     "components": "Methods list five attributes while saying six; supplementaryS1 supplies memory as the sixth. PCA/varimax yields Experience(emotion,pain,consciousness) and Agency(planning,memory,self-control), alphas.84/.67. Bartlettdf15 fits six variables. Eigenvalues2.33/1.87 and38.84%+31.19%=70.03% broadly reconcile. This is same-sample component extraction, not independent confirmation of universally two mental dimensions.",
     "moral_status": "Seven heterogeneous items mix destruction, pain, life/freedom, human rights, environmental significance, social obligations and citizenship. Alpha rises.52to.78 after dropping the destruction item. Reverse-coding and a multidimensional validity analysis are not supplied; do not assert that scoring definitely omitted reversal. Predictor pain and outcome pain content overlap. One scale does not settle moral agency, standing and legal personhood.",
     "paths": "Figure1 shows mind→Experience.591, mind→Agency.328, mind→Status.036, soul→Status.122, Experience→Status.593, Agency→Status.200, mind–soul covariance/correlation.410. Standardized indirect products.350463/.0656 broadly match.351/.065 after rounding. A nonzero conditional association does not demonstrate causal mediation or a necessary/sufficient soul condition.",
-    "intervals": "Table3 explicitly gives unstandardized indirect estimates.219/.041 with90%CIs[.169,.276]/[.024,.063], alongside standardized values.351/.065. Those intervals contain their unstandardized estimates; comparing them directly with standardized beta would be a false criticism. Other paths’ interval scales need explicit labeling; do not invent corrected intervals or convert90%to95%.",
+    "intervals": "Table3 explicitly gives unstandardized indirect estimates .219/.041 with90%CIs[.169,.276]/[.024,.063], alongside standardized .351/.065. These intervals contain the unstandardized points. For all five other reported paths, converting standardized beta with Table2 SDs likewise produces points inside the displayed intervals. The interval scales are therefore coherent under an unstandardized interpretation despite incomplete prose labels. Do not compare them directly to standardized beta or convert90%to95%.",
     "fit": "ReportedCMIN/DF.53,CFI1,SRMR.034,RMSEA0with90%upper.111 can occur for a small-df model. Point fit does not prove causal direction, unique model or excellent population fit; the wide upper bound matters. Original covariance/model output is unavailable.",
     "sample_ambiguity": "Table2 means2.29/1.22 differ from text2.20/1.20, and mind–soulr.41 versus text.42. Soul–Agencyr.15 is markedp<.01, whereas an ordinary two-sided correlation test givesp≈.025 forN223 but≈.0028 forN394. This is compatible with a different analysis sample but does not prove which sample was used. Ask for per-analysisN instead of relabeling everyone asN394.",
     "effect_sizes": "For pairedt222, standardized changedz=t/sqrt223 gives≈.744 for mind versus soul. Supplementary six values are≈.447,.228,.623,.758,.868,.702. Published d labels1.33 and1.98/2.12/1.86/1.84/1.89/1.76 are not those values and closely track raw SDs of paired differences. The intended formula is unavailable; retain this reproducibility concern without pretending dz is the only possible convention.",
@@ -315,6 +315,71 @@
       "soul_afterlife_only_percent": 78.5,
       "soul_afterlife_or_reincarnation_percent": 91.1,
       "boundary": "Different response groupings answer different questions.93.3 includes nothing-changes2.2,afterlife78.5,reincarnation12.6. Do not silently label it afterlife-only."
+    },
+    "direct_path_scale_checks": {
+      "scope": "Conditional conversion B=beta*SD(outcome)/SD(predictor), using rounded Table2 SDs. All five intervals contain the implied unstandardized point. This supports a coherent unstandardized interval interpretation; it does not recover original output, exact analysis sample or bootstrap draws.",
+      "paths": [
+        {
+          "path": "Mind to Experience",
+          "standardized_beta": 0.591,
+          "outcome_sd": 0.98,
+          "predictor_sd": 1.49,
+          "unstandardized_point_implied_by_table2_sds": 0.3887114093959731,
+          "reported_interval": [
+            0.318,
+            0.471
+          ],
+          "contains_implied_point": true
+        },
+        {
+          "path": "Mind to Agency",
+          "standardized_beta": 0.328,
+          "outcome_sd": 0.9,
+          "predictor_sd": 1.49,
+          "unstandardized_point_implied_by_table2_sds": 0.19812080536912752,
+          "reported_interval": [
+            0.151,
+            0.272
+          ],
+          "contains_implied_point": true
+        },
+        {
+          "path": "Soul to Status",
+          "standardized_beta": 0.122,
+          "outcome_sd": 0.91,
+          "predictor_sd": 0.61,
+          "unstandardized_point_implied_by_table2_sds": 0.18200000000000002,
+          "reported_interval": [
+            0.06,
+            0.316
+          ],
+          "contains_implied_point": true
+        },
+        {
+          "path": "Experience to Status",
+          "standardized_beta": 0.593,
+          "outcome_sd": 0.91,
+          "predictor_sd": 0.98,
+          "unstandardized_point_implied_by_table2_sds": 0.5506428571428571,
+          "reported_interval": [
+            0.469,
+            0.629
+          ],
+          "contains_implied_point": true
+        },
+        {
+          "path": "Agency to Status",
+          "standardized_beta": 0.2,
+          "outcome_sd": 0.91,
+          "predictor_sd": 0.9,
+          "unstandardized_point_implied_by_table2_sds": 0.20222222222222225,
+          "reported_interval": [
+            0.127,
+            0.263
+          ],
+          "contains_implied_point": true
+        }
+      ]
     }
   },
   "source_corrections": [
@@ -351,7 +416,7 @@
     },
     {
       "location": "Other path interval scales",
-      "finding": "Table3 clarifies unstandardized indirect intervals, but prose mixes standardized beta and intervals for other paths without equally explicit scale labels. Request output/labels rather than declare intervals wrong because they exclude standardized beta."
+      "finding": "Prose scale labels could be clearer, but every displayed direct-path interval contains beta*SD(outcome)/SD(predictor) using the rounded Table2 values. This resolves the apparent point/interval mismatch under a conventional unstandardized interpretation. Exact coefficients/sample/bootstrap output remain unavailable; no corrected interval is proposed."
     },
     {
       "location": "Status scale and sample validation",
@@ -370,7 +435,7 @@
     {
       "location": "Indirect intervals must contain standardized beta",
       "status": "REFUTED",
-      "finding": "Table3 intervals contain unstandardized estimates.219/.041. Standardized.351/.065 are on a different scale. Reported path products broadly reconcile."
+      "finding": "Table3 intervals contain unstandardized estimates .219/.041. All five other path intervals also contain the conventional unstandardized points implied by standardized beta and Table2 SDs. Standardized beta is on a different scale; a claimed point/interval contradiction would be false. Reported indirect products broadly reconcile."
     },
     {
       "location": "Bartlettdf15proves the authors analyzed an impossible list",
@@ -445,5 +510,10 @@
       "moral-standing-ascription",
       "moral-agency-attribution"
     ]
+  },
+  "audit_followup": {
+    "reason": "Check an apparent mismatch across coefficient scales before interpreting it as an error.",
+    "result": "All five additional path intervals are numerically compatible with an unstandardized scale. Narrowed the earlier labeling question and retained the successful check.",
+    "boundary": "This is the same assistant’s aggregate review, not an independent audit or raw-data replication."
   }
 }
