@@ -1,0 +1,455 @@
+{
+  "sequence": 296,
+  "source": {
+    "file_name": "S5408_Dargnies_2024.pdf",
+    "source_id": "S5408",
+    "sha256": "dd4a8cc718ea403214b5430f526b55e6980d8fdcbc21a4c3479cb493046c7d33",
+    "pdf_pages": 48,
+    "printed_pages": "Repository cover plus manuscript 1–47",
+    "version_note": "Supplied EconStor/WZB accepted-manuscript package: repository cover, manuscript dated March 2023, main text/references/appendix through printed p37, online Appendix A and B through p47. Publisher verifies first online publication 19 June 2024; final issue is Management Science 72(1):285–301, January 2026. These are versions of one work, not independent studies.",
+    "verification_url": "https://doi.org/10.1287/mnsc.2022.02774",
+    "verification_method": "All 48 supplied pages read, including all tables, four figures, references, alternative regressions and participant instructions. Rendered figures, equation, confidence measures, subgroup table and bibliographic discrepancy visually inspected. Publisher abstract/supplement page and Crossref verify identity and online/issue dates; final typeset main article not read. Seven-page publisher instruction supplement fully read. Public AEA registry v3.0 text fully read through a normal public HTML request after the web-reader failed. No restricted replication files, author code or respondent data used."
+  },
+  "citation": {
+    "title": "Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence",
+    "authors": [
+      "Marie-Pierre Dargnies",
+      "Rustamdjan Hakimov",
+      "Dorothea Kübler"
+    ],
+    "year": 2024,
+    "url": "https://doi.org/10.1287/mnsc.2022.02774",
+    "venue": "Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied accepted manuscript",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "source_scope_note": "Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted manuscript, embedded appendices and separate public instruction supplement read; final typeset main article and restricted replication data not read.",
+    "access_limits": [
+      "Supplied 48-page package is fully read. EconStor landing page presents an anti-bot challenge; no attempt was made to solve or bypass it. Repository byte-identity with an online PDF is not claimed. The supplied file SHA-256 pins exactly what was reviewed.",
+      "Publisher’s seven-page instructions supplement was openly downloadable: 171138 bytes, SHA-256 ca23f3fd6e5e7ee14afe77125938ac5f7030153c33df68c81ad29cb40b54424e. It repeats the 90-second instructions, conflicting task-3 composition and disclosed −.35 gender coefficient. It is not a new experiment.",
+      "The linked INFORMS replication portal requires agreement to restricted verification-only terms and an email form. No agreement, form submission, author contact, download of restricted data or execution of author code was attempted. Exact arm counts, original figure commands and raw-data replication remain unavailable in this pass.",
+      "Public registry https://www.socialscienceregistry.org/trials/9068 was readable through a normal request despite the web-reader error: 30954 bytes, SHA-256 6acd7e8ede60ecb36a5d0c3328bef6d272d6aafebd44fb5ea04019da4592c8a1. Current v3.0 lists initial registration 17 March 2022, publication 21 March and update 16 May 2022; individual randomization and Lausanne IRB approval dated 9 March 2022. Earlier version snapshots and nonpublic analysis-plan details were not read.",
+      "Registry currently mixes an older 2×2 abstract and six-arm detail with an expanded seven-arm plan and 1750 target. The manuscript explicitly discloses dropping the gender-discrimination-feedback arm and relabeling/redefining hypotheses. Do not pretend the current registry is an unchanged pre-data plan or infer concealment from disclosed deviations.",
+      "Crossref verifies Möbius et al. 2022 metadata and Moore/Healy 2008 metadata only. Neither original was fully read in this pass. Earlier algorithm-aversion, hiring and discrimination studies remain secondary citations here.",
+      "No real applicant decisions, personal gender/ability profiling, new participant study, paid inference, full-paper Markdown archive or additional research page."
+    ]
+  },
+  "study": {
+    "sample": "744 workers and 754 managers, 1498 retained US Prolific participants. Six between-subject conditions target about 250 each with gender balance; recruitment targeted 260 per condition for anticipated exclusions. Average duration nine minutes and payoff £3.10. Collection 21 March–18 May 2022. Binary male/female survey coding and online-role recruitment limit generalization.",
+    "workers": "Three incentivized tasks: Raven matrices, zero counting, and a mixed job task. One task is randomly selected for performance pay; an additional £0.50 depends on being hired in a selected pair. Workers choose algorithm versus another participant acting as manager. Their self-confidence and beliefs about male hiring shares are elicited after that source choice, limiting causal interpretation of belief-choice correlations.",
+    "managers": "Managers examine a random 20-worker training sample, then make 20 hiring choices. Hiring pairs have similar prior performance; ten pairs per manager additionally have different genders and score differences at most one. There are 600 constructed pairs and repeated workers/pairs. A correct selected hire pays £2. Managers then estimate correct choices and choose whether algorithmic decisions override their own.",
+    "algorithm": "OLS trained on 507 BaselineW/NoGenderW workers; TranspW excluded from training so a formula was available before disclosure. Full-score models include 744 workers. Algorithm and manager have different training set sizes, and some evaluated workers overlap the algorithm training pool. Reported task accuracy is not a held-out occupational validation or an equal-information comparison.",
+    "treatments": "Workers: baseline, no gender input, formula disclosure. Managers: baseline, own-performance/calibration feedback, formula disclosure. Public registration specifies individual randomization, but recruitment cohorts and sequencing are not recovered from raw records. NoGenderW changes both actual algorithm inputs and information about those inputs; it is not an isolated framing manipulation.",
+    "statistical_discrimination": "With individual task scores held fixed, the model includes a negative male coefficient and favors female candidates. The conditional effect differs from raw job-task means, which are 6.14 for men and 6.20 for women, p=.96. It does not establish innate sex differences or all-job superiority. The source calls this statistical discrimination and discusses taste-based mechanisms separately, without identifying a unique human discriminatory motive.",
+    "choices": "Reported worker algorithm choices: 46.67% baseline, 59.13% no gender, 50.63% transparent. No-gender contrast is 12.46 percentage points, Table4 marginal effect .125; baseline/transparency p=.42. Manager delegation: 34.1%, 49.8% feedback, 32.2% transparent; feedback contrast 15.7 points, Table5 .157; baseline/transparency p=.71. These are observed treatment contrasts, not equivalence tests for transparency.",
+    "efficiency_and_fairness": "Within constructed pairs, reported algorithm correct hires 66.9% versus managers 55.9%; female hires 84.9% algorithm, 56.1% managers, with 62.6% of best performers female. Source explicitly says close-score pair construction drives the large selection imbalance; its random-pair simulation gives 53.1% female hires. Highest predicted score, realized accuracy, balanced selection, process acceptability and legal fairness are distinct criteria.",
+    "aversion": "Worker optimality is estimated by simulating a fitted manager-choice model against the hiring algorithm. Source classifies 24.3% as algorithm averse and 25.1% as algorithm loving, with 50.5% optimal choices; 99.9% sum is rounding. Manager aversion is 54.8% baseline, 33.1% feedback, 53.4% transparent. These labels use estimated or realized payoff benchmarks, not elicited beliefs about relative source accuracy or all relevant values.",
+    "confidence": "Worker instructions/Table4 measure believed percentile of the combined task-1/task-2 score, although early methods describe job-task confidence. Manager confidence is expected correct hires out of 20; overconfidence subtracts actual correct hires. Mean observed hires 11.2, believed 11.5; reported sex-specific tests show significant overestimation for men and a null for women. A significant result in one group and null in another is not itself a test of their difference.",
+    "analysis": "Table3 has 15080 hiring records, exactly 754×20. Manager-choice regressions cluster by manager; optimal/algorithm choices cluster by pair. This is not 15080 independent participants, and the authors did not entirely ignore repeated observations. Shared workers and training data still complicate broad generalization. Probit marginal effects and supplied OLS alternatives mostly preserve directions; covariance/output are unavailable for independent re-estimation.",
+    "feedback_mechanism": "Randomized feedback about correct choices and calibration increases delegation and estimated optimality. The feedback includes performance information and a label; it may update self-ability beliefs, salient errors or relative decision expectations. The study does not isolate every mediator or establish that more delegation is always safer. Authors acknowledge restricted tasks, novice managers and limited external validity.",
+    "transparency": "Displaying a formula and prose produces no statistically significant increase in source choice/delegation in this setup. Disclosure does not show algorithm performance, includes a documented .35-versus-.34 coefficient error, and may be hard to understand. The authors explicitly retain transparency’s compliance/oversight value; do not report a general refutation of transparency.",
+    "subgroups": "AppendixA1 no-gender×male marginal interaction .074(SE.087), transparency×male .004(SE.088), neither significant. Male-only no-gender .181 is significant, female-only .098 is not; that pattern alone does not establish a reliable gender difference in treatment effects. No essentialist or universal group claim is warranted.",
+    "policy_scope": "A preference for dropping a gender input in this incentivized task does not establish a universal ban on all group attributes, a current legal interpretation or absence of proxy discrimination. Task-score-only inputs may correlate with gender, and removing a protected field alone does not prove real-world nondiscrimination. No legal conclusion is supplied."
+  },
+  "summary": "Add Statistical discrimination as a distinct group-information mechanism. Broaden the stable overconfidence definition to include empirically measured performance overestimation, and enrich existing aversion, appreciation, task-confidence and calibrated-reliance entries. Preserve the paper’s preference/optimality distinction, explicit deviations and limitations. Document accurate online/issue provenance, disclosed coefficient error, instruction mismatches and bibliographic corrections without claiming raw-data replication.",
+  "findings": [
+    {
+      "term": "Statistical discrimination",
+      "decision": "new-entry",
+      "id": "statistical-discrimination",
+      "category": "Social",
+      "synonyms": [],
+      "definition": "Using group membership to infer an individual’s unobserved characteristics and thereby treat them differently.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "3",
+          "quote": "known as profiling and amounting to statistical discrimination"
+        },
+        {
+          "pdf_page": 18,
+          "printed_page": "17",
+          "quote": "the algorithm picks the woman when a man and a woman have the same"
+        }
+      ],
+      "novelty_rationale": "Named mechanism absent from current names and aliases. It concerns group information as a predictive proxy, distinct from arbitrary similarity favoritism, hostility or taste-based preference, a generic fairness judgment, base-rate neglect and treating a group average as a logically certain individual property. It can use individual evidence alongside group membership.",
+      "evidence_scope": "Directly discussed and instantiated by the read OLS hiring rule, which conditions on task scores and a gender dummy. Human managers also show conditional gender differences in choices, but the experiment does not uniquely identify their motives. The no-gender treatment increases worker algorithm selection; this does not by itself validate every fairness or welfare interpretation.",
+      "boundary": "A predictive group association does not establish an individual’s actual ability, an innate group difference, a causal explanation or lawful and fair treatment. Statistical discrimination differs from taste-based animus and from the broader outcome of disparate impact. Group-informed inference is not automatically an ecological fallacy; validity, individual evidence, uncertainty, rights and context require separate assessment.",
+      "ai_proposal": "Within an authorized fairness evaluation, hold individual evidence constant while varying a group label or a documented group-level statistic. Inspect whether the assistant substitutes or adds a group association when judging an individual. Assess relevance, uncertainty, individual evidence and applicable rights or constraints; do not infer legitimacy solely from higher average accuracy or malicious intent solely from a difference.",
+      "relates_to": [
+        "b033-representativeness",
+        "b034-base-rate-neglect",
+        "upload-076",
+        "b070-in-group-favouritism",
+        "procedural-fairness-judgment"
+      ],
+      "origin": "Labor economics / social judgment / hiring discrimination",
+      "measurability": "multi-turn",
+      "ai_evidence_status": "Observed operation of a simple OLS hiring algorithm and human choices in a controlled online task; the proposed language-model evaluation and real-world employment fairness are not established."
+    },
+    {
+      "term": "Overconfidence",
+      "decision": "enrich-existing",
+      "target_id": "b043-overconfidence",
+      "definition": "Stated confidence or completeness (\"all\", \"every\", \"only\") exceeding the evidence.",
+      "evidence": [
+        {
+          "pdf_page": 28,
+          "printed_page": "27",
+          "quote": "difference between the believed and the actual number of correct hiring decisions"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "Managers estimate how many of their 20 hiring choices were correct. Overconfidence is estimated minus actual correct choices, an overestimation measure. Feedback increases delegation from 34.1% to 49.8%, with a larger reported effect for more overconfident managers.",
+      "boundary": "Overestimation, relative-rank confidence and excessive precision differ. The randomized intervention supplies feedback about actual performance and a calibration label; it does not independently manipulate only an internal overconfidence mechanism. Confidence associations do not by themselves prove causal mediation or an AI feeling.",
+      "previous_definition": "Stated confidence or completeness (\"all\", \"every\", \"only\") exceeding the evidence.",
+      "revised_definition": "Confidence in a judgment or an estimate of one’s ability or performance that exceeds what the evidence or observed outcomes justify.",
+      "definition_revision_reason": "The previous wording focused on stated certainty and completeness in model output. The fully read experiment directly measures human performance overestimation. Broaden the same stable concept to accommodate both, retaining prior AI examples and keeping neutral task confidence and overprecision distinct."
+    },
+    {
+      "term": "Algorithm aversion",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-aversion",
+      "definition": "Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in a comparable task.",
+      "evidence": [
+        {
+          "pdf_page": 21,
+          "printed_page": "20",
+          "quote": "Algorithm aversion requires a suboptimal choice of managerial hiring"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "The paper distinguishes choosing a human source from its narrower payoff-based aversion measure. Own-performance feedback lowers manager aversion; removing gender input lowers worker aversion. Footnotes acknowledge the stronger belief-based test was not possible because relative source-success beliefs were not elicited.",
+      "boundary": "The canonical relative reluctance definition remains broader than this paper’s local operationalization. Estimated ex-post payoff optimality is not proof that a person knowingly rejected better advice, ignored rights or acted irrationally. Manager hiring probabilities are modeled, and legitimate process values may differ from task payoffs."
+    },
+    {
+      "term": "Algorithm appreciation",
+      "decision": "enrich-existing",
+      "target_id": "algorithm-appreciation",
+      "definition": "Giving greater weight or preference to algorithmic advice or judgment than to human advice or judgment in a comparable task.",
+      "evidence": [
+        {
+          "pdf_page": 26,
+          "printed_page": "25",
+          "quote": "25.1% of workers are algorithm loving"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "A subset choose the algorithm when the fitted hiring simulation predicts a better individual payoff from managers. This local algorithm-loving measure is distinguished from optimal algorithm choice and from simple source preference.",
+      "boundary": "Retain the established appreciation entry rather than add Algorithm loving as a synonym for all appreciation. The paper’s narrower payoff-disadvantage criterion is model-dependent and does not identify subjective trust, moral approval or a universal tendency to overuse AI."
+    },
+    {
+      "term": "Task self-confidence",
+      "decision": "enrich-existing",
+      "target_id": "task-self-confidence",
+      "definition": "A person’s belief in their own ability to perform a particular task successfully.",
+      "evidence": [
+        {
+          "pdf_page": 44,
+          "printed_page": "43",
+          "quote": "Think about your performance in tasks 1 and 2"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "Worker confidence is an incentivized estimate of relative performance on the combined first two tasks; managers estimate correct hires. Worker confidence is associated with source choice, and manager feedback is experimentally varied.",
+      "boundary": "Worker confidence and source beliefs are elicited after source choice, so their associations need not reflect prior causal drivers. Relative standing, absolute ability, actual performance and overconfidence differ. The early methods’ job-task wording conflicts with the read instructions and Table4."
+    },
+    {
+      "term": "Calibrated reliance",
+      "decision": "enrich-existing",
+      "target_id": "calibrated-reliance",
+      "definition": "Using assistance to a degree justified by its task-specific competence, relevance, uncertainty and the consequences of error.",
+      "evidence": [
+        {
+          "pdf_page": 31,
+          "printed_page": "30",
+          "quote": "increases the optimality of delegation decisions"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "Managers receiving own-performance feedback are more likely to delegate and to make the source choice that is optimal under the paper’s realized-performance criterion; reported optimal-choice rates are 34.9%, 52.6% and 36.3% for baseline, feedback and transparent conditions.",
+      "boundary": "More use is not itself calibration. Here optimality is a constrained short-task payoff benchmark with unequal algorithm/human training information and no direct measure of comparative source beliefs. Accuracy, process rights, uncertainty and real deployment costs need separate validation."
+    },
+    {
+      "term": "Procedural fairness judgment",
+      "decision": "enrich-existing",
+      "target_id": "procedural-fairness-judgment",
+      "definition": "Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather than assessing only its outcome.",
+      "evidence": [
+        {
+          "pdf_page": 31,
+          "printed_page": "30",
+          "quote": "preference for no discrimination"
+        }
+      ],
+      "novelty_rationale": "Retain the existing concept and distinguish its operationalization from neighboring mechanisms; a new treatment or local label is not a new independent behavior.",
+      "evidence_scope": "The source interprets greater acceptance of a gender-excluding algorithm as a process preference and makes a policy recommendation. Input exclusion and beliefs about personal advantage are both relevant to interpretation.",
+      "boundary": "Context only: the experiment measures choice, not a dedicated procedural-fairness scale or a consensus moral/legal rule. Do not infer that gender-blind inputs prevent every proxy effect, that the task reveals a universal preference against advantageous discrimination, or that transparency has no oversight value.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "aggregate_checks": {
+    "scope": "Arithmetic from the supplied accepted manuscript. Not raw-data replication. Illustrative binomial intervals use the stated approximate target of 250 participants per treatment, not recovered arm counts.",
+    "retained_participants": {
+      "workers": 744,
+      "managers": 754,
+      "total": 1498
+    },
+    "hiring_observations": {
+      "managers": 754,
+      "decisions_each": 20,
+      "product": 15080,
+      "reported_table3": 15080
+    },
+    "worker_choice_difference_pp": 12.46,
+    "manager_feedback_difference_pp": 15.699999999999996,
+    "manager_aversion_reduction_pp": 21.699999999999996,
+    "worker_choice_class_sum_percent": 99.9,
+    "figure3_reference_intervals": [
+      {
+        "arm": "BaselineM",
+        "reported_proportion": 0.341,
+        "assumed_n": 250,
+        "normal_95_half_width": 0.05876327119553506,
+        "reference_interval": [
+          0.282236728804465,
+          0.39976327119553506
+        ]
+      },
+      {
+        "arm": "ConfidM",
+        "reported_proportion": 0.498,
+        "assumed_n": 250,
+        "normal_95_half_width": 0.06198014629217972,
+        "reference_interval": [
+          0.43601985370782026,
+          0.5599801462921797
+        ]
+      },
+      {
+        "arm": "TranspM",
+        "reported_proportion": 0.322,
+        "assumed_n": 250,
+        "normal_95_half_width": 0.05792003955799754,
+        "reference_interval": [
+          0.2640799604420025,
+          0.3799200395579975
+        ]
+      }
+    ],
+    "figure3_boundary": "Rendered bars appear narrower than these simple participant-level binomial intervals. The caption does not disclose their exact calculation; original arm counts and plotting output are required. No replacement interval or changed significance claim is asserted."
+  },
+  "source_corrections": [
+    {
+      "location": "Publication/version provenance",
+      "status": "VERIFIED_ONLINE_AND_ISSUE_DATES",
+      "correction": "Publisher states first online 19 June 2024; current issue/Crossref state 72(1):285–301, January 2026. Retain the 2024 online year with explicit 2026 issue information and the supplied manuscript’s own pagination. Do not count repository, preprint and issue versions as separate studies."
+    },
+    {
+      "location": "Möbius et al. reference, printed p35",
+      "status": "VERIFIED_BIBLIOGRAPHIC_PAGE_RANGE",
+      "verification_url": "https://doi.org/10.1287/mnsc.2021.4294",
+      "correction": "Managing Self-Confidence: Theory and Experimental Evidence is Management Science 68(11):7793–7817, not 7793–8514. Publisher identity and Crossref agree. Original full paper not read; correct metadata only."
+    },
+    {
+      "location": "Moore/Healy2008 footnote18 versus references",
+      "status": "VERIFIED_MISSING_REFERENCE_IDENTITY",
+      "verification_url": "https://doi.org/10.1037/0033-295x.115.2.502",
+      "correction": "The footnote’s cited Moore and Healy (2008) lacks a bibliography entry in the supplied package. Verified identity is Don A. Moore and Paul J. Healy, The trouble with overconfidence, Psychological Review 115(2):502–517. Metadata verification is not full-original reading or another independent study credited to this review."
+    },
+    {
+      "location": "Transparency equation, printed p11 and Appendix B",
+      "status": "VERIFIED_PREVIOUSLY_DISCLOSED_MISMATCH",
+      "correction": "Instructions disclose a −.35 male coefficient; the implemented equation is stated as −.34, with Table2 OLS estimate −.344. Footnote6 explicitly acknowledges the erroneous instruction coefficient. Preserve that disclosure and its uncertainty; do not allege a hidden error or silently rewrite the experimental exposure."
+    },
+    {
+      "location": "Worker confidence, printed pp10/22/43",
+      "status": "VERIFIED_MEASURE_TARGET_BOUNDARY",
+      "correction": "Early methods describe confidence in job-task relative performance, but the actual instructions and Table4 describe combined task-1/task-2 relative performance. Use the latter for the observed measure and retain the internal wording discrepancy."
+    },
+    {
+      "location": "Task timing and composition, methods versus supplied/public instructions",
+      "status": "VERIFIED_INTERNAL_INSTRUCTION_MISMATCH",
+      "correction": "Methods describe two minutes per worker task and task3 as seven Raven/type1 plus five zero-count/type2 items. Worker instructions say 90 seconds and task3 as five Raven plus seven zero-count items; manager instructions say seven type1 plus five type2. The separate publisher supplement retains this conflict. Actual administered composition/timing requires task code or original records; do not guess which account is correct."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Figure3 confidence intervals",
+      "finding": "Rendered intervals around manager delegation proportions appear much narrower than simple binomial 95% intervals for approximately250 participants per arm, while Figure1 worker intervals look consistent with that scale. Illustrative independent-binomial half-widths are about.059,.062,.058. Exact counts and plotting methods are unavailable; retain as an unresolved graph/estimand question, not corrected intervals or evidence that all main tests are invalid."
+    },
+    {
+      "location": "NoGenderW proxy discrimination claim, footnote4",
+      "finding": "The paper correctly notes that dropping gender generally does not eliminate proxy discrimination, then states this is impossible in its task because only performance is used. Task1 itself differs by gender, so input exclusion alone is not a general proof of no indirect effect. Distinguish explicit gender conditioning from all possible group disparities without making a new legal ruling."
+    },
+    {
+      "location": "No-gender treatment and male subgroup interpretation",
+      "finding": "AppendixA1 interactions are nonsignificant, although the male-only effect is significant and the female-only effect is not. This is insufficient by itself to establish a reliable gender difference. Retain the reported effect estimates, avoid replacing their p-values or inferring a universal male-specific response."
+    },
+    {
+      "location": "Pre-registration timing and deviations",
+      "finding": "Current registry v3.0 was updated during the collection period and contains older plus expanded design fields. The manuscript explicitly discloses a dropped arm/hypotheses and a narrower operational aversion definition. Earlier snapshots/nonpublic analysis details were not inspected, so exact pre-data status of every hypothesis is unresolved; do not label all claims either cleanly preregistered or concealed post-hoc."
+    }
+  ],
+  "methodological_limits": [
+    "Human choices around a transparent OLS rule are not evidence of an LLM’s subjective confidence, discriminatory taste or real-world job performance.",
+    "Payoff-defined optimality omits process rights and other possible values; source choice is not automatically irrational or a comprehensive fairness measure.",
+    "Worker belief measures occur after source choice. Associations can reflect prior beliefs, rationalization, common causes or other pathways; no isolated belief mediator is identified.",
+    "Own-performance feedback is a real randomized treatment according to the public registry, but it bundles information and a calibration label. Do not reduce the causal contrast to a uniquely proven psychological mediator.",
+    "Formula disclosure is one transparency implementation. Nonsignificance is not equivalence, and acceptance is not the sole ethical or oversight purpose of transparency.",
+    "Algorithm training uses far more workers than each manager observes and overlaps some evaluated workers. Pair construction strongly shapes gender selection rates. No held-out real-employment generalization follows.",
+    "Repeated hiring records are clustered in the reported regression analyses. Shared workers/pairs still require care, but it would be false to claim the paper treated all15080 records as independent participants everywhere.",
+    "Binary gender coding, stylized paid tasks and inexperienced online-role managers limit population/context validity; they establish neither innate group differences nor a general hiring policy.",
+    "Public instruction inconsistencies, a disclosed coefficient difference and apparently narrow plotted intervals need original administration/plotting records. They do not justify inventing corrected results or misconduct allegations.",
+    "No restricted data, new model evaluations, forced three-paper citation quota, automatic principle/harm links, new category or annual mention counts were produced."
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "1498 participants versus15080 table observations",
+      "status": "REFUTED",
+      "finding": "754 managers each make20 hiring choices, giving15080 records. Worker and manager counts sum1498. Units differ; arithmetic reconciles."
+    },
+    {
+      "location": "Raw male/female job means conflict with conditional model coefficient",
+      "status": "REFUTED",
+      "finding": "Unconditional means and a conditional regression answer different questions. The negative male coefficient at fixed prior scores is not contradicted by nearly equal raw job means."
+    },
+    {
+      "location": "Algorithm hires84.9% women, proving every female share should be84.9%",
+      "status": "REFUTED",
+      "finding": "The study deliberately constructs close-score pairs and explicitly reports a much smaller53.1% simulated female share under random pairing. Selected-pair statistics are not population constants."
+    },
+    {
+      "location": "The −.35 instruction coefficient was concealed",
+      "status": "REFUTED",
+      "finding": "Footnote6 openly acknowledges the difference from the implemented−.34 coefficient. Retain the historical instruction rather than erase it."
+    },
+    {
+      "location": "No statistical effect of transparency means the authors reject transparency itself",
+      "status": "REFUTED",
+      "finding": "Conclusion explicitly preserves transparency’s compliance/monitoring role and discusses comprehension and format limitations."
+    },
+    {
+      "location": "Every hypothesis outcome follows the authors’ initial expectations",
+      "status": "REFUTED",
+      "finding": "Predicted absolute preference for male hires is not supported, and transparency hypotheses are not supported. Source retains these failures and explicitly discloses dropped hypotheses."
+    },
+    {
+      "location": "99.9% choice classes prove missing participants",
+      "status": "REFUTED",
+      "finding": "50.5+24.3+25.1=99.9 is compatible with separately rounded percentages. No missing respondent is inferred."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0012.json",
+      "finding": "Institutional/source choice may reflect discretion and legitimate process values. Keep relative aversion distinct from the narrower payoff-based measure used here."
+    },
+    {
+      "related_review": "references/pdf-reviews/0134.json",
+      "finding": "Predictive relevance, fairness perceptions, actual nondiscrimination and legal authority are distinct. Dropping a field or maximizing observed accuracy does not settle all four."
+    },
+    {
+      "related_review": "references/pdf-reviews/0292.json",
+      "finding": "Response order matters: worker confidence is measured after the source choice. As with reconstructed counterfactual responses, do not call a later report an independently observed pre-choice cause."
+    },
+    {
+      "related_review": "references/pdf-reviews/0294.json",
+      "finding": "Read actual items and rendered figures before accepting construct labels or criticizing every statistic. Distinguish local confirmed discrepancies from unresolved graph calculations."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Algorithm loving as a new row",
+      "reason": "Local payoff-disadvantage operationalization enriches Algorithm appreciation; adding a second broad source-preference row would create overlap."
+    },
+    {
+      "term": "Overoptimism,overestimation or overplacement as new rows",
+      "reason": "Performance overestimation enriches the stable overconfidence concept. Relative worker confidence is not shown to be excessive, and excessive precision is a separate existing concept."
+    },
+    {
+      "term": "Taste-based discrimination as demonstrated mechanism",
+      "reason": "Mentioned in related literature, but this experiment does not uniquely identify taste-based animus or fully review the primary mechanism literature. Do not create a new established behavioral finding from an incidental citation."
+    },
+    {
+      "term": "Self-serving preference as Self-serving bias",
+      "reason": "Choosing a personally advantageous procedure is not the existing attributional self-serving bias of taking credit and deflecting blame. No automatic mapping or new catch-all row."
+    },
+    {
+      "term": "Universal transparency failure or new fairness principle",
+      "reason": "One disclosure format and short-task choices do not establish equivalence, universal design failure or a new ethical principle."
+    }
+  ],
+  "limitations": [
+    "One new construct; five existing concepts directly enriched and one receives non-counted process-fairness context. Catalogue becomes818 in the same eleven categories. The stable overconfidence ID and prior examples are retained with an explicit definition revision. Full-PDF and public-instrument reading are separated from metadata checks and unavailable raw-data replication."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "statistical-discrimination"
+    ],
+    "enriched": [
+      "b043-overconfidence",
+      "algorithm-aversion",
+      "algorithm-appreciation",
+      "task-self-confidence",
+      "calibrated-reliance",
+      "procedural-fairness-judgment"
+    ],
+    "revised_definitions": [
+      "b043-overconfidence"
+    ]
+  }
+}

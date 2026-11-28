@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 817
+  mode_count: 818
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 817
+    numbered_entries: 818
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0294.json
+    latest_review: references/pdf-reviews/0296.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -5854,7 +5854,8 @@ modes:
 - id: b043-overconfidence
   num: 43
   name: Overconfidence
-  definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
+  definition: Confidence in a judgment or an estimate of one’s ability or performance that exceeds what the
+    evidence or observed outcomes justify.
   example: It says "this definitely fixes it" before running a single test.
   family: metacognition-confidence
   group_label: Metacognition and confidence
@@ -6136,6 +6137,47 @@ modes:
           clarity.
         verification_url: https://arxiv.org/abs/2608.04318v1
         verified_date: '2026-11-28'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Overconfidence
+    definition: Stated confidence or completeness ("all", "every", "only") exceeding the evidence.
+    evidence_scope: Managers estimate how many of their 20 hiring choices were correct. Overconfidence is estimated
+      minus actual correct choices, an overestimation measure. Feedback increases delegation from 34.1% to
+      49.8%, with a larger reported effect for more overconfident managers.
+    catalogue_boundary: Overestimation, relative-rank confidence and excessive precision differ. The randomized
+      intervention supplies feedback about actual performance and a calibration label; it does not independently
+      manipulate only an internal overconfidence mechanism. Confidence associations do not by themselves prove
+      causal mediation or an AI feeling.
+    definition_sources:
+    - id: pdf-review-0296-b043-overconfidence
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 28 (source locators: 27).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: Managers estimate how many of their 20 hiring choices were correct. Overconfidence
+          is estimated minus actual correct choices, an overestimation measure. Feedback increases delegation
+          from 34.1% to 49.8%, with a larger reported effect for more overconfident managers.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
+        verified_date: '2026-11-28'
+  concept_boundary: Overestimation, relative-rank confidence and excessive precision differ. The randomized
+    intervention supplies feedback about actual performance and a calibration label; it does not independently
+    manipulate only an internal overconfidence mechanism. Confidence associations do not by themselves prove
+    causal mediation or an AI feeling.
 - id: b044-dunning-kruger-effect
   num: 44
   name: Dunning-Kruger effect
@@ -63843,6 +63885,46 @@ modes:
           reports less relative disadvantage in the two essential-good vignettes.
         verification_url: https://doi.org/10.1007/s00146-026-02886-1
         verified_date: '2026-11-28'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Algorithm aversion
+    definition: Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in
+      a comparable task.
+    evidence_scope: The paper distinguishes choosing a human source from its narrower payoff-based aversion
+      measure. Own-performance feedback lowers manager aversion; removing gender input lowers worker aversion.
+      Footnotes acknowledge the stronger belief-based test was not possible because relative source-success
+      beliefs were not elicited.
+    catalogue_boundary: The canonical relative reluctance definition remains broader than this paper’s local
+      operationalization. Estimated ex-post payoff optimality is not proof that a person knowingly rejected
+      better advice, ignored rights or acted irrationally. Manager hiring probabilities are modeled, and legitimate
+      process values may differ from task payoffs.
+    definition_sources:
+    - id: pdf-review-0296-algorithm-aversion
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 21 (source locators: 20).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: The paper distinguishes choosing a human source from its narrower payoff-based aversion
+          measure. Own-performance feedback lowers manager aversion; removing gender input lowers worker aversion.
+          Footnotes acknowledge the stronger belief-based test was not possible because relative source-success
+          beliefs were not elicited.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
+        verified_date: '2026-11-28'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -64501,6 +64583,43 @@ modes:
           Choosing the source and later rating its decision are distinct outcomes.
         verification_url: https://doi.org/10.1007/s11127-024-01178-w
         verified_date: '2026-11-27'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Algorithm appreciation
+    definition: Giving greater weight or preference to algorithmic advice or judgment than to human advice
+      or judgment in a comparable task.
+    evidence_scope: A subset choose the algorithm when the fitted hiring simulation predicts a better individual
+      payoff from managers. This local algorithm-loving measure is distinguished from optimal algorithm choice
+      and from simple source preference.
+    catalogue_boundary: Retain the established appreciation entry rather than add Algorithm loving as a synonym
+      for all appreciation. The paper’s narrower payoff-disadvantage criterion is model-dependent and does
+      not identify subjective trust, moral approval or a universal tendency to overuse AI.
+    definition_sources:
+    - id: pdf-review-0296-algorithm-appreciation
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 26 (source locators: 25).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: A subset choose the algorithm when the fitted hiring simulation predicts a better individual
+          payoff from managers. This local algorithm-loving measure is distinguished from optimal algorithm
+          choice and from simple source preference.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
+        verified_date: '2026-11-28'
 - id: need-for-cognition
   num: 447
   name: Need for cognition
@@ -93430,6 +93549,45 @@ modes:
           procedural justice motivates the study.
         verification_url: https://doi.org/10.1007/s00146-026-02886-1
         verified_date: '2026-11-28'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Procedural fairness judgment
+    definition: Evaluating whether the rules, evidence and procedures used to reach a decision are fair, rather
+      than assessing only its outcome.
+    evidence_scope: The source interprets greater acceptance of a gender-excluding algorithm as a process preference
+      and makes a policy recommendation. Input exclusion and beliefs about personal advantage are both relevant
+      to interpretation.
+    catalogue_boundary: 'Context only: the experiment measures choice, not a dedicated procedural-fairness
+      scale or a consensus moral/legal rule. Do not infer that gender-blind inputs prevent every proxy effect,
+      that the task reveals a universal preference against advantageous discrimination, or that transparency
+      has no oversight value.'
+    definition_sources:
+    - id: pdf-review-0296-procedural-fairness-judgment
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 31 (source locators: 30).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: The source interprets greater acceptance of a gender-excluding algorithm as a process
+          preference and makes a policy recommendation. Input exclusion and beliefs about personal advantage
+          are both relevant to interpretation.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
+        verified_date: '2026-11-28'
 - id: volitionality-attribution
   num: 592
   name: Volitionality attribution
@@ -96354,6 +96512,43 @@ modes:
           while requiring sensitivity to relevant limitations and recurrent counterevidence. Proposed critical
           trust retains scrutiny and human authority.
         verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Calibrated reliance
+    definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+      and the consequences of error.
+    evidence_scope: Managers receiving own-performance feedback are more likely to delegate and to make the
+      source choice that is optimal under the paper’s realized-performance criterion; reported optimal-choice
+      rates are 34.9%, 52.6% and 36.3% for baseline, feedback and transparent conditions.
+    catalogue_boundary: More use is not itself calibration. Here optimality is a constrained short-task payoff
+      benchmark with unequal algorithm/human training information and no direct measure of comparative source
+      beliefs. Accuracy, process rights, uncertainty and real deployment costs need separate validation.
+    definition_sources:
+    - id: pdf-review-0296-calibrated-reliance
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 31 (source locators: 30).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: Managers receiving own-performance feedback are more likely to delegate and to make
+          the source choice that is optimal under the paper’s realized-performance criterion; reported optimal-choice
+          rates are 34.9%, 52.6% and 36.3% for baseline, feedback and transparent conditions.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
         verified_date: '2026-11-28'
 - id: environmental-rebound-effect
   num: 600
@@ -110807,6 +111002,42 @@ modes:
         doi: 10.1038/s41598-024-66821-4
         evidence_scope: Discussion interprets the fear-of-invalidity association in terms of decision confidence.
         verification_url: https://www.nature.com/articles/s41598-024-66821-4
+        verified_date: '2026-11-28'
+  - id: pdf-review-0296
+    review_record: references/pdf-reviews/0296.json
+    name: Task self-confidence
+    definition: A person’s belief in their own ability to perform a particular task successfully.
+    evidence_scope: Worker confidence is an incentivized estimate of relative performance on the combined first
+      two tasks; managers estimate correct hires. Worker confidence is associated with source choice, and manager
+      feedback is experimentally varied.
+    catalogue_boundary: Worker confidence and source beliefs are elicited after source choice, so their associations
+      need not reflect prior causal drivers. Relative standing, absolute ability, actual performance and overconfidence
+      differ. The early methods’ job-task wording conflicts with the read instructions and Table4.
+    definition_sources:
+    - id: pdf-review-0296-task-self-confidence
+      title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+      url: https://doi.org/10.1287/mnsc.2022.02774
+      consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 44 (source locators: 43).
+        Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+        conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+        gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+        decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+        manuscript, embedded appendices and separate public instruction supplement read; final typeset main
+        article and restricted replication data not read.'
+      publication:
+        type: journal-article
+        authors:
+        - Marie-Pierre Dargnies
+        - Rustamdjan Hakimov
+        - Dorothea Kübler
+        year: 2024
+        venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied
+          accepted manuscript
+        doi: 10.1287/mnsc.2022.02774
+        evidence_scope: Worker confidence is an incentivized estimate of relative performance on the combined
+          first two tasks; managers estimate correct hires. Worker confidence is associated with source choice,
+          and manager feedback is experimentally varied.
+        verification_url: https://doi.org/10.1287/mnsc.2022.02774
         verified_date: '2026-11-28'
 - id: math-washing
   num: 678
@@ -129609,3 +129840,118 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0294.json
+- id: statistical-discrimination
+  num: 818
+  name: Statistical discrimination
+  definition: Using group membership to infer an individual’s unobserved characteristics and thereby treat
+    them differently.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Labor economics / social judgment / hiring discrimination
+  human_parallel: Statistical discrimination
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Observed operation of a simple OLS hiring algorithm and human choices in a controlled
+    online task; the proposed language-model evaluation and real-world employment fairness are not established.
+  proposed_ai_manifestation: Within an authorized fairness evaluation, hold individual evidence constant while
+    varying a group label or a documented group-level statistic. Inspect whether the assistant substitutes
+    or adds a group association when judging an individual. Assess relevance, uncertainty, individual evidence
+    and applicable rights or constraints; do not infer legitimacy solely from higher average accuracy or malicious
+    intent solely from a difference.
+  research_boundary: A predictive group association does not establish an individual’s actual ability, an innate
+    group difference, a causal explanation or lawful and fair treatment. Statistical discrimination differs
+    from taste-based animus and from the broader outcome of disparate impact. Group-informed inference is not
+    automatically an ecological fallacy; validity, individual evidence, uncertainty, rights and context require
+    separate assessment.
+  concept_boundary: A predictive group association does not establish an individual’s actual ability, an innate
+    group difference, a causal explanation or lawful and fair treatment. Statistical discrimination differs
+    from taste-based animus and from the broader outcome of disparate impact. Group-informed inference is not
+    automatically an ecological fallacy; validity, individual evidence, uncertainty, rights and context require
+    separate assessment.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - b033-representativeness
+  - b034-base-rate-neglect
+  - upload-076
+  - b070-in-group-favouritism
+  - procedural-fairness-judgment
+  definition_sources:
+  - id: pdf-review-0296-statistical-discrimination
+    title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+    url: https://doi.org/10.1287/mnsc.2022.02774
+    consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 4, 18 (source locators: 3,
+      17). Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+      conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+      gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+      decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+      manuscript, embedded appendices and separate public instruction supplement read; final typeset main article
+      and restricted replication data not read.'
+    publication:
+      type: journal-article
+      authors:
+      - Marie-Pierre Dargnies
+      - Rustamdjan Hakimov
+      - Dorothea Kübler
+      year: 2024
+      venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied accepted
+        manuscript
+      doi: 10.1287/mnsc.2022.02774
+      evidence_scope: Directly discussed and instantiated by the read OLS hiring rule, which conditions on
+        task scores and a gender dummy. Human managers also show conditional gender differences in choices,
+        but the experiment does not uniquely identify their motives. The no-gender treatment increases worker
+        algorithm selection; this does not by itself validate every fairness or welfare interpretation.
+      verification_url: https://doi.org/10.1287/mnsc.2022.02774
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: 'Aversion to Hiring Algorithms: Transparency, Gender Profiling, and Self-Confidence'
+    authors:
+    - Marie-Pierre Dargnies
+    - Rustamdjan Hakimov
+    - Dorothea Kübler
+    year: 2024
+    url: https://doi.org/10.1287/mnsc.2022.02774
+    venue: Management Science; first online 19 June 2024, issue 72(1):285–301 (January 2026); supplied accepted
+      manuscript
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1287/mnsc.2022.02774
+    relevance: Directly discussed and instantiated by the read OLS hiring rule, which conditions on task scores
+      and a gender dummy. Human managers also show conditional gender differences in choices, but the experiment
+      does not uniquely identify their motives. The no-gender treatment increases worker algorithm selection;
+      this does not by itself validate every fairness or welfare interpretation.
+    consulted: 'Full supplied PDF text read, all 48 pages; evidence at PDF pages 4, 18 (source locators: 3,
+      17). Incentivized US Prolific online hiring experiment with 744 workers and 754 managers in six treatment
+      conditions, March–May 2022. A simple OLS hiring algorithm uses two prior task scores with or without
+      gender. Outcomes are implemented source/delegation choices and short-task performance, not actual employment
+      decisions, an LLM’s discriminatory intent or validated general workplace productivity. Supplied accepted
+      manuscript, embedded appendices and separate public instruction supplement read; final typeset main article
+      and restricted replication data not read.'
+    verification_url: https://doi.org/10.1287/mnsc.2022.02774
+    verified_date: '2026-11-28'
+    verification_method: All 48 supplied pages read, including all tables, four figures, references, alternative
+      regressions and participant instructions. Rendered figures, equation, confidence measures, subgroup table
+      and bibliographic discrepancy visually inspected. Publisher abstract/supplement page and Crossref verify
+      identity and online/issue dates; final typeset main article not read. Seven-page publisher instruction
+      supplement fully read. Public AEA registry v3.0 text fully read through a normal public HTML request
+      after the web-reader failed. No restricted replication files, author code or respondent data used.
+    review_record: references/pdf-reviews/0296.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Statistical discrimination"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Statistical+discrimination%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0296.json
