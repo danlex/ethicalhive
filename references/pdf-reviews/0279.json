@@ -1,0 +1,416 @@
+{
+  "sequence": 279,
+  "source": {
+    "file_name": "S4034_Saxena_2026.pdf",
+    "source_id": "S4034",
+    "sha256": "a45427d7d886588c76e247ab063df4408ac56ad35cbb1c4fb679b2f17f98966f",
+    "pdf_pages": 18,
+    "printed_pages": "1–18, no numbered proceedings pagination",
+    "version_note": "arXiv:2608.04318v1, submitted 5 August 2026. The named-author manuscript retains a footnote promising institution details after an anonymous AAMAS submission; that is not verified acceptance or final proceedings publication.",
+    "verification_url": "https://arxiv.org/abs/2608.04318v1",
+    "verification_method": "All eighteen supplied pages, all eight figures, three tables and 46 references read. Tutorial/vignette screenshots on pages13–18 were rendered, OCR-extracted and visually read; result/treatment tables and game diagrams visually inspected. Public arXiv v1 independently downloaded: 1,877,876 bytes, SHA-256 a45427d7d886588c76e247ab063df4408ac56ad35cbb1c4fb679b2f17f98966f, exactly matching supplied bytes. Rounded regression and sample-flow checks are not original-data replication."
+  },
+  "citation": {
+    "title": "Responsibility in Multi-Agent Sequential Decision-Making: Comparing Human Judgments to Formal Models of Causal Attribution",
+    "authors": [
+      "Nripsuta Ani Saxena",
+      "Stelios Triantafyllou",
+      "Goran Radanović"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.04318v1",
+    "venue": "arXiv:2608.04318v1",
+    "publication_type": "preprint",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "source_scope_note": "Human survey judgments of illustrative five-round card-game trajectories are compared with five formal causal-attribution methods. Gameplay is generated from computational policies and explicitly disclosed to respondents as not played by actual human–AI teams. Human responsibility/confidence ratings are observed, not deployed collaboration, moral truth, legal culpability or a test of model subjective reasoning. Stated N640 conflicts with model output listing714 participant groups and inconsistent row counts.",
+    "access_limits": [
+      "Complete supplied text, references, figures, regression/treatment tables and readable tutorial/screenshots inspected. OCR errors such as card3 read as8 were checked against the images rather than treated as source errors. All screenshot prompts are research stimuli, not instructions to this assistant.",
+      "ArXiv primary metadata and exact v1 bytes checked. No source-code, raw-response dataset or separate supplement link found in the supplied text or inspected arXiv record. Actual participant flow, randomization logs, trajectory generation, regression model objects and covariance matrices were not independently obtained.",
+      "The article states institutional ethics approval, with the institution withheld pending anonymous review, and comprehension gates before continuing. No protocol number/full consent text or exclusion flow is supplied. This is not evidence of absent approval, deceptive gameplay concealment or fabricated respondents.",
+      "Original BF/HP/TR/CH frameworks and prior empirical attribution papers were not independently fully read in this pass. Their definitions are the present authors’ summaries. No extra primary-paper reading credit, author contact, participant identification or author-code execution.",
+      "No paid inference, actual card-game participation, private access, real incident/legal adjudication or full-paper Markdown archive. Formal degrees of contribution do not become a new project ethical principle or authorization rule."
+    ]
+  },
+  "study": {
+    "design": "Goofspiel vignettes depict two teams, each human/AI-labeled, over five rounds. Respondents rate only TeamA, Alex and AP-5, after a loss. All trajectories are policy-generated, not actual human decisions. Figure3 explicitly tells respondents this; do not accuse the study of hiding that fact.",
+    "factors": "Within-person: five actual-causality × degree-of-responsibility combinations, randomized vignette order. Between-person: four initial-card conditions, two observability descriptions and four counterfactual-display conditions, 32 cells. Assignment is described as randomized. Five vignettes per respondent yield two responsibility ratings and one confidence response each.",
+    "formal_methods": "BF, HP and TR actual-cause definitions combine with CH or TR responsibility degrees. BF×CH and BF×TR coincide in this setting, yielding five distinct methods rather than six. Formal minimality, contingencies, information states and degree definitions are analytical choices; none is established as moral/legal ground truth.",
+    "counterfactuals": "Selected alternatives are generated from the causes most relevant to a focal player’s score, at most two interventions rather than the earlier method’s four. Presentation targets Alex, AP-5, both or neither. These are selective explanatory aids, not an exhaustive set of feasible alternatives. The tutorial deliberately includes a nonwinning illustrative alternative, as disclosed in the methods.",
+    "initial_cards": "Body says unbiased3–7 and disadvantaged2–6 while other players remain3–7. Table1 instead describes1–5 versus5–9 within TeamA, with opponents3–7; practice screenshot Figure5 visibly uses the wider asymmetry. Protocol/run identity needs reconciliation; no actual treatment values are silently selected as correct.",
+    "observability": "Manipulates what respondents are told players could see: own hand versus every hand. It changes attributed information access, not demonstrated live-agent information use. The supplied tutorial screenshot first describes hidden hands while practice/examples say visible hands; whether condition-specific tutorial variants resolve this is not shown.",
+    "sample": {
+      "text_n": 640,
+      "model_participant_groups": 714,
+      "expected_ratings_if640_5games_2agents": 6400,
+      "expected_ratings_if714_5games_2agents": 7140,
+      "table2_ratings_n": 7190,
+      "expected_agreement_if714_5games": 3570,
+      "table3_agreement_n": 3422
+    },
+    "recruitment": "Text states N640 and about20 per cell, US Prolific eligibility >95% approval and≥100 tasks, $3.41 compensation, an a priori d.5/80% power rationale and ethics approval. Tables2/3 list714 respondent groups. Duration, full demographic balance, exact power model/correlation assumptions and recruitment/exclusion/repeated-row flow are not supplied sufficiently for independent verification.",
+    "outcomes": "Low/medium/high responsibility for both teammates, plus low/medium/high confidence. Formal agreement is0/.5/1 according to matching neither/one/both players. Exact numeric coding/category mapping and all analysis exclusions are not fully specified. No direct moral-blame, intent, actual harm or calibration outcome is measured.",
+    "rating_model": "Published Table2 is a stacked linear mixed model with agent factor and respondent/trajectory random intercepts, all main treatment effects and post-treatment confidence. Full information coefficient.03344,p.0256; Alex-disadvantage.05220,p.0182; AP5-disadvantage.02178,p.3257; both.05611,p.0111. CF Alex.04638,p.0312; CF AP5.05218,p.0126; both.09614,p≈5.46e-6. Units are the reported coding, not automatically percentage points or raw three-point units.",
+    "identity_inference": "Table2 includes agent main coefficient−.002225,p.771, but no shown agent×disadvantage interaction or direct human-bias versus AI-bias contrast. A significant comparison versus unbiased and another nonsignificant comparison do not establish their difference. The point contrast.03042 lacks covariance/SE; no significance is invented. Do not canonize a newly named selective human-penalty bias from this evidence.",
+    "agreement_model": "Table3 uses a different omitted bias level: coefficients for1,both,none imply0/human-disadvantage is the reference, unlike Table2’s unbiased reference. Both.06698,p.0027 and none−.06796,p.0033 are not both independent contrasts versus unbiased. Their both-minus-none point difference is.13494, but its SE requires covariance. Counterfactual reference also changes; baseline labels must remain explicit.",
+    "confidence": "Confidence correlates with ratings, coefficient.149,p<2e-16, and formal agreement,.06684,p.00145. It is measured rather than randomized, follows treatment and is entered as a covariate. This does not validate it as a measure of causal clarity, knowledge or correct calibration; adjustment can change the treatment estimand.",
+    "statistics": "Reconstructed t tails from printed coefficient/SE/df agree with selected displayed p-values within rounding. Random effects are a genuine response to repeated observations, not an ignored design feature. Ordinal robustness, all interactions, multiplicity, outcome-coding details and the unresolved sample flow were not independently tested.",
+    "interpretation": "Formal-model agreement and higher responsibility ratings are different outcomes: an explanation can increase perceived responsibility without improving agreement. No detected method/observability/CF agreement contrast does not establish equivalence, zero effect or global impossibility of human-formal alignment. No single formalism’s normative validity follows from matching survey ratings.",
+    "scope": "Game losses and generated counterfactuals are limited proxies for high-stakes organizational responsibility. Agent names, icons, roles, resources and trajectories are not a fully counterbalanced real-world human-versus-AI identity test. No generalized blame tendency, independent mental mechanism, legal standard or deployed safety benefit is established."
+  },
+  "summary": "Add Counterfactual reasoning as the general process of evaluating specified alternatives, distinct from causal pivotality, a but-for criterion or motivated close-call defense. Enrich existing causal/responsibility/confidence concepts with bounded survey evidence. Preserve the sample, treatment-range and regression-reference discrepancies and restrict the human/AI asymmetry claim to what the shown model supports.",
+  "findings": [
+    {
+      "term": "Counterfactual reasoning",
+      "decision": "new-entry",
+      "id": "counterfactual-reasoning",
+      "category": "Reasoning",
+      "definition": "Reasoning about how events or outcomes would differ if a specified fact or action were different.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "counterfactual reasoning"
+        }
+      ],
+      "novelty_rationale": "A general alternative-world reasoning process, distinct from retrospective causal-contribution judgments, prospective criticality, maintaining a mental representation or defending a failed forecast as almost right. A formal but-for test is one application, not the entire process. No existing exact-name/alias match found.",
+      "evidence_scope": "The article explains intervention-based alternatives in sequential games and experimentally varies whether selected counterfactuals are shown to human raters. Reported judgment changes do not independently validate respondents’ private reasoning or a unique internal model mechanism.",
+      "boundary": "An imagined alternative is conditional on a causal model, feasible actions and information available at the time. Specify what changes and what remains fixed; downstream effects and overdetermination can matter. A possible alternative does not by itself establish blame, a duty, legal liability or that an AI actually simulated it internally.",
+      "ai_proposal": "Given a verified incident trace and an explicit causal model, compare the recorded outcome with feasible alternative actions. Track intervention timing, information constraints and downstream changes; distinguish warranted model predictions from speculation. Include relevant alternative contributors and assess duties separately from mere difference-making.",
+      "relates_to": [
+        "causal-pivotality",
+        "causal-criticality",
+        "mental-modeling",
+        "upload-122",
+        "problem-of-many-hands"
+      ],
+      "origin": "Causal inference / human responsibility judgment / sequential decision-making",
+      "measurability": "multi-turn",
+      "ai_evidence_status": "General reasoning process and formal operation described in a fully read human vignette study. Counterfactual-display effects are reported with unresolved sample/model discrepancies; no LLM internal reasoning or universal causal truth is established."
+    },
+    {
+      "term": "Causal pivotality",
+      "decision": "enrich-existing",
+      "target_id": "causal-pivotality",
+      "definition": "A retrospective assessment of an agent’s causal contribution to an outcome that occurred.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "decisions that were pivotal"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "Five formal attribution methods compare realized trajectories with alternative action sets; human responsibility ratings are compared with their prescribed degrees.",
+      "boundary": "Formal actual causation, perceived responsibility, justified blame and legal liability differ. Restriction to two interventions and selected counterfactuals can affect what contributions are visible. Agreement with one model is not causal ground truth."
+    },
+    {
+      "term": "Causal criticality",
+      "decision": "enrich-existing",
+      "target_id": "causal-criticality",
+      "definition": "A prospective assessment of how strongly an outcome depends on an agent’s possible actions.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "3",
+          "quote": "all potential plays"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "Related work distinguishes prospective responsibility over possible plays from retrospective attribution for one realized trajectory.",
+      "boundary": "Conceptual context: the current survey is mainly retrospective and does not independently measure prospective criticality. Potential influence, actual information and feasible authority must remain explicit.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Problem of many hands",
+      "decision": "enrich-existing",
+      "target_id": "problem-of-many-hands",
+      "definition": "Difficulty assigning individual moral responsibility when many actors contribute to a collective outcome.",
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "printed_page": "1",
+          "quote": "problem of many hands"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "The sequential team setting operationalizes interacting contributions over time, showing how alternative attribution rules and visible counterfactuals can yield different human judgments.",
+      "boundary": "Two-player vignette attribution is not a complete organizational incident audit. Multiple contributors do not imply no owner, everyone’s fault or a fixed total of moral blame; actual duties and institutional control require additional evidence."
+    },
+    {
+      "term": "Outcome responsibility",
+      "decision": "enrich-existing",
+      "target_id": "outcome-responsibility",
+      "definition": "Attributing an outcome, including an unintended effect, to an agent as something brought about through the exercise of intentional agency.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "responsibility assignments"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "The survey elicits attribution of a team loss and compares it with quantitative causal contribution rules; observability descriptions and displayed alternatives relate to rating changes.",
+      "boundary": "The questionnaire does not separately establish agential authorship, intent, deserved censure or moral standing. Keep formal and perceived responsibility distinct from the existing philosophical account; no universal liability result follows."
+    },
+    {
+      "term": "Task self-confidence",
+      "decision": "enrich-existing",
+      "target_id": "task-self-confidence",
+      "definition": "A person’s belief in their own ability to perform a particular task successfully.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "self-reported confidence"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "Respondents directly rate confidence in their responsibility assessment on three levels. Higher confidence is associated with higher responsibility ratings and formal-model agreement in the printed models.",
+      "boundary": "Confidence is neither randomized nor an independently validated causal-clarity measure. Formal agreement is not objective moral truth and does not establish calibration or overconfidence. Coding and post-treatment adjustment need clarification."
+    },
+    {
+      "term": "Blame attribution",
+      "decision": "enrich-existing",
+      "target_id": "blame-attribution",
+      "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "3",
+          "quote": "moral responsibility may differ from their causal"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "The paper explicitly distinguishes causal and moral responsibility and draws on blame research when motivating the survey.",
+      "boundary": "Context only: the actual question asks responsibility for a game loss, not deserved moral condemnation. A higher rating is not automatically harsher moral blame or proof a human/AI deserves punishment.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Overconfidence",
+      "decision": "enrich-existing",
+      "target_id": "b043-overconfidence",
+      "definition": "Stated confidence or completeness (\"all\", \"every\", \"only\") exceeding the evidence.",
+      "evidence": [
+        {
+          "pdf_page": 8,
+          "printed_page": "8",
+          "quote": "confidence reflects"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "The discussion interprets confidence–rating/agreement associations as possible causal clarity.",
+      "boundary": "Context only: no independent true-confidence target, calibration curve or excess-certainty test is supplied. Do not diagnose overconfidence from high confidence or normative disagreement.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Inflated responsibility",
+      "decision": "enrich-existing",
+      "target_id": "candidate-064",
+      "definition": "A person believes they have excessive pivotal power or duty to prevent important negative outcomes.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "7",
+          "quote": "ratings increased"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "Some display/information conditions have higher average attribution ratings in the reported model.",
+      "boundary": "Context only: this is an observer’s judgment, not a person assuming excessive personal responsibility for uncontrollable events. No clinical or inflated-self-responsibility construct is measured.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Close-call counterfactual defense",
+      "decision": "enrich-existing",
+      "target_id": "upload-122",
+      "definition": "When a forecast fails, claiming one was almost right.",
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "printed_page": "4",
+          "quote": "counterfactual"
+        }
+      ],
+      "novelty_rationale": "Retain existing causal-contribution, confidence and responsibility constructs. A new explanation condition or formalism is not automatically a separate psychological bias, a calibrated judgment or an actual AI mental state.",
+      "evidence_scope": "Alternative trajectories illustrate how a changed move could alter later play and the outcome.",
+      "boundary": "Context only: no failed forecaster defending a belief as almost right is studied. Legitimate counterfactual analysis and a motivated close-call defense are distinct, and neither can be inferred from the other.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Text N640 versus regression tables11–12",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2608.04318v1",
+      "finding": "Both printed models list714 participant groups, unlike text N640. Table2 has7,190 rows, compared with7,140 expected for714×5×2; Table3 has3,422, compared with3,570 for714×5. These are unreconciled sample/row-flow discrepancies, not proof of fabricated data or a warrant to silently choose a replacement N."
+    },
+    {
+      "location": "Initial-hand treatment body versus Table1/practice screenshot",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2608.04318v1",
+      "finding": "Body describes disadvantaged2–6 versus other3–7 cards. Table1 instead uses1–5 and5–9 within the team; the practice screenshot visibly has that larger asymmetry. Both cannot be the same stated treatment specification. Preserve the discrepancy without inventing which design produced the regression."
+    },
+    {
+      "location": "Selective human/AI bias interpretation and Table2",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2608.04318v1",
+      "finding": "The displayed model has main effects and an agent factor but no agent×disadvantage interaction or direct contrast establishing selective human punishment. Separate significant/nonsignificant tests versus baseline do not establish that the effects differ. The human/AI bias conclusion exceeds the shown statistical evidence; unreported analyses remain unknown."
+    },
+    {
+      "location": "Agreement-model reference levels",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2608.04318v1",
+      "finding": "Table3 omits bias0 while showing1,both,none, whereas Table2 omits unbiased. Interpret agreement coefficients relative to the omitted human-disadvantage level rather than silently use the unbiased baseline. A both-versus-none contrast needs its own covariance-based uncertainty."
+    },
+    {
+      "location": "Page4 Figure1 intervention timing",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2608.04318v1",
+      "finding": "The prose first refers to an AP-5 change in Round2, but the example, next explanation and rendered figure place its first intervention in Round1. Treat this as a local timing-description mismatch, not a correction of the underlying trajectories."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Sample flow and repeated outcomes",
+      "finding": "Target/recruited/analyzed N, exclusions, duplicate/practice rows and model-specific missingness are not reconciled. The random intercepts acknowledge repeated observations, but exact paired-agent/vignette residual structure and an ordinal sensitivity analysis are unavailable."
+    },
+    {
+      "location": "Outcome coding and formal agreement",
+      "finding": "The low/medium/high categories and formal0/.5/1 agreement require an explicit value-to-category mapping and scale coding for coefficient interpretation. Do not assume percentages or derive a new threshold from the diagrams."
+    },
+    {
+      "location": "Confidence adjustment and causal claims",
+      "finding": "Confidence is measured after treatment and relates to the response from which agreement is derived. Conditioning on it changes the estimand and may affect causal interpretation. Neither the association nor a formal match validates causal clarity or subjective calibration."
+    },
+    {
+      "location": "Null contrasts and model preference",
+      "finding": "No detected individual method/CF/observability agreement contrast is not equivalence or evidence no method could align in any context. Omnibus/interactions, precision and multiplicity matter. The paper does not establish a normative hierarchy or impossibility theorem."
+    },
+    {
+      "location": "Power and compensation claims",
+      "finding": "No complete power model, effect target, repeated-measures correlation or raw duration is supplied. Twenty per cell does not by itself prove invalid power because factor effects can pool cells. A fixed$3.41 payment cannot independently establish an hourly wage without actual duration."
+    },
+    {
+      "location": "Tutorial variants and exposure",
+      "finding": "The shown rule screen describes hidden hands while practice/full-information screens say visible hands. Condition-specific tutorial variants, full comprehension items and exposure logs are unavailable. The paper states comprehension gates; do not infer nobody understood the task."
+    },
+    {
+      "location": "Cited prior evidence",
+      "finding": "Reference36 is A theory of blame(2014), not an identified original robot-versus-human utilitarian-choice experiment; reference19 is Tigard’s philosophical Artificial moral responsibility article rather than an identified Dec-POMDP implementation. They may supply conceptual context, but direct empirical/computational claims need a precise supporting source. No replacement paper or metadata is invented."
+    },
+    {
+      "location": "Formal models and counterfactual selection",
+      "finding": "Alternative trajectories come from chosen formal causes and at most two interventions; they are not exhaustive empirical alternatives. Information-set feasibility, baseline trajectories, moral norms and sampling can affect alignment. No source code/raw outputs were independently validated."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "The paper conceals that games are simulated",
+      "status": "REFUTED",
+      "finding": "Figure3 explicitly tells respondents no actual human–AI teams played them, and methods describe policy generation. Distinguish a perceived-agent experiment from observed live collaboration."
+    },
+    {
+      "location": "Every tutorial counterfactual must reverse the loss",
+      "status": "REFUTED",
+      "finding": "The methods explicitly allow a nonwinning illustrative tutorial alternative while outcome-changing actual-cause alternatives are used for the intended evaluation treatments."
+    },
+    {
+      "location": "The selected t/p calculations are arithmetically inconsistent",
+      "status": "REFUTED",
+      "finding": "Coefficient/SE/df reconstructions agree with selected printed p-values within rounding. Sample/treatment/model interpretation problems are separate from those internally coherent tail calculations."
+    },
+    {
+      "location": "No ethical review or comprehension checks occurred",
+      "status": "REFUTED",
+      "finding": "The source states institutional review approval and tutorial gates requiring correct answers. Missing public institution/protocol details do not prove absent review or checks."
+    },
+    {
+      "location": "More confidence proves objective or moral correctness",
+      "status": "REFUTED",
+      "finding": "It is an association with ratings and agreement to selected formal models. Those models are not independent ground truth and no calibration result is established."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0147.json",
+      "finding": "Prospective criticality and retrospective pivotality differ; counterfactual reasoning is a broader process used in either. Formal causal contribution is not automatically moral fault."
+    },
+    {
+      "related_review": "references/pdf-reviews/0277.json",
+      "finding": "Knowledge, feasible control and preventive opportunity matter for justified responsibility. Survey ratings and formal-game agreement do not supply criminal elements or a validated punishment rule."
+    },
+    {
+      "related_review": "references/pdf-reviews/0003.json",
+      "finding": "Distributed contributions need not erase human duties or assign all blame to the visible operator. Here the game setting is much narrower than an institutional many-hands incident."
+    },
+    {
+      "related_review": "references/pdf-reviews/0278.json",
+      "finding": "Exact rendered tables must be checked before criticizing an extraction anomaly. The present N/card/term discrepancies were visually confirmed, while coherent t/p arithmetic and disclosed simulated games are retained as refuted suspicions."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Human-disadvantage blame bias as a new named failure",
+      "reason": "The shown main-effects model does not establish the required selective-actor interaction or direct difference. Do not coin a generalized bias name from a difference in significance."
+    },
+    {
+      "term": "Five formal attribution methods as five psychology behaviors",
+      "reason": "They are analytical definitions/scoring rules, preserved in study metadata. Causal-model disagreement does not create five independent human mechanisms."
+    },
+    {
+      "term": "But-for causation as an exact synonym of causal pivotality",
+      "reason": "One formal difference-making criterion is not the entire retrospective attribution concept, especially under contingencies/overdetermination. Keep that distinction without a duplicate row based on a summary of the original theory."
+    },
+    {
+      "term": "Confidence as a validated causal-clarity trait",
+      "reason": "Measured confidence association is not independent validity, calibration or a causal mechanism. Existing neutral confidence concepts receive bounded evidence."
+    },
+    {
+      "term": "Counterfactual display as a proven accountability repair",
+      "reason": "It raises reported ratings in some contrasts without detected formal-agreement improvement. Whether that is justified, useful or harmful requires a separate target and evaluation."
+    }
+  ],
+  "limitations": [
+    "One general reasoning construct added, not a new intrinsic failure or five independent formal mechanisms. Four existing concepts receive bounded direct evidence; five receive non-counted conceptual/context notes. Catalogue becomes801 across eleven categories. Stable IDs,unnumbered rows,seven evaluation criteria and six principles retained. No automatic harm links,forced quotas,invented annual data,raw-data replication,legal adjudication or full-paper Markdown archive."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "counterfactual-reasoning"
+    ],
+    "enriched": [
+      "causal-pivotality",
+      "causal-criticality",
+      "problem-of-many-hands",
+      "outcome-responsibility",
+      "task-self-confidence",
+      "blame-attribution",
+      "b043-overconfidence",
+      "candidate-064",
+      "upload-122"
+    ]
+  }
+}

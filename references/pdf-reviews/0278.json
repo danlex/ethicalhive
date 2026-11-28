@@ -1,0 +1,346 @@
+{
+  "sequence": 278,
+  "source": {
+    "file_name": "S3802_Russo_2026.pdf",
+    "source_id": "S3802",
+    "sha256": "7e717baf766a810ea0dd108bb863189eac3b92797c1c2d583fdfa152812fdeb1",
+    "pdf_pages": 17,
+    "printed_pages": "6481–6497",
+    "version_note": "Final EACL 2026 long paper, March 24–29, pages 6481–6497, DOI 10.18653/v1/2026.eacl-long.305. Later version of the 14-page arXiv:2507.17216v1 reviewed as PDF 0039; the title adds Moral before Judgment. Different bytes and additional experiments/appendices require reading, but shared data/results do not become an independent study.",
+    "verification_url": "https://aclanthology.org/2026.eacl-long.305/",
+    "verification_method": "All seventeen supplied pages, all six figures, eight tables, references, prompts and appendices A.1–A.9 read. Figures and result/taxonomy tables visually inspected; formula on page 6483 checked visually. ACL primary metadata and exact public PDF verified: 1,022,809 bytes, SHA-256 7e717baf766a810ea0dd108bb863189eac3b92797c1c2d583fdfa152812fdeb1. The two-page public Responsible NLP checklist was also fully read. Original preprint page 3 visually rechecked to retract a false criticism in review 0039."
+  },
+  "citation": {
+    "title": "The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models",
+    "authors": [
+      "Giuseppe Russo",
+      "Debora Nozza",
+      "Paul Röttger",
+      "Dirk Hovy"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.18653/v1/2026.eacl-long.305",
+    "venue": "Proceedings of the 19th EACL, Volume 1: Long Papers, 6481–6497",
+    "publication_type": "proceedings-article",
+    "domain": "ai"
+  },
+  "version_family": {
+    "earlier_review": "references/pdf-reviews/0039.json",
+    "earlier_sha256": "18d24d8457457892d43e984e7010225b1907025bf9053601555f2ed0a0e62718",
+    "earlier_url": "https://arxiv.org/abs/2507.17216v1",
+    "relationship": "Later published version, not byte-identical; full final-version reading recorded separately from independent-study credit.",
+    "counting": "All current findings set count_as_behaviour_paper false so the final DOI and earlier arXiv source are not automatically used to fill two independent-paper slots. Earlier reading and selected citation provenance remain visible."
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "LLM output distributions and extracted rationale-value mentions are compared with selected Reddit community responses. This final version adds a semantic-fidelity study, inferred demographic personas, a 300-dilemma generalization set, ten-seed alpha ablations, a DMP–Overton human study and paired comparison heatmap. These are author-reported additions, not independently replicated data. Shared preprint/final results are one work, not independent studies or objective moral truth.",
+    "access_limits": [
+      "Full supplied final text, all figures/tables/prompts and two-page ACL checklist read. Exact public ACL PDF bytes match. The supplementary checklist has SHA-256 94fd36444567ad6af865a2b240322ccb421b2a466719f6dbcef52524f32ec435 and 64,805 bytes; it is not another independent empirical paper.",
+      "No research-code/dataset link found on the inspected ACL landing page or in the supplied text. ACL Anthology maintenance GitHub links are not the authors’ experiment code. Participant responses, value extraction outputs, profile samples, model API logs and raw Reddit histories were not downloaded or reanalyzed.",
+      "The original local preprint SHA matches review 0039. Only its page 3 was re-read/re-rendered for the formula and reversed NTA/YTA labels; the earlier full reading remains the provenance for the rest. Do not claim another complete preprint reading.",
+      "Semantic-fidelity N=100, DMP–Overton N=100 and five student taxonomy annotators are separately described samples. Their overlap is not documented, so do not assert 205 unique people. Raw repeated-rating dependence and the reported preference p-value remain unresolved.",
+      "Checklist A1 is marked yes; most other checklist entries are blank, not marked no. Some corresponding details appear in the paper. Blank entries are not evidence that consent, ethics review, licensing or artifact checks did not occur.",
+      "No authors contacted, no raw-user identification or demographic profiling performed, no author-code execution, paid inference, public metadata correction submission or full-paper Markdown archive. Original cited studies were not independently fully read here."
+    ]
+  },
+  "study": {
+    "data": "22,451 AITA posts from July–December 2024, 684,360 direct replies; GPT-4o-mini rewrite plus three recognizability checks retains 1,618 dilemmas (7.2068%) and 51,776 judgments. Final count is exactly 32 per dilemma on average, but an exact per-case sampling rule is not supplied. Initial comments/posts average 30.48, unlike the reported 42 users per case; stages and units need reconciliation.",
+    "binary_target": "NTA/YTA map to Acceptable/Unacceptable; ESH/NAH/INFO are excluded. The final text says 63% YTA and 27% NTA, reversing the v1 text’s 63% NTA/27% YTA; both sum to 90%, with the earlier 98.6% retained-category statement still in the final footnote. No raw polarity or denominator repair is invented.",
+    "selection": "One English-language self-selected community, model-dependent 92.8% exclusion and possible correlated users/comments limit representation. Authors acknowledge Western/Anglo-American context and residual preprocessing bias. Recognizability filtering is not proof of no memorization or privacy traceability.",
+    "semantic_fidelity": "100 Prolific participants over 21, paid $12/hour, randomly assigned original versus rewritten material, five dilemmas each. Four content questions compare treatment responses with control modal answers; agreement 86–92%. This supports selected content recall, not statistical equivalence of moral judgments, motives, omitted facts or all survivors. No exact equivalence margin or full test output is supplied.",
+    "models": "Ten named LLMs plus sampled/inferred persona and pooled-model baselines; main T=1, Table4 also T=0. Figure2, Table4 and Figure6 do not have fully consistent model labels/means. Exact inference dates and endpoint snapshots are not fully pinned. A model panel need not be statistically independent or represent individual humans.",
+    "metric": "Absolute difference between human/model acceptable-response proportions per dilemma; the formula visibly includes absolute-value bars in both v1 and the final version. Entropy of extracted value distributions is a different estimand. Low output diversity is judged against the declared community-distribution target, not a unique morally correct answer.",
+    "personas": "One baseline samples self-disclosed age/gender; another infers age/gender/partisanship scores from subreddit-comment history using published subreddit-level dimensions. These are proxies, not independently verified identities or all cultures. The privacy section acknowledges unavailable cultural/religious information; do not claim it states no demographic inference was performed.",
+    "taxonomy": "Value Kaleidoscope extracts 3,783 expressions from human and model rationales; embeddings/agglomerative clustering yield 73 initial clusters, silhouette .09. GPT labels/reallocation and five human reviewers produce a claimed 60-category taxonomy, with four reviewers converging. This is not a reported held-out expression-level reliability or extraction-validity estimate. Table5 visibly prints 59 labels and omits Honesty despite Table1.",
+    "value_results": "Table1 sums reconcile: model own top ten 81.6%, human own top ten 35.2%; their sets differ (Responsibility versus Freedom). Mean normalized entropy human .57, baseline .46, DMP .52. Expressions in rationales are not identified private values or faithful causal reasoning. Length/style/extractor effects were not independently audited.",
+    "dmp": "Human-derived global/topic value priors and sampled profiles steer generated verdicts/rationales. Reported main error .22→.08; rounded values imply 63.64% relative reduction while source says64.3%, plausibly due rounding. Entropy .46→.52 is about13.04% (source13.1%). These are not percentage-point gains or proof of better ethical decisions.",
+    "generalization": "The final version reports 300 additional dilemmas excluded from taxonomy construction: council error .24→.11, relative54.17% consistent with54.2%, entropy .47→.50 versus human .55. This narrows the old v1 no-holdout concern; it is not an unseen-community or independently replicated result. Independence from all prior/profile fitting and exact splits are not fully specified.",
+    "ablation": "Alpha in {1,5,10,20,50}, ten seeds, mean errors18.2/13.7/8.0/11.6/14.2pp with95%CIs. Final version supplies seed uncertainty and Holm–Bonferroni-labeled pairwise comparisons, so do not repeat v1’s lack-of-all-inference criticism as if unchanged. Hyperparameter choice/generalization and mismatched summaries remain bounded concerns.",
+    "one_shot": "DMP–Overton synthesizes multiple sampled perspectives into one rationale.100 Prolific participants each rate five paired anonymized baseline/Overton answers in randomized order, five7-point dimensions plus forced overall preference. Pluralism4.11→4.46,p<.001; usefulness/clarity/acceptability/safety changes are small with p>.05. No validated absence of harm, equivalence or broad advice efficacy follows.",
+    "preference_reconstruction": {
+      "assumption": "100 participants each supply five forced choices, no exclusion/tie; treat 500 choices as independent only to reproduce the stated simple binomial test, not as a justified cluster-aware analysis.",
+      "n": 500,
+      "dmp_choices": 258,
+      "dmp_percent": 51.6,
+      "two_sided_p": 0.5023743407533193,
+      "one_sided_p": 0.25118717037665966,
+      "printed_p": 0.032
+    },
+    "sampling_math": "The simple 500-choice binomial reconstruction only checks the stated test. Five choices per participant and potentially shared dilemmas require dependence-aware inference. No raw preference/rating arrays are available, so no corrected author-level p-value or Wilcoxon result is asserted.",
+    "dirichlet_specification": "Per-rationale multi-label frequencies need explicit normalization if treated as a probability base. The written Dirichlet(alpha G0) omits a topic-count/posterior term despite describing fitted topical profiles. Profile draw counts, top-three versus60-score payload and exact prompt insertion are underspecified; this is not proof the actual implementation omitted them.",
+    "self_audit": "Review0039 incorrectly criticized missing absolute-value bars after relying on extracted text. Visual inspection of the original and final source refutes that criticism. The original review is corrected with the prior wording and a Self-evaluation: the auditor audited record. The process error was treating an extraction omission as a source defect; hidden intent/internal reasoning is not inferred."
+  },
+  "summary": "No new terms: final-version evidence updates the existing diversity-collapse entry and related boundaries. Preserve added human studies, unseen dilemmas, ablations and corrected publication identity without double-counting the preprint. Retract the earlier formula criticism in review0039. Record unresolved preference-test, taxonomy, dataset-polarity and figure/table inconsistencies without inventing corrected data or erasing the final version’s genuine methodological additions.",
+  "findings": [
+    {
+      "term": "Diversity collapse",
+      "decision": "enrich-existing",
+      "target_id": "diversity-collapse",
+      "definition": "Producing unusually homogeneous outputs across repeated samples or varied prompts, with less variation than the task or reference distribution requires.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6486",
+          "quote": "narrower set of moral values"
+        }
+      ],
+      "evidence_scope": "Final-version update of the same work reviewed in0039: expressed value entropy remains human.57/model.46, rising to.52 with DMP. New300-dilemma and DMP–Overton results extend the reported evaluation but are not independent replications. The prior missing-absolute-bars criticism has been visually refuted and withdrawn in the original review.",
+      "boundary": "Community matching is the stated task target, not moral truth or an intrinsic need for randomness in every answer. More diverse extracted rationales do not establish private beliefs, causal deliberation or better outcomes. The final version’s preference p-value and several summaries are unresolved. This version adds no second independent-paper credit.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Suggestibility",
+      "decision": "enrich-existing",
+      "target_id": "b067-suggestibility",
+      "definition": "Leading input reshapes the output; the cognitive face of prompt injection.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": "6494",
+          "quote": "personalized moral profile"
+        }
+      ],
+      "evidence_scope": "Final prompts and ablations report response changes under explicit evaluator-supplied human-derived value profiles. The same work’s new one-shot synthesis receives higher pluralism ratings, while other rating differences are not statistically detected.",
+      "boundary": "Authorized profile conditioning is not malicious prompt injection, inappropriate compliance or a demonstrated psychological mechanism. Nonsignificant safety/clarity differences do not establish equivalence or harmlessness. Do not use this related steering result as a second independent paper.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Amplified moral bias",
+      "decision": "enrich-existing",
+      "target_id": "b072-amplified-moral-bias",
+      "definition": "Producing moral judgments that exaggerate a human reference pattern, such as rating approved actions more positively and disapproved actions more negatively.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "6483",
+          "quote": "proportion of Acceptable"
+        }
+      ],
+      "evidence_scope": "The final paper still measures binary-response prevalence and extracted value breadth rather than moral intensity. Added evaluations do not turn it into a direct test of extreme rating amplification.",
+      "boundary": "Context and version update only: absolute distribution mismatch removes direction and does not prove more extreme moral condemnation, felt certainty, an inaction bias or an ethically worse answer. Preserve the distinct construct and avoid duplicate-source credit.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Social desirability / people-pleasing",
+      "decision": "enrich-existing",
+      "target_id": "b069-social-desirability-people-pleasing",
+      "definition": "Shaping answers or behaviour to win approval, including agreement, flattery or favourable self-presentation, at the expense of accuracy or the stated task.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "6492",
+          "quote": "sycophancy"
+        }
+      ],
+      "evidence_scope": "AppendixA.2 reports narrator-support asymmetry before rewriting and closer high-consensus alignment after reformulation. The authors interpret this as reduced sycophancy.",
+      "boundary": "Rewriting/filtering also changes format, perspective and survivor selection; asymmetry alone does not uniquely isolate approval-seeking or interpersonal social desirability. No new actual user-pleasing motive or separate independent study is credited.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Moral uncertainty",
+      "decision": "enrich-existing",
+      "target_id": "moral-uncertainty",
+      "definition": "Uncertainty about which moral principles are justified, what they require in a situation, or which entities warrant moral consideration.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 14,
+          "printed_page": "6494",
+          "quote": "multiple reasonable perspec"
+        }
+      ],
+      "evidence_scope": "The DMP–Overton human study rates whether one response presents several reasonable perspectives rather than a single side, connecting distributional evaluation with practical advice format.",
+      "boundary": "Context only: a perceived plurality rating is not calibrated uncertainty, normative truth or proof that all represented views are reasonable. Moral disagreement and the safety of the advice require separate evaluation; no second paper credit.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Alignment target problem",
+      "decision": "enrich-existing",
+      "target_id": "alignment-target-problem",
+      "definition": "Difficulty choosing an AI alignment standard when judgments about human action, AI action and human design of AI differ.",
+      "novelty_rationale": "This is the final version of the work already fully read in review 0039, not an independent replication. Retain the existing concepts and attach version-specific additions and corrections without duplicate publication credit.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "6482",
+          "quote": "distributional alignment problem"
+        }
+      ],
+      "evidence_scope": "The paper explicitly defines alignment to a selected community’s distribution and later studies a one-shot synthesis, illustrating different evaluation targets.",
+      "boundary": "Context only: population-distribution matching is not the existing actor/AI/designer contrast. Do not merge these as exact synonyms or treat public majority views as a replacement for justified human governance.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Review0039 formula criticism and final page6483",
+      "status": "CORRECTED",
+      "verification_url": "https://aclanthology.org/2026.eacl-long.305.pdf",
+      "finding": "Absolute-value bars are visible in the final formula and the original supplied preprint page3. The old criticism was an extraction artifact, not an author formula error. Correct review0039 in place, retaining the former statement and process/prevention record under Self-evaluation: the auditor audited."
+    },
+    {
+      "location": "Final publication/version identity",
+      "status": "CONFIRMED",
+      "verification_url": "https://aclanthology.org/2026.eacl-long.305/",
+      "finding": "Cite Russo,Nozza,Röttger,Hovy,EACL2026 Long Papers6481–6497,DOI10.18653/v1/2026.eacl-long.305. It is the later version of arXiv2507.17216v1, not a new independent replication. Current title includes Moral Judgment; both version identities remain historically accurate."
+    },
+    {
+      "location": "Table5 claimed60-value list",
+      "status": "CONFIRMED",
+      "verification_url": "https://aclanthology.org/2026.eacl-long.305.pdf",
+      "finding": "Visually checked table prints59 labels and omits Honesty, which appears in Table1. Some Table2 labels also lack exact matches. This persists from the preprint; do not invent the missing implementation category or import sixty new behavior rows."
+    },
+    {
+      "location": "Final Table4 versus Figure6 summaries/model labels",
+      "status": "CONFIRMED",
+      "verification_url": "https://aclanthology.org/2026.eacl-long.305.pdf",
+      "finding": "Table4 T=1 Panel.22 minus DBRX.34 is−.12, but Figure6 prints−.06; Sonnet.29 minus Opus.29 is0, but Figure6 prints−.04. Differences exceed ordinary displayed rounding. Figure6 also uses O1-mini/Opus-3.5 labels unlike the baseline table. A version/run/label mismatch needs reconciliation; no corrected matrix is invented."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Human preference test",
+      "finding": "Main text calls overall preference p.032 Wilcoxon; appendix says binomial. Under the described100×5 forced choices,51.6% implies258/500; a simple two-sided binomial p≈.5024 and one-sided≈.2512 do not reproduce.032. Different units/exclusions or another test are not documented. Repeated respondents/dilemmas also matter; do not replace the paper’s p with a claimed correctly clustered estimate."
+    },
+    {
+      "location": "NTA/YTA proportions across versions",
+      "finding": "V1 visibly says63%NTA/27%YTA; final says63%YTA/27%NTA. Both total90%, while the final footnote retains98.6%for those labels. Denominators/polarity are unresolved without raw data; preserve the discrepancy rather than choose a convenient label direction."
+    },
+    {
+      "location": "Dataset counts",
+      "finding": "684,360/22,451≈30.48 initial replies per post differs from reported42 users per dilemma, and51,776/1,618=32 exactly. Stages, users versus replies and any fixed sampling are not sufficiently specified. Near-equal fixed-width consensus buckets also need a sampling explanation."
+    },
+    {
+      "location": "Rationale extraction and taxonomy",
+      "finding": "Initial silhouette.09, four-of-five final taxonomy convergence and high-level human validation do not validate every adapted extractor assignment or remove length/style bias. Own top-ten sets differ. Table2 relative percentage comparisons and prose rounding are not percentage-point measures."
+    },
+    {
+      "location": "Dirichlet/topic/profile reproducibility",
+      "finding": "Normalization, topic-count fitting/posterior update, draw length and actual profile payload are not completely specified. Public code was not linked/inspected here. Missing description does not prove the implementation lacks those steps."
+    },
+    {
+      "location": "Semantic fidelity and generalization",
+      "finding": "Content-question agreement is not moral-response equivalence. The300 unseen dilemmas exclude taxonomy construction, but all fitting/sampling boundaries are not explicit; no cross-community generalization or contamination elimination is established."
+    },
+    {
+      "location": "No-harm and comparable-quality language",
+      "finding": "Small nonsignificant usefulness,clarity,acceptability and safety differences do not establish equivalence or noninferiority. User ratings are not an incident-free deployment, objective ethical validation or causal downstream behavioral benefit."
+    },
+    {
+      "location": "Checklist interpretation",
+      "finding": "Most boxes are blank rather than no. The main paper supplies some details, including human payment and privacy discussion. No inference of absent approval/consent, proved noncompliance or safe anonymization follows from these declarations alone."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "Absolute discrepancy bars are missing from the source",
+      "status": "REFUTED",
+      "finding": "They appear in both rendered versions. Text extraction omitted them. The earlier criticism in0039 is withdrawn and its history preserved."
+    },
+    {
+      "location": "The final work has no holdout,seed intervals or human evaluation",
+      "status": "REFUTED",
+      "finding": "It adds300 unseen dilemmas,ten-seed alpha intervals,semantic-fidelity and DMP–Overton human evaluations and Holm-labeled comparisons. Their limits remain,but do not repeat the older v1 omissions as current absence."
+    },
+    {
+      "location": "The rounded64.3% claim is definitely an arithmetic error",
+      "status": "REFUTED",
+      "finding": "Rounded22pp→8pp implies63.64%, but unrounded source values could yield64.3%. Treat as an unreproduced reported relative reduction rather than a proven false number or64.3pp gain."
+    },
+    {
+      "location": "Table1 cumulative percentages do not sum",
+      "status": "REFUTED",
+      "finding": "The ten model percentages sum81.6 and human percentages35.2 exactly. Different category sets and extraction validity are separate concerns."
+    },
+    {
+      "location": "DMP–Overton confirms objective moral correctness or no harm",
+      "status": "REFUTED",
+      "finding": "It measures human perceived pluralism and other ratings. Neither normative truth nor safety equivalence is established."
+    },
+    {
+      "location": "An ACL checklist blank means the authors answered no",
+      "status": "REFUTED",
+      "finding": "The checklist legend explicitly distinguishes a blank entry from a marked no. Do not turn missing checklist responses into misconduct or absence-of-procedure claims."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0039.json",
+      "finding": "Preserve one version family. Final-version additions narrow several old limitations, but the formula accusation was already false in v1 and needs retraction in the original record. Visual checking of the exact mathematical region is necessary before asserting a source defect."
+    },
+    {
+      "related_review": "references/pdf-reviews/0273.json",
+      "finding": "Both studies target population distributions, which differs from individual preference recovery or a single justified recommendation. DMP–Overton begins testing the one-shot presentation gap without resolving the normative target."
+    },
+    {
+      "related_review": "references/pdf-reviews/0275.json",
+      "finding": "A proposed reflective interface and an evaluated output-diversity intervention have different evidence status. More perspectives or coherent rationale text do not by themselves establish genuine value revision or well-being."
+    }
+  ],
+  "self_evaluation": {
+    "category": "Self-evaluation: the auditor audited",
+    "case": "False-positive mathematical criticism from extracted text",
+    "affected_record": "references/pdf-reviews/0039.json",
+    "observed_error": "The review asserted that the source omitted absolute-value bars without visually checking that formula.",
+    "evidence": "The original v1 page3 and final page6483 visibly contain the bars; extracted text lacks them. Prior review access notes name other visual checks, not this formula.",
+    "repair": "Retract the exact criticism in0039, retain its former wording in review_corrections, and record the correction and linked final-version update here.",
+    "prevention": "Inspect the exact rendered equation/table before criticizing a missing mathematical symbol; separate source failure from extraction failure and preserve unresolved status if visual confirmation is unavailable.",
+    "limits": "This verifies a process/output error, not inaccessible internal reasoning, deliberate intent or a general claim that all earlier criticisms are wrong."
+  },
+  "deferred": [
+    {
+      "term": "Pluralistic moral gap as a duplicate new behavior",
+      "reason": "Already integrated into Diversity collapse in0039. Current final-version additions do not identify a new independent collapse mechanism."
+    },
+    {
+      "term": "Sixty moral values as sixty new behaviors",
+      "reason": "Content taxonomy is not a behavior list, and its printed category count is incomplete. Preserve the taxonomy audit without adding rows or new project principles."
+    },
+    {
+      "term": "DMP and DMP–Overton as validated human mental traits",
+      "reason": "They are generation/aggregation interventions. Output changes and perceived pluralism do not prove private moral beliefs or psychological mechanisms."
+    },
+    {
+      "term": "Preprint and proceedings as two independent papers",
+      "reason": "Different versions of the same work share the core dataset/results. Current notes are non-counted version evidence rather than a second citation slot."
+    }
+  ],
+  "limitations": [
+    "No new IDs or independent-publication count. Six existing concepts receive non-counted final-version/context notes; catalogue remains800 across eleven categories. Review0039’s disproved formula criticism is corrected with history. Stable IDs,unnumbered rows,seven evaluation criteria,six principles and truthful timeline gaps retained. No forced quota,raw-data replication,original-paper reading credit,author contact or full-paper Markdown archive."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [],
+    "enriched": [
+      "diversity-collapse",
+      "b067-suggestibility",
+      "b072-amplified-moral-bias",
+      "b069-social-desirability-people-pleasing",
+      "moral-uncertainty",
+      "alignment-target-problem"
+    ]
+  }
+}

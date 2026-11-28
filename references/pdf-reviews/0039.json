@@ -149,7 +149,7 @@
     "Being unrecognized as AITA is not proof of absence of memorization or contamination. The claimed post-cutoff status is not verified for every model/API version; exact snapshots are not reported.",
     "Consensus buckets are almost exactly balanced324/324/324/323/323. The text does not explain whether/how subsampling produced that balance. Overall performance should not be assumed to follow natural deployment consensus prevalence.",
     "1618×32 equals51776, but the paper describes variable Ni and does not explain whether exactly32 human comments were retained per case. Do not invent a sampling rule from that arithmetic.",
-    "The metric is described as absolute discrepancy, but the displayed definition Delta=P_human(1)−P_LLM(1) omits absolute-value bars. Figures label absolute difference; raw code is needed to settle actual implementation.",
+    "CORRECTED by visual recheck during review 0278: both the supplied 2025 preprint and the 2026 EACL version display absolute-value bars in the discrepancy formula. Text extraction omitted those glyphs. The earlier alleged formula/prose mismatch was a false positive and is withdrawn; actual analysis code was not independently replicated.",
     "No confidence intervals, error bars or clear inferential comparisons are supplied for the main improvements. Terms such as significantly more prevalent are not accompanied here by an identified statistical test.",
     "Ten model families/configurations and repeated completions are not independent human moral agents. Pooled models may share training sources; a panel is not proven independent simply by treating members as evaluators.",
     "Temperature1 is selected because it performs better on the reported dataset; this is a model-selection choice. Repeated sampling differs from the single response a typical advice user sees.",
@@ -197,6 +197,17 @@
     {
       "term": "Dynamic Moral Profiling",
       "reason": "A proposed intervention, not another behaviour; preserve reported results with evaluation limits."
+    }
+  ],
+  "review_corrections": [
+    {
+      "category": "Self-evaluation: the auditor audited",
+      "correction_review": "references/pdf-reviews/0278.json",
+      "error_type": "False-positive source criticism from a text-extraction artifact",
+      "previous_statement": "The metric is described as absolute discrepancy, but the displayed definition Delta=P_human(1)−P_LLM(1) omits absolute-value bars. Figures label absolute difference; raw code is needed to settle actual implementation.",
+      "verified_correction": "The original supplied 14-page preprint, SHA-256 18d24d8457457892d43e984e7010225b1907025bf9053601555f2ed0a0e62718, visibly contains both bars on PDF page 3. The 17-page EACL version also contains them. The earlier review rendered other figures/tables but did not visually verify this formula before criticizing it.",
+      "observed_failure": "The review treated a limitation of the extracted text as a defect in the source. Comparing the extracted page with the rendered page supports this process explanation; no inaccessible internal reasoning or deliberate intent is inferred.",
+      "prevention": "Before asserting that a mathematical symbol, sign, exponent or table value is absent or inconsistent, inspect that exact source region visually. Separate extraction failure from source failure, retain uncertainty if rendering is unavailable, and record/retract a disproved criticism in the original review rather than only append another accusation."
     }
   ],
   "limitations": [
