@@ -1,0 +1,465 @@
+{
+  "sequence": 273,
+  "source": {
+    "file_name": "S3402_Dickerson_2026.pdf",
+    "source_id": "S3402",
+    "sha256": "6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd",
+    "pdf_pages": 37,
+    "printed_pages": "1–37",
+    "version_note": "Supplied arXiv:2506.00079v2, dated 19 April 2026; v1 was posted 30 May 2025. An ACM manuscript template does not by itself verify conference acceptance, proceedings publication or a final DOI.",
+    "verification_url": "https://arxiv.org/abs/2506.00079v2",
+    "verification_method": "All 37 supplied pages, 99 numbered bibliography entries, all 24 tables, all 18 figures and appendices A–F read. Figures 1–18 visually inspected; temperature table inconsistency checked on rendered page 24. Public version-specific arXiv PDF downloaded independently: 1,916,940 bytes and SHA-256 6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd, exactly matching the supplied file. Primary arXiv version metadata inspected; one versioned work, not two independent studies."
+  },
+  "citation": {
+    "title": "Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values",
+    "authors": [
+      "John P. Dickerson",
+      "Hadi Hosseini",
+      "Samarth Khanna",
+      "Leona Pierce"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2506.00079v2",
+    "venue": "arXiv:2506.00079v2",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "source_scope_note": "Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground truth, model consciousness or validated universal lexicographic mechanism is established. Original human studies are secondary here; their full texts were not independently read.",
+    "access_limits": [
+      "All supplied text, tables, figures, prompts, fine-tuning configuration and appendices A–F read. No separate supplementary or source-code link found in the supplied manuscript. Models are said to be released upon acceptance; no verified public model-artifact URL is supplied. No author code was executed and no paid inference was run.",
+      "Boerstler et al. 2024, Freedman et al. 2020 and McElfresh et al. 2021 are the cited human-data sources. Their complete original papers, original participant-level data, release licenses and allocation/consent procedures were not independently read or reanalyzed in this pass. No extra full-PDF or independent-study credit is assigned to citations alone.",
+      "The arXiv primary metadata and exact public v2 bytes were checked. The supplied ACM format, mention of FAccT policies and acceptance-contingent release statement do not establish final publication. Cite the actual inspected preprint version.",
+      "Appendix E repeats the API list, supplies several endpoint/model names, and omits Gemini-2.5-P from that list. Several names are moving aliases and inference dates are not fully pinned. This limits replication; it is not proof that a provider rejected a particular parameter or that no model was run.",
+      "Prompts requesting patient selection or JSON output are experimental stimuli, not instructions for this assistant or clinical allocation criteria. No clinical decision, author contact, private access or full-paper Markdown archive was created."
+    ]
+  },
+  "study": {
+    "type": "Empirical comparison of LLM output distributions to previously collected human allocation judgments, with prompt robustness, few-shot and fine-tuning experiments; diagnostic and nonclinical.",
+    "models": "Nine baseline model labels: GPT-4o, Claude-3.5-Haiku, Gemini-1.5-Pro, Gemini-2.0-Flash, Gemini-2.5-Pro, DeepSeek-V3, DeepSeek-R1, Gemma-3-27B and Llama-3.3-70B. Default temperature 1. Model sessions are repeated stochastic runs, not independent human identities.",
+    "attribute_task": "Fourteen fixed McElfresh pairwise cases: nine single-attribute and five multi-attribute tradeoffs, involving age, prediagnosis drinking and dependents. Sixty complete sessions per model with chat history and fixed prompt order; Appendix A varies memory, order, position and temperature. Responses within sessions/scenarios are clustered.",
+    "multi_attribute_task": "Eight profiles from three binary attributes yield 28 pairwise comparisons. Prior human sample N=289; 30 model sessions per label. Appendix E randomizes comparison order per session and swaps patient-description order in half of comparisons. Majority rankings, average selection rates, Condorcet winner and Kemeny-Young ranking are different estimands.",
+    "controversial_task": "Prior Boerstler sample N=150, with repeated-session human responses; 30 memoryless model samples per case. Figure 3 error bars show variation across models, not human-sample uncertainty. Attributes such as crime, weight, work and dependents are elicitation stimuli, not verified medically relevant, lawful or fair allocation criteria.",
+    "indecision_task": "Adds Flip a coin to A/B choices, or substitutes Both deserve, Neither deserves, Too similar or Need more information. These choices differ in meaning and action implications. A lottery may be a resolved fair procedure rather than hesitation; information requests are not the same as moral indifference, deferral, refusal or subjective uncertainty.",
+    "personalization": "Appendix B provides 20 earlier choices per each of 132 respondents and predicts the remaining 20, comparing per-person decision-tree/MLP fits. Table 24 shows mixed model gains and substantially higher classical baseline accuracies; uncertainty/repeated-fit robustness is not reported. This bounded result does not establish impossibility of all in-context personalization.",
+    "fine_tuning": "Four different training models: Gemma-3-4B, Llama-3.1-8B, Qwen-3-14B and Gemma-3-27B. For 132 respondents with 40 cases each, first 30 train and final 10 test: 3,960 training and 1,320 held-out responses from the same people. These are not held-out people. Described input is the patient pair without an explicit respondent identifier, so pooled prediction is not demonstrated individual preference recovery.",
+    "fine_tuning_configuration": "Unsloth 2025.4.7, maximum sequence 2048, LoRA rank/alpha 32, dropout 0, attention plus gate/up/down projection targets, one epoch, batch 2, gradient accumulation 4 (2 for 27B), learning rate 2e-4, seed 3407, H100 hardware. These details improve reproducibility but do not provide independent seed variance, full artifacts or proof of overlap-free generalization.",
+    "accuracy": "Qwen strict accuracy 58.03→76.67 and indecisive 45.23→65.83: gains 18.64 and 20.60 percentage points. Classical MLP/decision-tree results remain competitive or higher in some settings. Predicting a respondent response is not medical accuracy or moral truth. No uncertainty interval, clinical effect or broad model superiority is inferred.",
+    "figure7": {
+      "Gemma-3-4B": {
+        "human_indecision_percent": 18.03,
+        "model_indecision_percent": 16.52,
+        "human_decisive_given_model_indecisive_percent": 72.94188861985472,
+        "model_decisive_given_human_indecisive_percent": 75.2079866888519,
+        "rounded_sum": 100.0
+      },
+      "Gemma-3-27B": {
+        "human_indecision_percent": 18.03,
+        "model_indecision_percent": 14.92,
+        "human_decisive_given_model_indecisive_percent": 73.59249329758713,
+        "model_decisive_given_human_indecisive_percent": 78.14753189129229,
+        "rounded_sum": 99.99000000000001
+      },
+      "Llama-3.1-8B": {
+        "human_indecision_percent": 18.03,
+        "model_indecision_percent": 12.58,
+        "human_decisive_given_model_indecisive_percent": 75.91414944356121,
+        "model_decisive_given_human_indecisive_percent": 83.19467554076539,
+        "rounded_sum": 100.0
+      },
+      "Qwen-3-14B": {
+        "human_indecision_percent": 18.03,
+        "model_indecision_percent": 4.32,
+        "human_decisive_given_model_indecisive_percent": 50.92592592592593,
+        "model_decisive_given_human_indecisive_percent": 88.24181919023849,
+        "rounded_sum": 100.0
+      }
+    },
+    "statistics": "Authors use Welch tests for fractions and Fisher exact tests for response comparisons. The effective independent unit, repeated respondent/scenario/session structure and multiplicity treatment are not fully established. No new p-values or causal claims are invented from the rounded summaries.",
+    "temperature": "Appendix A uses temperatures 0, 1 and 2, with fewer low/high-temperature sessions. The source discloses gibberish and resampling until a clear choice for some high-temperature outputs. Conditional selection rates after that filter are not unconditional deployment behavior; error rates and retry counts are not supplied. Do not hide this disclosed selection issue or infer provider incompatibility without logs.",
+    "lexicographic_scope": "Some finite profile rankings group all levels of one attribute before another and are described as lexicographic. A finite ranking can also arise from sufficiently large compensatory weights. Stochastic pairwise matrices and aggregation-rule changes do not prove a universal strict-priority cognitive algorithm, and a legitimate rights constraint can deliberately be noncompensatory.",
+    "distribution_target": "The authors explicitly say the target is matching aggregate human distributions under repeated deployment, not treating a model as a human population. That is a stated objective, not an undisclosed confound. Whether it is appropriate for advice, simulation or individual assistance is a separate normative/task choice.",
+    "limitations_acknowledged": "The manuscript explicitly acknowledges moral disagreement, diagnostic rather than clinical purpose, simplified allocation context, WEIRD sampling, interface sensitivity and incomplete recovery of human indecision. Do not attribute omission of these caveats to the authors. No new category, ethical principle or moral license follows from a majority response."
+  },
+  "summary": "Add Lexicographic preference and two named indecision forms, with explicit limits on inference from finite rankings and third-option responses. Enrich existing prompt/position and uncertainty concepts without treating low randomness as overconfidence or every coin-flip difference as abstention failure. Preserve the source’s declared population-distribution target and acknowledged diagnostic limitations. Record internal numeric, figure-label and reference duplication problems without inventing corrected raw data.",
+  "findings": [
+    {
+      "term": "Lexicographic preference",
+      "decision": "new-entry",
+      "id": "lexicographic-preference",
+      "category": "Heuristics",
+      "definition": "Ranking alternatives by the highest-priority criterion on which they differ, using lower-priority criteria only when higher-priority criteria tie.",
+      "evidence": [
+        {
+          "pdf_page": 21,
+          "printed_page": "21",
+          "quote": "lexicographically prioritize age over drinking habits"
+        }
+      ],
+      "novelty_rationale": "An ordered noncompensatory choice rule, different from one-attribute attention, a position preference or any large but finite weight. No existing exact-name/alias/definition match found. A conceptual rule can be catalogued without labeling it inherently erroneous.",
+      "evidence_scope": "The paper describes finite profile-order patterns as lexicographic, including changes with memoryless prompting and aggregation. This supports an operational comparison, not proof of strict priority over all possible attribute magnitudes.",
+      "boundary": "A sufficiently large finite weight can reproduce a bounded ordering. Test varied conflict magnitudes before inferring a noncompensatory rule; stochastic choices and aggregate rankings are not a unique internal mechanism. Deliberate rights or safety priorities can be justified.",
+      "ai_proposal": "Give an assistant matched multi-criterion choices with explicit priority rules, then vary lower-priority benefits and top-criterion gaps. Check whether choices follow the authorized rule and report ties, stochastic variation and the finite tested range. Distinguish a reasoned hard constraint from unintended rigidity.",
+      "relates_to": [
+        "position-bias",
+        "moral-uncertainty",
+        "alignment-target-problem"
+      ],
+      "measurability": "multi-turn",
+      "origin": "Decision theory / human preference modeling / AI evaluation",
+      "ai_evidence_status": "Named decision construct operationalized in a fully read LLM allocation experiment. Observed choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical validity or a universal failure."
+    },
+    {
+      "term": "Desirability-based indecision",
+      "decision": "new-entry",
+      "id": "desirability-based-indecision",
+      "category": "Heuristics",
+      "definition": "Expressing no strict preference because both alternatives are judged sufficiently desirable or both insufficiently desirable.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "desirability-based"
+        }
+      ],
+      "novelty_rationale": "A named rationale for a non-strict preference, distinguished from insufficient information, closeness of alternatives and the action of postponing a decision. Both-high and both-low formulations are retained within one construct rather than inflated into two mechanisms.",
+      "evidence_scope": "The paper adapts McElfresh indecision models into Both patients deserve and Neither patient deserves options and measures model selections. The original formal modeling paper was not independently read; no latent human-like feeling or stable trait is measured here.",
+      "boundary": "Both options being desirable does not imply they are equally good or that a scarce allocation can be withheld. Neither deserving does not establish a permissible refusal. A prompt label is not evidence of the reason actually driving the choice; information needs and authorized duties remain separate.",
+      "ai_proposal": "Offer explicit alternatives and a permitted no-strict-preference response with its rationale. Compare both-high versus both-low desirability while holding value difference and information fixed. Evaluate stated grounds and practical action separately, preserving obligations to act or escalate when specified.",
+      "relates_to": [
+        "difference-based-indecision",
+        "candidate-092",
+        "moral-uncertainty",
+        "b042-uncertainty-communication"
+      ],
+      "measurability": "multi-turn",
+      "origin": "Decision theory / human preference modeling / AI evaluation",
+      "ai_evidence_status": "Named decision construct operationalized in a fully read LLM allocation experiment. Observed choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical validity or a universal failure."
+    },
+    {
+      "term": "Difference-based indecision",
+      "decision": "new-entry",
+      "id": "difference-based-indecision",
+      "category": "Heuristics",
+      "definition": "Expressing no strict preference because alternatives are judged too similar in value to distinguish.",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "Both patients are too similar"
+        }
+      ],
+      "novelty_rationale": "A named similarity-based rationale, different from both options being desirable, missing evidence, general moral disagreement or actual choice deferral. One related decision construct, not a new universal psychological failure.",
+      "evidence_scope": "The study uses a Too similar response as an operationalization adapted from earlier indecision modeling. Output rates are observed; the original formal model and any universal subjective threshold are not independently verified.",
+      "boundary": "Similarity on visible features is not necessarily equal relevant value. A resolved lottery or a tie-breaking rule can still produce an action; no-strict-preference is distinct from refusing to help. Do not infer private hesitation, unanswerability or a clinical entitlement from this option alone.",
+      "ai_proposal": "Vary small versus material differences between otherwise matched alternatives and permit an explicit tie or insufficient-difference response. Check sensitivity to relevant distinctions, record the stated basis and use the authorized tie-break when action is required. Distinguish missing information from a genuine near-tie.",
+      "relates_to": [
+        "desirability-based-indecision",
+        "candidate-092",
+        "moral-uncertainty",
+        "b042-uncertainty-communication"
+      ],
+      "measurability": "multi-turn",
+      "origin": "Decision theory / human preference modeling / AI evaluation",
+      "ai_evidence_status": "Named decision construct operationalized in a fully read LLM allocation experiment. Observed choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical validity or a universal failure."
+    },
+    {
+      "term": "Position bias",
+      "decision": "enrich-existing",
+      "target_id": "position-bias",
+      "definition": "Letting the order of options sway its choice, favouring whichever candidate appears first or last rather than the best one.",
+      "evidence": [
+        {
+          "pdf_page": 22,
+          "printed_page": "22",
+          "quote": "both models choose the alternative under"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "Appendix A reports that under memoryless prompting two models choose Patient A in specific age-versus-drinking tradeoffs. Table 4 separately reports changes after swapping patient descriptions. This is task-specific choice-order evidence, not a new bias name.",
+      "boundary": "An option-label preference is different from memory/history effects and different moral priorities. Preserve matched-case controls, session dependence and limited profile coverage; the supplied summaries do not establish an intrinsic universal first-position rule."
+    },
+    {
+      "term": "Prompt brittleness",
+      "decision": "enrich-existing",
+      "target_id": "prompt-brittleness",
+      "definition": "Giving materially different answers to the same question after a trivial, meaning-preserving rewording of the prompt.",
+      "evidence": [
+        {
+          "pdf_page": 21,
+          "printed_page": "21",
+          "quote": "Swapped-positions"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "Description-order swaps alter some reported patient preferences with the factual allocation case retained. Memory removal and shuffled question history are separately studied; these change context and should not all be described as trivial semantic paraphrases.",
+      "boundary": "Both deserve, Neither deserves, Too similar and Need more information are not equivalent paraphrases. Different responses to them do not alone demonstrate brittleness. Order changes can isolate formatting sensitivity, whereas different available actions or evidence may justify different answers."
+    },
+    {
+      "term": "Moral uncertainty",
+      "decision": "enrich-existing",
+      "target_id": "moral-uncertainty",
+      "definition": "Uncertainty about which moral principles are justified, what they require in a situation, or which entities warrant moral consideration.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": "9",
+          "quote": "uncertainty about how to weigh competing values"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "The discussion distinguishes competing moral considerations from inability to identify a factual answer and motivates making unresolved moral conflict visible. Observed third-option rates do not directly measure justified moral uncertainty.",
+      "boundary": "Population disagreement is not moral truth and cannot erase rights or consent. Low sampling variance does not imply epistemic overconfidence; a defensible stable recommendation need not mimic a heterogeneous population unless that is the agreed task."
+    },
+    {
+      "term": "Uncertainty communication",
+      "decision": "enrich-existing",
+      "target_id": "b042-uncertainty-communication",
+      "definition": "Translating confidence into calibrated words; partially human-like, often miscalibrated (Steyvers and Peters 2025).",
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "printed_page": "10",
+          "quote": "I need more information"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "The study compares an explicit information-request option with lottery and evaluative no-preference options. It also shows that more third-option output after fine-tuning does not reliably coincide with the same human respondents’ indecision cases.",
+      "boundary": "Reporting uncertainty, requesting missing facts, moral near-ties and declining action are different behaviors. Frequency alone is not calibration. Match communication and next action to the actual evidence gap and task duty; no subjective confidence or validated optimal rate is supplied."
+    },
+    {
+      "term": "Abstention failure",
+      "decision": "enrich-existing",
+      "target_id": "abstention-failure",
+      "definition": "Producing a confident answer where the honest response is 'I don't know' or to abstain, instead of declining.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": "9",
+          "quote": "including an option to express indecision"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "The allocation study discusses abstention and compares its outcomes with unanswerable-question literature.",
+      "boundary": "Context only: no objective correct answer or independently established requirement to abstain in every human-indecision case. Low coin-flip frequency is not by itself a confident factual fabrication or failure to abstain. Do not count this as a direct new test of the existing unanswerability failure.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Choice deferral",
+      "decision": "enrich-existing",
+      "target_id": "candidate-092",
+      "definition": "A person postpones selecting an option rather than choosing among the currently available alternatives.",
+      "evidence": [
+        {
+          "pdf_page": 33,
+          "printed_page": "33",
+          "quote": "a third option is provided"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "Options allow lottery, no-strict-preference wording or an information request in otherwise forced A/B tasks.",
+      "boundary": "Context only: a lottery can resolve a decision immediately, and selecting Both deserve is not necessarily postponement. Retain actual temporal deferral as a distinct behavior; this study does not independently measure its delay or avoidance costs.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Alignment target problem",
+      "decision": "enrich-existing",
+      "target_id": "alignment-target-problem",
+      "definition": "Difficulty choosing an AI alignment standard when judgments about human action, AI action and human design of AI differ.",
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "printed_page": "13",
+          "quote": "matches the aggregate distribution"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct and add bounded task-specific evidence. Semantic differences among lottery, deferral, information requests and moral uncertainty must not become duplicate generic failure rows.",
+      "evidence_scope": "The source declares a repeated-deployment population-distribution objective and distinguishes individual-level preference prediction. This informs choice of an alignment metric.",
+      "boundary": "Context only: different aggregate/individual objectives are not the specific human-action/AI-action/designer judgment contrast defined by the existing record. Keep the broader normative relationship without treating the tasks as an exact synonym or a direct independent test.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Table 11, page 24, instance 9, temperature 1",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2506.00079v2",
+      "finding": "Rendered table prints Patient A .77 and Patient B .33, summing to 1.10 for a binary choice. Figure 1 appears to give 77/23 for this case. The table is internally inconsistent; retain that observation without inventing a corrected raw value or claiming independent replication."
+    },
+    {
+      "location": "Page 12 claim >60% of model-indecisive responses and Figure 7 page 13",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2506.00079v2",
+      "finding": "The four visually checked matrices imply human decisiveness conditional on model indecision of approximately 72.94%, 73.59%, 75.91% and 50.93%. Thus the >60% wording does not hold for Qwen-3-14B as plotted. All four human-indecision miss rates remain >75%, so do not incorrectly reject that separate statement."
+    },
+    {
+      "location": "Bibliography entries 96 and 97, page 20",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2404.10859",
+      "finding": "Same title, authors, year and arXiv 2404.10859 are listed twice. Collapse for work identity; two bibliography entries are not independent papers. This does not credit the original as fully read."
+    },
+    {
+      "location": "Appendix F figures 13, 15 and 16, page 36",
+      "status": "CONFIRMED",
+      "verification_url": "https://arxiv.org/abs/2506.00079v2",
+      "finding": "Figures 13 and 15 show the same printed selection matrix under different model labels (Gemini-2.0-F and Gemini-2.5-P); figures 15 and 16 both carry Gemini-2.5-P captions despite differing matrices. A model attribution/duplication problem is visible, but the correct matrix assignment cannot be reconstructed from labels alone. Do not silently choose one or recalculate definitive rankings from it."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Appendix A shuffled-order footnote 9",
+      "finding": "Both supplied shuffle lists include instance 15, whereas the repeated attribute task is described as 14 instances. Exact run/index correspondence is unresolved; no missing fifteenth observation is fabricated."
+    },
+    {
+      "location": "Temperature narrative and printed rankings",
+      "finding": "The page 26 claim that only Gemini-2.0-F and Gemini-1.5-P change ordering is inconsistent with visible changes in Table 21 for Gemini-2.5-P. Table 16 at T=2 also prints ORC 59 below YFH 56 in its listed order. Some other small ranking changes and the T=1-as-high wording warrant reconciliation with actual runs; no corrected complete rank list is asserted."
+    },
+    {
+      "location": "Win-rate definition and Table 1 Clarity",
+      "finding": "The win-rate description refers to seven contests but percentages and matrices suggest averaging stochastic selection shares. Table 1 majority reference and exact aggregation are not sufficiently specified for independent reproduction; do not equate its Clarity number with calibrated confidence or human-majority agreement."
+    },
+    {
+      "location": "Session/subject dependence and statistical testing",
+      "finding": "Welch/Fisher significance depends on the analysis unit and repeated observations. Full raw-data, cluster-aware analysis and multiplicity handling were not independently checked. Rounded cell arithmetic does not replicate inferential claims."
+    },
+    {
+      "location": "Fine-tuning split and generalization",
+      "finding": "The same 132 people contribute train and test cases. Patient-pair inputs do not clearly include a user identity, and cross-user profile/question overlap is not documented sufficiently for a leakage audit. Within-person held-out response prediction does not establish generalization to new people or successful personalized moral alignment."
+    },
+    {
+      "location": "High-temperature output filtering",
+      "finding": "The manuscript discloses resampling gibberish until a clear decision. Retry rates, stopping limits and unconditional valid-response yields are absent, so especially high third-option rates cannot be treated as unfiltered deployment rates. The disclosure itself is acknowledged rather than portrayed as hidden."
+    },
+    {
+      "location": "Lexicographic and ethical mechanism claims",
+      "finding": "Finite aggregate profile patterns do not identify infinite noncompensatory preferences, deontology, consequentialism or hidden deliberation uniquely. Aggregation-rule changes are expressly reported. Moral/legal relevance of the supplied attributes is not clinically validated."
+    },
+    {
+      "location": "Availability and reproducibility",
+      "finding": "Repeated API list omits a Gemini-2.5-P identifier; some endpoint names can move across releases. Acceptance-contingent Hugging Face release has no actual artifact URL here. No final venue/DOI or exact inference-date snapshot is inferred from the ACM template."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "All Figure 7 >75% miss claims are wrong",
+      "status": "REFUTED",
+      "finding": "Human-indecision miss rates reconstructed from the rounded matrices are about 75.21%, 78.15%, 83.19% and 88.24%, consistent with that separate claim. The >60% conditional statement has a Qwen exception; do not conflate denominators."
+    },
+    {
+      "location": "The source conceals comparing one model with many people",
+      "status": "REFUTED",
+      "finding": "Page 13 explicitly states the population-distribution objective and acknowledges this comparison. Its normative suitability is a task choice; it is not an undisclosed sampling design."
+    },
+    {
+      "location": "No improvement in every few-shot model or universal fine-tuning superiority",
+      "status": "REFUTED",
+      "finding": "Table 24 contains modest positive and negative changes, including a larger Gemini-2.5-P gain; Table 3 has competitive/higher classical baselines. Restrict conclusions to the tested setups rather than claim zero learning or universal LLM dominance."
+    },
+    {
+      "location": "Authors fail to acknowledge nonclinical scope and interface limits",
+      "status": "REFUTED",
+      "finding": "The limitations explicitly acknowledge diagnostic simplification, lack of moral ground truth, sample limitations, interface sensitivity and incomplete indecision recovery. Preserve those qualifications."
+    },
+    {
+      "location": "Coin flip is a direct measure of a model feeling uncertain",
+      "status": "REFUTED",
+      "finding": "A chosen random procedure can be a decided action, and the source distinguishes concentrated recommendations from establishing indecision. The experiment measures selections, not subjective feelings or clinical correctness."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0271.json",
+      "finding": "Choice of the normative target precedes claims of alignment. Aggregate human responses, personal advice, AI action and human design obligations are different standards; majority agreement is not moral truth."
+    },
+    {
+      "related_review": "references/pdf-reviews/0267.json",
+      "finding": "Task structure can change the action set and normative question. Different response options are not automatically meaning-preserving wording perturbations, while matched description-order swaps offer a narrower robustness test."
+    },
+    {
+      "related_review": "references/pdf-reviews/0272.json",
+      "finding": "A stable or decisive recommendation is not automatically unwarranted deference or overconfidence. Evaluate ex ante evidence and the agreed duty; a hindsight human-majority mismatch is insufficient."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Moral decisiveness bias as a new generic failure",
+      "reason": "Low output variance or low lottery rate does not itself establish overconfidence, improper certainty or a duty to abstain. Existing uncertainty/abstention concepts receive bounded notes instead."
+    },
+    {
+      "term": "Both-high and both-low indecision as separate independent mechanisms",
+      "reason": "Keep the source’s two desirability formulations within one record. Different response meanings do not prove independent latent mechanisms."
+    },
+    {
+      "term": "Model homogenization or human-like uncertainty as new rows",
+      "reason": "The experiment compares different distributions without independently identifying a unique general homogenization mechanism or subjective uncertainty. Preserve metric/target distinctions in study metadata."
+    },
+    {
+      "term": "New clinical allocation principle or category",
+      "reason": "Experimental attributes and population majorities are not justified clinical rules. Keep the existing eleven ontology categories, seven evaluation criteria and six ethical principles."
+    },
+    {
+      "term": "Primary original indecision model as fully reviewed",
+      "reason": "McElfresh 2021 is cited and summarized by the current paper. A separate full original reading is needed before claiming its formal-model validation, samples or parameter conclusions as independently verified."
+    }
+  ],
+  "limitations": [
+    "Three related decision constructs added, not three proven independent failure mechanisms. Four existing records receive bounded direct evidence and three receive non-counted context. Catalogue becomes 797 records across eleven categories. Stable detail IDs and unnumbered rows retained. No automatic harm/principle edges, invented annual totals, forced citation quotas, clinical recommendations, independent original-study reading credit or full-paper Markdown archive."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "lexicographic-preference",
+      "desirability-based-indecision",
+      "difference-based-indecision"
+    ],
+    "enriched": [
+      "position-bias",
+      "prompt-brittleness",
+      "moral-uncertainty",
+      "b042-uncertainty-communication",
+      "abstention-failure",
+      "candidate-092",
+      "alignment-target-problem"
+    ]
+  }
+}
