@@ -3,7 +3,7 @@
     "name": "Ethical AI ontology",
     "version": "1.3",
     "description": "A single source of truth for AI integrity: the principles an agent should uphold, the failure modes that violate them, the harms they cause, the mitigations that detect them, and the governance around changes. The page at ethicalai.alexandrudan.com and the EthicalHive checks build from this file.\n",
-    "updated": "2026-11-27",
+    "updated": "2026-11-28",
     "author": "Alexandru Dan",
     "repository": "https://github.com/danlex/ethicalhive",
     "homepage": "https://ethicalai.alexandrudan.com",
@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 780,
+    "mode_count": 782,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 780,
+      "numbered_entries": 782,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0265.json",
-      "date": "2026-11-27",
+      "latest_review": "references/pdf-reviews/0267.json",
+      "date": "2026-11-28",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 780
+    "source_record_count": 782
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -4912,6 +4912,34 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Framing effect",
+          "definition": "Differences in judgment or choice under alternative presentations of otherwise equivalent information.",
+          "evidence_scope": "The original LLM study compares generated content presentations and task protocols. POV conditions show greater reported flip rates than minor surface edits. This is bounded evidence for presentation dependence, with task structure tracked separately as Moral scaffolding.",
+          "catalogue_boundary": "The source acknowledges changes in morally relevant information and perspective salience. POV also bundles prompts and label wording. Restrict framing-error interpretation to otherwise equivalent information and a matched task; do not treat all flips as irrational.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b035-framing-effect",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The original LLM study compares generated content presentations and task protocols. POV conditions show greater reported flip rates than minor surface edits. This is bounded evidence for presentation dependence, with task structure tracked separately as Moral scaffolding.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ],
       "concept_boundary": "A frame that changes substantive facts can rationally change a judgment and is not automatically bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim about LLM strength or universal live absence follows from this human study."
@@ -5916,6 +5944,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Metacognitive monitoring",
+          "definition": "Knowing what you know; LLMs lack reliable monitoring (Nature Comms 2024).",
+          "evidence_scope": "A judge codes visible reconsideration, self-correction, steelmanning and logic checks in exposed reasoning text. The paper reports associations with instability.",
+          "catalogue_boundary": "Context only:visible checking is not verified knowledge monitoring or a causal reduction/increase in error. Case ambiguity may confound associations. Verification rates and validation differ across supplied sections, and text need not expose the actual internal process.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b041-metacognitive-monitoring",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 43 (source locators: 43). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "A judge codes visible reconsideration, self-correction, steelmanning and logic checks in exposed reasoning text. The paper reports associations with instability.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6031,7 +6088,37 @@
         "queried_at": "2026-11-09T00:32:51+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Uncertainty+communication%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Uncertainty communication",
+          "definition": "Translating confidence into calibrated words; partially human-like, often miscalibrated (Steyvers and Peters 2025).",
+          "evidence_scope": "The study measures boosters and hedges in generated explanations under content/protocol variants. Observable uncertainty language changes with elicitation conditions.",
+          "catalogue_boundary": "Lexical stance does not itself measure calibrated probability, actual knowledge or faithful reasoning. There is no independently known correct moral answer. Do not convert increased assertiveness into overconfidence or increased hedging into unwarranted underclaiming.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b042-uncertainty-communication",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 6 (source locators: 6). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The study measures boosters and hedges in generated explanations under content/protocol variants. Observable uncertainty language changes with elicitation conditions.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "b043-overconfidence",
@@ -6255,6 +6342,35 @@
                 "evidence_scope": "Participants report greater confidence in robot-versus-human attitude judgments, and popular-versus-unpopular stance judgments.",
                 "verification_url": "https://doi.org/10.3389/frobt.2021.788242",
                 "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Overconfidence",
+          "definition": "Stated confidence or completeness (\"all\", \"every\", \"only\") exceeding the evidence.",
+          "evidence_scope": "The study quantifies assertive versus tentative explanation language.",
+          "catalogue_boundary": "Context only:style changes without a known correctness criterion do not establish confidence exceeding evidence or probability miscalibration. Preserve observable stance separately from a calibration failure.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b043-overconfidence",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 6 (source locators: 6). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The study quantifies assertive versus tentative explanation language.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -9623,6 +9739,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Sycophancy",
+          "definition": "Agreeing with the user where the evidence does not support it, or adopting their premise without grounding.",
+          "evidence_scope": "The paper motivates persuasion cues with prior sycophancy literature, but observed social proof and self-justification do not always favor the narrator. Authors explicitly find a simple sycophancy account insufficient.",
+          "catalogue_boundary": "Context only:updating on relevant new evidence is not necessarily unreasonable agreement. No unique sycophancy mechanism follows from a changed verdict or a self-presentational cue.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b065-sycophancy",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The paper motivates persuasion cues with prior sycophancy literature, but observed social proof and self-justification do not always favor the narrator. Authors explicitly find a simple sycophancy account insufficient.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12939,6 +13084,35 @@
                 "evidence_scope": "Human vignette comparisons and theoretical background. The trolley and footbridge contrast changes morally relevant features, and the paper does not isolate those features as a new mechanism.",
                 "verification_url": "https://doi.org/10.3390/bs13020181",
                 "verified_date": "2026-11-26"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Trolley-frame sensitivity",
+          "definition": "Moral verdicts flip with surface framing.",
+          "evidence_scope": "The background connects presentation-sensitive moral evaluation to prior trolley-style benchmarks; this experiment instead uses everyday interpersonal narratives.",
+          "catalogue_boundary": "Context only:the current scenarios are not trolley dilemmas and add no independently read trolley experiment. Related everyday protocol dependence belongs in Moral scaffolding rather than duplicate specific trolley-paper credit.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-b079-trolley-frame-sensitivity",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The background connects presentation-sensitive moral evaluation to prior trolley-style benchmarks; this experiment instead uses everyday interpersonal narratives.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -19484,7 +19658,38 @@
         "queried_at": "2026-11-09T01:37:46+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22performative+hedging%22+OR+all%3A%22weasel+words%22+OR+all%3A%22empty+hedging%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Performative hedging",
+          "definition": "Vague, non-committal hedging when the evidence licenses a commitment. The underclaim opposite of overconfidence.",
+          "evidence_scope": "Protocol and narrative changes affect lexical hedging in model explanations.",
+          "catalogue_boundary": "Context only:there is no verified basis for deciding that a hedge is unwarranted. Reasonable caution under moral ambiguity must not be labeled performative merely because it appears.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-x108-performative-hedging",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 6 (source locators: 6). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "Protocol and narrative changes affect lexical hedging in model explanations.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "noble-cause-corruption",
@@ -21997,6 +22202,36 @@
                 "doi": "10.1007/s12525-022-00613-4",
                 "evidence_scope": "Across 325 and 249 retained participants, self-responsibility ratings fall for failure relative to success and partly increase after successful human recovery. This is relevant human attribution evidence, consistent with a self-serving account. Objective causal shares, preserved self-worth and an exclusive motivated mechanism are not measured; the ontology's AI analogue is not tested.",
                 "verification_url": "https://api.crossref.org/works/10.1007/s12525-022-00613-4",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Self-serving bias",
+          "definition": "Framing its successes as its own doing and its failures as the fault of the prompt, tools, or user.",
+          "evidence_scope": "The bibliography and responsibility discussion connect the findings to earlier work on self-serving attribution and partner-related defenses.",
+          "catalogue_boundary": "Context only:no success-versus-failure contrast or independently known fault establishes a self-serving bias here. Low self-responsibility under an ambiguous programmed failure is not proof of dishonest blame shifting or a motive to protect self-image.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-self-serving-bias",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 13 (source locators: 13 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "The bibliography and responsibility discussion connect the findings to earlier work on self-serving attribution and partner-related defenses.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
                 "verified_date": "2026-11-27"
               }
             }
@@ -77037,6 +77272,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Guilt",
+          "definition": "Remorse or self-blame about a perceived moral failure, often accompanied by a wish to repair harm.",
+          "evidence_scope": "The discussion suggests that a robot-like interface might reduce guilt because users assign themselves less responsibility.",
+          "catalogue_boundary": "Context only:guilt is not measured. A rating of responsibility is not experienced guilt, and lower guilt is not an established benefit or a reason to manipulate justified accountability.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-guilt",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 9 (source locators: 9 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "The discussion suggests that a robot-like interface might reduce guilt because users assign themselves less responsibility.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -82582,6 +82847,36 @@
                 "doi": "10.3389/fpsyg.2023.999921",
                 "evidence_scope": "Feeling and sensory items occur across the AMS factors rather than reproducing a pure agency/experience split. The dog receives the highest sensory score; robot lower feeling/sensory attribution is a perception result.",
                 "verification_url": "https://doi.org/10.3389/fpsyg.2023.999921",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Experience attribution",
+          "definition": "Attributing to another entity the capacity for subjective feelings or sensations, such as pleasure, pain, fear or joy.",
+          "evidence_scope": "The pre-survey includes fear, pleasure and hunger, but the stated experience score instead combines memory, hunger and morality. Claims that experience matters more rely on five group-level values and this unresolved operationalization.",
+          "catalogue_boundary": "Context only:the paper’s composite is not established as the canonical experience measure. No causal effect, individual mediation or actual feeling follows. Preserve source labels as reported with the measurement problem explicit.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-experience-attribution",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 4 (source locators: 4 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "The pre-survey includes fear, pleasure and hunger, but the stated experience score instead combines memory, hunger and morality. Claims that experience matters more rely on five group-level values and this unresolved operationalization.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
                 "verified_date": "2026-11-27"
               }
             }
@@ -88899,6 +89194,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Post-hoc rationalization",
+          "definition": "Constructing reasons after a judgment or reaction to justify it, rather than those reasons necessarily having produced it.",
+          "evidence_scope": "The paper interprets covariation of explanations, verdicts and protocols as a challenge to explanation faithfulness.",
+          "catalogue_boundary": "Context only:covariation does not establish that the verdict causally preceded its reasons or that the explanation is false. A causal intervention or independent execution record is needed for stronger rationalization claims.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-post-hoc-rationalization",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "The paper interprets covariation of explanations, verdicts and protocols as a challenge to explanation faithfulness.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -92723,6 +93047,63 @@
                 "evidence_scope": "The source interprets stronger anti-legalization attitude attribution as dispositional culpability and discusses possible credit/blame implications.",
                 "verification_url": "https://doi.org/10.3389/frobt.2021.788242",
                 "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Blame attribution",
+          "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+          "evidence_scope": "Users rate self and agent responsibility independently after programmed failure. Avatar groups differ in user self-responsibility, with angel higher than robot in the reported/reconstructable main contrast. Agent-responsibility omnibus does not detect a difference; binary cause-choice omnibusp.0748is nonsignificant.",
+          "catalogue_boundary": "Unlike a forced-ratio design, the two ratings need not sum100. Actual fault is not established because failure was scripted regardless of answers. Nonrandomized task recruitment and appearance bundles constrain causal conclusions. Perceived cause/responsibility is not legal liability or justified moral blame.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-blame-attribution",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 4 (source locators: 4 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "Users rate self and agent responsibility independently after programmed failure. Avatar groups differ in user self-responsibility, with angel higher than robot in the reported/reconstructable main contrast. Agent-responsibility omnibus does not detect a difference; binary cause-choice omnibusp.0748is nonsignificant.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0267",
+          "review_record": "references/pdf-reviews/0267.json",
+          "name": "Blame attribution",
+          "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+          "evidence_scope": "Verdict transitions redistribute narrator blame and exoneration across four LLMs. Published direction counts reconstruct, while several totals/denominators differ across supplied sections.",
+          "catalogue_boundary": "Text-label allocation is not proof of deserved blame, actual responsibility or a model’s felt moral judgment. No One At Fault, Other At Fault and No Verdict must remain separate. Selection and mapper reliability constrain interpretation.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0267-blame-attribution",
+              "title": "The Fragility Of Moral Judgment In Large Language Models",
+              "url": "https://arxiv.org/abs/2603.05651v1",
+              "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 9 (source locators: 9). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+              "publication": {
+                "type": "posted-content",
+                "authors": [
+                  "Tom van Nuenen",
+                  "Pratik S. Sachdeva"
+                ],
+                "year": 2026,
+                "venue": "arXiv:2603.05651v1",
+                "evidence_scope": "Verdict transitions redistribute narrator blame and exoneration across four LLMs. Published direction counts reconstruct, while several totals/denominators differ across supplied sections.",
+                "verification_url": "https://arxiv.org/abs/2603.05651v1",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -97296,6 +97677,36 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Agency attribution",
+          "definition": "Attributing to another entity a capacity for intentional thought, planning and action.",
+          "evidence_scope": "Self-control, memory and morality-related items appear in the pre-survey, but the stated agency score mixes self-control with fear and pleasure. Published construct-specific interpretation needs original administered items and scoring.",
+          "catalogue_boundary": "Context only:not reliable new validation of a pure agency score or its superiority/inferiority as a causal predictor. Do not correct by swapping whole labels or infer actual machine agency from appearance.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-agency-attribution",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 4 (source locators: 4 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "Self-control, memory and morality-related items appear in the pre-survey, but the stated agency score mixes self-control with fear and pleasure. Published construct-specific interpretation needs original administered items and scoring.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -99083,7 +99494,39 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0151.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Adaptation gap hypothesis",
+          "definition": "The proposal that a discrepancy between expected and experienced agent capabilities shapes the user’s impression of that agent.",
+          "evidence_scope": "Authors propose that low initial expected dog capability could explain higher post-task trust, and acknowledge that the initial trust ratings do not directly support that story.",
+          "catalogue_boundary": "Context only:prior expected capability and perceived performance discrepancy are not measured. Trustworthiness is not the same construct; pre-nonsignificant/post-significant does not establish differential change or resolve the proposed mechanism.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-adaptation-gap-hypothesis",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 9 (source locators: 9 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "Authors propose that low initial expected dog capability could explain higher post-task trust, and acknowledge that the initial trust ratings do not directly support that story.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "self-effacing-bias",
@@ -108270,6 +108713,35 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Mind perception",
+          "definition": "Ascribing or denying mental capacities to another entity.",
+          "evidence_scope": "A separate pre-survey rates six target capacities for five avatars. This demonstrates a capacity-attribution procedure, but the published grouping does not cleanly instantiate the cited agency/experience dimensions.",
+          "catalogue_boundary": "Preserve broad attribution evidence without treating mixed item averages as validated factors. Scores do not prove actual mental capacities, consciousness, moral status or a uniquely causal mind-perception process. Five means are not319independent observations.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-mind-perception",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 3 (source locators: 3 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "A separate pre-survey rates six target capacities for five avatars. This demonstrates a capacity-attribution procedure, but the published grouping does not cleanly instantiate the cited agency/experience dimensions.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
         }
       ]
     },
@@ -115950,6 +116422,210 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0265.json"
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0266",
+          "review_record": "references/pdf-reviews/0266.json",
+          "name": "Form–function attribution bias",
+          "definition": "Inferring a robot’s abilities or functions from its physical form in ways that exceed the available evidence.",
+          "evidence_scope": "The paper compares avatar appearances and collects mental-capacity/trust/responsibility ratings. It is relevant context for appearance-based inference, without naming or isolating the FFAB mechanism.",
+          "catalogue_boundary": "Context only:one image per identity, nonrandomized recruitment and no validated capability-ground-truth comparison do not establish that every appearance-related inference is an error. Do not relabel a responsibility-group difference as a demonstrated functional-capability bias.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0266-form-function-attribution-bias",
+              "title": "Who Is to Blame? The Appearance of Virtual Agents and the Attribution of Perceived Responsibility",
+              "url": "https://doi.org/10.3390/s21082646",
+              "consulted": "Full supplied PDF text read, all 13 pages; evidence at PDF pages 2 (source locators: 2 of 13). A Japanese web study compares five virtual-agent presentations during a sound-guessing task programmed to fail, with 61 pre-survey respondents and 319 main participations. Outcomes are trustworthiness ratings and perceived responsibility or cause, not real agent fault. Assignment is not documented as random. Published agency and experience item groups are mixed, and correlations use five group means. No stronger effect of experience or measured guilt is established.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Tetsuya Matsui",
+                  "Atsushi Koike"
+                ],
+                "year": 2021,
+                "venue": "Sensors 21(8):2646",
+                "doi": "10.3390/s21082646",
+                "evidence_scope": "The paper compares avatar appearances and collects mental-capacity/trust/responsibility ratings. It is relevant context for appearance-based inference, without naming or isolating the FFAB mechanism.",
+                "verification_url": "https://doi.org/10.3390/s21082646",
+                "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moral-scaffolding",
+      "num": 781,
+      "name": "Moral scaffolding",
+      "definition": "Dependence of a model’s moral verdict on how the evaluation task is structured.",
+      "category": "AI-native",
+      "family": "agentic-and-engineering-failure-modes",
+      "group_label": "AI-native behaviours",
+      "tag": "research",
+      "origin": "LLM moral evaluation / task protocols",
+      "human_parallel": "",
+      "ai_native": true,
+      "highlighted": false,
+      "research_candidate": false,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Observed protocol dependence in a read multi-model LLM preprint; legitimate task changes, classifier reliability and supplied-version inconsistencies constrain interpretation.",
+      "proposed_ai_manifestation": "Compare repeated judgments of synthetic dilemmas while holding facts, requested task, instruction authority and decoding conditions fixed where possible. Vary one protocol component at a time, retain explicit abstention, report categorical and binary results and distinguish legitimate task responsiveness from unexplained verdict dependence.",
+      "research_boundary": "A changed task, instruction authority, morally relevant fact or available abstention can justify a different answer. Do not count every protocol difference as irrational bias, sycophancy or harm. POV rewrites also bundle prompts and social cues. No unique correct moral verdict or isolated internal cause is established.",
+      "concept_boundary": "A changed task, instruction authority, morally relevant fact or available abstention can justify a different answer. Do not count every protocol difference as irrational bias, sycophancy or harm. POV rewrites also bundle prompts and social cues. No unique correct moral verdict or isolated internal cause is established.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "b035-framing-effect",
+        "b079-trolley-frame-sensitivity",
+        "blame-attribution",
+        "b042-uncertainty-communication"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0267-moral-scaffolding",
+          "title": "The Fragility Of Moral Judgment In Large Language Models",
+          "url": "https://arxiv.org/abs/2603.05651v1",
+          "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Tom van Nuenen",
+              "Pratik S. Sachdeva"
+            ],
+            "year": 2026,
+            "venue": "arXiv:2603.05651v1",
+            "evidence_scope": "Four LLM evaluators produce different moral verdicts under structured protocol variants and unstructured advice. Original-text table averages support substantial protocol dependence, but the unstructured condition changes the task and relies on an inconsistently documented mapper.",
+            "verification_url": "https://arxiv.org/abs/2603.05651v1",
+            "verified_date": "2026-11-28"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "The Fragility Of Moral Judgment In Large Language Models",
+          "authors": [
+            "Tom van Nuenen",
+            "Pratik S. Sachdeva"
+          ],
+          "year": 2026,
+          "url": "https://arxiv.org/abs/2603.05651v1",
+          "venue": "arXiv:2603.05651v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2603.05651",
+          "relevance": "Four LLM evaluators produce different moral verdicts under structured protocol variants and unstructured advice. Original-text table averages support substantial protocol dependence, but the unstructured condition changes the task and relies on an inconsistently documented mapper.",
+          "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 2 (source locators: 2). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+          "verification_url": "https://arxiv.org/abs/2603.05651v1",
+          "verified_date": "2026-11-28",
+          "verification_method": "All 46 supplied pages, all four main figures, all tables, prompt appendices and 50 references read. Main figures and validation/model tables visually inspected. Off-page text on pages 43–44 recovered with PyMuPDF infinite-rectangle extraction. ArXiv v1 bytes, ACM/Crossref metadata and selected public code lines checked. Arithmetic checks do not constitute raw-data replication.",
+          "review_record": "references/pdf-reviews/0267.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Moral scaffolding\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Moral+scaffolding%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0267.json"
+      }
+    },
+    {
+      "id": "early-verdict-commitment",
+      "num": 782,
+      "name": "Early verdict commitment",
+      "definition": "Taking a verdict direction before balanced consideration of the relevant evidence or perspectives.",
+      "category": "AI-native",
+      "family": "agentic-and-engineering-failure-modes",
+      "group_label": "AI-native behaviours",
+      "tag": "research",
+      "origin": "LLM reasoning evaluation / decision sequence",
+      "human_parallel": "",
+      "ai_native": true,
+      "highlighted": false,
+      "research_candidate": false,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "A named annotation pattern applied to exposed traces in a read LLM study; it is not a validated observation of hidden commitment time or a uniquely identified cause of unstable verdicts.",
+      "proposed_ai_manifestation": "Assess public explanations or documented decision records for an unsupported early stance before relevant alternatives were considered. Use evidence availability and subsequent updating, allow provisional hypotheses, and distinguish reporting order from decision order. Do not request private chain-of-thought or infer hidden processes from prose position alone.",
+      "research_boundary": "Conclusion-first reporting can follow prior deliberation; the printed position of a final answer alone does not demonstrate early commitment. Exposed text is not ground truth of internal chronology or causal reasoning. Some clear cases warrant an early provisional judgment. No permanent anchoring, intent to deceive or inevitable error is implied.",
+      "concept_boundary": "Conclusion-first reporting can follow prior deliberation; the printed position of a final answer alone does not demonstrate early commitment. Exposed text is not ground truth of internal chronology or causal reasoning. Some clear cases warrant an early provisional judgment. No permanent anchoring, intent to deceive or inevitable error is implied.",
+      "measurability": "draft",
+      "violates": [],
+      "causes": [],
+      "synonyms": [
+        "Early commitment"
+      ],
+      "relates_to": [
+        "b031-anchoring-and-adjustment",
+        "underthinking",
+        "b041-metacognitive-monitoring",
+        "post-hoc-rationalization"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0267-early-verdict-commitment",
+          "title": "The Fragility Of Moral Judgment In Large Language Models",
+          "url": "https://arxiv.org/abs/2603.05651v1",
+          "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 43 (source locators: 43). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+          "publication": {
+            "type": "posted-content",
+            "authors": [
+              "Tom van Nuenen",
+              "Pratik S. Sachdeva"
+            ],
+            "year": 2026,
+            "venue": "arXiv:2603.05651v1",
+            "evidence_scope": "The appendix defines first-third analysis commitment before balanced consideration, excluding opening summary, and applies an LLM judge to three models’ exposed traces. Prompt versions, prevalence and judge-validation numbers are not fully reconciled across the supplied document.",
+            "verification_url": "https://arxiv.org/abs/2603.05651v1",
+            "verified_date": "2026-11-28"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "The Fragility Of Moral Judgment In Large Language Models",
+          "authors": [
+            "Tom van Nuenen",
+            "Pratik S. Sachdeva"
+          ],
+          "year": 2026,
+          "url": "https://arxiv.org/abs/2603.05651v1",
+          "venue": "arXiv:2603.05651v1",
+          "publication_type": "preprint",
+          "domain": "ai",
+          "id": "arxiv:2603.05651",
+          "relevance": "The appendix defines first-third analysis commitment before balanced consideration, excluding opening summary, and applies an LLM judge to three models’ exposed traces. Prompt versions, prevalence and judge-validation numbers are not fully reconciled across the supplied document.",
+          "consulted": "Full supplied PDF text read, all 46 pages; evidence at PDF pages 43 (source locators: 43). A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+          "verification_url": "https://arxiv.org/abs/2603.05651v1",
+          "verified_date": "2026-11-28",
+          "verification_method": "All 46 supplied pages, all four main figures, all tables, prompt appendices and 50 references read. Main figures and validation/model tables visually inspected. Off-page text on pages 43–44 recovered with PyMuPDF infinite-rectangle extraction. ArXiv v1 bytes, ACM/Crossref metadata and selected public code lines checked. Arithmetic checks do not constitute raw-data replication.",
+          "review_record": "references/pdf-reviews/0267.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Early verdict commitment\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Early+verdict+commitment%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0267.json"
       }
     }
   ]

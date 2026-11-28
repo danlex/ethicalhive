@@ -1,0 +1,471 @@
+{
+  "sequence": 267,
+  "source": {
+    "file_name": "S3041_VanNuenen_2026.pdf",
+    "source_id": "S3041",
+    "sha256": "16096e042bf10362794995194a1fc5bc61a9df3f43fe7250574252a1a326a3f6",
+    "pdf_pages": 46,
+    "printed_pages": "1–46",
+    "version_note": "Supplied arXiv:2603.05651v1, 5 March 2026. Its public v1 PDF is byte-identical. A related FAccT 2026 proceedings article exists, DOI 10.1145/3805689.3806447, published 25 June 2026, pages 7327–7372. Only final-version metadata was verified; its full text was not compared. Findings and discrepancies below concern the supplied preprint, not an assumed unchanged final version.",
+    "verification_url": "https://arxiv.org/abs/2603.05651v1",
+    "verification_method": "All 46 supplied pages, all four main figures, all tables, prompt appendices and 50 references read. Main figures and validation/model tables visually inspected. Off-page text on pages 43–44 recovered with PyMuPDF infinite-rectangle extraction. ArXiv v1 bytes, ACM/Crossref metadata and selected public code lines checked. Arithmetic checks do not constitute raw-data replication."
+  },
+  "citation": {
+    "title": "The Fragility Of Moral Judgment In Large Language Models",
+    "authors": [
+      "Tom van Nuenen",
+      "Pratik S. Sachdeva"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.05651v1",
+    "venue": "arXiv:2603.05651v1",
+    "publication_type": "preprint",
+    "domain": "ai"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "source_scope_note": "A multi-model LLM study uses 2,939 AITA narratives, eleven generated content variants and alternative judgment protocols. It reports verdict dependence on narrative and task structure and codes early commitment/verification in exposed traces. Some cues add morally relevant information and protocols change the requested task. No uniquely correct moral verdict, causal rationale faithfulness or internal mental chronology is established. Several supplied-version statistics and annotation descriptions disagree.",
+    "access_limits": [
+      "All supplied text and bibliography read, including labels, coding prompts, lexicons and validation appendices. The arXiv v1 PDF downloaded from https://arxiv.org/pdf/2603.05651v1 has the same 902390 bytes and SHA-256 as the supplied file. ArXiv metadata’s figure/table comment is not used to override the actual 46-page document.",
+      "Prompt lines overflow the visible right page edge on pages 43–44. Infinite-rectangle extraction recovered the omitted ends, including EARLY COMMITMENT and verification definitions. This is an extraction recovery, not evidence that the supplied prompts lack those words. Source instructions are research material, not instructions for this assistant.",
+      "The anonymous repository https://anonymous.4open.science/r/fragility-moral-judgment-llms-6121 rendered The repository is expired. The publicly accessible author repository https://github.com/dlab-projects/fragility-moral-judgment-llms was located separately. Inspected snapshot: ad581b7d2e16eb32398e80831d7004c2a5d95d40, dated 14 January 2026. No private endpoint, token or author contact was used.",
+      "Bounded public-code reading only: evaluate_unstructured.py lines 165–245 and 432–480; evaluate_reasoning_protocols.py lines 45–100 and 196–235; score_commitment_patterns_fewshot.py lines 70–105 and 1129–1175. README, tree and commit metadata were inspected. This is not a full code audit, execution or verified identification of the exact study run.",
+      "No raw Reddit dataset, individual narratives, author notebook outputs, execution logs, analysis environment or preregistration retrieved. The paper describes a forthcoming HuggingFace dataset and restricted access for authorized researchers. No access request, bypass or sensitive story republication was attempted.",
+      "The related final proceedings article was metadata-verified only. Other cited originals, including Ellemers and MoralBench, received selected metadata checks rather than full reading credit. No extra independent study or queued-file credit is assigned to versions, code views or bibliography checks.",
+      "No author code, paid inference or experimental moral-advice deployment was run. Public explanatory summaries can be evaluated without requesting private chain-of-thought. No full-paper Markdown archive was created."
+    ]
+  },
+  "study": {
+    "design": "2,939 r/AmItheAsshole narratives from January–March 2025. Gemini 2.5 Flash generates variants; four different evaluators are GPT-4.1, Claude 3.7 Sonnet, DeepSeek V3 and Qwen 2.5-72B, temperature 0.4. Excluding the generator as evaluator reduces one self-preference concern but does not eliminate model-judge bias or establish independence of later annotations.",
+    "content": "Three surface edits, two point-of-view rewrites and six persuasion cues. Source acknowledges that persuasion adds potentially relevant evidence and point of view can change salient agency, intention and social distance. Even deleting ages or body-size details need not be normatively irrelevant. POV conditions also use format-specific prompts and labels, so they do not isolate pronoun grammar.",
+    "labels": "Self At Fault, Other At Fault, All At Fault, No One At Fault and No Verdict/unclear. No One At Fault is distinct from narrator exoneration and from no judgment. First-person prompt wording and mapped AITA labels are not demonstrated to be exactly equivalent taxonomies.",
+    "baseline": "Three original-text runs per model give modal reference verdicts; ties excluded. Baseline evaluation count 35,268 equals 2,939 × 4 × 3. A separate entropy analysis samples 200 narratives with 15 runs. Split-sample entropy from runs 2–15 versus held-out run 1 avoids direct reuse of the reference sample.",
+    "noise": "Three-run disagreement is described as a noise floor, but disagreement versus a modal baseline or a held-out run is a different estimand. Surface average 7.5% versus mean noise 8.3% is not a paired equivalence test; GPT and Claude surface rates 7.3% and 7.1% exceed their own 3.9% and 6.2% noise figures. Preserve comparatively lower surface sensitivity without universal within-noise claims.",
+    "content_results": "Reported family flip rates are surface 7.5%, POV 24.3%, persuasion 10.8%; weighting by 3, 2 and 6 conditions gives 12.35%, consistent with rounded 12.4% overall. Transition counts imply 8,709 blame-direction reversals among 15,016 flips, 58.0%, net 2,143 toward narrator blame. Social-proof and self-justification cues do not uniformly yield user agreement; the paper itself rejects a sufficient simple-sycophancy account.",
+    "protocol_design": "Stratified 1,200 instances: twelve conditions × four GPT-4.1 run-1 verdict categories × 25; No Verdict excluded. This includes 100 original and 1,100 variant instances, not 1,200 independent original narratives sampled at population prevalence. Three alternative protocols across four models generate 14,400 evaluations. Verdict-first, explanation-first, system placement and unstructured advice differ in task and/or instruction context.",
+    "protocol_results": "On original texts, model-average flips are 22.8% explanation-first, 22.5% system placement and 55.0% unstructured; these averages reconstruct from the table. Unstructured advice removes the forced-verdict task and adds a classifier, so nonjudgment can be legitimate compliance rather than a moral failure. Reported protocol transition counts yield 52.4% blame reversals among flips and a 4.34-to-1 exoneration/blame directional ratio, arithmetically coherent.",
+    "epistemic_stance": "A lexicon computes boosters minus hedges per 100 words, with exclusions and negation filtering. This measures observable language style, not probability calibration, actual knowledge or faithful internal reasoning. Short sentences are excluded and quotes are not excluded. A model may communicate uncertainty differently without being overconfident or performatively vague.",
+    "reasoning": "Four extended-reasoning models are compared, but only three expose traces; o3-mini is correctly excluded from trace annotation. Matched complete-case Ns vary. The Claude thinking toggle is a cleaner comparison than different architectures/sizes; source acknowledges these confounds. Small observed differences do not prove zero benefit or equivalence of reasoning. More visible verification in ambiguous cases can coexist with instability without causing it.",
+    "commitment": "The appendix codes an early verdict direction within the first third of the analysis, excluding initial summary and before balanced consideration of both parties. This is an observable annotation convention. Text order is not proof of when hidden deliberation occurred, and conclusion-first reporting is not sufficient evidence of premature commitment.",
+    "validation": "The perturbation audit has 100 items. High raw agreement and low or negative kappa can coexist under extreme marginals; overall-pass labels do not establish that every separate criterion passed. Unstructured validation begins with 100 responses but has 59 unique after deduplication. Appendix human–mapper fine-category agreement is 47.5%/55.9%, kappas .356/.465, weaker than the main-text account; binary blame agreement is stronger, with kappas .79–.90. Both facts matter.",
+    "annotation_versions": "Main text and appendix give different verification prevalence and judge-validation figures. Public scoring code supports combined or separate prompts and few-shot options, which could produce different runs, but no executed manifest resolves them. Code parameters and available flags are not proof of the parameters used for published results.",
+    "scope": "No population-wide human moral psychology, unique correct verdict, justified real-world blame, actual model emotion, causal post-hoc rationalization, universal sycophancy or verified clinical advice benefit follows. Dataset selection, generated narratives, bundled protocols, label mapping, missing outputs and stochastic decoding constrain transfer."
+  },
+  "summary": "Add two bounded AI-native evaluation patterns: Moral scaffolding and Early verdict commitment. Link them to existing framing, attribution and reasoning concepts without claiming two independent psychological mechanisms. Enrich framing, blame allocation and uncertainty-language evidence; retain non-counted context where calibration, sycophancy, causal rationalization or internal monitoring is not established. Record supplied-version discrepancies and verified bibliography corrections separately from the unreviewed final publication.",
+  "findings": [
+    {
+      "term": "Moral scaffolding",
+      "decision": "new-entry",
+      "id": "moral-scaffolding",
+      "definition": "Dependence of a model’s moral verdict on how the evaluation task is structured.",
+      "category": "AI-native",
+      "ai_native": true,
+      "origin": "LLM moral evaluation / task protocols",
+      "ai_evidence_status": "Observed protocol dependence in a read multi-model LLM preprint; legitimate task changes, classifier reliability and supplied-version inconsistencies constrain interpretation.",
+      "novelty_rationale": "The source names dependence on task structure. It extends the evaluation vocabulary beyond equivalent-information framing to judgment format, response ordering and instruction placement. These related patterns are not asserted to be independent basic mechanisms.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "We call this dependence on task structure moral scaffolding"
+        }
+      ],
+      "evidence_scope": "Four LLM evaluators produce different moral verdicts under structured protocol variants and unstructured advice. Original-text table averages support substantial protocol dependence, but the unstructured condition changes the task and relies on an inconsistently documented mapper.",
+      "boundary": "A changed task, instruction authority, morally relevant fact or available abstention can justify a different answer. Do not count every protocol difference as irrational bias, sycophancy or harm. POV rewrites also bundle prompts and social cues. No unique correct moral verdict or isolated internal cause is established.",
+      "ai_proposal": "Compare repeated judgments of synthetic dilemmas while holding facts, requested task, instruction authority and decoding conditions fixed where possible. Vary one protocol component at a time, retain explicit abstention, report categorical and binary results and distinguish legitimate task responsiveness from unexplained verdict dependence.",
+      "measurability": "multi-turn",
+      "relates_to": [
+        "b035-framing-effect",
+        "b079-trolley-frame-sensitivity",
+        "blame-attribution",
+        "b042-uncertainty-communication"
+      ]
+    },
+    {
+      "term": "Early verdict commitment",
+      "decision": "new-entry",
+      "id": "early-verdict-commitment",
+      "synonyms": [
+        "Early commitment"
+      ],
+      "definition": "Taking a verdict direction before balanced consideration of the relevant evidence or perspectives.",
+      "category": "AI-native",
+      "ai_native": true,
+      "origin": "LLM reasoning evaluation / decision sequence",
+      "ai_evidence_status": "A named annotation pattern applied to exposed traces in a read LLM study; it is not a validated observation of hidden commitment time or a uniquely identified cause of unstable verdicts.",
+      "novelty_rationale": "A stance can be taken early and later revised, so this differs from maintaining a broken anchor. Long reasoning can still commit early, so it is not synonymous with shallow reasoning or abandoning a promising path. Unresolved task requirements and causal post-hoc justification are separate concerns.",
+      "evidence": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "quote": "Early commitment: the model takes a verdict direction in the first third"
+        }
+      ],
+      "evidence_scope": "The appendix defines first-third analysis commitment before balanced consideration, excluding opening summary, and applies an LLM judge to three models’ exposed traces. Prompt versions, prevalence and judge-validation numbers are not fully reconciled across the supplied document.",
+      "boundary": "Conclusion-first reporting can follow prior deliberation; the printed position of a final answer alone does not demonstrate early commitment. Exposed text is not ground truth of internal chronology or causal reasoning. Some clear cases warrant an early provisional judgment. No permanent anchoring, intent to deceive or inevitable error is implied.",
+      "ai_proposal": "Assess public explanations or documented decision records for an unsupported early stance before relevant alternatives were considered. Use evidence availability and subsequent updating, allow provisional hypotheses, and distinguish reporting order from decision order. Do not request private chain-of-thought or infer hidden processes from prose position alone.",
+      "measurability": "draft",
+      "relates_to": [
+        "b031-anchoring-and-adjustment",
+        "underthinking",
+        "b041-metacognitive-monitoring",
+        "post-hoc-rationalization"
+      ]
+    },
+    {
+      "term": "Framing effect",
+      "decision": "enrich-existing",
+      "target_id": "b035-framing-effect",
+      "definition": "Differences in judgment or choice under alternative presentations of otherwise equivalent information.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "formatting, paraphrasing, label ordering"
+        }
+      ],
+      "evidence_scope": "The original LLM study compares generated content presentations and task protocols. POV conditions show greater reported flip rates than minor surface edits. This is bounded evidence for presentation dependence, with task structure tracked separately as Moral scaffolding.",
+      "boundary": "The source acknowledges changes in morally relevant information and perspective salience. POV also bundles prompts and label wording. Restrict framing-error interpretation to otherwise equivalent information and a matched task; do not treat all flips as irrational."
+    },
+    {
+      "term": "Blame attribution",
+      "decision": "enrich-existing",
+      "target_id": "blame-attribution",
+      "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 9,
+          "printed_page": "9",
+          "quote": "Asymmetric Blame Attribution"
+        }
+      ],
+      "evidence_scope": "Verdict transitions redistribute narrator blame and exoneration across four LLMs. Published direction counts reconstruct, while several totals/denominators differ across supplied sections.",
+      "boundary": "Text-label allocation is not proof of deserved blame, actual responsibility or a model’s felt moral judgment. No One At Fault, Other At Fault and No Verdict must remain separate. Selection and mapper reliability constrain interpretation."
+    },
+    {
+      "term": "Uncertainty communication",
+      "decision": "enrich-existing",
+      "target_id": "b042-uncertainty-communication",
+      "definition": "Translating confidence into calibrated words; partially human-like, often miscalibrated (Steyvers and Peters 2025).",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "epistemic stance in explanations"
+        }
+      ],
+      "evidence_scope": "The study measures boosters and hedges in generated explanations under content/protocol variants. Observable uncertainty language changes with elicitation conditions.",
+      "boundary": "Lexical stance does not itself measure calibrated probability, actual knowledge or faithful reasoning. There is no independently known correct moral answer. Do not convert increased assertiveness into overconfidence or increased hedging into unwarranted underclaiming."
+    },
+    {
+      "term": "Trolley-frame sensitivity",
+      "decision": "enrich-existing",
+      "target_id": "b079-trolley-frame-sensitivity",
+      "definition": "Moral verdicts flip with surface framing.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "trolley vignettes"
+        }
+      ],
+      "evidence_scope": "The background connects presentation-sensitive moral evaluation to prior trolley-style benchmarks; this experiment instead uses everyday interpersonal narratives.",
+      "boundary": "Context only:the current scenarios are not trolley dilemmas and add no independently read trolley experiment. Related everyday protocol dependence belongs in Moral scaffolding rather than duplicate specific trolley-paper credit.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Sycophancy",
+      "decision": "enrich-existing",
+      "target_id": "b065-sycophancy",
+      "definition": "Agreeing with the user where the evidence does not support it, or adopting their premise without grounding.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "Such cues can trigger sycophancy"
+        }
+      ],
+      "evidence_scope": "The paper motivates persuasion cues with prior sycophancy literature, but observed social proof and self-justification do not always favor the narrator. Authors explicitly find a simple sycophancy account insufficient.",
+      "boundary": "Context only:updating on relevant new evidence is not necessarily unreasonable agreement. No unique sycophancy mechanism follows from a changed verdict or a self-presentational cue.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Post-hoc rationalization",
+      "decision": "enrich-existing",
+      "target_id": "post-hoc-rationalization",
+      "definition": "Constructing reasons after a judgment or reaction to justify it, rather than those reasons necessarily having produced it.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2",
+          "quote": "verdict-conditioned rationalizations"
+        }
+      ],
+      "evidence_scope": "The paper interprets covariation of explanations, verdicts and protocols as a challenge to explanation faithfulness.",
+      "boundary": "Context only:covariation does not establish that the verdict causally preceded its reasons or that the explanation is false. A causal intervention or independent execution record is needed for stronger rationalization claims.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Overconfidence",
+      "decision": "enrich-existing",
+      "target_id": "b043-overconfidence",
+      "definition": "Stated confidence or completeness (\"all\", \"every\", \"only\") exceeding the evidence.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "confidence vs. tentativeness"
+        }
+      ],
+      "evidence_scope": "The study quantifies assertive versus tentative explanation language.",
+      "boundary": "Context only:style changes without a known correctness criterion do not establish confidence exceeding evidence or probability miscalibration. Preserve observable stance separately from a calibration failure.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Performative hedging",
+      "decision": "enrich-existing",
+      "target_id": "x108-performative-hedging",
+      "definition": "Vague, non-committal hedging when the evidence licenses a commitment. The underclaim opposite of overconfidence.",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "6",
+          "quote": "epistemic stance"
+        }
+      ],
+      "evidence_scope": "Protocol and narrative changes affect lexical hedging in model explanations.",
+      "boundary": "Context only:there is no verified basis for deciding that a hedge is unwarranted. Reasonable caution under moral ambiguity must not be labeled performative merely because it appears.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Metacognitive monitoring",
+      "decision": "enrich-existing",
+      "target_id": "b041-metacognitive-monitoring",
+      "definition": "Knowing what you know; LLMs lack reliable monitoring (Nature Comms 2024).",
+      "novelty_rationale": "Retain the existing construct. A change of moral verdict, explanation style or annotation label does not by itself identify a new independent mechanism.",
+      "evidence": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "quote": "Verification: the model actively tests its reasoning"
+        }
+      ],
+      "evidence_scope": "A judge codes visible reconsideration, self-correction, steelmanning and logic checks in exposed reasoning text. The paper reports associations with instability.",
+      "boundary": "Context only:visible checking is not verified knowledge monitoring or a causal reduction/increase in error. Case ambiguity may confound associations. Verification rates and validation differ across supplied sections, and text need not expose the actual internal process.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "PDF bibliography, Ellemers et al. 2019",
+      "status": "CONFIRMED",
+      "verification_url": "https://doi.org/10.1177/1088868318811759",
+      "finding": "Verified authors are Naomi Ellemers, Jojanneke van der Toorn, Yavor Paunov and Thed van Leeuwen. The supplied Yuval Feldman Paunov and Tessa van Leeuwen names are incorrect. Metadata verification is not full reading of that review."
+    },
+    {
+      "location": "PDF bibliography, MoralBench",
+      "status": "CONFIRMED",
+      "verification_url": "https://doi.org/10.1145/3748239.3748246",
+      "finding": "Correct published MoralBench: Moral Evaluation of LLMs record is ACM SIGKDD Explorations Newsletter 27(1):62–71, 7 July 2025, DOI 10.1145/3748239.3748246. Supplied DOI 10.1145/3715318.3715327 did not resolve in Crossref. The related arXiv:2406.04428 preprint is from 2024; do not combine preprint year with final publication metadata or count versions as independent studies."
+    },
+    {
+      "location": "Main-text universal within-noise interpretation",
+      "status": "CONFIRMED",
+      "finding": "The overall surface average is lower than the average three-run disagreement, but GPT and Claude surface flip rates exceed their individual noise figures. Different estimands and absence of a paired equivalence test prevent a universal within-noise or no-effect conclusion. This does not erase the comparatively lower observed surface sensitivity."
+    },
+    {
+      "location": "Unstructured mapper validation interpretation",
+      "status": "CONFIRMED",
+      "finding": "Appendix Table 3 reports 59 unique responses after deduplication. Human–human fine-category agreement is 67.8%, kappa .588; human–mapper agreement is 47.5% and 55.9%, kappas .356 and .465. Do not report the stronger human–human figure as mapper validation. Binary blame kappas .79–.90 are stronger and must also be retained."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Main content evaluation flow",
+      "finding": "2,939 × 11 × 4 gives 129,316 versus 129,156 reported, a difference of 160. The 40-scenarios/160-model-evaluations exclusion description does not explain deletion across all eleven variants. Figure 1 category counts sum to 2,928 rather than 2,939. Do not invent the missing unit or denominator."
+    },
+    {
+      "location": "Flip totals and category examples",
+      "finding": "15,016 content flips divided by 129,156 evaluations gives 11.63%, not 12.4%; aggregation or subsets could explain this. A No One At Fault example gives 30.2% overall versus a later 54.0% category rate. Exact common denominator/version is unresolved. Weighted family averages do support rounded 12.4%."
+    },
+    {
+      "location": "Entropy association",
+      "finding": "Abstract r .37–.71, body r .23–.49 and Figure 1 Qwen r .56 are not a single consistent range. Preserve reported positive associations without inventing a corrected common estimate or causal ambiguity mechanism."
+    },
+    {
+      "location": "Mapper identity",
+      "finding": "Tables 1–2 name Gemini; methods/validation name GPT-4.1-mini. Public evaluate_unstructured.py lines 218–245 hard-code google/gemini-2.0-flash-lite-001. Its command-line model option controls the evaluated model, not this mapper. The inspected code may not be the executed paper version; no run manifest resolves identity."
+    },
+    {
+      "location": "Reasoning annotations and prevalence",
+      "finding": "Appendix complete-case counts yield 9,831 exposed traces versus 9,819 annotated, twelve fewer unexplained. Verification prevalence is 45.8% in the main text versus 85.6% in Table 9. Main validation describes 100 traces and stronger coefficients; appendix has 99 with early/presence/quality kappas .71/.65/.58 and agreements 87%/89%/79%, quality N=74. Definitions, runs or subsets may differ; do not combine best figures."
+    },
+    {
+      "location": "Perturbation audit criteria",
+      "finding": "Table 2 overall-pass ratings are 99/100 and 95/100 with 94% agreement, while unintended-change ratings differ 19/100 versus 8/100. Exact meaning of overall pass versus every criterion is unclear. The near-zero or negative kappa itself can be explained by extreme marginal prevalence."
+    },
+    {
+      "location": "Protocol agreement and missing outputs",
+      "finding": "Abstract/body/appendix protocol agreement numbers use different apparent subsets and include/exclude unstructured labels. Complete cases vary by model, and repair/missingness flow is incomplete. Do not declare every differing percentage contradictory or silently treat all samples as identical."
+    },
+    {
+      "location": "Executable environment",
+      "finding": "Selected scripts import llm_evaluations_everyday_dilemmas while the inspected source directory is fragility_moral_judgment_llms. The environment/dependency configuration and actual run were not verified. OpenRouter reasoning payloads are not proof that direct-provider API temperature constraints were violated."
+    },
+    {
+      "location": "Walasek and Stewart 2015 bibliography",
+      "finding": "The supplied title A Meta-analytic Review of Valence Framing Effects in Moral Decision-making, JDM 10(5):449–458, was not independently verified in targeted public searches. Do not call it fabricated, substitute an unrelated real paper, or count it as verified support."
+    },
+    {
+      "location": "Final proceedings version",
+      "finding": "Final FAccT publication metadata is verified, but its text has not been compared. The supplied preprint discrepancies must not be attributed to an assumed unchanged final paper."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "Source conceals semantic changes",
+      "status": "REFUTED",
+      "finding": "The paper explicitly acknowledges that persuasion adds potentially morally relevant information and point of view can change agency/intent salience. Retain this caveat rather than accuse the source of assuming all transformations are semantically invariant."
+    },
+    {
+      "location": "All arithmetic incoherent",
+      "status": "REFUTED",
+      "finding": "Baseline evaluation count, weighted family flip rate, baseline protocol averages, directional transition ratios and exposed-trace totals reconstruct. Isolate the unresolved flow/version differences rather than reject every result."
+    },
+    {
+      "location": "Four reasoning models but only three trace sets",
+      "status": "REFUTED",
+      "finding": "o3-mini does not expose traces and is explicitly excluded from trace annotation. This is a documented access distinction, not a missing fourth trace analysis."
+    },
+    {
+      "location": "Low kappa proves the 94% audit agreement wrong",
+      "status": "REFUTED",
+      "finding": "Extreme yes-rate marginals reconstruct approximately −.017 kappa with 94% agreement. Distinguish prevalence effects from uncertain criterion definitions."
+    },
+    {
+      "location": "Visible final-answer position proves premature reasoning",
+      "status": "REFUTED",
+      "finding": "A model can report its conclusion first after prior deliberation. The source’s trace annotation is an operational visible-text marker, not direct access to hidden commitment timing."
+    },
+    {
+      "location": "Less stable verification proves checking is harmful or performative",
+      "status": "REFUTED",
+      "finding": "Ambiguous cases may elicit both checking and unstable judgments. Observational covariation and inconsistent annotation versions do not establish a harmful verification intervention or deliberate performance."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0265.json",
+      "finding": "Attribution patterns and confidence differences do not establish actual fault or calibration failure. Preserve category meanings and the distinction between a measured inference and a demonstrated error."
+    },
+    {
+      "related_review": "references/pdf-reviews/0266.json",
+      "finding": "Check operational items and labels rather than trusting a construct name. Mathematically coherent summaries can coexist with reporting and measurement problems; keep both findings."
+    },
+    {
+      "related_review": "references/pdf-reviews/0261.json",
+      "finding": "Verdict, intent, belief, assertion and moral status are distinct outcomes. Do not infer real model mental states or universal human–AI equivalence from judgment labels."
+    },
+    {
+      "related_review": "references/pdf-reviews/0122.json",
+      "finding": "A plausible later explanation is not an execution trace. Correlated wording and verdict changes motivate faithfulness tests but do not by themselves establish causal post-hoc rationalization."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Verification or performative verification as a new independent behavior",
+      "reason": "Existing metacognition and rationale records cover the concern. Annotation prevalence/version differences and observational associations do not identify a unique harmful mechanism."
+    },
+    {
+      "term": "Moral ambiguity sensitivity as a demonstrated failure",
+      "reason": "Uncertainty under genuinely ambiguous facts can be appropriate. Entropy–flip association and mismatched estimates do not establish irrationality or a unique mechanism."
+    },
+    {
+      "term": "Every variant label as a new behavior",
+      "reason": "Self-justification, social proof and POV conditions are manipulations or existing constructs, not automatically newly identified independent mechanisms."
+    },
+    {
+      "term": "Reasoning is useless or moral explanations are necessarily unfaithful",
+      "reason": "Model confounds, missingness, no equivalence bounds and absent causal faithfulness tests prevent these broad conclusions."
+    }
+  ],
+  "limitations": [
+    "Two bounded AI-native records added; three existing records receive direct study evidence and six receive non-counted context. Catalogue becomes 782 records in eleven categories, not 782 independent mechanisms.",
+    "Stable detail IDs, unnumbered catalogue rows, seven evaluation criteria and six ethical principles retained. No automatic harm/principle edge, invented annual count, forced citation quota, new full-paper Markdown archive or independent replication claim.",
+    "Code inspection is bounded and static. Metadata verification, supplied preprint reading and related final publication status are explicitly separated."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "moral-scaffolding",
+      "early-verdict-commitment"
+    ],
+    "enriched": [
+      "b035-framing-effect",
+      "blame-attribution",
+      "b042-uncertainty-communication",
+      "b079-trolley-frame-sensitivity",
+      "b065-sycophancy",
+      "post-hoc-rationalization",
+      "b043-overconfidence",
+      "x108-performative-hedging",
+      "b041-metacognitive-monitoring"
+    ]
+  }
+}
