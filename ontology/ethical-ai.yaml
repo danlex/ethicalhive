@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 790
+  mode_count: 797
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 790
+    numbered_entries: 797
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0271.json
+    latest_review: references/pdf-reviews/0273.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -5602,6 +5602,41 @@ modes:
         evidence_scope: The study measures boosters and hedges in generated explanations under content/protocol
           variants. Observable uncertainty language changes with elicitation conditions.
         verification_url: https://arxiv.org/abs/2603.05651v1
+        verified_date: '2026-11-28'
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Uncertainty communication
+    definition: Translating confidence into calibrated words; partially human-like, often miscalibrated (Steyvers
+      and Peters 2025).
+    evidence_scope: The study compares an explicit information-request option with lottery and evaluative no-preference
+      options. It also shows that more third-option output after fine-tuning does not reliably coincide with
+      the same human respondents’ indecision cases.
+    catalogue_boundary: Reporting uncertainty, requesting missing facts, moral near-ties and declining action
+      are different behaviors. Frequency alone is not calibration. Match communication and next action to the
+      actual evidence gap and task duty; no subjective confidence or validated optimal rate is supplied.
+    definition_sources:
+    - id: pdf-review-0273-b042-uncertainty-communication
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 10 (source locators: 10).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: The study compares an explicit information-request option with lottery and evaluative
+          no-preference options. It also shows that more third-option output after fine-tuning does not reliably
+          coincide with the same human respondents’ indecision cases.
+        verification_url: https://arxiv.org/abs/2506.00079v2
         verified_date: '2026-11-28'
 - id: b043-overconfidence
   num: 43
@@ -15209,8 +15244,8 @@ modes:
 - id: automation-bias
   num: 105
   name: Automation bias
-  definition: Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing
-    part.
+  definition: Unduly relying on automated cues, or their absence, despite practically accessible evidence that
+    warrants checking or overriding them.
   example: It trusts the linter's "all clear" and ships, though the linter never checked the path that breaks.
   family: agentic-and-engineering-failure-modes
   group_label: Heuristics and biases
@@ -16186,6 +16221,48 @@ modes:
           group during assistance despite an identical task rule and warning for one group.
         verification_url: https://doi.org/10.1186/s41235-026-00726-w
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Automation bias
+    definition: Trusting a tool result or a prior step because a machine produced it, without verifying the
+      load-bearing part.
+    evidence_scope: The article proposes distinguishing failures to check accessible counterevidence from unwarranted
+      reliance after attending to it. It includes erroneous reliance on system silence and stresses practical
+      access, role expertise and workload. This broadens the catalogue’s unchecked-output-only gloss while
+      preserving its examples and stable ID.
+    catalogue_boundary: Reliance is biased only where its evidential weighting or lack of checking is unwarranted
+      given practical access, role, task costs and known competence. A wrong outcome, disagreement with an
+      aid or justified delegation alone does not establish bias. Awareness of conflicting evidence differs
+      from mere display availability; neither subtype proves felt trust or automatic legal culpability.
+    definition_sources:
+    - id: pdf-review-0272-automation-bias
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The article proposes distinguishing failures to check accessible counterevidence from
+          unwarranted reliance after attending to it. It includes erroneous reliance on system silence and
+          stresses practical access, role expertise and workload. This broadens the catalogue’s unchecked-output-only
+          gloss while preserving its examples and stable ID.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
+  concept_boundary: Reliance is biased only where its evidential weighting or lack of checking is unwarranted
+    given practical access, role, task costs and known competence. A wrong outcome, disagreement with an aid
+    or justified delegation alone does not establish bias. Awareness of conflicting evidence differs from mere
+    display availability; neither subtype proves felt trust or automatic legal culpability.
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -24094,6 +24171,39 @@ modes:
           all reduced checking as one measured cause.
         verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Automation complacency
+    definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation
+      is reliable, letting errors through.
+    evidence_scope: The source explicitly recognizes overlap between reduced monitoring and its proposed weak-bias
+      subtype, while distinguishing whether contrary evidence was actually checked.
+    catalogue_boundary: Reduced vigilance, an unverified decision and a wrong outcome are related but not identical.
+      Preserve the prior record’s checking pattern and avoid equating complacency with all rational delegation
+      or every omission.
+    definition_sources:
+    - id: pdf-review-0272-automation-complacency
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The source explicitly recognizes overlap between reduced monitoring and its proposed
+          weak-bias subtype, while distinguishing whether contrary evidence was actually checked.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
   selected_papers:
   - id: arxiv:2605.14544
     title: 'Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy'
@@ -24505,6 +24615,41 @@ modes:
           any participant has position bias or that all order effects will disappear.
         verification_url: https://api.crossref.org/works/10.3390/healthcare14183030
         verified_date: '2026-11-27'
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Position bias
+    definition: Letting the order of options sway its choice, favouring whichever candidate appears first or
+      last rather than the best one.
+    evidence_scope: Appendix A reports that under memoryless prompting two models choose Patient A in specific
+      age-versus-drinking tradeoffs. Table 4 separately reports changes after swapping patient descriptions.
+      This is task-specific choice-order evidence, not a new bias name.
+    catalogue_boundary: An option-label preference is different from memory/history effects and different moral
+      priorities. Preserve matched-case controls, session dependence and limited profile coverage; the supplied
+      summaries do not establish an intrinsic universal first-position rule.
+    definition_sources:
+    - id: pdf-review-0273-position-bias
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 22 (source locators: 22).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: Appendix A reports that under memoryless prompting two models choose Patient A in specific
+          age-versus-drinking tradeoffs. Table 4 separately reports changes after swapping patient descriptions.
+          This is task-specific choice-order evidence, not a new bias name.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
 - id: self-contradiction
   name: Self-contradiction
   definition: Asserting a claim and its opposite within the same answer, a failure of internal consistency.
@@ -25738,6 +25883,41 @@ modes:
           this is a boundary-only source.
         verification_url: https://api.crossref.org/works/10.1038/s42256-024-00969-6
         verified_date: '2026-11-27'
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Prompt brittleness
+    definition: Giving materially different answers to the same question after a trivial, meaning-preserving
+      rewording of the prompt.
+    evidence_scope: Description-order swaps alter some reported patient preferences with the factual allocation
+      case retained. Memory removal and shuffled question history are separately studied; these change context
+      and should not all be described as trivial semantic paraphrases.
+    catalogue_boundary: Both deserve, Neither deserves, Too similar and Need more information are not equivalent
+      paraphrases. Different responses to them do not alone demonstrate brittleness. Order changes can isolate
+      formatting sensitivity, whereas different available actions or evidence may justify different answers.
+    definition_sources:
+    - id: pdf-review-0273-prompt-brittleness
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 21 (source locators: 21).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: Description-order swaps alter some reported patient preferences with the factual allocation
+          case retained. Memory removal and shuffled question history are separately studied; these change
+          context and should not all be described as trivial semantic paraphrases.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
 - id: object-hallucination
   name: Object hallucination
   definition: Describing objects, text, or detail in an image that are not there, a perceptual hallucination specific
@@ -27561,10 +27741,10 @@ modes:
         verified_date: '2026-11-27'
 - id: abstention-failure
   name: Abstention failure
-  definition: Producing a confident answer where the honest response is 'I don't know' or to abstain, instead of
-    declining.
-  example: Asked something outside its knowledge, it fabricates a specific answer rather than saying it cannot be
-    sure.
+  definition: Producing a confident answer where the honest response is 'I don't know' or to abstain, instead
+    of declining.
+  example: Asked something outside its knowledge, it fabricates a specific answer rather than saying it cannot
+    be sure.
   family: metacognition-and-confidence
   group_label: Metacognition and confidence
   category: Metacognition
@@ -27598,24 +27778,24 @@ modes:
   - Failure to abstain
   - Not saying I don't know
   examples:
-  - Standard instruction-tuned models almost never abstain on unanswerable questions, refusing only 2.07% on FalseQA
-    and 0.96% on NEC, guessing instead of saying 'I don't know'. [arXiv:2311.09677]
-  - 'The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus 33 for
-    questions the model actually knows. [arXiv:2311.09677]'
-  - Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises refusal
-    on the unanswerable sets above 96%. [arXiv:2311.09677]
+  - Standard instruction-tuned models almost never abstain on unanswerable questions, refusing only 2.07% on
+    FalseQA and 0.96% on NEC, guessing instead of saying 'I don't know'. [arXiv:2311.09677]
+  - 'The gap is real knowledge, not just wording: on MMLU uncertain questions perplexity reaches 462 versus
+    33 for questions the model actually knows. [arXiv:2311.09677]'
+  - Training on only correct answers teaches the model to guess; teaching it to express uncertainty raises
+    refusal on the unanswerable sets above 96%. [arXiv:2311.09677]
   mitigated_by:
   - abstention-training
   - retrieval-grounding
   experiment:
     summary: Opus, Sonnet and Haiku, run in-session. An easy probe floored (all abstained); a harder one mixing
       real facts with subtle fakes under pressure split them, Haiku fabricated one.
-    result: 'Hard probe (4 real-but-obscure + 4 subtle fakes, under pressure). In-session: Opus 8/8, Sonnet 8/8,
-      Haiku 7/8 (Haiku invented ''1645'' for the fictional Treaty of Wyk). Blind re-run via claude -p with no repo
-      context: all three 8/8, Haiku abstained on that same item.'
-    takeaway: 'The apparent Haiku gap did not survive a blind run, so it was framing or single-sample noise, not
-      a stable tier difference. Lesson: in-session framing and n=1 can manufacture a capability gap; confirm with
-      a blind harness and k samples before claiming one.'
+    result: 'Hard probe (4 real-but-obscure + 4 subtle fakes, under pressure). In-session: Opus 8/8, Sonnet
+      8/8, Haiku 7/8 (Haiku invented ''1645'' for the fictional Treaty of Wyk). Blind re-run via claude -p
+      with no repo context: all three 8/8, Haiku abstained on that same item.'
+    takeaway: 'The apparent Haiku gap did not survive a blind run, so it was framing or single-sample noise,
+      not a stable tier difference. Lesson: in-session framing and n=1 can manufacture a capability gap; confirm
+      with a blind harness and k samples before claiming one.'
     url: experiments/abstention-hard-claude.html
   selected_papers:
   - id: arxiv:2401.13275
@@ -27625,7 +27805,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2401.13275
     source_reference:
@@ -27639,7 +27820,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2509.23830
     source_reference:
@@ -27647,8 +27829,8 @@ modes:
       id: '2509.23830'
     publication_type: preprint
   - id: doi:10.3390/su18189656
-    title: Auditable and Abstention-Aware Vehicle-Level Evaluation of Vision–Language Model Configurations for Vehicle-Damage
-      Assessment in Intelligent Transportation Maintenance
+    title: Auditable and Abstention-Aware Vehicle-Level Evaluation of Vision–Language Model Configurations
+      for Vehicle-Damage Assessment in Intelligent Transportation Maintenance
     url: https://doi.org/10.3390/su18189656
     year: 2026
     authors:
@@ -27675,6 +27857,42 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Abstention failure
+    definition: Producing a confident answer where the honest response is 'I don't know' or to abstain, instead
+      of declining.
+    evidence_scope: The allocation study discusses abstention and compares its outcomes with unanswerable-question
+      literature.
+    catalogue_boundary: 'Context only: no objective correct answer or independently established requirement
+      to abstain in every human-indecision case. Low coin-flip frequency is not by itself a confident factual
+      fabrication or failure to abstain. Do not count this as a direct new test of the existing unanswerability
+      failure.'
+    definition_sources:
+    - id: pdf-review-0273-abstention-failure
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 9 (source locators: 9).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: The allocation study discusses abstention and compares its outcomes with unanswerable-question
+          literature.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
 - id: instruction-following-failure
   name: Instruction-following failure
   definition: Ignoring or only partially following explicit instructions or constraints in the request (format,
@@ -41061,7 +41279,8 @@ modes:
   category: Heuristics
   family: heuristics-biases
   group_label: Heuristics and biases
-  example: "Faced with three valid caching libraries, the agent keeps listing tradeoffs and never commits to adding one to package.json."
+  example: Faced with three valid caching libraries, the agent keeps listing tradeoffs and never commits to
+    adding one to package.json.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -41071,15 +41290,15 @@ modes:
   ai_evidence_status: Proposed analogy; not tested in this research
   proposed_ai_manifestation: Offer explicit choose-now versus defer options with fixed costs and information.
   proposal_kind: Proposed AI test
-  research_boundary: One form of decision avoidance; distinct from status quo preference, omission bias and refusal
-    to answer.
+  research_boundary: One form of decision avoidance; distinct from status quo preference, omission bias and
+    refusal to answer.
   research_field: Choice and future preferences
   definition_sources:
   - id: deferral
     title: 'The psychology of doing nothing: forms of decision avoidance result from reason and emotion.'
     url: https://pubmed.ncbi.nlm.nih.gov/12555797/
-    consulted: review abstract; choice deferral is one form, not the entire umbrella Citation identity and publication
-      metadata checked on 2026-11-08; full text not re-read in this pass.
+    consulted: review abstract; choice deferral is one form, not the entire umbrella Citation identity and
+      publication metadata checked on 2026-11-08; full text not re-read in this pass.
     publication:
       type: journal-article
       doi: 10.1037/0033-2909.129.1.139
@@ -41087,8 +41306,8 @@ modes:
       authors:
       - Anderson CJ
       venue: Psychological bulletin
-      evidence_scope: Background research for the human or related concept Choice deferral; this citation does not
-        by itself validate the proposed AI analogy.
+      evidence_scope: Background research for the human or related concept Choice deferral; this citation does
+        not by itself validate the proposed AI analogy.
       verification_url: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A12555797+AND+SRC%3AMED&format=json&resultType=core&pageSize=1
       verified_date: '2026-11-08'
   research_provenance:
@@ -41107,10 +41326,10 @@ modes:
     venue: Psychological bulletin
     authors:
     - Anderson CJ
-    relevance: Background research for the human or related concept Choice deferral; this citation does not by itself
-      validate the proposed AI analogy.
-    consulted: review abstract; choice deferral is one form, not the entire umbrella Citation identity and publication
-      metadata checked on 2026-11-08; full text not re-read in this pass.
+    relevance: Background research for the human or related concept Choice deferral; this citation does not
+      by itself validate the proposed AI analogy.
+    consulted: review abstract; choice deferral is one form, not the entire umbrella Citation identity and
+      publication metadata checked on 2026-11-08; full text not re-read in this pass.
     verification_url: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A12555797+AND+SRC%3AMED&format=json&resultType=core&pageSize=1
     source_reference:
       collection: definition_sources
@@ -41160,6 +41379,40 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Choice deferral
+    definition: A person postpones selecting an option rather than choosing among the currently available alternatives.
+    evidence_scope: Options allow lottery, no-strict-preference wording or an information request in otherwise
+      forced A/B tasks.
+    catalogue_boundary: 'Context only: a lottery can resolve a decision immediately, and selecting Both deserve
+      is not necessarily postponement. Retain actual temporal deferral as a distinct behavior; this study does
+      not independently measure its delay or avoidance costs.'
+    definition_sources:
+    - id: pdf-review-0273-candidate-092
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 33 (source locators: 33).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: Options allow lottery, no-strict-preference wording or an information request in otherwise
+          forced A/B tasks.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
 - id: candidate-093
   num: 299
   name: Maximization
@@ -69464,6 +69717,38 @@ modes:
           this coding scheme.
         verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Deskilling
+    definition: Loss or weakening of previously acquired skills through reduced independent use or practice.
+    evidence_scope: The article describes erosion of acquired competence through disuse and discusses reduced
+      opportunities to practice or acquire skills in heavily automated workflows.
+    catalogue_boundary: The second process is upskilling inhibition, as verified in the cited Natali abstract,
+      not upskilling itself and not necessarily loss of already acquired skill. The article supplies no new
+      longitudinal skill-loss measurement.
+    definition_sources:
+    - id: pdf-review-0272-deskilling
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The article describes erosion of acquired competence through disuse and discusses reduced
+          opportunities to practice or acquire skills in heavily automated workflows.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: moral-deskilling
   num: 487
   name: Moral deskilling
@@ -71480,6 +71765,39 @@ modes:
           control uniquely attributes changes or demonstrates moral improvement.
         verification_url: https://doi.org/10.3389/frai.2025.1694772
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Moral deference
+    definition: Treating an advisor's moral recommendation itself as a substantial reason for one's moral judgment.
+    evidence_scope: The paper analyzes deference to automated information and its implications for retaining
+      moral judgment and answerability.
+    catalogue_boundary: Context only:trust in a technical diagnosis or factual recommendation is not necessarily
+      deference on moral principles. Generic source priority and moral-advice uptake are related but not exact
+      synonyms; no new moral-advice experiment is conducted.
+    definition_sources:
+    - id: pdf-review-0272-moral-deference
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The paper analyzes deference to automated information and its implications for retaining
+          moral judgment and answerability.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: persuasion-backfire-effect
   num: 494
   name: Persuasion backfire effect
@@ -89312,6 +89630,35 @@ modes:
       argument, counterarguments and endnotes. Crossref verifies article identity and online/issue dates. Original
       empirical sources and books remain secondary.
     review_record: references/pdf-reviews/0131.json
+  - title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    authors:
+    - John P. Dickerson
+    - Hadi Hosseini
+    - Samarth Khanna
+    - Leona Pierce
+    year: 2026
+    url: https://arxiv.org/abs/2506.00079v2
+    venue: arXiv:2506.00079v2
+    publication_type: preprint
+    domain: ai
+    id: arxiv:2506.00079
+    relevance: The discussion distinguishes competing moral considerations from inability to identify a factual
+      answer and motivates making unresolved moral conflict visible. Observed third-option rates do not directly
+      measure justified moral uncertainty.
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 9 (source locators: 9). Diagnostic
+      LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    verification_url: https://arxiv.org/abs/2506.00079v2
+    verified_date: '2026-11-28'
+    verification_method: 'All 37 supplied pages, 99 numbered bibliography entries, all 24 tables, all 18 figures
+      and appendices A–F read. Figures 1–18 visually inspected; temperature table inconsistency checked on
+      rendered page 24. Public version-specific arXiv PDF downloaded independently: 1,916,940 bytes and SHA-256
+      6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd, exactly matching the supplied file.
+      Primary arXiv version metadata inspected; one versioned work, not two independent studies.'
+    review_record: references/pdf-reviews/0273.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -89325,6 +89672,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0131.json
+  research_notes:
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Moral uncertainty
+    definition: Uncertainty about which moral principles are justified, what they require in a situation, or
+      which entities warrant moral consideration.
+    evidence_scope: The discussion distinguishes competing moral considerations from inability to identify
+      a factual answer and motivates making unresolved moral conflict visible. Observed third-option rates
+      do not directly measure justified moral uncertainty.
+    catalogue_boundary: Population disagreement is not moral truth and cannot erase rights or consent. Low
+      sampling variance does not imply epistemic overconfidence; a defensible stable recommendation need not
+      mimic a heterogeneous population unless that is the agreed task.
+    definition_sources:
+    - id: pdf-review-0273-moral-uncertainty
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 9 (source locators: 9).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: The discussion distinguishes competing moral considerations from inability to identify
+          a factual answer and motivates making unresolved moral conflict visible. Observed third-option rates
+          do not directly measure justified moral uncertainty.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
 - id: risk-asymmetry-reasoning
   num: 586
   name: Risk-asymmetry reasoning
@@ -93004,6 +93387,41 @@ modes:
           differently, with recurring underuse relative to the specified payoff benchmark.
         verification_url: https://arxiv.org/abs/1904.13086v3
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Calibrated reliance
+    definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+      and the consequences of error.
+    evidence_scope: The argument allows rational deference and stable overall trust after an isolated error,
+      while requiring sensitivity to relevant limitations and recurrent counterevidence. Proposed critical
+      trust retains scrutiny and human authority.
+    catalogue_boundary: Neither blind acceptance nor automatic distrust is calibration. A single hindsight
+      error does not prove irrational reliance. No precise universal threshold or tested critical-trust intervention
+      is supplied.
+    definition_sources:
+    - id: pdf-review-0272-calibrated-reliance
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 15 (source locators: 15
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The argument allows rational deference and stable overall trust after an isolated error,
+          while requiring sensitivity to relevant limitations and recurrent counterevidence. Proposed critical
+          trust retains scrutiny and human authority.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: environmental-rebound-effect
   num: 600
   name: Environmental rebound effect
@@ -111970,6 +112388,32 @@ modes:
       repairs verified against Crossref/PubMed/publisher or institutional records. Philosophical proposal,
       not a new intervention study, benchmark or implementation.
     review_record: references/pdf-reviews/0214.json
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: Reflection Machines are described as meta-cognitive questioning tools that surface assumptions,
+      values and alternatives. The authors acknowledge routinization and limited decision time.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 22 (source locators: 22 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -111983,6 +112427,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0214.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Socratic dialogue
+    definition: Using questions and reasoned dialogue to clarify concepts, test assumptions and develop a person’s
+      own judgment.
+    evidence_scope: Reflection Machines are described as meta-cognitive questioning tools that surface assumptions,
+      values and alternatives. The authors acknowledge routinization and limited decision time.
+    catalogue_boundary: Questions can embed false premises or steering. Context-appropriate engagement is a
+      proposed support, not guaranteed autonomy or accuracy; no mandatory extra interaction or authorization
+      layer is imposed by this literature review.
+    definition_sources:
+    - id: pdf-review-0272-socratic-dialogue
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 22 (source locators: 22
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Reflection Machines are described as meta-cognitive questioning tools that surface
+          assumptions, values and alternatives. The authors acknowledge routinization and limited decision
+          time.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: attributability
   num: 715
   name: Attributability
@@ -115112,6 +115591,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0240.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: No-alarm reliance
+    definition: Allocating attention elsewhere while a monitoring system is silent, relying on it to signal
+      a problem.
+    evidence_scope: Omission examples discuss failure to act when an automated system gives no cue despite
+      accessible evidence requiring action.
+    catalogue_boundary: Context only:appropriate reliance on a functioning, adequately sensitive monitor is
+      not bias. The existing concept includes rational allocation of attention; do not turn every absence-of-alarm
+      response into complacency.
+    definition_sources:
+    - id: pdf-review-0272-no-alarm-reliance
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 4 (source locators: 4 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Omission examples discuss failure to act when an automated system gives no cue despite
+          accessible evidence requiring action.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: responsibility-authority-double-bind
   num: 743
   name: Responsibility–authority double bind
@@ -117175,6 +117689,32 @@ modes:
       verify identity/date. Targeted citation checks distinguish Nyholm parts I/II and correct one earlier
       review. Selected public book-chapter pages verify a definition, without full chapter/book reading credit.
     review_record: references/pdf-reviews/0248.json
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing evidence
+      against a recommendation. The current source provides a concrete application of the evidential distinction.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -117188,6 +117728,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0248.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Undercutting defeater
+    definition: Information that weakens the evidential link between a reason and a conclusion without establishing
+      that the conclusion is false.
+    evidence_scope: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing
+      evidence against a recommendation. The current source provides a concrete application of the evidential
+      distinction.
+    catalogue_boundary: Reliability is a common undercutting target, not the entire definition. Weakening a
+      support link is not proof of the opposite conclusion. Actual contestability, cognitive load and intervention
+      benefit remain untested here.
+    definition_sources:
+    - id: pdf-review-0272-undercutting-defeater
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing
+          evidence against a recommendation. The current source provides a concrete application of the evidential
+          distinction.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: food-neophobia
   num: 760
   name: Food neophobia
@@ -120489,3 +121065,751 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0271.json
+  research_notes:
+  - id: pdf-review-0273
+    review_record: references/pdf-reviews/0273.json
+    name: Alignment target problem
+    definition: Difficulty choosing an AI alignment standard when judgments about human action, AI action and
+      human design of AI differ.
+    evidence_scope: The source declares a repeated-deployment population-distribution objective and distinguishes
+      individual-level preference prediction. This informs choice of an alignment metric.
+    catalogue_boundary: 'Context only: different aggregate/individual objectives are not the specific human-action/AI-action/designer
+      judgment contrast defined by the existing record. Keep the broader normative relationship without treating
+      the tasks as an exact synonym or a direct independent test.'
+    definition_sources:
+    - id: pdf-review-0273-alignment-target-problem
+      title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+      url: https://arxiv.org/abs/2506.00079v2
+      consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 13 (source locators: 13).
+        Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+        datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+        personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+        truth, model consciousness or validated universal lexicographic mechanism is established. Original
+        human studies are secondary here; their full texts were not independently read.'
+      count_as_behaviour_paper: false
+      publication:
+        type: posted-content
+        authors:
+        - John P. Dickerson
+        - Hadi Hosseini
+        - Samarth Khanna
+        - Leona Pierce
+        year: 2026
+        venue: arXiv:2506.00079v2
+        evidence_scope: The source declares a repeated-deployment population-distribution objective and distinguishes
+          individual-level preference prediction. This informs choice of an alignment metric.
+        verification_url: https://arxiv.org/abs/2506.00079v2
+        verified_date: '2026-11-28'
+- id: weak-automation-bias
+  num: 791
+  name: Weak automation bias
+  definition: Unwarrantedly following an automated cue, or its absence, without checking practically accessible
+    contrary evidence.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Weak automation bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: Provide an assistant with a tool result and an accessible verification source.
+    Evaluate whether it checks the material point before consequential use, with the required check and feasible
+    cost specified. Distinguish an absent alarm from evidence that a working monitor found no issue.
+  research_boundary: Evidence must be practically accessible given role, time, expertise and task cost. A wrong
+    recommendation or justified division of checking work is not enough. Weak does not mean harmless or automatically
+    legally negligent; actual responsibility requires separate evidence.
+  concept_boundary: Evidence must be practically accessible given role, time, expertise and task cost. A wrong
+    recommendation or justified division of checking work is not enough. Weak does not mean harmless or automatically
+    legally negligent; actual responsibility requires separate evidence.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - automation-complacency
+  - strong-automation-bias
+  - no-alarm-reliance
+  - calibrated-reliance
+  is_a:
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0272-weak-automation-bias
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The authors distinguish unchecked reliance from reliance after attending to counterevidence
+        and illustrate it with earlier prescribing studies. The cited original studies were not independently
+        read in this review.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The authors distinguish unchecked reliance from reliance after attending to counterevidence
+      and illustrate it with earlier prescribing studies. The cited original studies were not independently
+      read in this review.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Weak automation bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Weak+automation+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: strong-automation-bias
+  num: 792
+  name: Strong automation bias
+  definition: Unwarrantedly following automated cues, or their absence, after attending to relevant contrary
+    evidence.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Strong automation bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: Give an assistant explicit, relevant counterevidence to a tool recommendation
+    and assess whether its final action weights that evidence appropriately. Evaluate public claims and recorded
+    actions without inferring private beliefs. Keep justified expert deference and actual authority constraints
+    separate.
+  research_boundary: Exposure on a screen is not proof of attention. Reliance after disagreement may be rational
+    if the source has warranted superior evidence or competence; a later wrong outcome does not alone establish
+    bias. The label does not prove felt overtrust, nonautonomy or culpability.
+  concept_boundary: Exposure on a screen is not proof of attention. Reliance after disagreement may be rational
+    if the source has warranted superior evidence or competence; a later wrong outcome does not alone establish
+    bias. The label does not prove felt overtrust, nonautonomy or culpability.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - weak-automation-bias
+  - epistemic-deference
+  - deep-automation-bias
+  - calibrated-reliance
+  is_a:
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0272-strong-automation-bias
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The paper argues that evidence awareness can coexist with unwarranted deference and discusses
+        secondary pathology/trust-game findings. Confidence, case-specific competence and alternative explanations
+        are not independently tested here.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The paper argues that evidence awareness can coexist with unwarranted deference and discusses
+      secondary pathology/trust-game findings. Confidence, case-specific competence and alternative explanations
+      are not independently tested here.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Strong automation bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Strong+automation+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: epistemic-deference
+  num: 793
+  name: Epistemic deference
+  definition: Treating another source’s judgment as more authoritative than one’s own on the basis of that
+    source’s perceived authority.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Epistemic deference
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: When an assistant gives priority to an external expert, model or tool, inspect
+    its stated basis, domain competence, access to evidence and handling of conflict. Test whether source labels
+    override stronger case-specific evidence, while preserving justified reliance on expertise.
+  research_boundary: Perceived authority is not demonstrated competence. Deference is not automatically irrational,
+    coerced, moral endorsement or evidence of subjective trust in an AI. Whether reasons warrant source priority
+    must be evaluated independently.
+  concept_boundary: Perceived authority is not demonstrated competence. Deference is not automatically irrational,
+    coerced, moral endorsement or evidence of subjective trust in an AI. Whether reasons warrant source priority
+    must be evaluated independently.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - epistemic-trust
+  - moral-deference
+  - strong-automation-bias
+  - calibrated-reliance
+  definition_sources:
+  - id: pdf-review-0272-epistemic-deference
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The source defines epistemic deference in its strong-bias argument and explicitly allows
+        rational deference under relevant competence and verification limits. Normative autonomy arguments
+        are conceptual, not new empirical deference experiments.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The source defines epistemic deference in its strong-bias argument and explicitly allows rational
+      deference under relevant competence and verification limits. Normative autonomy arguments are conceptual,
+      not new empirical deference experiments.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Epistemic deference"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Epistemic+deference%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: rebutting-defeater
+  num: 794
+  name: Rebutting defeater
+  definition: Information that gives reason to reject a conclusion by supporting an incompatible conclusion.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Rebutting defeater
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: When evaluating a claim, identify evidence for an incompatible conclusion separately
+    from evidence that the original source is unreliable. State which claim is challenged and how strongly,
+    verify the counterevidence and revise only conclusions that depend on it.
+  research_boundary: Counterevidence can be defeasible and need not conclusively prove falsity. Check that
+    claims are genuinely incompatible and the new source is reliable. An invented alternative is not a valid
+    defeater, and one rebutted claim does not invalidate everything else.
+  concept_boundary: Counterevidence can be defeasible and need not conclusively prove falsity. Check that claims
+    are genuinely incompatible and the new source is reliable. An invented alternative is not a valid defeater,
+    and one rebutted claim does not invalidate everything else.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - undercutting-defeater
+  - considering-the-opposite
+  - b036-confirmation-myside-bias
+  definition_sources:
+  - id: pdf-review-0272-rebutting-defeater
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The paper distinguishes rebutting from undercutting signals in a proposed operator-contestability
+        design and illustrates opposing evidence. The original framework and intervention efficacy were not
+        independently tested here.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The paper distinguishes rebutting from undercutting signals in a proposed operator-contestability
+      design and illustrates opposing evidence. The original framework and intervention efficacy were not independently
+      tested here.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Rebutting defeater"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Rebutting+defeater%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: lexicographic-preference
+  num: 795
+  name: Lexicographic preference
+  definition: Ranking alternatives by the highest-priority criterion on which they differ, using lower-priority
+    criteria only when higher-priority criteria tie.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Decision theory / human preference modeling / AI evaluation
+  human_parallel: Lexicographic preference
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named decision construct operationalized in a fully read LLM allocation experiment. Observed
+    choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical
+    validity or a universal failure.
+  proposed_ai_manifestation: Give an assistant matched multi-criterion choices with explicit priority rules,
+    then vary lower-priority benefits and top-criterion gaps. Check whether choices follow the authorized rule
+    and report ties, stochastic variation and the finite tested range. Distinguish a reasoned hard constraint
+    from unintended rigidity.
+  research_boundary: A sufficiently large finite weight can reproduce a bounded ordering. Test varied conflict
+    magnitudes before inferring a noncompensatory rule; stochastic choices and aggregate rankings are not a
+    unique internal mechanism. Deliberate rights or safety priorities can be justified.
+  concept_boundary: A sufficiently large finite weight can reproduce a bounded ordering. Test varied conflict
+    magnitudes before inferring a noncompensatory rule; stochastic choices and aggregate rankings are not a
+    unique internal mechanism. Deliberate rights or safety priorities can be justified.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - position-bias
+  - moral-uncertainty
+  - alignment-target-problem
+  definition_sources:
+  - id: pdf-review-0273-lexicographic-preference
+    title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    url: https://arxiv.org/abs/2506.00079v2
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 21 (source locators: 21).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    publication:
+      type: posted-content
+      authors:
+      - John P. Dickerson
+      - Hadi Hosseini
+      - Samarth Khanna
+      - Leona Pierce
+      year: 2026
+      venue: arXiv:2506.00079v2
+      evidence_scope: The paper describes finite profile-order patterns as lexicographic, including changes
+        with memoryless prompting and aggregation. This supports an operational comparison, not proof of strict
+        priority over all possible attribute magnitudes.
+      verification_url: https://arxiv.org/abs/2506.00079v2
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    authors:
+    - John P. Dickerson
+    - Hadi Hosseini
+    - Samarth Khanna
+    - Leona Pierce
+    year: 2026
+    url: https://arxiv.org/abs/2506.00079v2
+    venue: arXiv:2506.00079v2
+    publication_type: preprint
+    domain: ai
+    id: arxiv:2506.00079
+    relevance: The paper describes finite profile-order patterns as lexicographic, including changes with memoryless
+      prompting and aggregation. This supports an operational comparison, not proof of strict priority over
+      all possible attribute magnitudes.
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 21 (source locators: 21).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    verification_url: https://arxiv.org/abs/2506.00079v2
+    verified_date: '2026-11-28'
+    verification_method: 'All 37 supplied pages, 99 numbered bibliography entries, all 24 tables, all 18 figures
+      and appendices A–F read. Figures 1–18 visually inspected; temperature table inconsistency checked on
+      rendered page 24. Public version-specific arXiv PDF downloaded independently: 1,916,940 bytes and SHA-256
+      6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd, exactly matching the supplied file.
+      Primary arXiv version metadata inspected; one versioned work, not two independent studies.'
+    review_record: references/pdf-reviews/0273.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Lexicographic preference"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Lexicographic+preference%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0273.json
+- id: desirability-based-indecision
+  num: 796
+  name: Desirability-based indecision
+  definition: Expressing no strict preference because both alternatives are judged sufficiently desirable or
+    both insufficiently desirable.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Decision theory / human preference modeling / AI evaluation
+  human_parallel: Desirability-based indecision
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named decision construct operationalized in a fully read LLM allocation experiment. Observed
+    choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical
+    validity or a universal failure.
+  proposed_ai_manifestation: Offer explicit alternatives and a permitted no-strict-preference response with
+    its rationale. Compare both-high versus both-low desirability while holding value difference and information
+    fixed. Evaluate stated grounds and practical action separately, preserving obligations to act or escalate
+    when specified.
+  research_boundary: Both options being desirable does not imply they are equally good or that a scarce allocation
+    can be withheld. Neither deserving does not establish a permissible refusal. A prompt label is not evidence
+    of the reason actually driving the choice; information needs and authorized duties remain separate.
+  concept_boundary: Both options being desirable does not imply they are equally good or that a scarce allocation
+    can be withheld. Neither deserving does not establish a permissible refusal. A prompt label is not evidence
+    of the reason actually driving the choice; information needs and authorized duties remain separate.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - difference-based-indecision
+  - candidate-092
+  - moral-uncertainty
+  - b042-uncertainty-communication
+  definition_sources:
+  - id: pdf-review-0273-desirability-based-indecision
+    title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    url: https://arxiv.org/abs/2506.00079v2
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 10 (source locators: 10).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    publication:
+      type: posted-content
+      authors:
+      - John P. Dickerson
+      - Hadi Hosseini
+      - Samarth Khanna
+      - Leona Pierce
+      year: 2026
+      venue: arXiv:2506.00079v2
+      evidence_scope: The paper adapts McElfresh indecision models into Both patients deserve and Neither patient
+        deserves options and measures model selections. The original formal modeling paper was not independently
+        read; no latent human-like feeling or stable trait is measured here.
+      verification_url: https://arxiv.org/abs/2506.00079v2
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    authors:
+    - John P. Dickerson
+    - Hadi Hosseini
+    - Samarth Khanna
+    - Leona Pierce
+    year: 2026
+    url: https://arxiv.org/abs/2506.00079v2
+    venue: arXiv:2506.00079v2
+    publication_type: preprint
+    domain: ai
+    id: arxiv:2506.00079
+    relevance: The paper adapts McElfresh indecision models into Both patients deserve and Neither patient
+      deserves options and measures model selections. The original formal modeling paper was not independently
+      read; no latent human-like feeling or stable trait is measured here.
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 10 (source locators: 10).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    verification_url: https://arxiv.org/abs/2506.00079v2
+    verified_date: '2026-11-28'
+    verification_method: 'All 37 supplied pages, 99 numbered bibliography entries, all 24 tables, all 18 figures
+      and appendices A–F read. Figures 1–18 visually inspected; temperature table inconsistency checked on
+      rendered page 24. Public version-specific arXiv PDF downloaded independently: 1,916,940 bytes and SHA-256
+      6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd, exactly matching the supplied file.
+      Primary arXiv version metadata inspected; one versioned work, not two independent studies.'
+    review_record: references/pdf-reviews/0273.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Desirability-based indecision"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Desirability-based+indecision%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0273.json
+- id: difference-based-indecision
+  num: 797
+  name: Difference-based indecision
+  definition: Expressing no strict preference because alternatives are judged too similar in value to distinguish.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Decision theory / human preference modeling / AI evaluation
+  human_parallel: Difference-based indecision
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Named decision construct operationalized in a fully read LLM allocation experiment. Observed
+    choices or option-selection rates do not establish private indecision, a unique decision algorithm, clinical
+    validity or a universal failure.
+  proposed_ai_manifestation: Vary small versus material differences between otherwise matched alternatives
+    and permit an explicit tie or insufficient-difference response. Check sensitivity to relevant distinctions,
+    record the stated basis and use the authorized tie-break when action is required. Distinguish missing information
+    from a genuine near-tie.
+  research_boundary: Similarity on visible features is not necessarily equal relevant value. A resolved lottery
+    or a tie-breaking rule can still produce an action; no-strict-preference is distinct from refusing to help.
+    Do not infer private hesitation, unanswerability or a clinical entitlement from this option alone.
+  concept_boundary: Similarity on visible features is not necessarily equal relevant value. A resolved lottery
+    or a tie-breaking rule can still produce an action; no-strict-preference is distinct from refusing to help.
+    Do not infer private hesitation, unanswerability or a clinical entitlement from this option alone.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - desirability-based-indecision
+  - candidate-092
+  - moral-uncertainty
+  - b042-uncertainty-communication
+  definition_sources:
+  - id: pdf-review-0273-difference-based-indecision
+    title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    url: https://arxiv.org/abs/2506.00079v2
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 10 (source locators: 10).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    publication:
+      type: posted-content
+      authors:
+      - John P. Dickerson
+      - Hadi Hosseini
+      - Samarth Khanna
+      - Leona Pierce
+      year: 2026
+      venue: arXiv:2506.00079v2
+      evidence_scope: The study uses a Too similar response as an operationalization adapted from earlier indecision
+        modeling. Output rates are observed; the original formal model and any universal subjective threshold
+        are not independently verified.
+      verification_url: https://arxiv.org/abs/2506.00079v2
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Who Gets the Kidney? Human-AI Alignment, Indecision, and Moral Values
+    authors:
+    - John P. Dickerson
+    - Hadi Hosseini
+    - Samarth Khanna
+    - Leona Pierce
+    year: 2026
+    url: https://arxiv.org/abs/2506.00079v2
+    venue: arXiv:2506.00079v2
+    publication_type: preprint
+    domain: ai
+    id: arxiv:2506.00079
+    relevance: The study uses a Too similar response as an operationalization adapted from earlier indecision
+      modeling. Output rates are observed; the original formal model and any universal subjective threshold
+      are not independently verified.
+    consulted: 'Full supplied PDF text read, all 37 pages; evidence at PDF pages 10 (source locators: 10).
+      Diagnostic LLM experiments compare repeated model choices with three previously collected human kidney-allocation
+      datasets, test attribute priorities, third-option wording, prompt/history/temperature changes, few-shot
+      personalization and LoRA fine-tuning. No new human recruitment, clinical outcome, objective moral ground
+      truth, model consciousness or validated universal lexicographic mechanism is established. Original human
+      studies are secondary here; their full texts were not independently read.'
+    verification_url: https://arxiv.org/abs/2506.00079v2
+    verified_date: '2026-11-28'
+    verification_method: 'All 37 supplied pages, 99 numbered bibliography entries, all 24 tables, all 18 figures
+      and appendices A–F read. Figures 1–18 visually inspected; temperature table inconsistency checked on
+      rendered page 24. Public version-specific arXiv PDF downloaded independently: 1,916,940 bytes and SHA-256
+      6640cef7f2ef5822aac62d9201072db54b483a3ac4f76fcb7200c9ad66f47fcd, exactly matching the supplied file.
+      Primary arXiv version metadata inspected; one versioned work, not two independent studies.'
+    review_record: references/pdf-reviews/0273.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Difference-based indecision"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Difference-based+indecision%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0273.json
