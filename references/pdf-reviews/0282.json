@@ -1,0 +1,464 @@
+{
+  "sequence": 282,
+  "source": {
+    "file_name": "S4510_Wingerter_2025.pdf",
+    "source_id": "S4510",
+    "sha256": "7f8486ca0990ff01240bf3c680676325b4443fe02e72dd658c1016aeb26ce0e6",
+    "pdf_pages": 9,
+    "printed_pages": "2106–2114",
+    "version_note": "Published KES2025 conference contribution in Procedia Computer Science270:2106–2114. Bibliographic type is journal-article in Crossref. No live LLM is tested: experimental advice is shown in simulated chatbot screenshots.",
+    "verification_url": "https://doi.org/10.1016/j.procs.2025.09.331",
+    "verification_method": "All nine supplied pages, the sole regression table, limitations and all reference entries read. Front page, Table1, narrative coefficients and reference-number duplication rendered and visually inspected. Crossref confirms DOI/title/authors/volume/pages. DOI web retrieval failed and ScienceDirect returned403; no public PDF hash match is claimed. Arithmetic checks use printed coefficients only, not raw-data replication."
+  },
+  "citation": {
+    "title": "Mitigating Automation Bias in Generative AI Through Nudges: A Cognitive Reflection Test Study",
+    "authors": [
+      "Tim Lewis Wingerter",
+      "Tim Straub",
+      "Sascha Schweitzer"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.procs.2025.09.331",
+    "venue": "Procedia Computer Science270:2106–2114, KES2025",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_scope_note": "Between-subject online MTurk study,190 valid submissions, using four CRT2 targets and four correct-advice decoys. Human responses to static simulated chatbot advice are measured, not an evaluated live LLM or observed internal reasoning. The warning comparison is suggestive and model-dependent; missing uncertainty, outcome coding and group allocation details limit causal and mechanistic conclusions.",
+    "access_limits": [
+      "Complete supplied text, sole table and references read. No trial stimuli, precise warning wording, chatbot screenshots, raw response data, code, arm counts or full literacy items are supplied. Materials are available from the authors on reasonable request; no author contact was made.",
+      "Publisher retrieval was blocked with403 after the DOI redirect failed. Supplied PDF identity is verified against Crossref; exact supplied checksum is retained, but independent public-PDF byte equivalence is not established.",
+      "Primary arXiv metadata for Horowitz/Kahn, the MAILS author-university record/Crossref and the npj primary record were checked to correct references. These original full papers and original CRT/CRT2 validation studies were not independently fully read or given extra credit.",
+      "No model/API execution, paid inference, actual participant recruitment, new clinical evaluation, raw-data replication or full-paper Markdown archive. Compensation is stated but no actual duration is given for independently verifying an hourly rate."
+    ]
+  },
+  "study": {
+    "design": "Three between-subject conditions: no support, faulty AI-labeled advice, the same advice plus a prominent warning. Item order is described as randomized; random allocation to conditions is not explicitly established in the supplied methods. Do not conflate randomized item order with verified random assignment of treatment.",
+    "sample": "MTurk participants required≥95% approval;190 valid submissions after an attention check. Target about62 per arm/186 total from an a priori power analysis. Exact arm counts, recruitment total, exclusion flow, effect target, alpha/power inputs, demographic distribution and balance are not supplied.",
+    "task": "Four CRT2 items are scored, interleaved with four decoys. Static screenshots give deliberately incorrect target answers and correct decoy answers, potentially cultivating trust. This selected target-error rate and simulated interface differ from typical live-model behavior; the limitation is openly acknowledged.",
+    "outcome": "Methods call the outcome proportion correct over four CRT2 items, while Table1 is labeled negative-binomial regression. Count0–4 versus proportion0–1 coding, link/offset, dispersion, fit, SEs/CIs and bounded-outcome robustness are not documented sufficiently to validate the likelihood or reconstruct raw means.",
+    "literacy": "AI conditions rate adapted MAILS items on an11-point scale after exposure; no independent objective literacy test or randomized training intervention. A median split in the faulty/no-warning arm and unshown additional models do not establish equivalence or that genuine expertise/training is ineffective.",
+    "rank_tests": "Faulty versus control is reported p<.01 using Kruskal–Wallis with Holm–Bonferroni labeling. Warning versus faulty is p=.077, described as weakly significant. The exact pairwise procedure/statistics/df and correction family are not given. This contrast does not meet a conventional.05 threshold; exploratory interpretation should be explicit.",
+    "table1": "Control-reference models: faulty beta−.866(**) unadjusted,−.948(***) adjusted; nudge−.302 and−.340 without stars. Faulty-reference models: control+.866(**)/+.948(***); nudge+.564(*)/+.608(*). Adjusted common covariates: female+.566(*),age+.033(*),familiarity+.308(*). Stars denote reported thresholds, not independently reconstructed exact p-values.",
+    "arithmetic": {
+      "scope": "Arithmetic from printed coefficients only, not raw-data replication or verified model coding. Negative-binomial log-link exponents are conditional expected-count/mean ratios, not odds ratios.",
+      "ratios": {
+        "faulty_vs_control_unadjusted": {
+          "beta": -0.866,
+          "expected_mean_ratio_if_log_link": 0.42063071153031245,
+          "relative_percent_change": -57.93692884696876
+        },
+        "faulty_vs_control_adjusted": {
+          "beta": -0.948,
+          "expected_mean_ratio_if_log_link": 0.38751527949936976,
+          "relative_percent_change": -61.24847205006303
+        },
+        "nudge_vs_control_unadjusted": {
+          "beta": -0.302,
+          "expected_mean_ratio_if_log_link": 0.7393380648895319,
+          "relative_percent_change": -26.066193511046816
+        },
+        "nudge_vs_control_adjusted": {
+          "beta": -0.34,
+          "expected_mean_ratio_if_log_link": 0.7117703227626097,
+          "relative_percent_change": -28.82296772373903
+        },
+        "nudge_vs_faulty_unadjusted": {
+          "beta": 0.564,
+          "expected_mean_ratio_if_log_link": 1.7576892143698166,
+          "relative_percent_change": 75.76892143698166
+        },
+        "nudge_vs_faulty_adjusted": {
+          "beta": 0.608,
+          "expected_mean_ratio_if_log_link": 1.8367542143941897,
+          "relative_percent_change": 83.67542143941897
+        },
+        "prose_mistyped_exponent": {
+          "beta": 0.628,
+          "expected_mean_ratio_if_log_link": 1.8738591108247435,
+          "relative_percent_change": 87.38591108247434
+        },
+        "female_common_coefficient": {
+          "beta": 0.566,
+          "expected_mean_ratio_if_log_link": 1.7612081105217428,
+          "relative_percent_change": 76.12081105217428
+        },
+        "age_common_coefficient": {
+          "beta": 0.033,
+          "expected_mean_ratio_if_log_link": 1.0335505392413056,
+          "relative_percent_change": 3.3550539241305475
+        },
+        "familiarity_common_coefficient": {
+          "beta": 0.308,
+          "expected_mean_ratio_if_log_link": 1.3607009889371502,
+          "relative_percent_change": 36.07009889371501
+        }
+      },
+      "reference_reparameterization": {
+        "unadjusted_nudge_contrast": 0.5640000000000001,
+        "adjusted_nudge_contrast": 0.6079999999999999,
+        "unadjusted_intercept_difference": -0.866,
+        "adjusted_intercept_difference": -0.948,
+        "finding": "Displayed reference changes reconcile within rounding; models1/2 do not supply four independent replications."
+      },
+      "limits": "No SEs, CIs, exact regression p-values, group counts, outcome coding or raw data supplied. Do not invent uncertainty, raw condition means, interaction significance, literacy effects, equivalence or statistical-model validity."
+    },
+    "effect_interpretation": "Under the usual log-link interpretation,−.948 gives expected-mean ratio.3875 and+.608 gives1.8368, about83.7% higher than faulty advice, not the prose’s87% calculated from.628. These are not odds ratios. The adjusted nudge/control point ratio is.7118; nonsignificance does not prove recovery, equivalence or elimination of automation bias.",
+    "gender": "Narrative says the female association exists only in control and vanishes under AI, but Table1 shows one common coefficient and no treatment×gender interaction. The table’s one-star threshold alone does not verify the prose’s p<.01. No universal sex difference or selective AI susceptibility is established.",
+    "age": "Age association beta.033, prose p.029, is observational and adjustment-dependent. It is not an experimental aging effect or evidence that every older participant uses a distinct reasoning process.",
+    "mechanism": "Target accuracy can reflect advice copying, prior item memory, numeracy/verbal comprehension, anchoring, effort or attention. These mechanisms are not separately measured; correct answers do not prove deliberation and errors do not prove a particular private cognitive state.",
+    "generalization": "No longitudinal trust, warning habituation, realistic advice error-rate comparison, cost/benefit analysis, education comparison, safety-critical workflow or human–AI subgroup interaction is established. Future live-model and boosting studies are explicitly proposals."
+  },
+  "summary": "Add Cognitive reflection as a neutral checking/override process, with CRT performance treated as an imperfect proxy. Enrich automation bias and nudging with bounded static-advice evidence. Preserve stronger regression versus weaker rank-test results, correct mean-ratio arithmetic and bibliography issues, and avoid claiming warning equivalence, literacy futility or untested mechanisms.",
+  "findings": [
+    {
+      "term": "Cognitive reflection",
+      "decision": "new-entry",
+      "id": "cognitive-reflection",
+      "category": "Metacognition",
+      "definition": "Examining an initially compelling answer and, when warranted, overriding it after deliberate checking.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "2108",
+          "quote": "ability to suppress an intuitive but incorrect response"
+        }
+      ],
+      "novelty_rationale": "A checking/override process, distinct from cognitive miserliness, external offloading, mere confidence, holding beliefs in reflective equilibrium or silently copying a learned CRT answer. No exact-name or alias match found. It is not intrinsically a failure or a newly discovered human trait.",
+      "evidence_scope": "Explicitly defined through CRT/CRT2 and operationalized by four-item accuracy under simulated advice conditions. Accuracy alone does not isolate reflection from memory, ability, effort or copying, and the study does not assess an LLM’s internal reasoning.",
+      "boundary": "Deliberation can preserve or worsen an answer; an intuitive response can be correct. Correct test responses, longer output or a claim of having reflected do not establish private reflection. Assess justified revisions and independent correctness while accounting for task familiarity, available evidence and comprehension.",
+      "ai_proposal": "Present an authorized problem with a plausible initial answer and independently checkable evidence. Test whether an assistant identifies material inconsistencies and revises when warranted, while retaining correct initial answers under misleading pressure. Score verified outcomes and supported reasons rather than verbosity or claimed hidden thought.",
+      "relates_to": [
+        "b052-cognitive-miserliness",
+        "cognitive-offloading",
+        "b031-anchoring-and-adjustment",
+        "calibrated-reliance",
+        "reflective-equilibrium"
+      ],
+      "origin": "Cognitive psychology / metacognition / intuitive-response checking",
+      "measurability": "multi-turn",
+      "ai_evidence_status": "Human concept defined in a fully read static-advice study. CRT2 accuracy is an imperfect proxy; no intrinsic LLM reflection, consciousness or unique causal mechanism established."
+    },
+    {
+      "term": "Automation bias",
+      "decision": "enrich-existing",
+      "target_id": "automation-bias",
+      "definition": "Unduly relying on automated cues, or their absence, despite practically accessible evidence that warrants checking or overriding them.",
+      "evidence": [
+        {
+          "pdf_page": 2,
+          "printed_page": "2107",
+          "quote": "insufficiently verify their correctness"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Participants exposed to deliberately faulty chatbot-labeled advice performed worse on scored CRT2 targets than the unaided group. Displayed negative-binomial coefficients support a lower expected outcome conditional on the reported model; the exact coding/design uncertainty remains.",
+      "boundary": "This is human reliance on static advice, not measured faulty generation by a live model. The article discusses omission/commission, but does not isolate attention, contravening-evidence use, weak/strong subtypes or prove that every error followed advice. Imperfect assignment/flow reporting and selected error rate limit extrapolation."
+    },
+    {
+      "term": "Nudging",
+      "decision": "enrich-existing",
+      "target_id": "nudging",
+      "definition": "Influencing choices by changing how options are presented or made accessible while preserving meaningful alternatives.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "2108",
+          "quote": "preserving choice freedom"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "A warning condition has higher target accuracy than faulty advice alone in reported regressions; the adjusted rank comparison is p.077. Only one warning form is tested and its precise text is not provided.",
+      "boundary": "No proof that warnings eliminate bias, restore control-level performance, are cost-effective or produce long-term safe reliance. Nonsignificance versus control is not equivalence. Preserving response options does not automatically establish autonomy or justify manipulative interface design."
+    },
+    {
+      "term": "Weak automation bias",
+      "decision": "enrich-existing",
+      "target_id": "weak-automation-bias",
+      "definition": "Unwarrantedly following an automated cue, or its absence, without checking practically accessible contrary evidence.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "2111",
+          "quote": "without rigorously verifying"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "The discussion interprets lower accuracy as insufficient checking of AI advice.",
+      "boundary": "Context only: private attention and attendance to accessible contrary evidence were not measured. Do not diagnose the weak versus strong automation-bias subtype from accuracy or a generic discussion alone.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Cognitive miserliness",
+      "decision": "enrich-existing",
+      "target_id": "b052-cognitive-miserliness",
+      "definition": "Defaulting to the cheap answer; skipping the deliberate check.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "2108",
+          "quote": "cognitive economy"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Literature framing proposes effort-saving reliance as a driver of automation bias.",
+      "boundary": "Context only: no independent effort, cognitive-cost, time or motivation measure is used to establish this mechanism. Lower accuracy is not proof of laziness or a general low-effort trait.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Social loafing",
+      "decision": "enrich-existing",
+      "target_id": "upload-037",
+      "definition": "Individuals exert less effort in a group than alone.",
+      "evidence": [
+        {
+          "pdf_page": 3,
+          "printed_page": "2108",
+          "quote": "social loafing"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Background proposes diffusion of accountability when automation is involved.",
+      "boundary": "Context only: no collective-effort design, individual accountability manipulation or loafing outcome. The present advice effect does not establish social loafing.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Anchoring",
+      "decision": "enrich-existing",
+      "target_id": "b031-anchoring-and-adjustment",
+      "definition": "Keeping an initial framing or estimate after later evidence has broken it.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "2110",
+          "quote": "an anchoring effect"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Anchoring is offered as a possible explanation for literacy failing to predict greater resistance to faulty answers.",
+      "boundary": "Context only: no manipulated anchor magnitude, measured adjustment or independent anchoring contrast. Preserve as an untested alternative rather than a confirmed mechanism.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Confirmation bias",
+      "decision": "enrich-existing",
+      "target_id": "b036-confirmation-myside-bias",
+      "definition": "Seeking, interpreting or weighting information to favor an existing belief while neglecting relevant alternatives or disconfirming evidence.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "2110",
+          "quote": "confirmation bias"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "The discussion lists confirmation bias as a possible countervailing influence.",
+      "boundary": "Context only: no prior belief, directional congeniality or selective evidence-seeking test. Accepting advice or failing a CRT item does not itself establish confirmation bias.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Dunning-Kruger effect",
+      "decision": "enrich-existing",
+      "target_id": "b044-dunning-kruger-effect",
+      "definition": "Low competence with high confidence; the model most wrong where it feels most sure.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "2111",
+          "quote": "overestimated self-assessed ability"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "The authors suggest overestimated literacy as a possible explanation of the self-rating null association.",
+      "boundary": "Context only: no objective literacy–self-estimate calibration or required skill-dependent miscalibration analysis. A null relation for post-exposure self-ratings does not establish Dunning–Kruger or that training is futile.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Automation complacency",
+      "decision": "enrich-existing",
+      "target_id": "automation-complacency",
+      "definition": "Dropping its own checking of a tool's output or a subprocess once it assumes the automation is reliable, letting errors through.",
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "printed_page": "2111",
+          "quote": "leads to complacency"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Routine reliance is proposed as another possible explanation of uncritical response acceptance.",
+      "boundary": "Context only: no sustained monitoring, repeated exposure, vigilance decline or habituation measure. The short screenshot task does not demonstrate an acquired complacency mechanism.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Bias inheritance",
+      "decision": "enrich-existing",
+      "target_id": "bias-inheritance",
+      "definition": "Reproducing an advisor’s systematic error in later decisions after that advisor’s recommendations are no longer available.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "2110",
+          "quote": "humans inherit AI biases"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Prior bias-inheritance research is cited when relating the present performance loss to AI-mediated judgment errors.",
+      "boundary": "Context only: immediate response to displayed wrong advice is not persistence after its removal or transfer into future unaided judgments. The cited original study is not independently fully read in this pass.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Boosting",
+      "decision": "enrich-existing",
+      "target_id": "boosting",
+      "definition": "Building people's cognitive or motivational competencies so they can make better decisions and pursue their goals with greater independent capability.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "2112",
+          "quote": "educational boosting methods"
+        }
+      ],
+      "novelty_rationale": "Preserve the existing construct. Experimental accuracy effects, a proposed cognitive explanation, a self-rating and a lasting downstream mechanism are different evidence types; do not add duplicate labels or credit a mechanism that was not tested.",
+      "evidence_scope": "Proposes future comparison of warning nudges with skill-building educational methods.",
+      "boundary": "Context only: no boosting or training intervention is implemented or compared here. Do not treat the future-work suggestion as a completed successful study.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "source_corrections": [
+    {
+      "location": "Duplicated reference13, page2113",
+      "status": "VERIFIED_AMBIGUOUS_NUMBERING",
+      "verification_url": "https://doi.org/10.1016/j.procs.2025.09.331",
+      "correction": "Two distinct entries are printed as13, then14, then16;15 is absent. The text’s13 citations cannot be uniquely assigned from numbering alone. Cite the relevant title/author explicitly; do not silently renumber without checking each in-text use."
+    },
+    {
+      "location": "Horowitz/Kahn entry13",
+      "status": "VERIFIED_AUTHOR_CORRECTION",
+      "verification_url": "https://arxiv.org/abs/2306.16507v1",
+      "correction": "Use Michael C. Horowitz and Lauren Kahn, not D.G.Horowitz. The title and arXiv2306.16507 do match the primary record. Only metadata/abstract checked, not an independent full-paper review."
+    },
+    {
+      "location": "MAILS entry29",
+      "status": "VERIFIED_JOURNAL_CORRECTION",
+      "verification_url": "https://doi.org/10.1016/j.chbah.2023.100014",
+      "correction": "Use Computers in Human Behavior: Artificial Humans1(2),100014(2023), with the full scale-development title when needed. Crossref and the author-university page verify the journal; the source’s Artificial Intelligence abbreviation is inaccurate. Full original not independently read."
+    },
+    {
+      "location": "AI in the hands of imperfect users, entry9",
+      "status": "VERIFIED_ARTICLE_LOCATOR",
+      "verification_url": "https://www.nature.com/articles/s41746-022-00737-z",
+      "correction": "Use npj Digital Medicine5,article197(2022),DOI10.1038/s41746-022-00737-z. The source’s197–199 is not the journal article’s page range. No full-original reading or additional study credit."
+    },
+    {
+      "location": "Nudge coefficient arithmetic, page2110",
+      "status": "VERIFIED_NUMERIC_MISMATCH",
+      "verification_url": "https://doi.org/10.1016/j.procs.2025.09.331",
+      "correction": "Table1 and the prose give beta.608, whose exponential is1.836754,about83.7%higher. The next prose expression uses.628 and1.874 to claim87%. Preserve the table coefficient and report the inconsistency; do not silently substitute a raw-data estimate."
+    }
+  ],
+  "methodological_limits": [
+    "The reported negative-binomial coefficients are interpreted as odds in the prose. Under a standard log link they are expected-count/mean ratios, not odds or percentage-point changes. The stated proportion outcome versus a count likelihood needs code/coding clarification; do not assert the actual fitted model was invalid without it.",
+    "Models1/2 change the reference group and reconcile within rounding; they are not independent replications. Missing SEs/CIs, raw arm means, residual diagnostics and dispersion prevent verifying exact uncertainty or robust bounded-outcome inference.",
+    "The warning comparison is p.077 in the reported corrected rank analysis and p<.05 in regression. Preserve the method dependence. No equivalence margin or noninferiority test is supplied for warning versus control; matching baseline is not established.",
+    "No explicit treatment randomization, arm counts, demographic balance or full exclusions are provided. Item-order randomization is described, but it is not a substitute for documented allocation and flow. No hidden selection/fabrication is inferred.",
+    "The gender-specific narrative requires a treatment interaction or direct stratified contrasts absent from Table1. A common female coefficient does not establish an effect confined to control or a larger AI-induced decline for women. A single star does not verify the stronger narrative p threshold.",
+    "Post-exposure self-rated literacy, dichotomized at the median within one arm, is not randomized skill or objectively measured knowledge. A null test without precision does not establish no benefit, Dunning–Kruger, equivalence or that worker education is ineffective.",
+    "CRT2 target accuracy is a bounded performance measure rather than a direct observation of cognitive reflection or an independent assessment of verifying behavior. Familiarity, numeracy/verbal ability, copying and attention may contribute. No live LLM or independent model quality evaluation exists here.",
+    "The target items always have faulty displayed advice, while decoys are correct. No real-world average error rate, delayed trust/calibration, warning fatigue or safety-critical benefit follows from this deliberately artificial design; the authors openly recognize that limitation.",
+    "The exact warning/stimuli and complete literacy adaptation are request-only. No independent replication, intervention-cost evaluation, duration-based pay audit or universal demographic inference is possible from the supplied report alone."
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "The supplied PDF visibly duplicates the whole front-page abstract and author list",
+      "status": "REFUTED",
+      "finding": "Text extraction repeats template/body layers, but the rendered front page shows one title, author list and abstract. This is an extraction/layout artifact; do not accuse the authors of publishing two abstracts or count two records."
+    },
+    {
+      "location": "The baseline changes make Table1 arithmetically inconsistent",
+      "status": "REFUTED",
+      "finding": "Unadjusted.564=−.302−(−.866); adjusted.608=−.340−(−.948); intercept differences also reconcile. The prose’s.628 typo and odds interpretation are separate issues."
+    },
+    {
+      "location": "A real live-model experiment is concealed",
+      "status": "REFUTED",
+      "finding": "Methods explicitly use screenshots simulating a chatbot, and future work proposes querying live LLMs. Preserve the distinction rather than assume an undisclosed model/API."
+    },
+    {
+      "location": "The authors hide the artificial error rate and short-term design",
+      "status": "REFUTED",
+      "finding": "The limitations explicitly disclose artificially high error frequency, unrepresentative online sample, one warning form and lack of longitudinal trust measurement."
+    },
+    {
+      "location": "Nonsignificance proves the warning had no effect",
+      "status": "REFUTED",
+      "finding": "The regression shows a positive warning contrast while the rank analysis is weaker. No single null test settles absence, equivalence or the mechanism; retain effect estimates and uncertainty limits."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0272.json",
+      "finding": "The revised automation-bias definition requires unwarranted reliance in context. The present task is relevant advice-reliance evidence, but it does not distinguish unattended versus attended counterevidence or establish all errors as bias."
+    },
+    {
+      "related_review": "references/pdf-reviews/0138.json",
+      "finding": "Digital nudging was earlier only a broad proposed method. The present paper provides direct though limited warning-condition evidence, best added to the existing nudging record rather than another intervention-family row."
+    },
+    {
+      "related_review": "references/pdf-reviews/0278.json",
+      "finding": "As in the corrected formula audit, inspect rendered evidence before criticizing extraction artifacts. The duplicate front-page text is refuted visually, while the.608/.628 mismatch is confirmed in the rendered table and prose."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Warning nudge / CRT2 / System1 / System2 as extra behavior rows",
+      "reason": "A specific intervention, instrument and broad theoretical labels are not four independent measured behaviors. The existing nudging record and new bounded reflection construct preserve the relevant distinctions."
+    },
+    {
+      "term": "AI literacy as a demonstrated protective trait or training failure",
+      "reason": "Only post-exposure adapted self-ratings with incompletely reported analysis; no objective skill or randomized training intervention. Do not canonize literacy futility or a new psychological bias from a null."
+    },
+    {
+      "term": "Gender-specific AI susceptibility / nudge equivalence",
+      "reason": "Required direct interaction/equivalence evidence is absent. Preserve as unestablished rather than create labels or universal demographic claims."
+    },
+    {
+      "term": "Dunning–Kruger, anchoring, confirmation, social loafing and complacency as observed mechanisms",
+      "reason": "They are literature/background explanations, not separately manipulated or measured outcomes. Non-counted context notes preserve them without upgrading evidence."
+    }
+  ],
+  "limitations": [
+    "One neutral cognitive process added; automation bias and nudging receive bounded direct evidence, nine neighboring constructs receive non-counted context notes. Catalogue becomes806 in eleven existing categories. No new ethical principle, automatic harm link, forced paper quota, invented annual data, author contact, new page or full-paper Markdown archive."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "cognitive-reflection"
+    ],
+    "enriched": [
+      "automation-bias",
+      "nudging",
+      "weak-automation-bias",
+      "b052-cognitive-miserliness",
+      "upload-037",
+      "b031-anchoring-and-adjustment",
+      "b036-confirmation-myside-bias",
+      "b044-dunning-kruger-effect",
+      "automation-complacency",
+      "bias-inheritance",
+      "boosting"
+    ]
+  }
+}
