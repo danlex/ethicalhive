@@ -125,8 +125,10 @@ def main():
             pub=source.get('publication')
             if not pub:
                 continue
-            if pub.get('type') not in ('journal-article','proceedings-article','posted-content'):
-                errors.append(f'{mid}: only reviewed paper types may be counted as research papers')
+            if pub.get('type') not in ('journal-article','proceedings-article','posted-content','book','book-chapter'):
+                errors.append(f'{mid}: unsupported publication type')
+            if pub.get('type') in ('book','book-chapter') and source.get('count_as_behaviour_paper') is not False:
+                errors.append(f'{mid}: book references must stay separate from research-paper counts')
             if not all(pub.get(key) for key in ('authors','year','venue','evidence_scope','verification_url','verified_date')):
                 errors.append(f'{mid}: research-paper record needs citation, scope and verification metadata')
             if not source.get('consulted'):

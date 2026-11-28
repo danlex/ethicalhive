@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 import yaml
-from catalogue_sources import research_papers, source_coverage, selected_papers, literature_search
+from catalogue_sources import PAPER_TYPES, research_papers, source_coverage, selected_papers, literature_search
 from literature_timeline_ui import timeline_placeholder, timeline_assets
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -254,10 +254,16 @@ def research_block(mode):
         out.append('<p class="research-note">Human definitions and AI proposals are separate. The analogy has not been tested in this research; clinical terms do not diagnose AI or establish feelings, unconscious motives or intent. Some conditioning evidence also comes from nonhuman animals.</p>')
         boundary=record.get('research_boundary',record.get('distinction_and_limits',''))
         if boundary:out.append('<p><b>Boundary and limits.</b> '+esc(boundary)+'</p>')
-        sources=[s for s in record.get('definition_sources',[]) if not s.get('publication')]
+        record_sources=record.get('definition_sources',[])
+        sources=([s for s in record_sources
+                  if s.get('publication',{}).get('type') not in PAPER_TYPES
+                  or s.get('count_as_behaviour_paper') is False]
+                 if not record.get('review_record') else [])
         if sources:
+            if any(s.get('publication',{}).get('type') in ('book','book-chapter') for s in sources):
+                out.append('<h4>Book and reference sources</h4>')
             out.append('<ul class="human-sources">'+''.join('<li><a href="'+esc(s['url'])+'">'+esc(s['title'])+'</a><br><small>Access: '+esc(s['consulted'])+'</small></li>' for s in sources)+'</ul>')
-        elif not research_papers(record):
+        elif not record_sources or record.get('source_check')=='pending-definition-source-check':
             out.append('<p><b>Source check pending.</b> The supplied attribution is a research lead, not a verified definition-source passage.</p>')
         provenance=record.get('research_provenance',record)
         contrib=provenance.get('contributions',[])
