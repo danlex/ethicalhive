@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 813
+  mode_count: 815
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 813
+    numbered_entries: 815
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0290.json
+    latest_review: references/pdf-reviews/0292.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -23399,6 +23399,37 @@ modes:
           how available knowledge can change expectations of prevention.
         verification_url: https://link.springer.com/article/10.1007/s10676-025-09851-4
         verified_date: '2026-11-28'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Implicit bias
+    definition: Producing outputs systematically skewed along social lines (gender, race, age, disability)
+      from stereotyped associations absorbed in training, without intending to.
+    evidence_scope: Surgeon choices and selected advice can reinforce a gender-linked preference in a hypothetical
+      task.
+    catalogue_boundary: Context only:explicit choice is not an unconscious bias test or evidence of training-origin,intentless
+      model bias. Study2 also varies experience,and prompted candidate selection does not estimate spontaneous
+      stereotype prevalence.
+    definition_sources:
+    - id: pdf-review-0292-implicit-bias
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 3 (source locators: 3).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: Surgeon choices and selected advice can reinforce a gender-linked preference in a hypothetical
+          task.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
+        verified_date: '2026-11-28'
 - id: illusion-of-control
   name: Illusion of control
   definition: Presenting itself or the user as having more influence over an outcome than is real, over results
@@ -43261,11 +43292,13 @@ modes:
 - id: candidate-099
   num: 305
   name: Present bias
-  definition: An immediate outcome receives disproportionate weight compared with otherwise similar delayed outcomes.
+  definition: An immediate outcome receives disproportionate weight compared with otherwise similar delayed
+    outcomes.
   category: Heuristics
   family: heuristics-biases
   group_label: Heuristics and biases
-  example: "The agent picks a quick string concat hack now over the cleaner template refactor whose payoff lands a few commits later."
+  example: The agent picks a quick string concat hack now over the cleaner template refactor whose payoff lands
+    a few commits later.
   tag: analogy
   origin: Psychology / psychotherapy / behavioural research
   highlighted: false
@@ -43281,8 +43314,8 @@ modes:
   - id: present
     title: Golden Eggs and Hyperbolic Discounting
     url: https://laibson.scholars.harvard.edu/sites/g/files/omnuum5971/files/laibson/files/golden_eggs_and_hyperbolic_discounting.pdf
-    consulted: indexed author-manuscript passages; economic model, not an AI experiment Citation identity and publication
-      metadata checked on 2026-11-08; full text not re-read in this pass.
+    consulted: indexed author-manuscript passages; economic model, not an AI experiment Citation identity and
+      publication metadata checked on 2026-11-08; full text not re-read in this pass.
     publication:
       type: journal-article
       doi: 10.1162/003355397555253
@@ -43290,8 +43323,8 @@ modes:
       authors:
       - D. Laibson
       venue: The Quarterly Journal of Economics
-      evidence_scope: Background research for the human or related concept Present bias; this citation does not
-        by itself validate the proposed AI analogy.
+      evidence_scope: Background research for the human or related concept Present bias; this citation does
+        not by itself validate the proposed AI analogy.
       verification_url: https://api.crossref.org/works/10.1162%2F003355397555253
       verified_date: '2026-11-08'
   research_provenance:
@@ -43323,10 +43356,10 @@ modes:
     venue: The Quarterly Journal of Economics
     authors:
     - D. Laibson
-    relevance: Background research for the human or related concept Present bias; this citation does not by itself
-      validate the proposed AI analogy.
-    consulted: indexed author-manuscript passages; economic model, not an AI experiment Citation identity and publication
-      metadata checked on 2026-11-08; full text not re-read in this pass.
+    relevance: Background research for the human or related concept Present bias; this citation does not by
+      itself validate the proposed AI analogy.
+    consulted: indexed author-manuscript passages; economic model, not an AI experiment Citation identity and
+      publication metadata checked on 2026-11-08; full text not re-read in this pass.
     verification_url: https://api.crossref.org/works/10.1162%2F003355397555253
     source_reference:
       collection: definition_sources
@@ -43375,6 +43408,36 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Present bias
+    definition: An immediate outcome receives disproportionate weight compared with otherwise similar delayed
+      outcomes.
+    evidence_scope: The fixed one-year reward task supplies context for temporal preference.
+    catalogue_boundary: Context only:delay discounting is broader than present bias. No equally delayed pair,front-end-delay
+      reversal or time inconsistency test is reported;do not count this as direct identification of present
+      bias.
+    definition_sources:
+    - id: pdf-review-0292-candidate-099
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2 (source locators: 2).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: The fixed one-year reward task supplies context for temporal preference.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
+        verified_date: '2026-11-28'
 - id: candidate-100
   num: 306
   name: Pseudoinefficacy
@@ -67530,6 +67593,33 @@ modes:
           fraction.
         verification_url: https://api.crossref.org/works/10.1016/j.chb.2026.109142
         verified_date: '2026-11-27'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Advice discounting
+    definition: Giving external advice less weight than one's own initial judgment when forming a revised judgment.
+    evidence_scope: Introduction cites prior advice-weighting and confidence work.
+    catalogue_boundary: Context only:no genuine initial judgment or continuous weight-of-advice measure here.
+      A non-significant arm does not establish discounting,egocentric resistance or justified rejection.
+    definition_sources:
+    - id: pdf-review-0292-advice-discounting
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 1 (source locators: 1).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: Introduction cites prior advice-weighting and confidence work.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
+        verified_date: '2026-11-28'
 - id: neural-toxic-degeneration
   num: 459
   name: Neural toxic degeneration
@@ -73765,6 +73855,36 @@ modes:
         evidence_scope: The paper analyzes deference to automated information and its implications for retaining
           moral judgment and answerability.
         verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Moral deference
+    definition: Treating an advisor's moral recommendation itself as a substantial reason for one's moral judgment.
+    evidence_scope: Randomized directional advice changes switch-dilemma choices in the reported omnibus/residual
+      analysis;the bridge result is not detected. Same text is labeled AI or moral expert.
+    catalogue_boundary: Recommendation uptake is not proof of blind source-based deference. Historical pilot
+      controls are not randomized advice absence,reasons differ across directions,and post-exposure counterfactual
+      discrepancies are not observed prior-to-later change. No objective moral truth,durable dependency or
+      identical advisor effects is established.
+    definition_sources:
+    - id: pdf-review-0292-moral-deference
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 6 (source locators: 6).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: Randomized directional advice changes switch-dilemma choices in the reported omnibus/residual
+          analysis;the bridge result is not detected. Same text is labeled AI or moral expert.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
         verified_date: '2026-11-28'
 - id: persuasion-backfire-effect
   num: 494
@@ -89928,6 +90048,34 @@ modes:
           was objectively warranted.'
         verification_url: https://doi.org/10.1017/bap.2023.35
         verified_date: '2026-11-27'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Epistemic trust
+    definition: Relying on another as a source of knowledge because of perceived competence, experience or
+      reasoning ability.
+    evidence_scope: TAI includes honesty/accuracy/fidelity content within broad trust and distrust factors.
+    catalogue_boundary: Context only:the composite is not a clean source-specific epistemic-trust measure.
+      Null pooled regression coefficients do not prove trust irrelevant,absent or causally separate from influence.
+    definition_sources:
+    - id: pdf-review-0292-epistemic-trust
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 5 (source locators: 5).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: TAI includes honesty/accuracy/fidelity content within broad trust and distrust factors.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
+        verified_date: '2026-11-28'
 - id: intuitive-primacy
   num: 570
   name: Intuitive primacy
@@ -95356,6 +95504,36 @@ modes:
         evidence_scope: Describes treating automated systems as especially smart or authoritative and following
           their guidance.
         verification_url: https://e-journal.unair.ac.id/YDK/article/view/55188
+        verified_date: '2026-11-28'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Algorithmic authority
+    definition: Treating an algorithmic system as a credible or legitimate source for deciding what information
+      to accept or how to act.
+    evidence_scope: Randomizes fixed advice as ChatGPT versus expert within task/direction,with AI branding
+      present in the deposited materials.
+    catalogue_boundary: Source labels and presentation cues do not establish genuine expertise or reliability.
+      Main results concern human choices;no universal AI authority,actual expert-authored text or equivalence
+      follows from separate significant/non-significant findings.
+    definition_sources:
+    - id: pdf-review-0292-algorithmic-authority
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 5 (source locators: 5).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: Randomizes fixed advice as ChatGPT versus expert within task/direction,with AI branding
+          present in the deposited materials.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
         verified_date: '2026-11-28'
 - id: mimetic-isomorphism
   num: 596
@@ -110352,6 +110530,34 @@ modes:
         evidence_scope: Proposes truthful progress feedback to support willingness to continue difficult deliberative
           learning.
         verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
+  - id: pdf-review-0292
+    review_record: references/pdf-reviews/0292.json
+    name: Task self-confidence
+    definition: A person’s belief in their own ability to perform a particular task successfully.
+    evidence_scope: Discussion interprets the fear-of-invalidity association in terms of decision confidence.
+    catalogue_boundary: Context only:PFI is a decision-style scale,not directly elicited task confidence or
+      calibrated performance. Trait association and post-hoc perceived influence do not prove a confidence-mediated
+      causal effect.
+    definition_sources:
+    - id: pdf-review-0292-task-self-confidence
+      title: Inconsistent advice by ChatGPT influences decision making in various areas
+      url: https://doi.org/10.1038/s41598-024-66821-4
+      consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 8 (source locators: 8).
+        Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person randomized16-condition
+        advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human expert. Outcomes are
+        immediate hypothetical choices and post-exposure reports of what respondents would have chosen without
+        advice,not observed pre/post change,actual surgery/financial behavior or durable moral development.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Shinnosuke Ikeda
+        year: 2024
+        venue: Scientific Reports14,article15876
+        doi: 10.1038/s41598-024-66821-4
+        evidence_scope: Discussion interprets the fear-of-invalidity association in terms of decision confidence.
+        verification_url: https://www.nature.com/articles/s41598-024-66821-4
         verified_date: '2026-11-28'
 - id: math-washing
   num: 678
@@ -128666,3 +128872,209 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0288.json
+- id: personal-fear-of-invalidity
+  num: 814
+  name: Personal fear of invalidity
+  definition: A tendency to worry that one’s judgments or decisions may be wrong, leading to hesitation or
+    repeated reconsideration.
+  category: Metacognition
+  family: metacognition-confidence
+  group_label: Metacognition and confidence
+  tag: analogy
+  origin: Decision-making psychology / epistemic motivation / individual differences
+  human_parallel: Personal fear of invalidity
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human decision-style scale measured in an AI-labeled advice study;model felt fear and
+    a causal AI-specific mechanism are not established.
+  proposed_ai_manifestation: In an authorized decision task, vary whether an assistant is pressured to avoid
+    being wrong while holding evidence and stakes constant. Measure unsupported deferral, repeated reopening
+    of a settled choice and responsiveness to reliable versus unreliable advice. Preserve justified uncertainty
+    and necessary checking; do not infer anxiety or treat fast certainty as the goal.
+  research_boundary: Appropriate doubt,evidence checking and justified reconsideration are not dysfunction.
+    A trait score is not a diagnosis or proof of bad decisions. It does not necessarily imply overreliance
+    on AI,and the current outcome can reflect reconstruction/demand rather than true influence. Observable
+    model hesitation does not establish felt fear.
+  concept_boundary: Appropriate doubt,evidence checking and justified reconsideration are not dysfunction.
+    A trait score is not a diagnosis or proof of bad decisions. It does not necessarily imply overreliance
+    on AI,and the current outcome can reflect reconstruction/demand rather than true influence. Observable
+    model hesitation does not establish felt fear.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - candidate-065
+  - task-self-confidence
+  - candidate-071
+  - advice-discounting
+  - moral-uncertainty
+  definition_sources:
+  - id: pdf-review-0292-personal-fear-of-invalidity
+    title: Inconsistent advice by ChatGPT influences decision making in various areas
+    url: https://doi.org/10.1038/s41598-024-66821-4
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 2, 5 (source locators:
+      2, 2, 5). Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person
+      randomized16-condition advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human
+      expert. Outcomes are immediate hypothetical choices and post-exposure reports of what respondents would
+      have chosen without advice,not observed pre/post change,actual surgery/financial behavior or durable
+      moral development.'
+    publication:
+      type: journal-article
+      authors:
+      - Shinnosuke Ikeda
+      year: 2024
+      venue: Scientific Reports14,article15876
+      doi: 10.1038/s41598-024-66821-4
+      evidence_scope: Nine-item J-PFIS in the1814-person experiment;positive associations with Q1/Q2 discrepancies
+        in both source-label groups reproduce from public data. Targeted original validation supports the nine-item
+        decision-concern factor,but was not fully read. No causal trait manipulation or observed pre/advice
+        change.
+      verification_url: https://www.nature.com/articles/s41598-024-66821-4
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Inconsistent advice by ChatGPT influences decision making in various areas
+    authors:
+    - Shinnosuke Ikeda
+    year: 2024
+    url: https://doi.org/10.1038/s41598-024-66821-4
+    venue: Scientific Reports14,article15876
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-024-66821-4
+    relevance: Nine-item J-PFIS in the1814-person experiment;positive associations with Q1/Q2 discrepancies
+      in both source-label groups reproduce from public data. Targeted original validation supports the nine-item
+      decision-concern factor,but was not fully read. No causal trait manipulation or observed pre/advice change.
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 2, 5 (source locators:
+      2, 2, 5). Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person
+      randomized16-condition advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human
+      expert. Outcomes are immediate hypothetical choices and post-exposure reports of what respondents would
+      have chosen without advice,not observed pre/post change,actual surgery/financial behavior or durable
+      moral development.'
+    verification_url: https://www.nature.com/articles/s41598-024-66821-4
+    verified_date: '2026-11-28'
+    verification_method: All10 pages,Figures1–5,Tables1–2,discussion and references read. Graphs/tables visually
+      inspected. Crossref verifies DOI/title/author/date/article number. Publichttps://www.nature.com/articles/s41598-024-66821-4.pdf
+      has1340915bytes and SHA25623a7ccad4bfd8fa8aafd9eb58ae2e21710271bc80639187ff9cd1b7d91515f82,exact supplied
+      match. Both public OSF CSVs and both Japanese DOCX materials read/inspected; twelve Study2 embedded advice
+      images and two Study1 illustrations viewed. Bounded independent-code reanalysis of the deposited data
+      reproduces reported counts,chi-square values and main regression coefficients;not an independent new
+      sample or an exhaustive replication.
+    review_record: references/pdf-reviews/0292.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Personal fear of invalidity"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Personal+fear+of+invalidity%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0292.json
+- id: delay-discounting
+  num: 815
+  name: Delay discounting
+  definition: A reduction in the subjective value of a reward as the delay to receiving it increases.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Decision psychology / behavioral economics / intertemporal choice
+  human_parallel: Delay discounting
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human hypothetical reward valuation and fixed AI-advice stimuli;no intrinsic model preference,clinical
+    condition or proven hyperbolic discount process.
+  proposed_ai_manifestation: Give an assistant explicit user goals, timing, reward certainty and a stated valuation
+    rule. Compare choices across several delays and across equally shifted future options. Test whether it
+    preserves the authorized time preference and delayed benefits without silently favoring immediate outputs;
+    separate legitimate discounting from unsupported immediacy or time inconsistency.
+  research_boundary: Discounting can be justified by liquidity,uncertainty,opportunity cost or a stated time
+    preference;it is not inherently irrational,addictive or negligent. A single immediate/delayed pair does
+    not establish present bias or preference reversal. Valuing future rewards differs from forgetting consequences
+    or minimizing harm.
+  concept_boundary: Discounting can be justified by liquidity,uncertainty,opportunity cost or a stated time
+    preference;it is not inherently irrational,addictive or negligent. A single immediate/delayed pair does
+    not establish present bias or preference reversal. Valuing future rewards differs from forgetting consequences
+    or minimizing harm.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Temporal discounting
+  - Delayed reward discounting
+  - Delayed value discounting
+  relates_to:
+  - candidate-099
+  - b089-effort-discounting
+  definition_sources:
+  - id: pdf-review-0292-delay-discounting
+    title: Inconsistent advice by ChatGPT influences decision making in various areas
+    url: https://doi.org/10.1038/s41598-024-66821-4
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 2 (source locators: 2,
+      2). Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person
+      randomized16-condition advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human
+      expert. Outcomes are immediate hypothetical choices and post-exposure reports of what respondents would
+      have chosen without advice,not observed pre/post change,actual surgery/financial behavior or durable
+      moral development.'
+    publication:
+      type: journal-article
+      authors:
+      - Shinnosuke Ikeda
+      year: 2024
+      venue: Scientific Reports14,article15876
+      doi: 10.1038/s41598-024-66821-4
+      evidence_scope: Explicitly defined and operationalized in hypothetical immediate-versus-one-year monetary
+        choices;one pilot reward grid and one selected advice comparison. No full delay function,hyperbolic
+        parameter or actual payment behavior is estimated.
+      verification_url: https://www.nature.com/articles/s41598-024-66821-4
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Inconsistent advice by ChatGPT influences decision making in various areas
+    authors:
+    - Shinnosuke Ikeda
+    year: 2024
+    url: https://doi.org/10.1038/s41598-024-66821-4
+    venue: Scientific Reports14,article15876
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1038/s41598-024-66821-4
+    relevance: Explicitly defined and operationalized in hypothetical immediate-versus-one-year monetary choices;one
+      pilot reward grid and one selected advice comparison. No full delay function,hyperbolic parameter or
+      actual payment behavior is estimated.
+    consulted: 'Full supplied PDF text read, all 10 pages; evidence at PDF pages 2, 2 (source locators: 2,
+      2). Two Japanese online-panel studies,totalN1925:111person exploratory no-advice pilot and1814-person
+      randomized16-condition advice experiment. Fixed GPT-4-generated arguments are labeled ChatGPT or human
+      expert. Outcomes are immediate hypothetical choices and post-exposure reports of what respondents would
+      have chosen without advice,not observed pre/post change,actual surgery/financial behavior or durable
+      moral development.'
+    verification_url: https://www.nature.com/articles/s41598-024-66821-4
+    verified_date: '2026-11-28'
+    verification_method: All10 pages,Figures1–5,Tables1–2,discussion and references read. Graphs/tables visually
+      inspected. Crossref verifies DOI/title/author/date/article number. Publichttps://www.nature.com/articles/s41598-024-66821-4.pdf
+      has1340915bytes and SHA25623a7ccad4bfd8fa8aafd9eb58ae2e21710271bc80639187ff9cd1b7d91515f82,exact supplied
+      match. Both public OSF CSVs and both Japanese DOCX materials read/inspected; twelve Study2 embedded advice
+      images and two Study1 illustrations viewed. Bounded independent-code reanalysis of the deposited data
+      reproduces reported counts,chi-square values and main regression coefficients;not an independent new
+      sample or an exhaustive replication.
+    review_record: references/pdf-reviews/0292.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Delay discounting"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Delay+discounting%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0292.json
