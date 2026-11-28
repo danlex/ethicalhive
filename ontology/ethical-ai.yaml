@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 818
+  mode_count: 819
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 818
+    numbered_entries: 819
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0298.json
+    latest_review: references/pdf-reviews/0300.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -4695,6 +4695,44 @@ modes:
           trust contrast. Two unadjusted headline differences are exploratory; lexical blame categories vary
           with wording.
         verification_url: https://doi.org/10.1007/978-3-031-35822-7_22
+        verified_date: '2026-11-28'
+  - id: pdf-review-0300
+    review_record: references/pdf-reviews/0300.json
+    name: Framing effect
+    definition: Differences in judgment or choice under alternative presentations of otherwise equivalent information.
+    evidence_scope: Medical, warehouse and urban settings yield different automation choices despite shared
+      game mechanics. The authors themselves note unmeasured differences in inferred harm, goods, vulnerability
+      and mental models.
+    catalogue_boundary: 'Context only: equivalent underlying code does not ensure equivalent information or
+      perceived stakes. Relevant contextual differences can justify different choices. The experiment does
+      not isolate a purely irrational presentation effect or show that ethical criteria should ignore context.'
+    definition_sources:
+    - id: pdf-review-0300-b035-framing-effect
+      title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+        to Perform a Task
+      url: https://doi.org/10.1109/TTS.2021.3118355
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 10 (source locators: 55).
+        43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+        reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+        in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+        incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+        but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Gian Luca Liehner
+        - Philipp Brauner
+        - Anne Kathrin Schaar
+        - Martina Ziefle
+        year: 2021
+        venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October
+          2021
+        doi: 10.1109/TTS.2021.3118355
+        evidence_scope: Medical, warehouse and urban settings yield different automation choices despite shared
+          game mechanics. The authors themselves note unmeasured differences in inferred harm, goods, vulnerability
+          and mental models.
+        verification_url: https://doi.org/10.1109/TTS.2021.3118355
         verified_date: '2026-11-28'
   concept_boundary: A frame that changes substantive facts can rationally change a judgment and is not automatically
     bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim
@@ -63960,6 +63998,43 @@ modes:
           beliefs were not elicited.
         verification_url: https://doi.org/10.1287/mnsc.2022.02774
         verified_date: '2026-11-28'
+  - id: pdf-review-0300
+    review_record: references/pdf-reviews/0300.json
+    name: Algorithm aversion
+    definition: Reluctance to use or accept algorithmic judgments or decisions relative to human judgment in
+      a comparable task.
+    evidence_scope: Discussion suggests underreliance because nominally 100% reliability produces 89.42% automation
+      choices, but acknowledges uncertainty about this interpretation.
+    catalogue_boundary: 'Context only: universal optimality is not established. Methods allow manual profit
+      10% above stated automation expectation, while historical reliability need not guarantee future perfection.
+      Do not count every manual choice as irrational aversion or add a duplicate refusal behavior.'
+    definition_sources:
+    - id: pdf-review-0300-algorithm-aversion
+      title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+        to Perform a Task
+      url: https://doi.org/10.1109/TTS.2021.3118355
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 10 (source locators: 55).
+        43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+        reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+        in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+        incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+        but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Gian Luca Liehner
+        - Philipp Brauner
+        - Anne Kathrin Schaar
+        - Martina Ziefle
+        year: 2021
+        venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October
+          2021
+        doi: 10.1109/TTS.2021.3118355
+        evidence_scope: Discussion suggests underreliance because nominally 100% reliability produces 89.42%
+          automation choices, but acknowledges uncertainty about this interpretation.
+        verification_url: https://doi.org/10.1109/TTS.2021.3118355
+        verified_date: '2026-11-28'
 - id: weak-evidence-effect
   num: 445
   name: Weak evidence effect
@@ -96657,6 +96732,45 @@ modes:
           rates are 34.9%, 52.6% and 36.3% for baseline, feedback and transparent conditions.
         verification_url: https://doi.org/10.1287/mnsc.2022.02774
         verified_date: '2026-11-28'
+  - id: pdf-review-0300
+    review_record: references/pdf-reviews/0300.json
+    name: Calibrated reliance
+    definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+      and the consequences of error.
+    evidence_scope: Participants make observed automate/manual choices under different reliability and harm
+      descriptions. Higher displayed reliability increases delegation, with a risk-by-reliability interaction.
+      The theory explicitly distinguishes appropriate trust from overuse and underuse.
+    catalogue_boundary: Reliability sensitivity is not proof of calibration. Manual options can have higher
+      expected payoff, actual reliability is represented by historical frequency, and injury costs matter.
+      Full delegation to nominally 100% automation is not a universal optimum. Hypothetical game success is
+      not established road or clinical safety.
+    definition_sources:
+    - id: pdf-review-0300-calibrated-reliance
+      title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+        to Perform a Task
+      url: https://doi.org/10.1109/TTS.2021.3118355
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 2 (source locators: 47).
+        43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+        reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+        in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+        incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+        but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+      publication:
+        type: journal-article
+        authors:
+        - Gian Luca Liehner
+        - Philipp Brauner
+        - Anne Kathrin Schaar
+        - Martina Ziefle
+        year: 2021
+        venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October
+          2021
+        doi: 10.1109/TTS.2021.3118355
+        evidence_scope: Participants make observed automate/manual choices under different reliability and
+          harm descriptions. Higher displayed reliability increases delegation, with a risk-by-reliability
+          interaction. The theory explicitly distinguishes appropriate trust from overuse and underuse.
+        verification_url: https://doi.org/10.1109/TTS.2021.3118355
+        verified_date: '2026-11-28'
 - id: environmental-rebound-effect
   num: 600
   name: Environmental rebound effect
@@ -98192,6 +98306,44 @@ modes:
           all headline means below50/100 and no significant aggregate overt/covert wording difference. The
           source treats trust as relevant to acceptance but does not measure actual reliance.
         verification_url: https://doi.org/10.1007/978-3-031-35822-7_22
+        verified_date: '2026-11-28'
+  - id: pdf-review-0300
+    review_record: references/pdf-reviews/0300.json
+    name: Performance trust
+    definition: Expecting an agent or system to perform competently and reliably in a relevant task.
+    evidence_scope: The study discusses reliability expectations and uses a local trust disposition scale,
+      observed delegation and postblock reliance reports. These measurements are explicitly separated in the
+      source.
+    catalogue_boundary: Observed use is an imperfect proxy for trust and can reflect payoffs, context or preference.
+      A five-item adaptation is not the unchanged original instrument, and self-reported support compliance
+      is not an objective advice-following measure. No machine feeling or independently validated deployment
+      competence is shown.
+    definition_sources:
+    - id: pdf-review-0300-performance-trust
+      title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+        to Perform a Task
+      url: https://doi.org/10.1109/TTS.2021.3118355
+      consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 3 (source locators: 48).
+        43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+        reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+        in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+        incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+        but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+      publication:
+        type: journal-article
+        authors:
+        - Gian Luca Liehner
+        - Philipp Brauner
+        - Anne Kathrin Schaar
+        - Martina Ziefle
+        year: 2021
+        venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October
+          2021
+        doi: 10.1109/TTS.2021.3118355
+        evidence_scope: The study discusses reliability expectations and uses a local trust disposition scale,
+          observed delegation and postblock reliance reports. These measurements are explicitly separated in
+          the source.
+        verification_url: https://doi.org/10.1109/TTS.2021.3118355
         verified_date: '2026-11-28'
 - id: animism
   num: 606
@@ -130131,3 +130283,115 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0296.json
+- id: risk-perception
+  num: 819
+  name: Risk perception
+  definition: The subjective appraisal of the likelihood and seriousness of potential harm.
+  category: Perception
+  family: perception-predictive-processing
+  group_label: Perception and predictive processing
+  tag: analogy
+  origin: Risk psychology / human factors / risk communication
+  human_parallel: Risk perception
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Human appraisal construct discussed in a fully read simulated-choice experiment; isolated
+    causal risk-perception effects and the proposed language-model test are not established.
+  proposed_ai_manifestation: Present an assistant with documented hazard information and ask it to distinguish
+    likelihood, severity, uncertainty and affected people. Vary contextual wording while holding relevant facts
+    fixed, then change the actual hazard evidence. Test whether revisions track evidence and relevant consequences;
+    do not score caution or lower adoption as failure by itself.
+  research_boundary: Subjective appraisal can accurately reflect evidence or be mistaken; it is not inherently
+    a bias. Perceived probability, severity, acceptability, affective reaction and willingness to take risk
+    are related but distinct. Relevant context can legitimately change an appraisal. A model’s risk statement
+    does not prove felt fear, objective danger or authority to act.
+  concept_boundary: Subjective appraisal can accurately reflect evidence or be mistaken; it is not inherently
+    a bias. Perceived probability, severity, acceptability, affective reaction and willingness to take risk
+    are related but distinct. Relevant context can legitimately change an appraisal. A model’s risk statement
+    does not prove felt fear, objective danger or authority to act.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms:
+  - Perceived risk
+  relates_to:
+  - perceived-ethical-risk
+  - risk-asymmetry-reasoning
+  - upload-071
+  - candidate-032
+  - calibrated-reliance
+  definition_sources:
+  - id: pdf-review-0300-risk-perception
+    title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+      to Perform a Task
+    url: https://doi.org/10.1109/TTS.2021.3118355
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 4 (source locators: 49,
+      49). 43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+      reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+      in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+      incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+      but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+    publication:
+      type: journal-article
+      authors:
+      - Gian Luca Liehner
+      - Philipp Brauner
+      - Anne Kathrin Schaar
+      - Martina Ziefle
+      year: 2021
+      venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October 2021
+      doi: 10.1109/TTS.2021.3118355
+      evidence_scope: Explicit theoretical definition and discussion in the fully read human-factors experiment.
+        Risk type and context affect simulated delegation,but the postblock item labeled risk perception asks
+        willingness to take risk rather than isolating perceived likelihood or severity. The cited original
+        risk review is not independently fully read.
+      verification_url: https://doi.org/10.1109/TTS.2021.3118355
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Delegation of Moral Tasks to Automated Agents—The Impact of Risk and Context on Trusting a Machine
+      to Perform a Task
+    authors:
+    - Gian Luca Liehner
+    - Philipp Brauner
+    - Anne Kathrin Schaar
+    - Martina Ziefle
+    year: 2021
+    url: https://doi.org/10.1109/TTS.2021.3118355
+    venue: IEEE Transactions on Technology and Society 3(1):46–57 (March 2022); first online 8 October 2021
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1109/tts.2021.3118355
+    relevance: Explicit theoretical definition and discussion in the fully read human-factors experiment. Risk
+      type and context affect simulated delegation,but the postblock item labeled risk perception asks willingness
+      to take risk rather than isolating perceived likelihood or severity. The cited original risk review is
+      not independently fully read.
+    consulted: 'Full supplied PDF text read, all 12 pages; evidence at PDF pages 4, 4 (source locators: 49,
+      49). 43 unpaid volunteers complete 108 counterbalanced computer-game decisions each, within person across
+      reliability, risk type, context and support-source labels. Binary automate/manual choices are observed
+      in a fictional delivery task; trust and risk items are self-reports. No actual robots, injuries, financial
+      incentives, live AI recommendations or clinical/road deployment. Reliability and context affect choices,
+      but payoff design, latent beliefs and reporting discrepancies constrain mechanism claims.'
+    verification_url: https://doi.org/10.1109/TTS.2021.3118355
+    verified_date: '2026-11-28'
+    verification_method: All12 supplied pages read,including all71 reference entries,full methods/results/discussion/limitations
+      and adapted trust items. All five figures,full-factorial table and image-only questionnaire appendix
+      actually viewed. Crossref and public RWTH record verify identity/issue/online date. IEEE reader and RWTH
+      PDF endpoint show anti-bot challenges;none bypassed and no public-PDF checksum match claimed. Printed-aggregate
+      ANOVA/payoff arithmetic checked without raw data or author code. Targeted NTSB public case summary and
+      selected reference metadata checked separately.
+    review_record: references/pdf-reviews/0300.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Risk perception"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Risk+perception%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0300.json
