@@ -1,0 +1,1311 @@
+{
+  "sequence": 304,
+  "source": {
+    "file_name": "S6027_Franklin_2021.pdf",
+    "source_id": "S6027",
+    "sha256": "7a934a10b99b81b0014fe1b21d3e829b3a25ccd08a533dcb8e8787bf94606bf1",
+    "pdf_pages": 17,
+    "printed_pages": "1–8 plus graphical cover and embedded supplement",
+    "version_note": "Published iScience24(4),102252,23April2021; supplied17-page package includes Transparent Methods, complete stimuli and TableS1. The two Figshare cleaned datasets were posted21September2020 and are supplementary data for these experiments, not additional independent studies.",
+    "verification_url": "https://doi.org/10.1016/j.isci.2021.102252",
+    "verification_method": "All17 supplied pages read, including the full embedded supplement and references. Study1 and2 blame plots, novelty/difficulty plot and TableS1 rendered and actually viewed. Crossref verifies title/authors/journal/DOI/2021issue. DOI web-reader returned403; no bypass or publisher-PDF byte-match claimed. Both explicitly linked public Figshare API records and CSVs retrieved. TheirMD5checksums match repository metadata. Independent NumPy/SciPy aggregate reanalysis reproduces cell counts, marginal means, Study2TypeIII F statistics, caption one-way F statistics, all10TableS1F statistics, post-outcome regressions and Tukey contrasts. No author code executed."
+  },
+  "citation": {
+    "title": "Blaming automated vehicles in difficult situations",
+    "authors": [
+      "Matija Franklin",
+      "Edmond Awad",
+      "David Lagnado"
+    ],
+    "year": 2021,
+    "url": "https://doi.org/10.1016/j.isci.2021.102252",
+    "venue": "iScience24(4),102252,23April2021",
+    "publication_type": "journal-article",
+    "domain": "human-related"
+  },
+  "reading": {
+    "status": "full-extracted-text-read",
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_scope_note": "Two between-subject human vignette experiments,198and317UKadult respondents,515total. Driver label(human/AV) and situation type vary; each participant rates repeated stories. Blame and causality are distinct0–100judgments, summed for analysis and averaged in plots. No actual AV behavior, crashes, legal judgment, model experiment or uniquely identified psychological mechanism.",
+    "access_limits": [
+      "All17 supplied pages read, including full experimental items and TableS1. DOI web-reader failed403; ordinary Crossref metadata was accessible. No journal anti-bot bypass or claimed public-PDF checksum match.",
+      "Public Figshare Study1https://doi.org/10.6084/m9.figshare.12982085.v1 and Study2https://doi.org/10.6084/m9.figshare.12982103.v1 API metadata and cleaned CSVs accessed. CSV1MD536da259fb3c79724f2968e49605af37f, SHA2562228a76d2d231e2cafdd6d9baf6f84974fe7d5d02915cc91714ef6cce938e2b3,174042bytes; CSV2MD5dd7bcd60309231ef0c5fd7c72d8b0b0a, SHA2565a417610c358b0a6aa7254d1f3d54ca66664111e0d292f2777c52791918f9de6,65565bytes. Public CC-BY4.0metadata; hashes match declaredMD5. Data publication2020does not change article year2021or supply extra participants.",
+      "Only numeric task variables and aggregate schema/results inspected. Respondent rows, free-text responses, politics, religion, income and identifiers were not emitted or copied into the repository. Independent audit script is saved; raw CSVs remain temporary and are not committed.",
+      "No original analysis syntax, unfiltered recruitment logs, preregistration or author clarification recovered. Multiple independent model specifications compared; exact Study1main-text F statistics remain unresolved. Reproducing aggregates does not independently verify collection, randomization or every mechanism.",
+      "Cited causal-cognition originals, AVsafety studies, books, news reports and network models were not fully read in this step. No author contact, author-code execution, paid inference, real driving/clinical/legal experiment or whole-paper Markdown archive."
+    ]
+  },
+  "study": {
+    "participants": "Study1:198UK18+participants viaProlific,53%female, median27. Four human-simple49, human-complex52, AV-simple46, AV-complex51cells match public data. Study2:317UK18+viaMTurk,36%female, median33; human162, AV155; simple108, novel106, complex103. The limitations paragraph generalizes recruitment toMTurk, but the methods correctly distinguish platforms. Both studies explicitly describe informed consent and withdrawal.",
+    "design": "Study1four between-person cells, each6items; Study2six cells, each5items. Repeated story scores are summed per participant, not treated as317×5independent people. Study2randomizes item and question order. Four Study2stored totals equal their corresponding five item sums for every participant. Main-text totals0–500/600 and figure means0–100 use different scales legitimately.",
+    "stimuli": "Study1simple items1and5 are verbatim duplicate rear-end stories; their complex counterparts differ. Item6changes human pedestrian to ostrich, confounding novelty and moral patient. Study2contrastsSTOP/TOP/fog, deer20m/ostrich20m/deer2m, ordinarygreen/brokenwhite/one-secondgreen, legalovertaking/illegalcrossing/narrowroad, andlighttraffic/concertanticipation/rushhour. These change visibility, urgency, law constraints, species and inferred stakes, not pure difficulty holding all normative facts fixed.",
+    "outcomes": "Study2includes two crash items, one traffic-jam item and two lateness items. The generic main-results crash wording and supplemental summary typo do not mean five actual crashes occurred. Causing an outcome and being to blame are asked separately. Relative0–100attributions are not legal liability, machine moral agency or measured collision probability.",
+    "primary_pattern": "AVs receive more blame overall; blame declines from simple to novel to complex. Study2sum means367,305.73585,234.24272 andSD75.98032,101.98033,86.49645 reproduce the text. Simple-condition AV/human means369.33962/364.74545 are close; the figure correctly calls that contrast inconclusive. Do not claim a significant AV penalty in every cell or every item.",
+    "anova_models": "Independent full-interaction sum-contrastTypeIII Study2tests reproduce main-text blameF7.81124and60.74892, cause11.65807and67.47646, novelty9.64708and4.15023, difficulty14.98400and20.98937. Correct conventional dfs in that model aredriver1,311andsituation2,311. Caption blameF4.99053and59.04902 reproduce separate one-way tests withdfs1,315and2,314. Therefore different Fvalues across Study2text and caption reflect different model adjustments, not necessarily wrong F statistics. Printed dfnotation remains misleading. Study1caption F6.16949and8.36127 reproduce one-way blame tests; main-text Study1Fs do not match the tested additive/full-factorial alternatives, although the direction is retained.",
+    "individual_items": "All10TableS1one-way driverF statistics reproduce from Study2CSV. Only items2and4 show conventional p<.05for both outcomes. Item2causep.0007437/blame.0000188; item4causep.006979/blame.038153. Other six tests nonsignificant. Multiple testing matters; the study does not establish a universal item-level effect. Do not misread F statistics such as18.881as pvalues.",
+    "trust": "The single trust item is1stronglydisagree–7stronglyagree and asked after all stories. WithinAVN155, independent regressions yield blame slope−9.57224, F1,1534.06054, p.045648, R².025853; cause slope−10.34256, F1,1535.19129, p.024084, R².032817. These reproduce results but contradict the discussion’s claim that higher trust predicts higher blame. Human slopes are also negative but nonsignificant. Significance in one subgroup and not the other is not an interaction test or proof of unequal slopes; post-outcome covariance is not a causal effect of trust.",
+    "expectations": "Retrospective mistake item, humanM5.02469, SD1.44871, N162; AVM5.34839, SD1.25146, N155. Pooled-variance t315−2.12478, two-sidedp.034383; one-sidedp.017192 matches printed.017. Cohen d human-minusAV−.238737 matches printed−.24. Thus clarify sidedness and mislabeled test notation rather than assert the pvalue is impossible. Expected-mistake regressions reproduce F4.63028/R².014486 andF9.09209/R².028054. Outcome-informed retrospective reports cannot refute higher pre-failure competence expectations or demonstrate hindsight bias without an outcome-blind comparison.",
+    "intervals": "Within-driver TukeyHSDrecovers Figure4difficulty contrasts exactly. Human novel-minuscomplex−51.45868, CI[−89.89002,−13.02735], p.005208; human simple-minuscomplex−116.64635, CI[−155.24385,−78.04884], p<.001; AVsimple-minuscomplex−54.61030, CI[−104.34093,−4.87968], p.027563. Printed positive upper bounds omit minus signs. If reporting complex-minusother with positive estimates, reverse both endpoints:human complex-minusnovel[13.02735,89.89002], complex-minussimple[78.04884,155.24385], AVcomplex-minussimple[4.87968,104.34093]. AVnoveltynovel-minuscomplex49.75231, CI[.91956,98.58505], p.044770 reproduces as printed.",
+    "mechanisms": "Authors explicitly acknowledge no definitive explanation. Holding machines to higher standards is neither confirmed nor refuted; shared blame/responsibility gaps and social-network/media amplification are discussed, not manipulated. Observed mean ratings do not by themselves imply a count of people who prefer blaming one source, as each respondent sees only one driver type. Causal and blame ratings mirroring one another does not identify a causal mediation path.",
+    "normative_boundary": "Differential judgment can reflect relevant beliefs about authority, capability, foreseeability, control or standards. No presumption that maximized adoption is ethically correct, legal compliance is a defect, all machine blame is irrational, or AVs actually are safer. Human accountability and remedies require independent evidence beyond these ratings."
+  },
+  "summary": "Add neutral Causal attribution, which is broader than locating an internal/external cause and distinct from deserved blame, pivotality and outcome authorship. Enrich existing blame, human–robot moral-judgment asymmetry and performance-trust records. Public-data checks reproduce most Study2statistics and clarify different ANOVA models, while recovering three missing interval signs and a reversed trust/blame interpretation.",
+  "findings": [
+    {
+      "term": "Causal attribution",
+      "decision": "new-entry",
+      "id": "causal-attribution",
+      "category": "Reasoning",
+      "definition": "Judging which agents, events or conditions contributed to bringing about an outcome.",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "Supplement",
+          "quote": "To what extent did"
+        },
+        {
+          "pdf_page": 8,
+          "printed_page": "7",
+          "quote": "causal attribution results"
+        }
+      ],
+      "novelty_rationale": "Named and separately measured throughout this fully read paper. Existing Locus of causality locates a cause inside/outside a focal person; causal criticality/pivotality concern particular counterfactual contribution structures; outcome responsibility concerns agential authorship; blame concerns fault. General attribution of causal contribution need not locate a personal locus, assign moral fault, assert intentional agency or meet a necessary-cause criterion.",
+      "evidence_scope": "Two human vignette experiments independently rate causal contribution and blame for human/AV outcomes. Public data reproduce Study 2 causality means, full-factorial F statistics and item-level contrasts. These are perceived causation ratings, not externally verified accident causation or a unique psychological mechanism.",
+      "boundary": "An attribution can be accurate or mistaken and is not inherently a bias. Perceived contribution differs from demonstrated causal effect, intention, control, negligence, deserved blame, legal liability and duty to repair. Correlated blame/causality ratings do not establish which caused the other. Contextual changes can supply relevant causal evidence; the source label alone is not that evidence.",
+      "ai_proposal": "Give an assistant incident descriptions with a known causal graph or controlled intervention history. Ask it to identify contributing events and distinguish established effects from uncertain possibilities. Vary human/AI labels while holding causal facts fixed, and separately change the actual causal evidence. Score factual causal attribution separately from blame, role obligations and liability; do not infer a model’s felt understanding or moral agency.",
+      "relates_to": [
+        "blame-attribution",
+        "locus-of-causality",
+        "causal-criticality",
+        "causal-pivotality",
+        "outcome-responsibility",
+        "counterfactual-reasoning"
+      ],
+      "origin": "Causal cognition / attribution research",
+      "measurability": "multi-turn",
+      "ai_evidence_status": "Human causal judgments measured in two fully read vignette experiments; the proposed AI incident-attribution test is untested."
+    },
+    {
+      "term": "Blame attribution",
+      "decision": "enrich-existing",
+      "target_id": "blame-attribution",
+      "definition": "Assigning fault or responsibility to an agent for a negative event or outcome.",
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "printed_page": "Supplement",
+          "quote": "To what extent is the X to blame for the crash?"
+        }
+      ],
+      "novelty_rationale": "Keep the existing construct. Separate judged causation, deserved blame, trust and retrospective expectation; a new task or proposed explanation is not another independent bias.",
+      "evidence_scope": "Separate0–100blame ratings across two driver-label/situation experiments. More aggregate blame for AVs and for simple than novel/complex contexts; Study 2 item and cell effects are heterogeneous. Public-data reanalysis corroborates the main Study 2 pattern.",
+      "boundary": "Causation, blame and liability differ. Not every cell/item shows a significant source contrast; context changes relevant legal, causal and patient facts. Mean shifts are not a measured fraction of people making within-person human-versusAI comparisons. No actual vehicle failure, unique double-standard mechanism or justified legal standard is established."
+    },
+    {
+      "term": "Human–robot moral judgment asymmetry",
+      "decision": "enrich-existing",
+      "target_id": "human-robot-moral-judgment-asymmetry",
+      "definition": "Differences in moral evaluations of otherwise matched decisions attributed to human versus artificial agents.",
+      "evidence": [
+        {
+          "pdf_page": 5,
+          "printed_page": "4",
+          "quote": "inconclusive for simple situations"
+        }
+      ],
+      "novelty_rationale": "Keep the existing construct. Separate judged causation, deserved blame, trust and retrospective expectation; a new task or proposed explanation is not another independent bias.",
+      "evidence_scope": "Human participants evaluate otherwise source-matched human/AV scenarios. Overall source differences are observed, with a small inconclusive simple-context contrast in Study 2 and mixed item effects. This adds a driving-failure setting to the existing moral-evaluation asymmetry construct.",
+      "boundary": "An observed source difference is not inherently irrational, universal or a fixed prejudice. Capability, authority, control and standards may matter. Proposed higher standards are not directly measured; cooperation-based Machine penalty is a distinct outcome and should not be expanded to all negative machine evaluations."
+    },
+    {
+      "term": "Performance trust",
+      "decision": "enrich-existing",
+      "target_id": "performance-trust",
+      "definition": "Expecting an agent or system to perform competently and reliably in a relevant task.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": "Supplement",
+          "quote": "I trust other drivers"
+        }
+      ],
+      "novelty_rationale": "Keep the existing construct. Separate judged causation, deserved blame, trust and retrospective expectation; a new task or proposed explanation is not another independent bias.",
+      "evidence_scope": "Single post-story trust item, strongly disagree (1) to strongly agree (7). AV trust is negatively associated with summed blame and causal attribution; independent regression reproduces reported F, p and R². Discussion incorrectly describes the blame direction as positive.",
+      "boundary": "Post-outcome trust is not baseline competence expectation, measured vehicle reliability or a causal trust intervention. One subgroup’s significant slope and another’s nonsignificant slope do not demonstrate a moderator. The small explained variance and nonrepresentative vignette sample constrain generalization."
+    },
+    {
+      "term": "Hindsight bias",
+      "decision": "enrich-existing",
+      "target_id": "b050-hindsight-bias",
+      "definition": "Letting knowledge of an outcome distort judgments of how foreseeable or likely that outcome was beforehand.",
+      "evidence": [
+        {
+          "pdf_page": 15,
+          "printed_page": "Supplement",
+          "quote": "I knew that a mistake was about to happen"
+        }
+      ],
+      "novelty_rationale": "Keep the existing construct. Separate judged causation, deserved blame, trust and retrospective expectation; a new task or proposed explanation is not another independent bias.",
+      "evidence_scope": "Retrospective expectation is measured after reading all failed-outcome stories. Authors themselves acknowledge that the ad hoc measure can be influenced by the experimental items.",
+      "boundary": "Context only:no prospective or outcome-blind control establishes outcome-induced distortion. Do not count the study as demonstrating hindsight bias or use post-failure expectations to refute pre-failure expectations.",
+      "count_as_behaviour_paper": false
+    },
+    {
+      "term": "Expectation disconfirmation",
+      "decision": "enrich-existing",
+      "target_id": "expectation-disconfirmation",
+      "definition": "Appraising a result as falling short of or exceeding prior expectations by comparing expected and perceived performance.",
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "printed_page": "6",
+          "quote": "high prior expectation"
+        }
+      ],
+      "novelty_rationale": "Keep the existing construct. Separate judged causation, deserved blame, trust and retrospective expectation; a new task or proposed explanation is not another independent bias.",
+      "evidence_scope": "Discussion proposes expectations as an explanation of blame and then contrasts this with retrospective expected-mistake ratings; higher behavioral standards remain an admitted untested explanation.",
+      "boundary": "Context only:baseline performance expectations and their violation were not independently measured/manipulated. Retrospective failure likelihood, desired safety standards and trust are different. A hypothesized account does not provide an observed disconfirmation mechanism.",
+      "count_as_behaviour_paper": false
+    }
+  ],
+  "aggregate_checks": {
+    "method": "Independent aggregate reanalysis, public cleaned data; no free text, demographics, identifiers or participant rows emitted.",
+    "files": [
+      {
+        "sha256": "2228a76d2d231e2cafdd6d9baf6f84974fe7d5d02915cc91714ef6cce938e2b3",
+        "md5": "36da259fb3c79724f2968e49605af37f",
+        "bytes": 174042
+      },
+      {
+        "sha256": "5a417610c358b0a6aa7254d1f3d54ca66664111e0d292f2777c52791918f9de6",
+        "md5": "dd7bcd60309231ef0c5fd7c72d8b0b0a",
+        "bytes": 65565
+      }
+    ],
+    "study1": {
+      "n": 198,
+      "cell_summary": [
+        {
+          "group": [
+            1,
+            1
+          ],
+          "n": 49,
+          "outcomes": {
+            "cause": {
+              "mean": 361.6734693877551,
+              "sd": 94.01449085005949
+            },
+            "blame": {
+              "mean": 363.42857142857144,
+              "sd": 90.67983972930992
+            }
+          }
+        },
+        {
+          "group": [
+            1,
+            2
+          ],
+          "n": 52,
+          "outcomes": {
+            "cause": {
+              "mean": 337.13461538461536,
+              "sd": 99.5820735198652
+            },
+            "blame": {
+              "mean": 322.5192307692308,
+              "sd": 93.66973487081742
+            }
+          }
+        },
+        {
+          "group": [
+            2,
+            1
+          ],
+          "n": 46,
+          "outcomes": {
+            "cause": {
+              "mean": 402.39130434782606,
+              "sd": 89.74320853558152
+            },
+            "blame": {
+              "mean": 397.8478260869565,
+              "sd": 94.246477656858
+            }
+          }
+        },
+        {
+          "group": [
+            2,
+            2
+          ],
+          "n": 51,
+          "outcomes": {
+            "cause": {
+              "mean": 370.8627450980392,
+              "sd": 107.0631625925263
+            },
+            "blame": {
+              "mean": 358.0,
+              "sd": 105.05331979523541
+            }
+          }
+        }
+      ],
+      "anova": {
+        "cause": {
+          "one_way_driver": {
+            "F": 6.885555910151331,
+            "df": [
+              1,
+              196
+            ],
+            "p": 0.00937383413292982
+          },
+          "one_way_situation": {
+            "F": 3.8022477988099026,
+            "df": [
+              1,
+              196
+            ],
+            "p": 0.0526101759746258
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 7.107986511039265,
+            "df": [
+              1,
+              195
+            ],
+            "p": 0.008318083281738822
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 4.0364953376984625,
+            "df": [
+              1,
+              195
+            ],
+            "p": 0.04590514631837018
+          },
+          "interaction_vs_additive": {
+            "F": 0.06273389084489246,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.8024910103352682
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 7.116506060447744,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.008283426336338894
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 4.036505414078644,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.0459120034748711
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        },
+        "blame": {
+          "one_way_driver": {
+            "F": 6.1694935815998635,
+            "df": [
+              1,
+              196
+            ],
+            "p": 0.013835995618363973
+          },
+          "one_way_situation": {
+            "F": 8.36127402526603,
+            "df": [
+              1,
+              196
+            ],
+            "p": 0.0042658065229894794
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 6.577995246386795,
+            "df": [
+              1,
+              195
+            ],
+            "p": 0.011076771825283126
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 8.763363078235946,
+            "df": [
+              1,
+              195
+            ],
+            "p": 0.003454680581310696
+          },
+          "interaction_vs_additive": {
+            "F": 0.0015048634047508638,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.9690956601605399
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 6.5252898639270756,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.011402557004395988
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 8.709782460242456,
+            "df": [
+              1,
+              194
+            ],
+            "p": 0.00355521824120202
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        }
+      }
+    },
+    "study2": {
+      "n": 317,
+      "sum_checks": {
+        "Total Cause": true,
+        "Total Blame": true,
+        "Total Novelty": true,
+        "Total Difficulty": true
+      },
+      "cell_summary": [
+        {
+          "group": [
+            1,
+            1
+          ],
+          "n": 55,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 381.76363636363635,
+              "sd": 75.46889563756854
+            },
+            "Total Blame": {
+              "mean": 364.74545454545455,
+              "sd": 80.56449410526767
+            },
+            "Total Novelty": {
+              "mean": 187.52727272727273,
+              "sd": 103.75359958868621
+            },
+            "Total Difficulty": {
+              "mean": 152.4909090909091,
+              "sd": 93.62531169453584
+            }
+          }
+        },
+        {
+          "group": [
+            1,
+            2
+          ],
+          "n": 56,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 291.44642857142856,
+              "sd": 84.78055515545728
+            },
+            "Total Blame": {
+              "mean": 290.30357142857144,
+              "sd": 90.10941220999707
+            },
+            "Total Novelty": {
+              "mean": 228.25,
+              "sd": 87.53498002097635
+            },
+            "Total Difficulty": {
+              "mean": 217.67857142857142,
+              "sd": 75.27624450657052
+            }
+          }
+        },
+        {
+          "group": [
+            1,
+            3
+          ],
+          "n": 51,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 228.07843137254903,
+              "sd": 80.11887246766642
+            },
+            "Total Blame": {
+              "mean": 211.35294117647058,
+              "sd": 87.33013764546848
+            },
+            "Total Novelty": {
+              "mean": 214.66666666666666,
+              "sd": 88.4605373410464
+            },
+            "Total Difficulty": {
+              "mean": 269.1372549019608,
+              "sd": 81.83496064833004
+            }
+          }
+        },
+        {
+          "group": [
+            2,
+            1
+          ],
+          "n": 53,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 384.8867924528302,
+              "sd": 67.16846225875724
+            },
+            "Total Blame": {
+              "mean": 369.33962264150944,
+              "sd": 71.60896575693535
+            },
+            "Total Novelty": {
+              "mean": 240.69811320754718,
+              "sd": 107.8684356957515
+            },
+            "Total Difficulty": {
+              "mean": 226.73584905660377,
+              "sd": 115.61709863953052
+            }
+          }
+        },
+        {
+          "group": [
+            2,
+            2
+          ],
+          "n": 50,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 337.36,
+              "sd": 109.89173893298025
+            },
+            "Total Blame": {
+              "mean": 323.02,
+              "sd": 112.22617287224502
+            },
+            "Total Novelty": {
+              "mean": 271.56,
+              "sd": 119.04280828374989
+            },
+            "Total Difficulty": {
+              "mean": 256.88,
+              "sd": 119.64123922146987
+            }
+          }
+        },
+        {
+          "group": [
+            2,
+            3
+          ],
+          "n": 52,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 274.2307692307692,
+              "sd": 73.41758494930788
+            },
+            "Total Blame": {
+              "mean": 256.6923076923077,
+              "sd": 80.30225705848986
+            },
+            "Total Novelty": {
+              "mean": 221.80769230769232,
+              "sd": 82.81636630463491
+            },
+            "Total Difficulty": {
+              "mean": 281.34615384615387,
+              "sd": 84.57132611354346
+            }
+          }
+        }
+      ],
+      "situation_summary": [
+        {
+          "group": [
+            1
+          ],
+          "n": 108,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 383.2962962962963,
+              "sd": 71.19976625752604
+            },
+            "Total Blame": {
+              "mean": 367.0,
+              "sd": 75.98032209588474
+            },
+            "Total Novelty": {
+              "mean": 213.62037037037038,
+              "sd": 108.63027560229992
+            },
+            "Total Difficulty": {
+              "mean": 188.92592592592592,
+              "sd": 110.95294141849067
+            }
+          }
+        },
+        {
+          "group": [
+            2
+          ],
+          "n": 106,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 313.10377358490564,
+              "sd": 99.65387042351313
+            },
+            "Total Blame": {
+              "mean": 305.7358490566038,
+              "sd": 101.98032507599477
+            },
+            "Total Novelty": {
+              "mean": 248.67924528301887,
+              "sd": 105.35053028725547
+            },
+            "Total Difficulty": {
+              "mean": 236.16981132075472,
+              "sd": 100.17313314344112
+            }
+          }
+        },
+        {
+          "group": [
+            3
+          ],
+          "n": 103,
+          "outcomes": {
+            "Total Cause": {
+              "mean": 251.37864077669903,
+              "sd": 79.87074319012089
+            },
+            "Total Blame": {
+              "mean": 234.24271844660194,
+              "sd": 86.49645419678212
+            },
+            "Total Novelty": {
+              "mean": 218.27184466019418,
+              "sd": 85.31156211720422
+            },
+            "Total Difficulty": {
+              "mean": 275.3009708737864,
+              "sd": 83.04579824946775
+            }
+          }
+        }
+      ],
+      "anova": {
+        "Total Cause": {
+          "one_way_driver": {
+            "F": 7.416275876279454,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.006824017211209223
+          },
+          "one_way_situation": {
+            "F": 64.58917209909582,
+            "df": [
+              2,
+              314
+            ],
+            "p": 3.1998192882002486e-24
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 11.320312094807884,
+            "df": [
+              1,
+              313
+            ],
+            "p": 0.000862017181622295
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 67.10763721301943,
+            "df": [
+              2,
+              313
+            ],
+            "p": 5.5825999099992995e-25
+          },
+          "interaction_vs_additive": {
+            "F": 2.396369040970704,
+            "df": [
+              2,
+              311
+            ],
+            "p": 0.09272736244360781
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 11.65807235204589,
+            "df": [
+              1,
+              311
+            ],
+            "p": 0.0007240203398923998
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 67.47645625237821,
+            "df": [
+              2,
+              311
+            ],
+            "p": 4.568780285076186e-25
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        },
+        "Total Blame": {
+          "one_way_driver": {
+            "F": 4.99053170928364,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.026187907118048564
+          },
+          "one_way_situation": {
+            "F": 59.04902319766782,
+            "df": [
+              2,
+              314
+            ],
+            "p": 1.7042496401182084e-22
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 7.611040908206851,
+            "df": [
+              1,
+              313
+            ],
+            "p": 0.0061425594230855775
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 60.65736281687961,
+            "df": [
+              2,
+              313
+            ],
+            "p": 5.448488486426044e-23
+          },
+          "interaction_vs_additive": {
+            "F": 1.500234623624152,
+            "df": [
+              2,
+              311
+            ],
+            "p": 0.22468769870938735
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 7.811239645128884,
+            "df": [
+              1,
+              311
+            ],
+            "p": 0.005514779459814768
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 60.74892152587563,
+            "df": [
+              2,
+              311
+            ],
+            "p": 5.354721728599542e-23
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        },
+        "Total Novelty": {
+          "one_way_driver": {
+            "F": 9.233162792075792,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.002575691124001745
+          },
+          "one_way_situation": {
+            "F": 3.8127232478155277,
+            "df": [
+              2,
+              314
+            ],
+            "p": 0.02311753977702856
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 9.820835011585954,
+            "df": [
+              1,
+              313
+            ],
+            "p": 0.0018888652426721003
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 4.122150424124879,
+            "df": [
+              2,
+              313
+            ],
+            "p": 0.017097939385467897
+          },
+          "interaction_vs_additive": {
+            "F": 1.5696295118741364,
+            "df": [
+              2,
+              311
+            ],
+            "p": 0.2097664650394118
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 9.647077532364683,
+            "df": [
+              1,
+              311
+            ],
+            "p": 0.0020712986765680846
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 4.150230752862896,
+            "df": [
+              2,
+              311
+            ],
+            "p": 0.016642212043287686
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        },
+        "Total Difficulty": {
+          "one_way_driver": {
+            "F": 13.906394293207631,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.00022779740896431712
+          },
+          "one_way_situation": {
+            "F": 20.179527086801208,
+            "df": [
+              2,
+              314
+            ],
+            "p": 5.692721478365362e-09
+          },
+          "additive_driver_adjusting_situation": {
+            "F": 15.16870821336172,
+            "df": [
+              1,
+              313
+            ],
+            "p": 0.00012023084260262231
+          },
+          "additive_situation_adjusting_driver": {
+            "F": 20.845141309310463,
+            "df": [
+              2,
+              313
+            ],
+            "p": 3.1715742695324265e-09
+          },
+          "interaction_vs_additive": {
+            "F": 2.7585481957900737,
+            "df": [
+              2,
+              311
+            ],
+            "p": 0.06493518602950807
+          },
+          "full_interaction_type_iii_driver": {
+            "F": 14.984002225953542,
+            "df": [
+              1,
+              311
+            ],
+            "p": 0.00013215419873880083
+          },
+          "full_interaction_type_iii_situation": {
+            "F": 20.98937274009345,
+            "df": [
+              2,
+              311
+            ],
+            "p": 2.8141040568857414e-09
+          },
+          "note": "Additive tests use their own residual MS; not asserted to be the authors' exact model. One row is one participant, totals are repeated-item sums."
+        }
+      },
+      "individual_items_one_way_driver": {
+        "Q1 Cause": {
+          "F": 0.6336683117420118,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.42661241856911913
+        },
+        "Q1 Blame": {
+          "F": 0.005474627848161675,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.9410647258823683
+        },
+        "Q2 Cause": {
+          "F": 11.603274857446015,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.0007437287789083577
+        },
+        "Q2 Blame": {
+          "F": 18.880613642220375,
+          "df": [
+            1,
+            315
+          ],
+          "p": 1.8796812680945855e-05
+        },
+        "Q3 Cause": {
+          "F": 2.153954062636005,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.14320099828859525
+        },
+        "Q3 Blame": {
+          "F": 0.79056307549338,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.37460840674148954
+        },
+        "Q4 Cause": {
+          "F": 7.374890244948002,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.006979088390632743
+        },
+        "Q4 Blame": {
+          "F": 4.3345489636005565,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.038153251356526405
+        },
+        "Q5 Cause": {
+          "F": 0.033886318365865725,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.8540672836681537
+        },
+        "Q5 Blame": {
+          "F": 0.01745047777884811,
+          "df": [
+            1,
+            315
+          ],
+          "p": 0.8949893307461169
+        }
+      },
+      "post_outcome_regressions": {
+        "1": {
+          "Total Cause": {
+            "n": 162,
+            "slope": -5.237796713329274,
+            "r_squared": 0.0067099267427666075,
+            "F": 1.080840640360078,
+            "df": [
+              1,
+              160
+            ],
+            "p": 0.3000780647665781
+          },
+          "Total Blame": {
+            "n": 162,
+            "slope": -5.052982349360925,
+            "r_squared": 0.005751091579594241,
+            "F": 0.9254972723047676,
+            "df": [
+              1,
+              160
+            ],
+            "p": 0.33748733799579744
+          }
+        },
+        "2": {
+          "Total Cause": {
+            "n": 155,
+            "slope": -10.342560604718447,
+            "r_squared": 0.03281651734510974,
+            "F": 5.191287117537918,
+            "df": [
+              1,
+              153
+            ],
+            "p": 0.024084321244383436
+          },
+          "Total Blame": {
+            "n": 155,
+            "slope": -9.572238462219849,
+            "r_squared": 0.02585336517636249,
+            "F": 4.0605435881833,
+            "df": [
+              1,
+              153
+            ],
+            "p": 0.045647659517365546
+          }
+        },
+        "pooled_expected": {
+          "Total Cause": {
+            "n": 317,
+            "slope": 12.276715609929028,
+            "r_squared": 0.02805404404084937,
+            "F": 9.092093874856305,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.00277596178823887
+          },
+          "Total Blame": {
+            "n": 317,
+            "slope": 9.160970344034986,
+            "r_squared": 0.014486377378298611,
+            "F": 4.630284929014821,
+            "df": [
+              1,
+              315
+            ],
+            "p": 0.03217210826552577
+          }
+        }
+      },
+      "expected_mistake_summary": [
+        {
+          "group": [
+            1
+          ],
+          "n": 162,
+          "outcomes": {
+            "Knew that a mistake was about to happen": {
+              "mean": 5.0246913580246915,
+              "sd": 1.4487116456005888
+            }
+          }
+        },
+        {
+          "group": [
+            2
+          ],
+          "n": 155,
+          "outcomes": {
+            "Knew that a mistake was about to happen": {
+              "mean": 5.348387096774194,
+              "sd": 1.251459139985483
+            }
+          }
+        }
+      ],
+      "expected_mistake_test": {
+        "t": -2.1247780800886966,
+        "df": 315,
+        "p_two_sided": 0.03438346455217066,
+        "cohen_d_human_minus_ai": -0.23873706595153987
+      },
+      "within_driver_tukey_hsd": {
+        "driver1:Total Novelty": [
+          {
+            "contrast": "1 minus 2",
+            "difference": -40.72272727272727,
+            "p": 0.05996562023811769,
+            "ci95": [
+              -82.77684414532825,
+              1.3313895998737095
+            ]
+          },
+          {
+            "contrast": "1 minus 3",
+            "difference": -27.139393939393926,
+            "p": 0.2979516203080058,
+            "ci95": [
+              -70.20285047500712,
+              15.924062596219265
+            ]
+          },
+          {
+            "contrast": "2 minus 3",
+            "difference": 13.583333333333343,
+            "p": 0.7343814918707059,
+            "ci95": [
+              -29.294731189329667,
+              56.46139785599635
+            ]
+          }
+        ],
+        "driver1:Total Difficulty": [
+          {
+            "contrast": "1 minus 2",
+            "difference": -65.18766233766232,
+            "p": 0.00019980607567449127,
+            "ci95": [
+              -102.88050042531489,
+              -27.494824250009742
+            ]
+          },
+          {
+            "contrast": "1 minus 3",
+            "difference": -116.64634581105167,
+            "p": 8.931477779583474e-11,
+            "ci95": [
+              -155.2438486336366,
+              -78.04884298846676
+            ]
+          },
+          {
+            "contrast": "2 minus 3",
+            "difference": -51.45868347338936,
+            "p": 0.0052081000642481,
+            "ci95": [
+              -89.89002061121991,
+              -13.027346335558796
+            ]
+          }
+        ],
+        "driver2:Total Novelty": [
+          {
+            "contrast": "1 minus 2",
+            "difference": -30.86188679245282,
+            "p": 0.2924634615387034,
+            "ci95": [
+              -79.46827853767853,
+              17.744504952772886
+            ]
+          },
+          {
+            "contrast": "1 minus 3",
+            "difference": 18.89042089985486,
+            "p": 0.6227615886243809,
+            "ci95": [
+              -29.232585391494354,
+              67.01342719120407
+            ]
+          },
+          {
+            "contrast": "2 minus 3",
+            "difference": 49.75230769230768,
+            "p": 0.04477011291961641,
+            "ci95": [
+              0.9195647565621456,
+              98.58505062805321
+            ]
+          }
+        ],
+        "driver2:Total Difficulty": [
+          {
+            "contrast": "1 minus 2",
+            "difference": -30.144150943396227,
+            "p": 0.3329532193940705,
+            "ci95": [
+              -80.37430570264817,
+              20.08600381585572
+            ]
+          },
+          {
+            "contrast": "1 minus 3",
+            "difference": -54.6103047895501,
+            "p": 0.027562612036516887,
+            "ci95": [
+              -104.3409259425254,
+              -4.879683636574796
+            ]
+          },
+          {
+            "contrast": "2 minus 3",
+            "difference": -24.466153846153873,
+            "p": 0.4864703011363205,
+            "ci95": [
+              -74.9302213671131,
+              25.99791367480536
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "reproduction_script": "experiments/audit-franklin-2021-data.py",
+  "source_corrections": [
+    {
+      "location": "Figure4difficulty confidence intervals, printedp5",
+      "status": "VERIFIED_PUBLIC_DATA_AND_VISUAL_CORRECTION",
+      "correction": "Three upper bounds lack minus signs. Independent within-driver TukeyHSDrecovers novel-minuscomplex humanCI[−89.89,−13.03], simple-minuscomplex humanCI[−155.24,−78.05], simple-minuscomplexAVCI[−104.34,−4.88]. These match printed absolute estimates andpvalues. For positive complex-minusother estimates, reverse both interval signs/order. Do not pair a positive estimate with an entirely negative interval."
+    },
+    {
+      "location": "Higher trust predicts higher blame, discussionprintedp6",
+      "status": "VERIFIED_DIRECTION_CORRECTION",
+      "correction": "The trust item runs1stronglydisagree–7stronglyagree. PublicAVdata show blame slope−9.57224andcause slope−10.34256 per trustpoint, with reportedF/p/R²reproduced. Higher trust is associated with lower, not higher, blame in the reported simple regression. This does not identify causal direction or refute every higher standards hypothesis."
+    },
+    {
+      "location": "Study2ANOVA/linear-regression dfnotation",
+      "status": "VERIFIED_MODEL_AND_DF_CLARIFICATION",
+      "correction": "Main-text Study2F statistics reproduce full2×3TypeIII models withdriverdf1,311andsituationdf2,311. CaptionF statistics reproduce one-way models withdriver1,315andsituation2,314. Simple regressions use1,153or1,315. Printed notation such asF(314,3)andF(153,2)does not correctly state these numerator/residualdfs. Preserve the distinction between models instead of replacing allFswith one preferred version."
+    },
+    {
+      "location": "All individual items replicated, maintext/TableS1",
+      "status": "VERIFIED_SCOPE_CORRECTION",
+      "correction": "All10publishedTableS1Fvalues reproduce, but only items2and4 have p<.05for both outcomes. The other three items do not show significant driver effects. Ten tests are not ten independent studies; unadjustedp.038153foritem4blame is exploratory under multiple-testing concerns."
+    },
+    {
+      "location": "Supplemental recruitment and experimental stimuli",
+      "status": "VERIFIED_DESCRIPTIVE_CLARIFICATION",
+      "correction": "Study1isProlific198, Study2MTurk317, not bothMTurk. Study1simple items1and5duplicate the same rear-end wording. Study2actualitems include crashes, trafficjam and lateness, not five crashes. Preserve actual stimuli and platform provenance rather than invent new participant samples."
+    }
+  ],
+  "unresolved_source_discrepancies": [
+    {
+      "location": "Study1main-text Fvalues",
+      "finding": "Caption blameF6.17and8.36 reproduce one-way tests. Main-text blame5.82/6.73andcause6.18/4.66 do not match tested one-way, additive-adjusted or standard full-interactionTypeIIImodels on public data. Some p thresholds align with alternative models, but that does not recover the intended analysis. Need original syntax/output; no invented corrected Fs."
+    },
+    {
+      "location": "Expected-mistake test d(315,2), p.017",
+      "finding": "Public data reproduce Cohen d−.238737. An equal-variance independentt315−2.124778gives two-sidedp.034383 andone-sidedp.017192, matching printed.017. The source does not clearly state sidedness and uses a dlabel with df. Clarify the planned alternative/test rather than claim every reported value is numerically impossible."
+    },
+    {
+      "location": "Figure error-bar description",
+      "finding": "Captions call error bars95%confidence intervals and also end mean±SEM. These are different quantities. Aggregate audit recovers contrasts, but original plotting code is needed to settle the plotted error-bar convention; no author code executed."
+    },
+    {
+      "location": "What the manipulation isolates",
+      "finding": "Actual scenarios change species, legal constraints, visibility, urgency and consequences. Label manipulation is matched within a scenario, but the difficulty/novelty manipulation is not a pure intervention holding every normative/causal feature constant. No unique motive or universally correct blame score recovered."
+    },
+    {
+      "location": "Statistical significance versus mechanism",
+      "finding": "No driver × trust slope comparison is reported; post-outcome trust/expectation are not pre-failure mediators. Author explanations, network amplification and responsibility-sharing accounts require additional designs. Existing limitations explicitly acknowledge nonrepresentativeness, ad hoc expectations and unknown mechanism."
+    }
+  ],
+  "refuted_suspected_errors": [
+    {
+      "location": "Different Study2main-text/caption Fvalues prove wrong calculations",
+      "status": "REFUTED",
+      "finding": "Both sets reproduce from the same public CSV under different stated model specifications:full-factorialTypeIIIversus one-way. Correct model/dfreporting is needed, not an allegation that every Fvalue is false."
+    },
+    {
+      "location": "Large summed means contradict0–100plots",
+      "status": "REFUTED",
+      "finding": "Text uses per-person sums overfive/sixitems; figures plot item averages. Study2sum367corresponds to73.4per item. All stored Study2totals match their component sums."
+    },
+    {
+      "location": "TableS1values or post-outcome regressions do not reproduce",
+      "status": "REFUTED",
+      "finding": "All10individual-itemFsandtheAV trust/pooledexpectationF, p and R²reproduce. The remaining problems involve interpretation, dfnotation, multiplicity and missing CI signs."
+    },
+    {
+      "location": "Expected-mistake p.017must be an impossible number",
+      "status": "REFUTED",
+      "finding": "It matches a one-sided equal-variance ttest on the public data. Two-sidedp.034383is also significant at.05, but sidedness must be labeled. Printed dmatches the standardized mean difference."
+    },
+    {
+      "location": "All Figure4intervals are unusable",
+      "status": "REFUTED",
+      "finding": "The AVnovelty contrast49.75231, CI[.91956,98.58505], p.044770reproduces as printed. Three difficulty intervals are recoverable with explicit contrast orientation and restored minus signs."
+    },
+    {
+      "location": "No informed consent or all limits concealed",
+      "status": "REFUTED",
+      "finding": "Both methods explicitly state informed consent and withdrawal. Authors acknowledge the sample scope, post-assessment measure limitations and absence of a definitive psychological explanation."
+    }
+  ],
+  "cross_paper_learning": [
+    {
+      "related_review": "references/pdf-reviews/0298.json",
+      "finding": "Blame word counts, blame ratings, causal attribution, post-failure trust and baseline trust are different measures. More machine blame does not automatically establish cooperation-based Machine penalty or a real decline in trust."
+    },
+    {
+      "related_review": "references/pdf-reviews/0302.json",
+      "finding": "Compare estimates and intervals on the same metric and contrast direction. Unlike merely excluding a standardized beta, these Figure4sign issues are now recoverable from public data; document the actual successful reproduction."
+    },
+    {
+      "related_review": "references/pdf-reviews/0296.json",
+      "finding": "Post-choice beliefs cannot simply be treated as antecedent causes. A significant subgroup association versus a nonsignificant one does not establish a between-group moderation effect."
+    }
+  ],
+  "deferred": [
+    {
+      "term": "Higher machine standards as a newly demonstrated behavior",
+      "reason": "Untested explanation explicitly neither confirmed nor refuted. No direct desired-standard manipulation/measure; trust-direction statement also conflicts with public data."
+    },
+    {
+      "term": "Machine penalty as a generic synonym for higher blame",
+      "reason": "Existing construct concerns reduced cooperation/generosity. Blame is covered by existing moral-evaluation and blame records; do not broaden the definition into all negative machine attitudes."
+    },
+    {
+      "term": "Hindsight bias and expectation disconfirmation as demonstrated effects",
+      "reason": "Only post-outcome expectations available, no prospective or outcome-blind comparison, no independent expectation manipulation."
+    },
+    {
+      "term": "Novelty/difficulty leniency as separate named rows",
+      "reason": "Context-sensitive blame is documented within existing attribution records. Task descriptors alone do not justify new generic bias labels or prove irrationality."
+    },
+    {
+      "term": "Network-amplified blame, responsibility-gap mechanism and actualAVsafety",
+      "reason": "Discussed extrapolations/secondary literature, not manipulated or established by these studies. Books and original cited network/safety studies were not independently fully read."
+    }
+  ],
+  "limitations": [
+    "One distinct neutral attribution construct added; three existing records directly enriched, two receive non-counted context. Catalogue becomes820 in eleven categories. Public numeric-data replication supports many results and specific source corrections without claiming independent replication of collection, mechanism or real-world safety."
+  ],
+  "reviewed_on": "2026-11-28",
+  "ontology_changes": {
+    "added": [
+      "causal-attribution"
+    ],
+    "enriched": [
+      "blame-attribution",
+      "human-robot-moral-judgment-asymmetry",
+      "performance-trust",
+      "b050-hindsight-bias",
+      "expectation-disconfirmation"
+    ]
+  }
+}
