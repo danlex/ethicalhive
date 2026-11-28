@@ -11,33 +11,41 @@ from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
 onto=yaml.safe_load((ROOT/'ontology/ethical-ai.yaml').read_text())
-assert len(onto['modes'])==434
+count=len(onto['modes'])
+# The original integration is a historical fixture; later PDF reviews extend it.
+original=[m for m in onto['modes'] if m['num']<=434]
+assert len(original)==434
 primary=[m for m in onto['modes'] if not m.get('grouped_under')]
 grouped=[m for m in onto['modes'] if m.get('grouped_under')]
-assert len(primary)==425 and len(grouped)==9
+assert len(primary)==count-9 and len(grouped)==9
 expected_groups={'social-desirability-bias':'b069-social-desirability-people-pleasing','clarification-avoidance':'x107-silent-assumption-gap','escalation-of-commitment':'b038-sunk-cost-fallacy','upload-009':'overpromise-underdeliver','upload-136':'b025-cognitive-tunneling','upload-137':'perseveration','upload-125':'b058-einstellung-mental-set','upload-124':'self-serving-bias','upload-140':'laziness'}
 assert {m['id']:m['grouped_under'] for m in grouped}==expected_groups
 added=[m for m in onto['modes'] if m.get('research_candidate')]
-assert len(added)==227
+original_added=[m for m in original if m.get('research_candidate')]
+assert len(original_added)==227
 source_review=json.loads((ROOT/onto['meta']['paper_source_review']['record']).read_text())
 definition_changes=source_review['source_check_changes']
 assert len({r['num'] for r in definition_changes})==len(definition_changes)==24
 assert all(r['previous_status']=='pending-definition-source-check' and r['current_status']=='definition-source-consulted'
            and r['passage_locator'] and r['reason'] for r in definition_changes)
-assert sum(m['source_check']=='pending-definition-source-check' for m in added)==96-len(definition_changes)
-assert sum(m['source_check']=='definition-source-consulted' for m in added)==131+len(definition_changes)
-assert all(m['tag']=='analogy' and not m['violates'] and not m['causes'] for m in added)
+assert sum(m['source_check']=='pending-definition-source-check' for m in original_added)==96-len(definition_changes)
+assert sum(m['source_check']=='definition-source-consulted' for m in original_added)==131+len(definition_changes)
+# The original import remains analogy-tagged and has no empirical harm edges.
+# Its later seven-category classification assigns one evaluation criterion.
+principle_ids={p['id'] for p in onto['principles']}
+assert all(m['tag']=='analogy' and not m['causes'] and len(m['violates'])==1
+           and set(m['violates'])<=principle_ids for m in original_added)
 manifest=json.loads((ROOT/'references/catalogue-integration-2026-11-06.json').read_text())
 assert len(manifest['decisions'])==228
-assert len({m['num'] for m in onto['modes']})==434
+assert len({m['num'] for m in onto['modes']})==count
 export=json.loads((ROOT/'docs/behaviours.json').read_text())
-assert len(export['modes'])==434 and export['meta']['mode_count']==434
-assert export['meta']['source_record_count']==434
+assert len(export['modes'])==count and export['meta']['mode_count']==count
+assert export['meta']['source_record_count']==count
 assert export['modes']==sorted(onto['modes'],key=lambda m:m['num'])
-assert [m['num'] for m in export['modes']]==list(range(1,435))
+assert [m['num'] for m in export['modes']]==list(range(1,count+1))
 rows=list(csv.DictReader((ROOT/'docs/behaviours.csv').open()))
-assert len(rows)==434
-assert [int(r['num']) for r in rows]==list(range(1,435))
+assert len(rows)==count
+assert [int(r['num']) for r in rows]==list(range(1,count+1))
 assert {r['id']:r['grouped_under'] for r in rows if r['grouped_under']}==expected_groups
 by_num={m['num']:m for m in onto['modes']}
 category_order=list(dict.fromkeys(m['category'] for m in sorted(onto['modes'],key=lambda m:m['num'])))
@@ -70,11 +78,11 @@ try:
             page.route('https://**/*',lambda r:r.abort())
             errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
             page.goto(base,wait_until='domcontentloaded')
-            assert page.locator('.concept').count()==434
+            assert page.locator('.concept').count()==count
             assert page.locator('.concept-variant').count()==0
             # Repeated status/overlap banners are removed from the catalogue.
             assert page.locator('.concept .research-status').count()==0
-            assert page.locator('.concept > summary .pcount').count()==434
+            assert page.locator('.concept > summary .pcount').count()==count
             layouts=page.locator('.concept > summary > .head').evaluate_all('''heads=>heads.map(h=>{
                 const box=h.getBoundingClientRect(), cells=[...h.children];
                 return {classes:cells.map(c=>c.matches('h2')?'name':c.className),
@@ -85,14 +93,14 @@ try:
             assert all(row['classes'][:3]==['name','one','fam'] and row['classes'][3].startswith('pcount') and len(row['classes'])==4 for row in layouts)
             # Compare actual geometry across the old and added records, not only markup.
             baseline=layouts[expected_numbers.index('170')]
-            for num in (208,209,315,434):
+            for num in dict.fromkeys((208,209,315,434,count)):
                 row=layouts[expected_numbers.index(str(num))]
                 assert abs(row['countEnd']-baseline['countEnd'])<1,(width,num,row,baseline)
                 assert abs(row['height']-baseline['height'])<1,(width,num,row,baseline)
                 if width>640:
                     assert abs(row['category']-baseline['category'])<1,(width,num,row,baseline)
             assert page.locator('.concept > summary .num').count()==0
-            assert page.locator('.concept > .body .meta > dt:first-child').all_text_contents()==['Reference ID']*434
+            assert page.locator('.concept > .body .meta > dt:first-child').all_text_contents()==['Reference ID']*count
             assert page.locator('.concept > .body .meta > dd:first-of-type').all_text_contents()==expected_numbers
             assert page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.dataset.num)')==expected_numbers
             assert page.locator('.cat-group').count()==len(category_order)==11
@@ -110,10 +118,11 @@ try:
             assert page.locator('#jumpNav a').all_text_contents()==[f'{category} ({len(group["numbers"])})' for category,group in zip(category_order,groups)]
             assert page.locator('#jumpNav').get_attribute('aria-label')=='Jump to ontology category'
             ids=page.locator('.concept').evaluate_all('(els)=>els.map(e=>e.id)')
-            assert len(ids)==len(set(ids))==434
-            assert page.locator('#principles .card').count()==6
-            assert page.locator('#self-eval-language-discrepancy').count()==1
-            assert page.locator('#mm .li.mode').count()==434
+            assert len(ids)==len(set(ids))==count
+            assert page.locator('#principles .cx-card').count()==6
+            # The retrospective now has a standalone experiment page.
+            assert (ROOT/'docs/experiments/self-evaluation-language-discrepancy.html').is_file()
+            assert page.locator('#mm .li.mode').count()==count
             # Category navigation is a real anchor and keeps the stable IDs.
             page.locator('#jumpNav a').last.click()
             assert page.url.endswith('#grp-ai-native-behaviours')
@@ -130,7 +139,7 @@ try:
             tool.locator('summary').click()
             assert tool.locator('.body a[href="#tool-over-privilege"]').count()>=1
             page.locator('[data-filter="new"]').click()
-            assert page.locator('.concept:visible').count()==227
+            assert page.locator('.concept:visible').count()==len(added)
             page.locator('[data-filter="pending"]').click()
             assert page.locator('.concept:visible').count()==sum(m['source_check']=='pending-definition-source-check' for m in added)
             page.locator('#search').fill('encoding specificity')
@@ -184,7 +193,7 @@ try:
         page=browser.new_page(java_script_enabled=False,viewport={'width':390,'height':900})
         page.route('https://**/*',lambda r:r.abort())
         page.goto(base,wait_until='domcontentloaded')
-        assert page.locator('.concept').count()==434
+        assert page.locator('.concept').count()==count
         assert page.locator('.concept > summary .num').count()==0
         assert page.locator('.cat-group').count()==11
         page.locator('#upload-003 summary').click()
@@ -193,5 +202,5 @@ try:
         page.locator('#upload-009 > summary').click()
         assert page.locator('#upload-009 .human-sources').is_visible()
         browser.close()
-    print('PASS: 434 stable references in 11 ontology categories, corrected terminology and subtypes, ordered JSON/CSV, overlap links, map, filters, mobile and no-JS reading')
+    print(f'PASS: {count} stable references in 11 ontology categories, corrected terminology and subtypes, ordered JSON/CSV, overlap links, map, filters, mobile and no-JS reading')
 finally:server.shutdown()
