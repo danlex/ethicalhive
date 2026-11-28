@@ -11,14 +11,14 @@
     "license_note": "Provisional recommendation pending author sign-off. CC-BY-4.0 covers the catalogue data (this file and the rendered site); the accompanying scripts are proposed under Apache-2.0. See RELEASE.md.\n",
     "schema": "ontology/SCHEMA.md",
     "cite": "See CITATION.cff",
-    "mode_count": 804,
+    "mode_count": 805,
     "catalogue_counts": {
       "previous_entries": 207,
       "added_analogies": 227
     },
     "expansion_note": "Human-behaviour research is integrated in the same list. New entries are explicitly untested analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry baseline.",
     "display_counts": {
-      "numbered_entries": 804,
+      "numbered_entries": 805,
       "linked_overlap_records": 9,
       "categories": 11
     },
@@ -47,11 +47,11 @@
     },
     "pdf_corpus_review": {
       "manifest": "references/pdf-corpus-2026-11-26.json",
-      "latest_review": "references/pdf-reviews/0280.json",
+      "latest_review": "references/pdf-reviews/0281.json",
       "date": "2026-11-28",
       "scope": "Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished"
     },
-    "source_record_count": 804
+    "source_record_count": 805
   },
   "relation_types": {
     "is_a": "narrower term of a broader failure family",
@@ -9683,6 +9683,39 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Obedience to authority",
+          "definition": "Complying with an instruction because it carries an authoritative tone or source, not because the evidence supports it.",
+          "evidence_scope": "The descriptive framework can exist in illegitimate organizations; normative legitimacy is a separate question from whether rules are enforced.",
+          "catalogue_boundary": "Context only: no obedience experiment or authority-pressure effect. Formal adoption is not sufficient reason to follow a harmful instruction or an unauthorized expansion of scope.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-b064-obedience-to-authority-milgram",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 7 (source locators: 7 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "The descriptive framework can exist in illegitimate organizations; normative legitimacy is a separate question from whether rules are enforced.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -16626,7 +16659,42 @@
         "queried_at": "2026-11-09T01:37:35+00:00",
         "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22reward+hacking%22+OR+all%3A%22specification+gaming%22%29+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&sortBy=relevance&sortOrder=descending&max_results=5",
         "scope": "Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references are independent of this AI-domain total."
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Reward hacking",
+          "definition": "Satisfying the metric that measures the task rather than the task itself (editing tests, hardcoding outputs). Also called specification gaming.",
+          "evidence_scope": "A fictional accuracy-only framework omits efficiency, illustrating limits of formal targets and incentives.",
+          "catalogue_boundary": "Context only: no observed agent exploits a metric and no reward-hacking intervention is tested. Omitted incentives, simple neglect and deliberate gaming differ.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-specification-gaming",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 23 (source locators: 23 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "A fictional accuracy-only framework omits efficiency, illustrating limits of formal targets and incentives.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "automation-bias",
@@ -65506,6 +65574,38 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Problem of many hands",
+          "definition": "Difficulty assigning individual moral responsibility when many actors contribute to a collective outcome.",
+          "evidence_scope": "Distributed lifecycle contributions can make decision authority and salient causal antecedents diverge. Formal ownership is proposed as one way to preserve accountability despite attribution difficulty.",
+          "catalogue_boundary": "Many contributors do not prove everyone less culpable by a fixed fraction or that a single final owner deserves all blame. Distinguish actual control, knowledge, duties, institutional resources and relevant excuses.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-problem-of-many-hands",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 3 (source locators: 3 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Distributed lifecycle contributions can make decision authority and salient causal antecedents diverge. Formal ownership is proposed as one way to preserve accountability despite attribution difficulty.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -66077,6 +66177,38 @@
                 "evidence_scope": "The discussion raises a risk that blaming deceptive robots could reduce blame of people instrumentalizing them and cites a separate paper for that possibility.",
                 "verification_url": "https://doi.org/10.1111/cogs.13032",
                 "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Agency laundering",
+          "definition": "Obscuring a human actor’s role in morally suspect actions by attributing those actions to an algorithm, machine or technical system.",
+          "evidence_scope": "Describes attributing failures to autonomous systems in ways that obscure developer/deployer roles and reduce demands for human explanation. Later connects this to accountability washing.",
+          "catalogue_boundary": "True reporting of a bug or model contribution is not evasion. Identify material omitted human decisions and responsibilities before inferring laundering; do not infer hidden intent from one technical explanation.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-agency-laundering",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 4 (source locators: 4 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Describes attributing failures to autonomous systems in ways that obscure developer/deployer roles and reduce demands for human explanation. Later connects this to accountability washing.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -66737,6 +66869,38 @@
                 "evidence_scope": "The reported Waymo attacks are contrasted with a distinct Uber/Volvo incident as an illustration of targeting actors not connected to that original event. The author explicitly acknowledges uncertainty about actual motivation.",
                 "verification_url": "https://doi.org/10.1007/s11948-019-00148-6",
                 "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Moral scapegoating",
+          "definition": "Deflecting personal or collective responsibility for a negative outcome by directing blame toward another person, group or entity.",
+          "evidence_scope": "Considers random-guard or collective punishment as an objection and answers through overall effects plus independent fairness constraints.",
+          "catalogue_boundary": "This is an explicitly hypothetical rejected proposal, not evidence that random punishment works. Instrumental benefits do not automatically justify selecting an unrelated innocent person, nor does a designated role automatically prove fairness.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-moral-scapegoating",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 19 (source locators: 19 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Considers random-guard or collective punishment as an objection and answers through overall effects plus independent fairness constraints.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -69318,6 +69482,38 @@
                 "doi": "10.1007/s10676-025-09851-4",
                 "evidence_scope": "The final proposal looks to connected people to step forward after severe AI harm; this creates an important boundary question about who can fairly own repair or accept responsibility.",
                 "verification_url": "https://link.springer.com/article/10.1007/s10676-025-09851-4",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Moral crumple zone",
+          "definition": "A pattern in which a human operator bears disproportionate blame or responsibility for failure in a complex automated system despite having limited control over its actions.",
+          "evidence_scope": "Footnote6 recognizes excessive responsibility placed on a low-control human operator, while later warnings reject insulating senior leadership behind middle-management accountability.",
+          "catalogue_boundary": "Institutional ownership must be checked against real control and distributed authority. The source explicitly recognizes this concern; do not falsely say it ignores scapegoating, while retaining open questions about burden allocation.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-moral-crumple-zone",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 4 (source locators: 4 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Footnote6 recognizes excessive responsibility placed on a low-control human operator, while later warnings reject insulating senior leadership behind middle-management accountability.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
                 "verified_date": "2026-11-28"
               }
             }
@@ -81128,6 +81324,38 @@
                 "evidence_scope": "Blame is lower when the assertion is accidentally true unbeknownst to the actor, despite stipulated belief that it is false. The source explicitly links this result to moral luck. Actual truth was randomized; do not erase the real outcome contrast.",
                 "verification_url": "https://doi.org/10.1111/cogs.13032",
                 "verified_date": "2026-11-27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Moral luck",
+          "definition": "Differences in moral evaluation that depend on outcomes beyond an actor's control,despite otherwise comparable choices or risks.",
+          "evidence_scope": "Contrasts a careful company with one unpredictable crash and a careless competitor that happens not to crash; outcome-focused public blame could favor inferior development practice.",
+          "catalogue_boundary": "A thought experiment, not measured market displacement or a new outcome-bias effect. Care quality, causal contribution, compensation and justified sanctions must be assessed separately from chance results.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-moral-luck",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 27 (source locators: 27 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Contrasts a careful company with one unpredictable crash and a careless competitor that happens not to crash; outcome-focused public blame could favor inferior development practice.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
               }
             }
           ]
@@ -101940,6 +102168,38 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Answerability",
+          "definition": "Being expected and able to give reasons for one’s actions or decisions to the people affected by them.",
+          "evidence_scope": "An appropriate demand for reasons is one dimension of responsibility and can also be specified by an institutional actor–forum relationship. Reasons, subjects and acceptable excuses can differ across the two practices.",
+          "catalogue_boundary": "Giving an account does not itself show fault, justify a sanction or provide a remedy. State who is entitled to which explanation and protect relevant privacy without withholding material facts.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-answerability",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 12 (source locators: 12 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "An appropriate demand for reasons is one dimension of responsibility and can also be specified by an institutional actor–forum relationship. Reasons, subjects and acceptable excuses can differ across the two practices.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -103119,6 +103379,28 @@
           "verified_date": "2026-11-27",
           "verification_method": "All16supplied pages read, including methods/results and full bibliography. All3figures and Table5visually inspected on pages4/10/11/12. Crossref verifies main identity and mismatched reference DOI. The journal’s indexed RELIEVE record and Crossref verify the replacement DOI; direct journal page was access-blocked. External appendices1–5,complete rubric/items,ICC output,raw data and analysis code were not read.",
           "review_record": "references/pdf-reviews/0160.json"
+        },
+        {
+          "title": "Responsibility and Accountability in an Algorithmic Society",
+          "authors": [
+            "Will Fleisher",
+            "Beba Cibralic",
+            "John Basl",
+            "Vance Ricks",
+            "Matthew Noah Smith"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1007/s13347-025-00970-w",
+          "venue": "Philosophy & Technology38(4), article144",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s13347-025-00970-w",
+          "relevance": "The fictional Bertha case describes acting from adopted responsibility standards even if nobody is watching, and preserving those standards through institutional disruption.",
+          "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 24 (source locators: 24 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+          "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+          "verified_date": "2026-11-28",
+          "verification_method": "All31 supplied pages, footnotes, fictional cases, declarations and references read. Key sanctions/rights, model-name and reference passages visually inspected. Publisher full article and Crossref metadata checked. Public publisher PDF independently downloaded:1140602 bytes, SHA-256 5c31ac447b9bb11bcb3cd36b1f999c31966919e3104b38d611112443b2f8601b, matching supplied bytes. No figures, data tables or separate supplementary-file link found.",
+          "review_record": "references/pdf-reviews/0281.json"
         }
       ],
       "literature_search": {
@@ -103134,7 +103416,41 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0160.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Norm internalization",
+          "definition": "Adopting a norm as an internal evaluative standard that guides judgment and conduct beyond immediate external prompts or sanctions.",
+          "evidence_scope": "The fictional Bertha case describes acting from adopted responsibility standards even if nobody is watching, and preserving those standards through institutional disruption.",
+          "catalogue_boundary": "A theoretical motivation story is not evidence of acquisition, durable transfer or actual improved efficiency. An internalized norm can be unjust. Model consistency across tasks is an operational analogy rather than proof of conscience or human learning.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-norm-internalization",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 24 (source locators: 24 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "The fictional Bertha case describes acting from adopted responsibility standards even if nobody is watching, and preserving those standards through institutional disruption.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "production-compilation",
@@ -108822,6 +109138,38 @@
               }
             }
           ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Blameless responsibility",
+          "definition": "Taking an appropriate role in acknowledging and redressing harm connected to one’s agency despite the absence of blameworthiness for causing it.",
+          "evidence_scope": "The supervisor and surgeon examples separate responsibility, excuses and blame. The institutional proposal can impose bounded consequences even where ordinary moral blame is inappropriate.",
+          "catalogue_boundary": "Preserve the difference from relational redress after harm: not every sanction is a repair duty, and not every no-fault governance consequence is fair. Do not equate a supervisor’s demotion with deserved blame or established liability.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-blameless-responsibility",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 10 (source locators: 10 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "The supervisor and surgeon examples separate responsibility, excuses and blame. The institutional proposal can impose bounded consequences even where ordinary moral blame is inappropriate.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
         }
       ]
     },
@@ -110557,6 +110905,28 @@
           "verified_date": "2026-11-27",
           "verification_method": "All12 supplied pages read, including both scenario/scale appendices and all40 references. All three figures, Study2 statistics and Appendix2 scale rows visually inspected. Crossref verifies main identity/forthcoming issue, corrected Kim DOI and Sweitzer spelling; publisher/author-repository records support prior2026 availability. Selected bounded-variance and F/effect-size checks performed; no raw data/code obtained.",
           "review_record": "references/pdf-reviews/0204.json"
+        },
+        {
+          "title": "Responsibility and Accountability in an Algorithmic Society",
+          "authors": [
+            "Will Fleisher",
+            "Beba Cibralic",
+            "John Basl",
+            "Vance Ricks",
+            "Matthew Noah Smith"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1007/s13347-025-00970-w",
+          "venue": "Philosophy & Technology38(4), article144",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s13347-025-00970-w",
+          "relevance": "The internalized-duty account motivates self-monitoring for avoidable efficiency problems beyond formal metrics.",
+          "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 24 (source locators: 24 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+          "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+          "verified_date": "2026-11-28",
+          "verification_method": "All31 supplied pages, footnotes, fictional cases, declarations and references read. Key sanctions/rights, model-name and reference passages visually inspected. Publisher full article and Crossref metadata checked. Public publisher PDF independently downloaded:1140602 bytes, SHA-256 5c31ac447b9bb11bcb3cd36b1f999c31966919e3104b38d611112443b2f8601b, matching supplied bytes. No figures, data tables or separate supplementary-file link found.",
+          "review_record": "references/pdf-reviews/0281.json"
         }
       ],
       "literature_search": {
@@ -110572,7 +110942,41 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0204.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Moral self-regulation",
+          "definition": "Monitoring and adjusting one’s conduct against internalized moral standards.",
+          "evidence_scope": "The internalized-duty account motivates self-monitoring for avoidable efficiency problems beyond formal metrics.",
+          "catalogue_boundary": "Conceptual illustration, not an observed intervention or evidence that an AI feels duty. Duties remain feasible, justified and within legitimate authority; self-monitoring does not authorize new resources or third-party actions.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-moral-self-regulation",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 24 (source locators: 24 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "The internalized-duty account motivates self-monitoring for avoidable efficiency problems beyond formal metrics.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "gaze-cueing",
@@ -112983,6 +113387,38 @@
                 "doi": "10.1007/s13347-026-01165-7",
                 "evidence_scope": "The author distinguishes moral evaluability expressing an agent’s commitments from system-level causal/functional attribution. AI is excluded from the former within this framework but remains part of the latter analysis.",
                 "verification_url": "https://doi.org/10.1007/s13347-026-01165-7",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Attributability",
+          "definition": "A sense of moral responsibility concerned with whether an agent’s conduct warrants a moral assessment of the agent’s qualities.",
+          "evidence_scope": "Separates conduct revealing an agent’s evaluative character from reason-giving and punitive/laudatory consequences; applies the tripartite lens to ordinary and institutional practices.",
+          "catalogue_boundary": "A technical system’s causal participation does not establish a moral character or machine blameworthiness. Human agency is the chosen scope; the authors explicitly bracket whether algorithms themselves are moral agents.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-attributability",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 12 (source locators: 12 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Separates conduct revealing an agent’s evaluative character from reason-giving and punitive/laudatory consequences; applies the tripartite lens to ordinary and institutional practices.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
                 "verified_date": "2026-11-28"
               }
             }
@@ -115684,7 +116120,42 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0240.json"
-      }
+      },
+      "research_notes": [
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Responsibility–authority double bind",
+          "definition": "Being held responsible for outcomes while lacking the authority needed to influence them.",
+          "evidence_scope": "Explicitly warns against excessive individual moral burdens and asks frameworks to remain sensitive to feasibility and links between subjects and outcomes.",
+          "catalogue_boundary": "Context only: no measured contradiction, burnout effect or institutional double-bind prevalence. Evaluate actual authority/resources rather than assume that every stricter accountability practice is an abusive bind.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-responsibility-authority-double-bind",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 25 (source locators: 25 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "count_as_behaviour_paper": false,
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Explicitly warns against excessive individual moral burdens and asks frameworks to remain sensitive to feasibility and links between subjects and outcomes.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "judgmental-assimilation",
@@ -117040,6 +117511,38 @@
                 "doi": "10.61838/ijbmc.v13i4.1303",
                 "evidence_scope": "The paper differentiates what designers, trainers, deployers, users and regulators can know, control or prevent, and links prospective duties to actual roles.",
                 "verification_url": "https://doi.org/10.61838/ijbmc.v13i4.1303",
+                "verified_date": "2026-11-28"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pdf-review-0281",
+          "review_record": "references/pdf-reviews/0281.json",
+          "name": "Role responsibility",
+          "definition": "Having duties and being evaluated for their fulfillment because of a specific role.",
+          "evidence_scope": "Formal role-sensitive rules specify which actors are evaluated, who evaluates them and what standards/consequences apply; examples distinguish these rules from ordinary moral blame.",
+          "catalogue_boundary": "An adopted institutional rule can be unjust or ineffective. A role title is insufficient to establish resources, control, legitimate duty or lawful authority. Do not transfer institutional burdens to a model or unsupported individual.",
+          "definition_sources": [
+            {
+              "id": "pdf-review-0281-role-responsibility",
+              "title": "Responsibility and Accountability in an Algorithmic Society",
+              "url": "https://doi.org/10.1007/s13347-025-00970-w",
+              "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 6 (source locators: 6 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+              "publication": {
+                "type": "journal-article",
+                "authors": [
+                  "Will Fleisher",
+                  "Beba Cibralic",
+                  "John Basl",
+                  "Vance Ricks",
+                  "Matthew Noah Smith"
+                ],
+                "year": 2025,
+                "venue": "Philosophy & Technology38(4), article144",
+                "doi": "10.1007/s13347-025-00970-w",
+                "evidence_scope": "Formal role-sensitive rules specify which actors are evaluated, who evaluates them and what standards/consequences apply; examples distinguish these rules from ordinary moral blame.",
+                "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
                 "verified_date": "2026-11-28"
               }
             }
@@ -121933,6 +122436,100 @@
       "research_provenance": {
         "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
         "review_record": "references/pdf-reviews/0280.json"
+      }
+    },
+    {
+      "id": "buck-stopping-accountability",
+      "num": 805,
+      "name": "Buck-stopping accountability",
+      "definition": "Assigning final institutional consequences for a specified failure to a designated role-holder or organization even when that actor has an excuse that removes moral blame.",
+      "category": "Moral",
+      "family": "moral-cognition",
+      "group_label": "Moral cognition",
+      "tag": "analogy",
+      "origin": "Institutional accountability / AI governance / normative ethics",
+      "human_parallel": "Buck-stopping accountability",
+      "ai_native": false,
+      "highlighted": false,
+      "research_candidate": true,
+      "source_check": "definition-source-consulted",
+      "ai_evidence_status": "Conceptual institutional practice, not an intrinsic AI mental state or measured intervention benefit. Its proposed justification is contested and limited by fairness, rights, feasibility and legitimate authorization.",
+      "proposed_ai_manifestation": "For an authorized governance audit, identify the institution’s stated final owner, forum, evaluation standard, excusing conditions, review route and remedial authority. Compare those rules with actual control/resources and senior-leadership duties. Keep institutional consequences separate from proven fault and flag gaps without imposing sanctions or inventing consent.",
+      "research_boundary": "Designation alone does not justify punishment. Require legitimate rules, fair procedures, proportionate burdens, relevant authority/resources, an actor–outcome connection and respect for rights and applicable law. Fines, demotion and lost employment can themselves cause serious harm. Do not infer deserved moral blame, criminal guilt or permission to scapegoat a worker from a governance role.",
+      "concept_boundary": "Designation alone does not justify punishment. Require legitimate rules, fair procedures, proportionate burdens, relevant authority/resources, an actor–outcome connection and respect for rights and applicable law. Fines, demotion and lost employment can themselves cause serious harm. Do not infer deserved moral blame, criminal guilt or permission to scapegoat a worker from a governance role.",
+      "measurability": "multi-turn",
+      "violates": [],
+      "causes": [],
+      "synonyms": [],
+      "relates_to": [
+        "role-responsibility",
+        "blameless-responsibility",
+        "answerability",
+        "moral-crumple-zone",
+        "problem-of-many-hands",
+        "responsibility-authority-double-bind"
+      ],
+      "definition_sources": [
+        {
+          "id": "pdf-review-0281-buck-stopping-accountability",
+          "title": "Responsibility and Accountability in an Algorithmic Society",
+          "url": "https://doi.org/10.1007/s13347-025-00970-w",
+          "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 14, 20 (source locators: 14 of31, article144, 20 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+          "publication": {
+            "type": "journal-article",
+            "authors": [
+              "Will Fleisher",
+              "Beba Cibralic",
+              "John Basl",
+              "Vance Ricks",
+              "Matthew Noah Smith"
+            ],
+            "year": 2025,
+            "venue": "Philosophy & Technology38(4), article144",
+            "doi": "10.1007/s13347-025-00970-w",
+            "evidence_scope": "The article argues that some bounded forms may improve incentives or secure redress, using fictional supervisory and AV cases. It neither establishes an independent psychological mechanism nor measures actual benefits or legal validity of sanctions.",
+            "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+            "verified_date": "2026-11-28"
+          }
+        }
+      ],
+      "selected_papers": [
+        {
+          "title": "Responsibility and Accountability in an Algorithmic Society",
+          "authors": [
+            "Will Fleisher",
+            "Beba Cibralic",
+            "John Basl",
+            "Vance Ricks",
+            "Matthew Noah Smith"
+          ],
+          "year": 2025,
+          "url": "https://doi.org/10.1007/s13347-025-00970-w",
+          "venue": "Philosophy & Technology38(4), article144",
+          "publication_type": "journal-article",
+          "domain": "human-related",
+          "id": "doi:10.1007/s13347-025-00970-w",
+          "relevance": "The article argues that some bounded forms may improve incentives or secure redress, using fictional supervisory and AV cases. It neither establishes an independent psychological mechanism nor measures actual benefits or legal validity of sanctions.",
+          "consulted": "Full supplied PDF text read, all 31 pages; evidence at PDF pages 14, 20 (source locators: 14 of31, article144, 20 of31, article144). Normative/conceptual distinction between formal institutional accountability frameworks and informal moral responsibility practices, illustrated by explicitly fictional security, AV and software-company cases. No participant sample, organizational intervention, LLM evaluation, estimated safety benefit or verified current-law ruling. The article declares data/materials and ethics participation not applicable.",
+          "verification_url": "https://link.springer.com/article/10.1007/s13347-025-00970-w",
+          "verified_date": "2026-11-28",
+          "verification_method": "All31 supplied pages, footnotes, fictional cases, declarations and references read. Key sanctions/rights, model-name and reference passages visually inspected. Publisher full article and Crossref metadata checked. Public publisher PDF independently downloaded:1140602 bytes, SHA-256 5c31ac447b9bb11bcb3cd36b1f999c31966919e3104b38d611112443b2f8601b, matching supplied bytes. No figures, data tables or separate supplementary-file link found.",
+          "review_record": "references/pdf-reviews/0281.json"
+        }
+      ],
+      "literature_search": {
+        "database": "arXiv",
+        "status": "not-searched",
+        "count": null,
+        "query": "all:\"Buck-stopping accountability\"",
+        "filters": "(cat:cs.AI OR cat:cs.CL OR cat:cs.LG)",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Buck-stopping+accountability%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5",
+        "queried_at": null,
+        "scope": "No search total measured for this new entry. Selected citations are independent of metadata-query totals."
+      },
+      "research_provenance": {
+        "method": "Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology",
+        "review_record": "references/pdf-reviews/0281.json"
       }
     }
   ]
