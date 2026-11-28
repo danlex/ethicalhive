@@ -156,10 +156,12 @@ def citation(review,finding):
 def source_record(review,finding):
     c=citation(review,finding)
     doi=c['url'].split('doi.org/',1)[-1] if 'doi.org/' in c['url'] else None
+    is_book=c['publication_type'] in ('book','book-chapter')
     return {'id':f"pdf-review-{review['sequence']:04d}-{finding.get('id',finding.get('target_id'))}",
             'title':c['title'],'url':c['url'],'consulted':c['consulted'],
-            **({'count_as_behaviour_paper':False} if finding.get('count_as_behaviour_paper') is False else {}),
-            'publication':{'type':('posted-content' if c['publication_type'] in ('preprint','posted-content') else
+            **({'count_as_behaviour_paper':False} if is_book or finding.get('count_as_behaviour_paper') is False else {}),
+            'publication':{'type':(c['publication_type'] if is_book else
+                'posted-content' if c['publication_type'] in ('preprint','posted-content') else
                 'proceedings-article' if c['publication_type']=='proceedings-article' else 'journal-article'),
               'authors':c['authors'],'year':c['year'],'venue':c['venue'],
               **({'doi':doi} if doi else {}),'evidence_scope':c['relevance'],
@@ -185,7 +187,10 @@ def new_mode(review,finding,ontology):
         'violates':finding.get('violates',[]),'causes':finding.get('causes',[]),
         'synonyms':finding.get('synonyms',[]),'relates_to':finding.get('relates_to',[]),
         **({'is_a':finding['is_a']} if finding.get('is_a') else {}),
-        'definition_sources':[source_record(review,finding)],'selected_papers':[citation(review,finding)],
+        'definition_sources':[source_record(review,finding)],
+        'selected_papers':([] if review['citation']['publication_type'] in ('book','book-chapter')
+                           or finding.get('count_as_behaviour_paper') is False else [citation(review,finding)]),
+        **({'terminology_sources':finding['terminology_sources']} if finding.get('terminology_sources') else {}),
         'literature_search':{'database':'arXiv','status':'not-searched','count':None,'query':query,
           'filters':filters,'url':'https://export.arxiv.org/api/query?'+urlencode({'search_query':query+' AND '+filters,'max_results':5}),
           'queried_at':None,'scope':'No search total measured for this new entry. Selected citations are independent of metadata-query totals.'},
@@ -205,6 +210,7 @@ def fill_selected_from_read_reviews(mode):
         if not path or not (ROOT/path).is_file():continue
         review=read_json(ROOT/path)
         if review.get('duplicate_of') or review.get('reading',{}).get('status')!='full-extracted-text-read':continue
+        if review['citation'].get('publication_type') in ('book','book-chapter'):continue
         finding=next((f for f in review['findings'] if f.get('target_id')==mode['id']
                       and f['decision']=='enrich-existing'),None)
         if finding is None or finding.get('count_as_behaviour_paper') is False:continue
