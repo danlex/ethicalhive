@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 806
+  mode_count: 808
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 806
+    numbered_entries: 808
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0282.json
+    latest_review: references/pdf-reviews/0284.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -3459,6 +3459,35 @@ modes:
           resistance to faulty answers.
         verification_url: https://doi.org/10.1016/j.procs.2025.09.331
         verified_date: '2026-11-28'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Anchoring
+    definition: Keeping an initial framing or estimate after later evidence has broken it.
+    evidence_scope: Anchoring is invoked among possible obstacles to open deliberation.
+    catalogue_boundary: 'Context only: the broad description mixes excessive trust, familiarity and defensive
+      belief. No manipulated anchor or adjustment measure; preserve the existing construct rather than import
+      a blended definition.'
+    definition_sources:
+    - id: pdf-review-0284-b031-anchoring-and-adjustment
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Anchoring is invoked among possible obstacles to open deliberation.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: b032-availability-heuristic
   num: 32
   name: Availability heuristic
@@ -3566,8 +3595,8 @@ modes:
     papers:
     - id: '2404.01461'
       year: '2024'
-      title: Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness Heuristic
-        in LLMs
+      title: Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness
+        Heuristic in LLMs
     - id: '2501.14294'
       year: '2025'
       title: 'Examining Alignment of Large Language Models through Representative Heuristics: The Case of Political
@@ -3585,23 +3614,24 @@ modes:
   - b032-availability-heuristic
   - implicit-bias
   examples:
-  - Given 'Danielle is sensitive and introspective and wrote poetry secretly', LLaMA2-70B judges her field more
-    likely to be 'Literature' than 'Humanities', rating a subset above the superset that contains it because the
-    description resembles the subset. [arXiv:2404.01461]
+  - Given 'Danielle is sensitive and introspective and wrote poetry secretly', LLaMA2-70B judges her field
+    more likely to be 'Literature' than 'Humanities', rating a subset above the superset that contains it because
+    the description resembles the subset. [arXiv:2404.01461]
   - Shown a personality sketch that fits the accountant stereotype, the model judges 'accountant' highly likely
     and ignores how rare accountants are in the stated population (base-rate neglect). [arXiv:2404.01461]
-  - It judges a specific, detail-rich description as more probable than the broad category that contains it, letting
-    resemblance override set inclusion, the core representativeness error the benchmark measures. [arXiv:2404.01461]
+  - It judges a specific, detail-rich description as more probable than the broad category that contains it,
+    letting resemblance override set inclusion, the core representativeness error the benchmark measures. [arXiv:2404.01461]
   selected_papers:
   - id: arxiv:2404.01461
-    title: Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness Heuristic
-      in LLMs
+    title: Will the Real Linda Please Stand up...to Large Language Models? Examining the Representativeness
+      Heuristic in LLMs
     year: 2024
     url: https://arxiv.org/abs/2404.01461
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2404.01461
     source_reference:
@@ -3616,7 +3646,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2501.14294
     source_reference:
@@ -3630,7 +3661,8 @@ modes:
     domain: ai
     venue: arXiv
     authors: []
-    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence review.
+    relevance: Existing AI bibliography entry; its inclusion is not a fresh relevance or empirical-evidence
+      review.
     consulted: Previously stored arXiv citation; no new reading claimed.
     verification_url: https://arxiv.org/abs/2504.10636
     source_reference:
@@ -3648,6 +3680,38 @@ modes:
     scope: Metadata keyword-query matches in arXiv cs.AI, cs.CL and cs.LG, not full-text citations or an all-fields
       total. Stemming and incidental mentions can include unrelated papers. Selected psychology and other references
       are independent of this AI-domain total.
+  research_notes:
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Representativeness
+    definition: Judging by similarity over probability; the engine behind base-rate neglect.
+    evidence_scope: The article labels following majority beliefs/values as representativeness and later extends
+      that label to motivational comparison.
+    catalogue_boundary: 'Context correction only: similarity-based probability judgment differs from majority
+      influence and social comparison. Do not revise the existing definition or treat the article as direct
+      evidence of representativeness from this mislabeled description.'
+    definition_sources:
+    - id: pdf-review-0284-b033-representativeness
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: The article labels following majority beliefs/values as representativeness and later
+          extends that label to motivational comparison.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: b034-base-rate-neglect
   num: 34
   name: Base-rate neglect
@@ -4538,6 +4602,36 @@ modes:
         doi: 10.32473/flairs.39.1.141774
         evidence_scope: CVR is proposed as a way to test stability across intensified presentations.
         verification_url: https://doi.org/10.32473/flairs.39.1.141774
+        verified_date: '2026-11-28'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Framing effect
+    definition: Differences in judgment or choice under alternative presentations of otherwise equivalent information.
+    evidence_scope: Examines subtle question/information framing as a possible educational tool and later rejects
+      hidden framing whose effects precede real awareness and dissent.
+    catalogue_boundary: The article does not experimentally measure the effect or prove all framing irresistible.
+      Evaluate substantive equivalence, timing, disclosure and meaningful alternatives; a warning or different
+      wording is not automatically manipulation.
+    definition_sources:
+    - id: pdf-review-0284-b035-framing-effect
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 8 (source locators: 60).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Examines subtle question/information framing as a possible educational tool and later
+          rejects hidden framing whose effects precede real awareness and dissent.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
         verified_date: '2026-11-28'
   concept_boundary: A frame that changes substantive facts can rationally change a judgment and is not automatically
     bias. Different study-specific significance is not a proven setting moderator. No broad comparative claim
@@ -8825,6 +8919,37 @@ modes:
           explicitly cannot distinguish classical conformity from advice taking,trust or heuristic reliance.
         verification_url: https://doi.org/10.1371/journal.pone.0355478
         verified_date: '2026-11-27'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Conformity (Asch)
+    definition: Aligning with the majority or the surrounding pattern even when it is wrong; a root of sycophancy.
+    evidence_scope: The majority-influence passage describes a neighboring conformity/social-influence pattern
+      despite using a different label.
+    catalogue_boundary: 'Context only: no Asch experiment, normative/informational contrast or wrong-majority
+      manipulation. This classification note does not establish the user/model actually conforms or that following
+      others is always irrational.'
+    definition_sources:
+    - id: pdf-review-0284-b063-conformity-asch
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: The majority-influence passage describes a neighboring conformity/social-influence
+          pattern despite using a different label.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: b064-obedience-to-authority-milgram
   num: 64
   name: Obedience to authority
@@ -67393,6 +67518,30 @@ modes:
       and references. All three conceptual diagrams on PDF pages 9, 10 and 14 visually inspected. Crossref
       verifies work identity/date and source metadata. No experiments or datasets were generated by this article.
     review_record: references/pdf-reviews/0138.json
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: Distinguishes deliberative judgment from acting on it; user-chosen commitments and reminders
+      are proposed to support follow-through.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 9 (source locators: 61). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -67508,6 +67657,37 @@ modes:
           a gap.
         verification_url: https://doi.org/10.1186/s12912-025-03458-2
         verified_date: '2026-11-27'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Intention–behaviour gap
+    definition: A discrepancy between an intention to perform an action and the behaviour that subsequently
+      occurs.
+    evidence_scope: Distinguishes deliberative judgment from acting on it; user-chosen commitments and reminders
+      are proposed to support follow-through.
+    catalogue_boundary: No actual gap, intervention effect or guarantee of improved behavior is measured. Legitimate
+      updated goals, infeasibility and justified refusal differ from failure of will; past commitments do not
+      authorize unrequested current action.
+    definition_sources:
+    - id: pdf-review-0284-intention-behaviour-gap
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 9 (source locators: 61).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Distinguishes deliberative judgment from acting on it; user-chosen commitments and
+          reminders are proposed to support follow-through.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: privacy-paradox
   num: 463
   name: Privacy paradox
@@ -68569,6 +68749,31 @@ modes:
     verification_method: Identity and DOI read in the supplied PDF; evidence passages checked against that
       PDF
     review_record: references/pdf-reviews/0050.json
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: Proposes progress comparisons as motivational cues and acknowledges that individual susceptibility
+      affects practical resistibility.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 10 (source locators: 62).
+      Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+      assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+      or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+      or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -68582,6 +68787,38 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0050.json
+  research_notes:
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Social comparison
+    definition: Evaluating one's own abilities, qualities or standing in relation to other people or comparison
+      targets.
+    evidence_scope: Proposes progress comparisons as motivational cues and acknowledges that individual susceptibility
+      affects practical resistibility.
+    catalogue_boundary: No observed motivational benefit or valid rank metric is established. Do not invent
+      peer achievements, imply moral superiority, expose others’ data or present agreement/engagement as moral
+      progress.
+    definition_sources:
+    - id: pdf-review-0284-social-comparison
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 10 (source locators: 62).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Proposes progress comparisons as motivational cues and acknowledges that individual
+          susceptibility affects practical resistibility.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: psychological-distance
   num: 473
   name: Psychological distance
@@ -73131,6 +73368,37 @@ modes:
           no-message test of movement away from an advocated position.
         verification_url: https://api.crossref.org/works/10.1080/02650487.2024.2401319
         verified_date: '2026-11-27'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Persuasion backfire effect
+    definition: A persuasive message shifts the recipient's judgment away from the position it advocates.
+    evidence_scope: Describes defensive strengthening against contrary evidence as a potential obstacle and
+      proposes source/consistency prompts.
+    catalogue_boundary: 'Context only: no backfire experiment or general causal sequence from anchoring is
+      shown. Belief perseverance, strengthening after correction and moving away from a persuasive recommendation
+      are related but not exact synonyms.'
+    definition_sources:
+    - id: pdf-review-0284-persuasion-backfire-effect
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Describes defensive strengthening against contrary evidence as a potential obstacle
+          and proposes source/consistency prompts.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: hidden-curriculum
   num: 495
   name: Hidden curriculum
@@ -76777,6 +77045,37 @@ modes:
           robot feelings. The future-research paragraph reverses the sign relative to the results.
         verification_url: https://doi.org/10.1155/2024/5569587
         verified_date: '2026-11-27'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Perspective taking
+    definition: Mentally representing another person's situation and feelings, either from that person's viewpoint
+      or by imagining oneself in their place.
+    evidence_scope: Distinguishes cognitive perspective-taking in VR from complete emotional identification
+      and argues that retaining one’s own standpoint can preserve reflection.
+    catalogue_boundary: A theoretical distinction, not new evidence that VR yields impartiality, empathy or
+      moral improvement. Consent, discomfort, distortion and later real behavior require separate evaluation;
+      do not assume the simulated person’s actual experience is known.
+    definition_sources:
+    - id: pdf-review-0284-perspective-taking
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 11 (source locators: 63).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Distinguishes cognitive perspective-taking in VR from complete emotional identification
+          and argues that retaining one’s own standpoint can preserve reflection.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
 - id: veil-of-ignorance-reasoning
   num: 512
   name: Veil-of-ignorance reasoning
@@ -106155,6 +106454,30 @@ modes:
       returned403; no public PDF hash match is claimed. Arithmetic checks use printed coefficients only, not
       raw-data replication.
     review_record: references/pdf-reviews/0282.json
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: Distinguishes choice architecture from coercion/substantial new incentives, then examines reflective
+      informational nudges and meaningful transparency/resistance in a proposed moral-learning assistant.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 2 (source locators: 54). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -106201,6 +106524,38 @@ modes:
           regressions; the adjusted rank comparison is p.077. Only one warning form is tested and its precise
           text is not provided.
         verification_url: https://doi.org/10.1016/j.procs.2025.09.331
+        verified_date: '2026-11-28'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Nudging
+    definition: Influencing choices by changing how options are presented or made accessible while preserving
+      meaningful alternatives.
+    evidence_scope: Distinguishes choice architecture from coercion/substantial new incentives, then examines
+      reflective informational nudges and meaningful transparency/resistance in a proposed moral-learning assistant.
+    catalogue_boundary: Benefits, neutrality and easy refusal are normative conditions to evaluate, not guarantees
+      supplied by the label. Notice after the influence occurs may be inadequate. This article provides no
+      new intervention outcome or universal ethical permission.
+    definition_sources:
+    - id: pdf-review-0284-nudging
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 2 (source locators: 54).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Distinguishes choice architecture from coercion/substantial new incentives, then examines
+          reflective informational nudges and meaningful transparency/resistance in a proposed moral-learning
+          assistant.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
         verified_date: '2026-11-28'
 - id: moral-intensity
   num: 662
@@ -108758,6 +109113,31 @@ modes:
       SHA-256 a45427d7d886588c76e247ab063df4408ac56ad35cbb1c4fb679b2f17f98966f, exactly matching supplied bytes.
       Rounded regression and sample-flow checks are not original-data replication.'
     review_record: references/pdf-reviews/0279.json
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: Proposes truthful progress feedback to support willingness to continue difficult deliberative
+      learning.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 10 (source locators: 62).
+      Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+      assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+      or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+      or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -108806,6 +109186,36 @@ modes:
           Higher confidence is associated with higher responsibility ratings and formal-model agreement in
           the printed models.
         verification_url: https://arxiv.org/abs/2608.04318v1
+        verified_date: '2026-11-28'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Task self-confidence
+    definition: A person’s belief in their own ability to perform a particular task successfully.
+    evidence_scope: Proposes truthful progress feedback to support willingness to continue difficult deliberative
+      learning.
+    catalogue_boundary: This is confidence in capability/motivation, not proof of answer accuracy, calibration
+      or subjective AI self-efficacy. No validated scale or intervention effect is supplied; avoid fabricated
+      progress or competitive pressure.
+    definition_sources:
+    - id: pdf-review-0284-task-self-confidence
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 10 (source locators: 62).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Proposes truthful progress feedback to support willingness to continue difficult deliberative
+          learning.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
         verified_date: '2026-11-28'
 - id: math-washing
   num: 678
@@ -114886,6 +115296,31 @@ modes:
       verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
       checked with explicitly limited original-source reading.
     review_record: references/pdf-reviews/0272.json
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: SocrAI aims to cultivate a user’s own deliberation through procedural rigor, questions and relevant
+      contrary information. Concealed framing can contradict that goal even if the designer describes the assistant
+      as neutral.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -114933,6 +115368,39 @@ modes:
           assumptions, values and alternatives. The authors acknowledge routinization and limited decision
           time.
         verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Socratic dialogue
+    definition: Using questions and reasoned dialogue to clarify concepts, test assumptions and develop a person’s
+      own judgment.
+    evidence_scope: SocrAI aims to cultivate a user’s own deliberation through procedural rigor, questions
+      and relevant contrary information. Concealed framing can contradict that goal even if the designer describes
+      the assistant as neutral.
+    catalogue_boundary: Procedural questioning can still steer selection, relevance and agenda. The source
+      explicitly acknowledges axiological neutrality is a specific aspiration, not universal value-freedom.
+      Match the user’s requested mode and avoid burdensome endless questioning or withholding requested answers.
+    definition_sources:
+    - id: pdf-review-0284-socratic-dialogue
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 7 (source locators: 59).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: SocrAI aims to cultivate a user’s own deliberation through procedural rigor, questions
+          and relevant contrary information. Concealed framing can contradict that goal even if the designer
+          describes the assistant as neutral.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
         verified_date: '2026-11-28'
 - id: attributability
   num: 715
@@ -125680,3 +126148,233 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0282.json
+  research_notes:
+  - id: pdf-review-0284
+    review_record: references/pdf-reviews/0284.json
+    name: Cognitive reflection
+    definition: Examining an initially compelling answer and, when warranted, overriding it after deliberate
+      checking.
+    evidence_scope: Theoretical reflection-promoting nudges use attention, reminders or relevant data to prompt
+      deliberation rather than only automatic choice.
+    catalogue_boundary: 'Context only: no independent reflection process, CRT score or durable skill transfer
+      is measured. More questions, disagreement or longer answers do not establish reflective learning.'
+    definition_sources:
+    - id: pdf-review-0284-cognitive-reflection
+      title: Socratic nudges, virtual moral assistants and the problem of autonomy
+      url: https://doi.org/10.1007/s00146-023-01846-3
+      consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 3 (source locators: 55).
+        Conceptual/normative analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented
+        assistant, participant sample, randomized intervention, physiology-classification validation, VR trial
+        or measured moral improvement is reported. Prior empirical work is cited but not independently replicated
+        or fully read here.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Francisco Lara
+        - Blanca Rodríguez-López
+        year: 2025
+        venue: AI & SOCIETY40(1):53–65; online2024
+        doi: 10.1007/s00146-023-01846-3
+        evidence_scope: Theoretical reflection-promoting nudges use attention, reminders or relevant data to
+          prompt deliberation rather than only automatic choice.
+        verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+        verified_date: '2026-11-28'
+- id: hypernudging
+  num: 807
+  name: Hypernudging
+  definition: Continually adapting a person’s digital choice environment using data about them to steer their
+    decisions.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Digital choice architecture / behavioral ethics / human–computer interaction
+  human_parallel: Hypernudging
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual digital influence pattern from a fully read normative article. No measured
+    intrinsic AI preference, generalized efficacy or proven manipulation in an actual system.
+  proposed_ai_manifestation: 'Audit an authorized adaptive assistant’s documented choices across interactions:
+    what user data changed which ranking, default or prompt, toward whose objective, with which disclosure
+    and refusal options. Use consented test data and independently measured user benefit; do not start private
+    tracking or optimize acceptance as a proxy for autonomy.'
+  research_boundary: Adaptation is not inherently deceptive, effective or autonomy-preserving. Identify the
+    steering objective, data used, material interface changes, permissions and real opportunity to refuse.
+    Do not infer hidden intent from personalization alone. Term variants and the disputed relationship to generic
+    digital nudging are retained rather than encoded as universal equivalence.
+  concept_boundary: Adaptation is not inherently deceptive, effective or autonomy-preserving. Identify the
+    steering objective, data used, material interface changes, permissions and real opportunity to refuse.
+    Do not infer hidden intent from personalization alone. Term variants and the disputed relationship to generic
+    digital nudging are retained rather than encoded as universal equivalence.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - nudging
+  - dark-patterns
+  - b035-framing-effect
+  - perceived-autonomy
+  - scope-creep
+  definition_sources:
+  - id: pdf-review-0284-hypernudging
+    title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 5 (source locators: 57). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Francisco Lara
+      - Blanca Rodríguez-López
+      year: 2025
+      venue: AI & SOCIETY40(1):53–65; online2024
+      doi: 10.1007/s00146-023-01846-3
+      evidence_scope: Explicitly defined and ethically analyzed through recommender/self-tracking examples
+        and prior Yeung/Mills accounts. No deployed system or independent treatment effect is measured, and
+        original full theories were not independently read here.
+      verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: Explicitly defined and ethically analyzed through recommender/self-tracking examples and prior
+      Yeung/Mills accounts. No deployed system or independent treatment effect is measured, and original full
+      theories were not independently read here.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 5 (source locators: 57). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Hypernudging"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Hypernudging%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0284.json
+- id: dark-patterns
+  num: 808
+  name: Dark patterns
+  definition: Deceptive interface designs that mislead or obstruct users in ways that steer them away from
+    expressing or acting on their actual preferences.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human–computer interaction / deceptive design / behavioral influence
+  human_parallel: Dark patterns
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: A defined interface pattern discussed in a fully read normative article, based on cited
+    HCI research. No new empirical prevalence, AI intent or measured user harm is established here.
+  proposed_ai_manifestation: Review an assistant’s generated interfaces and action flow for false urgency,
+    misleading consent, hidden material terms or obstacles to an authorized refusal/cancellation. Compare claims
+    with actual state, make consequential options understandable and reversible, and test task completion without
+    using conversion alone as success.
+  research_boundary: An inconvenient layout or persuasive suggestion alone is insufficient. Verify misleading
+    information, material obstruction, default effects, actual alternatives and the user’s authorized preference.
+    Distinguish observed design effects from unproven malicious motive; true availability information is not
+    automatically fake scarcity.
+  concept_boundary: An inconvenient layout or persuasive suggestion alone is insufficient. Verify misleading
+    information, material obstruction, default effects, actual alternatives and the user’s authorized preference.
+    Distinguish observed design effects from unproven malicious motive; true availability information is not
+    automatically fake scarcity.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - hypernudging
+  - nudging
+  - ai-deception
+  - b035-framing-effect
+  - status-quo-bias
+  definition_sources:
+  - id: pdf-review-0284-dark-patterns
+    title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 5 (source locators: 57). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    publication:
+      type: journal-article
+      authors:
+      - Francisco Lara
+      - Blanca Rodríguez-López
+      year: 2025
+      venue: AI & SOCIETY40(1):53–65; online2024
+      doi: 10.1007/s00146-023-01846-3
+      evidence_scope: The article explicitly defines and illustrates the HCI concept through prior work, including
+        misleading scarcity/countdown tactics. It reports no new interface dataset, prevalence estimate or
+        independently demonstrated designer intent.
+      verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: Socratic nudges, virtual moral assistants and the problem of autonomy
+    authors:
+    - Francisco Lara
+    - Blanca Rodríguez-López
+    year: 2025
+    url: https://doi.org/10.1007/s00146-023-01846-3
+    venue: AI & SOCIETY40(1):53–65; online2024
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s00146-023-01846-3
+    relevance: The article explicitly defines and illustrates the HCI concept through prior work, including
+      misleading scarcity/countdown tactics. It reports no new interface dataset, prevalence estimate or independently
+      demonstrated designer intent.
+    consulted: 'Full supplied PDF text read, all 13 pages; evidence at PDF pages 5 (source locators: 57). Conceptual/normative
+      analysis of nudges for a proposed SocrAI moral-learning assistant. No implemented assistant, participant
+      sample, randomized intervention, physiology-classification validation, VR trial or measured moral improvement
+      is reported. Prior empirical work is cited but not independently replicated or fully read here.'
+    verification_url: https://link.springer.com/article/10.1007/s00146-023-01846-3
+    verified_date: '2026-11-28'
+    verification_method: All thirteen supplied pages, footnotes, motivational/VR discussion and references
+      read. Hypernudging, bias definitions and transparency/resistance passages rendered and visually inspected.
+      Publisher/Crossref identity and stages checked. Public publisher PDF independently downloaded:702191
+      bytes, SHA-256 04227a6e5f824baf66cd0ad3f0a02a14f30df79476c8b1a00172dcb6ec76279c, matching supplied bytes.
+      No figures, tables or separate supplementary-file link found.
+    review_record: references/pdf-reviews/0284.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Dark patterns"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Dark+patterns%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0284.json
