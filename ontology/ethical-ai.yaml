@@ -17,7 +17,7 @@ meta:
     '
   schema: ontology/SCHEMA.md
   cite: See CITATION.cff
-  mode_count: 790
+  mode_count: 794
   catalogue_counts:
     previous_entries: 207
     added_analogies: 227
@@ -25,7 +25,7 @@ meta:
     analogies; source review is stated per entry. Existing paper and experiment results describe the 207-entry
     baseline.
   display_counts:
-    numbered_entries: 790
+    numbered_entries: 794
     linked_overlap_records: 9
     categories: 11
   count_note: Record counts are not counts of mutually exclusive or independently established AI mechanisms.
@@ -53,7 +53,7 @@ meta:
       explicit shortfalls, access limits and previous source reviews.
   pdf_corpus_review:
     manifest: references/pdf-corpus-2026-11-26.json
-    latest_review: references/pdf-reviews/0271.json
+    latest_review: references/pdf-reviews/0272.json
     date: '2026-11-28'
     scope: Sequential PDF reading; human evidence, AI proposals and secondary citations remain distinguished
 relation_types:
@@ -15209,8 +15209,8 @@ modes:
 - id: automation-bias
   num: 105
   name: Automation bias
-  definition: Trusting a tool result or a prior step because a machine produced it, without verifying the load-bearing
-    part.
+  definition: Unduly relying on automated cues, or their absence, despite practically accessible evidence that
+    warrants checking or overriding them.
   example: It trusts the linter's "all clear" and ships, though the linter never checked the path that breaks.
   family: agentic-and-engineering-failure-modes
   group_label: Heuristics and biases
@@ -16186,6 +16186,48 @@ modes:
           group during assistance despite an identical task rule and warning for one group.
         verification_url: https://doi.org/10.1186/s41235-026-00726-w
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Automation bias
+    definition: Trusting a tool result or a prior step because a machine produced it, without verifying the
+      load-bearing part.
+    evidence_scope: The article proposes distinguishing failures to check accessible counterevidence from unwarranted
+      reliance after attending to it. It includes erroneous reliance on system silence and stresses practical
+      access, role expertise and workload. This broadens the catalogue’s unchecked-output-only gloss while
+      preserving its examples and stable ID.
+    catalogue_boundary: Reliance is biased only where its evidential weighting or lack of checking is unwarranted
+      given practical access, role, task costs and known competence. A wrong outcome, disagreement with an
+      aid or justified delegation alone does not establish bias. Awareness of conflicting evidence differs
+      from mere display availability; neither subtype proves felt trust or automatic legal culpability.
+    definition_sources:
+    - id: pdf-review-0272-automation-bias
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The article proposes distinguishing failures to check accessible counterevidence from
+          unwarranted reliance after attending to it. It includes erroneous reliance on system silence and
+          stresses practical access, role expertise and workload. This broadens the catalogue’s unchecked-output-only
+          gloss while preserving its examples and stable ID.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
+  concept_boundary: Reliance is biased only where its evidential weighting or lack of checking is unwarranted
+    given practical access, role, task costs and known competence. A wrong outcome, disagreement with an aid
+    or justified delegation alone does not establish bias. Awareness of conflicting evidence differs from mere
+    display availability; neither subtype proves felt trust or automatic legal culpability.
 - id: silent-error-swallowing
   num: 106
   name: Silent error swallowing
@@ -24094,6 +24136,39 @@ modes:
           all reduced checking as one measured cause.
         verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Automation complacency
+    definition: Dropping its own checking of a tool's output or a subprocess once it assumes the automation
+      is reliable, letting errors through.
+    evidence_scope: The source explicitly recognizes overlap between reduced monitoring and its proposed weak-bias
+      subtype, while distinguishing whether contrary evidence was actually checked.
+    catalogue_boundary: Reduced vigilance, an unverified decision and a wrong outcome are related but not identical.
+      Preserve the prior record’s checking pattern and avoid equating complacency with all rational delegation
+      or every omission.
+    definition_sources:
+    - id: pdf-review-0272-automation-complacency
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The source explicitly recognizes overlap between reduced monitoring and its proposed
+          weak-bias subtype, while distinguishing whether contrary evidence was actually checked.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
   selected_papers:
   - id: arxiv:2605.14544
     title: 'Complacent, Not Sycophantic: Reframing Large Language Models and Designing AI Literacy'
@@ -69464,6 +69539,38 @@ modes:
           this coding scheme.
         verification_url: https://doi.org/10.3390/bs16101829
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Deskilling
+    definition: Loss or weakening of previously acquired skills through reduced independent use or practice.
+    evidence_scope: The article describes erosion of acquired competence through disuse and discusses reduced
+      opportunities to practice or acquire skills in heavily automated workflows.
+    catalogue_boundary: The second process is upskilling inhibition, as verified in the cited Natali abstract,
+      not upskilling itself and not necessarily loss of already acquired skill. The article supplies no new
+      longitudinal skill-loss measurement.
+    definition_sources:
+    - id: pdf-review-0272-deskilling
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The article describes erosion of acquired competence through disuse and discusses reduced
+          opportunities to practice or acquire skills in heavily automated workflows.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: moral-deskilling
   num: 487
   name: Moral deskilling
@@ -71480,6 +71587,39 @@ modes:
           control uniquely attributes changes or demonstrates moral improvement.
         verification_url: https://doi.org/10.3389/frai.2025.1694772
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Moral deference
+    definition: Treating an advisor's moral recommendation itself as a substantial reason for one's moral judgment.
+    evidence_scope: The paper analyzes deference to automated information and its implications for retaining
+      moral judgment and answerability.
+    catalogue_boundary: Context only:trust in a technical diagnosis or factual recommendation is not necessarily
+      deference on moral principles. Generic source priority and moral-advice uptake are related but not exact
+      synonyms; no new moral-advice experiment is conducted.
+    definition_sources:
+    - id: pdf-review-0272-moral-deference
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The paper analyzes deference to automated information and its implications for retaining
+          moral judgment and answerability.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: persuasion-backfire-effect
   num: 494
   name: Persuasion backfire effect
@@ -93004,6 +93144,41 @@ modes:
           differently, with recurring underuse relative to the specified payoff benchmark.
         verification_url: https://arxiv.org/abs/1904.13086v3
         verified_date: '2026-11-27'
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Calibrated reliance
+    definition: Using assistance to a degree justified by its task-specific competence, relevance, uncertainty
+      and the consequences of error.
+    evidence_scope: The argument allows rational deference and stable overall trust after an isolated error,
+      while requiring sensitivity to relevant limitations and recurrent counterevidence. Proposed critical
+      trust retains scrutiny and human authority.
+    catalogue_boundary: Neither blind acceptance nor automatic distrust is calibration. A single hindsight
+      error does not prove irrational reliance. No precise universal threshold or tested critical-trust intervention
+      is supplied.
+    definition_sources:
+    - id: pdf-review-0272-calibrated-reliance
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 15 (source locators: 15
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: The argument allows rational deference and stable overall trust after an isolated error,
+          while requiring sensitivity to relevant limitations and recurrent counterevidence. Proposed critical
+          trust retains scrutiny and human authority.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: environmental-rebound-effect
   num: 600
   name: Environmental rebound effect
@@ -111970,6 +112145,32 @@ modes:
       repairs verified against Crossref/PubMed/publisher or institutional records. Philosophical proposal,
       not a new intervention study, benchmark or implementation.
     review_record: references/pdf-reviews/0214.json
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: Reflection Machines are described as meta-cognitive questioning tools that surface assumptions,
+      values and alternatives. The authors acknowledge routinization and limited decision time.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 22 (source locators: 22 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -111983,6 +112184,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0214.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Socratic dialogue
+    definition: Using questions and reasoned dialogue to clarify concepts, test assumptions and develop a person’s
+      own judgment.
+    evidence_scope: Reflection Machines are described as meta-cognitive questioning tools that surface assumptions,
+      values and alternatives. The authors acknowledge routinization and limited decision time.
+    catalogue_boundary: Questions can embed false premises or steering. Context-appropriate engagement is a
+      proposed support, not guaranteed autonomy or accuracy; no mandatory extra interaction or authorization
+      layer is imposed by this literature review.
+    definition_sources:
+    - id: pdf-review-0272-socratic-dialogue
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 22 (source locators: 22
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Reflection Machines are described as meta-cognitive questioning tools that surface
+          assumptions, values and alternatives. The authors acknowledge routinization and limited decision
+          time.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: attributability
   num: 715
   name: Attributability
@@ -115112,6 +115348,41 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0240.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: No-alarm reliance
+    definition: Allocating attention elsewhere while a monitoring system is silent, relying on it to signal
+      a problem.
+    evidence_scope: Omission examples discuss failure to act when an automated system gives no cue despite
+      accessible evidence requiring action.
+    catalogue_boundary: Context only:appropriate reliance on a functioning, adequately sensitive monitor is
+      not bias. The existing concept includes rational allocation of attention; do not turn every absence-of-alarm
+      response into complacency.
+    definition_sources:
+    - id: pdf-review-0272-no-alarm-reliance
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 4 (source locators: 4 of
+        27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      count_as_behaviour_paper: false
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Omission examples discuss failure to act when an automated system gives no cue despite
+          accessible evidence requiring action.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: responsibility-authority-double-bind
   num: 743
   name: Responsibility–authority double bind
@@ -117175,6 +117446,32 @@ modes:
       verify identity/date. Targeted citation checks distinguish Nyholm parts I/II and correct one earlier
       review. Selected public book-chapter pages verify a definition, without full chapter/book reading credit.
     review_record: references/pdf-reviews/0248.json
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing evidence
+      against a recommendation. The current source provides a concrete application of the evidential distinction.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
   literature_search:
     database: arXiv
     status: not-searched
@@ -117188,6 +117485,42 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0248.json
+  research_notes:
+  - id: pdf-review-0272
+    review_record: references/pdf-reviews/0272.json
+    name: Undercutting defeater
+    definition: Information that weakens the evidential link between a reason and a conclusion without establishing
+      that the conclusion is false.
+    evidence_scope: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing
+      evidence against a recommendation. The current source provides a concrete application of the evidential
+      distinction.
+    catalogue_boundary: Reliability is a common undercutting target, not the entire definition. Weakening a
+      support link is not proof of the opposite conclusion. Actual contestability, cognitive load and intervention
+      benefit remain untested here.
+    definition_sources:
+    - id: pdf-review-0272-undercutting-defeater
+      title: What is Wrong With Automation Bias?
+      url: https://doi.org/10.1007/s13347-026-01090-9
+      consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23
+        of 27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic
+        deference and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect
+        sizes are secondary citations, not new experiments or independent replications. The paper recognizes
+        justified deference, practical evidence access, institutional pressure, single-error limits and unproven
+        safeguard efficacy. Proposed AI-workflow analogues remain untested.'
+      publication:
+        type: journal-article
+        authors:
+        - Perica Jovchevski
+        - Stefan Buijsman
+        - Mark Neerincx
+        year: 2026
+        venue: Philosophy & Technology 39(2):84
+        doi: 10.1007/s13347-026-01090-9
+        evidence_scope: Design for Defeaters distinguishes challenges to input/pipeline reliability from opposing
+          evidence against a recommendation. The current source provides a concrete application of the evidential
+          distinction.
+        verification_url: https://doi.org/10.1007/s13347-026-01090-9
+        verified_date: '2026-11-28'
 - id: food-neophobia
   num: 760
   name: Food neophobia
@@ -120489,3 +120822,406 @@ modes:
   research_provenance:
     method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
     review_record: references/pdf-reviews/0271.json
+- id: weak-automation-bias
+  num: 791
+  name: Weak automation bias
+  definition: Unwarrantedly following an automated cue, or its absence, without checking practically accessible
+    contrary evidence.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Weak automation bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: Provide an assistant with a tool result and an accessible verification source.
+    Evaluate whether it checks the material point before consequential use, with the required check and feasible
+    cost specified. Distinguish an absent alarm from evidence that a working monitor found no issue.
+  research_boundary: Evidence must be practically accessible given role, time, expertise and task cost. A wrong
+    recommendation or justified division of checking work is not enough. Weak does not mean harmless or automatically
+    legally negligent; actual responsibility requires separate evidence.
+  concept_boundary: Evidence must be practically accessible given role, time, expertise and task cost. A wrong
+    recommendation or justified division of checking work is not enough. Weak does not mean harmless or automatically
+    legally negligent; actual responsibility requires separate evidence.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - automation-complacency
+  - strong-automation-bias
+  - no-alarm-reliance
+  - calibrated-reliance
+  is_a:
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0272-weak-automation-bias
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The authors distinguish unchecked reliance from reliance after attending to counterevidence
+        and illustrate it with earlier prescribing studies. The cited original studies were not independently
+        read in this review.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The authors distinguish unchecked reliance from reliance after attending to counterevidence
+      and illustrate it with earlier prescribing studies. The cited original studies were not independently
+      read in this review.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Weak automation bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Weak+automation+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: strong-automation-bias
+  num: 792
+  name: Strong automation bias
+  definition: Unwarrantedly following automated cues, or their absence, after attending to relevant contrary
+    evidence.
+  category: Heuristics
+  family: heuristics-biases
+  group_label: Heuristics and biases
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Strong automation bias
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: Give an assistant explicit, relevant counterevidence to a tool recommendation
+    and assess whether its final action weights that evidence appropriately. Evaluate public claims and recorded
+    actions without inferring private beliefs. Keep justified expert deference and actual authority constraints
+    separate.
+  research_boundary: Exposure on a screen is not proof of attention. Reliance after disagreement may be rational
+    if the source has warranted superior evidence or competence; a later wrong outcome does not alone establish
+    bias. The label does not prove felt overtrust, nonautonomy or culpability.
+  concept_boundary: Exposure on a screen is not proof of attention. Reliance after disagreement may be rational
+    if the source has warranted superior evidence or competence; a later wrong outcome does not alone establish
+    bias. The label does not prove felt overtrust, nonautonomy or culpability.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - weak-automation-bias
+  - epistemic-deference
+  - deep-automation-bias
+  - calibrated-reliance
+  is_a:
+  - automation-bias
+  definition_sources:
+  - id: pdf-review-0272-strong-automation-bias
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The paper argues that evidence awareness can coexist with unwarranted deference and discusses
+        secondary pathology/trust-game findings. Confidence, case-specific competence and alternative explanations
+        are not independently tested here.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The paper argues that evidence awareness can coexist with unwarranted deference and discusses
+      secondary pathology/trust-game findings. Confidence, case-specific competence and alternative explanations
+      are not independently tested here.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 8 (source locators: 8 of 27).
+      Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Strong automation bias"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Strong+automation+bias%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: epistemic-deference
+  num: 793
+  name: Epistemic deference
+  definition: Treating another source’s judgment as more authoritative than one’s own on the basis of that
+    source’s perceived authority.
+  category: Social
+  family: social-cognition-theory-of-mind
+  group_label: Social cognition and theory of mind
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Epistemic deference
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: When an assistant gives priority to an external expert, model or tool, inspect
+    its stated basis, domain competence, access to evidence and handling of conflict. Test whether source labels
+    override stronger case-specific evidence, while preserving justified reliance on expertise.
+  research_boundary: Perceived authority is not demonstrated competence. Deference is not automatically irrational,
+    coerced, moral endorsement or evidence of subjective trust in an AI. Whether reasons warrant source priority
+    must be evaluated independently.
+  concept_boundary: Perceived authority is not demonstrated competence. Deference is not automatically irrational,
+    coerced, moral endorsement or evidence of subjective trust in an AI. Whether reasons warrant source priority
+    must be evaluated independently.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - epistemic-trust
+  - moral-deference
+  - strong-automation-bias
+  - calibrated-reliance
+  definition_sources:
+  - id: pdf-review-0272-epistemic-deference
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The source defines epistemic deference in its strong-bias argument and explicitly allows
+        rational deference under relevant competence and verification limits. Normative autonomy arguments
+        are conceptual, not new empirical deference experiments.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The source defines epistemic deference in its strong-bias argument and explicitly allows rational
+      deference under relevant competence and verification limits. Normative autonomy arguments are conceptual,
+      not new empirical deference experiments.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 11 (source locators: 11 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Epistemic deference"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Epistemic+deference%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
+- id: rebutting-defeater
+  num: 794
+  name: Rebutting defeater
+  definition: Information that gives reason to reject a conclusion by supporting an incompatible conclusion.
+  category: Reasoning
+  family: reasoning-architecture
+  group_label: Reasoning architecture
+  tag: analogy
+  origin: Human factors / epistemology / AI ethics
+  human_parallel: Rebutting defeater
+  ai_native: false
+  highlighted: false
+  research_candidate: true
+  source_check: definition-source-consulted
+  ai_evidence_status: Conceptual distinction or evidential relation in a fully read philosophical article;
+    cited empirical originals and proposed AI-workflow intervention effects are not independently tested here.
+  proposed_ai_manifestation: When evaluating a claim, identify evidence for an incompatible conclusion separately
+    from evidence that the original source is unreliable. State which claim is challenged and how strongly,
+    verify the counterevidence and revise only conclusions that depend on it.
+  research_boundary: Counterevidence can be defeasible and need not conclusively prove falsity. Check that
+    claims are genuinely incompatible and the new source is reliable. An invented alternative is not a valid
+    defeater, and one rebutted claim does not invalidate everything else.
+  concept_boundary: Counterevidence can be defeasible and need not conclusively prove falsity. Check that claims
+    are genuinely incompatible and the new source is reliable. An invented alternative is not a valid defeater,
+    and one rebutted claim does not invalidate everything else.
+  measurability: multi-turn
+  violates: []
+  causes: []
+  synonyms: []
+  relates_to:
+  - undercutting-defeater
+  - considering-the-opposite
+  - b036-confirmation-myside-bias
+  definition_sources:
+  - id: pdf-review-0272-rebutting-defeater
+    title: What is Wrong With Automation Bias?
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    publication:
+      type: journal-article
+      authors:
+      - Perica Jovchevski
+      - Stefan Buijsman
+      - Mark Neerincx
+      year: 2026
+      venue: Philosophy & Technology 39(2):84
+      doi: 10.1007/s13347-026-01090-9
+      evidence_scope: The paper distinguishes rebutting from undercutting signals in a proposed operator-contestability
+        design and illustrates opposing evidence. The original framework and intervention efficacy were not
+        independently tested here.
+      verification_url: https://doi.org/10.1007/s13347-026-01090-9
+      verified_date: '2026-11-28'
+  selected_papers:
+  - title: What is Wrong With Automation Bias?
+    authors:
+    - Perica Jovchevski
+    - Stefan Buijsman
+    - Mark Neerincx
+    year: 2026
+    url: https://doi.org/10.1007/s13347-026-01090-9
+    venue: Philosophy & Technology 39(2):84
+    publication_type: journal-article
+    domain: human-related
+    id: doi:10.1007/s13347-026-01090-9
+    relevance: The paper distinguishes rebutting from undercutting signals in a proposed operator-contestability
+      design and illustrates opposing evidence. The original framework and intervention efficacy were not independently
+      tested here.
+    consulted: 'Full supplied PDF text read, all 27 pages; evidence at PDF pages 23 (source locators: 23 of
+      27). Conceptual/normative synthesis proposes weak versus strong automation bias, analyzes epistemic deference
+      and autonomy, and discusses reflective agents and defeaters. All empirical samples and effect sizes are
+      secondary citations, not new experiments or independent replications. The paper recognizes justified
+      deference, practical evidence access, institutional pressure, single-error limits and unproven safeguard
+      efficacy. Proposed AI-workflow analogues remain untested.'
+    verification_url: https://doi.org/10.1007/s13347-026-01090-9
+    verified_date: '2026-11-28'
+    verification_method: All 27 supplied pages, every footnote, normative argument, design proposal and complete
+      bibliography read. Pages 8 and 23 visually checked; no substantive figures/data tables are present. Publisher/Crossref
+      verify source identity/date. Cited Natali publisher abstract and selected Reflection Machines metadata
+      checked with explicitly limited original-source reading.
+    review_record: references/pdf-reviews/0272.json
+  literature_search:
+    database: arXiv
+    status: not-searched
+    count: null
+    query: all:"Rebutting defeater"
+    filters: (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    url: https://export.arxiv.org/api/query?search_query=all%3A%22Rebutting+defeater%22+AND+%28cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG%29&max_results=5
+    queried_at: null
+    scope: No search total measured for this new entry. Selected citations are independent of metadata-query
+      totals.
+  research_provenance:
+    method: Sequential reading of a user-supplied PDF; novelty and boundaries reviewed against current ontology
+    review_record: references/pdf-reviews/0272.json
